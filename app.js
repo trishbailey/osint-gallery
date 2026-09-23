@@ -208,6 +208,7 @@
     iframe.title = "Preview of " + (tool.name || "tool");
     iframe.setAttribute("allow", "autoplay");
     iframe.allowFullscreen = true;
+    iframe.tabIndex = -1;
     frame.appendChild(iframe);
     if (!dialog.open) dialog.showModal();
     closeBtn.focus();
