@@ -139,14 +139,10 @@
 
   function previewControl(tool) {
     var driveId = safeDriveId(tool.previewDriveId);
+    if (!driveId) return null;
     var button = document.createElement("button");
     button.type = "button";
     button.className = "button button-ghost";
-    if (!driveId) {
-      button.disabled = true;
-      button.textContent = "Preview soon";
-      return button;
-    }
     button.textContent = "Preview";
     button.addEventListener("click", function () {
       openPreview(tool, driveId, button);
@@ -170,7 +166,9 @@
     foot.className = "tile-foot";
     var actions = document.createElement("div");
     actions.className = "actions";
-    actions.append(enterControl(tool, enterOk), previewControl(tool));
+    actions.appendChild(enterControl(tool, enterOk));
+    var preview = previewControl(tool);
+    if (preview) actions.appendChild(preview);
     foot.appendChild(actions);
     article.append(iconNode(tool), heading, blurb, status, foot);
     return article;
