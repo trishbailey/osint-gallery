@@ -43,15 +43,6 @@
       "status": "live"
     },
     {
-      "id": "reddit",
-      "name": "Reddit",
-      "blurb": "A Reddit OSINT tool is planned. Check back for updates.",
-      "icon": "/icons/reddit.svg",
-      "enterUrl": "",
-      "previewDriveId": "",
-      "status": "soon"
-    },
-    {
       "id": "bluesky",
       "name": "Bluesky Collector",
       "blurb": "Collect content from Bluesky.",
