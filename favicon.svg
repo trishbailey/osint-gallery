@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="beaconTitle">
-  <title id="beaconTitle">Beacon Tools</title>
+  <title id="beaconTitle">Beacon OSINT Tools</title>
   <rect width="48" height="48" rx="12" fill="#122D44"/>
-  <path d="M33.2 12.2a13.2 13.2 0 1 0 .2 23.6" fill="none" stroke="#FFD84D" stroke-width="3" stroke-linecap="round"/>
-  <text x="22" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">B</text>
+  <path d="M36.02 11.98a17 17 0 1 0 0 24.04" fill="none" stroke="#FFD84D" stroke-width="3" stroke-linecap="round"/>
+  <path fill="#FFFFFF" fill-rule="evenodd" d="M18 14h7c4 0 6 2 6 5 0 2-1 3.5-2.5 4.2C30.8 24 32 25.7 32 28c0 3.8-2.6 6-7 6h-7V14Zm4 3.5v4.2h2.5c1.7 0 2.5-.7 2.5-2.1s-.8-2.1-2.5-2.1H22Zm0 7.5v5.5h3c2 0 3-1 3-2.8S27 25 25 25h-3Z"/>
 </svg>
