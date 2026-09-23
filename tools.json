@@ -9,7 +9,7 @@
     {
       "id": "spotlight-x",
       "name": "X Account Spotlight",
-      "blurb": "Collect and analyze X account posts, interactions, and posting patterns.",
+      "blurb": "X Account Spotlight collects and analyzes an X account’s posts to uncover activity patterns, interactions, recurring themes, and language worth closer review.",
       "icon": "/icons/spotlight-x.svg",
       "enterUrl": "https://spotlight-x.onrender.com/",
       "previewDriveId": "",
@@ -18,7 +18,7 @@
     {
       "id": "domain-recon",
       "name": "Domain Recon",
-      "blurb": "Research domains and review their online infrastructure.",
+      "blurb": "Domain Recon does a deep dive into the registration details and technical infrastructure of a specific domain in order to surface hidden clues.",
       "icon": "/icons/domain-recon.svg",
       "enterUrl": "https://domain-recon-z0hz.onrender.com/",
       "previewDriveId": "",
@@ -27,7 +27,7 @@
     {
       "id": "bluesky",
       "name": "Bluesky Spotlight",
-      "blurb": "Collect content from Bluesky.",
+      "blurb": "Bluesky Spotlight downloads one account’s full public post history, then shows who that account interacts with, when it posts, and what it writes about.",
       "icon": "/icons/bluesky.svg",
       "enterUrl": "https://bluesky-collector.onrender.com/",
       "previewDriveId": "",
@@ -36,7 +36,7 @@
     {
       "id": "tiktok",
       "name": "TikTok Spotlight",
-      "blurb": "A TikTok OSINT tool is planned. Check back for updates.",
+      "blurb": "TikTok Spotlight collects selected public TikTok posts, transcribes their audio, and uses AI to explore topics, mentions, view counts, and comment themes.",
       "icon": "/icons/tiktok.svg",
       "enterUrl": "",
       "previewDriveId": "",
@@ -45,7 +45,7 @@
     {
       "id": "telegram",
       "name": "Telegram Spotlight",
-      "blurb": "Collect and review content from Telegram channels.",
+      "blurb": "Telegram Spotlight collects channel posts by date and keyword, then maps connections and reveals patterns across conversations.",
       "icon": "/icons/telegram.svg",
       "enterUrl": "https://telegram-new-7bd0.onrender.com/",
       "previewDriveId": "",
@@ -54,7 +54,7 @@
     {
       "id": "info-ops-spotlight",
       "name": "Coordinated X Replies Spotlight",
-      "blurb": "Explore information operations and online narratives.",
+      "blurb": "Coordinated Replies Spotlight uncovers patterns of potential coordination by tracing repeat commenters, reply timing, shared narratives, and reused images across X threads.",
       "icon": "/icons/info-ops-spotlight.svg",
       "enterUrl": "https://info-ops-spotlight.onrender.com/",
       "previewDriveId": "",
