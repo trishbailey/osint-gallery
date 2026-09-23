@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beacon Tools</title>
+    <meta
+      name="description"
+      content="Choose a tool. Enter the live app or watch a short preview."
+    />
+    <meta name="theme-color" content="#122D44" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="main">
+      <header class="hero">
+        <p class="eyebrow" id="site-eyebrow">OSINT workspace</p>
+        <h1 class="wordmark" id="site-name">
+          <span class="beam" aria-hidden="true"></span>
+          <span class="name">
+            <span class="first">
+              <svg class="arc" viewBox="0 0 48 48" aria-hidden="true">
+                <path
+                  d="M36.3 13.7A16 16 0 1 0 36.3 34.3"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+              </svg>
+              B
+            </span>eacon Tools
+          </span>
+        </h1>
+        <p class="lede" id="site-lede">
+          Choose a tool. Enter the live app or watch a short preview.
+        </p>
+      </header>
+      <section class="grid" id="tool-grid" aria-label="Tools">
+        <p class="empty">Loading tools…</p>
+      </section>
+      <footer class="site-footer">
+        <p id="site-owner">Beacon Intelligence Group</p>
+      </footer>
+    </main>
+
+    <dialog id="preview-dialog" aria-labelledby="preview-title">
+      <div class="dialog-bar">
+        <h2 id="preview-title">Preview</h2>
+        <button type="button" class="button button-ghost" id="preview-close">
+          Close
+        </button>
+      </div>
+      <div id="preview-frame"></div>
+    </dialog>
+
+    <noscript>
+      <p class="main">This directory needs JavaScript to list the tools.</p>
+    </noscript>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "site": {
+    "name": "Beacon Tools",
+    "eyebrow": "OSINT workspace",
+    "tagline": "Choose a tool. Enter the live app or watch a short preview.",
+    "owner": "Beacon Intelligence Group"
+  },
+  "tools": [
+    {
+      "id": "thread-net",
+      "name": "Thread Net",
+      "blurb": "Find handles that repeat the same claim across busy X threads.",
+      "icon": "/icons/thread-net.svg",
+      "enterUrl": "https://REPLACE.onrender.com",
+      "previewDriveId": "",
+      "status": "live"
+    },
+    {
+      "id": "account-file",
+      "name": "Account File",
+      "blurb": "One named public account, windowed posts, searchable claims.",
+      "icon": "/icons/account-file.svg",
+      "enterUrl": "https://REPLACE.onrender.com",
+      "previewDriveId": "",
+      "status": "preview-soon"
+    }
+  ]
+}

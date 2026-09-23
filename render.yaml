@@ -1,0 +1,14 @@
+# Static site only. Do not add a web service or a database for this gallery.
+services:
+  - type: web
+    name: beacon-tools
+    runtime: static
+    buildCommand: echo no-build
+    staticPublishPath: .
+    envVars:
+      - key: SKIP_INSTALL_DEPS
+        value: "true"
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
