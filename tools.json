@@ -53,12 +53,12 @@
     },
     {
       "id": "bluesky",
-      "name": "Bluesky",
-      "blurb": "A Bluesky OSINT tool is planned. Check back for updates.",
+      "name": "Bluesky Collector",
+      "blurb": "Collect content from Bluesky.",
       "icon": "/icons/bluesky.svg",
-      "enterUrl": "",
+      "enterUrl": "https://bluesky-collector.onrender.com/",
       "previewDriveId": "",
-      "status": "soon"
+      "status": "live"
     },
     {
       "id": "tiktok",
