@@ -38,9 +38,9 @@
       "name": "TikTok Spotlight",
       "blurb": "TikTok Spotlight collects selected public TikTok posts, transcribes their audio, and uses AI to explore topics, mentions, view counts, and comment themes.",
       "icon": "/icons/tiktok.svg",
-      "enterUrl": "",
+      "enterUrl": "https://tiktok-spotlight.onrender.com/",
       "previewDriveId": "",
-      "status": "soon"
+      "status": "live"
     },
     {
       "id": "domain-recon",
