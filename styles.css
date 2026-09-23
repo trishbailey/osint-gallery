@@ -65,7 +65,7 @@ body {
   display: inline-block;
   max-width: 100%;
   overflow-wrap: anywhere;
-  margin: 8px 0;
+  margin: 12px 0;
   color: #fff;
   font-size: 30px;
   font-weight: 650;
@@ -103,8 +103,8 @@ body {
   position: absolute;
   left: 50%;
   top: 54%;
-  width: 1.28em;
-  height: 1.28em;
+  width: 1.7em;
+  height: 1.7em;
   transform: translate(-50%, -50%);
   overflow: visible;
   color: var(--yellow);
