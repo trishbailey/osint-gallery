@@ -108,7 +108,7 @@ body {
 
 .arc {
   position: absolute;
-  left: 50%;
+  left: calc(50% - 3px);
   top: 54%;
   width: 1.7em;
   height: 1.7em;
