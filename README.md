@@ -1,4 +1,4 @@
-# Beacon Tools
+# Beacon_OSINT_Tools.com
 
 Public directory of OSINT tools. This site is a storefront. Each tool stays its own Render Web Service. Preview videos stay on Google Drive. Do not commit `.mp4` files.
 

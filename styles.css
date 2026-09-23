@@ -63,6 +63,8 @@ body {
 .wordmark {
   position: relative;
   display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   margin: 8px 0;
   color: #fff;
   font-size: 30px;

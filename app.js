@@ -57,7 +57,7 @@
   function paintName(name) {
     var heading = document.getElementById("site-name");
     if (!heading) return;
-    var safe = String(name || "Beacon Tools").trim() || "Beacon Tools";
+    var safe = String(name || "Beacon_OSINT_Tools.com").trim() || "Beacon_OSINT_Tools.com";
     var initial = safe.charAt(0);
     var rest = safe.slice(1);
     heading.replaceChildren();
