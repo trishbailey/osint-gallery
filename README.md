@@ -12,7 +12,7 @@ Public directory of OSINT tools. This site is a storefront. Each tool stays its 
 
 `status` is `live`, `preview-soon`, or `soon`.
 
-- An empty or invalid `previewDriveId` disables Preview and labels it “Preview soon”.
+- An empty or invalid `previewDriveId` hides the Preview button. A valid video ID enables it.
 - Enter stays disabled unless `status` is `live` and `enterUrl` is a real http(s) URL. Placeholder hosts that contain `REPLACE` stay disabled so the gallery itself does not 404.
 
 ## Deploy on Render
