@@ -16,11 +16,11 @@
       "status": "live"
     },
     {
-      "id": "domain-recon",
-      "name": "Domain Recon",
-      "blurb": "Domain Recon does a deep dive into the registration details and technical infrastructure of a specific domain in order to surface hidden clues.",
-      "icon": "/icons/domain-recon.svg",
-      "enterUrl": "https://domain-recon-z0hz.onrender.com/",
+      "id": "telegram",
+      "name": "Telegram Spotlight",
+      "blurb": "Telegram Spotlight collects channel posts by date and keyword, then maps connections and reveals patterns across conversations.",
+      "icon": "/icons/telegram.svg",
+      "enterUrl": "https://telegram-new-7bd0.onrender.com/",
       "previewDriveId": "",
       "status": "live"
     },
@@ -43,11 +43,11 @@
       "status": "soon"
     },
     {
-      "id": "telegram",
-      "name": "Telegram Spotlight",
-      "blurb": "Telegram Spotlight collects channel posts by date and keyword, then maps connections and reveals patterns across conversations.",
-      "icon": "/icons/telegram.svg",
-      "enterUrl": "https://telegram-new-7bd0.onrender.com/",
+      "id": "domain-recon",
+      "name": "Domain Recon",
+      "blurb": "Domain Recon does a deep dive into the registration details and technical infrastructure of a specific domain in order to surface hidden clues.",
+      "icon": "/icons/domain-recon.svg",
+      "enterUrl": "https://domain-recon-z0hz.onrender.com/",
       "previewDriveId": "",
       "status": "live"
     },
