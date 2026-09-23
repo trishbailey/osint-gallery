@@ -7,22 +7,67 @@
   },
   "tools": [
     {
-      "id": "thread-net",
-      "name": "Thread Net",
-      "blurb": "Find handles that repeat the same claim across busy X threads.",
-      "icon": "/icons/thread-net.svg",
-      "enterUrl": "https://REPLACE.onrender.com",
+      "id": "spotlight-x",
+      "name": "Spotlight X",
+      "blurb": "Collect and analyze X account posts, interactions, and posting patterns.",
+      "icon": "/icons/spotlight-x.svg",
+      "enterUrl": "https://spotlight-x.onrender.com/",
       "previewDriveId": "",
       "status": "live"
     },
     {
-      "id": "account-file",
-      "name": "Account File",
-      "blurb": "One named public account, windowed posts, searchable claims.",
-      "icon": "/icons/account-file.svg",
-      "enterUrl": "https://REPLACE.onrender.com",
+      "id": "domain-recon",
+      "name": "Domain Recon",
+      "blurb": "Research domains and review their online infrastructure.",
+      "icon": "/icons/domain-recon.svg",
+      "enterUrl": "https://domain-recon-z0hz.onrender.com/",
       "previewDriveId": "",
-      "status": "preview-soon"
+      "status": "live"
+    },
+    {
+      "id": "info-ops-spotlight",
+      "name": "Information Operations Spotlight",
+      "blurb": "Explore information operations and online narratives.",
+      "icon": "/icons/info-ops-spotlight.svg",
+      "enterUrl": "https://info-ops-spotlight.onrender.com/",
+      "previewDriveId": "",
+      "status": "live"
+    },
+    {
+      "id": "telegram",
+      "name": "Telegram Channel Collector",
+      "blurb": "Collect and review content from Telegram channels.",
+      "icon": "/icons/telegram.svg",
+      "enterUrl": "https://telegram-new-7bd0.onrender.com/",
+      "previewDriveId": "",
+      "status": "live"
+    },
+    {
+      "id": "reddit",
+      "name": "Reddit",
+      "blurb": "A Reddit OSINT tool is planned. Check back for updates.",
+      "icon": "/icons/reddit.svg",
+      "enterUrl": "",
+      "previewDriveId": "",
+      "status": "soon"
+    },
+    {
+      "id": "bluesky",
+      "name": "Bluesky",
+      "blurb": "A Bluesky OSINT tool is planned. Check back for updates.",
+      "icon": "/icons/bluesky.svg",
+      "enterUrl": "",
+      "previewDriveId": "",
+      "status": "soon"
+    },
+    {
+      "id": "tiktok",
+      "name": "TikTok",
+      "blurb": "A TikTok OSINT tool is planned. Check back for updates.",
+      "icon": "/icons/tiktok.svg",
+      "enterUrl": "",
+      "previewDriveId": "",
+      "status": "soon"
     }
   ]
 }

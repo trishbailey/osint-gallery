@@ -31,12 +31,10 @@ Or create a Static Site by hand:
 - Publish directory: `.` (the repo root)
 - Environment variable: `SKIP_INSTALL_DEPS` = `true`
 
-## Fill in before the first real launch
+## Directory content
 
-- Site name and owner, in `tools.json`
-- Real `enterUrl` values
-- Real Drive file IDs
-- Icon files
-- A custom domain, if you have one
+The directory lists Spotlight X, Domain Recon, Information Operations Spotlight, and Telegram Channel Collector with live Enter links. Reddit, Bluesky, and TikTok have reserved Coming soon tiles.
 
-Until those exist, the two placeholder tiles keep Enter disabled.
+- Add Drive file IDs in `tools.json` to enable previews.
+- To launch a planned tool, set its `enterUrl` and change its `status` to `live`.
+- Site name and owner remain configurable in `tools.json`.
