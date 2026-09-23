@@ -57,7 +57,7 @@
   function paintName(name) {
     var heading = document.getElementById("site-name");
     if (!heading) return;
-    var safe = String(name || "Beacon_OSINT_Tools.com").trim() || "Beacon_OSINT_Tools.com";
+    var safe = String(name || "Beacon OSINT Tools").trim() || "Beacon OSINT Tools";
     var initial = safe.charAt(0);
     var rest = safe.slice(1);
     heading.replaceChildren();
@@ -250,7 +250,7 @@
       setText(
         "site-lede",
         site.tagline,
-        "Choose a tool. Enter the live app or watch a short preview.",
+        "Spotlight tools to focus narrowly and deeply on selected target accounts.",
       );
       setText("site-owner", site.owner, "Beacon Intelligence Group");
       renderTools(Array.isArray(data.tools) ? data.tools : []);
