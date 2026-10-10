@@ -59,6 +59,16 @@
       "enterUrl": "https://info-ops-spotlight.onrender.com/",
       "previewDriveId": "",
       "status": "live"
+    },
+    {
+      "id": "wallet-spotlight",
+      "name": "Wallet Spotlight",
+      "blurb": "Wallet Spotlight traces crypto wallet activity and fund flows to show how money moved.",
+      "icon": "/icons/wallet-spotlight.svg",
+      "enterUrl": "https://wallet-tracer.onrender.com/",
+      "previewDriveId": "",
+      "status": "live",
+      "newTab": true
     }
   ]
 }

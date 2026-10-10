@@ -121,6 +121,10 @@
       link.className = "button button-primary";
       link.href = tool.enterUrl;
       link.textContent = "Enter";
+      if (tool.newTab) {
+        link.target = "_blank";
+        link.rel = "noopener";
+      }
       return link;
     }
     var button = document.createElement("button");
