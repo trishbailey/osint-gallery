@@ -61,10 +61,10 @@
       "status": "live"
     },
     {
-      "id": "wallet-spotlight",
-      "name": "Wallet Spotlight",
-      "blurb": "Wallet Spotlight traces crypto wallet activity and fund flows to show how money moved.",
-      "icon": "/icons/wallet-spotlight.svg",
+      "id": "crypto-spotlight",
+      "name": "Crypto Spotlight",
+      "blurb": "Crypto Spotlight traces crypto wallet activity and fund flows to show how money moved.",
+      "icon": "/icons/crypto-spotlight.svg",
       "enterUrl": "https://wallet-tracer.onrender.com/",
       "previewDriveId": "",
       "status": "live",
