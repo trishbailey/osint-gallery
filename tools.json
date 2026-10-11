@@ -69,6 +69,16 @@
       "previewDriveId": "",
       "status": "live",
       "newTab": true
+    },
+    {
+      "id": "paste-site-spotlight",
+      "name": "Paste Site Spotlight",
+      "blurb": "Paste Site Spotlight searches paste sites and leak sources, including GitHub and more with optional API keys, for an email, domain, username, or keyword, and shows a status for each source.",
+      "icon": "/icons/paste-site-spotlight.svg",
+      "enterUrl": "https://paste-site-spotlight.onrender.com/",
+      "previewDriveId": "",
+      "status": "live",
+      "newTab": true
     }
   ]
 }
