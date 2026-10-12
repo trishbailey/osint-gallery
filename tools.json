@@ -69,6 +69,26 @@
       "previewDriveId": "",
       "status": "live",
       "newTab": true
+    },
+    {
+      "id": "selector-spotlight",
+      "name": "Selector Spotlight",
+      "blurb": "Selector Spotlight searches a username across hundreds of sites, ranks hits as Verified, Likely, or manual check, and adds deep links plus an AI assessment.",
+      "icon": "/icons/selector-spotlight.svg",
+      "enterUrl": "https://selector-spotlight.onrender.com/",
+      "previewDriveId": "",
+      "status": "live",
+      "newTab": true
+    },
+    {
+      "id": "email-header-analyzer",
+      "name": "Email Header & Phishing Analyzer",
+      "blurb": "Email Header & Phishing Analyzer reads a pasted or uploaded email, traces the sending path, checks SPF, DKIM, and DMARC, and extracts IPs, domains, and URLs.",
+      "icon": "/icons/email-header-analyzer.svg",
+      "enterUrl": "https://email-header-phishing-analyzer.onrender.com/",
+      "previewDriveId": "",
+      "status": "live",
+      "newTab": true
     }
   ]
 }
