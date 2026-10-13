@@ -9,11 +9,12 @@
     {
       "id": "spotlight-x",
       "name": "X Account Spotlight",
-      "blurb": "X Account Spotlight collects and analyzes an X account’s posts to uncover activity patterns, interactions, recurring themes, and language worth closer review.",
+      "blurb": "X Account Spotlight collects and analyzes an X account\u2019s posts to uncover activity patterns, interactions, recurring themes, and language worth closer review.",
       "icon": "/icons/spotlight-x.svg",
       "enterUrl": "https://spotlight-x.onrender.com/",
       "previewDriveId": "",
-      "status": "live"
+      "status": "live",
+      "newTab": true
     },
     {
       "id": "telegram",
@@ -22,16 +23,18 @@
       "icon": "/icons/telegram.svg",
       "enterUrl": "https://telegram-new-7bd0.onrender.com/",
       "previewDriveId": "",
-      "status": "live"
+      "status": "live",
+      "newTab": true
     },
     {
       "id": "bluesky",
       "name": "Bluesky Spotlight",
-      "blurb": "Bluesky Spotlight downloads one account’s full public post history, then shows who that account interacts with, when it posts, and what it writes about.",
+      "blurb": "Bluesky Spotlight downloads one account\u2019s full public post history, then shows who that account interacts with, when it posts, and what it writes about.",
       "icon": "/icons/bluesky.svg",
       "enterUrl": "https://bluesky-collector.onrender.com/",
       "previewDriveId": "",
-      "status": "live"
+      "status": "live",
+      "newTab": true
     },
     {
       "id": "tiktok",
@@ -40,7 +43,8 @@
       "icon": "/icons/tiktok.svg",
       "enterUrl": "https://tiktok-spotlight.onrender.com/",
       "previewDriveId": "",
-      "status": "live"
+      "status": "live",
+      "newTab": true
     },
     {
       "id": "domain-recon",
@@ -49,7 +53,8 @@
       "icon": "/icons/domain-recon.svg",
       "enterUrl": "https://domain-recon-z0hz.onrender.com/",
       "previewDriveId": "",
-      "status": "live"
+      "status": "live",
+      "newTab": true
     },
     {
       "id": "info-ops-spotlight",
@@ -58,7 +63,8 @@
       "icon": "/icons/info-ops-spotlight.svg",
       "enterUrl": "https://info-ops-spotlight.onrender.com/",
       "previewDriveId": "",
-      "status": "live"
+      "status": "live",
+      "newTab": true
     },
     {
       "id": "crypto-spotlight",
@@ -66,6 +72,16 @@
       "blurb": "Crypto Spotlight traces crypto wallet activity and fund flows to show how money moved.",
       "icon": "/icons/crypto-spotlight.svg",
       "enterUrl": "https://wallet-tracer.onrender.com/",
+      "previewDriveId": "",
+      "status": "live",
+      "newTab": true
+    },
+    {
+      "id": "paste-site-spotlight",
+      "name": "Paste Site Spotlight",
+      "blurb": "Paste Site Spotlight searches paste sites and leak sources, including GitHub and more with optional API keys, for an email, domain, username, or keyword, and shows a status for each source.",
+      "icon": "/icons/paste-site-spotlight.svg",
+      "enterUrl": "https://paste-site-spotlight.onrender.com/",
       "previewDriveId": "",
       "status": "live",
       "newTab": true
