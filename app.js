@@ -121,10 +121,8 @@
       link.className = "button button-primary";
       link.href = tool.enterUrl;
       link.textContent = "Enter";
-      if (tool.newTab) {
-        link.target = "_blank";
-        link.rel = "noopener";
-      }
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
       return link;
     }
     var button = document.createElement("button");
