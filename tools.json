@@ -105,6 +105,16 @@
       "previewDriveId": "",
       "status": "live",
       "newTab": true
+    },
+    {
+      "id": "hk-vetting",
+      "name": "HK Vetting",
+      "blurb": "Vet Hong Kong finance candidates: SFC licences, court cases, sanctions, adverse media in English and Chinese.",
+      "icon": "/icons/hk-vetting.svg",
+      "enterUrl": "https://hk-vetting.onrender.com/",
+      "previewDriveId": "",
+      "status": "live",
+      "newTab": true
     }
   ]
 }
