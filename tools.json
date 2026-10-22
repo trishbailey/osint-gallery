@@ -115,6 +115,16 @@
       "previewDriveId": "",
       "status": "live",
       "newTab": true
+    },
+    {
+      "id": "axis-network",
+      "name": "Axis Channel Network",
+      "blurb": "Findings map of how messages, websites and fundraising details move between Iran-aligned groups\u2019 public Telegram, Eitaa and X channels, 20 Sep \u2013 20 Oct 2026.",
+      "icon": "/icons/axis-network.svg",
+      "enterUrl": "https://beacon-tools.onrender.com/axis-network/",
+      "previewDriveId": "",
+      "status": "live",
+      "newTab": true
     }
   ]
 }
