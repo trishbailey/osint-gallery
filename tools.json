@@ -125,6 +125,16 @@
       "previewDriveId": "",
       "status": "live",
       "newTab": true
+    },
+    {
+      "id": "world-brief",
+      "name": "Strategic World Brief",
+      "blurb": "Daily, cited brief that tracks 20 global storylines across security, politics, the economy and technology, with a story map, weekly synthesis and predictions log.",
+      "icon": "/icons/world-brief.svg",
+      "enterUrl": "https://world-brief-tpnb.onrender.com/",
+      "previewDriveId": "",
+      "status": "live",
+      "newTab": true
     }
   ]
 }
