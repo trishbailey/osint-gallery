@@ -2,7 +2,7 @@ const PH=()=>matchMedia("(max-width:600px)").matches;
 const BRI_URL=window.BRI_DASHBOARD_URL||"../belt-and-road/";
 const briHref=id=>BRI_URL+(id?"#p="+encodeURIComponent(id):"#region=africa");
 const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const COLORS={hex:["#C4A86A","#A05A3A","#5C2626"]};
+const COLORS={hex:["#E3B341","#E0607E","#9B57D3"]};
 const BC={Russia:"#FF80FF",UAE:"#FFE272",Turkey:"#00FFE5",Iran:"#00FF00",Egypt:"#CC7A00",US:"#00CBFF",France:"#5B72CC",China:"#E52249",Rwanda:"#FF8E72"};
 const FLAG=(sel,w)=>{w=w||20;const h=w*2/3;sel.append("rect").attr("x",-w/2-3).attr("y",-h/2-3).attr("width",w+6).attr("height",h+6).attr("fill","transparent");sel.append("use").attr("href","#cnflag").attr("x",-w/2).attr("y",-h/2).attr("width",w).attr("height",h);};
 const SHEET="https://docs.google.com/spreadsheets/d/1fCulxY6AJ0br-O5hstRmIP9Lfco4-CMjYdHpH3Q7hTc/edit";
