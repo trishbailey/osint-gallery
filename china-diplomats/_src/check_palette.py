@@ -19,7 +19,7 @@ def de(c1,c2):
     RT=-2*math.sqrt(Cbp**7/(Cbp**7+25**7))*math.sin(math.radians(60*math.exp(-((hb-275)/25)**2)))
     return math.sqrt((dL/SL)**2+(dC/SC)**2+(dH/SH)**2+RT*(dC/SC)*(dH/SH))
 P={'kind':['#4fc3b0','#e8a33d','#c46ad6','#5d8fe6'],'talking points':['#4e9fe0','#e0703c','#5cbf7a','#b36bd6','#e6c34a'],
-   'account types':['#e05a5a','#4e9fe0','#5cbf7a','#e6b33a','#b36bd6'],'aggression':['#8e1b24','#d9b26a','#3fa45b'],'matrix steps':['#2f6f8f','#8f5419','#8e2a4f']}
+   'account types':['#e05a5a','#4e9fe0','#5cbf7a','#e6b33a','#b36bd6'],'aggression':['#ffffff','#f7b3c2','#e0526f','#8e0c22'],'matrix steps':['#2f6f8f','#8f5419','#8e2a4f']}
 ok=True
 for n,cs in P.items():
     m=min((de(a,b),a,b) for a,b in itertools.combinations(cs,2));bg=min(de(c,'#12203a') for c in cs)
