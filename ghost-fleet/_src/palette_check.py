@@ -21,7 +21,7 @@ print(len(P),"colours; failures:",bad)
 if bad or len(P)<5: sys.exit(1)
 # behaviour classes (app.js CL) and trade chart (story.js CC)
 st=open(os.path.join(os.path.dirname(__file__),"..","story.js")).read()
-for name,pal in (("classes",dict(re.findall(r'(\w+):\["[^"]+","(#[0-9a-f]{6})"',src))),("trade",dict(re.findall(r'(\w+):"(#[0-9a-f]{6})"',st.split("const CC=")[1].split("}")[0])))):
+for name,pal in (("classes",dict(re.findall(r'(\w+):\["[^"]+","(#[0-9a-f]{6})"',src))),("chapter1",dict(list(re.findall(r'(\w+):"(#[0-9a-f]{6})"',st.split("B3C={")[1].split("}")[0]))+[("route",st.split('RED="')[1][:7])])),("trade",dict(re.findall(r'(\w+):"(#[0-9a-f]{6})"',st.split("const CC=")[1].split("}")[0])))):
     b2=[(a,b,round(de(pal[a],pal[b]),1)) for a,b in itertools.combinations(pal,2) if de(pal[a],pal[b])<20]
     print(name,len(pal),"colours; failures:",b2)
     if b2 or len(pal)<3: sys.exit(1)
