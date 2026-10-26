@@ -1,0 +1,22 @@
+name: Ghost fleet AIS (Digitraffic)
+on:
+  schedule: [{cron: "*/15 * * * *"}]
+  workflow_dispatch:
+permissions: {contents: write}
+concurrency: {group: ghost-fleet-ais, cancel-in-progress: false}
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Poll Digitraffic latest positions (no key)
+        run: python3 ghost-fleet/_src/fetch_digitraffic.py ghost-fleet/data/vessels.json ghost-fleet/data/positions
+      - name: Commit only if new rows (only ghost-fleet/data/positions)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ghost-fleet/data/positions
+          if git diff --cached --quiet; then echo "no new rows"; exit 0; fi
+          git commit -m "Ghost fleet: Digitraffic AIS positions $(date -u +%FT%H:%MZ)"
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep $((i*10)); done; exit 1
