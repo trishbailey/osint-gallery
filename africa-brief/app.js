@@ -3,7 +3,7 @@ const briHref=id=>BRI_URL+(id?"#p="+encodeURIComponent(id):"#region=africa");
 const briLink=(t,cls,id)=>`<a class="${cls}" href="${briHref(id)}">${t}</a>`;
 const COLORS={gold:"#B8860B",uranium:"#2E7D32",cobalt:"#1F4E9A",copper:"#B5502A",coltan:"#6B2D8C",tin:"#5D6D7E",tungsten:"#34495E",lithium:"#C2185B","rare-earths":"#00838F",graphite:"#111",manganese:"#8E44AD",bauxite:"#A04000",oil:"#000",gas:"#E67E22",water:"#1565C0",arable:"#558B2F"};
 Promise.all([d3.json("data/ne_110m.geojson"),d3.json("data/brief.json"),d3.json("data/conflict_hex.geojson"),d3.json("data/media.json")]).then(([geo,B,HX,MD])=>{
- document.getElementById("dd").textContent=B.data_date;
+ document.getElementById("dd").textContent=new Date(B.data_date+"T12:00:00Z").toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"});
  const S={};B.sources.forEach(s=>S[s.id]=s);
  const W=900,H=820,svg=d3.select("#svg");
  const afr={type:"FeatureCollection",features:geo.features.filter(f=>f.properties.CONTINENT==="Africa")};
