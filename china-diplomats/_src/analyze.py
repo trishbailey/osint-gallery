@@ -158,7 +158,8 @@ _mp=[n for n,_ in sorted(_a7.items(),key=lambda x:-len(x[1]))[:5]]
 mx=collections.defaultdict(lambda:collections.Counter())
 for r in rows:
     if r.get('tp') in _mp and r['t']>=_m7: mx[r['h']][r['tp']]+=1
-matrix=dict(points=_mp,window_days=7,rows=sorted([dict(h=h,country=acc.get(h.lower(),{}).get('country_posted','?'),cells=dict(v)) for h,v in mx.items()],key=lambda x:-sum(x['cells'].values())))
+_mxr=sorted([dict(h=h,country=acc.get(h.lower(),{}).get('country_posted','?'),cells=dict(v)) for h,v in mx.items()],key=lambda x:-sum(x['cells'].values()))
+matrix=dict(points=_mp,window_days=7,total_accounts=len(_mxr),rows=_mxr[:25])
 # ---------- synchronized bursts ----------
 WIN=dt.timedelta(hours=6);bursts=[]
 for n,m in enumerate(clusters[:40]):

@@ -102,7 +102,7 @@ function hitOpen(svg,stk,x,y,days,w){svg.style('cursor','pointer').on('click',e=
 function tpChips(el,keys){VK[el]=keys;if(!document.getElementById(el).hidden)tpLeg(keys)}
 function tpLeg(keys){d3.select('#lg-tp').html('').selectAll('div').data(keys).join('div').style('cursor','pointer').attr('title','Click to read what it says').html(k=>`<span class="sw sq" style="background:${TPC[k]}"></span>${esc(ST.series[k].name)}`).on('click',(e,k)=>openNarr(k));narrKeys(d3.select('#lg-tp').selectAll('div'),k=>k)}
 // ---- matrix
-(function(){const P=MX.points,R=MX.rows;d3.select('#mx-sub').text(`The ${R.length} accounts that posted the top ${P.length} talking points of the past ${MX.window_days||7} days. Darker cells mean more posts.`);const cw=112,lw=200,rh=30,top=74;const w=lw+cw*P.length+10,h=top+rh*R.length+6;
+(function(){const P=MX.points,R=MX.rows;const N=MX.total_accounts||R.length;d3.select('#mx-note').text(`Top ${R.length} of ${N} accounts`);d3.select('#mx-sub').text(`The ${R.length} accounts that posted the most on the top ${P.length} talking points of the past ${MX.window_days||7} days. Darker cells mean more posts.`);const cw=112,lw=200,rh=30,top=74;const w=lw+cw*P.length+10,h=top+rh*R.length+6;
  const svg=d3.select('#matrix').append('svg').attr('class','native').attr('width',w).attr('height',h).attr('role','img').attr('aria-label','Matrix of accounts by talking point');
  // one red ramp, light pink (few posts) to dark red (many); steps fitted to the data; empty cells = panel background
  const mxv=d3.max(R,r=>d3.max(P,p=>r.cells[p]||0))||1;const MXS=mxv>=11?[1,3,6,11]:mxv>=6?[1,2,3,5]:[1,2,3,4].slice(0,Math.max(2,mxv));const MXR=['#fde4ea','#f08aa2','#c8304d','#640514'].slice(4-MXS.length);
