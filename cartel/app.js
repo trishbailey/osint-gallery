@@ -56,12 +56,12 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   const pattern=cols=>{const k=cols.join("-").replace(/#/g,"");if(pats[k])return pats[k];const w=6*cols.length;
     const p=defs.append("pattern").attr("id","p"+k).attr("patternUnits","userSpaceOnUse").attr("width",w).attr("height",w).attr("patternTransform","rotate(45)");
     cols.forEach((c,i)=>p.append("rect").attr("x",i*6).attr("y",0).attr("width",6).attr("height",w).attr("fill",c));return pats[k]=`url(#p${k})`};
-  let filt=null,fset=null,mode="groups";
+  let filt=null,fset=null;
   const dotp={};const dots=c=>{const k=c.replace("#","");if(dotp[k])return dotp[k];const p=defs.append("pattern").attr("id","d"+k).attr("patternUnits","userSpaceOnUse").attr("width",7).attr("height",7);
     p.append("rect").attr("width",7).attr("height",7).attr("fill",c).attr("fill-opacity",.4);p.append("circle").attr("cx",3.5).attr("cy",3.5).attr("r",1.7).attr("fill",c);return dotp[k]=`url(#d${k})`};
   const shade=(c,l)=>l==="dominant"?d3.lab(c).darker(0.7).formatHex():d3.interpolateLab(c,"#ffffff")(l==="significant"?0.42:0.78);
   const lvl=(c,l)=>({f:shade(c,l),o:1});
-  const style=d=>{if(mode!=="groups")return chor(d);const r=RB[d.properties.id];if(!r)return{f:"#1b2c4a",o:1};
+  const style=d=>{const r=RB[d.properties.id];if(!r)return{f:"#1b2c4a",o:1};
     if(fset){const e=r.groups.filter(x=>fset.includes(x.group)).sort((a,b)=>LV[b.level]-LV[a.level]);if(!e.length)return{f:"#1b2c4a",o:1};if(e.length===1)return lvl(GC[e[0].group].color,e[0].level);return{f:pattern(e.slice(0,3).map(x=>GC[x.group].color)),o:1}}
     if(filt){const e=r.groups.find(x=>x.group===filt);return e?lvl(GC[filt].color,e.level):{f:"#1b2c4a",o:1}}
     let heavy=r.groups.filter(x=>x.level!=="present");
@@ -84,7 +84,7 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   const L=$("grouplegend");L.innerHTML=`<button class="chip on" data-g="">All groups</button>`+terr.groups.filter(x=>used.has(x.id)).map(x=>`<button class="chip" data-g="${x.id}"><span class="dot" style="background:${x.color}"></span>${esc(x.name)}</button>`).join("");
   const setF=id=>{filt=id||null;fset=null;L.querySelectorAll(".chip").forEach(b=>b.classList.toggle("on",b.dataset.g===(id||"")));paint();key()};
   L.querySelectorAll(".chip").forEach(b=>b.onclick=()=>setF(b.dataset.g));
-  const key=()=>$("keybox").innerHTML=mode!=="groups"?chorKey():fset?`<b>Storyline groups</b><br>`+fset.map(x=>`<span class="dot" style="background:${GC[x].color}"></span> ${esc(GC[x].name)}`).join("<br>"):filt?`<b>${esc(GC[filt].name)}</b>`+swatches(GC[filt].color)
+  const key=()=>$("keybox").innerHTML=fset?`<b>Storyline groups</b><br>`+fset.map(x=>`<span class="dot" style="background:${GC[x].color}"></span> ${esc(GC[x].name)}`).join("<br>"):filt?`<b>${esc(GC[filt].name)}</b>`+swatches(GC[filt].color)
     :`<b>Presence</b>${swatches("#e4572e")}<span class="sw hatch"></span> ▧ Contested / shared (wide stripes)<br><span class="sw" style="background:#1b2c4a;border:1px solid #3a5583"></span> No sourced footprint`;key();
   $("mapnotes").innerHTML=`<p>${esc(terr.note)}</p><h3>Where footprint data is thin</h3><ul>${terr.thin.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`;
   // overlays
@@ -101,16 +101,8 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   const CHI={precursors:["⚗","#c8a24a","Precursor chemicals"],ports:["⚓","#5b8fd1","Ports"],money:["$","#6aa684","Money laundering"],loans:["¥","#e07a5f","Loans / finance"]};
   mk("china",`China-linked sites (${china.items.filter(i=>i.lonlat).length})`,"#22aa00",s=>{const n=s.selectAll("g").data(china.items.filter(i=>i.lonlat)).join("g").attr("class","pt").attr("data-t",d=>`translate(${proj2(d.lonlat)})`).attr("transform",d=>`translate(${proj2(d.lonlat)})`).style("cursor","pointer").on("click",(e,d)=>drawer(`<h2>${esc(d.title)}</h2><span class="tag">${esc((CHI[d.category]||[0,0,d.category])[2])}</span><p>${esc(d.text)}</p>${d.says_vs_does?`<p class="says">Says vs does: ${esc(d.says_vs_does)}</p>`:""}${cite(d.cites)}`));
     n.append("title").text(d=>`${(CHI[d.category]||[0,0,""])[2]}: ${d.name||d.title||""}`);n.append("circle").attr("r",10).attr("fill","#22aa00").attr("stroke","#0b1526").attr("stroke-width",1.5);n.append("text").attr("text-anchor","middle").attr("dy","0.35em").attr("fill","#0b1526").style("font-weight","800").style("font-size","13px").text(d=>(CHI[d.category]||["?"])[0]);n.append("text").attr("class","lbl").attr("x",13).attr("y",4).text(d=>d.title);});
-  // choropleth modes (Mexico states)
-  const byReg={},clave={};DM.mxs.states.forEach(x=>{byReg[x.region]=x;clave[x.clave]=x.region});
-  const CH={homicide:{label:"Homicide victims per 100,000, last 12 months",val:id=>{const x=byReg[id];return x?homRate(x.clave):null},src:DM.vio},
-    disap:{label:"Disappeared and missing, not located, per 100,000 (cumulative)",val:id=>{const x=byReg[id],v=DM.dis.states.find(s=>s.region===id);return x&&v?v.v/x.pop*1e5:null},src:DM.dis},
-    extort:{label:"Extortion incidents per 100,000 adults (ENVIPE 2025)",val:id=>{const v=DM.ext.states.find(s=>s.region===id);return v?v.v:null},src:DM.ext}};
-  let sc=null;
-  function chor(d){const v=CH[mode].val(d.properties.id);if(v==null)return{f:d.properties.iso==="MEX"?"#1b2c4a":"#16243f",o:d.properties.iso==="MEX"?1:.5};return{f:sc(v),o:.95}}
-  function chorKey(){const c=CH[mode],[a,b]=sc.domain();const st=c.src;return `<b>${esc(c.label)}</b><div class="ramp" style="background:linear-gradient(90deg,${sc(a)},${sc((a+b)/2)},${sc(b)})"></div><div class="rampl"><span>less · ${Math.round(a).toLocaleString()}</span><span>${Math.round(b).toLocaleString()} · more</span></div><div class="muted">${esc(mode==="homicide"?"12 months to "+fmtM(st.last):mode==="disap"?"As of "+st.as_of:st.survey)}. Source: ${srcLink(st.cites)}${st.substitute?" (substitute, see notes)":""}</div>`}
-  const MB=document.createElement("div");MB.className="overlay modebtns";MB.innerHTML='<b>Shade Mexico by</b><br>'+[["groups","Group presence"],["homicide","Homicide rate"],["disap","Disappearances"],["extort","Extortion"]].map(([k,l])=>`<button class="chip${k==="groups"?" on":""}" data-m="${k}">${l}</button>`).join("");svg.node().parentNode.appendChild(MB);
-  const setMode=m=>{mode=m;MB.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.m===m));if(m!=="groups"){const vs=DM.mxs.states.map(x=>CH[m].val(x.region)).filter(v=>v!=null);sc=d3.scaleSequential([0,d3.max(vs)],d3.interpolateLab("#fde4d8","#7a1712"))}$("grouplegend").classList.toggle("dim",m!=="groups");paint();key()};
+  // map always shades by group presence
+  const setMode=()=>{paint();key()};
   MB.querySelectorAll("button").forEach(b=>b.onclick=()=>setMode(b.dataset.m));
   // seizures by area of responsibility, sized, placed at the area's main crossing (approximate)
   const AOR={"San Diego":[[-117.03,32.55],["San Diego Field Office","San Diego Sector"]],"El Centro":[[-115.5,32.68],["El Centro Sector"]],"Yuma":[[-114.62,32.49],["Yuma Sector"]],"Tucson":[[-110.94,31.34],["Tucson Field Office","Tucson Sector"]],
@@ -132,7 +124,7 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   svg.call(zoom.transform,VIEWS.mx);
   const layerOn=(k,on)=>{const lab=[...$("layers").querySelectorAll("label")].find(l=>l.dataset.k===k);if(lab){lab.querySelector("input").checked=on;layers[k].style("display",on?null:"none")}};
   return {setF:id=>{setF(id);document.querySelector(".maptile").scrollIntoView({behavior:"smooth"})},setMode,layerOn,
-    story:sl=>{setMode("groups");setF("");fset=sl.groups&&sl.groups.length?sl.groups:null;L.querySelectorAll(".chip").forEach(b=>b.classList.remove("on"));paint();key();
+    story:sl=>{setMode();setF("");fset=sl.groups&&sl.groups.length?sl.groups:null;L.querySelectorAll(".chip").forEach(b=>b.classList.remove("on"));paint();key();
       Object.keys(layers).forEach(k=>layerOn(k,(sl.layers||[]).includes(k)));svg.transition().duration(800).call(zoom.transform,fitBox(...sl.view));document.querySelector(".maptile").scrollIntoView({behavior:"smooth"})}};
 }
 function moneyTile(m){
@@ -242,7 +234,7 @@ function violenceTile(M){const v=DM.vio,ms=[...new Set(Object.values(v.states).f
   // state ranking strip: rate last 12 months
   const rk=DM.mxs.states.map(s=>({s,r:homRate(s.clave)})).sort((a,b)=>b.r-a.r).slice(0,8);
   $("homrank").innerHTML=`<div class="muted">Highest homicide rates, 12 months to ${esc(fmtM(v.last))} (per 100,000)</div>`+rk.map(x=>`<div class="bar" data-r="${x.s.region}"><span>${esc(x.s.name)}</span><i style="width:${x.r/rk[0].r*100}%"></i><b>${x.r.toFixed(0)}</b></div>`).join("");
-  $("homrank").querySelectorAll(".bar").forEach(b=>b.onclick=()=>{M.setMode("homicide");document.querySelector(".maptile").scrollIntoView({behavior:"smooth"})});
+  $("homrank").querySelectorAll(".bar").forEach(b=>b.onclick=()=>{document.querySelector(".maptile").scrollIntoView({behavior:"smooth"})});
   // political violence timeline
   const el=$("pvtime"),W=el.clientWidth||520,H=96,ev=DM.pv.events;const x=d3.scaleTime([new Date(ev[0].date+"T00:00"),new Date()],[14,W-14]);
   const svg=d3.select(el).append("svg").attr("width",W).attr("height",H);svg.append("g").attr("transform",`translate(0,${H-20})`).attr("class","axis").call(d3.axisBottom(x).ticks(d3.timeMonth.every(3)).tickFormat(d3.timeFormat("%b %Y")));
