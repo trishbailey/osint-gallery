@@ -25,7 +25,7 @@ svg text{font-size:13px;fill:var(--fg)}
 .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--mut);margin:8px 0}
 .sw{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:6px}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.tab{background:var(--card);border:1px solid var(--line);color:var(--fg);border-radius:16px;padding:6px 14px;font-size:14px;cursor:pointer}.tab.on{background:var(--acc);color:#000;font-weight:600}
-.maps{display:flex;gap:16px;flex-wrap:wrap}.mapbox h3{font-size:16px;color:var(--mut)}
+.cap{font-size:15px;line-height:1.45;color:#e6edf3;max-width:1240px;margin:6px 0}.cap.clim{color:#c9d1d9}.cap .src{color:#9aa4b2}.maps{display:flex;gap:16px;flex-wrap:wrap}.mapbox h3{font-size:16px;color:var(--mut)}
 #panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;grid-template-columns:440px 1fr;gap:24px}
 #panel .full{grid-column:1/3}
 .kv{font-size:14px;color:var(--mut);line-height:1.7}.kv b{color:var(--fg)}
@@ -73,16 +73,16 @@ footer.beacon-foot a:hover{color:#ffd84d}
 <div class="legend" id="lg1"></div><div class="tabs" id="tabs"></div><div id="regions"></div></section>
 <section id="s-panel"><h2>2 · Basin panel</h2><div class="chips" id="chips"></div><div id="panel"></div></section>
 <section id="s-rank"><h2>3 · Who can turn off the tap</h2><div class="sub">One row per upstream → downstream pair, ranked by the downstream state's AQUASTAT dependency ratio (% of its renewable water that originates outside its borders; national figure). <span class="ico">!</span> = the Pacific Institute chronology records a cut-off, withholding or threat in that basin. Lever = upstream works listed in the inventory (basins.csv).</div><div class="rank" id="rank"></div></section>
-<section id="s-clim"><h2>4 · Climate strip</h2><div class="sub">WRI Aqueduct 4.0 country water stress: baseline (left) and 2050 business-as-usual category (right), as published by WRI. Grouped by region.</div><div class="legend" id="lg4"></div><div id="tiles"></div></section>
-<section id="s-sankey"><h2>5 · Transboundary inflow (derived)</h2><div class="sub">DERIVED: link width = the state's AQUASTAT dependency ratio (a share, not a volume), drawn from the basin it belongs to. Only states at 50% or above; aquifers omitted (national ratios are not aquifer-specific). A state in two basins receives two links.</div><svg id="sankey" width="1240" height="640"></svg></section>
+
+<section id="s-sankey"><h2>4 · Transboundary inflow (derived)</h2><div class="sub">DERIVED: link width = the state's AQUASTAT dependency ratio (a share, not a volume), drawn from the basin it belongs to. Only states at 50% or above; aquifers omitted (national ratios are not aquifer-specific). A state in two basins receives two links.</div><svg id="sankey" width="1240" height="640"></svg></section>
 <footer><b>Sources</b><ul>
 <li>FAO AQUASTAT, dependency ratio (var. 4192) and dam capacity (var. 4197): <a href="https://data.apps.fao.org/aquastat/?lang=en">data.apps.fao.org/aquastat</a></li>
-<li>WRI Aqueduct 4.0 Country Rankings: <a href="https://files.wri.org/aqueduct/aqueduct-4-0-country-rankings.zip">files.wri.org/aqueduct/aqueduct-4-0-country-rankings.zip</a></li>
+<li>WRI Aqueduct 4.0 Country Rankings (baseline and 2050 business-as-usual stress categories, used in each map's climate line): <a href="https://files.wri.org/aqueduct/aqueduct-4-0-country-rankings.zip">files.wri.org/aqueduct/aqueduct-4-0-country-rankings.zip</a></li>
 <li>TFDD treaties (Feb 2023) and Spatial Database 2024 (basin and basin-country-unit outlines): <a href="https://transboundarywaters.ceoas.oregonstate.edu/spatial-datasets">transboundarywaters.ceoas.oregonstate.edu/spatial-datasets</a>. “Product of the Transboundary Freshwater Diplomacy Database, College of Earth, Ocean, and Atmospheric Sciences, Oregon State University.”</li>
 <li>IGRAC and UNESCO-IHP (2025) Transboundary Aquifers of the World Map, CC BY-SA 3.0 IGO: <a href="https://doi.org/10.58154/yb8g-cp97">doi.org/10.58154/yb8g-cp97</a></li>
 <li>Global Dam Watch database v1.0 (Lehner et al. 2024), CC BY 4.0: <a href="https://doi.org/10.6084/m9.figshare.25988293">doi.org/10.6084/m9.figshare.25988293</a></li>
 <li>Pacific Institute Water Conflict Chronology: <a href="https://www.worldwater.org/water-conflict/">worldwater.org/water-conflict</a></li>
-<li>Natural Earth 1:50m countries and 1:10m rivers and lakes (public domain): <a href="https://www.naturalearthdata.com/">naturalearthdata.com</a>. All shapes simplified.</li></ul></footer>
+<li>Natural Earth 1:50m countries and 1:10m rivers and lakes (public domain): <a href="https://www.naturalearthdata.com/">naturalearthdata.com</a>. All shapes simplified.</li><li>Blue Nile share of Nile flow (about 4/7 at Aswan): Awulachew et al., IWMI Working Paper 127 (2008): <a href="http://iwmi.cgiar.org/Publications/Working_Papers/working/WOR127.pdf">iwmi.cgiar.org/…/WOR127.pdf</a></li><li>Arrow start points, river and lake labels, and the Khartoum marker are placed by hand at approximate published locations; dam positions are GDW v1.0 coordinates.</li><li>US–Mexico 1944 treaty and the 2020 La Boquilla occupation: Brookings, "Not dried up: US-Mexico water cooperation" (2020), <a href="https://www.brookings.edu/articles/not-dried-up-us-mexico-water-cooperation/">brookings.edu</a>; Reuters (Sept. 2020), <a href="https://www.reuters.com/article/us-mexico-usa-water-idUSKBN2602K0/">reuters.com</a></li></ul></footer>
 <footer class="beacon-foot"><a href="https://beaconintelligencegroup.com" rel="noopener">Beacon Intelligence Group</a></footer>
 <div class="tt" id="tt"></div>
 <script>// https://d3js.org v7.9.0 Copyright 2010-2023 Mike Bostock
@@ -101,13 +101,13 @@ const TF={1:['Nile'],2:['Indus'],3:['Tigris-Euphrates/Shatt al Arab'],4:['Mekong
 const CONTESTED={40398:'GERD',7070:'Merowe',299:'Atatürk',301:'Mosul',292:'Kayrakkum',1057:'La Boquilla',54:'Kakhovka (destroyed 2023)',280:'Dnipro HPP',63:'Kariba'};
 const short=n=>n.split(/ [\/(]/)[0];
 const tt=d3.select('#tt');const tip=(e,h)=>tt.style('display','block').html(h).style('left',(e.clientX+12)+'px').style('top',(e.clientY+12)+'px'),untip=()=>tt.style('display','none');
-const depCol=d3.scaleThreshold().domain([20,50,80,95]).range(['#2b6cb0','#9f7aea','#ecc94b','#ed8936','#e53e3e']);const NOCOL='#6b7280';
+const depCol=d3.scaleThreshold().domain([20,50,80,95]).range(['#48bb78','#f6e05e','#9f7aea','#ec4899','#8b5a2b']);const NOCOL='#000000';
 B.forEach(b=>{b.max=b.dep.length?d3.max(b.dep,d=>d.v):null;b.down=b.dep.filter(d=>d.c!==b.up).sort((a,c)=>c.v-a.v)[0];
  b.geo=(TF[b.id]||[]).flatMap(n=>BAS.concat(AQ).filter(f=>f.properties.Basin_Name===n));
  b.flag=TL.some(t=>t.b===b.name&&(t.k==='cut'||t.k==='threat'));b.lev=TL.some(t=>t.b===b.name&&t.k==='cut')?'cut':TL.some(t=>t.b===b.name&&(t.k==='threat'||t.k==='dam'))?'threat':'none';b.aq=b.type==='aquifer';
  b.pts=PTS.filter(p=>(TF[b.id]||[]).includes(p.properties.Basin_Name));});
 const ptOf=(b,c)=>{const p=b.pts.filter(p=>p.properties.NAME===c).sort((x,y)=>(y.properties.Area_km2||0)-(x.properties.Area_km2||0))[0];return p&&p.geometry.coordinates};
-d3.select('#lg1').html([['<20%',0],['20–50%',1],['50–80%',2],['80–95%',3],['≥95%',4]].map(([t,i])=>`<span><i class="sw" style="background:${depCol.range()[i]}"></i>${t}</span>`).join('')+`<span><i class="sw" style="background:${NOCOL}"></i>no sourced figure</span><span style="color:#fff">▲ dam</span><span style="color:#ff6b6b">▲ named dam</span><span>Arrows: thicker = downstream more dependent; <b style="color:#ff3b3b">red</b> cut-off recorded, <b style="color:#ff9f1a">orange</b> threat/dam dispute, <b style="color:#9fb3d1">grey-blue</b> neither</span>`);
+d3.select('#lg1').html([['<20%',0],['20–50%',1],['50–80%',2],['80–95%',3],['≥95%',4]].map(([t,i])=>`<span><i class="sw" style="background:${depCol.range()[i]}"></i>${t}</span>`).join('')+`<span style="color:#fff">▲ dam (black, white outline)</span><span style="color:#ff3b3b">▲ dam named in the chronology (red outline, red label)</span><span>Arrows: thicker = downstream more dependent; <b style="color:#ff3b3b">red</b> cut-off recorded, <b style="color:#ff9f1a">orange</b> threat/dam dispute, <b style="color:#fff">white</b> neither</span>`);
 // label placer: avoids overlaps among labels and keeps inside the frame
 function placer(svg,w,h){const boxes=[];const ov=(a,b)=>a.x<b.x+b.w&&b.x<a.x+a.w&&a.y<b.y+b.h&&b.y<a.y+a.h;
  return {block(x,y,r){boxes.push({x:x-r,y:y-r,w:2*r,h:2*r})},rect(x,y,w0,h0){boxes.push({x,y,w:w0,h:h0})},
@@ -116,6 +116,54 @@ function placer(svg,w,h){const boxes=[];const ov=(a,b)=>a.x<b.x+b.w&&b.x<a.x+a.w
   for(const [dx,dy] of C){const bx={x:x+dx-W/2,y:y+dy-H/2,w:W,h:H};if(bx.x<2||bx.y<2||bx.x+W>w-2||bx.y+H>h-2)continue;if(boxes.some(b=>ov(b,bx)))continue;
    boxes.push(bx);t.attr('x',x+dx).attr('y',y+dy+H/2-4).attr('text-anchor','middle');if(Math.hypot(dx,dy)>14)g.insert('line',':first-child').attr('x1',x).attr('y1',y).attr('x2',x+dx).attr('y2',y+dy).attr('stroke','#c9d1d9').attr('stroke-width',1);return true}
   t.remove();return false}}}
+// Per-map explanatory layer: arrow start on the headwater or key upstream dam, river/lake labels, key dams, caption.
+const DAMNAME={40398:'GERD (Grand Ethiopian Renaissance Dam)',59:'Aswan High Dam',7070:'Merowe Dam',299:'Atatürk Dam',301:'Mosul Dam',7377:'Ilisu Dam',292:'Kayrakkum Dam',287:'Toktogul Dam',1537:'Nurek Dam',1057:'La Boquilla Dam',153:'Hoover Dam',146:'Glen Canyon Dam',54:'Kakhovka Dam (destroyed 2023)',280:'Dnipro Hydroelectric Station',63:'Kariba Dam',366:'Manantali Dam',7209:'Xiaowan Dam',7160:'Nuozhadu Dam',7336:'Farakka Barrage',6947:'Baglihar Dam',311:'Tarbela Dam',30:'Itaipu Dam'};
+const CFG={
+ '1,20,22':{start:{1:'dam:40398'},keyDams:[40398,59,7070],
+  rivers:[['Blue Nile',['Abay','El Bahr el Azraq'],[35.6,10.6]],['White Nile',['El Bahr el Abyad','Bahr el Jebel','Albert Nile','Victoria Nile'],[32.3,11.0]],['Nile (main stem)',['Nile'],[31.0,25.5]],['Atbara',['Atbara','Setit'],[35.4,16.6]]],
+  lakes:[['Lake Victoria (source of the White Nile)','Lake Victoria',[33.0,-1.0]],['Lake Tana (source of the Blue Nile)','Lake Tana',[37.3,12.0]],['Lake Nasser (reservoir behind the Aswan High Dam)',null,[32.4,22.6]]],
+  marks:[['Khartoum: Blue Nile and White Nile meet',[32.53,15.6]]],
+  cap:'Upstream: <b>Ethiopia</b>. The Blue Nile rises at Lake Tana in Ethiopia and supplies about 4/7 (roughly 57%) of the Nile\'s mean annual flow at Aswan <span class=src>(IWMI Working Paper 127, Awulachew et al. 2008)</span>. GERD (Grand Ethiopian Renaissance Dam) sits on the Blue Nile near the Sudan border, so Ethiopia controls when that water is stored or released. Downstream, {d:1} The Nubian and North-Western Sahara aquifers (hatched) are shared groundwater.'},
+ '3,5,9':{start:{3:'dam:299',5:[35.68,33.38],9:[68.2,34.45]},keyDams:[299,7377,301],
+  rivers:[['Euphrates',['Euphrates','Firat','Al Furat'],[40.0,35.3]],['Tigris',['Tigris','Dicle'],[43.6,34.6]],['Jordan',['Jordan'],[35.55,32.4]],['Helmand',['Helmand'],[64.2,31.4]]],
+  lakes:[['Dead Sea','Dead Sea',[35.5,31.5]]],marks:[],
+  cap:'Upstream: <b>Turkey</b> holds the headwaters of the Tigris and Euphrates and the Atatürk and Ilisu dams; downstream, {d:3} In the Jordan basin the Hasbani headwater rises in Lebanon; {d:5} The Helmand rises in Afghanistan\'s Hindu Kush and ends in Iran\'s Sistan wetlands; {d:9}'},
+ '2,8':{start:{2:'dam:6947',8:[91.0,29.3]},keyDams:[6947,311,7336],
+  rivers:[['Indus',['Indus'],[70.6,29.0]],['Chenab',['Chenab'],[73.6,31.6]],['Jhelum',['Jhelum'],[73.2,33.4]],['Ganges',['Ganges'],[84.5,25.3]],['Brahmaputra (Yarlung Tsangpo in China)',['Brahmaputra','Yarlung','Dihang'],[87.5,29.6]]],
+  lakes:[],marks:[],
+  cap:'Upstream: <b>India</b> holds the upper Chenab and Jhelum, tributaries of the Indus, with dams such as Baglihar; {d:2} The Brahmaputra rises in China as the Yarlung Tsangpo, and India operates the Farakka Barrage on the Ganges above Bangladesh; {d:8}'},
+ '6,7':{start:{6:'dam:1537',7:'dam:287'},keyDams:[287,292,1537],
+  rivers:[['Syr Darya',['Syr Darya'],[66.5,44.6]],['Naryn',['Naryn'],[74.5,41.6]],['Amu Darya',['Amu Darya'],[61.8,40.2]],['Panj',['Panj'],[70.0,37.4]]],
+  lakes:[['Aral Sea (shrunken)','South Aral Sea',[59.6,45.2]]],marks:[],
+  cap:'Upstream: <b>Kyrgyzstan</b> (Toktogul Dam on the Naryn, which becomes the Syr Darya) and <b>Tajikistan</b> (Nurek Dam on the Vakhsh, an Amu Darya tributary) hold the mountain headwaters and can time winter and summer releases. Downstream, {d:7} and {d:6}'},
+ '4,12':{start:{4:'dam:7209',12:[98.85,25.9]},keyDams:[7209,7160],
+  rivers:[['Mekong (Lancang in China)',['Mekong','Lancang'],[104.5,16.4]],['Salween (Nu in China)',['Salween','Nu'],[97.7,19.2]]],
+  lakes:[['Tonlé Sap','Tonlé Sap',[104.0,12.9]]],marks:[],
+  cap:'Upstream: <b>China</b> holds the headwaters of both rivers and a cascade of dams on the upper Mekong (Lancang), including Xiaowan and Nuozhadu. Downstream, {d:4} On the Salween (Nu), {d:12}'},
+ '14,15,13,19':{start:{14:[-10.73,9.08],15:[-11.9,10.6],13:[16.1,-12.6],19:[24.3,-11.4]},keyDams:[366,63],
+  rivers:[['Niger',['Niger'],[-2.0,15.6]],['Senegal',['Sénégal','Bafing'],[-13.6,15.4]],['Okavango',['Okavango','Cubango'],[19.5,-17.9]],['Zambezi',['Zambezi'],[23.2,-15.6]]],
+  lakes:[['Lake Kariba (reservoir behind Kariba Dam)',null,[27.9,-17.0]]],marks:[],
+  cap:'Upstream: the Niger and Senegal rise in <b>Guinea</b>\'s Fouta Djallon highlands; {d:14} and {d:15} The Okavango rises in <b>Angola</b> and the Zambezi in <b>Zambia</b>; for both, {d:13}'},
+ '10':{start:{10:'dam:153'},keyDams:[153,146,1057],
+  rivers:[['Colorado',['Colorado'],[-112.3,36.3]],['Rio Grande',['Rio Grande','Grande'],[-106.8,32.3]],['Conchos',['Conchos'],[-105.6,28.6]]],
+  lakes:[['Lake Mead',null,[-114.4,36.3]],['Lake Powell',null,[-111.0,37.2]]],marks:[],
+  cap:'Upstream: the <b>United States</b> holds the Colorado headwaters and its big reservoirs (Hoover and Glen Canyon dams). Downstream, {d:10} On the Rio Grande the obligation runs the other way: under the 1944 treaty Mexico must deliver water from its tributaries to the US, and in 2020 farmers occupied La Boquilla Dam on the Conchos to block releases toward that debt <span class=src>(<a href="https://www.brookings.edu/articles/not-dried-up-us-mexico-water-cooperation/">Brookings, 2020</a>; <a href="https://www.reuters.com/article/us-mexico-usa-water-idUSKBN2602K0/">Reuters, 2020</a>)</span>.'},
+ '18,21':{start:{18:[-51.0,-20.1]},keyDams:[30],
+  rivers:[['Paraná',['Paraná','Paranaíba'],[-53.5,-22.6]],['Uruguay',['Uruguay'],[-56.0,-29.2]]],lakes:[],marks:[],
+  cap:'Upstream: <b>Brazil</b> holds the upper Paraná; the river then forms the Brazil–Paraguay border at Itaipu Dam, which the two states share. Downstream, {d:18} The Guarani Aquifer (hatched) is shared groundwater.'},
+ '16,17,11':{start:{16:[8.5,47.95],17:[9.4,47.6],11:[33.5,55.9]},keyDams:[54,280],
+  rivers:[['Danube',['Danube','Donau'],[18.9,46.2]],['Rhine',['Rhine','Rhein','Rhin'],[7.6,49.6]],['Dnipro',['Dnipro','Dnepre'],[30.6,50.6]]],
+  lakes:[['Lake Constance',null,[9.35,47.62]]],marks:[],
+  cap:'Upstream: the Danube rises in <b>Germany</b>, the Rhine in <b>Switzerland</b>, and the Dnipro in <b>Russia</b>. Downstream, {d:16}; {d:17}; and {d:11} Kakhovka Dam on the lower Dnipro was destroyed in 2023.'}
+};
+const STW={'Low (<10%)':'low','Low - Medium (10-20%)':'low-medium','Medium - High (20-40%)':'medium-high','High (40-80%)':'high','Extremely High (>80%)':'extremely high'};const STO=Object.keys(STW);
+function capHTML(key,bs){const c=CFG[key];if(!c)return '';const nmC=s=>s.replace('United States of America','the United States');
+ const txt=c.cap.replace(/\{d:(\d+)\}/g,(m,i)=>{const b=B.find(x=>x.id==i);return b&&b.down?`${nmC(b.down.c)} gets ${b.down.v}% of its renewable water from outside its borders (AQUASTAT ${b.down.y}).`:'<span class=blank>no sourced figure</span>.'}).replace(/\.\./g,'.').replace(/\.\)\./g,').').replace(/\.;/g,';').replace(/\. and /g,' and ');
+ const cs={};bs.forEach(b=>Object.keys(b.stress).forEach(i=>{cs[i]={s:b.stress[i],p:b.proj[i]}}));const isoN={};COUNTRIES.forEach(f=>isoN[f.properties.ADM0_A3]=f.properties.NAME);isoN.SSD='South Sudan';
+ const wr=Object.entries(cs).filter(([i,o])=>STW[o.s]&&STW[o.p]&&STO.indexOf(o.p)>STO.indexOf(o.s)).sort((a,b)=>STO.indexOf(b[1].p)-STO.indexOf(a[1].p)).map(([i,o])=>`${(isoN[i]||i).replace('United States of America','United States')}, ${STW[o.s]} to ${STW[o.p]}`);
+ const cl=wr.length?`Water stress worsens by 2050 (WRI Aqueduct 4.0, business as usual): ${wr.join('; ')}.`:'No country\'s stress category worsens by 2050 (WRI Aqueduct 4.0, business as usual).';
+ return `<div class="cap">${txt}</div><div class="cap clim">${cl}</div>`}
+
 function band(pts,W){// tapered band + arrowhead
  const n=pts.length;const cum=[0];for(let i=1;i<n;i++)cum.push(cum[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]));const T=cum[n-1]||1;const head=Math.min(T*.3,W*1.5+12);
  let j=n-1;while(j>0&&T-cum[j]<head)j--;const L=[],R=[];
@@ -144,54 +192,61 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
  svg.append('defs').html(`<clipPath id="c${id}"><rect width="${w}" height="${h}"/></clipPath><marker id="a${id}" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0L12,6L0,12z" fill="#ffe600" stroke="#000" stroke-width="1.5"/></marker><pattern id="h${id}" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line y2="8" stroke="#fff" stroke-opacity=".35" stroke-width="3"/></pattern>`);
  const g=svg.append('g').attr('clip-path',`url(#c${id})`);g.append('rect').attr('width',w).attr('height',h).attr('fill','#0b2238');
  const rip=new Set(bs.flatMap(b=>b.rip));
- g.append('g').selectAll('path').data(COUNTRIES.filter(f=>f.properties.NAME!=='Antarctica')).join('path').attr('d',p).attr('fill',d=>rip.has(d.properties.NAME)?'#2d3642':'#1b2129').attr('stroke','#8b949e').attr('stroke-width',.6);
+ g.append('g').selectAll('path').data(COUNTRIES.filter(f=>f.properties.NAME!=='Antarctica')).join('path').attr('d',p).attr('fill','#0a0a0a').attr('stroke','#e8d8b0').attr('stroke-opacity',.55).attr('stroke-width',.6);
  const rb=bs.filter(b=>!b.aq),ab=bs.filter(b=>b.aq);
  const bp=g.append('g');rb.forEach(b=>b.geo.forEach(f=>bp.append('path').attr('d',p(f)).attr('fill',b.max==null?NOCOL:depCol(b.max)).attr('fill-opacity',.42).attr('stroke',b.max==null?NOCOL:depCol(b.max)).attr('stroke-width',2).style('cursor','pointer').on('click',()=>show(b.id,true)).on('mousemove',e=>tip(e,`<b>${b.name}</b><br>highest dependency: ${b.max==null?'no sourced figure':b.down?b.max+'%':''}`)).on('mouseout',untip)));
- g.append('g').selectAll('path').data(RIV).join('path').attr('d',p).attr('fill','none').attr('stroke','#63b3ed').attr('stroke-width',d=>d.properties.scalerank<=3?1.6:.8).attr('pointer-events','none');
- g.append('g').selectAll('path').data(LAK).join('path').attr('d',p).attr('fill','#63b3ed').attr('pointer-events','none');
+ const C=CFG[opt.key]||{rivers:[],lakes:[],marks:[],start:{},keyDams:[]};const mainN=new Set(C.rivers.flatMap(r=>r[1]));const isMain=d=>mainN.has(d.properties.name);
+ g.append('g').selectAll('path').data(RIV.filter(d=>!isMain(d))).join('path').attr('d',p).attr('fill','none').attr('stroke','#38b6ff').attr('stroke-opacity',.45).attr('stroke-width',.8).attr('pointer-events','none');
+ const mr=RIV.filter(isMain);g.append('g').selectAll('path').data(mr).join('path').attr('d',p).attr('fill','none').attr('stroke','#001a33').attr('stroke-width',6).attr('stroke-linecap','round');
+ g.append('g').selectAll('path').data(mr).join('path').attr('d',p).attr('fill','none').attr('stroke','#38b6ff').attr('stroke-width',3.4).attr('stroke-linecap','round').attr('pointer-events','none');
+ const keepL=new Set(C.lakes.map(l=>l[1]).filter(Boolean));g.append('g').selectAll('path').data(LAK.filter(d=>keepL.has(d.properties.name))).join('path').attr('d',p).attr('fill',d=>keepL.has(d.properties.name)?'#38b6ff':'#3b5670').attr('fill-opacity',d=>keepL.has(d.properties.name)?1:.35).attr('stroke',d=>keepL.has(d.properties.name)?'#001a33':'none').attr('pointer-events','none');
  ab.forEach(b=>b.geo.forEach(f=>g.append('path').attr('d',p(f)).attr('fill',`url(#h${id})`).attr('stroke','#fff').attr('stroke-width',2).attr('stroke-dasharray','6 4').style('cursor','pointer').on('click',()=>show(b.id,true)).on('mousemove',e=>tip(e,`<b>${b.name}</b> (aquifer, IGRAC 2025)`)).on('mouseout',untip)));
  const P=placer(svg,w,h);const lg=svg.append('g');
  // dams
  const dm=DAMS.filter(d=>bs.some(b=>b.geo.some(f=>d3.geoContains(f,d.geometry.coordinates))));
- dm.forEach(d=>{const [x,y]=pr(d.geometry.coordinates);const c=CONTESTED[d.properties.GDW_ID];P.block(x,y,5);
-  svg.append('path').attr('d',d3.symbol(d3.symbolTriangle,c?90:36)()).attr('transform',`translate(${x},${y})`).attr('fill',c?'#ff6b6b':'#ffffff').attr('stroke','#000').attr('stroke-width',.8).on('mousemove',e=>tip(e,`<b>${d.properties.DAM_NAME}</b> (${d.properties.COUNTRY})<br>${d.properties.RIVER||''} · ${(d.properties.CAP_MCM/1000).toFixed(1)} km³ · ${d.properties.YEAR_DAM>0?d.properties.YEAR_DAM:''}<br>GDW v1.0`)).on('mouseout',untip)});
+ dm.forEach(d=>{const [x,y]=pr(d.geometry.coordinates);const c=CONTESTED[d.properties.GDW_ID]||C.keyDams.includes(d.properties.GDW_ID);P.block(x,y,c?9:5);
+  svg.append('path').attr('class',c?'kd':null).attr('d',d3.symbol(d3.symbolTriangle,c?200:30)()).attr('transform',`translate(${x},${y})`).attr('fill','#000000').attr('stroke',CONTESTED[d.properties.GDW_ID]?'#ff3b3b':'#ffffff').attr('stroke-width',c?3:1).attr('opacity',c?1:.7).on('mousemove',e=>tip(e,`<b>${d.properties.DAM_NAME}</b> (${d.properties.COUNTRY})<br>${d.properties.RIVER||''} · ${(d.properties.CAP_MCM/1000).toFixed(1)} km³ · ${d.properties.YEAR_DAM>0?d.properties.YEAR_DAM:''}<br>GDW v1.0`)).on('mouseout',untip)});
  // arrows: tapered flow bands (width = downstream dependency, colour = documented leverage), routed along Natural Earth rivers where possible
  const AR=[];const ag=svg.append('g');
- bs.forEach(b=>{if(!b.up||!b.down)return;const a=ptOf(b,b.up),c=ptOf(b,b.down.c);if(!a||!c)return;
+ bs.forEach(b=>{if(!b.up||!b.down)return;const sv=C.start[b.id];let a=ptOf(b,b.up);if(Array.isArray(sv))a=sv;else if(sv){const dd=DAMS.find(d=>d.properties.GDW_ID==+sv.slice(4));if(dd)a=dd.geometry.coordinates}const c=ptOf(b,b.down.c);if(!a||!c)return;
   const P0=pr(a),P1=pr(c);let pts=null;let routed=false;
   if(!pts){const [x1,y1]=P0,[x2,y2]=P1,dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy)||1;const k=(len<80?Math.max(40,len*.45):Math.max(len*.22,40))/len;
    const C0=pr(d3.geoCentroid({type:'FeatureCollection',features:b.geo}));let sg=Math.hypot((x1+x2)/2+dy*k-C0[0],(y1+y2)/2-dx*k-C0[1])>Math.hypot((x1+x2)/2-dy*k-C0[0],(y1+y2)/2+dx*k-C0[1])?-1:1;
    const cx=(x1+x2)/2-sg*dy*k,cy=(y1+y2)/2+sg*dx*k;pts=d3.range(0,1.0001,1/30).map(t=>[(1-t)*(1-t)*x1+2*t*(1-t)*cx+t*t*x2,(1-t)*(1-t)*y1+2*t*(1-t)*cy+t*t*y2]);
 }
-  const W=4+6*Math.min(b.down.v,98)/98;const col=b.lev==='cut'?'#ff3b3b':b.lev==='threat'?'#ff9f1a':'#9fb3d1';
+  const W=4+6*Math.min(b.down.v,98)/98;const col=b.lev==='cut'?'#ff3b3b':b.lev==='threat'?'#ff9f1a':'#ffffff';
   ag.append('path').attr('d',band(pts,W)).attr('fill',col).attr('stroke','#000').attr('stroke-width',2).attr('stroke-linejoin','round').attr('opacity',.95);
   ag.append('circle').attr('cx',pts[0][0]).attr('cy',pts[0][1]).attr('r',5).attr('fill','#fff').attr('stroke','#000').attr('stroke-width',2);
   const m=pts[Math.floor(pts.length/2)];AR.push({b,mx:m[0],my:m[1],routed});pts.forEach(q=>P.block(q[0],q[1],W/2+3));});
+ svg.selectAll('.kd').raise();
  // labels: contested dams first, then countries, then basin names
- {const gL=svg.append('g');const items=[['t','Arrow: from the country where the river rises to the downstream country most dependent on inflow from abroad.'],['t','Thicker = downstream more dependent (AQUASTAT):'],['w',4,'~0%'],['w',7,'50%'],['w',10,'98%'],['t','Colour = chronology record in basin:'],['c','#ff3b3b','cut-off / withholding'],['c','#ff9f1a','threat or dam dispute'],['c','#9fb3d1','neither']];
+ {const gL=svg.append('g');const items=[['t','Arrow: from the country where the river rises to the downstream country most dependent on inflow from abroad.'],['t','Thicker = downstream more dependent (AQUASTAT):'],['w',4,'~0%'],['w',7,'50%'],['w',10,'98%'],['t','Colour = chronology record in basin:'],['c','#ff3b3b','cut-off / withholding'],['c','#ff9f1a','threat or dam dispute'],['c','#ffffff','neither']];
   let x=12,y=24,maxW=w-44,rows=[];const g2=gL.append('g').attr('transform','translate(10,0)');const adv=(ww)=>{if(x+ww>maxW){x=12;y+=24}const r=[x,y];x+=ww+14;return r};
   items.forEach(it=>{if(it[0]==='t'){it[1].split(' ').forEach(wd=>{const t=g2.append('text').text(wd).style('font-size','13px').style('fill','#fff');const ww=t.node().getComputedTextLength();const [px,py]=adv(ww-10);t.attr('x',px).attr('y',py+4)})}
-   else if(it[0]==='w'){const t=g2.append('text').text(it[2]).style('font-size','13px').style('fill','#fff');const tw=t.node().getComputedTextLength();const [px,py]=adv(40+tw);g2.append('rect').attr('x',px).attr('y',py-it[1]/2).attr('width',34).attr('height',it[1]).attr('fill','#cfd8e3').attr('stroke','#000');t.attr('x',px+40).attr('y',py+4)}
+   else if(it[0]==='w'){const t=g2.append('text').text(it[2]).style('font-size','13px').style('fill','#fff');const tw=t.node().getComputedTextLength();const [px,py]=adv(40+tw);g2.append('rect').attr('x',px).attr('y',py-it[1]/2).attr('width',34).attr('height',it[1]).attr('fill','#ffffff').attr('stroke','#000');t.attr('x',px+40).attr('y',py+4)}
    else{const t=g2.append('text').text(it[2]).style('font-size','13px').style('fill','#fff');const tw=t.node().getComputedTextLength();const [px,py]=adv(24+tw);g2.append('rect').attr('x',px).attr('y',py-7).attr('width',18).attr('height',14).attr('rx',3).attr('fill',it[1]).attr('stroke','#000');t.attr('x',px+24).attr('y',py+4)}});
-  const H=y+16;gL.attr('transform',`translate(10,${h+6})`);svg.attr('height',h+H+14).attr('viewBox',null);gL.insert('rect',':first-child').attr('width',w-20).attr('height',H).attr('rx',6).attr('fill','#000').attr('fill-opacity',.85).attr('stroke','#cfd8e3');}
+  const H=y+16;gL.attr('transform',`translate(10,${h+6})`);svg.attr('height',h+H+14).attr('viewBox',null);gL.insert('rect',':first-child').attr('width',w-20).attr('height',H).attr('rx',6).attr('fill','#000').attr('fill-opacity',.85).attr('stroke','#ffffff');}
  const st=t=>t.style('font-weight',700).style('paint-order','stroke').style('stroke','#000').style('stroke-width',3.5);
- dm.filter(d=>CONTESTED[d.properties.GDW_ID]).forEach(d=>{const [x,y]=pr(d.geometry.coordinates);P.add(lg,x,y-12,CONTESTED[d.properties.GDW_ID],t=>{st(t);t.style('fill','#ff8a8a')})});
+ dm.filter(d=>CONTESTED[d.properties.GDW_ID]||C.keyDams.includes(d.properties.GDW_ID)).forEach(d=>{const [x,y]=pr(d.geometry.coordinates);const id=d.properties.GDW_ID;P.add(lg,x,y-14,'▲ '+(DAMNAME[id]||CONTESTED[id]||d.properties.DAM_NAME),t=>{st(t);t.style('fill',CONTESTED[id]?'#ff3b3b':'#ffffff')})});
+ C.marks.forEach(([n,c])=>{const [x,y]=pr(c);svg.append('circle').attr('cx',x).attr('cy',y).attr('r',6).attr('fill','#fff').attr('stroke','#000').attr('stroke-width',2.5);P.block(x,y,8);P.add(lg,x,y,n,t=>{st(t);t.style('fill','#fff')})});
+ C.lakes.forEach(([n,_,c])=>{const [x,y]=pr(c);if(!_){svg.append('circle').attr('cx',x).attr('cy',y).attr('r',5).attr('fill','#38b6ff').attr('stroke','#001a33').attr('stroke-width',2)}P.add(lg,x,y,n,t=>{st(t);t.style('fill','#9fdcff').style('font-style','italic')})});
+ C.rivers.forEach(([n,_,c])=>{const [x,y]=pr(c);P.add(lg,x,y,n,t=>{st(t);t.style('fill','#7fd3ff').style('font-style','italic').style('font-size','15px')})});
  const nm=c=>c.replace('United States of America','United States');
  AR.forEach(({b,mx,my})=>{if(!P.add(lg,mx,my,`${nm(b.up)} → ${nm(b.down.c)} · ${b.down.v}% dependent (AQUASTAT ${b.down.y})`,t=>{t.style('font-weight',700).style('fill','#fff').style('paint-order','stroke').style('stroke','#000').style('stroke-width',4)}))console.warn('unplaced arrow tag',b.name)});
  const seen=new Set();const cl=[];bs.forEach(b=>b.pts.forEach(pt=>cl.push({n:pt.properties.NAME,a:pt.properties.Area_km2||pt.properties.A||0,c:pt.geometry.coordinates})));
- const at={};AR.forEach(({b})=>[b.up,b.down.c].forEach(c=>{const q=ptOf(b,c);if(q)cl.push({n:c,a:1e12,c:q})}));cl.sort((a,b)=>b.a-a.a).forEach(o=>{const [x,y]=pr(o.c);if((at[o.n]||[]).some(([u,v])=>Math.hypot(u-x,v-y)<150))return;(at[o.n]=at[o.n]||[]).push([x,y]);if(!P.add(lg,x,y,o.n.replace('Democratic Republic of the Congo','DR Congo').replace('The former Yugoslav Republic of Macedonia','North Macedonia'),st))console.warn('unplaced',o.n)});
- const bl=new Set();bs.forEach(b=>{const key=TF[b.id].join();if(bl.has(key))return;bl.add(key);const nmL=key==='Aral Sea'?'ARAL SEA BASIN (AMU + SYR DARYA)':short(b.name).toUpperCase();const c=d3.geoCentroid({type:'FeatureCollection',features:b.geo});const [x,y]=pr(c);P.add(lg,x,y+22,nmL,t=>{st(t);t.style('fill',b.aq?'#ffffff':'#ffe08a').style('letter-spacing','1px')})});
+ const at={};AR.forEach(({b})=>[b.up,b.down.c].forEach(c=>{const q=ptOf(b,c);if(q)cl.push({n:c,a:1e12,c:q})}));cl.sort((a,b)=>b.a-a.a).forEach(o=>{if(/Hala'ib|Ma'tan|Abyei|Bir Tawil/.test(o.n))return;const [x,y]=pr(o.c);if((at[o.n]||[]).some(([u,v])=>Math.hypot(u-x,v-y)<150))return;(at[o.n]=at[o.n]||[]).push([x,y]);if(!P.add(lg,x,y,o.n.replace('Democratic Republic of the Congo','DR Congo').replace('The former Yugoslav Republic of Macedonia','North Macedonia'),st))console.warn('unplaced',o.n)});
+ const bl=new Set();bs.forEach(b=>{const key=TF[b.id].join();if(bl.has(key))return;bl.add(key);const nmL=key==='Aral Sea'?'ARAL SEA BASIN (AMU + SYR DARYA)':short(b.name).toUpperCase();const c=d3.geoCentroid({type:'FeatureCollection',features:b.geo});const [x,y]=pr(c);P.add(lg,x,y+22,nmL,t=>{st(t);t.style('fill','#ffffff').style('letter-spacing','1px')})});
  lg.raise();return svg}
 const REG=[['Nile & North Africa',[[1,20,22]]],['Middle East',[[3,5,9]]],['South Asia',[[2,8]]],['Central Asia',[[6,7]]],['Southeast Asia',[[4,12]]],['Sub-Saharan Africa',[[14,15,13,19]]],['Americas & Europe',[[10],[18,21],[16,17,11]]]];
 const titles={'10':'Colorado / Rio Grande','18,21':'Paraná / La Plata and Guarani','16,17,11':'Danube, Rhine, Dnipro'};
 REG.forEach(([n,groups],i)=>{const sec=d3.select('#regions').append('div').attr('class','region').attr('id','reg'+i);sec.append('h3').text(n);const box=sec.append('div').attr('class','maps');
- groups.forEach(ids=>{const m=box.append('div').attr('class','mapbox');if(groups.length>1)m.append('h3').text(titles[ids.join(',')]);drawMap(m,ids,groups.length>1?(ids.length>2?1240:610):1240,groups.length>1?(ids.length>2?600:560):700)});
+ groups.forEach(ids=>{const m=box.append('div').attr('class','mapbox');if(groups.length>1)m.append('h3').text(titles[ids.join(',')]);drawMap(m,ids,groups.length>1?(ids.length>2?1240:610):1240,groups.length>1?(ids.length>2?640:600):(i===0?1050:760),{key:ids.join(',')});m.style('width',(groups.length>1?(ids.length>2?1240:610):1240)+'px');m.append('div').html(capHTML(ids.join(','),B.filter(b=>ids.includes(b.id))))});
  const kb=sec.append('div').attr('class','legend');B.filter(b=>groups.flat().includes(b.id)).forEach(b=>kb.append('span').attr('class','chip').text(b.name).on('click',()=>show(b.id,true)));});
 d3.selectAll('.region').style('display',(x,j)=>j?'none':null);
 d3.select('#tabs').selectAll('button').data(REG).join('button').attr('class',(d,i)=>'tab'+(i?'':' on')).text(d=>d[0]).on('click',function(e,d){const i=REG.indexOf(d);d3.selectAll('.tab').classed('on',(x,j)=>j===i);d3.selectAll('.region').style('display',(x,j,n)=>n[j].id==='reg'+i?null:'none')});
 // PANEL
 d3.select('#chips').selectAll('.chip').data(B).join('button').attr('class','chip').text(d=>short(d.name)).on('click',(e,d)=>show(d.id));
-const KC={cut:'#ff5c8a',threat:'#ffb000',dam:'#4fc3f7',other:'#9aa4b2'},KL={cut:'cut-off / withholding',threat:'threat',dam:'dam dispute',other:'other water conflict'};
+const KC={cut:'#ff3b3b',threat:'#ff9f1a',dam:'#f6e05e',other:'#ffffff'},KL={cut:'cut-off / withholding',threat:'threat',dam:'dam dispute',other:'other water conflict'};
 const nb=s=>s||'<span class=blank>no sourced figure</span>';
 function show(id,scroll){const b=B.find(x=>x.id==id);d3.selectAll('#chips .chip').classed('on',d=>d.id==id);const P=d3.select('#panel').html('');
  const Lf=P.append('div');Lf.append('h3').text(b.name);drawMap(Lf,[b.id],440,500);
@@ -207,7 +262,7 @@ function show(id,scroll){const b=B.find(x=>x.id==id);d3.selectAll('#chips .chip'
  F.append('div').attr('class','legend').html(Object.keys(KC).map(k=>`<span><i class="sw" style="background:${KC[k]}"></i>${KL[k]}</span>`).join(''));
  if(!ev.length){F.append('div').attr('class','blank').text('no sourced figure: no chronology entries matched');}else{
  const yr=d=>+String(d.d).match(/-?\d+/)[0]*(/BC/.test(d.d)?-1:1);const ts=F.append('svg').attr('width',1200).attr('height',64);
- const ext=d3.extent(ev,yr);const xs=d3.scaleLinear([ext[0]-3,ext[1]+3],[20,1180]);ts.append('line').attr('x1',20).attr('x2',1180).attr('y1',24).attr('y2',24).attr('stroke','#8b949e');
+ const ext=d3.extent(ev,yr);const xs=d3.scaleLinear([ext[0]-3,ext[1]+3],[20,1180]);ts.append('line').attr('x1',20).attr('x2',1180).attr('y1',24).attr('y2',24).attr('stroke','#ffffff');
  ts.selectAll('circle').data(ev).join('circle').attr('cx',d=>xs(yr(d))).attr('cy',24).attr('r',8).attr('fill',d=>KC[d.k]).attr('stroke','#000').on('mousemove',(e,d)=>tip(e,`<b>${d.d}</b> ${d.h}`)).on('mouseout',untip);
  ts.selectAll('text').data(xs.ticks(6).filter(Number.isInteger)).join('text').attr('x',d=>xs(d)).attr('y',56).attr('text-anchor','middle').text(d=>d<0?(-d)+' BC':d);
  const key=ev.filter(d=>d.k!=='other'),rest=ev.filter(d=>d.k==='other');const li=(ul,d)=>ul.append('li').html(`<span class="sw" style="background:${KC[d.k]}"></span><b>${d.d}</b> ${d.h} · <a href="${d.u}" target="_blank">source</a>`);
@@ -223,20 +278,14 @@ rows.forEach(r=>{rk.append('div').attr('class','c').html(`<b>${r.u.replace('Unit
  rk.append('div').attr('class','c').html(r.v==null?'<span class=blank>no sourced figure</span>':`<span class="bar" style="width:${r.v*3}px;background:${depCol(r.v)}"></span> ${r.v}% <span style="color:var(--mut)">(${r.y})</span>`);
  rk.append('div').attr('class','c').html(r.b.flag?'<span class="ico" title="chronology records cut or threat">!</span>':'');
  rk.append('div').attr('class','c').html(`${r.lv||'<span style="color:var(--mut)">none listed</span>'} <span style="color:var(--mut)">· ${short(r.b.name)}</span>`)});
-// CLIMATE
-const SC={'Low (<10%)':['#a6e3a1','Low'],'Low - Medium (10-20%)':['#d9f99d','Low-Med'],'Medium - High (20-40%)':['#fde68a','Med-High'],'High (40-80%)':['#fdba74','High'],'Extremely High (>80%)':['#fca5a5','Extreme'],'Arid and Low Water Use':['#d1d5db','Arid']};
-d3.select('#lg4').html(Object.entries(SC).map(([k,c])=>`<span><i class="sw" style="background:${c[0]}"></i>${c[1]} = ${k}</span>`).join(''));
 const isoName={};COUNTRIES.forEach(f=>{isoName[f.properties.ADM0_A3]=f.properties.NAME});isoName.SSD='S. Sudan';
-const ord=Object.keys(SC);const sq=s=>`<div class="sq" style="background:${SC[s]?SC[s][0]:'#6b7280'}">${SC[s]?SC[s][1]:'no figure'}</div>`;
-REG.forEach(([n,groups])=>{const ids=groups.flat();const cs={};B.filter(b=>ids.includes(b.id)).forEach(b=>new Set([...Object.keys(b.stress),...Object.keys(b.proj)]).forEach(i=>{cs[i]={i,s:b.stress[i],p:b.proj[i]}}));
- const T=d3.select('#tiles');T.append('div').attr('class','reg').text(n);T.append('div').attr('class','tiles').selectAll('div').data(Object.values(cs).sort((a,b)=>ord.indexOf(b.s)-ord.indexOf(a.s))).join('div').attr('class','tile').html(d=>`<span class="nm">${(isoName[d.i]||d.i).replace('United States of America','United States')}</span>${sq(d.s)}<span style="color:var(--mut)">→</span>${sq(d.p)}`)});
 // SANKEY
 (function(){const nodes=[],links=[],idx={};const N=k=>{if(!(k in idx)){idx[k]=nodes.length;nodes.push({name:k})}return idx[k]};
 B.filter(b=>!b.aq).forEach(b=>b.dep.filter(d=>d.v>=50).forEach(d=>links.push({source:N('▸ '+short(b.name)),target:N(d.c.replace('United States of America','United States')),value:d.v,yr:d.y})));
 const G=d3.sankey().nodeWidth(16).nodePadding(14).extent([[230,10],[1080,630]])({nodes:nodes.map(d=>({...d})),links:links.map(d=>({...d}))});
-const svg=d3.select('#sankey');const col=d3.scaleOrdinal(d3.schemeTableau10);
-svg.append('g').selectAll('path').data(G.links).join('path').attr('d',d3.sankeyLinkHorizontal()).attr('fill','none').attr('stroke',d=>col(d.source.name)).attr('stroke-opacity',.55).attr('stroke-width',d=>Math.max(1,d.width)).on('mousemove',(e,d)=>tip(e,`${d.source.name.slice(2)} → ${d.target.name}: ${d.value}% (${d.yr})`)).on('mouseout',untip);
-svg.append('g').selectAll('rect').data(G.nodes).join('rect').attr('x',d=>d.x0).attr('y',d=>d.y0).attr('width',d=>d.x1-d.x0).attr('height',d=>Math.max(1,d.y1-d.y0)).attr('fill',d=>d.name[0]==='▸'?col(d.name):'#c9d1d9');
+const svg=d3.select('#sankey');const RC=['#48bb78','#f6e05e','#9f7aea','#ec4899','#38b6ff','#ff9f1a','#ffffff'];const regOf=n=>{const b=B.find(b=>'▸ '+short(b.name)===n);return REG.findIndex(r=>r[1].flat().includes(b.id))};const col=n=>RC[regOf(n)];d3.select('#sankey').node().insertAdjacentHTML('beforebegin','<div class=legend>'+REG.map((r,i)=>`<span><i class=sw style="background:${RC[i]}"></i>${r[0]}</span>`).join('')+'</div>');
+svg.append('g').selectAll('path').data(G.links).join('path').attr('d',d3.sankeyLinkHorizontal()).attr('fill','none').attr('stroke',d=>col(d.source.name)).attr('stroke-opacity',.85).attr('stroke-width',d=>Math.max(1,d.width)).on('mousemove',(e,d)=>tip(e,`${d.source.name.slice(2)} → ${d.target.name}: ${d.value}% (${d.yr})`)).on('mouseout',untip);
+svg.append('g').selectAll('rect').data(G.nodes).join('rect').attr('x',d=>d.x0).attr('y',d=>d.y0).attr('width',d=>d.x1-d.x0).attr('height',d=>Math.max(1,d.y1-d.y0)).attr('fill',d=>d.name[0]==='▸'?col(d.name):'#ffffff');
 svg.append('g').selectAll('text').data(G.nodes).join('text').attr('x',d=>d.x0<600?d.x0-8:d.x1+8).attr('y',d=>(d.y0+d.y1)/2+5).attr('text-anchor',d=>d.x0<600?'end':'start').text(d=>d.name[0]==='▸'?d.name.slice(2):`${d.name} ${d3.sum(d.targetLinks,l=>l.value)>100?'':''}`).style('font-size','14px');
 })();
 </script></body></html>
