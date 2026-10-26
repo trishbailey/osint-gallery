@@ -28,3 +28,8 @@ Defined in `build.py` (HOT): transfer areas, Russian loading ports and Baltic ch
 
 ## Story mode (story.py, story.js)
 `story.py` runs at the end of `build.py` and writes `data/story.json`: trips (Russian loading-port call -> next foreign port call, skipping canal/strait transit stops and Crimean ports), flows by loading port and destination country, identity changes in 12 months, transfer-area loitering, transponder gaps vs GPS-interference days, and the case-study ships. Case-study IMOs are set in story.py; recheck them after each data refresh. Vessel list now also includes the EU Annex XLII list (OpenSanctions `eu_journal_sanctions`, program EU-RUS).
+
+## Live AIS collectors
+- `fetch_digitraffic.py` (workflow `ghost-fleet-ais-digitraffic.yml`, every 15 min, no key): Finland Digitraffic latest positions (Baltic, CC BY 4.0) -> `data/positions/digitraffic-YYYY-MM.csv`, deduped on (mmsi, timestamp); commits only when there are new rows.
+- `fetch_aisstream.py` (workflow `ghost-fleet-ais-aisstream.yml`, hourly, ~5 min stream): aisstream.io, MMSIs split into subscriptions of 200 -> `data/positions/aisstream-YYYY-MM.csv`. Skipped until the repo secret `AISSTREAM_API_KEY` exists.
+Both use concurrency group `ghost-fleet-ais` and `pull --rebase` with retries before push; the daily rebuild merges `positions/*.csv` into `tracks.json`.
