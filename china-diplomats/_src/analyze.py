@@ -238,7 +238,7 @@ ENT={'ASEAN','African Union','EU','OPCW','UN/Intl orgs Geneva','UN/Intl orgs Vie
 # rolling 30-day window ending at the latest post (never earlier than the archive start)
 TW=max(T(START),T(END)-dt.timedelta(days=30));TWS=TW.strftime('%Y-%m-%dT%H:%M:%SZ')
 trows=[r for r in rows if r['t']>=TWS]
-tonemap=dict(min_posts=MINP,agg_threshold=0.04,window=dict(start=TWS,end=END,days=(T(END).date()-TW.date()).days+1),countries=[],areas=[])
+tonemap=dict(min_posts=MINP,min_agg_posts=3,count_breaks=[3,10,50],agg_threshold=0.04,window=dict(start=TWS,end=END,days=(T(END).date()-TW.date()).days+1),countries=[],areas=[])
 byc=collections.defaultdict(list)
 for r in trows:byc[r['country']].append(r)
 snip=lambda r:dict(id=r['id'],h=r['h'],t=r['t'],text=r['text'][:220])
@@ -246,7 +246,7 @@ for c,rs in sorted(byc.items()):
     n=len(rs);na=sum(r['tl']=='a' for r in rs);nf=sum(r['tl']=='f' for r in rs)
     harsh=sorted([r for r in rs if r['ag']>0],key=lambda r:-(r['ag']-r['fr']))[:3]
     fri=sorted([r for r in rs if r['fr']>r['ag']],key=lambda r:-(r['fr']-r['ag']))[:3]
-    tonemap['countries'].append(dict(region=rs[0]['region'],country=c,ll=CENT.get(c),geo=None if c in ENT else GEO.get(c,c),posts=n,agg=round(na/n,3),fri=round(nf/n,3),idx=round((nf-na)/n,3),harsh=[snip(r) for r in harsh],friendly=[snip(r) for r in fri]))
+    tonemap['countries'].append(dict(region=rs[0]['region'],country=c,ll=CENT.get(c),geo=None if c in ENT else GEO.get(c,c),posts=n,nagg=na,agg=round(na/n,3),fri=round(nf/n,3),idx=round((nf-na)/n,3),harsh=[snip(r) for r in harsh],friendly=[snip(r) for r in fri]))
 # ---------- key areas: regions with aggressive countries, plus a sentence generated from their aggressive posts ----------
 # Targets are counted from the aggressive posts themselves (multilingual keyword match); no model involved.
 TGT=[('Taiwan\u2019s independence camp and its leaders',r"taiwan|台湾|台灣|台独|台獨|lai ching|赖清德|賴清德|ライ|separatis|独立"),
@@ -257,7 +257,7 @@ TGT=[('Taiwan\u2019s independence camp and its leaders',r"taiwan|台湾|台灣|�
  ('foreign criticism over Xinjiang, Tibet and Hong Kong',r"xinjiang|新疆|tibet|西藏|hong kong|香港|dalai")]
 TGR=[(n,re.compile(x,re.I)) for n,x in TGT]
 def joinand(xs):return xs[0] if len(xs)==1 else ', '.join(xs[:-1])+' and '+xs[-1]
-scoredc=[c for c in tonemap['countries'] if c['posts']>=MINP and c['agg']>=tonemap['agg_threshold'] and c['region'] not in('?','China HQ')]
+scoredc=[c for c in tonemap['countries'] if c['posts']>=MINP and c['agg']>=tonemap['agg_threshold'] and c['nagg']>=tonemap['min_agg_posts'] and c['region'] not in('?','China HQ')]
 for reg in sorted({c['region'] for c in scoredc}):
     cs=sorted([c for c in scoredc if c['region']==reg],key=lambda c:-c['agg']);names={c['country'] for c in cs}
     ag=[r for r in trows if r['country'] in names and r['tl']=='a'];n=len(ag);parts=[];tg=[]
