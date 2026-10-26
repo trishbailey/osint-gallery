@@ -24,7 +24,7 @@ Promise.all([J("data/profiles.json"),J("data/group_countries.json"),J("data/grou
  const card=p=>{const col=COL[p.id]||"#e4572e";const gc=GCN.groups[p.id];const cs=gc?gc.countries:[];const s=p.membership_series||[];
    const srcs=[...new Set(s.map(d=>d.source))];
    return `<div class="pfcard" data-g="${p.id}" style="--c:${col}">
-   ${p.image?`<figure class="pfimg"><img src="${esc(p.image.src)}" alt="${esc(p.image.caption)}" loading="lazy"><figcaption>${esc(p.image.caption)} · <a href="${esc(p.image.page)}" target="_blank" rel="noopener">${esc(p.image.author)}, ${esc(p.image.license)}</a></figcaption></figure>`:""}
+   ${p.image?`<figure class="pfimg"><img src="${esc(p.image.src)}" alt="${esc(p.image.caption)}" loading="lazy"><figcaption>${esc(p.image.caption)}</figcaption></figure>`:""}
    <h3>${esc(p.name)}</h3>${p.abbr?`<div class="pfabbr">${esc(p.abbr)}</div>`:""}
    <p class="pfwhat">${esc(p.what)}${FNx(p.what_c)}</p>
    <div class="pffound">🏁 ${esc(p.founded)}${FNx(p.founded_c)}</div>
@@ -33,7 +33,7 @@ Promise.all([J("data/profiles.json"),J("data/group_countries.json"),J("data/grou
    <div class="pfmem"><div class="pfmemh">Members over time</div>${chart(p,col)}<div class="pfnote">${p.series_note?esc(p.series_note):""}${srcs.length?FNx(srcs):""}</div></div>
    <details class="pfmore"><summary>More</summary>${(p.more||[]).map(([t,c])=>`<p>${esc(t)}${FNx(c)}</p>`).join("")}</details></div>`};
  const sec=document.createElement("section");sec.className="tile pftile";sec.id="profiles";
- sec.innerHTML=`<details open class="pfdet"><summary><h2>Group profiles</h2><span class="muted"> · who each group is, where it operates, what it does</span></summary><div class="pfgrid">${PR.profiles.map(card).join("")}</div><div class="muted small">As of ${esc(PR.as_of)}. Descriptive only. Flags: sourced presence (home country first); absence means no sourced entry. Crime chips: primary/secondary activities in cited sources.</div></details>`;
+ sec.innerHTML=`<details open class="pfdet"><summary><h2>Group profiles</h2><span class="muted"> · who each group is, where it operates, what it does</span></summary><div class="pfgrid">${PR.profiles.map(card).join("")}</div><div class="muted small">As of ${esc(PR.as_of)}. Descriptive only. Flags: sourced presence (home country first); absence means no sourced entry. Crime chips: primary/secondary activities in cited sources.</div><details class="pfcredits"><summary>Photo credits</summary><ul>${PR.profiles.filter(p=>p.image).map(p=>`<li>${esc(p.name||p.id)}: ${esc(p.image.caption)} · ${esc(p.image.author)}, ${esc(p.image.license)} (<a href="${esc(p.image.page)}" target="_blank" rel="noopener">Wikimedia Commons</a>)</li>`).join("")}</ul></details></details>`;
  const place=()=>{const wn=document.getElementById("whatsnew"),ld=document.getElementById("leaders");
    const lds=ld&&(ld.closest("section")||ld);if(lds){if(lds.previousElementSibling!==sec)lds.before(sec)}else if(wn){if(wn.previousElementSibling!==sec)wn.before(sec)}else if(!sec.isConnected){const mt=document.querySelector(".maptile");mt?mt.after(sec):document.body.appendChild(sec)}};
  place();let n=0;const iv=setInterval(()=>{place();if(++n>60)clearInterval(iv)},250);

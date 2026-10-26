@@ -23,3 +23,4 @@
 .pfmore summary{cursor:pointer;color:var(--c);font-size:13px;margin-top:6px}
 .pfmore p{font-size:13px;line-height:1.4;margin:5px 0}
 .pfimg img[src*="b18"]{object-position:center 20%}
+.pfcredits{margin-top:.4em;font-size:.85em}.pfcredits summary{cursor:pointer}.pfcredits ul{margin:.3em 0 0 1.2em;padding:0}
