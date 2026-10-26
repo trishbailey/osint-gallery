@@ -60,7 +60,24 @@
 "name": "OCEAN 28",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "1031537",
+"name": "LADY JASMINE",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "1064493",
+"name": "OCEAN FORTUNE 18",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -109,7 +126,16 @@
 "name": "IMO 7808401 (BEBEK-E)",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "8010427",
+"name": "OPHELIA",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -118,6 +144,14 @@
 "mmsi": "",
 "lists": [
 "us_ofac_sdn"
+]
+},
+{
+"imo": "8231057",
+"name": "VOLGONEFT 251",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -185,6 +219,14 @@
 ]
 },
 {
+"imo": "8414477",
+"name": "FLANDRIA",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "8422670",
 "name": "VAFA",
 "mmsi": "",
@@ -229,7 +271,8 @@
 "name": "MARIA",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -301,7 +344,8 @@
 "name": "PARTIZANSK",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -353,6 +397,22 @@
 ]
 },
 {
+"imo": "8724779",
+"name": "VANINO",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "8724793",
+"name": "KORSAKOV",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "8728543",
 "name": "SAKHALIN 9",
 "mmsi": "",
@@ -397,7 +457,8 @@
 "name": "TORONTO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -413,7 +474,8 @@
 "name": "NIMBUS SPB",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -482,11 +544,27 @@
 ]
 },
 {
+"imo": "8862935",
+"name": "SANRAYZ",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "8866591",
 "name": "VALENTIN EMIROV",
 "mmsi": "",
 "lists": [
 "us_ofac_sdn"
+]
+},
+{
+"imo": "8867129",
+"name": "VOLGONEFT 160",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -571,6 +649,54 @@
 ]
 },
 {
+"imo": "8915299",
+"name": "DAMAS WAVE",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "8915548",
+"name": "RYAZAN",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "8915550",
+"name": "NOYABRSK",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "8918540",
+"name": "BERGEN T",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "8920579",
+"name": "NAVIK",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "8920581",
+"name": "MELITO CARRIER",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "8922486",
 "name": "DVINSKIY ZALIV",
 "mmsi": "",
@@ -627,6 +753,14 @@
 ]
 },
 {
+"imo": "8984848",
+"name": "BILAL BEY",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9014872",
 "name": "TAMBEY",
 "mmsi": "",
@@ -643,11 +777,28 @@
 ]
 },
 {
+"imo": "9036272",
+"name": "KORD ARCTIC",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9036284",
+"name": "NORDSTRAUM",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9037123",
 "name": "AS CALCUTTA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -655,7 +806,8 @@
 "name": "IMMANUEL",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -663,7 +815,8 @@
 "name": "ENISEY",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -707,6 +860,14 @@
 ]
 },
 {
+"imo": "9083184",
+"name": "BIRTHE THERESI",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9083196",
 "name": "GENRIKH GASANOV",
 "mmsi": "",
@@ -735,7 +896,8 @@
 "name": "OSTROV RUSSKIY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -751,7 +913,8 @@
 "name": "TAIMYR",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -767,7 +930,8 @@
 "name": "MT KONSTANTINOVSK",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -799,7 +963,8 @@
 "name": "CARUZO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -815,7 +980,8 @@
 "name": "OKEAN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -823,7 +989,16 @@
 "name": "BODHI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9147447",
+"name": "TAVIAN",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -831,7 +1006,32 @@
 "name": "ODIN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9156981",
+"name": "G.ROSSINI",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9157002",
+"name": "ERIDAN",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9157014",
+"name": "SOLSTRAUM",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -864,7 +1064,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -872,7 +1073,8 @@
 "name": "ARNO BABAJANYAN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -880,7 +1082,16 @@
 "name": "AVIOR",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9164718",
+"name": "THOTH",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -888,7 +1099,8 @@
 "name": "ASTORIA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -897,7 +1109,8 @@
 "mmsi": "273430430",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -905,7 +1118,8 @@
 "name": "ZEVS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -913,7 +1127,8 @@
 "name": "CILICIA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -937,7 +1152,8 @@
 "name": "ZAMBRA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -954,7 +1170,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -970,7 +1187,8 @@
 "name": "NEON",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -979,7 +1197,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -991,12 +1210,21 @@
 ]
 },
 {
+"imo": "9186625",
+"name": "STAR MM",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9187227",
 "name": "MERU",
 "mmsi": "667002333",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1012,7 +1240,8 @@
 "name": "KYLO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1040,11 +1269,20 @@
 ]
 },
 {
+"imo": "9194012",
+"name": "ANABAR",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9194983",
 "name": "DELIVER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1060,7 +1298,8 @@
 "name": "IMO 9198082 (\"GLOBAL STAR\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1076,7 +1315,8 @@
 "name": "MD MIRANDA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1085,7 +1325,8 @@
 "mmsi": "273610900",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1094,7 +1335,8 @@
 "mmsi": "352001461",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1126,7 +1368,8 @@
 "name": "RAVEN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1134,7 +1377,8 @@
 "name": "RANGLER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1142,7 +1386,8 @@
 "name": "VERNAL",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1150,7 +1395,8 @@
 "name": "STELLAR BEVERLY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1158,7 +1404,8 @@
 "name": "SKY RIDER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1166,7 +1413,8 @@
 "name": "TEMIRO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1186,12 +1434,21 @@
 ]
 },
 {
+"imo": "9211896",
+"name": "ZAL PARS 3",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9211999",
 "name": "SOFIA",
 "mmsi": "273615700",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1203,12 +1460,21 @@
 ]
 },
 {
+"imo": "9213313",
+"name": "ALBEDO",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9216298",
 "name": "ASYA ENERGY",
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1248,7 +1514,8 @@
 "name": "CHEETAH II",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1265,7 +1532,8 @@
 "mmsi": "518998787",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1273,7 +1541,8 @@
 "name": "CAROLINE BEZENGI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1281,7 +1550,8 @@
 "name": "FIRN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1290,7 +1560,8 @@
 "mmsi": "352003222",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1307,7 +1578,8 @@
 "name": "ARLAN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1323,7 +1595,8 @@
 "name": "ODUNE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1331,7 +1604,8 @@
 "name": "SKADI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1340,7 +1614,8 @@
 "mmsi": "352978243",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1348,7 +1623,8 @@
 "name": "TREND",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1356,7 +1632,8 @@
 "name": "KSENA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1364,7 +1641,8 @@
 "name": "MAISHA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1372,7 +1650,8 @@
 "name": "NARCISSUS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1380,7 +1659,8 @@
 "name": "VESNA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1389,7 +1669,8 @@
 "mmsi": "667002317",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1398,7 +1679,8 @@
 "mmsi": "352003752",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1406,7 +1688,8 @@
 "name": "OCEAN II",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1414,7 +1697,24 @@
 "name": "SEALION I",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9234642",
+"name": "KOALA",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9235000",
+"name": "COATLICUE",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1423,7 +1723,8 @@
 "mmsi": "352001387",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1431,7 +1732,8 @@
 "name": "FUGA BLUEMARINE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1439,7 +1741,8 @@
 "name": "KATIUSKA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1447,7 +1750,8 @@
 "name": "VISION",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1455,7 +1759,8 @@
 "name": "FENGHUANG",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1463,7 +1768,8 @@
 "name": "BLUE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1472,7 +1778,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1480,7 +1787,8 @@
 "name": "PRIMORYE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1488,7 +1796,8 @@
 "name": "THANE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1496,7 +1805,8 @@
 "name": "HANSON",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1529,7 +1839,8 @@
 "name": "EAST 1",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1538,7 +1849,8 @@
 "mmsi": "636022303",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1555,7 +1867,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1563,7 +1876,8 @@
 "name": "IMO 9243320 (\"YEHOPE\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1611,7 +1925,8 @@
 "name": "MARIEL",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1619,7 +1934,8 @@
 "name": "INDRI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1627,7 +1943,8 @@
 "name": "WILMA II",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1635,7 +1952,8 @@
 "name": "QUARTANUS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1643,7 +1961,8 @@
 "name": "BREEZ",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1652,7 +1971,8 @@
 "mmsi": "352002942",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1660,7 +1980,8 @@
 "name": "LALIQUE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1668,7 +1989,8 @@
 "name": "HATTI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1676,7 +1998,8 @@
 "name": "SPRIT",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1684,7 +2007,8 @@
 "name": "MU DAN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1692,7 +2016,8 @@
 "name": "SILVERA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1710,7 +2035,8 @@
 "mmsi": "352002202",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1718,7 +2044,8 @@
 "name": "CHILLI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1726,7 +2053,16 @@
 "name": "IZOLA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9250050",
+"name": "PALLADA",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1743,7 +2079,8 @@
 "mmsi": "314993000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1751,7 +2088,8 @@
 "name": "NEOMI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1759,7 +2097,8 @@
 "name": "MIKATI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1768,7 +2107,8 @@
 "mmsi": "352002070",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1776,7 +2116,8 @@
 "name": "DAPHNE I",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1784,7 +2125,8 @@
 "name": "IMO 9251743 (\"DAKAR\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1792,7 +2134,8 @@
 "name": "BLUEBELL",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1800,7 +2143,8 @@
 "name": "CELINE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1808,7 +2152,16 @@
 "name": "BRIONT",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9252967",
+"name": "GRACEP",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1816,7 +2169,8 @@
 "name": "REUS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1824,7 +2178,8 @@
 "name": "GURUDEV",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1832,7 +2187,8 @@
 "name": "ARABELA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1841,7 +2197,8 @@
 "mmsi": "352002470",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1849,7 +2206,8 @@
 "name": "DESTAMAR",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1865,7 +2223,8 @@
 "name": "BOLOGNIA FALCON",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1873,7 +2232,8 @@
 "name": "IMO 9255268 (\"ANDREY PERVOZVANNIY\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1882,7 +2242,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1890,7 +2251,8 @@
 "name": "IMO 9255282 (\"PIONEER\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1906,7 +2268,8 @@
 "name": "PONTUS I",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1914,7 +2277,8 @@
 "name": "LEBRE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1922,7 +2286,8 @@
 "name": "FIORA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1930,7 +2295,8 @@
 "name": "SEA MARINE 1",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1938,7 +2304,8 @@
 "name": "SEGINUS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1947,7 +2314,8 @@
 "mmsi": "626369000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1956,7 +2324,8 @@
 "mmsi": "636011641",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1965,7 +2334,8 @@
 "mmsi": "626367000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1974,7 +2344,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -1998,7 +2369,8 @@
 "name": "LACONIA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2006,7 +2378,8 @@
 "name": "MIN HANG",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2014,7 +2387,8 @@
 "name": "FURIA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2022,7 +2396,8 @@
 "name": "TOREX",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2040,7 +2415,8 @@
 "mmsi": "636011916",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2048,7 +2424,8 @@
 "name": "EDERRA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2056,7 +2433,16 @@
 "name": "AKAR WEST",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9258478",
+"name": "GT HONOR",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2073,7 +2459,8 @@
 "name": "ASHER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2081,7 +2468,8 @@
 "name": "CARCHARODON",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2089,7 +2477,8 @@
 "name": "DAKSHA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2098,7 +2487,8 @@
 "mmsi": "352002137",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2107,7 +2497,8 @@
 "mmsi": "636016693",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2115,7 +2506,8 @@
 "name": "YI TONG",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2123,7 +2515,8 @@
 "name": "ETERNAL PEACE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2131,7 +2524,16 @@
 "name": "SEZAR",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9260067",
+"name": "VISION",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2139,7 +2541,16 @@
 "name": "KATRAN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9260483",
+"name": "ARMADA LEADER",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2147,7 +2558,8 @@
 "name": "FIESTA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2155,7 +2567,8 @@
 "name": "QUARTZ",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2163,7 +2576,8 @@
 "name": "HANNAH",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2171,7 +2585,8 @@
 "name": "C VIKING",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2179,7 +2594,8 @@
 "name": "UTAKI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2187,7 +2603,8 @@
 "name": "SEAL",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2195,7 +2612,8 @@
 "name": "SAINT",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2203,7 +2621,8 @@
 "name": "SOUL",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2211,7 +2630,16 @@
 "name": "FRUNZE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9263693",
+"name": "SINO STAR",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2219,7 +2647,8 @@
 "name": "THEMIS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2235,7 +2664,8 @@
 "name": "KAMELOT",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2243,7 +2673,8 @@
 "name": "SEA MAVERICK",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2251,7 +2682,8 @@
 "name": "SAURI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2259,7 +2691,8 @@
 "name": "SEABASS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2268,7 +2701,8 @@
 "mmsi": "352003763",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2276,7 +2710,8 @@
 "name": "BIVOLA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2284,7 +2719,8 @@
 "name": "PIERRE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2301,7 +2737,8 @@
 "mmsi": "626450000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2309,7 +2746,8 @@
 "name": "SPARTA",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2317,7 +2755,8 @@
 "name": "CINDY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2326,7 +2765,8 @@
 "mmsi": "626364000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2334,7 +2774,8 @@
 "name": "IMO 9270555 (\"INTEGRITY RACER\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2342,7 +2783,8 @@
 "name": "GAURI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2351,7 +2793,8 @@
 "mmsi": "304768000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2360,7 +2803,8 @@
 "mmsi": "352004581",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2368,7 +2812,8 @@
 "name": "FACCA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2384,7 +2829,8 @@
 "name": "GARUDA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2393,7 +2839,8 @@
 "mmsi": "626248000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2409,7 +2856,24 @@
 "name": "IMO 9274082 (\"TM HAI HA 568\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9274331",
+"name": "SAN DAMIAN",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9274343",
+"name": "SAN COSMAS",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2418,7 +2882,8 @@
 "mmsi": "626279000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2427,7 +2892,8 @@
 "mmsi": "636018885",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2443,7 +2909,8 @@
 "name": "YANGTZE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2452,7 +2919,8 @@
 "mmsi": "314951000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2460,7 +2928,8 @@
 "name": "ECHO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2468,7 +2937,8 @@
 "name": "PRS OCEAN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2476,7 +2946,8 @@
 "name": "LUNAR TIDE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2484,7 +2955,8 @@
 "name": "ELISE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2492,7 +2964,8 @@
 "name": "LEA I",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2500,7 +2973,8 @@
 "name": "SOFOS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2533,7 +3007,8 @@
 "mmsi": "352001692",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2541,7 +3016,8 @@
 "name": "JI HANG",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2550,7 +3026,8 @@
 "mmsi": "621819067",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2559,7 +3036,16 @@
 "mmsi": "352001694",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9281683",
+"name": "SIRI",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2567,7 +3053,8 @@
 "name": "MEROPE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2575,7 +3062,8 @@
 "name": "IMO 9282041 (\"KAVIZ\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2584,7 +3072,8 @@
 "mmsi": "352001530",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2592,7 +3081,8 @@
 "name": "TAGOR",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2600,7 +3090,8 @@
 "name": "FIORA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2608,7 +3099,8 @@
 "name": "CLYDE NOBLE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2616,7 +3108,8 @@
 "name": "ATLANTICOS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2625,7 +3118,8 @@
 "mmsi": "273253500",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2633,7 +3127,8 @@
 "name": "THYA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2641,7 +3136,8 @@
 "name": "TIBURON",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2649,7 +3145,8 @@
 "name": "BUDDHA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2658,7 +3155,8 @@
 "mmsi": "574005540",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2667,7 +3165,8 @@
 "mmsi": "574005550",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2675,7 +3174,8 @@
 "name": "BONIFACY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2683,7 +3183,8 @@
 "name": "SEA FIDELITY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2692,7 +3193,8 @@
 "mmsi": "352003720",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2700,7 +3202,8 @@
 "name": "EASTERN PEARL",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2708,7 +3211,16 @@
 "name": "NEXT",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9286073",
+"name": "T CEREAL",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2716,7 +3228,8 @@
 "name": "SAMADHA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2725,7 +3238,8 @@
 "mmsi": "273355340",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2733,7 +3247,8 @@
 "name": "DYNAMIK TRADER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2741,7 +3256,8 @@
 "name": "ANDAMAN SKIES",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2749,7 +3265,8 @@
 "name": "STRATOS AURORA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2757,7 +3274,8 @@
 "name": "KUDOS STARS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2765,7 +3283,8 @@
 "name": "AZURE CELESTE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2773,7 +3292,8 @@
 "name": "ARABESCA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2781,7 +3301,8 @@
 "name": "MARATHON",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2790,7 +3311,8 @@
 "mmsi": "314975000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2798,7 +3320,8 @@
 "name": "VALENTE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2806,7 +3329,8 @@
 "name": "ROCKY RUNNER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2814,7 +3338,8 @@
 "name": "PACIFICOS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2831,7 +3356,8 @@
 "name": "CANIS POWER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2839,7 +3365,8 @@
 "name": "GENJI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2847,7 +3374,8 @@
 "name": "ARIADNE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2855,7 +3383,8 @@
 "name": "MAISAN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2863,7 +3392,8 @@
 "name": "THEA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2871,7 +3401,8 @@
 "name": "JUMBO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2879,7 +3410,8 @@
 "name": "VELORA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2887,7 +3419,8 @@
 "name": "IMO 9290385 (\"ELBUS\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2895,7 +3428,8 @@
 "name": "IMO 9290397 (\"STORMBRINGER\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2903,7 +3437,8 @@
 "name": "VAYU 1",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2911,7 +3446,8 @@
 "name": "E MEI SHAN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2919,7 +3455,8 @@
 "name": "BEAST",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2935,7 +3472,8 @@
 "name": "IMO 9291262 (\"SILVAR\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2944,7 +3482,8 @@
 "mmsi": "314959000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2952,7 +3491,8 @@
 "name": "NOVA CREST",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2961,7 +3501,8 @@
 "mmsi": "314944000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2970,7 +3511,16 @@
 "mmsi": "314956000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9292187",
+"name": "LUNA LUSTER",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2978,7 +3528,8 @@
 "name": "ALTURA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2986,7 +3537,8 @@
 "name": "ADYGEYA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -2994,7 +3546,8 @@
 "name": "BULL",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3002,7 +3555,8 @@
 "name": "RICCA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3010,7 +3564,8 @@
 "name": "TEAM",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3018,7 +3573,8 @@
 "name": "LISTIGA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3026,7 +3582,8 @@
 "name": "SAGAR VIOLET",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3034,7 +3591,8 @@
 "name": "ARGENT",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3042,7 +3600,8 @@
 "name": "SUN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3050,7 +3609,8 @@
 "name": "JUNIA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3058,7 +3618,8 @@
 "name": "FOTUO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3066,7 +3627,8 @@
 "name": "KHALASI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3074,7 +3636,8 @@
 "name": "CHONGCHON",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3090,7 +3653,8 @@
 "name": "LILY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3098,7 +3662,8 @@
 "name": "IMO 9296377 (\"MARJORIE\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3106,7 +3671,8 @@
 "name": "FIGHTER TWO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3114,7 +3680,8 @@
 "name": "RIGEL",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3135,11 +3702,20 @@
 ]
 },
 {
+"imo": "9296781",
+"name": "KRASNODAR",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9296810",
 "name": "MISSONI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3148,7 +3724,16 @@
 "mmsi": "352001616",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9297149",
+"name": "REVANCHE",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3157,7 +3742,8 @@
 "mmsi": "352002801",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3165,7 +3751,8 @@
 "name": "SULEYMAN I",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3173,7 +3760,8 @@
 "name": "IMO 9297541 (\"DOVE\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3181,7 +3769,8 @@
 "name": "MONTE 1",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3189,7 +3778,8 @@
 "name": "CORDELIA MOON",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3197,7 +3787,8 @@
 "name": "IMO 9298492 (\"TOA PAYOH\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3205,7 +3796,8 @@
 "name": "JAVA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3213,7 +3805,8 @@
 "name": "SOFIA K",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3229,7 +3822,8 @@
 "name": "KORD ATLANTIC",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3237,7 +3831,8 @@
 "name": "VELES",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3245,7 +3840,8 @@
 "name": "MIANZIMU",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3253,7 +3849,8 @@
 "name": "PRISMA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3262,7 +3859,8 @@
 "mmsi": "518999083",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3271,7 +3869,8 @@
 "mmsi": "314942000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3279,7 +3878,8 @@
 "name": "GUANYIN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3288,7 +3888,8 @@
 "mmsi": "636012384",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3297,7 +3898,8 @@
 "mmsi": "352001911",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3305,7 +3907,8 @@
 "name": "ANTAEUS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3323,7 +3926,8 @@
 "mmsi": "352004367",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3331,7 +3935,8 @@
 "name": "MIRES",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3339,7 +3944,8 @@
 "name": "TENDUA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3347,7 +3953,8 @@
 "name": "VIPER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3355,7 +3962,8 @@
 "name": "WALL",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3363,7 +3971,8 @@
 "name": "TURBO VOYAGER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3372,7 +3981,8 @@
 "mmsi": "352003718",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3381,7 +3991,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3390,7 +4001,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3407,7 +4019,8 @@
 "mmsi": "352002195",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3416,7 +4029,8 @@
 "mmsi": "352002205",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3425,7 +4039,8 @@
 "mmsi": "352002204",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3434,7 +4049,8 @@
 "mmsi": "352002198",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3443,7 +4059,8 @@
 "mmsi": "352002197",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3451,7 +4068,8 @@
 "name": "DENEB",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3464,11 +4082,20 @@
 ]
 },
 {
+"imo": "9303869",
+"name": "ABINSK",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9304356",
 "name": "YODAN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3476,7 +4103,8 @@
 "name": "CHENG HE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3484,7 +4112,8 @@
 "name": "JALDHARA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3492,7 +4121,8 @@
 "name": "IMO 9305556 (\"MARVEN\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3500,7 +4130,8 @@
 "name": "SCF BALTICA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3508,7 +4139,8 @@
 "name": "PONE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3516,7 +4148,8 @@
 "name": "HUANG HE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3525,7 +4158,8 @@
 "mmsi": "636012853",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3533,7 +4167,8 @@
 "name": "NS COMMANDER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3541,7 +4176,8 @@
 "name": "INNOVATOR",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3565,7 +4201,8 @@
 "name": "ELECTRA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3573,7 +4210,8 @@
 "name": "EVENTIN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3581,7 +4219,8 @@
 "name": "TYCHE 1",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3589,7 +4228,8 @@
 "name": "UNITE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3597,7 +4237,8 @@
 "name": "ESTELLA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3605,7 +4246,8 @@
 "name": "INA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3613,7 +4255,8 @@
 "name": "BERRA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3621,7 +4264,8 @@
 "name": "KUSTO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3629,7 +4273,8 @@
 "name": "RYMO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3637,7 +4282,8 @@
 "name": "SEASONS I",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3646,7 +4292,8 @@
 "mmsi": "352003367",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3655,7 +4302,8 @@
 "mmsi": "314947000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3671,7 +4319,8 @@
 "name": "IONIA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3679,7 +4328,8 @@
 "name": "VAULT",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3687,7 +4337,8 @@
 "name": "AFKADA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3695,7 +4346,8 @@
 "name": "TORX",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3704,7 +4356,8 @@
 "mmsi": "314967000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3712,7 +4365,8 @@
 "name": "HITIT",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3721,7 +4375,8 @@
 "mmsi": "352002139",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3730,7 +4385,8 @@
 "mmsi": "626382000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3739,7 +4395,8 @@
 "mmsi": "626390000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3755,7 +4412,8 @@
 "name": "JACKLYN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3764,7 +4422,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3773,7 +4432,8 @@
 "mmsi": "352001732",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3782,7 +4442,8 @@
 "mmsi": "314001002",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3790,7 +4451,8 @@
 "name": "AGNES",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3798,7 +4460,8 @@
 "name": "IMO 9314179 (\"FLINT WIND\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3815,7 +4478,8 @@
 "name": "OSCAR I",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3823,7 +4487,8 @@
 "name": "HIMALAYA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3831,7 +4496,8 @@
 "name": "INDRAS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3840,7 +4506,8 @@
 "mmsi": "305026000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3848,7 +4515,8 @@
 "name": "SEA HONOR",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3856,7 +4524,8 @@
 "name": "MARQUISE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3864,7 +4533,8 @@
 "name": "SCF VANKOR",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3872,7 +4542,8 @@
 "name": "IMO 9317315 (\"LUCH\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3880,7 +4551,8 @@
 "name": "ARTEMIS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3888,7 +4560,8 @@
 "name": "OLIVE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3896,7 +4569,8 @@
 "name": "SWIFTSEA RIDER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3905,7 +4579,8 @@
 "mmsi": "314897000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3914,7 +4589,8 @@
 "mmsi": "314894000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3930,7 +4606,8 @@
 "name": "EASTERN GLORY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3938,7 +4615,8 @@
 "name": "HU PO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3946,7 +4624,8 @@
 "name": "GREAT JACOMBO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3954,7 +4633,8 @@
 "name": "MAINI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3962,7 +4642,8 @@
 "name": "ATALANTA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3970,7 +4651,8 @@
 "name": "SEA OWL I",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3978,7 +4660,8 @@
 "name": "MAVERICK",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3986,7 +4669,8 @@
 "name": "IMO 9321677 (\"DAPHNE V\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -3994,7 +4678,8 @@
 "name": "OCEAN FAYE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4002,7 +4687,8 @@
 "name": "SAI BABA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4011,7 +4697,8 @@
 "mmsi": "626315000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4019,7 +4706,8 @@
 "name": "ORVI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4028,7 +4716,8 @@
 "mmsi": "352001452",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4037,7 +4726,8 @@
 "mmsi": "352001510",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4073,7 +4763,8 @@
 "mmsi": "626399000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4082,7 +4773,8 @@
 "mmsi": "314958000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4090,7 +4782,8 @@
 "name": "ADITYA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4098,7 +4791,8 @@
 "name": "KATY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4115,7 +4809,8 @@
 "name": "TRANQUIL SEA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4123,7 +4818,8 @@
 "name": "SINAR G",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4131,7 +4827,8 @@
 "name": "MARABELLA SUN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4139,7 +4836,8 @@
 "name": "MARBLE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4147,7 +4845,8 @@
 "name": "GARASAN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4156,7 +4855,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4172,7 +4872,8 @@
 "name": "FULGER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4180,7 +4881,8 @@
 "name": "HERA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4196,7 +4898,8 @@
 "name": "IMO 9326885 (\"ANAYA\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4204,7 +4907,8 @@
 "name": "ARIA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4212,7 +4916,8 @@
 "name": "OCEAN EMBRACE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4229,7 +4934,8 @@
 "name": "IMO 9328170 (\"AETHER\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4238,7 +4944,8 @@
 "mmsi": "314971000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4246,7 +4953,8 @@
 "name": "PACIFIC",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4254,7 +4962,8 @@
 "name": "EAGLE S",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4262,7 +4971,8 @@
 "name": "THORIN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4270,7 +4980,8 @@
 "name": "LUMIN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4294,7 +5005,8 @@
 "name": "KELLY GRACE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4302,7 +5014,8 @@
 "name": "DELVINA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4310,7 +5023,8 @@
 "name": "GRIF",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4318,7 +5032,8 @@
 "name": "IMO 9332171 (\"VIRENT\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4326,7 +5041,8 @@
 "name": "IMO 9332614 (\"BELLARIS\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4334,7 +5050,8 @@
 "name": "LANG YA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4342,7 +5059,8 @@
 "name": "VARUNA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4350,7 +5068,8 @@
 "name": "NICHOLE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4358,7 +5077,8 @@
 "name": "WISDOMS DAUGHTER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4366,7 +5086,8 @@
 "name": "NOBLE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4374,7 +5095,8 @@
 "name": "ENIGMA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4382,7 +5104,8 @@
 "name": "SCF PECHORA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4391,7 +5114,8 @@
 "mmsi": "314893000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4408,7 +5132,8 @@
 "mmsi": "273328440",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4417,7 +5142,8 @@
 "mmsi": "273345750",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4425,7 +5151,8 @@
 "name": "IMO 9333785 (\"SEADAR\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4433,7 +5160,8 @@
 "name": "BLUE TALU",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4441,7 +5169,8 @@
 "name": "WUDI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4473,7 +5202,8 @@
 "name": "NAXOS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4481,7 +5211,8 @@
 "name": "MYRA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4489,7 +5220,8 @@
 "name": "URIEL",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4499,6 +5231,14 @@
 "lists": [
 "gb_fcdo_sanctions",
 "us_ofac_sdn"
+]
+},
+{
+"imo": "9337195",
+"name": "SIREN II",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4514,7 +5254,8 @@
 "name": "AGNI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4522,7 +5263,8 @@
 "name": "IMO 9337418 (\"ATMOS\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4530,7 +5272,8 @@
 "name": "SAMUDRA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4546,7 +5289,8 @@
 "name": "SHAANXI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4555,7 +5299,8 @@
 "mmsi": "636013272",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4564,7 +5309,8 @@
 "mmsi": "626393000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4573,7 +5319,8 @@
 "mmsi": "314889000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4582,7 +5329,8 @@
 "mmsi": "314892000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4591,7 +5339,8 @@
 "mmsi": "626379000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4600,7 +5349,8 @@
 "mmsi": "314949000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4609,7 +5359,8 @@
 "mmsi": "314964000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4618,7 +5369,16 @@
 "mmsi": "626388000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9343986",
+"name": "CAPELLA MB",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4627,7 +5387,8 @@
 "mmsi": "314943000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4643,7 +5404,8 @@
 "name": "RU YI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4651,7 +5413,8 @@
 "name": "KIRA K",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4660,7 +5423,8 @@
 "mmsi": "352002122",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4668,7 +5432,8 @@
 "name": "MA JIN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4676,7 +5441,8 @@
 "name": "AQUARIUS II",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4708,7 +5474,8 @@
 "name": "AURA MARIS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4716,7 +5483,8 @@
 "name": "LUCKY FAIRY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4741,7 +5509,8 @@
 "mmsi": "352002589",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4749,7 +5518,8 @@
 "name": "SANDHYA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4757,7 +5527,8 @@
 "name": "GURU",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4765,7 +5536,8 @@
 "name": "JUN MA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4773,7 +5545,8 @@
 "name": "CHANDRA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4782,7 +5555,8 @@
 "mmsi": "352003366",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4791,7 +5565,16 @@
 "mmsi": "352003364",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9354636",
+"name": "FLURA",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4799,7 +5582,8 @@
 "name": "IMO 9356610 (\"ALEXANDER NEVSKIY\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4807,7 +5591,8 @@
 "name": "MAIA-1",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4824,7 +5609,8 @@
 "mmsi": "352002194",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4833,7 +5619,8 @@
 "mmsi": "352002196",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4841,7 +5628,8 @@
 "name": "INDUS 1",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4857,7 +5645,8 @@
 "name": "ACHILLES",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4865,7 +5654,8 @@
 "name": "FU HAI WAN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4877,12 +5667,21 @@
 ]
 },
 {
+"imo": "9369617",
+"name": "NIZAMI GANJAVI",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9372547",
 "name": "VASILY DINKOV",
 "mmsi": "273345020",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4891,7 +5690,8 @@
 "mmsi": "273335010",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4900,7 +5700,8 @@
 "mmsi": "273330620",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4908,7 +5709,8 @@
 "name": "ELEPHANT",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4924,7 +5726,8 @@
 "name": "ARMADA EXPLORER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4932,7 +5735,8 @@
 "name": "MONARCH I",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4941,7 +5745,8 @@
 "mmsi": "352002948",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4949,7 +5754,8 @@
 "name": "GANGA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4958,7 +5764,8 @@
 "mmsi": "352002898",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4974,7 +5781,8 @@
 "name": "OCEAN AUTUMN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4982,7 +5790,8 @@
 "name": "IMO 9379301 (\"VERSA\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4990,7 +5799,8 @@
 "name": "IMO 9380570 (\"KURDOS III\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -4998,7 +5808,8 @@
 "name": "CENTURION",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5007,7 +5818,8 @@
 "mmsi": "636022364",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5024,7 +5836,8 @@
 "name": "EVERDINE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5032,7 +5845,8 @@
 "name": "DENVER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5041,7 +5855,8 @@
 "mmsi": "314953000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5049,7 +5864,8 @@
 "name": "SARASWATI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5058,7 +5874,8 @@
 "mmsi": "352002791",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5066,7 +5883,8 @@
 "name": "LION 1",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5074,7 +5892,8 @@
 "name": "RAGNAR",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5083,7 +5902,8 @@
 "mmsi": "314954000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5091,7 +5911,8 @@
 "name": "JI LI I",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5099,7 +5920,8 @@
 "name": "JI SHUN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5107,7 +5929,8 @@
 "name": "JI XIANG",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5115,7 +5938,8 @@
 "name": "MARS 6",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5124,7 +5948,16 @@
 "mmsi": "314946000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9385233",
+"name": "MONTE BIANCO",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5132,7 +5965,8 @@
 "name": "LERUO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5140,7 +5974,8 @@
 "name": "SPRING FORTUNE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5148,7 +5983,8 @@
 "name": "MAIN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5156,7 +5992,8 @@
 "name": "ETHERA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5164,7 +6001,8 @@
 "name": "MANASLU",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5172,7 +6010,8 @@
 "name": "SURYA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5181,7 +6020,8 @@
 "mmsi": "352002820",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5189,7 +6029,8 @@
 "name": "DESTAN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5197,7 +6038,8 @@
 "name": "BAI LU",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5205,7 +6047,8 @@
 "name": "UNITY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5213,7 +6056,8 @@
 "name": "TANGO 2",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5221,7 +6065,8 @@
 "name": "TIGER 6",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5229,7 +6074,8 @@
 "name": "MINION",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5237,7 +6083,8 @@
 "name": "SMYRTOS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5245,7 +6092,16 @@
 "name": "LIETO",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9390317",
+"name": "MARINSTRAUM",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5253,7 +6109,8 @@
 "name": "IMO 9390587 (\"ONEIROI\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5262,7 +6119,8 @@
 "mmsi": "352002872",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5270,7 +6128,8 @@
 "name": "OCEAN AMZ",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5278,7 +6137,8 @@
 "name": "PACIFIC 01",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5295,7 +6155,8 @@
 "mmsi": "314931000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5304,7 +6165,8 @@
 "mmsi": "314948000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5313,7 +6175,8 @@
 "mmsi": "314987000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5329,7 +6192,8 @@
 "name": "EVALI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5346,7 +6210,8 @@
 "mmsi": "352003485",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5354,7 +6219,8 @@
 "name": "FENG SHOU",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5362,7 +6228,8 @@
 "name": "SAATHI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5370,7 +6237,8 @@
 "name": "CHEN LU",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5378,7 +6246,8 @@
 "name": "TAI SHAN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5386,7 +6255,8 @@
 "name": "SAMOS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5394,7 +6264,8 @@
 "name": "FAST KATHY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5402,7 +6273,8 @@
 "name": "EVITA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5410,7 +6282,8 @@
 "name": "IMO 9408542 (\"LING HONG\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5418,7 +6291,16 @@
 "name": "IMO 9408554 (\"HE BO\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9408683",
+"name": "ZHUO YUAN",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5426,7 +6308,8 @@
 "name": "TASSOS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5434,7 +6317,8 @@
 "name": "SPIRIT 2",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5443,7 +6327,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5470,7 +6355,8 @@
 "mmsi": "626378000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5479,7 +6365,8 @@
 "mmsi": "352002456",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5488,7 +6375,8 @@
 "mmsi": "314984000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5497,7 +6385,8 @@
 "mmsi": "314965000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5506,7 +6395,8 @@
 "mmsi": "626377000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5514,7 +6404,8 @@
 "name": "NILANGA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5523,7 +6414,8 @@
 "mmsi": "636022098",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5531,7 +6423,8 @@
 "name": "IMO 9413004 (\"HORAE\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5539,7 +6432,8 @@
 "name": "NS ARCTIC",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5548,7 +6442,8 @@
 "mmsi": "626372000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5556,7 +6451,8 @@
 "name": "NS ASIA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5565,7 +6461,8 @@
 "mmsi": "314895000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5573,7 +6470,8 @@
 "name": "IMO 9417464 (\"TANI\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5581,7 +6479,8 @@
 "name": "CETUS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5590,7 +6489,8 @@
 "mmsi": "352002209",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5599,7 +6499,16 @@
 "mmsi": "273371330",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9419084",
+"name": "IRKUTSK",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5608,7 +6517,8 @@
 "mmsi": "352002488",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5616,7 +6526,8 @@
 "name": "WU TAI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5625,7 +6536,8 @@
 "mmsi": "352003963",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5633,7 +6545,8 @@
 "name": "JEWEL",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5642,7 +6555,8 @@
 "mmsi": "636014308",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5650,7 +6564,8 @@
 "name": "SCF SAMOTLOR",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5659,7 +6574,8 @@
 "mmsi": "314988000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5667,7 +6583,8 @@
 "name": "SCF BAIKAL",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5676,7 +6593,16 @@
 "mmsi": "273334570",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9422964",
+"name": "ABRAU",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5692,7 +6618,8 @@
 "name": "MANTA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5700,7 +6627,8 @@
 "name": "XUE SONG",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5708,7 +6636,8 @@
 "name": "GOGLAND",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5716,7 +6645,8 @@
 "name": "JIN HUI",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5724,7 +6654,8 @@
 "name": "APATE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5740,7 +6671,8 @@
 "name": "NAUTILUS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5748,7 +6680,8 @@
 "name": "AKHTY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5756,7 +6689,8 @@
 "name": "VOLGA RIVER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5764,7 +6698,8 @@
 "name": "IRTYSH RIVER",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5773,7 +6708,8 @@
 "mmsi": "352002486",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5781,7 +6717,8 @@
 "name": "VENETIANS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5789,7 +6726,8 @@
 "name": "CENTURION I",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5798,7 +6736,8 @@
 "mmsi": "626278000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5806,7 +6745,8 @@
 "name": "CAI YUN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5814,7 +6754,8 @@
 "name": "IMO 9439383 (\"BHILVA\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5822,7 +6763,8 @@
 "name": "BOLU",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5830,7 +6772,8 @@
 "name": "NEMRUT",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5846,7 +6789,8 @@
 "name": "FELIKS",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5862,7 +6806,8 @@
 "name": "AURA 1",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5879,7 +6824,8 @@
 "mmsi": "273371920",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5903,7 +6849,8 @@
 "name": "BLACKSEA EAGLE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5919,7 +6866,8 @@
 "name": "GENERAL SKOBELEV",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5927,7 +6875,8 @@
 "name": "OLYMPIYSKY PROSPECT",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5936,7 +6885,8 @@
 "mmsi": "626368000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5945,7 +6895,8 @@
 "mmsi": "314919000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5954,7 +6905,16 @@
 "mmsi": "352001925",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9515539",
+"name": "MIKHAIL NENASHEV",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5962,7 +6922,8 @@
 "name": "SUVOROVSKY PROSPECT",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5971,7 +6932,8 @@
 "mmsi": "352002179",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5980,7 +6942,8 @@
 "mmsi": "352002168",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5989,7 +6952,8 @@
 "mmsi": "352002280",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -5998,7 +6962,8 @@
 "mmsi": "273353580",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6023,7 +6988,16 @@
 "mmsi": "352002588",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9550137",
+"name": "MATROS KOSHKA",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6031,7 +7005,8 @@
 "name": "XING CHEN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6043,12 +7018,21 @@
 ]
 },
 {
+"imo": "9573816",
+"name": "MATROS POZYNICH",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9577082",
 "name": "PREMIER",
 "mmsi": "314945000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6057,7 +7041,16 @@
 "mmsi": "314976000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9582776",
+"name": "PERUN",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6065,7 +7058,8 @@
 "name": "MARLIN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6073,7 +7067,8 @@
 "name": "KALUGA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6082,7 +7077,8 @@
 "mmsi": "352002861",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6091,7 +7087,8 @@
 "mmsi": "273355640",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6107,7 +7104,8 @@
 "name": "JUPITER I",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6115,7 +7113,8 @@
 "name": "VENUS III",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6124,7 +7123,8 @@
 "mmsi": "314950000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6133,7 +7133,8 @@
 "mmsi": "626362000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6142,7 +7143,8 @@
 "mmsi": "352003372",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6151,7 +7153,8 @@
 "mmsi": "636015565",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6191,7 +7194,8 @@
 "name": "KARAKUZ",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6199,7 +7203,8 @@
 "name": "BAVLY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6207,7 +7212,8 @@
 "name": "STANISLAV GOVORUKHIN",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6216,7 +7222,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6236,12 +7243,21 @@
 ]
 },
 {
+"imo": "9624316",
+"name": "AURA",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9630004",
 "name": "VELIKIY NOVGOROD",
 "mmsi": "314928000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6249,7 +7265,8 @@
 "name": "PSKOV",
 "mmsi": "314930000",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6269,11 +7286,36 @@
 ]
 },
 {
+"imo": "9637961",
+"name": "SERGEY TERSKOV",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9638197",
+"name": "TONG YUAN",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9640499",
+"name": "IVAN KRAMSKOY",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9640516",
 "name": "VF TANKER-3",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6281,7 +7323,16 @@
 "name": "VF TANKER-4",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9645011",
+"name": "SANAR 18",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6289,7 +7340,16 @@
 "name": "IMO 9645023 (\"VASILY SURIKOV\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9645061",
+"name": "ALEKSEY SAVRASOV",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6298,7 +7358,8 @@
 "mmsi": "273399390",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6330,7 +7391,8 @@
 "name": "SATURN I",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6342,11 +7404,27 @@
 ]
 },
 {
+"imo": "9664976",
+"name": "IRTYSH",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9673202",
 "name": "ORIENT VISION",
 "mmsi": "352002707",
 "lists": [
 "us_ofac_sdn"
+]
+},
+{
+"imo": "9676230",
+"name": "TRUVOR",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6370,7 +7448,8 @@
 "name": "DMITRY POKROVSKY",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6379,7 +7458,8 @@
 "mmsi": "273342180",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6388,7 +7468,16 @@
 "mmsi": "273340060",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9687992",
+"name": "ORENBURG",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6396,7 +7485,8 @@
 "name": "STALINGRAD",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6416,11 +7506,28 @@
 ]
 },
 {
+"imo": "9715270",
+"name": "ZAID",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9720263",
+"name": "ZAFAR",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9735141",
 "name": "IMO 9735141 (\"MIDVOLGA-3\")",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6428,7 +7535,8 @@
 "name": "YAZ",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6436,7 +7544,8 @@
 "name": "SIG",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6445,7 +7554,8 @@
 "mmsi": "352002442",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6453,7 +7563,8 @@
 "name": "ALARA",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6485,7 +7596,8 @@
 "name": "KUPAVA",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6494,7 +7606,8 @@
 "mmsi": "273397870",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6503,7 +7616,8 @@
 "mmsi": "273398780",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6512,7 +7626,8 @@
 "mmsi": "273391790",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6553,7 +7668,8 @@
 "mmsi": "273392990",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6562,7 +7678,8 @@
 "mmsi": "273385570",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6571,7 +7688,8 @@
 "mmsi": "273391160",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6596,7 +7714,8 @@
 "mmsi": "273375360",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6621,7 +7740,8 @@
 "mmsi": "273382620",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6641,6 +7761,14 @@
 ]
 },
 {
+"imo": "9809538",
+"name": "KUMANA",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
+]
+},
+{
 "imo": "9817779",
 "name": "TIS",
 "mmsi": "273396740",
@@ -6654,7 +7782,8 @@
 "mmsi": "314905000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6662,7 +7791,8 @@
 "name": "HUNTER STAR",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6671,7 +7801,8 @@
 "mmsi": "352003251",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6680,7 +7811,8 @@
 "mmsi": "352003207",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6689,7 +7821,16 @@
 "mmsi": "273212310",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
+]
+},
+{
+"imo": "9838864",
+"name": "SVYATOI KNYAZ VLADIMIR",
+"mmsi": "",
+"lists": [
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6698,7 +7839,8 @@
 "mmsi": "273211040",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6707,7 +7849,8 @@
 "mmsi": "273295230",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6716,7 +7859,8 @@
 "mmsi": "273616040",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6741,7 +7885,8 @@
 "mmsi": "314906000",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6789,7 +7934,8 @@
 "name": "SCF LA PEROUSE",
 "mmsi": "",
 "lists": [
-"gb_fcdo_sanctions"
+"gb_fcdo_sanctions",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6822,7 +7968,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6831,7 +7978,8 @@
 "mmsi": "273618730",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6840,7 +7988,8 @@
 "mmsi": "273611590",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6857,7 +8006,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6882,7 +8032,8 @@
 "mmsi": "273259920",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6955,7 +8106,8 @@
 "mmsi": "352002203",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -6964,7 +8116,8 @@
 "mmsi": "352002208",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -7021,7 +8174,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -7087,7 +8241,8 @@
 "name": "SAAM FSU",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -7095,7 +8250,8 @@
 "name": "KORYAK FSU",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -7167,7 +8323,8 @@
 "name": "NAN FENG ZHI XING",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -7183,7 +8340,8 @@
 "name": "NIKOLAY ANISHCHENKOV",
 "mmsi": "",
 "lists": [
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -7192,7 +8350,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -7201,7 +8360,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -7210,7 +8370,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 },
 {
@@ -7219,7 +8380,8 @@
 "mmsi": "",
 "lists": [
 "gb_fcdo_sanctions",
-"us_ofac_sdn"
+"us_ofac_sdn",
+"eu_journal_sanctions"
 ]
 }
 ]

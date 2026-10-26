@@ -141,3 +141,4 @@ for n,o in (("map.json",mapj),("tracks.json",tracks),("profiles.json",prof)):
     json.dump(o,open(os.path.join(D,n),"w"),separators=(",",":"),ensure_ascii=False)
 print("near-infra",sum(1 for e in vev if e.get("inf")),"events90",collections.Counter(e["t"] for e in vev),"sarcells",len(mapj["sar"]),"tracks",len(tracks),"csvpts",extra,
       "pts/track median",sorted(len(t) for t in tracks.values())[len(tracks)//2] if tracks else 0)
+exec(open(os.path.join(H,"story.py")).read())

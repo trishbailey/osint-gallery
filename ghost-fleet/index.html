@@ -1,15 +1,16 @@
-<!doctype html><html lang="en"><head><script data-slash-fix>if(location.pathname==="/ghost-fleet")location.replace("/ghost-fleet/"+location.search+location.hash);</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html><html lang="en"><head>
+<link rel="icon" href="/icons/ghost-fleet.svg" type="image/svg+xml"><script data-slash-fix>if(location.pathname==="/ghost-fleet")location.replace("/ghost-fleet/"+location.search+location.hash);</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Russia's Shadow Fleet Tracker | Beacon Intelligence Group</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Z61EKRP8QV');</script>
-<link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css?v=1"></head><body>
+<link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css?v=2"></head><body>
 <header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">SHADOW FLEET · v1</span></a>
 <nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#map">Map</a><a href="#vessels">Ships</a><a href="../ukraine-money-flows/">Ukraine Money Flows</a></nav></header>
 <div class="layout">
 <button id="ftoggle" aria-expanded="false" aria-controls="side">☰ Filters and layers</button>
 <aside id="side" aria-label="Map filters and key">
- <h2 class="sh" id="tprompt">Show on map</h2>
- <div class="legend" id="legend" role="group" aria-labelledby="tprompt"></div>
+ <h2 class="rawonly sh" id="tprompt">Show on map</h2>
+ <div class="rawonly legend" id="legend" role="group" aria-labelledby="tprompt"></div>
  <h2 class="sh">Seabed infrastructure</h2>
  <button class="hl wide" id="infra" aria-pressed="false"><span class="ln" style="background:#5cc98a"></span>Undersea cables <span class="ln" style="background:#f2d16b"></span>Pipelines (Europe)</button>
  <h2 class="sh">Reference layers</h2>
@@ -17,12 +18,12 @@
  <button class="hl wide" id="wpib" aria-pressed="false"><span class="sw sq" style="background:#d97cb0"></span>World ports</button>
  <button class="hl wide" id="jamb" aria-pressed="false"><span class="sw sq" style="background:#b06ac9"></span>GPS interference <span class="sw sq" style="background:#d94f8a"></span>strong</button>
  <div class="muted">GPS interference follows the Ship movements date.</div>
- <h2 class="sh"><label for="from">Dates shown</label></h2>
- <div class="dates"><input type="range" id="from" aria-label="Start date"><input type="range" id="to" aria-label="End date"><div id="datelbl" class="muted"></div></div>
- <h2 class="sh"><label for="q">Find a ship</label></h2>
- <input id="q" list="names" placeholder="Name or IMO number" autocomplete="off"><datalist id="names"></datalist>
- <h2 class="sh">Ship movements</h2>
- <div class="anim">
+ <h2 class="rawonly sh"><label for="from">Dates shown</label></h2>
+ <div class="rawonly dates"><input type="range" id="from" aria-label="Start date"><input type="range" id="to" aria-label="End date"><div id="datelbl" class="muted"></div></div>
+ <h2 class="rawonly sh"><label for="q">Find a ship</label></h2>
+ <input class="rawonly" id="q" list="names" placeholder="Name or IMO number" autocomplete="off"><datalist id="names"></datalist>
+ <h2 class="rawonly sh">Ship movements</h2>
+ <div class="rawonly anim">
   <button id="play" aria-pressed="false">▶ Play</button>
   <div class="seg" role="group" aria-label="Which ships move"><button id="aAll" class="on" aria-pressed="true">All ships</button><button id="aOne" aria-pressed="false">Selected ship</button></div>
   <label class="muted" for="speed">Speed</label><select id="speed"><option value="0.5">1 day per 2 seconds</option><option value="1" selected>1 day per second</option><option value="3">3 days per second</option><option value="7">1 week per second</option></select>
@@ -31,11 +32,16 @@
 </aside>
 <main>
 <h1 id="title">Where Russia's shadow-fleet tankers go</h1>
-<p class="intro">Russia moves much of its seaborne oil on ageing tankers with opaque owners, frequent name and flag changes and patchy insurance, often called the shadow fleet. This page follows about 660 of these tankers, using public ship-tracking data from Global Fishing Watch for the last 90 days: port calls, loitering at sea (a common sign of ship-to-ship oil transfers), switched-off AIS transponders, and radar satellite detections of ships that broadcast no identity. Use the left panel to choose layers, dates or one ship, press Play to watch the fleet move, and click any ship for its history.</p>
-<div class="stats" id="stats" aria-live="polite"></div>
-<div class="banner" role="note">Hover a dot for details; click a ship's dot or table row to open its profile.</div>
+<p class="intro">Russia moves much of its seaborne oil on ageing tankers with opaque owners, frequent name and flag changes and patchy insurance, often called the shadow fleet. This page follows about 720 of these tankers using public ship-tracking data from Global Fishing Watch, and shows how the fleet keeps oil moving: where it loads, where it waits, how ships change identity, who runs them and when they go dark. Step through the story below, or switch to Explore to use the map yourself.</p>
+<h2 class="sh2">What the data shows</h2>
+<div id="heads" class="heads"></div>
+<div id="modes" class="seg modes" role="group" aria-label="View"><button data-m="story" aria-pressed="true">The story</button><button data-m="explore" aria-pressed="false">Explore the map</button></div>
+<div class="exonly banner"><label><input type="checkbox" id="rawt"> Show every event, filters and ship animation</label> <span class="muted">Default view: trips from Russian loading ports (line width = number of trips) and transfer areas (circle size = loitering). Lines link start and end points only; they are not the routes sailed.</span></div>
+<div class="rawonly stats" id="stats" aria-live="polite"></div>
+<div id="story" class="stonly"><div class="snav"><button id="prev" aria-label="Previous chapter">‹</button><span id="cpos"></span><button id="next" aria-label="Next chapter">›</button></div><div id="chapters" class="chapters"></div></div>
 <div id="map" role="region" aria-label="Map of shadow-fleet tanker activity"></div>
-<p class="note">Moving ships travel in straight lines between recorded positions (port calls, loitering and transponder-gap points), so a path may cross land. Radar detections cover selected chokepoints only.</p>
+
+<p class="note rawonly">Moving ships travel in straight lines between recorded positions (port calls, loitering and transponder-gap points), so a path may cross land. Radar detections cover selected chokepoints only.</p>
 <details id="explainer" class="grp" open><summary><h2>The shadow fleet in brief</h2></summary>
 <div class="cards">
 <details class="card" open><summary>Why it is called a shadow fleet</summary>
@@ -59,12 +65,12 @@
 <details id="vessels" class="grp" open><summary><h2>Ships by activity, last 90 days</h2></summary><p class="muted">Click a ship to open its profile.</p><div id="vt"></div></details>
 <details class="sources"><summary>Sources and notes</summary><ol id="srcs">
 <li><a href="https://globalfishingwatch.org" target="_blank" rel="noopener">Powered by Global Fishing Watch.</a> Datasets: public-global-port-visits-events, public-global-loitering-events, public-global-gaps-events, public-global-encounters-events, public-global-sar-presence (v5.0), <span id="drange"></span>. Data accessed <span id="acc"></span> at https://globalfishingwatch.org/our-apis/. Events are model estimates from AIS and satellite radar; licence CC BY-NC 4.0.</li>
-<li>Ship list compiled from public UK and US government designations of tankers carrying Russian oil, via <a href="https://www.opensanctions.org" target="_blank" rel="noopener">OpenSanctions</a>.</li>
+<li>Ship list compiled from public UK, US and EU government lists of tankers carrying Russian oil, via <a href="https://www.opensanctions.org" target="_blank" rel="noopener">OpenSanctions</a>.</li>
 <li>Undersea telecom cables: TeleGeography Submarine Cable Map (CC BY-NC-SA). European pipelines: EMODnet Human Activities (CC BY 4.0). Simplified to about 1 km.</li>
 <li>Maritime boundaries: Marine Regions, Flanders Marine Institute (VLIZ), CC BY 4.0. Ports: NGA World Port Index (Pub. 150), public domain. Company roles: Defence Intelligence of Ukraine War&amp;Sanctions data via OpenSanctions (CC BY-NC 4.0). GPS interference: gpsjam.org, from ADS-B Exchange aircraft reports.</li>
 <li>Basemap: <a href="https://www.naturalearthdata.com" target="_blank" rel="noopener">Natural Earth</a>. Map library: Leaflet.</li>
 </ol></details>
 </main></div>
 <div id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="ptitle" hidden><button id="pclose" aria-label="Close profile">✕</button><div id="pbody"></div></div>
-<script src="vendor/leaflet.js"></script><script src="app.js?v=1"></script>
+<script src="vendor/leaflet.js"></script><script src="app.js?v=2"></script><script src="story.js?v=2"></script>
 </body></html>
