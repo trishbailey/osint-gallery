@@ -1,0 +1,37 @@
+name: sync-dashboards
+# Pulls each live dashboard's main branch (see dashboards.json), builds it,
+# and commits the output into /<slug>/. Render auto-deploys beacon-tools on push.
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      slugs: {description: "Space-separated slugs (blank = all)", required: false, default: ""}
+  repository_dispatch:
+    types: [dashboard-updated]
+  push:
+    branches: [main]
+    paths: ["dashboards.json", "scripts/sync_dashboards.py", ".github/workflows/sync-dashboards.yml"]
+permissions:
+  contents: write
+concurrency: {group: sync-dashboards, cancel-in-progress: false}
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Build dashboards into subpaths
+        env:
+          DASHBOARD_READ_TOKEN: ${{ secrets.DASHBOARD_READ_TOKEN }}
+        run: python3 scripts/sync_dashboards.py ${{ github.event.inputs.slugs }} ${{ github.event.client_payload.slug }}
+      - name: Commit if changed
+        run: |
+          git config user.name "beacon-dashboard-sync"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "No dashboard changes"; exit 0; fi
+          git commit -m "Sync dashboards: $(cat */.source 2>/dev/null | tr '\n' ' ')"
+          git pull --rebase origin main && git push

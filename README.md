@@ -42,3 +42,58 @@ The directory lists Spotlight X, Domain Recon, Information Operations Spotlight,
 ## Dashboards
 
 The page has two separate sections: **Tools** (the `tools` array in `tools.json`) and **Dashboards** (the `dashboards` array). To add a dashboard (e.g. Africa Brief, Cartel, Water Security, Belt and Road), append an entry to `dashboards` with `id`, `name`, `blurb`, `icon` (optional), `enterUrl`, and `status`. Only entries with `status: "live"` and a real https URL are shown, so an entry can sit as `"soon"` until it launches.
+
+## Dashboards: how publishing works
+
+All Beacon dashboards are served from this one Render static site (`beacon-tools`), each under its own subpath. Nothing is copied by hand.
+
+| Subpath | Source repo (branch `main`) | Build command | Publish dir | Status |
+|---|---|---|---|---|
+| `/world-brief/` | `trishbailey/world-brief` (private) | none | `public/` | live |
+| `/critical-minerals/` | `trishbailey/critical-minerals` (private) | none | `public/` | live |
+| `/ukraine-money-flows/` | `trishbailey/ukraine-money-flows` (private) | none | `public/` | live |
+| `/cartel/` | `trishbailey/cartel-dashboard` (public) | `bash pipeline/build.sh` | `public/` | live |
+| `/africa-brief/` | in this repo (`africa-brief/`, own workflow) | | | live, not synced |
+| `/water-security/` | (not yet) | | `public/` | reserved |
+| `/belt-and-road/` | in this repo (`belt-and-road/`, own workflow) | | | live, not synced |
+| `/middle-east/` | (not yet) | | `public/` | reserved |
+| `/indo-pacific/` | (not yet) | | `public/` | reserved |
+| `/latin-america/` | (not yet) | | `public/` | reserved |
+
+The single source of truth is `dashboards.json`. Reserved subpaths hold a "Coming soon" page until they go live. Entries marked `in-repo` (Africa Brief, Belt and Road) are built directly in this repo by their own workflows, and the sync never touches them. Never add a sync entry for a slug that already has an in-repo folder.
+
+### How an update reaches the live site
+
+1. The dashboard bot pushes to **its own repo's `main`** as usual. It does not touch this repo.
+2. Every 15 minutes, `.github/workflows/sync-dashboards.yml` in this repo runs `scripts/sync_dashboards.py`. For each `live` entry in `dashboards.json` it:
+   - shallow-clones the repo's `main` branch,
+   - runs the `build` command, if there is one,
+   - copies the publish dir (`public/`) to a temp folder and rewrites root-relative links (`href="/x"`, `src="/x"`, `url(/x)`, `fetch("/x")`) to `/<slug>/x`. It also changes the old `*.onrender.com` URL in og:url, canonical and og:image to `https://beacon-tools.onrender.com/<slug>/`, and adds the second GA tag (`G-FE6CZGWX0J`) next to `G-Z61EKRP8QV`,
+   - replaces `/<slug>/` **only if clone and build both succeeded**. If anything fails, the previous version stays live,
+   - points that dashboard's card in `tools.json` at `/<slug>/`.
+3. If anything changed, the workflow commits it to `main` and Render auto-deploys `beacon-tools`. An update is normally live 15 to 25 minutes after the dashboard repo's push. GitHub's scheduled runs can occasionally be late.
+
+Each subpath has a `.source` file showing the repo commit that is live (e.g. `/cartel/.source`).
+
+### Rules for a dashboard bot (follow these and it just works)
+
+- Commit the finished, validated site to `public/` on `main` (or provide a `build` command that produces it). The page must be `public/index.html`.
+- Only commit to `main` after validation passes. Whatever is on `main` gets published (World Brief already works this way: `render-brief` only commits after `validate_reasoner.py` passes).
+- Use relative links (`style.css`, `data/x.json`) or root-relative links (`/style.css`). Both work, because root-relative links are rewritten to the subpath. Don't build URLs in JavaScript from `location.origin + "/..."`, since those are not rewritten. Use relative paths instead.
+- Keep the GA tag `G-Z61EKRP8QV` in each page's `<head>`. The second tag is added automatically.
+- Optional, for instant publishing: from your repo's Action, send a `repository_dispatch` of type `dashboard-updated` to `trishbailey/osint-gallery` with `{"slug": "<slug>"}`. That needs a token with access to this repo. Without it, the 15-minute schedule picks the update up.
+
+### Adding a new dashboard (e.g. Water Security)
+
+1. In `dashboards.json`, find the reserved entry, set `repo` (`owner/name`), `private`, `build` (or `""`), `publish` (usually `public`), `oldUrl` (or `""`), and change `status` to `live`.
+2. Add a card to the `dashboards` array in `tools.json` with `"id"` equal to the entry's `cardId` (the slug) and `"status": "live"`. The sync sets its `enterUrl` to `/<slug>/` after the first successful build.
+3. If the repo is private, give the `DASHBOARD_READ_TOKEN` secret read access to it (see below).
+4. Merge. The push runs the sync immediately (Actions → sync-dashboards → Run workflow also works, optionally with a slug).
+
+### Secret needed for private repos
+
+`DASHBOARD_READ_TOKEN` is a repository secret in `trishbailey/osint-gallery`. It is a fine-grained GitHub token with **Contents: Read-only** on the private dashboard repos (`world-brief`, `critical-minerals`, `ukraine-money-flows`, plus future ones). Until it is set, private dashboards are skipped and the log says so. Public repos (e.g. `cartel-dashboard`) need no token. The token is never printed. The script redacts it from error output.
+
+### Cost
+
+$0. This repo is public, so GitHub Actions minutes are free. `beacon-tools` stays a free Render static site with no build step (`echo no-build`), and no new Render services are added.

@@ -1,0 +1,108 @@
+{
+  "_comment": "Dashboards hosted inside beacon-tools. The sync workflow (.github/workflows/sync-dashboards.yml) builds each 'live' entry from its repo's main branch into /<slug>/. See README 'Dashboards: how publishing works'.",
+  "site": "https://beacon-tools.onrender.com",
+  "dashboards": [
+    {
+      "slug": "world-brief",
+      "repo": "trishbailey/world-brief",
+      "private": true,
+      "build": "",
+      "publish": "public",
+      "oldUrl": "https://world-brief-tpnb.onrender.com",
+      "status": "live",
+      "cardId": "world-brief"
+    },
+    {
+      "slug": "critical-minerals",
+      "repo": "trishbailey/critical-minerals",
+      "private": true,
+      "build": "",
+      "publish": "public",
+      "oldUrl": "https://critical-minerals-pzcr.onrender.com",
+      "status": "live",
+      "cardId": "critical-minerals"
+    },
+    {
+      "slug": "ukraine-money-flows",
+      "repo": "trishbailey/ukraine-money-flows",
+      "private": true,
+      "build": "",
+      "publish": "public",
+      "oldUrl": "https://ukraine-money-flows.onrender.com",
+      "status": "live",
+      "cardId": "ukraine-money-flows"
+    },
+    {
+      "slug": "cartel",
+      "repo": "trishbailey/cartel-dashboard",
+      "private": false,
+      "build": "bash pipeline/build.sh",
+      "publish": "public",
+      "oldUrl": "https://cartel-dashboard.onrender.com",
+      "status": "live",
+      "cardId": "cartel"
+    },
+    {
+      "slug": "africa-brief",
+      "repo": "trishbailey/osint-gallery",
+      "private": false,
+      "build": "",
+      "publish": "",
+      "oldUrl": "",
+      "status": "in-repo",
+      "cardId": "africa-brief",
+      "note": "Lives directly in this repo under /africa-brief/ with its own workflow; not touched by the sync."
+    },
+    {
+      "slug": "water-security",
+      "repo": "",
+      "private": true,
+      "build": "",
+      "publish": "public",
+      "oldUrl": "",
+      "status": "reserved",
+      "cardId": "water-security"
+    },
+    {
+      "slug": "belt-and-road",
+      "repo": "trishbailey/osint-gallery",
+      "private": false,
+      "build": "",
+      "publish": "",
+      "oldUrl": "",
+      "status": "in-repo",
+      "cardId": "belt-and-road",
+      "note": "Lives directly in this repo under /belt-and-road/ with its own workflow; not touched by the sync."
+    },
+    {
+      "slug": "middle-east",
+      "repo": "",
+      "private": true,
+      "build": "",
+      "publish": "public",
+      "oldUrl": "",
+      "status": "reserved",
+      "cardId": "middle-east"
+    },
+    {
+      "slug": "indo-pacific",
+      "repo": "",
+      "private": true,
+      "build": "",
+      "publish": "public",
+      "oldUrl": "",
+      "status": "reserved",
+      "cardId": "indo-pacific"
+    },
+    {
+      "slug": "latin-america",
+      "repo": "",
+      "private": true,
+      "build": "",
+      "publish": "public",
+      "oldUrl": "",
+      "status": "reserved",
+      "cardId": "latin-america"
+    }
+  ]
+}
