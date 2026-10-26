@@ -39,6 +39,11 @@ def rewrite(text, slug, old_url, ext):
     if ext in (".html", ".htm") and GA_MAIN in text and GA_SITE not in text:
         text = re.sub(r"(gtag\(\s*['\"]config['\"]\s*,\s*['\"]" + GA_MAIN + r"['\"]\s*\);?)",
                       r"\1gtag('config','" + GA_SITE + "');", text, count=1)
+    if ext in (".html", ".htm") and "data-slash-fix" not in text:
+        # /<slug> (no trailing slash) would break relative asset paths; bounce to /<slug>/
+        fix = ('<script data-slash-fix>if(location.pathname==="/' + slug + '")'
+               'location.replace("/' + slug + '/"+location.search+location.hash);</script>')
+        text = re.sub(r"(<head[^>]*>)", lambda m: m.group(1) + fix, text, count=1, flags=re.I)
     return text
 
 def build(d):
