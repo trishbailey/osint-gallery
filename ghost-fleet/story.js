@@ -23,7 +23,7 @@ const CLS=GF.CL,K=S.classes||{},NC=Object.values(K).reduce((a,b)=>a+b,0);
 function lastPos(){const last={};M.events.forEach(e=>{if(!last[e.imo]||e.s>last[e.imo].s)last[e.imo]=e});const b=[];
  Object.values(last).forEach(e=>{const c=(GF.P[e.imo]||{}).cls||"other";if(c==="other")return;L.circleMarker([e.lat,e.lon],{renderer:cv,radius:5,color:"#0b1526",weight:1,fillColor:CLS[c][1],fillOpacity:.95}).bindTooltip(`<b>${esc(title((GF.P[e.imo]||{}).name||e.imo))}</b><br>${CLS[c][0]}<br>Last recorded ${fmt(e.s)}`).on("click",()=>openP(e.imo)).addTo(lay);b.push([e.lat,e.lon])});return b}
 const B3=["CHN","IND","TUR"],B3C={CHN:"#e05a6a",IND:"#e8913a",TUR:"#4fa3e0"},B3F={CHN:"China",IND:"India",TUR:"Turkey"},B3P={CHN:[34,104],IND:[21,78.5],TUR:[39,35]},B3N=Object.fromEntries(S.dest);
-function big3(){L.geoJSON(GF.LAND,{filter:f=>Object.values(B3F).includes(f.properties.n),style:f=>{const c=B3.find(k=>B3F[k]===f.properties.n);return{color:"#0b1526",weight:1,fillColor:B3C[c],fillOpacity:.7}},interactive:false}).addTo(lay);
+function big3(){L.geoJSON(GF.LAND,{filter:f=>Object.values(B3F).includes(f.properties.n),style:f=>{const c=B3.find(k=>B3F[k]===f.properties.n);return{color:"#0b1526",weight:1,fillColor:B3C[c],fillOpacity:.7}},onEachFeature:(f,l)=>l.bindTooltip(esc(f.properties.n),{sticky:true})}).addTo(lay);
  const fs=S.flows.filter(f=>B3.includes(f.to)),mx=Math.max(...fs.map(f=>f.n));
  fs.forEach(f=>{const pts=curve(f.a,B3P[f.to]),w=2+9*f.n/mx;L.polyline(pts,{renderer:cv,color:"#0b1526",weight:w+3,opacity:.9}).addTo(lay);
   L.polyline(pts,{renderer:cv,color:B3C[f.to],weight:w,opacity:1}).bindTooltip(`<b>${esc(f.from)} → ${esc(cn(f.to))}</b><br>${f.n} trips in 12 months`,{sticky:true}).addTo(lay)});
@@ -36,7 +36,7 @@ function big3(){L.geoJSON(GF.LAND,{filter:f=>Object.values(B3F).includes(f.prope
   L.marker(an,{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="pl">${esc(f.from)}</div>`}),interactive:false}).addTo(lay)});
  // country names: small and light; counts in sea callouts joined by leader lines
  const CNP={CHN:[37.5,93],IND:[23.5,77],TUR:[38.6,32.2]},BA={CHN:[16,115],IND:[13,63],TUR:ph?[30.3,33.5]:[33,21]};
- B3.forEach(c=>{L.marker(CNP[c],{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="cn3">${B3F[c]}</div>`}),interactive:false}).addTo(lay);
+ B3.forEach(c=>{
   L.polyline([B3P[c],BA[c]],{color:B3C[c],weight:1.5,opacity:1,interactive:false}).addTo(lay);
   L.marker(BA[c],{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="b3l" style="border-color:${B3C[c]}"><b style="color:${B3C[c]}">${B3N[c]||0}</b><span>trips · ${Math.round(100*(B3N[c]||0)/S.voyages)}%</span></div>`}),interactive:false}).addTo(lay)});
  return ph?[[8,14],[72,138]]:[[8,20],[72,138]]}
