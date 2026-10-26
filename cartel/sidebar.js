@@ -11,3 +11,10 @@ fetch("data/group_countries.json").then(r=>r.json()).catch(()=>({groups:{}})).th
    b.dataset.full=1;b.innerHTML=(dot?dot.outerHTML:"")+`<span class="gname">${esc(FULL[id]||b.textContent.trim())}</span>`+(fl?`<span class="gflags">${fl}</span>`:"")});
   if((cs.length&&document.querySelector("#grouplegend .chip[data-g='']"))||++n>60)clearInterval(t)},250)});
 })();
+/* Desktop: lock the sidebar height to the map box so the route toggles stay beside the map */
+(function(){
+const mq=window.matchMedia("(min-width:821px)"),side=document.querySelector(".mapside"),mw=document.querySelector(".maprow>.mapwrap");
+if(!side||!mw)return;
+const fit=()=>{if(!mq.matches){side.style.height="";return}side.style.height=mw.getBoundingClientRect().height+"px"};
+if(window.ResizeObserver)new ResizeObserver(fit).observe(mw);window.addEventListener("resize",fit);mq.addEventListener&&mq.addEventListener("change",fit);fit();
+})();
