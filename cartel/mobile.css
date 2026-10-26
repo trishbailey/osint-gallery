@@ -1,0 +1,63 @@
+/* Phone layout (<=640px). Desktop is untouched: every rule lives inside this media query, and mobile.js only acts when it matches. No colours are defined here beyond the shared theme variables. */
+@media (max-width:640px){
+header{padding:10px 14px 8px;flex-direction:column;align-items:flex-start;gap:4px}
+h1{font-size:20px}#asof{font-size:13px}
+main{padding:10px 10px;gap:12px}
+/* compact summary chips */
+.kpis{display:flex;overflow-x:auto;gap:8px;margin:0;padding-bottom:4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.kpis .kpi{flex:0 0 auto;max-width:200px;padding:6px 10px;border-top-width:2px;border-radius:16px;scroll-snap-align:start}
+.kpis .kpi .v{font-size:18px}.kpis .kpi .l,.kpis .kpi .s{font-size:13px;line-height:1.3}
+.tile{padding:10px}
+.tilehead{flex-direction:column;align-items:flex-start;gap:2px}
+/* map: tip shortened, sidebar becomes a filter sheet behind one button */
+.maptile .tilehead>.muted,#ixnote{display:none!important}
+.mprompt{font-size:13px;color:var(--text);margin:2px 0 8px}
+.mfbar{display:flex;gap:8px;align-items:center;margin:0 0 8px}
+.mfbtn{flex:1 1 auto;min-height:44px;border-radius:22px;border:1px solid var(--gold);background:var(--panel2);color:var(--text);font-size:15px;font-weight:600;cursor:pointer}
+.mfstate{font-size:13px;color:var(--muted);flex:0 1 auto;max-width:45%}
+.maprow{display:block}
+.mapside{display:none}
+.mapside.msheet{display:block;position:fixed;left:0;right:0;bottom:0;top:auto;z-index:30;max-height:80vh;overflow:auto;max-width:none;width:100%;border-radius:14px 14px 0 0;border:0;border-top:2px solid var(--gold);padding:8px 14px 18px;box-shadow:0 -10px 30px rgba(0,0,0,.5)}
+.mshhead{display:flex;justify-content:space-between;align-items:center;position:sticky;top:-8px;background:var(--panel2);padding:6px 0;z-index:1}
+.mshhead b{font-size:16px}.mshdone{min-height:44px;min-width:80px;border-radius:22px;border:1px solid var(--gold);background:#1c2c4b;color:var(--text);font-size:15px;cursor:pointer}
+#grouplegend.sidechips .chip{min-height:44px;font-size:14px}
+.sidelayers label,.mapside #layers label,.mapside #routebox label{min-height:44px!important;font-size:14px}
+.mback{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:25;display:none}.mback.on{display:block}
+/* region clusters on the map */
+.mclu{cursor:pointer}.mclu text{font-size:14px;font-weight:700;pointer-events:none}
+.mclu .ml{font-size:13px;font-weight:600;fill:var(--text);paint-order:stroke;stroke:#0b1526;stroke-width:3.5px;stroke-linejoin:round}
+.mapwrap .overlay{font-size:13px}
+.zoombtns .zb{width:44px;height:44px;min-height:44px}
+/* details drawer becomes a bottom sheet */
+#drawer{top:auto;bottom:0;left:0;right:0;width:100%;max-width:none;height:auto;max-height:82vh;border-left:0;border-top:2px solid var(--gold);border-radius:14px 14px 0 0;transform:translateY(105%);padding:22px 16px 20px;box-shadow:0 -10px 30px rgba(0,0,0,.5);font-size:14px}
+#drawer::before{content:"";position:absolute;left:50%;top:8px;width:44px;height:5px;margin-left:-22px;border-radius:3px;background:var(--line)}
+#drawer.on{transform:none}#dclose{width:44px;height:44px;top:4px;right:6px}
+#dbody img{max-width:100%;height:auto}
+/* grouped, collapsible card sections; one card per row */
+.mgrp{border:1px solid var(--line);border-radius:8px;margin:8px 0;background:var(--panel2)}
+.mgrp>summary{list-style:none;cursor:pointer;min-height:48px;display:flex;align-items:center;justify-content:space-between;padding:6px 12px;font-size:15px;font-weight:600}
+.mgrp>summary::-webkit-details-marker{display:none}
+.mgrp>summary .mcnt{font-size:13px;color:var(--muted);font-weight:400}
+.mgrp>summary::after{content:"▾";color:var(--gold);margin-left:8px}.mgrp[open]>summary::after{content:"▴"}
+.mgrp>.mgbody{display:flex;flex-direction:column;gap:8px;padding:0 8px 10px}
+.pfgrid,.ldgrid,.nowgrid,.cards,.stories,.arcs,.two,.row2,.row2b,.row3{grid-template-columns:1fr!important}
+#profiles .pfcard{width:100%;max-width:none}
+#profiles .mgbody .pfimg,#profiles .mgbody .pfmem,#profiles .mgbody .pfmore,#profiles .mgbody .pfszb,#profiles .mgbody .pffound{display:none}
+#profiles .mgbody .pfcard h3{margin-top:0}
+#profiles .mgbody .pfcn{display:none}
+.mdet{min-height:44px;margin-top:8px;width:100%;border-radius:22px;border:1px solid var(--gold);background:#1c2c4b;color:var(--text);font-size:14px;cursor:pointer}
+#dbody .pfcard .pfimg img{width:100%}
+/* wide graphics scroll sideways at full size; text stays at least 13px */
+.mscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.mswipe{font-size:13px;color:var(--gold);margin:4px 0}
+#netsvg{width:auto!important}
+.tl-svg .tl-ic,.tl-split{font-size:13px}.tl-fto{font-size:13px}
+.tl-tip{max-width:80vw}
+svg text{font-size:max(13px,1em)}
+.bar{grid-template-columns:110px 1fr 44px}
+footer{padding:12px 14px}
+.pfcredits,.pfcredits *,.small{font-size:13px!important}
+}
+@media (max-width:640px){#drawer:not(.on){visibility:hidden}.ixhint{display:none!important}}
+@media (max-width:640px){#mapsvg.mclon text.lbl,#mapsvg.mclon text.lblm{display:none}}
+@media (max-width:640px){#mapsvg.mclon .ctl{display:none}#drawer{z-index:40}}
