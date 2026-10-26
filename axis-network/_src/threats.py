@@ -40,6 +40,25 @@ CASE = dict(warn='https://t.me/army21ye/3878', claim='https://t.me/MilitaryMedia
         ('Reuters', 'https://www.al-monitor.com/originals/2026/10/saudi-aramco-headquarters-suffered-extensive-damage-houthi-attack-sources-say', 'Reuters via Al-Monitor, “Saudi Aramco headquarters suffered extensive damage in Houthi attack, sources say”, Oct 14, 2026')])
 AIR_EX = 'https://t.me/MilitaryMediaY/47023'  # Oct 12 statement renewing the warning to airlines
 MIL = ['militarymediay', 'army21ye']
+# map sites: label -> (short map label, type, lat, lon, regex). Only named, locatable places.
+SITES = {
+ 'kkia': ('King Khalid Airport', 'airport', 24.96, 46.70, FAC['King Khalid International Airport, Riyadh']),
+ 'ryref': ('Riyadh refinery', 'energy', 24.55, 46.86, FAC['Aramco refinery, Riyadh']),
+ 'aramhq': ('Aramco HQ (Dhahran)', 'energy', 26.31, 50.14, FAC['Aramco headquarters, Dhahran/Dammam']),
+ 'rabigh': ('Rabigh refinery', 'energy', 22.80, 39.03, FAC['Rabigh refinery']),
+ 'abha': ('Abha airport', 'airport', 18.24, 42.66, FAC['Abha airport']),
+ 'khamis': ('Khamis Mushait air base', 'military', 18.30, 42.80, FAC['Khamis Mushait air base']),
+ 'jizanap': ('Jizan airport', 'airport', 16.90, 42.59, r'مطار (?:الملك عبدالله|جيزان|جازان)|Jizan airport'),
+ 'najranap': ('Najran airport', 'airport', 17.61, 44.42, r'مطار نجران|Najran airport'),
+ 'jedap': ('Jeddah airport', 'airport', 21.68, 39.16, r'مطار (?:الملك عبد ?العزيز|جدة)|Jeddah airport'),
+ 'yanbu': ('Yanbu oil port', 'energy', 24.09, 38.06, FAC['Yanbu oil port']),
+ 'shaybah': ('Shaybah oil field', 'energy', 22.51, 53.97, r'الشيبة|Shaybah'),
+ 'dmmap': ('King Fahd Airport (Dammam)', 'airport', 26.47, 49.80, FAC['King Fahd International Airport, Dammam']),
+}
+SITE_MIN = 5  # a site gets its own bubble when named in this many threat posts in the last 30 days
+GEN = [('airport (unnamed)', r'مطار|مطارات|airport'), ('energy (unnamed)', r'أرامكو|ارامكو|مصفا|منشآت نفطية|نفط|Aramco|refiner|oil'),
+       ('military (unnamed)', r'قاعدة|قواعد|معسكر|base'), ('government', r'وزارة|قصر|الديوان|ministry|palace')]
+WARN = r'تهيب|نهيب|الإخلاء|بالإخلاء|إخلاء|evacuat|نحذر|we warn|will be targeted|سيتم استهداف|سنستهدف'
 
 def load(path):
     if path.endswith('.pkl'): d = pd.read_pickle(path)
@@ -81,13 +100,55 @@ def build(posts_path, copies_csv=None):
         m = th[th.text.str.contains(pat, regex=True)]
         if len(m) and m.date.min() >= W['last7'][0] and not any(f['l'] == lab for f in flag):
             flag.append(dict(l=lab, why='first', n7=int(len(m)), first=str(m.date.min().date()), url=m.sort_values('date').url.iloc[0]))
+    # named sites (own bubbles) and what the general city/province bubbles actually name
+    sites = []
+    for k, (lab, ty, la, lo, pat) in SITES.items():
+        r = dict(k=k, l=lab, t=ty, la=la, lo=lo)
+        for w in ('base', 'last30', 'last7', 'prior21'): n = len(cnt(pat, w)); r[w] = [n, rate(n, w)]
+        x = cnt(pat, 'last30').sort_values('date', ascending=False)
+        r['ex'] = [[u, str(t.date())] for u, t in zip(x.url.head(3), x.date.head(3))]
+        if r['last30'][0] >= SITE_MIN: sites.append(r)
+    allsite = '|'.join(f'(?:{v[4]})' for v in SITES.values())
+    def kinds(pat):
+        x = cnt(pat, 'last30'); out = {}
+        for k, (lab, ty, *_ , sp) in SITES.items():
+            n = int(x.text.str.contains(sp, regex=True).sum())
+            if n: out[lab] = n
+        rest = x[~x.text.str.contains(allsite, regex=True)]; gen = {}
+        for _, t in rest.text.items():
+            g = next((g for g, gp in GEN if re.search(gp, t, re.I)), 'place named generally')
+            gen[g] = gen.get(g, 0) + 1
+        ex = rest.sort_values('date', ascending=False)
+        return dict(n=int(len(x)), named=out, general=gen, ngen=int(len(rest)), ex=[[u, str(t.date())] for u, t in zip(ex.url.head(2), ex.date.head(2))])
+    kind = {k: kinds(CHART[k][2]) for k in ('riyadh', 'aramco', 'south')}
+    # this week (threats only): newest warnings and claimed strikes following them
+    CL = r'بيان القوات المسلحة|عملية عسكرية|عمليات عسكرية|استهدفت|استهدفنا|targeted'
+    def tg(t):
+        n = [v[0] for v in SITES.values() if re.search(v[4], t)]
+        return n or [CHART[k][0].split(' (')[0] for k in CHART if re.search(CHART[k][2], t)][:2]
+    a7 = W['last7'][0]
+    wk = th[(th.date >= a7) & th.channel.str.lower().isin(MIL) & th.text.str.contains(WARN, regex=True) & ~th.text.str.contains(CL, regex=True)].sort_values('date', ascending=False)
+    warns = []
+    for _, r in wk.iterrows():
+        t = tg(r.text)
+        if t and len(warns) < 3 and not any(w['t'] == t[:3] and w['d'] == r.date.strftime('%b %-d') for w in warns): warns.append(dict(d=r.date.strftime('%b %-d'), t=t[:3], u=r.url))
+    cl = h[(h.date >= a7) & h.channel.str.lower().isin(MIL) & h.text.str.contains(CL, regex=True)].sort_values('date', ascending=False)
+    claims = []
+    for _, r in cl.iterrows():
+        t = tg(r.text); dd = r.date.strftime('%b %-d')
+        if not t: continue
+        c = next((c for c in claims if c['d'] == dd), None)
+        if c: c['t'] += [x for x in t if x not in c['t']]
+        elif len(claims) < 3: claims.append(dict(d=dd, t=list(t), u=r.url))
+    week = dict(start=str(a7.date()), warns=warns, claims=claims)
     # warning -> strike case (times from the posts themselves)
     byu = d.drop_duplicates('url').set_index('url')
     tm = lambda u: byu.date[u].strftime('%b %-d, %H:%M UTC') if u in byu.index else None
     case = dict(CASE, warn_t=tm(CASE['warn']), claim_t=tm(CASE['claim']), ok=CASE['warn'] in byu.index and CASE['claim'] in byu.index)
     # airlines warnings
     a = th[th.text.str.contains(AIR, regex=True) & (th.date >= pd.Timestamp('2026-09-01', tz='UTC'))]
-    air = dict(n=int(len(a)), first=str(a.date.min().date()) if len(a) else None, first_url=a.url.iloc[0] if len(a) else None,
+    airlink = {v[0]: int(a.text.str.contains(v[4], regex=True).sum()) for v in SITES.values() if v[1] == 'airport'}
+    air = dict(link={k: v for k, v in airlink.items() if v}, n=int(len(a)), first=str(a.date.min().date()) if len(a) else None, first_url=a.url.iloc[0] if len(a) else None,
                ex=AIR_EX if AIR_EX in byu.index else (a.url.iloc[-1] if len(a) else None))
     # Iraqi militia repost speed for Houthi military statements (last 30 days)
     iq = None
@@ -102,7 +163,7 @@ def build(posts_path, copies_csv=None):
                       claim=[c.channel.iloc[0], int(c.lag.iloc[0]), c.post_url.iloc[0]] if len(c) else None)
     return dict(end=str((end - D).date()), base_start=BASE_START, w30_start=str((end - 30 * D).date()), w7_start=str((end - 7 * D).date()),
                 p21_start=str((end - 28 * D).date()), tot=tot, nthreat=int(len(th)), nch=int(h.channel.nunique()), nposts=int(len(d[d.group == 'houthi'])),
-                rows=rows, flag=flag, case=case, air=air, iraqi=iq)
+                rows=rows, sites=sites, kind=kind, week=week, flag=flag, case=case, air=air, iraqi=iq)
 
 if __name__ == '__main__':
     import json, sys; print(json.dumps(build(sys.argv[1] if len(sys.argv) > 1 else '/workspace/threats/posts.pkl'), ensure_ascii=False, indent=1)[:3000])
