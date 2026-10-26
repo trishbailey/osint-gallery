@@ -235,15 +235,84 @@ for r in rows:
 MINP=5
 GEO={'Antigua and Barbuda':'Antigua and Barb.','Congo (Rep.)':'Congo','DR Congo':'Dem. Rep. Congo','Equatorial Guinea':'Eq. Guinea','North Macedonia':'Macedonia','South Sudan':'S. Sudan','UAE':'United Arab Emirates','United States':'United States of America','China (HQ)':'China'}
 ENT={'ASEAN','African Union','EU','OPCW','UN/Intl orgs Geneva','UN/Intl orgs Vienna','United Nations (NY)'}
-tonemap=dict(min_posts=MINP,countries=[])
+# rolling 30-day window ending at the latest post (never earlier than the archive start)
+TW=max(T(START),T(END)-dt.timedelta(days=30));TWS=TW.strftime('%Y-%m-%dT%H:%M:%SZ')
+trows=[r for r in rows if r['t']>=TWS]
+tonemap=dict(min_posts=MINP,agg_threshold=0.04,window=dict(start=TWS,end=END,days=(T(END).date()-TW.date()).days+1),countries=[],areas=[])
 byc=collections.defaultdict(list)
-for r in rows:byc[r['country']].append(r)
+for r in trows:byc[r['country']].append(r)
 snip=lambda r:dict(id=r['id'],h=r['h'],t=r['t'],text=r['text'][:220])
 for c,rs in sorted(byc.items()):
     n=len(rs);na=sum(r['tl']=='a' for r in rs);nf=sum(r['tl']=='f' for r in rs)
     harsh=sorted([r for r in rs if r['ag']>0],key=lambda r:-(r['ag']-r['fr']))[:3]
     fri=sorted([r for r in rs if r['fr']>r['ag']],key=lambda r:-(r['fr']-r['ag']))[:3]
-    tonemap['countries'].append(dict(country=c,ll=CENT.get(c),geo=None if c in ENT else GEO.get(c,c),posts=n,agg=round(na/n,3),fri=round(nf/n,3),idx=round((nf-na)/n,3),harsh=[snip(r) for r in harsh],friendly=[snip(r) for r in fri]))
+    tonemap['countries'].append(dict(region=rs[0]['region'],country=c,ll=CENT.get(c),geo=None if c in ENT else GEO.get(c,c),posts=n,agg=round(na/n,3),fri=round(nf/n,3),idx=round((nf-na)/n,3),harsh=[snip(r) for r in harsh],friendly=[snip(r) for r in fri]))
+# ---------- key areas: regions with aggressive countries, plus a sentence generated from their aggressive posts ----------
+# Targets are counted from the aggressive posts themselves (multilingual keyword match); no model involved.
+TGT=[('Taiwan\u2019s independence camp and its leaders',r"taiwan|台湾|台灣|台独|台獨|lai ching|赖清德|賴清德|ライ|separatis|独立"),
+ ('Japan\u2019s right wing and its wartime record',r"japan|日本|右翼|militari|軍国主義|军国主义|yasukuni|靖国|neomilitar|japon"),
+ ('the Philippine Coast Guard and Manila\u2019s South China Sea claims',r"philippin|tarriela|south china sea|南海|huangyan|黄岩|scarborough|second thomas|仁爱|manila|filipin"),
+ ('the United States and its arms sales and sanctions',r"\bu\.s\.|united states|美国|美國|america|washington|arms sales|estadounidense|EE\. ?UU|米国|sanction"),
+ ('NATO and the European Union',r"\bnato\b|北约|european union|\bEU\b|欧盟|brussels"),
+ ('foreign criticism over Xinjiang, Tibet and Hong Kong',r"xinjiang|新疆|tibet|西藏|hong kong|香港|dalai")]
+TGR=[(n,re.compile(x,re.I)) for n,x in TGT]
+def joinand(xs):return xs[0] if len(xs)==1 else ', '.join(xs[:-1])+' and '+xs[-1]
+scoredc=[c for c in tonemap['countries'] if c['posts']>=MINP and c['agg']>=tonemap['agg_threshold'] and c['region'] not in('?','China HQ')]
+for reg in sorted({c['region'] for c in scoredc}):
+    cs=sorted([c for c in scoredc if c['region']==reg],key=lambda c:-c['agg']);names={c['country'] for c in cs}
+    ag=[r for r in trows if r['country'] in names and r['tl']=='a'];n=len(ag);parts=[];tg=[]
+    THE=lambda x:'the '+x if re.match(r'(Philippines|Netherlands|United |UAE|Dominican|Maldives|Bahamas|Gambia)',x) else x
+    for c in cs[:3]:
+        a_=[r for r in ag if r['country']==c['country']];k_=len(a_)
+        if not k_:continue
+        hits=sorted(((sum(1 for r in a_ if g.search(r['text'])),nm) for nm,g in TGR),reverse=True)
+        top=[(k,nm) for k,nm in hits if k>=max(1,0.3*k_)][:2];tg+=[dict(country=c['country'],name=nm,posts=k) for k,nm in top]
+        tps=collections.Counter(r.get('tp') for r in a_ if r.get('tp')).most_common(2)
+        np_=f"{k_} aggressive post{'s' if k_>1 else ''}"
+        if top: parts.append(f"In {THE(c['country'])} ({np_}), {'most' if k_>2 else 'they'} target {joinand([nm for k,nm in top])}.")
+        elif tps: parts.append(f"In {THE(c['country'])} ({np_}), they push {joinand(['\u201c'+t+'\u201d' for t,_ in tps])}.")
+        else: parts.append(f"In {THE(c['country'])} ({np_}), topics are mixed with no single target.")
+    sent=' '.join(parts)
+    tonemap['areas'].append(dict(name=reg,countries=[c['country'] for c in cs],top=cs[0]['agg'],n_agg=n,sentence=sent,targets=tg))
+LN={'ja':'Japanese','zh':'Chinese','es':'Spanish','fr':'French','ru':'Russian','ar':'Arabic','pt':'Portuguese','de':'German','ko':'Korean','cs':'Czech','et':'Estonian','lv':'Latvian'}
+def explain(ag):
+    n=len(ag)
+    if not n:return None
+    hits=sorted(((sum(1 for r in ag if g.search(r['text'])),nm) for nm,g in TGR),reverse=True)
+    top=[(k,nm) for k,nm in hits if k>=max(1,0.1*n)][:3]
+    about=[]
+    if top:
+        about.append(f"Of {n} aggressive post{'s' if n>1 else ''} in the last {tonemap['window']['days']} days, "+joinand([f"{round(100*k/n)}% concern {nm}" for k,nm in top])+".")
+    tps=collections.Counter(r.get('tp') for r in ag if r.get('tp')).most_common(2)
+    if tps: about.append("Talking points they feed: "+joinand([f"\u201c{t}\u201d ({k} post{'s' if k>1 else ''})" for t,k in tps])+".")
+    if not about: about.append(f"The {n} aggressive posts cover mixed topics with no single dominant target.")
+    why=[]
+    oa=collections.Counter((r['oa'],r['k']) for r in ag if r.get('oa') and r['oa']!='?' and r['oa']!=r['h']).most_common(2)
+    verb={'repost':'repost','quote':'quote','reply':'reply to'}
+    for (acct,k),c in oa:
+        v=verb.get(k,'respond to');v1={'repost':'reposts','quote':'quotes','reply to':'replies to'}.get(v,'responds to')
+        if c>=2 or n<=3: why.append(f"{c} of the posts {v} @{acct}." if c>1 else f"1 post {v1} @{acct}.")
+    ev=collections.Counter()
+    for r in ag:
+        for nm,rx in [('Taiwan Recovery Day (25 October)',r"recovery day|光复|光復"),('the Japanese right wing\u2019s use of AI to alter war-history data',r"偽情報混入|投毒|poison|AI should be used|人工知能|tampering with historical"),('remarks by Philippine Coast Guard spokesperson Jay Tarriela',r"tarriela"),('a speech by Taiwan\u2019s leader Lai Ching-te',r"lai ching-te|赖清德|賴清德|Lai’s|Lai's"),('US arms sales to Taiwan',r"arms sales|军售|armas")]:
+            if re.search(rx,r['text'],re.I):ev[nm]+=1
+    for nm,c in ev.most_common(2):why.append(f"{c} post{'s respond' if c>1 else ' responds'} to {nm}.")
+    sm=sorted(ag,key=lambda r:-(r['ag']-r['fr']));seen=set();samples=[]
+    for r in sm:
+        if r['c'][:30] in seen or (len({x['country'] for x in samples})<len({y['country'] for y in ag}) and r['country'] in {x['country'] for x in samples}):continue
+        seen.add(r['c'][:30]);samples.append(dict(id=r['id'],h=r['h'],country=r['country'],t=r['t'],text=r['text'][:400],lang=LN.get(r['lang']) if r['lang']!='en' else None))
+        if len(samples)==3:break
+    if len(samples)<3:
+        for r in sm:
+            if len(samples)==3:break
+            if r['id'] not in {x['id'] for x in samples} and r['c'][:30] not in seen:seen.add(r['c'][:30]);samples.append(dict(id=r['id'],h=r['h'],country=r['country'],t=r['t'],text=r['text'][:400],lang=LN.get(r['lang']) if r['lang']!='en' else None))
+    return dict(about=about,why=why,samples=samples)
+for a_ in tonemap['areas']:
+    a_['explain']=explain([r for r in trows if r['country'] in set(a_['countries']) and r['tl']=='a'])
+for c in tonemap['countries']:
+    if c['posts']>=MINP:c['explain']=explain([r for r in byc[c['country']] if r['tl']=='a'])
+tonemap['areas'].sort(key=lambda a:-a['top'])
+print('tone window',TWS,END,[ (a['name'],a['countries'],a['sentence']) for a in tonemap['areas']])
 # ---------- map spread: per named cluster ----------
 mapd=[dict(key=c['key'],name=c['name'],desc=c['desc'],n=c['n'],langs=c['langs'],ids=c['ids'][:60],first=c['first'],last=c['last'],accounts=c['accounts'],countries=c['countries'],
     spread=[dict(s,ll=CENT.get(s['country'])) for s in c['spread']]) for c in named]
