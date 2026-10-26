@@ -149,8 +149,7 @@ body=f'''<div class="legend" data-legend></div><main>
 
 <div class="small" style="margin:8px 0 24px">Emblems: {credits}. Credit: Beacon Intelligence Group.</div></main>'''
 for gid,sec in [('irgc','1. Group'),]: pass
-GA="""<script async src="https://www.googletagmanager.com/gtag/js?id=G-FE6CZGWX0J"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FE6CZGWX0J');
-  gtag('config', 'G-Z61EKRP8QV');</script>"""
+GA="""<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());  gtag('config', 'G-Z61EKRP8QV');</script>"""
 html=f'<!doctype html><html><head>{GA}<meta charset="utf-8"><title>Axis channel flows, 20 Sep – 20 Oct 2026</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>{CSS}</style></head><body data-pop="1">{body}<script>{js}</script></body></html>'
 exec(open('themes.py').read()); _A='<div class="small" style="margin:8px 0 24px">Emblems'; html=html.replace(_A,open('themes_sec.html').read()+_A,1)
 open(W+'dashboard/axis_flow_dashboard_2026-10-22_v7_10.html','w').write(html)

@@ -14,7 +14,10 @@ CFG = json.load(open(os.path.join(ROOT, "dashboards.json")))
 SITE = CFG["site"].rstrip("/")
 KNOWN_HOSTS = os.environ.get("GITHUB_KNOWN_HOSTS_FILE", "")
 SECRET_ENVS = {d["deployKeySecret"] for d in CFG["dashboards"] if d.get("deployKeySecret")}
-GA_MAIN, GA_SITE = "G-Z61EKRP8QV", "G-FE6CZGWX0J"
+GA_MAIN, GA_OLD = "G-Z61EKRP8QV", "G-FE6CZGWX0J"  # GA_OLD is retired: stripped, never added
+GA_SNIPPET = ('<script async src="https://www.googletagmanager.com/gtag/js?id=' + GA_MAIN + '"></script>'
+              "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}"
+              "gtag('js',new Date());gtag('config','" + GA_MAIN + "');</script>")
 TEXT = (".html", ".htm", ".css", ".js", ".json", ".xml", ".txt", ".webmanifest", ".svg")
 
 def run(cmd, cwd, env=None):
@@ -40,9 +43,16 @@ def rewrite(text, slug, old_url, ext):
     if ext in (".html", ".htm", ".js"):
         text = re.sub(r'(\bfetch\(\s*["\'`])/' + neg, r"\1" + base, text)
         text = re.sub(r'(\b(?:location\.href|window\.location)\s*=\s*["\'`])/' + neg, r"\1" + base, text)
-    if ext in (".html", ".htm") and GA_MAIN in text and GA_SITE not in text:
-        text = re.sub(r"(gtag\(\s*['\"]config['\"]\s*,\s*['\"]" + GA_MAIN + r"['\"]\s*\);?)",
-                      r"\1gtag('config','" + GA_SITE + "');", text, count=1)
+    if ext in (".html", ".htm"):
+        # remove the retired GA property; add GA_MAIN only when the page lacks it
+        text = re.sub(r"[ \t]*gtag\(\s*['\"]config['\"]\s*,\s*['\"]" + GA_OLD + r"['\"]\s*\);?[ \t]*\n?", "", text)
+        old_loader = r'<script async src="https://www\.googletagmanager\.com/gtag/js\?id=' + GA_OLD + r'"></script>'
+        if "gtag/js?id=" + GA_MAIN in text:
+            text = re.sub(r"[ \t]*" + old_loader + r"[ \t]*\n?", "", text)
+        else:
+            text = re.sub(old_loader, '<script async src="https://www.googletagmanager.com/gtag/js?id=' + GA_MAIN + '"></script>', text)
+        if GA_MAIN not in text:
+            text = re.sub(r"(<head[^>]*>)", lambda m: m.group(1) + GA_SNIPPET, text, count=1, flags=re.I)
     if ext in (".html", ".htm") and "data-slash-fix" not in text:
         # /<slug> (no trailing slash) would break relative asset paths; bounce to /<slug>/
         fix = ('<script data-slash-fix>if(location.pathname==="/' + slug + '")'
