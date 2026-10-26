@@ -12,6 +12,7 @@
    "name": "Guadalajara Cartel",
    "founded": 1980,
    "cites": [
+    "IC_TIJUANA",
     "IC_SINALOA"
    ]
   },
@@ -19,16 +20,19 @@
    "id": "sinaloa",
    "region": "Mexico",
    "founded": 1989,
-   "circa": false,
+   "circa": true,
    "parent": "guadalajara",
    "ended": null,
    "cites": [
     "IC_SINALOA"
    ],
-   "split": {
+   "link": {
+    "kind": "breakup",
     "year": 1989,
-    "text": "Félix Gallardo's arrest breaks up the Guadalajara cartel; Sinaloa emerges.",
+    "label": "formed from Guadalajara's break-up, 1989",
+    "text": "After Félix Gallardo's April 1989 arrest, his territory was divided: Chapo Guzmán and Palma got Sinaloa/Sonora routes; Juárez went to Aguilar Guajardo (later the Carrillo Fuentes brothers); Tijuana to the Arellano Félix brothers. Siblings, not parent and child.",
     "cites": [
+     "IC_TIJUANA",
      "IC_SINALOA"
     ]
    }
@@ -43,7 +47,17 @@
    "cites": [
     "ACLED_SIN",
     "ELPAIS_SIN"
-   ]
+   ],
+   "link": {
+    "kind": "breakup",
+    "year": 2024,
+    "label": "formed from Sinaloa's break-up, 2024",
+    "text": "El Mayo Zambada's July 2024 abduction to the US split the Sinaloa Cartel; Guzmán's sons (Chapitos) and Zambada's faction (Mayiza) have been at war since Sept 2024.",
+    "cites": [
+     "ACLED_SIN",
+     "ELPAIS_SIN"
+    ]
+   }
   },
   {
    "id": "mayiza",
@@ -55,7 +69,17 @@
    "cites": [
     "ACLED_SIN",
     "JORNADA_SIN"
-   ]
+   ],
+   "link": {
+    "kind": "breakup",
+    "year": 2024,
+    "label": "formed from Sinaloa's break-up, 2024",
+    "text": "Zambada's faction, at war with the Chapitos since Sept 2024 after the Sinaloa Cartel split.",
+    "cites": [
+     "ACLED_SIN",
+     "JORNADA_SIN"
+    ]
+   }
   },
   {
    "id": "cjng",
@@ -67,9 +91,11 @@
    "cites": [
     "IC_CJNG"
    ],
-   "split": {
+   "link": {
+    "kind": "split",
     "year": 2010,
-    "text": "Emerges from the Milenio cartel, a Sinaloa ally, after Nacho Coronel's death.",
+    "label": "split from Sinaloa network (via Milenio), 2010",
+    "text": "Dual roots: CJNG grew out of the Milenio Cartel (Valencia family, Michoacán/Jalisco), which worked for Sinaloa's Ignacio 'Nacho' Coronel in Jalisco. After Coronel was killed in July 2010, Nemesio Oseguera ('El Mencho') and others formed CJNG.",
     "cites": [
      "IC_CJNG"
     ]
@@ -98,9 +124,11 @@
    "cites": [
     "IC_ZETAS"
    ],
-   "split": {
+   "link": {
+    "kind": "split",
     "year": 2010,
-    "text": "Zetas, the Gulf Cartel's armed wing, break away and go to war with it.",
+    "label": "split from Gulf Cartel, 2010",
+    "text": "The Zetas, the Gulf Cartel's armed wing, broke away in early 2010 and went to war with it.",
     "cites": [
      "IC_ZETAS",
      "IC_GULF"
@@ -117,25 +145,50 @@
    "cites": [
     "IC_ZETAS"
    ],
-   "split": {
+   "link": {
+    "kind": "split",
     "year": 2015,
-    "text": "Cartel del Noreste emerges from the Zetas around 2015.",
+    "label": "split from Los Zetas, c. 2015",
+    "text": "Cartel del Noreste emerged from the Zetas' Treviño-family faction around 2015 as the Zetas fragmented.",
     "cites": [
      "IC_ZETAS"
     ]
    }
   },
   {
-   "id": "lnfm",
+   "id": "familia",
+   "name": "La Familia Michoacana",
+   "historic": true,
    "region": "Mexico",
    "founded": 2006,
    "circa": true,
    "parent": null,
+   "ended": 2011,
+   "cites": [
+    "IC_FAMILIA"
+   ]
+  },
+  {
+   "id": "lnfm",
+   "region": "Mexico",
+   "founded": 2011,
+   "circa": true,
+   "parent": "familia",
    "ended": null,
    "cites": [
     "IC_FAMILIA",
     "FTO"
-   ]
+   ],
+   "link": {
+    "kind": "breakup",
+    "year": 2011,
+    "label": "formed from La Familia's break-up, 2010–11",
+    "text": "After Nazario Moreno's reported death (Dec 2010) La Familia split: one wing became the Knights Templar (2011); the remnant became La Nueva Familia Michoacana, later led by the Hurtado brothers.",
+    "cites": [
+     "IC_FAMILIA",
+     "IC_TEMPLARIOS"
+    ]
+   }
   },
   {
    "id": "unidos",
@@ -145,8 +198,8 @@
    "parent": null,
    "ended": null,
    "cites": [
-    "FTO",
-    "IC_CJNG"
+    "IC_UNIDOS",
+    "FTO"
    ]
   },
   {
@@ -154,27 +207,63 @@
    "region": "Mexico",
    "founded": 2013,
    "circa": true,
-   "parent": null,
+   "parent": "unidos",
    "ended": null,
    "cites": [
-    "STATE_JUAREZ"
-   ]
+    "IC_UNIDOS",
+    "TREAS_VIAGRAS"
+   ],
+   "link": {
+    "kind": "alliance",
+    "year": 2020,
+    "label": "allied in Cárteles Unidos, 2020",
+    "text": "Alliance, not a split: Los Viagras (a former self-defence group) joined the Cartel del Abuelo in the Cárteles Unidos coalition against CJNG in 2020. By late 2024 the US Treasury reported Los Viagras had allied with CJNG.",
+    "cites": [
+     "IC_UNIDOS",
+     "TREAS_VIAGRAS"
+    ]
+   }
   },
   {
    "id": "juarez",
    "region": "Mexico",
-   "founded": 1993,
+   "founded": 1989,
    "circa": true,
    "parent": "guadalajara",
    "ended": null,
    "cites": [
     "IC_JUAREZ"
    ],
-   "split": {
+   "link": {
+    "kind": "breakup",
     "year": 1989,
-    "text": "Juárez plaza emerges from the Guadalajara cartel break-up.",
+    "label": "formed from Guadalajara's break-up, 1989",
+    "text": "The Juárez–Nuevo Laredo corridor went to Rafael Aguilar Guajardo when Guadalajara broke up; Amado Carrillo Fuentes, Ernesto Fonseca's nephew, took it over in 1993. Juárez is Sinaloa's sibling and later its rival, never its offshoot.",
     "cites": [
-     "IC_SINALOA"
+     "IC_TIJUANA",
+     "IC_JUAREZ"
+    ]
+   }
+  },
+  {
+   "id": "tijuana",
+   "name": "Tijuana Cartel (Arellano Félix)",
+   "historic": true,
+   "region": "Mexico",
+   "founded": 1989,
+   "circa": true,
+   "parent": "guadalajara",
+   "ended": null,
+   "cites": [
+    "IC_TIJUANA"
+   ],
+   "link": {
+    "kind": "breakup",
+    "year": 1989,
+    "label": "formed from Guadalajara's break-up, 1989",
+    "text": "The Arellano Félix brothers received the Tijuana plaza when Félix Gallardo divided his territory from prison.",
+    "cites": [
+     "IC_TIJUANA"
     ]
    }
   },
@@ -201,15 +290,37 @@
    ]
   },
   {
+   "id": "auc",
+   "name": "AUC paramilitaries",
+   "historic": true,
+   "region": "Colombia",
+   "founded": 1997,
+   "circa": false,
+   "parent": null,
+   "ended": 2006,
+   "cites": [
+    "IC_URABENOS"
+   ]
+  },
+  {
    "id": "clan",
    "region": "Colombia",
    "founded": 2006,
    "circa": true,
-   "parent": null,
+   "parent": "auc",
    "ended": null,
    "cites": [
     "IC_URABENOS"
-   ]
+   ],
+   "link": {
+    "kind": "breakup",
+    "year": 2006,
+    "label": "formed from AUC's demobilisation, 2006",
+    "text": "Founded in Urabá by mid-level AUC commanders who refused the 2003–06 demobilisation.",
+    "cites": [
+     "IC_URABENOS"
+    ]
+   }
   },
   {
    "id": "eln",
@@ -223,26 +334,62 @@
    ]
   },
   {
+   "id": "farc",
+   "name": "FARC guerrilla",
+   "historic": true,
+   "region": "Colombia",
+   "founded": 1964,
+   "circa": false,
+   "parent": null,
+   "ended": 2017,
+   "cites": [
+    "IC_EXFARC"
+   ]
+  },
+  {
    "id": "exfarc",
    "region": "Colombia",
    "founded": 2016,
    "circa": false,
-   "parent": null,
+   "parent": "farc",
    "ended": null,
    "cites": [
-    "IC_EXFARC"
-   ]
+    "IC_EXFARC",
+    "IC_EMC"
+   ],
+   "name": "FARC dissidents / EMC",
+   "link": {
+    "kind": "split",
+    "year": 2016,
+    "label": "split from FARC, 2016",
+    "text": "Iván Mordisco's 1st Front rejected the peace process in mid-2016; with Gentil Duarte it became the Estado Mayor Central.",
+    "cites": [
+     "IC_EMC",
+     "IC_EXFARC"
+    ]
+   }
   },
   {
    "id": "segmar",
    "region": "Colombia",
    "founded": 2019,
    "circa": false,
-   "parent": "exfarc",
+   "parent": "farc",
    "ended": null,
    "cites": [
-    "IC_SEGMAR"
-   ]
+    "IC_SEGMAR",
+    "IC_EXFARC"
+   ],
+   "link": {
+    "kind": "split",
+    "year": 2019,
+    "label": "split from FARC's ex-combatants, 2019",
+    "text": "Iván Márquez, a FARC peace negotiator, rearmed in Aug 2019. It is a rival of the EMC, not its offshoot.",
+    "cites": [
+     "IC_SEGMAR",
+     "IC_EXFARC"
+    ]
+   }
   },
   {
    "id": "choneros",
@@ -264,7 +411,16 @@
    "ended": null,
    "cites": [
     "IC_LOBOS"
-   ]
+   ],
+   "link": {
+    "kind": "split",
+    "year": 2021,
+    "label": "split from Los Choneros, 2020–21",
+    "text": "Pipo's Lobos had been a Choneros substructure; after Rasquiña's murder (Dec 2020) they led the Nueva Generación breakaway coalition.",
+    "cites": [
+     "IC_LOBOS"
+    ]
+   }
   },
   {
    "id": "chone_killers",
@@ -274,19 +430,37 @@
    "parent": "choneros",
    "ended": null,
    "cites": [
-    "IC_ECUADOR"
-   ]
+    "IC_CHONEKILLERS"
+   ],
+   "link": {
+    "kind": "split",
+    "year": 2021,
+    "label": "split from Los Choneros, 2020–21",
+    "text": "A Durán Ñetas cell rebranded in 2020 as the Choneros' hit squad. After Rasquiña's murder it joined the Lobos-led Nueva Generación, and from 2022 it realigned with the Choneros.",
+    "cites": [
+     "IC_CHONEKILLERS"
+    ]
+   }
   },
   {
    "id": "los_tiguerones",
    "region": "Ecuador",
-   "founded": 2020,
+   "founded": 2017,
    "circa": true,
    "parent": "choneros",
    "ended": null,
    "cites": [
-    "IC_ECUADOR"
-   ]
+    "IC_TIGUERONES"
+   ],
+   "link": {
+    "kind": "split",
+    "year": 2021,
+    "label": "split from Los Choneros, 2020–21",
+    "text": "Formed in the late 2010s as a Choneros faction. It broke away after Rasquiña's murder and joined Nueva Generación, then re-allied with the Choneros by 2023.",
+    "cites": [
+     "IC_TIGUERONES"
+    ]
+   }
   },
   {
    "id": "pcc",
@@ -340,7 +514,8 @@
    "parent": null,
    "ended": null,
    "cites": [
-    "IC_HAITI"
+    "IC_HAITI",
+    "STATE_HAITI"
    ]
   },
   {
@@ -351,7 +526,8 @@
    "parent": null,
    "ended": null,
    "cites": [
-    "IC_HAITI"
+    "IC_HAITI",
+    "STATE_HAITI"
    ]
   }
  ],
@@ -552,9 +728,9 @@
   },
   {
    "group": "cdn",
-   "year": 2010,
+   "year": 2015,
    "type": "split",
-   "text": "Zetas split from Gulf (2010); Cartel del Noreste emerges from the Zetas around 2015.",
+   "text": "Cartel del Noreste emerges from the Zetas' Treviño faction.",
    "cites": [
     "IC_ZETAS"
    ]
@@ -578,7 +754,7 @@
    ]
   },
   {
-   "group": "lnfm",
+   "group": "familia",
    "year": 2006,
    "type": "found",
    "text": "La Familia Michoacana, a former Gulf/Zetas ally, announces itself in Michoacán.",
@@ -587,7 +763,7 @@
    ]
   },
   {
-   "group": "lnfm",
+   "group": "familia",
    "year": 2010,
    "type": "split",
    "text": "Death of Nazario Moreno splits Familia; Knights Templar formed in 2011.",
@@ -836,9 +1012,9 @@
   },
   {
    "group": "lobos",
-   "year": 2020,
+   "year": 2021,
    "type": "split",
-   "text": "Breaks from Los Choneros after Rasquiña's killing.",
+   "text": "Leads the Nueva Generación breakaway from Los Choneros after Rasquiña's Dec 2020 murder.",
    "cites": [
     "IC_LOBOS"
    ]
@@ -1013,6 +1189,51 @@
    "text": "Designated an FTO (5 May 2025).",
    "cites": [
     "FTO"
+   ]
+  },
+  {
+   "group": "unidos",
+   "year": 2020,
+   "type": "alliance",
+   "text": "Cartel del Abuelo and Los Viagras ally as Cárteles Unidos against CJNG.",
+   "cites": [
+    "IC_UNIDOS"
+   ]
+  },
+  {
+   "group": "viagras",
+   "year": 2024,
+   "type": "alliance",
+   "text": "Reported by the US Treasury to have allied with CJNG.",
+   "cites": [
+    "TREAS_VIAGRAS"
+   ]
+  },
+  {
+   "group": "tijuana",
+   "year": 2002,
+   "type": "killed",
+   "text": "Ramón Arellano Félix killed in Mazatlán; Benjamín arrested a month later.",
+   "cites": [
+    "IC_TIJUANA"
+   ]
+  },
+  {
+   "group": "los_tiguerones",
+   "year": 2023,
+   "type": "alliance",
+   "text": "Re-allies with Los Choneros against the Lobos.",
+   "cites": [
+    "IC_TIGUERONES"
+   ]
+  },
+  {
+   "group": "chone_killers",
+   "year": 2022,
+   "type": "alliance",
+   "text": "Realigns with Los Choneros as Nueva Generación frays.",
+   "cites": [
+    "IC_CHONEKILLERS"
    ]
   }
  ]

@@ -9,7 +9,7 @@
 .tl-hit{fill:transparent}
 .tl-lane:hover .tl-hit{fill:rgba(255,255,255,.04)}
 .tl-lane.dim{opacity:.35}
-.tl-branch{fill:none;stroke-width:3;opacity:.95}.tl-bhit{fill:none;stroke:transparent;stroke-width:14;cursor:help}.tl-link.on .tl-branch{stroke-width:4.5}.tl-split{font-size:13px;font-weight:700;paint-order:stroke;stroke:#0d1420;stroke-width:3.5px}.tl-fam{fill:rgba(255,255,255,.025)}.tl-name.root{font-weight:700}
+.tl-branch{fill:none;stroke-width:4;opacity:.95}.tl-bhit{fill:none;stroke:transparent;stroke-width:14;cursor:help}.tl-link.on .tl-branch{stroke-width:6}.tl-split{font-size:12.5px;font-weight:700;paint-order:stroke;stroke:#0d1420;stroke-width:3.5px}.tl-fam{fill:rgba(255,255,255,.025)}.tl-name.root{font-weight:700}
 .tl-circa{fill:#aab6c8;font-size:13px}
 .tl-x{fill:#ef476f;font-size:13px;font-style:normal}
 .tl-cc{font-size:15px}
@@ -28,3 +28,5 @@
 .tl-list .tl-ic{color:#ffd166;margin-right:6px}
 .tl-svg{min-width:760px}
 .tl-svg .tl-ic{font-size:11px}.tl-fto{fill:#0b111b;font-size:8px;font-weight:800}.tl-legend-bottom{margin-top:10px;font-size:13px;color:#d8e1ee}.tl-legend .tl-ic{border:0;width:auto;font-size:14px}
+
+.tl-lineage{margin-top:8px;font-size:13px;color:#d8e1ee}.tl-lineage summary{cursor:pointer;color:#aab6c8}.tl-lineage ul{margin:6px 0 0;padding-left:18px}.tl-lineage li{padding:2px 0}
