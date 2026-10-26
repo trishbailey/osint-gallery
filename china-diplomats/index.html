@@ -20,9 +20,9 @@
 <div class="mc"><div id="stream" class="viz"></div><div id="streamw" class="viz" hidden></div><div id="streamm" class="viz" hidden></div></div></div></section>
 <section id="spread" class="card"><h2 class="sh2" id="sp-title">How a talking point spreads</h2>
 <p class="sub" id="sp-sub"></p>
-<div class="cols"><div class="lc"><h3 class="lh"><label for="tp">Talking point</label></h3><select id="tp"></select><p class="muted" id="tpdesc"></p>
+<div class="cols"><div class="lc"><h3 class="lh" id="tplab">Top 5 stories this week</h3><select id="tp" hidden aria-labelledby="tplab"></select><p class="muted" id="tpdesc"></p>
 <div><div id="chips" class="chips" role="group" aria-label="Choose a narrative"></div></div>
-<h3 class="lh">Dots</h3><div class="legend" id="lg-kind"></div><h3 class="lh">Account types shown</h3><div id="types" class="types" role="group" aria-label="Account types shown on the spread map and ripple"></div></div>
+<div class="legend g2" id="lg-kind" aria-label="Dots"></div><h3 class="lh">Account types shown</h3><div id="types" class="types" role="group" aria-label="Account types shown on the spread map"></div></div>
 <div class="mc"><div class="ctl"><button id="play" class="btn">▶ Play</button><input type="range" id="clock" min="0" max="1000" value="1000" aria-label="Time"><span id="clocklbl" class="muted"></span></div>
 <div id="map" class="viz"></div></div></div></section>
 
@@ -33,13 +33,13 @@
 
 
 <section id="who" class="card"><h2 class="sh2">Which accounts carry which talking points</h2>
-<p class="sub">The 25 accounts with the most posts in named talking points. Darker cells mean more posts.</p>
+<p class="sub" id="mx-sub">Accounts that posted the top talking points of the past 7 days. Darker cells mean more posts.</p>
 <div class="cols"><div class="lc"><h3 class="lh">Posts per cell</h3><div class="legend" id="lg-mx"></div></div><div class="mc"><div id="matrix" class="viz scrollx"></div></div></div></section>
 
 <section id="amp" class="card"><h2 class="sh2">How one post ripples out</h2>
 <p class="sub" id="amp-sub"></p>
 <div class="cols"><div class="lc"><h3 class="lh">Choose a post</h3><div id="rchips" class="chips" role="group" aria-label="Choose a post"></div>
-<h3 class="lh">Account types shown</h3><div class="types tcomp" role="group" aria-label="Account types shown on the ripple"></div><div class="ctl"><button id="rplay" class="btn">▶ Play</button><button id="rreplay" class="btn" type="button">↺ Replay</button><button id="rspeed" class="btn" type="button" aria-label="Playback speed 1x, click to change">1×</button></div></div>
+<div class="ctl"><button id="rplay" class="btn">▶ Play</button><button id="rreplay" class="btn" type="button">↺ Replay</button><button id="rspeed" class="btn" type="button" aria-label="Playback speed 1x, click to change">1×</button></div></div>
 <div class="mc"><div class="ctl"><input type="range" id="rclock" min="0" max="1000" value="0" aria-label="Time since the original post"><span id="rlbl" class="muted"></span></div>
 <div id="net" class="viz"></div><div id="netlist"></div></div></div></section>
 

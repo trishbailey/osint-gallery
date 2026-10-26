@@ -149,10 +149,16 @@ for sr in stream['series']:
 for r in rows:
     if r.get('tp') in kn: stream['series'][kn[r['tp']]]['vals'][days.index(r['t'][:10])]+=1
 # ---------- matrix: which embassies push which talking points ----------
+# top 5 talking points of the past 7 days (rolling), by distinct accounts; cells = posts in those 7 days
+_m7=(T(END)-dt.timedelta(days=7)).isoformat().replace('+00:00','Z')
+_a7=collections.defaultdict(set)
+for r in rows:
+    if r.get('tp') and r['t']>=_m7:_a7[r['tp']].add(r['h'])
+_mp=[n for n,_ in sorted(_a7.items(),key=lambda x:-len(x[1]))[:5]]
 mx=collections.defaultdict(lambda:collections.Counter())
 for r in rows:
-    if r.get('tp'): mx[r['h']][r['tp']]+=1
-matrix=dict(points=[c['name'] for c in named],rows=sorted([dict(h=h,country=acc.get(h.lower(),{}).get('country_posted','?'),cells=dict(v)) for h,v in mx.items()],key=lambda x:-sum(x['cells'].values()))[:40])
+    if r.get('tp') in _mp and r['t']>=_m7: mx[r['h']][r['tp']]+=1
+matrix=dict(points=_mp,window_days=7,rows=sorted([dict(h=h,country=acc.get(h.lower(),{}).get('country_posted','?'),cells=dict(v)) for h,v in mx.items()],key=lambda x:-sum(x['cells'].values())))
 # ---------- synchronized bursts ----------
 WIN=dt.timedelta(hours=6);bursts=[]
 for n,m in enumerate(clusters[:40]):
@@ -320,8 +326,11 @@ def explain(ag):
 for c in tonemap['countries']:
     if c['posts']>=MINP:c['explain']=explain([r for r in byc[c['country']] if r['tl']=='a'])
 # ---------- map spread: per named cluster ----------
-mapd=[dict(key=c['key'],name=c['name'],desc=c['desc'],n=c['n'],langs=c['langs'],ids=c['ids'][:60],first=c['first'],last=c['last'],accounts=c['accounts'],countries=c['countries'],
-    spread=[dict(s,ll=CENT.get(s['country'])) for s in c['spread']]) for c in named if c['accounts']>=7]  # spread map: only stories with more than 6 account dots
+# spread map: top 5 stories of the past 7 days (rolling), ranked by distinct accounts posting in that week, min 7 accounts
+_c7=(T(END)-dt.timedelta(days=7)).isoformat().replace('+00:00','Z');_byid={r['id']:r for r in rows}
+for c in named:c['acc7']=len({_byid[i]['h'] for i in c['ids'] if i in _byid and _byid[i]['t']>=_c7})
+mapd=[dict(key=c['key'],name=c['name'],desc=c['desc'],n=c['n'],langs=c['langs'],ids=c['ids'][:60],first=c['first'],last=c['last'],accounts=c['accounts'],accounts_7d=c['acc7'],countries=c['countries'],
+    spread=[dict(s,ll=CENT.get(s['country'])) for s in c['spread']]) for c in sorted([c for c in named if c['acc7']>=7],key=lambda c:(-c['acc7'],-c['accounts']))[:5]]
 # ---------- accounts ----------
 pc=collections.Counter(r['h'] for r in rows)
 accts=[dict(h=r['handle'],name=r['name'],type=typ(r),country=r['country_posted'],followers=int(r['followers'] or 0),posts=pc.get(r['handle'],0),ll=CENT.get(r['country_posted'])) for r in acc.values()]
