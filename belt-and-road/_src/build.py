@@ -16,11 +16,11 @@ E={}
 for r in csv.DictReader(open(os.path.join(S,"africa.csv"))):
     E[r["id"]]=dict(id=r["id"],name=r["name"],country=r["country"],region="africa",type=r["type"],kind=r["kind"],lat=float(r["lat"]),lon=float(r["lon"]),
       value=r["value"],backer=r["backer"],china_gets=r["china_gets"],host_case=r["host_case"],confidence=r["confidence"],confidence_reason="",sources=srcs(r["sources"]),origin=r["origin"])
-for r in [x for f in ("south_se_asia.csv","south_america.csv") for x in csv.DictReader(open(os.path.join(S,f)))]:
+for r in [x for f in ("south_se_asia.csv","south_america.csv","central_asia.csv") for x in csv.DictReader(open(os.path.join(S,f)))]:
     if r["id"] in E: print("duplicate id skipped:",r["id"]); continue
     E[r["id"]]=dict(id=r["id"],name=r["name"],country=r["country"],region=r["region"],type=typ(r["kind"]),kind=r["kind"],lat=float(r["lat"]),lon=float(r["lon"]),
       value=r["value"],backer=r["lender_builder"],china_gets=r["china_gets"],host_case=r["host_position"],confidence=CONF.get(r["confidence"],r["confidence"]),
-      confidence_reason=r["confidence_reason"],sources=srcs(r["source_urls"]),origin="south_america.csv" if r["region"]=="south-america" else "south_se_asia.csv")
+      confidence_reason=r["confidence_reason"],sources=srcs(r["source_urls"]),origin={"south-america":"south_america.csv","central-asia":"central_asia.csv"}.get(r["region"],"south_se_asia.csv"))
 L=list(E.values())
 F=list(L[0].keys())
 for p in ("data/belt_and_road.csv",):
