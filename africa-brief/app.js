@@ -1,8 +1,10 @@
 const BRI_URL=window.BRI_DASHBOARD_URL||"../belt-and-road/";
 const briHref=id=>BRI_URL+(id?"#p="+encodeURIComponent(id):"#region=africa");
 const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const COLORS={hex:["#FFB27A","#FF6A2B","#E8173C"]};
-const BC={Russia:"#F48FB1",UAE:"#FFB74D",Turkey:"#80CBC4",Iran:"#BCAAA4",Egypt:"#9FA8DA",US:"#90CAF9",France:"#B0BEC5",China:"#EF9A9A",Rwanda:"#A5D6A7"};
+const COLORS={hex:["#FFD180","#FF6D00","#880E4F"]};
+const BC={Russia:"#FF80FF",UAE:"#FFAB00",Turkey:"#1DE9B6",Iran:"#9CCC65",Egypt:"#FF8FB1",US:"#7C9CFF",France:"#E1BEE7",China:"#FF6B6B",Rwanda:"#00C853"};
+const FLAG=(sel,w)=>{w=w||20;const h=w*2/3;sel.append("rect").attr("x",-w/2-3).attr("y",-h/2-3).attr("width",w+6).attr("height",h+6).attr("fill","transparent");sel.append("use").attr("href","#cnflag").attr("x",-w/2).attr("y",-h/2).attr("width",w).attr("height",h);};
+const SHEET="https://docs.google.com/spreadsheets/d/1fCulxY6AJ0br-O5hstRmIP9Lfco4-CMjYdHpH3Q7hTc/edit";
 const BEIJING=[116.4,39.9];
 const RU_REGION={mali:"sahel",burkina:"sahel",niger:"sahel",car:"car",libya:"north",sudan:"sudan"};
 const GROUP_OF=k=>({"g-jnim":"jnim","g-jnim-cw":"jnim","g-issp":"issp","g-iswap":"iswap","g-shabaab":"shabaab","g-issom":"is","g-ism":"is"})[k];
@@ -36,11 +38,11 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
  gH.selectAll("path").data(HX.features).join("path").attr("d",path).attr("class","hex").attr("fill",f=>HC[f.properties.step-1])
   .on("click",(e,f)=>{const c=afr.features.find(a=>d3.geoContains(a,d3.geoCentroid(f)));const r=c&&r2c[c.properties.ADM0_A3];if(r)openRegion(r,f);else panel(`<p class="eyebrow">Conflict cell</p><h3>${esc(f.properties.country)}</h3><p><b>${f.properties.deaths}</b> deaths in ${f.properties.events} events, ${M.period}.</p>`);})
   .append("title").text(f=>`${f.properties.country}: ${f.properties.deaths} deaths, ${f.properties.events} events`);
- const tbl=ls=>`<h4>Outside backers</h4>${ls.map(l=>`<div class="bk" style="border-left-color:${BC[bk(l)]||"#9cc1f0"}"><b>${esc(l.backer)}</b> → ${esc(l.actor)} <span class="badge st-${/document/i.test(l.confidence)?"documented":/alleg/i.test(l.confidence)?"alleged":"reported"}">${esc(l.confidence)}</span><br><span class="muted">${esc(l.means.join(", "))}</span><p>${esc(l.actions)}${fn(l.cites)}</p><p><b>Gets in return:</b> ${esc(l.returns)}</p>${l.position?`<p><b>Its own case:</b> ${esc(l.position)}</p>`:""}</div>`).join("")}`;
+ const tbl=ls=>`<h4>Outside backers</h4>${ls.map(l=>`<div class="bk" style="border-left-color:${BC[bk(l)]||"#82B1FF"}"><b>${esc(l.backer)}</b> → ${esc(l.actor)} <span class="badge st-${/document/i.test(l.confidence)?"documented":/alleg/i.test(l.confidence)?"alleged":"reported"}">${esc(l.confidence)}</span><br><span class="muted">${esc(l.means.join(", "))}</span><p>${esc(l.actions)}${fn(l.cites)}</p><p><b>Gets in return:</b> ${esc(l.returns)}</p>${l.position?`<p><b>Its own case:</b> ${esc(l.position)}</p>`:""}</div>`).join("")}`;
  function showR(r,f){_arcs.set(r.id);panel(`<p class="eyebrow">Conflict region</p><h3>${esc(r.name)}</h3>${f?`<p><b>This cell (${esc(f.properties.country)}):</b> ${f.properties.deaths} conflict deaths in ${f.properties.events} events.</p>`:""}<p>${esc(r.summary)}${fn(r.cites)}</p><p><a href="#r-${r.id}">Read the region section ↓</a> · <a href="#news" data-nf="${r.id}">News storylines ↓</a></p>`+
   (B.links.some(l=>l.region===r.id)?tbl(B.links.filter(l=>l.region===r.id)):"<p class=\"muted\">No outside-backer entries yet.</p>"));}
  const CAT=t=>["oil","gas","uranium"].includes(t)?"energy":t==="gold"?"gold":["water","arable"].includes(t)?"land":"battery";
- const CATS={energy:{c:"#B0BEC5",s:d3.symbolSquare,n:"Energy (oil, gas, uranium)"},gold:{c:"#FFD54F",s:d3.symbolDiamond,n:"Gold"},battery:{c:"#64B5F6",s:d3.symbolCircle,n:"Battery and critical minerals"},land:{c:"#81C784",s:d3.symbolStar,n:"Land and water"}};
+ const CATS={energy:{c:"#AA00FF",s:d3.symbolSquare,n:"Energy (oil, gas, uranium)"},gold:{c:"#FFD600",s:d3.symbolDiamond,n:"Gold"},battery:{c:"#00B0FF",s:d3.symbolCircle,n:"Battery and critical minerals"},land:{c:"#AEEA00",s:d3.symbolStar,n:"Land and water"}};
  const KEY=new Set(["gold-sudan-rsf","gold-jebel-amer","gold-car-ndassima","gold-mali-refinery","gold-burkina-asm","gold-drc-east-asm","u-niger-somair","ta-drc","co-drc","oil-libya","oil-ssd-portsudan","oil-niger-benin","gas-mozambique","w-nile-gerd","land-sudan-gezira"]);
  const resPanel=d=>panel(`<p class="eyebrow">Resource · ${CATS[CAT(d.type)].n}</p><h3>${esc(d.name)}</h3><p><b>Resource:</b> ${esc(d.type)}</p><p><b>${esc(d.quantity)}</b> (${d.year||"n/a"}), world share ${esc(d.world_share)}${fn(d.cites)}</p><p><b>Controlled or operated by:</b> ${esc(d.controller)}</p><p><b>Conflict overlap:</b> ${esc(d.conflict_region||"none in current regions")} · <b>Confidence:</b> ${esc(d.confidence)}</p>${d.note?`<p class="muted">${esc(d.note)}</p>`:""}`);
  const gR=Z.append("g");
@@ -53,7 +55,7 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
  const bk=l=>{const n=l.backer;return n.startsWith("United Arab")?"UAE":n.startsWith("United States")?"US":n.split(/[ (]/)[0];};
  const gF=Z.append("g"),cl=([x,y])=>[Math.max(14,Math.min(W-14,x)),Math.max(14,Math.min(H-14,y))];
  const arcSel=gF.selectAll("path").data(B.links).join("path").attr("class","arc2")
-  .attr("stroke",l=>BC[bk(l)]||"#9cc1f0").attr("stroke-dasharray",l=>l.means.includes("withdrawal")?"5 4":null)
+  .attr("stroke",l=>BC[bk(l)]||"#82B1FF").attr("stroke-dasharray",l=>l.means.includes("withdrawal")?"5 4":null)
   .attr("d",l=>`M${cl(proj(l.backer_lonlat))}L${proj(l.target_lonlat)}`)
   .on("click",(e,l)=>{const r=B.regions.find(r=>r.id===l.region);r?showR(r):panel(tbl([l]));});
  arcSel.append("title").text(l=>`${l.backer} → ${l.actor} [${fnNums(l.cites)}]`);
@@ -71,16 +73,15 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
  const briPanel=d=>panel(`<p class="eyebrow">China Belt &amp; Road project · ${esc(d.kind)} · ${esc(d.confidence)}</p><h3>${esc(d.name)}</h3><p><b>${esc(d.value)}</b>${fn(d.cites)}</p><p><b>Lender or builder:</b> ${esc(d.lender_builder)}</p><p><b>What China gets:</b> ${esc(d.china_gets)}</p><p><b>Host's case:</b> ${esc(d.host_position)}</p><p><a class="bri-inline" href="${briHref(d.id)}">See this project in the Belt and Road dashboard →</a></p>`);
  const bri=gB.selectAll("g.bri").data(B.bri).join("g").attr("class","bri").attr("transform",d=>`translate(${d._p})`).style("cursor","pointer")
   .on("mouseenter",(e,d)=>cnOn(d)).on("mouseleave",()=>cnOn(null)).on("click",(e,d)=>{if(e.metaKey||e.ctrlKey){location.href=briHref(d.id);return;}briPanel(d);});
- bri.append("rect").attr("x",-23).attr("y",-10).attr("width",46).attr("height",20).attr("rx",4);
- bri.append("text").attr("class","cnb").attr("text-anchor","middle").attr("y",5).text("CN BRI");
+ bri.each(function(){FLAG(d3.select(this),20);});
  bri.append("title").text(d=>`China – Belt & Road: ${d.name}, click for the Belt and Road dashboard`);
  /* backer labels */
  const gBL=Z.append("g"),seen=new Set(),labs=[];
  B.links.forEach(l=>{const k=bk(l);if(seen.has(k))return;seen.add(k);const a=cl(proj(l.backer_lonlat));
   const OFF={Turkey:[-10,18,"end"],Russia:[10,18,"start"],Rwanda:[44,-30,"start"],Egypt:[10,-10,"start"]},o=OFF[k]||[a[0]>W/2?-8:8,18,a[0]>W/2?"end":"start"];
-  gBL.append("circle").attr("cx",a[0]).attr("cy",a[1]).attr("r",5).attr("fill",BC[k]||"#9cc1f0").attr("stroke","#0b1526");
+  gBL.append("circle").attr("cx",a[0]).attr("cy",a[1]).attr("r",5).attr("fill",BC[k]||"#82B1FF").attr("stroke","#0b1526");
   if(k==="Rwanda")gBL.append("line").attr("x1",a[0]).attr("y1",a[1]).attr("x2",a[0]+o[0]+2).attr("y2",a[1]+o[1]+3).attr("stroke",BC[k]).attr("stroke-width",1.5);
-  labs.push({x:a[0]+o[0],y:a[1]+o[1],a:o[2],t:l.backer.split(" (")[0].replace("United Arab Emirates","UAE"),c:BC[k]||"#9cc1f0",cls:"blabel",china:k==="China"});});
+  labs.push({x:a[0]+o[0],y:a[1]+o[1],a:o[2],t:l.backer.split(" (")[0].replace("United Arab Emirates","UAE"),c:BC[k]||"#82B1FF",cls:"blabel",china:k==="China"});});
  if(!seen.has("China")){gBL.append("circle").attr("cx",BJ[0]).attr("cy",BJ[1]).attr("r",5).attr("fill",BC.China).attr("stroke","#0b1526");labs.push({x:BJ[0]-8,y:BJ[1]+18,a:"end",t:"China (Beijing)",c:BC.China,cls:"blabel",china:true});}
  /* Russia alignment markers (toggle) */
  const gRU=Z.append("g").style("display","none");
@@ -102,8 +103,8 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
  head("Resources");Object.values(CATS).forEach(c=>item(g=>g.append("path").attr("d",d3.symbol(c.s,120)()).attr("transform","translate(8,-5)").attr("fill",c.c),c.n));
  head("Outside powers");item(g=>g.append("line").attr("x1",0).attr("x2",20).attr("y1",-5).attr("y2",-5).attr("stroke",BC.Russia).attr("stroke-width",3),"Backer line (colour per power)");
  item(g=>g.append("line").attr("x1",0).attr("x2",20).attr("y1",-5).attr("y2",-5).attr("stroke",BC.France).attr("stroke-width",3).attr("stroke-dasharray","4 3"),"Withdrawal");
- item(g=>g.append("path").attr("d",d3.symbol(d3.symbolTriangle,110)()).attr("transform","translate(8,-5)").attr("fill","#F48FB1"),"Russia alignment (toggle, click for details)");
- {const g=lg.append("g").attr("transform",`translate(8,${y})`);g.append("rect").attr("x",-8).attr("y",-15).attr("width",50).attr("height",19).attr("rx",3).attr("fill","#0b1526").attr("stroke","#EF5350").attr("stroke-width",1.8);g.append("text").attr("class","cnb").attr("x",17).attr("y",-1).text("CN BRI");g.append("text").attr("x",50).text("China Belt & Road project");y+=22;}
+ item(g=>g.append("path").attr("d",d3.symbol(d3.symbolTriangle,110)()).attr("transform","translate(8,-5)").attr("fill","#FF80FF"),"Russia alignment (toggle, click for details)");
+ {const g=lg.append("g").attr("transform",`translate(8,${y})`);const f=g.append("g").attr("transform","translate(10,-5)");FLAG(f,20);g.append("text").attr("x",28).text("China Belt & Road project");y+=22;}
  {const a=lg.append("a").attr("href",briHref());a.append("text").attr("x",8).attr("y",y+2).text("Belt and Road dashboard →");y+=22;}
  lg.attr("transform",`translate(24,${H-y-24})`);bg.attr("height",y+14);
  [["L-conf",gC],["L-res",gR],["L-for",gF],["L-for",gBL],["L-bri",gB],["L-ru",gRU]].forEach(([id,g])=>document.getElementById(id).addEventListener("change",e=>g.style("display",e.target.checked?null:"none")));
@@ -138,10 +139,10 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
   ${ru.length?`<h4>Russia here</h4>${ru.map(x=>`<p>${esc(x.theatre)}: Russia backs ${esc(x.backs.charAt(0).toLowerCase()+x.backs.slice(1))}${fn(x.backs_cites)} <a href="#russia">Russia section ↓</a></p>`).join("")}`:""}
   ${SLs.some(s=>s.region===r.id)?`<h4>Storylines</h4><p>${SLs.filter(s=>s.region===r.id).map(s=>`<a href="#news" data-nf="${r.id}" data-sl="${s.id}">${esc(s.title)}</a>`).join(" · ")}</p>`:""}</div>
   <div class="rmapcol"><svg class="loc" id="loc-${r.id}" viewBox="0 0 460 400" role="img" aria-label="Locator map, ${esc(r.name)}"></svg>
-  <div class="lockey" data-r="${r.id}"><label class="chip"><input type="checkbox" data-l="hex" checked> Conflict</label><label class="chip"><input type="checkbox" data-l="places" checked> Places and groups</label><label class="chip"><input type="checkbox" data-l="res" checked> Mines and resources</label><label class="chip"><input type="checkbox" data-l="bri" checked> CN BRI</label><label class="chip"><input type="checkbox" data-l="ru" ${ru.length?"checked":"disabled"}> Russia</label></div>
+  <div class="lockey" data-r="${r.id}"><label class="chip"><input type="checkbox" data-l="hex" checked> Conflict</label><label class="chip"><input type="checkbox" data-l="places" checked> Places and groups</label><label class="chip"><input type="checkbox" data-l="res" checked> Mines and resources</label><label class="chip"><input type="checkbox" data-l="bri" checked> China Belt &amp; Road</label><label class="chip"><input type="checkbox" data-l="ru" ${ru.length?"checked":"disabled"}> Russia</label></div>
   <svg class="spark" id="sp-${r.id}" viewBox="0 0 460 96"></svg></div></div></details>`;}).join("");
  /* locator maps */
- const PSYM={city:[d3.symbolCircle,60,"#e6e9ef"],area:[d3.symbolCircle,0,"#e6e9ef"],mine:[d3.symbolDiamond,90,"#FFD54F"],group:[d3.symbolCross,110,"#CE93D8"],lake:[d3.symbolCircle,60,"#64B5F6"],base:[d3.symbolSquare,80,"#F48FB1"],dam:[d3.symbolSquare,80,"#64B5F6"]};
+ const PSYM={city:[d3.symbolCircle,60,"#FFFFFF"],area:[d3.symbolCircle,0,"#FFFFFF"],mine:[d3.symbolDiamond,90,"#FFD600"],group:[d3.symbolCross,110,"#FF9E80"],lake:[d3.symbolCircle,60,"#18FFFF"],base:[d3.symbolSquare,80,"#FF80FF"],dam:[d3.symbolSquare,80,"#64B5F6"]};
  const LOC={};
  const buildLoc=r=>{if(LOC[r.id])return;const sv=d3.select("#loc-"+r.id);if(sv.empty())return;const LW=460,LH=400;
   const fc={type:"FeatureCollection",features:afr.features.filter(x=>r.countries.includes(x.properties.ADM0_A3))};
@@ -161,7 +162,7 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
   L.hex.selectAll("path").data(HX.features.filter(f=>inB(d3.geoCentroid(f)))).join("path").attr("d",pa).attr("fill",f=>HC[f.properties.step-1]).attr("fill-opacity",.85).append("title").text(f=>`${f.properties.country}: ${f.properties.deaths} deaths`);
   
   B.resources.filter(d=>inB(d.lonlat)&&(d.conflict_region===r.id||r.countries.some(c=>(d.country||"").includes(c)))).forEach(d=>{const [x,y]=pj(d.lonlat);L.res.append("path").attr("class","res").attr("fill",CATS[CAT(d.type)].c).attr("d",d3.symbol(CATS[CAT(d.type)].s,90)()).attr("transform",`translate(${x},${y})`).style("cursor","pointer").on("click",()=>resPanel(d)).append("title").text(d.name);});
-  B.bri.filter(d=>inB(d.lonlat)&&(d.region===r.id)).forEach(d=>{const [x,y]=pj(d.lonlat);const g=L.bri.append("g").attr("class","bri").attr("transform",`translate(${x},${y+14})`).style("cursor","pointer").on("click",()=>{location.href=briHref(d.id);});g.append("rect").attr("x",-23).attr("y",-10).attr("width",46).attr("height",20).attr("rx",4);g.append("text").attr("class","cnb").attr("text-anchor","middle").attr("y",5).text("CN BRI");g.append("title").text(`China – Belt & Road: ${d.name}, click for the Belt and Road dashboard`);});
+  B.bri.filter(d=>inB(d.lonlat)&&(d.region===r.id)).forEach(d=>{const [x,y]=pj(d.lonlat);const g=L.bri.append("g").attr("class","bri").attr("transform",`translate(${x},${y+14})`).style("cursor","pointer").on("click",()=>{location.href=briHref(d.id);});FLAG(g,18);g.append("title").text(`China – Belt & Road: ${d.name}, click for the Belt and Road dashboard`);});
   B.russia.filter(x=>RU_REGION[x.id]===r.id&&inB(x.ll)).forEach(x=>{const [px,py]=pj(x.ll);const g=L.ru.append("g").attr("class","rumark").attr("transform",`translate(${px},${py})`).style("cursor","pointer").on("click",()=>{document.getElementById("russia").scrollIntoView();});g.append("path").attr("d",d3.symbol(d3.symbolTriangle,150)());lab(L.ru,px,py,"RU · "+x.theatre);L.ru.selectAll("text.pn").attr("class","pn ru");g.append("title").text(`Russia in ${x.theatre}: backs ${x.backs} [${fnNums(x.cites)}]`);});
   const P=L.places.selectAll("g").data(PL[r.id]||[]).join("g").attr("class","pt").attr("data-k",p=>p.k).attr("transform",p=>`translate(${pj(p.ll)})`);
   P.append("path").attr("class","sym").attr("d",p=>d3.symbol(PSYM[p.t][0],PSYM[p.t][1]||1)()).attr("fill",p=>PSYM[p.t][2]).attr("stroke","#0b1526").attr("stroke-width",1.2);
@@ -185,9 +186,11 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
  const hl=(r,keys,on)=>{buildLoc(B.regions.find(x=>x.id===r));const o=LOC[r];if(!o)return;o.P.classed("on",p=>on&&keys.includes(p.k)).classed("dim",p=>on&&!keys.includes(p.k));};
  document.querySelectorAll(".prose .pl").forEach(el=>{const f=on=>{hl(el.dataset.r,[el.dataset.k],on);el.classList.toggle("on",on);};el.addEventListener("mouseenter",()=>f(true));el.addEventListener("mouseleave",()=>f(false));el.addEventListener("focus",()=>f(true));el.addEventListener("blur",()=>f(false));});
  /* ---------- Russia section ---------- */
- const renderRu=()=>{document.getElementById("rusec").innerHTML=`<p>Russia works through the Africa Corps, which took over from Wagner in Mali in June 2025, and through security deals with governments.${fn(["reuters-mali-2025"])} Each row shows whom Russia backs in a theatre, whom it fights, and who is reported to back the other side. Status tags read "documented", "reported" or "alleged". Hover a group name for its affiliation chain and terrorist designations.</p>
- <div class="tscroll"><table><tr><th>Theatre</th><th>Russian vehicle</th><th>Russia backs</th><th>Russia fights</th><th>Backers of the other side</th><th>Each side's case</th><th>Status</th></tr>${B.russia.map(r=>`<tr><td><b>${esc(r.theatre)}</b><br><a href="#r-${RU_REGION[r.id]}">region ↑</a></td><td>${esc(r.vehicle)}</td><td>${esc(r.backs)}${fn(r.backs_cites)}</td><td>${r.fights.map(f=>`<span class="chip" title="${esc(gTip(f.g))}">${esc(f.n)}</span> ${desBadges(f.g)}`).join("<br>")}</td><td>${r.opp_backers.length?r.opp_backers.map(o=>`${esc(o.n)} <span class="badge st-${o.status}">${o.status}</span>${fn(o.cites)}`).join("<br>"):'<span class="muted">None documented in our sources</span>'}</td><td>${esc(r.steelman)}${fn(r.cites)}</td><td><span class="badge st-${r.status}">${r.status}</span></td></tr>`).join("")}</table></div>
- <p class="muted">Tick "Russia alignments" on the main map to place these theatres. Designation badges: US FTO = US Foreign Terrorist Organization list, UK = UK proscribed list, UN 1267 = UN ISIL (Da'esh) and Al-Qaida sanctions list.</p>`;};
+ const renderRu=()=>{document.getElementById("rusec").innerHTML=`<p>Russia works through the Africa Corps, which took over from Wagner in Mali in June 2025, and through security deals with governments.${fn(["reuters-mali-2025"])} Each card shows whom Russia backs in a theatre and whom it fights. Open a card for who backs the other side and each side's case. Status tags read "documented", "reported" or "alleged".</p>
+ <div class="rugrid">${B.russia.map(r=>`<article class="rucard"><header><svg width="16" height="14" aria-hidden="true"><path d="M8 1L15 13H1Z" fill="#FF80FF"/></svg><h4>${esc(r.theatre)}</h4>${stB(r.status)}</header><p class="veh">${esc(r.vehicle)}</p><p><b>Backs:</b> ${esc(r.backs)}${fn(r.backs_cites)}</p><p><b>Fights:</b> ${r.fights.map(f=>`<span class="chip" title="${esc(gTip(f.g))}">${esc(f.n)}</span>${desBadges(f.g)}`).join(" ")}</p>
+ <details><summary>Other side's backers and each side's case</summary><p>${r.opp_backers.length?r.opp_backers.map(o=>`${esc(o.n)} ${stB(o.status)}${fn(o.cites)}`).join("<br>"):"None documented in our sources."}</p><p>${esc(r.steelman)}${fn(r.cites)}</p><p><a href="#r-${RU_REGION[r.id]}">Region section ↑</a></p></details></article>`).join("")}</div>
+ <aside class="a7note"><b>Settlement rail (reported):</b> Russia's sanctioned A7 payments network and its A7A5 ruble token are covered under Money flows. No source we found links them to African gold or trade.${fn(["ofac-a7-2025","elliptic-a7a5-2026"])} <a href="#flows">Money flows ↓</a></aside>
+ <p class="muted">Tick "Russia alignments" on the main map to place these theatres. Designation badges: US FTO = US Foreign Terrorist Organization list, UK = UK proscribed list, UN 1267 = UN ISIL (Da'esh) and Al-Qaida sanctions list. <a href="${SHEET}" target="_blank" rel="noopener">Full data in the Google Sheet ↗</a></p>`;};
  /* ---------- news by storyline ---------- */
  const LN={en:"EN",fr:"FR",pt:"PT",ar:"AR",ru:"RU",sw:"SW",ha:"HA",so:"SO",am:"AM",ti:"TI",rw:"RW",rn:"RN",es:"ES"};
  const isState=s=>/^(yes|de facto)/i.test(s||"");
@@ -213,7 +216,56 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
  document.getElementById("newssec").innerHTML=`<p>News is grouped under standing storylines. Each storyline has a context header that explains where it came from, who drives it and what is at stake. Each item carries one line showing how it connects. Items that fit no storyline sit under "Other developments". Clicking a region on the map filters this list.</p><div class="nfilter">${[...B.regions.map(r=>r.id),"continent"].map(id=>`<button class="chip" data-r="${id}">${esc(RN[id])}</button>`).join("")}</div><div id="nbody"></div>`;
  document.querySelectorAll(".nfilter .chip").forEach(c=>c.onclick=()=>setNews(c.dataset.r));
  document.addEventListener("click",e=>{const a=e.target.closest("[data-nf]");if(a){setNews(a.dataset.nf,a.dataset.sl);}});
- /* ---------- sankey ---------- */
+ /* ---------- v1.3 graphics ---------- */
+ const stB=s=>`<span class="badge st-${s}">${s}</span>`;
+ const stOf=c=>/document/i.test(c)?"documented":/alleg/i.test(c)?"alleged":"reported";
+ const flagI=w=>`<svg class="flagi" width="${w}" height="${w*2/3}" viewBox="0 0 ${w} ${w*2/3}" aria-hidden="true"><use href="#cnflag" width="${w}" height="${w*2/3}"/></svg>`;
+ const goldChart=()=>{const R=B.goldroutes,el=document.getElementById("flowsec");
+  el.innerHTML=`<p>Most African gold leaves through Dubai. The chart shows three routes: into the UAE, from the UAE to Switzerland, and from the UAE into crypto. Band widths are tonnes on one shared scale, and each band carries its own year. The crypto route has no published tonnage, so it is drawn as a dashed outline.</p>
+  <svg id="goldsvg" class="goldsvg" viewBox="0 0 1160 500" role="img" aria-label="Gold routes from Africa through the UAE to Switzerland and crypto"></svg>
+  <div class="rcards">
+   <div class="rcard" style="border-top-color:#FFD600"><h4>1. ${esc(R.uae.label)}</h4><p><b>${R.uae.smuggled.t} t</b> of African gold reached the UAE in ${R.uae.smuggled.year} without being declared for export in Africa. That was 66.5% of the UAE's gold imports from Africa.${fn([R.uae.smuggled.cite])} Over ${R.uae.decade.year} the undeclared total was ${R.uae.decade.t.toLocaleString()} t.${fn([R.uae.decade.cite])}</p><ul>${R.uae.cases.map(c=>`<li>${stB(c.status)} ${esc(c.t)}${fn(c.cites)}</li>`).join("")}</ul></div>
+   <div class="rcard" style="border-top-color:#00B0FF"><h4>2. ${esc(R.ch.label)}</h4><p><b>${R.ch.t} t</b> in ${esc(R.ch.year)}.${fn([R.ch.cite])} Over ${R.ch.decade.year}, Switzerland imported ${R.ch.decade.t.toLocaleString()} t of gold from Dubai.${fn([R.ch.decade.cite])}</p><p>${esc(R.ch.note)}${fn([R.ch.decade.cite])}</p></div>
+   <div class="rcard" style="border-top-color:#AA00FF"><h4>3. ${esc(R.crypto.label)}</h4><ul>${R.crypto.cases.map(c=>`<li>${stB(c.status)} ${esc(c.t)}${fn(c.cites)}</li>`).join("")}</ul><p class="gap">${esc(R.crypto.gap)}</p></div>
+   <div class="rcard" style="border-top-color:#FF80FF"><h4>${esc(R.a7.label)} ${stB(R.a7.status)}</h4>${R.a7.t.map((t,i)=>`<p>${esc(t)}${fn(i===0?["elliptic-a7a5-2026","ofac-a7-2025"]:i===1?["ofac-sdn-20250814","uk-a7a5-2025","eu-19th-2025"]:["elliptic-a7a5-2025","elliptic-a7a5-2026","ft-a7a5-2025","chainalysis-a7a5-2025","elliptic-a7-leaks"])}</p>`).join("")}<p class="gap"><b>Africa link:</b> ${esc(R.a7.africa)}</p></div>
+  </div>
+  <h3>Battery minerals</h3><div class="statrow">${B.sankey.battery.map((f,i)=>`<div class="stat" style="border-left-color:${i?"#00B0FF":"#AEEA00"}"><div class="big">${f.t.toLocaleString()} t</div><div>${esc(f.from)} → ${esc(f.to)}</div><div class="muted">${esc(f.year)}${fn([f.cite])}</div></div>`).join("")}</div>
+  <p class="muted">The two battery figures are different minerals, so they are not drawn on one scale. <a href="${SHEET}" target="_blank" rel="noopener">Full data in the Google Sheet ↗</a></p>`;
+  const sv=d3.select("#goldsvg"),k=0.5,gap=15,OX=290,HX=560,DX=820;
+  const ins=[...R.uae.inflows.map(f=>({n:f.from==="Russia"?"Russia (not African)":f.from,t:f.t,y:f.year,c:f.from==="Russia"?"#FF80FF":"#FFD600",cite:f.cite})),{n:"Undeclared African gold",t:R.uae.smuggled.t,y:R.uae.smuggled.year,c:"#FF6D00",cite:R.uae.smuggled.cite}];
+  const tot=d3.sum(ins,d=>d.t),hubH=tot*k,hubY=20+(ins.length-1)*gap/2;let y=20,hy=hubY;
+  ins.forEach(d=>{const h=d.t*k;sv.append("polygon").attr("points",`${OX+10},${y} ${HX},${hy} ${HX},${hy+h} ${OX+10},${y+h}`).attr("fill",d.c).attr("fill-opacity",.8).append("title").text(`${d.n} → UAE: ${d.t} t (${d.y}) [${fnNums([d.cite])}]`);
+   sv.append("rect").attr("x",OX).attr("y",y).attr("width",10).attr("height",h).attr("fill",d.c);
+   sv.append("text").attr("class","gl").attr("x",OX-8).attr("y",y+h/2+5).attr("text-anchor","end").text(`${d.n}: ${d.t} t (${d.y})`);y+=h+gap;hy+=h;});
+  sv.append("rect").attr("x",HX).attr("y",hubY).attr("width",16).attr("height",hubH).attr("fill","#FFFFFF");
+  sv.append("text").attr("class","gl gh").attr("x",HX+8).attr("y",hubY-8).attr("text-anchor","middle").text("UAE (Dubai)");
+  const chH=R.ch.t*k;sv.append("polygon").attr("points",`${HX+16},${hubY} ${DX},${hubY} ${DX},${hubY+chH} ${HX+16},${hubY+chH}`).attr("fill","#00B0FF").attr("fill-opacity",.8).append("title").text(`UAE → Switzerland: ${R.ch.t} t (${R.ch.year}) [${fnNums([R.ch.cite])}]`);
+  sv.append("rect").attr("x",DX).attr("y",hubY).attr("width",10).attr("height",chH).attr("fill","#00B0FF");
+  const lab=(x,y0,lines,cls)=>{const t=sv.append("text").attr("class","gl "+(cls||"")).attr("x",x).attr("y",y0);lines.forEach((l,i)=>t.append("tspan").attr("x",x).attr("dy",i?18:0).text(l));};
+  lab(DX+18,hubY+chH/2-4,["Switzerland",`${R.ch.t} t (${R.ch.year})`]);
+  const cy=hubY+chH+30,cH=44;sv.append("polygon").attr("points",`${HX+16},${cy} ${DX},${cy} ${DX},${cy+cH} ${HX+16},${cy+cH}`).attr("fill","#AA00FF").attr("fill-opacity",.18).attr("stroke","#AA00FF").attr("stroke-width",2).attr("stroke-dasharray","7 5").append("title").text("UAE → crypto and stablecoins via OTC desks: no published tonnage. Documented case: Russian (Polyus) gold, OFAC 2024.");
+  sv.append("text").attr("class","gl").attr("x",(HX+DX)/2+8).attr("y",cy+cH/2+5).attr("text-anchor","middle").text("no published tonnage");
+  lab(DX+18,cy+16,["Crypto and stablecoins","via OTC desks (documented case:","Russian gold, not African)"]);
+  const ay=cy+cH+52;sv.append("line").attr("x1",DX+5).attr("y1",cy+cH).attr("x2",DX+5).attr("y2",ay-6).attr("stroke","#FF80FF").attr("stroke-width",2).attr("stroke-dasharray","4 4");
+  sv.append("rect").attr("x",DX-4).attr("y",ay-6).attr("width",18).attr("height",18).attr("fill","none").attr("stroke","#FF80FF").attr("stroke-width",2);
+  lab(DX+18,ay+8,["A7A5 / Grinex: Russian settlement","rail (reported link, no African","gold source found)"],"ga7");
+  sv.append("text").attr("class","gl").attr("x",OX).attr("y",y+18).text("Band width = tonnes, same scale for every band. Hover a band for its source number.");
+  sv.attr("viewBox",`0 0 1160 ${Math.max(y+30,ay+70)}`);};
+ const renderBackers=()=>{const regs=B.regions,bks=[...new Set(B.links.map(bk))].sort();
+  const cell=(r,b)=>{const ls=B.links.filter(l=>l.region===r.id&&bk(l)===b);if(!ls.length)return `<span class="mx0"></span>`;const s=ls.map(l=>stOf(l.confidence));const st=s.includes("documented")?"documented":s.includes("reported")?"reported":"alleged";
+   return `<button class="mx st-${st}" style="--c:${BC[b]||"#82B1FF"}" data-r="${r.id}" data-b="${esc(b)}" title="${esc(ls.map(l=>`${l.backer} → ${l.actor} (${l.confidence}): ${(l.means||[]).join(", ")}`).join("\n"))}">${ls.length}</button>`;};
+  document.getElementById("bksec").innerHTML=`<p>Each dot is one or more outside states backing a side in a region. Solid dots are documented, dashed rings are reported or alleged. Hover for the actor and means, click for the full entry and sources.</p>
+  <div class="mxwrap"><div class="mxg" style="grid-template-columns:minmax(150px,1.3fr) repeat(${bks.length},minmax(44px,1fr))"><span></span>${bks.map(b=>`<span class="mxh" style="color:${BC[b]||"#82B1FF"}">${esc(b)}</span>`).join("")}
+  ${regs.map(r=>`<span class="mxr"><a href="#r-${r.id}">${esc(r.name)}</a></span>${bks.map(b=>cell(r,b)).join("")}`).join("")}</div></div><div id="mxdet"></div>
+  <p class="muted"><a href="${SHEET}" target="_blank" rel="noopener">Full data in the Google Sheet ↗</a></p>`;
+  document.querySelectorAll("#bksec .mx").forEach(b=>b.addEventListener("click",()=>{document.getElementById("mxdet").innerHTML=tbl(B.links.filter(l=>l.region===b.dataset.r&&bk(l)===b.dataset.b));}));};
+ const renderMinerals=()=>{const by={};B.resources.forEach(r=>{const m=/^([\d.]+)%$/.exec(r.world_share||"");if(!m)return;(by[r.type]??=[]).push({r,v:+m[1]});});
+  const rows=Object.entries(by).map(([t,a])=>({t,a,v:d3.sum(a,x=>x.v),c:CATS[CAT(t)].c})).sort((a,b)=>b.v-a.v);
+  const nm=t=>t.charAt(0).toUpperCase()+t.slice(1).replace("-"," ");
+  document.getElementById("mnsec").innerHTML=`<p>Share of world mine output from the African producers on the map, from USGS figures. Colours follow the map's resource key. Hover a bar for the country split.</p>
+  <div class="bars">${rows.map(x=>`<div class="bar" title="${esc(x.a.map(y=>`${y.r.name}: ${y.r.quantity}, ${y.v}% (${y.r.year})`).join("\n"))}"><span class="bl">${esc(nm(x.t))}</span><span class="bt"><span class="bf" style="width:${Math.min(x.v,100)}%;background:${x.c}"></span></span><span class="bv">${x.v.toFixed(x.v<10?1:0)}%</span><span class="bc">${esc(x.a.map(y=>y.r.name.split(" (")[0].replace(/^(DRC|South Africa|Guinea|Gabon|Ghana|Rwanda|Nigeria|Zambia|Madagascar|Zimbabwe|Mali|Mozambique|Tanzania|Namibia|Niger).*/,"$1")).join(", "))}${fn([...new Set(x.a.flatMap(y=>y.r.cites))])}</span></div>`).join("")}</div>
+  <p class="muted"><a href="${SHEET}" target="_blank" rel="noopener">Full data in the Google Sheet ↗</a></p>`;};
+ /* ---------- sankey (unused) ---------- */
  function sankey(id,flows){const sv=d3.select("#"+id),W=1060,Hh=+sv.attr("viewBox").split(" ")[3];const cols={};flows.forEach(f=>{cols[f.from]??=0;cols[f.to]=Math.max(cols[f.to]??0,(cols[f.from]??0)+1);});
   const col=n=>cols[n];const nodes=[...new Set(flows.flatMap(f=>[f.from,f.to]))];const ncol=d3.max(nodes,col)+1;
   const val=n=>Math.max(d3.sum(flows.filter(f=>f.from===n),f=>f.t),d3.sum(flows.filter(f=>f.to===n),f=>f.t));
@@ -231,19 +283,26 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
   document.getElementById(id+"-notes").innerHTML=flows.map(f=>`<span>${esc(f.from)} → ${esc(f.to)}: <b>${f.t.toLocaleString()} t</b>, ${f.year}.${fn([f.cite])}</span>`).join("");}
  /* ---------- BRI, media, method ---------- */
  const fillRest=()=>{
- document.getElementById("brisec").innerHTML=`<aside class="bri-cta"><div><p class="eyebrow">Beacon global dashboard</p><h3>China's role in Africa and beyond</h3><p>The Belt and Road dashboard tracks China's loans, ports, railways, bases and mining stakes worldwide.</p></div><a class="bri-btn" href="${briHref()}">Explore the Belt and Road dashboard →</a></aside><p>Fourteen China-linked projects sit in or near the conflict regions on this map. They include railways, ports, Africa's first Chinese military base, mining stakes and state loans. China's state lenders have lent to 49 African governments since 2000.${fn(["bu-cla-2024","bu-cla-db"])} Each row shows what China built or lent, what it gets in return and how the host government presents the deal.</p>
-  <div class="tscroll"><table><tr><th>Project</th><th>Type</th><th>Country</th><th>What China built or lent</th><th>What China gets</th><th>Host's case</th><th>Confidence</th></tr>${B.bri.map(b=>`<tr><td><b><a href="${briHref(b.id)}">${esc(b.name)}</a></b></td><td>${esc(b.kind)}</td><td>${esc(b.country)}</td><td>${esc(b.value)}. ${esc(b.lender_builder)}${fn(b.cites)}</td><td>${esc(b.china_gets)}</td><td>${esc(b.host_position)}</td><td>${esc(b.confidence)}</td></tr>`).join("")}</table></div>`;
+ document.getElementById("brisec").innerHTML=`<aside class="bri-cta"><div><p class="eyebrow">Beacon global dashboard</p><h3>China's role in Africa and beyond</h3><p>The Belt and Road dashboard tracks China's loans, ports, railways, bases and mining stakes worldwide.</p></div><a class="bri-btn" href="${briHref()}">Explore the Belt and Road dashboard →</a></aside><p>Fourteen China-linked projects sit in or near the conflict regions on this map. They include railways, ports, Africa's first Chinese military base, mining stakes and state loans. China's state lenders have lent to 49 African governments since 2000.${fn(["bu-cla-2024","bu-cla-db"])} Each card shows what China built or lent. Open it for what China gets and the host government's case.</p>
+  ${(()=>{const K=k=>k.replace(/\s*\(.*\)/,"");const cnt=d3.rollups(B.bri,v=>v.length,b=>K(b.kind)).sort((a,b)=>b[1]-a[1]);const mx=d3.max(cnt,c=>c[1]);return `<div class="bars bri-bars">${cnt.map(([k,n])=>`<div class="bar"><span class="bl">${flagI(18)} ${esc(k.charAt(0).toUpperCase()+k.slice(1))}</span><span class="bt"><span class="bf" style="width:${n/mx*100}%;background:#FF1744"></span></span><span class="bv">${n}</span></div>`).join("")}</div>`;})()}
+  <div class="bricards">${B.bri.map(b=>`<article class="bricard"><header>${flagI(20)}<h4><a href="${briHref(b.id)}">${esc(b.name)}</a></h4></header><p class="veh">${esc(b.country)} · ${esc(b.kind)}</p><p><b>${esc(b.value)}</b>${fn(b.cites)}</p><details><summary>Details</summary><p><b>Lender or builder:</b> ${esc(b.lender_builder)}</p><p><b>What China gets:</b> ${esc(b.china_gets)}</p><p><b>Host's case:</b> ${esc(b.host_position)}</p><p><b>Confidence:</b> ${esc(b.confidence)}</p></details></article>`).join("")}</div>
+  <p class="muted"><a href="${SHEET}" target="_blank" rel="noopener">Full data in the Google Sheet ↗</a></p>`;
  if(MD){const own=MD.ownership,fs=own.filter(o=>o.foreign_state),dom=own.filter(o=>!o.foreign_state);
- const orow=o=>`<tr><td><b>${esc(o.name)}</b></td><td>${esc(o.country)}</td><td>${esc(o.owner)}${fn((o.ownership_source||"").split(/\s*;\s*/).filter(u=>u.startsWith("http")).map(u=>urlSrc(u,"Ownership of "+o.name,o.name+" ownership source")))}</td><td>${esc(o.ownership_type)}</td><td>${esc(o.political_ties||"")}</td><td>${isState(o.state_media)?'<span class="badge state">State media</span>':""}</td><td>${o.verified?'<span class="badge ok">Verified</span>':'<span class="badge unv">Unverified</span>'}</td></tr>`;
- const OH='<tr><th>Outlet</th><th>Base</th><th>Owner</th><th>Type</th><th>Political ties</th><th>State</th><th>Status</th></tr>';
- document.getElementById("mediasec").innerHTML=`<p>Who owns an outlet shapes what it covers. State media are used here as each government's own narrative, never as confirmation of facts. A row is <b>Verified</b> only when we opened its ownership sources. <b>Unverified</b> rows rely on reference listings and are shown for context.</p>
-  <h3>Foreign-state media active in Africa</h3><div class="tscroll"><table>${OH}${fs.map(orow).join("")}</table></div>
-  <h3>Key African and international outlets (verified ownership)</h3><div class="tscroll"><table>${OH}${dom.map(orow).join("")}</table></div>`;}
+ const oSrc=o=>fn((o.ownership_source||"").split(/\s*;\s*/).filter(u=>u.startsWith("http")).map(u=>urlSrc(u,"Ownership of "+o.name,o.name+" ownership source")));
+ const TYI=o=>isState(o.state_media)?["#FF1744","■","State media"]:/aligned|backed/i.test(o.ownership_type)?["#FFAB00","◆","Private, state-aligned or state-backed"]:["#1DE9B6","●","Private"];
+ const tag=o=>{const [c,s,n]=TYI(o);return `<span class="otag ${o.verified?"":"unv"}" title="${esc(`${o.name} (${o.country}). Owner: ${o.owner}. ${o.political_ties||""} ${o.verified?"Ownership verified.":"Ownership unverified."}`)}"><i style="color:${c}" aria-label="${n}">${s}</i> ${esc(o.name)}${oSrc(o)}</span>`;};
+ const grp=(arr,key)=>d3.groups(arr,key).sort((a,b)=>b[1].length-a[1].length);
+ const ownerKey=o=>{const m=/\(([^)]*(Group|Holdings|Ltd|Media)[^)]*)\)/.exec(o.owner);return m?m[1]:o.owner.split(/[,(]/)[0].trim();};
+ document.getElementById("mediasec").innerHTML=`<p>Who owns an outlet shapes what it covers. State media are used here as each government's own narrative, never as confirmation of facts. Hover an outlet for its owner and ties. A dashed tag means its ownership is unverified.</p>
+  <p class="okey"><span><i style="color:#FF1744">■</i> State media</span><span><i style="color:#FFAB00">◆</i> Private, state-aligned or state-backed</span><span><i style="color:#1DE9B6">●</i> Private</span></p>
+  <h3>Foreign-state media active in Africa, by owner state</h3><div class="ogrid">${grp(fs,o=>o.country.split("/")[0]).map(([k,a])=>`<div class="ocard"><h4>${k==="China"?flagI(20)+" ":""}${esc(k)} <span class="cnt">${a.length}</span></h4>${a.map(tag).join("")}</div>`).join("")}</div>
+  <h3>Key African and international outlets, by owner</h3><div class="ogrid">${grp(dom,ownerKey).map(([k,a])=>`<div class="ocard"><h4>${esc(k)} <span class="cnt">${a.length}</span></h4>${a.map(tag).join("")}</div>`).join("")}</div>
+  <p class="muted"><a href="${SHEET}" target="_blank" rel="noopener">Full data in the Google Sheet ↗</a></p>`;}
  document.getElementById("methodsec").innerHTML=`<ul><li><b>Conflict shading and monthly bars:</b> ${esc(NOTE)} Monthly bars use UCDP GED best estimates by region, counted in the month an event starts. Sudan's October 2025 bar is the RSF capture of El Fasher, which UCDP codes as two events with about 56,700 best-estimate deaths.</li><li><b>Resources, backers, Russia and Belt and Road:</b> every entry carries at least one numbered source. Contested links are marked "reported" or "alleged". Each side's own case is given.</li><li><b>Region explainers:</b> a bottom line, then one claim per paragraph, each with its source number. Descriptive only, with no forecasts or recommendations.</li>
   <li><b>Latest news:</b> fetched ${MD?esc(MD.fetched):"n/a"} from ${MD?MD.feeds_ok:0} of ${MD?MD.feeds_total:0} working RSS feeds. Items from the last 14 days are matched to a region by place and actor names, grouped into same-event stories by headline word overlap, then hung on a standing storyline by keyword match. Unmatched stories go to "Other developments". Non-English headlines are translated locally with NLLB-200 (facebook/nllb-200-distilled-600M), and originals are shown. No .cn sites are fetched.</li>
-  <li><b>X posts:</b> read from the free X API for accounts in the source list.</li><li><b>Money flows:</b> only published figures.</li><li><b>Sources:</b> numbered in order of first appearance. A repeated source keeps its number.</li></ul>`;};
- setNews("sahel");renderRu();sankey("sk-gold",B.sankey.gold);sankey("sk-battery",B.sankey.battery);fillRest();
- window._sankeyFlows=B.sankey.gold.length+B.sankey.battery.length;
+  <li><b>X posts:</b> read from the free X API for accounts in the source list.</li><li><b>Money flows:</b> only published figures are drawn, on one tonnage scale. The crypto route and the A7A5 rail have no published gold tonnage and are drawn as outlines. A7A5 is marked "reported" because no source we found ties it to African gold.</li><li><b>Sources:</b> numbered in order of first appearance. A repeated source keeps its number.</li></ul>`;};
+ setNews("sahel");renderBackers();renderMinerals();renderRu();goldChart();fillRest();
+ window._sankeyFlows=document.querySelectorAll("#goldsvg polygon").length;
  renderSources();
  window._fn=()=>({n:FNL.length,ids:FNL});
  window._check=()=>{const ts=[...document.querySelectorAll("svg text")].filter(t=>t.getBBox().width>0&&getComputedStyle(t).display!=="none"&&t.closest("svg").getBoundingClientRect().width>0);

@@ -932,6 +932,102 @@
    "publisher": "CNN",
    "date": "2023-04-21",
    "url": "https://www.cnn.com/2023/04/20/africa/wagner-sudan-russia-libya-intl"
+  },
+  {
+   "id": "swissaid-trail-article",
+   "title": "On the trail of African gold (summary article)",
+   "publisher": "SWISSAID",
+   "date": "2024-05-30",
+   "url": "https://www.swissaid.ch/en/articles/on-the-trail-of-african-gold/",
+   "type": "secondary"
+  },
+  {
+   "id": "ofac-polyus-2024",
+   "title": "Treasury takes sweeping aim at Russia's financial infrastructure (jy2404), Sudakov gold laundering network",
+   "publisher": "US Treasury",
+   "date": "2024-06-12",
+   "url": "https://home.treasury.gov/news/press-releases/jy2404",
+   "type": "primary"
+  },
+  {
+   "id": "ofac-a7-2025",
+   "title": "Treasury sanctions cryptocurrency exchange and network enabling sanctions evasion (sb0225): Grinex, A7, A71, A7 Agent, Old Vector",
+   "publisher": "US Treasury",
+   "date": "2025-08-14",
+   "url": "https://home.treasury.gov/news/press-releases/sb0225",
+   "type": "primary"
+  },
+  {
+   "id": "ofac-sdn-20250814",
+   "title": "Cyber-related designations, SDN list entries for A7 LLC, Grinex, Old Vector",
+   "publisher": "OFAC",
+   "date": "2025-08-14",
+   "url": "https://ofac.treasury.gov/recent-actions/20250814",
+   "type": "primary"
+  },
+  {
+   "id": "uk-a7a5-2025",
+   "title": "UK targets sanctions circumvention and crypto networks exploited by Russia",
+   "publisher": "UK FCDO",
+   "date": "2025-08-20",
+   "url": "https://www.gov.uk/government/news/uk-targets-sanctions-circumvention-and-crypto-networks-exploited-by-russia",
+   "type": "primary"
+  },
+  {
+   "id": "eu-19th-2025",
+   "title": "19th package of sanctions against Russia: crypto providers and A7A5",
+   "publisher": "Council of the EU",
+   "date": "2025-10-23",
+   "url": "https://www.consilium.europa.eu/en/press/press-releases/2025/10/23/19th-package-of-sanctions-against-russia-eu-targets-russian-energy-third-country-banks-and-crypto-providers/",
+   "type": "primary"
+  },
+  {
+   "id": "elliptic-a7a5-2025",
+   "title": "The rise of A7A5: the ruble stablecoin now transfers $1 billion per day",
+   "publisher": "Elliptic",
+   "date": "2025-07-27",
+   "url": "https://www.elliptic.co/insights/the-rise-of-a7a5-the-ruble-stablecoin-now-transfers-1-billion-per-day/",
+   "type": "secondary"
+  },
+  {
+   "id": "elliptic-a7a5-2026",
+   "title": "A7A5: the ruble-backed stablecoin crosses $100 billion in transactions",
+   "publisher": "Elliptic",
+   "date": "2026-01-21",
+   "url": "https://www.elliptic.co/insights/a7a5-the-ruble-backed-stablecoin-100-billion-in-transactions/",
+   "type": "secondary"
+  },
+  {
+   "id": "elliptic-a7-leaks",
+   "title": "The A7 leaks: the role of crypto in Russian sanctions evasion and election interference",
+   "publisher": "Elliptic",
+   "date": "2025",
+   "url": "https://www.elliptic.co/insights/the-a7-leaks-the-role-of-crypto-in-russian-sanctions-evasion-and-election-interference/",
+   "type": "secondary"
+  },
+  {
+   "id": "ft-a7a5-2025",
+   "title": "Whale-watching the stablecoin trade in ersatz roubles for sort-of dollars (FT Alphaville, on the FT's A7A5 investigation)",
+   "publisher": "Financial Times",
+   "date": "2025",
+   "url": "https://www.ft.com/content/650769ea-5679-44c1-99bc-dd060232bfed",
+   "type": "secondary"
+  },
+  {
+   "id": "chainalysis-a7a5-2025",
+   "title": "How A7A5 and Grinex enable the Russian shadow crypto economy",
+   "publisher": "Chainalysis",
+   "date": "2025-08",
+   "url": "https://www.chainalysis.com/blog/a7a5-grinex-russian-crypto-economy-ofac-sanctions-august-2025/",
+   "type": "secondary"
+  },
+  {
+   "id": "sentry-rsf-uae",
+   "title": "The RSF's business network in the UAE",
+   "publisher": "The Sentry",
+   "date": "2025",
+   "url": "https://thesentry.org/reports/sudan-rsf-business-network-in-the-uae/",
+   "type": "secondary"
   }
  ],
  "regions": [
@@ -2772,7 +2868,7 @@
      ]
     },
     {
-     "t": "Gold pays for the fighting. Armed groups tax and protect artisanal mining sites, which gives them income and local standing. [[gitoc-acled-2024]] Niger's army raided such sites in June 2025 to cut jihadist financing. [[reuters-niger-gold-2025]] Much of the region's gold leaves undeclared: SWISSAID found 405 t of African gold entered the UAE in 2022 without matching export records. [[swissaid-gold-2024]]",
+     "t": "Gold pays for the fighting. Armed groups tax and protect artisanal mining sites, which gives them income and local standing. [[gitoc-acled-2024]] Niger's army raided such sites in June 2025 to cut jihadist financing. [[reuters-niger-gold-2025]] Much of the region's gold leaves undeclared: SWISSAID found 405 t of African gold entered the UAE in 2022 without matching export records. [[swissaid-gold-2024]] SWISSAID names Mali among the three largest gold-smuggling countries in Africa and finds that 80-85% of African artisanal gold is exported to the UAE. [[swissaid-gold-2024]]",
      "c": [
       "gitoc-acled-2024",
       "reuters-niger-gold-2025",
@@ -2849,10 +2945,11 @@
      ]
     },
     {
-     "t": "Gold is the main source of hard currency for both sides. The RSF's business network began in the {{jebelamer|Jebel Amer}} mines of Darfur. [[guardian-jebelamer-2020]] SWISSAID counts 29 t of gold the UAE imported directly from Sudan in 2024, plus imports via Chad and Libya that it treats as exit routes for RSF gold. [[swissaid-uae-2025]]",
+     "t": "Gold is the main source of hard currency for both sides, and most of it goes to the UAE. The RSF's business network began in the {{jebelamer|Jebel Amer}} mines of Darfur. [[guardian-jebelamer-2020]] SWISSAID counts 29 t of gold the UAE imported directly from Sudan in 2024, plus imports via Chad and Libya that it treats as exit routes for RSF gold. [[swissaid-uae-2025]] The US Treasury sanctioned UAE-based AZ Gold, managed by an RSF figure, for buying Sudanese gold. [[ofac-rsf-2025]]",
      "c": [
       "guardian-jebelamer-2020",
-      "swissaid-uae-2025"
+      "swissaid-uae-2025",
+      "ofac-rsf-2025"
      ]
     },
     {
@@ -2935,7 +3032,7 @@
      ]
     },
     {
-     "t": "Security is paid for in resources. Crisis Group reports that Russians run gold mines, cut timber and receive tax exemptions in return for protecting the government. [[icg-car-2026]] The US Treasury sanctioned Wagner-linked firms including Midas, which holds the {{ndassima|Ndassima}} gold mine. [[ofac-wagner-gold]]",
+     "t": "Security is paid for in resources. Crisis Group reports that Russians run gold mines, cut timber and receive tax exemptions in return for protecting the government. [[icg-car-2026]] The US Treasury sanctioned Wagner-linked firms including Midas, which holds the {{ndassima|Ndassima}} gold mine. [[ofac-wagner-gold]] Treasury said Dubai-based Industrial Resources joined a scheme that turned CAR gold into dollars and moved cash to Russia by hand. [[ofac-wagner-gold]]",
      "c": [
       "icg-car-2026",
       "ofac-wagner-gold"
@@ -3068,6 +3165,12 @@
      "t": "Oil revenue is divided along the same line, with the east-based authorities shutting fields in August 2024. [[eia-libya]]",
      "c": [
       "eia-libya"
+     ]
+    },
+    {
+     "t": "Libya is also a gold corridor. SWISSAID counts 9 t of gold the UAE imported from Libya in 2024 and treats Libya as one exit route for Sudanese gold. [[swissaid-uae-2025]]",
+     "c": [
+      "swissaid-uae-2025"
      ]
     },
     {
@@ -4025,5 +4128,148 @@
    ],
    "status": "reported"
   }
- ]
+ ],
+ "goldroutes": {
+  "uae": {
+   "label": "Africa to the UAE (Dubai)",
+   "inflows": [
+    {
+     "from": "Sudan",
+     "to": "UAE",
+     "t": 29,
+     "year": "2024",
+     "cite": "swissaid-uae-2025"
+    },
+    {
+     "from": "Chad",
+     "to": "UAE",
+     "t": 18,
+     "year": "2024",
+     "cite": "swissaid-uae-2025"
+    },
+    {
+     "from": "Libya",
+     "to": "UAE",
+     "t": 9,
+     "year": "2024",
+     "cite": "swissaid-uae-2025"
+    },
+    {
+     "from": "Egypt",
+     "to": "UAE",
+     "t": 27,
+     "year": "2024",
+     "cite": "swissaid-uae-2025"
+    },
+    {
+     "from": "Uganda",
+     "to": "UAE",
+     "t": 31,
+     "year": "2024",
+     "cite": "swissaid-uae-2025"
+    },
+    {
+     "from": "Rwanda",
+     "to": "UAE",
+     "t": 19,
+     "year": "2024",
+     "cite": "swissaid-uae-2025"
+    },
+    {
+     "from": "Togo",
+     "to": "UAE",
+     "t": 52,
+     "year": "2024",
+     "cite": "swissaid-uae-2025"
+    },
+    {
+     "from": "Russia",
+     "to": "UAE",
+     "t": 66,
+     "year": "2024",
+     "cite": "swissaid-uae-2025"
+    }
+   ],
+   "smuggled": {
+    "t": 405,
+    "year": "2022",
+    "cite": "swissaid-gold-2024",
+    "what": "African gold imported by the UAE that was not declared for export in Africa (66.5% of the UAE's African gold imports)"
+   },
+   "decade": {
+    "t": 2569,
+    "year": "2012-2022",
+    "cite": "swissaid-gold-2024"
+   },
+   "cases": [
+    {
+     "status": "documented",
+     "t": "OFAC sanctioned UAE-based AZ Gold, managed by an RSF figure, for buying gold from Sudan.",
+     "cites": [
+      "ofac-rsf-2025"
+     ]
+    },
+    {
+     "status": "documented",
+     "t": "OFAC said Dubai-based Industrial Resources joined a Wagner-linked scheme that turned CAR gold into US dollars and moved cash to Russia by hand.",
+     "cites": [
+      "ofac-wagner-gold"
+     ]
+    },
+    {
+     "status": "reported",
+     "t": "The Sentry traced RSF-linked businessmen behind four Dubai gold companies.",
+     "cites": [
+      "sentry-rsf-uae"
+     ]
+    }
+   ]
+  },
+  "ch": {
+   "label": "UAE to Switzerland",
+   "t": 316,
+   "year": "Jan-Sep 2025",
+   "cite": "swissaid-uae-2025",
+   "decade": {
+    "t": 1670,
+    "year": "2012-2022",
+    "cite": "swissaid-trail-article"
+   },
+   "note": "Swiss rules record refined gold by its last place of processing, so gold from Dubai counts as Emirati."
+  },
+  "crypto": {
+   "label": "UAE to crypto and stablecoins",
+   "cases": [
+    {
+     "status": "documented",
+     "t": "OFAC said a network laundering gold for sanctioned Russian miner Polyus converted gold-sale payments into fiat and cryptocurrency through UAE and Hong Kong front companies, including Dubai's Red Coast Metals Trading DMCC. The gold was Russian, not African.",
+     "cites": [
+      "ofac-polyus-2024"
+     ]
+    }
+   ],
+   "gap": "We found no published volume of African gold converted to crypto in the UAE, and no source tying a specific African gold shipment to a crypto conversion."
+  },
+  "a7": {
+   "label": "A7A5, Russia's settlement rail",
+   "status": "reported",
+   "t": [
+    "A7 LLC is a Moscow cross-border payments firm owned by Ilan Shor and the state defence bank Promsvyazbank (PSB). Its ruble token A7A5 is issued by Old Vector in Kyrgyzstan and trades mainly on the Grinex exchange.",
+    "The US sanctioned A7, Grinex and Old Vector in August 2025, the UK sanctioned Grinex and Old Vector the same month, and the EU banned A7A5 transactions in October 2025.",
+    "Elliptic counts more than $100 billion in A7A5 transfers by January 2026, mostly as a bridge between rubles and the dollar token USDT."
+   ],
+   "cites": [
+    "ofac-a7-2025",
+    "ofac-sdn-20250814",
+    "uk-a7a5-2025",
+    "eu-19th-2025",
+    "elliptic-a7a5-2025",
+    "elliptic-a7a5-2026",
+    "elliptic-a7-leaks",
+    "ft-a7a5-2025",
+    "chainalysis-a7a5-2025"
+   ],
+   "africa": "None of these sources links A7 or A7A5 to African gold or trade. It is shown as the Russian settlement rail that a gold-to-crypto route could feed into, not as a documented Africa link."
+  }
+ }
 }
