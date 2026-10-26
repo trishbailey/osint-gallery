@@ -113,3 +113,4 @@ svg text{fill-opacity:1}
 .us-v{font-weight:700;color:var(--text);border-bottom:1px dotted var(--gold);cursor:help}.us-v:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .defn{font-size:15px}
 .sk-year{font-size:clamp(32px,5vw,52px)}
+.sk-us-note{font-size:15px;color:var(--text);margin:0 0 8px;border-left:3px solid var(--gold);padding-left:10px}
