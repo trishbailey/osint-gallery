@@ -10,8 +10,11 @@ const OTHER='#c8a24a';
 const hp=()=>new URLSearchParams(location.hash.slice(1));
 function setHash(k,v){const q=hp();if(v==null)q.delete(k);else q.set(k,v);const t=q.toString();history.replaceState(null,'',location.pathname+location.search+(t?'#'+t:''))}
 const TYPES={'Foreign ministry':'#e05a5a','Embassy':'#4e9fe0','Consulate':'#5cbf7a','Diplomat':'#e6b33a','Outside account':'#b36bd6'};
-const AGC=['#8e1b24','#d9b26a','#3fa45b'];const TONEB=[['Mostly aggressive',AGC[0]],['Neutral or mixed',AGC[1]],['Mostly friendly',AGC[2]]];
-const toneCol=d3.scaleLinear().domain([-0.35,0,0.35]).range(AGC).interpolate(d3.interpolateLab).clamp(true);
+const AGC=['#b0182f','#d9b26a','#3fa45b'];// AGG: aggressive-share steps. Not aggressive below AGT (4%): white. Pink to dark red = more aggressive.
+const AGT=0.04,AGS=[0.08,0.20],AGR=['#ffffff','#f7b3c2','#e0526f','#8e0c22'];
+const aggCol=a=>a<AGT?AGR[0]:a<AGS[0]?AGR[1]:a<AGS[1]?AGR[2]:AGR[3];
+const TONEB=[['Not aggressive (under 4% of posts)',AGR[0]],['Somewhat aggressive (4-8%)',AGR[1]],['Aggressive (8-20%)',AGR[2]],['Most aggressive (20% or more)',AGR[3]]];
+
 const accType={};ACC.forEach(a=>accType[a.h]=a.type);
 let on=new Set(Object.keys(TYPES));
 const tip=d3.select('#tip');
@@ -166,15 +169,30 @@ function openPost(a){const p=PO[a.id];d3.select('#ph').text(a.label);
  const MP=TONE.min_posts,byGeo={};TONE.countries.forEach(c=>{if(c.geo&&c.posts>=MP)byGeo[c.geo]=c});
  const pct=x=>Math.round(x*100)+'%';
  const tip=c=>{if(!c)return '';const h=c.harsh[0],f=c.friendly[0];return `<b>${esc(c.country)}</b> · ${c.posts} posts<br><span style="color:#e2646e">Aggressive ${pct(c.agg)}</span> · <span style="color:#6fd08a">Friendly ${pct(c.fri)}</span>`+(h?`<br><i>Harshest:</i> “${esc(h.text.slice(0,110))}…”`:'')+(f?`<br><i>Friendliest:</i> “${esc(f.text.slice(0,110))}…”`:'')+'<br>Click to read the posts'};
- const g=svg.append('g').selectAll('path').data(countries).join('path').attr('d',path).attr('stroke','#2c426b').attr('stroke-width',.4)
-  .attr('fill',f=>{const c=byGeo[f.properties.name];return c?toneCol(c.idx):'#1b2c4a'})
+ const zg=svg.append('g');const g=zg.append('g').selectAll('path').data(countries).join('path').attr('d',path).attr('stroke','#2c426b').attr('stroke-width',.4)
+  .attr('fill',f=>{const c=byGeo[f.properties.name];return c?aggCol(c.agg):'#1b2c4a'}).attr('vector-effect','non-scaling-stroke')
   .style('cursor',f=>byGeo[f.properties.name]?'pointer':null).on('click',(e,f)=>{const c=byGeo[f.properties.name];if(c)openTone(c)});
  tipOn(g,f=>{const c=byGeo[f.properties.name];return c?tip(c):`<b>${esc(f.properties.name)}</b><br>Not shown (no tracked account or fewer than ${MP} posts)`});
- const ents=TONE.countries.filter(c=>!c.geo&&c.ll&&c.posts>=MP);const eg=svg.append('g').selectAll('g').data(ents).join('g').attr('transform',d=>{const p=proj(d.ll);return `translate(${p[0]},${p[1]})`}).style('cursor','pointer').on('click',(e,c)=>openTone(c));
- eg.append('rect').attr('x',-7).attr('y',-7).attr('width',14).attr('height',14).attr('transform','rotate(45)').attr('stroke','#e6e9ef').attr('stroke-width',1).attr('fill',c=>toneCol(c.idx));
+ const ents=TONE.countries.filter(c=>!c.geo&&c.ll&&c.posts>=MP);const eg=zg.append('g').selectAll('g').data(ents).join('g').attr('transform',d=>{const p=proj(d.ll);return `translate(${p[0]},${p[1]})`}).style('cursor','pointer').on('click',(e,c)=>openTone(c));
+ eg.append('rect').attr('x',-7).attr('y',-7).attr('width',14).attr('height',14).attr('transform','rotate(45)').attr('stroke','#e6e9ef').attr('stroke-width',1).attr('fill',c=>aggCol(c.agg));
  tipOn(eg,c=>tip(c).replace('</b>','</b> (multilateral or headquarters)'));
  const scored=TONE.countries.filter(c=>c.posts>=MP).sort((a,b)=>b.agg-a.agg);
- d3.select('#tone-sub').text(`Each post is scored for aggressive wording (accusations of hegemony, smears, interference, warnings) and friendly wording (cooperation, friendship, congratulations) in English, Chinese, Japanese, Korean, Russian, Arabic, Spanish, French, Portuguese and German. Countries are coloured by the share of aggressive posts minus the share of friendly ones. Most aggressive: ${scored.slice(0,3).map(c=>`${c.country} (${pct(c.agg)} aggressive)`).join(', ')}. Countries with fewer than ${MP} posts are not shown. Click a country to read its harshest and friendliest posts.`);
+ const hot=scored.filter(c=>c.agg>=AGT),top=hot.slice(0,5),nf=scored.filter(c=>c.agg<AGT).length;
+ d3.select('#tone-head').text(`${nf} of ${scored.length} countries and organisations post almost no aggressive wording. The sharpest tone comes from ${(n=>n.slice(0,-1).join(', ')+' and '+n[n.length-1])(top.slice(0,3).map(c=>/^(Philippines|Netherlands|United |UAE|EU|African Union|Czech)/.test(c.country)?'the '+c.country:c.country))}.`);
+ d3.select('#tone-sub').text(`Share of each mission's posts with aggressive wording (accusations of hegemony, smears, interference, warnings), scored in ten languages. White means under ${Math.round(AGT*100)}%. Countries with fewer than ${MP} posts are not shown. Click a country to read its harshest and friendliest posts.`);
+  const featOf=c=>countries.find(f=>f.properties.name===c.geo);
+ const fit=(cs,pad)=>{let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;cs.forEach(c=>{const f=c.geo&&featOf(c);const b=f?path.bounds(f):(()=>{const p=proj(c.ll);return [[p[0]-8,p[1]-8],[p[0]+8,p[1]+8]]})();x0=Math.min(x0,b[0][0]);y0=Math.min(y0,b[0][1]);x1=Math.max(x1,b[1][0]);y1=Math.max(y1,b[1][1])});
+  const k=Math.min(4,0.9/Math.max((x1-x0)/W,(y1-y0)/HM));return {k,x:W/2-k*(x0+x1)/2,y:HM/2-k*(y0+y1)/2}};
+ const setZ=(t,anim)=>{const tr=`translate(${t.x},${t.y}) scale(${t.k})`;(anim?zg.transition().duration(700):zg).attr('transform',tr);zg.selectAll('rect').attr('stroke-width',1/t.k).attr('transform',`rotate(45) scale(${1/Math.sqrt(t.k)})`)};
+ const hotZ=fit(hot.filter(c=>c.geo||c.ll),0),clustered=hotZ.k>=1.8;let zoomed=clustered;
+ const zb=d3.select('#tzoom');const zlab=()=>zb.text(zoomed?'Show whole world':'Zoom to hot spots').attr('aria-pressed',zoomed);
+ setZ(zoomed?hotZ:{k:1,x:0,y:0});zlab();
+ zb.on('click',()=>{zoomed=!zoomed;setZ(zoomed?hotZ:{k:1,x:0,y:0},1);zlab()});
+ d3.select('#ttop').selectAll('li').data(top).join('li').append('button').attr('class','tli').attr('type','button')
+  .html((c,i)=>`<span class="sw sq" style="background:${aggCol(c.agg)}"></span><b>${i+1}. ${esc(c.country)}</b><span>${pct(c.agg)} aggressive · ${c.posts} posts</span>`)
+  .on('click',function(e,c){zoomed=true;setZ(fit([c]),1);zlab();g.attr('stroke',f=>f.properties.name===c.geo?'#c8a24a':'#2c426b').attr('stroke-width',f=>f.properties.name===c.geo?2.5:.4);
+   const r=document.getElementById('tmap').getBoundingClientRect(),b=this.getBoundingClientRect();showTip({clientX:r.left+8,clientY:Math.max(8,r.bottom-40)},tip(c));setTimeout(()=>{hideTip();openTone(c)},2200)});
+
 })();
 function openTone(c){const row=(p,col)=>`<div class="post" style="border-left:4px solid ${col};padding-left:8px"><div class="m">@${esc(p.h)} · ${fd(p.t)}</div><div>${esc(p.text)}</div><a href="https://x.com/${encodeURIComponent(p.h)}/status/${p.id}" target="_blank" rel="noopener">Open on x.com ↗</a></div>`;
  d3.select('#ph').text(`${c.country}: ${Math.round(c.agg*100)}% aggressive, ${Math.round(c.fri*100)}% friendly`);

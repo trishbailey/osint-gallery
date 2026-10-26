@@ -84,3 +84,7 @@ svg text{fill:var(--text);font-size:13px}
 .af input,.af select{min-height:44px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:0 10px;font-size:14px;color-scheme:dark}
 .acards{display:grid;gap:8px;margin:8px 0}.acard{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px}
 @media (max-width:700px){.accl{grid-template-columns:1fr}.af{grid-template-columns:1fr 1fr}.af label:first-child{grid-column:1/-1}}
+
+.thead{font-size:18px;font-weight:600;color:var(--text);margin:4px 0 6px}#tzoom{margin:4px 0 8px}#tmap{overflow:hidden}
+.ttop{list-style:none;padding:0;margin:6px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px}.tli{width:100%;min-height:44px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;text-align:left;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:6px 10px;font-size:14px;cursor:pointer}.tli:hover,.tli:focus-visible{border-color:var(--gold)}.tli span:last-child{color:var(--muted);font-size:13px}
+.thead{font-size:16px}.tli{font-family:inherit}
