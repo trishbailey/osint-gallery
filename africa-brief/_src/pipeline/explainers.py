@@ -45,7 +45,7 @@ EX={
  "drivers":[I("Gold is the main hard-currency source for both sides; the RSF's commercial roots lie in Jebel Amer gold in Darfur.","guardian-jebelamer-2020","un-sudan-2024"),
         I("The war has hit the Gezira farm scheme, Sudan's breadbasket; UN rights chief said drone strikes killed 306 people in three weeks in Oct 2026.","fao-sudan-ag-2024","radiotamazuj-drones-2026")],
  "money":[I("The UAE imported 29 t of gold directly from Sudan in 2024, plus 18 t from Chad and 9 t from Libya, which SWISSAID calls exit points for RSF gold.","swissaid-uae-2025"),
-        I("OFAC sanctioned UAE-based firms for supplying the RSF with money and equipment.","ofac-rsf-2025")],
+        I("The US Treasury said UAE-based firms supplied the RSF with money and equipment.","ofac-rsf-2025")],
  "case":[I("SAF: it is the legitimate national army defending the state against a rebel militia.","reuters-sudan-backers-2023"),
         I("RSF: it says it fights a regime of former Bashir-era Islamists.","reuters-sudan-backers-2023"),
         I("UAE: it denies arming any party and says its flights carry aid.","un-sudan-2024")]},
@@ -62,7 +62,7 @@ EX={
 "car":{
  "who":[I("President Touadéra won a third term in the Dec 2025 vote, validated with 77.9%; Wagner fighters (about 1,500) and Rwandan troops back his government.","reuters-car-court-2026","icg-car-2026")],
  "drivers":[I("Armed groups and state forces compete over gold, diamond and timber zones; Wagner-linked firms hold gold rights including Ndassima.","ofac-wagner-gold","icg-car-2026")],
- "money":[I("Crisis Group reports that Russians run gold mines, cut timber and receive tax exemptions in return for security; OFAC sanctioned Wagner gold firms.","icg-car-2026","ofac-wagner-gold")],
+ "money":[I("Crisis Group reports that Russians run gold mines, cut timber and receive tax exemptions in return for security; the US Treasury has named Wagner-linked gold firms.","icg-car-2026","ofac-wagner-gold")],
  "case":[I("Bangui: Russian and Rwandan forces delivered security gains that UN peacekeeping did not.","icg-car-2026"),
         I("Moscow presses for Africa Corps, under its defence ministry, to replace Wagner and for CAR to pay more.","icg-car-2026")]},
 "horn":{
