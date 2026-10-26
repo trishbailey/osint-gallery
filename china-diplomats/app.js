@@ -25,7 +25,7 @@ d3.select('#cover').text(`Coverage: ${fday(H.start.slice(0,10))} to ${fd(H.end)}
 d3.select('#heads').selectAll('div').data([[H.accounts,'accounts tracked'],[H.active,'posted in this period'],[H.posts,'posts collected'],[H.countries,'countries and organisations'],[H.clusters,'messages shared by 3+ accounts'],[H.topburst_acc,'accounts pushed the '+H.topburst+' in bursts']]).join('div').attr('class','head').html(d=>`<b>${fmt(d[0])}</b><span>${d[1]}</span>`);
 // ---- legends and filters
 const lg=(id,items,sq)=>d3.select(id).selectAll('div').data(items).join('div').html(d=>`<span class="sw ${sq?'sq':''}" style="background:${d[1]}"></span>${esc(d[0])}`);
-lg('#lg-kind',Object.values(KIND));lg('#lg-tp',ST.series.map((s,i)=>[s.name,TPC[i]]),1);lg('#lg-tone',TONEB,1);d3.select('#lg-tone').append('div').attr('class','li').html(`<span class="sw" style="background:${AGC[1]};opacity:.3"></span>Faded: under ${TONE.min_posts} posts`);
+lg('#lg-kind',Object.values(KIND));lg('#lg-tp',ST.series.map((s,i)=>[s.name,TPC[i]]),1);lg('#lg-tone',TONEB,1);d3.select('#lg-tone').append('div').attr('class','li').text(`Countries with fewer than ${TONE.min_posts} posts are not shown`);
 d3.select('#types').selectAll('button').data(Object.entries(TYPES)).join('button').attr('class','tg').attr('aria-pressed','true').html(d=>`<span class="sw" style="background:${d[1]}"></span>${d[0]}`)
  .on('click',function(e,d){on.has(d[0])?on.delete(d[0]):on.add(d[0]);this.setAttribute('aria-pressed',on.has(d[0]));drawSpread(true);drawRipple()});
 const side=document.getElementById('side'),ft=document.getElementById('ftoggle');
@@ -163,18 +163,18 @@ function openPost(a){const p=PO[a.id];d3.select('#ph').text(a.label);
 // ---- aggression heat map
 (function(){const svg=d3.select('#tmap').append('svg').attr('data-ci-ignore','aggression diverging ramp').attr('viewBox',`0 0 ${W} ${HM}`).attr('role','img').attr('aria-label','World map of how aggressive or friendly posts are, by country');
  svg.append('path').attr('d',path({type:'Sphere'})).attr('fill','#0f1b31');
- const MP=TONE.min_posts,byGeo={};TONE.countries.forEach(c=>{if(c.geo)byGeo[c.geo]=c});
+ const MP=TONE.min_posts,byGeo={};TONE.countries.forEach(c=>{if(c.geo&&c.posts>=MP)byGeo[c.geo]=c});
  const pct=x=>Math.round(x*100)+'%';
- const tip=c=>{if(!c)return '';const h=c.harsh[0],f=c.friendly[0];return `<b>${esc(c.country)}</b> · ${c.posts} posts${c.posts<MP?' (too few to judge, faded)':''}<br><span style="color:#e2646e">Aggressive ${pct(c.agg)}</span> · <span style="color:#6fd08a">Friendly ${pct(c.fri)}</span>`+(h?`<br><i>Harshest:</i> “${esc(h.text.slice(0,110))}…”`:'')+(f?`<br><i>Friendliest:</i> “${esc(f.text.slice(0,110))}…”`:'')+'<br>Click to read the posts'};
+ const tip=c=>{if(!c)return '';const h=c.harsh[0],f=c.friendly[0];return `<b>${esc(c.country)}</b> · ${c.posts} posts<br><span style="color:#e2646e">Aggressive ${pct(c.agg)}</span> · <span style="color:#6fd08a">Friendly ${pct(c.fri)}</span>`+(h?`<br><i>Harshest:</i> “${esc(h.text.slice(0,110))}…”`:'')+(f?`<br><i>Friendliest:</i> “${esc(f.text.slice(0,110))}…”`:'')+'<br>Click to read the posts'};
  const g=svg.append('g').selectAll('path').data(countries).join('path').attr('d',path).attr('stroke','#2c426b').attr('stroke-width',.4)
-  .attr('fill',f=>{const c=byGeo[f.properties.name];return c?toneCol(c.idx):'#1b2c4a'}).attr('fill-opacity',f=>{const c=byGeo[f.properties.name];return c&&c.posts<MP?.3:1})
+  .attr('fill',f=>{const c=byGeo[f.properties.name];return c?toneCol(c.idx):'#1b2c4a'})
   .style('cursor',f=>byGeo[f.properties.name]?'pointer':null).on('click',(e,f)=>{const c=byGeo[f.properties.name];if(c)openTone(c)});
- tipOn(g,f=>{const c=byGeo[f.properties.name];return c?tip(c):`<b>${esc(f.properties.name)}</b><br>No tracked mission account`});
- const ents=TONE.countries.filter(c=>!c.geo&&c.ll);const eg=svg.append('g').selectAll('g').data(ents).join('g').attr('transform',d=>{const p=proj(d.ll);return `translate(${p[0]},${p[1]})`}).style('cursor','pointer').on('click',(e,c)=>openTone(c));
- eg.append('rect').attr('x',-7).attr('y',-7).attr('width',14).attr('height',14).attr('transform','rotate(45)').attr('stroke','#e6e9ef').attr('stroke-width',1).attr('fill',c=>toneCol(c.idx)).attr('fill-opacity',c=>c.posts<MP?.3:1);
+ tipOn(g,f=>{const c=byGeo[f.properties.name];return c?tip(c):`<b>${esc(f.properties.name)}</b><br>Not shown (no tracked account or fewer than ${MP} posts)`});
+ const ents=TONE.countries.filter(c=>!c.geo&&c.ll&&c.posts>=MP);const eg=svg.append('g').selectAll('g').data(ents).join('g').attr('transform',d=>{const p=proj(d.ll);return `translate(${p[0]},${p[1]})`}).style('cursor','pointer').on('click',(e,c)=>openTone(c));
+ eg.append('rect').attr('x',-7).attr('y',-7).attr('width',14).attr('height',14).attr('transform','rotate(45)').attr('stroke','#e6e9ef').attr('stroke-width',1).attr('fill',c=>toneCol(c.idx));
  tipOn(eg,c=>tip(c).replace('</b>','</b> (multilateral or headquarters)'));
  const scored=TONE.countries.filter(c=>c.posts>=MP).sort((a,b)=>b.agg-a.agg);
- d3.select('#tone-sub').text(`Each post is scored for aggressive wording (accusations of hegemony, smears, interference, warnings) and friendly wording (cooperation, friendship, congratulations) in English, Chinese, Japanese, Korean, Russian, Arabic, Spanish, French, Portuguese and German. Countries are coloured by the share of aggressive posts minus the share of friendly ones. Most aggressive: ${scored.slice(0,3).map(c=>`${c.country} (${pct(c.agg)} aggressive)`).join(', ')}. Countries with fewer than ${MP} posts are faded. Click a country to read its harshest and friendliest posts.`);
+ d3.select('#tone-sub').text(`Each post is scored for aggressive wording (accusations of hegemony, smears, interference, warnings) and friendly wording (cooperation, friendship, congratulations) in English, Chinese, Japanese, Korean, Russian, Arabic, Spanish, French, Portuguese and German. Countries are coloured by the share of aggressive posts minus the share of friendly ones. Most aggressive: ${scored.slice(0,3).map(c=>`${c.country} (${pct(c.agg)} aggressive)`).join(', ')}. Countries with fewer than ${MP} posts are not shown. Click a country to read its harshest and friendliest posts.`);
 })();
 function openTone(c){const row=(p,col)=>`<div class="post" style="border-left:4px solid ${col};padding-left:8px"><div class="m">@${esc(p.h)} · ${fd(p.t)}</div><div>${esc(p.text)}</div><a href="https://x.com/${encodeURIComponent(p.h)}/status/${p.id}" target="_blank" rel="noopener">Open on x.com ↗</a></div>`;
  d3.select('#ph').text(`${c.country}: ${Math.round(c.agg*100)}% aggressive, ${Math.round(c.fri*100)}% friendly`);

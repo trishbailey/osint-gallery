@@ -8,7 +8,7 @@
 set -euo pipefail
 export CD_STATE=${CD_STATE:-/workspace/china-diplomats/state}
 REPO=${REPO:-/workspace/cd-gallery}
-START=${START:-2026-10-17T00:00:00Z}
+START=${START:-2026-10-01T00:00:00Z}
 TMP=$(mktemp -d)
 cd "$REPO/china-diplomats/_src"
 python3 -W ignore analyze.py --start "$START" --out "$TMP"
@@ -23,4 +23,8 @@ if git diff --cached --quiet; then echo "no data change"; git switch -q -; exit 
 git commit -qm "china-diplomats: daily data refresh $(date -u +%F)"
 git push -q -u origin "$BR"                 # plain push only; never force
 gh pr create --repo trishbailey/osint-gallery --head "$BR" --title "china-diplomats: daily data refresh $(date -u +%F)" --body "Automated data refresh (china-diplomats/data/*.json only)."
+sleep 15                                    # let the CI check register
+if ! gh pr checks "$BR" --repo trishbailey/osint-gallery --watch --fail-fast --interval 15; then
+  echo "CI check failed or did not pass; NOT merging. PR left open: $BR" >&2; exit 1
+fi
 gh pr merge "$BR" --repo trishbailey/osint-gallery --squash --delete-branch
