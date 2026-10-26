@@ -104,9 +104,14 @@ ORD.forEach(()=>{});
   row.on("mouseleave",()=>{if(pinned)return;tipHide();ch.style("display",null);hs.forEach(h=>h.style("display","none"));});}
 });
 window._prow=()=>gP.selectAll(".prow").size();
-const cOver=(e,f)=>{const iso=f.properties.ADM0_A3;if(!byIso.has(iso)||pinned)return;countryOn(iso);const ps=[...new Set(byIso.get(iso).map(x=>x.p))];tipShow(`<b>${esc(f.properties.NAME||f.properties.ADMIN||iso)}</b><div class="tsub">Foreign involvement: ${ps.map(p=>esc(CAPS[p].n)).join(", ")}</div>`,e);};
-Z.selectAll("path.country").on("mouseenter",cOver).on("mouseleave",()=>{clearLines();tipHide();}).on("click",(e,f)=>{if(byIso.has(f.properties.ADM0_A3)){e.stopPropagation();pinned=false;cOver(e,f);pinned=true;}});
-gC.selectAll("path.conf").on("mouseenter",cOver).on("mouseleave",()=>{clearLines();tipHide();});
+const cName=f=>{const p=f.properties;return p.ADM0_A3==="SOL"?"Somaliland":p.ADM0_A3==="COG"?"Republic of the Congo":(p.ADMIN||p.NAME);};
+const cOver=(e,f)=>{const iso=f.properties.ADM0_A3;if(pinned)return;let sub="";if(byIso.has(iso)){countryOn(iso);const ps=[...new Set(byIso.get(iso).map(x=>x.p))];sub=`<div class="tsub">Foreign involvement: ${ps.map(p=>esc(CAPS[p].n)).join(", ")}</div>`;}
+ const h=`<b>${esc(cName(f))}</b>${sub}`;e&&e.clientX!=null&&e.type!=="focus"?tipShow(h,e):tipAt(h,e.currentTarget||e.target);};
+const cOut=()=>{if(pinned)return;clearLines();tipHide();};
+Z.selectAll("path.country").attr("tabindex",0).attr("aria-label",f=>cName(f)+(byIso.has(f.properties.ADM0_A3)?", foreign involvement":"")).each(function(){d3.select(this).select("title").remove();})
+ .on("mouseenter",cOver).on("mousemove",(e,f)=>{if(!pinned&&e.clientX!=null)window._tip&&tipShow(document.getElementById("tip").innerHTML,e);}).on("mouseleave",cOut).on("focus",cOver).on("blur",()=>{pinned=false;cOut();})
+ .on("click",(e,f)=>{e.stopPropagation();pinned=false;cOver(e,f);pinned=true;});
+gC.selectAll("path.conf").each(function(){d3.select(this).select("title").remove();}).on("click.name",(e,f)=>{pinned=false;cOver(e,f);pinned=true;}).on("mouseenter",cOver).on("mouseleave",cOut);
 Z.select("rect.sea").on("click",()=>{pinned=false;clearLines();tipHide();});
 document.addEventListener("click",e=>{if(pinned&&!e.target.closest("#svg")){pinned=false;clearLines();tipHide();}});
 const hlConf=isos=>{gHL.selectAll("*").remove();if(!isos)return;gHL.selectAll("path").data(afr.features.filter(f=>isos.includes(f.properties.ADM0_A3))).join("path").attr("d",path).attr("class","hlpath");};
@@ -132,7 +137,7 @@ const placeC=k=>{gCL.selectAll("*").remove();const s=1/k,fs=13*s,ob=[];
   rc.attr("x",ok.bb.x0).attr("y",ok.bb.y0).attr("width",ok.bb.x1-ok.bb.x0).attr("height",ok.bb.y1-ok.bb.y0).attr("rx",(ok.bb.y1-ok.bb.y0)/2);
   if(Math.hypot(ok.dx,ok.dy)>20){ln.attr("x1",d.c[0]).attr("y1",d.c[1]).attr("x2",ok.x).attr("y2",ok.y).style("stroke-width",s);g.insert("circle","line").attr("cx",d.c[0]).attr("cy",d.c[1]).attr("r",2*s).attr("class","cdot");}else ln.remove();});
  window._hiddenLabels=hidden;};
-placeC(1);
+/* placeC(1); kept for later use: country labels now show on hover only */
 gP.raise();gPL.raise();
 /* legend (short) */
 const LS=d3.select("#legsvg"),lg=LS.append("g").attr("class","legend").attr("transform","translate(14,26)");
@@ -153,7 +158,7 @@ document.getElementById("L-res").onchange=e=>{gR.style("display",e.target.checke
 document.getElementById("L-allres").onchange=e=>{if(e.target.checked&&!document.getElementById("L-res").checked){document.getElementById("L-res").checked=true;document.getElementById("L-res").onchange({target:{checked:true}});}resSel.style("display",d=>e.target.checked||KEY.has(d.id)?null:"none");};
  /* zoom to region */
  const zoom=d3.zoom().scaleExtent([1,6]).on("zoom",e=>{const k=e.transform.k;zk=k;Z.attr("transform",e.transform);resSel.attr("transform",d=>`translate(${proj(d.lonlat)}) scale(${1/k})`);gP.selectAll(".prow").attr("transform",d=>`translate(${d.x},${d.y}) scale(${1/k})`);gPL.selectAll("*").remove();gCL.selectAll("*").remove();gTop.selectAll("text").style("font-size",(14/e.transform.k)+"px");gTop.selectAll("rect").each(function(){const t=this.nextSibling,b=t.getBBox();d3.select(this).attr("x",b.x-5/e.transform.k).attr("y",b.y-2/e.transform.k).attr("width",b.width+10/e.transform.k).attr("height",b.height+4/e.transform.k).attr("rx",(b.height+4/e.transform.k)/2);});});
- zoom.on("end",e=>placeC(e.transform.k));svg.call(zoom).on("wheel.zoom",null).on("dblclick.zoom",null);
+ svg.call(zoom).on("wheel.zoom",null).on("dblclick.zoom",null);
  const rb=document.getElementById("reset");rb.onclick=()=>{svg.transition().duration(600).call(zoom.transform,d3.zoomIdentity);rb.classList.remove("show");};
  function openRegion(r,f){const fc={type:"FeatureCollection",features:afr.features.filter(x=>r.countries.includes(x.properties.ADM0_A3))};
   const [[x0,y0],[x1,y1]]=path.bounds(fc),k=Math.min(4,0.8/Math.max((x1-x0)/W,(y1-y0)/H));
