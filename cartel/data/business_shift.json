@@ -1,0 +1,486 @@
+{
+ "title": "How the business shifted",
+ "note": "Annual counts for the region, not per-cartel figures; seizures and arrests also reflect enforcement effort. Describes the record only, no prediction.",
+ "panels": [
+  {
+   "id": "drugs",
+   "title": "US southwest border drug seizures",
+   "unit": "index, FY2019 = 100 (pounds seized)",
+   "years": "US fiscal years (Oct to Sep)",
+   "indexed": true,
+   "series": [
+    {
+     "id": "fentanyl",
+     "label": "Fentanyl",
+     "points": [
+      {
+       "y": 2019,
+       "v": 2633,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2020,
+       "v": 4558,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2021,
+       "v": 10586,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2022,
+       "v": 14104,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2023,
+       "v": 26718,
+       "url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-drugs-fy22-fy25.csv"
+      },
+      {
+       "y": 2024,
+       "v": 21148,
+       "url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-drugs-fy22-fy25.csv"
+      },
+      {
+       "y": 2025,
+       "v": 11488,
+       "url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-drugs-fy22-fy25.csv"
+      }
+     ]
+    },
+    {
+     "id": "meth",
+     "label": "Methamphetamine",
+     "points": [
+      {
+       "y": 2019,
+       "v": 131137,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2020,
+       "v": 170124,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2021,
+       "v": 182561,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2022,
+       "v": 160305,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2023,
+       "v": 121186,
+       "url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-drugs-fy22-fy25.csv"
+      },
+      {
+       "y": 2024,
+       "v": 157562,
+       "url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-drugs-fy22-fy25.csv"
+      },
+      {
+       "y": 2025,
+       "v": 155993,
+       "url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-drugs-fy22-fy25.csv"
+      }
+     ]
+    },
+    {
+     "id": "cocaine",
+     "label": "Cocaine",
+     "points": [
+      {
+       "y": 2019,
+       "v": 24353,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2020,
+       "v": 18992,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2021,
+       "v": 26739,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2022,
+       "v": 25171,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2023,
+       "v": 27570,
+       "url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-drugs-fy22-fy25.csv"
+      },
+      {
+       "y": 2024,
+       "v": 30383,
+       "url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-drugs-fy22-fy25.csv"
+      },
+      {
+       "y": 2025,
+       "v": 40945,
+       "url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-drugs-fy22-fy25.csv"
+      }
+     ]
+    },
+    {
+     "id": "marijuana",
+     "label": "Marijuana",
+     "points": [
+      {
+       "y": 2019,
+       "v": 517065,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2020,
+       "v": 502311,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2021,
+       "v": 212979,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2022,
+       "v": 85656,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+      },
+      {
+       "y": 2023,
+       "v": 61220,
+       "url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-drugs-fy22-fy25.csv"
+      },
+      {
+       "y": 2024,
+       "v": 56396,
+       "url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-drugs-fy22-fy25.csv"
+      },
+      {
+       "y": 2025,
+       "v": 40758,
+       "url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-drugs-fy22-fy25.csv"
+      }
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "name": "US Customs and Border Protection",
+     "title": "Drug seizure statistics FY2019-FY2022 (CSV)",
+     "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/nationwide-drugs-fy19-fy22.csv"
+    },
+    {
+     "name": "US Customs and Border Protection",
+     "title": "Drug seizure statistics FY2022-FY2025 (CSV)",
+     "url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-drugs-fy22-fy25.csv"
+    }
+   ]
+  },
+  {
+   "id": "extortion",
+   "title": "Extortion victims, Mexico",
+   "unit": "victims in prosecutors' case files per year",
+   "years": "calendar years",
+   "series": [
+    {
+     "id": "extortion",
+     "label": "Extortion",
+     "points": [
+      {
+       "y": 2015,
+       "v": 6223,
+       "url": "https://data.diegovalle.net/elcrimen/nm-estatal-victimas.csv.gz"
+      },
+      {
+       "y": 2016,
+       "v": 5861,
+       "url": "https://data.diegovalle.net/elcrimen/nm-estatal-victimas.csv.gz"
+      },
+      {
+       "y": 2017,
+       "v": 6278,
+       "url": "https://data.diegovalle.net/elcrimen/nm-estatal-victimas.csv.gz"
+      },
+      {
+       "y": 2018,
+       "v": 6895,
+       "url": "https://data.diegovalle.net/elcrimen/nm-estatal-victimas.csv.gz"
+      },
+      {
+       "y": 2019,
+       "v": 9003,
+       "url": "https://data.diegovalle.net/elcrimen/nm-estatal-victimas.csv.gz"
+      },
+      {
+       "y": 2020,
+       "v": 8380,
+       "url": "https://data.diegovalle.net/elcrimen/nm-estatal-victimas.csv.gz"
+      },
+      {
+       "y": 2021,
+       "v": 9408,
+       "url": "https://data.diegovalle.net/elcrimen/nm-estatal-victimas.csv.gz"
+      },
+      {
+       "y": 2022,
+       "v": 11039,
+       "url": "https://data.diegovalle.net/elcrimen/nm-estatal-victimas.csv.gz"
+      },
+      {
+       "y": 2023,
+       "v": 10946,
+       "url": "https://data.diegovalle.net/elcrimen/nm-estatal-victimas.csv.gz"
+      },
+      {
+       "y": 2024,
+       "v": 10862,
+       "url": "https://data.diegovalle.net/elcrimen/nm-estatal-victimas.csv.gz"
+      },
+      {
+       "y": 2025,
+       "v": 11139,
+       "url": "https://data.diegovalle.net/elcrimen/nm-estatal-victimas.csv.gz"
+      }
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "name": "SESNSP via elcri.men mirror",
+     "title": "Victims of crime, fuero común (state-level file)",
+     "url": "https://data.diegovalle.net/elcrimen/nm-estatal-victimas.csv.gz"
+    }
+   ]
+  },
+  {
+   "id": "fuel",
+   "title": "Illegal taps on Pemex fuel pipelines",
+   "unit": "taps found per year (refined-fuel pipelines, excluding LP gas)",
+   "years": "calendar years",
+   "series": [
+    {
+     "id": "fuel",
+     "label": "Fuel theft (huachicol)",
+     "points": [
+      {
+       "y": 2015,
+       "v": 5252,
+       "url": "https://www.igavim.org/Documentos%20Generados/Reportes/2026%20TomasCland2025.pdf"
+      },
+      {
+       "y": 2016,
+       "v": 6969,
+       "url": "https://www.igavim.org/Documentos%20Generados/Reportes/2026%20TomasCland2025.pdf"
+      },
+      {
+       "y": 2017,
+       "v": 10363,
+       "url": "https://www.igavim.org/Documentos%20Generados/Reportes/2026%20TomasCland2025.pdf"
+      },
+      {
+       "y": 2018,
+       "v": 14956,
+       "url": "https://www.igavim.org/Documentos%20Generados/Reportes/2026%20TomasCland2025.pdf"
+      },
+      {
+       "y": 2019,
+       "v": 13053,
+       "url": "https://www.igavim.org/Documentos%20Generados/Reportes/2026%20TomasCland2025.pdf"
+      },
+      {
+       "y": 2020,
+       "v": 9132,
+       "url": "https://www.igavim.org/Documentos%20Generados/Reportes/2026%20TomasCland2025.pdf"
+      },
+      {
+       "y": 2021,
+       "v": 10251,
+       "url": "https://www.igavim.org/Documentos%20Generados/Reportes/2026%20TomasCland2025.pdf"
+      },
+      {
+       "y": 2022,
+       "v": 11295,
+       "url": "https://www.igavim.org/Documentos%20Generados/Reportes/2026%20TomasCland2025.pdf"
+      },
+      {
+       "y": 2023,
+       "v": 12005,
+       "url": "https://www.igavim.org/Documentos%20Generados/Reportes/2026%20TomasCland2025.pdf"
+      },
+      {
+       "y": 2024,
+       "v": 10396,
+       "url": "https://www.igavim.org/Documentos%20Generados/Reportes/2026%20TomasCland2025.pdf"
+      },
+      {
+       "y": 2025,
+       "v": 9366,
+       "url": "https://www.igavim.org/Documentos%20Generados/Reportes/2026%20TomasCland2025.pdf"
+      }
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "name": "IGAVIM, from Pemex transparency answers",
+     "title": "Tomas clandestinas 2025 report",
+     "url": "https://www.igavim.org/Documentos%20Generados/Reportes/2026%20TomasCland2025.pdf"
+    }
+   ]
+  },
+  {
+   "id": "migrants",
+   "title": "Border Patrol southwest border encounters",
+   "unit": "people encountered per year, a proxy for demand for migrant smuggling",
+   "years": "US fiscal years (Oct to Sep); from March 2020 includes Title 42 expulsions",
+   "proxy": true,
+   "series": [
+    {
+     "id": "migrants",
+     "label": "Migrant smuggling (proxy)",
+     "points": [
+      {
+       "y": 2015,
+       "v": 331333,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2021-Aug/US59B8~1.PDF"
+      },
+      {
+       "y": 2016,
+       "v": 408870,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2021-Aug/US59B8~1.PDF"
+      },
+      {
+       "y": 2017,
+       "v": 303916,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2021-Aug/US59B8~1.PDF"
+      },
+      {
+       "y": 2018,
+       "v": 396579,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2021-Aug/US59B8~1.PDF"
+      },
+      {
+       "y": 2019,
+       "v": 851508,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/sbo-encounters-fy19-fy22.csv"
+      },
+      {
+       "y": 2020,
+       "v": 400651,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/sbo-encounters-fy19-fy22.csv"
+      },
+      {
+       "y": 2021,
+       "v": 1659206,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/sbo-encounters-fy19-fy22.csv"
+      },
+      {
+       "y": 2022,
+       "v": 2206436,
+       "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/sbo-encounters-fy19-fy22.csv"
+      },
+      {
+       "y": 2023,
+       "v": 2045838,
+       "url": "https://www.cbp.gov/sites/default/files/2026-09/sbo-encounters-fy23-fy26-aug.csv"
+      },
+      {
+       "y": 2024,
+       "v": 1530523,
+       "url": "https://www.cbp.gov/sites/default/files/2026-09/sbo-encounters-fy23-fy26-aug.csv"
+      },
+      {
+       "y": 2025,
+       "v": 237538,
+       "url": "https://www.cbp.gov/sites/default/files/2026-09/sbo-encounters-fy23-fy26-aug.csv"
+      }
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "name": "US Customs and Border Protection",
+     "title": "USBP Southwest Border Sector Apprehensions FY1960-FY2020",
+     "url": "https://www.cbp.gov/document/stats/us-border-patrol-fiscal-year-southwest-border-sector-apprehensions-fy-1960-fy-2020"
+    },
+    {
+     "name": "US Customs and Border Protection",
+     "title": "Southwest land border encounters FY2019-FY2022 (CSV)",
+     "url": "https://www.cbp.gov/sites/default/files/assets/documents/2022-Oct/sbo-encounters-fy19-fy22.csv"
+    },
+    {
+     "name": "US Customs and Border Protection",
+     "title": "Southwest land border encounters FY2023-FY2026 (CSV)",
+     "url": "https://www.cbp.gov/sites/default/files/2026-09/sbo-encounters-fy23-fy26-aug.csv"
+    }
+   ]
+  },
+  {
+   "id": "gold",
+   "title": "Alluvial gold mining, Colombia",
+   "unit": "hectares with evidence of alluvial gold exploitation (EVOA, on land)",
+   "years": "calendar years; earlier UNODC years used a different method",
+   "series": [
+    {
+     "id": "gold",
+     "label": "Illegal gold mining",
+     "points": [
+      {
+       "y": 2020,
+       "v": 100752,
+       "url": "https://www.unodc.org/colombia/es/100-752-hectareas-con-evidencias-de-explotacion-de-oro-de-aluvion-evoa.html"
+      },
+      {
+       "y": 2021,
+       "v": 98567,
+       "url": "https://www.unodc.org/colombia/es/informe-de-explotacion-de-oro-de-aluvion-2021-encontr-98-567-hectareas-con-evidencia-de-esta-practica-en-colombia.html"
+      },
+      {
+       "y": 2022,
+       "v": 94733,
+       "url": "https://www.unodc.org/colombia/es/informe-de-explotacion-de-oro-de-aluvion-2022.html"
+      },
+      {
+       "y": 2023,
+       "v": 105060,
+       "url": "https://acmineria.com.co/wp-content/uploads/2026/04/evidencias_de_explotacion_de_oro_de_aluvion_2023_compressed.pdf"
+      }
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "name": "UNODC / SIMCI",
+     "title": "Alluvial gold exploitation (EVOA) 2020",
+     "url": "https://www.unodc.org/colombia/es/100-752-hectareas-con-evidencias-de-explotacion-de-oro-de-aluvion-evoa.html"
+    },
+    {
+     "name": "UNODC / SIMCI",
+     "title": "Alluvial gold exploitation (EVOA) 2021",
+     "url": "https://www.unodc.org/colombia/es/informe-de-explotacion-de-oro-de-aluvion-2021-encontr-98-567-hectareas-con-evidencia-de-esta-practica-en-colombia.html"
+    },
+    {
+     "name": "UNODC / SIMCI",
+     "title": "Alluvial gold exploitation (EVOA) 2022",
+     "url": "https://www.unodc.org/colombia/es/informe-de-explotacion-de-oro-de-aluvion-2022.html"
+    },
+    {
+     "name": "UNODC / SIMCI",
+     "title": "Alluvial gold exploitation (EVOA) 2023",
+     "url": "https://acmineria.com.co/wp-content/uploads/2026/04/evidencias_de_explotacion_de_oro_de_aluvion_2023_compressed.pdf"
+    }
+   ]
+  }
+ ]
+}

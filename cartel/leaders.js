@@ -43,7 +43,7 @@ Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json
   <div class="gcf">${sizeBadge(g.id)}<span class="bis">${bizIcons(g.id)}</span></div>
   <div class="bd"><p>${esc(g.leadership_note)}${g.sources.map(FN).join("")}</p>${ls.map(more).join("")}</div></div>`}).join("")}</div>
  <details class="more former"><summary>Jailed, extradited or dead (${former.length})</summary><div class="fgrid">${former.map(l=>`<div class="fc ld" data-g="${l.group_key}" tabindex="0">${person(l)}<span class="gchip sm">${esc((G.find(g=>g.id===l.group_key)||{}).name||l.group_key)}</span><div class="bd">${more(l)}</div></div>`).join("")}</div></details>
- <div class="ldcharts"><div class="chbox"><h3>Members (published estimates)</h3><div id="szmem"></div></div><div class="chbox"><h3>Annual revenue, USD billions</h3><div id="szrev"></div></div><div class="chbox wide"><h3>Lines of business</h3><div id="bzgrid"></div></div></div>
+ <div class="ldcharts"><div class="chbox"><h3>Members (published estimates)</h3><div id="szmem"></div></div><div class="chbox"><h3>Annual revenue, USD billions</h3><div id="szrev"></div></div><div class="chbox wide"><h3>How the business shifted</h3><div id="bzshift"></div></div></div>
  <details class="more"><summary>About these cards</summary><p class="small">${esc(ld.method)} As of ${esc(ld.as_of)}. ${esc(sz.note)} ${esc(bz.note)} * = figure for the whole Sinaloa Cartel.</p></details>`;
  {const mt=document.querySelector(".maptile");if(mt)mt.after(t);else anchor.parentNode.insertBefore(t,anchor);}
  const grid=t.querySelector("#ldgrid");
@@ -77,9 +77,6 @@ Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json
  t.querySelector("#szmem").insertAdjacentHTML("beforeend",leg+`<div class="small muted">No credible estimate: ${[...new Set(noMem)].map(esc).join(", ")||"none"}. Conflicting figures from other sources are in the numbered notes.</div>`);
  bars("#szrev",revRows,v=>"$"+(v/1e9)+"B");
  t.querySelector("#szrev").insertAdjacentHTML("beforeend",leg+`<div class="small muted">No credible USD estimate: ${[...new Set(noRev)].map(esc).join(", ")}.</div><div class="small muted">${revNotes.map(esc).join(" · ")}.</div>`);
- // business heat-map
- const used=bz.lines.filter(x=>G.some(g=>(bz.groups[g.id]||{})[x.id]));
- t.querySelector("#bzgrid").innerHTML=`<table class="bz"><thead><tr><th></th>${used.map(x=>`<th title="${esc(x.label)}"><div class="vl"><span class="vli">${BI[x.id]||"·"}</span> ${esc(x.label)}</div></th>`).join("")}</tr></thead><tbody>${G.map(g=>`<tr><th>${esc(g.name)}</th>${used.map(x=>{const c=(bz.groups[g.id]||{})[x.id];return `<td>${c?`<span class="hm ${c.level}" title="${esc(x.label)}: ${c.level}">${c.level==="primary"?"●":c.level==="secondary"?"◐":"○"}</span>${FN({name:x.label,url:c.source_url})}`:""}</td>`}).join("")}</tr>`).join("")}</tbody></table><div class="small muted">● primary ◐ secondary ○ minor. Empty = no source found.</div>`;
  function setG(g,from){grid.parentNode.querySelectorAll(".ld").forEach(c=>{const m=!g||c.dataset.g.split(" ").includes(g);c.classList.toggle("hl",!!g&&m);c.classList.remove("dim")});
   const n=g?grid.querySelectorAll(".ld.hl").length:0;
   t.querySelector("#ldnote").textContent=g?(from?`Highlighted from ${from}: `:"")+`${gname[g]||g}`+(n?"":" (not among the 14 tracked groups)"):"";}

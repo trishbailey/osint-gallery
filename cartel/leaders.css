@@ -72,3 +72,9 @@ table.bz .vl{writing-mode:horizontal-tb;transform:none;max-height:none;position:
 table.bz td{min-width:42px}
 table.bz thead th>span{height:22px;line-height:22px;width:100%;text-align:center;font-size:16px}table.bz .vl{bottom:28px;left:calc(50% - 4px)}
 table.bz thead th{height:190px}table.bz .vl{bottom:6px;left:calc(50% - 9px);font-size:14px}table.bz .vl .vli{display:inline-block;width:20px;text-align:center;font-size:15px}
+/* How the business shifted (shift.js) */
+.shnote{margin:0 0 8px;font-size:13px}.shgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.shp{margin:0;background:#0f1b31;border:1px solid #24365a;border-radius:8px;padding:8px}.shp.wide{grid-column:1/-1}
+.shp figcaption{font-size:14px;color:#e6e9ef;margin-bottom:4px}.shp figcaption .shu{display:block;font-size:13px;color:#9aa6b8;font-weight:400}.shp .nw{white-space:nowrap}
+.shax text{font-size:13px;fill:#c9d2e0}.shax path,.shax line{stroke:#3a5080}.shref{stroke:#c8a24a;stroke-dasharray:4 4;stroke-width:1.5}.shlab{font-size:13.5px;font-weight:600;paint-order:stroke;stroke:#0f1b31;stroke-width:4px}
+.shpt{cursor:pointer}.shtip{position:absolute;display:none;z-index:9999;background:#12203a;border:1px solid #24365a;color:#e6e9ef;font-size:13px;padding:6px 8px;border-radius:6px;pointer-events:none}
+@media(max-width:800px){.shgrid{grid-template-columns:1fr}}
