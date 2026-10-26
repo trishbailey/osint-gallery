@@ -43,6 +43,17 @@ section{padding:18px 0;border-bottom:1px solid var(--line);scroll-margin-top:72p
 .jump:hover{background:#24365a}
 .back-region{display:inline-flex;align-items:center;min-height:44px;margin:0 0 6px;padding:0 2px;background:none;border:none;color:var(--link);font:15px/1.2 "Helvetica Neue",Arial,sans-serif;cursor:pointer;text-decoration:underline}
 .back-region:hover{color:var(--gold)}
+details.history{margin:8px 0 0}
+details.history>summary{display:flex;align-items:center;min-height:44px;padding:0;cursor:pointer;color:var(--text);font-size:15px;font-weight:700;list-style:none}
+details.history>summary::-webkit-details-marker{display:none}
+details.history>summary:before{content:"\25B8";color:var(--gold);margin-right:8px}
+details.history[open]>summary:before{content:"\25BE"}
+ul.hist{list-style:none;padding:0;margin:2px 0 8px}
+ul.hist li{display:flex;gap:8px;align-items:flex-start;margin:6px 0;font-size:14px;line-height:1.45}
+.hist-dot{width:10px;height:10px;border-radius:50%;flex:none;margin-top:5px;box-shadow:inset 0 0 0 1px rgba(230,233,239,.35)}
+.hist-empty{margin:2px 0 8px;font-size:14px}
+.hist-more{display:inline-flex;align-items:center;min-height:44px;padding:0;background:none;border:none;color:var(--link);font:15px/1.2 "Helvetica Neue",Arial,sans-serif;cursor:pointer;text-decoration:underline}
+.hist-more:hover{color:var(--gold)}
 .lead{font-size:15px;margin:8px 0 0;max-width:900px}
 .banner{display:flex;align-items:center;min-height:44px;margin:10px 0;padding:8px 14px;background:#1c2c4b;border:1px solid var(--gold);border-radius:6px;font-size:15px;font-weight:700}
 .prompt{color:var(--gold);font-size:13px;margin:10px 0 4px}
@@ -652,12 +663,30 @@ function axisBars(svg,rows,x0,bw){const x=d3.scaleLinear([0,100],[0,bw]);
   if(d.v!=null){svg.append('rect').attr('data-ink','bar').attr('x',x0).attr('y',y+4).attr('width',Math.max(0,x(d.v))).attr('height',16).attr('rx',2).attr('fill',depCol(d.v));
    svg.append('text').attr('x',x0+bw+8).attr('y',y+16).text(d.v+'%')}
   else svg.append('text').attr('x',x0+8).attr('y',y+16).text('no sourced figure').attr('fill','#e6e9ef')})}
+function yearOf(s){const nums=[...String(s).matchAll(/\d{3,4}/g)].map(m=>+m[0]);return nums.length?Math.max(...nums):-9999}
+function histItems(b){const items=[],seen=new Set();const add=it=>{const k=it.k+'|'+it.y+'|'+it.text.slice(0,80);if(seen.has(k))return;seen.add(k);items.push(it)};
+ const rank={cut:5,threat:4,dam:3,other:2,treaty:2,open:2};
+ TL.filter(t=>t.b===b.name).forEach(t=>{const text=String(t.h||'').replace(/\s+/g,' ').trim();if(!text)return;const y=yearOf(t.d);const href=/^https?:/i.test(t.u)?t.u:'#src-6';add({y,show:String(t.d).replace(/-/g,'–'),text,k:t.k,href,rank:rank[t.k]||1,fn:'6'})});
+ String(b.treaties||'').split(';').forEach(part=>{const m=/^\s*(?:(\d{4})-\d{2}-\d{2}|00\/00\/(\d{4}))\s+([\s\S]+)/.exec(part);if(!m)return;const y=+(m[1]||m[2]);let text=m[3].replace(/\s*\[TFDDID[^\]]*\]/gi,'').replace(/\s+/g,' ').trim();text=text.replace(/^Agreement between the government of /i,'Agreement between ').replace(/the government of /gi,'').replace(/\s+\([^)]*$/,'').replace(/\s+[a-z]{1,4}$/,'').trim();if(text.length>150)text=text.slice(0,150).replace(/\s+\S*$/,'').trim();let prev='';while(text&&text!==prev){prev=text;text=text.replace(/[,:;]\s*$/,'').replace(/\s+(on|the|of|and|in|for|a|an|to)$/i,'').trim()}if(text)add({y,show:String(y),text,k:'treaty',href:'#src-3',rank:rank.treaty,fn:'3'})});
+ if(b.geo&&b.geo.length)DAMS.forEach(d=>{const id=d.properties.GDW_ID;if(!DAMSAY[id])return;const y=+d.properties.YEAR_DAM;if(!(y>0))return;if(!b.geo.some(f=>d3.geoContains(f,d.geometry.coordinates)))return;add({y,show:String(y),text:d.properties.DAM_NAME+' opened',k:'open',href:'#src-5',rank:rank.open,fn:'5'})});
+ return items}
+function historyBlock(parent,b){const items=histItems(b);const det=parent.append('details').attr('class','history');det.append('summary').text('History');
+ if(!items.length){det.append('p').attr('class','hist-empty').text('No recorded incidents');return}
+ const col={cut:CUT,threat:THR,dam:'#c46ad4',other:'#e6e9ef',treaty:'#9cc1f0',open:DAMSW};
+ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+ const ul=det.append('ul').attr('class','hist');
+ const draw=rows=>{ul.html('');rows.forEach(it=>{const ext=/^https?:/i.test(it.href);ul.append('li').html(`<i class="hist-dot" style="background:${col[it.k]||'#e6e9ef'}"></i><span>${esc(it.show)} · ${esc(it.text)}<sup class="fn"><a href="${esc(it.href)}"${ext?' target="_blank" rel="noopener"':''}>${it.fn}</a></sup></span>`)});};
+ const byYear=(a,c)=>c.y-a.y||c.rank-a.rank;
+ const all=items.slice().sort(byYear);
+ const picked=items.slice().sort((a,c)=>c.rank-a.rank||c.y-a.y).slice(0,5).sort(byYear);
+ draw(picked);
+ if(all.length>5){const btn=det.append('button').attr('type','button').attr('class','hist-more').text('Show all ('+all.length+')');btn.on('click',()=>{draw(all);btn.remove()})}}
 function show(id,scroll){clearTip();const ri=REG.findIndex(r=>r[1].flat().includes(+id));if(ri>=0)setRegion(ri);setArrowNotes([arrowSay([+id])]);
  const b=B.find(x=>x.id==id);d3.selectAll('#chips .chip').classed('on',d=>d.id==id);(()=>{let hit=false;d3.selectAll('#sumchips .chip').classed('on',function(){const on=!hit&&this.dataset.id==String(id);if(on)hit=true;return on})})();const P=d3.select('#panel').html('');P.append('button').attr('type','button').attr('class','back-region full').text('Back to region').on('click',()=>{clearTip();holdLevel(1);if(isPhone())closeSheet();const el=document.getElementById(ri>=0?'reg'+ri:'s-maps');if(el)el.scrollIntoView({behavior:'smooth',block:'start'})});
  const Lf=P.append('div');Lf.append('h3').text(shown(b.name));
  if(isPhone()&&scroll)openSheet();
  const mw=isPhone()?Math.max(260,document.documentElement.clientWidth-32):440,mh=isPhone()?Math.max(220,Math.round(420*mw/440)):420;
- const asay=arrowSay([b.id]);if(asay)Lf.append('p').attr('class','arrow-key').html(arrowSwatch()+'<span>'+asay+'</span>');drawMap(Lf,[b.id],mw,mh,isPhone()?{sparse:true,sheet:true}:{});
+ const asay=arrowSay([b.id]);if(asay)Lf.append('p').attr('class','arrow-key').html(arrowSwatch()+'<span>'+asay+'</span>');drawMap(Lf,[b.id],mw,mh,isPhone()?{sparse:true,sheet:true}:{});historyBlock(Lf,b);
  const R=P.append('div');R.append('div').attr('class','kv').html(`<b>Headwater control:</b> ${nb(shown(b.hw))}<br><b>Dams and works:</b> ${nb(shown(b.dams))}<br><b>Upstream dam capacity:</b> ${b.upcap!=null?b.upcap+' km³ ('+b.up+')'+FN(1):nb()}<br><b>Storage vs annual flow:</b> ${nb(b.storage)}<br><b>Treaties:</b> ${b.tc||nb()}${b.status?' · '+b.status:''}${FN(3)}`);
  R.append('h3').text('Share from abroad');
  R.append('p').attr('class','unit').html('Percent of renewable water from abroad, largest first, from zero.'+FN(1));
