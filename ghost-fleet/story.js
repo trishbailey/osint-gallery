@@ -37,11 +37,11 @@ function big3(){L.geoJSON(GF.LAND,{filter:f=>Object.values(B3F).includes(f.prope
   L.polyline([f.a,an],{color:"#f5f7fa",weight:1,opacity:.8,interactive:false}).addTo(lay);
   L.marker(an,{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="pl">${esc(f.from)}</div>`}),interactive:false}).addTo(lay)});
  // country names: small and light; counts in sea callouts joined by leader lines
- const CNP={CHN:[37.5,93],IND:[23.5,77],TUR:[38.6,32.2]},BA=GF.phone()?{CHN:[19,130],IND:[-4,72],TUR:[3,4]}:{CHN:[19,130],IND:[5,65],TUR:[27,15]};
+ const CNP={CHN:[37.5,93],IND:[23.5,77],TUR:[38.6,32.2]},BA=GF.phone()?{CHN:[14,146],IND:[-10,77],TUR:[40,-39]}:{CHN:[22,138],IND:[0,79],TUR:[40,-29]};GF.BA=BA;
  B3.forEach(c=>{
   L.polyline([B3P[c],BA[c]],{color:B3C[c],weight:1.5,opacity:1,interactive:false}).addTo(lay);
-  L.marker(BA[c],{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="b3l" style="border-color:${B3C[c]}"><b style="color:${B3C[c]}">${B3N[c]||0}</b><span>trips · ${Math.round(100*(B3N[c]||0)/S.voyages)}%</span></div>`}),interactive:false}).addTo(lay)});
- return ph?[[0,-6],[70,136]]:[[-2,-12],[72,138]]}
+  L.marker(BA[c],{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="b3l" style="border-color:${B3C[c]}"><b style="color:${B3C[c]}">${B3N[c]||0}</b><span>${GF.phone()?"":"trips · "}${Math.round(100*(B3N[c]||0)/S.voyages)}%</span></div>`}),interactive:false}).addTo(lay)});
+ return ph?[[-12,-36],[70,148]]:[[-4,-26],[72,146]]}
 const C=S.cases,ch=C.chain,id=C.identity,nw=C.network,dk=C.dark;
 const loHrs=ch.ev.filter(e=>e.t==="loitering"&&e.hz).reduce((a,e)=>a+(e.hrs||0),0),loHz=(ch.ev.find(e=>e.t==="loitering"&&e.hz)||{}).hz;
 const flagsY=new Set(id.hist.filter(h=>h[2]>="2025-01-01").map(h=>h[1]));
@@ -78,7 +78,7 @@ cards.innerHTML=CH.map((c,i)=>`<article class="chap" data-i="${i}" tabindex="0">
 cards.querySelectorAll("[data-p]").forEach(b=>b.onclick=e=>{e.stopPropagation();openP(b.dataset.p)});
 let cur=0,mode="story";
 // chapter 1: red chevrons flowing along the aggregate sea routes, source port -> buyer. Canvas overlay, runs only while visible.
-const RED="#e8423f",ARW=(()=>{const c=document.createElement("canvas");c.className="arw";map.createPane("arwp").style.zIndex=450;map.getPane("arwp").appendChild(c);const x=c.getContext("2d");
+const RED="#e8423f",ARW=(()=>{const c=document.createElement("canvas");c.className="arw";map.createPane("arwp").style.zIndex=450;map.getPane("arwp").appendChild(c);const nt=document.createElement("div");nt.className="arwnote";nt.textContent="Red arrows: tanker trips from Russian oil ports to each buyer, combined along common sea lanes";map.getContainer().appendChild(nt);const x=c.getContext("2d");
  const rm=matchMedia("(prefers-reduced-motion: reduce)");let R=null,M=1,P=[],vis=true,raf=0,t0=performance.now();
  function proj(){const s=map.getSize(),d=devicePixelRatio||1;c.width=s.x*d;c.height=s.y*d;c.style.width=s.x+"px";c.style.height=s.y+"px";x.setTransform(d,0,0,d,0,0);L.DomUtil.setPosition(c,map.containerPointToLayerPoint([0,0]));
   P=(R||[]).map(r=>{const p=r.line.map(q=>map.latLngToContainerPoint(q)),L=[0];for(let i=1;i<p.length;i++)L.push(L[i-1]+p[i].distanceTo(p[i-1]));const k=r.n/M;return{p,L,T:L[L.length-1],gap:Math.max(16,60-44*k),sz:2.5+3*k}})}
@@ -90,7 +90,7 @@ const RED="#e8423f",ARW=(()=>{const c=document.createElement("canvas");c.classNa
  function kick(){if(!raf&&R)raf=requestAnimationFrame(loop)}
  map.on("zoomstart movestart",()=>{c.style.opacity=0});map.on("zoomend moveend resize",()=>{c.style.opacity=1;proj();kick();draw(performance.now())});
  new IntersectionObserver(e=>{vis=e[0].isIntersecting;kick()}).observe(map.getContainer());document.addEventListener("visibilitychange",kick);rm.addEventListener&&rm.addEventListener("change",kick);
- return{set(rs,mx){R=rs;M=mx||1;proj();if(!R){x.clearRect(0,0,c.width,c.height);return}draw(performance.now());kick()},running:()=>!!raf,pts:()=>P.map(o=>o.p.map(q=>[q.x,q.y]))}})();
+ return{set(rs,mx){R=rs;nt.style.display=rs?"block":"none";M=mx||1;proj();if(!R){x.clearRect(0,0,c.width,c.height);return}draw(performance.now());kick()},running:()=>!!raf,pts:()=>P.map(o=>o.p.map(q=>[q.x,q.y]))}})();
 GF.ARW=ARW;
 function fit(b){map.options.zoomSnap=.25;if(GF.phone())map.setMinZoom(1);map.invalidateSize();if(b&&b.length)map.flyToBounds(L.latLngBounds(b).pad(.15),{duration:.8,maxZoom:6})}
 function go(i){cur=Math.max(0,Math.min(CH.length-1,i));lay.clearLayers();ARW.set(null);hideRaw();fit(CH[cur].d());
