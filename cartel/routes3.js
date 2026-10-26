@@ -39,3 +39,15 @@ function start(){const M=window.MAPX;if(!M||!window.__proj||!document.getElement
   const mn=document.getElementById("mapnotes");if(mn){notes.insertAdjacentHTML("afterbegin","<h3>Routes</h3>");mn.appendChild(notes)}
  }).catch(e=>console.warn("routes3:",e))}
 start();})();
+/* always-visible on-map route key: names the active route type; tap to cycle Drugs → Human smuggling → Firearms → Off */
+(function rkey(){const wrap=document.querySelector(".mapwrap"),ins=[...document.querySelectorAll("input[data-route]")];if(!wrap||ins.length<3)return setTimeout(rkey,300);
+ const ORD=["drug","migr","guns"],INFO={drug:["#ffe81a","Drug and precursor routes"],migr:["#88fc15","Human smuggling routes"],guns:["#33ebff","Firearm routes (southbound)"]};
+ const k=document.createElement("button");k.id="routekey";k.type="button";wrap.appendChild(k);
+ const cur=()=>{const i=ins.find(x=>x.checked);return i?i.dataset.route:null};
+ const upd=()=>{const c=cur(),[col,lab]=c?INFO[c]:["#ffffff","Routes off"];
+  k.innerHTML=`<svg width="26" height="10" aria-hidden="true"><line x1="2" y1="5" x2="24" y2="5" stroke="${col}" stroke-width="4" stroke-linecap="round" ${c?"":'stroke-dasharray="2 4"'}/></svg><span>${lab}</span><b>Change ▸</b>`;
+  k.setAttribute("aria-label",`Showing: ${lab}. Tap to switch route type`)};
+ k.onclick=e=>{e.stopPropagation();const c=cur(),n=c?ORD[ORD.indexOf(c)+1]||null:"drug";
+  if(n){const i=ins.find(x=>x.dataset.route===n);i.checked=true;i.dispatchEvent(new Event("change",{bubbles:true}))}
+  else{const i=ins.find(x=>x.checked);i.checked=false;i.dispatchEvent(new Event("change",{bubbles:true}))}upd()};
+ ins.forEach(i=>i.addEventListener("change",()=>setTimeout(upd,0)));upd()})();

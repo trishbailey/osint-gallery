@@ -116,3 +116,6 @@ button,.chip[data-g],.chip[data-v]{min-height:44px}
 .rtflow{stroke:#0b1526;stroke-opacity:.6;stroke-dasharray:3 15;stroke-linecap:round;animation:rtflow 1.6s linear infinite}
 @keyframes rtflow{to{stroke-dashoffset:-36}}
 @media (prefers-reduced-motion:reduce){.rtflow{animation:none;display:none}}
+#routekey{position:absolute;left:10px;bottom:10px;z-index:6;display:flex;align-items:center;gap:8px;background:#0b1526;color:#ffffff;border:1px solid #c8a24a;border-radius:999px;padding:5px 12px;font:600 13px/1.2 inherit;font-family:inherit;cursor:pointer;max-width:calc(100% - 20px)}
+#routekey b{color:#c8a24a;font-weight:800;white-space:nowrap}#routekey span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:1100px){.mapwrap>#routekey{position:absolute}}
