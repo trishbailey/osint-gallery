@@ -485,10 +485,11 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
  g.append('g').selectAll('path').data(LAK.filter(d=>keepL.has(d.properties.name))).join('path').attr('d',p).attr('fill',GLOW).attr('fill-opacity',.55).attr('stroke',WATER).attr('stroke-width',.6).attr('pointer-events','none');
  const segs=hydroSegs(ids.map(Number)).sort((a,b)=>a.q-b.q);const qmin=d3.min(segs,d=>d.q)||1,qmax=d3.max(segs,d=>d.q)||1;
  const tq=q=>qmax<=qmin?1:Math.max(0,Math.min(1,Math.log(q/qmin)/Math.log(qmax/qmin)));
+ const rw=q=>0.8+tq(q)*3.2;
  const flow=g.append('g').attr('class','lay-flow').attr('pointer-events','none');
  const line=d=>p({type:'LineString',coordinates:d.pts});
- flow.selectAll('path.glow').data(segs).join('path').attr('class','glow').attr('d',line).attr('fill','none').attr('stroke',GLOW).attr('stroke-linecap','round').attr('stroke-linejoin','round').attr('stroke-width',d=>1.6+tq(d.q)*20).attr('stroke-opacity',d=>0.12+tq(d.q)*0.55);
- flow.selectAll('path.core').data(segs).join('path').attr('class','core').attr('data-ink','water').attr('d',line).attr('fill','none').attr('stroke',WATER).attr('stroke-linecap','round').attr('stroke-linejoin','round').attr('stroke-width',d=>0.7+tq(d.q)*6.4).attr('stroke-opacity',d=>0.28+tq(d.q)*0.72);
+ flow.selectAll('path.glow').data(segs).join('path').attr('class','glow').attr('d',line).attr('fill','none').attr('stroke',GLOW).attr('stroke-linecap','round').attr('stroke-linejoin','round').attr('vector-effect','non-scaling-stroke').attr('stroke-width',d=>rw(d.q)+1.4).attr('stroke-opacity',0.18);
+ flow.selectAll('path.core').data(segs).join('path').attr('class','core').attr('data-ink','water').attr('d',line).attr('fill','none').attr('stroke',WATER).attr('stroke-linecap','round').attr('stroke-linejoin','round').attr('vector-effect','non-scaling-stroke').attr('stroke-width',d=>rw(d.q)).attr('stroke-opacity',d=>0.72+tq(d.q)*0.28);
  ab.forEach(b=>b.geo.forEach(f=>{const path=g.append('path').attr('data-bid',b.id).attr('class','aquifer lay-aq').attr('data-ink','aquifer').attr('d',p(f)).attr('fill',`url(#h${id})`).attr('stroke',AQINK).attr('stroke-width',1.5).attr('stroke-dasharray','6 4');
   path.append('title').text('Click for '+shown(b.name)+' details');
   path.on('click',()=>{if(!(zoomable&&ids.length===1&&+ids[0]===+b.id))show(b.id,true)}).on('mousemove',e=>tip(e,`<b>${shown(b.name)}</b><br>Shared aquifer`)).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement))}));
