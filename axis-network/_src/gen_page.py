@@ -1,11 +1,18 @@
+import os
 """Builds axis-network/index.html from ../data.json (run build_data.py first). Static, $0, one GA tag."""
 import json, os, html
 H=os.path.dirname(os.path.abspath(__file__)); D=json.load(open(os.path.join(H,'..','data.json')))
-G={'houthi':['Houthis (Ansar Allah)','#e5534b'],'irgc':['IRGC and Iranian state','#3fb950'],'hezbollah':['Hezbollah','#f2cc60'],
-   'hamas':['Hamas and allied media','#39c5cf'],'iraqi':['Iraqi militias','#5b8def'],'aligned':['Pro-Axis news outlets','#a855f7'],'pij':['Palestinian Islamic Jihad (PIJ)','#ff7eb6']}
-TC=['#e5534b','#39c5cf','#f2cc60','#ff7eb6','#5b8def']
+G={'houthi':['Houthis (Ansar Allah)','#b24762'],'irgc':['IRGC and Iranian state','#6e9a52'],'hezbollah':['Hezbollah','#c9a75a'],
+   'hamas':['Hamas and allied media','#3f9c96'],'iraqi':['Iraqi militias','#4379a8'],'aligned':['Pro-Axis news outlets','#8e65b8'],'pij':['Palestinian Islamic Jihad (PIJ)','#b36a34']}
+TC=['#b24762','#3f9c96','#c9a75a','#b36a34','#4379a8']
 f=lambda n:f'{n:,}'
 from datetime import date
+def rng(s,days=7):
+    from datetime import timedelta
+    y,m,d=map(int,s.split('-'));b=date(y,m,d);a=b-timedelta(days=days-1)
+    if a.year!=b.year: return f"{a:%b %-d, %Y}–{b:%b %-d, %Y}"
+    if a.month!=b.month: return f"{a:%b %-d}–{b:%b %-d}, {b.year}"
+    return f"{a:%b %-d}–{b.day}, {b.year}"
 def nice(s): y,m,d=map(int,s.split('-')); return date(y,m,d).strftime('%b %-d, %Y')
 c=D['collection']; x30=D['xcopies30']; ao=D['allorigin30']; tot=D['allcopies30']; o=D['origin30']; w=D['week']; p=D['pay']; th=D['themes']
 hpct=round(100*ao['houthi']/tot); topx=max(o,key=o.get); hx=round(100*o['houthi']/x30); tx=round(100*o[topx]/x30)
@@ -64,8 +71,8 @@ leg1=''.join(f'<span><i style="background:{G[g][1]}"></i>{gl(g)}</span>' for g i
 pb=''
 mx=max(t[1] for t in p['by_type'])
 for t,n,sh in p['by_type']:
-    pb+=f'<div class="tb"><div class="gn">{t}</div><div style="display:flex;align-items:center;gap:8px"><div class="sbar" style="margin:0;height:28px;width:{100*n/mx:.1f}%">'+(f'<i style="flex:{sh};background:#f2cc60" tabindex="0" data-tip="<b>{t}</b><br>{sh} of {n} posted by 2 or more channels"></i>' if sh else '')+(f'<i style="flex:{n-sh};background:#39c5cf" tabindex="0" data-tip="<b>{t}</b><br>{n-sh} of {n} posted by one channel only"></i>' if n-sh else '')+f'</div><b style="font-size:15px">{n}</b></div></div>'
-leg2='<span><i style="background:#f2cc60"></i>Posted by 2+ channels</span><span><i style="background:#39c5cf"></i>One channel only</span>'
+    pb+=f'<div class="tb"><div class="gn">{t}</div><div style="display:flex;align-items:center;gap:8px"><div class="sbar" style="margin:0;height:28px;width:{100*n/mx:.1f}%">'+(f'<i style="flex:{sh};background:#c9a75a" tabindex="0" data-tip="<b>{t}</b><br>{sh} of {n} posted by 2 or more channels"></i>' if sh else '')+(f'<i style="flex:{n-sh};background:#3f9c96" tabindex="0" data-tip="<b>{t}</b><br>{n-sh} of {n} posted by one channel only"></i>' if n-sh else '')+f'</div><b style="font-size:15px">{n}</b></div></div>'
+leg2='<span><i style="background:#c9a75a"></i>Posted by 2+ channels</span><span><i style="background:#3f9c96"></i>One channel only</span>'
 pg=', '.join(f'{gl(g)} {n}' for g,n in p['by_group'].items())
 # themes
 tb=''
@@ -75,7 +82,7 @@ tb=tb.replace('margin:4px 0 12px','')
 leg3=''.join(f'<span><i style="background:{TC[i]}"></i>{l}</span>' for i,l in enumerate(th['cats']))
 chiph=''.join(f'<div class="chip"><b>{a}</b><span>{b}</span><em>{e}</em></div>' for a,b,e in chips)
 infra=f'{D["infra"]["sites"]} websites promoted by the channels were mapped to their servers. Only one link crosses groups: almoqawma.com, posted by both Hamas and Hezbollah channels, shared server addresses with the IRGC-linked pgsa.ir. Everything else stays inside one group.'
-DATA=json.dumps(dict(G={k:v for k,v in G.items()},f30=D['flow30'],f7=D['flow7']),ensure_ascii=False)
+DATA=json.dumps(dict(MAP=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'basemap.json'))),BG=D['by_group'],G={k:v for k,v in G.items()},f30=D['flow30'],f7=D['flow7']),ensure_ascii=False)
 JS='''
 const D=__D__,TIP=document.getElementById('tip'),SH=document.getElementById('sheet');
 const ph=()=>innerWidth<700;
@@ -90,42 +97,73 @@ const NS='http://www.w3.org/2000/svg';
 function el(n,a,p){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);p&&p.appendChild(e);return e}
 let mode='f30';
 function flow(){const box=document.getElementById('flow');box.innerHTML='';const W=box.clientWidth,P=D[mode].filter(r=>r[2]>=10);
- const L=ph()?112:230,R=ph()?112:230,gap=10,nw=12,tot=P.reduce((a,r)=>a+r[2],0);
+ const L=ph()?118:250,R=ph()?118:250,gap=10,nw=12,tot=P.reduce((a,r)=>a+r[2],0);
  const so={},ta={};P.forEach(r=>{so[r[0]]=(so[r[0]]||0)+r[2];ta[r[1]]=(ta[r[1]]||0)+r[2]});
  const sk=Object.keys(so).sort((a,b)=>so[b]-so[a]),tk=Object.keys(ta).sort((a,b)=>ta[b]-ta[a]);
- const Hh=ph()?440:440,k=(Hh-gap*Math.max(sk.length,tk.length))/tot;
- const svg=el('svg',{width:W,height:Hh+30,role:'img','aria-label':'Flow of copied messages from the group that posted first (left) to the group that copied (right)'},box);
+ const Hh=ph()?520:540,k=(Hh-gap*Math.max(sk.length,tk.length))/tot;
+ const svg=el('svg',{width:W,height:Hh+(ph()?70:40),role:'img','aria-label':'Flow of copied messages from the group that posted first (left) to the group that copied (right)'},box);
  el('text',{x:0,y:16,fill:'#e6e9ef','font-size':14,'font-weight':700},svg).textContent='Posted first ↓';
  const t2=el('text',{x:W,y:16,fill:'#e6e9ef','font-size':14,'font-weight':700,'text-anchor':'end'},svg);t2.textContent='Copied by ↓';
  const ys={},yt={};let y=30;sk.forEach(g=>{ys[g]=y;y+=so[g]*k+gap});y=30;tk.forEach(g=>{yt[g]=y;y+=ta[g]*k+gap});
  const x0=L,x1=W-R,os={...ys},ot={...yt},lg=el('g',{},svg);
  P.forEach(r=>{const h=r[2]*k,a=os[r[0]],b=ot[r[1]];os[r[0]]+=h;ot[r[1]]+=h;const m=(x0+x1)/2;
-  const pth=el('path',{d:`M${x0+nw},${a}C${m},${a} ${m},${b} ${x1-nw},${b}L${x1-nw},${b+h}C${m},${b+h} ${m},${a+h} ${x0+nw},${a+h}Z`,fill:D.G[r[0]][1],'fill-opacity':.6,stroke:D.G[r[0]][1],'stroke-opacity':.9,'stroke-width':.5,tabindex:0},lg);
+  const pth=el('path',{d:`M${x0+nw},${a}C${m},${a} ${m},${b} ${x1-nw},${b}L${x1-nw},${b+h}C${m},${b+h} ${m},${a+h} ${x0+nw},${a+h}Z`,fill:D.G[r[0]][1],'fill-opacity':.42,stroke:D.G[r[0]][1],'stroke-opacity':.55,'stroke-width':.5,tabindex:0},lg);
   pth.dataset.tip=`<b style="color:${D.G[r[0]][1]}">${D.G[r[0]][0]}</b> → <b style="color:${D.G[r[1]][1]}">${D.G[r[1]][0]}</b><br>${r[2].toLocaleString()} messages copied`;
-  pth.addEventListener('mouseenter',()=>pth.setAttribute('fill-opacity',.95));pth.addEventListener('mouseleave',()=>pth.setAttribute('fill-opacity',.6))});
+  pth.addEventListener('mouseenter',()=>{lg.querySelectorAll('path').forEach(q=>q.setAttribute('fill-opacity',q===pth?.85:.14))});pth.addEventListener('mouseleave',()=>{lg.querySelectorAll('path').forEach(q=>q.setAttribute('fill-opacity',.42))})});
  const short=g=>ph()?{houthi:'Houthis',irgc:'IRGC / Iran',hezbollah:'Hezbollah',hamas:'Hamas',iraqi:'Iraqi militias',aligned:'Pro-Axis media',pij:'PIJ'}[g]:D.G[g][0];
- const lab=(g,x,y0,h,v,anchor,tx)=>{el('rect',{x,y:y0,width:nw,height:Math.max(2,h),fill:D.G[g][1]},svg);
-   const t=el('text',{x:tx,y:y0+h/2+(ph()?-2:5),fill:'#e6e9ef','font-size':ph()?13:14.5,'text-anchor':anchor},svg);t.textContent=short(g)+' ';const s=ph()?el('tspan',{'font-weight':700,fill:D.G[g][1],x:tx,dy:15},t):el('tspan',{'font-weight':700,fill:D.G[g][1]},t);s.textContent=v.toLocaleString()};
+ const last={};const lab=(g,x,y0,h,v,anchor,tx)=>{el('rect',{x,y:y0,width:nw,height:Math.max(2,h),fill:D.G[g][1]},svg);
+   let ly=y0+h/2+(ph()?-2:5);const mg=ph()?32:19;if(last[anchor]!=null&&ly<last[anchor]+mg)ly=last[anchor]+mg;last[anchor]=ly;const t=el('text',{x:tx,y:ly,fill:'#e6e9ef','font-size':ph()?13:14.5,'text-anchor':anchor},svg);t.textContent=short(g)+' ';const s=ph()?el('tspan',{'font-weight':700,fill:D.G[g][1],x:tx,dy:15},t):el('tspan',{'font-weight':700,fill:D.G[g][1]},t);s.textContent=v.toLocaleString()};
  sk.forEach(g=>lab(g,x0,ys[g],so[g]*k,so[g],'end',x0-6));tk.forEach(g=>lab(g,x1-nw,yt[g],ta[g]*k,ta[g],'start',x1+6));
  document.getElementById('ftitle').textContent=mode==='f30'?'last 30 days':'last 7 days'}
 document.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{mode=b.dataset.w;document.querySelectorAll('[data-w]').forEach(x=>x.setAttribute('aria-pressed',x===b));flow()});
+
+function netmap(){const box=document.getElementById('net');box.innerHTML='';const MP=D.MAP,cw=box.clientWidth,P=ph();
+ const vx=P?240:0,vw=P?760:MP.W,vy=P?20:0,vh=P?640:MP.H,u=vw/cw,fs=n=>n*u;
+ const pj=(lo,la)=>[MP.W/2+(lo-MP.lonc)*MP.K*MP.S,MP.H-(la-MP.lat0)*MP.S];
+ const LOC={irgc:[51.39,35.69,'Tehran'],hezbollah:[35.5,33.89,'Beirut'],iraqi:[44.36,33.31,'Baghdad'],houthi:[44.2,15.35,'Sanaa'],hamas:[33.6,30.6,'Gaza'],pij:[34.3,28.2,'Gaza'],aligned:[P?38.5:27.5,P?24.5:25.5,'pan-regional']};
+ const svg=el('svg',{viewBox:`${vx} ${vy} ${vw} ${vh}`,width:'100%',style:'display:block;border-radius:10px;background:#0d1a2e',role:'img','aria-label':'Map of copied messages between groups, last 30 days'},box);
+ MP.paths.forEach(d=>el('path',{d,fill:'#16284a',stroke:'#2c4370','stroke-width':.8*u/1.3},svg));
+ const pos={};for(const g in LOC)pos[g]=pj(LOC[g][0],LOC[g][1]);
+ const E=D.f30.filter(r=>r[2]>=10),mx=Math.max(...E.map(r=>r[2])),eg=el('g',{},svg),dg=el('g',{},svg),parts=[];
+ const ctl=(a,b)=>{const m=[(a[0]+b[0])/2,(a[1]+b[1])/2],dx=b[0]-a[0],dy=b[1]-a[1];return[m[0]-dy*.18,m[1]+dx*.18]};
+ const bz=(a,c,b,t)=>[(1-t)**2*a[0]+2*(1-t)*t*c[0]+t*t*b[0],(1-t)**2*a[1]+2*(1-t)*t*c[1]+t*t*b[1]];
+ E.forEach(([a,b,n])=>{const p0=pos[a],p2=pos[b],p1=ctl(p0,p2);const w=(1.5+11*Math.sqrt(n/mx))*Math.min(u,1.6);
+  const pt=el('path',{d:`M${p0} Q${p1} ${p2}`,fill:'none',stroke:D.G[a][1],'stroke-width':w,'stroke-opacity':.42,'stroke-linecap':'round',tabindex:0},eg);
+  pt.dataset.tip=`<b style="color:${D.G[a][1]}">${D.G[a][0]}</b> → <b style="color:${D.G[b][1]}">${D.G[b][0]}</b><br>${n.toLocaleString()} messages copied (30 days)`;
+  pt.addEventListener('mouseenter',()=>eg.querySelectorAll('path').forEach(q=>q.setAttribute('stroke-opacity',q===pt?.9:.12)));
+  pt.addEventListener('mouseleave',()=>eg.querySelectorAll('path').forEach(q=>q.setAttribute('stroke-opacity',.42)));
+  const k=Math.max(1,Math.round(1+6*Math.sqrt(n/mx)));for(let j=0;j<k;j++)parts.push({c:el('circle',{r:2.6*Math.min(u,1.6),fill:'#e6e9ef','fill-opacity':.85},dg),p0,p1,p2,ph:j/k,sp:.05+.08*Math.sqrt(n/mx)})});
+ const off={hamas:[-1,0],pij:[-1,0],hezbollah:[0,-1]};
+ for(const g in LOC){const[x,y]=pos[g],r=fs(P?11:15),bg=D.BG[g]||{ch:0,posts:0};
+  const c=el('circle',{cx:x,cy:y,r,fill:D.G[g][1],stroke:'#0b1526','stroke-width':fs(2.5),tabindex:0},svg);
+  c.dataset.tip=`<b style="color:${D.G[g][1]}">${D.G[g][0]}</b><br>${bg.ch} channels · ${bg.posts.toLocaleString()} posts · base: ${LOC[g][2]}`;
+  const o=off[g]||[0,1],tx=o[0]?x-r-fs(6):x,ty=o[1]<0?y-r-fs(8):o[1]>0?y+r+fs(16):y+fs(5);
+  const t=el('text',{x:tx,y:ty,'text-anchor':o[0]?'end':'middle','font-size':fs(P?13:14.5),'font-weight':700,fill:'#e6e9ef',stroke:'#0b1526','stroke-width':fs(3),'paint-order':'stroke'},svg);
+  t.textContent=P?{houthi:'Houthis',irgc:'IRGC / Iran',hezbollah:'Hezbollah',hamas:'Hamas',iraqi:'Iraqi militias',aligned:'Pro-Axis media',pij:'PIJ'}[g]:D.G[g][0];
+  if(!P){const t2=el('tspan',{x:tx,dy:fs(16),'font-size':fs(13),'font-weight':400,fill:'#b8c0cc'},t);t2.textContent=`${bg.ch} channels · ${LOC[g][2]}`}}
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches){parts.forEach(p=>{const[x,y]=bz(p.p0,p.p1,p.p2,p.ph);p.c.setAttribute('cx',x);p.c.setAttribute('cy',y)});return}
+ const t0=performance.now(),id=++netmap.id;(function tick(now){if(id!==netmap.id)return;const T=(now-t0)/1000;parts.forEach(p=>{const[x,y]=bz(p.p0,p.p1,p.p2,(T*p.sp+p.ph)%1);p.c.setAttribute('cx',x);p.c.setAttribute('cy',y)});requestAnimationFrame(tick)})(t0)}
+netmap.id=0;netmap();addEventListener('resize',()=>netmap());
 flow();let rw=innerWidth;addEventListener('resize',()=>{if(innerWidth!==rw){rw=innerWidth;flow()}});
 '''.replace('__D__',DATA)
 page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Axis Channel Network</title><meta name="description" content="How Iran-aligned Telegram channels share messages and raise money."><link rel="icon" href="../favicon.svg"><style>{CSS}</style></head><body><main>
 <h1>Axis Channel Network</h1>
 <p class="intro">This page tracks {c["channels"]} public Telegram channels run by or aligned with Iran’s “Axis of Resistance”: the Houthis, the IRGC and Iranian state media, Hezbollah, Hamas, Palestinian Islamic Jihad and Iraqi militias. It shows where their messages start and how they spread, how they ask for money, and what each group talks about. Tap or hover any bar for details; sources are in the More section.</p>
-<div class="thru">Data through {nice(D["data_through"])} · main window: 30 days from {nice(D["window_start"])}</div>
+<div class="thru">Data through {nice(D["data_through"])} (latest collected post) · main window: {rng(D["data_through"],30)}</div>
 <div class="strip"><div class="st"><b>{c["channels"]}</b><span>channels</span></div><div class="st"><b>{f(c["posts"])}</b><span>posts collected</span></div><div class="st"><b>{f(x30)}</b><span>messages copied across groups</span></div></div>
+<section id="map"><h2>Which groups pass messages to which</h2><p class="prompt">Each circle is a group at its home base; lines show messages first posted by one group and later copied by another (last 30 days). Thicker lines mean more messages; moving dots show direction.</p>
+<div id="net"></div><p class="cap">Line colour = the group that posted first. Hover or tap a line or circle for numbers. Pro-Axis news outlets have no single base and are placed on their own. Flows under 10 messages are left out.</p></section>
 <section id="spread"><h2>Where messages start and how they spread</h2><p class="prompt">Who posts first when the same message appears in several channels (last 30 days)</p>
 <div class="row"><div class="leg">{leg1}</div><div>{s1bar}<div class="lbl">Copied across groups, <span id="ftitle">last 30 days</span>: posted first (left) → copied by (right)</div>
-<div style="display:flex;gap:8px;margin:6px 0"><button class="btn" data-w="f30" aria-pressed="true">30 days</button><button class="btn" data-w="f7" aria-pressed="false">7 days</button></div><div id="flow"></div></div></div>
+<div style="display:flex;gap:8px;margin:6px 0"><button class="btn" data-w="f30" aria-pressed="true">30 days</button><button class="btn" data-w="f7" aria-pressed="false">7 days</button></div></div></div>
+<div id="flow" style="width:100%;margin-top:6px"></div>
 <p class="cap">{cap1}</p></section>
 <section id="pay"><h2>Shared payment methods</h2><p class="prompt">Payment methods posted in the channels, by type</p>
 <div class="row"><div class="leg">{leg2}</div><div>{pb}</div></div><p class="cap">{cap2} Channels posting them: {pg}.</p></section>
 <section id="themes"><h2>What each group pushes</h2><p class="prompt">Share of each group’s posts by topic</p>
 <div class="row"><div class="leg">{leg3}</div><div>{tb}</div></div><p class="cap">{cap3}</p></section>
-<section id="week"><h2>New this week</h2><p class="prompt">{nice(D["data_through"])} and the 6 days before, compared with the 3 weeks before</p><div class="chips">{chiph}</div></section>
+<section id="week"><h2>New this week: {rng(D["data_through"])}</h2><p class="prompt"><b>{rng(D["data_through"])}</b>, compared with the 3 weeks before ({rng(str(date.fromisoformat(D["data_through"])-__import__("datetime").timedelta(days=7)),21)})</p><div class="chips">{chiph}</div></section>
 <details id="more"><summary>More: shared websites, method and sources</summary><div class="in"><p><b>Shared websites.</b> {infra}</p>
 <p><b>Method.</b> A message counts as copied when the same text appears in two or more channels; the first channel to post it is the origin. Same-group copies (for example between Houthi channels) are included in the top bar; the flow chart shows only copies between different groups. Flows under 10 messages are left out.</p>
 <div id="src"><b>Sources</b><ol>{''.join(f"<li>{html.escape(x)}</li>" for x in SRC)}</ol></div></div></details>
