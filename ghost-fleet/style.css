@@ -127,3 +127,5 @@ body.story #map{height:min(62vh,620px)}
  .rbars .mcol:nth-child(even) .mv,.rbars .mcol:nth-child(even) .ml{visibility:hidden}}
 .rbars{overflow:hidden}.mcol{overflow:hidden}.lead .lchips,.lead .shbox,.lead .shfig{min-width:0;max-width:100%}
 @media(max-width:700px){.rchips .lchip{min-width:0;flex:1 1 0;padding:6px 8px}.rchips .lchip b{font-size:17px}.arr{font-size:16px}.mv,.ml{font-size:13px;letter-spacing:-.02em}.srow{grid-template-columns:minmax(0,96px) minmax(0,1fr) auto}.cbar{grid-template-columns:70px minmax(0,1fr) auto}}
+
+.dg{margin:8px 0}.dgh{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}.dgh b{font-size:22px;color:var(--gold)}.dgh span{font-size:13px;color:var(--muted)}.dg svg{display:block;width:100%;max-width:400px;height:auto}
