@@ -14,7 +14,7 @@ svg{display:block;font-family:inherit}#mapsvg{width:100%;touch-action:none;curso
 #layers{left:10px;bottom:10px}#layers label{display:block;cursor:pointer;white-space:nowrap}#keybox{left:10px;top:10px;max-width:250px}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}.chip{display:inline-flex;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--line);color:var(--text);font-size:13px;padding:4px 9px;border-radius:14px;cursor:pointer}
 .chip.on{border-color:var(--gold);background:#1c2c4b}.chip.dim{opacity:.45}.dot{width:12px;height:12px;border-radius:3px;display:inline-block;flex:none}
-.hatch{background:repeating-linear-gradient(45deg,#e4572e 0 4px,#2e86de 4px 8px)}
+.hatch{background:repeating-linear-gradient(45deg,#937d38 0 4px,#246658 4px 8px)}
 .netrow{margin:16px 0}.tlrow{margin:16px 0}.row3{display:grid;grid-template-columns:1fr;gap:16px}.row2{display:grid;grid-template-columns:1fr 380px;gap:16px}
 @media(max-width:1100px){.row3,.row2,.kpis{grid-template-columns:1fr 1fr}}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;align-content:start}

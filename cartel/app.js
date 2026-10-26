@@ -2,7 +2,9 @@ const COL={precursors:"#c8a24a",cocaine:"#e6e9ef","fentanyl / methamphetamine":"
 const KCOL={rivalry:"#c0504d",alliance:"#6aa684",faction:"#c77dff","alleged link":"#c8a24a",service:"#5b8fd1"};
 const LV={dominant:.95,significant:.75,present:.35};
 const LVI={dominant:"●",significant:"◍",present:"○"},LVW={dominant:"Dominant",significant:"Significant",present:"Minor"};
-const shadeG=(c,l)=>l==="dominant"?d3.lab(c).darker(0.7).formatHex():d3.interpolateLab(c,"#ffffff")(l==="significant"?0.42:0.78);
+/* area fills: muted base (window.TERR_FILL) at Dominant; lower levels drop L* and chroma (mirrored in pipeline/palette_check.py FILL_LV) */
+const FILLLV={dominant:[0,1],significant:[6,.85],present:[12,.7]};
+const shadeG=(c,l)=>{const [dl,f]=FILLLV[l]||FILLLV.dominant,x=d3.lab(c);return d3.lab(x.l-dl,x.a*f,x.b*f).formatHex()};
 const swatches=c=>`<div class="lvramp"><span class="muted">less</span>${["present","significant","dominant"].map(l=>`<span class="sw" title="${LVW[l]}" style="background:${shadeG(c,l)}"></span>`).join("")}<span class="muted">more</span></div><div class="muted">${LVI.present} Minor · ${LVI.significant} Significant · ${LVI.dominant} Dominant</div>`;
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const $=id=>document.getElementById(id);
@@ -39,6 +41,7 @@ function kpis(net,cross,money,events,terr){
   $("kpis").innerHTML=K.map(k=>`<div class="kpi"><div class="v">${k[0]}</div><div class="l">${k[1].replace(/\s*(\S+)$/,"")} <span class="nw">${k[1].match(/(\S+)$/)[1]}${k[2]}</span></div></div>`).join("");
 }
 function mapView(topo,adm,terr,routes,cross,china,GC){
+  const FC=id=>(window.TERR_FILL||{})[id]||GC[id].color;  // muted area-fill colour for a group
   const svg=d3.select("#mapsvg"),W=svg.node().parentNode.clientWidth||1200,H=Math.round(Math.max(460,Math.min(W*0.62,window.innerHeight-250)));svg.attr("width",W).attr("height",H).style("height",H+"px");
   const view=document.createElement("div");view.className="overlay zoombtns";view.innerHTML='<button class="zb" data-z="in" title="Zoom in" aria-label="Zoom in">+</button><button class="zb" data-z="out" title="Zoom out" aria-label="Zoom out">&minus;</button><button class="zb" data-z="reset" title="Reset view" aria-label="Reset view">&#8634;</button>';svg.node().parentNode.appendChild(view);
   const proj=d3.geoConicEqualArea().parallels([-15,20]).rotate([135,0]).center([0,-2]).fitExtent([[10,10],[W-10,H-10]],{type:"MultiPoint",coordinates:[[-118,32.7],[-34.8,-7],[-70,-40],[-55,-34],[-81.3,-5]]});
@@ -61,17 +64,17 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   let filt=null,fset=null;
   const dotp={};const dots=c=>{const k=c.replace("#","");if(dotp[k])return dotp[k];const p=defs.append("pattern").attr("id","d"+k).attr("patternUnits","userSpaceOnUse").attr("width",7).attr("height",7);
     p.append("rect").attr("width",7).attr("height",7).attr("fill",c).attr("fill-opacity",.4);p.append("circle").attr("cx",3.5).attr("cy",3.5).attr("r",1.7).attr("fill",c);return dotp[k]=`url(#d${k})`};
-  const shade=(c,l)=>l==="dominant"?d3.lab(c).darker(0.7).formatHex():d3.interpolateLab(c,"#ffffff")(l==="significant"?0.42:0.78);
+  const shade=shadeG;
   const lvl=(c,l)=>({f:shade(c,l),o:1});
   const style=d=>{const r=RB[d.properties.id];if(!r)return{f:"#1b2c4a",o:1};
-    if(fset){const e=r.groups.filter(x=>fset.includes(x.group)).sort((a,b)=>LV[b.level]-LV[a.level]);if(!e.length)return{f:"#1b2c4a",o:1};if(e.length===1)return lvl(GC[e[0].group].color,e[0].level);return{f:pattern(e.slice(0,3).map(x=>GC[x.group].color)),o:1}}
-    if(filt){const e=r.groups.find(x=>x.group===filt);return e?lvl(GC[filt].color,e.level):{f:"#1b2c4a",o:1}}
+    if(fset){const e=r.groups.filter(x=>fset.includes(x.group)).sort((a,b)=>LV[b.level]-LV[a.level]);if(!e.length)return{f:"#1b2c4a",o:1};if(e.length===1)return lvl(FC(e[0].group),e[0].level);return{f:pattern(e.slice(0,3).map(x=>FC(x.group))),o:1}}
+    if(filt){const e=r.groups.find(x=>x.group===filt);return e?lvl(FC(filt),e.level):{f:"#1b2c4a",o:1}}
     let heavy=r.groups.filter(x=>x.level!=="present");
     if(r.contested&&r.contested.groups.length>1)heavy=r.contested.groups.map(x=>({group:x}));
     const dom=r.groups.filter(x=>x.level==="dominant");if(dom.length===1&&!(r.contested&&r.contested.groups.length>1))heavy=dom;
-    if(!heavy.length)return lvl(GC[r.groups[0].group].color,"present");
-    if(heavy.length===1){const c=GC[heavy[0].group].color;return r.contested?{f:pattern([c,"#0b1526"]),o:1}:lvl(c,heavy[0].level||"dominant")}
-    return{f:pattern(heavy.slice(0,3).map(x=>GC[x.group].color)),o:1}};
+    if(!heavy.length)return lvl(FC(r.groups[0].group),"present");
+    if(heavy.length===1){const c=FC(heavy[0].group);return r.contested?{f:pattern([c,"#0b1526"]),o:1}:lvl(c,heavy[0].level||"dominant")}
+    return{f:pattern(heavy.slice(0,3).map(x=>FC(x.group))),o:1}};
   const ad=g.append("g").selectAll("path").data(adm.features).join("path").attr("class","adm").attr("d",path).attr("stroke","none").attr("vector-effect","non-scaling-stroke").attr("stroke-width",1.5).style("cursor",d=>RB[d.properties.id]?"pointer":"default")
     .on("click",(e,d)=>regionShow(d)).on("mouseover",function(){d3.select(this).attr("stroke","#fff").raise()}).on("mouseout",function(){d3.select(this).attr("stroke",this.dataset.s||"none")});
   ad.append("title").text(d=>{const r=RB[d.properties.id];return (d.properties.name||"")+(r?": "+r.groups.map(x=>GC[x.group].name).join(", "):"")});
@@ -79,15 +82,15 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   g.append("path").datum(topojson.mesh(topo,topo.objects.admin1,(a,b)=>a!==b&&a.properties.iso===b.properties.iso&&a.properties.iso!=="USA")).attr("d",path).attr("fill","none").attr("stroke","#0b1526").attr("stroke-width",.6).attr("vector-effect","non-scaling-stroke").style("pointer-events","none");
   g.append("path").datum(topojson.mesh(topo,topo.objects.countries)).attr("d",path).attr("fill","none").attr("stroke","#8fa3c4").attr("stroke-width",1).attr("vector-effect","non-scaling-stroke").style("pointer-events","none");
   function regionShow(d){const r=RB[d.properties.id],mx=stateStats(d.properties.id);if(!r){drawer(`<h2>${esc(d.properties.name||"")}</h2>${mx}<p class="muted">No sourced group footprint is mapped here. That reflects data coverage, not an absence of organized crime.</p>`);return}
-    drawer(`<h2>${esc(r.name)}</h2><div class="muted">${esc(r.iso)}</div>`+mx+(r.contested?`<h3>Contested</h3><div class="rg">${r.contested.groups.map(x=>`<span class="dot" style="background:${GC[x].color}"></span> ${esc(GC[x].name)}`).join(" vs ")}<div>${esc(r.contested.note)}</div>${cite(r.contested.cites)}</div>`:"")+
-    "<h3>Groups active</h3>"+r.groups.slice().sort((a,b)=>LV[b.level]-LV[a.level]).map(x=>`<div class="rg"><span class="dot" style="background:${GC[x.group].color}"></span> <b>${esc(GC[x.group].name)}</b> <span class="lvl"><b>${LVI[x.level]} ${LVW[x.level]}</b> · ${esc(terr.levels[x.level])}${r.contested&&r.contested.groups.includes(x.group)?" · contests":""}</span>${x.note?`<div>${esc(x.note)}</div>`:""}${cite(x.cites)}</div>`).join(""))}
+    drawer(`<h2>${esc(r.name)}</h2><div class="muted">${esc(r.iso)}</div>`+mx+(r.contested?`<h3>Contested</h3><div class="rg">${r.contested.groups.map(x=>`<span class="dot" style="background:${FC(x)}"></span> ${esc(GC[x].name)}`).join(" vs ")}<div>${esc(r.contested.note)}</div>${cite(r.contested.cites)}</div>`:"")+
+    "<h3>Groups active</h3>"+r.groups.slice().sort((a,b)=>LV[b.level]-LV[a.level]).map(x=>`<div class="rg"><span class="dot" style="background:${FC(x.group)}"></span> <b>${esc(GC[x.group].name)}</b> <span class="lvl"><b>${LVI[x.level]} ${LVW[x.level]}</b> · ${esc(terr.levels[x.level])}${r.contested&&r.contested.groups.includes(x.group)?" · contests":""}</span>${x.note?`<div>${esc(x.note)}</div>`:""}${cite(x.cites)}</div>`).join(""))}
   // legend chips = filter
   const used=new Set(terr.regions.flatMap(r=>r.groups.map(x=>x.group)));
-  const L=$("grouplegend");L.innerHTML=`<button class="chip on" data-g="">All groups</button>`+terr.groups.filter(x=>used.has(x.id)).map(x=>`<button class="chip" data-g="${x.id}"><span class="dot" style="background:${x.color}"></span>${esc(x.name)}</button>`).join("");
+  const L=$("grouplegend");L.innerHTML=`<button class="chip on" data-g="">All groups</button>`+terr.groups.filter(x=>used.has(x.id)).map(x=>`<button class="chip" data-g="${x.id}"><span class="dot" style="background:${FC(x.id)}"></span>${esc(x.name)}</button>`).join("");
   const setF=id=>{filt=id||null;fset=null;L.querySelectorAll(".chip").forEach(b=>b.classList.toggle("on",b.dataset.g===(id||"")));paint();key()};
   L.querySelectorAll(".chip").forEach(b=>b.onclick=()=>setF(b.dataset.g));
-  const key=()=>$("keybox").innerHTML=fset?`<b>Storyline groups</b><br>`+fset.map(x=>`<span class="dot" style="background:${GC[x].color}"></span> ${esc(GC[x].name)}`).join("<br>"):filt?`<b>${esc(GC[filt].name)}</b>`+swatches(GC[filt].color)
-    :`<b>Presence</b>${swatches("#e4572e")}<span class="sw hatch"></span> ▧ Contested / shared (wide stripes)<br><span class="sw" style="background:#1b2c4a;border:1px solid #3a5583"></span> No sourced footprint`;key();
+  const key=()=>$("keybox").innerHTML=fset?`<b>Storyline groups</b><br>`+fset.map(x=>`<span class="dot" style="background:${FC(x)}"></span> ${esc(GC[x].name)}`).join("<br>"):filt?`<b>${esc(GC[filt].name)}</b>`+swatches(FC(filt))
+    :`<b>Presence</b>${swatches(FC("cjng"))}<span class="sw hatch"></span> ▧ Contested / shared (wide stripes)<br><span class="sw" style="background:#1b2c4a;border:1px solid #3a5583"></span> No sourced footprint`;key();
   $("mapnotes").innerHTML=`<p>${esc(terr.note)}</p><h3>Where footprint data is thin</h3><ul>${terr.thin.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`;
   // overlays
   const proj2=c=>proj(c);
