@@ -101,4 +101,9 @@ svg text{fill:var(--text);font-size:13px}
 @media (min-width:701px){.lcd>summary{display:none}}
 @media (max-width:700px){.cols{display:block}.lc{margin-bottom:10px}.lc .chips{flex-direction:row;flex-wrap:wrap}}
 
-.types{display:flex;flex-wrap:wrap;gap:6px}.types .tg{width:auto;margin:0;gap:6px}.ti{flex:none;vertical-align:middle}.tcomp .tg{font-size:13px;padding:0 8px}
+.types{display:flex;flex-wrap:wrap;gap:6px}.types .tg{width:auto;margin:0;gap:6px}.ti{flex:none;vertical-align:middle}
+#spread .lc{gap:4px}#spread .lc .lh{margin:2px 0 0}#spread #tpdesc{font-size:13px;margin:0}
+#spread .lc .chips{gap:4px}
+.lnk{background:none;border:0;color:var(--gold);font-size:14px;text-align:left;padding:0;min-height:44px;cursor:pointer;text-decoration:underline}
+.legend.g2{display:grid;grid-template-columns:1fr 1fr;gap:0 8px}.legend.g2 div{min-height:24px}
+#spread .types{display:grid;grid-template-columns:1fr 1fr;gap:4px}#spread .types .tg{font-size:13px;padding:0 6px;min-height:44px}

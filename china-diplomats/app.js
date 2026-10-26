@@ -36,17 +36,17 @@ d3.select('#cover').text(`Coverage: ${fday(H.start.slice(0,10))} to ${fd(H.end)}
 d3.select('#heads').selectAll('div').data([[H.accounts,'accounts tracked'],[H.active,'posted in this period'],[H.posts,'posts collected'],[H.countries,'countries and organisations'],[H.clusters,'messages shared by 3+ accounts'],[H.topburst_acc,'accounts pushed the '+H.topburst+' in bursts']]).join('div').attr('class','head').html(d=>`<b>${fmt(d[0])}</b><span>${d[1]}</span>`);
 // ---- legends and filters
 const lg=(id,items,sq)=>d3.select(id).selectAll('div').data(items).join('div').html(d=>`<span class="sw ${sq?'sq':''}" style="background:${d[1]}"></span>${esc(d[0])}`);
-lg('#lg-kind',Object.values(KIND));const drawTLeg=()=>{d3.select('#lg-tone').html('');lg('#lg-tone',TMODE==='count'?TONEB_C():TONEB_S(),1);d3.select('#lg-tone').append('div').attr('class','li').text(`Countries with fewer than ${TONE.min_posts} posts are not shown`)};drawTLeg();
-d3.selectAll('.types').selectAll('button').data(Object.keys(TYPES)).join('button').attr('class','tg').attr('type','button').attr('aria-pressed','true').html(t=>`${tIcon(t)}${t}`)
- .on('click',function(e,t){on.has(t)?on.delete(t):on.add(t);d3.selectAll('.types button').filter(x=>x===t).attr('aria-pressed',on.has(t));drawSpread(true);drawRipple()});
+lg('#lg-kind',Object.values(KIND));const drawTLeg=()=>{d3.select('#lg-tone').html('');lg('#lg-tone',(TMODE==='count'?TONEB_C():TONEB_S()).slice().reverse(),1);d3.select('#lg-tone').append('div').attr('class','li').text(`Countries with fewer than ${TONE.min_posts} posts are not shown`)};drawTLeg();
+d3.select('#types').selectAll('button').data(Object.keys(TYPES)).join('button').attr('class','tg').attr('type','button').attr('aria-pressed','true').html(t=>`${tIcon(t)}${t}`)
+ .on('click',function(e,t){on.has(t)?on.delete(t):on.add(t);this.setAttribute('aria-pressed',on.has(t));drawSpread(true)});
 // ---- talking point picker
-let cur=0;const NAR=SP.filter(d=>d.accounts>6&&d.spread.length>6);SP.length=0;NAR.forEach(d=>SP.push(d));
+let cur=0;const NAR=SP.filter(d=>(d.accounts_7d??d.accounts)>=7).slice(0,5);SP.length=0;NAR.forEach(d=>SP.push(d));
 const slug=n=>n.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-const sel=d3.select('#tp');sel.selectAll('option').data(SP).join('option').attr('value',(d,i)=>i).text(d=>`${d.name} (${d.accounts} accounts)`);
+const sel=d3.select('#tp');sel.selectAll('option').data(SP).join('option').attr('value',(d,i)=>i).text(d=>`${d.name} (${d.accounts_7d??d.accounts} accounts this week)`);
 sel.on('change',function(){setTP(+this.value)});
 d3.select('#chips').selectAll('button').data(SP).join('button').attr('class','chip').html(d=>`<span class="sw" style="background:${tpColor(d.name)||'transparent'};border:2px solid ${tpColor(d.name)||OTHER}"></span>${esc(d.name)}`).on('click',(e,d)=>setTP(SP.indexOf(d)));
-const tpread=d3.select(document.getElementById('chips').parentNode).insert('button','#chips + *').attr('id','tpread').attr('type','button').attr('class','btn').style('margin','8px 0').on('click',()=>openNarr(ST.series.findIndex(s=>s.name===SP[cur].name)));
-function setTP(i){cur=i;{const k=ST.series.findIndex(s=>s.name===SP[i].name);tpread.attr('hidden',k<0?'':null).text(`Read what “${SP[i].name}” says and see a sample post`)}sel.property('value',i);d3.select('#chips').selectAll('button').attr('aria-pressed',(d,j)=>j===i);d3.select('#tpdesc').text(SP[i].desc);
+const tpread=d3.select(document.getElementById('chips').parentNode).insert('button','#chips + *').attr('id','tpread').attr('type','button').attr('class','lnk').on('click',()=>openNarr(ST.series.findIndex(s=>s.name===SP[cur].name)));
+function setTP(i){cur=i;{const k=ST.series.findIndex(s=>s.name===SP[i].name);tpread.attr('hidden',k<0?'':null).text('Read what it says ›').attr('aria-label',`Read what “${SP[i].name}” says and see a sample post`)}sel.property('value',i);d3.select('#chips').selectAll('button').attr('aria-pressed',(d,j)=>j===i);d3.select('#tpdesc').text(SP[i].desc);
  d3.select('#sp-title').text(`How it spread: ${SP[i].name}`);setHash('narrative',slug(SP[i].name));stop();drawSpread();play()}
 function gotoNarr(name){const i=SP.findIndex(d=>d.name===name);if(i<0)return;setTP(i);document.getElementById('spread').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
 function initNarr(){const m=location.hash.match(/narrative=([\w-]+)/);const ini=!!m;const i=m?SP.findIndex(d=>slug(d.name)===m[1]):-1;if(i>=0){setTP(i);setTimeout(()=>document.getElementById('spread').scrollIntoView(),50)}else{setTP(0);setHash('narrative',null)}}
@@ -102,7 +102,7 @@ function hitOpen(svg,stk,x,y,days,w){svg.style('cursor','pointer').on('click',e=
 function tpChips(el,keys){VK[el]=keys;if(!document.getElementById(el).hidden)tpLeg(keys)}
 function tpLeg(keys){d3.select('#lg-tp').html('').selectAll('div').data(keys).join('div').style('cursor','pointer').attr('title','Click to read what it says').html(k=>`<span class="sw sq" style="background:${TPC[k]}"></span>${esc(ST.series[k].name)}`).on('click',(e,k)=>openNarr(k));narrKeys(d3.select('#lg-tp').selectAll('div'),k=>k)}
 // ---- matrix
-(function(){const P=MX.points,R=MX.rows.slice(0,25);const cw=112,lw=200,rh=30,top=74;const w=lw+cw*P.length+10,h=top+rh*R.length+6;
+(function(){const P=MX.points,R=MX.rows;d3.select('#mx-sub').text(`The ${R.length} accounts that posted the top ${P.length} talking points of the past ${MX.window_days||7} days. Darker cells mean more posts.`);const cw=112,lw=200,rh=30,top=74;const w=lw+cw*P.length+10,h=top+rh*R.length+6;
  const svg=d3.select('#matrix').append('svg').attr('class','native').attr('width',w).attr('height',h).attr('role','img').attr('aria-label','Matrix of accounts by talking point');
  // one red ramp, light pink (few posts) to dark red (many); steps fitted to the data; empty cells = panel background
  const mxv=d3.max(R,r=>d3.max(P,p=>r.cells[p]||0))||1;const MXS=mxv>=11?[1,3,6,11]:mxv>=6?[1,2,3,5]:[1,2,3,4].slice(0,Math.max(2,mxv));const MXR=['#fde4ea','#f08aa2','#c8304d','#640514'].slice(4-MXS.length);
@@ -131,7 +131,7 @@ function fdur(m){return m<60?Math.round(m)+' min':m<1440?(m/60).toFixed(m<600?1:
 let RG=null,RSPD=1;
 function drawRipple(){const r=RP[rcur];rchip.attr('aria-pressed',(d,i)=>i===rcur);rstop();
  const box=document.getElementById('net');d3.select('#net').selectAll('*').remove();d3.select('#netlist').selectAll('*').remove();
- const amps=r.amps.filter(a=>on.has(a.type));const maxD=Math.max(60,d3.max(amps,a=>a.delay)||60);
+ const amps=r.amps.slice();const maxD=Math.max(60,d3.max(amps,a=>a.delay)||60);
  d3.select('#amp-sub').html(`<b>${esc(r.theme||'Post')}</b>: a post by <b>${esc(r.label)}</b> (${fd(r.t)}) was reposted or quoted by <b>${amps.length}</b> tracked accounts. Rings show how long each took: closer to the centre means faster. <span class="m">“${esc(r.text)}”</span>`);
  const phone=box.clientWidth<700;
  const rs=d3.scaleLog().domain([1,maxD+1]);
@@ -213,7 +213,13 @@ function openPost(a){const p=PO[a.id];d3.select('#ph').text(a.label);
  const fit=(cs,pad)=>{let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;cs.forEach(c=>{const f=c.geo&&featOf(c);let b=f?path.bounds(f):null;const pt=r=>{const p=proj(c.ll||d3.geoCentroid(f));return [[p[0]-r,p[1]-r],[p[0]+r,p[1]+r]]};
    // countries split by the antimeridian (Fiji, Russia...) have bounds spanning the whole map; use a box around their capital/centroid instead
    if(!b||b[1][0]-b[0][0]>W*0.45)b=pt(f?24:8);x0=Math.min(x0,b[0][0]);y0=Math.min(y0,b[0][1]);x1=Math.max(x1,b[1][0]);y1=Math.max(y1,b[1][1])});
-  const k=Math.min(4,0.9/Math.max((x1-x0)/W,(y1-y0)/HM));return {k,x:W/2-k*(x0+x1)/2,y:HM/2-k*(y0+y1)/2}};
+  const k=Math.min(4,0.9/Math.max((x1-x0)/W,(y1-y0)/HM));
+  // centre on the main landmass centroid (not the bbox: Alaska, Fiji or outlying islands pull a bbox off-centre); for one country only
+  let cx=(x0+x1)/2,cy=(y0+y1)/2;if(cs.length===1){const f=cs[0].geo&&featOf(cs[0]);if(f){let g_=f;if(f.geometry.type==='MultiPolygon'){const big=f.geometry.coordinates.map(c=>({type:'Feature',geometry:{type:'Polygon',coordinates:c}})).sort((a,b)=>d3.geoArea(b)-d3.geoArea(a))[0];g_=big}const p=proj(d3.geoCentroid(g_));cx=p[0];cy=p[1]}}
+  // if the side panel covers the right of the map, centre in the part still visible
+  let vw=W;const pn=document.getElementById('panel'),sr=svg.node().getBoundingClientRect();if(pn&&!pn.hidden){const pr=pn.getBoundingClientRect();if(pr.left>sr.left+sr.width*0.3&&pr.left<sr.right)vw=W*(pr.left-sr.left)/sr.width}
+  return {k,x:vw/2-k*cx,y:HM/2-k*cy}};
+ window.__cdTone={proj,W,HM};// used by the QA script to measure on-screen centring
  const setZ=(t,anim)=>{const tr=`translate(${t.x},${t.y}) scale(${t.k})`;(anim?zg.transition().duration(900):zg).attr('transform',tr);zg.selectAll('rect').attr('stroke-width',1/t.k).attr('transform',`rotate(45) scale(${1/Math.sqrt(t.k)})`)};
  const RM2=matchMedia('(prefers-reduced-motion: reduce)').matches;
  // Left column: one ranked list of countries (max 8) that meet the colouring thresholds for the current mode.
@@ -225,7 +231,7 @@ function openPost(a){const p=PO[a.id];d3.select('#ph').text(a.label);
  const drawTop=()=>{top=ranked();d3.select('#ttop').html('');
   d3.select('#ttop').selectAll('li').data(top,c=>c.country).join('li').append('button').attr('class','tli').attr('type','button').attr('aria-pressed','false')
   .html((c,i)=>`<span class="sw sq" style="background:${colOf(c)}"></span><b>${i+1}. ${esc(c.country)}</b><span>${TMODE==='count'?nagg(c)+' aggressive posts':pct(c.agg)+' aggressive'}</span>`)
-  .on('click',(e,c)=>{zoomTo(c,1);openTone(c)});
+  .on('click',(e,c)=>{openTone(c);zoomTo(c,1)});
   if(top[0])zoomTo(top[0],0);else{zoomed=false;zlab()}};drawTop();
  zb.on('click',()=>{if(zoomed){zoomed=false;setZ({k:1,x:0,y:0},!RM2);zlab()}else if(selc)zoomTo(selc,1)});
  d3.selectAll('#tmode button').on('click',function(){TMODE=this.dataset.m;d3.selectAll('#tmode button').attr('aria-pressed',function(){return this.dataset.m===TMODE});g.attr('fill',f=>{const c=byGeo[f.properties.name];return c?colOf(c):'#1b2c4a'});eg.selectAll('rect').attr('fill',c=>colOf(c));drawTLeg();setHead();drawTop()});
