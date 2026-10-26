@@ -159,3 +159,8 @@ table{display:block;width:100%}table tr{display:block;border-bottom:1px solid va
 .chipgrp summary{min-height:44px;display:flex;align-items:center;font:700 14px Arial,sans-serif;color:var(--text);cursor:pointer;padding:0 12px;border:1px solid var(--line);border-radius:6px;background:var(--panel2)}
 .chipgrp .lg{margin-top:8px}.lg-chip{min-height:44px}
 }
+/* flags + minerals bars */
+.flag{display:inline-block;width:1.1em;height:.82em;vertical-align:-.08em;margin-right:.3em;border-radius:2px;box-shadow:0 0 0 1px rgba(230,233,239,.35)}
+.hbars{list-style:none;margin:0;padding:0}.hb{display:grid;grid-template-columns:minmax(90px,130px) 1fr minmax(120px,170px);gap:8px;align-items:center;font-size:14px;margin:6px 0;color:var(--text)}
+.hb-t{background:var(--panel2);height:18px;border-radius:3px}.hb-f{display:block;height:100%;border-radius:3px}.hb-v{font-weight:700}.hb-s{display:block;font-weight:400;font-size:12px;color:#b9c2d0}
+@media(max-width:700px){.hb{grid-template-columns:1fr auto}.hb-t{grid-column:1/-1;order:3}}
