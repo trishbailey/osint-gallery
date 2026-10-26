@@ -72,3 +72,5 @@ svg text{fill:var(--text);font-size:13px}
  .panel{top:auto;height:80vh;border-left:0;border-top:2px solid var(--gold);border-radius:14px 14px 0 0}
 }
 #tpview{margin:8px 0 10px;gap:0}#tpview button{border-radius:0;min-width:84px}#tpview button:first-child{border-radius:6px 0 0 6px}#tpview button:last-child{border-radius:0 6px 6px 0}
+.says{font-size:15px;line-height:1.55;margin:4px 0 12px}
+.legend.inline{display:flex;flex-wrap:wrap;gap:6px 16px;margin:4px 0 8px}.legend.inline .li{display:inline-flex;align-items:center;gap:6px;font-size:13px}

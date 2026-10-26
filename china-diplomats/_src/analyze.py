@@ -110,7 +110,8 @@ named.sort(key=lambda c:-c['accounts'])
 d0=T(START).date();d1=T(END).date();days=[(d0+dt.timedelta(d)).isoformat() for d in range((d1-d0).days+1)]
 # ---------- streamgraph (top named talking points, daily) ----------
 TOP=named[:5]
-stream=dict(days=days,series=[dict(name=c['name'],vals=[0]*len(days)) for c in TOP])
+_NI={v['name']:v for v in NAMES.values()}
+stream=dict(days=days,series=[dict(name=c['name'],line=_NI.get(c['name'],{}).get('line',''),says=_NI.get(c['name'],{}).get('says',''),sample=_NI.get(c['name'],{}).get('sample'),vals=[0]*len(days)) for c in TOP])
 ki={c['key']:j for j,c in enumerate(TOP)}
 kn={c['name']:j for j,c in enumerate(TOP)}
 for r in rows:

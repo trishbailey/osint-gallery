@@ -79,13 +79,13 @@ d3.select('#clock').on('input',function(){stop();setPos(this.value/1000);d3.sele
  const ps=svg.append('g').selectAll('path').data(stk).join('path').attr('d',area).attr('fill',d=>TPC[d.key]).attr('fill-opacity',.9).attr('stroke','#0b1526').attr('stroke-width',.6);
  svg.append('g').attr('transform',`translate(0,${h-m.b})`).call(d3.axisBottom(x).ticks(d3.utcDay.every(w<600?3:1)).tickFormat(d3.utcFormat('%-d %b'))).call(g=>{g.selectAll('text').attr('font-size',13);g.selectAll('line,path').attr('stroke','#5a6f94')});
  ps.on('mousemove',(e,d)=>{const [mx]=d3.pointer(e,svg.node());const i=d3.minIndex(days,dd=>Math.abs(x(dd)-mx*(w/svg.node().getBoundingClientRect().width)));
-   showTip(e,`<b>${esc(ST.series[d.key].name)}</b><br>${fday(ST.days[i])}: ${ST.series[d.key].vals[i]} posts`)});svg.on('mouseleave',hideTip);ps.style('cursor','pointer').on('click',(e,d)=>gotoNarr(ST.series[d.key].name));ps
-  .on('touchstart',(e,d)=>showTip(e.touches[0],`<b>${esc(ST.series[d.key].name)}</b><br>${d3.sum(ST.series[d.key].vals)} posts in total`),{passive:true});
+   showTip(e,`<b>${esc(ST.series[d.key].name)}</b><br><i>${esc(ST.series[d.key].line)}</i><br>${fday(ST.days[i])}: ${ST.series[d.key].vals[i]} posts`)});svg.on('mouseleave',hideTip);ps.style('cursor','pointer').on('click',(e,d)=>openNarr(d.key));narrKeys(ps,d=>d.key);ps
+  .on('touchstart',(e,d)=>showTip(e.touches[0],`<b>${esc(ST.series[d.key].name)}</b><br><i>${esc(ST.series[d.key].line)}</i><br>${d3.sum(ST.series[d.key].vals)} posts in total`),{passive:true});
 })();
 // ---- matrix
 (function(){const P=MX.points,R=MX.rows.slice(0,25);const cw=112,lw=200,rh=30,top=74;const w=lw+cw*P.length+10,h=top+rh*R.length+6;
  const svg=d3.select('#matrix').append('svg').attr('class','native').attr('width',w).attr('height',h).attr('role','img').attr('aria-label','Matrix of accounts by talking point');
- const mxv=d3.max(R,r=>d3.max(P,p=>r.cells[p]||0));const col=d3.scaleSequential([0,mxv],t=>d3.interpolateRgb('#1d3157','#a0522d')(t));
+ const mxv=d3.max(R,r=>d3.max(P,p=>r.cells[p]||0));const MXB=[['1–2 posts','#2f6f8f'],['3–5 posts','#8f5419'],['6 or more','#8e2a4f']];const col=v=>v>=6?MXB[2][1]:v>=3?MXB[1][1]:MXB[0][1];d3.select('#mxkey').html(MXB.map(b=>`<span class="li"><span class="sw" style="background:${b[1]}"></span>${b[0]}</span>`).join(''));
  const wrap=t=>{const w=t.replace(/[()']/g,'').split(' '),L=[''];w.forEach(x=>{if((L[L.length-1]+' '+x).trim().length>13&&L.length<4)L.push(x);else L[L.length-1]=(L[L.length-1]+' '+x).trim()});return L};
  svg.selectAll('text.c').data(P).join('text').attr('class','c').attr('text-anchor','middle').attr('font-size',13).each(function(d,i){const L=wrap(d);d3.select(this).selectAll('tspan').data(L).join('tspan').attr('x',lw+cw*i+cw/2).attr('y',(t,j)=>top-8-(L.length-1-j)*16).text(t=>t)});
  const g=svg.selectAll('g.r').data(R).join('g').attr('transform',(d,i)=>`translate(0,${top+rh*i})`);
@@ -161,7 +161,7 @@ function openPost(a){const p=PO[a.id];d3.select('#ph').text(a.label);
  panel.hidden=false;document.getElementById('pclose').focus()}
 
 // ---- aggression heat map
-(function(){const svg=d3.select('#tmap').append('svg').attr('viewBox',`0 0 ${W} ${HM}`).attr('role','img').attr('aria-label','World map of how aggressive or friendly posts are, by country');
+(function(){const svg=d3.select('#tmap').append('svg').attr('data-ci-ignore','aggression diverging ramp').attr('viewBox',`0 0 ${W} ${HM}`).attr('role','img').attr('aria-label','World map of how aggressive or friendly posts are, by country');
  svg.append('path').attr('d',path({type:'Sphere'})).attr('fill','#0f1b31');
  const MP=TONE.min_posts,byGeo={};TONE.countries.forEach(c=>{if(c.geo)byGeo[c.geo]=c});
  const pct=x=>Math.round(x*100)+'%';
@@ -221,8 +221,8 @@ function periodChart(el,unit){const box=document.getElementById(el);const fmtD=d
   const ps=svg.append('g').selectAll('path').data(stk).join('path').attr('d',d3.area().x((d,i)=>x(P[i].k)).y0(d=>y(d[0])).y1(d=>y(d[1])).curve(d3.curveBasis)).attr('fill',d=>TPC[d.key]).attr('fill-opacity',.9).attr('stroke','#0b1526').attr('stroke-width',.6).style('cursor','pointer');
   const ax=svg.append('g').selectAll('g').data(P).join('g').attr('transform',p=>`translate(${x(p.k)},${h-m.b+18})`);
   ax.append('text').attr('text-anchor','middle').attr('font-size',13).text(p=>p.label);ax.append('text').attr('y',17).attr('text-anchor','middle').attr('font-size',13).style('fill','#9aa6b8').text(p=>p.sub);
-  ps.on('mousemove',(e,d)=>{const [mx]=d3.pointer(e,svg.node());const sc=w/svg.node().getBoundingClientRect().width;const i=d3.minIndex(P,p=>Math.abs(x(p.k)-mx*sc));showTip(e,`<b>${esc(ST.series[d.key].name)}</b><br>${P[i].label} (${P[i].sub}): ${P[i].vals[d.key]} posts<br>Click to see it spread on the map`)});
-  svg.on('mouseleave',hideTip);ps.on('click',(e,d)=>gotoNarr(ST.series[d.key].name));
+  ps.on('mousemove',(e,d)=>{const [mx]=d3.pointer(e,svg.node());const sc=w/svg.node().getBoundingClientRect().width;const i=d3.minIndex(P,p=>Math.abs(x(p.k)-mx*sc));showTip(e,`<b>${esc(ST.series[d.key].name)}</b><br><i>${esc(ST.series[d.key].line)}</i><br>${P[i].label} (${P[i].sub}): ${P[i].vals[d.key]} posts<br>Click to read what it says`)});
+  svg.on('mouseleave',hideTip);ps.on('click',(e,d)=>openNarr(d.key));narrKeys(ps,d=>d.key);
  } else {
   // too few periods for a stream: ranked bars per period
   const nar=w<520,rowH=nar?52:34,lw=nar?0:Math.min(250,w*0.45),h=P.length*(ST.series.length*rowH+56)+6;
@@ -231,11 +231,11 @@ function periodChart(el,unit){const box=document.getElementById(el);const fmtD=d
   P.forEach(p=>{svg.append('text').attr('x',0).attr('y',y0+22).attr('font-size',15).attr('font-weight',600).text(p.label);
    svg.append('text').attr('x',0).attr('y',y0+40).attr('font-size',13).style('fill','#9aa6b8').text(p.sub);
    const ord=ST.series.map((s,j)=>j).sort((a,b)=>p.vals[b]-p.vals[a]);
-   const g=svg.append('g').attr('transform',`translate(0,${y0+52})`).selectAll('g').data(ord).join('g').attr('transform',(j,i)=>`translate(0,${i*rowH})`).style('cursor','pointer').on('click',(e,j)=>gotoNarr(ST.series[j].name));
+   const g=svg.append('g').attr('transform',`translate(0,${y0+52})`).selectAll('g').data(ord).join('g').attr('transform',(j,i)=>`translate(0,${i*rowH})`).style('cursor','pointer').on('click',(e,j)=>openNarr(j));narrKeys(g,j=>j);
    g.append('text').attr('x',nar?0:lw-10).attr('y',nar?14:rowH/2+3).attr('text-anchor',nar?'start':'end').attr('font-size',13).text(j=>ST.series[j].name);
    g.append('rect').attr('x',lw).attr('y',nar?20:4).attr('height',rowH-12).attr('rx',3).attr('width',j=>Math.max(2,x(p.vals[j]))).attr('fill',j=>TPC[j]);
    g.append('text').attr('x',j=>lw+x(p.vals[j])+8).attr('y',nar?rowH-18:rowH/2+3).attr('font-size',13).text(j=>p.vals[j]);
-   tipOn(g,j=>`<b>${esc(ST.series[j].name)}</b><br>${p.label} (${p.sub}): ${p.vals[j]} posts<br>Click to see it spread on the map`);
+   tipOn(g,j=>`<b>${esc(ST.series[j].name)}</b><br><i>${esc(ST.series[j].line)}</i><br>${p.label} (${p.sub}): ${p.vals[j]} posts<br>Click to read what it says`);
    y0+=ST.series.length*rowH+56});
  }}
 const VIEWS={day:['stream','Top talking points by day','Posts per day in each of the five talking points carried by the most accounts. Hover for counts; click one to see it spread on the map.'],
@@ -251,7 +251,13 @@ setView(hp().get('view')||'day');
 addEventListener('hashchange',()=>{const v=hp().get('view')||'day';setView(v)});
 
 document.getElementById('pclose').onclick=()=>{panel.hidden=true};
-addEventListener('keydown',e=>{if(e.key==='Escape'){panel.hidden=true;side.classList.remove('open')}});
+function openNarr(k){const n=ST.series[k];if(!n)return;window._lastFocus=document.activeElement;
+ const sm=n.sample;d3.select('#ph').text(n.name);
+ d3.select('#pbody').html(`<p class="says">${esc(n.says)}</p>`+(sm?`<h3 class="sh3">Sample post</h3><div class="post"><div class="m">${esc((ACC.find(a=>a.h===sm.h)||{}).name||sm.h)} (@${esc(sm.h)}) · ${fd(sm.t)}</div><div>“${esc(sm.text)}”</div><div class="m">${sm.lang==='English'?'Original in English':`Translated from ${esc(sm.lang)}`}</div><a href="https://x.com/${encodeURIComponent(sm.h)}/status/${sm.id}" target="_blank" rel="noopener">Open on x.com ↗</a></div>`:''));
+ panel.hidden=false;document.getElementById('pclose').focus()}
+function narrKeys(sel,key){sel.attr('tabindex',0).attr('role','button').attr('aria-label',d=>{const k=key(d);return `${ST.series[k].name}: open explanation`}).on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openNarr(key(d))}})}
+document.getElementById('pclose').addEventListener('click',()=>{window._lastFocus&&window._lastFocus.focus&&window._lastFocus.focus()});
+addEventListener('keydown',e=>{if(e.key==='Escape'){if(!panel.hidden&&window._lastFocus)setTimeout(()=>window._lastFocus.focus(),0);panel.hidden=true;side.classList.remove('open')}});
 // ---- method
 d3.select('#method').html(`Posts were collected from ${H.accounts} X accounts run by China's foreign ministry, embassies, consulates, ambassadors and missions to international organisations, using X's full-archive search through a free connector. This version covers ${fday(H.start.slice(0,10))} to ${fd(H.end)}; earlier posts are not included. Messages count as the same talking point when posts repost the same original or when their text is a near-duplicate (character n-gram similarity, which works across scripts but does not match translations into other languages). Eight large clusters were reviewed and named by hand; related clusters were merged under one name. A burst is four or more accounts posting the same message within six hours. Tone counts words from fixed confrontational and cooperative word lists in English, Chinese, Japanese, Spanish, French, Portuguese, Russian and Arabic; it measures word choice, not intent. Location is the country an account is posted to, not where a post was written. Basemap: Natural Earth via world-atlas. The page describes past activity and makes no forecasts.`);
 window._check={ready:true};
