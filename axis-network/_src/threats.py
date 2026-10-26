@@ -42,18 +42,19 @@ AIR_EX = 'https://t.me/MilitaryMediaY/47023'  # Oct 12 statement renewing the wa
 MIL = ['militarymediay', 'army21ye']
 # map sites: label -> (short map label, type, lat, lon, regex). Only named, locatable places.
 SITES = {
- 'kkia': ('King Khalid Airport', 'airport', 24.96, 46.70, FAC['King Khalid International Airport, Riyadh']),
- 'ryref': ('Riyadh refinery', 'energy', 24.55, 46.86, FAC['Aramco refinery, Riyadh']),
- 'aramhq': ('Aramco HQ (Dhahran)', 'energy', 26.31, 50.14, FAC['Aramco headquarters, Dhahran/Dammam']),
- 'rabigh': ('Rabigh refinery', 'energy', 22.80, 39.03, FAC['Rabigh refinery']),
- 'abha': ('Abha airport', 'airport', 18.24, 42.66, FAC['Abha airport']),
- 'khamis': ('Khamis Mushait air base', 'military', 18.30, 42.80, FAC['Khamis Mushait air base']),
- 'jizanap': ('Jizan airport', 'airport', 16.90, 42.59, r'مطار (?:الملك عبدالله|جيزان|جازان)|Jizan airport'),
- 'najranap': ('Najran airport', 'airport', 17.61, 44.42, r'مطار نجران|Najran airport'),
- 'jedap': ('Jeddah airport', 'airport', 21.68, 39.16, r'مطار (?:الملك عبد ?العزيز|جدة)|Jeddah airport'),
- 'yanbu': ('Yanbu oil port', 'energy', 24.09, 38.06, FAC['Yanbu oil port']),
- 'shaybah': ('Shaybah oil field', 'energy', 22.51, 53.97, r'الشيبة|Shaybah'),
- 'dmmap': ('King Fahd Airport (Dammam)', 'airport', 26.47, 49.80, FAC['King Fahd International Airport, Dammam']),
+ 'kkia': ('King Khalid Airport', 'airport', 24.958, 46.699, FAC['King Khalid International Airport, Riyadh']),
+ 'ryref': ('Riyadh refinery', 'energy', 24.519, 46.868, FAC['Aramco refinery, Riyadh']),
+ 'aramhq': ('Aramco HQ (Dhahran)', 'energy', 26.312, 50.147, FAC['Aramco headquarters, Dhahran/Dammam']),
+ 'rabigh': ('Rabigh refinery', 'energy', 22.722, 39.022, FAC['Rabigh refinery']),
+ 'abha': ('Abha airport', 'airport', 18.240, 42.657, FAC['Abha airport']),
+ 'khamis': ('Khamis Mushait air base', 'military', 18.297, 42.804, FAC['Khamis Mushait air base']),
+ 'jizanap': ('Jizan airport', 'airport', 16.901, 42.586, r'مطار (?:الملك عبدالله|جيزان|جازان)|Jizan airport'),
+ 'najranap': ('Najran airport', 'airport', 17.611, 44.419, r'مطار نجران|Najran airport'),
+ 'jedap': ('Jeddah airport', 'airport', 21.680, 39.157, r'مطار (?:الملك عبد ?العزيز|جدة)|Jeddah airport'),
+ 'yanbu': ('Yanbu oil port', 'energy', 23.960, 38.240, FAC['Yanbu oil port']),
+ 'shaybah': ('Shaybah oil field', 'energy', 22.510, 53.960, r'الشيبة|Shaybah'),
+ 'dmmap': ('King Fahd Airport (Dammam)', 'airport', 26.471, 49.798, FAC['King Fahd International Airport, Dammam']),
+ 'mod': ('Saudi defence ministry', 'government', 24.669, 46.716, FAC['Saudi defence ministry']),
 }
 SITE_MIN = 5  # a site gets its own bubble when named in this many threat posts in the last 30 days
 GEN = [('airport (unnamed)', r'مطار|مطارات|airport'), ('energy (unnamed)', r'أرامكو|ارامكو|مصفا|منشآت نفطية|نفط|Aramco|refiner|oil'),
@@ -107,7 +108,8 @@ def build(posts_path, copies_csv=None):
         for w in ('base', 'last30', 'last7', 'prior21'): n = len(cnt(pat, w)); r[w] = [n, rate(n, w)]
         x = cnt(pat, 'last30').sort_values('date', ascending=False)
         r['ex'] = [[u, str(t.date())] for u, t in zip(x.url.head(3), x.date.head(3))]
-        if r['last30'][0] >= SITE_MIN: sites.append(r)
+        r['minor'] = r['last30'][0] < SITE_MIN
+        if r['last30'][0] >= 1: sites.append(r)
     allsite = '|'.join(f'(?:{v[4]})' for v in SITES.values())
     def kinds(pat):
         x = cnt(pat, 'last30'); out = {}
