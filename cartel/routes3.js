@@ -4,7 +4,7 @@
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const L=[{k:"drug",f:"data/routes_drugs.geojson",label:"Drug and precursor routes",color:"#f230fd",dash:{cocaine:null,precursor:"1 5",synthetic:"9 5"}},
  {k:"migr",f:"data/routes_migrants.geojson",label:"Migrant routes",color:"#88fc15",dash:{"northbound land":null,"rail (La Bestia)":"14 6","sea":"1 5","southbound (reverse) 2025":"9 4 1 4"}},
- {k:"guns",f:"data/routes_firearms.geojson",label:"Firearm routes (southbound)",color:"#ffccff",dash:{land:null,sea:"1 5",air:"9 5"}}];
+ {k:"guns",f:"data/routes_firearms.geojson",label:"Firearm routes (southbound)",color:"#ff2277",dash:{land:null,sea:"1 5",air:"9 5"}}];
 const FN=r=>(window.FN?window.FN(r):"");
 function show(p,l){if(typeof drawer!=="function")return;drawer(`<h2>${esc(p.from)} → ${esc(p.to)}</h2><span class="tag" style="border-color:${l.color}">${esc(l.label)}</span><span class="tag">${esc(p.subtype)}</span><span class="tag">${esc(p.year)}</span><p>${esc(p.description)}${FN(p.sources)}</p>${p.sector?`<p><b>US Border Patrol sector:</b> ${esc(p.sector)}<br><b>Apprehensions:</b> ${(+p.encounters).toLocaleString()} (${esc(p.encounters_year)}, whole sector; FY2025 border-wide total fell to 237,565)</p>`:p.volume?`<p class="small">Sourced volume: ${(+p.volume).toLocaleString()}</p>`:""}${p.control?`<p><b>Controlling group / fee:</b> ${esc(p.control)}${FN(p.control_sources)}</p>`:""}<p class="muted small">Schematic corridor between places named in the sources.</p>`)}
 function start(){const M=window.MAPX;if(!M||!window.__proj||!document.getElementById("layers")){return setTimeout(start,200)}

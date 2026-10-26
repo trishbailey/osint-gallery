@@ -49,7 +49,7 @@ Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json
  const grid=t.querySelector("#ldgrid");
  t.addEventListener("click",e=>{if(e.target.closest("a"))return;const c=e.target.closest(".gc,.fc");if(c)c.classList.toggle("open")});
  // plain linear bar charts (members, revenue)
- const GCOL={sinaloa:"#fff619",cjng:"#ff65e3",gulf:"#a2a0e5",cdn:"#1f8c8a",lnfm:"#127e30",clan:"#926b2c",eln:"#f5ffda",tda:"#aa00f2",choneros:"#bc426c",lobos:"#52f2e2",pcc:"#ff8e12",ms13:"#a6a940",unidos:"#c084aa"};
+ const GCOL={sinaloa:"#8f8509",cjng:"#02afff",gulf:"#ffa26a",cdn:"#307b0a",lnfm:"#1c70c5",clan:"#958fff",eln:"#8931ff",tda:"#29b47b",choneros:"#ff2400",lobos:"#b06208",pcc:"#ea34b2",ms13:"#f0c740",unidos:"#fd7db7"};
  const fN=v=>Math.round(v).toLocaleString("en-US"),fB=v=>"$"+(v>=1e9?(v/1e9).toFixed(1).replace(/\.0$/,"")+"B":Math.round(v/1e6)+"M");
  const memRows=[],revRows=[],noMem=[],noRev=[],revNotes=[];
  Object.entries(sz.groups).forEach(([k,v])=>{
