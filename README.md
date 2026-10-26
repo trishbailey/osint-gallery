@@ -56,6 +56,7 @@ All Beacon dashboards are served from this one Render static site (`beacon-tools
 | `/africa-brief/` | in this repo (`africa-brief/`, own workflow) | | | live, not synced |
 | `/water-security/` | (not yet) | | `public/` | reserved |
 | `/belt-and-road/` | in this repo (`belt-and-road/`, own workflow) | | | live, not synced |
+| `/ghost-fleet/` | in this repo (`ghost-fleet/`, own workflow) | | | live, not synced |
 | `/middle-east/` | (not yet) | | `public/` | reserved |
 | `/indo-pacific/` | (not yet) | | `public/` | reserved |
 | `/latin-america/` | (not yet) | | `public/` | reserved |

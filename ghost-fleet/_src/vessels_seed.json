@@ -1,0 +1,7225 @@
+[
+{
+"imo": "1006960",
+"name": "OLYMPIA",
+"mmsi": "319766000",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "1010648",
+"name": "SEA RHAPSODY",
+"mmsi": "538071180",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "1010703",
+"name": "TANGO",
+"mmsi": "518100626",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "1011159",
+"name": "ANATTA",
+"mmsi": "319025900",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "1011202",
+"name": "NIRVANA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "1011331",
+"name": "MADAME GU",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "1011551",
+"name": "GRACEFUL",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "1021570",
+"name": "OCEAN 28",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "6703769",
+"name": "ALIREZA 1",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "7236141",
+"name": "TRITON",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "7423275",
+"name": "IVAN KIREEV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "7612448",
+"name": "BALTIYSKIY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "7741108",
+"name": "MANGAZEYA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "7808401",
+"name": "IMO 7808401 (BEBEK-E)",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "8227238",
+"name": "AKADEMIK ALEKSANDR KARPINSKIY",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8305781",
+"name": "BELOMORSKIY",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8315499",
+"name": "PAWELL",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8318130",
+"name": "BALTIYSK",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8318740",
+"name": "CAPTAIN YAKUBOVICH",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8330516",
+"name": "SAKHALIN 8",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8406573",
+"name": "BAVENIT",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8408985",
+"name": "AKADEMIK LAZEREV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8409032",
+"name": "AKADEMIK NEMCHINOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8422670",
+"name": "VAFA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8422682",
+"name": "VAFA-1",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8502080",
+"name": "INZHENER TRUBIN",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8502107",
+"name": "INZHENER VESHNYAKOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8504923",
+"name": "PROFESSOR RYABINKIN",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8517839",
+"name": "MARIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8523242",
+"name": "PASSAT",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8603406",
+"name": "IOHANN MAHMASTAL",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8606616",
+"name": "KOMPOZITOR RAKHMANINOV",
+"mmsi": "273452650",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8606628",
+"name": "KOMPOZITOR GASANOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8618073",
+"name": "KAPITAN RYNTSYN",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8700010",
+"name": "ETIM EMIN",
+"mmsi": "273355400",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8700046",
+"name": "OLGA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8700060",
+"name": "SONA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8700096",
+"name": "PARTIZANSK",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "8711289",
+"name": "RZK CONSTANTA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8711306",
+"name": "ANDREY OSIPOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8714657",
+"name": "SELENGA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8714695",
+"name": "ARKADIY CHERNYSHEV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8724080",
+"name": "CAPTAIN BEKLEMISHEV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8724482",
+"name": "YUZHMORGEOLOGIYA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8728543",
+"name": "SAKHALIN 9",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8730077",
+"name": "DOBRYNYA",
+"mmsi": "273449240",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8730455",
+"name": "CHIZHOVKA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8770261",
+"name": "AKADEMIK CHERSKY",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8807416",
+"name": "AMBAL",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8808525",
+"name": "TORONTO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "8814354",
+"name": "PIZHMA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8821761",
+"name": "NIMBUS SPB",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "8821797",
+"name": "TAIMYR",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8821802",
+"name": "TIKSY",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8826230",
+"name": "GELENDZHIK",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8834691",
+"name": "PROFESSOR LOGACHEV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8846814",
+"name": "MUSA JALIL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "8857667",
+"name": "SAKHALIN 10",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8858087",
+"name": "SKIF-V",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8861058",
+"name": "RASUL GAMZATOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8866591",
+"name": "VALENTIN EMIROV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8889385",
+"name": "OMSKIY-103",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8904367",
+"name": "MEKHANIK YARTSEV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8904379",
+"name": "MEKHANIK MAKARIN",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8904408",
+"name": "MEKHANIK BRILIN",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8904410",
+"name": "MEKHANIK KOTTSOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8904422",
+"name": "MEKHANIK PUSTOSHNYY",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8904434",
+"name": "MEKHANIK PYATLIN",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8904458",
+"name": "MEKHANIK KRASKOVSKIY",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8909329",
+"name": "ALEKSEY MARYSHEV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8909331",
+"name": "GRIGORIY MIKHEYEV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8922486",
+"name": "DVINSKIY ZALIV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8926913",
+"name": "OMSKIY-119",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8928143",
+"name": "LAPOMINKA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8931748",
+"name": "TERIBERKA",
+"mmsi": "273913200",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8943155",
+"name": "SUDAK",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "8943210",
+"name": "BEGEY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "8951413",
+"name": "ZAKAMSK",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9014872",
+"name": "TAMBEY",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9025778",
+"name": "OT-2077",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9037123",
+"name": "AS CALCUTTA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9056571",
+"name": "IMMANUEL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9079169",
+"name": "ENISEY",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9081291",
+"name": "TERIBERKA",
+"mmsi": "273211090",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9081332",
+"name": "TURUKHAN",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9081368",
+"name": "TERSKIY BEREG",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9081370",
+"name": "MIKHAIL BRITNEV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9082142",
+"name": "ASKAR-SARYDZHA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9083196",
+"name": "GENRIKH GASANOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9083330",
+"name": "GASRET ALIEV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9086253",
+"name": "TAIBOLA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9087714",
+"name": "OSTROV RUSSKIY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9103817",
+"name": "BORIS KUSTODIEV",
+"mmsi": "273191000",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9105140",
+"name": "TAIMYR",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9109081",
+"name": "KHOLMOGORY",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9113276",
+"name": "MT KONSTANTINOVSK",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9116632",
+"name": "POLAR ROCK",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9118355",
+"name": "ZEYA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9131357",
+"name": "ORION",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9137648",
+"name": "CARUZO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9142588",
+"name": "KUNASHIR",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9142916",
+"name": "OKEAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9144782",
+"name": "BODHI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9151890",
+"name": "ODIN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9157820",
+"name": "SIVUCH",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9159921",
+"name": "PATRIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9160994",
+"name": "SPARTA II",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9161003",
+"name": "LADY R",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9163764",
+"name": "ARNO BABAJANYAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9164512",
+"name": "AVIOR",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9166314",
+"name": "ASTORIA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9167930",
+"name": "MURMANSK",
+"mmsi": "273430430",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9168946",
+"name": "ZEVS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9171175",
+"name": "CILICIA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9171620",
+"name": "UMKA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9171876",
+"name": "NARVAL",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9175078",
+"name": "ZAMBRA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9179385",
+"name": "SIMUSHIR",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9179842",
+"name": "ANGARA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9179854",
+"name": "ADLER",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9183295",
+"name": "NEON",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9183831",
+"name": "NP DUDINKA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9185528",
+"name": "GELOR",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9187227",
+"name": "MERU",
+"mmsi": "667002333",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9187514",
+"name": "AKADEMIK PRIMAKOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9189146",
+"name": "KYLO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9190107",
+"name": "POLA DUDINKA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9190274",
+"name": "SHANTAR",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9190286",
+"name": "PARAMUSHIR",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9194983",
+"name": "DELIVER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9196620",
+"name": "UMBA",
+"mmsi": "273387920",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9198082",
+"name": "IMO 9198082 (\"GLOBAL STAR\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9198226",
+"name": "ASCALON",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9198290",
+"name": "MD MIRANDA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9198783",
+"name": "MARIA",
+"mmsi": "273610900",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9199127",
+"name": "KOEN",
+"mmsi": "352001461",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9201994",
+"name": "BUK",
+"mmsi": "273318480",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9202053",
+"name": "SEVERNIY PROECT",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9203710",
+"name": "SV KONSTANTIN",
+"mmsi": "273450880",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9205067",
+"name": "RAVEN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9206671",
+"name": "RANGLER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9207027",
+"name": "VERNAL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9208069",
+"name": "STELLAR BEVERLY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9208124",
+"name": "SKY RIDER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9209972",
+"name": "TEMIRO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9210256",
+"name": "VIKTOR ZABELIN",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9210359",
+"name": "S. KUZNETSOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9211999",
+"name": "SOFIA",
+"mmsi": "273615700",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9212008",
+"name": "SANAR 8",
+"mmsi": "273619700",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9216298",
+"name": "ASYA ENERGY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9216482",
+"name": "MIKHAIL LOMONOSOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9217979",
+"name": "KOLA",
+"mmsi": "273414140",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9220639",
+"name": "BALTIC LEADER",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9220641",
+"name": "LADY MARIIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9222560",
+"name": "CHEETAH II",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9223540",
+"name": "OWENS",
+"mmsi": "373482000",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9224283",
+"name": "NEER 1",
+"mmsi": "518998787",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9224439",
+"name": "CAROLINE BEZENGI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9224441",
+"name": "FIRN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9224465",
+"name": "OLAF 1",
+"mmsi": "352003222",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9224805",
+"name": "OXIS",
+"mmsi": "613612000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9227443",
+"name": "ARLAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9228980",
+"name": "ARCTICA 1",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9229374",
+"name": "ODUNE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9230971",
+"name": "SKADI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9231212",
+"name": "XANTHOS EOS",
+"mmsi": "352978243",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9231509",
+"name": "TREND",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9232888",
+"name": "KSENA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9232929",
+"name": "MAISHA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9232931",
+"name": "NARCISSUS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9233349",
+"name": "VESNA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9233741",
+"name": "MITZEL",
+"mmsi": "667002317",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9233765",
+"name": "AULIS",
+"mmsi": "352003752",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9233777",
+"name": "OCEAN II",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9234501",
+"name": "SEALION I",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9235713",
+"name": "AMBER 6",
+"mmsi": "352001387",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9235725",
+"name": "FUGA BLUEMARINE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9236004",
+"name": "KATIUSKA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9236016",
+"name": "VISION",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9236248",
+"name": "FENGHUANG",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9236353",
+"name": "BLUE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9236640",
+"name": "ONYX",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9236743",
+"name": "PRIMORYE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9237228",
+"name": "THANE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9237412",
+"name": "HANSON",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9238052",
+"name": "FREYA",
+"mmsi": "352001855",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9239458",
+"name": "SIBERIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9240550",
+"name": "SMP ARKHANGELSK",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9240885",
+"name": "EAST 1",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9242223",
+"name": "ADONIA",
+"mmsi": "636022303",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9242986",
+"name": "SASCO ANGARA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9243148",
+"name": "EVEREST ENERGY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9243320",
+"name": "IMO 9243320 (\"YEHOPE\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9243801",
+"name": "ARCTICA 2",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9243825",
+"name": "MYS SHMIDTA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9246140",
+"name": "SASCO AVACHA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9246621",
+"name": "IMO 9246621 (PORTOVYY)",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9247194",
+"name": "KUNPENG",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9247376",
+"name": "MARIEL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9247429",
+"name": "INDRI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9247431",
+"name": "WILMA II",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9247443",
+"name": "QUARTANUS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9247778",
+"name": "BREEZ",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9247780",
+"name": "TURACO",
+"mmsi": "352002942",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9247792",
+"name": "LALIQUE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9247883",
+"name": "HATTI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9248796",
+"name": "SPRIT",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9248801",
+"name": "MU DAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9248849",
+"name": "SILVERA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9249087",
+"name": "HS GLORY",
+"mmsi": "636018127",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9249128",
+"name": "IMO 9249128 (\"SAKHALIN\")",
+"mmsi": "352002202",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9249130",
+"name": "CHILLI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9249312",
+"name": "IZOLA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9250385",
+"name": "SIYANIE SEVERA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9250531",
+"name": "PYTHON",
+"mmsi": "314993000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9250543",
+"name": "NEOMI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9250892",
+"name": "MIKATI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9251274",
+"name": "CRIUS",
+"mmsi": "352002070",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9251456",
+"name": "DAPHNE I",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9251743",
+"name": "IMO 9251743 (\"DAKAR\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9251810",
+"name": "BLUEBELL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9252400",
+"name": "CELINE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9252955",
+"name": "BRIONT",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9253076",
+"name": "REUS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9253234",
+"name": "GURUDEV",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9253313",
+"name": "ARABELA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9253325",
+"name": "NURKEZ",
+"mmsi": "352002470",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9253894",
+"name": "DESTAMAR",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9253909",
+"name": "JAMES II",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9255244",
+"name": "BOLOGNIA FALCON",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9255268",
+"name": "IMO 9255268 (\"ANDREY PERVOZVANNIY\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9255270",
+"name": "NP DIKSON",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9255282",
+"name": "IMO 9255282 (\"PIONEER\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9255402",
+"name": "SASCO ANIVA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9255660",
+"name": "PONTUS I",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9255672",
+"name": "LEBRE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9255684",
+"name": "FIORA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9255830",
+"name": "SEA MARINE 1",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9256028",
+"name": "SEGINUS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9256054",
+"name": "NEVSKIY PROSPECT",
+"mmsi": "626369000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9256066",
+"name": "LIGOVSKY PROSPECT",
+"mmsi": "636011641",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9256078",
+"name": "LITEYNY PROSPECT",
+"mmsi": "626367000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9256602",
+"name": "PIONEER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9256858",
+"name": "INDA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9256860",
+"name": "PEGAS",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9257022",
+"name": "LACONIA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9257137",
+"name": "MIN HANG",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9257802",
+"name": "FURIA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9257814",
+"name": "TOREX",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9257993",
+"name": "AMELL",
+"mmsi": "268249200",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9258002",
+"name": "KAZAN",
+"mmsi": "636011916",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9258026",
+"name": "EDERRA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9258167",
+"name": "AKAR WEST",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9258521",
+"name": "LAUREN II",
+"mmsi": "355070000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9258868",
+"name": "ASHER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9258882",
+"name": "CARCHARODON",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9259185",
+"name": "DAKSHA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9259197",
+"name": "THALIA III",
+"mmsi": "352002137",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9259599",
+"name": "LAURYN",
+"mmsi": "636016693",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9259733",
+"name": "YI TONG",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9259745",
+"name": "ETERNAL PEACE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9259991",
+"name": "SEZAR",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9260275",
+"name": "KATRAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9260823",
+"name": "FIESTA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9261401",
+"name": "QUARTZ",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9261619",
+"name": "HANNAH",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9261657",
+"name": "C VIKING",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9262924",
+"name": "UTAKI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9263186",
+"name": "SEAL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9263198",
+"name": "SAINT",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9263203",
+"name": "SOUL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9263643",
+"name": "FRUNZE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9264570",
+"name": "THEMIS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9265756",
+"name": "OASIS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9265873",
+"name": "KAMELOT",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9265885",
+"name": "SEA MAVERICK",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9266475",
+"name": "SAURI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9266750",
+"name": "SEABASS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9266853",
+"name": "NEW POWER",
+"mmsi": "352003763",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9266865",
+"name": "BIVOLA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9266877",
+"name": "PIERRE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9267297",
+"name": "BERING",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9268112",
+"name": "OLIA",
+"mmsi": "626450000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9268710",
+"name": "SPARTA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9270517",
+"name": "CINDY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9270529",
+"name": "KRYMSK",
+"mmsi": "626364000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9270555",
+"name": "IMO 9270555 (\"INTEGRITY RACER\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9270749",
+"name": "GAURI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9271327",
+"name": "VIEW",
+"mmsi": "304768000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9271585",
+"name": "PRUDENCE",
+"mmsi": "352004581",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9271951",
+"name": "FACCA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9272412",
+"name": "FINVAL",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9272931",
+"name": "GARUDA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9273052",
+"name": "ALISSA",
+"mmsi": "626248000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9273442",
+"name": "PIER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9274082",
+"name": "IMO 9274082 (\"TM HAI HA 568\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9274434",
+"name": "NANDA DEVI",
+"mmsi": "626279000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9274446",
+"name": "SORION",
+"mmsi": "636018885",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9274616",
+"name": "LA PRIDE",
+"mmsi": "636022251",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9274800",
+"name": "YANGTZE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9276028",
+"name": "PEGASUS",
+"mmsi": "314951000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9276030",
+"name": "ECHO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9276561",
+"name": "PRS OCEAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9277735",
+"name": "LUNAR TIDE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9277747",
+"name": "ELISE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9277759",
+"name": "LEA I",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9278064",
+"name": "SOFOS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9278600",
+"name": "BARENTS",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9279422",
+"name": "KAPITAN KOKOVIN",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9279434",
+"name": "KAPITAN SAKHAROV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9280885",
+"name": "APUS",
+"mmsi": "352001692",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9281009",
+"name": "JI HANG",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9281011",
+"name": "MOTI",
+"mmsi": "621819067",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9281152",
+"name": "AQUILA II",
+"mmsi": "352001694",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9281891",
+"name": "MEROPE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9282041",
+"name": "IMO 9282041 (\"KAVIZ\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9282479",
+"name": "MINERVA M",
+"mmsi": "352001530",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9282481",
+"name": "TAGOR",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9282493",
+"name": "FIORA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9282792",
+"name": "CLYDE NOBLE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9282986",
+"name": "ATLANTICOS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9283241",
+"name": "DIGNITY",
+"mmsi": "273253500",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9283289",
+"name": "THYA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9283291",
+"name": "TIBURON",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9283306",
+"name": "BUDDHA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9284582",
+"name": "PANDA",
+"mmsi": "574005540",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9284594",
+"name": "LEOPARD",
+"mmsi": "574005550",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9284726",
+"name": "BONIFACY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9285835",
+"name": "SEA FIDELITY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9285847",
+"name": "SIRIUS 1",
+"mmsi": "352003720",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9285859",
+"name": "EASTERN PEARL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9286023",
+"name": "NEXT",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9286281",
+"name": "SAMADHA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9286463",
+"name": "OLANGA",
+"mmsi": "273355340",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9286657",
+"name": "DYNAMIK TRADER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9288693",
+"name": "ANDAMAN SKIES",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9288708",
+"name": "STRATOS AURORA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9288710",
+"name": "KUDOS STARS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9288722",
+"name": "AZURE CELESTE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9288734",
+"name": "ARABESCA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9288746",
+"name": "MARATHON",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9288851",
+"name": "GRINCH",
+"mmsi": "314975000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9288863",
+"name": "VALENTE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9288899",
+"name": "ROCKY RUNNER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9288930",
+"name": "PACIFICOS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9289477",
+"name": "M SOPHIA",
+"mmsi": "374933000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9289520",
+"name": "CANIS POWER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9289738",
+"name": "GENJI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9289752",
+"name": "ARIADNE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9289776",
+"name": "MAISAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9290309",
+"name": "THEA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9290335",
+"name": "JUMBO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9290373",
+"name": "VELORA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9290385",
+"name": "IMO 9290385 (\"ELBUS\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9290397",
+"name": "IMO 9290397 (\"STORMBRINGER\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9290517",
+"name": "VAYU 1",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9290828",
+"name": "E MEI SHAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9290921",
+"name": "BEAST",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9291250",
+"name": "CORTEX",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9291262",
+"name": "IMO 9291262 (\"SILVAR\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9292034",
+"name": "TOPAZ",
+"mmsi": "314959000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9292046",
+"name": "NOVA CREST",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9292058",
+"name": "TANGO",
+"mmsi": "314944000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9292060",
+"name": "TALISMAN",
+"mmsi": "314956000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9292199",
+"name": "ALTURA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9292204",
+"name": "ADYGEYA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9292503",
+"name": "BULL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9292577",
+"name": "RICCA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9292589",
+"name": "TEAM",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9292838",
+"name": "LISTIGA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9292981",
+"name": "SAGAR VIOLET",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9293002",
+"name": "ARGENT",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9293117",
+"name": "SUN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9293155",
+"name": "JUNIA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9293959",
+"name": "FOTUO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9293997",
+"name": "KHALASI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9294123",
+"name": "CHONGCHON",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9294264",
+"name": "IMO 9294264 (\"ORION\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9294331",
+"name": "LILY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9296377",
+"name": "IMO 9296377 (\"MARJORIE\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9296391",
+"name": "FIGHTER TWO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9296406",
+"name": "RIGEL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9296585",
+"name": "SENSUS",
+"mmsi": "636022146",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9296597",
+"name": "PROMETEI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9296810",
+"name": "MISSONI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9296822",
+"name": "SAGITTA",
+"mmsi": "352001616",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9297357",
+"name": "YANHU",
+"mmsi": "352002801",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9297371",
+"name": "SULEYMAN I",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9297541",
+"name": "IMO 9297541 (\"DOVE\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9297553",
+"name": "MONTE 1",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9297888",
+"name": "CORDELIA MOON",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9298492",
+"name": "IMO 9298492 (\"TOA PAYOH\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9298595",
+"name": "JAVA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299123",
+"name": "SOFIA K",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299135",
+"name": "MANDALA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299161",
+"name": "KORD ATLANTIC",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299173",
+"name": "VELES",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299666",
+"name": "MIANZIMU",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299678",
+"name": "PRISMA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299680",
+"name": "CANGJIE",
+"mmsi": "518999083",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9299692",
+"name": "CALLISTO",
+"mmsi": "314942000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9299707",
+"name": "GUANYIN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299719",
+"name": "OTLA",
+"mmsi": "636012384",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9299721",
+"name": "CEPHEUS",
+"mmsi": "352001911",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9299733",
+"name": "ANTAEUS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299745",
+"name": "APUS",
+"mmsi": "636022360",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9299769",
+"name": "AQUATICA",
+"mmsi": "352004367",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9299771",
+"name": "MIRES",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299862",
+"name": "TENDUA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299874",
+"name": "VIPER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299886",
+"name": "WALL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299898",
+"name": "TURBO VOYAGER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9299903",
+"name": "DEYNA",
+"mmsi": "352003718",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9300348",
+"name": "SANAR-10",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9300350",
+"name": "SANAR-9",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9300817",
+"name": "IMO 9300817 (\"KOSMOS\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9301380",
+"name": "PAVEL CHERNYSH",
+"mmsi": "352002195",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9301392",
+"name": "KAPITAN KOSTICHEV",
+"mmsi": "352002205",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9301407",
+"name": "VIKTOR TITOV",
+"mmsi": "352002204",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9301419",
+"name": "YURI SENKEVICH",
+"mmsi": "352002198",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9301421",
+"name": "VICTOR KONETSKY",
+"mmsi": "352002197",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9301524",
+"name": "DENEB",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9301615",
+"name": "SARA II",
+"mmsi": "636022546",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9304356",
+"name": "YODAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9304629",
+"name": "CHENG HE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9304825",
+"name": "JALDHARA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9305556",
+"name": "IMO 9305556 (\"MARVEN\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9305568",
+"name": "SCF BALTICA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9306562",
+"name": "PONE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9306627",
+"name": "HUANG HE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9306782",
+"name": "KARELIYA",
+"mmsi": "636012853",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9306794",
+"name": "NS COMMANDER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9306809",
+"name": "INNOVATOR",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9307205",
+"name": "LNG SOARS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9307724",
+"name": "SCF SAKHALIN",
+"mmsi": "273318120",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9307815",
+"name": "ELECTRA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9308065",
+"name": "EVENTIN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9308077",
+"name": "TYCHE 1",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9308132",
+"name": "UNITE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9308170",
+"name": "ESTELLA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9308443",
+"name": "INA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9308821",
+"name": "BERRA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9308833",
+"name": "KUSTO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9308857",
+"name": "RYMO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9308950",
+"name": "SEASONS I",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9309576",
+"name": "SAPPHIRE",
+"mmsi": "352003367",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9309588",
+"name": "SYMPHONY",
+"mmsi": "314947000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9310018",
+"name": "ANTEY",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9310525",
+"name": "IONIA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9310707",
+"name": "VAULT",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9311531",
+"name": "AFKADA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9311610",
+"name": "TORX",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9311622",
+"name": "VLADIMIR TIKHONOV",
+"mmsi": "314967000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9311751",
+"name": "HITIT",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9312872",
+"name": "HUIHAI ATLANTIC",
+"mmsi": "352002139",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9312884",
+"name": "KEMEROVO",
+"mmsi": "626382000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9312896",
+"name": "KRASNOYARSK",
+"mmsi": "626390000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9313149",
+"name": "TASCA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9313498",
+"name": "JACKLYN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9313589",
+"name": "SANAR-14",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9314088",
+"name": "LYRA",
+"mmsi": "352001732",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9314105",
+"name": "MAKALU",
+"mmsi": "314001002",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9314167",
+"name": "AGNES",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9314179",
+"name": "IMO 9314179 (\"FLINT WIND\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9314818",
+"name": "MILEY",
+"mmsi": "636022424",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9314820",
+"name": "OSCAR I",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9314882",
+"name": "HIMALAYA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9314894",
+"name": "INDRAS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9315446",
+"name": "SPRING",
+"mmsi": "305026000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9315654",
+"name": "SEA HONOR",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9315745",
+"name": "MARQUISE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9316127",
+"name": "SCF VANKOR",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9317315",
+"name": "IMO 9317315 (\"LUCH\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9317949",
+"name": "ARTEMIS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9318034",
+"name": "OLIVE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9318539",
+"name": "SWIFTSEA RIDER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9318541",
+"name": "SERENADE",
+"mmsi": "314897000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9318553",
+"name": "SAGA",
+"mmsi": "314894000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9319404",
+"name": "IMO 9319404 (AVACHA)",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9319674",
+"name": "EASTERN GLORY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9319686",
+"name": "HU PO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9319703",
+"name": "GREAT JACOMBO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9319870",
+"name": "MAINI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9319882",
+"name": "ATALANTA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9321172",
+"name": "SEA OWL I",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9321562",
+"name": "MAVERICK",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9321677",
+"name": "IMO 9321677 (\"DAPHNE V\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9321689",
+"name": "OCEAN FAYE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9321691",
+"name": "SAI BABA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9321706",
+"name": "MERCURY",
+"mmsi": "626315000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9321718",
+"name": "ORVI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9321847",
+"name": "EMILY S",
+"mmsi": "352001452",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9321976",
+"name": "HEIDI A",
+"mmsi": "352001510",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9322267",
+"name": "SAHARA",
+"mmsi": "636022550",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9322827",
+"name": "PICTOR",
+"mmsi": "636022479",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9322839",
+"name": "AVRIL",
+"mmsi": "636022401",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9322956",
+"name": "PROSPERITY",
+"mmsi": "626399000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9322968",
+"name": "HYPERION",
+"mmsi": "314958000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9323314",
+"name": "ADITYA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9323326",
+"name": "KATY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9323338",
+"name": "BETTLE",
+"mmsi": "636022072",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9323340",
+"name": "TRANQUIL SEA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9323364",
+"name": "SINAR G",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9323376",
+"name": "MARABELLA SUN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9323974",
+"name": "MARBLE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9323986",
+"name": "GARASAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9324277",
+"name": "NOVA ENERGY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9326689",
+"name": "IMO 9326689 (\"MERKURIY\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9326718",
+"name": "FULGER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9326720",
+"name": "HERA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9326811",
+"name": "IMO 9326811 (\"PERSEAS\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9326885",
+"name": "IMO 9326885 (\"ANAYA\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9327360",
+"name": "ARIA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9327372",
+"name": "OCEAN EMBRACE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9327413",
+"name": "KAROL",
+"mmsi": "636022549",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9328170",
+"name": "IMO 9328170 (\"AETHER\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9329655",
+"name": "PROXIMA",
+"mmsi": "314971000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9329667",
+"name": "PACIFIC",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9329760",
+"name": "EAGLE S",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9330472",
+"name": "THORIN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9330599",
+"name": "LUMIN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9330604",
+"name": "NACHOS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9331048",
+"name": "IMO 9331048 (CHAIVO)",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9331141",
+"name": "KELLY GRACE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9331153",
+"name": "DELVINA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9332028",
+"name": "GRIF",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9332171",
+"name": "IMO 9332171 (\"VIRENT\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9332614",
+"name": "IMO 9332614 (\"BELLARIS\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9332781",
+"name": "LANG YA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9332810",
+"name": "VARUNA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9332822",
+"name": "NICHOLE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9332834",
+"name": "WISDOMS DAUGHTER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9333400",
+"name": "NOBLE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9333412",
+"name": "ENIGMA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9333424",
+"name": "SCF PECHORA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9333436",
+"name": "SCF AMUR",
+"mmsi": "314893000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9333591",
+"name": "IMO 9333591 (\"ARCTIC EXPRESS\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9333670",
+"name": "MIKHAIL ULYANOV",
+"mmsi": "273328440",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9333682",
+"name": "KIRILL LAVROV",
+"mmsi": "273345750",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9333785",
+"name": "IMO 9333785 (\"SEADAR\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9334557",
+"name": "BLUE TALU",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9335094",
+"name": "WUDI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9335678",
+"name": "SCF ENDEAVOUR",
+"mmsi": "273312540",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9335680",
+"name": "SCF ENDURANCE",
+"mmsi": "273314650",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9335692",
+"name": "SCF ENTERPRISE",
+"mmsi": "273312060",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9336426",
+"name": "NAXOS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9336490",
+"name": "MYRA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9336517",
+"name": "URIEL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9337133",
+"name": "IVY",
+"mmsi": "574005380",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9337327",
+"name": "JAZZ",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9337389",
+"name": "AGNI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9337418",
+"name": "IMO 9337418 (\"ATMOS\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9337901",
+"name": "SAMUDRA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9338230",
+"name": "HERMES",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9338905",
+"name": "SHAANXI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9339301",
+"name": "NS LEADER",
+"mmsi": "636013272",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9339313",
+"name": "LADOGA",
+"mmsi": "626393000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9339325",
+"name": "LIBERTY",
+"mmsi": "314889000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9339337",
+"name": "NS LOTUS",
+"mmsi": "314892000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9341067",
+"name": "KALININGRAD",
+"mmsi": "626379000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9341079",
+"name": "NS CORONA",
+"mmsi": "314949000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9341081",
+"name": "NS CLIPPER",
+"mmsi": "314964000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9341093",
+"name": "KOLOMNA",
+"mmsi": "626388000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9344033",
+"name": "TRIUMPH",
+"mmsi": "314943000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9344411",
+"name": "IMO 9344411 (\"GALLE ENERGY\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9345623",
+"name": "RU YI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9346720",
+"name": "KIRA K",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9346732",
+"name": "HUIHAI PACIFIC",
+"mmsi": "352002122",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9346744",
+"name": "MA JIN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9346873",
+"name": "AQUARIUS II",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9346885",
+"name": "IMO 9346885 (\"ZENTURO\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9347059",
+"name": "UTRENNIY",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9347061",
+"name": "SABETTA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9347308",
+"name": "AURA MARIS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9348479",
+"name": "LUCKY FAIRY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9349289",
+"name": "LADY D",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9349291",
+"name": "ANASTASIIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9350654",
+"name": "RUBY CROSS",
+"mmsi": "352002589",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9352195",
+"name": "SANDHYA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9353096",
+"name": "GURU",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9353113",
+"name": "JUN MA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9353125",
+"name": "CHANDRA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9354301",
+"name": "JAGUAR",
+"mmsi": "352003366",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9354313",
+"name": "ZALIV AMURSKIY",
+"mmsi": "352003364",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9356610",
+"name": "IMO 9356610 (\"ALEXANDER NEVSKIY\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9358010",
+"name": "MAIA-1",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9358034",
+"name": "SASCO ALDAN",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9360128",
+"name": "ZALIV BAIKAL",
+"mmsi": "352002194",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9360130",
+"name": "ZALIV VOSTOK",
+"mmsi": "352002196",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9360415",
+"name": "INDUS 1",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9366110",
+"name": "MYS ZHELANIYA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9368223",
+"name": "ACHILLES",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9368235",
+"name": "FU HAI WAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9368340",
+"name": "MYS DEZHNEVA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9372547",
+"name": "VASILY DINKOV",
+"mmsi": "273345020",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9372559",
+"name": "KAPITAN GOTSKY",
+"mmsi": "273335010",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9372561",
+"name": "TIMOFEY GUZHENKO",
+"mmsi": "273330620",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9374868",
+"name": "ELEPHANT",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9376440",
+"name": "SMP SEVERODVINSK",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9377042",
+"name": "ARMADA EXPLORER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9377779",
+"name": "MONARCH I",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9378618",
+"name": "SI HE",
+"mmsi": "352002948",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9378620",
+"name": "GANGA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9378632",
+"name": "MALAK",
+"mmsi": "352002898",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9378864",
+"name": "IMO 9378864 (\"VISUND\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9379052",
+"name": "OCEAN AUTUMN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9379301",
+"name": "IMO 9379301 (\"VERSA\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9380570",
+"name": "IMO 9380570 (\"KURDOS III\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9380673",
+"name": "CENTURION",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9381732",
+"name": "AUGA",
+"mmsi": "636022364",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9381744",
+"name": "ANTILA",
+"mmsi": "636022362",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9382073",
+"name": "EVERDINE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9382712",
+"name": "DENVER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9382798",
+"name": "TRUST",
+"mmsi": "314953000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9383869",
+"name": "SARASWATI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9383950",
+"name": "EMINENT",
+"mmsi": "352002791",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9384069",
+"name": "LION 1",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9384095",
+"name": "RAGNAR",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9384306",
+"name": "UNIVERSAL",
+"mmsi": "314954000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9384435",
+"name": "JI LI I",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9384447",
+"name": "JI SHUN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9384459",
+"name": "JI XIANG",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9384992",
+"name": "MARS 6",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9385142",
+"name": "ALMOND",
+"mmsi": "314946000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9385831",
+"name": "LERUO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9386536",
+"name": "SPRING FORTUNE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9387255",
+"name": "MAIN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9387279",
+"name": "ETHERA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9388027",
+"name": "MANASLU",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9388742",
+"name": "SURYA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9388754",
+"name": "LONG BAI",
+"mmsi": "352002820",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9388766",
+"name": "DESTAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9388780",
+"name": "BAI LU",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9388792",
+"name": "UNITY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9389071",
+"name": "TANGO 2",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9389083",
+"name": "TIGER 6",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9389095",
+"name": "MINION",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9389100",
+"name": "SMYRTOS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9389679",
+"name": "LIETO",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9390587",
+"name": "IMO 9390587 (\"ONEIROI\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9392822",
+"name": "LOTUS",
+"mmsi": "352002872",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9394935",
+"name": "OCEAN AMZ",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9395379",
+"name": "PACIFIC 01",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9396854",
+"name": "LAMANTIN",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9397535",
+"name": "JUPITER",
+"mmsi": "314931000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9397547",
+"name": "ARIADNE",
+"mmsi": "314948000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9397559",
+"name": "ARIA",
+"mmsi": "314987000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9398046",
+"name": "SMP NOVODVINSK",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9400980",
+"name": "EVALI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9402263",
+"name": "IMO 9402263 (\"ASTERAS\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9402469",
+"name": "FREDA",
+"mmsi": "352003485",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9402471",
+"name": "FENG SHOU",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9402732",
+"name": "SAATHI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9404948",
+"name": "CHEN LU",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9405057",
+"name": "TAI SHAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9408190",
+"name": "SAMOS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9408205",
+"name": "FAST KATHY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9408530",
+"name": "EVITA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9408542",
+"name": "IMO 9408542 (\"LING HONG\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9408554",
+"name": "IMO 9408554 (\"HE BO\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9408695",
+"name": "TASSOS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9409259",
+"name": "SPIRIT 2",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9409467",
+"name": "PRAVASI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9410870",
+"name": "HS EVERETT",
+"mmsi": "636022403",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9410894",
+"name": "VALOUR",
+"mmsi": "636022386",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9411020",
+"name": "BRATSK",
+"mmsi": "626378000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9411331",
+"name": "CANARA",
+"mmsi": "352002456",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9412335",
+"name": "NS BORA",
+"mmsi": "314984000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9412347",
+"name": "LEONID LOZA",
+"mmsi": "314965000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9412359",
+"name": "BELGOROD",
+"mmsi": "626377000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9412452",
+"name": "NILANGA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9412995",
+"name": "KRUGER",
+"mmsi": "636022098",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9413004",
+"name": "IMO 9413004 (\"HORAE\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9413547",
+"name": "NS ARCTIC",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9413559",
+"name": "ANTARKTIKA",
+"mmsi": "626372000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9413561",
+"name": "NS ASIA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9413573",
+"name": "ATLAS",
+"mmsi": "314895000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9417464",
+"name": "IMO 9417464 (\"TANI\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9418482",
+"name": "CETUS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9418494",
+"name": "ZALIV ANIVA",
+"mmsi": "352002209",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9418509",
+"name": "OMSK",
+"mmsi": "273371330",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9419137",
+"name": "SIKAR",
+"mmsi": "352002488",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9419151",
+"name": "WU TAI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9419448",
+"name": "HENG TAI",
+"mmsi": "352003963",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9419450",
+"name": "JEWEL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9421960",
+"name": "PRIMORYE",
+"mmsi": "636014308",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9421972",
+"name": "SCF SAMOTLOR",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9422445",
+"name": "SIRIUS",
+"mmsi": "314988000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9422457",
+"name": "SCF BAIKAL",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9422653",
+"name": "GAZPROMNEFT NORDEAST",
+"mmsi": "273334570",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9422988",
+"name": "VOLANS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9424651",
+"name": "MANTA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9428358",
+"name": "XUE SONG",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9430210",
+"name": "GOGLAND",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9430272",
+"name": "JIN HUI",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9433016",
+"name": "APATE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9433286",
+"name": "MYS FLORA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9434890",
+"name": "NAUTILUS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9435337",
+"name": "AKHTY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9435363",
+"name": "VOLGA RIVER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9435375",
+"name": "IRTYSH RIVER",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9436006",
+"name": "SAMIRA",
+"mmsi": "352002486",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9436018",
+"name": "VENETIANS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9436020",
+"name": "CENTURION I",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9436941",
+"name": "ATTICA",
+"mmsi": "626278000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9437983",
+"name": "CAI YUN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9439383",
+"name": "IMO 9439383 (\"BHILVA\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9439539",
+"name": "BOLU",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9439541",
+"name": "NEMRUT",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9451642",
+"name": "VENGERY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9459242",
+"name": "FELIKS",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9470131",
+"name": "IMO 9470131 (\"TORVIAN\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9472634",
+"name": "AURA 1",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9481881",
+"name": "PORT OLYA-2",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9481910",
+"name": "PORT OLYA-3",
+"mmsi": "273371920",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9481922",
+"name": "PORT OLYA-1",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9481934",
+"name": "PORT OLYA-4",
+"mmsi": "273390550",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9495832",
+"name": "BLACKSEA EAGLE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9497531",
+"name": "SPASATEL KAREV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9503304",
+"name": "GENERAL SKOBELEV",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9511387",
+"name": "OLYMPIYSKY PROSPECT",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9511521",
+"name": "MOSKOVSKY PROSPECT",
+"mmsi": "626368000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9511533",
+"name": "PRIMORSKY PROSPECT",
+"mmsi": "314919000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9513139",
+"name": "FEARLESS",
+"mmsi": "352001925",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9522324",
+"name": "SUVOROVSKY PROSPECT",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9524451",
+"name": "SABINA",
+"mmsi": "352002179",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9524463",
+"name": "SAKARYA",
+"mmsi": "352002168",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9530917",
+"name": "SAKINA",
+"mmsi": "352002280",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9537109",
+"name": "GAZPROMNEFT ZUID EAST",
+"mmsi": "273353580",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9538115",
+"name": "VYACHESLAV TIKHONOV",
+"mmsi": "273350140",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9538892",
+"name": "SPARTA III",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9544281",
+"name": "CORUM",
+"mmsi": "352002588",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9550682",
+"name": "XING CHEN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9572020",
+"name": "BALTIYSKIY ISSLEDOVATEL",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9577082",
+"name": "PREMIER",
+"mmsi": "314945000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9577094",
+"name": "PATHFINDER",
+"mmsi": "314976000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9585912",
+"name": "MARLIN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9585924",
+"name": "KALUGA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9589750",
+"name": "DANSHUI",
+"mmsi": "352002861",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9590137",
+"name": "MEGION",
+"mmsi": "273355640",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9594339",
+"name": "LENA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9599341",
+"name": "JUPITER I",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9599353",
+"name": "VENUS III",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9610781",
+"name": "NIKOLAY ZUYEV",
+"mmsi": "314950000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9610793",
+"name": "GEORGY MASLOV",
+"mmsi": "626362000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9610808",
+"name": "ANATOLY KOLODKIN",
+"mmsi": "352003372",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9610810",
+"name": "VIKTOR BAKAEV",
+"mmsi": "636015565",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9613549",
+"name": "VITUS BERING",
+"mmsi": "273358680",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9613551",
+"name": "ALEKSEY CHIRIKOV",
+"mmsi": "273369290",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9617923",
+"name": "MARIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9620633",
+"name": "ORIENT HARMONY",
+"mmsi": "352002708",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9621558",
+"name": "KARAKUZ",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9621560",
+"name": "BAVLY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9621596",
+"name": "STANISLAV GOVORUKHIN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9621601",
+"name": "VASILY LANOVOY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9624213",
+"name": "IVAN SIDORENKO",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9624225",
+"name": "OSTAP SHEREMETA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9630004",
+"name": "VELIKIY NOVGOROD",
+"mmsi": "314928000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9630028",
+"name": "PSKOV",
+"mmsi": "314930000",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9637492",
+"name": "CLEAN OCEAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9637507",
+"name": "CLEAN PLANET",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9640516",
+"name": "VF TANKER-3",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9640528",
+"name": "VF TANKER-4",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9645023",
+"name": "IMO 9645023 (\"VASILY SURIKOV\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9650016",
+"name": "RN SAKHALIN",
+"mmsi": "273399390",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9653068",
+"name": "RN AMUR",
+"mmsi": "273333470",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9653070",
+"name": "RN USSURI",
+"mmsi": "273320710",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9655456",
+"name": "CLEAN VISION",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9655470",
+"name": "SATURN I",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9661792",
+"name": "DILBAR",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9673202",
+"name": "ORIENT VISION",
+"mmsi": "352002707",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9678238",
+"name": "SVYATOY KNYAZ VLADIMIR",
+"mmsi": "273393630",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9682423",
+"name": "MURMAN",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9683726",
+"name": "DMITRY POKROVSKY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9683738",
+"name": "LADY SEVDA",
+"mmsi": "273342180",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9683740",
+"name": "LADY LEILA",
+"mmsi": "273340060",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9690212",
+"name": "STALINGRAD",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9690224",
+"name": "MARSHAL ZHUKOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9691785",
+"name": "POLA SEVASTIANA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9735141",
+"name": "IMO 9735141 (\"MIDVOLGA-3\")",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9735323",
+"name": "YAZ",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9735335",
+"name": "SIG",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9737187",
+"name": "CHRISTOPHE DE MARGERIE",
+"mmsi": "352002442",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9741724",
+"name": "ALARA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9742120",
+"name": "GENNADIY NEVELSKOY",
+"mmsi": "273396990",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9743033",
+"name": "SPARTA IV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9747194",
+"name": "ARTEMIS OFFSHORE",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9749154",
+"name": "KUPAVA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9752084",
+"name": "SHTURMAN ALBANOV",
+"mmsi": "273397870",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9752096",
+"name": "SHTURMAN MALYGIN",
+"mmsi": "273398780",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9752101",
+"name": "SHTURMAN OVTSYN",
+"mmsi": "273391790",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9753727",
+"name": "STEPAN MAKAROV",
+"mmsi": "273392530",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9753739",
+"name": "FEDOR USHAKOV",
+"mmsi": "273396260",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9753741",
+"name": "YEVGENY PRIMAKOV",
+"mmsi": "273412440",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9759666",
+"name": "IPSALA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9759915",
+"name": "SHTURMAN SKURATOV",
+"mmsi": "273392990",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9759927",
+"name": "SHTURMAN SHCHERBININ",
+"mmsi": "273385570",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9759939",
+"name": "SHTURMAN KOSHELEV",
+"mmsi": "273391160",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9763837",
+"name": "AUDAX",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9763849",
+"name": "PUGNAX",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9777670",
+"name": "SANAR-15",
+"mmsi": "273375360",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9778313",
+"name": "MARSHAL VASILEVSKIY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9780940",
+"name": "ULA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9784893",
+"name": "LADY RANIA",
+"mmsi": "273382620",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9797577",
+"name": "BAKHTEMIR",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9804057",
+"name": "VYAZ",
+"mmsi": "273418480",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9817779",
+"name": "TIS",
+"mmsi": "273396740",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9826902",
+"name": "KOROLEV PROSPECT",
+"mmsi": "314905000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9830769",
+"name": "HUNTER STAR",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9832547",
+"name": "VELMAR",
+"mmsi": "352003251",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9832559",
+"name": "VIRAT",
+"mmsi": "352003207",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9837547",
+"name": "MIKHAIL LAZAREV",
+"mmsi": "273212310",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9842176",
+"name": "VLADIMIR MONOMAKH",
+"mmsi": "273211040",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9842188",
+"name": "VLADIMIR VINOGRADOV",
+"mmsi": "273295230",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9842190",
+"name": "AKADEMIC GUBKIN",
+"mmsi": "273616040",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9842205",
+"name": "YARD NO.131040 ZVEZDA-DSME",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9842217",
+"name": "NURSULTAN NAZARBAYEV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9843560",
+"name": "VOYAGER",
+"mmsi": "314906000",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9849423",
+"name": "POLA MAKARIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9849435",
+"name": "POLA FILOFEIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9849459",
+"name": "POLA SOFIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9849461",
+"name": "POLA FEODOSIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9849473",
+"name": "POLA FIVA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9849887",
+"name": "SCF LA PEROUSE",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions"
+]
+},
+{
+"imo": "9851103",
+"name": "POLA ANATOLIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9851115",
+"name": "POLA ANFISA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9851127",
+"name": "POLA GALI",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9864837",
+"name": "MULAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9866380",
+"name": "OKEANSKY PROSPECT",
+"mmsi": "273618730",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9866392",
+"name": "VOSTOCHNY PROSPECT",
+"mmsi": "273611590",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9868807",
+"name": "NAVIS 6",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9876359",
+"name": "IVAN AIVAZOVSKIY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9876361",
+"name": "ALEXEY BOGOLYUBOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9876373",
+"name": "ALEXANDER BEGGROV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9885879",
+"name": "VALENTIN PIKUL",
+"mmsi": "273259920",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9888182",
+"name": "DMITRY MENDELEEV",
+"mmsi": "273296810",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9888792",
+"name": "POLA HARITA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9888807",
+"name": "POLA PELAGIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9889198",
+"name": "ALEKSANDR SOKOLOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9897690",
+"name": "POLA ANASTASIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9897705",
+"name": "POLA MARIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9898254",
+"name": "OKEANSKY PROSPECT",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9900514",
+"name": "PETROTRANS 5902",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9901025",
+"name": "VLADIMIR ARSENYEV",
+"mmsi": "352002203",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9901037",
+"name": "NIKOLAY ZADORNOV",
+"mmsi": "352002208",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9903827",
+"name": "POLA YAROSLAVA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9903839",
+"name": "POLA VARVARA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9903841",
+"name": "POLA AGATA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9903853",
+"name": "POLA ALEXIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9903865",
+"name": "POLA MARINA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9903877",
+"name": "POLA MIROPIA",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9904546",
+"name": "IMO 9904546 (ALEKSEY KOSYGIN)",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9904675",
+"name": "IMO 9904675 (PYOTR STOLYPIN)",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9904687",
+"name": "SERGEI WITTE",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9904699",
+"name": "ZVEZDA 044",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9904704",
+"name": "IMO 9904704 (KONSTANTIN POSIET)",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9906544",
+"name": "ASTROL-1",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9908994",
+"name": "YARD NO.131080 ZVEZDA-DSME",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9912696",
+"name": "YURI BABAEV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9915090",
+"name": "SAAM FSU",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9915105",
+"name": "KORYAK FSU",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9918779",
+"name": "YARD NO. 9918779 ZVEZDA-DSME",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9918781",
+"name": "YARD NO. 9918781 ZVEZDA-DSME",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9921996",
+"name": "VLADIMIR LATYSHEV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9922110",
+"name": "VICTOR ANDRYUKHIN",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9922122",
+"name": "LEONID PESTRIKOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9922134",
+"name": "NIKOLAI LEONOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9924340",
+"name": "ALPHA HELIOS",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9924352",
+"name": "ALPHA HERMES",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9934498",
+"name": "NAN FENG ZHI XING",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9940186",
+"name": "ALEXANDR DEEV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9942392",
+"name": "NIKOLAY ANISHCHENKOV",
+"mmsi": "",
+"lists": [
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9953509",
+"name": "BURAN",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9953511",
+"name": "VOSKHOD",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9953523",
+"name": "NORTH SKY",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+},
+{
+"imo": "9953535",
+"name": "ZARYA",
+"mmsi": "",
+"lists": [
+"gb_fcdo_sanctions",
+"us_ofac_sdn"
+]
+}
+]

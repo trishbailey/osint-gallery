@@ -81,6 +81,18 @@
       "note": "v1.1, 136 entries. Lives directly in this repo under /belt-and-road/ with its own workflow; not touched by the sync."
     },
     {
+   "slug": "ghost-fleet",
+   "repo": "trishbailey/osint-gallery",
+   "private": false,
+   "build": "",
+   "publish": "",
+   "oldUrl": "",
+   "status": "in-repo",
+   "cardId": "ghost-fleet",
+   "version": "1",
+   "note": "v1. Lives directly in this repo under /ghost-fleet/ (_src/) with its own workflow (ghost-fleet-rebuild.yml); not touched by the sync."
+  },
+  {
       "slug": "middle-east",
       "repo": "",
       "private": true,

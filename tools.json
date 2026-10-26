@@ -119,6 +119,14 @@
   ],
   "dashboards": [
     {
+      "id": "ghost-fleet",
+      "name": "Russia's Shadow Fleet",
+      "blurb": "Maps where about 660 tankers in Russia's shadow fleet go: port calls, loitering at sea, transponder gaps and radar detections from the last 90 days, with animated ship movements and a profile for every ship.",
+      "icon": "/icons/ghost-fleet.svg",
+      "enterUrl": "https://beacon-tools.onrender.com/ghost-fleet/",
+      "status": "live"
+    },
+    {
       "id": "world-brief",
       "name": "Strategic World Brief",
       "blurb": "Daily, cited brief that tracks 20 global storylines across security, politics, the economy and technology, with a story map, weekly synthesis and predictions log.",
