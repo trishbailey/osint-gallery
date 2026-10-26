@@ -8,33 +8,24 @@
 <header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">CHINA DIPLOMATS ON X · v1</span></a>
 <nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#themes">Themes</a><a href="#spread">Spread</a><a href="#amp">Ripple</a><a href="#tone">Aggression</a><a href="#cal">Bursts</a></nav></header>
 <div class="layout">
-<button id="ftoggle" aria-expanded="false" aria-controls="side">☰ Filters and legend</button>
-<aside id="side" aria-label="Filters and legend">
- <div class="sheethead"><span>Filters and legend</span><button id="sclose" aria-label="Close filters">✕</button></div>
- <h2 class="sh"><label for="tp">Talking point</label></h2>
- <select id="tp"></select>
- <p class="muted" id="tpdesc"></p>
- <h2 class="sh">Account types</h2>
- <div id="types" role="group" aria-label="Account types shown"></div>
- <h2 class="sh">Spread map</h2><div class="legend" id="lg-kind"></div>
- <h2 class="sh">Top talking points</h2><div class="legend" id="lg-tp"></div>
- <h2 class="sh">Aggression map</h2><div class="seg" id="tmode" role="group" aria-label="Colour countries by"><button type="button" data-m="share" aria-pressed="true">By share</button><button type="button" data-m="count" aria-pressed="false">By count</button></div><div class="legend" id="lg-tone"></div>
- <h2 class="sh">Key areas</h2><ul id="tareas" class="tareas" aria-label="Key areas of aggressive posts"></ul>
-</aside>
 <main>
 <h1>China Diplomats on X</h1>
 <p class="intro">China's foreign ministry, its embassies, consulates and ambassadors run a large network of X accounts. This page tracks what they post, which messages appear across many accounts at once, who reposts whom, and how the tone differs from country to country.</p>
 <p class="cover" id="cover"></p>
 <div id="heads" class="heads"></div>
+<div class="topbar"><span class="tbl">Account types shown on the spread map and ripple:</span><div id="types" role="group" aria-label="Account types shown"></div></div>
 <section id="themes" class="card"><h2 class="sh2" id="tp-title">Top talking points by day</h2>
-<div class="seg" id="tpview" role="group" aria-label="Time scale"><button data-v="day">Day</button><button data-v="week">Week</button><button data-v="month">Month</button></div>
 <p class="sub" id="tp-sub"></p>
-<div id="stream" class="viz"></div><div id="streamw" class="viz" hidden></div><div id="streamm" class="viz" hidden></div></section>
+<div class="cols"><div class="lc"><div class="seg" id="tpview" role="group" aria-label="Time scale"><button data-v="day">Day</button><button data-v="week">Week</button><button data-v="month">Month</button></div>
+<h3 class="lh">Top talking points</h3><div class="legend" id="lg-tp"></div></div>
+<div class="mc"><div id="stream" class="viz"></div><div id="streamw" class="viz" hidden></div><div id="streamm" class="viz" hidden></div></div></div></section>
 <section id="spread" class="card"><h2 class="sh2" id="sp-title">How a talking point spreads</h2>
-<div id="chips" class="chips" role="group" aria-label="Choose a narrative"></div>
 <p class="sub" id="sp-sub"></p>
-<div class="ctl"><button id="play" class="btn">▶ Play</button><input type="range" id="clock" min="0" max="1000" value="1000" aria-label="Time"><span id="clocklbl" class="muted"></span></div>
-<div id="map" class="viz"></div></section>
+<div class="cols"><div class="lc"><h3 class="lh"><label for="tp">Talking point</label></h3><select id="tp"></select><p class="muted" id="tpdesc"></p>
+<div><div id="chips" class="chips" role="group" aria-label="Choose a narrative"></div></div>
+<h3 class="lh">Dots</h3><div class="legend" id="lg-kind"></div></div>
+<div class="mc"><div class="ctl"><button id="play" class="btn">▶ Play</button><input type="range" id="clock" min="0" max="1000" value="1000" aria-label="Time"><span id="clocklbl" class="muted"></span></div>
+<div id="map" class="viz"></div></div></div></section>
 
 
 
@@ -44,29 +35,32 @@
 
 <section id="who" class="card"><h2 class="sh2">Which accounts carry which talking points</h2>
 <p class="sub">The 25 accounts with the most posts in named talking points. Darker cells mean more posts.</p>
-<div id="mxkey" class="legend inline"></div><div id="matrix" class="viz scrollx"></div></section>
+<div class="cols"><div class="lc"><h3 class="lh">Posts per cell</h3><div class="legend" id="lg-mx"></div></div><div class="mc"><div id="matrix" class="viz scrollx"></div></div></div></section>
 
 <section id="amp" class="card"><h2 class="sh2">How one post ripples out</h2>
-<div id="rchips" class="chips" role="group" aria-label="Choose a post"></div>
 <p class="sub" id="amp-sub"></p>
-<div class="ctl"><button id="rplay" class="btn">▶ Play</button><input type="range" id="rclock" min="0" max="1000" value="0" aria-label="Time since the original post"><span id="rlbl" class="muted"></span></div>
-<div id="net" class="viz"></div><div id="netlist"></div></section>
+<div class="cols"><div class="lc"><h3 class="lh">Choose a post</h3><div id="rchips" class="chips" role="group" aria-label="Choose a post"></div>
+<div class="ctl"><button id="rplay" class="btn">▶ Play</button><button id="rreplay" class="btn" type="button">↺ Replay</button><button id="rspeed" class="btn" type="button" aria-label="Playback speed 1x, click to change">1×</button></div></div>
+<div class="mc"><div class="ctl"><input type="range" id="rclock" min="0" max="1000" value="0" aria-label="Time since the original post"><span id="rlbl" class="muted"></span></div>
+<div id="net" class="viz"></div><div id="netlist"></div></div></div></section>
 
 
 
 <section id="tone" class="card"><h2 class="sh2">How aggressive or friendly, by country</h2>
 <p class="thead" id="tone-head"></p><p class="win" id="tone-win"></p>
 <p class="sub" id="tone-sub"></p>
-<p class="sub tam">Select a key area to zoom the map to it.</p><ul id="tareas-m" class="tareas tam" aria-label="Key areas of aggressive posts"></ul>
-<button id="tzoom" class="btn" type="button" aria-pressed="false">Zoom to hot spots</button>
-<div id="tmap" class="viz"></div>
-<h3 class="sh3">Most aggressive</h3><p class="sub">Select a country to zoom to it and read its posts.</p><ol id="ttop" class="ttop"></ol></section>
+<div class="cols"><div class="lc"><h3 class="lh">Colour countries by</h3><div class="seg" id="tmode" role="group" aria-label="Colour countries by"><button type="button" data-m="share" aria-pressed="true">By share</button><button type="button" data-m="count" aria-pressed="false">By count</button></div><div class="legend" id="lg-tone"></div>
+<button id="tzoom" class="btn" type="button" aria-pressed="false">Zoom to key area</button>
+<details class="lcd" id="tone-more" open><summary>Key areas and most aggressive</summary>
+<h3 class="lh">Key areas</h3><ul id="tareas" class="tareas" aria-label="Key areas of aggressive posts"></ul>
+<h3 class="lh">Most aggressive</h3><p class="sub">Select a country to zoom to it and read its posts.</p><ol id="ttop" class="ttop"></ol></details></div>
+<div class="mc"><div id="tmap" class="viz"></div></div></div></section>
 <section id="cal" class="card"><h2 class="sh2">When many accounts posted the same message</h2>
 <p class="sub">A burst is four or more accounts posting the same message within six hours. Bursts are grouped by what they said; click one to read the posts.</p>
-<div id="bgroups" class="bgroups"></div>
 <h3 class="sh3">Burst calendar</h3>
 <p class="sub">Each cell is one hour (UTC), coloured by the talking point of the burst in that hour (outlined cells are other topics, named in the tooltip). Click a coloured cell to read the posts.</p>
-<div id="calv" class="viz scrollx"></div></section>
+<div id="calv" class="viz scrollx"></div>
+<details class="note dd" id="dd-bursts"><summary id="bsum">See each burst: message, accounts and timing</summary><div class="ddb"><div id="bgroups" class="bgroups"></div></div></details></section>
 
 <details class="note dd" id="dd-acc"><summary>Accounts tracked</summary><div class="ddb">
 <p class="m" id="acc-how"></p><div id="acc-list"></div></div></details>
