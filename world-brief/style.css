@@ -122,3 +122,14 @@ table{background:var(--panel)}th{background:var(--panel2);color:var(--gold);bord
 .pstrip .st-date,.strip .st-date{color:#5CCFDA}.strip{border-top-color:#2BB3C0}.strip li::before{background:var(--gold)}.thread .strip li::before{background:var(--gold)}
 .flow{border-bottom-color:var(--line)}.fl-pay{background:var(--gold);color:#0b1526}.fl-ben{background:#2BB3C0;color:#0b1526}.fl-arrow{color:var(--text)}
 .fb-bar{background:#1d3a4f}.fb-bar span{background:#2BB3C0}
+/* standards layout: headline strip, main map, toggles */
+.kpis{list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:18px 0}
+.kpis li{flex:1 1 140px;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--gold);padding:10px 14px}
+.kpi-n{display:block;font-size:28px;font-weight:700;color:var(--text);line-height:1.1}.kpi-l{font-size:14px;color:var(--text)}
+.prompt{font-size:15px;color:var(--gold);margin:0 0 8px;font-weight:700}
+.mm-on{cursor:pointer}.mm-on:hover,.mm-on:focus{fill:#c8a24a;outline:none}
+.mm-key{font-size:14px;color:var(--text)}.sw{display:inline-block;width:14px;height:14px;vertical-align:-2px;border-radius:2px;margin-right:4px}
+details.more{margin:10px 0;border-top:1px solid var(--line);padding-top:8px}
+details.more>summary{min-height:44px;display:flex;align-items:center;font-size:15px;color:#5CCFDA;font-weight:700}
+.bl{font-size:17px}.card.flash{outline:3px solid var(--gold)}
+.arc-btn,.arcp-close{min-height:44px}
