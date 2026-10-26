@@ -168,7 +168,7 @@ function drawRipple(){const r=RP[rcur];rchip.attr('aria-pressed',(d,i)=>i===rcur
  tipOn(cg,()=>`<b>Original post</b> by ${esc(r.label)}<br>${fd(r.t)}<br>“${esc(r.text.slice(0,140))}”`);
  const clk=svg.append('text').attr('x',14).attr('y',24).attr('font-size',15).attr('font-weight',600).style('fill','#c8a24a');
  RG={amps,links,g,pulse,clk,phone:false};}
- RG.maxD=maxD;rset(RM?1:0);if(RM)d3.select('#rplay').text('↺ Replay')}
+ RG.maxD=maxD;rset(RM?1:0);d3.select('#rplay').text(RM?'↺ Replay':'▶ Play')}
 // playback time runs on a log scale, so long-delay amplifiers don't stall it; labels show the real delay
 function rset(p){rpos=p;const m=p>=1?RG.maxD:Math.pow(RG.maxD+1,p)-1;d3.select('#rclock').property('value',Math.round(p*1000));
  const n=RG.amps.filter(a=>a.delay<=m).length;d3.select('#rlbl').text(`+${fdur(m)} after posting · ${n} of ${RG.amps.length} accounts joined`);
