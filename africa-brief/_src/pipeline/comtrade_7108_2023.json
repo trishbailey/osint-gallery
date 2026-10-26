@@ -1,0 +1,1257 @@
+{
+ "year": 2023,
+ "links": [
+  {
+   "s": "Other African countries",
+   "t": "UAE",
+   "tonnes": 293.9
+  },
+  {
+   "s": "Ghana",
+   "t": "UAE",
+   "tonnes": 52.8
+  },
+  {
+   "s": "Guinea",
+   "t": "UAE",
+   "tonnes": 135.9
+  },
+  {
+   "s": "Sahel (Mali, Burkina Faso, Niger)",
+   "t": "UAE",
+   "tonnes": 92.7
+  },
+  {
+   "s": "South Africa",
+   "t": "UAE",
+   "tonnes": 17.7
+  },
+  {
+   "s": "Sudan",
+   "t": "UAE",
+   "tonnes": 17.1
+  },
+  {
+   "s": "Other African countries",
+   "t": "Switzerland",
+   "tonnes": 99.4
+  },
+  {
+   "s": "Ghana",
+   "t": "Switzerland",
+   "tonnes": 62.1
+  },
+  {
+   "s": "Guinea",
+   "t": "Switzerland",
+   "tonnes": 4.3
+  },
+  {
+   "s": "Sahel (Mali, Burkina Faso, Niger)",
+   "t": "Switzerland",
+   "tonnes": 74.7
+  },
+  {
+   "s": "South Africa",
+   "t": "Switzerland",
+   "tonnes": 59.5
+  },
+  {
+   "s": "Ghana",
+   "t": "India",
+   "tonnes": 15.9
+  },
+  {
+   "s": "Guinea",
+   "t": "India",
+   "tonnes": 17.6
+  },
+  {
+   "s": "Other African countries",
+   "t": "India",
+   "tonnes": 34.8
+  },
+  {
+   "s": "Sahel (Mali, Burkina Faso, Niger)",
+   "t": "India",
+   "tonnes": 2.1
+  },
+  {
+   "s": "South Africa",
+   "t": "India",
+   "tonnes": 77.1
+  },
+  {
+   "s": "Ghana",
+   "t": "Hong Kong",
+   "tonnes": 0.6
+  },
+  {
+   "s": "Other African countries",
+   "t": "Hong Kong",
+   "tonnes": 8.5
+  },
+  {
+   "s": "South Africa",
+   "t": "Hong Kong",
+   "tonnes": 20.9
+  },
+  {
+   "s": "Other African countries",
+   "t": "All other",
+   "tonnes": 16.5
+  },
+  {
+   "s": "Ghana",
+   "t": "All other",
+   "tonnes": 4.3
+  },
+  {
+   "s": "Sahel (Mali, Burkina Faso, Niger)",
+   "t": "All other",
+   "tonnes": 0.4
+  },
+  {
+   "s": "South Africa",
+   "t": "All other",
+   "tonnes": 13.3
+  },
+  {
+   "s": "South Africa",
+   "t": "China",
+   "tonnes": 167.1
+  },
+  {
+   "s": "South Africa",
+   "t": "United Kingdom",
+   "tonnes": 32.4
+  },
+  {
+   "s": "Other African countries",
+   "t": "Canada",
+   "tonnes": 17.4
+  },
+  {
+   "s": "South Africa",
+   "t": "Canada",
+   "tonnes": 13.3
+  },
+  {
+   "s": "Guinea",
+   "t": "USA",
+   "tonnes": 0.1
+  },
+  {
+   "s": "Other African countries",
+   "t": "USA",
+   "tonnes": 1.1
+  },
+  {
+   "s": "Sahel (Mali, Burkina Faso, Niger)",
+   "t": "USA",
+   "tonnes": 0.1
+  },
+  {
+   "s": "South Africa",
+   "t": "USA",
+   "tonnes": 14.8
+  }
+ ],
+ "reexports": [
+  {
+   "s": "UAE",
+   "t": "UAE → Switzerland",
+   "tonnes": 151.8
+  },
+  {
+   "s": "UAE",
+   "t": "UAE → India",
+   "tonnes": 105.9
+  },
+  {
+   "s": "UAE",
+   "t": "UAE → Hong Kong",
+   "tonnes": 156.6
+  },
+  {
+   "s": "UAE",
+   "t": "UAE → Turkey",
+   "tonnes": 156.4
+  },
+  {
+   "s": "UAE",
+   "t": "UAE → all other",
+   "tonnes": 23.9
+  },
+  {
+   "s": "UAE",
+   "t": "UAE → Saudi Arabia",
+   "tonnes": 42.5
+  }
+ ],
+ "audit": [
+  {
+   "hub": "UAE",
+   "origin": "Algeria",
+   "group": "Other African countries",
+   "kg": 46.79,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=12"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Angola",
+   "group": "Other African countries",
+   "kg": 666.78,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=24"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Burundi",
+   "group": "Other African countries",
+   "kg": 1945.4,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=108"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Cameroon",
+   "group": "Other African countries",
+   "kg": 14048.4,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=120"
+  },
+  {
+   "hub": "UAE",
+   "origin": "CAR",
+   "group": "Other African countries",
+   "kg": 1767.29,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=140"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Chad",
+   "group": "Other African countries",
+   "kg": 17711.7,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=148"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Comoros",
+   "group": "Other African countries",
+   "kg": 0.48,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=174"
+  },
+  {
+   "hub": "UAE",
+   "origin": "DR Congo",
+   "group": "Other African countries",
+   "kg": 3337.39,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=180"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Benin",
+   "group": "Other African countries",
+   "kg": 13039.9,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=204"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Ethiopia",
+   "group": "Other African countries",
+   "kg": 4294.68,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=231"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Eritrea",
+   "group": "Other African countries",
+   "kg": 2342.54,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=232"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Gabon",
+   "group": "Other African countries",
+   "kg": 708.3,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=266"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Gambia",
+   "group": "Other African countries",
+   "kg": 26.98,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=270"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Ghana",
+   "group": "Ghana",
+   "kg": 52773.8,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=288"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Guinea",
+   "group": "Guinea",
+   "kg": 135944.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=324"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Côte d'Ivoire",
+   "group": "Other African countries",
+   "kg": 690.72,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=384"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Kenya",
+   "group": "Other African countries",
+   "kg": 9178.19,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=404"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Liberia",
+   "group": "Other African countries",
+   "kg": 934.35,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=430"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Libya",
+   "group": "Other African countries",
+   "kg": 11873.4,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=434"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Madagascar",
+   "group": "Other African countries",
+   "kg": 1106.74,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=450"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Malawi",
+   "group": "Other African countries",
+   "kg": 241.43,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=454"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Mali",
+   "group": "Sahel (Mali, Burkina Faso, Niger)",
+   "kg": 77462.33,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=466"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Mauritania",
+   "group": "Other African countries",
+   "kg": 4213.18,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=478"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Mauritius",
+   "group": "Other African countries",
+   "kg": 23.21,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=480"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Morocco",
+   "group": "Other African countries",
+   "kg": 19.34,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=504"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Mozambique",
+   "group": "Other African countries",
+   "kg": 7775.31,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=508"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Niger",
+   "group": "Sahel (Mali, Burkina Faso, Niger)",
+   "kg": 7473.69,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=562"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Nigeria",
+   "group": "Other African countries",
+   "kg": 19856.2,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=566"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Rwanda",
+   "group": "Other African countries",
+   "kg": 13831.2,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=646"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Senegal",
+   "group": "Other African countries",
+   "kg": 4014.64,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=686"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Sierra Leone",
+   "group": "Other African countries",
+   "kg": 128.32,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=694"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Somalia",
+   "group": "Other African countries",
+   "kg": 5048.15,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=706"
+  },
+  {
+   "hub": "UAE",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 17724.68,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Zimbabwe",
+   "group": "Other African countries",
+   "kg": 30440.8,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=716"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Sudan",
+   "group": "Sudan",
+   "kg": 17088.5,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=729"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Eswatini",
+   "group": "Other African countries",
+   "kg": 0.65,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=748"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Togo",
+   "group": "Other African countries",
+   "kg": 42309.7,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=768"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Uganda",
+   "group": "Other African countries",
+   "kg": 14243.53,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=800"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Egypt",
+   "group": "Other African countries",
+   "kg": 15990.7,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=818"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Tanzania",
+   "group": "Other African countries",
+   "kg": 22905.1,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=834"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Burkina Faso",
+   "group": "Sahel (Mali, Burkina Faso, Niger)",
+   "kg": 7751.45,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=854"
+  },
+  {
+   "hub": "UAE",
+   "origin": "Zambia",
+   "group": "Other African countries",
+   "kg": 29139.5,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=894"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Chad",
+   "group": "Other African countries",
+   "kg": 1.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=148"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Ghana",
+   "group": "Ghana",
+   "kg": 62150.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=288"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Guinea",
+   "group": "Guinea",
+   "kg": 4292.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=324"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Côte d'Ivoire",
+   "group": "Other African countries",
+   "kg": 41597.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=384"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Liberia",
+   "group": "Other African countries",
+   "kg": 12360.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=430"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Madagascar",
+   "group": "Other African countries",
+   "kg": 1.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=450"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Mali",
+   "group": "Sahel (Mali, Burkina Faso, Niger)",
+   "kg": 18121.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=466"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Mauritania",
+   "group": "Other African countries",
+   "kg": 11629.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=478"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Morocco",
+   "group": "Other African countries",
+   "kg": 149.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=504"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Mozambique",
+   "group": "Other African countries",
+   "kg": 166.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=508"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Nigeria",
+   "group": "Other African countries",
+   "kg": 2705.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=566"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Senegal",
+   "group": "Other African countries",
+   "kg": 10566.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=686"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 59508.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Zimbabwe",
+   "group": "Other African countries",
+   "kg": 50.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=716"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Egypt",
+   "group": "Other African countries",
+   "kg": 8427.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=818"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Tanzania",
+   "group": "Other African countries",
+   "kg": 11732.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=834"
+  },
+  {
+   "hub": "Switzerland",
+   "origin": "Burkina Faso",
+   "group": "Sahel (Mali, Burkina Faso, Niger)",
+   "kg": 56586.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=854"
+  },
+  {
+   "hub": "India",
+   "origin": "Ghana",
+   "group": "Ghana",
+   "kg": 15865.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=699&period=2023&cmdCode=7108&flowCode=M&partnerCode=288"
+  },
+  {
+   "hub": "India",
+   "origin": "Guinea",
+   "group": "Guinea",
+   "kg": 17554.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=699&period=2023&cmdCode=7108&flowCode=M&partnerCode=324"
+  },
+  {
+   "hub": "India",
+   "origin": "Côte d'Ivoire",
+   "group": "Other African countries",
+   "kg": 33.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=699&period=2023&cmdCode=7108&flowCode=M&partnerCode=384"
+  },
+  {
+   "hub": "India",
+   "origin": "Mali",
+   "group": "Sahel (Mali, Burkina Faso, Niger)",
+   "kg": 184.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=699&period=2023&cmdCode=7108&flowCode=M&partnerCode=466"
+  },
+  {
+   "hub": "India",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 77119.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=699&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "India",
+   "origin": "Uganda",
+   "group": "Other African countries",
+   "kg": 13771.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=699&period=2023&cmdCode=7108&flowCode=M&partnerCode=800"
+  },
+  {
+   "hub": "India",
+   "origin": "Tanzania",
+   "group": "Other African countries",
+   "kg": 21015.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=699&period=2023&cmdCode=7108&flowCode=M&partnerCode=834"
+  },
+  {
+   "hub": "India",
+   "origin": "Burkina Faso",
+   "group": "Sahel (Mali, Burkina Faso, Niger)",
+   "kg": 1934.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=699&period=2023&cmdCode=7108&flowCode=M&partnerCode=854"
+  },
+  {
+   "hub": "Hong Kong",
+   "origin": "Ghana",
+   "group": "Ghana",
+   "kg": 613.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=344&period=2023&cmdCode=7108&flowCode=M&partnerCode=288"
+  },
+  {
+   "hub": "Hong Kong",
+   "origin": "Mozambique",
+   "group": "Other African countries",
+   "kg": 149.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=344&period=2023&cmdCode=7108&flowCode=M&partnerCode=508"
+  },
+  {
+   "hub": "Hong Kong",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 20903.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=344&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "Hong Kong",
+   "origin": "Zimbabwe",
+   "group": "Other African countries",
+   "kg": 5.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=344&period=2023&cmdCode=7108&flowCode=M&partnerCode=716"
+  },
+  {
+   "hub": "Hong Kong",
+   "origin": "Uganda",
+   "group": "Other African countries",
+   "kg": 6332.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=344&period=2023&cmdCode=7108&flowCode=M&partnerCode=800"
+  },
+  {
+   "hub": "Hong Kong",
+   "origin": "Zambia",
+   "group": "Other African countries",
+   "kg": 2031.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=344&period=2023&cmdCode=7108&flowCode=M&partnerCode=894"
+  },
+  {
+   "hub": "Turkey",
+   "origin": "DR Congo",
+   "group": "Other African countries",
+   "kg": 36.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=180"
+  },
+  {
+   "hub": "Turkey",
+   "origin": "Ghana",
+   "group": "Ghana",
+   "kg": 4268.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=288"
+  },
+  {
+   "hub": "Turkey",
+   "origin": "Liberia",
+   "group": "Other African countries",
+   "kg": 16.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=430"
+  },
+  {
+   "hub": "Turkey",
+   "origin": "Libya",
+   "group": "Other African countries",
+   "kg": 1013.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=434"
+  },
+  {
+   "hub": "Turkey",
+   "origin": "Madagascar",
+   "group": "Other African countries",
+   "kg": 1019.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=450"
+  },
+  {
+   "hub": "Turkey",
+   "origin": "Mali",
+   "group": "Sahel (Mali, Burkina Faso, Niger)",
+   "kg": 275.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=466"
+  },
+  {
+   "hub": "Turkey",
+   "origin": "Morocco",
+   "group": "Other African countries",
+   "kg": 129.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=504"
+  },
+  {
+   "hub": "Turkey",
+   "origin": "Senegal",
+   "group": "Other African countries",
+   "kg": 35.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=686"
+  },
+  {
+   "hub": "Turkey",
+   "origin": "Sierra Leone",
+   "group": "Other African countries",
+   "kg": 8.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=694"
+  },
+  {
+   "hub": "Turkey",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 1709.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "Turkey",
+   "origin": "Sudan",
+   "group": "Sudan",
+   "kg": 38.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=729"
+  },
+  {
+   "hub": "Turkey",
+   "origin": "Egypt",
+   "group": "Other African countries",
+   "kg": 837.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=818"
+  },
+  {
+   "hub": "Turkey",
+   "origin": "Tanzania",
+   "group": "Other African countries",
+   "kg": 8.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=834"
+  },
+  {
+   "hub": "China",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 167100.977,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=156&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "China",
+   "origin": "Egypt",
+   "group": "Other African countries",
+   "kg": 1.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=156&period=2023&cmdCode=7108&flowCode=M&partnerCode=818"
+  },
+  {
+   "hub": "South Africa",
+   "origin": "Botswana",
+   "group": "Other African countries",
+   "kg": 514.32,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=710&period=2023&cmdCode=7108&flowCode=M&partnerCode=72"
+  },
+  {
+   "hub": "South Africa",
+   "origin": "Namibia",
+   "group": "Other African countries",
+   "kg": 10662.2,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=710&period=2023&cmdCode=7108&flowCode=M&partnerCode=516"
+  },
+  {
+   "hub": "South Africa",
+   "origin": "Nigeria",
+   "group": "Other African countries",
+   "kg": 0.1,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=710&period=2023&cmdCode=7108&flowCode=M&partnerCode=566"
+  },
+  {
+   "hub": "South Africa",
+   "origin": "Eswatini",
+   "group": "Other African countries",
+   "kg": 25.61,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=710&period=2023&cmdCode=7108&flowCode=M&partnerCode=748"
+  },
+  {
+   "hub": "United Kingdom",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 32372.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=826&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "United Kingdom",
+   "origin": "Zimbabwe",
+   "group": "Other African countries",
+   "kg": 36.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=826&period=2023&cmdCode=7108&flowCode=M&partnerCode=716"
+  },
+  {
+   "hub": "United Kingdom",
+   "origin": "Tunisia",
+   "group": "Other African countries",
+   "kg": 0.45,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=826&period=2023&cmdCode=7108&flowCode=M&partnerCode=788"
+  },
+  {
+   "hub": "Italy",
+   "origin": "CAR",
+   "group": "Other African countries",
+   "kg": 42.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=380&period=2023&cmdCode=7108&flowCode=M&partnerCode=140"
+  },
+  {
+   "hub": "Italy",
+   "origin": "DR Congo",
+   "group": "Other African countries",
+   "kg": 2.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=380&period=2023&cmdCode=7108&flowCode=M&partnerCode=180"
+  },
+  {
+   "hub": "Italy",
+   "origin": "Morocco",
+   "group": "Other African countries",
+   "kg": 53.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=380&period=2023&cmdCode=7108&flowCode=M&partnerCode=504"
+  },
+  {
+   "hub": "Italy",
+   "origin": "Senegal",
+   "group": "Other African countries",
+   "kg": 28.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=380&period=2023&cmdCode=7108&flowCode=M&partnerCode=686"
+  },
+  {
+   "hub": "Italy",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 8409.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=380&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "Italy",
+   "origin": "Uganda",
+   "group": "Other African countries",
+   "kg": 5.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=380&period=2023&cmdCode=7108&flowCode=M&partnerCode=800"
+  },
+  {
+   "hub": "Italy",
+   "origin": "Egypt",
+   "group": "Other African countries",
+   "kg": 263.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=380&period=2023&cmdCode=7108&flowCode=M&partnerCode=818"
+  },
+  {
+   "hub": "Italy",
+   "origin": "Burkina Faso",
+   "group": "Sahel (Mali, Burkina Faso, Niger)",
+   "kg": 155.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=380&period=2023&cmdCode=7108&flowCode=M&partnerCode=854"
+  },
+  {
+   "hub": "Singapore",
+   "origin": "Ethiopia",
+   "group": "Other African countries",
+   "kg": 3.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=702&period=2023&cmdCode=7108&flowCode=M&partnerCode=231"
+  },
+  {
+   "hub": "Singapore",
+   "origin": "Ghana",
+   "group": "Ghana",
+   "kg": 3.03,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=702&period=2023&cmdCode=7108&flowCode=M&partnerCode=288"
+  },
+  {
+   "hub": "Singapore",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 388.01,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=702&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "Australia",
+   "origin": "Ghana",
+   "group": "Ghana",
+   "kg": 0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=36&period=2023&cmdCode=7108&flowCode=M&partnerCode=288"
+  },
+  {
+   "hub": "Australia",
+   "origin": "Kenya",
+   "group": "Other African countries",
+   "kg": 0.759,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=36&period=2023&cmdCode=7108&flowCode=M&partnerCode=404"
+  },
+  {
+   "hub": "Australia",
+   "origin": "Mali",
+   "group": "Sahel (Mali, Burkina Faso, Niger)",
+   "kg": 0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=36&period=2023&cmdCode=7108&flowCode=M&partnerCode=466"
+  },
+  {
+   "hub": "Australia",
+   "origin": "Senegal",
+   "group": "Other African countries",
+   "kg": 0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=36&period=2023&cmdCode=7108&flowCode=M&partnerCode=686"
+  },
+  {
+   "hub": "Australia",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=36&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "Lebanon",
+   "origin": "Ghana",
+   "group": "Ghana",
+   "kg": 29.139,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=422&period=2023&cmdCode=7108&flowCode=M&partnerCode=288"
+  },
+  {
+   "hub": "Lebanon",
+   "origin": "Liberia",
+   "group": "Other African countries",
+   "kg": 1725.975,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=422&period=2023&cmdCode=7108&flowCode=M&partnerCode=430"
+  },
+  {
+   "hub": "Lebanon",
+   "origin": "Egypt",
+   "group": "Other African countries",
+   "kg": 4.096,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=422&period=2023&cmdCode=7108&flowCode=M&partnerCode=818"
+  },
+  {
+   "hub": "Belgium",
+   "origin": "DR Congo",
+   "group": "Other African countries",
+   "kg": 0.58,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=56&period=2023&cmdCode=7108&flowCode=M&partnerCode=180"
+  },
+  {
+   "hub": "Belgium",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 1665.81,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=56&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "Belgium",
+   "origin": "Burkina Faso",
+   "group": "Sahel (Mali, Burkina Faso, Niger)",
+   "kg": 10.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=56&period=2023&cmdCode=7108&flowCode=M&partnerCode=854"
+  },
+  {
+   "hub": "Canada",
+   "origin": "Congo",
+   "group": "Other African countries",
+   "kg": 2.644,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=124&period=2023&cmdCode=7108&flowCode=M&partnerCode=178"
+  },
+  {
+   "hub": "Canada",
+   "origin": "Mauritania",
+   "group": "Other African countries",
+   "kg": 9381.7,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=124&period=2023&cmdCode=7108&flowCode=M&partnerCode=478"
+  },
+  {
+   "hub": "Canada",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 13279.433,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=124&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "Canada",
+   "origin": "Zimbabwe",
+   "group": "Other African countries",
+   "kg": 11.27,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=124&period=2023&cmdCode=7108&flowCode=M&partnerCode=716"
+  },
+  {
+   "hub": "Canada",
+   "origin": "Eswatini",
+   "group": "Other African countries",
+   "kg": 0.216,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=124&period=2023&cmdCode=7108&flowCode=M&partnerCode=748"
+  },
+  {
+   "hub": "Canada",
+   "origin": "Tunisia",
+   "group": "Other African countries",
+   "kg": 0.001,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=124&period=2023&cmdCode=7108&flowCode=M&partnerCode=788"
+  },
+  {
+   "hub": "Canada",
+   "origin": "Egypt",
+   "group": "Other African countries",
+   "kg": 8028.574,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=124&period=2023&cmdCode=7108&flowCode=M&partnerCode=818"
+  },
+  {
+   "hub": "USA",
+   "origin": "Guinea",
+   "group": "Guinea",
+   "kg": 57.402,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2023&cmdCode=7108&flowCode=M&partnerCode=324"
+  },
+  {
+   "hub": "USA",
+   "origin": "Kenya",
+   "group": "Other African countries",
+   "kg": 12.947,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2023&cmdCode=7108&flowCode=M&partnerCode=404"
+  },
+  {
+   "hub": "USA",
+   "origin": "Mali",
+   "group": "Sahel (Mali, Burkina Faso, Niger)",
+   "kg": 51.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2023&cmdCode=7108&flowCode=M&partnerCode=466"
+  },
+  {
+   "hub": "USA",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 14839.504,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "USA",
+   "origin": "Zimbabwe",
+   "group": "Other African countries",
+   "kg": 24.728,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2023&cmdCode=7108&flowCode=M&partnerCode=716"
+  },
+  {
+   "hub": "USA",
+   "origin": "Eswatini",
+   "group": "Other African countries",
+   "kg": 0.001,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2023&cmdCode=7108&flowCode=M&partnerCode=748"
+  },
+  {
+   "hub": "USA",
+   "origin": "Togo",
+   "group": "Other African countries",
+   "kg": 5.263,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2023&cmdCode=7108&flowCode=M&partnerCode=768"
+  },
+  {
+   "hub": "USA",
+   "origin": "Uganda",
+   "group": "Other African countries",
+   "kg": 2.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2023&cmdCode=7108&flowCode=M&partnerCode=800"
+  },
+  {
+   "hub": "USA",
+   "origin": "Egypt",
+   "group": "Other African countries",
+   "kg": 1016.8,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2023&cmdCode=7108&flowCode=M&partnerCode=818"
+  },
+  {
+   "hub": "Thailand",
+   "origin": "Ethiopia",
+   "group": "Other African countries",
+   "kg": 2.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=764&period=2023&cmdCode=7108&flowCode=M&partnerCode=231"
+  },
+  {
+   "hub": "Thailand",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 60.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=764&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "Thailand",
+   "origin": "Egypt",
+   "group": "Other African countries",
+   "kg": 0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=764&period=2023&cmdCode=7108&flowCode=M&partnerCode=818"
+  },
+  {
+   "hub": "Saudi Arabia",
+   "origin": "South Africa",
+   "group": "South Africa",
+   "kg": 1082.773,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=682&period=2023&cmdCode=7108&flowCode=M&partnerCode=710"
+  },
+  {
+   "hub": "Saudi Arabia",
+   "origin": "Egypt",
+   "group": "Other African countries",
+   "kg": 22.581,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=682&period=2023&cmdCode=7108&flowCode=M&partnerCode=818"
+  }
+ ],
+ "excluded": [
+  {
+   "hub": "UAE",
+   "origin": "Congo",
+   "kg": 454860.74,
+   "usd": 621859030.591,
+   "why": "declared value implies under 3 USD per gram, far below the gold price, so the weight is a recording error",
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=178"
+  },
+  {
+   "hub": "UAE",
+   "origin": "South Sudan",
+   "kg": 14604.0,
+   "usd": 27378590.386,
+   "why": "declared value implies under 3 USD per gram, far below the gold price, so the weight is a recording error",
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=784&period=2023&cmdCode=7108&flowCode=M&partnerCode=728"
+  }
+ ],
+ "reaudit": [
+  {
+   "to": "Switzerland",
+   "kg": 151836.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=757&period=2023&cmdCode=7108&flowCode=M&partnerCode=784"
+  },
+  {
+   "to": "India",
+   "kg": 105930.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=699&period=2023&cmdCode=7108&flowCode=M&partnerCode=784"
+  },
+  {
+   "to": "Hong Kong",
+   "kg": 156561.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=344&period=2023&cmdCode=7108&flowCode=M&partnerCode=784"
+  },
+  {
+   "to": "Turkey",
+   "kg": 156429.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=792&period=2023&cmdCode=7108&flowCode=M&partnerCode=784"
+  },
+  {
+   "to": "China",
+   "kg": 7427.116,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=156&period=2023&cmdCode=7108&flowCode=M&partnerCode=784"
+  },
+  {
+   "to": "United Kingdom",
+   "kg": 66.842,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=826&period=2023&cmdCode=7108&flowCode=M&partnerCode=784"
+  },
+  {
+   "to": "Italy",
+   "kg": 597.0,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=380&period=2023&cmdCode=7108&flowCode=M&partnerCode=784"
+  },
+  {
+   "to": "Singapore",
+   "kg": 12128.65,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=702&period=2023&cmdCode=7108&flowCode=M&partnerCode=784"
+  },
+  {
+   "to": "Lebanon",
+   "kg": 3074.038,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=422&period=2023&cmdCode=7108&flowCode=M&partnerCode=784"
+  },
+  {
+   "to": "Belgium",
+   "kg": 479.19,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=56&period=2023&cmdCode=7108&flowCode=M&partnerCode=784"
+  },
+  {
+   "to": "Canada",
+   "kg": 126.595,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=124&period=2023&cmdCode=7108&flowCode=M&partnerCode=784"
+  },
+  {
+   "to": "USA",
+   "kg": 38.67,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2023&cmdCode=7108&flowCode=M&partnerCode=784"
+  },
+  {
+   "to": "Saudi Arabia",
+   "kg": 42521.876,
+   "src": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=682&period=2023&cmdCode=7108&flowCode=M&partnerCode=784"
+  }
+ ],
+ "total": 1368.4,
+ "dest": {
+  "UAE": 610.1000000000001,
+  "Switzerland": 300.0,
+  "India": 147.5,
+  "Hong Kong": 30.0,
+  "All other": 34.5,
+  "China": 167.1,
+  "United Kingdom": 32.4,
+  "Canada": 30.7,
+  "USA": 16.1
+ }
+}
