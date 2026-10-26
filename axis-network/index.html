@@ -173,7 +173,7 @@ M.forEach(t=>{const col=t.up?'#c0504d':'#4379a8',r=Math.max(7,Math.sqrt(t.c)*3.2
  if(t.q.length)h+=t.q.map(q=>`<div class="tq">${e(q[0])}</div><div>${q[1]} · <a href="${q[2]}" target="_blank" rel="noopener nofollow">${q[2].replace('https://','')}</a></div>`).join('');
  else h+=`<div class="tq">Mentions only; no clear direct threat line in the sample.</div>`+t.ex.map(u=>`<div><a href="${u[0]}" target="_blank" rel="noopener nofollow">${u[0].replace('https://','')}</a> · ${u[1]}</div>`).join('');
  L.circleMarker([t.la,t.lo],{radius:r,color:col,weight:2,fillColor:col,fillOpacity:.55}).addTo(m).bindPopup(h,{maxWidth:280});b.push([t.la,t.lo]);
- if(t.k==='aramco')L.marker([t.la,t.lo],{icon:L.divIcon({className:'case-mk',html:'Oct 13 warning → Oct 14 claimed strike',iconSize:null,iconAnchor:[-14,26]}),interactive:false}).addTo(m)});
+ if(t.k==='aramco')L.marker([t.la,t.lo],{icon:L.divIcon({className:'',html:`<span class="case-mk" style="position:absolute;right:12px;bottom:10px">${innerWidth<600?'Oct 13 warning → strike':'Oct 13 warning → Oct 14 claimed strike'}</span>`,iconSize:[0,0],iconAnchor:[0,0]}),interactive:false}).addTo(m)});
  m.fitBounds(b,{padding:[24,24]})})();
 flow();let rw=innerWidth;addEventListener('resize',()=>{if(innerWidth!==rw){rw=innerWidth;flow()}});
 </script></body></html>
