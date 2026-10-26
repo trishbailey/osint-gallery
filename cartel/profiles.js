@@ -6,7 +6,7 @@ const I2={MEX:"MX",USA:"US",GTM:"GT",HND:"HN",SLV:"SV",COL:"CO",VEN:"VE",ECU:"EC
 const NM={MEX:"Mexico",USA:"United States",GTM:"Guatemala",HND:"Honduras",SLV:"El Salvador",COL:"Colombia",VEN:"Venezuela",ECU:"Ecuador",PER:"Peru",CHL:"Chile",BRA:"Brazil",PRY:"Paraguay",HTI:"Haiti",BOL:"Bolivia",ARG:"Argentina",ESP:"Spain",AUS:"Australia",PRT:"Portugal",CRI:"Costa Rica",PAN:"Panama"};
 const flag=i=>(I2[i]||"").replace(/./g,c=>String.fromCodePoint(127397+c.charCodeAt(0)))||i;
 const EMO={fentanyl:"💊",meth:"⚗️",cocaine:"❄️",heroin:"💉",marijuana:"🌿",drugs_unspecified:"💊",precursors:"🧪",migrant_smuggling:"🚶",human_trafficking:"⛓️",extortion:"💰",kidnapping:"🚐",fuel_theft:"⛽",illegal_mining:"⛏️",logging_fishing:"🪵",arms:"🔫",money_laundering:"🏦",legit_economies:"🏢"};
-const SHORT={drugs_unspecified:"Drugs",precursors:"Precursors",migrant_smuggling:"Migrant smuggling",human_trafficking:"Trafficking",logging_fishing:"Logging/fishing",arms:"Arms",money_laundering:"Laundering",legit_economies:"Legal economies",illegal_mining:"Illegal mining"};
+const SHORT={drugs_unspecified:"Drugs",precursors:"Precursors",migrant_smuggling:"Human smuggling",human_trafficking:"Trafficking",logging_fishing:"Logging/fishing",arms:"Arms",money_laundering:"Laundering",legit_economies:"Legal economies",illegal_mining:"Illegal mining"};
 const J=u=>fetch(u).then(r=>r.json());
 Promise.all([J("data/profiles.json"),J("data/group_countries.json"),J("data/groups_business.json"),J("data/territory.json"),J("data/groups_size.json").catch(()=>({groups:{}}))]).then(([PR,GCN,BIZ,T,SZ])=>{
 

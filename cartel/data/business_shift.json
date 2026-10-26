@@ -342,13 +342,13 @@
   {
    "id": "migrants",
    "title": "Border Patrol southwest border encounters",
-   "unit": "people encountered per year, a proxy for demand for migrant smuggling",
+   "unit": "people encountered per year, a proxy for demand for human smuggling",
    "years": "US fiscal years (Oct to Sep); from March 2020 includes Title 42 expulsions",
    "proxy": true,
    "series": [
     {
      "id": "migrants",
-     "label": "Migrant smuggling (proxy)",
+     "label": "Human smuggling (proxy)",
      "points": [
       {
        "y": 2015,
