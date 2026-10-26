@@ -179,3 +179,22 @@ details summary{cursor:pointer;color:#82B1FF;font-weight:700;font-size:13px}
 .clabels rect{fill:#0b1526;stroke:#24365a;stroke-width:.8}
 .clead{stroke:#9fb3d9;stroke-width:1}.cdot{fill:#9fb3d9}
 .rlabel{fill:#FFE272}
+
+/* v1.6.3 left sidebar legend, muted fills */
+.mapgrid{grid-template-columns:260px minmax(0,1fr)}.mapgrid>#panel{grid-column:1/-1}
+@media(min-width:1800px){.mapgrid{grid-template-columns:260px minmax(0,1fr) 380px}.mapgrid>#panel{grid-column:auto}}
+@media(max-width:800px){.mapgrid{grid-template-columns:1fr}}
+.mapside{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:10px}
+.mapside .layers{flex-direction:column;align-items:stretch}.mapside .chip{flex:none}
+.sideh{margin:0 0 8px;font-size:15px}
+.mapside .legsvg{margin-top:4px;border:0;background:none}
+.litem{cursor:pointer}.litem .lhit{fill:transparent}.litem:hover .lhit,.litem:focus .lhit{fill:#24365a}.litem:focus{outline:none}.litem:focus .lhit{stroke:#FFE272}
+.litem.off>*:not(.lhit){opacity:.35}.litem.off text{text-decoration:line-through}
+.legend .lsub{font-size:13px;fill:#c9d4ea}
+.pline{filter:drop-shadow(0 0 1.5px #0b1526) drop-shadow(0 0 1px #0b1526)}
+.cfloc .lreg{fill:#3E6A9E}
+.mgrid{display:grid;grid-template-columns:220px minmax(0,1fr);gap:16px;align-items:start}@media(max-width:800px){.mgrid{grid-template-columns:1fr}}
+.mside{display:flex;flex-direction:column;gap:4px;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:10px;margin:0}
+.mk{display:flex;align-items:center;gap:8px;background:none;border:1px solid transparent;border-radius:4px;color:#e6e9ef;font:14px "Helvetica Neue",Arial,sans-serif;text-align:left;padding:5px 6px;cursor:pointer;min-height:32px}
+.mk:hover,.mk:focus-visible{background:#24365a;border-color:#FFE272}.mk.off{opacity:.45;text-decoration:line-through}.mk i{flex:none;width:14px;height:14px;border-radius:3px}
+.mbars .bf.off{opacity:.12}
