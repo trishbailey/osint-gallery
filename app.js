@@ -3,6 +3,7 @@
   var lastTrigger = null;
 
   var grid = document.getElementById("tool-grid");
+  var dashGrid = document.getElementById("dashboard-grid");
   var dialog = document.getElementById("preview-dialog");
   var frame = document.getElementById("preview-frame");
   var title = document.getElementById("preview-title");
@@ -57,7 +58,7 @@
   function paintName(name) {
     var heading = document.getElementById("site-name");
     if (!heading) return;
-    var safe = String(name || "Beacon OSINT Tools").trim() || "Beacon OSINT Tools";
+    var safe = String(name || "Beacon Tools & Dashboards").trim() || "Beacon Tools & Dashboards";
     var initial = safe.charAt(0);
     var rest = safe.slice(1);
     heading.replaceChildren();
@@ -156,7 +157,7 @@
     var enterOk = canEnter(tool);
     var article = document.createElement("article");
     article.className = "tile";
-    var heading = document.createElement("h2");
+    var heading = document.createElement("h3");
     heading.textContent = tool.name || "Untitled tool";
     var blurb = document.createElement("p");
     blurb.className = "blurb";
@@ -176,18 +177,34 @@
     return article;
   }
 
-  function renderTools(tools) {
-    grid.replaceChildren();
-    if (!tools.length) {
+  function renderInto(target, items, emptyText) {
+    if (!target) return;
+    target.replaceChildren();
+    if (!items.length) {
       var empty = document.createElement("p");
       empty.className = "empty";
-      empty.textContent = "No tools listed yet.";
-      grid.appendChild(empty);
+      empty.textContent = emptyText;
+      target.appendChild(empty);
       return;
     }
-    tools.forEach(function (tool) {
-      grid.appendChild(renderTool(tool));
+    items.forEach(function (item) {
+      target.appendChild(renderTool(item));
     });
+  }
+
+  function renderTools(tools) {
+    renderInto(grid, tools, "No tools listed yet.");
+  }
+
+  // Dashboards come from the "dashboards" array in tools.json. Only entries
+  // with status "live" and a real URL are shown, so new dashboards can be
+  // added there (status "soon") and switched to "live" when they launch.
+  function renderDashboards(dashboards) {
+    renderInto(
+      dashGrid,
+      dashboards.filter(canEnter),
+      "No dashboards listed yet.",
+    );
   }
 
   function focusables() {
@@ -256,6 +273,7 @@
       );
       setText("site-owner", site.owner, "Beacon Intelligence Group");
       renderTools(Array.isArray(data.tools) ? data.tools : []);
+      renderDashboards(Array.isArray(data.dashboards) ? data.dashboards : []);
     })
     .catch(function () {
       grid.replaceChildren();
@@ -263,5 +281,12 @@
       fail.className = "empty";
       fail.textContent = "The tool list could not be loaded.";
       grid.appendChild(fail);
+      if (dashGrid) {
+        dashGrid.replaceChildren();
+        var failD = document.createElement("p");
+        failD.className = "empty";
+        failD.textContent = "The dashboard list could not be loaded.";
+        dashGrid.appendChild(failD);
+      }
     });
 })();
