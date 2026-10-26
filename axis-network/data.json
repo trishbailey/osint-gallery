@@ -10,31 +10,31 @@
  "by_group": {
   "houthi": {
    "ch": 25,
-   "posts": 72792
+   "posts": 84364
   },
   "irgc": {
-   "ch": 54,
-   "posts": 108732
+   "ch": 5,
+   "posts": 28992
   },
   "hezbollah": {
    "ch": 18,
-   "posts": 27705
+   "posts": 32668
   },
   "hamas": {
    "ch": 10,
-   "posts": 34819
+   "posts": 41182
   },
   "iraqi": {
    "ch": 23,
-   "posts": 40556
+   "posts": 48123
   },
   "aligned": {
    "ch": 4,
-   "posts": 8096
+   "posts": 9528
   },
   "pij": {
    "ch": 1,
-   "posts": 322
+   "posts": 403
   }
  },
  "flow30": [
@@ -4329,5 +4329,11 @@
     "https://t.me/sajadsda/232105"
    ]
   }
+ },
+ "coord": {
+  "channels": 86,
+  "posts": 245260,
+  "start": "2026-09-20",
+  "end": "2026-10-26"
  }
 }

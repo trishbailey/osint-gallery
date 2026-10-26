@@ -40,7 +40,7 @@ gl=lambda g:G[g][0]
 chips=[(f'{f(w["xcopies"])}','cross-group copies in the last 7 days',f'{sg(wchg)}% vs the weekly average of the 3 weeks before'),
  (f'{f(hw)}','of them started on Houthi channels',f'{sg(hwchg)}% vs the earlier weekly average'),
  (f'{f(w["top_pairs"][0][2])}',f'{gl(w["top_pairs"][0][0])} → {gl(w["top_pairs"][0][1])}','the busiest route this week')]
-SRC=[f'Cross-group copies: identical message text (60+ characters after cleaning) posted by channels of two different groups, first post = origin. {f(c["posts"])} public Telegram posts from {c["channels"]} channels, {nice(c["start"])} to {nice(c["end"])}; main window {nice(D["window_start"])} to {nice(D["data_through"])}. Biggest cross-group source channels: '+', '.join(f'@{h} ({f(n)})' for h,_,n in D['topsrc30'])+'.',
+SRC=[f'Cross-group copies: identical message text (60+ characters after cleaning) posted by channels of two different groups, first post = origin. {f(D["coord"]["posts"])} public Telegram posts from {D["coord"]["channels"]} channels analysed for copies, {nice(D["coord"]["start"])} to {nice(D["coord"]["end"])}; main window {nice(D["window_start"])} to {nice(D["data_through"])}. Biggest cross-group source channels: '+', '.join(f'@{h} ({f(n)})' for h,_,n in D['topsrc30'])+'.',
  f'Payment methods (bank cards, bank accounts, donation phone numbers, named campaigns and crypto wallets) found in posts from {p["first"]} to {p["last"]}. Only {p["in_window"]} of {p["edges"]} postings fall inside the 30-day window, so this chart uses the whole payment collection.',
  'Channel group labels follow the channels’ own branding and published reporting. Sadaa al-Masirah (@sadaa_almasirah) is the largest single Houthi source.']
 
