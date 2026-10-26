@@ -3,7 +3,7 @@ name: sync-dashboards
 # and commits the output into /<slug>/. Render auto-deploys beacon-tools on push.
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "7,22,37,52 * * * *"  # off-minute: GitHub drops many :00/:15 runs
   workflow_dispatch:
     inputs:
       slugs: {description: "Space-separated slugs (blank = all)", required: false, default: ""}
