@@ -6,7 +6,7 @@ const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&g
 const fmt=d=>new Date(d).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"});
 const title=s=>String(s||"").toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
 const day=864e5,t0=Date.parse(M.from),t1=Date.parse(M.to),nd=Math.round((t1-t0)/day);
-document.getElementById("drange").textContent=M.from+" to "+M.to;document.getElementById("acc").textContent=M.generated.slice(0,10);
+
 const map=L.map("map",{worldCopyJump:true,preferCanvas:true,minZoom:2,attributionControl:true}).setView([45,30],3);
 map.attributionControl.setPrefix('<a href="https://globalfishingwatch.org" target="_blank" rel="noopener">Powered by Global Fishing Watch.</a> Basemap: Natural Earth');
 L.geoJSON(LAND,{style:{color:"#4d6a99",weight:.7,fillColor:"#2a4066",fillOpacity:1},onEachFeature:(f,l)=>l.bindTooltip(esc(f.properties.n),{sticky:true})}).addTo(map);
