@@ -347,7 +347,7 @@ tonemap['areas'].sort(key=lambda a:-a['top'])
 print('tone window',TWS,END,[ (a['name'],a['countries'],a['sentence']) for a in tonemap['areas']])
 # ---------- map spread: per named cluster ----------
 mapd=[dict(key=c['key'],name=c['name'],desc=c['desc'],n=c['n'],langs=c['langs'],ids=c['ids'][:60],first=c['first'],last=c['last'],accounts=c['accounts'],countries=c['countries'],
-    spread=[dict(s,ll=CENT.get(s['country'])) for s in c['spread']]) for c in named]
+    spread=[dict(s,ll=CENT.get(s['country'])) for s in c['spread']]) for c in named if c['accounts']>=7]  # spread map: only stories with more than 6 account dots
 # ---------- accounts ----------
 pc=collections.Counter(r['h'] for r in rows)
 accts=[dict(h=r['handle'],name=r['name'],type=typ(r),country=r['country_posted'],followers=int(r['followers'] or 0),posts=pc.get(r['handle'],0),ll=CENT.get(r['country_posted'])) for r in acc.values()]
