@@ -38,3 +38,7 @@ The directory lists Spotlight X, Domain Recon, Information Operations Spotlight,
 - Add Drive file IDs in `tools.json` to enable previews.
 - To launch a planned tool, set its `enterUrl` and change its `status` to `live`.
 - Site name and owner remain configurable in `tools.json`.
+
+## Dashboards
+
+The page has two separate sections: **Tools** (the `tools` array in `tools.json`) and **Dashboards** (the `dashboards` array). To add a dashboard (e.g. Africa Brief, Cartel, Water Security, Belt and Road), append an entry to `dashboards` with `id`, `name`, `blurb`, `icon` (optional), `enterUrl`, and `status`. Only entries with `status: "live"` and a real https URL are shown, so an entry can sit as `"soon"` until it launches.
