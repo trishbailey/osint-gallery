@@ -54,3 +54,5 @@ nwk=[v for v in nv if CLS.get(v["imo"])!="other"]
 S["cases"]["network"]["flows"]=[[v["lp"],v["dp"],nm(v["imo"])] for v in nwk]
 S["cases"]["network"]["ships"]=[s for s in S["cases"]["network"]["ships"] if CLS.get(s[0])!="other"]
 print("CASE2",S["cases"]["chain"]["name"],S["cases"]["chain"]["imo"],CLS[S["cases"]["chain"]["imo"]],[(e["t"],e.get("hz"),e.get("hrs")) for e in S["cases"]["chain"]["ev"]],"net",len(nwk),len(nv))
+
+exec(open(os.path.join(H,"routes.py")).read())

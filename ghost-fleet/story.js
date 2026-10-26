@@ -24,22 +24,23 @@ function lastPos(){const last={};M.events.forEach(e=>{if(!last[e.imo]||e.s>last[
  Object.values(last).forEach(e=>{const c=(GF.P[e.imo]||{}).cls||"other";if(c==="other")return;L.circleMarker([e.lat,e.lon],{renderer:cv,radius:5,color:"#0b1526",weight:1,fillColor:CLS[c][1],fillOpacity:.95}).bindTooltip(`<b>${esc(title((GF.P[e.imo]||{}).name||e.imo))}</b><br>${CLS[c][0]}<br>Last recorded ${fmt(e.s)}`).on("click",()=>openP(e.imo)).addTo(lay);b.push([e.lat,e.lon])});return b}
 const B3=["CHN","IND","TUR"],B3C={CHN:"#e05a6a",IND:"#e8913a",TUR:"#4fa3e0"},B3F={CHN:"China",IND:"India",TUR:"Turkey"},B3P={CHN:[34,104],IND:[21,78.5],TUR:[39,35]},B3N=Object.fromEntries(S.dest);
 function big3(){L.geoJSON(GF.LAND,{filter:f=>Object.values(B3F).includes(f.properties.n),style:f=>{const c=B3.find(k=>B3F[k]===f.properties.n);return{color:"#0b1526",weight:1,fillColor:B3C[c],fillOpacity:.7}},onEachFeature:(f,l)=>l.bindTooltip(esc(f.properties.n),{sticky:true})}).addTo(lay);
- const fs=S.flows.filter(f=>B3.includes(f.to)),mx=Math.max(...fs.map(f=>f.n));
- fs.forEach(f=>{const pts=curve(f.a,B3P[f.to]),w=2+9*f.n/mx;L.polyline(pts,{renderer:cv,color:"#0b1526",weight:w+3,opacity:.9}).addTo(lay);
-  L.polyline(pts,{renderer:cv,color:B3C[f.to],weight:w,opacity:1}).bindTooltip(`<b>${esc(f.from)} → ${esc(cn(f.to))}</b><br>${f.n} trips in 12 months`,{sticky:true}).addTo(lay)});
+ const fs=S.flows.filter(f=>B3.includes(f.to)),rs=(S.routes||[]).slice().sort((x,y)=>y.n-x.n),mx=Math.max(...rs.map(r=>r.n));
+ // sea-lane routes precomputed in the build (searoute); widest drawn first so thinner lanes stay visible on top
+ rs.forEach(r=>L.polyline(r.line,{renderer:cv,color:"#0b1526",weight:2+9*r.n/mx+3,opacity:.9,interactive:false,lineJoin:"round"}).addTo(lay));
+ rs.forEach(r=>L.polyline(r.line,{renderer:cv,color:B3C[r.to],weight:2+9*r.n/mx,opacity:1,lineJoin:"round",smoothFactor:1.5}).bindTooltip(`<b>${esc(r.from)} → ${esc(cn(r.to))}</b><br>${r.n} trips in 12 months`,{sticky:true}).addTo(lay));
  const ph=GF.phone(),seen={};
  // port labels: fixed sea anchors + thin leader lines (geographic, so they hold at any zoom)
- const PA={Kozmino:[39.6,134.6],Primorsk:[62.3,21],"Ust-Luga":[57.2,19.5],Novorossiysk:[43.2,30],Taman:[47.6,38.5],Murmansk:[73,40]};if(ph)Object.assign(PA,{Kozmino:[39.5,126],Primorsk:[64.5,31],Novorossiysk:[44.2,33.5]});const PH=["Kozmino","Primorsk","Novorossiysk","Murmansk"];
+ const PA={Kozmino:[39.6,134.6],Primorsk:[62.3,21],"Ust-Luga":[57.8,26.5],Novorossiysk:[42.2,39.8],Taman:[47.6,38.5],Murmansk:[73,40]};if(ph)Object.assign(PA,{Kozmino:[39.5,126],Primorsk:[64.5,31],Novorossiysk:[42.2,39.8]});const PH=["Kozmino","Primorsk","Novorossiysk","Murmansk"];
  fs.forEach(f=>{if(seen[f.from])return;seen[f.from]=1;const dot=L.circleMarker(f.a,{radius:5,color:"#0b1526",weight:2,fillColor:"#f5f7fa",fillOpacity:1}).bindTooltip(esc(f.from)+" (loading port)").addTo(lay);
   const an=PA[f.from];if(!an||(ph&&!PH.includes(f.from)))return;
   L.polyline([f.a,an],{color:"#f5f7fa",weight:1,opacity:.8,interactive:false}).addTo(lay);
   L.marker(an,{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="pl">${esc(f.from)}</div>`}),interactive:false}).addTo(lay)});
  // country names: small and light; counts in sea callouts joined by leader lines
- const CNP={CHN:[37.5,93],IND:[23.5,77],TUR:[38.6,32.2]},BA={CHN:[16,115],IND:[13,63],TUR:ph?[30.3,33.5]:[33,21]};
+ const CNP={CHN:[37.5,93],IND:[23.5,77],TUR:[38.6,32.2]},BA=GF.phone()?{CHN:[19,130],IND:[-4,72],TUR:[27,14]}:{CHN:[19,130],IND:[5,65],TUR:[35.3,29.5]};
  B3.forEach(c=>{
   L.polyline([B3P[c],BA[c]],{color:B3C[c],weight:1.5,opacity:1,interactive:false}).addTo(lay);
   L.marker(BA[c],{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="b3l" style="border-color:${B3C[c]}"><b style="color:${B3C[c]}">${B3N[c]||0}</b><span>trips · ${Math.round(100*(B3N[c]||0)/S.voyages)}%</span></div>`}),interactive:false}).addTo(lay)});
- return ph?[[8,14],[72,138]]:[[8,20],[72,138]]}
+ return ph?[[0,-6],[70,136]]:[[-2,-12],[72,138]]}
 const C=S.cases,ch=C.chain,id=C.identity,nw=C.network,dk=C.dark;
 const loHrs=ch.ev.filter(e=>e.t==="loitering"&&e.hz).reduce((a,e)=>a+(e.hrs||0),0),loHz=(ch.ev.find(e=>e.t==="loitering"&&e.hz)||{}).hz;
 const flagsY=new Set(id.hist.filter(h=>h[2]>="2025-01-01").map(h=>h[1]));
@@ -75,7 +76,7 @@ const box=document.getElementById("story"),cards=document.getElementById("chapte
 cards.innerHTML=CH.map((c,i)=>`<article class="chap" data-i="${i}" tabindex="0"><h3>${c.t}</h3><p>${c.c}</p>${c.x||""}${c.key?`<div class="key">${c.key.map(k=>`<span><i style="background:${k[0]}"></i>${k[1]}</span>`).join("")}</div>`:""}${c.ship?`<button class="lnk" data-p="${c.ship}">Open ship profile</button>`:""}${c.chips?`<div>${c.chips.map(s=>`<span class="chip" role="button" tabindex="0" data-p="${s[0]}">${esc(title(s[1]))}</span>`).join("")}</div>`:""}</article>`).join("");
 cards.querySelectorAll("[data-p]").forEach(b=>b.onclick=e=>{e.stopPropagation();openP(b.dataset.p)});
 let cur=0,mode="story";
-function fit(b){if(b&&b.length)map.flyToBounds(L.latLngBounds(b).pad(.15),{duration:.8,maxZoom:6})}
+function fit(b){map.options.zoomSnap=.25;if(GF.phone())map.setMinZoom(1);map.invalidateSize();if(b&&b.length)map.flyToBounds(L.latLngBounds(b).pad(.15),{duration:.8,maxZoom:6})}
 function go(i){cur=Math.max(0,Math.min(CH.length-1,i));lay.clearLayers();hideRaw();fit(CH[cur].d());
  cards.querySelectorAll(".chap").forEach((c,j)=>c.classList.toggle("on",j===cur));document.getElementById("cpos").textContent=`${cur+1} / ${CH.length}`;
  const el=cards.children[cur];if(GF.phone())cards.scrollTo({left:el.offsetLeft-cards.offsetLeft,behavior:"smooth"})}
