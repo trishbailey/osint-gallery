@@ -255,19 +255,15 @@ const panel=document.getElementById('panel');
  card.append('h3').html(d=>`<span class="sw" style="background:${tpColor(d.name)||'transparent'};border:2px solid ${tpColor(d.name)||OTHER}"></span>${esc(d.name)} <span class="m">${d.bs.length} burst${d.bs.length>1?'s':''}</span>`);
  card.selectAll('button.br').data(d=>d.bs).join('button').attr('class','br').on('click',(e,b)=>openBurst(b))
   .html(b=>`<span class="bw">${fd(b.start)} to ${fd(b.end)}</span><span class="bn"><b>${b.accounts}</b> accounts · <b>${b.countries}</b> countries</span><span class="bq">“${esc(b.quote)}”</span>`);
- const days=BU.days,cs=30,lw=110,top=34,w=lw+24*cs+10,h=top+days.length*cs+12;
- const cell={};BU.bursts.forEach(b=>b.ids.forEach(id=>{const p=PO[id];if(!p)return;const k=p.t.slice(0,13);(cell[k]=cell[k]||[]).push(b)}));
- const svg=d3.select('#calv').append('svg').attr('class','native').attr('width',w).attr('height',h).attr('role','img').attr('aria-label','Calendar of bursts by day and hour, coloured by talking point');
- svg.selectAll('text.hr').data(d3.range(0,24,3)).join('text').attr('class','hr').attr('x',d=>lw+d*cs+cs/2).attr('y',top-10).attr('text-anchor','middle').attr('font-size',13).text(d=>String(d).padStart(2,'0')+':00');
- const gd=svg.selectAll('g.d').data(days).join('g').attr('class','d').attr('transform',(d,i)=>`translate(0,${top+i*cs})`);
- gd.append('text').attr('x',lw-12).attr('y',cs/2+5).attr('text-anchor','end').attr('font-size',13).text(d=>fday(d));
- const data=d=>d3.range(24).map(hh=>{const bs=cell[d+'T'+String(hh).padStart(2,'0')]||[];const t=d3.greatest(d3.rollups(bs,v=>v.length,b=>b.name),x=>x[1]);return {d,hh,n:bs.length,a:BU.cal[d]?.all[hh]||0,name:t?t[0]:null,bs:[...new Set(bs)]}});
- const cells=gd.selectAll('rect.c').data(data).join('rect').attr('class','c').attr('x',d=>lw+d.hh*cs+2).attr('y',2).attr('width',cs-4).attr('height',cs-4).attr('rx',3)
-  .attr('fill',d=>d.name?(tpColor(d.name)||'#0f1b31'):d.a?'#172a4b':'#101d35').attr('stroke',d=>d.name&&!tpColor(d.name)?OTHER:'none').attr('stroke-width',2.5)
-  .style('cursor',d=>d.name?'pointer':'default').on('click',(e,d)=>{if(d.bs.length)openBurst(d.bs[0])});
- tipOn(cells,d=>`<b>${fday(d.d)}, ${String(d.hh).padStart(2,'0')}:00 UTC</b><br>${d.a} posts${d.name?`<br>Burst: <b>${esc(d.name)}</b> (${d.n} posts)<br>Click to read them`:''}`);
+ const t3=d3.select('#top3').selectAll('div.t3').data(BU.top3||[]).join('div').attr('class','t3').attr('role','button').attr('tabindex',0)
+  .attr('aria-label',t=>`${BU.bursts[t.i].accounts} accounts: ${t.title}. Open the posts`)
+  .on('click',(e,t)=>{if(e.target.closest('a'))return;openBurst(BU.bursts[t.i],t.title)}).on('keydown',(e,t)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openBurst(BU.bursts[t.i],t.title)}});
+ t3.html((t,k)=>{const b=BU.bursts[t.i],p=PO[t.sample];return `<div class="t3r">#${k+1}</div><h3>${esc(t.title)}</h3><div class="t3d">${fday(b.start.slice(0,10))}</div>
+  <div class="t3n"><span><b>${b.accounts}</b> accounts</span><span><b>${b.countries}</b> countries</span><span>spread in <b>${fdur(t.spread_min)}</b></span></div>
+  <p class="t3q">“${esc(b.quote.length>140?b.quote.slice(0,140).replace(/\s+\S*$/,'')+'…':b.quote)}”</p>
+  ${p?`<a class="t3a" href="https://x.com/${encodeURIComponent(p.h)}/status/${t.sample}" target="_blank" rel="noopener">Sample post by @${esc(p.h)} on x.com ↗</a>`:''}`});
 })();
-function openBurst(b){d3.select('#ph').text(b.name);
+function openBurst(b,ttl){d3.select('#ph').text(ttl||b.name);
  const body=d3.select('#pbody').html(`<p class="muted">${b.accounts} accounts in ${b.countries} countries and organisations, ${fd(b.start)} to ${fd(b.end)}</p>`);
  b.ids.forEach(id=>{const p=PO[id];if(!p)return;body.append('div').attr('class','post').html(`<div class="m">@${esc(p.h)} · ${esc(p.country)} · ${KIND[p.k][0]} · ${fd(p.t)}</div><div>${esc(p.text)}</div><a href="https://x.com/${encodeURIComponent(p.h)}/status/${id}" target="_blank" rel="noopener">Open on x.com ↗</a>`)});
  panel.hidden=false;document.getElementById('pclose').focus()}

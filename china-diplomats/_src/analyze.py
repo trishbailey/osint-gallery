@@ -168,11 +168,14 @@ for n,m in enumerate(clusters[:40]):
             bursts.append(dict(cl=n,name=CL[n]['name'] or CL[n]['sample'][:90],named=bool(CL[n]['name']),start=rows[grp[0][1]]['t'],end=rows[grp[-1][1]]['t'],accounts=len(hs),
               countries=len({rows[i]['country'] for i in mem}),quote=q[:220]+('…' if len(q)>220 else ''),quote_en=bool(en),langs=dict(collections.Counter(rows[i]['lang'] for i in mem)),ids=[rows[i]['id'] for i in mem]))
 burst_ids={i for b in bursts for i in b['ids']}
-cal={}
-for r in rows:
-    d=r['t'][:10];hh=int(r['t'][11:13]);c=cal.setdefault(d,dict(all=[0]*24,burst=[0]*24))
-    c['all'][hh]+=1
-    if r['id'] in burst_ids:c['burst'][hh]+=1
+_KT=[('National Day','National Day greetings'),('Long March','Long March 90th anniversary'),('Global Governance','Global Governance Initiative'),('shared future','A community with a shared future'),('Taiwan','Taiwan and the UN seat')]
+# top 3 bursts (most distinct accounts, one per message) within the last 30 days
+_c30=(T(END)-dt.timedelta(days=30)).isoformat().replace('+00:00','Z');_seen=set();top3=[]
+for b in sorted([b for b in bursts if b['start']>=_c30],key=lambda b:(-b['accounts'],-b['countries'],b['start'])):
+    if b['name'] in _seen:continue
+    _ttl=b['name'] if b['named'] else next((v for k,v in _KT if k.lower() in (b['name']+' '+b['quote']).lower()),' '.join(b['name'].split()[:8])+'…')
+    _seen.add(b['name']);top3.append(dict(i=bursts.index(b),title=_ttl,spread_min=round((T(b['end'])-T(b['start'])).total_seconds()/60),sample=b['ids'][0]))
+    if len(top3)==3:break
 # ---------- amplifiers ----------
 E=collections.Counter();fast=collections.Counter();delays=[]
 for r in rows:
@@ -364,7 +367,7 @@ pp={r['id']:dict(h=r['h'],t=r['t'],k=r['k'],text=r['text'][:400],country=r['coun
 _tpn=sorted({r['tp'] for r in rows if r.get('tp')})
 archive=dict(narratives=_tpn,kinds=['post','repost','quote','reply'],rows=[[r['id'],r['h'],r['t'][:16],['post','repost','quote','reply'].index(r['k']) if r['k'] in ('post','repost','quote','reply') else 0,r['country'],_tpn.index(r['tp']) if r.get('tp') else -1,r['text']] for r in rows])
 head['list_checked']=dt.datetime.fromtimestamp(os.path.getmtime(os.path.join(H,'accounts.csv'))).strftime('%-d %b %Y')
-for nm_,obj in [('archive',archive),('headline',head),('stream',stream),('matrix',matrix),('bursts',dict(bursts=bursts,cal=cal,days=days)),('network',net),('ripples',pick),('tone',tonemap),('spread',mapd),('accounts',accts),('posts',pp)]:
+for nm_,obj in [('archive',archive),('headline',head),('stream',stream),('matrix',matrix),('bursts',dict(bursts=bursts,top3=top3)),('network',net),('ripples',pick),('tone',tonemap),('spread',mapd),('accounts',accts),('posts',pp)]:
     json.dump(obj,open(os.path.join(OUT,nm_+'.json'),'w'),ensure_ascii=False,separators=(',',':'))
 with open(os.path.join(H,'..','posts_export.csv'),'w',newline='') as fo:
     w=csv.writer(fo);w.writerow(['id','created_at_utc','handle','country','account_type','kind','lang','text','referenced_author','likes','reposts','views','cluster','url'])
