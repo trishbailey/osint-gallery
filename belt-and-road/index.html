@@ -2,16 +2,23 @@
 <title>Belt and Road Dashboard | Beacon Intelligence Group</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-FE6CZGWX0J');gtag('config','G-Z61EKRP8QV');</script>
-<link rel="stylesheet" href="style.css?v=0.8"></head><body>
-<header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">BELT AND ROAD · v0.8</span></a>
-<nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#top">Map</a><a href="#tbl">Projects</a><a href="#method">Method</a><a href="data/belt_and_road.csv">Download CSV</a></nav></header>
-<section class="hero"><div class="wrap"><p class="eyebrow">Actions, not statements</p><h1>China's Belt and Road: what was built, lent and leased</h1>
-<p class="lead">Ports, railways, mines, military and dual-use sites, and major loans across Africa, South Asia, Southeast Asia, Central Asia, the Middle East, Europe and the Balkans, the Pacific Islands and South America. Each entry gives what China gets, the host country's case, a confidence level and sources. Data as of <span id="dd"></span>.</p></div></section>
-<main class="wrap" id="top"><div class="regions" id="regions" role="group" aria-label="Region filter"></div>
+<link rel="stylesheet" href="style.css?v=0.9"></head><body>
+<header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">BELT AND ROAD · v0.9</span></a>
+<nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#top">Map</a><a href="#cards">Projects</a><a id="sheet" href="https://docs.google.com/spreadsheets/d/18CBdo9rBt-fisHeLSca_YV4sPFoRThlBO6J3W23OJ9Y/edit" target="_blank" rel="noopener">Full data (Google Sheet)</a></nav></header>
+<main class="wrap" id="top">
+<h1 id="title">China's Belt and Road: All regions</h1>
+<div class="stats" id="stats" aria-live="polite"></div>
+<p class="prompt" id="rprompt">Select a region to zoom the map.</p>
+<div class="regions" id="regions" role="group" aria-labelledby="rprompt"></div>
 <div id="africa-brief" class="brief" hidden><strong>Africa view:</strong> <a href="#" target="_blank" rel="noopener">Read the Africa Brief &rarr;</a></div>
-<div class="filters" id="filters"></div>
-<div class="grid"><div class="mapbox"><svg id="map" viewBox="0 0 960 500" role="img" aria-label="World map of Chinese-backed projects"></svg></div>
-<aside id="panel" class="card"><p class="muted">Click a marker or a table row for details.</p></aside></div>
-<table id="tbl"><thead><tr><th>Name</th><th>Country</th><th>Region</th><th>Type</th><th>Confidence</th></tr></thead><tbody></tbody></table>
-<p class="muted" id="method">Confidence: high = primary document or multiple reputable reports; medium = single report or unconfirmed share; low = claim only. No .cn sources are used. Basemap: Natural Earth 1:110m.</p></main>
-<script src="vendor/d3.min.js"></script><script src="app.js?v=0.8"></script></body></html>
+<div class="banner" role="note">Click or tab to any marker or project card to open its details.</div>
+<div class="mapbox"><svg id="map" viewBox="0 0 960 500" role="group" aria-label="Map of Chinese-backed projects"></svg></div>
+<p class="prompt" id="tprompt">Toggle a project type to show or hide it on the map. Each button is also the map key.</p>
+<div class="legend" id="legend" role="group" aria-labelledby="tprompt"></div>
+<section id="agg" hidden><h2>Continent-wide loan totals</h2><p class="muted">These are totals across many countries, so they are not shown as places on the map.</p><div class="cards" id="aggcards"></div></section>
+<section id="cards"><h2 id="ctitle">Projects</h2><div class="cards" id="pcards"></div></section>
+<p class="muted small">Data as of <span id="dd"></span>. Basemap: Natural Earth.</p>
+</main>
+<div id="scrim" hidden></div>
+<aside id="panel" role="dialog" aria-modal="true" aria-labelledby="ptitle" aria-hidden="true" tabindex="-1"><button type="button" class="close" id="close" aria-label="Close details">&times; Close</button><div id="pbody"></div></aside>
+<script src="vendor/d3.min.js"></script><script src="app.js?v=0.9"></script></body></html>
