@@ -87,12 +87,35 @@ Each subpath has a `.source` file showing the repo commit that is live (e.g. `/c
 
 1. In `dashboards.json`, find the reserved entry, set `repo` (`owner/name`), `private`, `build` (or `""`), `publish` (usually `public`), `oldUrl` (or `""`), and change `status` to `live`.
 2. Add a card to the `dashboards` array in `tools.json` with `"id"` equal to the entry's `cardId` (the slug) and `"status": "live"`. The sync sets its `enterUrl` to `/<slug>/` after the first successful build.
-3. If the repo is private, give the `DASHBOARD_READ_TOKEN` secret read access to it (see below).
+3. If the repo is private, set up a read-only deploy key for it (see "Access to private repos" below).
 4. Merge. The push runs the sync immediately (Actions → sync-dashboards → Run workflow also works, optionally with a slug).
 
-### Secret needed for private repos
+### Access to private repos (read-only deploy keys)
 
-`DASHBOARD_READ_TOKEN` is a repository secret in `trishbailey/osint-gallery`. It is a fine-grained GitHub token with **Contents: Read-only** on the private dashboard repos (`world-brief`, `critical-minerals`, `ukraine-money-flows`, plus future ones). Until it is set, private dashboards are skipped and the log says so. Public repos (e.g. `cartel-dashboard`) need no token. The token is never printed. The script redacts it from error output.
+Each private dashboard repo has its own **read-only deploy key** (repo Settings → Deploy keys, titled "osint-gallery sync (read-only)"). The matching private key is an Actions secret in `trishbailey/osint-gallery`:
+
+| Repo | Secret |
+|---|---|
+| `trishbailey/world-brief` | `DEPLOY_KEY_WORLD_BRIEF` |
+| `trishbailey/critical-minerals` | `DEPLOY_KEY_CRITICAL_MINERALS` |
+| `trishbailey/ukraine-money-flows` | `DEPLOY_KEY_UKRAINE_MONEY_FLOWS` |
+
+The workflow writes GitHub's SSH host keys (from `https://api.github.com/meta`) to a known_hosts file. The script clones each private repo from `git@github.com:<repo>.git`, with `GIT_SSH_COMMAND` using only that repo's key and strict host checking. The key goes into a 0600 temp file that is deleted right after the clone. Secrets are never passed to build commands or printed. No personal access token is used.
+
+**To add a private dashboard:**
+1. Generate an ed25519 key pair in a temp dir.
+2. Add the public key to the new repo as a deploy key with "Allow write access" **off**.
+3. Save the private key as the secret `DEPLOY_KEY_<SLUG_IN_CAPS>`, e.g. `gh secret set DEPLOY_KEY_WATER_SECURITY -R trishbailey/osint-gallery < keyfile`.
+4. Delete the local key with `shred -u`.
+5. Set `"deployKeySecret": "DEPLOY_KEY_<SLUG>"` on its `dashboards.json` entry, and add the same `env:` line to the "Build dashboards into subpaths" step in `.github/workflows/sync-dashboards.yml`.
+
+Public repos need no key.
+
+### Concurrent edits
+
+Several bots work on this repo at once. To avoid overwriting each other:
+- Change only **your own folder** (`/<slug>/`) and **your own entry** in `dashboards.json` (and your own card in `tools.json`). Don't reformat or reorder other entries, and don't touch other dashboards' folders or workflows.
+- **Rebase onto the latest `main` right before merging**, then check that the PR diff contains only your files.
 
 ### Cost
 

@@ -23,9 +23,15 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
+      - name: GitHub SSH known_hosts (from api.github.com/meta)
+        run: |
+          curl -fsSL https://api.github.com/meta | python3 -c "import json,sys;print(chr(10).join('github.com '+k for k in json.load(sys.stdin)['ssh_keys']))" > "$RUNNER_TEMP/gh_known_hosts"
+          echo "GITHUB_KNOWN_HOSTS_FILE=$RUNNER_TEMP/gh_known_hosts" >> "$GITHUB_ENV"
       - name: Build dashboards into subpaths
         env:
-          DASHBOARD_READ_TOKEN: ${{ secrets.DASHBOARD_READ_TOKEN }}
+          DEPLOY_KEY_WORLD_BRIEF: ${{ secrets.DEPLOY_KEY_WORLD_BRIEF }}
+          DEPLOY_KEY_CRITICAL_MINERALS: ${{ secrets.DEPLOY_KEY_CRITICAL_MINERALS }}
+          DEPLOY_KEY_UKRAINE_MONEY_FLOWS: ${{ secrets.DEPLOY_KEY_UKRAINE_MONEY_FLOWS }}
         run: python3 scripts/sync_dashboards.py ${{ github.event.inputs.slugs }} ${{ github.event.client_payload.slug }}
       - name: Commit if changed
         run: |

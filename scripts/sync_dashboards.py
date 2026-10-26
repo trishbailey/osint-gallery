@@ -4,14 +4,16 @@ into /<slug>/ of this site, rewriting root-relative paths for the subpath.
 
 Safety: each dashboard is built in a temp dir; /<slug>/ is replaced only if
 clone + build succeed. On any failure the previous version stays in place.
-Never prints tokens. Usage: python3 scripts/sync_dashboards.py [slug ...]
+Private repos are cloned over SSH with a per-repo read-only deploy key
+(env var named by deployKeySecret). Never prints keys. Usage: python3 scripts/sync_dashboards.py [slug ...]
 """
 import json, os, re, shutil, subprocess, sys, tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CFG = json.load(open(os.path.join(ROOT, "dashboards.json")))
 SITE = CFG["site"].rstrip("/")
-TOKEN = os.environ.get("DASHBOARD_READ_TOKEN", "").strip()
+KNOWN_HOSTS = os.environ.get("GITHUB_KNOWN_HOSTS_FILE", "")
+SECRET_ENVS = {d["deployKeySecret"] for d in CFG["dashboards"] if d.get("deployKeySecret")}
 GA_MAIN, GA_SITE = "G-Z61EKRP8QV", "G-FE6CZGWX0J"
 TEXT = (".html", ".htm", ".css", ".js", ".json", ".xml", ".txt", ".webmanifest", ".svg")
 
@@ -19,8 +21,8 @@ def run(cmd, cwd, env=None):
     return subprocess.run(cmd, cwd=cwd, env=env, shell=isinstance(cmd, str),
                           stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
 
-def scrub(s):
-    return s.replace(TOKEN, "***") if TOKEN else s
+def clean_env():
+    return {k: v for k, v in os.environ.items() if k not in SECRET_ENVS}
 
 def rewrite(text, slug, old_url, ext):
     base = "/" + slug + "/"
@@ -48,21 +50,34 @@ def rewrite(text, slug, old_url, ext):
 
 def build(d):
     slug, repo = d["slug"], d["repo"]
-    if d.get("private") and not TOKEN:
-        print(f"[{slug}] SKIP: private repo and DASHBOARD_READ_TOKEN is not set; previous version kept")
+    key_name = d.get("deployKeySecret", "")
+    key = os.environ.get(key_name, "") if key_name else ""
+    if d.get("private") and not key:
+        print(f"[{slug}] SKIP: private repo and secret {key_name or '(no deployKeySecret)'} is empty; previous version kept")
         return False
     tmp = tempfile.mkdtemp(prefix="dash-")
     try:
-        url = (f"https://x-access-token:{TOKEN}@github.com/{repo}.git" if TOKEN
-               else f"https://github.com/{repo}.git")
-        r = run(["git", "clone", "--depth", "1", "--branch", d.get("branch", "main"), url, "src"], tmp)
+        env = clean_env()
+        kp = ""
+        if key:
+            if not (KNOWN_HOSTS and os.path.isfile(KNOWN_HOSTS)):
+                print(f"[{slug}] FAIL: GITHUB_KNOWN_HOSTS_FILE missing"); return False
+            kp = os.path.join(tmp, "deploy_key")
+            fd = os.open(kp, os.O_WRONLY | os.O_CREAT, 0o600)
+            os.write(fd, (key.strip() + "\n").encode()); os.close(fd)
+            env["GIT_SSH_COMMAND"] = (f"ssh -i {kp} -o IdentitiesOnly=yes -o BatchMode=yes "
+                                      f"-o StrictHostKeyChecking=yes -o UserKnownHostsFile={KNOWN_HOSTS}")
+            url = f"git@github.com:{repo}.git"
+        else:
+            url = f"https://github.com/{repo}.git"
+        r = run(["git", "clone", "--depth", "1", "--branch", d.get("branch", "main"), url, "src"], tmp, env)
+        if kp: os.remove(kp)
         if r.returncode:
-            print(f"[{slug}] FAIL clone: {scrub(r.stdout)[-800:]}"); return False
+            print(f"[{slug}] FAIL clone: {r.stdout[-800:]}"); return False
         src = os.path.join(tmp, "src")
         sha = run(["git", "rev-parse", "HEAD"], src).stdout.strip()
         if d.get("build"):
-            env = {k: v for k, v in os.environ.items() if k != "DASHBOARD_READ_TOKEN"}
-            r = run(d["build"], src, env)
+            r = run(d["build"], src, clean_env())
             if r.returncode:
                 print(f"[{slug}] FAIL build at {sha[:7]}: {r.stdout[-1500:]}"); return False
         pub = os.path.join(src, d.get("publish", "public"))

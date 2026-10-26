@@ -10,7 +10,8 @@
       "publish": "public",
       "oldUrl": "https://world-brief-tpnb.onrender.com",
       "status": "live",
-      "cardId": "world-brief"
+      "cardId": "world-brief",
+      "deployKeySecret": "DEPLOY_KEY_WORLD_BRIEF"
     },
     {
       "slug": "critical-minerals",
@@ -20,7 +21,8 @@
       "publish": "public",
       "oldUrl": "https://critical-minerals-pzcr.onrender.com",
       "status": "live",
-      "cardId": "critical-minerals"
+      "cardId": "critical-minerals",
+      "deployKeySecret": "DEPLOY_KEY_CRITICAL_MINERALS"
     },
     {
       "slug": "ukraine-money-flows",
@@ -30,7 +32,8 @@
       "publish": "public",
       "oldUrl": "https://ukraine-money-flows.onrender.com",
       "status": "live",
-      "cardId": "ukraine-money-flows"
+      "cardId": "ukraine-money-flows",
+      "deployKeySecret": "DEPLOY_KEY_UKRAINE_MONEY_FLOWS"
     },
     {
       "slug": "cartel",
