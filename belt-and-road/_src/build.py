@@ -27,6 +27,21 @@ for p in ("data/belt_and_road.csv",):
     with open(os.path.join(R,p),"w",newline="") as f:
         w=csv.DictWriter(f,F); w.writeheader()
         for e in L: w.writerow({**e,"sources":"; ".join(e["sources"])})
-json.dump({"data_date":datetime.date.today().isoformat(),"glossary":json.load(open(os.path.join(S,"glossary.json"))),"iso":json.load(open(os.path.join(S,"iso.json"))),"entries":L},open(os.path.join(R,"data/bri.json"),"w"),indent=1)
+M=json.load(open(os.path.join(S,"meta.json")));GL=json.load(open(os.path.join(S,"glossary.json")))
+# Gate: fail the build if any acronym is left without a plain-words expansion.
+bare=set()
+for e in L:
+    for k in ("name","value","backer","china_gets","host_case","confidence_reason"):
+        t=e[k]
+        for key in sorted(GL,key=len,reverse=True): t=re.sub(r"(?<![A-Za-z])"+re.escape(key)+r"(?![A-Za-z])"," ",t)
+        bare|={w for w in re.findall(r"(?<![A-Za-z])[A-Z][A-Z0-9&]{1,}[a-z]?(?![A-Za-z])",t) if w not in M["allow"] and not re.fullmatch(r"[A-Z]?\d+",w)}
+if bare: raise SystemExit("bare acronyms without glossary entries: "+", ".join(sorted(bare)))
+ids={e["id"] for e in L}
+assert all(v["id"] in ids for v in M["events"]), "what's new refers to a missing id"
+counts={r:sum(1 for e in L if e["region"]==r) for r in M["regions_added"]}
+whats_new=sorted([dict(date=v["date"],id=v["id"],text=v["text"]) for v in M["events"]]+[dict(date=d,region=r,text=f"Region added: {r} ({counts[r]} projects)") for r,d in M["regions_added"].items() if r=="central-america-caribbean"],key=lambda x:x["date"],reverse=True)
+import sys
+if "--check" in sys.argv: raise SystemExit(0)
+json.dump({"data_date":datetime.date.today().isoformat(),"glossary":json.load(open(os.path.join(S,"glossary.json"))),"iso":json.load(open(os.path.join(S,"iso.json"))),"whats_new":whats_new,"regions_added":M["regions_added"],"entries":L},open(os.path.join(R,"data/bri.json"),"w"),indent=1)
 from collections import Counter
 print(len(L),"entries",Counter(e["region"] for e in L),Counter(e["type"] for e in L))

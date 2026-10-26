@@ -1,4 +1,4 @@
-/* v1.0 (v0.7 theme): dark theme matched to the Cartel dashboard (trishbailey/cartel-dashboard public/style.css variables) */
+/* v1.1 (v0.7 theme): dark theme matched to the Cartel dashboard (trishbailey/cartel-dashboard public/style.css variables) */
 :root{--bg:#0b1526;--panel:#12203a;--panel2:#0f1b31;--line:#24365a;--text:#e6e9ef;--muted:#9aa6b8;--gold:#c8a24a;--red:#c0504d;--land:#1b2c4a}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Arial,Helvetica,sans-serif}
@@ -83,3 +83,26 @@ main{padding:0;min-width:0}
 .nw{white-space:nowrap}
 abbr{text-decoration:none}
 @media(max-width:860px){.layout{grid-template-columns:1fr}#side{position:static;max-height:none}#side .regions{flex-direction:row;flex-wrap:wrap}#side .regions button{width:auto}}
+
+/* v1.1: locator inset, place highlights, site areas, what's new, larger mobile map */
+#loc{width:100%;height:auto;display:block;background:#0f1b31;border:1px solid #24365a;border-radius:6px;margin-bottom:10px}
+#loc .lland{fill:#1b2c4a;stroke:#24365a;stroke-width:.6}
+#loc .lland.lreg{fill:#3b5a4a}
+#loc .lbox{fill:none;stroke:#c8a24a;stroke-width:4}
+#filters>summary{cursor:pointer;min-height:44px;display:flex;align-items:center}
+.site{opacity:.85;pointer-events:none}
+.land.hl{stroke:#c8a24a;stroke-width:1.2px}
+.mk.hlm{stroke:#c8a24a;stroke-width:3px}
+a.place{color:#e6e9ef;text-decoration:underline dotted #c8a24a;text-underline-offset:3px}
+a.place:hover,a.place:focus{color:#c8a24a}
+#whatsnew{margin:28px 0}
+.wnl{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.wnl li{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:center}
+.wnl time{color:#9aa6b8;font-size:14px}
+.wnl .pcard.wn{display:flex;flex-direction:row;justify-content:flex-start;gap:8px;align-items:center;text-align:left;min-height:44px;width:100%}
+.wnl .wnr{display:flex;align-items:center;min-height:44px;color:#c8a24a}
+.mapbox{min-height:0}
+@media (max-width:860px){.mapbox svg{width:100%;height:auto}.wnl li{grid-template-columns:1fr;gap:2px}#loc{max-width:360px}}
+@media (max-width:860px){#side{position:static;max-height:none}#side .regions{display:grid;grid-template-columns:1fr 1fr;gap:6px}#side .regions button{font-size:13px}}
+@media (max-width:860px){#side .regions{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:6px;padding-bottom:4px}#side .regions button{flex:0 0 auto;width:auto;white-space:nowrap}#loc{max-width:220px}.intro{font-size:15px}}
+#side .regions button .n{margin-left:8px}

@@ -1,5 +1,5 @@
 {
- "data_date": "2026-10-25",
+ "data_date": "2026-10-26",
  "glossary": {
   "ADB": "Asian Development Bank",
   "AGL": "Africa Global Logistics, MSC's port arm",
@@ -117,10 +117,37 @@
   "CMC": "CMC, a Chinese state firm",
   "CBC": "CBC, a Chinese battery consortium",
   "EU-": "European Union",
-  "FBC": "FBC",
   "G20": "Group of 20 major economies",
   "G7": "Group of Seven rich democracies",
-  "S&P": "S&P Global"
+  "S&P": "S&P Global",
+  "ABC": "Australian Broadcasting Corporation",
+  "AD Ports": "Abu Dhabi Ports, the emirate's state port group",
+  "CK": "CK Hutchison, a Hong Kong conglomerate",
+  "CLTC": "China Satellite Launch and Tracking Control General, a PLA space-tracking unit",
+  "COPHC": "China Overseas Port Holding Company, a state firm",
+  "CPFL": "CPFL Energia, a Brazilian power company",
+  "CT2": "Container Terminal 2",
+  "ENR": "Engineering News-Record, a construction trade journal",
+  "FAQ": "question-and-answer page",
+  "GEDI": "Gezhouba Group's power engineering and design arm",
+  "HAPCO": "Huajin Aramco Petrochemical Company, a Saudi-Chinese refinery venture",
+  "HKTDC": "Hong Kong Trade Development Council",
+  "ISAS": "Institute of South Asian Studies",
+  "JEMSE": "Jujuy Energ\u00eda y Miner\u00eda, the Argentine province of Jujuy's state mining company",
+  "LLP": "limited liability partnership",
+  "MAPNA": "MAPNA Group, an Iranian state engineering firm",
+  "NI 43-101": "a Canadian standard for mining technical reports",
+  "PR Newswire": "a press-release wire service",
+  "RFE/RL": "Radio Free Europe/Radio Liberty",
+  "U3O8": "uranium oxide concentrate",
+  "FY": "financial year",
+  "RM": "Malaysian ringgit",
+  "COP": "Colombian pesos",
+  "HUF": "Hungarian forints",
+  "HRK": "Croatian kuna",
+  "TOP": "Tongan pa'anga",
+  "US DoD": "US Department of Defense",
+  "FBC": "Fijian Broadcasting Corporation"
  },
  "iso": {
   "Antigua and Barbuda": "ag",
@@ -204,6 +231,44 @@
   "Zimbabwe": "zw",
   "Angola (top)": "ao",
   "China": "cn"
+ },
+ "whats_new": [
+  {
+   "date": "2026-10-25",
+   "region": "central-america-caribbean",
+   "text": "Region added: central-america-caribbean (21 projects)"
+  },
+  {
+   "date": "2026-02-23",
+   "id": "bri-panama-ports",
+   "text": "Panama took back the two canal ports run by Hong Kong's CK Hutchison after its Supreme Court voided the contract"
+  },
+  {
+   "date": "2025-10-05",
+   "id": "bri-demerara-bridge",
+   "text": "Guyana opened the new Demerara River Bridge, built by China Railway Construction"
+  },
+  {
+   "date": "2025-02-21",
+   "id": "bri-cuba-solar",
+   "text": "Cuba opened the first of 92 solar parks built with Chinese equipment, as China replaces Russia as its main helper"
+  },
+  {
+   "date": "2024-05-08",
+   "id": "bri-nicaragua-canal",
+   "text": "Nicaragua revoked the never-built canal concession of the Hong Kong company HKND"
+  }
+ ],
+ "regions_added": {
+  "africa": "2026-10-25",
+  "south-asia": "2026-10-25",
+  "southeast-asia": "2026-10-25",
+  "south-america": "2026-10-25",
+  "central-asia": "2026-10-25",
+  "middle-east": "2026-10-25",
+  "europe": "2026-10-25",
+  "pacific": "2026-10-25",
+  "central-america-caribbean": "2026-10-25"
  },
  "entries": [
   {

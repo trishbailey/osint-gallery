@@ -2,19 +2,23 @@
 <title>Belt and Road Dashboard | Beacon Intelligence Group</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-FE6CZGWX0J');gtag('config','G-Z61EKRP8QV');</script>
-<link rel="stylesheet" href="style.css?v=1.0"></head><body>
-<header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">BELT AND ROAD · v1.0</span></a>
-<nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#top">Map</a><a href="#cards">Projects</a><a href="../africa-brief/">Africa Brief</a><a id="sheet" href="https://docs.google.com/spreadsheets/d/18CBdo9rBt-fisHeLSca_YV4sPFoRThlBO6J3W23OJ9Y/edit" target="_blank" rel="noopener">Full data (Google Sheet)</a></nav></header>
+<link rel="stylesheet" href="style.css?v=1.1"></head><body>
+<header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">BELT AND ROAD · v1.1</span></a>
+<nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#top">Map</a><a href="#cards">Projects</a><a href="#whatsnew">What's new</a><a href="../africa-brief/">Africa Brief</a><a id="sheet" href="https://docs.google.com/spreadsheets/d/18CBdo9rBt-fisHeLSca_YV4sPFoRThlBO6J3W23OJ9Y/edit" target="_blank" rel="noopener">Full data (Google Sheet)</a></nav></header>
 <div class="layout" id="top">
 <aside id="side" aria-label="Map filters and key">
  <h2 class="sh" id="rprompt">Region</h2>
  <div class="regions" id="regions" role="group" aria-labelledby="rprompt"></div>
+ <h2 class="sh">Where you are</h2>
+ <svg id="loc" role="img" aria-label="Locator map: the whole world, with the area shown on the main map outlined in gold"></svg>
+ <details id="filters" open><summary class="sh">Filters and key</summary>
  <h2 class="sh" id="tprompt">Show on map</h2>
  <div class="legend" id="legend" role="group" aria-labelledby="tprompt"></div>
  <h2 class="sh" id="cprompt">Confidence</h2>
  <div class="legend" id="conf" role="group" aria-labelledby="cprompt"></div>
  <h2 class="sh">Key</h2>
  <ul class="key" id="key"></ul>
+ </details>
  <a class="xlink" id="africa-brief" href="../africa-brief/">Africa Brief: the politics behind the African projects &rarr;</a>
 </aside>
 <main>
@@ -25,8 +29,9 @@
 <div class="mapbox"><svg id="map" viewBox="0 0 960 500" role="group" aria-label="Map of Chinese-backed projects"></svg></div>
 <section id="agg" hidden><h2>Continent-wide loan totals</h2><div class="cards" id="aggcards"></div></section>
 <section id="cards"><h2 id="ctitle">Projects</h2><div id="pcards"></div></section>
+<section id="whatsnew"><h2>What's new</h2><p class="muted">Recent shifts in the projects tracked here, newest first. Point at an item to see the country on the map; click to open the project.</p><ul class="wnl" id="wnlist"></ul></section>
 <p class="muted small">Data as of <span id="dd"></span>. Basemap: Natural Earth. Flags: flag-icons (MIT licence).</p>
 </main></div>
 <div id="scrim" hidden></div>
 <aside id="panel" role="dialog" aria-modal="true" aria-labelledby="ptitle" aria-hidden="true" tabindex="-1"><button type="button" class="close" id="close" aria-label="Close details">&times; Close</button><div id="pbody"></div></aside>
-<script src="vendor/d3.min.js"></script><script src="app.js?v=1.0"></script></body></html>
+<script src="vendor/d3.min.js"></script><script src="app.js?v=1.1"></script></body></html>

@@ -1,0 +1,42 @@
+{
+ "allow": [
+  "US",
+  "II",
+  "III",
+  "B3",
+  "UK"
+ ],
+ "regions_added": {
+  "africa": "2026-10-25",
+  "south-asia": "2026-10-25",
+  "southeast-asia": "2026-10-25",
+  "south-america": "2026-10-25",
+  "central-asia": "2026-10-25",
+  "middle-east": "2026-10-25",
+  "europe": "2026-10-25",
+  "pacific": "2026-10-25",
+  "central-america-caribbean": "2026-10-25"
+ },
+ "events": [
+  {
+   "date": "2026-02-23",
+   "id": "bri-panama-ports",
+   "text": "Panama took back the two canal ports run by Hong Kong's CK Hutchison after its Supreme Court voided the contract"
+  },
+  {
+   "date": "2025-10-05",
+   "id": "bri-demerara-bridge",
+   "text": "Guyana opened the new Demerara River Bridge, built by China Railway Construction"
+  },
+  {
+   "date": "2025-02-21",
+   "id": "bri-cuba-solar",
+   "text": "Cuba opened the first of 92 solar parks built with Chinese equipment, as China replaces Russia as its main helper"
+  },
+  {
+   "date": "2024-05-08",
+   "id": "bri-nicaragua-canal",
+   "text": "Nicaragua revoked the never-built canal concession of the Hong Kong company HKND"
+  }
+ ]
+}
