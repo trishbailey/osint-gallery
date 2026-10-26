@@ -32,4 +32,4 @@ Defined in `build.py` (HOT): transfer areas, Russian loading ports and Baltic ch
 ## Live AIS collectors
 - `fetch_digitraffic.py` (workflow `ghost-fleet-ais-digitraffic.yml`, every 15 min, no key): Finland Digitraffic latest positions (Baltic, CC BY 4.0) -> `data/positions/digitraffic-YYYY-MM.csv`, deduped on (mmsi, timestamp); commits only when there are new rows.
 - `fetch_aisstream.py` (workflow `ghost-fleet-ais-aisstream.yml`, hourly, ~5 min stream): aisstream.io, MMSIs split into subscriptions of 200 -> `data/positions/aisstream-YYYY-MM.csv`. Skipped until the repo secret `AISSTREAM_API_KEY` exists.
-Both use concurrency group `ghost-fleet-ais` and `pull --rebase` with retries before push; the daily rebuild merges `positions/*.csv` into `tracks.json`.
+Both commit to the `ais-data` branch (not main, so Render doesn't redeploy), using concurrency group `ghost-fleet-ais` and `pull --rebase` with retries. The daily 05:41 UTC rebuild copies `ghost-fleet/data/positions/` from `ais-data` into main, merges the CSVs into `tracks.json`, and commits once, so the site republishes once a day.

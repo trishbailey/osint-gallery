@@ -20,6 +20,9 @@ jobs:
       - name: Fetch Global Fishing Watch events (keeps previous data on failure)
         env: {GFW_API_TOKEN: "${{ secrets.GFW_API_TOKEN }}"}
         run: python3 ghost-fleet/_src/fetch.py
+      - name: Merge AIS positions from ais-data branch (feeds commit there all day)
+        run: |
+          if git fetch origin ais-data; then git checkout FETCH_HEAD -- ghost-fleet/data/positions; else echo "no ais-data branch"; fi
       - run: python3 ghost-fleet/_src/build.py
       - run: python3 ghost-fleet/_src/palette_check.py
       - name: Commit if data changed (only ghost-fleet/data)
