@@ -77,3 +77,10 @@ header{background:var(--panel2);border-bottom-color:var(--line)}.brand{color:var
 .cite,.hero .cite{background:#1d3a4f;color:#9BE7EE}
 table{background:var(--panel)}th{background:var(--panel2);color:var(--gold);border-color:var(--line)}td{border-color:var(--line)}
 .stg-h,.stg-arrow,details summary,.tags{color:#5CCFDA}.stg-na{background:var(--panel2);color:var(--muted)}
+.kpis{list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:18px 0}
+.kpis li{flex:1 1 160px;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--gold);padding:10px 14px}
+.kpi-n{display:block;font-size:28px;font-weight:700;color:var(--text);line-height:1.1}.kpi-l{font-size:14px;color:var(--text)}
+.mm-key,.lead-key li{font-size:14px;color:var(--text)}.sw{display:inline-block;width:14px;height:14px;vertical-align:-2px;border-radius:2px;margin-right:4px}
+details.more{margin:14px 0;border-top:1px solid var(--line);padding-top:8px}
+details.more>summary{min-height:44px;display:flex;align-items:center;font-family:Georgia,serif;font-size:22px;color:var(--text)}
+.lead.dark{color:var(--text)}
