@@ -16,6 +16,9 @@ jobs:
         run: echo "AISSTREAM_API_KEY secret not set; skipping."
       - uses: actions/checkout@v4
         if: env.HAS_KEY == 'true'
+      - name: Check out ais-data branch (positions live there; pushes to it don't deploy Render)
+        if: env.HAS_KEY == 'true'
+        run: git fetch origin ais-data && git worktree add ais -B ais-data origin/ais-data
       - uses: actions/setup-python@v5
         if: env.HAS_KEY == 'true'
         with: {python-version: "3.12"}
@@ -24,13 +27,14 @@ jobs:
         env: {AISSTREAM_API_KEY: "${{ secrets.AISSTREAM_API_KEY }}"}
         run: |
           pip install -q websockets
-          python3 ghost-fleet/_src/fetch_aisstream.py ghost-fleet/data/vessels.json ghost-fleet/data/positions 300
-      - name: Commit only if new rows (only ghost-fleet/data/positions)
+          python3 ghost-fleet/_src/fetch_aisstream.py ghost-fleet/data/vessels.json ais/ghost-fleet/data/positions 300
+      - name: Commit only if new rows to ais-data (only ghost-fleet/data/positions)
         if: env.HAS_KEY == 'true'
         run: |
+          cd ais
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add ghost-fleet/data/positions
           if git diff --cached --quiet; then echo "no new rows"; exit 0; fi
           git commit -m "Ghost fleet: aisstream AIS positions $(date -u +%FT%H:%MZ)"
-          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep $((i*10)); done; exit 1
+          for i in 1 2 3; do git pull --rebase origin ais-data && git push origin HEAD:ais-data && exit 0; sleep $((i*10)); done; exit 1

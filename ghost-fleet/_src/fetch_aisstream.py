@@ -14,7 +14,9 @@ if not KEY: print("AISSTREAM_API_KEY not set; skipping"); sys.exit(0)
 import websockets
 vj,out=sys.argv[1],sys.argv[2]; SECS=int(sys.argv[3]) if len(sys.argv)>3 else 300
 MAX_CONN=int(os.environ.get("AISSTREAM_MAX_CONN","3")); CH=200
-m=mmsi_map(vj); ids=sorted(m)
+m=mmsi_map(vj)
+# aisstream rejects malformed MMSIs and closes the whole subscription, so send only 9-digit ones
+ids=sorted(k for k in m if k.isdigit() and len(k)==9)
 chunks=[ids[i:i+CH] for i in range(0,len(ids),CH)]
 rounds=[chunks[i:i+MAX_CONN] for i in range(0,len(chunks),MAX_CONN)]
 last={}; rows=[]
@@ -39,7 +41,7 @@ async def stream(chunk,secs):
                     ts=(tu[:19].replace(" ","T")+"Z") if tu else now.strftime("%Y-%m-%dT%H:%M:%SZ")
                     rows.append([m[s],s,ts,p["Latitude"],p["Longitude"],p.get("Sog"),p.get("Cog"),"aisstream"])
             return
-        except Exception as e: print("retry",type(e).__name__); await asyncio.sleep(5)
+        except Exception as e: print("retry",type(e).__name__,getattr(getattr(e,"rcvd",None),"reason","")[:120]); await asyncio.sleep(5)
 async def main():
     per=max(60,SECS//len(rounds))
     for rd in rounds: await asyncio.gather(*(stream(c,per) for c in rd))
