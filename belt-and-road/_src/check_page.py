@@ -14,7 +14,7 @@ with sync_playwright() as p:
         pg.goto(base+hsh);pg.wait_for_function("window._ready");pg.wait_for_timeout(1200)
         pg.evaluate("()=>document.querySelectorAll('#legend button[aria-pressed=false]').forEach(b=>b.click())");pg.wait_for_timeout(300)
         r=pg.evaluate(JS);fills=sorted(set(pg.eval_on_selector_all("#map .mk","e=>e.map(x=>getComputedStyle(x).fill)")))
-        lf=sorted(set(pg.eval_on_selector_all("#map .land, #map .site","e=>e.map(x=>getComputedStyle(x).fill)")))
+        lf=sorted(set(pg.eval_on_selector_all("#map .land, #map .site, #map .bb circle","e=>e.map(x=>getComputedStyle(x).fill)")))
         hx=['#%02x%02x%02x'%tuple(int(c) for c in f[4:-1].split(',')) for f in fills]
         lh=['#%02x%02x%02x'%tuple(int(c) for c in f[4:-1].split(',')) for f in lf];ld=min(de(a,c) for a,c in itertools.combinations(lh,2)) if len(lh)>1 else 99
         hx=hx+lh
@@ -48,6 +48,41 @@ with sync_playwright() as p:
     gt=pg.evaluate("()=>[...document.scripts].map(s=>s.src||s.textContent).join(' ').match(/G-[A-Z0-9]+/g)")
     print("panel open",op,t,"| sources expand",srcopen,"| esc closes",cl,"| GA",sorted(set(gt)),"| errors",errs)
     if not(op and srcopen and cl) or errs: bad=1
+    # v1.2 phone layout (390px): clustering, collapsed groups, filter bottom sheet, full-screen details, deep links
+    m=b.new_page(viewport={"width":390,"height":844},device_scale_factor=2,is_mobile=True,has_touch=True);m.on("pageerror",lambda e:errs.append("mobile: "+str(e)))
+    m.goto(base+"#region=all");m.wait_for_function("window._ready");m.wait_for_timeout(1200)
+    nb=m.eval_on_selector_all("#map .bb","e=>e.length");nm=m.eval_on_selector_all("#map .mk","e=>e.length");labs=m.eval_on_selector_all("#map .clab","e=>e.length")
+    ng=m.eval_on_selector_all("details.grp","e=>e.length");no=m.eval_on_selector_all("details.grp[open]","e=>e.length");side=m.is_visible("#side");wno=m.evaluate("()=>document.getElementById('whatsnew').open")
+    r=m.evaluate(JS);small=m.evaluate("()=>[...document.querySelectorAll('button,summary,.rbar,.tchip')].filter(b=>b.offsetParent&&b.getBoundingClientRect().height<44).map(b=>b.textContent.slice(0,30))")
+    bt=m.evaluate("()=>{const t=document.querySelector('#map .bb .bn');return t?t.getBoundingClientRect().height:0}")
+    print("mobile world: bubbles",nb,"markers",nm,"labels",labs,"| groups",ng,"open",no,"| sidebar visible",side,"| what's new open",wno,"| labels",r,"| <44px",small,"| bubble text px",round(bt,1))
+    if nb<5 or nm or labs or not ng or no or side or wno or r["bad"] or small or (r["n"] and r["minPx"]<12.95): bad=1
+    m.locator("#map .bb").first.tap();m.wait_for_timeout(1400);nm2=m.eval_on_selector_all("#map .mk","e=>e.length");nb2=m.eval_on_selector_all("#map .bb","e=>e.length");rt=m.inner_text("#title")
+    print("bubble tap -> markers",nm2,"bubbles",nb2,"|",rt)
+    if not nm2 or nb2: bad=1
+    m.click("details.grp summary");m.wait_for_timeout(200);op1=m.eval_on_selector_all("details.grp[open]","e=>e.length")
+    c0=m.eval_on_selector_all("#pcards .pcard","e=>e.length");m.click("#fbtn");m.wait_for_timeout(400)
+    so=m.evaluate("()=>document.getElementById('fsheet').classList.contains('open')");inside=m.evaluate("()=>['q','legend','conf'].every(i=>document.getElementById(i).closest('#fsheet'))")
+    m.fill("#q","port");m.wait_for_timeout(300);c1=m.eval_on_selector_all("#pcards .pcard","e=>e.length");m.fill("#q","");m.click("#fdone");m.wait_for_timeout(400);sc=not m.evaluate("()=>document.getElementById('fsheet').classList.contains('open')")
+    m.click(".tchip[data-t=port]");m.wait_for_timeout(300);c2=m.eval_on_selector_all("#pcards .pcard","e=>e.length");m.click(".tchip[data-t=port]");m.wait_for_timeout(300)
+    print("group tap opens",op1,"| sheet opens",so,"filters inside",inside,"| search cards",c0,"->",c1,"| sheet closes",sc,"| type chip cards",c2)
+    if op1!=1 or not so or not inside or not (0<c1<c0) or not sc or not (0<c2<c0): bad=1
+    if not m.eval_on_selector_all("details.grp[open]","e=>e.length"): m.click("details.grp summary");m.wait_for_timeout(200)
+    m.click("details.grp[open] .pcard");m.wait_for_timeout(800);pw=m.evaluate("()=>{const p=document.getElementById('panel');return p.classList.contains('open')?p.getBoundingClientRect().width:0}")
+    hasq=m.evaluate("()=>/What China gets/i.test(document.getElementById('pbody').innerText)&&/Host country/i.test(document.getElementById('pbody').innerText)&&!!document.getElementById('srcs')")
+    if pre: m.screenshot(path=f"{pre}-m-details.png")
+    m.click("#showmap");m.wait_for_timeout(1500);ln=m.eval_on_selector_all("#map .lines path","e=>e.length");pc=not m.evaluate("()=>document.getElementById('panel').classList.contains('open')")
+    print("details width",pw,"sections",hasq,"| show on map closes",pc,"line drawn",ln)
+    if pw<385 or not hasq or not pc or not ln: bad=1
+    m.goto(base+"#p=bri-panama-ports");m.wait_for_timeout(1500);dp=m.evaluate("()=>document.getElementById('panel').classList.contains('open')")
+    m.goto(base+"#region=pacific");m.wait_for_timeout(1200);dr=m.inner_text("#title")
+    print("mobile deep links: #p= opens",dp,"| #region=",dr,"| errors",errs)
+    if not dp or "Pacific" not in dr or errs: bad=1
+    if pre:
+        m.goto(base+"#region=all");m.wait_for_timeout(1200);m.evaluate("window.scrollTo(0,0)");m.screenshot(path=f"{pre}-m-landing.png")
+        m.evaluate("document.querySelector('.mapbox').scrollIntoView()");m.wait_for_timeout(300);m.screenshot(path=f"{pre}-m-map.png")
+        m.goto(base+"#region=central-america-caribbean");m.wait_for_timeout(1300);m.evaluate("()=>{const d=document.querySelector('details.grp');d.open=true;d.scrollIntoView()}");m.wait_for_timeout(300);m.screenshot(path=f"{pre}-m-group.png")
+        d=b.new_page(viewport={"width":1280,"height":800});d.goto(base+"#region=all");d.wait_for_function("window._ready");d.wait_for_timeout(1500);d.screenshot(path=f"{pre}-desktop-1280.png");d.screenshot(path=f"{pre}-desktop-1280-full.png",full_page=True)
     if pre:
         m=b.new_page(viewport={"width":390,"height":844},device_scale_factor=2,is_mobile=True);m.goto(base+"#region=central-america-caribbean");m.wait_for_function("window._ready");m.wait_for_timeout(1500);m.screenshot(path=f"{pre}-mobile.png",full_page=True)
         pg.goto(base+"#region=central-america-caribbean");pg.wait_for_function("window._ready");pg.wait_for_timeout(1500);pg.screenshot(path=f"{pre}-desktop.png",full_page=True)
