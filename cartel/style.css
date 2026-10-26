@@ -93,3 +93,13 @@ button,.chip[data-g],.chip[data-v]{min-height:44px}
 .zoombtns .zb:hover{border-color:var(--gold)}
 @media (max-width:820px){.maprow{flex-direction:column}.mapside{flex:none;max-width:none;width:100%;max-height:none;position:static;box-sizing:border-box}}
 .mapside #layers label,.mapside #routebox label{min-height:32px!important;margin:0!important;padding:0!important;white-space:normal}
+/* Desktop (>=821px): sidebar is exactly as tall as the map box; routes and overlays sit at the top, the group list scrolls inside (height set by sidebar.js) */
+@media (min-width:821px){
+.maprow{align-items:stretch}
+.mapside{display:flex;flex-direction:column;overflow:hidden;box-sizing:border-box}
+.mapside>h3:nth-of-type(2){order:1;margin-top:0}.mapside>#routebox{order:2}
+.mapside>h3:nth-of-type(3){order:3}.mapside>#layers{order:4;margin-bottom:6px}
+.mapside>h3:nth-of-type(1){order:5;margin-top:8px}
+.mapside>#grouplegend{order:6;flex:1 1 auto;min-height:120px;overflow-y:auto;padding-right:4px}
+.mapside #routebox label,.mapside #layers label{min-height:28px!important}
+}
