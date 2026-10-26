@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-26T16:06:08Z",
+ "as_of": "2026-10-26T19:01:51Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,125 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "527456607f",
+   "status": "official_claim_only",
+   "title": "Como parte del reforzamiento de la seguridad en Sinaloa y de las acciones para combatir la producción de drogas sintéticas, elementos de @SEMAR_mx y @SSPCMexico, en coordinación con @FGRMexico, locali",
+   "lang": "es",
+   "title_en": "As part of reinforcing security in Sinaloa and actions to combat synthetic drug production, personnel from @SEMAR_mx and @SSPCMexico, in coordination with @FGRMexico, loc",
+   "first_report": "2026-10-26T19:00:23Z",
+   "first_report_precision": "minute",
+   "first_source": "Gabinete de Seguridad (Mexico)",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Gabinete de Seguridad (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "gabsec",
+     "name": "Gabinete de Seguridad (Mexico)",
+     "kind": "official",
+     "via": "X @GabSeguridadMX",
+     "url": "https://x.com/GabSeguridadMX/status/2114794285581173050",
+     "time": "2026-10-26T19:00:23Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "be732306c9",
+   "status": "single_source",
+   "title": "\"AL MEJOR CAZADOR SE LE VA LA LIEBRE\", ASÍ RECORDÓ PEÑA NIETO LA FUGA DE ‘EL CHAPO’ GUZMÁN DE EL ALTIPLANO A 10 AÑOS DE SU CAPTURA El expresidente habló para la docuserie “Operación Cisne Negro”, que ",
+   "lang": "es",
+   "title_en": "\"EVEN THE BEST HUNTER LETS THE HARE GET AWAY\": HOW PEÑA NIETO RECALLED 'EL CHAPO' GUZMÁN'S ESCAPE FROM EL ALTIPLANO, 10 YEARS AFTER HIS CAPTURE. The former president spoke for the docuseries \"Operación Cisne Negro\", whic",
+   "first_report": "2026-10-26T18:30:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2114786641550184811",
+     "time": "2026-10-26T18:30:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "9bd1407827",
+   "status": "official_claim_only",
+   "title": "En #Mexicali, #BajaCalifornia, elementos de @SEMAR_mx, #SSPC y @GN_MEXICO_, en coordinación con autoridades estatales, detuvieron a Israel Leonel “N”, identificado como operador regional de un grupo d",
+   "lang": "es",
+   "title_en": "In #Mexicali, #BajaCalifornia, personnel from @SEMAR_mx, #SSPC and @GN_MEXICO_, in coordination with state authorities, arrested Israel Leonel \"N\", identified as a regional operator of a criminal gr",
+   "first_report": "2026-10-26T17:13:10Z",
+   "first_report_precision": "minute",
+   "first_source": "SSPC (Mexico)",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2114767302910501224",
+     "time": "2026-10-26T17:13:10Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "fed578ac14",
+   "status": "official_claim_only",
+   "title": "El 23, 24 y 25 de octubre, autoridades federales realizaron detenciones, cateos, aseguramientos de armas y droga en #BajaCalifornia, #CDMX, #Colima, #Guerrero, #Jalisco, #Sinaloa, #Sonora, #Tabasco, #",
+   "lang": "es",
+   "title_en": "On October 23, 24 and 25, federal authorities carried out arrests, searches, and seizures of weapons and drugs in #BajaCalifornia, #CDMX, #Colima, #Guerrero, #Jalisco, #Sinaloa, #Sonora, #Tabasco, #",
+   "first_report": "2026-10-26T16:28:38Z",
+   "first_report_precision": "minute",
+   "first_source": "SSPC (Mexico)",
+   "region_ids": [
+    "MEX-2719",
+    "MEX-2713",
+    "MEX-2734",
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2114756095860146534",
+     "time": "2026-10-26T16:28:38Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "360e08e6ec",
    "status": "single_source",
@@ -83,6 +202,550 @@
      "url": "https://x.com/ArmandoInfo/status/2114722466622787634",
      "time": "2026-10-26T14:15:00Z",
      "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "cf6ad6aed6",
+   "status": "single_source",
+   "title": "Eleições 2026: Por que duelo entre Lula e Flávio é crucial para a América Latina — e para Trump - BBC News Brasil",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-25T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "BBC",
+   "region_ids": [],
+   "country": "BRA",
+   "group_ids": [
+    "cv",
+    "pcc"
+   ],
+   "outlets": [
+    "BBC"
+   ],
+   "sources": [
+    {
+     "outlet": "bbc",
+     "name": "BBC",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://bbc.com/portuguese/articles/cm62yvnkdwk7o",
+     "time": "2026-10-25T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "bbc",
+     "name": "BBC",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://bbc.com/portuguese/articles/ck5ynlp6qq57o",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "bbc",
+     "name": "BBC",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://bbc.com/portuguese/articles/cm86zyl320eeo",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "1f5e3120ec",
+   "status": "confirmed",
+   "title": "Quién es El Compa Mike detenido en Zapopan- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-25T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2719",
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng",
+    "sinaloa"
+   ],
+   "outlets": [
+    "Infobae",
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/quien-es-el-compa-mike-detenido-en-zapopan",
+     "time": "2026-10-25T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/10/24/asi-describen-los-narcocorridos-a-el-compa-mike-517-detenido-en-jalisco-cuatro-letras-lo-definen-radica-con-los-gueros/",
+     "time": "2026-10-25T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/zapopan-refugio-operadores-criminales-12-capturas-alto",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.milenio.com/policia/quien-es-el-compa-mike-detenido-en-zapopan",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "61d9df6c9c",
+   "status": "confirmed",
+   "title": "Cae en Oaxaca “El Ácido”, sicario de 19 años a la orden de Los Cromos en el Istmo de Tehuantepec - Infobae",
+   "lang": "es",
+   "title_en": "\"El Ácido\", 19-year-old hitman working for Los Cromos in the Isthmus of Tehuantepec, falls in Oaxaca - Infobae",
+   "first_report": "2026-10-25T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2723",
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "El Financiero",
+    "Infobae",
+    "La Jornada"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/10/24/cae-en-oaxaca-el-acido-sicario-de-19-anos-a-la-orden-de-los-cromos-en-el-istmo-de-tehuantepec/",
+     "time": "2026-10-25T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.jornada.com.mx/noticia/2026/10/23/estados/detienen-en-oaxaca-a-presunto-sicario-de-los-cromos-grupo-ligado-al-cjng",
+     "time": "2026-10-25T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "elfinanciero",
+     "name": "El Financiero",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://elfinanciero.com.mx/estados/2026/10/26/detienen-a-el-primo-jefe-de-plaza-en-istmo-de-tehuantepec-oaxaca-tras-caida-del-comandante-cromo",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "ef38722fb7",
+   "status": "confirmed",
+   "title": "Capturan a un hombre señalado como jefe de una red de préstamos \"gota a gota\" del Cártel de Sinaloa en Oaxaca",
+   "lang": "es",
+   "title_en": "Man identified as head of a Sinaloa Cartel \"gota a gota\" (drip-loan) lending network captured in Oaxaca",
+   "first_report": "2026-10-25T22:35:35Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2723"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Infobae",
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2114486056619831483",
+     "time": "2026-10-25T22:35:35Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/caen-colombiano-en-oaxaca-por-presuntos-nexos-con-el-cartel-de-sinaloa",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "658604b017",
+   "status": "single_source",
+   "title": "Radiografía de Jamundí con corredores estratégicos para la droga y las invasiones de tierra por parte de disidentes: medidas por alerta de Defensoría - El Tiempo",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-26T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Tiempo",
+   "region_ids": [
+    "COL-1314",
+    "COL-1404"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "clan"
+   ],
+   "outlets": [
+    "El Tiempo"
+   ],
+   "sources": [
+    {
+     "outlet": "eltiempo",
+     "name": "El Tiempo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eltiempo.com/colombia/cali/radiografia-de-jamundi-con-corredores-estrategicos-para-la-droga-y-las-invasiones-de-tierra-por-parte-de-disidentes-medidas-por-alerta-de-defensoria-3596295",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "d3815e1020",
+   "status": "single_source",
+   "title": "Alias Bloqueo Rudo aceptó su responsabilidad en el crimen de la lideresa social Luz Chala, en zona rural de Quibdó - El Tiempo",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-26T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Tiempo",
+   "region_ids": [
+    "COL-1415"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "clan"
+   ],
+   "outlets": [
+    "El Tiempo"
+   ],
+   "sources": [
+    {
+     "outlet": "eltiempo",
+     "name": "El Tiempo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eltiempo.com/justicia/delitos/alias-bloqueo-rudo-acepto-su-responsabilidad-en-el-crimen-de-la-lideresa-social-luz-chala-en-zona-rural-de-quibdo-3596268",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "3056adf99f",
+   "status": "single_source",
+   "title": "Así quedó la tabla de posiciones de la LigaPro tras el triunfo de Macará 2-1 ante Liga de Quito",
+   "lang": "es",
+   "title_en": "The LigaPro standings after Macará's 2-1 win over Liga de Quito",
+   "first_report": "2026-10-26T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Diario Extra (Ecuador)",
+   "region_ids": [
+    "ECU-1287"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "outlets": [
+    "Diario Extra (Ecuador)"
+   ],
+   "sources": [
+    {
+     "outlet": "extra",
+     "name": "Diario Extra (Ecuador)",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://extra.ec/noticia/deportes/asi-quedo-tabla-posiciones-ligapro-triunfo-macara-2-1-liga-quito-165915.html",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "435e56a74f",
+   "status": "confirmed",
+   "title": "Alias Gato Farfán podría pasar 27 años en prisión: este lunes conocerá su sentencia",
+   "lang": "es",
+   "title_en": "Alias Gato Farfán could face 27 years in prison: he learns his sentence this Monday",
+   "first_report": "2026-10-26T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Diario Extra (Ecuador)",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2719",
+    "MEX-2706",
+    "MEX-2718"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng",
+    "sinaloa"
+   ],
+   "outlets": [
+    "Diario Extra (Ecuador)",
+    "El Universo"
+   ],
+   "sources": [
+    {
+     "outlet": "extra",
+     "name": "Diario Extra (Ecuador)",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://extra.ec/noticia/justicia/alias-gato-farfan-podria-pasar-27-anos-prision-lunes-conocera-sentencia-166027.html",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "eluniverso",
+     "name": "El Universo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniverso.com/politica/seguridad/alias-gato-farfan-se-podria-convertir-en-el-segundo-capo-ecuatoriano-sentenciado-por-narcotrafico-en-estados-unidos-fiscalia-sugirio-condena-que-se-conocera-el-lunes-26-nota/",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "4766309501",
+   "status": "single_source",
+   "title": "La Pastora en Quito: de los puntos de droga a la captura de su presunta mano derecha",
+   "lang": "es",
+   "title_en": "La Pastora in Quito: from drug sale points to the capture of her alleged right-hand man",
+   "first_report": "2026-10-26T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Diario Extra (Ecuador)",
+   "region_ids": [
+    "ECU-1287"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "outlets": [
+    "Diario Extra (Ecuador)"
+   ],
+   "sources": [
+    {
+     "outlet": "extra",
+     "name": "Diario Extra (Ecuador)",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://extra.ec/noticia/quito/pastora-quito-puntos-droga-captura-presunta-mano-derecha-165990.html",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "20a7721fe0",
+   "status": "single_source",
+   "title": "Gangs, Fintechs, and the Amazon: The Crime Agenda Awaiting Lula’s Fourth Term",
+   "lang": "es",
+   "title_en": "Gangs, Fintechs, and the Amazon: The Crime Agenda Awaiting Lula’s Fourth Term",
+   "first_report": "2026-10-26T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "InSight Crime",
+   "region_ids": [],
+   "country": "BRA",
+   "group_ids": [
+    "cv",
+    "pcc"
+   ],
+   "outlets": [
+    "InSight Crime"
+   ],
+   "sources": [
+    {
+     "outlet": "insight",
+     "name": "InSight Crime",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://insightcrime.org/news/gangs-fintechs-and-the-amazon-the-crime-agenda-awaiting-lulas-fourth-term",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "6d1ad48a89",
+   "status": "single_source",
+   "title": "Noche de Museos octubre 2026: LISTA de actividades- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-26T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/comunidad/noche-museos-octubre-2026-cdmx-actividades",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "42a03c926d",
+   "status": "single_source",
+   "title": "Operativos contra taxis por aplicación seguirán en Oaxaca- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-26T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2723"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/estados/operativos-contra-taxis-por-aplicacion-seguiran-en-oaxaca",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "51036d427d",
+   "status": "single_source",
+   "title": "Hallan asesinado a exempleado del Poder Judicial de Sinaloa a espaldas de Ciudad Universitaria; horas antes fue privado de la libertad",
+   "lang": "es",
+   "title_en": "Former Sinaloa Judiciary employee found murdered behind Ciudad Universitaria; hours earlier he had been abducted",
+   "first_report": "2026-10-26T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "El Universal"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/estados/hallan-asesinado-a-exempleado-del-poder-judicial-de-sinaloa-a-espaldas-de-ciudad-universitaria-horas-antes-fue-privado-de-la-libertad/",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "aab9438c0b",
+   "status": "single_source",
+   "title": "Sheinbaum y gobernador de Jalisco alistan proyecto integral de agua para Guadalajara; van por garantizar agua limpia",
+   "lang": "es",
+   "title_en": "Sheinbaum and the Jalisco governor prepare a comprehensive water project for Guadalajara, aiming to guarantee clean water",
+   "first_report": "2026-10-26T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "El Universal"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/nacion/sheinbaum-y-gobernador-de-jalisco-alistan-proyecto-integral-de-agua-para-guadalajara-van-por-garantizar-agua-limpia/",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "fefc150ba1",
+   "status": "single_source",
+   "title": "Lo cercaron en un restaurante de Mexicali: cae “El Isra”, líder de Los Rusos y objetivo prioritario en Baja California - Infobae",
+   "lang": "es",
+   "title_en": "Cornered in a Mexicali restaurant: \"El Isra\", leader of Los Rusos and a priority target in Baja California, is arrested - Infobae",
+   "first_report": "2026-10-26T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/10/26/lo-cercaron-en-un-restaurante-de-mexicali-cae-el-isra-lider-de-los-rusos-y-objetivo-prioritario-en-baja-california/",
+     "time": "2026-10-26T12:00:00Z",
+     "time_precision": "day"
     }
    ]
   },
@@ -242,10 +905,10 @@
    "first_report_precision": "minute",
    "first_source": "Gabinete de Seguridad (Mexico)",
    "region_ids": [
-    "MEX-2721",
     "MEX-2710",
+    "MEX-2712",
     "MEX-2711",
-    "MEX-2712"
+    "MEX-2721"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -260,38 +923,6 @@
      "via": "X @GabSeguridadMX",
      "url": "https://x.com/GabSeguridadMX/status/2114492962193428772",
      "time": "2026-10-25T23:03:02Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "ef38722fb7",
-   "status": "single_source",
-   "title": "Capturan a un hombre señalado como jefe de una red de préstamos \"gota a gota\" del Cártel de Sinaloa en Oaxaca",
-   "lang": "es",
-   "title_en": "Man identified as head of a Sinaloa Cartel \"gota a gota\" (drip-loan) lending network captured in Oaxaca",
-   "first_report": "2026-10-25T22:35:35Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2723",
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2114486056619831483",
-     "time": "2026-10-25T22:35:35Z",
      "time_precision": "minute"
     }
    ]
@@ -611,56 +1242,6 @@
    ]
   },
   {
-   "id": "f497a4bf05",
-   "status": "confirmed",
-   "title": "Así describen los narcocorridos a “El Compa Mike 517″ detenido en Jalisco: “Cuatro letras lo definen, radica con los güeros”",
-   "lang": "es",
-   "title_en": "How narcocorridos describe \"El Compa Mike 517\", arrested in Jalisco: \"Four letters define him, he lives with the güeros\"",
-   "first_report": "2026-10-24T16:36:42Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Infobae",
-    "Milenio"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2114033352176980391",
-     "time": "2026-10-24T16:36:42Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/quien-es-el-compa-mike-detenido-en-zapopan",
-     "time": "2026-10-25T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/10/24/asi-describen-los-narcocorridos-a-el-compa-mike-517-detenido-en-jalisco-cuatro-letras-lo-definen-radica-con-los-gueros/",
-     "time": "2026-10-25T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
    "id": "fbf98cbf8a",
    "status": "confirmed",
    "title": "Abaten a “El Meny Carranza” y detienen a cuatro más tras enfrentamiento armado en San Antonio, Sonora",
@@ -742,36 +1323,6 @@
    ]
   },
   {
-   "id": "cf6ad6aed6",
-   "status": "single_source",
-   "title": "Eleições 2026: Por que duelo entre Lula e Flávio é crucial para a América Latina — e para Trump - BBC News Brasil",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-10-25T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "BBC",
-   "region_ids": [],
-   "country": "BRA",
-   "group_ids": [
-    "cv",
-    "pcc"
-   ],
-   "outlets": [
-    "BBC"
-   ],
-   "sources": [
-    {
-     "outlet": "bbc",
-     "name": "BBC",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://bbc.com/portuguese/articles/cm62yvnkdwk7o",
-     "time": "2026-10-25T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
    "id": "69a92fdb63",
    "status": "single_source",
    "title": "Balotaje en Brasil: se extiende la votación y se amplía la expectativa por el cabeza a cabeza entre Lula y Bolsonaro",
@@ -845,8 +1396,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "eln",
     "clan",
+    "eln",
     "exfarc"
    ],
    "outlets": [
@@ -944,9 +1495,9 @@
    "first_report_precision": "day",
    "first_source": "El Universal",
    "region_ids": [
-    "MEX-2735",
     "MEX-2711",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2735"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1173,8 +1724,8 @@
    "first_report_precision": "day",
    "first_source": "Milenio",
    "region_ids": [
-    "MEX-2708",
-    "PAN-1338"
+    "PAN-1338",
+    "MEX-2708"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -1420,8 +1971,8 @@
    "first_report_precision": "day",
    "first_source": "Semana",
    "region_ids": [
-    "COL-1314",
     "COL-1317",
+    "COL-1314",
     "COL-1421"
    ],
    "country": "COL",
@@ -1549,8 +2100,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "unidos"
+    "unidos",
+    "cjng"
    ],
    "outlets": [
     "Eje Central"
@@ -1579,10 +2130,10 @@
    "region_ids": [],
    "country": "COL",
    "group_ids": [
+    "clan",
     "tda",
-    "eln",
     "exfarc",
-    "clan"
+    "eln"
    ],
    "outlets": [
     "El Observador"
@@ -1698,8 +2249,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "tda",
-    "clan"
+    "clan",
+    "tda"
    ],
    "outlets": [
     "Infobae"
@@ -1726,8 +2277,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "ARG-1308",
-    "PAN-1340"
+    "PAN-1340",
+    "ARG-1308"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -1799,48 +2350,6 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://www.infobae.com/guatemala/2026/10/25/catrinas-en-el-centro-historico-de-guatemala-70-participantes-flores-encajes-y-una-tradicion-mexicana-que-cruzo-fronteras/",
-     "time": "2026-10-25T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "61d9df6c9c",
-   "status": "confirmed",
-   "title": "Cae en Oaxaca “El Ácido”, sicario de 19 años a la orden de Los Cromos en el Istmo de Tehuantepec - Infobae",
-   "lang": "es",
-   "title_en": "\"El Ácido\", 19-year-old hitman working for Los Cromos in the Isthmus of Tehuantepec, falls in Oaxaca - Infobae",
-   "first_report": "2026-10-25T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2723",
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Infobae",
-    "La Jornada"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/10/24/cae-en-oaxaca-el-acido-sicario-de-19-anos-a-la-orden-de-los-cromos-en-el-istmo-de-tehuantepec/",
-     "time": "2026-10-25T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "jornada",
-     "name": "La Jornada",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.jornada.com.mx/noticia/2026/10/23/estados/detienen-en-oaxaca-a-presunto-sicario-de-los-cromos-grupo-ligado-al-cjng",
      "time": "2026-10-25T12:00:00Z",
      "time_precision": "day"
     }
@@ -2297,95 +2806,6 @@
      "via": "X @InSightCrime",
      "url": "https://x.com/InSightCrime/status/2114122561965453668",
      "time": "2026-10-24T22:31:11Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "90b22de679",
-   "status": "official_claim_only",
-   "title": "Durante la revisión del equipaje de un pasajero procedente de Bogotá, Colombia, en la Terminal 1 del @AICM_mx, personal de @AduanasMx, en coordinación con @SEMAR_mx y @SSPCMexico, aseguró 8,659 tablet",
-   "lang": "es",
-   "title_en": "During inspection of the luggage of a passenger arriving from Bogotá, Colombia, at Terminal 1 of @AICM_mx, @AduanasMx staff, in coordination with @SEMAR_mx and @SSPCMexico, seized 8,659 tablets containing hydrocodone and",
-   "first_report": "2026-10-24T18:00:03Z",
-   "first_report_precision": "minute",
-   "first_source": "Gabinete de Seguridad (Mexico)",
-   "region_ids": [
-    "COL-1399"
-   ],
-   "country": "COL",
-   "group_ids": [],
-   "outlets": [
-    "Gabinete de Seguridad (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "gabsec",
-     "name": "Gabinete de Seguridad (Mexico)",
-     "kind": "official",
-     "via": "X @GabSeguridadMX",
-     "url": "https://x.com/GabSeguridadMX/status/2114054325626720733",
-     "time": "2026-10-24T18:00:03Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "eace66a1ed",
-   "status": "single_source",
-   "title": "➡️ Con drones y helicóptero, detienen en Zapopan al ‘Compa Mike 517’, buscado por EU y presunto operador del CDS 🟣🚔| En operativo que movilizó a elementos de la Secretaría de Seguridad del Estado de J",
-   "lang": "es",
-   "title_en": "➡️ With drones and a helicopter, 'Compa Mike 517', wanted by the US and alleged CDS operator, arrested in Zapopan. In an operation by the Jalisco State Security Secretariat, Miguel Casillas, better known as 'Compa…', was",
-   "first_report": "2026-10-24T17:31:30Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2114047141882548317",
-     "time": "2026-10-24T17:31:30Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "4269b9d8bb",
-   "status": "single_source",
-   "title": "Pero la suerte de Saab la enfrentaron primero sus socios. Álvaro Pulido Vargas estaba detenido en Caracas desde abril de 2023 por el caso Pdvsa-Cripto, mientras que Carlos Lizcano también quedó bajo a",
-   "lang": "es",
-   "title_en": "But Saab's partners met their fate first. Álvaro Pulido Vargas had been held in Caracas since April 2023 over the PDVSA-Crypto case, while Carlos Lizcano was also arrested last February after the capture of",
-   "first_report": "2026-10-24T17:00:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Armando.Info",
-   "region_ids": [
-    "VEN-43"
-   ],
-   "country": "VEN",
-   "group_ids": [],
-   "outlets": [
-    "Armando.Info"
-   ],
-   "sources": [
-    {
-     "outlet": "armando",
-     "name": "Armando.Info",
-     "kind": "outlet",
-     "via": "X @ArmandoInfo",
-     "url": "https://x.com/ArmandoInfo/status/2114039217060028691",
-     "time": "2026-10-24T17:00:00Z",
      "time_precision": "minute"
     }
    ]

@@ -25,3 +25,16 @@
 .pfcredits{margin-top:.4em;font-size:max(13px,.85em)}.pfcredits summary{cursor:pointer}.pfcredits ul{margin:.3em 0 0 1.2em;padding:0}
 
 .pfszb{font-size:13px;margin:6px 0 4px}.pfsz{line-height:1.45}.pfszn{font-size:13px;margin:0 0 2px 8px}
+
+/* Who's in charge now, inside each group card */
+.pflead{margin:8px 0 6px;padding:8px 10px;border:1px solid #24365a;border-left:3px solid var(--c,#c8a24a);border-radius:6px;background:#0f1d36;font-size:13px}
+.pfleadh{font-weight:700;color:#c8a24a;text-transform:uppercase;letter-spacing:.04em;font-size:13px;margin-bottom:4px}
+.pfleadg{font-weight:600;margin:6px 0 2px;color:#e6ecf5}
+.pflp{margin:4px 0}.pflp>summary{list-style:none;cursor:pointer}.pflp>summary::-webkit-details-marker{display:none}
+.pflead .lp{margin:0;gap:8px;align-items:flex-start}.pflead .lp .ph img{width:44px;height:55px}
+.pflead .lpt b{font-size:14px}.pflead .rlt{color:#c3cfe2;font-size:13px}
+.pfst{font-size:13px;font-weight:600;color:#8fd3a8}.pfst.jailed,.pfst.extradited{color:#f0b35a}.pfst.dead,.pfst.reported_dead{color:#ff8a8a}
+.pflp .lmore{font-size:13px;padding:4px 0 6px 52px;color:#dfe6f1}
+.pfformer>summary{cursor:pointer;color:#c8a24a;font-size:13px;margin-top:4px}
+.pfleadn{font-size:13px;margin:6px 0 0;color:#c3cfe2}.pfunk{font-size:13px;color:#c3cfe2}
+@media (max-width:640px){.pflead .lp .ph img{width:40px;height:50px}.pflp .lmore{padding-left:0}}

@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-26T16:06:08Z",
+ "as_of": "2026-10-26T19:01:51Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,82 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2114794285581173050",
+   "handle": "GabSeguridadMX",
+   "url": "https://x.com/GabSeguridadMX/status/2114794285581173050",
+   "created_at": "2026-10-26T19:00:23.000Z",
+   "text": "Como parte del reforzamiento de la seguridad en Sinaloa y de las acciones para combatir la producción de drogas sintéticas, elementos de @SEMAR_mx y @SSPCMexico, en coordinación con @FGRMexico, localizaron e inhabilitaron un laboratorio clandestino para la elaboración de https:/…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "As part of reinforcing security in Sinaloa and actions to combat synthetic drug production, personnel from @SEMAR_mx and @SSPCMexico, in coordination with @FGRMexico, located and disabled a clandestine laboratory for the production of…"
+  },
+  {
+   "id": "2114786641550184811",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2114786641550184811",
+   "created_at": "2026-10-26T18:30:00.000Z",
+   "text": "\"AL MEJOR CAZADOR SE LE VA LA LIEBRE\", ASÍ RECORDÓ PEÑA NIETO LA FUGA DE ‘EL CHAPO’ GUZMÁN DE EL ALTIPLANO A 10 AÑOS DE SU CAPTURA El expresidente habló para la docuserie “Operación Cisne Negro”, que se estrenará en ViX el 27 de octubre, sobre la fuga en 2015 del exlíder del htt…",
+   "lang": "es",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "\"EVEN THE BEST HUNTER LETS THE HARE GET AWAY\": HOW PEÑA NIETO RECALLED 'EL CHAPO' GUZMÁN'S ESCAPE FROM EL ALTIPLANO, 10 YEARS AFTER HIS CAPTURE. The former president spoke for the docuseries \"Operación Cisne Negro\", premiering on ViX on October 27, about the 2015 escape of the former leader of the…"
+  },
+  {
+   "id": "2114767302910501224",
+   "handle": "SSPCMexico",
+   "url": "https://x.com/SSPCMexico/status/2114767302910501224",
+   "created_at": "2026-10-26T17:13:10.000Z",
+   "text": "En #Mexicali, #BajaCalifornia, elementos de @SEMAR_mx, #SSPC y @GN_MEXICO_, en coordinación con autoridades estatales, detuvieron a Israel Leonel “N”, identificado como operador regional de un grupo delictivo. https://t.co/UuYPilBHvW https://t.co/VITrR3UY1x",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "In #Mexicali, #BajaCalifornia, personnel from @SEMAR_mx, #SSPC and @GN_MEXICO_, in coordination with state authorities, arrested Israel Leonel \"N\", identified as a regional operator of a criminal group."
+  },
+  {
+   "id": "2114756095860146534",
+   "handle": "SSPCMexico",
+   "url": "https://x.com/SSPCMexico/status/2114756095860146534",
+   "created_at": "2026-10-26T16:28:38.000Z",
+   "text": "El 23, 24 y 25 de octubre, autoridades federales realizaron detenciones, cateos, aseguramientos de armas y droga en #BajaCalifornia, #CDMX, #Colima, #Guerrero, #Jalisco, #Sinaloa, #Sonora, #Tabasco, #Tamaulipas, #Veracruz y #Zacatecas. https://t.co/ihtuxqvqcP https://t.co/2fqgC7…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2718",
+    "MEX-2727",
+    "MEX-2719",
+    "MEX-2711",
+    "MEX-2712",
+    "MEX-2725",
+    "MEX-2716",
+    "MEX-2734",
+    "MEX-2713"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "On October 23, 24 and 25, federal authorities carried out arrests, searches, and seizures of weapons and drugs in #BajaCalifornia, #CDMX, #Colima, #Guerrero, #Jalisco, #Sinaloa, #Sonora, #Tabasco, #Tamaulipas, #Veracruz and #Zacatecas."
+  },
   {
    "id": "2114737810296951128",
    "handle": "ZETATijuana",

@@ -19,7 +19,6 @@ Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json
  const gname={};net.groups.forEach(g=>gname[g.id]=g.name);ter.groups.forEach(g=>gname[g.id]=gname[g.id]||g.name);
  const anchor=document.querySelector(".row2b")||document.querySelector("main").lastElementChild;
  // ---------- leaders: who's in charge now ----------
- const t=document.createElement("section");t.className="tile ldtile";t.id="leaders";
  const L=ld.leaders,G=ld.groups,BL=Object.fromEntries(bz.lines.map(x=>[x.id,x.label]));
  const live=g=>L.filter(l=>l.group_key===g&&l.role!=="former_leader"),former=L.filter(l=>l.role==="former_leader");
  const sizeOf=g=>{for(const[k,v]of Object.entries(sz.groups)){if(k===g||(v.applies_to||[]).includes(g))return [k,v]}return [g,null]};
@@ -36,26 +35,22 @@ Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json
  const person=l=>`<div class="lp"><div class="ph">${ph(l)}</div><div class="lpt"><b>${esc(l.name)}</b>${l.alias?`<div class="al">“${esc(l.alias)}”</div>`:""}${l.faction&&l.role==="faction_leader"?`<div class="rl">${esc(l.faction)}</div>`:""}
   <div class="bdg">${ICON(l)}${l.confidence?`<span class="cf ${CONF[l.confidence][1]}" title="${esc(l.confidence)}">${CONF[l.confidence][0]}</span>`:""}${l.role==="reported_successor"?`<span class="cf c3">Successor?</span>`:""}${l.reward_usd?`<span class="rw" title="US reward">${usd(l.reward_usd)}</span>`:""}</div></div></div>`;
  const more=l=>`<div class="lmore"><b>${esc(l.name)}</b>: ${esc(l.title)}. ${esc(l.status_note)}${FN(l.status_source)}${l.reward_usd?` Reward up to ${usd(l.reward_usd)}${FN(l.reward_source)}.`:""} ${esc(l.known_for)}${l.leadership_note?" "+esc(l.leadership_note):""}${l.sources.map(FN).join("")}${l.charges.length?`<ul>${l.charges.map(c=>`<li>${esc(c)}</li>`).join("")}</ul>`:""}${(l.photo&&!l.photo.placeholder)?`<div class="lic">Photo: ${esc(l.photo.credit)}, ${esc(l.photo.license)}${FN({name:"photo",url:l.photo.image_source_url})}</div>`:""}</div>`;
- t.innerHTML=`<div class="tilehead"><h2>Who's in charge now</h2><span class="muted">One card per group. Tap a card for details. Badges: Official = confirmed by officials; Multiple outlets; Contested.</span></div>
- <div id="ldnote" class="muted small"></div>
- <div class="nowgrid" id="ldgrid">${G.map(g=>{const ls=live(g.id);return `<div class="gc ld" data-g="${g.id}${["chapitos","mayiza"].includes(g.id)?" sinaloa":""}" tabindex="0">
-  <div class="gch"><span class="gchip">${esc(g.name)}</span>${LS[g.leadership]?`<span class="lsb ${g.leadership}">${LS[g.leadership]}</span>`:""}</div>
-  ${ls.length?ls.map(person).join(""):`<div class="unk">? Leadership unknown</div>`}
-  <div class="gcf">${sizeBadge(g.id)}<span class="bis">${bizIcons(g.id)}</span></div>
-  <div class="bd"><p>${esc(g.leadership_note)}${g.sources.map(FN).join("")}</p>${noCard(g.id)}${ls.map(more).join("")}</div></div>`}).join("")}</div>
- <details class="more former"><summary>Jailed, extradited or dead (${former.length})</summary><div class="fgrid">${former.map(l=>`<div class="fc ld" data-g="${l.group_key}" tabindex="0">${person(l)}<span class="gchip sm">${esc((G.find(g=>g.id===l.group_key)||{}).name||l.group_key)}</span><div class="bd">${more(l)}</div></div>`).join("")}</div></details>
- <div class="ldcharts"><div class="chbox wide"><h3>How the business shifted</h3><div id="bzshift"></div></div></div>
- <details class="more"><summary>About these cards</summary><p class="small">${esc(ld.method)} As of ${esc(ld.as_of)}. ${esc(sz.note)} ${esc(bz.note)} * = figure for the whole Sinaloa Cartel.</p></details>`;
- {const mt=document.querySelector(".maptile");if(mt)mt.after(t);else anchor.parentNode.insertBefore(t,anchor);}
- const grid=t.querySelector("#ldgrid");
- t.addEventListener("click",e=>{if(e.target.closest("a"))return;const c=e.target.closest(".gc,.fc");if(c)c.classList.toggle("open")});
- // group colours (members/revenue bar charts moved onto profile cards; kept for palette_check)
- const GCOL={sinaloa:"#8f8509",cjng:"#00ccff",gulf:"#ffa26a",cdn:"#307b0a",lnfm:"#1c70c5",clan:"#958fff",eln:"#8931ff",tda:"#29b47b",choneros:"#ff2400",lobos:"#b06208",pcc:"#ea34b2",ms13:"#f0c740",unidos:"#fd7db7"};
- function setG(g,from){grid.parentNode.querySelectorAll(".ld").forEach(c=>{const m=!g||c.dataset.g.split(" ").includes(g);c.classList.toggle("hl",!!g&&m);c.classList.remove("dim")});
-  const n=g?grid.querySelectorAll(".ld.hl").length:0;
-  t.querySelector("#ldnote").textContent=g?(from?`Highlighted from ${from}: `:"")+`${gname[g]||g}`+(n?"":" (not among the 14 tracked groups)"):"";}
- document.addEventListener("click",e=>{const c=e.target.closest("#grouplegend .chip[data-g]");if(c){setG(c.dataset.g,"map");return}
-  const k=e.target.closest("#cards [data-map]");if(k)setG(k.dataset.map,"Who's who")},true);
+ // "Who's in charge now" lives inside each group profile card (profiles.js)
+ const CARD={chapitos:"sinaloa",mayiza:"sinaloa"},cardOf=k=>CARD[k]||k;
+ const fd=d=>d?new Date(d+"T12:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"}):"";
+ const pl=l=>`<details class="pflp"><summary>${person(l).replace('<div class="bdg">',`<div class="pfst ${l.status}">${STL[l.status]||l.status}${l.status_date?" · "+fd(l.status_date):""}</div><div class="rlt">${esc(l.title||"")}</div><div class="bdg">`)}</summary>${more(l)}</details>`;
+ const block=pid=>{const gs=G.filter(g=>cardOf(g.id)===pid);if(!gs.length)return "";
+  return `<div class="pflead"><div class="pfleadh">Who's in charge now</div>${gs.map(g=>{const ls=live(g.id),fm=former.filter(l=>l.group_key===g.id);
+   return `<div class="pfleadgrp">${gs.length>1||LS[g.leadership]?`<div class="pfleadg">${gs.length>1?esc(g.name):""}${LS[g.leadership]?` <span class="lsb ${g.leadership}">${LS[g.leadership]}</span>`:""}</div>`:""}
+   ${ls.length?ls.map(pl).join(""):`<div class="pfunk">Leadership unknown</div>`}
+   ${fm.length?`<details class="pfformer"><summary>Jailed, extradited or dead (${fm.length})</summary>${fm.map(pl).join("")}</details>`:""}
+   <p class="pfleadn">${esc(g.leadership_note)}${g.sources.map(FN).join("")}</p></div>`}).join("")}</div>`};
+ const cardIds=new Set();
+ const inject=()=>{document.querySelectorAll(".pfcard[data-g]:not([data-lead])").forEach(c=>{c.dataset.lead=1;cardIds.add(c.dataset.g);const h=block(c.dataset.g);if(!h)return;
+   const at=c.querySelector(".pfimg")||c.querySelector(".pfmore");at?at.insertAdjacentHTML("beforebegin",h):c.insertAdjacentHTML("beforeend",h)})};
+ let tries=0;const iv=setInterval(()=>{inject();if(document.querySelector(".pfcard")&&++tries>8){clearInterval(iv);
+   const orphan=L.filter(l=>!cardIds.has(cardOf(l.group_key)));if(orphan.length)console.warn("leaders without a profile card:",orphan.map(l=>l.name+" ("+l.group_key+")").join(", "))}},250);
+ document.addEventListener("click",e=>{if(e.target.closest(".pflead a"))e.stopPropagation()},true);
  // ---------- documented corruption cases: one collapsed section (no map overlay) ----------
  const s=document.createElement("section");s.className="tile cptile";s.id="capture";
  const cases=cp.cases.slice().sort((a,b)=>a.country.localeCompare(b.country)||ORDER.indexOf(a.status)-ORDER.indexOf(b.status)||b.date.localeCompare(a.date));
@@ -63,6 +58,6 @@ Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json
  s.innerHTML=`<details class="more"><summary><b>Documented corruption cases (${cp.cases.length})</b> <span class="muted">· convictions, charges, US sanctions, acquittals/dismissals; counts of cases, not a verdict on any government</span></summary>
  <div class="cpcases">${cp.countries.map(c=>`<h3>${esc(c.name)} (${c.total})</h3>`+cases.filter(x=>x.country===c.country).map(x=>`<div class="cp" style="border-left-color:${CST[x.status][1]}"><span class="st" style="background:${CST[x.status][1]}33;color:${CST[x.status][1]}">${CST[x.status][0]}</span> <b>${esc(x.person)}</b> <span class="m">· ${esc(x.office)} · ${esc(x.level)} · ${esc(x.date)}</span><div class="m">Group link: ${esc(x.group_link)}</div><div>${esc(x.note)}</div>${x.sources.map(A).join("")}</div>`).join("")).join("")}</div>
  <p class="small muted">${esc(cp.method)}</p></details>`;
- const ov=document.querySelector("section.ovtile");ov.parentNode.insertBefore(s,ov.nextElementSibling);
+ const bg=document.querySelector("section.bgtile");bg.after(s);
 }).catch(e=>console.error("leaders/capture:",e));
 })();

@@ -26,3 +26,7 @@ let q;const run=()=>{clearTimeout(q);q=setTimeout(fix,200)};
 [800,2000,4000,8000].forEach(d=>setTimeout(fix,d));window.addEventListener("resize",run);
 if(window.MutationObserver)new MutationObserver(run).observe(document.body,{childList:true,subtree:true});
 })();
+/* keep the map zoom buttons below the Presence legend strip */
+(function(){const k=document.getElementById("keybox");if(!k||!window.ResizeObserver)return;
+const fit=()=>{const z=document.querySelector(".mapwrap .zoombtns");if(z)z.style.top=(k.offsetHeight+10)+"px"};
+new ResizeObserver(fit).observe(k);setTimeout(fit,1500);setTimeout(fit,4000)})();

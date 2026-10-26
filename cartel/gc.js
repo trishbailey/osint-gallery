@@ -11,7 +11,7 @@ fetch("data/group_countries.json").then(r=>r.json()).then(GCN=>{
  const G=id=>GCN.groups[ALIAS[id]||id];
  const row=g=>`<div class="gcc" style="display:flex;flex-wrap:wrap;gap:2px 6px;max-width:100%">${g.countries.map(c=>`<span class="gcf" title="${esc(NM[c.iso]||c.iso)}" style="cursor:help;font-size:16px">${flag(c.iso)}</span>`).join("")}</div>`;
  function deco(){document.querySelectorAll("#cards .gc:not([data-gcc])").forEach(el=>{const n=window.NET||(typeof NET!=="undefined"?NET:null);const x=n&&n.groups?n.groups[+el.dataset.k]:(n&&n[+el.dataset.k]);const g=x&&G(x.id);el.dataset.gcc=1;if(g)el.querySelector("h4").insertAdjacentHTML("afterend",row(g))});
-  document.querySelectorAll(".nowgrid .ld:not([data-gcc])").forEach(el=>{const g=G(el.dataset.g.split(" ")[0]);el.dataset.gcc=1;const h=el.querySelector(".gch");if(g&&h)h.insertAdjacentHTML("afterend",row(g))})}
+  document.querySelectorAll(".pflead_none").forEach(el=>{const g=G(el.dataset.g.split(" ")[0]);el.dataset.gcc=1;const h=el.querySelector(".gch");if(g&&h)h.insertAdjacentHTML("afterend",row(g))})}
  let n=0;const t=setInterval(()=>{deco();if(++n>40)clearInterval(t)},300);
  const lg=document.getElementById("grouplegend");const note=document.createElement("div");note.id="gcnote";note.className="gcnote small";lg.after(note);
  lg.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;const id=b.dataset.g;note.innerHTML="";if(!id)return;const g=G(id);if(!g)return;

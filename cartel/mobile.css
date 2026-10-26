@@ -40,7 +40,7 @@ main{padding:10px 10px;gap:12px}
 .mgrp>summary .mcnt{font-size:13px;color:var(--muted);font-weight:400}
 .mgrp>summary::after{content:"▾";color:var(--gold);margin-left:8px}.mgrp[open]>summary::after{content:"▴"}
 .mgrp>.mgbody{display:flex;flex-direction:column;gap:8px;padding:0 8px 10px}
-.pfgrid,.ldgrid,.nowgrid,.cards,.stories,.arcs,.two,.row2,.row2b,.row3{grid-template-columns:1fr!important}
+.pfgrid,.cards,.stories,.arcs,.two,.row2,.row2b,.row3{grid-template-columns:1fr!important}
 #profiles .pfcard{width:100%;max-width:none}
 #profiles .mgbody .pfimg,#profiles .mgbody .pfmem,#profiles .mgbody .pfmore,#profiles .mgbody .pfszb,#profiles .mgbody .pffound{display:none}
 #profiles .mgbody .pfcard h3{margin-top:0}

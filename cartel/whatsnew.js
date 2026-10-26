@@ -20,8 +20,9 @@ Promise.all([J("data/whatsnew.json"),J("data/territory.json")]).then(([wn,terr])
     <ul class="wndevs">${t.developments.map((d,di)=>devH(d,ti,di)).join("")}</ul></div>`).join("")}
   ${(wn.other||[]).length?`<div class="wncard wnother" style="--c:#56657f"><div class="wnhead"><h3>Other notable</h3></div><ul class="wndevs">${wn.other.map((d,di)=>devH(d,"o",di)).join("")}</ul></div>`:""}</div>
   <div class="muted small">As of ${esc(wn.as_of)}. ${esc(wn.note)}</div>`;
-  const place=()=>{const ld=document.getElementById("leaders"),mt=document.querySelector(".maptile");const a=ld||mt;if(a)a.after(s);else (document.querySelector("main")||document.body).prepend(s)};
-  place();let n=0;const iv=setInterval(()=>{const ld=document.getElementById("leaders");if(ld&&ld.nextElementSibling!==s){ld.after(s)}if(ld||++n>40)clearInterval(iv)},250);
+  /* last content section: directly after the network (Alliances and rivalries) */
+  const place=()=>{const nr=document.querySelector("section.netrow");if(nr){if(nr.nextElementSibling!==s)nr.after(s)}else (document.querySelector("main")||document.body).appendChild(s)};
+  place();
   const chip=g=>{const b=document.querySelector(`#grouplegend .chip[data-g="${g||""}"]`);if(b)b.click()};
   const view=v=>{if(window.MAPZ)window.MAPZ.view(v)};
   const region=id=>{const p=[...document.querySelectorAll("#mapsvg path.adm")].find(p=>p.__data__&&p.__data__.properties&&p.__data__.properties.id===id);if(p)p.dispatchEvent(new MouseEvent("click",{bubbles:true}))};

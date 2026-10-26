@@ -1,4 +1,4 @@
-/* Group profile cards (data/profiles.json): placed between "Who's in charge now" (#leaders) and "What's new" (#whatsnew). Always shows every group. */
+/* Group profile cards (data/profiles.json): placed directly after the map; each card carries its "Who's in charge now" block (leaders.js). Always shows every group. */
 (function(){
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const FNx=r=>window.FN?window.FN(r):"";
@@ -47,8 +47,7 @@ Promise.all([J("data/profiles.json"),J("data/group_countries.json"),J("data/grou
    <details class="pfmore"><summary>More</summary><div class="pfszb">${sizeLines(p.id)}</div><div class="pfmem"><div class="pfmemh">Members over time</div>${chart(p,col)}<div class="pfnote">${p.series_note?esc(p.series_note):""}${srcs.length?FNx(srcs):""}</div></div>${(p.more||[]).map(([t,c])=>`<p>${esc(t)}${FNx(c)}</p>`).join("")}</details></div>`};
  const sec=document.createElement("section");sec.className="tile pftile";sec.id="profiles";
  sec.innerHTML=`<details open class="pfdet"><summary><h2>Group profiles</h2><span class="muted"> · who each group is, where it operates, what it does</span></summary><div class="pfgrid">${PR.profiles.map(card).join("")}</div><div class="muted small">As of ${esc(PR.as_of)}. Descriptive only. Flags: sourced presence (home country first); absence means no sourced entry. Crime chips: primary/secondary activities in cited sources.</div><details class="pfcredits"><summary>Photo credits</summary><ul>${PR.profiles.filter(p=>p.image).map(p=>`<li>${esc(p.name||p.id)}: ${esc(p.image.caption)} · ${esc(p.image.author)}, ${esc(p.image.license)} (<a href="${esc(p.image.page)}" target="_blank" rel="noopener">Wikimedia Commons</a>)</li>`).join("")}</ul></details></details>`;
- const place=()=>{const wn=document.getElementById("whatsnew"),ld=document.getElementById("leaders");
-   const lds=ld&&(ld.closest("section")||ld);if(lds){if(lds.previousElementSibling!==sec)lds.before(sec)}else if(wn){if(wn.previousElementSibling!==sec)wn.before(sec)}else if(!sec.isConnected){const mt=document.querySelector(".maptile");mt?mt.after(sec):document.body.appendChild(sec)}};
+ const place=()=>{const mt=document.querySelector(".maptile");if(mt){if(mt.nextElementSibling!==sec)mt.after(sec)}else if(!sec.isConnected)document.body.appendChild(sec)};
  place();let n=0;const iv=setInterval(()=>{place();if(++n>60)clearInterval(iv)},250);
  const lg=document.getElementById("grouplegend");if(lg)lg.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;const g=b.dataset.g;sec.querySelectorAll(".pfcard").forEach(c=>c.classList.toggle("hl",!!g&&c.dataset.g===g))});
 }).catch(e=>console.warn("profiles",e));

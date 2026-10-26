@@ -15,18 +15,24 @@ function start(){const M=window.MAPX;if(!M||!window.__proj||!document.getElement
   eg.append("text").text(d=>d.n).attr("x",5).attr("y",4.5).attr("font-size",13).attr("fill","#ffffff").attr("stroke","#0b1526").attr("stroke-width",2.5).attr("paint-order","stroke")};
  const OFF={drug:[0,0],migr:[2.5,2.5],guns:[-2.5,-2.5]};
  const arrows=(s,color)=>{const ar=[],tmp=d3.select("body").append("svg").style("position","absolute").style("visibility","hidden").style("width",0).style("height",0),tp=tmp.append("path").node();
-  s.selectAll("path.ovl").each(function(){tp.setAttribute("d",this.getAttribute("d"));const L=tp.getTotalLength();if(!L||L<25)return;(()=>{const n=Math.max(1,Math.floor(L/90)),ts=[];for(let i=1;i<=n;i++)ts.push(i/(n+1));ts.push(.985);return ts})().forEach(t=>{const a=tp.getPointAtLength(L*t-1),b=tp.getPointAtLength(L*t);ar.push({x:b.x,y:b.y,r:Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI})})});tmp.remove();
+  s.selectAll("path.ovl").each(function(){tp.setAttribute("d",this.getAttribute("d"));const L=tp.getTotalLength();if(!L||L<160)return;
+   /* one arrow per segment, 60% along; skip it if another arrow is already within 70px (overlapping or converging corridors) */
+   const a=tp.getPointAtLength(L*.6-1),b=tp.getPointAtLength(L*.6);if(ar.some(q=>Math.hypot(q.x-b.x,q.y-b.y)<70))return;ar.push({x:b.x,y:b.y,r:Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI})});tmp.remove();
   s.append("g").style("pointer-events","none").selectAll("g").data(ar).join("g").attr("class","pt").attr("data-t",d=>`translate(${d.x},${d.y}) rotate(${d.r})`).attr("transform",function(){return `${this.dataset.t} scale(${1/(window.__zk||1)})`}).append("path").attr("d","M-7,-6L7,0L-7,6Z").attr("fill",color).attr("stroke","#0b1526").attr("stroke-width",1.5)};
  Promise.all(L.map(l=>fetch(l.f).then(r=>r.json()))).then(gs=>{
   const notes=document.createElement("div");notes.id="routenotes";notes.className="rnotes muted small";
   gs.forEach((g,i)=>{const l=L[i],vs=g.features.map(f=>+f.properties.volume||0),mx=Math.max(...vs,1);
    const sw=d=>d.properties.volume?1.8+3.2*Math.sqrt(d.properties.volume/mx):2.2;
    M.mk(l.k,l.label,l.color,s=>{s.append("g").selectAll("path").data(g.features).join("path").attr("d",rp).attr("fill","none").attr("stroke","#0b1526").attr("stroke-opacity",.85).attr("stroke-width",d=>sw(d)+2.5).attr("stroke-linecap","round").attr("vector-effect","non-scaling-stroke").style("pointer-events","none");
-    s.append("g").selectAll("path").data(g.features).join("path").attr("class","ovl rt-"+l.k).attr("d",rp).attr("fill","none").attr("stroke",l.color).attr("stroke-width",sw).attr("stroke-linecap","round").attr("vector-effect","non-scaling-stroke").style("cursor","pointer").on("click",(e,d)=>show(d.properties,l)).append("title").text(d=>`${d.properties.from} → ${d.properties.to} (${d.properties.subtype})`);s.attr("transform",`translate(${OFF[l.k]})`);arrows(s,l.color);ends(s,g.features,l.color)});
+    s.append("g").selectAll("path").data(g.features).join("path").attr("class","ovl rt-"+l.k).attr("d",rp).attr("fill","none").attr("stroke",l.color).attr("stroke-width",sw).attr("stroke-linecap","round").attr("vector-effect","non-scaling-stroke").style("cursor","pointer").on("click",(e,d)=>show(d.properties,l)).append("title").text(d=>`${d.properties.from} → ${d.properties.to} (${d.properties.subtype})`);s.append("g").style("pointer-events","none").selectAll("path").data(g.features).join("path").attr("class","rtflow").attr("d",rp).attr("fill","none").attr("stroke-width",d=>Math.max(1.4,sw(d)*.55)).attr("vector-effect","non-scaling-stroke");s.attr("transform",`translate(${OFF[l.k]})`);arrows(s,l.color);ends(s,g.features,l.color)});
    if(M.layers&&M.layers[l.k])M.layers[l.k].lower();
    const box=document.getElementById("routebox")||document.getElementById("layers"),lab=document.querySelector(`#layers label[data-k="${l.k}"]`);
    if(lab){lab.innerHTML=`<input type="checkbox"> <svg width="22" height="8" style="vertical-align:middle"><line x1="1" y1="4" x2="21" y2="4" stroke="${l.color}" stroke-width="3" stroke-linecap="round"/></svg> <span>${esc(l.short)} (${g.features.length})</span>`;
-    const inp=lab.querySelector("input");inp.onchange=e=>M.layers[l.k].style("display",e.target.checked?null:"none");lab.dataset.o=i;
+    const inp=lab.querySelector("input");inp.dataset.route=l.k;inp.onchange=e=>{const on=e.target.checked;
+     /* routes are one-at-a-time: ticking one unticks the others; ticking the active one again turns all off */
+     if(on)box.querySelectorAll("input[data-route]").forEach(x=>{if(x!==inp&&x.checked){x.checked=false;M.layers[x.dataset.route]&&M.layers[x.dataset.route].style("display","none")}});
+     M.layers[l.k].style("display",on?null:"none")};
+    if(l.k==="drug"){inp.checked=true;M.layers[l.k].style("display",null)}else{inp.checked=false;M.layers[l.k].style("display","none")}lab.dataset.o=i;
     const after=[...box.querySelectorAll("label")].find(x=>+x.dataset.o>i);box.insertBefore(lab,after||null)}
    const subs=Object.keys(l.dash).filter(k=>g.features.some(f=>f.properties.subtype===k));
    notes.insertAdjacentHTML("beforeend",`<div data-k="${l.k}"><b style="color:${l.color}">${esc(l.label)}</b> (${g.features.length}). Click or hover a line for its type (${subs.join(", ")}). ${esc(g.notes.note)}${FN(g.notes.sources)}</div>`)});

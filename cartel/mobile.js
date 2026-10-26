@@ -61,7 +61,6 @@ fetch("data/group_countries.json").then(r=>r.json()).catch(()=>({groups:{}})).th
  group("#profiles .pfgrid",".pfcard","groups");
  when(()=>document.querySelector("#profiles .mgrp"),()=>document.querySelectorAll("#profiles .pfcard").forEach(c=>{const b=document.createElement("button");b.className="mdet";b.textContent="Full profile ▸";
   b.onclick=()=>{const k=c.cloneNode(true);k.querySelector(".mdet")?.remove();k.querySelector(".pfmore")?.setAttribute("open","");drawer(k.outerHTML)};c.appendChild(b)}));
- group("#ldgrid, #leaders .ldgrid",".gc.ld","groups",false);
  /* 4. wide graphics: full size, sideways scroll with a hint */
  const swipe=el=>{if(!el||el.dataset.msw)return;el.dataset.msw=1;const w=document.createElement("div");w.className="mscroll";el.parentNode.insertBefore(w,el);w.appendChild(el);
   const h=document.createElement("div");h.className="mswipe";h.textContent="↔ Swipe sideways to see the whole chart";w.parentNode.insertBefore(h,w)};

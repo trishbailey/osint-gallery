@@ -28,7 +28,7 @@ Promise.all([J("data/sources.json"),J("data/routes.geojson"),J("data/crossings.g
   kpis(net,cross,money,events,terr);
   const M=mapView(topo,adm,terr,routes,cross,china,GC);
   overview(ov,arcs,net,terr,events,M);
-  moneyTile(money);netTile(net,terr,topo);cards(net,terr,M);ticker(events);background(arcs);sources(src);
+  netTile(net,terr,topo);cards(net,terr,M);ticker(events);background(arcs);sources(src);
 });
 function kpis(net,cross,money,events,terr){
   const fto=net.groups.filter(g=>g.fto).length, s=cross.stats;
@@ -89,8 +89,8 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   const L=$("grouplegend");L.innerHTML=`<button class="chip on" data-g="">All groups</button>`+terr.groups.filter(x=>used.has(x.id)).map(x=>`<button class="chip" data-g="${x.id}"><span class="dot" style="background:${FC(x.id)}"></span>${esc(x.name)}</button>`).join("");
   const setF=id=>{filt=id||null;fset=null;L.querySelectorAll(".chip").forEach(b=>b.classList.toggle("on",b.dataset.g===(id||"")));paint();key()};
   L.querySelectorAll(".chip").forEach(b=>b.onclick=()=>setF(b.dataset.g));
-  const key=()=>$("keybox").innerHTML=fset?`<b>Storyline groups</b><br>`+fset.map(x=>`<span class="dot" style="background:${FC(x)}"></span> ${esc(GC[x].name)}`).join("<br>"):filt?`<b>${esc(GC[filt].name)}</b>`+swatches(FC(filt))
-    :`<b>Presence</b>${swatches(FC("cjng"))}<span class="sw hatch"></span> ▧ Contested / shared (wide stripes)<br><span class="sw" style="background:#1b2c4a;border:1px solid #3a5583"></span> No sourced footprint`;key();
+  const key=()=>$("keybox").innerHTML=fset?`<b>Storyline groups</b>`+fset.map(x=>`<span class="ki"><span class="dot" style="background:${FC(x)}"></span> ${esc(GC[x].name)}</span>`).join(""):filt?`<b>${esc(GC[filt].name)}</b>`+swatches(FC(filt))
+    :`<b>Presence</b>${swatches(FC("cjng"))}<span class="ki"><span class="sw hatch"></span> ▧ Contested / shared (wide stripes)</span><span class="ki"><span class="sw" style="background:#1b2c4a;border:1px solid #3a5583"></span> No sourced footprint</span>`;key();
   $("mapnotes").innerHTML=`<p>${esc(terr.note)}</p><h3>Where footprint data is thin</h3><ul>${terr.thin.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`;
   // overlays
   const proj2=c=>proj(c);
@@ -132,24 +132,6 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   return {setF:id=>{setF(id);document.querySelector(".maptile").scrollIntoView({behavior:"smooth"})},setMode,layerOn,
     story:sl=>{setMode();setF("");fset=sl.groups&&sl.groups.length?sl.groups:null;L.querySelectorAll(".chip").forEach(b=>b.classList.remove("on"));paint();key();
       Object.keys(layers).forEach(k=>layerOn(k,(sl.layers||[]).includes(k)));svg.transition().duration(800).call(zoom.transform,fitBox(...sl.view));document.querySelector(".maptile").scrollIntoView({behavior:"smooth"})}};
-}
-function moneyTile(m){
-  $("moneyunit").textContent=m.unit;
-  const el=$("sankey"),W=Math.max(300,el.parentNode.clientWidth-28),ph=W<600,H=ph?400:420;const svg=d3.select(el).attr("width",W).attr("height",H).attr("viewBox",`0 0 ${W} ${H}`);
-  /* labels sit above each node (never on the bands), so leave a top gap and wide node padding */
-  const {nodes,links}=d3.sankey().nodeId(d=>d.id).nodeWidth(16).nodePadding(ph?52:58).extent([[8,40],[W-8,H-10]])({nodes:m.nodes.map(d=>({...d})),links:m.links.map(d=>({...d}))});
-  const gc={source:"#c8a24a",channel:"#5b8fd1",use:"#6aa684"};
-  svg.append("g").selectAll("path").data(links).join("path").attr("d",d3.sankeyLinkHorizontal()).attr("fill","none").attr("stroke","#5b8fd1").attr("stroke-opacity",.45).attr("stroke-width",d=>Math.max(2,d.width)).style("cursor","pointer")
-   .on("click",(e,d)=>drawer(`<h2>${esc(d.source.name)} → ${esc(d.target.name)}</h2><p><b>$${d.value}bn</b> (${esc(d.period||"")}, ${esc(d.status||"")})</p><p class="note">${esc(m.unit)}</p>${cite(d.cites)}`)).append("title").text(d=>`${d.source.name} → ${d.target.name}: $${d.value}bn`);
-  const n=svg.append("g").selectAll("g").data(nodes).join("g").style("cursor","pointer").on("click",(e,d)=>drawer(`<h2>${esc(d.name)}</h2><p><b>$${d.value}bn</b></p><p class="note">${esc(m.unit)}</p>`));
-  n.append("rect").attr("x",d=>d.x0).attr("y",d=>d.y0).attr("width",d=>d.x1-d.x0).attr("height",d=>Math.max(3,d.y1-d.y0)).attr("fill",d=>gc[d.group]).append("title").text(d=>`${d.name}: $${d.value}bn`);
-  const anc=d=>d.group==="source"?"start":d.group==="use"?"end":"middle",lx=d=>d.group==="source"?d.x0:d.group==="use"?d.x1:(d.x0+d.x1)/2;
-  const lbl=d=>d.group==="source"?`$${d.value}bn total`:d.group==="use"?(ph?`Reported $${d.value}bn`:`${d.name} $${d.value}bn`):`${d.name} $${d.value}bn`;
-  n.append("text").attr("class","lbl mlbl").attr("text-anchor",anc).attr("x",lx).attr("y",d=>ph&&d.group!=="channel"?d.y1+20:d.y0-10).text(lbl);
-  $("moneycav").innerHTML=`Covers only one channel: suspicious-activity reports tied to Chinese money-laundering networks filed with FinCEN, 2020-2024 (one source, one unit). Not total cartel money. <a href="#" onclick="document.querySelector('#moneycov').scrollIntoView({behavior:'smooth'});return false">Other channels ▾</a>`;
-  const CH=[["Chinese money-laundering networks (bank/MSB reports)","$312bn reported suspicious activity, 2020-24",["FINCEN_CMLN_FTA"]],["Real estate","$53.7bn of the CMLN reports (overlapping tag)",["FINCEN_CMLN_FTA"]],["Trade-based laundering","$9.7bn of the CMLN reports (overlapping tag)",["FINCEN_CMLN_FTA"]],["Fentanyl-related bank reports","$1.4bn, 2024",["FINCEN_FENT_FTA"]],["Bulk cash smuggled south","no sourced figure",[]],["Remittances","no sourced figure",[]],["Crypto","no sourced figure",[]],["Fuel theft (huachicol)","no sourced figure",[]],["Extortion","no sourced figure in USD",[]]];
-  $("moneycov").innerHTML=`<h3>Money channels: what has a sourced figure</h3><table class="mcov">${CH.map(([a,b,c])=>`<tr><td>${esc(a)}</td><td class="${/no sourced/.test(b)?"muted":""}">${esc(b)}${c.length?cite(c):""}</td></tr>`).join("")}</table><div class="small muted">Rows without a figure are known channels where no credible, sourced annual figure was found. Report figures are amounts flagged, not proven laundering.</div>`;
-  $("moneymore").innerHTML=`<p><b>${esc(m.takeaway)}</b></p><p>${esc(m.summary)}</p><h3>Typologies flagged (overlapping)</h3>${m.typologies.map(t=>`<div>${esc(t.name)}: $${t.value}bn</div>`).join("")}${cite(["FINCEN_CMLN_FTA"])}<h3>Related</h3>${m.related.map(r=>`<div><b>${esc(r.name)}</b>${r.value?` ($${r.value}bn)`:""}: ${esc(r.text||"")}${cite(r.cites)}</div>`).join("")}<p class="note">${esc(m.notes)}</p>`;
 }
 function netTile(net,terr,topo){
   const el=$("netsvg");el.style.width="100%";const W=Math.max(900,el.parentNode.clientWidth-28),H=W<1000?820:780;const svg=d3.select(el).attr("width",W).attr("height",H).attr("viewBox",`0 0 ${W} ${H}`);svg.selectAll("*").remove();
