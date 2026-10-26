@@ -33,6 +33,8 @@ def rewrite(text, slug, old_url, ext):
     if ext in (".html", ".htm", ".svg"):
         text = re.sub(r'(\b(?:href|src|action|poster|data-src)=["\'])/' + neg, r"\1" + base, text)
         text = re.sub(r'(\bsrcset=["\'])/' + neg, r"\1" + base, text)
+        # unquoted attributes, e.g. <a href=/storylines/x.html>
+        text = re.sub(r'(\b(?:href|src|action|poster)=)/' + neg + r'(?=[^\s"\'>]*)', r"\1" + base, text)
     if ext in (".html", ".htm", ".css"):
         text = re.sub(r'(url\(\s*["\']?)/' + neg, r"\1" + base, text)
     if ext in (".html", ".htm", ".js"):
