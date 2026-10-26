@@ -94,6 +94,10 @@ sup.fn a:hover{color:var(--gold)}
 .stage{display:grid;grid-template-columns:272px minmax(0,1fr);gap:16px;align-items:start}
 #side{position:sticky;top:64px;align-self:start;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px 12px;max-height:calc(100vh - 80px);overflow:auto}
 #side-toggle{display:none}
+#basin-side{position:sticky;top:64px;align-self:start;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px 12px;max-height:calc(100vh - 80px);overflow:auto}
+#s-panel .stage{min-width:0}
+#s-panel .stage-main,#panel,#panel > *{min-width:0}
+#panel .full,#panel .chart-scroll{overflow-x:auto;max-width:100%}
 .side-h{margin:10px 0 4px;font-size:13px;letter-spacing:.08em;color:var(--gold);font-weight:700}
 .side-btns{display:flex;flex-direction:column;gap:6px}
 .side-btns .tab,.side-btns .chip,.side-btns .lg{width:100%;justify-content:flex-start;text-align:left}
@@ -146,7 +150,8 @@ button,.tab,.chip,.lg,summary{white-space:normal}
 #s-panel.sheet{display:block;position:fixed;left:0;right:0;bottom:0;z-index:70;max-height:86vh;overflow:auto;margin:0;padding:8px 12px 22px;background:var(--bg);border:none;border-radius:16px 16px 0 0;box-shadow:0 -12px 40px rgba(0,0,0,.55)}
 #levels{margin:0 -12px 8px;padding:6px 12px;gap:6px}
 #levels a{min-height:40px;padding:4px 8px;font-size:14px}
-#s-panel > .prompt,#s-panel > #chips{display:none}
+#s-panel > .prompt{display:none}
+#basin-side{position:static;top:auto;max-height:46vh;margin:0 0 10px}
 #s-panel.sheet > h2{margin:2px 0 4px;font-size:18px}
 #s-panel.sheet > .lvl-note{margin:0 0 8px}
 .sheet-bar{display:block;position:sticky;top:0;z-index:2;background:var(--bg);padding-bottom:6px}
@@ -215,8 +220,6 @@ svg.phone-map{overflow:hidden}
       <div id="side-body">
         <p class="side-h">Region</p>
         <div id="side-regions" class="side-btns"></div>
-        <p class="side-h">Basin</p>
-        <div id="side-basins" class="side-btns"></div>
         <p class="side-h">Show</p>
         <div id="layers" class="side-btns"></div>
         <div id="side-notes"></div>
@@ -232,8 +235,13 @@ svg.phone-map{overflow:hidden}
   <div class="sheet-bar phone-only"><button type="button" id="sheet-close" class="sheet-close">Close basin</button></div>
   <h2>Level 2 · River basins: the detail</h2>
   <p class="lvl-note">Dams, dependency, and the record for one basin.</p>
-  <div class="chips" id="chips"></div>
-  <div id="panel"></div>
+  <div class="stage">
+    <aside id="basin-side" aria-label="Basins">
+      <p class="side-h">Basin</p>
+      <div id="chips" class="side-btns"></div>
+    </aside>
+    <div class="stage-main" id="panel"></div>
+  </div>
 </section>
 <section id="s-rank">
   <button type="button" class="fold-btn phone-only" aria-expanded="false" aria-controls="rank-body">Who depends</button>
@@ -611,9 +619,7 @@ const REG=[['Nile & North Africa',[[1,20,22]]],['Middle East',[[3,5,9]]],['South
 const titles={'10':'Colorado / Rio Grande','18,21':'Paraná / La Plata and Guarani','16,17,11':'Danube, Rhine, Dnipro'};
 REG.forEach(([n,groups],i)=>{const sec=d3.select('#regions').append('div').attr('class','region').attr('id','reg'+i);sec.append('h3').text(n);const box=sec.append('div').attr('class','maps');
  groups.forEach(ids=>{const key=ids.join(',');const m=box.append('div').attr('class','mapbox');if(key==='1,20,22')m.attr('id','box-nile');if(key==='3,5,9')m.attr('id','box-mideast');if(groups.length>1)m.append('h3').text(titles[key]);const baseW=groups.length>1?(ids.length>2?1240:610):1240,baseH=groups.length>1?(ids.length>2?640:600):(i===0?980:720);const stageEl=document.querySelector('.stage-main');const stageW=(stageEl&&stageEl.clientWidth)||baseW;const useW=isPhone()?contentW():Math.max(280,Math.min(baseW,stageW-2)),useH=isPhone()?Math.max(240,Math.round(baseH*useW/baseW)):Math.max(280,Math.round(baseH*useW/baseW));const say=arrowSay(ids);if(say)m.append('p').attr('class','arrow-key').html(arrowSwatch()+'<span>'+say+'</span>');const svgM=drawMap(m,ids,useW,useH,{key,sparse:isPhone()});const capBox=m.append('div').html(capHTML(key,B.filter(b=>ids.includes(b.id))));if(isPhone()){const notes=(svgM&&svgM.property('damNotes'))||[];const have=capBox.text();const extra=notes.filter(n=>n&&!have.includes(String(n).split(',')[0]));if(extra.length)capBox.append('p').attr('class','cap').text(extra.join(' '))}const jumps=m.append('div').attr('class','basin-jumps');jumps.append('span').text('See its basins');ids.forEach(id=>{const b=B.find(x=>+x.id===+id);if(!b)return;jumps.append('button').attr('type','button').attr('class','jump').attr('title','Open '+shown(b.name)).text(jumpName(b)).on('click',()=>show(b.id,true))})});});
-function setRegion(i){clearTip();d3.selectAll('#side-regions .tab').classed('on',(_,j)=>j===i);d3.selectAll('.region').style('display',(_,j)=>j===i?null:'none');
- const ids=REG[i][1].flat();const box=d3.select('#side-basins').html('');
- B.filter(b=>ids.includes(b.id)).forEach(b=>box.append('button').attr('type','button').attr('class','chip').attr('data-id',b.id).attr('title','Open '+shown(b.name)).text(shown(b.name)).on('click',()=>show(b.id,true)));setArrowNotes(REG[i][1].map(arrowSay))}
+function setRegion(i){clearTip();d3.selectAll('#side-regions .tab').classed('on',(_,j)=>j===i);d3.selectAll('.region').style('display',(_,j)=>j===i?null:'none');setArrowNotes(REG[i][1].map(arrowSay))}
 d3.select('#side-regions').selectAll('button').data(REG).join('button').attr('type','button').attr('class',(_,i)=>'tab'+(i?'':' on')).attr('title',d=>'Show '+d[0]).text(d=>d[0]).style('background',(_,i)=>RC[i]).style('color',(_,i)=>i===2||i===6?'#1a1208':'#fff').on('click',(e,d)=>setRegion(REG.indexOf(d)));
 d3.select('#side-notes').html(keyNotes());
 const LAY=[['flow','River water',WATER],['cut','Cut-off',CUT],['threat','Threat',THR],['neither','Neither',NEI],['dam','Dams',NEI],['aq','Aquifers',AQINK]];
@@ -634,7 +640,7 @@ function axisBars(svg,rows,x0,bw){const x=d3.scaleLinear([0,100],[0,bw]);
    svg.append('text').attr('x',x0+bw+8).attr('y',y+16).text(d.v+'%')}
   else svg.append('text').attr('x',x0+8).attr('y',y+16).text('no sourced figure').attr('fill','#e6e9ef')})}
 function show(id,scroll){clearTip();const ri=REG.findIndex(r=>r[1].flat().includes(+id));if(ri>=0)setRegion(ri);setArrowNotes([arrowSay([+id])]);
- const b=B.find(x=>x.id==id);d3.selectAll('#chips .chip').classed('on',d=>d.id==id);(()=>{let hit=false;d3.selectAll('#sumchips .chip').classed('on',function(){const on=!hit&&this.dataset.id==String(id);if(on)hit=true;return on})})();d3.selectAll('#side-basins button').classed('on',function(){return this.dataset.id==String(id)});const P=d3.select('#panel').html('');P.append('button').attr('type','button').attr('class','back-region full').text('Back to region').on('click',()=>{clearTip();holdLevel(1);if(isPhone())closeSheet();const el=document.getElementById(ri>=0?'reg'+ri:'s-maps');if(el)el.scrollIntoView({behavior:'smooth',block:'start'})});
+ const b=B.find(x=>x.id==id);d3.selectAll('#chips .chip').classed('on',d=>d.id==id);(()=>{let hit=false;d3.selectAll('#sumchips .chip').classed('on',function(){const on=!hit&&this.dataset.id==String(id);if(on)hit=true;return on})})();const P=d3.select('#panel').html('');P.append('button').attr('type','button').attr('class','back-region full').text('Back to region').on('click',()=>{clearTip();holdLevel(1);if(isPhone())closeSheet();const el=document.getElementById(ri>=0?'reg'+ri:'s-maps');if(el)el.scrollIntoView({behavior:'smooth',block:'start'})});
  const Lf=P.append('div');Lf.append('h3').text(shown(b.name));
  if(isPhone()&&scroll)openSheet();
  const mw=isPhone()?Math.max(260,document.documentElement.clientWidth-32):440,mh=isPhone()?Math.max(220,Math.round(420*mw/440)):420;
@@ -644,7 +650,7 @@ function show(id,scroll){clearTip();const ri=REG.findIndex(r=>r[1].flat().includ
  R.append('p').attr('class','unit').html('Percent of renewable water from abroad, largest first, from zero.'+FN(1));
  const dd=b.rip.map(r=>b.dep.find(d=>d.c===r)||{c:r,v:null}).sort((a,c)=>(c.v??-1)-(a.v??-1));
  if(isPhone())phoneBars(R,dd.map(d=>({label:d.c.replace('United States of America','United States'),v:d.v})));
- else{const bs=R.append('svg').attr('class','chart').attr('width',640).attr('height',36+dd.length*28).attr('role','img').attr('aria-label','Dependency bars for '+shown(b.name));
+ else{const bs=R.append('div').attr('class','chart-scroll').append('svg').attr('class','chart').attr('width',640).attr('height',36+dd.length*28).attr('role','img').attr('aria-label','Dependency bars for '+shown(b.name));
  axisBars(bs,dd.map(d=>({label:d.c,v:d.v})),210,280)}
  const ev=TL.filter(t=>t.b===b.name);const F=P.append(isPhone()?'details':'div').attr('class',isPhone()?'full phone-fold':'full');
  if(isPhone())F.append('summary').html('Flashpoint timeline'+FN(6));else F.append('h3').html('Flashpoint timeline'+FN(6));
@@ -658,7 +664,7 @@ function show(id,scroll){clearTip();const ri=REG.findIndex(r=>r[1].flat().includ
  const key=ev.filter(d=>d.k!=='other'),rest=ev.filter(d=>d.k==='other');const li=(ul,d)=>ul.append('li').html(`<i class="sw" style="background:${KC[d.k]}"></i> <b>${d.d}</b> <a href="${d.u}" target="_blank" rel="noopener">${d.h}</a>`);
  const ul=F.append('ul').attr('class','events');key.slice(-6).forEach(d=>li(ul,d));
  const more=key.slice(0,-6).concat(rest);if(more.length){const det=F.append('details').attr('class','more');det.append('summary').attr('title','Show the rest of the chronology').text('Show '+more.length+' more entries');const u2=det.append('ul').attr('class','events');more.forEach(d=>li(u2,d))}}
- markBasin(id);if(scroll){holdLevel(2);if(isPhone()){if(!document.getElementById('s-panel').classList.contains('sheet'))openSheet()}else document.getElementById('s-panel').scrollIntoView({behavior:'smooth',block:'start'})}}
+ markBasin(id);if(scroll){holdLevel(2);if(isPhone()){if(!document.getElementById('s-panel').classList.contains('sheet'))openSheet()}else document.getElementById('s-panel').scrollIntoView({behavior:'smooth',block:'start'})}const sideBox=document.getElementById('basin-side');const onChip=sideBox&&sideBox.querySelector('button.on');if(onChip){const top=onChip.getBoundingClientRect().top-sideBox.getBoundingClientRect().top+sideBox.scrollTop;sideBox.scrollTop=Math.max(0,top-8)}}
 show(1);
 const PAIRS=[[1,'Ethiopia','Egypt','Grand Ethiopian Renaissance Dam (GERD)'],[1,'Ethiopia','Sudan','Grand Ethiopian Renaissance Dam (GERD), Tekeze Dam'],[8,'India','Bangladesh','Farakka Barrage'],[8,'China','Bangladesh','Brahmaputra dams'],[2,'India','Pakistan','Baglihar Dam and other Indus dams'],[3,'Turkey','Syria','Atatürk Dam and Ilisu Dam'],[3,'Turkey','Iraq','Atatürk Dam and Ilisu Dam'],[3,'Syria','Iraq','Tabqa Dam and Tishreen Dam'],[9,'Afghanistan','Iran','Kajaki Dam and Kamal Khan Dam'],[6,'Tajikistan','Turkmenistan','Nurek Dam and Rogun Dam'],[6,'Afghanistan','Turkmenistan','Qosh Tepa Canal'],[7,'Kyrgyzstan','Uzbekistan','Toktogul Dam'],[4,'China','Cambodia','Lancang cascade'],[4,'Laos','Cambodia','Xayaburi Dam and Don Sahong Dam'],[4,'China','Vietnam','Lancang cascade'],[11,'Russia','Ukraine',''],[13,'Angola','Namibia',''],[14,'Guinea','Niger',''],[15,'Mali','Mauritania','Manantali Dam'],[16,'Slovakia','Hungary','Gabčíkovo Dam'],[17,'Switzerland','Netherlands',''],[18,'Brazil','Paraguay','Itaipu Dam'],[18,'Brazil','Argentina','Itaipu Dam'],[19,'Zambia','Mozambique','Kariba Dam'],[10,'United States of America','Mexico','Hoover Dam and Glen Canyon Dam'],[5,'Israel','Jordan','National Water Carrier']];
 const rows=PAIRS.map(([id,u,d,lv])=>{const b=B.find(x=>x.id==id);const dv=b.dep.find(x=>x.c===d);return{b,u,d,lv,v:dv?dv.v:null,y:dv?dv.y:null}}).sort((a,c)=>(c.v??-1)-(a.v??-1));
