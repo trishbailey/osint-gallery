@@ -143,6 +143,14 @@
       "status": "live"
     },
     {
+      "id": "cartel",
+      "name": "Latin America Cartel Dashboard",
+      "blurb": "Maps cartel territory, violence, leaders, money flows and seizures across Latin America, with a live X feed and sourced timelines.",
+      "icon": "",
+      "enterUrl": "https://cartel-dashboard.onrender.com/",
+      "status": "live"
+    },
+    {
       "id": "axis-network",
       "name": "Axis Channel Network",
       "blurb": "Findings map of how messages, websites and fundraising details move between Iran-aligned groups’ public Telegram, Eitaa and X channels, 20 Sep – 20 Oct 2026.",
