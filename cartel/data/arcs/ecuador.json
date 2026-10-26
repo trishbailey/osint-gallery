@@ -1,0 +1,71 @@
+{
+ "title": "Ecuador's gang war",
+ "current_phase": "Los Choneros and Los Lobos fight over Ecuador's cocaine export economy.",
+ "history": [
+  {
+   "text": "Ecuador became a major cocaine export hub after 2020.",
+   "cites": [
+    "IC_ECUADOR"
+   ]
+  }
+ ],
+ "turning_points": [
+  {
+   "text": "Fito extradited to the US.",
+   "cites": [
+    "DEA_FITO"
+   ],
+   "date": "2025-07-21"
+  }
+ ],
+ "actors": [
+  "choneros",
+  "lobos"
+ ],
+ "cites": [
+  "IC_ECUADOR",
+  "IC_CHONEROS",
+  "IC_LOBOS"
+ ],
+ "storyline": {
+  "order": 4,
+  "what": [
+   {
+    "text": "InSight Crime describes Los Choneros and Los Lobos fighting over ports and prisons that serve cocaine exports.",
+    "cites": [
+     "IC_ECUADOR",
+     "IC_LOBOS"
+    ]
+   },
+   {
+    "text": "Los Choneros leader Fito was extradited to the US in July 2025.",
+    "cites": [
+     "DEA_FITO"
+    ]
+   }
+  ],
+  "groups": [
+   "choneros",
+   "lobos"
+  ],
+  "view": [
+   -81.5,
+   -5,
+   -75,
+   1.5
+  ],
+  "trend": {
+   "kind": "headlines",
+   "match": [
+    "ecuador",
+    "guayaquil",
+    "choneros",
+    "lobos"
+   ],
+   "label": "Headlines in the feed mentioning Ecuador, by day"
+  },
+  "title": "Ecuador's gang war"
+ },
+ "id": "ecuador",
+ "log": []
+}

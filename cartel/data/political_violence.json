@@ -1,0 +1,542 @@
+{
+ "title": "Killings of sitting mayors and journalists in Mexico since October 2024",
+ "first": "2024-10-06",
+ "last": "2026-08-29",
+ "cites": [
+  "UNOTV_ALCALDES",
+  "ETCETERA_PERIODISTAS",
+  "A19_PERIODISTAS"
+ ],
+ "note": "Mayors: UnoTV's count of sitting mayors killed under the current administration (to 22 Jul 2026). Journalists: Revista Etcétera's list (to 22 Jul 2026, dates of confirmed death) plus El País for Ricardo Zúñiga Rosas. Lists differ from Article 19 (14 cases it links to journalistic work under this administration) and CPJ, which apply stricter motive tests. Candidates and other officials killed are not yet included; Data Cívica's 'Votar entre balas' tracker is the fuller source. Map points are approximate locations.",
+ "events": [
+  {
+   "date": "2024-10-06",
+   "name": "Alejandro Arcos Catalán",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Chilpancingo, Guerrero",
+   "lonlat": [
+    -99.5,
+    17.55
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2024-10-15",
+   "name": "Román Ruiz Bohórquez",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Candelaria Loxicha, Oaxaca",
+   "lonlat": [
+    -96.49,
+    15.93
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2024-10-29",
+   "name": "Mauricio Solís",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Michoacán",
+   "lonlat": [
+    -101.19,
+    19.7
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2024-10-30",
+   "name": "Patricia Ramírez González",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Colima",
+   "lonlat": [
+    -103.72,
+    19.24
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2024-12-03",
+   "name": "Adriano Bachega",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Nuevo León",
+   "lonlat": [
+    -100.31,
+    25.67
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2024-12-15",
+   "name": "Jesús Franco Lárraga",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Tancanhuitz, San Luis Potosí",
+   "lonlat": [
+    -98.96,
+    21.6
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2025-01-17",
+   "name": "Calletano de Jesús Guerrero",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Estado de México",
+   "lonlat": [
+    -99.66,
+    19.29
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2025-01-25",
+   "name": "Alejandro Gallegos",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Tabasco",
+   "lonlat": [
+    -92.93,
+    17.99
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2025-03-02",
+   "name": "Kristian Uriel Zavala",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Guanajuato",
+   "lonlat": [
+    -101.26,
+    20.52
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2025-03-14",
+   "name": "Irán Villarreal Belmont",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Guanajuato",
+   "lonlat": [
+    -100.82,
+    20.53
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2025-05-15",
+   "name": "Mario Hernández García",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Santiago Amoltepec, Oaxaca",
+   "lonlat": [
+    -97.5,
+    16.65
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2025-05-15",
+   "name": "José Carlos González Herrera",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Guerrero",
+   "lonlat": [
+    -99.88,
+    16.85
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2025-06-02",
+   "name": "Isaías Rojas Ramírez",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Metlatónoc, Guerrero",
+   "lonlat": [
+    -98.41,
+    17.19
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2025-06-03",
+   "name": "Yolanda Sánchez Figueroa",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Cotija, Michoacán",
+   "lonlat": [
+    -102.7,
+    19.81
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2025-06-05",
+   "name": "Salvador Bastida García",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Tacámbaro, Michoacán",
+   "lonlat": [
+    -101.46,
+    19.23
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2025-06-15",
+   "name": "Lilia Gema García Soto",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "San Mateo Piñas, Oaxaca",
+   "lonlat": [
+    -96.33,
+    15.97
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2025-06-21",
+   "name": "Acasio Flores Guerrero",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Malinaltepec, Guerrero",
+   "lonlat": [
+    -98.67,
+    17.25
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2025-06-23",
+   "name": "Shalom Salomón Ordóñez",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Puebla",
+   "lonlat": [
+    -98.2,
+    19.04
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2025-07-09",
+   "name": "Pedro Ronald Paz",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Guerrero",
+   "lonlat": [
+    -99.9,
+    16.87
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2025-07-09",
+   "name": "Ángel Sevilla",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Sonora",
+   "lonlat": [
+    -110.95,
+    29.07
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2025-10-20",
+   "name": "Miguel Bahena Solórzano",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Pisaflores, Hidalgo",
+   "lonlat": [
+    -99.0,
+    21.19
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2025-10-25",
+   "name": "Miguel Ángel Beltrán",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Durango",
+   "lonlat": [
+    -104.67,
+    24.03
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2025-11-01",
+   "name": "Carlos Alberto Manzo Rodríguez",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Uruapan, Michoacán",
+   "lonlat": [
+    -102.06,
+    19.42
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2026-01-08",
+   "name": "Carlos Leonardo Ramírez Castro",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Veracruz",
+   "lonlat": [
+    -96.13,
+    19.17
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2026-06-11",
+   "name": "Luis Ángel López",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Veracruz",
+   "lonlat": [
+    -94.45,
+    18.14
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2026-06-13",
+   "name": "Joel Ángel Bravo Martínez",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "San Miguel Amatitlán, Oaxaca",
+   "lonlat": [
+    -97.9,
+    17.85
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2026-07-03",
+   "name": "Roxana Guzmán",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Veracruz",
+   "lonlat": [
+    -94.4,
+    18.07
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2026-07-04",
+   "name": "Manuel Alejandro Mora Serna",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Guerrero",
+   "lonlat": [
+    -99.55,
+    17.6
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2026-07-13",
+   "name": "Eduardo Saavedra López",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "San Miguel Yogovana, Oaxaca",
+   "lonlat": [
+    -96.33,
+    16.92
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2026-07-16",
+   "name": "Josué Martínez Contreras",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Puebla",
+   "lonlat": [
+    -97.4,
+    18.47
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2026-07-22",
+   "name": "Valentín Lavín Romero",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Temoac, Morelos",
+   "lonlat": [
+    -98.78,
+    18.77
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ]
+  },
+  {
+   "date": "2026-07-22",
+   "name": "Francisco Alejandro Leyva Aguilar",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "place": "Oaxaca",
+   "lonlat": [
+    -96.76,
+    17.15
+   ],
+   "precision": "state-level or city as reported (approximate)",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "cites": [
+    "ETCETERA_PERIODISTAS"
+   ]
+  },
+  {
+   "date": "2026-08-29",
+   "name": "Ricardo Zúñiga Rosas",
+   "role": "Photographer and content creator",
+   "kind": "journalist",
+   "place": "Tehuitzingo, Puebla",
+   "lonlat": [
+    -98.34,
+    18.33
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://elpais.com/mexico/2026-08-31/mexico-lleva-ocho-periodistas-asesinados-en-lo-que-va-de-2026.html",
+   "cites": [
+    "ELPAIS_PERIODISTAS26",
+    "A19_PERIODISTAS"
+   ]
+  }
+ ]
+}

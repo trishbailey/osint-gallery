@@ -1,0 +1,849 @@
+{
+ "as_of": "2026-10-25",
+ "groups": [
+  {
+   "id": "sinaloa",
+   "name": "Sinaloa Cartel",
+   "kind": "cartel",
+   "country": "MX",
+   "lonlat": [
+    -107.39,
+    24.8
+   ],
+   "fto": {
+    "date": "2025-02-20",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Mexico's oldest major trafficking federation, now split by war between the Chapitos (sons of El Chapo) and the Mayiza (El Mayo Zambada's faction) since Sept 2024.",
+   "says_vs_does": "Its leaders long cultivated a 'no fentanyl' image. In practice the DEA names Sinaloa a top fentanyl producer, and Treasury keeps sanctioning its suppliers.",
+   "leaders": [
+    {
+     "name": "Ismael 'El Mayo' Zambada",
+     "role": "Co-founder",
+     "status": "Sentenced to life in the US, Jul 2026",
+     "cites": [
+      "DOJ_MAYO",
+      "DOJ_MAYO_SENT"
+     ]
+    },
+    {
+     "name": "Ovidio Guzmán López",
+     "role": "Chapitos",
+     "status": "Pleaded guilty in Chicago, Jul 2025",
+     "cites": [
+      "DOJ_OVIDIO"
+     ]
+    },
+    {
+     "name": "Joaquín Guzmán López",
+     "role": "Chapitos",
+     "status": "Pleaded guilty in Chicago, Dec 2025",
+     "cites": [
+      "DOJ_JOAQUIN"
+     ]
+    },
+    {
+     "name": "Iván Archivaldo Guzmán",
+     "role": "Chapitos leader",
+     "status": "At large",
+     "cites": [
+      "IC_SINALOA"
+     ]
+    }
+   ],
+   "cites": [
+    "IC_SINALOA",
+    "DEA25",
+    "ACLED_SIN",
+    "OFAC_SB0468"
+   ]
+  },
+  {
+   "id": "chapitos",
+   "name": "Los Chapitos",
+   "kind": "faction",
+   "country": "MX",
+   "lonlat": [
+    -107.6,
+    25.4
+   ],
+   "fto": {
+    "date": "2025-02-20",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Faction led by El Chapo's sons. They are fighting the Mayiza for Culiacán, Mazatlán and the sierra.",
+   "says_vs_does": "They publicly deny handing El Mayo to the US, but his July 2024 abduction by Joaquín Guzmán López set off the war.",
+   "leaders": [],
+   "cites": [
+    "ACLED_SIN",
+    "ELPAIS_SIN",
+    "JORNADA_SIN"
+   ]
+  },
+  {
+   "id": "mayiza",
+   "name": "La Mayiza",
+   "kind": "faction",
+   "country": "MX",
+   "lonlat": [
+    -106.9,
+    24.3
+   ],
+   "fto": {
+    "date": "2025-02-20",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Faction loyal to El Mayo Zambada, now without him. Mexico charged figures from both factions in Oct 2026.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "ACLED_SIN",
+    "JORNADA_SIN"
+   ]
+  },
+  {
+   "id": "cjng",
+   "name": "Jalisco Cartel New Generation (CJNG)",
+   "kind": "cartel",
+   "country": "MX",
+   "lonlat": [
+    -103.35,
+    20.67
+   ],
+   "fto": {
+    "date": "2025-02-20",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Expansive, militarised cartel. The DEA says it is present in more than 40 countries. Its founder El Mencho was killed on 22 Feb 2026, and succession is unconfirmed.",
+   "says_vs_does": "The reports name Juan Carlos Valencia 'El Pelón' as the likely successor. InSight Crime warns this is not confirmed.",
+   "leaders": [
+    {
+     "name": "Nemesio Oseguera 'El Mencho'",
+     "role": "Founder",
+     "status": "Killed 22 Feb 2026",
+     "cites": [
+      "ELPAIS_MENCHO"
+     ]
+    },
+    {
+     "name": "Juan Carlos Valencia 'El Pelón'",
+     "role": "Reported successor",
+     "status": "Unconfirmed",
+     "cites": [
+      "IC_CJNG_BOSS"
+     ]
+    }
+   ],
+   "cites": [
+    "IC_CJNG",
+    "DEA25",
+    "ELPAIS_MENCHO",
+    "IC_CJNG_BOSS",
+    "ECONOMISTA_CJNG"
+   ]
+  },
+  {
+   "id": "gulf",
+   "name": "Gulf Cartel",
+   "kind": "cartel",
+   "country": "MX",
+   "lonlat": [
+    -97.5,
+    25.9
+   ],
+   "fto": {
+    "date": "2025-02-20",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Fragmented Tamaulipas cartel. Its old armed wing, the Zetas, split off in 2010.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "IC_GULF"
+   ]
+  },
+  {
+   "id": "cdn",
+   "name": "Cartel del Noreste",
+   "kind": "cartel",
+   "country": "MX",
+   "lonlat": [
+    -99.5,
+    27.5
+   ],
+   "fto": {
+    "date": "2025-02-20",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Zetas successor group controlling Nuevo Laredo.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "IC_ZETAS"
+   ]
+  },
+  {
+   "id": "lnfm",
+   "name": "La Nueva Familia Michoacana",
+   "kind": "cartel",
+   "country": "MX",
+   "lonlat": [
+    -100.5,
+    18.6
+   ],
+   "fto": {
+    "date": "2025-02-20",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Operates in Guerrero, Michoacán and the State of Mexico.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "id": "unidos",
+   "name": "Cárteles Unidos",
+   "kind": "cartel",
+   "country": "MX",
+   "lonlat": [
+    -102.35,
+    19.09
+   ],
+   "fto": {
+    "date": "2025-02-20",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Michoacán coalition formed against the CJNG.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "FTO",
+    "IC_CJNG"
+   ]
+  },
+  {
+   "id": "viagras",
+   "name": "Los Viagras",
+   "kind": "cartel",
+   "country": "MX",
+   "lonlat": [
+    -102.0,
+    19.4
+   ],
+   "fto": {
+    "date": "2026-07-16",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Michoacán group in the Tierra Caliente.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "STATE_JUAREZ"
+   ]
+  },
+  {
+   "id": "juarez",
+   "name": "Juárez Cartel / La Línea",
+   "kind": "cartel",
+   "country": "MX",
+   "lonlat": [
+    -106.45,
+    31.2
+   ],
+   "fto": {
+    "date": "2026-07-16",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Controls Ciudad Juárez plazas against Sinaloa-aligned gangs.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "IC_JUAREZ",
+    "STATE_JUAREZ"
+   ]
+  },
+  {
+   "id": "tda",
+   "name": "Tren de Aragua",
+   "kind": "gang",
+   "country": "VE",
+   "lonlat": [
+    -67.6,
+    10.2
+   ],
+   "fto": {
+    "date": "2025-02-20",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Venezuelan prison gang that grew into a transnational network of extortion, smuggling and trafficking in people.",
+   "says_vs_does": "US officials portray it as directed by the Venezuelan state. That claim is contested and still unproven in court.",
+   "leaders": [],
+   "cites": [
+    "IC_TDA",
+    "DOJ_MADURO"
+   ]
+  },
+  {
+   "id": "soles",
+   "name": "Cartel de los Soles",
+   "kind": "state-linked network",
+   "country": "VE",
+   "lonlat": [
+    -66.9,
+    10.5
+   ],
+   "fto": {
+    "date": "2025-11-24",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Label for Venezuelan officials accused of trafficking. Maduro was captured in Jan 2026, and a June 2027 trial start has been proposed.",
+   "says_vs_does": "InSight Crime describes a loose system of corrupt military networks, not a hierarchical cartel. The US indictment alleges direct leadership.",
+   "leaders": [
+    {
+     "name": "Nicolás Maduro",
+     "role": "Alleged leader (US indictment)",
+     "status": "In US custody, trial proposed for Jun 2027",
+     "cites": [
+      "STATE_MADURO",
+      "REUTERS_MADURO_TRIAL"
+     ]
+    }
+   ],
+   "cites": [
+    "IC_SOLES",
+    "STATE_MADURO",
+    "DOJ_MADURO",
+    "CRS_MADURO",
+    "REUTERS_MADURO_TRIAL"
+   ]
+  },
+  {
+   "id": "clan",
+   "name": "Clan del Golfo (Urabeños / EGC)",
+   "kind": "armed group",
+   "country": "CO",
+   "lonlat": [
+    -76.6,
+    8.0
+   ],
+   "fto": {
+    "date": "2025-12-17",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Colombia's largest trafficking group. It controls Urabá and the Darién migrant route.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "IC_URABENOS"
+   ]
+  },
+  {
+   "id": "eln",
+   "name": "ELN",
+   "kind": "guerrilla",
+   "country": "CO",
+   "lonlat": [
+    -72.5,
+    7.5
+   ],
+   "fto": {
+    "date": "1997-10-08",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Marxist guerrilla group active in Colombia and Venezuela. It funds itself through drugs, illegal mining and extortion.",
+   "says_vs_does": "It presents itself as a political insurgency, but its operations depend on criminal economies on both sides of the border.",
+   "leaders": [],
+   "cites": [
+    "IC_ELN"
+   ]
+  },
+  {
+   "id": "segmar",
+   "name": "Segunda Marquetalia",
+   "kind": "armed group",
+   "country": "CO",
+   "lonlat": [
+    -72.0,
+    6.0
+   ],
+   "fto": {
+    "date": "2021-12-01",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "FARC dissidents who rearmed in 2019.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "IC_SEGMAR"
+   ]
+  },
+  {
+   "id": "choneros",
+   "name": "Los Choneros",
+   "kind": "gang",
+   "country": "EC",
+   "lonlat": [
+    -80.4,
+    -1.0
+   ],
+   "fto": {
+    "date": "2025-09-05",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Ecuadorian prison gang linked to Sinaloa. Its leader Fito escaped in 2024, was recaptured in 2025 and was extradited to the US.",
+   "says_vs_does": "",
+   "leaders": [
+    {
+     "name": "José Adolfo 'Fito' Macías",
+     "role": "Leader",
+     "status": "Extradited to the US Jul 2025; pleaded not guilty",
+     "cites": [
+      "DEA_FITO"
+     ]
+    }
+   ],
+   "cites": [
+    "IC_CHONEROS",
+    "DEA_FITO"
+   ]
+  },
+  {
+   "id": "lobos",
+   "name": "Los Lobos",
+   "kind": "gang",
+   "country": "EC",
+   "lonlat": [
+    -79.5,
+    -2.6
+   ],
+   "fto": {
+    "date": "2025-09-05",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Ecuador's largest gang, tied to the CJNG. Also active in illegal gold mining.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "IC_LOBOS"
+   ]
+  },
+  {
+   "id": "pcc",
+   "name": "PCC (Primeiro Comando da Capital)",
+   "kind": "gang",
+   "country": "BR",
+   "lonlat": [
+    -46.63,
+    -23.55
+   ],
+   "fto": {
+    "date": "2026-06-05",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Brazil's most powerful criminal organisation. It dominates the cocaine trade through Santos.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "IC_PCC"
+   ]
+  },
+  {
+   "id": "cv",
+   "name": "Comando Vermelho",
+   "kind": "gang",
+   "country": "BR",
+   "lonlat": [
+    -43.2,
+    -22.9
+   ],
+   "fto": {
+    "date": "2026-06-05",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Rio de Janeiro faction expanding in the Amazon.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "IC_CV"
+   ]
+  },
+  {
+   "id": "ms13",
+   "name": "MS-13",
+   "kind": "gang",
+   "country": "SV",
+   "lonlat": [
+    -89.2,
+    13.7
+   ],
+   "fto": {
+    "date": "2025-02-20",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Transnational gang weakened in El Salvador by mass detention under the state of exception.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "IC_MS13"
+   ]
+  },
+  {
+   "id": "b18",
+   "name": "Barrio 18",
+   "kind": "gang",
+   "country": "GT",
+   "lonlat": [
+    -90.5,
+    14.6
+   ],
+   "fto": {
+    "date": "2025-09-24",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "MS-13's main rival in Guatemala, Honduras and El Salvador.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "FTO",
+    "IC_MS13"
+   ]
+  },
+  {
+   "id": "cmln",
+   "name": "Chinese money laundering networks",
+   "kind": "facilitator",
+   "country": "US/MX/CN",
+   "lonlat": [
+    -95,
+    30
+   ],
+   "fto": null,
+   "summary": "Brokers who swap cartel dollars for pesos through mirror transactions. Not designated as a group.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "FINCEN_CMLN_ADV",
+    "FINCEN_CMLN_FTA"
+   ]
+  },
+  {
+   "id": "los_tiguerones",
+   "name": "Los Tiguerones",
+   "kind": "gang",
+   "country": "EC",
+   "lonlat": [
+    -79.6,
+    0.6
+   ],
+   "fto": {
+    "date": "2026-09-10",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Designated as an FTO. This v1 has no further profile.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "id": "chone_killers",
+   "name": "Chone Killers",
+   "kind": "gang",
+   "country": "EC",
+   "lonlat": [
+    -80.0,
+    -0.7
+   ],
+   "fto": {
+    "date": "2026-07-02",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Designated as an FTO. This v1 has no further profile.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "id": "viv_ansanm",
+   "name": "Viv Ansanm (Haiti)",
+   "kind": "gang",
+   "country": "HT",
+   "lonlat": [
+    -72.3,
+    18.6
+   ],
+   "fto": {
+    "date": "2025-05-05",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Designated as an FTO. This v1 has no further profile.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "id": "gran_grif",
+   "name": "Gran Grif (Haiti)",
+   "kind": "gang",
+   "country": "HT",
+   "lonlat": [
+    -72.6,
+    19.1
+   ],
+   "fto": {
+    "date": "2025-05-05",
+    "cites": [
+     "FTO"
+    ]
+   },
+   "summary": "Designated as an FTO. This v1 has no further profile.",
+   "says_vs_does": "",
+   "leaders": [],
+   "cites": [
+    "FTO"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "source": "chapitos",
+   "target": "mayiza",
+   "kind": "rivalry",
+   "text": "Open war since Sept 2024, after El Mayo's abduction to the US.",
+   "cites": [
+    "ACLED_SIN",
+    "ELPAIS_SIN"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "chapitos",
+   "target": "sinaloa",
+   "kind": "faction",
+   "text": "Faction of the Sinaloa Cartel.",
+   "cites": [
+    "IC_SINALOA"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "mayiza",
+   "target": "sinaloa",
+   "kind": "faction",
+   "text": "Faction of the Sinaloa Cartel.",
+   "cites": [
+    "IC_SINALOA"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "cjng",
+   "target": "sinaloa",
+   "kind": "rivalry",
+   "text": "Long-running national rivalry.",
+   "cites": [
+    "IC_CJNG"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "cjng",
+   "target": "unidos",
+   "kind": "rivalry",
+   "text": "War for Michoacán.",
+   "cites": [
+    "IC_CJNG"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "cjng",
+   "target": "viagras",
+   "kind": "rivalry",
+   "text": "War for Michoacán's Tierra Caliente.",
+   "cites": [
+    "IC_CJNG"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "cjng",
+   "target": "lobos",
+   "kind": "alliance",
+   "text": "Supply partnership.",
+   "cites": [
+    "IC_LOBOS"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "sinaloa",
+   "target": "choneros",
+   "kind": "alliance",
+   "text": "Supply partnership.",
+   "cites": [
+    "IC_CHONEROS"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "choneros",
+   "target": "lobos",
+   "kind": "rivalry",
+   "text": "Fight over prisons and ports.",
+   "cites": [
+    "IC_ECUADOR"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "gulf",
+   "target": "cdn",
+   "kind": "rivalry",
+   "text": "Zetas split from the Gulf Cartel in 2010.",
+   "cites": [
+    "IC_ZETAS"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "juarez",
+   "target": "sinaloa",
+   "kind": "rivalry",
+   "text": "Contest for Ciudad Juárez.",
+   "cites": [
+    "IC_JUAREZ"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "pcc",
+   "target": "cv",
+   "kind": "rivalry",
+   "text": "National prison-faction rivalry.",
+   "cites": [
+    "IC_PCC",
+    "IC_CV"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "ms13",
+   "target": "b18",
+   "kind": "rivalry",
+   "text": "Decades-long gang war.",
+   "cites": [
+    "IC_MS13"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "soles",
+   "target": "tda",
+   "kind": "alleged link",
+   "text": "Alleged by the US government. Contested and unproven in court.",
+   "cites": [
+    "DOJ_MADURO",
+    "IC_TDA"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "soles",
+   "target": "segmar",
+   "kind": "alleged link",
+   "text": "Alleged sanctuary and cocaine ties, per US charges.",
+   "cites": [
+    "DOJ_MADURO",
+    "IC_SOLES"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "soles",
+   "target": "eln",
+   "kind": "alleged link",
+   "text": "ELN presence in Venezuela.",
+   "cites": [
+    "IC_ELN"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "cmln",
+   "target": "sinaloa",
+   "kind": "service",
+   "text": "Launders proceeds.",
+   "cites": [
+    "FINCEN_CMLN_ADV"
+   ],
+   "as_of": "2026-10-25"
+  },
+  {
+   "source": "cmln",
+   "target": "cjng",
+   "kind": "service",
+   "text": "Launders proceeds.",
+   "cites": [
+    "FINCEN_CMLN_ADV"
+   ],
+   "as_of": "2026-10-25"
+  }
+ ],
+ "note": "Alliances are fluid and often reported by a single source. Alleged state links are allegations unless a court has decided them."
+}

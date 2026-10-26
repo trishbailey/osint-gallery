@@ -1,0 +1,67 @@
+{
+ "title": "CJNG after El Mencho",
+ "current_phase": "The CJNG has been in a leadership succession since El Mencho was killed in February 2026.",
+ "history": [
+  {
+   "text": "The CJNG rose after 2010 to become one of Mexico's two largest trafficking organizations.",
+   "cites": [
+    "IC_CJNG"
+   ]
+  }
+ ],
+ "turning_points": [
+  {
+   "text": "El Mencho killed.",
+   "cites": [
+    "ELPAIS_MENCHO"
+   ],
+   "date": "2026-02-22"
+  }
+ ],
+ "actors": [
+  "cjng"
+ ],
+ "cites": [
+  "IC_CJNG_BOSS",
+  "ELPAIS_MENCHO",
+  "ECONOMISTA_CJNG"
+ ],
+ "storyline": {
+  "order": 2,
+  "what": [
+   {
+    "text": "El País reported in August 2026 that the CJNG had kept operating six months after El Mencho's death.",
+    "cites": [
+     "ELPAIS_MENCHO"
+    ]
+   },
+   {
+    "text": "InSight Crime questioned claims that a single new boss controls the group.",
+    "cites": [
+     "IC_CJNG_BOSS"
+    ]
+   }
+  ],
+  "groups": [
+   "cjng"
+  ],
+  "view": [
+   -106,
+   17.5,
+   -99,
+   23
+  ],
+  "trend": {
+   "kind": "homicides",
+   "states": [
+    "14",
+    "16",
+    "11"
+   ],
+   "label": "Homicide victims per month, Jalisco, Michoacán and Guanajuato"
+  },
+  "title": "CJNG after El Mencho"
+ },
+ "id": "cjng",
+ "log": []
+}

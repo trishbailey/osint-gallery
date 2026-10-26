@@ -1,0 +1,32 @@
+{
+ "id": "brazil",
+ "title": "Brazil's factions",
+ "current_phase": "The PCC and CV are designated FTOs (Jun 2026).",
+ "history": [
+  {
+   "period": "1993-",
+   "text": "Prison factions go national.",
+   "cites": [
+    "IC_PCC"
+   ]
+  }
+ ],
+ "turning_points": [
+  {
+   "date": "2026-06-05",
+   "text": "PCC and CV designated FTOs.",
+   "cites": [
+    "FTO"
+   ]
+  }
+ ],
+ "actors": [
+  "pcc",
+  "cv"
+ ],
+ "cites": [
+  "IC_PCC",
+  "IC_CV"
+ ],
+ "log": []
+}

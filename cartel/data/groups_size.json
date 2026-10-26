@@ -1,0 +1,347 @@
+{
+ "note": "Ranges as published; nothing averaged or converted. low=high means a single published figure; a null high means 'more than'.",
+ "groups": {
+  "sinaloa": {
+   "label": "Sinaloa Cartel (both factions)",
+   "applies_to": [
+    "chapitos",
+    "mayiza"
+   ],
+   "members": [
+    {
+     "low": 26000,
+     "high": null,
+     "year": 2023,
+     "unit": "members",
+     "note": "DEA: 'more than 26,000 members, associates, facilitators and brokers' worldwide; lower bound only.",
+     "source_url": "https://www.justice.gov/sites/default/files/2023-07/2023.7.12_dea_papadopoulos_sfr_for_a_house_homeland_hearing_on_protecting_the_homeland.pdf",
+     "source_name": "DEA testimony"
+    },
+    {
+     "low": 17825,
+     "high": 17825,
+     "year": 2022,
+     "unit": "members",
+     "note": "Model-based point estimate (Prieto-Curiel et al., Science 2023) from homicide and incarceration data.",
+     "source_url": "https://www.science.org/doi/10.1126/science.adh2888",
+     "source_name": "Science"
+    }
+   ],
+   "revenue": [
+    {
+     "low": null,
+     "high": 3000000000.0,
+     "year": 2019,
+     "unit": "annual_revenue_usd",
+     "note": "'Up to $3 billion' a year; dated estimate quoted by Congressional Research Service.",
+     "source_url": "https://www.congress.gov/crs-product/R41576",
+     "source_name": "CRS"
+    }
+   ]
+  },
+  "cjng": {
+   "label": "CJNG",
+   "members": [
+    {
+     "low": 15000,
+     "high": 20000,
+     "year": 2026,
+     "unit": "members",
+     "note": "US counterterrorism center estimate.",
+     "source_url": "https://www.dni.gov/nctc/terrorist_groups/cjng.html",
+     "source_name": "NCTC"
+    },
+    {
+     "low": 28764,
+     "high": 28764,
+     "year": 2022,
+     "unit": "members",
+     "note": "Model-based point estimate (Science 2023).",
+     "source_url": "https://www.science.org/doi/10.1126/science.adh2888",
+     "source_name": "Science"
+    }
+   ],
+   "revenue": [
+    {
+     "no_credible_estimate": true,
+     "note": "No official or academic annual figure found."
+    }
+   ]
+  },
+  "gulf": {
+   "label": "Gulf Cartel",
+   "members": [
+    {
+     "no_credible_estimate": true,
+     "note": "NCTC: 'thousands', no number."
+    }
+   ],
+   "revenue": [
+    {
+     "no_credible_estimate": true,
+     "note": "None found."
+    }
+   ]
+  },
+  "cdn": {
+   "label": "Cártel del Noreste",
+   "members": [
+    {
+     "low": 1000,
+     "high": null,
+     "year": 2025,
+     "unit": "members",
+     "note": "'More than 1,000'; lower bound only.",
+     "source_url": "https://www.dni.gov/nctc/terrorist_groups/cdn.html",
+     "source_name": "NCTC"
+    }
+   ],
+   "revenue": [
+    {
+     "no_credible_estimate": true,
+     "note": "None found."
+    }
+   ]
+  },
+  "lnfm": {
+   "label": "La Nueva Familia Michoacana",
+   "members": [
+    {
+     "low": 5000,
+     "high": 5000,
+     "year": 2026,
+     "unit": "members",
+     "note": "Approximate.",
+     "source_url": "https://www.dni.gov/nctc/terrorist_groups/lnfm.html",
+     "source_name": "NCTC"
+    }
+   ],
+   "revenue": [
+    {
+     "no_credible_estimate": true,
+     "note": "None found."
+    }
+   ]
+  },
+  "unidos": {
+   "label": "Cárteles Unidos",
+   "members": [
+    {
+     "no_credible_estimate": true,
+     "note": "NCTC: 'thousands', no number."
+    }
+   ],
+   "revenue": [
+    {
+     "no_credible_estimate": true,
+     "note": "None found."
+    }
+   ]
+  },
+  "tda": {
+   "label": "Tren de Aragua",
+   "members": [
+    {
+     "low": 2500,
+     "high": 5000,
+     "year": 2026,
+     "unit": "members",
+     "note": "US counterterrorism center range.",
+     "source_url": "https://www.dni.gov/nctc/terrorist_groups/tren_de_aragua.html",
+     "source_name": "NCTC"
+    }
+   ],
+   "revenue": [
+    {
+     "no_credible_estimate": true,
+     "note": "Figures circulate in media but none traced to an official or academic estimate."
+    }
+   ]
+  },
+  "choneros": {
+   "label": "Los Choneros",
+   "members": [
+    {
+     "low": 12000,
+     "high": 12000,
+     "year": 2026,
+     "unit": "members",
+     "note": "Approximate.",
+     "source_url": "https://www.dni.gov/nctc/terrorist_groups/los_choneros.html",
+     "source_name": "NCTC"
+    },
+    {
+     "low": 30000,
+     "high": 30000,
+     "year": 2024,
+     "unit": "armed members",
+     "note": "Ecuadorian government figure; much higher than US estimate (contested).",
+     "source_url": "https://www.comunicacion.gob.ec/ecuador-y-ee-uu-coinciden-en-declarar-que-las-organizaciones-criminales-son-terroristas-2/",
+     "source_name": "Ecuador government"
+    }
+   ],
+   "revenue": [
+    {
+     "no_credible_estimate": true,
+     "note": "None found."
+    }
+   ]
+  },
+  "lobos": {
+   "label": "Los Lobos",
+   "members": [
+    {
+     "low": 8000,
+     "high": 8000,
+     "year": 2026,
+     "unit": "members",
+     "note": "Approximate.",
+     "source_url": "https://www.dni.gov/nctc/terrorist_groups/los_lobos.html",
+     "source_name": "NCTC"
+    },
+    {
+     "low": 50000,
+     "high": 50000,
+     "year": 2024,
+     "unit": "members",
+     "note": "Ecuadorian government figure; much higher than US estimate (contested).",
+     "source_url": "https://www.comunicacion.gob.ec/ecuador-y-ee-uu-coinciden-en-declarar-que-las-organizaciones-criminales-son-terroristas-2/",
+     "source_name": "Ecuador government"
+    }
+   ],
+   "revenue": [
+    {
+     "low": 43200000.0,
+     "high": 43200000.0,
+     "year": 2024,
+     "unit": "annual_revenue_usd",
+     "note": "PARTIAL: illegal gold mining in one area only (Ecuadorian intelligence report via Código Vidrio). Not total revenue.",
+     "source_url": "https://news.mongabay.com/2024/05/ecuadors-los-lobos-narcotrafficking-gang-muscles-in-on-illegal-gold-mining/",
+     "source_name": "Mongabay"
+    }
+   ]
+  },
+  "clan": {
+   "label": "Clan del Golfo",
+   "members": [
+    {
+     "low": 9915,
+     "high": 9915,
+     "year": 2026,
+     "unit": "members",
+     "note": "Defence Ministry: 9,915 total including support networks.",
+     "source_url": "https://caracol.com.co/2026/08/26/cerca-de-30000-integrantes-conforman-grupos-armados-y-delincuenciales-en-colombia/",
+     "source_name": "Colombia MinDefensa"
+    },
+    {
+     "low": 3364,
+     "high": 3364,
+     "year": 2026,
+     "unit": "armed members",
+     "note": "Defence Ministry: armed combatants.",
+     "source_url": "https://caracol.com.co/2026/08/26/cerca-de-30000-integrantes-conforman-grupos-armados-y-delincuenciales-en-colombia/",
+     "source_name": "Colombia MinDefensa"
+    },
+    {
+     "low": 10268,
+     "high": 10268,
+     "year": 2026,
+     "unit": "members",
+     "note": "Interior Ministry figure.",
+     "source_url": "https://www.portafolio.co/economia/gobierno/grupos-armados-casi-duplicaron-sus-integrantes-durante-la-paz-total-del-gobierno-petro-segun-mininterior-502594",
+     "source_name": "Colombia MinInterior"
+    }
+   ],
+   "revenue": [
+    {
+     "low": 4400000000.0,
+     "high": 4400000000.0,
+     "year": 2025,
+     "unit": "annual_revenue_usd",
+     "note": "International Crisis Group estimate.",
+     "source_url": "https://www.crisisgroup.org/es/rpt/latin-america-caribbean/andes/colombia/105-unsolved-crime-total-peace-dealing-colombias-gaitanistas",
+     "source_name": "Crisis Group"
+    }
+   ]
+  },
+  "eln": {
+   "label": "ELN",
+   "members": [
+    {
+     "low": 6877,
+     "high": 6877,
+     "year": 2026,
+     "unit": "members",
+     "note": "Defence Ministry: total including support networks.",
+     "source_url": "https://caracol.com.co/2026/08/26/cerca-de-30000-integrantes-conforman-grupos-armados-y-delincuenciales-en-colombia/",
+     "source_name": "Colombia MinDefensa"
+    },
+    {
+     "low": 3442,
+     "high": 3442,
+     "year": 2026,
+     "unit": "armed members",
+     "note": "Defence Ministry: armed combatants.",
+     "source_url": "https://caracol.com.co/2026/08/26/cerca-de-30000-integrantes-conforman-grupos-armados-y-delincuenciales-en-colombia/",
+     "source_name": "Colombia MinDefensa"
+    }
+   ],
+   "revenue": [
+    {
+     "low": 250000000000.0,
+     "high": 250000000000.0,
+     "year": 2023,
+     "unit": "annual_revenue_cop",
+     "note": "COP 250,000 million a year (Colombian pesos, not converted). Not shown on the USD chart.",
+     "source_url": "https://caracol.com.co/2023/11/15/eln-percibiria-250-mil-millones-al-ano-por-finanzas-criminales/",
+     "source_name": "Caracol"
+    }
+   ]
+  },
+  "ms13": {
+   "label": "MS-13",
+   "members": [
+    {
+     "low": 10000,
+     "high": 10000,
+     "year": 2018,
+     "unit": "members",
+     "note": "US only (CRS). NCTC says 'probably tens of thousands' worldwide, no number.",
+     "source_url": "https://www.congress.gov/crs-product/R45292",
+     "source_name": "CRS"
+    }
+   ],
+   "revenue": [
+    {
+     "no_credible_estimate": true,
+     "note": "None found."
+    }
+   ]
+  },
+  "pcc": {
+   "label": "PCC",
+   "members": [
+    {
+     "low": 40000,
+     "high": 40000,
+     "year": 2025,
+     "unit": "members",
+     "note": "São Paulo state prosecutors (Lincoln Gakiya).",
+     "source_url": "https://g1.globo.com/sp/sao-paulo/noticia/2025/09/22/como-em-20-anos-o-pcc-saltou-de-faccao-com-5-mil-criminosos-para-virar-mafia-com-40-mil-membros.ghtml",
+     "source_name": "MP-SP via G1"
+    }
+   ],
+   "revenue": [
+    {
+     "low": 2000000000.0,
+     "high": null,
+     "year": 2025,
+     "unit": "annual_revenue_usd",
+     "note": "'At least US$2 billion' (R$10bn+) a year; São Paulo prosecutors. Lower bound.",
+     "source_url": "https://www.estadao.com.br/sao-paulo/pcc-ja-fatura-r-10-bilhoes-ao-ano-crescimento-foi-assustador-diz-promotor-em-cpi/",
+     "source_name": "MP-SP via Estadão"
+    }
+   ]
+  }
+ }
+}

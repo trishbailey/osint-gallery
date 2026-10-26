@@ -1,0 +1,234 @@
+{
+ "title": "Mexican states: identifiers and population",
+ "source_url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+ "cites": [
+  "INEGI_CENSO20"
+ ],
+ "note": "Population from INEGI's 2020 census, used as the denominator for rates. Rates are therefore approximate for later years.",
+ "states": [
+  {
+   "clave": 1,
+   "name": "Aguascalientes",
+   "region": "MEX-2717",
+   "pop": 1425607,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 2,
+   "name": "Baja California",
+   "region": "MEX-2706",
+   "pop": 3769020,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 3,
+   "name": "Baja California Sur",
+   "region": "MEX-2707",
+   "pop": 798447,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 4,
+   "name": "Campeche",
+   "region": "MEX-2722",
+   "pop": 928363,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 5,
+   "name": "Coahuila",
+   "region": "MEX-2708",
+   "pop": 3146771,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 6,
+   "name": "Colima",
+   "region": "MEX-2718",
+   "pop": 731391,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 7,
+   "name": "Chiapas",
+   "region": "MEX-2735",
+   "pop": 5543828,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 8,
+   "name": "Chihuahua",
+   "region": "MEX-2709",
+   "pop": 3741869,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 9,
+   "name": "Ciudad de México",
+   "region": "MEX-2727",
+   "pop": 9209944,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 10,
+   "name": "Durango",
+   "region": "MEX-2710",
+   "pop": 1832650,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 11,
+   "name": "Guanajuato",
+   "region": "MEX-2728",
+   "pop": 6166934,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 12,
+   "name": "Guerrero",
+   "region": "MEX-2729",
+   "pop": 3540685,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 13,
+   "name": "Hidalgo",
+   "region": "MEX-2730",
+   "pop": 3082841,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 14,
+   "name": "Jalisco",
+   "region": "MEX-2719",
+   "pop": 8348151,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 15,
+   "name": "Estado de México",
+   "region": "MEX-2731",
+   "pop": 16992418,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 16,
+   "name": "Michoacán",
+   "region": "MEX-2720",
+   "pop": 4748846,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 17,
+   "name": "Morelos",
+   "region": "MEX-2732",
+   "pop": 1971520,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 18,
+   "name": "Nayarit",
+   "region": "MEX-2721",
+   "pop": 1235456,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 19,
+   "name": "Nuevo León",
+   "region": "MEX-2714",
+   "pop": 5784442,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 20,
+   "name": "Oaxaca",
+   "region": "MEX-2723",
+   "pop": 4132148,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 21,
+   "name": "Puebla",
+   "region": "MEX-2724",
+   "pop": 6583278,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 22,
+   "name": "Querétaro",
+   "region": "MEX-2733",
+   "pop": 2368467,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 23,
+   "name": "Quintana Roo",
+   "region": "MEX-2736",
+   "pop": 1857985,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 24,
+   "name": "San Luis Potosí",
+   "region": "MEX-2715",
+   "pop": 2822255,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 25,
+   "name": "Sinaloa",
+   "region": "MEX-2711",
+   "pop": 3026943,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 26,
+   "name": "Sonora",
+   "region": "MEX-2712",
+   "pop": 2944840,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 27,
+   "name": "Tabasco",
+   "region": "MEX-2725",
+   "pop": 2402598,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 28,
+   "name": "Tamaulipas",
+   "region": "MEX-2716",
+   "pop": 3527735,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 29,
+   "name": "Tlaxcala",
+   "region": "MEX-2726",
+   "pop": 1342977,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 30,
+   "name": "Veracruz",
+   "region": "MEX-2734",
+   "pop": 8062579,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 31,
+   "name": "Yucatán",
+   "region": "MEX-2737",
+   "pop": 2320898,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  },
+  {
+   "clave": 32,
+   "name": "Zacatecas",
+   "region": "MEX-2713",
+   "pop": 1622138,
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/"
+  }
+ ]
+}

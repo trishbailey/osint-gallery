@@ -1,0 +1,86 @@
+{
+ "id": "money",
+ "title": "Money and China",
+ "current_phase": "CMLNs dominate cartel laundering, and the US targets Mexican banks.",
+ "history": [
+  {
+   "period": "2020-2024",
+   "text": "FinCEN documents $312bn in CMLN-linked reports.",
+   "cites": [
+    "FINCEN_CMLN_FTA"
+   ]
+  }
+ ],
+ "turning_points": [
+  {
+   "date": "2025-06-25",
+   "text": "Section 2313a orders against CIBanco, Intercam and Vector.",
+   "cites": [
+    "TREAS_2313A"
+   ]
+  },
+  {
+   "date": "2025-08-28",
+   "text": "FinCEN CMLN advisory.",
+   "cites": [
+    "FINCEN_CMLN_ADV"
+   ]
+  },
+  {
+   "date": "2026-01-30",
+   "text": "Panama voids CK Hutchison's port concessions.",
+   "cites": [
+    "REUTERS_PANAMA"
+   ]
+  }
+ ],
+ "actors": [
+  "cmln"
+ ],
+ "cites": [
+  "FINCEN_CMLN_ADV"
+ ],
+ "log": [],
+ "storyline": {
+  "order": 7,
+  "title": "Money and China",
+  "what": [
+   {
+    "text": "FinCEN linked about $312bn in suspicious activity from 2020 to 2024 to Chinese money laundering networks; suspicious reports are not proven laundering.",
+    "cites": [
+     "FINCEN_CMLN_FTA"
+    ]
+   },
+   {
+    "text": "Treasury used FEND Off Fentanyl Act orders against three Mexican financial firms in June 2025.",
+    "cites": [
+     "TREAS_2313A"
+    ]
+   }
+  ],
+  "groups": [],
+  "view": [
+   -118,
+   14,
+   -86,
+   33
+  ],
+  "layers": [
+   "money",
+   "china"
+  ],
+  "trend": {
+   "kind": "headlines",
+   "match": [
+    "lavado",
+    "laundering",
+    "fincen",
+    "treasury",
+    "tesoro",
+    "china",
+    "chino"
+   ],
+   "label": "Headlines in the feed on money and China, by day"
+  }
+ }
+}

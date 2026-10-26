@@ -1,0 +1,37 @@
+{
+ "as_of": "2026-10-25",
+ "title": "Situation overview",
+ "sentences": [
+  {
+   "text": "Mexico's largest cartel has been at war with itself since El Mayo Zambada's removal to the US in 2024, while the CJNG has been in succession since El Mencho was killed in February 2026.",
+   "cites": [
+    "ACLED_SIN",
+    "ELPAIS_MENCHO"
+   ]
+  },
+  {
+   "text": "Washington has designated major cartels as Foreign Terrorist Organizations since February 2025 and has added sanctions, bank orders and military strikes on alleged drug boats.",
+   "cites": [
+    "FTO",
+    "TREAS_2313A",
+    "JS_STRIKES"
+   ]
+  },
+  {
+   "text": "Fentanyl seizures at the border and provisional US overdose deaths have both fallen, while precursor supply has shifted partly from China to India.",
+   "cites": [
+    "CBP_SEIZ_CSV",
+    "CDC_VSRR",
+    "OFAC_SB0468"
+   ]
+  },
+  {
+   "text": "Further south, Ecuador's gangs fight over cocaine ports, Colombia's armed groups contest record coca output, and Maduro faces trial in the US.",
+   "cites": [
+    "IC_ECUADOR",
+    "UNODC_WDR25",
+    "REUTERS_MADURO_TRIAL"
+   ]
+  }
+ ]
+}

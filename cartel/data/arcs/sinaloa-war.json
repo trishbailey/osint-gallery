@@ -1,0 +1,73 @@
+{
+ "title": "Mexico's Sinaloa war",
+ "current_phase": "The Chapitos and the Mayiza have fought for control of the Sinaloa Cartel since September 2024.",
+ "history": [
+  {
+   "text": "El Mayo Zambada was flown to the US in July 2024, and fighting between the two factions began that September.",
+   "cites": [
+    "DOJ_MAYO",
+    "ACLED_SIN"
+   ]
+  }
+ ],
+ "turning_points": [
+  {
+   "text": "El Mayo Zambada is flown to the US.",
+   "cites": [
+    "DOJ_MAYO"
+   ],
+   "date": "2024-07-25"
+  },
+  {
+   "text": "El Mayo sentenced to life.",
+   "cites": [
+    "DOJ_MAYO_SENT"
+   ],
+   "date": "2026-07-20"
+  }
+ ],
+ "actors": [
+  "chapitos",
+  "mayiza"
+ ],
+ "cites": [
+  "ACLED_SIN",
+  "ELPAIS_SIN"
+ ],
+ "storyline": {
+  "order": 1,
+  "what": [
+   {
+    "text": "ACLED describes the war between the Chapitos and the Mayiza, now in its second year, as having spread beyond Culiacán.",
+    "cites": [
+     "ACLED_SIN"
+    ]
+   },
+   {
+    "text": "El País reported in October 2026 that the violence had intensified in Mazatlán and the sierra.",
+    "cites": [
+     "ELPAIS_SIN"
+    ]
+   }
+  ],
+  "groups": [
+   "sinaloa"
+  ],
+  "view": [
+   -110.5,
+   22,
+   -104,
+   27.5
+  ],
+  "trend": {
+   "kind": "homicides",
+   "states": [
+    "25"
+   ],
+   "label": "Homicide victims per month, Sinaloa"
+  },
+  "title": "Mexico's Sinaloa war"
+ },
+ "id": "sinaloa-war",
+ "log": []
+}

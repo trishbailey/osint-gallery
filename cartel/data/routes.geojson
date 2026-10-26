@@ -1,0 +1,430 @@
+{
+ "type": "FeatureCollection",
+ "as_of": "2026-10-25",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -139.5,
+      30.0
+     ],
+     [
+      -120,
+      24
+     ],
+     [
+      -104.31,
+      19.05
+     ]
+    ]
+   },
+   "properties": {
+    "id": "R1",
+    "name": "Precursor chemicals: China to Mexico's Pacific ports",
+    "kind": "maritime",
+    "commodity": "precursors",
+    "text": "Fentanyl and methamphetamine precursors and pill-press parts ship mainly from China, increasingly also from India, to Mexico's Pacific ports such as Manzanillo and Lázaro Cárdenas.",
+    "confidence": "reported",
+    "cites": [
+     "DEA25",
+     "OFAC_JY1413",
+     "FINCEN_FENT_FTA"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -139.5,
+      20.0
+     ],
+     [
+      -115,
+      17
+     ],
+     [
+      -102.2,
+      17.96
+     ]
+    ]
+   },
+   "properties": {
+    "id": "R2",
+    "name": "Precursor chemicals: India to Mexico",
+    "kind": "maritime",
+    "commodity": "precursors",
+    "text": "Treasury sanctioned India-based chemical suppliers selling precursors to the Sinaloa Cartel in April 2026.",
+    "confidence": "reported",
+    "cites": [
+     "OFAC_SB0468",
+     "DEA25"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -107.39,
+      24.8
+     ],
+     [
+      -109.9,
+      27.5
+     ],
+     [
+      -110.94,
+      31.34
+     ]
+    ]
+   },
+   "properties": {
+    "id": "R3",
+    "name": "Synthetic drugs: Sinaloa to Arizona and California crossings",
+    "kind": "land",
+    "commodity": "fentanyl / methamphetamine",
+    "text": "Fentanyl pressed in Sinaloa moves north through Sonora to the Nogales and other Arizona ports of entry, mostly in passenger and cargo vehicles.",
+    "confidence": "reported",
+    "cites": [
+     "DEA25",
+     "WOLA_FENT",
+     "IC_SINALOA"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.35,
+      20.67
+     ],
+     [
+      -107.39,
+      24.8
+     ],
+     [
+      -112,
+      29.5
+     ],
+     [
+      -117.03,
+      32.54
+     ]
+    ]
+   },
+   "properties": {
+    "id": "R4",
+    "name": "Synthetic drugs: Sinaloa and Jalisco to Baja California",
+    "kind": "land",
+    "commodity": "fentanyl / methamphetamine",
+    "text": "Synthetic drugs move up the Pacific corridor to San Ysidro, Otay Mesa and Calexico.",
+    "confidence": "reported",
+    "cites": [
+     "DEA25",
+     "IC_CJNG"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.03,
+      3.88
+     ],
+     [
+      -82,
+      6
+     ],
+     [
+      -90,
+      12
+     ],
+     [
+      -92.26,
+      14.9
+     ]
+    ]
+   },
+   "properties": {
+    "id": "R5",
+    "name": "Cocaine: Colombia's Pacific coast to Central America and Mexico",
+    "kind": "maritime",
+    "commodity": "cocaine",
+    "text": "Go-fast boats and semi-submersibles carry cocaine from Buenaventura and Tumaco north along the eastern Pacific. This is the zone of US boat strikes since September 2025.",
+    "confidence": "reported",
+    "cites": [
+     "UNODC_WDR25",
+     "IC_URABENOS",
+     "JS_STRIKES"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -79.89,
+      -2.19
+     ],
+     [
+      -80.5,
+      2
+     ],
+     [
+      -79.9,
+      9.35
+     ],
+     [
+      -60,
+      20
+     ],
+     [
+      -35,
+      30
+     ]
+    ]
+   },
+   "properties": {
+    "id": "R6",
+    "name": "Cocaine: Ecuador's ports to Europe and North America",
+    "kind": "maritime",
+    "commodity": "cocaine",
+    "text": "Containerised cocaine leaves Guayaquil, often through the Panama Canal, to Europe and the US. Los Choneros and Los Lobos fight over the port economy.",
+    "confidence": "reported",
+    "cites": [
+     "IC_ECUADOR",
+     "IC_CHONEROS",
+     "IC_LOBOS",
+     "UNODC_WDR25"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -72.3,
+      7.9
+     ],
+     [
+      -67.5,
+      10.5
+     ],
+     [
+      -69.9,
+      18.47
+     ],
+     [
+      -66.1,
+      18.46
+     ],
+     [
+      -80.19,
+      25.77
+     ]
+    ]
+   },
+   "properties": {
+    "id": "R7",
+    "name": "Cocaine: Caribbean route via Venezuela and Hispaniola",
+    "kind": "maritime / air",
+    "commodity": "cocaine",
+    "text": "Cocaine leaves from Venezuela's coast and from airstrips in Apure and Zulia toward the Dominican Republic, Puerto Rico and Florida. US strikes have also hit boats in the Caribbean.",
+    "confidence": "reported",
+    "cites": [
+     "IC_SOLES",
+     "JS_STRIKES",
+     "UNODC_WDR25"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -63,
+      -17
+     ],
+     [
+      -46.33,
+      -23.96
+     ],
+     [
+      -30,
+      -10
+     ],
+     [
+      -30,
+      10
+     ]
+    ]
+   },
+   "properties": {
+    "id": "R8",
+    "name": "Cocaine: Brazil and Southern Cone to Europe and Africa",
+    "kind": "maritime",
+    "commodity": "cocaine",
+    "text": "Bolivian and Peruvian cocaine reaches Santos and other Atlantic ports. The PCC controls much of this trade toward Europe and West Africa.",
+    "confidence": "reported",
+    "cites": [
+     "IC_PCC",
+     "UNODC_WDR25"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -84.3,
+      15.3
+     ],
+     [
+      -89.9,
+      16.9
+     ],
+     [
+      -92.26,
+      14.9
+     ],
+     [
+      -97.5,
+      25.9
+     ]
+    ]
+   },
+   "properties": {
+    "id": "R9",
+    "name": "Cocaine: Central American land bridge to Mexico",
+    "kind": "land",
+    "commodity": "cocaine",
+    "text": "Cocaine landed on the Honduran Mosquitia coast crosses Guatemala's Petén into Chiapas, then moves north to the Tamaulipas border.",
+    "confidence": "reported",
+    "cites": [
+     "UNODC_WDR25",
+     "IC_GULF"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -76.78,
+      8.42
+     ],
+     [
+      -77.6,
+      8.0
+     ],
+     [
+      -79.57,
+      8.95
+     ],
+     [
+      -84,
+      11
+     ],
+     [
+      -92.26,
+      14.9
+     ],
+     [
+      -99.5,
+      27.5
+     ]
+    ]
+   },
+   "properties": {
+    "id": "R10",
+    "name": "Human smuggling: Darién Gap to the US border",
+    "kind": "land",
+    "commodity": "migrants",
+    "text": "The Clan del Golfo taxes migrant crossings from Necoclí through the Darién. Smuggling networks charge along the route to the US border.",
+    "confidence": "reported",
+    "cites": [
+     "IC_URABENOS"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -106.45,
+      31.76
+     ],
+     [
+      -107.39,
+      24.8
+     ]
+    ]
+   },
+   "properties": {
+    "id": "R11",
+    "name": "Firearms: US to Mexico (southbound)",
+    "kind": "land",
+    "commodity": "firearms",
+    "text": "Most firearms recovered and traced in Mexico come from the United States, smuggled south through the same crossings.",
+    "confidence": "reported",
+    "cites": [
+     "GAO_FIREARMS"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -99.5,
+      27.5
+     ],
+     [
+      -103.35,
+      20.67
+     ]
+    ]
+   },
+   "properties": {
+    "id": "R12",
+    "name": "Bulk cash: US to Mexico (southbound)",
+    "kind": "land",
+    "commodity": "cash",
+    "text": "Drug proceeds return south as bulk cash. They increasingly go through Chinese money laundering networks instead, which buy dollars inside the US (see Money flows).",
+    "confidence": "reported",
+    "cites": [
+     "FINCEN_CMLN_ADV",
+     "DEA25"
+    ]
+   }
+  }
+ ]
+}

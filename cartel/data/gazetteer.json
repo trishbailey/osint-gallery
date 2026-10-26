@@ -1,0 +1,3997 @@
+{
+ "version": 1,
+ "note": "Gazetteer for pipeline/tag_x.py. 'aliases' match on word boundaries, case-insensitive and accent-insensitive. 'ambiguous_aliases' (place names that are also surnames, other countries' provinces or common words) only count when the post or the account default names the same country. Group 'case_sensitive' aliases must match exact case. Accounts: tier, source_type, country and default_region applied when the text names no place.",
+ "countries": {
+  "MEX": [
+   "México",
+   "Mexico",
+   "mexicano",
+   "mexicana"
+  ],
+  "COL": [
+   "Colombia",
+   "colombiano",
+   "colombiana"
+  ],
+  "ECU": [
+   "Ecuador",
+   "ecuatoriano",
+   "ecuatoriana"
+  ],
+  "VEN": [
+   "Venezuela",
+   "venezolano",
+   "venezolana"
+  ],
+  "GTM": [
+   "Guatemala",
+   "guatemalteco"
+  ],
+  "HND": [
+   "Honduras",
+   "hondureño"
+  ],
+  "SLV": [
+   "El Salvador",
+   "salvadoreño",
+   "Bukele"
+  ],
+  "PER": [
+   "Perú",
+   "Peru",
+   "peruano"
+  ],
+  "BRA": [
+   "Brasil",
+   "Brazil",
+   "brasileño"
+  ],
+  "HTI": [
+   "Haití",
+   "Haiti"
+  ],
+  "CRI": [
+   "Costa Rica"
+  ],
+  "PAN": [
+   "Panamá",
+   "Panama"
+  ],
+  "BOL": [
+   "Bolivia"
+  ],
+  "CHL": [
+   "Chile"
+  ],
+  "ARG": [
+   "Argentina"
+  ],
+  "PRY": [
+   "Paraguay"
+  ],
+  "NIC": [
+   "Nicaragua"
+  ]
+ },
+ "regions": [
+  {
+   "id": "ARG-1295",
+   "name": "Buenos Aires",
+   "country": "ARG",
+   "aliases": [
+    "Buenos Aires"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1300",
+   "name": "Catamarca",
+   "country": "ARG",
+   "aliases": [
+    "Catamarca"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1306",
+   "name": "Chaco",
+   "country": "ARG",
+   "aliases": [
+    "Chaco"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1274",
+   "name": "Chubut",
+   "country": "ARG",
+   "aliases": [
+    "Chubut"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-5493",
+   "name": "Ciudad de Buenos Aires",
+   "country": "ARG",
+   "aliases": [
+    "Ciudad de Buenos Aires"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1308",
+   "name": "Corrientes",
+   "country": "ARG",
+   "aliases": [
+    "Corrientes"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1299",
+   "name": "Córdoba",
+   "country": "ARG",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Córdoba"
+   ]
+  },
+  {
+   "id": "ARG-1309",
+   "name": "Entre Ríos",
+   "country": "ARG",
+   "aliases": [
+    "Entre Ríos"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1307",
+   "name": "Formosa",
+   "country": "ARG",
+   "aliases": [
+    "Formosa"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1301",
+   "name": "Jujuy",
+   "country": "ARG",
+   "aliases": [
+    "Jujuy"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1296",
+   "name": "La Pampa",
+   "country": "ARG",
+   "aliases": [
+    "La Pampa"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1302",
+   "name": "La Rioja",
+   "country": "ARG",
+   "aliases": [
+    "La Rioja"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1275",
+   "name": "Mendoza",
+   "country": "ARG",
+   "aliases": [
+    "Mendoza"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1312",
+   "name": "Misiones",
+   "country": "ARG",
+   "aliases": [
+    "Misiones"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1276",
+   "name": "Neuquén",
+   "country": "ARG",
+   "aliases": [
+    "Neuquén"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1297",
+   "name": "Río Negro",
+   "country": "ARG",
+   "aliases": [
+    "Río Negro"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1303",
+   "name": "Salta",
+   "country": "ARG",
+   "aliases": [
+    "Salta"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1273",
+   "name": "San Juan",
+   "country": "ARG",
+   "aliases": [
+    "San Juan"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1298",
+   "name": "San Luis",
+   "country": "ARG",
+   "aliases": [
+    "San Luis"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1271",
+   "name": "Santa Cruz",
+   "country": "ARG",
+   "aliases": [
+    "Santa Cruz"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1310",
+   "name": "Santa Fe",
+   "country": "ARG",
+   "aliases": [
+    "Santa Fe"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1304",
+   "name": "Santiago del Estero",
+   "country": "ARG",
+   "aliases": [
+    "Santiago del Estero"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1272",
+   "name": "Tierra del Fuego",
+   "country": "ARG",
+   "aliases": [
+    "Tierra del Fuego"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ARG-1305",
+   "name": "Tucumán",
+   "country": "ARG",
+   "aliases": [
+    "Tucumán"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BOL-1292",
+   "name": "Chuquisaca",
+   "country": "BOL",
+   "aliases": [
+    "Chuquisaca"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BOL-1291",
+   "name": "Cochabamba",
+   "country": "BOL",
+   "aliases": [
+    "Cochabamba"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BOL-1293",
+   "name": "El Beni",
+   "country": "BOL",
+   "aliases": [
+    "El Beni"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BOL-1936",
+   "name": "La Paz",
+   "country": "BOL",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "La Paz"
+   ]
+  },
+  {
+   "id": "BOL-1937",
+   "name": "Oruro",
+   "country": "BOL",
+   "aliases": [
+    "Oruro"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BOL-1938",
+   "name": "Pando",
+   "country": "BOL",
+   "aliases": [
+    "Pando"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BOL-1939",
+   "name": "Potosí",
+   "country": "BOL",
+   "aliases": [
+    "Potosí"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BOL-1940",
+   "name": "Santa Cruz",
+   "country": "BOL",
+   "aliases": [
+    "Santa Cruz"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BOL-1941",
+   "name": "Tarija",
+   "country": "BOL",
+   "aliases": [
+    "Tarija"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BRA-576",
+   "name": "Acre",
+   "country": "BRA",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Acre"
+   ]
+  },
+  {
+   "id": "BRA-623",
+   "name": "Alagoas",
+   "country": "BRA",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Alagoas"
+   ]
+  },
+  {
+   "id": "BRA-681",
+   "name": "Amapá",
+   "country": "BRA",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Amapá"
+   ]
+  },
+  {
+   "id": "BRA-592",
+   "name": "Amazonas",
+   "country": "BRA",
+   "aliases": [
+    "Manaus"
+   ],
+   "ambiguous_aliases": [
+    "Amazonas"
+   ]
+  },
+  {
+   "id": "BRA-624",
+   "name": "Bahia",
+   "country": "BRA",
+   "aliases": [
+    "Salvador, Bahia"
+   ],
+   "ambiguous_aliases": [
+    "Bahia"
+   ]
+  },
+  {
+   "id": "BRA-621",
+   "name": "Ceará",
+   "country": "BRA",
+   "aliases": [
+    "Fortaleza"
+   ],
+   "ambiguous_aliases": [
+    "Ceará"
+   ]
+  },
+  {
+   "id": "BRA-599",
+   "name": "Distrito Federal",
+   "country": "BRA",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Distrito Federal"
+   ]
+  },
+  {
+   "id": "BRA-625",
+   "name": "Espírito Santo",
+   "country": "BRA",
+   "aliases": [
+    "Espírito Santo"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BRA-1294",
+   "name": "Goiás",
+   "country": "BRA",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Goiás"
+   ]
+  },
+  {
+   "id": "BRA-593",
+   "name": "Maranhão",
+   "country": "BRA",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Maranhão"
+   ]
+  },
+  {
+   "id": "BRA-602",
+   "name": "Mato Grosso",
+   "country": "BRA",
+   "aliases": [
+    "Mato Grosso"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BRA-600",
+   "name": "Mato Grosso do Sul",
+   "country": "BRA",
+   "aliases": [
+    "Campo Grande",
+    "Mato Grosso do Sul",
+    "Ponta Porã"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BRA-601",
+   "name": "Minas Gerais",
+   "country": "BRA",
+   "aliases": [
+    "Minas Gerais"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BRA-613",
+   "name": "Paraná",
+   "country": "BRA",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Paraná"
+   ]
+  },
+  {
+   "id": "BRA-626",
+   "name": "Paraíba",
+   "country": "BRA",
+   "aliases": [
+    "Paraíba"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BRA-594",
+   "name": "Pará",
+   "country": "BRA",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Pará"
+   ]
+  },
+  {
+   "id": "BRA-1313",
+   "name": "Pernambuco",
+   "country": "BRA",
+   "aliases": [
+    "Pernambuco"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BRA-622",
+   "name": "Piauí",
+   "country": "BRA",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Piauí"
+   ]
+  },
+  {
+   "id": "BRA-628",
+   "name": "Rio Grande do Norte",
+   "country": "BRA",
+   "aliases": [
+    "Rio Grande do Norte"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BRA-612",
+   "name": "Rio Grande do Sul",
+   "country": "BRA",
+   "aliases": [
+    "Rio Grande do Sul"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BRA-627",
+   "name": "Rio de Janeiro",
+   "country": "BRA",
+   "aliases": [
+    "Complexo da Penha",
+    "Complexo do Alemão",
+    "Maré",
+    "Rio de Janeiro"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BRA-595",
+   "name": "Rondônia",
+   "country": "BRA",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Rondônia"
+   ]
+  },
+  {
+   "id": "BRA-670",
+   "name": "Roraima",
+   "country": "BRA",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Roraima"
+   ]
+  },
+  {
+   "id": "BRA-614",
+   "name": "Santa Catarina",
+   "country": "BRA",
+   "aliases": [
+    "Santa Catarina"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BRA-629",
+   "name": "Sergipe",
+   "country": "BRA",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Sergipe"
+   ]
+  },
+  {
+   "id": "BRA-1311",
+   "name": "São Paulo",
+   "country": "BRA",
+   "aliases": [
+    "Baixada Santista",
+    "Porto de Santos",
+    "Santos, SP",
+    "Sao Paulo",
+    "São Paulo"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "BRA-596",
+   "name": "Tocantins",
+   "country": "BRA",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Tocantins"
+   ]
+  },
+  {
+   "id": "CHL-2691",
+   "name": "Aisén del General Carlos Ibáñez del Campo",
+   "country": "CHL",
+   "aliases": [
+    "Aisén del General Carlos Ibáñez del Campo"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2695",
+   "name": "Antofagasta",
+   "country": "CHL",
+   "aliases": [
+    "Antofagasta"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2694",
+   "name": "Arica y Parinacota",
+   "country": "CHL",
+   "aliases": [
+    "Arica y Parinacota"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2696",
+   "name": "Atacama",
+   "country": "CHL",
+   "aliases": [
+    "Atacama"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2702",
+   "name": "Bío-Bío",
+   "country": "CHL",
+   "aliases": [
+    "Bío-Bío"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2697",
+   "name": "Coquimbo",
+   "country": "CHL",
+   "aliases": [
+    "Coquimbo"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2700",
+   "name": "La Araucanía",
+   "country": "CHL",
+   "aliases": [
+    "La Araucanía"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2703",
+   "name": "Libertador General Bernardo O'Higgins",
+   "country": "CHL",
+   "aliases": [
+    "Libertador General Bernardo O'Higgins"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2704",
+   "name": "Los Lagos",
+   "country": "CHL",
+   "aliases": [
+    "Los Lagos"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2701",
+   "name": "Los Ríos",
+   "country": "CHL",
+   "aliases": [
+    "Los Ríos"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2692",
+   "name": "Magallanes y Antártica Chilena",
+   "country": "CHL",
+   "aliases": [
+    "Magallanes y Antártica Chilena"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2705",
+   "name": "Maule",
+   "country": "CHL",
+   "aliases": [
+    "Maule"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2698",
+   "name": "Región Metropolitana de Santiago",
+   "country": "CHL",
+   "aliases": [
+    "Región Metropolitana de Santiago"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2693",
+   "name": "Tarapacá",
+   "country": "CHL",
+   "aliases": [
+    "Tarapacá"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-2699",
+   "name": "Valparaíso",
+   "country": "CHL",
+   "aliases": [
+    "Valparaíso"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CHL-20010",
+   "name": "Ñuble",
+   "country": "CHL",
+   "aliases": [
+    "Ñuble"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1283",
+   "name": "Amazonas",
+   "country": "COL",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Amazonas"
+   ]
+  },
+  {
+   "id": "COL-1314",
+   "name": "Antioquia",
+   "country": "COL",
+   "aliases": [
+    "Antioquia",
+    "Apartadó",
+    "Bajo Cauca",
+    "Caucasia",
+    "Envigado",
+    "Medellin",
+    "Medellín",
+    "Segovia",
+    "Turbo",
+    "Urabá"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1420",
+   "name": "Arauca",
+   "country": "COL",
+   "aliases": [
+    "Saravena",
+    "Tame"
+   ],
+   "ambiguous_aliases": [
+    "Arauca"
+   ]
+  },
+  {
+   "id": "COL-1412",
+   "name": "Atlántico",
+   "country": "COL",
+   "aliases": [
+    "Atlántico",
+    "Barranquilla",
+    "Soledad, Atlántico"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1399",
+   "name": "Bogota",
+   "country": "COL",
+   "aliases": [
+    "Bogota",
+    "Bogotá"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1413",
+   "name": "Bolívar",
+   "country": "COL",
+   "aliases": [
+    "Cartagena",
+    "sur de Bolívar"
+   ],
+   "ambiguous_aliases": [
+    "Bolívar"
+   ]
+  },
+  {
+   "id": "COL-1315",
+   "name": "Boyacá",
+   "country": "COL",
+   "aliases": [
+    "Boyacá"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1397",
+   "name": "Caldas",
+   "country": "COL",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Caldas"
+   ]
+  },
+  {
+   "id": "COL-1403",
+   "name": "Caquetá",
+   "country": "COL",
+   "aliases": [
+    "Caquetá",
+    "Florencia, Caquetá"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1422",
+   "name": "Casanare",
+   "country": "COL",
+   "aliases": [
+    "Casanare"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1404",
+   "name": "Cauca",
+   "country": "COL",
+   "aliases": [
+    "Argelia, Cauca",
+    "El Plateado",
+    "Jamundí",
+    "Popayán",
+    "Suárez, Cauca",
+    "Toribío",
+    "departamento del Cauca",
+    "norte del Cauca"
+   ],
+   "ambiguous_aliases": [
+    "Cauca"
+   ]
+  },
+  {
+   "id": "COL-1414",
+   "name": "Cesar",
+   "country": "COL",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Cesar"
+   ]
+  },
+  {
+   "id": "COL-1415",
+   "name": "Chocó",
+   "country": "COL",
+   "aliases": [
+    "Quibdó"
+   ],
+   "ambiguous_aliases": [
+    "Chocó"
+   ]
+  },
+  {
+   "id": "COL-1398",
+   "name": "Cundinamarca",
+   "country": "COL",
+   "aliases": [
+    "Cundinamarca"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1316",
+   "name": "Córdoba",
+   "country": "COL",
+   "aliases": [
+    "Montería",
+    "Tierralta"
+   ],
+   "ambiguous_aliases": [
+    "Córdoba"
+   ]
+  },
+  {
+   "id": "COL-1424",
+   "name": "Guainía",
+   "country": "COL",
+   "aliases": [
+    "Guainía"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1423",
+   "name": "Guaviare",
+   "country": "COL",
+   "aliases": [
+    "Guaviare",
+    "San José del Guaviare"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1405",
+   "name": "Huila",
+   "country": "COL",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Huila"
+   ]
+  },
+  {
+   "id": "COL-1318",
+   "name": "La Guajira",
+   "country": "COL",
+   "aliases": [
+    "La Guajira",
+    "Maicao",
+    "Riohacha"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1416",
+   "name": "Magdalena",
+   "country": "COL",
+   "aliases": [
+    "Santa Marta",
+    "Sierra Nevada de Santa Marta"
+   ],
+   "ambiguous_aliases": [
+    "Magdalena"
+   ]
+  },
+  {
+   "id": "COL-1425",
+   "name": "Meta",
+   "country": "COL",
+   "aliases": [
+    "Villavicencio"
+   ],
+   "ambiguous_aliases": [
+    "Meta"
+   ]
+  },
+  {
+   "id": "COL-1406",
+   "name": "Nariño",
+   "country": "COL",
+   "aliases": [
+    "Barbacoas",
+    "Pasto",
+    "Tumaco"
+   ],
+   "ambiguous_aliases": [
+    "Nariño"
+   ]
+  },
+  {
+   "id": "COL-1421",
+   "name": "Norte de Santander",
+   "country": "COL",
+   "aliases": [
+    "Catatumbo",
+    "Cucuta",
+    "Cúcuta",
+    "El Tarra",
+    "Norte de Santander",
+    "Ocaña",
+    "Tibú"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1407",
+   "name": "Putumayo",
+   "country": "COL",
+   "aliases": [
+    "Mocoa",
+    "Puerto Asís",
+    "Putumayo"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1400",
+   "name": "Quindío",
+   "country": "COL",
+   "aliases": [
+    "Quindío"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1401",
+   "name": "Risaralda",
+   "country": "COL",
+   "aliases": [
+    "Risaralda"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1342",
+   "name": "San Andrés y Providencia",
+   "country": "COL",
+   "aliases": [
+    "San Andrés y Providencia"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1317",
+   "name": "Santander",
+   "country": "COL",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Santander"
+   ]
+  },
+  {
+   "id": "COL-1417",
+   "name": "Sucre",
+   "country": "COL",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Sucre"
+   ]
+  },
+  {
+   "id": "COL-1402",
+   "name": "Tolima",
+   "country": "COL",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Tolima"
+   ]
+  },
+  {
+   "id": "COL-1408",
+   "name": "Valle del Cauca",
+   "country": "COL",
+   "aliases": [
+    "Buenaventura",
+    "Cali",
+    "Palmira",
+    "Tuluá",
+    "Valle del Cauca"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1426",
+   "name": "Vaupés",
+   "country": "COL",
+   "aliases": [
+    "Vaupés"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "COL-1427",
+   "name": "Vichada",
+   "country": "COL",
+   "aliases": [
+    "Vichada"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CRI-1333",
+   "name": "Alajuela",
+   "country": "CRI",
+   "aliases": [
+    "Alajuela"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CRI-1327",
+   "name": "Cartago",
+   "country": "CRI",
+   "aliases": [
+    "Cartago"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CRI-1334",
+   "name": "Guanacaste",
+   "country": "CRI",
+   "aliases": [
+    "Guanacaste"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CRI-1328",
+   "name": "Heredia",
+   "country": "CRI",
+   "aliases": [
+    "Heredia"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CRI-1329",
+   "name": "Limón",
+   "country": "CRI",
+   "aliases": [
+    "Limón"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CRI-1330",
+   "name": "Puntarenas",
+   "country": "CRI",
+   "aliases": [
+    "Puntarenas"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "CRI-1331",
+   "name": "San José",
+   "country": "CRI",
+   "aliases": [
+    "San José"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-1266",
+   "name": "Azuay",
+   "country": "ECU",
+   "aliases": [
+    "Camilo Ponce Enríquez",
+    "Cuenca, Ecuador",
+    "Ponce Enríquez"
+   ],
+   "ambiguous_aliases": [
+    "Azuay"
+   ]
+  },
+  {
+   "id": "ECU-1277",
+   "name": "Bolivar",
+   "country": "ECU",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Bolivar"
+   ]
+  },
+  {
+   "id": "ECU-1409",
+   "name": "Carchi",
+   "country": "ECU",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Carchi"
+   ]
+  },
+  {
+   "id": "ECU-1278",
+   "name": "Cañar",
+   "country": "ECU",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Cañar"
+   ]
+  },
+  {
+   "id": "ECU-1284",
+   "name": "Chimborazo",
+   "country": "ECU",
+   "aliases": [
+    "Chimborazo"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-1279",
+   "name": "Cotopaxi",
+   "country": "ECU",
+   "aliases": [
+    "Cotopaxi"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-1267",
+   "name": "El Oro",
+   "country": "ECU",
+   "aliases": [
+    "Huaquillas",
+    "Machala",
+    "Pasaje",
+    "Puerto Bolívar",
+    "Santa Rosa, El Oro"
+   ],
+   "ambiguous_aliases": [
+    "El Oro"
+   ]
+  },
+  {
+   "id": "ECU-1335",
+   "name": "Esmeraldas",
+   "country": "ECU",
+   "aliases": [
+    "Esmeraldas",
+    "San Lorenzo, Esmeraldas"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-1270",
+   "name": "Galápagos",
+   "country": "ECU",
+   "aliases": [
+    "Galápagos"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-1280",
+   "name": "Guayas",
+   "country": "ECU",
+   "aliases": [
+    "Daule",
+    "Durán",
+    "Guayaquil",
+    "Guayas",
+    "Milagro",
+    "Nueva Prosperidad",
+    "Penitenciaría del Litoral",
+    "Regional 8",
+    "Samborondón",
+    "Socio Vivienda"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-1410",
+   "name": "Imbabura",
+   "country": "ECU",
+   "aliases": [
+    "Imbabura"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-1268",
+   "name": "Loja",
+   "country": "ECU",
+   "aliases": [
+    "ciudad de Loja"
+   ],
+   "ambiguous_aliases": [
+    "Loja"
+   ]
+  },
+  {
+   "id": "ECU-1281",
+   "name": "Los Rios",
+   "country": "ECU",
+   "aliases": [
+    "Babahoyo",
+    "Los Ríos",
+    "Quevedo",
+    "Ventanas",
+    "Vinces"
+   ],
+   "ambiguous_aliases": [
+    "Los Rios"
+   ]
+  },
+  {
+   "id": "ECU-1282",
+   "name": "Manabi",
+   "country": "ECU",
+   "aliases": [
+    "Chone",
+    "Jipijapa",
+    "Manabí",
+    "Manta",
+    "Montecristi",
+    "Portoviejo"
+   ],
+   "ambiguous_aliases": [
+    "Manabi"
+   ]
+  },
+  {
+   "id": "ECU-1285",
+   "name": "Morona Santiago",
+   "country": "ECU",
+   "aliases": [
+    "Morona Santiago"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-1289",
+   "name": "Napo",
+   "country": "ECU",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Napo"
+   ]
+  },
+  {
+   "id": "ECU-1286",
+   "name": "Orellana",
+   "country": "ECU",
+   "aliases": [
+    "El Coca",
+    "Orellana"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-1288",
+   "name": "Pastaza",
+   "country": "ECU",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Pastaza"
+   ]
+  },
+  {
+   "id": "ECU-1287",
+   "name": "Pichincha",
+   "country": "ECU",
+   "aliases": [
+    "Pichincha",
+    "Quito"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-5507",
+   "name": "Santa Elena",
+   "country": "ECU",
+   "aliases": [
+    "La Libertad, Santa Elena",
+    "Salinas",
+    "Santa Elena"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-5508",
+   "name": "Santo Domingo de los Tsáchilas",
+   "country": "ECU",
+   "aliases": [
+    "Santo Domingo de los Tsáchilas",
+    "Santo Domingo, Ecuador"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-1411",
+   "name": "Sucumbios",
+   "country": "ECU",
+   "aliases": [
+    "Lago Agrio",
+    "Nueva Loja",
+    "Sucumbios",
+    "Sucumbíos"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-1290",
+   "name": "Tungurahua",
+   "country": "ECU",
+   "aliases": [
+    "Tungurahua"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "ECU-1269",
+   "name": "Zamora Chinchipe",
+   "country": "ECU",
+   "aliases": [
+    "Zamora Chinchipe"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1948",
+   "name": "Alta Verapaz",
+   "country": "GTM",
+   "aliases": [
+    "Alta Verapaz"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1942",
+   "name": "Baja Verapaz",
+   "country": "GTM",
+   "aliases": [
+    "Baja Verapaz"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1949",
+   "name": "Chimaltenango",
+   "country": "GTM",
+   "aliases": [
+    "Chimaltenango"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1960",
+   "name": "Chiquimula",
+   "country": "GTM",
+   "aliases": [
+    "Chiquimula"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1956",
+   "name": "El Progreso",
+   "country": "GTM",
+   "aliases": [
+    "El Progreso"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1950",
+   "name": "Escuintla",
+   "country": "GTM",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Escuintla"
+   ]
+  },
+  {
+   "id": "GTM-1951",
+   "name": "Guatemala",
+   "country": "GTM",
+   "aliases": [
+    "Ciudad de Guatemala",
+    "Mixco",
+    "Villa Nueva"
+   ],
+   "ambiguous_aliases": [
+    "Guatemala"
+   ]
+  },
+  {
+   "id": "GTM-1943",
+   "name": "Huehuetenango",
+   "country": "GTM",
+   "aliases": [
+    "Huehuetenango"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1959",
+   "name": "Izabal",
+   "country": "GTM",
+   "aliases": [
+    "Puerto Barrios"
+   ],
+   "ambiguous_aliases": [
+    "Izabal"
+   ]
+  },
+  {
+   "id": "GTM-1961",
+   "name": "Jalapa",
+   "country": "GTM",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Jalapa"
+   ]
+  },
+  {
+   "id": "GTM-1962",
+   "name": "Jutiapa",
+   "country": "GTM",
+   "aliases": [
+    "Jutiapa"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1944",
+   "name": "Petén",
+   "country": "GTM",
+   "aliases": [
+    "Peten"
+   ],
+   "ambiguous_aliases": [
+    "Petén"
+   ]
+  },
+  {
+   "id": "GTM-1945",
+   "name": "Quezaltenango",
+   "country": "GTM",
+   "aliases": [
+    "Quezaltenango"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-3467",
+   "name": "Quiché",
+   "country": "GTM",
+   "aliases": [
+    "Quiché"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1946",
+   "name": "Retalhuleu",
+   "country": "GTM",
+   "aliases": [
+    "Retalhuleu"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1953",
+   "name": "Sacatepéquez",
+   "country": "GTM",
+   "aliases": [
+    "Sacatepéquez"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1947",
+   "name": "San Marcos",
+   "country": "GTM",
+   "aliases": [
+    "San Marcos"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1957",
+   "name": "Santa Rosa",
+   "country": "GTM",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Santa Rosa"
+   ]
+  },
+  {
+   "id": "GTM-1954",
+   "name": "Sololá",
+   "country": "GTM",
+   "aliases": [
+    "Sololá"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1952",
+   "name": "Suchitepéquez",
+   "country": "GTM",
+   "aliases": [
+    "Suchitepéquez"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1955",
+   "name": "Totonicapán",
+   "country": "GTM",
+   "aliases": [
+    "Totonicapán"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "GTM-1963",
+   "name": "Zacapa",
+   "country": "GTM",
+   "aliases": [
+    "Zacapa"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HND-637",
+   "name": "Atlántida",
+   "country": "HND",
+   "aliases": [
+    "La Ceiba",
+    "Tela"
+   ],
+   "ambiguous_aliases": [
+    "Atlántida"
+   ]
+  },
+  {
+   "id": "HND-661",
+   "name": "Choluteca",
+   "country": "HND",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Choluteca"
+   ]
+  },
+  {
+   "id": "HND-638",
+   "name": "Colón",
+   "country": "HND",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Colón"
+   ]
+  },
+  {
+   "id": "HND-646",
+   "name": "Comayagua",
+   "country": "HND",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Comayagua"
+   ]
+  },
+  {
+   "id": "HND-651",
+   "name": "Copán",
+   "country": "HND",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Copán"
+   ]
+  },
+  {
+   "id": "HND-647",
+   "name": "Cortés",
+   "country": "HND",
+   "aliases": [
+    "Choloma",
+    "Puerto Cortés",
+    "San Pedro Sula"
+   ],
+   "ambiguous_aliases": [
+    "Cortés"
+   ]
+  },
+  {
+   "id": "HND-662",
+   "name": "El Paraíso",
+   "country": "HND",
+   "aliases": [
+    "El Paraíso"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HND-639",
+   "name": "Francisco Morazán",
+   "country": "HND",
+   "aliases": [
+    "Comayagüela",
+    "Francisco Morazán",
+    "Tegucigalpa"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HND-640",
+   "name": "Gracias a Dios",
+   "country": "HND",
+   "aliases": [
+    "Gracias a Dios",
+    "La Mosquitia"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HND-648",
+   "name": "Intibucá",
+   "country": "HND",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Intibucá"
+   ]
+  },
+  {
+   "id": "HND-641",
+   "name": "Islas de la Bahía",
+   "country": "HND",
+   "aliases": [
+    "Islas de la Bahía"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HND-649",
+   "name": "La Paz",
+   "country": "HND",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "La Paz"
+   ]
+  },
+  {
+   "id": "HND-652",
+   "name": "Lempira",
+   "country": "HND",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Lempira"
+   ]
+  },
+  {
+   "id": "HND-653",
+   "name": "Ocotepeque",
+   "country": "HND",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Ocotepeque"
+   ]
+  },
+  {
+   "id": "HND-642",
+   "name": "Olancho",
+   "country": "HND",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Olancho"
+   ]
+  },
+  {
+   "id": "HND-650",
+   "name": "Santa Bárbara",
+   "country": "HND",
+   "aliases": [
+    "Santa Bárbara"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HND-645",
+   "name": "Valle",
+   "country": "HND",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Valle"
+   ]
+  },
+  {
+   "id": "HND-643",
+   "name": "Yoro",
+   "country": "HND",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Yoro"
+   ]
+  },
+  {
+   "id": "HTI-1385",
+   "name": "Centre",
+   "country": "HTI",
+   "aliases": [
+    "Centre"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HTI-1359",
+   "name": "Grand'Anse",
+   "country": "HTI",
+   "aliases": [
+    "Grand'Anse"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HTI-1384",
+   "name": "L'Artibonite",
+   "country": "HTI",
+   "aliases": [
+    "L'Artibonite"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HTI-1360",
+   "name": "Nippes",
+   "country": "HTI",
+   "aliases": [
+    "Nippes"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HTI-1387",
+   "name": "Nord",
+   "country": "HTI",
+   "aliases": [
+    "Nord"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HTI-1386",
+   "name": "Nord-Est",
+   "country": "HTI",
+   "aliases": [
+    "Nord-Est"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HTI-1361",
+   "name": "Nord-Ouest",
+   "country": "HTI",
+   "aliases": [
+    "Nord-Ouest"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HTI-1388",
+   "name": "Ouest",
+   "country": "HTI",
+   "aliases": [
+    "Cité Soleil",
+    "Ouest",
+    "Port-au-Prince",
+    "Puerto Príncipe",
+    "Pétion-Ville"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HTI-1362",
+   "name": "Sud",
+   "country": "HTI",
+   "aliases": [
+    "Sud"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "HTI-1389",
+   "name": "Sud-Est",
+   "country": "HTI",
+   "aliases": [
+    "Sud-Est"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2717",
+   "name": "Aguascalientes",
+   "country": "MEX",
+   "aliases": [
+    "Aguascalientes"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2706",
+   "name": "Baja California",
+   "country": "MEX",
+   "aliases": [
+    "Baja California",
+    "Ensenada",
+    "Mexicali",
+    "Rosarito",
+    "San Quintín",
+    "Tecate",
+    "Tijuana"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2707",
+   "name": "Baja California Sur",
+   "country": "MEX",
+   "aliases": [
+    "BCS",
+    "Baja California Sur",
+    "Cabo San Lucas",
+    "La Paz, BCS",
+    "Los Cabos"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2722",
+   "name": "Campeche",
+   "country": "MEX",
+   "aliases": [
+    "Campeche",
+    "Ciudad del Carmen",
+    "Escárcega"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2735",
+   "name": "Chiapas",
+   "country": "MEX",
+   "aliases": [
+    "Chiapas",
+    "Chicomuselo",
+    "Comitán",
+    "Frontera Comalapa",
+    "Ocosingo",
+    "Pantelhó",
+    "San Cristóbal de las Casas",
+    "Tapachula",
+    "Tila",
+    "Tuxtla Gutiérrez"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2709",
+   "name": "Chihuahua",
+   "country": "MEX",
+   "aliases": [
+    "Cd. Juárez",
+    "Chihuahua",
+    "Ciudad Juárez",
+    "Cuauhtémoc, Chihuahua",
+    "Guachochi",
+    "Guadalupe y Calvo",
+    "Juárez, Chihuahua",
+    "Ojinaga",
+    "Parral"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2708",
+   "name": "Coahuila",
+   "country": "MEX",
+   "aliases": [
+    "Acuña",
+    "Coahuila",
+    "Monclova",
+    "Piedras Negras",
+    "Saltillo",
+    "Torreón"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2718",
+   "name": "Colima",
+   "country": "MEX",
+   "aliases": [
+    "Colima",
+    "Manzanillo",
+    "Tecomán",
+    "Villa de Álvarez"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2727",
+   "name": "Distrito Federal",
+   "country": "MEX",
+   "aliases": [
+    "Azcapotzalco",
+    "Benito Juárez, CDMX",
+    "CDMX",
+    "Ciudad de México",
+    "Coyoacán",
+    "Cuauhtémoc, CDMX",
+    "Gustavo A. Madero",
+    "Iztapalapa",
+    "Polanco",
+    "Tepito",
+    "Tláhuac",
+    "Xochimilco",
+    "Álvaro Obregón"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2710",
+   "name": "Durango",
+   "country": "MEX",
+   "aliases": [
+    "Gómez Palacio",
+    "Lerdo",
+    "Tamazula"
+   ],
+   "ambiguous_aliases": [
+    "Durango"
+   ]
+  },
+  {
+   "id": "MEX-2728",
+   "name": "Guanajuato",
+   "country": "MEX",
+   "aliases": [
+    "Abasolo",
+    "Acámbaro",
+    "Apaseo",
+    "Celaya",
+    "Cortazar",
+    "Guanajuato",
+    "Huanímaro",
+    "Irapuato",
+    "León, Guanajuato",
+    "Pénjamo",
+    "Salamanca",
+    "Salvatierra",
+    "San Miguel de Allende",
+    "Silao",
+    "Valle de Santiago",
+    "Yuriria"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2729",
+   "name": "Guerrero",
+   "country": "MEX",
+   "aliases": [
+    "Acapulco",
+    "Chilapa",
+    "Chilpancingo",
+    "Ciudad Altamirano",
+    "Guerrero, México",
+    "Heliodoro Castillo",
+    "Iguala",
+    "Petatlán",
+    "Taxco",
+    "Tecpan",
+    "Tlacotepec",
+    "Tlapa",
+    "Zihuatanejo",
+    "estado de Guerrero"
+   ],
+   "ambiguous_aliases": [
+    "Guerrero"
+   ]
+  },
+  {
+   "id": "MEX-2730",
+   "name": "Hidalgo",
+   "country": "MEX",
+   "aliases": [
+    "Hidalgo",
+    "Pachuca",
+    "Tula, Hidalgo",
+    "Tulancingo"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2719",
+   "name": "Jalisco",
+   "country": "MEX",
+   "aliases": [
+    "El Salto",
+    "Encarnación de Díaz",
+    "Guadalajara",
+    "Jalisco",
+    "Lagos de Moreno",
+    "Ocotlán",
+    "Puerto Vallarta",
+    "Rancho Izaguirre",
+    "Teocaltiche",
+    "Teuchitlán",
+    "Tlajomulco",
+    "Tlaquepaque",
+    "Tonalá",
+    "Zapopan"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2720",
+   "name": "Michoacán",
+   "country": "MEX",
+   "aliases": [
+    "Aguililla",
+    "Apatzingan",
+    "Apatzingán",
+    "Buenavista, Michoacán",
+    "Cherán",
+    "Coalcomán",
+    "Cotija",
+    "Hidalgo, Michoacán",
+    "Jacona",
+    "Lázaro Cárdenas",
+    "Michoacan",
+    "Michoacán",
+    "Morelia",
+    "Paracho",
+    "Pátzcuaro",
+    "Tangancícuaro",
+    "Tepalcatepec",
+    "Tierra Caliente michoacana",
+    "Uruapan",
+    "Zamora",
+    "Zitácuaro"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2732",
+   "name": "Morelos",
+   "country": "MEX",
+   "aliases": [
+    "Cuautla",
+    "Cuernavaca",
+    "Jiutepec",
+    "Morelos",
+    "Temixco",
+    "Yautepec"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2731",
+   "name": "México",
+   "country": "MEX",
+   "aliases": [
+    "Amanalco",
+    "Chalco",
+    "Chimalhuacán",
+    "Coacalco",
+    "Cuautitlán",
+    "Ecatepec",
+    "Edomex",
+    "Edoméx",
+    "Estado de México",
+    "Huixquilucan",
+    "Ixtapaluca",
+    "Luvianos",
+    "Naucalpan",
+    "Nezahualcóyotl",
+    "Tejupilco",
+    "Texcoco",
+    "Tlalnepantla",
+    "Toluca",
+    "Tultitlán",
+    "Valle de Bravo",
+    "Zinacantepec"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2721",
+   "name": "Nayarit",
+   "country": "MEX",
+   "aliases": [
+    "Bahía de Banderas",
+    "Nayarit",
+    "Tepic"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2714",
+   "name": "Nuevo León",
+   "country": "MEX",
+   "aliases": [
+    "Apodaca",
+    "Cadereyta",
+    "Escobedo",
+    "Guadalupe, NL",
+    "Juárez, NL",
+    "Monterrey",
+    "Nuevo Leon",
+    "Nuevo León",
+    "San Pedro Garza García"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2723",
+   "name": "Oaxaca",
+   "country": "MEX",
+   "aliases": [
+    "Istmo de Tehuantepec",
+    "Juchitán",
+    "Oaxaca",
+    "Pinotepa",
+    "Salina Cruz",
+    "Tuxtepec"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2724",
+   "name": "Puebla",
+   "country": "MEX",
+   "aliases": [
+    "Atlixco",
+    "Puebla",
+    "Tehuacán",
+    "Texmelucan"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2733",
+   "name": "Querétaro",
+   "country": "MEX",
+   "aliases": [
+    "Queretaro",
+    "Querétaro",
+    "San Juan del Río"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2736",
+   "name": "Quintana Roo",
+   "country": "MEX",
+   "aliases": [
+    "Cancun",
+    "Cancún",
+    "Chetumal",
+    "Playa del Carmen",
+    "Quintana Roo",
+    "Tulum"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2715",
+   "name": "San Luis Potosí",
+   "country": "MEX",
+   "aliases": [
+    "Ciudad Valles",
+    "Matehuala",
+    "San Luis Potosi",
+    "San Luis Potosí"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2711",
+   "name": "Sinaloa",
+   "country": "MEX",
+   "aliases": [
+    "Badiraguato",
+    "Concordia",
+    "Cosalá",
+    "Costa Rica, Sinaloa",
+    "Culiacan",
+    "Culiacán",
+    "Eldorado",
+    "Elota",
+    "Escuinapa",
+    "Guamúchil",
+    "Guasave",
+    "Los Mochis",
+    "Mazatlan",
+    "Mazatlán",
+    "Mocorito",
+    "Navolato",
+    "Rosario, Sinaloa",
+    "Sinaloa"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2712",
+   "name": "Sonora",
+   "country": "MEX",
+   "aliases": [
+    "Agua Prieta",
+    "Altar",
+    "Caborca",
+    "Cajeme",
+    "Ciudad Obregón",
+    "Guaymas",
+    "Hermosillo",
+    "Navojoa",
+    "Nogales",
+    "San Luis Río Colorado",
+    "Sonora",
+    "Sonoyta"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2725",
+   "name": "Tabasco",
+   "country": "MEX",
+   "aliases": [
+    "Comalcalco",
+    "Cárdenas, Tabasco",
+    "Huimanguillo",
+    "Tabasco",
+    "Villahermosa"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2716",
+   "name": "Tamaulipas",
+   "country": "MEX",
+   "aliases": [
+    "Altamira",
+    "Ciudad Victoria",
+    "Madero",
+    "Matamoros",
+    "Miguel Alemán",
+    "Nuevo Laredo",
+    "Reynosa",
+    "Río Bravo",
+    "San Fernando, Tamaulipas",
+    "Tamaulipas",
+    "Tampico",
+    "Valle Hermoso"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2726",
+   "name": "Tlaxcala",
+   "country": "MEX",
+   "aliases": [
+    "Apizaco",
+    "Tlaxcala"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2734",
+   "name": "Veracruz",
+   "country": "MEX",
+   "aliases": [
+    "Boca del Río",
+    "Coatzacoalcos",
+    "Córdoba, Veracruz",
+    "Minatitlán",
+    "Orizaba",
+    "Papantla",
+    "Poza Rica",
+    "Tuxpan",
+    "Veracruz",
+    "Xalapa"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2737",
+   "name": "Yucatán",
+   "country": "MEX",
+   "aliases": [
+    "Mérida, Yucatán",
+    "Progreso, Yucatán",
+    "Yucatan",
+    "Yucatán"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "MEX-2713",
+   "name": "Zacatecas",
+   "country": "MEX",
+   "aliases": [
+    "Fresnillo",
+    "Jerez, Zacatecas",
+    "Sombrerete",
+    "Valparaíso, Zacatecas",
+    "Zacatecas"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-657",
+   "name": "Atlántico Norte",
+   "country": "NIC",
+   "aliases": [
+    "Atlántico Norte"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-644",
+   "name": "Atlántico Sur",
+   "country": "NIC",
+   "aliases": [
+    "Atlántico Sur"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-668",
+   "name": "Boaco",
+   "country": "NIC",
+   "aliases": [
+    "Boaco"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-654",
+   "name": "Carazo",
+   "country": "NIC",
+   "aliases": [
+    "Carazo"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-663",
+   "name": "Chinandega",
+   "country": "NIC",
+   "aliases": [
+    "Chinandega"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-669",
+   "name": "Chontales",
+   "country": "NIC",
+   "aliases": [
+    "Chontales"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-664",
+   "name": "Estelí",
+   "country": "NIC",
+   "aliases": [
+    "Estelí"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-655",
+   "name": "Granada",
+   "country": "NIC",
+   "aliases": [
+    "Granada"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-656",
+   "name": "Jinotega",
+   "country": "NIC",
+   "aliases": [
+    "Jinotega"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-658",
+   "name": "León",
+   "country": "NIC",
+   "aliases": [
+    "León"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-665",
+   "name": "Madriz",
+   "country": "NIC",
+   "aliases": [
+    "Madriz"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-659",
+   "name": "Managua",
+   "country": "NIC",
+   "aliases": [
+    "Managua"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-660",
+   "name": "Masaya",
+   "country": "NIC",
+   "aliases": [
+    "Masaya"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-666",
+   "name": "Matagalpa",
+   "country": "NIC",
+   "aliases": [
+    "Matagalpa"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-667",
+   "name": "Nueva Segovia",
+   "country": "NIC",
+   "aliases": [
+    "Nueva Segovia"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-4800",
+   "name": "Rio San Juan",
+   "country": "NIC",
+   "aliases": [
+    "Rio San Juan"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "NIC-24",
+   "name": "Rivas",
+   "country": "NIC",
+   "aliases": [
+    "Rivas"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PAN-1958",
+   "name": "Bocas del Toro",
+   "country": "PAN",
+   "aliases": [
+    "Bocas del Toro"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PAN-1332",
+   "name": "Chiriquí",
+   "country": "PAN",
+   "aliases": [
+    "Chiriquí"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PAN-1336",
+   "name": "Coclé",
+   "country": "PAN",
+   "aliases": [
+    "Coclé"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PAN-1337",
+   "name": "Colón",
+   "country": "PAN",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Colón"
+   ]
+  },
+  {
+   "id": "PAN-1418",
+   "name": "Darién",
+   "country": "PAN",
+   "aliases": [
+    "Darién"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PAN-3455",
+   "name": "Emberá",
+   "country": "PAN",
+   "aliases": [
+    "Emberá"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PAN-1338",
+   "name": "Herrera",
+   "country": "PAN",
+   "aliases": [
+    "Herrera"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PAN-1419",
+   "name": "Kuna Yala",
+   "country": "PAN",
+   "aliases": [
+    "Kuna Yala"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PAN-1339",
+   "name": "Los Santos",
+   "country": "PAN",
+   "aliases": [
+    "Los Santos"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PAN-3454",
+   "name": "Ngöbe Buglé",
+   "country": "PAN",
+   "aliases": [
+    "Ngöbe Buglé"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PAN-1340",
+   "name": "Panama",
+   "country": "PAN",
+   "aliases": [
+    "Panama"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PAN-1341",
+   "name": "Veraguas",
+   "country": "PAN",
+   "aliases": [
+    "Veraguas"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-584",
+   "name": "Amazonas",
+   "country": "PER",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Amazonas"
+   ]
+  },
+  {
+   "id": "PER-569",
+   "name": "Apurímac",
+   "country": "PER",
+   "aliases": [
+    "Apurímac"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-570",
+   "name": "Arequipa",
+   "country": "PER",
+   "aliases": [
+    "Arequipa"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-586",
+   "name": "Ayacucho",
+   "country": "PER",
+   "aliases": [
+    "Ayacucho",
+    "VRAEM",
+    "Vraem"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-578",
+   "name": "Cajamarca",
+   "country": "PER",
+   "aliases": [
+    "Cajamarca"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-3505",
+   "name": "Callao",
+   "country": "PER",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Callao"
+   ]
+  },
+  {
+   "id": "PER-571",
+   "name": "Cusco",
+   "country": "PER",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Cusco"
+   ]
+  },
+  {
+   "id": "PER-588",
+   "name": "Huancavelica",
+   "country": "PER",
+   "aliases": [
+    "Huancavelica"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-579",
+   "name": "Huánuco",
+   "country": "PER",
+   "aliases": [
+    "Huánuco"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-589",
+   "name": "Ica",
+   "country": "PER",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Ica"
+   ]
+  },
+  {
+   "id": "PER-590",
+   "name": "Junín",
+   "country": "PER",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Junín"
+   ]
+  },
+  {
+   "id": "PER-580",
+   "name": "La Libertad",
+   "country": "PER",
+   "aliases": [
+    "Pataz",
+    "Trujillo, Perú"
+   ],
+   "ambiguous_aliases": [
+    "La Libertad"
+   ]
+  },
+  {
+   "id": "PER-566",
+   "name": "Lambayeque",
+   "country": "PER",
+   "aliases": [
+    "Lambayeque"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-591",
+   "name": "Lima",
+   "country": "PER",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Lima"
+   ]
+  },
+  {
+   "id": "PER-587",
+   "name": "Lima Province",
+   "country": "PER",
+   "aliases": [
+    "Comas",
+    "Lima Metropolitana",
+    "Lima Province",
+    "San Juan de Lurigancho"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-585",
+   "name": "Loreto",
+   "country": "PER",
+   "aliases": [
+    "Iquitos",
+    "Loreto"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-572",
+   "name": "Madre de Dios",
+   "country": "PER",
+   "aliases": [
+    "Madre de Dios"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-574",
+   "name": "Moquegua",
+   "country": "PER",
+   "aliases": [
+    "Moquegua"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-581",
+   "name": "Pasco",
+   "country": "PER",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Pasco"
+   ]
+  },
+  {
+   "id": "PER-567",
+   "name": "Piura",
+   "country": "PER",
+   "aliases": [
+    "Sullana"
+   ],
+   "ambiguous_aliases": [
+    "Piura"
+   ]
+  },
+  {
+   "id": "PER-573",
+   "name": "Puno",
+   "country": "PER",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Puno"
+   ]
+  },
+  {
+   "id": "PER-582",
+   "name": "San Martín",
+   "country": "PER",
+   "aliases": [
+    "San Martín"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-575",
+   "name": "Tacna",
+   "country": "PER",
+   "aliases": [
+    "Tacna"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-568",
+   "name": "Tumbes",
+   "country": "PER",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Tumbes"
+   ]
+  },
+  {
+   "id": "PER-583",
+   "name": "Ucayali",
+   "country": "PER",
+   "aliases": [
+    "Ucayali"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PER-577",
+   "name": "Áncash",
+   "country": "PER",
+   "aliases": [
+    "Áncash"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-597",
+   "name": "Alto Paraguay",
+   "country": "PRY",
+   "aliases": [
+    "Alto Paraguay"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-616",
+   "name": "Alto Paraná",
+   "country": "PRY",
+   "aliases": [
+    "Alto Paraná"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-615",
+   "name": "Amambay",
+   "country": "PRY",
+   "aliases": [
+    "Amambay"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-4837",
+   "name": "Asunción",
+   "country": "PRY",
+   "aliases": [
+    "Asunción"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-598",
+   "name": "Boquerón",
+   "country": "PRY",
+   "aliases": [
+    "Boquerón"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-617",
+   "name": "Caaguazú",
+   "country": "PRY",
+   "aliases": [
+    "Caaguazú"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-618",
+   "name": "Caazapá",
+   "country": "PRY",
+   "aliases": [
+    "Caazapá"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-619",
+   "name": "Canindeyú",
+   "country": "PRY",
+   "aliases": [
+    "Canindeyú"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-607",
+   "name": "Central",
+   "country": "PRY",
+   "aliases": [
+    "Central"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-603",
+   "name": "Concepción",
+   "country": "PRY",
+   "aliases": [
+    "Concepción"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-604",
+   "name": "Cordillera",
+   "country": "PRY",
+   "aliases": [
+    "Cordillera"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-608",
+   "name": "Guairá",
+   "country": "PRY",
+   "aliases": [
+    "Guairá"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-620",
+   "name": "Itapúa",
+   "country": "PRY",
+   "aliases": [
+    "Itapúa"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-609",
+   "name": "Misiones",
+   "country": "PRY",
+   "aliases": [
+    "Misiones"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-611",
+   "name": "Paraguarí",
+   "country": "PRY",
+   "aliases": [
+    "Paraguarí"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-605",
+   "name": "Presidente Hayes",
+   "country": "PRY",
+   "aliases": [
+    "Presidente Hayes"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-606",
+   "name": "San Pedro",
+   "country": "PRY",
+   "aliases": [
+    "San Pedro"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "PRY-610",
+   "name": "Ñeembucú",
+   "country": "PRY",
+   "aliases": [
+    "Ñeembucú"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "SLV-1343",
+   "name": "Ahuachapán",
+   "country": "SLV",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Ahuachapán"
+   ]
+  },
+  {
+   "id": "SLV-1344",
+   "name": "Cabañas",
+   "country": "SLV",
+   "aliases": [
+    "CECOT",
+    "Tecoluca"
+   ],
+   "ambiguous_aliases": [
+    "Cabañas"
+   ]
+  },
+  {
+   "id": "SLV-1357",
+   "name": "Chalatenango",
+   "country": "SLV",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Chalatenango"
+   ]
+  },
+  {
+   "id": "SLV-1345",
+   "name": "Cuscatlán",
+   "country": "SLV",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Cuscatlán"
+   ]
+  },
+  {
+   "id": "SLV-1346",
+   "name": "La Libertad",
+   "country": "SLV",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "La Libertad"
+   ]
+  },
+  {
+   "id": "SLV-1347",
+   "name": "La Paz",
+   "country": "SLV",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "La Paz"
+   ]
+  },
+  {
+   "id": "SLV-1350",
+   "name": "La Unión",
+   "country": "SLV",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "La Unión"
+   ]
+  },
+  {
+   "id": "SLV-1351",
+   "name": "Morazán",
+   "country": "SLV",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Morazán"
+   ]
+  },
+  {
+   "id": "SLV-1352",
+   "name": "San Miguel",
+   "country": "SLV",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "San Miguel"
+   ]
+  },
+  {
+   "id": "SLV-1349",
+   "name": "San Salvador",
+   "country": "SLV",
+   "aliases": [
+    "Apopa",
+    "Ilopango",
+    "Mejicanos",
+    "San Salvador",
+    "Soyapango"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "SLV-1353",
+   "name": "San Vicente",
+   "country": "SLV",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "San Vicente"
+   ]
+  },
+  {
+   "id": "SLV-1358",
+   "name": "Santa Ana",
+   "country": "SLV",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Santa Ana"
+   ]
+  },
+  {
+   "id": "SLV-1348",
+   "name": "Sonsonate",
+   "country": "SLV",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Sonsonate"
+   ]
+  },
+  {
+   "id": "SLV-1354",
+   "name": "Usulután",
+   "country": "SLV",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Usulután"
+   ]
+  },
+  {
+   "id": "VEN-38",
+   "name": "Amazonas",
+   "country": "VEN",
+   "aliases": [
+    "Puerto Ayacucho"
+   ],
+   "ambiguous_aliases": [
+    "Amazonas"
+   ]
+  },
+  {
+   "id": "VEN-40",
+   "name": "Anzoátegui",
+   "country": "VEN",
+   "aliases": [
+    "Anzoátegui"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-25",
+   "name": "Apure",
+   "country": "VEN",
+   "aliases": [
+    "Apure",
+    "Guasdualito"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-41",
+   "name": "Aragua",
+   "country": "VEN",
+   "aliases": [
+    "Maracay",
+    "Tocorón"
+   ],
+   "ambiguous_aliases": [
+    "Aragua"
+   ]
+  },
+  {
+   "id": "VEN-26",
+   "name": "Barinas",
+   "country": "VEN",
+   "aliases": [
+    "Barinas"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-39",
+   "name": "Bolívar",
+   "country": "VEN",
+   "aliases": [
+    "Arco Minero",
+    "Ciudad Guayana",
+    "El Callao",
+    "Las Claritas",
+    "Puerto Ordaz",
+    "Tumeremo"
+   ],
+   "ambiguous_aliases": [
+    "Bolívar"
+   ]
+  },
+  {
+   "id": "VEN-33",
+   "name": "Carabobo",
+   "country": "VEN",
+   "aliases": [
+    "Carabobo",
+    "Puerto Cabello",
+    "Tocuyito",
+    "Valencia, Venezuela"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-32",
+   "name": "Cojedes",
+   "country": "VEN",
+   "aliases": [
+    "Cojedes"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-65",
+   "name": "Delta Amacuro",
+   "country": "VEN",
+   "aliases": [
+    "Delta Amacuro"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-44",
+   "name": "Dependencias Federales",
+   "country": "VEN",
+   "aliases": [
+    "Dependencias Federales"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-43",
+   "name": "Distrito Capital",
+   "country": "VEN",
+   "aliases": [
+    "Caracas",
+    "Cota 905",
+    "Petare"
+   ],
+   "ambiguous_aliases": [
+    "Distrito Capital"
+   ]
+  },
+  {
+   "id": "VEN-23",
+   "name": "Falcón",
+   "country": "VEN",
+   "aliases": [
+    "Falcón",
+    "Paraguaná"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-45",
+   "name": "Guárico",
+   "country": "VEN",
+   "aliases": [
+    "Guárico"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-34",
+   "name": "Lara",
+   "country": "VEN",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Lara"
+   ]
+  },
+  {
+   "id": "VEN-47",
+   "name": "Miranda",
+   "country": "VEN",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Miranda"
+   ]
+  },
+  {
+   "id": "VEN-46",
+   "name": "Monagas",
+   "country": "VEN",
+   "aliases": [
+    "Monagas"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-27",
+   "name": "Mérida",
+   "country": "VEN",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Mérida"
+   ]
+  },
+  {
+   "id": "VEN-48",
+   "name": "Nueva Esparta",
+   "country": "VEN",
+   "aliases": [
+    "Nueva Esparta"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-35",
+   "name": "Portuguesa",
+   "country": "VEN",
+   "aliases": [
+    "Portuguesa"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-49",
+   "name": "Sucre",
+   "country": "VEN",
+   "aliases": [
+    "Carúpano",
+    "Cumaná",
+    "Güiria"
+   ],
+   "ambiguous_aliases": [
+    "Sucre"
+   ]
+  },
+  {
+   "id": "VEN-29",
+   "name": "Trujillo",
+   "country": "VEN",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Trujillo"
+   ]
+  },
+  {
+   "id": "VEN-28",
+   "name": "Táchira",
+   "country": "VEN",
+   "aliases": [
+    "San Antonio del Táchira",
+    "San Cristóbal, Táchira",
+    "Táchira",
+    "Ureña"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-42",
+   "name": "Vargas",
+   "country": "VEN",
+   "aliases": [],
+   "ambiguous_aliases": [
+    "Vargas"
+   ]
+  },
+  {
+   "id": "VEN-36",
+   "name": "Yaracuy",
+   "country": "VEN",
+   "aliases": [
+    "Yaracuy"
+   ],
+   "ambiguous_aliases": []
+  },
+  {
+   "id": "VEN-31",
+   "name": "Zulia",
+   "country": "VEN",
+   "aliases": [
+    "Catatumbo venezolano",
+    "Machiques",
+    "Maracaibo",
+    "Zulia"
+   ],
+   "ambiguous_aliases": []
+  }
+ ],
+ "groups": [
+  {
+   "ids": [
+    "sinaloa"
+   ],
+   "aliases": [
+    "Cártel de Sinaloa",
+    "Cartel de Sinaloa",
+    "Sinaloa Cartel",
+    "Sinaloa cartel",
+    "CDS",
+    "Cártel del Pacífico",
+    "El Mayo",
+    "Mayo Zambada",
+    "El Chapo",
+    "Guzmán Loera"
+   ]
+  },
+  {
+   "ids": [
+    "sinaloa",
+    "chapitos"
+   ],
+   "aliases": [
+    "Chapitos",
+    "Chapiza",
+    "La Chapiza",
+    "chapizza",
+    "Iván Archivaldo",
+    "Ivan Archivaldo",
+    "Jesús Alfredo Guzmán",
+    "Ovidio Guzmán",
+    "Los Ninis",
+    "El Jando"
+   ]
+  },
+  {
+   "ids": [
+    "sinaloa",
+    "mayiza"
+   ],
+   "aliases": [
+    "Mayiza",
+    "La Mayiza",
+    "Mayito Flaco",
+    "Mayo Flaco",
+    "El Mayito",
+    "Ismael Zambada Sicairos",
+    "El Rosarito",
+    "Los Cabrera"
+   ]
+  },
+  {
+   "ids": [
+    "cjng"
+   ],
+   "aliases": [
+    "CJNG",
+    "Cártel Jalisco Nueva Generación",
+    "Cartel Jalisco Nueva Generación",
+    "Jalisco New Generation",
+    "Jalisco cartel",
+    "El Mencho",
+    "Mencho",
+    "4 letras",
+    "cuatro letras",
+    "Los Mencho",
+    "El Jardinero",
+    "Delta 1",
+    "Grupo Élite",
+    "Los Cuinis",
+    "El 03"
+   ]
+  },
+  {
+   "ids": [
+    "gulf"
+   ],
+   "aliases": [
+    "Cártel del Golfo",
+    "Cartel del Golfo",
+    "Gulf Cartel",
+    "CDG",
+    "Los Metros",
+    "Metros",
+    "Los Ciclones",
+    "Ciclones",
+    "Los Escorpiones",
+    "Los Rojos, Tamaulipas"
+   ]
+  },
+  {
+   "ids": [
+    "cdn"
+   ],
+   "aliases": [
+    "Cártel del Noreste",
+    "Cartel del Noreste",
+    "CDN",
+    "Noreste",
+    "Tropa del Infierno",
+    "Zetas Vieja Escuela",
+    "Los Zetas",
+    "Zetas"
+   ]
+  },
+  {
+   "ids": [
+    "lnfm"
+   ],
+   "aliases": [
+    "Familia Michoacana",
+    "La Nueva Familia Michoacana",
+    "LNFM",
+    "Los Hurtado",
+    "El Pez",
+    "El Fresa",
+    "Hermanos Hurtado"
+   ]
+  },
+  {
+   "ids": [
+    "unidos"
+   ],
+   "aliases": [
+    "Cárteles Unidos",
+    "Carteles Unidos",
+    "Los Reyes Magos",
+    "Caballeros Templarios",
+    "Templarios",
+    "Los Caballeros Templarios",
+    "Tepalcatepec cartel",
+    "Abuelo Farías"
+   ]
+  },
+  {
+   "ids": [
+    "unidos",
+    "viagras"
+   ],
+   "aliases": [
+    "Los Viagras",
+    "Viagras",
+    "El Gordo Viagra"
+   ]
+  },
+  {
+   "ids": [
+    "juarez"
+   ],
+   "aliases": [
+    "Cártel de Juárez",
+    "Cartel de Juárez",
+    "Juárez Cartel",
+    "La Línea",
+    "La Linea",
+    "Nuevo Cártel de Juárez",
+    "Los Mexicles",
+    "Los Aztecas"
+   ]
+  },
+  {
+   "ids": [
+    "tda"
+   ],
+   "aliases": [
+    "Tren de Aragua",
+    "TdA",
+    "Niño Guerrero",
+    "Piratas de Aragua"
+   ]
+  },
+  {
+   "ids": [
+    "soles"
+   ],
+   "aliases": [
+    "Cartel de los Soles",
+    "Cártel de los Soles"
+   ]
+  },
+  {
+   "ids": [
+    "clan"
+   ],
+   "aliases": [
+    "Clan del Golfo",
+    "EGC",
+    "Ejército Gaitanista",
+    "Ejército Gaitanista de Colombia",
+    "Urabeños",
+    "AGC",
+    "Autodefensas Gaitanistas",
+    "Chiquito Malo"
+   ]
+  },
+  {
+   "ids": [
+    "eln"
+   ],
+   "aliases": [
+    "ELN",
+    "Ejército de Liberación Nacional"
+   ]
+  },
+  {
+   "ids": [
+    "exfarc"
+   ],
+   "aliases": [
+    "disidencias de las FARC",
+    "disidencias FARC",
+    "FARC dissidents",
+    "EMC",
+    "Estado Mayor Central",
+    "Iván Mordisco",
+    "Ivan Mordisco",
+    "Calarcá",
+    "EMBF",
+    "Frente Carolina Ramírez",
+    "Frente Dagoberto Ramos",
+    "Frente 33"
+   ]
+  },
+  {
+   "ids": [
+    "exfarc",
+    "segmar"
+   ],
+   "aliases": [
+    "Segunda Marquetalia",
+    "Iván Márquez",
+    "Comandos de la Frontera",
+    "Coordinadora Nacional Ejército Bolivariano"
+   ]
+  },
+  {
+   "ids": [
+    "choneros"
+   ],
+   "aliases": [
+    "Los Choneros",
+    "Choneros",
+    "Fito",
+    "Adolfo Macías",
+    "Los Fatales"
+   ]
+  },
+  {
+   "ids": [
+    "lobos"
+   ],
+   "aliases": [
+    "Los Lobos",
+    "Lobos, Ecuador",
+    "Pipo",
+    "Wilmer Chavarría"
+   ]
+  },
+  {
+   "ids": [
+    "los_tiguerones"
+   ],
+   "aliases": [
+    "Tiguerones",
+    "Los Tiguerones",
+    "Tigrerones"
+   ]
+  },
+  {
+   "ids": [
+    "chone_killers"
+   ],
+   "aliases": [
+    "Chone Killers"
+   ]
+  },
+  {
+   "ids": [
+    "pcc"
+   ],
+   "aliases": [
+    "PCC",
+    "Primeiro Comando da Capital",
+    "Primer Comando de la Capital",
+    "Marcola"
+   ]
+  },
+  {
+   "ids": [
+    "cv"
+   ],
+   "aliases": [
+    "Comando Vermelho",
+    "Comando Rojo"
+   ]
+  },
+  {
+   "ids": [
+    "ms13"
+   ],
+   "aliases": [
+    "MS-13",
+    "MS13",
+    "Mara Salvatrucha"
+   ]
+  },
+  {
+   "ids": [
+    "b18"
+   ],
+   "aliases": [
+    "Barrio 18",
+    "Mara 18",
+    "Barrio 18 Sureños",
+    "Barrio 18 Revolucionarios"
+   ]
+  },
+  {
+   "ids": [
+    "haiti",
+    "viv_ansanm"
+   ],
+   "aliases": [
+    "Viv Ansanm",
+    "Barbecue",
+    "Jimmy Chérizier",
+    "Jimmy Cherizier",
+    "G9"
+   ]
+  },
+  {
+   "ids": [
+    "haiti",
+    "gran_grif"
+   ],
+   "aliases": [
+    "Gran Grif",
+    "Grand Grif"
+   ]
+  },
+  {
+   "ids": [
+    "cmln"
+   ],
+   "aliases": [
+    "Chinese money laundering",
+    "lavado de dinero chino",
+    "CMLN",
+    "redes chinas de lavado"
+   ]
+  }
+ ],
+ "case_sensitive": [
+  "CDS",
+  "CDG",
+  "CDN",
+  "EGC",
+  "AGC",
+  "PCC",
+  "ELN",
+  "EMC",
+  "TdA",
+  "G9",
+  "LNFM",
+  "CJNG",
+  "CMLN"
+ ],
+ "accounts": {
+  "Riodoce_mx": {
+   "tier": "verified",
+   "source_type": "local outlet",
+   "country": "MEX",
+   "default_region": "MEX-2711"
+  },
+  "ZETATijuana": {
+   "tier": "verified",
+   "source_type": "local outlet",
+   "country": "MEX",
+   "default_region": "MEX-2706"
+  },
+  "noticieristas": {
+   "tier": "verified",
+   "source_type": "local outlet",
+   "country": "MEX",
+   "default_region": "MEX-2711"
+  },
+  "proceso": {
+   "tier": "verified",
+   "source_type": "national outlet",
+   "country": "MEX"
+  },
+  "Pajaropolitico": {
+   "tier": "verified",
+   "source_type": "national outlet",
+   "country": "MEX"
+  },
+  "infobaemexico": {
+   "tier": "verified",
+   "source_type": "national outlet",
+   "country": "MEX"
+  },
+  "causaencomun": {
+   "tier": "verified",
+   "source_type": "ngo",
+   "country": "MEX"
+  },
+  "InSightCrime": {
+   "tier": "verified",
+   "source_type": "research outlet",
+   "country": null
+  },
+  "_elfaro_": {
+   "tier": "verified",
+   "source_type": "regional outlet",
+   "country": "SLV"
+  },
+  "ArmandoInfo": {
+   "tier": "verified",
+   "source_type": "regional outlet",
+   "country": "VEN"
+  },
+  "Primicias": {
+   "tier": "verified",
+   "source_type": "national outlet",
+   "country": "ECU"
+  },
+  "EcuadorChequea": {
+   "tier": "verified",
+   "source_type": "fact-checker",
+   "country": "ECU"
+  },
+  "ioangrillo": {
+   "tier": "verified",
+   "source_type": "journalist",
+   "country": "MEX"
+  },
+  "falko_ernst": {
+   "tier": "verified",
+   "source_type": "researcher",
+   "country": "MEX"
+  },
+  "vhmichel": {
+   "tier": "verified",
+   "source_type": "journalist",
+   "country": "MEX"
+  },
+  "parescolombia": {
+   "tier": "verified",
+   "source_type": "think tank",
+   "country": "COL"
+  },
+  "CrisisGroup": {
+   "tier": "verified",
+   "source_type": "think tank",
+   "country": null
+  },
+  "GabSeguridadMX": {
+   "tier": "verified",
+   "source_type": "official",
+   "country": "MEX"
+  },
+  "SSPCMexico": {
+   "tier": "verified",
+   "source_type": "official",
+   "country": "MEX"
+  },
+  "DEAHQ": {
+   "tier": "verified",
+   "source_type": "official",
+   "country": null
+  },
+  "CBP": {
+   "tier": "verified",
+   "source_type": "official",
+   "country": null
+  },
+  "USTreasury": {
+   "tier": "verified",
+   "source_type": "official",
+   "country": null
+  }
+ },
+ "excluded_accounts": [
+  "MrMarcianoNews",
+  "AlertaNews24",
+  "semanarioZETA",
+  "borderlandbeat",
+  "elblogdelnarco",
+  "Cartel_Watch",
+  "AdrianaCooper",
+  "elsurdeacapulco",
+  "OFAC",
+  "TreasuryOFAC"
+ ]
+}

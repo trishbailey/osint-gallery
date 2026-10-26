@@ -1,0 +1,75 @@
+{
+ "as_of": "2026-10-25",
+ "items": [
+  {
+   "id": "CH1",
+   "category": "precursors",
+   "title": "Precursor chemicals",
+   "lonlat": [
+    -104.31,
+    19.05
+   ],
+   "text": "China remains the main source of fentanyl precursors, with India a growing supplier. Treasury has sanctioned suppliers based in China (2023) and in India and Latin America (2026).",
+   "says_vs_does": "Beijing points to its scheduling controls. US sanctions keep naming new China-based sellers.",
+   "cites": [
+    "DEA25",
+    "OFAC_JY1413",
+    "OFAC_SB0468"
+   ]
+  },
+  {
+   "id": "CH2",
+   "category": "money",
+   "title": "Chinese money laundering networks",
+   "lonlat": [
+    -95,
+    30
+   ],
+   "text": "CMLNs are now a leading channel for cartel cash, linked to $312bn in US suspicious-activity reports (2020-2024).",
+   "cites": [
+    "FINCEN_CMLN_FTA",
+    "FINCEN_CMLN_ADV"
+   ]
+  },
+  {
+   "id": "CH3",
+   "category": "ports",
+   "title": "Chancay port, Peru (COSCO)",
+   "lonlat": [
+    -77.27,
+    -11.56
+   ],
+   "text": "A COSCO-majority deepwater port. Officials assess smuggling risk; US-donated scanners are in place. No major cocaine seizure through it is documented in these sources.",
+   "cites": [
+    "AP_CHANCAY"
+   ]
+  },
+  {
+   "id": "CH4",
+   "category": "ports",
+   "title": "Panama Canal ports",
+   "lonlat": [
+    -79.57,
+    8.95
+   ],
+   "text": "The Supreme Court voided CK Hutchison's Balboa and Cristóbal concessions (Jan 2026), and APM and TIL run interim operations. COSCO suspended Balboa calls (Mar 2026), and CK Hutchison has started arbitration.",
+   "cites": [
+    "REUTERS_PANAMA",
+    "REUTERS_COSCO"
+   ]
+  },
+  {
+   "id": "CH5",
+   "category": "loans",
+   "title": "State lending",
+   "lonlat": [
+    -60,
+    -10
+   ],
+   "text": "Lending from China's policy banks peaked around $25bn in 2010 and fell to about $1.3bn in 2023 (Brazil). Venezuela is the largest historical borrower. Boston University archived its database in Feb 2025.",
+   "cites": [
+    "BU_CLLAC"
+   ]
+  }
+ ]
+}

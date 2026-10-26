@@ -1,0 +1,206 @@
+{
+ "title": "Disappeared and missing persons still not located, by state",
+ "as_of": "2026-05-16",
+ "unit": "people registered as disappeared or missing and not located (cumulative)",
+ "source_url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/",
+ "cites": [
+  "REDLUPA_RNPDNO",
+  "UNOTV_RNPDNO"
+ ],
+ "substitute": true,
+ "note": "The official RNPDNO site timed out for automated access, so this uses Red Lupa (IMDHD)'s compilation of RNPDNO state totals to 16 May 2026, as published by UnoTV. RNPDNO figures were reclassified in 2026 and the reclassification is disputed by families and researchers; national totals cited by Data Cívica (133,788 at 16 Aug 2026) differ from this compilation.",
+ "states": [
+  {
+   "region": "MEX-2717",
+   "name": "Aguascalientes",
+   "v": 506,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2706",
+   "name": "Baja California",
+   "v": 5160,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2707",
+   "name": "Baja California Sur",
+   "v": 1172,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2722",
+   "name": "Campeche",
+   "v": 218,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2708",
+   "name": "Coahuila",
+   "v": 3692,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2718",
+   "name": "Colima",
+   "v": 1524,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2735",
+   "name": "Chiapas",
+   "v": 2010,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2709",
+   "name": "Chihuahua",
+   "v": 4295,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2727",
+   "name": "Ciudad de México",
+   "v": 5980,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2710",
+   "name": "Durango",
+   "v": 1125,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2728",
+   "name": "Guanajuato",
+   "v": 5653,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2729",
+   "name": "Guerrero",
+   "v": 4617,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2730",
+   "name": "Hidalgo",
+   "v": 1717,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2719",
+   "name": "Jalisco",
+   "v": 12765,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2731",
+   "name": "Estado de México",
+   "v": 14648,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2720",
+   "name": "Michoacán",
+   "v": 7782,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2732",
+   "name": "Morelos",
+   "v": 2107,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2721",
+   "name": "Nayarit",
+   "v": 2226,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2714",
+   "name": "Nuevo León",
+   "v": 7476,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2723",
+   "name": "Oaxaca",
+   "v": 806,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2724",
+   "name": "Puebla",
+   "v": 2862,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2733",
+   "name": "Querétaro",
+   "v": 780,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2736",
+   "name": "Quintana Roo",
+   "v": 1874,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2715",
+   "name": "San Luis Potosí",
+   "v": 1331,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2711",
+   "name": "Sinaloa",
+   "v": 7243,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2712",
+   "name": "Sonora",
+   "v": 6111,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2725",
+   "name": "Tabasco",
+   "v": 2182,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2716",
+   "name": "Tamaulipas",
+   "v": 13787,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2726",
+   "name": "Tlaxcala",
+   "v": 181,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2734",
+   "name": "Veracruz",
+   "v": 7239,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2737",
+   "name": "Yucatán",
+   "v": 338,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  },
+  {
+   "region": "MEX-2713",
+   "name": "Zacatecas",
+   "v": 3995,
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/"
+  }
+ ]
+}

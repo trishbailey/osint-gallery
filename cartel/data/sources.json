@@ -1,0 +1,646 @@
+{
+ "as_of": "2026-10-25",
+ "note": "Registry of every citation. All data files cite these ids. Status 'bot-blocked' means the page exists but refuses automated fetches.",
+ "sources": [
+  {
+   "id": "FTO",
+   "title": "Foreign Terrorist Organizations list",
+   "publisher": "US Department of State",
+   "url": "https://www.state.gov/foreign-terrorist-organizations",
+   "date": "2026-10-25",
+   "type": "official"
+  },
+  {
+   "id": "DEA25",
+   "title": "2025 National Drug Threat Assessment",
+   "publisher": "DEA",
+   "url": "https://www.dea.gov/documents/2025/2025-05/2025-05-13/national-drug-threat-assessment",
+   "date": "2025-05-13",
+   "type": "official"
+  },
+  {
+   "id": "DEA25PDF",
+   "title": "2025 National Drug Threat Assessment (PDF)",
+   "publisher": "DEA",
+   "url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf",
+   "date": "2025-05-13",
+   "type": "official"
+  },
+  {
+   "id": "FINCEN_CMLN_ADV",
+   "title": "FinCEN Advisory FIN-2025-A003 on Chinese money laundering networks",
+   "publisher": "FinCEN",
+   "url": "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf",
+   "date": "2025-08-28",
+   "type": "official"
+  },
+  {
+   "id": "FINCEN_CMLN_FTA",
+   "title": "Financial Trend Analysis: Chinese money laundering networks (BSA data 2020-2024)",
+   "publisher": "FinCEN",
+   "url": "https://www.fincen.gov/system/files/2025-08/4000-10-INV-144549-S3F6L-FTA-CMLN-508.pdf",
+   "date": "2025-08-28",
+   "type": "official"
+  },
+  {
+   "id": "FINCEN_FENT_FTA",
+   "title": "Financial Trend Analysis: fentanyl-related BSA reporting, 2024",
+   "publisher": "FinCEN",
+   "url": "https://www.fincen.gov/system/files/shared/FinCEN-FTA-Fentanyl.pdf",
+   "date": "2025",
+   "type": "official"
+  },
+  {
+   "id": "FINCEN_NR",
+   "title": "FinCEN news releases",
+   "publisher": "FinCEN",
+   "url": "https://www.fincen.gov/news/news-releases/fincen-issues-advisory-and-financial-trend-analysis-chinese-money-laundering",
+   "date": "2025-08-28",
+   "type": "official"
+  },
+  {
+   "id": "TREAS_2313A",
+   "title": "Treasury issues historic orders under FEND Off Fentanyl Act (CIBanco, Intercam, Vector)",
+   "publisher": "US Treasury",
+   "url": "https://home.treasury.gov/news/press-releases/sb0179",
+   "date": "2025-06-25",
+   "type": "official"
+  },
+  {
+   "id": "TREAS_SB0231",
+   "title": "Treasury press release sb0231 (2313a order effective dates)",
+   "publisher": "US Treasury",
+   "url": "https://home.treasury.gov/news/press-releases/sb0231",
+   "date": "2025-08",
+   "type": "official"
+  },
+  {
+   "id": "OFAC_JY1413",
+   "title": "Treasury sanctions China- and Mexico-based fentanyl precursor suppliers",
+   "publisher": "US Treasury",
+   "url": "https://home.treasury.gov/news/press-releases/jy1413",
+   "date": "2023-04-14",
+   "type": "official"
+  },
+  {
+   "id": "OFAC_SB0468",
+   "title": "Treasury sanctions India- and Latin America-based suppliers to the Sinaloa Cartel",
+   "publisher": "US Treasury",
+   "url": "https://home.treasury.gov/news/press-releases/sb0468",
+   "date": "2026-04-23",
+   "type": "official"
+  },
+  {
+   "id": "CBP_SEIZ",
+   "title": "Drug seizure statistics",
+   "publisher": "US Customs and Border Protection",
+   "url": "https://www.cbp.gov/newsroom/stats/drug-seizure-statistics",
+   "date": "2026-10",
+   "type": "official"
+  },
+  {
+   "id": "WOLA_FENT",
+   "title": "Weekly US-Mexico border update: FY2025 fentanyl seizures",
+   "publisher": "WOLA / Adam Isacson",
+   "url": "https://www.wola.org/2025/11/weekly-u-s-mexico-border-update-november-7-2025/",
+   "date": "2025-11-07",
+   "type": "analysis"
+  },
+  {
+   "id": "JS_STRIKES",
+   "title": "Timeline of US military strikes on alleged drug boats",
+   "publisher": "Just Security",
+   "url": "https://www.justsecurity.org/124002/timeline-vessel-strikes-related-actions/",
+   "date": "2026-10-04",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_STRIKES",
+   "title": "Mapping US strikes on alleged drug boats",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/news/mapping-out-us-alleged-drug-boat-strikes/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "STATE_MADURO",
+   "title": "Nicolás Maduro Moros",
+   "publisher": "US Department of State",
+   "url": "https://www.state.gov/nicolas-maduro-moros/",
+   "date": "2026",
+   "type": "official"
+  },
+  {
+   "id": "DOJ_MADURO",
+   "title": "Superseding indictment, US v. Maduro Moros et al.",
+   "publisher": "US Department of Justice",
+   "url": "https://www.justice.gov/opa/media/1422326",
+   "date": "2026-01",
+   "type": "official"
+  },
+  {
+   "id": "CRS_MADURO",
+   "title": "CRS Legal Sidebar LSB11401: the Maduro prosecution",
+   "publisher": "Congressional Research Service",
+   "url": "https://www.congress.gov/crs_external_products/LSB/PDF/LSB11401/LSB11401.1.pdf",
+   "date": "2026",
+   "type": "official"
+  },
+  {
+   "id": "DOJ_MAYO",
+   "title": "El Mayo Zambada pleads guilty to CCE and racketeering",
+   "publisher": "US Department of Justice",
+   "url": "https://www.justice.gov/opa/pr/co-founder-sinaloa-cartel-ismael-el-mayo-zambada-garcia-pleads-guilty-engaging-continuing",
+   "date": "2025-08-25",
+   "type": "official"
+  },
+  {
+   "id": "DOJ_MAYO_SENT",
+   "title": "El Mayo Zambada sentenced to life, ordered to forfeit $15 billion",
+   "publisher": "US Department of Justice",
+   "url": "https://www.justice.gov/opa/pr/co-founder-sinaloa-cartel-ismael-el-mayo-zambada-garcia-sentenced-life-prison-and-ordered",
+   "date": "2026-07-20",
+   "type": "official"
+  },
+  {
+   "id": "DOJ_OVIDIO",
+   "title": "Ovidio Guzmán López pleads guilty in Chicago",
+   "publisher": "US Department of Justice",
+   "url": "https://www.justice.gov/usao-ndil/pr/ovidio-guzman-lopez-son-el-chapo-and-head-sinaloa-cartel-pleads-guilty-federal-drug",
+   "date": "2025-07-11",
+   "type": "official"
+  },
+  {
+   "id": "DOJ_JOAQUIN",
+   "title": "Joaquín Guzmán López pleads guilty in Chicago",
+   "publisher": "US Department of Justice",
+   "url": "https://www.justice.gov/opa/pr/joaquin-guzman-lopez-son-el-chapo-and-leader-sinaloa-cartel-pleads-guilty-federal-drug",
+   "date": "2025-12-01",
+   "type": "official"
+  },
+  {
+   "id": "DEA_FITO",
+   "title": "Fito Macías Villamar faces charges after extradition",
+   "publisher": "DEA",
+   "url": "https://www.dea.gov/press-releases/2025/07/21/jose-adolfo-fito-macias-villamar-faces-international-drug-and-weapon",
+   "date": "2025-07-21",
+   "type": "official"
+  },
+  {
+   "id": "ACLED_SIN",
+   "title": "Sinaloa Cartel conflict analysis",
+   "publisher": "ACLED",
+   "url": "https://acleddata.com/expert-comment/how-has-war-between-factions-sinaloa-cartel-evolved-its-second-year",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "ELPAIS_SIN",
+   "title": "Sinaloa war reaches Mazatlán and the sierra",
+   "publisher": "El País",
+   "url": "https://elpais.com/mexico/2026-10-10/la-guerra-del-cartel-de-sinaloa-recrudece-la-violencia-en-mazatlan-y-la-sierra.html",
+   "date": "2026-10-10",
+   "type": "media"
+  },
+  {
+   "id": "JORNADA_SIN",
+   "title": "Charges against El Talibán and El Junio",
+   "publisher": "La Jornada",
+   "url": "https://www.jornada.com.mx/noticia/2026/10/20/estados/golpe-a-los-chapitos-y-la-mayiza-vinculan-a-proceso-a-el-taliban-y-el-junio",
+   "date": "2026-10-20",
+   "type": "media"
+  },
+  {
+   "id": "ELPAIS_MENCHO",
+   "title": "CJNG after El Mencho",
+   "publisher": "El País (English)",
+   "url": "https://english.elpais.com/international/2026-08-29/six-months-without-el-mencho-in-mexico.html",
+   "date": "2026-08-29",
+   "type": "media"
+  },
+  {
+   "id": "IC_CJNG_BOSS",
+   "title": "CJNG's New Boss? Not So Fast",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/news/the-insight-take-cjng-new-boss-not-so-fast/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "ECONOMISTA_CJNG",
+   "title": "CJNG succession coverage",
+   "publisher": "El Economista",
+   "url": "https://www.eleconomista.com.mx/politica/muerte-mencho-afecto-operacion-regional-cjng-20261012-838103.html",
+   "date": "2026-10-12",
+   "type": "media"
+  },
+  {
+   "id": "IC_SINALOA",
+   "title": "Sinaloa Cartel profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/mexico-organized-crime-news/sinaloa-cartel-profile/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_CJNG",
+   "title": "Jalisco Cartel (CJNG) profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/mexico-organized-crime-news/jalisco-cartel-new-generation/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_TDA",
+   "title": "Tren de Aragua profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/venezuela-organized-crime-news/tren-de-aragua/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_URABENOS",
+   "title": "Urabeños / Clan del Golfo profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/colombia-organized-crime-news/urabenos-profile/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_PCC",
+   "title": "First Capital Command (PCC) profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/brazil-organized-crime-news/first-capital-command-pcc-profile/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_CV",
+   "title": "Red Command (Comando Vermelho) profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/brazil-organized-crime-news/red-command-profile/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_CHONEROS",
+   "title": "Los Choneros profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/ecuador-organized-crime-news/los-choneros/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_LOBOS",
+   "title": "Los Lobos profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/ecuador-organized-crime-news/lobos-ecuador/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_ECUADOR",
+   "title": "Ecuador organized crime profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/ecuador-organized-crime-news/ecuador/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_ELN",
+   "title": "ELN profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/colombia-organized-crime-news/eln-profile/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_SOLES",
+   "title": "Cartel of the Suns profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/venezuela-organized-crime-news/cartel-de-los-soles-profile/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_MS13",
+   "title": "MS13 profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/el-salvador-organized-crime-news/mara-salvatrucha-ms-13-profile/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_GULF",
+   "title": "Gulf Cartel profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/mexico-organized-crime-news/gulf-cartel-profile/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_ZETAS",
+   "title": "Zetas profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/mexico-organized-crime-news/zetas-profile/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_JUAREZ",
+   "title": "Juárez Cartel profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/mexico-organized-crime-news/juarez-cartel-profile/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_SEGMAR",
+   "title": "Segunda Marquetalia profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/colombia-organized-crime-news/segunda-marquetalia/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "STATE_JUAREZ",
+   "title": "Designation of Juárez Cartel/La Línea and Los Viagras",
+   "publisher": "US Department of State",
+   "url": "https://www.state.gov/foreign-terrorist-organizations",
+   "date": "2026-07-16",
+   "type": "official"
+  },
+  {
+   "id": "UNODC_WDR25",
+   "title": "World Drug Report 2025",
+   "publisher": "UNODC",
+   "url": "https://www.unodc.org/unodc/en/data-and-analysis/world-drug-report-2025.html",
+   "date": "2025-06-26",
+   "type": "official"
+  },
+  {
+   "id": "AP_CHANCAY",
+   "title": "US-donated scanners at Peru's Chancay port",
+   "publisher": "AP",
+   "url": "https://apnews.com/article/peru-puerto-china-eeuu-chancay-pacifico-ruta-maritima-latinoamerica-bernie-navarro-embajador-song-yang-c1be16bdc6b3eb3c18c6a8f065b8273f",
+   "date": "2025",
+   "type": "media"
+  },
+  {
+   "id": "REUTERS_PANAMA",
+   "title": "Panama Supreme Court voids CK Hutchison canal port concessions",
+   "publisher": "Reuters",
+   "url": "https://www.reuters.com/world/asia-pacific/panama-court-voids-ck-hutchison-port-contracts-2026-01-30/",
+   "date": "2026-01-30",
+   "type": "media"
+  },
+  {
+   "id": "REUTERS_COSCO",
+   "title": "COSCO suspends Balboa calls",
+   "publisher": "Reuters",
+   "url": "https://www.reuters.com/world/asia-pacific/chinas-cosco-shipping-suspends-operations-panamas-balboa-port-la-prensa-media-2026-03-10/",
+   "date": "2026-03-10",
+   "type": "media"
+  },
+  {
+   "id": "BU_CLLAC",
+   "title": "Chinese Loans to Latin America and the Caribbean database (data download)",
+   "publisher": "Boston University Global Development Policy Center",
+   "url": "https://www.bu.edu/gdp/china-latin-america-finance-database-data-download/",
+   "date": "2025-02",
+   "type": "analysis"
+  },
+  {
+   "id": "GAO_FIREARMS",
+   "title": "GAO-21-322: Firearms trafficking to Mexico",
+   "publisher": "US GAO",
+   "url": "https://www.gao.gov/products/gao-21-322",
+   "date": "2021-02-22",
+   "type": "official"
+  },
+  {
+   "id": "REUTERS_MADURO_TRIAL",
+   "title": "Maduro and US Justice Department propose June 2027 trial start",
+   "publisher": "Reuters",
+   "url": "https://www.reuters.com/world/us/venezuelas-maduro-us-justice-department-propose-june-2027-trial-start-2026-07-22/",
+   "date": "2026-07-22",
+   "type": "media"
+  },
+  {
+   "id": "DEA_MAP_UNIV",
+   "title": "DEA NDTA 2025 maps: Sinaloa Cartel and CJNG presence by state",
+   "publisher": "El Universal",
+   "url": "https://www.eluniversal.com.mx/nacion/cartel-de-sinaloa-y-cjng-con-presencia-en-todo-mexico-dea-estos-son-los-mapas-de-donde-opera-el-crimen-organizado/",
+   "date": "2025-05-15",
+   "type": "media"
+  },
+  {
+   "id": "DEA_MAP_RAZON",
+   "title": "CJNG present across Mexico; Sinaloa Cartel in 31 states, DEA reports",
+   "publisher": "La Razón",
+   "url": "https://www.razon.com.mx/mexico/2025/05/15/cjng-con-presencia-en-todo-mexico-cartel-de-sinaloa-opera-en-31-estados-reporta-la-dea/",
+   "date": "2025-05-15",
+   "type": "media"
+  },
+  {
+   "id": "DEA_MAP_SILLA",
+   "title": "States where each cartel operates, according to the DEA",
+   "publisher": "La Silla Rota",
+   "url": "https://lasillarota.com/nacion/2025/5/16/los-estados-donde-opera-cada-cartel-de-la-droga-en-mexico-segun-la-dea-448138.html",
+   "date": "2025-05-16",
+   "type": "media"
+  },
+  {
+   "id": "POLITICO_CJNG",
+   "title": "CJNG: the criminal empire El Mencho controlled (DEA map by state)",
+   "publisher": "Politico MX",
+   "url": "https://politico.mx/2026/02/24/cjng-asi-es-el-imperio-criminal-que-controlaba-el-mencho-en-mexico-y-el-mundo/",
+   "date": "2026-02-24",
+   "type": "media"
+  },
+  {
+   "id": "ACLED_RIFT",
+   "title": "How the Sinaloa Cartel rift is redrawing Mexico's criminal map",
+   "publisher": "ACLED",
+   "url": "https://acleddata.com/report/how-sinaloa-cartel-rift-redrawing-mexicos-criminal-map",
+   "date": "2025-05-07",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_EXFARC",
+   "title": "Ex-FARC Mafia (FARC dissidents) profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/colombia-organized-crime-news/ex-farc-mafia/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_B18",
+   "title": "Barrio 18 profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/el-salvador-organized-crime-news/barrio-18-profile/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_HAITI",
+   "title": "Haiti organized crime profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/haiti-organized-crime-news/haiti/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_HONDURAS",
+   "title": "Honduras organized crime profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/honduras-organized-crime-news/honduras/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_GUATEMALA",
+   "title": "Guatemala organized crime profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/guatemala-organized-crime-news/guatemala/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "IC_PARAGUAY",
+   "title": "Paraguay organized crime profile",
+   "publisher": "InSight Crime",
+   "url": "https://insightcrime.org/paraguay-organized-crime-news/paraguay/",
+   "date": "2026",
+   "type": "analysis"
+  },
+  {
+   "id": "CBP_SEIZ_CSV",
+   "title": "Nationwide drug seizures, FY2023-FY2026 (monthly CSV by region and area of responsibility)",
+   "publisher": "US Customs and Border Protection",
+   "url": "https://www.cbp.gov/document/stats/nationwide-drug-seizures",
+   "date": "2026-09",
+   "type": "official"
+  },
+  {
+   "id": "CDC_VSRR",
+   "title": "VSRR provisional drug overdose death counts (dataset xkb8-kh2a)",
+   "publisher": "CDC National Center for Health Statistics",
+   "url": "https://data.cdc.gov/resource/xkb8-kh2a.json",
+   "date": "2026-10",
+   "type": "official"
+  },
+  {
+   "id": "CDC_VSRR_PAGE",
+   "title": "Provisional drug overdose death counts",
+   "publisher": "CDC National Center for Health Statistics",
+   "url": "https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm",
+   "date": "2026-10",
+   "type": "official"
+  },
+  {
+   "id": "SESNSP_VIC",
+   "title": "Datos abiertos de incidencia delictiva: victims of crime by state (fuero común)",
+   "publisher": "SESNSP",
+   "url": "https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva",
+   "date": "2026-10",
+   "type": "official"
+  },
+  {
+   "id": "ELCRIMEN",
+   "title": "Public mirror of SESNSP state victims data (nm-estatal-victimas.csv.gz)",
+   "publisher": "elcri.men / Diego Valle-Jones",
+   "url": "https://elcri.men/datos.html",
+   "date": "2026-10",
+   "type": "data"
+  },
+  {
+   "id": "INEGI_CENSO20",
+   "title": "Censo de Población y Vivienda 2020",
+   "publisher": "INEGI",
+   "url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+   "date": "2021-01-25",
+   "type": "official"
+  },
+  {
+   "id": "REDLUPA_RNPDNO",
+   "title": "Informe nacional de personas desaparecidas (Red Lupa)",
+   "publisher": "IMDHD / Red Lupa",
+   "url": "https://imdhd.org/redlupa/informes-y-analisis/informes-nacionales/informe-nacional-de-personas-desaparecidas/",
+   "date": "2026-05-16",
+   "type": "analysis"
+  },
+  {
+   "id": "UNOTV_RNPDNO",
+   "title": "Estados con mayor y menor incidencia de desaparecidos en México",
+   "publisher": "UnoTV",
+   "url": "https://www.unotv.com/nacional/estados-mayor-menor-incidencia-de-desaparecidos-en-mexico/",
+   "date": "2026-05",
+   "type": "media"
+  },
+  {
+   "id": "DATACIVICA_DESAP",
+   "title": "Disappearances data and the 2026 RNPDNO reclassification",
+   "publisher": "Data Cívica",
+   "url": "https://datacivica.org/",
+   "date": "2026-08-16",
+   "type": "analysis"
+  },
+  {
+   "id": "CEIEG_ENVIPE",
+   "title": "ENVIPE compilation: extortion per 100,000 by state",
+   "publisher": "CEIEG Sinaloa",
+   "url": "https://ceieg.sinaloa.gob.mx/eBooks/envipe/files/basic-html/page5.html",
+   "date": "2025",
+   "type": "official"
+  },
+  {
+   "id": "INEGI_ENVIPE25",
+   "title": "ENVIPE 2025 results report",
+   "publisher": "INEGI",
+   "url": "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2025/ENVIPE/ENVIPE_25_RR.pdf",
+   "date": "2025-09-18",
+   "type": "official"
+  },
+  {
+   "id": "UNOTV_ALCALDES",
+   "title": "Ya son 14 los alcaldes asesinados en lo que va de la actual administración",
+   "publisher": "UnoTV",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "date": "2026-07-22",
+   "type": "media"
+  },
+  {
+   "id": "ETCETERA_PERIODISTAS",
+   "title": "Periodistas y comunicadores asesinados en el sexenio de Claudia Sheinbaum",
+   "publisher": "Revista Etcétera",
+   "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
+   "date": "2026-07-04",
+   "type": "media"
+  },
+  {
+   "id": "ELPAIS_PERIODISTAS26",
+   "title": "México lleva ocho periodistas asesinados en lo que va de 2026",
+   "publisher": "El País",
+   "url": "https://elpais.com/mexico/2026-08-31/mexico-lleva-ocho-periodistas-asesinados-en-lo-que-va-de-2026.html",
+   "date": "2026-08-31",
+   "type": "media"
+  },
+  {
+   "id": "A19_PERIODISTAS",
+   "title": "Periodistas asesinadas/os en México",
+   "publisher": "ARTICLE 19 México y Centroamérica",
+   "url": "https://articulo19.org/periodistasasesinados/",
+   "date": "2026-07-22",
+   "type": "analysis"
+  },
+  {
+   "id": "ACLED_ACCESS",
+   "title": "ACLED data access (API requires a registered key)",
+   "publisher": "ACLED",
+   "url": "https://acleddata.com/data-export-tool/",
+   "date": "2026",
+   "type": "data"
+  }
+ ]
+}

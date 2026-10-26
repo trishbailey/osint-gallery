@@ -1,0 +1,1143 @@
+{
+ "title": "State capture and corruption: documented cases",
+ "as_of": "2026-10-25",
+ "method": "Only documented cases: convictions, indictments or formal charges, US sanctions or designations, plus acquittals, dismissals, pardons and delistings. Allegations are not findings of guilt. The dashboard counts cases; it does not label any government as compromised. Not exhaustive: Colombia, Peru, Brazil and others are not yet covered.",
+ "status_legend": {
+  "alleged": "Named in official reports or testimony only",
+  "charged": "Indicted or formally accused; presumed innocent",
+  "sanctioned": "US Treasury/State designation (administrative, not a conviction)",
+  "convicted": "Found guilty or pleaded guilty",
+  "acquitted": "Found not guilty",
+  "dropped": "Charges dismissed",
+  "pardoned": "Convicted, then pardoned",
+  "delisted": "Sanction lifted"
+ },
+ "countries": [
+  {
+   "country": "MEX",
+   "name": "Mexico",
+   "total": 19,
+   "by_level": {
+    "state": 13,
+    "national": 3,
+    "municipal": 3
+   },
+   "by_status": {
+    "charged": 11,
+    "convicted": 4,
+    "dropped": 1,
+    "sanctioned": 3
+   }
+  },
+  {
+   "country": "VEN",
+   "name": "Venezuela",
+   "total": 5,
+   "by_level": {
+    "national": 5
+   },
+   "by_status": {
+    "charged": 3,
+    "convicted": 1,
+    "sanctioned": 1
+   }
+  },
+  {
+   "country": "HTI",
+   "name": "Haiti",
+   "total": 5,
+   "by_level": {
+    "national": 5
+   },
+   "by_status": {
+    "sanctioned": 5
+   }
+  },
+  {
+   "country": "ECU",
+   "name": "Ecuador",
+   "total": 4,
+   "by_level": {
+    "national": 2,
+    "state": 2
+   },
+   "by_status": {
+    "convicted": 3,
+    "acquitted": 1
+   }
+  },
+  {
+   "country": "SLV",
+   "name": "El Salvador",
+   "total": 4,
+   "by_level": {
+    "national": 4
+   },
+   "by_status": {
+    "sanctioned": 2,
+    "convicted": 2
+   }
+  },
+  {
+   "country": "HND",
+   "name": "Honduras",
+   "total": 3,
+   "by_level": {
+    "national": 3
+   },
+   "by_status": {
+    "pardoned": 1,
+    "convicted": 2
+   }
+  },
+  {
+   "country": "PRY",
+   "name": "Paraguay",
+   "total": 2,
+   "by_level": {
+    "national": 2
+   },
+   "by_status": {
+    "convicted": 1,
+    "delisted": 1
+   }
+  },
+  {
+   "country": "GTM",
+   "name": "Guatemala",
+   "total": 1,
+   "by_level": {
+    "national": 1
+   },
+   "by_status": {
+    "charged": 1
+   }
+  },
+  {
+   "country": "BOL",
+   "name": "Bolivia",
+   "total": 1,
+   "by_level": {
+    "national": 1
+   },
+   "by_status": {
+    "convicted": 1
+   }
+  }
+ ],
+ "cases": [
+  {
+   "id": "mex-001",
+   "country": "MEX",
+   "person": "Rubén Rocha Moya",
+   "office": "Governor of Sinaloa",
+   "level": "state",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Sinaloa Cartel (Chapitos), alleged",
+   "status": "charged",
+   "date": "2026-04-29",
+   "note": "Charged in SDNY. Denies the charges; Mexico says the US has not provided evidence to justify arrest. On second indefinite leave since 2026-08-23.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2026/04/29/governor-sinaloa-and-nine-current-and-former-mexican-officials-face-drug",
+     "date": "2026-04-29"
+    },
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/world/americas/us-charges-governor-mexicos-sinaloa-state-ties-cartel-2026-04-29/",
+     "date": "2026-04-29"
+    },
+    {
+     "name": "El País",
+     "url": "https://elpais.com/mexico/2026-08-23/el-congreso-de-sinaloa-acepta-la-segunda-renuncia-de-rocha-al-gobierno-de-sinaloa.html",
+     "date": "2026-08-23"
+    },
+    {
+     "name": "La Jornada",
+     "url": "https://www.jornada.com.mx/noticia/2026/09/02/politica/sheinbaum-asegura-que-eu-sigue-sin-presentar-pruebas-adicionales-para-detener-a-rocha-y-a-funcionarios-senalados",
+     "date": "2026-09-02"
+    }
+   ]
+  },
+  {
+   "id": "mex-002",
+   "country": "MEX",
+   "person": "Enrique Inzunza Cázarez",
+   "office": "Senator (Sinaloa)",
+   "level": "national",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Sinaloa Cartel (Chapitos), alleged",
+   "status": "charged",
+   "date": "2026-04-29",
+   "note": "Co-defendant in the SDNY Rocha Moya indictment. Mexico disputes the evidence.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2026/04/29/governor-sinaloa-and-nine-current-and-former-mexican-officials-face-drug",
+     "date": "2026-04-29"
+    },
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/world/americas/us-charges-governor-mexicos-sinaloa-state-ties-cartel-2026-04-29/",
+     "date": "2026-04-29"
+    }
+   ]
+  },
+  {
+   "id": "mex-003",
+   "country": "MEX",
+   "person": "Enrique Díaz Vega",
+   "office": "Former Sinaloa finance secretary",
+   "level": "state",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Sinaloa Cartel (Chapitos), alleged",
+   "status": "charged",
+   "date": "2026-04-29",
+   "note": "Co-defendant in the SDNY Rocha Moya indictment. Mexico disputes the evidence.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2026/04/29/governor-sinaloa-and-nine-current-and-former-mexican-officials-face-drug",
+     "date": "2026-04-29"
+    },
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/world/americas/us-charges-governor-mexicos-sinaloa-state-ties-cartel-2026-04-29/",
+     "date": "2026-04-29"
+    }
+   ]
+  },
+  {
+   "id": "mex-004",
+   "country": "MEX",
+   "person": "Dámaso Castro Zaavedra",
+   "office": "Sinaloa deputy attorney general",
+   "level": "state",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Sinaloa Cartel (Chapitos), alleged",
+   "status": "charged",
+   "date": "2026-04-29",
+   "note": "Co-defendant in the SDNY Rocha Moya indictment. Mexico disputes the evidence.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2026/04/29/governor-sinaloa-and-nine-current-and-former-mexican-officials-face-drug",
+     "date": "2026-04-29"
+    },
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/world/americas/us-charges-governor-mexicos-sinaloa-state-ties-cartel-2026-04-29/",
+     "date": "2026-04-29"
+    }
+   ]
+  },
+  {
+   "id": "mex-005",
+   "country": "MEX",
+   "person": "Marco Antonio Almanza Avilés",
+   "office": "Former head of Sinaloa investigative police",
+   "level": "state",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Sinaloa Cartel (Chapitos), alleged",
+   "status": "charged",
+   "date": "2026-04-29",
+   "note": "Co-defendant in the SDNY Rocha Moya indictment. Mexico disputes the evidence.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2026/04/29/governor-sinaloa-and-nine-current-and-former-mexican-officials-face-drug",
+     "date": "2026-04-29"
+    },
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/world/americas/us-charges-governor-mexicos-sinaloa-state-ties-cartel-2026-04-29/",
+     "date": "2026-04-29"
+    }
+   ]
+  },
+  {
+   "id": "mex-006",
+   "country": "MEX",
+   "person": "Alberto Jorge Contreras Núñez",
+   "office": "Former head of Sinaloa investigative police",
+   "level": "state",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Sinaloa Cartel (Chapitos), alleged",
+   "status": "charged",
+   "date": "2026-04-29",
+   "note": "Co-defendant in the SDNY Rocha Moya indictment. Mexico disputes the evidence.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2026/04/29/governor-sinaloa-and-nine-current-and-former-mexican-officials-face-drug",
+     "date": "2026-04-29"
+    },
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/world/americas/us-charges-governor-mexicos-sinaloa-state-ties-cartel-2026-04-29/",
+     "date": "2026-04-29"
+    }
+   ]
+  },
+  {
+   "id": "mex-007",
+   "country": "MEX",
+   "person": "Gerardo Mérida Sánchez",
+   "office": "Former Sinaloa public security secretary",
+   "level": "state",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Sinaloa Cartel (Chapitos), alleged",
+   "status": "charged",
+   "date": "2026-04-29",
+   "note": "Co-defendant in the SDNY Rocha Moya indictment. Mexico disputes the evidence.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2026/04/29/governor-sinaloa-and-nine-current-and-former-mexican-officials-face-drug",
+     "date": "2026-04-29"
+    },
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/world/americas/us-charges-governor-mexicos-sinaloa-state-ties-cartel-2026-04-29/",
+     "date": "2026-04-29"
+    }
+   ]
+  },
+  {
+   "id": "mex-008",
+   "country": "MEX",
+   "person": "José Antonio Dionisio Hipólito",
+   "office": "Former deputy director, Sinaloa state police",
+   "level": "state",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Sinaloa Cartel (Chapitos), alleged",
+   "status": "charged",
+   "date": "2026-04-29",
+   "note": "Co-defendant in the SDNY Rocha Moya indictment. Mexico disputes the evidence.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2026/04/29/governor-sinaloa-and-nine-current-and-former-mexican-officials-face-drug",
+     "date": "2026-04-29"
+    },
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/world/americas/us-charges-governor-mexicos-sinaloa-state-ties-cartel-2026-04-29/",
+     "date": "2026-04-29"
+    }
+   ]
+  },
+  {
+   "id": "mex-009",
+   "country": "MEX",
+   "person": "Juan de Dios Gámez Mendívil",
+   "office": "Mayor of Culiacán",
+   "level": "municipal",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Sinaloa Cartel (Chapitos), alleged",
+   "status": "charged",
+   "date": "2026-04-29",
+   "note": "Co-defendant in the SDNY Rocha Moya indictment. Mexico disputes the evidence.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2026/04/29/governor-sinaloa-and-nine-current-and-former-mexican-officials-face-drug",
+     "date": "2026-04-29"
+    },
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/world/americas/us-charges-governor-mexicos-sinaloa-state-ties-cartel-2026-04-29/",
+     "date": "2026-04-29"
+    }
+   ]
+  },
+  {
+   "id": "mex-010",
+   "country": "MEX",
+   "person": "Juan Valenzuela Millán",
+   "office": "Culiacán police commander",
+   "level": "municipal",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Sinaloa Cartel (Chapitos), alleged",
+   "status": "charged",
+   "date": "2026-04-29",
+   "note": "Co-defendant in the SDNY Rocha Moya indictment. Mexico disputes the evidence.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2026/04/29/governor-sinaloa-and-nine-current-and-former-mexican-officials-face-drug",
+     "date": "2026-04-29"
+    },
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/world/americas/us-charges-governor-mexicos-sinaloa-state-ties-cartel-2026-04-29/",
+     "date": "2026-04-29"
+    }
+   ]
+  },
+  {
+   "id": "mex-011",
+   "country": "MEX",
+   "person": "Genaro García Luna",
+   "office": "Secretary of Public Security (federal)",
+   "level": "national",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Sinaloa Cartel bribes, per jury verdict",
+   "status": "convicted",
+   "date": "2023-02-21",
+   "note": "Convicted by EDNY jury Feb 2023; sentenced to 38+ years (Oct 2024). Appeal argument scheduled for November 2026.",
+   "sources": [
+    {
+     "name": "Milenio",
+     "url": "https://www.milenio.com/policia/narcotrafico/tribunal-de-nueva-york-fija-audiencia-para-apelacion-de-garcia-luna"
+    }
+   ]
+  },
+  {
+   "id": "mex-012",
+   "country": "MEX",
+   "person": "Gen. Salvador Cienfuegos Zepeda",
+   "office": "Secretary of National Defense",
+   "level": "national",
+   "group_ids": [],
+   "group_link": "H-2 cartel (Beltrán Leyva offshoot), alleged",
+   "status": "dropped",
+   "date": "2020-11-18",
+   "note": "Arrested and charged in EDNY Oct 2020; US moved to dismiss for foreign-policy reasons and the judge dismissed on 2020-11-18. Mexico later closed its own probe.",
+   "sources": [
+    {
+     "name": "EDNY dismissal order (InSight Crime copy)",
+     "url": "https://insightcrime.org/wp-content/uploads/2020/11/20-11-18-Cienfuegos-Dismissal-Order.pdf",
+     "date": "2020-11-18"
+    }
+   ]
+  },
+  {
+   "id": "mex-013",
+   "country": "MEX",
+   "person": "Tomás Yarrington Ruvalcaba",
+   "office": "Governor of Tamaulipas",
+   "level": "state",
+   "group_ids": [
+    "gulf"
+   ],
+   "group_link": "Bribes linked to Gulf Cartel / Zetas era",
+   "status": "convicted",
+   "date": "2023-03-15",
+   "note": "Pleaded guilty to money laundering of bribes; sentenced to 9 years.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2023/03/15/former-mexican-governor-and-presidential-candidate-sentenced-money",
+     "date": "2023-03-15"
+    }
+   ]
+  },
+  {
+   "id": "mex-014",
+   "country": "MEX",
+   "person": "Mario Villanueva Madrid",
+   "office": "Governor of Quintana Roo",
+   "level": "state",
+   "group_ids": [
+    "juarez"
+   ],
+   "group_link": "Juárez Cartel bribes",
+   "status": "convicted",
+   "date": "2013-06-28",
+   "note": "Sentenced in SDNY to 131 months for laundering Juárez Cartel bribes.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2013/06/28/former-governor-mexican-state-sentenced-manhattan-federal-court-131",
+     "date": "2013-06-28"
+    }
+   ]
+  },
+  {
+   "id": "mex-015",
+   "country": "MEX",
+   "person": "Édgar Veytia",
+   "office": "Attorney General of Nayarit",
+   "level": "state",
+   "group_ids": [],
+   "group_link": "H-2 cartel",
+   "status": "convicted",
+   "date": "2019-09-26",
+   "note": "Pleaded guilty; sentenced in EDNY to 20 years.",
+   "sources": [
+    {
+     "name": "US DOJ (EDNY)",
+     "url": "https://www.justice.gov/usao-edny/pr/former-mexican-state-attorney-general-sentenced-20-years-prison-participation",
+     "date": "2019-09-26"
+    }
+   ]
+  },
+  {
+   "id": "mex-016",
+   "country": "MEX",
+   "person": "Hernán Bermúdez Requena",
+   "office": "Tabasco public security secretary",
+   "level": "state",
+   "group_ids": [],
+   "group_link": "Alleged leader of La Barredora",
+   "status": "charged",
+   "date": "2026-10-22",
+   "note": "In custody in Mexico (El Altiplano); Tabasco prosecutors formally accused him of forced disappearance on 2026-10-22, alongside kidnapping and extortion charges.",
+   "sources": [
+    {
+     "name": "El Financiero",
+     "url": "https://www.elfinanciero.com.mx/estados/2026/10/22/hernan-bermudez-requena-exlider-de-la-barredora-enfrenta-acusacion-por-desaparicion-forzada/",
+     "date": "2026-10-22"
+    }
+   ]
+  },
+  {
+   "id": "mex-017",
+   "country": "MEX",
+   "person": "Pedro Ariel Mendívil García",
+   "office": "Former Mexicali public security director",
+   "level": "municipal",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Los Rusos (Sinaloa Cartel, Los Mayos)",
+   "status": "sanctioned",
+   "date": "2026-09-29",
+   "note": "OFAC says he took bribes in exchange for cartel control of Mexicali municipal police.",
+   "sources": [
+    {
+     "name": "US Treasury sb0636",
+     "url": "https://home.treasury.gov/news/press-releases/sb0636",
+     "date": "2026-09-29"
+    }
+   ]
+  },
+  {
+   "id": "mex-018",
+   "country": "MEX",
+   "person": "Rafael Buenrostro Martín",
+   "office": "Former customs official (Chihuahua); legislative adviser, Baja California",
+   "level": "state",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Sinaloa Cartel (Rivera Zazueta network)",
+   "status": "sanctioned",
+   "date": "2026-09-29",
+   "note": "OFAC says he provided political favors for bribes.",
+   "sources": [
+    {
+     "name": "US Treasury sb0636",
+     "url": "https://home.treasury.gov/news/press-releases/sb0636",
+     "date": "2026-09-29"
+    }
+   ]
+  },
+  {
+   "id": "mex-019",
+   "country": "MEX",
+   "person": "Carlos Alberto Torres Torres",
+   "office": "Political operator; ex-husband of the Baja California governor (not an office holder)",
+   "level": "state",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Los Rusos (Sinaloa Cartel), alleged",
+   "status": "sanctioned",
+   "date": "2026-09-29",
+   "note": "OFAC alleges he protected the cartel in Baja California; US visa revoked May 2025.",
+   "sources": [
+    {
+     "name": "US Treasury sb0636",
+     "url": "https://home.treasury.gov/news/press-releases/sb0636",
+     "date": "2026-09-29"
+    }
+   ]
+  },
+  {
+   "id": "hnd-020",
+   "country": "HND",
+   "person": "Juan Orlando Hernández",
+   "office": "President of Honduras (2014–2022)",
+   "level": "national",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Cocaine traffickers incl. Sinaloa Cartel, per trial evidence",
+   "status": "pardoned",
+   "date": "2025-12-01",
+   "note": "Convicted March 2024 in SDNY, sentenced to 45 years; granted a full pardon by President Trump on 2025-12-01. Honduras' AG then issued an arrest warrant.",
+   "sources": [
+    {
+     "name": "CRS IN12621",
+     "url": "https://www.congress.gov/crs-product/IN12621"
+    },
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/world/americas/former-honduran-president-released-us-prison-after-trump-pardon-2025-12-02/",
+     "date": "2025-12-02"
+    },
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/world/americas/honduras-ag-issues-international-arrest-warrant-pardoned-ex-president-hernandez-2025-12-08/",
+     "date": "2025-12-08"
+    }
+   ]
+  },
+  {
+   "id": "hnd-021",
+   "country": "HND",
+   "person": "Juan Antonio 'Tony' Hernández",
+   "office": "Member of Congress",
+   "level": "national",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "group_link": "Cocaine trafficking (incl. bribes from El Chapo, per prosecutors)",
+   "status": "convicted",
+   "date": "2021-03-30",
+   "note": "Convicted 2019; sentenced to life in SDNY.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2021/03/30/former-honduran-congressman-tony-hernandez-sentenced-distributing-tons",
+     "date": "2021-03-30"
+    }
+   ]
+  },
+  {
+   "id": "hnd-022",
+   "country": "HND",
+   "person": "Juan Carlos 'El Tigre' Bonilla",
+   "office": "Director of the National Police",
+   "level": "national",
+   "group_ids": [],
+   "group_link": "Cocaine trafficking network tied to JOH case",
+   "status": "convicted",
+   "date": "2024-08-01",
+   "note": "Pleaded guilty; sentenced to 19 years in the US.",
+   "sources": [
+    {
+     "name": "AP",
+     "url": "https://apnews.com/article/honduras-national-police-valladares-drug-trafficking-1cb7299013ad5d9aab81a4fcd7ebe54b",
+     "date": "2024-08-01"
+    }
+   ]
+  },
+  {
+   "id": "ven-023",
+   "country": "VEN",
+   "person": "Nicolás Maduro Moros",
+   "office": "President of Venezuela (until Jan 2026)",
+   "level": "national",
+   "group_ids": [
+    "soles",
+    "eln",
+    "exfarc",
+    "tda"
+   ],
+   "group_link": "Cartel de los Soles; FARC, per indictment",
+   "status": "charged",
+   "date": "2026-10-08",
+   "note": "In US custody; narco-terrorism, cocaine and weapons charges, plus a torture count added 2026-10-08. Pleaded not guilty.",
+   "sources": [
+    {
+     "name": "US DOJ",
+     "url": "https://www.justice.gov/opa/pr/nicolas-maduro-moros-and-cilia-adela-flores-de-maduro-charged-torture",
+     "date": "2026-10-08"
+    },
+    {
+     "name": "AP",
+     "url": "https://apnews.com/article/maduro-venezuela-criminal-case-da82df35aab0f02e344d1c3de0ed31d7"
+    }
+   ]
+  },
+  {
+   "id": "ven-024",
+   "country": "VEN",
+   "person": "Cilia Flores de Maduro",
+   "office": "First Lady; former National Assembly president",
+   "level": "national",
+   "group_ids": [
+    "soles"
+   ],
+   "group_link": "Cartel de los Soles, per indictment",
+   "status": "charged",
+   "date": "2026-10-08",
+   "note": "Co-defendant with Maduro; pleaded not guilty.",
+   "sources": [
+    {
+     "name": "US DOJ",
+     "url": "https://www.justice.gov/opa/pr/nicolas-maduro-moros-and-cilia-adela-flores-de-maduro-charged-torture",
+     "date": "2026-10-08"
+    },
+    {
+     "name": "AP",
+     "url": "https://apnews.com/article/maduro-venezuela-criminal-case-da82df35aab0f02e344d1c3de0ed31d7"
+    }
+   ]
+  },
+  {
+   "id": "ven-025",
+   "country": "VEN",
+   "person": "Diosdado Cabello Rondón",
+   "office": "Senior PSUV leader and minister",
+   "level": "national",
+   "group_ids": [
+    "soles"
+   ],
+   "group_link": "Cartel de los Soles, per US charges",
+   "status": "charged",
+   "date": "2020-03-26",
+   "note": "Charged in SDNY in 2020; State reward raised to $25M on 2025-01-10.",
+   "sources": [
+    {
+     "name": "US State Dept",
+     "url": "https://www.state.gov/diosdado-cabello-rondon"
+    }
+   ]
+  },
+  {
+   "id": "ven-026",
+   "country": "VEN",
+   "person": "Hugo Carvajal Barrios",
+   "office": "Director of military intelligence",
+   "level": "national",
+   "group_ids": [
+    "soles",
+    "exfarc"
+   ],
+   "group_link": "FARC cocaine trafficking",
+   "status": "convicted",
+   "date": "2025-06-25",
+   "note": "Pleaded guilty in SDNY to narco-terrorism and drug charges; awaiting sentencing.",
+   "sources": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/legal/litigation/venezuelas-ex-spymaster-pleads-guilty-us-drug-trafficking-charges-2025-06-25/",
+     "date": "2025-06-25"
+    }
+   ]
+  },
+  {
+   "id": "ven-027",
+   "country": "VEN",
+   "person": "Cartel de los Soles (state-linked network)",
+   "office": "Network the US says is led by senior officials",
+   "level": "national",
+   "group_ids": [
+    "soles"
+   ],
+   "group_link": "US terrorist designation",
+   "status": "sanctioned",
+   "date": "2025-11-24",
+   "note": "Designated a Foreign Terrorist Organization by the US. Venezuela rejects the existence of the group. Not an individual case.",
+   "sources": [
+    {
+     "name": "US State Dept (Venezuelan targets)",
+     "url": "https://www.state.gov/wanted-narcotics-reward-program-venezuelan-targets"
+    }
+   ]
+  },
+  {
+   "id": "ecu-028",
+   "country": "ECU",
+   "person": "Wilman Terán",
+   "office": "President of the Judicature Council",
+   "level": "national",
+   "group_ids": [
+    "choneros"
+   ],
+   "group_link": "Leandro Norero trafficking network (Caso Metástasis)",
+   "status": "convicted",
+   "date": "2024-11-25",
+   "note": "Sentenced to 9 years 4 months for organized crime; 20 of 21 defendants convicted; written ruling Feb 2025; appeals filed.",
+   "sources": [
+    {
+     "name": "Fiscalía de Ecuador",
+     "url": "https://www.fiscalia.gob.ec/caso-metastasis-fiscalia-obtiene-sentencia-contra-20-procesados-por-delincuencia-organizada/"
+    },
+    {
+     "name": "Corte Nacional de Justicia",
+     "url": "https://www.cortenacional.gob.ec/cnj/index.php/noticias-2024/214-noviembre-2024/551-tribunal-de-la-sala-penal-de-la-cnj-declaro-culpables-a-20-de-los-21-procesados-en-el-caso-metastasis"
+    }
+   ]
+  },
+  {
+   "id": "ecu-029",
+   "country": "ECU",
+   "person": "Pablo Muentes",
+   "office": "Former National Assembly member",
+   "level": "national",
+   "group_ids": [],
+   "group_link": "Organized-crime network in Guayas courts (Caso Purga)",
+   "status": "convicted",
+   "date": "2025-03-03",
+   "note": "Sentenced to 13 years 4 months for organized crime.",
+   "sources": [
+    {
+     "name": "Corte Nacional de Justicia",
+     "url": "https://www.cortenacional.gob.ec/cnj/index.php/noticias-2025/204-marzo-2025/619-tribunal-de-la-sala-penal-de-la-cnj-declaro-culpables-a-10-de-los-13-procesados-en-el-caso-purga"
+    },
+    {
+     "name": "Primicias",
+     "url": "https://www.primicias.ec/politica/caso-purga-corrupcion-judicial-guayas-sentencia-muentes-gallardo-marfetan-prision-91001/"
+    }
+   ]
+  },
+  {
+   "id": "ecu-030",
+   "country": "ECU",
+   "person": "Fabiola Gallardo",
+   "office": "Former president, Guayas Provincial Court",
+   "level": "state",
+   "group_ids": [],
+   "group_link": "Organized-crime network in Guayas courts (Caso Purga)",
+   "status": "convicted",
+   "date": "2025-03-03",
+   "note": "Sentenced to 13 years 4 months for organized crime.",
+   "sources": [
+    {
+     "name": "Corte Nacional de Justicia",
+     "url": "https://www.cortenacional.gob.ec/cnj/index.php/noticias-2025/204-marzo-2025/619-tribunal-de-la-sala-penal-de-la-cnj-declaro-culpables-a-10-de-los-13-procesados-en-el-caso-purga"
+    },
+    {
+     "name": "Primicias",
+     "url": "https://www.primicias.ec/politica/caso-purga-corrupcion-judicial-guayas-sentencia-muentes-gallardo-marfetan-prision-91001/"
+    }
+   ]
+  },
+  {
+   "id": "ecu-031",
+   "country": "ECU",
+   "person": "Fausto Alarcón, Andrea Patiño, Saúl Mero",
+   "office": "Defendants in Caso Purga",
+   "level": "state",
+   "group_ids": [],
+   "group_link": "Caso Purga",
+   "status": "acquitted",
+   "date": "2025-03-03",
+   "note": "Court upheld their innocence and ordered immediate release.",
+   "sources": [
+    {
+     "name": "Corte Nacional de Justicia",
+     "url": "https://www.cortenacional.gob.ec/cnj/index.php/noticias-2025/204-marzo-2025/619-tribunal-de-la-sala-penal-de-la-cnj-declaro-culpables-a-10-de-los-13-procesados-en-el-caso-purga"
+    },
+    {
+     "name": "Primicias",
+     "url": "https://www.primicias.ec/politica/caso-purga-corrupcion-judicial-guayas-sentencia-muentes-gallardo-marfetan-prision-91001/"
+    }
+   ]
+  },
+  {
+   "id": "gtm-032",
+   "country": "GTM",
+   "person": "Mauricio López Bonilla",
+   "office": "Minister of the Interior",
+   "level": "national",
+   "group_ids": [],
+   "group_link": "Los Zetas and other traffickers, alleged by US",
+   "status": "charged",
+   "date": "2017-08-30",
+   "note": "Charged in the US; Guatemala authorized extradition in 2017 conditioned on local cases; no completed extradition found.",
+   "sources": [
+    {
+     "name": "Prensa Libre",
+     "url": "https://www.prensalibre.com/guatemala/justicia/guatemala-autoriza-extradicion-de-mauricio-lopez-bonilla-hacia-ee-uu/"
+    },
+    {
+     "name": "AP",
+     "url": "https://apnews.com/general-news-dc96b0ddde49423b8fa14f08a17220d2"
+    }
+   ]
+  },
+  {
+   "id": "slv-033",
+   "country": "SLV",
+   "person": "Osiris Luna Meza",
+   "office": "Vice Minister of Justice; prisons director",
+   "level": "national",
+   "group_ids": [
+    "ms13",
+    "b18"
+   ],
+   "group_link": "MS-13 / Barrio 18 truce talks, per US Treasury",
+   "status": "sanctioned",
+   "date": "2021-12-08",
+   "note": "Treasury says he organized secret meetings with jailed gang leaders. The Bukele government denies any pact.",
+   "sources": [
+    {
+     "name": "US Treasury jy0519",
+     "url": "https://home.treasury.gov/news/press-releases/jy0519",
+     "date": "2021-12-08"
+    }
+   ]
+  },
+  {
+   "id": "slv-034",
+   "country": "SLV",
+   "person": "Carlos Marroquín Chica",
+   "office": "Head of the Reconstruction of the Social Fabric unit",
+   "level": "national",
+   "group_ids": [
+    "ms13",
+    "b18"
+   ],
+   "group_link": "MS-13 / Barrio 18 truce talks, per US Treasury",
+   "status": "sanctioned",
+   "date": "2021-12-08",
+   "note": "Same Treasury action; the government denies.",
+   "sources": [
+    {
+     "name": "US Treasury jy0519",
+     "url": "https://home.treasury.gov/news/press-releases/jy0519",
+     "date": "2021-12-08"
+    }
+   ]
+  },
+  {
+   "id": "slv-035",
+   "country": "SLV",
+   "person": "Mauricio Funes",
+   "office": "President of El Salvador (2009–2014)",
+   "level": "national",
+   "group_ids": [
+    "ms13",
+    "b18"
+   ],
+   "group_link": "2012 gang truce",
+   "status": "convicted",
+   "date": "2023-05-29",
+   "note": "Convicted in absentia (lives in Nicaragua); 14 years for illicit association and breach of duty.",
+   "sources": [
+    {
+     "name": "Fiscalía General de El Salvador",
+     "url": "https://www.fiscalia.gob.sv/expresidente-funes-y-exministro-munguia-payes-condenados-a-14-y-18-anos-de-carcel-por-tregua/"
+    },
+    {
+     "name": "AP",
+     "url": "https://apnews.com/article/513f06d36e9179a17e58c0aa6ec72806"
+    }
+   ]
+  },
+  {
+   "id": "slv-036",
+   "country": "SLV",
+   "person": "David Munguía Payés",
+   "office": "Minister of Justice and Security",
+   "level": "national",
+   "group_ids": [
+    "ms13",
+    "b18"
+   ],
+   "group_link": "2012 gang truce",
+   "status": "convicted",
+   "date": "2023-05-29",
+   "note": "Sentenced to 18 years.",
+   "sources": [
+    {
+     "name": "Fiscalía General de El Salvador",
+     "url": "https://www.fiscalia.gob.sv/expresidente-funes-y-exministro-munguia-payes-condenados-a-14-y-18-anos-de-carcel-por-tregua/"
+    },
+    {
+     "name": "AP",
+     "url": "https://apnews.com/article/513f06d36e9179a17e58c0aa6ec72806"
+    }
+   ]
+  },
+  {
+   "id": "hti-037",
+   "country": "HTI",
+   "person": "Michel Martelly",
+   "office": "President of Haiti (2011–2016)",
+   "level": "national",
+   "group_ids": [
+    "haiti"
+   ],
+   "group_link": "Cocaine trafficking; sponsoring gangs, per US Treasury",
+   "status": "sanctioned",
+   "date": "2024-08-20",
+   "note": "Treasury designation; Martelly denies.",
+   "sources": [
+    {
+     "name": "US Treasury jy2542",
+     "url": "https://home.treasury.gov/news/press-releases/jy2542",
+     "date": "2024-08-20"
+    }
+   ]
+  },
+  {
+   "id": "hti-038",
+   "country": "HTI",
+   "person": "Joseph Lambert",
+   "office": "President of the Senate",
+   "level": "national",
+   "group_ids": [
+    "haiti"
+   ],
+   "group_link": "Cocaine trafficking, per US Treasury",
+   "status": "sanctioned",
+   "date": "2022-11-04",
+   "note": "Treasury designation.",
+   "sources": [
+    {
+     "name": "US Treasury jy1080",
+     "url": "https://home.treasury.gov/news/press-releases/jy1080",
+     "date": "2022-11-04"
+    }
+   ]
+  },
+  {
+   "id": "hti-039",
+   "country": "HTI",
+   "person": "Youri Latortue",
+   "office": "Former senator",
+   "level": "national",
+   "group_ids": [
+    "haiti"
+   ],
+   "group_link": "Cocaine trafficking, per US Treasury",
+   "status": "sanctioned",
+   "date": "2022-11-04",
+   "note": "Treasury designation.",
+   "sources": [
+    {
+     "name": "US Treasury jy1080",
+     "url": "https://home.treasury.gov/news/press-releases/jy1080",
+     "date": "2022-11-04"
+    }
+   ]
+  },
+  {
+   "id": "hti-040",
+   "country": "HTI",
+   "person": "Rony Celestin",
+   "office": "Senator",
+   "level": "national",
+   "group_ids": [
+    "haiti"
+   ],
+   "group_link": "Drug trafficking, per US Treasury",
+   "status": "sanctioned",
+   "date": "2022-12-02",
+   "note": "Treasury designation.",
+   "sources": [
+    {
+     "name": "US Treasury jy1137",
+     "url": "https://home.treasury.gov/news/press-releases/jy1137",
+     "date": "2022-12-02"
+    }
+   ]
+  },
+  {
+   "id": "hti-041",
+   "country": "HTI",
+   "person": "Richard Fourcand",
+   "office": "Senator",
+   "level": "national",
+   "group_ids": [
+    "haiti"
+   ],
+   "group_link": "Drug trafficking, per US Treasury",
+   "status": "sanctioned",
+   "date": "2022-12-02",
+   "note": "Treasury designation.",
+   "sources": [
+    {
+     "name": "US Treasury jy1137",
+     "url": "https://home.treasury.gov/news/press-releases/jy1137",
+     "date": "2022-12-02"
+    }
+   ]
+  },
+  {
+   "id": "pry-042",
+   "country": "PRY",
+   "person": "Erico Galeano",
+   "office": "Senator",
+   "level": "national",
+   "group_ids": [],
+   "group_link": "A Ultranza Py cocaine-laundering network",
+   "status": "convicted",
+   "date": "2026-03-04",
+   "note": "Sentenced to 13 years for money laundering and criminal association; upheld on appeal May 2026.",
+   "sources": [
+    {
+     "name": "ABC Color",
+     "url": "https://www.abc.com.py/nacionales/2026/03/04/erico-galeano-estara-13-anos-en-la-carcel-por-nexos-con-esquema-narco-de-a-ultranza/",
+     "date": "2026-03-04"
+    },
+    {
+     "name": "El Nacional",
+     "url": "https://elnacional.com.py/politica/confirman-condena-13-anos-erico-galeano-caso-derivado-ultranza-n105301"
+    }
+   ]
+  },
+  {
+   "id": "pry-043",
+   "country": "PRY",
+   "person": "Horacio Cartes",
+   "office": "President of Paraguay (2013–2018)",
+   "level": "national",
+   "group_ids": [],
+   "group_link": "Corruption (US designation did not cite a cartel)",
+   "status": "delisted",
+   "date": "2025-10-06",
+   "note": "Sanctioned by OFAC in 2023 for corruption; removed from the SDN list on 2025-10-06.",
+   "sources": [
+    {
+     "name": "OFAC",
+     "url": "https://ofac.treasury.gov/recent-actions/20251006",
+     "date": "2025-10-06"
+    }
+   ]
+  },
+  {
+   "id": "bol-044",
+   "country": "BOL",
+   "person": "Maximiliano Dávila Pérez",
+   "office": "Director of the anti-narcotics force (FELCN)",
+   "level": "national",
+   "group_ids": [],
+   "group_link": "Cocaine trafficking",
+   "status": "convicted",
+   "date": "2026-03-19",
+   "note": "Convicted in SDNY; sentenced to 25 years on 2026-03-19.",
+   "sources": [
+    {
+     "name": "AP",
+     "url": "https://apnews.com/article/bolivia-eeuu-narcotrafico-davila-condena-ab7eeee1c76a1a50ea013b89623fed77"
+    },
+    {
+     "name": "La Razón",
+     "url": "https://larazon.bo/nacional/2026/03/20/condenan-a-maximiliano-davila-a-25-anos-de-carcel-en-estados-unidos/",
+     "date": "2026-03-20"
+    }
+   ]
+  }
+ ]
+}

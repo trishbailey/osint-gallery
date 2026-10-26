@@ -1,0 +1,264 @@
+{
+ "slug": "cmln-suspicious-activity",
+ "title": "Chinese money laundering networks in US bank reporting",
+ "takeaway": "US filers flagged about $312 billion in suspicious activity tied to Chinese money laundering networks in 2020-2024. Banks reported most of it.",
+ "summary": "FinCEN analyzed 137,153 Bank Secrecy Act reports filed between 2020 and 2024. The Sankey splits that $312bn by the type of institution that filed. The bars show overlapping typologies; reports can carry several tags, so they do not add up. The schematic shows the 'mirror' trade FinCEN describes: cartel dollars in the US are sold to Chinese nationals who want to get money out of China, and the cartel is paid in pesos in Mexico.",
+ "data_date": "2025-08-28",
+ "unit": "USD billions (reported suspicious activity, not proven laundering)",
+ "kind": "sankey",
+ "nodes": [
+  {
+   "id": "cmln",
+   "name": "CMLN-linked suspicious activity",
+   "group": "source"
+  },
+  {
+   "id": "dep",
+   "name": "Depository institutions (banks)",
+   "group": "channel"
+  },
+  {
+   "id": "msb",
+   "name": "Money services businesses",
+   "group": "channel"
+  },
+  {
+   "id": "oth",
+   "name": "Casinos, insurers, securities, other",
+   "group": "channel"
+  },
+  {
+   "id": "rep",
+   "name": "Reported to FinCEN",
+   "group": "use"
+  }
+ ],
+ "links": [
+  {
+   "source": "cmln",
+   "target": "dep",
+   "value": 246,
+   "status": "reported",
+   "period": "2020-2024",
+   "cites": [
+    "FINCEN_CMLN_FTA"
+   ]
+  },
+  {
+   "source": "cmln",
+   "target": "msb",
+   "value": 42,
+   "status": "reported",
+   "period": "2020-2024",
+   "cites": [
+    "FINCEN_CMLN_FTA"
+   ]
+  },
+  {
+   "source": "cmln",
+   "target": "oth",
+   "value": 24,
+   "status": "reported",
+   "period": "2020-2024",
+   "cites": [
+    "FINCEN_CMLN_FTA"
+   ]
+  },
+  {
+   "source": "dep",
+   "target": "rep",
+   "value": 246,
+   "status": "reported",
+   "period": "2020-2024",
+   "cites": [
+    "FINCEN_CMLN_FTA"
+   ]
+  },
+  {
+   "source": "msb",
+   "target": "rep",
+   "value": 42,
+   "status": "reported",
+   "period": "2020-2024",
+   "cites": [
+    "FINCEN_CMLN_FTA"
+   ]
+  },
+  {
+   "source": "oth",
+   "target": "rep",
+   "value": 24,
+   "status": "reported",
+   "period": "2020-2024",
+   "cites": [
+    "FINCEN_CMLN_FTA"
+   ]
+  }
+ ],
+ "typologies": [
+  {
+   "name": "Real estate",
+   "value": 53.7,
+   "reports": 17389,
+   "cites": [
+    "FINCEN_CMLN_FTA"
+   ]
+  },
+  {
+   "name": "Cash deposits",
+   "value": 33,
+   "cites": [
+    "FINCEN_CMLN_FTA"
+   ]
+  },
+  {
+   "name": "Purported Chinese students",
+   "value": 13.8,
+   "reports": 20282,
+   "cites": [
+    "FINCEN_CMLN_FTA"
+   ]
+  },
+  {
+   "name": "Trade-based laundering",
+   "value": 9.7,
+   "reports": 512,
+   "cites": [
+    "FINCEN_CMLN_FTA"
+   ]
+  },
+  {
+   "name": "Human trafficking / smuggling",
+   "value": 4.2,
+   "cites": [
+    "FINCEN_CMLN_FTA"
+   ]
+  }
+ ],
+ "related": [
+  {
+   "name": "Fentanyl-related BSA reports, 2024",
+   "value": 1.4,
+   "reports": 1246,
+   "text": "Banks and MSBs filed 57% and 32% of these reports.",
+   "cites": [
+    "FINCEN_FENT_FTA"
+   ]
+  },
+  {
+   "name": "Section 2313a orders: CIBanco, Intercam, Vector (Mexico)",
+   "text": "Treasury named the three Mexican institutions primary money laundering concerns tied to fentanyl in June 2025. The orders took effect in Oct 2025.",
+   "cites": [
+    "TREAS_2313A",
+    "TREAS_SB0231"
+   ]
+  },
+  {
+   "name": "El Mayo Zambada forfeiture",
+   "value": 15,
+   "text": "A US court ordered a $15bn forfeiture at sentencing in July 2026. This is a court judgment figure, not recovered cash.",
+   "cites": [
+    "DOJ_MAYO_SENT"
+   ]
+  }
+ ],
+ "schematic": {
+  "title": "How the 'mirror' trade works (link widths are not amounts)",
+  "kind": "schematic",
+  "nodes": [
+   {
+    "id": "a",
+    "name": "Cartel cash in US cities",
+    "group": "source"
+   },
+   {
+    "id": "b",
+    "name": "US-based CMLN broker",
+    "group": "channel"
+   },
+   {
+    "id": "c",
+    "name": "PRC nationals buying USD",
+    "group": "channel"
+   },
+   {
+    "id": "d",
+    "name": "RMB paid inside China",
+    "group": "channel"
+   },
+   {
+    "id": "e",
+    "name": "Mexico-based CMLN broker",
+    "group": "channel"
+   },
+   {
+    "id": "f",
+    "name": "Pesos to cartel in Mexico",
+    "group": "use"
+   },
+   {
+    "id": "g",
+    "name": "Importers buying goods from China",
+    "group": "use"
+   }
+  ],
+  "links": [
+   {
+    "source": "a",
+    "target": "b",
+    "value": 1,
+    "cites": [
+     "FINCEN_CMLN_ADV"
+    ]
+   },
+   {
+    "source": "b",
+    "target": "c",
+    "value": 1,
+    "cites": [
+     "FINCEN_CMLN_ADV"
+    ]
+   },
+   {
+    "source": "c",
+    "target": "d",
+    "value": 1,
+    "cites": [
+     "FINCEN_CMLN_ADV"
+    ]
+   },
+   {
+    "source": "d",
+    "target": "g",
+    "value": 1,
+    "cites": [
+     "FINCEN_CMLN_ADV"
+    ]
+   },
+   {
+    "source": "b",
+    "target": "e",
+    "value": 1,
+    "cites": [
+     "FINCEN_CMLN_ADV"
+    ]
+   },
+   {
+    "source": "e",
+    "target": "f",
+    "value": 1,
+    "cites": [
+     "FINCEN_CMLN_ADV"
+    ]
+   }
+  ]
+ },
+ "notes": "These are amounts in suspicious activity reports, not convictions. FinCEN says totals may double count continuing or amended reports. The scale of unreported CMLN activity is unknown, as is the share that is cartel money and not other crime or capital flight. Follow the money: both sides gain. Cartels get pesos fast without moving cash across the border, and Chinese buyers get dollars outside China's capital controls.",
+ "sources": [
+  "FINCEN_CMLN_FTA",
+  "FINCEN_CMLN_ADV",
+  "FINCEN_FENT_FTA",
+  "TREAS_2313A",
+  "DOJ_MAYO_SENT"
+ ]
+}

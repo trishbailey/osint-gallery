@@ -1,0 +1,428 @@
+{
+ "note": "Levels (primary/secondary/minor) are an editorial reading of how prominently the cited source describes each activity. Empty = no source found, not 'not involved'.",
+ "lines": [
+  {
+   "id": "fentanyl",
+   "label": "Fentanyl"
+  },
+  {
+   "id": "meth",
+   "label": "Meth"
+  },
+  {
+   "id": "cocaine",
+   "label": "Cocaine"
+  },
+  {
+   "id": "heroin",
+   "label": "Heroin"
+  },
+  {
+   "id": "marijuana",
+   "label": "Marijuana"
+  },
+  {
+   "id": "drugs_unspecified",
+   "label": "Drugs (type not specified)"
+  },
+  {
+   "id": "precursors",
+   "label": "Precursor chemicals"
+  },
+  {
+   "id": "migrant_smuggling",
+   "label": "Migrant smuggling"
+  },
+  {
+   "id": "human_trafficking",
+   "label": "Human / sex trafficking"
+  },
+  {
+   "id": "extortion",
+   "label": "Extortion"
+  },
+  {
+   "id": "kidnapping",
+   "label": "Kidnapping"
+  },
+  {
+   "id": "fuel_theft",
+   "label": "Fuel theft"
+  },
+  {
+   "id": "illegal_mining",
+   "label": "Illegal mining"
+  },
+  {
+   "id": "logging_fishing",
+   "label": "Illegal logging / fishing"
+  },
+  {
+   "id": "arms",
+   "label": "Arms trafficking"
+  },
+  {
+   "id": "money_laundering",
+   "label": "Money laundering"
+  },
+  {
+   "id": "legit_economies",
+   "label": "Control of legal economies"
+  }
+ ],
+ "levels": [
+  "primary",
+  "secondary",
+  "minor"
+ ],
+ "groups": {
+  "chapitos": {
+   "fentanyl": {
+    "level": "primary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "meth": {
+    "level": "primary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "cocaine": {
+    "level": "primary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "heroin": {
+    "level": "secondary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "marijuana": {
+    "level": "minor",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "fuel_theft": {
+    "level": "minor",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   }
+  },
+  "mayiza": {
+   "fentanyl": {
+    "level": "primary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "meth": {
+    "level": "primary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "cocaine": {
+    "level": "primary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "heroin": {
+    "level": "secondary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "marijuana": {
+    "level": "minor",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "fuel_theft": {
+    "level": "minor",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "extortion": {
+    "level": "secondary",
+    "source_url": "https://home.treasury.gov/news/press-releases/sb0636"
+   },
+   "kidnapping": {
+    "level": "secondary",
+    "source_url": "https://home.treasury.gov/news/press-releases/sb0636"
+   },
+   "money_laundering": {
+    "level": "secondary",
+    "source_url": "https://home.treasury.gov/news/press-releases/sb0636"
+   }
+  },
+  "cjng": {
+   "fentanyl": {
+    "level": "primary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "meth": {
+    "level": "primary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "cocaine": {
+    "level": "primary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "precursors": {
+    "level": "secondary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "money_laundering": {
+    "level": "secondary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "fuel_theft": {
+    "level": "secondary",
+    "source_url": "https://www.dea.gov/cartels"
+   },
+   "extortion": {
+    "level": "secondary",
+    "source_url": "https://www.dea.gov/cartels"
+   },
+   "migrant_smuggling": {
+    "level": "secondary",
+    "source_url": "https://www.dea.gov/cartels"
+   },
+   "illegal_mining": {
+    "level": "minor",
+    "source_url": "https://www.state.gov/designation-of-international-cartels"
+   },
+   "arms": {
+    "level": "minor",
+    "source_url": "https://www.state.gov/designation-of-international-cartels"
+   }
+  },
+  "gulf": {
+   "cocaine": {
+    "level": "primary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "fentanyl": {
+    "level": "secondary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "meth": {
+    "level": "secondary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "heroin": {
+    "level": "secondary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "migrant_smuggling": {
+    "level": "primary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "money_laundering": {
+    "level": "secondary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "fuel_theft": {
+    "level": "minor",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "kidnapping": {
+    "level": "secondary",
+    "source_url": "https://www.state.gov/designation-of-international-cartels"
+   },
+   "extortion": {
+    "level": "secondary",
+    "source_url": "https://www.state.gov/designation-of-international-cartels"
+   }
+  },
+  "cdn": {
+   "drugs_unspecified": {
+    "level": "primary",
+    "source_url": "https://www.state.gov/designation-of-international-cartels"
+   },
+   "extortion": {
+    "level": "secondary",
+    "source_url": "https://www.state.gov/designation-of-international-cartels"
+   },
+   "kidnapping": {
+    "level": "secondary",
+    "source_url": "https://www.state.gov/designation-of-international-cartels"
+   },
+   "migrant_smuggling": {
+    "level": "secondary",
+    "source_url": "https://www.state.gov/designation-of-international-cartels"
+   }
+  },
+  "lnfm": {
+   "meth": {
+    "level": "primary",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   },
+   "extortion": {
+    "level": "primary",
+    "source_url": "https://www.state.gov/designation-of-international-cartels"
+   },
+   "kidnapping": {
+    "level": "secondary",
+    "source_url": "https://www.state.gov/designation-of-international-cartels"
+   },
+   "fuel_theft": {
+    "level": "minor",
+    "source_url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+   }
+  },
+  "unidos": {
+   "meth": {
+    "level": "primary",
+    "source_url": "https://www.state.gov/juan-jose-farias-alvarez"
+   },
+   "fentanyl": {
+    "level": "secondary",
+    "source_url": "https://www.state.gov/juan-jose-farias-alvarez"
+   },
+   "cocaine": {
+    "level": "secondary",
+    "source_url": "https://www.state.gov/juan-jose-farias-alvarez"
+   },
+   "heroin": {
+    "level": "minor",
+    "source_url": "https://www.state.gov/juan-jose-farias-alvarez"
+   }
+  },
+  "tda": {
+   "extortion": {
+    "level": "primary",
+    "source_url": "https://www.dni.gov/nctc/terrorist_groups/tren_de_aragua.html"
+   },
+   "human_trafficking": {
+    "level": "primary",
+    "source_url": "https://www.dni.gov/nctc/terrorist_groups/tren_de_aragua.html"
+   },
+   "kidnapping": {
+    "level": "secondary",
+    "source_url": "https://www.dni.gov/nctc/terrorist_groups/tren_de_aragua.html"
+   },
+   "migrant_smuggling": {
+    "level": "secondary",
+    "source_url": "https://www.dni.gov/nctc/terrorist_groups/tren_de_aragua.html"
+   },
+   "illegal_mining": {
+    "level": "secondary",
+    "source_url": "https://home.treasury.gov/news/press-releases/jy2459"
+   },
+   "cocaine": {
+    "level": "minor",
+    "source_url": "https://home.treasury.gov/news/press-releases/jy2459"
+   },
+   "money_laundering": {
+    "level": "minor",
+    "source_url": "https://home.treasury.gov/news/press-releases/jy2459"
+   }
+  },
+  "choneros": {
+   "cocaine": {
+    "level": "primary",
+    "source_url": "https://www.dni.gov/nctc/terrorist_groups/los_choneros.html"
+   },
+   "kidnapping": {
+    "level": "secondary",
+    "source_url": "https://www.dni.gov/nctc/terrorist_groups/los_choneros.html"
+   },
+   "arms": {
+    "level": "secondary",
+    "source_url": "https://www.dni.gov/nctc/terrorist_groups/los_choneros.html"
+   },
+   "extortion": {
+    "level": "secondary",
+    "source_url": "https://insightcrime.org/es/noticias/mientras-aumenta-presion-gobierno-las-pandillas-ecuatorianas-buscan-oro/"
+   },
+   "illegal_mining": {
+    "level": "secondary",
+    "source_url": "https://insightcrime.org/es/noticias/mientras-aumenta-presion-gobierno-las-pandillas-ecuatorianas-buscan-oro/"
+   }
+  },
+  "lobos": {
+   "illegal_mining": {
+    "level": "primary",
+    "source_url": "https://insightcrime.org/es/noticias/mientras-aumenta-presion-gobierno-las-pandillas-ecuatorianas-buscan-oro/"
+   },
+   "extortion": {
+    "level": "primary",
+    "source_url": "https://insightcrime.org/es/noticias-crimen-organizado-ecuador/lobos/"
+   },
+   "cocaine": {
+    "level": "primary",
+    "source_url": "https://insightcrime.org/es/noticias-crimen-organizado-ecuador/lobos/"
+   },
+   "kidnapping": {
+    "level": "secondary",
+    "source_url": "https://insightcrime.org/es/noticias-crimen-organizado-ecuador/lobos/"
+   },
+   "arms": {
+    "level": "minor",
+    "source_url": "https://news.mongabay.com/2024/05/ecuadors-los-lobos-narcotrafficking-gang-muscles-in-on-illegal-gold-mining/"
+   }
+  },
+  "clan": {
+   "cocaine": {
+    "level": "primary",
+    "source_url": "https://www.crisisgroup.org/es/rpt/latin-america-caribbean/andes/colombia/105-unsolved-crime-total-peace-dealing-colombias-gaitanistas"
+   },
+   "illegal_mining": {
+    "level": "secondary",
+    "source_url": "https://www.semana.com/nacion/barranquilla/articulo/la-millonaria-fortuna-de-los-grupos-armados-en-colombia-semana-revela-detalles-de-los-negocios-del-eln-disidencias-y-clan-del-golfo/202608/"
+   },
+   "migrant_smuggling": {
+    "level": "secondary",
+    "source_url": "https://www.crisisgroup.org/es/rpt/latin-america-caribbean/andes/colombia/105-unsolved-crime-total-peace-dealing-colombias-gaitanistas"
+   },
+   "extortion": {
+    "level": "secondary",
+    "source_url": "https://www.crisisgroup.org/es/rpt/latin-america-caribbean/andes/colombia/105-unsolved-crime-total-peace-dealing-colombias-gaitanistas"
+   },
+   "arms": {
+    "level": "minor",
+    "source_url": "https://www.crisisgroup.org/es/rpt/latin-america-caribbean/andes/colombia/105-unsolved-crime-total-peace-dealing-colombias-gaitanistas"
+   }
+  },
+  "eln": {
+   "cocaine": {
+    "level": "primary",
+    "source_url": "https://insightcrime.org/es/noticias-crimen-organizado-colombia/eln-colombia/"
+   },
+   "extortion": {
+    "level": "primary",
+    "source_url": "https://insightcrime.org/es/noticias-crimen-organizado-colombia/eln-colombia/"
+   },
+   "kidnapping": {
+    "level": "secondary",
+    "source_url": "https://insightcrime.org/es/noticias-crimen-organizado-colombia/eln-colombia/"
+   },
+   "illegal_mining": {
+    "level": "secondary",
+    "source_url": "https://www.semana.com/nacion/barranquilla/articulo/la-millonaria-fortuna-de-los-grupos-armados-en-colombia-semana-revela-detalles-de-los-negocios-del-eln-disidencias-y-clan-del-golfo/202608/"
+   }
+  },
+  "ms13": {
+   "extortion": {
+    "level": "primary",
+    "source_url": "https://www.dni.gov/nctc/terrorist_groups/ms13.html"
+   },
+   "drugs_unspecified": {
+    "level": "secondary",
+    "source_url": "https://www.dni.gov/nctc/terrorist_groups/ms13.html"
+   },
+   "migrant_smuggling": {
+    "level": "minor",
+    "source_url": "https://www.dni.gov/nctc/terrorist_groups/ms13.html"
+   },
+   "human_trafficking": {
+    "level": "minor",
+    "source_url": "https://www.congress.gov/crs-product/R45292"
+   },
+   "legit_economies": {
+    "level": "minor",
+    "source_url": "https://www.dni.gov/nctc/terrorist_groups/ms13.html"
+   }
+  },
+  "pcc": {
+   "cocaine": {
+    "level": "primary",
+    "source_url": "https://g1.globo.com/sp/sao-paulo/noticia/2025/09/22/como-em-20-anos-o-pcc-saltou-de-faccao-com-5-mil-criminosos-para-virar-mafia-com-40-mil-membros.ghtml"
+   },
+   "money_laundering": {
+    "level": "primary",
+    "source_url": "https://g1.globo.com/economia/noticia/2025/08/28/como-o-pcc-usa-fintechs-para-lavar-dinheiro.ghtml"
+   },
+   "legit_economies": {
+    "level": "secondary",
+    "source_url": "https://mpsp.mp.br/w/megaoperacao-com-1-400-agentes-mira-setor-de-combustiveis"
+   }
+  }
+ }
+}

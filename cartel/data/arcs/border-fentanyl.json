@@ -1,0 +1,68 @@
+{
+ "title": "The border and fentanyl",
+ "current_phase": "Fentanyl seizures at the Southwest border have fallen since 2023, while provisional US overdose deaths have also fallen.",
+ "history": [
+  {
+   "text": "Most fentanyl seized at the border is found at ports of entry, hidden in vehicles.",
+   "cites": [
+    "WOLA_FENT",
+    "CBP_SEIZ"
+   ]
+  }
+ ],
+ "turning_points": [
+  {
+   "text": "Eight groups designated FTOs.",
+   "cites": [
+    "FTO"
+   ],
+   "date": "2025-02-20"
+  }
+ ],
+ "actors": [
+  "sinaloa",
+  "cjng"
+ ],
+ "cites": [
+  "CBP_SEIZ_CSV",
+  "CDC_VSRR",
+  "DEA25"
+ ],
+ "storyline": {
+  "order": 3,
+  "what": [
+   {
+    "text": "CBP's monthly data show Southwest border fentanyl seizures well below their 2023 level.",
+    "cites": [
+     "CBP_SEIZ_CSV"
+    ]
+   },
+   {
+    "text": "CDC provisional data also show 12-month overdose deaths falling; seizure weights reflect enforcement as well as traffic.",
+    "cites": [
+     "CDC_VSRR",
+     "WOLA_FENT"
+    ]
+   }
+  ],
+  "groups": [],
+  "view": [
+   -120,
+   22,
+   -94,
+   37
+  ],
+  "layers": [
+   "seiz",
+   "cross"
+  ],
+  "trend": {
+   "kind": "seizures",
+   "drug": "fentanyl",
+   "label": "Fentanyl seized per month, Southwest border (lb)"
+  },
+  "title": "The border and fentanyl"
+ },
+ "id": "border-fentanyl",
+ "log": []
+}

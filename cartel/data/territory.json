@@ -1,0 +1,1843 @@
+{
+ "as_of": "2026-10-25",
+ "note": "Footprints by state/department compiled from DEA NDTA 2025 maps (as reported by Mexican media), ACLED and InSight Crime profiles. Levels: dominant, significant, present. Coverage outside Mexico is coarse; blank areas mean no sourced footprint here, not absence of crime.",
+ "levels": {
+  "dominant": "Dominant / control (source wording)",
+  "significant": "Significant presence",
+  "present": "Presence (lesser)"
+ },
+ "groups": [
+  {
+   "id": "sinaloa",
+   "name": "Sinaloa Cartel",
+   "color": "#e4572e",
+   "network_id": "sinaloa"
+  },
+  {
+   "id": "cjng",
+   "name": "CJNG",
+   "color": "#2e86de",
+   "network_id": "cjng"
+  },
+  {
+   "id": "gulf",
+   "name": "Gulf Cartel",
+   "color": "#f4d35e",
+   "network_id": "gulf"
+  },
+  {
+   "id": "cdn",
+   "name": "Cartel del Noreste",
+   "color": "#8d6e63",
+   "network_id": "cdn"
+  },
+  {
+   "id": "lnfm",
+   "name": "La Nueva Familia Michoacana",
+   "color": "#9b5de5",
+   "network_id": "lnfm"
+  },
+  {
+   "id": "juarez",
+   "name": "Juárez Cartel / La Línea",
+   "color": "#ff9f1c",
+   "network_id": "juarez"
+  },
+  {
+   "id": "clan",
+   "name": "Clan del Golfo",
+   "color": "#00bbf9",
+   "network_id": "clan"
+  },
+  {
+   "id": "eln",
+   "name": "ELN",
+   "color": "#f15bb5",
+   "network_id": "eln"
+  },
+  {
+   "id": "exfarc",
+   "name": "FARC dissidents",
+   "color": "#9ef01a",
+   "network_id": null
+  },
+  {
+   "id": "tda",
+   "name": "Tren de Aragua",
+   "color": "#ef476f",
+   "network_id": "tda"
+  },
+  {
+   "id": "choneros",
+   "name": "Los Choneros",
+   "color": "#06d6a0",
+   "network_id": "choneros"
+  },
+  {
+   "id": "lobos",
+   "name": "Los Lobos",
+   "color": "#118ab2",
+   "network_id": "lobos"
+  },
+  {
+   "id": "pcc",
+   "name": "PCC",
+   "color": "#ffd166",
+   "network_id": "pcc"
+  },
+  {
+   "id": "cv",
+   "name": "Comando Vermelho",
+   "color": "#d62828",
+   "network_id": "cv"
+  },
+  {
+   "id": "ms13",
+   "name": "MS-13",
+   "color": "#4cc9f0",
+   "network_id": "ms13"
+  },
+  {
+   "id": "b18",
+   "name": "Barrio 18",
+   "color": "#b5838d",
+   "network_id": "b18"
+  },
+  {
+   "id": "haiti",
+   "name": "Viv Ansanm / Gran Grif",
+   "color": "#c9ada7",
+   "network_id": "viv_ansanm"
+  }
+ ],
+ "thin": [
+  "Peru, Bolivia, Nicaragua, Costa Rica, Panama, Dominican Republic: no department-level footprint mapped from cited sources.",
+  "Venezuela: only ELN border states and Aragua mapped; Cartel de los Soles has no territorial footprint data.",
+  "Brazil: only core PCC/CV states mapped; both factions operate nationally.",
+  "Guatemala/Honduras: Mexican cartel corridors not mapped at department level.",
+  "Mexico: DEA maps are 2025 snapshots; Sinaloa faction split shown only as contested areas."
+ ],
+ "regions": [
+  {
+   "id": "BRA-1311",
+   "name": "São Paulo",
+   "iso": "BRA",
+   "groups": [
+    {
+     "group": "pcc",
+     "level": "dominant",
+     "cites": [
+      "IC_PCC"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "BRA-592",
+   "name": "Amazonas",
+   "iso": "BRA",
+   "groups": [
+    {
+     "group": "cv",
+     "level": "significant",
+     "cites": [
+      "IC_CV"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "BRA-600",
+   "name": "Mato Grosso do Sul",
+   "iso": "BRA",
+   "groups": [
+    {
+     "group": "pcc",
+     "level": "significant",
+     "cites": [
+      "IC_PCC"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "BRA-613",
+   "name": "Paraná",
+   "iso": "BRA",
+   "groups": [
+    {
+     "group": "pcc",
+     "level": "significant",
+     "cites": [
+      "IC_PCC"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "BRA-627",
+   "name": "Rio de Janeiro",
+   "iso": "BRA",
+   "groups": [
+    {
+     "group": "cv",
+     "level": "dominant",
+     "cites": [
+      "IC_CV"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "COL-1314",
+   "name": "Antioquia",
+   "iso": "COL",
+   "groups": [
+    {
+     "group": "clan",
+     "level": "significant",
+     "cites": [
+      "IC_URABENOS"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "COL-1316",
+   "name": "Córdoba",
+   "iso": "COL",
+   "groups": [
+    {
+     "group": "clan",
+     "level": "significant",
+     "cites": [
+      "IC_URABENOS"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "COL-1403",
+   "name": "Caquetá",
+   "iso": "COL",
+   "groups": [
+    {
+     "group": "exfarc",
+     "level": "significant",
+     "cites": [
+      "IC_EXFARC"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "COL-1404",
+   "name": "Cauca",
+   "iso": "COL",
+   "groups": [
+    {
+     "group": "eln",
+     "level": "significant",
+     "cites": [
+      "IC_ELN"
+     ]
+    },
+    {
+     "group": "exfarc",
+     "level": "significant",
+     "cites": [
+      "IC_EXFARC"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "eln",
+     "exfarc"
+    ],
+    "note": "ELN and FARC dissident fronts overlap.",
+    "cites": [
+     "IC_ELN",
+     "IC_EXFARC"
+    ]
+   }
+  },
+  {
+   "id": "COL-1406",
+   "name": "Nariño",
+   "iso": "COL",
+   "groups": [
+    {
+     "group": "eln",
+     "level": "significant",
+     "cites": [
+      "IC_ELN"
+     ]
+    },
+    {
+     "group": "exfarc",
+     "level": "significant",
+     "cites": [
+      "IC_EXFARC"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "eln",
+     "exfarc"
+    ],
+    "note": "ELN and FARC dissident fronts overlap near the Ecuador border.",
+    "cites": [
+     "IC_ELN",
+     "IC_EXFARC"
+    ]
+   }
+  },
+  {
+   "id": "COL-1407",
+   "name": "Putumayo",
+   "iso": "COL",
+   "groups": [
+    {
+     "group": "exfarc",
+     "level": "significant",
+     "cites": [
+      "IC_EXFARC"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "COL-1413",
+   "name": "Bolívar",
+   "iso": "COL",
+   "groups": [
+    {
+     "group": "clan",
+     "level": "significant",
+     "cites": [
+      "IC_URABENOS"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "COL-1415",
+   "name": "Chocó",
+   "iso": "COL",
+   "groups": [
+    {
+     "group": "clan",
+     "level": "significant",
+     "cites": [
+      "IC_URABENOS"
+     ]
+    },
+    {
+     "group": "eln",
+     "level": "significant",
+     "cites": [
+      "IC_ELN"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "clan",
+     "eln"
+    ],
+    "note": "Clan del Golfo and ELN compete over Pacific routes.",
+    "cites": [
+     "IC_URABENOS",
+     "IC_ELN"
+    ]
+   }
+  },
+  {
+   "id": "COL-1417",
+   "name": "Sucre",
+   "iso": "COL",
+   "groups": [
+    {
+     "group": "clan",
+     "level": "significant",
+     "cites": [
+      "IC_URABENOS"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "COL-1420",
+   "name": "Arauca",
+   "iso": "COL",
+   "groups": [
+    {
+     "group": "eln",
+     "level": "significant",
+     "cites": [
+      "IC_ELN"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "COL-1421",
+   "name": "Norte de Santander",
+   "iso": "COL",
+   "groups": [
+    {
+     "group": "eln",
+     "level": "significant",
+     "cites": [
+      "IC_ELN"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "COL-1423",
+   "name": "Guaviare",
+   "iso": "COL",
+   "groups": [
+    {
+     "group": "exfarc",
+     "level": "significant",
+     "cites": [
+      "IC_EXFARC"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "COL-1425",
+   "name": "Meta",
+   "iso": "COL",
+   "groups": [
+    {
+     "group": "exfarc",
+     "level": "significant",
+     "cites": [
+      "IC_EXFARC"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "ECU-1267",
+   "name": "El Oro",
+   "iso": "ECU",
+   "groups": [
+    {
+     "group": "lobos",
+     "level": "significant",
+     "cites": [
+      "IC_LOBOS"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "ECU-1280",
+   "name": "Guayas",
+   "iso": "ECU",
+   "groups": [
+    {
+     "group": "choneros",
+     "level": "significant",
+     "cites": [
+      "IC_CHONEROS"
+     ]
+    },
+    {
+     "group": "lobos",
+     "level": "significant",
+     "cites": [
+      "IC_LOBOS"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "choneros",
+     "lobos"
+    ],
+    "note": "Guayaquil port and prisons disputed among Choneros, Lobos and allied gangs.",
+    "cites": [
+     "IC_ECUADOR"
+    ]
+   }
+  },
+  {
+   "id": "ECU-1281",
+   "name": "Los Rios",
+   "iso": "ECU",
+   "groups": [
+    {
+     "group": "lobos",
+     "level": "significant",
+     "cites": [
+      "IC_LOBOS"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "ECU-1282",
+   "name": "Manabi",
+   "iso": "ECU",
+   "groups": [
+    {
+     "group": "choneros",
+     "level": "significant",
+     "cites": [
+      "IC_CHONEROS"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "ECU-1335",
+   "name": "Esmeraldas",
+   "iso": "ECU",
+   "groups": [
+    {
+     "group": "lobos",
+     "level": "present",
+     "cites": [
+      "IC_ECUADOR"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "GTM-1951",
+   "name": "Guatemala",
+   "iso": "GTM",
+   "groups": [
+    {
+     "group": "ms13",
+     "level": "significant",
+     "cites": [
+      "IC_MS13",
+      "IC_GUATEMALA"
+     ]
+    },
+    {
+     "group": "b18",
+     "level": "significant",
+     "cites": [
+      "IC_B18",
+      "IC_GUATEMALA"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "ms13",
+     "b18"
+    ],
+    "note": "MS-13 and Barrio 18 contest Guatemala City neighbourhoods.",
+    "cites": [
+     "IC_GUATEMALA"
+    ]
+   }
+  },
+  {
+   "id": "HND-639",
+   "name": "Francisco Morazán",
+   "iso": "HND",
+   "groups": [
+    {
+     "group": "ms13",
+     "level": "significant",
+     "cites": [
+      "IC_MS13",
+      "IC_HONDURAS"
+     ]
+    },
+    {
+     "group": "b18",
+     "level": "significant",
+     "cites": [
+      "IC_B18",
+      "IC_HONDURAS"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "ms13",
+     "b18"
+    ],
+    "note": "MS-13 and Barrio 18 contest urban neighbourhoods.",
+    "cites": [
+     "IC_HONDURAS"
+    ]
+   }
+  },
+  {
+   "id": "HND-647",
+   "name": "Cortés",
+   "iso": "HND",
+   "groups": [
+    {
+     "group": "ms13",
+     "level": "significant",
+     "cites": [
+      "IC_MS13",
+      "IC_HONDURAS"
+     ]
+    },
+    {
+     "group": "b18",
+     "level": "significant",
+     "cites": [
+      "IC_B18",
+      "IC_HONDURAS"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "ms13",
+     "b18"
+    ],
+    "note": "MS-13 and Barrio 18 contest urban neighbourhoods.",
+    "cites": [
+     "IC_HONDURAS"
+    ]
+   }
+  },
+  {
+   "id": "HTI-1384",
+   "name": "L'Artibonite",
+   "iso": "HTI",
+   "groups": [
+    {
+     "group": "haiti",
+     "level": "significant",
+     "cites": [
+      "IC_HAITI",
+      "FTO"
+     ],
+     "note": "Gran Grif gang."
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "HTI-1388",
+   "name": "Ouest",
+   "iso": "HTI",
+   "groups": [
+    {
+     "group": "haiti",
+     "level": "dominant",
+     "cites": [
+      "IC_HAITI",
+      "FTO"
+     ],
+     "note": "Viv Ansanm coalition controls most of Port-au-Prince."
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2706",
+   "name": "Baja California",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "sinaloa",
+     "cjng"
+    ],
+    "note": "Tijuana corridor disputed between Sinaloa factions and CJNG.",
+    "cites": [
+     "ACLED_RIFT"
+    ]
+   }
+  },
+  {
+   "id": "MEX-2707",
+   "name": "Baja California Sur",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "present",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2708",
+   "name": "Coahuila",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "present",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cdn",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2709",
+   "name": "Chihuahua",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "juarez",
+     "level": "significant",
+     "cites": [
+      "IC_JUAREZ",
+      "ACLED_RIFT"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "juarez",
+     "sinaloa"
+    ],
+    "note": "La Línea vs Sinaloa-aligned Los Salgueiro.",
+    "cites": [
+     "ACLED_RIFT"
+    ]
+   }
+  },
+  {
+   "id": "MEX-2710",
+   "name": "Durango",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "present",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2711",
+   "name": "Sinaloa",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "present",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "sinaloa"
+    ],
+    "note": "Internal war between the Chapitos and Mayo (Mayiza) factions since Sept 2024.",
+    "cites": [
+     "ACLED_RIFT"
+    ]
+   }
+  },
+  {
+   "id": "MEX-2712",
+   "name": "Sonora",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "present",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2713",
+   "name": "Zacatecas",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cdn",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "cjng",
+     "sinaloa"
+    ],
+    "note": "Long-running dispute between CJNG and Sinaloa Cartel.",
+    "cites": [
+     "ACLED_RIFT"
+    ]
+   }
+  },
+  {
+   "id": "MEX-2714",
+   "name": "Nuevo León",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "present",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "present",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "gulf",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ]
+    },
+    {
+     "group": "cdn",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2715",
+   "name": "San Luis Potosí",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "gulf",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ]
+    },
+    {
+     "group": "cdn",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2716",
+   "name": "Tamaulipas",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "present",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "gulf",
+     "level": "dominant",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ]
+    },
+    {
+     "group": "cdn",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "gulf",
+     "cdn"
+    ],
+    "note": "Gulf Cartel factions and Cartel del Noreste both shown with heavy presence on DEA maps.",
+    "cites": [
+     "DEA_MAP_SILLA"
+    ]
+   }
+  },
+  {
+   "id": "MEX-2717",
+   "name": "Aguascalientes",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2718",
+   "name": "Colima",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "present",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "cjng",
+     "sinaloa"
+    ],
+    "note": "Manzanillo port area disputed between CJNG and Sinaloa Cartel.",
+    "cites": [
+     "ACLED_RIFT"
+    ]
+   }
+  },
+  {
+   "id": "MEX-2719",
+   "name": "Jalisco",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2720",
+   "name": "Michoacán",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "present",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "lnfm",
+     "level": "dominant",
+     "cites": [
+      "DEA_MAP_SILLA",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "cjng",
+     "lnfm"
+    ],
+    "note": "CJNG and La Nueva Familia Michoacana both shown with heavy presence on DEA maps.",
+    "cites": [
+     "DEA_MAP_SILLA",
+     "POLITICO_CJNG"
+    ]
+   }
+  },
+  {
+   "id": "MEX-2721",
+   "name": "Nayarit",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "present",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2722",
+   "name": "Campeche",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "gulf",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2723",
+   "name": "Oaxaca",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "present",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2724",
+   "name": "Puebla",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "present",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "lnfm",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2725",
+   "name": "Tabasco",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "present",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "gulf",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2726",
+   "name": "Tlaxcala",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "present",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "lnfm",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2727",
+   "name": "Distrito Federal",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2728",
+   "name": "Guanajuato",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "present",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "lnfm",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2729",
+   "name": "Guerrero",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "present",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "lnfm",
+     "level": "dominant",
+     "cites": [
+      "DEA_MAP_SILLA",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2730",
+   "name": "Hidalgo",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "present",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "lnfm",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2731",
+   "name": "México",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "present",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "lnfm",
+     "level": "dominant",
+     "cites": [
+      "DEA_MAP_SILLA",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2732",
+   "name": "Morelos",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "present",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "lnfm",
+     "level": "dominant",
+     "cites": [
+      "DEA_MAP_SILLA",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2733",
+   "name": "Querétaro",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "present",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "lnfm",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2734",
+   "name": "Veracruz",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "present",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "gulf",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2735",
+   "name": "Chiapas",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    }
+   ],
+   "contested": {
+    "groups": [
+     "cjng",
+     "sinaloa"
+    ],
+    "note": "Guatemala border corridors disputed between CJNG and Sinaloa Cartel.",
+    "cites": [
+     "ACLED_RIFT"
+    ]
+   }
+  },
+  {
+   "id": "MEX-2736",
+   "name": "Quintana Roo",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "significant",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "gulf",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "MEX-2737",
+   "name": "Yucatán",
+   "iso": "MEX",
+   "groups": [
+    {
+     "group": "sinaloa",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_UNIV",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "cjng",
+     "level": "present",
+     "cites": [
+      "POLITICO_CJNG",
+      "DEA_MAP_RAZON"
+     ]
+    },
+    {
+     "group": "gulf",
+     "level": "significant",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "PRY-615",
+   "name": "Amambay",
+   "iso": "PRY",
+   "groups": [
+    {
+     "group": "pcc",
+     "level": "significant",
+     "cites": [
+      "IC_PARAGUAY",
+      "IC_PCC"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "SLV-1346",
+   "name": "La Libertad",
+   "iso": "SLV",
+   "groups": [
+    {
+     "group": "ms13",
+     "level": "present",
+     "cites": [
+      "IC_MS13"
+     ],
+     "note": "Sharply weakened under El Salvador's state of exception since 2022."
+    },
+    {
+     "group": "b18",
+     "level": "present",
+     "cites": [
+      "IC_B18"
+     ],
+     "note": "Sharply weakened under El Salvador's state of exception since 2022."
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "SLV-1348",
+   "name": "Sonsonate",
+   "iso": "SLV",
+   "groups": [
+    {
+     "group": "ms13",
+     "level": "present",
+     "cites": [
+      "IC_MS13"
+     ],
+     "note": "Sharply weakened under El Salvador's state of exception since 2022."
+    },
+    {
+     "group": "b18",
+     "level": "present",
+     "cites": [
+      "IC_B18"
+     ],
+     "note": "Sharply weakened under El Salvador's state of exception since 2022."
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "SLV-1349",
+   "name": "San Salvador",
+   "iso": "SLV",
+   "groups": [
+    {
+     "group": "ms13",
+     "level": "present",
+     "cites": [
+      "IC_MS13"
+     ],
+     "note": "Sharply weakened under El Salvador's state of exception since 2022."
+    },
+    {
+     "group": "b18",
+     "level": "present",
+     "cites": [
+      "IC_B18"
+     ],
+     "note": "Sharply weakened under El Salvador's state of exception since 2022."
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "SLV-1352",
+   "name": "San Miguel",
+   "iso": "SLV",
+   "groups": [
+    {
+     "group": "ms13",
+     "level": "present",
+     "cites": [
+      "IC_MS13"
+     ],
+     "note": "Sharply weakened under El Salvador's state of exception since 2022."
+    },
+    {
+     "group": "b18",
+     "level": "present",
+     "cites": [
+      "IC_B18"
+     ],
+     "note": "Sharply weakened under El Salvador's state of exception since 2022."
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "VEN-25",
+   "name": "Apure",
+   "iso": "VEN",
+   "groups": [
+    {
+     "group": "eln",
+     "level": "significant",
+     "cites": [
+      "IC_ELN"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "VEN-28",
+   "name": "Táchira",
+   "iso": "VEN",
+   "groups": [
+    {
+     "group": "eln",
+     "level": "significant",
+     "cites": [
+      "IC_ELN"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "VEN-31",
+   "name": "Zulia",
+   "iso": "VEN",
+   "groups": [
+    {
+     "group": "eln",
+     "level": "significant",
+     "cites": [
+      "IC_ELN"
+     ]
+    }
+   ],
+   "contested": null
+  },
+  {
+   "id": "VEN-41",
+   "name": "Aragua",
+   "iso": "VEN",
+   "groups": [
+    {
+     "group": "tda",
+     "level": "significant",
+     "cites": [
+      "IC_TDA"
+     ],
+     "note": "Origin at Tocorón prison; now a transnational network with no single territory."
+    }
+   ],
+   "contested": null
+  }
+ ]
+}

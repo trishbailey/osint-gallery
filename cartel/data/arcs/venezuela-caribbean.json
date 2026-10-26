@@ -1,0 +1,87 @@
+{
+ "id": "venezuela-caribbean",
+ "title": "Venezuela and the Caribbean",
+ "current_phase": "Maduro is in US custody, US boat strikes continue, and a trial is proposed for June 2027.",
+ "history": [
+  {
+   "period": "2020",
+   "text": "US narco-terrorism indictment of Maduro.",
+   "cites": [
+    "DOJ_MADURO"
+   ]
+  },
+  {
+   "period": "2025-",
+   "text": "US boat strikes; Maduro captured Jan 2026.",
+   "cites": [
+    "JS_STRIKES",
+    "STATE_MADURO"
+   ]
+  }
+ ],
+ "turning_points": [
+  {
+   "date": "2025-11-24",
+   "text": "Cartel de los Soles designated an FTO.",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "date": "2026-10-04",
+   "text": "71 strikes and 238 killed, per the Just Security count.",
+   "cites": [
+    "JS_STRIKES"
+   ]
+  }
+ ],
+ "actors": [
+  "soles",
+  "tda",
+  "eln"
+ ],
+ "cites": [
+  "IC_SOLES",
+  "CRS_MADURO"
+ ],
+ "log": [],
+ "storyline": {
+  "order": 5,
+  "title": "Venezuela and Tren de Aragua",
+  "what": [
+   {
+    "text": "Maduro is in US custody, and Reuters reported a proposed June 2027 trial start.",
+    "cites": [
+     "DOJ_MADURO",
+     "REUTERS_MADURO_TRIAL"
+    ]
+   },
+   {
+    "text": "Just Security counted 71 US strikes on alleged drug boats and 238 people killed by 4 October 2026, based largely on official US claims.",
+    "cites": [
+     "JS_STRIKES"
+    ]
+   }
+  ],
+  "groups": [
+   "tda"
+  ],
+  "view": [
+   -85,
+   0,
+   -58,
+   16
+  ],
+  "trend": {
+   "kind": "headlines",
+   "match": [
+    "venezuela",
+    "maduro",
+    "tren de aragua",
+    "caribe",
+    "caribbean"
+   ],
+   "label": "Headlines in the feed mentioning Venezuela, by day"
+  }
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "title": "Colombia's armed groups",
+ "current_phase": "The Clan del Golfo, the ELN and FARC dissident factions compete over coca and routes.",
+ "history": [
+  {
+   "text": "After the 2016 FARC peace deal, dissidents and the Clan del Golfo filled the gap.",
+   "cites": [
+    "IC_URABENOS",
+    "IC_EXFARC"
+   ]
+  }
+ ],
+ "turning_points": [
+  {
+   "text": "Clan del Golfo designated an FTO.",
+   "cites": [
+    "FTO"
+   ],
+   "date": "2025-12-17"
+  }
+ ],
+ "actors": [
+  "clan",
+  "eln",
+  "exfarc"
+ ],
+ "cites": [
+  "IC_URABENOS",
+  "IC_ELN",
+  "IC_EXFARC",
+  "UNODC_WDR25"
+ ],
+ "storyline": {
+  "order": 6,
+  "what": [
+   {
+    "text": "UNODC reports record coca cultivation and cocaine output, centred on Colombia.",
+    "cites": [
+     "UNODC_WDR25"
+    ]
+   },
+   {
+    "text": "InSight Crime profiles the Clan del Golfo, the ELN and FARC dissidents as the main armed actors in coca regions.",
+    "cites": [
+     "IC_URABENOS",
+     "IC_ELN",
+     "IC_EXFARC"
+    ]
+   }
+  ],
+  "groups": [
+   "clan",
+   "eln",
+   "exfarc"
+  ],
+  "view": [
+   -79.5,
+   -4.5,
+   -66,
+   12.5
+  ],
+  "trend": {
+   "kind": "headlines",
+   "match": [
+    "colombia",
+    "eln",
+    "clan del golfo",
+    "farc"
+   ],
+   "label": "Headlines in the feed mentioning Colombia, by day"
+  },
+  "title": "Colombia's armed groups"
+ },
+ "id": "colombia",
+ "log": []
+}

@@ -1,0 +1,2248 @@
+{
+ "title": "Provisional drug overdose deaths, 12 months ending",
+ "unit": "deaths in the 12 months ending each month (predicted value where CDC gives one)",
+ "landing_url": "https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm",
+ "cites": [
+  "CDC_VSRR"
+ ],
+ "series": {
+  "US": [
+   {
+    "m": "2019-01",
+    "v": 68187,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-02",
+    "v": 68130,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-03",
+    "v": 68235,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-04",
+    "v": 68259,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-05",
+    "v": 68320,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-06",
+    "v": 68322,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-07",
+    "v": 68562,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-08",
+    "v": 68932,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-09",
+    "v": 69324,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-10",
+    "v": 69950,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-11",
+    "v": 70942,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-12",
+    "v": 71740,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-01",
+    "v": 72732,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-02",
+    "v": 73952,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-03",
+    "v": 75273,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-04",
+    "v": 77581,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-05",
+    "v": 81163,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-06",
+    "v": 83519,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-07",
+    "v": 85861,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-08",
+    "v": 87918,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-09",
+    "v": 89504,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-10",
+    "v": 90735,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-11",
+    "v": 91847,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-12",
+    "v": 93129,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-01",
+    "v": 95418,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-02",
+    "v": 96747,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-03",
+    "v": 98876,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-04",
+    "v": 100508,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-05",
+    "v": 100427,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-06",
+    "v": 101358,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-07",
+    "v": 102288,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-08",
+    "v": 103447,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-09",
+    "v": 104962,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-10",
+    "v": 106405,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-11",
+    "v": 107460,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-12",
+    "v": 108553,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-01",
+    "v": 108795,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-02",
+    "v": 109649,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-03",
+    "v": 109622,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-04",
+    "v": 108785,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-05",
+    "v": 108429,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-06",
+    "v": 108326,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-07",
+    "v": 108538,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-08",
+    "v": 108444,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-09",
+    "v": 108407,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-10",
+    "v": 108799,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-11",
+    "v": 109431,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-12",
+    "v": 110393,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-01",
+    "v": 110751,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-02",
+    "v": 110720,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-03",
+    "v": 111058,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-04",
+    "v": 111739,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-05",
+    "v": 112357,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-06",
+    "v": 112412,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-07",
+    "v": 112360,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-08",
+    "v": 112418,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-09",
+    "v": 111700,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-10",
+    "v": 110748,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-11",
+    "v": 109576,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-12",
+    "v": 107966,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-01",
+    "v": 106587,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-02",
+    "v": 105405,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-03",
+    "v": 103192,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-04",
+    "v": 101049,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-05",
+    "v": 98685,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-06",
+    "v": 96726,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-07",
+    "v": 94100,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-08",
+    "v": 91043,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-09",
+    "v": 88406,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-10",
+    "v": 85835,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-11",
+    "v": 83512,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-12",
+    "v": 81313,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-01",
+    "v": 79626,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-02",
+    "v": 78056,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-03",
+    "v": 77306,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-04",
+    "v": 76176,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-05",
+    "v": 75094,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-06",
+    "v": 74120,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-07",
+    "v": 73240,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-08",
+    "v": 72889,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-09",
+    "v": 72368,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-10",
+    "v": 71779,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-11",
+    "v": 71293,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-12",
+    "v": 70735,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-01",
+    "v": 69835,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-02",
+    "v": 69216,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-03",
+    "v": 68080,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-04",
+    "v": 67209,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-05",
+    "v": 66478,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=US&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   }
+  ],
+  "AZ": [
+   {
+    "m": "2019-01",
+    "v": 1733,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-02",
+    "v": 1756,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-03",
+    "v": 1772,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-04",
+    "v": 1777,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-05",
+    "v": 1793,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-06",
+    "v": 1787,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-07",
+    "v": 1821,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-08",
+    "v": 1834,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-09",
+    "v": 1903,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-10",
+    "v": 1947,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-11",
+    "v": 1952,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-12",
+    "v": 1981,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-01",
+    "v": 2025,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-02",
+    "v": 2064,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-03",
+    "v": 2101,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-04",
+    "v": 2146,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-05",
+    "v": 2220,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-06",
+    "v": 2361,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-07",
+    "v": 2470,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-08",
+    "v": 2586,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-09",
+    "v": 2585,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-10",
+    "v": 2617,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-11",
+    "v": 2654,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-12",
+    "v": 2650,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-01",
+    "v": 2675,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-02",
+    "v": 2695,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-03",
+    "v": 2714,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-04",
+    "v": 2748,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-05",
+    "v": 2779,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-06",
+    "v": 2753,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-07",
+    "v": 2694,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-08",
+    "v": 2677,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-09",
+    "v": 2712,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-10",
+    "v": 2728,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-11",
+    "v": 2721,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-12",
+    "v": 2780,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-01",
+    "v": 2772,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-02",
+    "v": 2770,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-03",
+    "v": 2768,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-04",
+    "v": 2748,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-05",
+    "v": 2698,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-06",
+    "v": 2680,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-07",
+    "v": 2777,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-08",
+    "v": 2739,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-09",
+    "v": 2737,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-10",
+    "v": 2729,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-11",
+    "v": 2745,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-12",
+    "v": 2737,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-01",
+    "v": 2760,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-02",
+    "v": 2772,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-03",
+    "v": 2787,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-04",
+    "v": 2809,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-05",
+    "v": 2824,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-06",
+    "v": 2776,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-07",
+    "v": 2800,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-08",
+    "v": 2829,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-09",
+    "v": 2803,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-10",
+    "v": 2786,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-11",
+    "v": 2776,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-12",
+    "v": 2720,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-01",
+    "v": 2674,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-02",
+    "v": 2655,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-03",
+    "v": 2626,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-04",
+    "v": 2596,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-05",
+    "v": 2551,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-06",
+    "v": 2590,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-07",
+    "v": 2504,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-08",
+    "v": 2479,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-09",
+    "v": 2462,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-10",
+    "v": 2438,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-11",
+    "v": 2464,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-12",
+    "v": 2531,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-01",
+    "v": 2630,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-02",
+    "v": 2695,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-03",
+    "v": 2743,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-04",
+    "v": 2796,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-05",
+    "v": 2866,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-06",
+    "v": 2904,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-07",
+    "v": 2844,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-08",
+    "v": 2892,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-09",
+    "v": 2924,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-10",
+    "v": 2988,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-11",
+    "v": 2974,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-12",
+    "v": 2978,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-01",
+    "v": 2922,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-02",
+    "v": 2904,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-03",
+    "v": 2877,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-04",
+    "v": 2847,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-05",
+    "v": 2822,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=AZ&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   }
+  ],
+  "CA": [
+   {
+    "m": "2019-01",
+    "v": 5619,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-02",
+    "v": 5661,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-03",
+    "v": 5730,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-04",
+    "v": 5809,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-05",
+    "v": 5908,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-06",
+    "v": 5993,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-07",
+    "v": 6057,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-08",
+    "v": 6156,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-09",
+    "v": 6210,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-10",
+    "v": 6258,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-11",
+    "v": 6414,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-12",
+    "v": 6496,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-01",
+    "v": 6591,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-02",
+    "v": 6731,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-03",
+    "v": 6895,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-04",
+    "v": 7115,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-05",
+    "v": 7385,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-06",
+    "v": 7610,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-07",
+    "v": 7970,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-08",
+    "v": 8421,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-09",
+    "v": 8708,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-10",
+    "v": 9005,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-11",
+    "v": 9213,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-12",
+    "v": 9508,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-01",
+    "v": 9920,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-02",
+    "v": 10147,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-03",
+    "v": 10428,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-04",
+    "v": 10687,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-05",
+    "v": 10888,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-06",
+    "v": 11124,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-07",
+    "v": 11246,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-08",
+    "v": 11264,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-09",
+    "v": 11444,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-10",
+    "v": 11592,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-11",
+    "v": 11749,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-12",
+    "v": 11842,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-01",
+    "v": 11819,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-02",
+    "v": 11952,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-03",
+    "v": 11947,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-04",
+    "v": 11958,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-05",
+    "v": 11947,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-06",
+    "v": 11902,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-07",
+    "v": 11927,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-08",
+    "v": 11938,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-09",
+    "v": 12055,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-10",
+    "v": 12059,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-11",
+    "v": 12054,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-12",
+    "v": 12129,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-01",
+    "v": 12273,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-02",
+    "v": 12300,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-03",
+    "v": 12485,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-04",
+    "v": 12566,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-05",
+    "v": 12725,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-06",
+    "v": 12765,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-07",
+    "v": 12921,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-08",
+    "v": 12943,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-09",
+    "v": 12781,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-10",
+    "v": 12771,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-11",
+    "v": 12707,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-12",
+    "v": 12647,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-01",
+    "v": 12483,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-02",
+    "v": 12374,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-03",
+    "v": 12155,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-04",
+    "v": 11913,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-05",
+    "v": 11621,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-06",
+    "v": 11470,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-07",
+    "v": 11095,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-08",
+    "v": 10741,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-09",
+    "v": 10497,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-10",
+    "v": 10278,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-11",
+    "v": 10085,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-12",
+    "v": 9849,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-01",
+    "v": 9718,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-02",
+    "v": 9611,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-03",
+    "v": 9553,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-04",
+    "v": 9514,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-05",
+    "v": 9453,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-06",
+    "v": 9349,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-07",
+    "v": 9284,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-08",
+    "v": 9346,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-09",
+    "v": 9338,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-10",
+    "v": 9224,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-11",
+    "v": 9187,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-12",
+    "v": 9109,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-01",
+    "v": 9038,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-02",
+    "v": 8931,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-03",
+    "v": 8779,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-04",
+    "v": 8653,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-05",
+    "v": 8554,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=CA&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   }
+  ],
+  "NM": [
+   {
+    "m": "2019-01",
+    "v": 522,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-02",
+    "v": 535,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-03",
+    "v": 531,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-04",
+    "v": 547,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-05",
+    "v": 561,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-06",
+    "v": 561,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-07",
+    "v": 578,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-08",
+    "v": 574,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-09",
+    "v": 583,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-10",
+    "v": 600,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-11",
+    "v": 620,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-12",
+    "v": 614,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-01",
+    "v": 639,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-02",
+    "v": 646,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-03",
+    "v": 651,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-04",
+    "v": 650,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-05",
+    "v": 663,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-06",
+    "v": 684,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-07",
+    "v": 689,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-08",
+    "v": 729,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-09",
+    "v": 747,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-10",
+    "v": 767,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-11",
+    "v": 793,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-12",
+    "v": 808,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-01",
+    "v": 825,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-02",
+    "v": 844,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-03",
+    "v": 874,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-04",
+    "v": 917,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-05",
+    "v": 950,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-06",
+    "v": 964,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-07",
+    "v": 1003,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-08",
+    "v": 1020,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-09",
+    "v": 1030,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-10",
+    "v": 1036,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-11",
+    "v": 1035,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-12",
+    "v": 1040,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-01",
+    "v": 1053,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-02",
+    "v": 1083,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-03",
+    "v": 1091,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-04",
+    "v": 1070,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-05",
+    "v": 1053,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-06",
+    "v": 1044,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-07",
+    "v": 1019,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-08",
+    "v": 984,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-09",
+    "v": 984,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-10",
+    "v": 991,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-11",
+    "v": 1001,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-12",
+    "v": 1018,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-01",
+    "v": 1016,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-02",
+    "v": 972,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-03",
+    "v": 970,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-04",
+    "v": 984,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-05",
+    "v": 979,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-06",
+    "v": 996,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-07",
+    "v": 1013,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-08",
+    "v": 1036,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-09",
+    "v": 1019,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-10",
+    "v": 1018,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-11",
+    "v": 1008,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-12",
+    "v": 1002,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-01",
+    "v": 983,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-02",
+    "v": 990,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-03",
+    "v": 969,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-04",
+    "v": 946,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-05",
+    "v": 940,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-06",
+    "v": 894,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-07",
+    "v": 860,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-08",
+    "v": 844,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-09",
+    "v": 838,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-10",
+    "v": 823,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-11",
+    "v": 800,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-12",
+    "v": 794,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-01",
+    "v": 814,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-02",
+    "v": 816,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-03",
+    "v": 830,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-04",
+    "v": 852,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-05",
+    "v": 855,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-06",
+    "v": 870,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-07",
+    "v": 877,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-08",
+    "v": 893,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-09",
+    "v": 911,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-10",
+    "v": 920,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-11",
+    "v": 947,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-12",
+    "v": 968,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-01",
+    "v": 1010,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-02",
+    "v": 1035,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-03",
+    "v": 1068,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-04",
+    "v": 1095,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-05",
+    "v": 1128,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=NM&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   }
+  ],
+  "TX": [
+   {
+    "m": "2019-01",
+    "v": 3013,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-02",
+    "v": 2958,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-03",
+    "v": 3000,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-04",
+    "v": 3004,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-05",
+    "v": 3021,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-06",
+    "v": 2991,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-07",
+    "v": 2997,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-08",
+    "v": 3019,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-09",
+    "v": 2998,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-10",
+    "v": 3046,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-11",
+    "v": 3087,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2019-12",
+    "v": 3158,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-01",
+    "v": 3221,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-02",
+    "v": 3290,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-03",
+    "v": 3320,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-04",
+    "v": 3414,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-05",
+    "v": 3524,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-06",
+    "v": 3641,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-07",
+    "v": 3771,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-08",
+    "v": 3912,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-09",
+    "v": 4007,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-10",
+    "v": 4038,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-11",
+    "v": 4090,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2020-12",
+    "v": 4177,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-01",
+    "v": 4277,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-02",
+    "v": 4381,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-03",
+    "v": 4560,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-04",
+    "v": 4655,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-05",
+    "v": 4718,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-06",
+    "v": 4800,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-07",
+    "v": 4824,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-08",
+    "v": 4814,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-09",
+    "v": 4904,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-10",
+    "v": 4948,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-11",
+    "v": 5008,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2021-12",
+    "v": 5016,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-01",
+    "v": 5017,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-02",
+    "v": 5099,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-03",
+    "v": 5074,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-04",
+    "v": 5063,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-05",
+    "v": 5093,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-06",
+    "v": 5131,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-07",
+    "v": 5242,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-08",
+    "v": 5315,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-09",
+    "v": 5382,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-10",
+    "v": 5468,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-11",
+    "v": 5481,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2022-12",
+    "v": 5596,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-01",
+    "v": 5660,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-02",
+    "v": 5649,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-03",
+    "v": 5697,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-04",
+    "v": 5729,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-05",
+    "v": 5750,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-06",
+    "v": 5760,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-07",
+    "v": 5744,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-08",
+    "v": 5842,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-09",
+    "v": 5797,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-10",
+    "v": 5791,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-11",
+    "v": 5809,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2023-12",
+    "v": 5727,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-01",
+    "v": 5719,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-02",
+    "v": 5719,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-03",
+    "v": 5630,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-04",
+    "v": 5645,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-05",
+    "v": 5617,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-06",
+    "v": 5574,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-07",
+    "v": 5492,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-08",
+    "v": 5365,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-09",
+    "v": 5252,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-10",
+    "v": 5200,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-11",
+    "v": 5101,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2024-12",
+    "v": 5030,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-01",
+    "v": 4973,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-02",
+    "v": 4852,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-03",
+    "v": 4828,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-04",
+    "v": 4690,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-05",
+    "v": 4640,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-06",
+    "v": 4544,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-07",
+    "v": 4478,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-08",
+    "v": 4407,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-09",
+    "v": 4423,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-10",
+    "v": 4383,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-11",
+    "v": 4440,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2025-12",
+    "v": 4491,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-01",
+    "v": 4444,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-02",
+    "v": 4457,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-03",
+    "v": 4472,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-04",
+    "v": 4490,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   },
+   {
+    "m": "2026-05",
+    "v": 4444,
+    "url": "https://data.cdc.gov/resource/xkb8-kh2a.json?state=TX&indicator=Number+of+Drug+Overdose+Deaths&%24limit=5000"
+   }
+  ]
+ },
+ "note": "Provisional counts are revised as death records are completed. Shown beside seizures for context only; no causal link is implied.",
+ "first": "2019-01",
+ "last": "2026-05"
+}

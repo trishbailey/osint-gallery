@@ -1,0 +1,17 @@
+{
+ "run": "2026-10-25T23:51Z",
+ "sources": {
+  "cbp": {
+   "ok": true,
+   "range": "2022-10..2026-08"
+  },
+  "cdc_vsrr": {
+   "ok": true,
+   "range": "2019-01..2026-05"
+  },
+  "sesnsp": {
+   "ok": true,
+   "range": "2019-01..2026-09 (elcri.men mirror); direct SESNSP failed: SESNSP files not reachable (Akamai 403 or not published)"
+  }
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "id": "mexico",
+ "title": "Mexico's cartel wars",
+ "current_phase": "The Sinaloa civil war is in its second year, and the CJNG is in succession after El Mencho's death.",
+ "history": [
+  {
+   "period": "2006-2016",
+   "text": "The military-led crackdown splits the old cartels.",
+   "cites": [
+    "IC_SINALOA"
+   ]
+  },
+  {
+   "period": "2016-2024",
+   "text": "El Chapo is extradited and the CJNG rises.",
+   "cites": [
+    "IC_CJNG"
+   ]
+  },
+  {
+   "period": "2024-",
+   "text": "El Mayo is abducted to the US and the Sinaloa war begins.",
+   "cites": [
+    "ACLED_SIN"
+   ]
+  }
+ ],
+ "turning_points": [
+  {
+   "date": "2024-07-25",
+   "text": "El Mayo Zambada is flown to the US.",
+   "cites": [
+    "DOJ_MAYO"
+   ]
+  },
+  {
+   "date": "2025-02-20",
+   "text": "Eight groups designated FTOs.",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "date": "2026-02-22",
+   "text": "El Mencho killed.",
+   "cites": [
+    "ELPAIS_MENCHO"
+   ]
+  },
+  {
+   "date": "2026-07-20",
+   "text": "El Mayo sentenced to life.",
+   "cites": [
+    "DOJ_MAYO_SENT"
+   ]
+  }
+ ],
+ "actors": [
+  "chapitos",
+  "mayiza",
+  "cjng",
+  "juarez",
+  "viagras"
+ ],
+ "cites": [
+  "ACLED_SIN",
+  "IC_CJNG_BOSS"
+ ],
+ "log": []
+}

@@ -1,0 +1,1450 @@
+{
+ "title": "Leaders of the main armed groups",
+ "as_of": "2026-10-25",
+ "method": "Charges are allegations unless the person was convicted or pleaded guilty. Photos are only US government (public domain) or openly licensed images, stored in this repo; others show a neutral placeholder.",
+ "leaders": [
+  {
+   "id": "ivan-guzman",
+   "name": "Iván Archivaldo Guzmán Salazar",
+   "alias": "",
+   "group_ids": [
+    "sinaloa",
+    "chapitos"
+   ],
+   "faction": "Los Chapitos",
+   "status": "at_large",
+   "status_date": "2026-09-09",
+   "status_note": "Fugitive. A reported surrender negotiation (LA Times, May 2026) has not been confirmed by US or Mexican authorities.",
+   "status_source": {
+    "name": "Infobae",
+    "url": "https://www.infobae.com/mexico/2026/09/09/ivan-archivaldo-jesus-alfredo-guzman-y-mayito-flaco-siguen-profugos-que-se-sabe-de-ellos-a-2-anos-de-la-guerra-en-sinaloa/",
+    "date": "2026-09-09"
+   },
+   "reward_usd": 10000000,
+   "reward_source": {
+    "name": "ICE Most Wanted",
+    "url": "https://www.ice.gov/most-wanted/guzman-salazar-ivan"
+   },
+   "charges": [
+    "Charged in N.D. Illinois (warrant 2023-04-06): drug conspiracy, continuing criminal enterprise, money laundering",
+    "Sanctioned by OFAC (SDN list)"
+   ],
+   "known_for": "Alleged to lead the Chapitos faction that US prosecutors link to industrial fentanyl production; at war with the Mayiza faction since El Mayo's July 2024 abduction to the US.",
+   "sources": [
+    {
+     "name": "ICE Most Wanted",
+     "url": "https://www.ice.gov/most-wanted/guzman-salazar-ivan"
+    },
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/mexico/2026/09/09/ivan-archivaldo-jesus-alfredo-guzman-y-mayito-flaco-siguen-profugos-que-se-sabe-de-ellos-a-2-anos-de-la-guerra-en-sinaloa/",
+     "date": "2026-09-09"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/ivan.jpg",
+    "placeholder": false,
+    "image_source_url": "https://commons.wikimedia.org/wiki/File:U.S._Department_of_State_Wanted_Poster,_Iván_Archivaldo_Guzmán_Salazar_(cropped).jpg",
+    "license": "Public domain (work of the US federal government)",
+    "credit": "US Department of State wanted poster (via Wikimedia Commons)"
+   },
+   "title": "Co-leader of Los Chapitos (sons of El Chapo)",
+   "group_key": "chapitos",
+   "role": "current_leader",
+   "confidence": "confirmed by officials"
+  },
+  {
+   "id": "alfredo-guzman",
+   "name": "Jesús Alfredo Guzmán Salazar",
+   "alias": "",
+   "group_ids": [
+    "sinaloa",
+    "chapitos"
+   ],
+   "faction": "Los Chapitos",
+   "status": "at_large",
+   "status_date": "2026-09-09",
+   "status_note": "DEA fugitive.",
+   "status_source": {
+    "name": "Infobae",
+    "url": "https://www.infobae.com/mexico/2026/09/09/ivan-archivaldo-jesus-alfredo-guzman-y-mayito-flaco-siguen-profugos-que-se-sabe-de-ellos-a-2-anos-de-la-guerra-en-sinaloa/",
+    "date": "2026-09-09"
+   },
+   "reward_usd": 10000000,
+   "reward_source": {
+    "name": "DEA fugitive profile",
+    "url": "https://www.dea.gov/fugitives/jesus-alfredo-guzman-salazar"
+   },
+   "charges": [
+    "Charged in US federal court with drug trafficking conspiracy (DEA fugitive)",
+    "Sanctioned by OFAC (SDN list)"
+   ],
+   "known_for": "Brother of Iván Archivaldo; alleged co-leader of the Chapitos' trafficking operations.",
+   "sources": [
+    {
+     "name": "DEA fugitive profile",
+     "url": "https://www.dea.gov/fugitives/jesus-alfredo-guzman-salazar"
+    },
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/mexico/2026/09/09/ivan-archivaldo-jesus-alfredo-guzman-y-mayito-flaco-siguen-profugos-que-se-sabe-de-ellos-a-2-anos-de-la-guerra-en-sinaloa/",
+     "date": "2026-09-09"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/jesus_alfredo.jpg",
+    "placeholder": false,
+    "image_source_url": "https://commons.wikimedia.org/wiki/File:Jesus_Alfredo_Guzmán_Salazar.jpg",
+    "license": "Public domain (work of the US federal government)",
+    "credit": "DEA (via Wikimedia Commons)"
+   },
+   "title": "Co-leader of Los Chapitos",
+   "group_key": "chapitos",
+   "role": "current_leader",
+   "confidence": "confirmed by officials"
+  },
+  {
+   "id": "ovidio-guzman",
+   "name": "Ovidio Guzmán López",
+   "alias": "El Ratón",
+   "group_ids": [
+    "sinaloa",
+    "chapitos"
+   ],
+   "faction": "Los Chapitos",
+   "status": "extradited",
+   "status_date": "2026-10-14",
+   "status_note": "Extradited Sept 2023; pleaded guilty July 2025 and is cooperating. Sentencing status hearing moved to 2027-04-14. Infobae reports he is not held in a listed federal prison.",
+   "status_source": {
+    "name": "Expansión",
+    "url": "https://politica.expansion.mx/mexico/2026/10/14/aplazan-audiencia-sentencia-ovidio-guzman-abril-2027",
+    "date": "2026-10-14"
+   },
+   "reward_usd": null,
+   "reward_source": null,
+   "charges": [
+    "Pleaded guilty (N.D. Illinois), July 2025"
+   ],
+   "known_for": "His 2019 capture and release in Culiacán ('Culiacanazo') and 2023 recapture became symbols of the state's struggle with the cartel.",
+   "sources": [
+    {
+     "name": "Expansión",
+     "url": "https://politica.expansion.mx/mexico/2026/10/14/aplazan-audiencia-sentencia-ovidio-guzman-abril-2027",
+     "date": "2026-10-14"
+    },
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/mexico/2026/09/16/a-tres-anos-de-su-extradicion-a-estados-unidos-ovidio-guzman-lopez-no-esta-dentro-de-una-prision-ni-se-conoce-su-paradero/",
+     "date": "2026-09-16"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/ovidio.jpg",
+    "placeholder": false,
+    "image_source_url": "https://commons.wikimedia.org/wiki/File:Wanted_Poster,_Ovidio_Guzmán_López_(cropped).jpg",
+    "license": "Public domain (work of the US federal government)",
+    "credit": "US government wanted poster (via Wikimedia Commons)"
+   },
+   "title": "Former Chapitos leader; cooperating with US prosecutors",
+   "group_key": "chapitos",
+   "role": "former_leader"
+  },
+  {
+   "id": "joaquin-guzman-lopez",
+   "name": "Joaquín Guzmán López",
+   "alias": "",
+   "group_ids": [
+    "sinaloa",
+    "chapitos"
+   ],
+   "faction": "Los Chapitos",
+   "status": "jailed",
+   "status_date": "2025-12-01",
+   "status_note": "In US custody since July 2024, when he flew to Texas with El Mayo, whom prosecutors say he kidnapped. Pleaded guilty 2025-12-01; sentencing hearing postponed to 2027-03-01.",
+   "status_source": {
+    "name": "US DOJ",
+    "url": "https://www.justice.gov/opa/pr/joaquin-guzman-lopez-son-el-chapo-and-leader-sinaloa-cartel-pleads-guilty-federal-drug",
+    "date": "2025-12-02"
+   },
+   "reward_usd": null,
+   "reward_source": null,
+   "charges": [
+    "Pleaded guilty to drug trafficking charges (N.D. Illinois), 2025-12-01"
+   ],
+   "known_for": "The July 2024 delivery of El Mayo to US agents triggered the Chapitos–Mayiza war in Sinaloa.",
+   "sources": [
+    {
+     "name": "US DOJ",
+     "url": "https://www.justice.gov/opa/pr/joaquin-guzman-lopez-son-el-chapo-and-leader-sinaloa-cartel-pleads-guilty-federal-drug",
+     "date": "2025-12-01"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/joaquin.jpg",
+    "placeholder": false,
+    "image_source_url": "https://commons.wikimedia.org/wiki/File:Wanted_Poster,_Joaquin_Guzman_Lopez_(cropped).png",
+    "license": "Public domain (work of the US federal government)",
+    "credit": "US government wanted poster (via Wikimedia Commons)"
+   },
+   "title": "Former Chapitos leader",
+   "group_key": "chapitos",
+   "role": "former_leader"
+  },
+  {
+   "id": "el-mayo",
+   "name": "Ismael Zambada García",
+   "alias": "El Mayo",
+   "group_ids": [
+    "sinaloa",
+    "mayiza"
+   ],
+   "faction": "Mayiza",
+   "status": "jailed",
+   "status_date": "2026-07-20",
+   "status_note": "Pleaded guilty 2025-08-25; sentenced to life in prison and $15 billion forfeiture.",
+   "status_source": {
+    "name": "US DOJ (EDNY)",
+    "url": "https://www.justice.gov/opa/pr/co-founder-sinaloa-cartel-ismael-el-mayo-zambada-garcia-sentenced-life-prison-and-ordered",
+    "date": "2026-07-20"
+   },
+   "reward_usd": null,
+   "reward_source": null,
+   "charges": [
+    "Convicted on guilty plea (EDNY): CCE, racketeering; former US reward $15M"
+   ],
+   "known_for": "Ran the cartel for five decades without being captured until July 2024; admitted paying politicians, police and military.",
+   "sources": [
+    {
+     "name": "US DOJ",
+     "url": "https://www.justice.gov/opa/pr/co-founder-sinaloa-cartel-ismael-el-mayo-zambada-garcia-sentenced-life-prison-and-ordered",
+     "date": "2026-07-20"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/mayo.jpg",
+    "placeholder": false,
+    "image_source_url": "https://commons.wikimedia.org/wiki/File:Mayo_Zambada_(cropped).jpg",
+    "license": "Public domain (work of the US federal government)",
+    "credit": "DEA (via Wikimedia Commons)"
+   },
+   "title": "Sinaloa Cartel co-founder",
+   "group_key": "mayiza",
+   "role": "former_leader"
+  },
+  {
+   "id": "mayito-flaco",
+   "name": "Ismael Zambada Sicairos",
+   "alias": "Mayito Flaco",
+   "group_ids": [
+    "sinaloa",
+    "mayiza"
+   ],
+   "faction": "Mayiza (Los Mayos)",
+   "status": "at_large",
+   "status_date": "2026-09-29",
+   "status_note": "Fugitive in Mexico per OFAC.",
+   "status_source": {
+    "name": "US Treasury sb0636",
+    "url": "https://home.treasury.gov/news/press-releases/sb0636",
+    "date": "2026-09-29"
+   },
+   "reward_usd": null,
+   "reward_source": null,
+   "charges": [
+    "Indicted in S.D. California, July 2014 (drug trafficking, money laundering)",
+    "OFAC-designated 2026-09-29 (E.O. 14059, E.O. 13224)"
+   ],
+   "known_for": "Son of El Mayo; Treasury calls him the 'undisputed head of Los Mayos', fighting the Chapitos and controlling Tijuana and Mexicali plazas through allied cells.",
+   "sources": [
+    {
+     "name": "US Treasury sb0636",
+     "url": "https://home.treasury.gov/news/press-releases/sb0636",
+     "date": "2026-09-29"
+    },
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/mexico/2026/09/09/ivan-archivaldo-jesus-alfredo-guzman-y-mayito-flaco-siguen-profugos-que-se-sabe-de-ellos-a-2-anos-de-la-guerra-en-sinaloa/",
+     "date": "2026-09-09"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/mayito.jpg",
+    "placeholder": false,
+    "image_source_url": "https://commons.wikimedia.org/wiki/File:IsmaelZambadaS.jpg",
+    "license": "Public domain (work of the US federal government)",
+    "credit": "DEA (via Wikimedia Commons)"
+   },
+   "title": "Leader of Los Mayos, per US Treasury",
+   "group_key": "mayiza",
+   "role": "current_leader",
+   "confidence": "confirmed by officials"
+  },
+  {
+   "id": "el-mencho",
+   "name": "Nemesio Oseguera Cervantes",
+   "alias": "El Mencho",
+   "group_ids": [
+    "cjng"
+   ],
+   "faction": "",
+   "status": "dead",
+   "status_date": "2026-02-22",
+   "status_note": "Killed in a Mexican military operation in Tapalpa, Jalisco, with US intelligence support.",
+   "status_source": {
+    "name": "Reuters",
+    "url": "https://www.reuters.com/world/americas/mexican-drug-lord-el-mencho-killed-military-operation-government-source-2026-02-22/",
+    "date": "2026-02-22"
+   },
+   "reward_usd": null,
+   "reward_source": null,
+   "charges": [
+    "Was charged in US federal court (D.D.C.); former US reward $15M"
+   ],
+   "known_for": "Built CJNG into Mexico's most expansive cartel; his death triggered nationwide roadblocks and attacks.",
+   "sources": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/world/americas/mexican-drug-lord-el-mencho-killed-military-operation-government-source-2026-02-22/",
+     "date": "2026-02-22"
+    },
+    {
+     "name": "Gabinete de Seguridad (Mexico)",
+     "url": "https://gabinetedeseguridad.gob.mx/contenido/7937/la-secretaria-de-la-defensa-nacional-informa-sobre-una-operacion-para-la-detencion-de-ruben-n-a-mencho"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/mencho.jpg",
+    "placeholder": false,
+    "image_source_url": "https://commons.wikimedia.org/wiki/File:El_Mencho.jpg",
+    "license": "Public domain (Commons lists DEA as source)",
+    "credit": "Wikimedia Commons, credited to DEA",
+    "provenance_note": "Contested: Commons credits the DEA but its source link points to a news outlet; 1986 booking photo."
+   },
+   "title": "Founder and leader of CJNG",
+   "group_key": "cjng",
+   "role": "former_leader"
+  },
+  {
+   "id": "el-pelon",
+   "name": "Juan Carlos Valencia González",
+   "alias": "El 03 / El Pelón",
+   "group_ids": [
+    "cjng"
+   ],
+   "faction": "",
+   "status": "at_large",
+   "status_date": "2026-09-04",
+   "status_note": "Mexico's security secretary said 2026-09-04 he is the successor; InSight Crime cautions the succession is unsettled. Mexico has an extradition order.",
+   "status_source": {
+    "name": "US State Dept",
+    "url": "https://www.state.gov/juan-carlos-valencia-gonzalez"
+   },
+   "reward_usd": 25000000,
+   "reward_source": {
+    "name": "US State Dept",
+    "url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/08/degrading-cjng-announcing-over-100-million-in-reward-offers-and-visa-restrictions",
+    "date": "2026-08-05"
+   },
+   "charges": [
+    "Charged in D.D.C. (indictment filed 2020, unsealed 2026-08-05): cocaine and meth conspiracy, firearms"
+   ],
+   "known_for": "Stepson of El Mencho; alleged to run CJNG's armed wing. US-born dual national.",
+   "sources": [
+    {
+     "name": "US DOJ",
+     "url": "https://www.justice.gov/opa/pr/new-charges-and-rewards-announced-capture-andor-conviction-senior-leaders-notorious-mexican",
+     "date": "2026-08-05"
+    },
+    {
+     "name": "US State Dept",
+     "url": "https://www.state.gov/juan-carlos-valencia-gonzalez"
+    }
+   ],
+   "flags": [
+    "successor_unconfirmed"
+   ],
+   "photo": {
+    "file": "img/leaders/valencia.jpg",
+    "placeholder": false,
+    "image_source_url": "https://commons.wikimedia.org/wiki/File:Cartel_de_búsqueda_de_Juan_Carlos_Valencia_González_(25_millones).jpg",
+    "license": "Public domain (work of the US federal government)",
+    "credit": "US DOJ reward poster (via Wikimedia Commons), cropped"
+   },
+   "title": "Named by US and Mexican officials as Mencho's successor (UNCONFIRMED)",
+   "group_key": "cjng",
+   "role": "reported_successor",
+   "confidence": "reported, contested"
+  },
+  {
+   "id": "r-1",
+   "name": "Juan Reyes Mejía-González",
+   "alias": "R-1",
+   "group_ids": [
+    "gulf"
+   ],
+   "faction": "Los Rojos",
+   "status": "at_large",
+   "status_date": "2026-10-25",
+   "status_note": "Listed as wanted by State. The Gulf Cartel has no single leader; 2026 arrests included El Meño (Metros) and Nacho Vega (Escorpiones).",
+   "status_source": {
+    "name": "US State Dept",
+    "url": "https://www.state.gov/inl-rewards-program-narcotics-rewards-program/narcotics-rewards-program-fto-designated-targets"
+   },
+   "reward_usd": 5000000,
+   "reward_source": {
+    "name": "US State Dept",
+    "url": "https://www.state.gov/inl-rewards-program-narcotics-rewards-program/narcotics-rewards-program-fto-designated-targets"
+   },
+   "charges": [
+    "Charged in D.D.C. (2008) and N.D. Texas (2006): drug trafficking"
+   ],
+   "known_for": "Alleged long-time plaza boss in Reynosa and leader of the Los Rojos faction.",
+   "sources": [
+    {
+     "name": "US State Dept",
+     "url": "https://www.state.gov/inl-rewards-program-narcotics-rewards-program/narcotics-rewards-program-fto-designated-targets"
+    }
+   ],
+   "photo": {
+    "file": null,
+    "placeholder": true,
+    "image_source_url": null,
+    "license": "n/a (neutral placeholder; no clean official or openly licensed photo found)",
+    "credit": null
+   },
+   "title": "Head of a Gulf Cartel faction (cartel is fragmented)",
+   "group_key": "gulf",
+   "role": "faction_leader",
+   "confidence": "reported, contested",
+   "leadership_note": "State's reward dates from 2017; no recent professional reporting confirms he still runs Los Rojos."
+  },
+  {
+   "id": "z-40",
+   "name": "Miguel Ángel Treviño Morales",
+   "alias": "Z-40",
+   "group_ids": [
+    "cdn"
+   ],
+   "faction": "",
+   "status": "extradited",
+   "status_date": "2026-10-21",
+   "status_note": "Sent to the US Feb 2025; pleaded not guilty (D.D.C.). Prosecutors ruled out a plea deal; jury trial tentatively 2028-05-19; review hearing 2026-10-30. Current CDN boss is reported by media to be Juan Cisneros Treviño 'El Juanito'; no US charges found for him.",
+   "status_source": {
+    "name": "Infobae",
+    "url": "https://www.infobae.com/mexico/2026/10/21/de-los-zetas-a-los-chapitos-fechas-de-las-proximas-audiencias-de-los-narcos-mexicanos-en-eeuu/",
+    "date": "2026-10-21"
+   },
+   "reward_usd": null,
+   "reward_source": null,
+   "charges": [
+    "Charged in D.D.C.: drug trafficking, firearms; pleaded not guilty"
+   ],
+   "known_for": "Led Los Zetas until his 2013 arrest; the group's massacres include San Fernando, 2010.",
+   "sources": [
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/mexico/2026/10/21/de-los-zetas-a-los-chapitos-fechas-de-las-proximas-audiencias-de-los-narcos-mexicanos-en-eeuu/",
+     "date": "2026-10-21"
+    },
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/mexico/2026/07/10/fiscalia-de-eeuu-descarta-acuerdo-con-el-z-40-y-el-z-42-los-llevara-a-juicio/",
+     "date": "2026-07-10"
+    }
+   ],
+   "photo": {
+    "file": null,
+    "placeholder": true,
+    "image_source_url": null,
+    "license": "n/a (neutral placeholder; no clean official or openly licensed photo found)",
+    "credit": null
+   },
+   "title": "Founder of Cártel del Noreste (ex-Zetas)",
+   "group_key": "cdn",
+   "role": "former_leader"
+  },
+  {
+   "id": "el-pez",
+   "name": "Johnny Hurtado Olascoaga",
+   "alias": "El Pez",
+   "group_ids": [
+    "lnfm"
+   ],
+   "faction": "",
+   "status": "at_large",
+   "status_date": "2025-04-15",
+   "status_note": "Wanted by State; LNFM designated FTO 2025-02-20.",
+   "status_source": {
+    "name": "US State Dept",
+    "url": "https://www.state.gov/johnny-hurtado-olascoaga"
+   },
+   "reward_usd": 5000000,
+   "reward_source": {
+    "name": "US State Dept",
+    "url": "https://www.state.gov/johnny-hurtado-olascoaga"
+   },
+   "charges": [
+    "Indicted 2024-09-24 with his brother: heroin, meth, cocaine and fentanyl conspiracy",
+    "Sanctioned by OFAC"
+   ],
+   "known_for": "LNFM is accused of extortion of producers and towns in Guerrero, Mexico state and Michoacán.",
+   "sources": [
+    {
+     "name": "US State Dept",
+     "url": "https://www.state.gov/johnny-hurtado-olascoaga"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/el_pez.jpg",
+    "placeholder": false,
+    "image_source_url": "https://www.state.gov/wp-content/uploads/2025/04/Johnny.png",
+    "license": "Public domain (work of the US federal government)",
+    "credit": "US Department of State"
+   },
+   "title": "Leader of La Nueva Familia Michoacana",
+   "group_key": "lnfm",
+   "role": "current_leader",
+   "confidence": "confirmed by officials"
+  },
+  {
+   "id": "el-fresa",
+   "name": "José Alfredo Hurtado Olascoaga",
+   "alias": "El Fresa",
+   "group_ids": [
+    "lnfm"
+   ],
+   "faction": "",
+   "status": "at_large",
+   "status_date": "2025-04-15",
+   "status_note": "Wanted by State.",
+   "status_source": {
+    "name": "US State Dept",
+    "url": "https://www.state.gov/inl-rewards-program-narcotics-rewards-program/narcotics-rewards-program-fto-designated-targets"
+   },
+   "reward_usd": 3000000,
+   "reward_source": {
+    "name": "US State Dept",
+    "url": "https://www.state.gov/inl-rewards-program-narcotics-rewards-program/narcotics-rewards-program-fto-designated-targets"
+   },
+   "charges": [
+    "Indicted 2024-09-24 (same case as El Pez)",
+    "Sanctioned by OFAC"
+   ],
+   "known_for": "Brother of El Pez; State describes him as second in command.",
+   "sources": [
+    {
+     "name": "US State Dept",
+     "url": "https://www.state.gov/inl-rewards-program-narcotics-rewards-program/narcotics-rewards-program-fto-designated-targets"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/el_fresa.jpg",
+    "placeholder": false,
+    "image_source_url": "https://www.state.gov/wp-content/uploads/2025/04/Jose.png",
+    "license": "Public domain (work of the US federal government)",
+    "credit": "US Department of State"
+   },
+   "title": "LNFM second in command",
+   "group_key": "lnfm",
+   "role": "current_leader",
+   "confidence": "confirmed by officials"
+  },
+  {
+   "id": "el-abuelo",
+   "name": "Juan José Farías Álvarez",
+   "alias": "El Abuelo",
+   "group_ids": [
+    "unidos"
+   ],
+   "faction": "Cárteles Unidos",
+   "status": "at_large",
+   "status_date": "2025-08-14",
+   "status_note": "Wanted by State; Cárteles Unidos designated FTO 2025-02-20.",
+   "status_source": {
+    "name": "US State Dept",
+    "url": "https://www.state.gov/juan-jose-farias-alvarez"
+   },
+   "reward_usd": 10000000,
+   "reward_source": {
+    "name": "US State Dept",
+    "url": "https://www.state.gov/juan-jose-farias-alvarez"
+   },
+   "charges": [
+    "D.D.C. indictment (Jan 2024, unsealed July 2025)",
+    "Sanctioned by OFAC"
+   ],
+   "known_for": "Emerged from Tepalcatepec 'self-defense' groups in Michoacán; Cárteles Unidos is accused of fighting CJNG with landmines and drones.",
+   "sources": [
+    {
+     "name": "US State Dept",
+     "url": "https://www.state.gov/juan-jose-farias-alvarez"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/farias.jpg",
+    "placeholder": false,
+    "image_source_url": "https://www.state.gov/wp-content/uploads/2025/08/Abuelo-Photo-002.jpg",
+    "license": "Public domain (work of the US federal government)",
+    "credit": "US Department of State"
+   },
+   "title": "Leader of Cárteles Unidos",
+   "group_key": "unidos",
+   "role": "current_leader",
+   "confidence": "confirmed by officials"
+  },
+  {
+   "id": "nino-guerrero",
+   "name": "Héctor Rusthenford Guerrero Flores",
+   "alias": "Niño Guerrero",
+   "group_ids": [
+    "tda"
+   ],
+   "faction": "",
+   "status": "reported_dead",
+   "status_date": "2026-06-12",
+   "status_note": "US and Venezuela said he was killed in a joint operation in Bolívar state; no independent forensic confirmation released.",
+   "status_source": {
+    "name": "BBC",
+    "url": "https://www.bbc.com/news/articles/cp36z37knlko",
+    "date": "2026-06-12"
+   },
+   "reward_usd": null,
+   "reward_source": null,
+   "charges": [
+    "Indicted in the US; was under a $5M State reward",
+    "OFAC SDN"
+   ],
+   "known_for": "Ran the gang from Tocorón prison until escaping a 2023 raid; TdA expanded across South America and into the US.",
+   "sources": [
+    {
+     "name": "BBC",
+     "url": "https://www.bbc.com/news/articles/cp36z37knlko",
+     "date": "2026-06-12"
+    },
+    {
+     "name": "RNV (Venezuela state media)",
+     "url": "https://rnv.gob.ve/fuerzas-de-seguridad-desarticulan-estructuras-criminales-en-bolivar-y-reportan-deceso-de-alias-nino-guerrero/"
+    },
+    {
+     "name": "InSight Crime",
+     "url": "https://insightcrime.org/news/tren-de-aragua-leader-nino-guerrero-killed-in-venezuela-says-trump/"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/nino_guerrero.jpg",
+    "placeholder": false,
+    "image_source_url": "https://commons.wikimedia.org/wiki/File:Hectorflores122325.jpg",
+    "license": "Public domain (work of the US federal government)",
+    "credit": "ICE Most Wanted (via Wikimedia Commons); low resolution"
+   },
+   "title": "Leader of Tren de Aragua",
+   "group_key": "tda",
+   "role": "former_leader"
+  },
+  {
+   "id": "fito",
+   "name": "José Adolfo Macías Villamar",
+   "alias": "Fito",
+   "group_ids": [
+    "choneros"
+   ],
+   "faction": "",
+   "status": "extradited",
+   "status_date": "2025-07-21",
+   "status_note": "Recaptured 2025-06-25 and extradited to the US; arraigned in Brooklyn on a seven-count superseding indictment.",
+   "status_source": {
+    "name": "DEA",
+    "url": "https://www.dea.gov/press-releases/2025/07/21/jose-adolfo-fito-macias-villamar-faces-international-drug-and-weapon",
+    "date": "2025-07-21"
+   },
+   "reward_usd": null,
+   "reward_source": null,
+   "charges": [
+    "EDNY indictment: cocaine trafficking, firearms (7 counts)"
+   ],
+   "known_for": "His Jan 2024 prison escape set off Ecuador's declaration of 'internal armed conflict'.",
+   "sources": [
+    {
+     "name": "DEA",
+     "url": "https://www.dea.gov/press-releases/2025/07/21/jose-adolfo-fito-macias-villamar-faces-international-drug-and-weapon",
+     "date": "2025-07-21"
+    },
+    {
+     "name": "AP",
+     "url": "https://apnews.com/article/ecuador-united-states-extradition-drug-trafficker-e1743a12c2a54117cc12e0de9576774c"
+    }
+   ],
+   "photo": {
+    "file": null,
+    "placeholder": true,
+    "image_source_url": null,
+    "license": "n/a (neutral placeholder; no clean official or openly licensed photo found)",
+    "credit": null
+   },
+   "title": "Leader of Los Choneros",
+   "group_key": "choneros",
+   "role": "former_leader"
+  },
+  {
+   "id": "pipo",
+   "name": "Wilmer Geovanny Chavarría Barre",
+   "alias": "Pipo",
+   "group_ids": [
+    "lobos"
+   ],
+   "faction": "",
+   "status": "jailed",
+   "status_date": "2026-07-31",
+   "status_note": "Arrested in Málaga, Spain 2025-11-16 after faking his death. Spain's Audiencia Nacional approved extradition to Ecuador (late July 2026) to serve a 16-year homicide sentence and rejected a US extradition request.",
+   "status_source": {
+    "name": "El Universo",
+    "url": "https://www.eluniverso.com/noticias/politica/espana-aprobo-la-extradicion-a-ecuador-de-alias-pipo-cabecilla-de-los-lobos-nota/"
+   },
+   "reward_usd": null,
+   "reward_source": null,
+   "charges": [
+    "OFAC-sanctioned (2024)",
+    "Convicted in Ecuador (16 years, homicide); US extradition request rejected by Spain"
+   ],
+   "known_for": "Los Lobos are linked to illegal gold mining and cocaine routes for Mexican cartels.",
+   "sources": [
+    {
+     "name": "El Universo",
+     "url": "https://www.eluniverso.com/noticias/politica/espana-aprobo-la-extradicion-a-ecuador-de-alias-pipo-cabecilla-de-los-lobos-nota/"
+    },
+    {
+     "name": "EFE",
+     "url": "https://efe.com/espana/rechazan-entrega-eeuu-presunto-lider-banda-ecuatoriana-lobos/"
+    },
+    {
+     "name": "Heraldo",
+     "url": "https://www.heraldo.es/noticias/aragon/2026/07/31/estados-unidos-no-logra-extradicion-preso-mas-peligroso-vigilado-carcel-zaragoza-2041245.html",
+     "date": "2026-07-31"
+    }
+   ],
+   "photo": {
+    "file": null,
+    "placeholder": true,
+    "image_source_url": null,
+    "license": "n/a (neutral placeholder; no clean official or openly licensed photo found)",
+    "credit": null
+   },
+   "title": "Leader of Los Lobos",
+   "group_key": "lobos",
+   "role": "former_leader"
+  },
+  {
+   "id": "chiquito-malo",
+   "name": "Jobanis de Jesús Ávila Villadiego",
+   "alias": "Chiquito Malo",
+   "group_ids": [
+    "clan"
+   ],
+   "faction": "",
+   "status": "at_large",
+   "status_date": "2026-07-06",
+   "status_note": "At large. President Petro lifted the suspension of his extradition order on 2026-07-01 (formalized by Resolution 261, 2026-07-06); if captured he is to be sent to the US.",
+   "status_source": {
+    "name": "El País",
+    "url": "https://elpais.com/america-colombia/2026-07-01/petro-reactiva-la-orden-de-extradicion-contra-alias-chiquito-malo-lider-del-clan-del-golfo.html",
+    "date": "2026-07-01"
+   },
+   "reward_usd": null,
+   "reward_source": null,
+   "charges": [
+    "US drug trafficking charges; Colombian extradition order active since 2026-07-01"
+   ],
+   "known_for": "Succeeded Otoniel in 2021; the group is Colombia's largest armed trafficking organization.",
+   "sources": [
+    {
+     "name": "El País",
+     "url": "https://elpais.com/america-colombia/2026-07-01/petro-reactiva-la-orden-de-extradicion-contra-alias-chiquito-malo-lider-del-clan-del-golfo.html",
+     "date": "2026-07-01"
+    },
+    {
+     "name": "El Heraldo (CO)",
+     "url": "https://www.elheraldo.co/colombia/2026/07/06/presidente-petro-firmo-la-orden-de-extradicion-de-chiquito-malo-maximo-cabecilla-del-clan-del-golfo/",
+     "date": "2026-07-06"
+    }
+   ],
+   "photo": {
+    "file": null,
+    "placeholder": true,
+    "image_source_url": null,
+    "license": "n/a (neutral placeholder; no clean official or openly licensed photo found)",
+    "credit": null
+   },
+   "title": "Leader of Clan del Golfo (EGC)",
+   "group_key": "clan",
+   "role": "current_leader",
+   "confidence": "confirmed by officials"
+  },
+  {
+   "id": "antonio-garcia",
+   "name": "Eliécer Erlington Chamorro Acosta",
+   "alias": "Antonio García",
+   "group_ids": [
+    "eln"
+   ],
+   "faction": "",
+   "status": "at_large",
+   "status_date": "2026-03-02",
+   "status_note": "At large. Colombia's Defense Ministry offers up to about 5,385 million pesos. Convicted in absentia (first instance, under appeal) with the rest of the Central Command on 2026-09-28.",
+   "status_source": {
+    "name": "Infobae",
+    "url": "https://www.infobae.com/colombia/2026/03/02/ofrecen-millonarias-recompensas-por-responsables-de-homicidios-de-lideres-sociales-en-arauca-antonio-garcia-encabeza-la-lista/",
+    "date": "2026-03-02"
+   },
+   "reward_usd": null,
+   "reward_source": null,
+   "charges": [
+    "Colombian arrest warrants"
+   ],
+   "known_for": "Led the ELN through failed peace talks; the group operates on both sides of the Colombia–Venezuela border.",
+   "sources": [
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/colombia/2026/03/02/ofrecen-millonarias-recompensas-por-responsables-de-homicidios-de-lideres-sociales-en-arauca-antonio-garcia-encabeza-la-lista/",
+     "date": "2026-03-02"
+    },
+    {
+     "name": "El Tiempo",
+     "url": "https://www.eltiempo.com/justicia/conflicto-y-narcotrafico/ivan-mordisco-y-antonio-garcia-encabezan-el-listado-de-los-mas-buscados-ofrecen-hasta-5-300-millones-por-ellos-3533578"
+    },
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/colombia/2026/09/28/gabino-antonio-garcia-pablo-beltran-y-otros-11-maximos-cabecillas-del-eln-fueron-condenados-a-20-anos-de-prision-por-el-reclutamiento-forzado-de-60-menores-de-edad/",
+     "date": "2026-09-28"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/antonio_garcia.jpg",
+    "placeholder": false,
+    "image_source_url": "https://commons.wikimedia.org/wiki/File:GarciaELN.jpg",
+    "license": "CC BY 3.0",
+    "credit": "Resumen Latinoamericano (YouTube) via Wikimedia Commons, cropped"
+   },
+   "title": "Top commander of the ELN",
+   "group_key": "eln",
+   "role": "current_leader",
+   "confidence": "confirmed by officials"
+  },
+  {
+   "id": "diablito",
+   "name": "Borromeo Enrique Henríquez Solórzano",
+   "alias": "Diablito de Hollywood",
+   "group_ids": [
+    "ms13"
+   ],
+   "faction": "Ranfla Nacional",
+   "status": "jailed",
+   "status_date": "2026-08-31",
+   "status_note": "Jailed in El Salvador; the mass trial of 485 alleged MS-13 leaders ended July 2026; the verdict set for Aug 31 was postponed and none is reported yet.",
+   "status_source": {
+    "name": "AP",
+    "url": "https://apnews.com/article/el-salvador-gang-trial-salvatrucha-ms13-bukele-26a534768c5a624e83500bd764bec3fb",
+    "date": "2026-07"
+   },
+   "reward_usd": null,
+   "reward_source": null,
+   "charges": [
+    "Charged in US (E.D.N.Y., 2021 'Ranfla' indictment): terrorism conspiracy, narco-terrorism"
+   ],
+   "known_for": "Alleged member of MS-13's governing council that directed violence across Central America and the US.",
+   "sources": [
+    {
+     "name": "US DOJ",
+     "url": "https://www.justice.gov/es/espanol/pr/l-deres-de-alto-rango-de-la-ms-13-son-acusados-por-delitos-de-terrorismo-en-los-estados"
+    },
+    {
+     "name": "ICE",
+     "url": "https://www.ice.gov/news/releases/ms-13s-highest-ranking-leaders-charged-terrorism-offenses-us"
+    },
+    {
+     "name": "AP",
+     "url": "https://apnews.com/article/el-salvador-gang-trial-salvatrucha-ms13-bukele-26a534768c5a624e83500bd764bec3fb"
+    }
+   ],
+   "photo": {
+    "file": null,
+    "placeholder": true,
+    "image_source_url": null,
+    "license": "n/a (neutral placeholder; no clean official or openly licensed photo found)",
+    "credit": null
+   },
+   "title": "Described by DOJ as MS-13's most powerful member",
+   "group_key": "ms13",
+   "role": "former_leader"
+  },
+  {
+   "id": "marcola",
+   "name": "Marcos Willians Herbas Camacho",
+   "alias": "Marcola",
+   "group_ids": [
+    "pcc"
+   ],
+   "faction": "",
+   "status": "jailed",
+   "status_date": "2026-06-16",
+   "status_note": "Long imprisoned in Brazil's federal system. Made a defendant (réu) on 2026-06-16 for money laundering in Operation Vérnix; not a conviction.",
+   "status_source": {
+    "name": "G1",
+    "url": "https://g1.globo.com/sp/sao-paulo/noticia/2026/05/21/operacao-prende-influenciadora-deolane-bezerra-e-mira-familia-de-marcola-por-lavagem-de-dinheiro-do-pcc.ghtml",
+    "date": "2026-05-21"
+   },
+   "reward_usd": null,
+   "reward_source": null,
+   "charges": [
+    "Convicted in Brazil (multiple sentences)",
+    "PCC designated by the US as a terrorist organization (2026); OFAC sanctioned a PCC laundering network 2026-07-01"
+   ],
+   "known_for": "Built PCC into Brazil's largest criminal organization with cocaine export routes via Paraguay and Bolivia.",
+   "sources": [
+    {
+     "name": "G1",
+     "url": "https://g1.globo.com/sp/sao-paulo/noticia/2026/05/21/operacao-prende-influenciadora-deolane-bezerra-e-mira-familia-de-marcola-por-lavagem-de-dinheiro-do-pcc.ghtml",
+     "date": "2026-05-21"
+    },
+    {
+     "name": "G1",
+     "url": "https://g1.globo.com/sp/presidente-prudente-e-regiao/noticia/2026/06/21/o-que-aconteceu-com-deolane-em-um-mes-veja-os-desdobramentos-que-levaram-a-influenciadora-a-virar-re-por-esquema-ligado-ao-pcc-em-sp.ghtml",
+     "date": "2026-06-21"
+    },
+    {
+     "name": "G1",
+     "url": "https://g1.globo.com/sp/sao-paulo/noticia/2026/02/24/novo-organograma-feito-pela-policia-civil-revela-estrutura-empresarial-do-pcc-com-setores-de-compliance-e-rede-social.ghtml",
+     "date": "2026-02-24"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/marcola.jpg",
+    "placeholder": false,
+    "image_source_url": "https://commons.wikimedia.org/wiki/File:18-12-2018_Marcos_Willians_Herbas_Camacho.jpg",
+    "license": "CC BY 3.0",
+    "credit": "SBT (YouTube) via Wikimedia Commons",
+    "provenance_note": "Contested: a separate Commons file claims public domain from police; we use the CC BY 3.0 video still instead."
+   },
+   "title": "Leader of PCC",
+   "group_key": "pcc",
+   "role": "current_leader",
+   "confidence": "reported by multiple outlets",
+   "leadership_note": "Leads from prison: São Paulo police's 2026 organogram places him at the head of the Sintonia Final."
+  },
+  {
+   "id": "primito",
+   "name": "César Morfín Morfín",
+   "alias": "Primito / Metro 300",
+   "group_ids": [
+    "gulf"
+   ],
+   "group_key": "gulf",
+   "faction": "Los Metros",
+   "title": "Head of Los Metros, the Gulf faction allied with CJNG",
+   "role": "faction_leader",
+   "confidence": "reported by multiple outlets",
+   "status": "at_large",
+   "status_date": "2026-10-20",
+   "status_note": "Fugitive; filed an injunction against extradition to the US (Oct 2026).",
+   "status_source": {
+    "name": "Infobae",
+    "url": "https://www.infobae.com/mexico/2026/10/20/el-primito-pide-amparo-para-evitar-su-extradicion-a-eeuu-el-lider-del-cjng-sigue-profugo/",
+    "date": "2026-10-20"
+   },
+   "charges": [
+    "Sought by the US for extradition"
+   ],
+   "known_for": "DEA says Los Metros act as CJNG's enforcement arm in northeastern Mexico.",
+   "sources": [
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/mexico/2026/10/20/el-primito-pide-amparo-para-evitar-su-extradicion-a-eeuu-el-lider-del-cjng-sigue-profugo/",
+     "date": "2026-10-20"
+    },
+    {
+     "name": "El Universal",
+     "url": "https://www.eluniversal.com.mx/nacion/el-primito-lider-del-cjng-en-tamaulipas-se-ampara-contra-extradicion-a-eu-sigue-profugo/"
+    }
+   ],
+   "reward_usd": null,
+   "reward_source": null,
+   "photo": {
+    "file": null,
+    "placeholder": true,
+    "image_source_url": null,
+    "license": "n/a (neutral placeholder; no clean official or openly licensed photo found)",
+    "credit": null
+   }
+  },
+  {
+   "id": "escorpion-7",
+   "name": "Armando López Garcés",
+   "alias": "Escorpión 7 / El Pajarito",
+   "group_ids": [
+    "gulf"
+   ],
+   "group_key": "gulf",
+   "faction": "Los Escorpiones",
+   "title": "Reported head of Los Escorpiones faction",
+   "role": "faction_leader",
+   "confidence": "reported, contested",
+   "status": "at_large",
+   "status_date": "2026-07-16",
+   "status_note": "Named as Gulf Cartel leader by MVS; InSight Crime describes him only as a possible successor in the Escorpiones faction.",
+   "status_source": {
+    "name": "MVS Noticias",
+    "url": "https://mvsnoticias.com/nacional/2026/7/16/los-ocho-carteles-mexicanos-declarados-organizaciones-terroristas-por-eu-738636.html",
+    "date": "2026-07-16"
+   },
+   "charges": [],
+   "known_for": "Los Escorpiones fight Los Metros and CDN for Reynosa and Matamoros.",
+   "sources": [
+    {
+     "name": "MVS Noticias",
+     "url": "https://mvsnoticias.com/nacional/2026/7/16/los-ocho-carteles-mexicanos-declarados-organizaciones-terroristas-por-eu-738636.html",
+     "date": "2026-07-16"
+    },
+    {
+     "name": "InSight Crime",
+     "url": "https://insightcrime.org/es/noticias-crimen-organizado-mexico/cartel-del-golfo-perfil/"
+    }
+   ],
+   "reward_usd": null,
+   "reward_source": null,
+   "photo": {
+    "file": null,
+    "placeholder": true,
+    "image_source_url": null,
+    "license": "n/a (neutral placeholder; no clean official or openly licensed photo found)",
+    "credit": null
+   }
+  },
+  {
+   "id": "juanito",
+   "name": "Juan Cisneros Treviño",
+   "alias": "El Juanito / La Sombra",
+   "group_ids": [
+    "cdn"
+   ],
+   "group_key": "cdn",
+   "title": "Leader of Cártel del Noreste",
+   "role": "current_leader",
+   "confidence": "reported by multiple outlets",
+   "status": "at_large",
+   "status_date": "2026-07-16",
+   "status_note": "Took over CDN and its Tropa del Infierno after El Huevo's March 2022 arrest.",
+   "status_source": {
+    "name": "InSight Crime",
+    "url": "https://insightcrime.org/mexico-organized-crime-news/northeast-cartel/"
+   },
+   "charges": [],
+   "known_for": "Described as the last of the Treviño family line; Treasury names Abdón Rodríguez 'Cucho' as second in command.",
+   "sources": [
+    {
+     "name": "InSight Crime",
+     "url": "https://insightcrime.org/mexico-organized-crime-news/northeast-cartel/"
+    },
+    {
+     "name": "MVS Noticias",
+     "url": "https://mvsnoticias.com/nacional/2026/7/16/los-ocho-carteles-mexicanos-declarados-organizaciones-terroristas-por-eu-738636.html",
+     "date": "2026-07-16"
+    }
+   ],
+   "faction": "",
+   "reward_usd": null,
+   "reward_source": null,
+   "photo": {
+    "file": null,
+    "placeholder": true,
+    "image_source_url": null,
+    "license": "n/a (neutral placeholder; no clean official or openly licensed photo found)",
+    "credit": null
+   }
+  },
+  {
+   "id": "giovanny",
+   "name": "Giovanni Vicente Mosquera Serrano",
+   "alias": "Giovanny / El Viejo",
+   "group_ids": [
+    "tda"
+   ],
+   "group_key": "tda",
+   "title": "Reported new operational head of Tren de Aragua",
+   "role": "reported_successor",
+   "confidence": "reported, contested",
+   "status": "at_large",
+   "status_date": "2026-06-16",
+   "status_note": "Colombian police and prosecutors (per El Tiempo) say power passed to him after Niño Guerrero's death; on the FBI Ten Most Wanted list.",
+   "status_source": {
+    "name": "Infobae",
+    "url": "https://www.infobae.com/colombia/2026/06/16/quien-es-giovanny-el-nuevo-lider-del-tren-de-aragua-en-colombia-tras-el-bombardeo-ordenado-por-ee-uu-que-dio-de-baja-a-nino-guerrero/",
+    "date": "2026-06-16"
+   },
+   "charges": [
+    "On FBI Ten Most Wanted list"
+   ],
+   "known_for": "Credited with TdA's extortion and kidnapping rackets in Bogotá and other Colombian cities.",
+   "sources": [
+    {
+     "name": "El Tiempo",
+     "url": "https://www.eltiempo.com/justicia/conflicto-y-narcotrafico/giovanni-vicente-mosquera-alias-el-viejo-el-capo-que-hereda-el-poder-del-tren-de-aragua-en-colombia-tras-la-muerte-de-nino-guerrero-3564483"
+    },
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/colombia/2026/06/16/quien-es-giovanny-el-nuevo-lider-del-tren-de-aragua-en-colombia-tras-el-bombardeo-ordenado-por-ee-uu-que-dio-de-baja-a-nino-guerrero/",
+     "date": "2026-06-16"
+    },
+    {
+     "name": "CNN en Español",
+     "url": "https://cnnespanol.cnn.com/2026/06/16/latinoamerica/muerte-nino-guerrero-sucesion-tren-aragua-orix",
+     "date": "2026-06-16"
+    }
+   ],
+   "photo": {
+    "file": "img/leaders/giovanny.jpg",
+    "placeholder": false,
+    "image_source_url": "https://commons.wikimedia.org/wiki/File:Picture_of_Giovanni_Vicente_Mosquera_Serrano.webp",
+    "license": "Public domain (work of the US federal government)",
+    "credit": "FBI (via Wikimedia Commons)"
+   },
+   "faction": "",
+   "reward_usd": null,
+   "reward_source": null
+  },
+  {
+   "id": "petrica",
+   "name": "Yohan José Romero",
+   "alias": "Johan Petrica",
+   "group_ids": [
+    "tda"
+   ],
+   "group_key": "tda",
+   "title": "TdA co-founder; Las Claritas mining boss",
+   "role": "reported_successor",
+   "confidence": "reported, contested",
+   "status": "at_large",
+   "status_date": "2026-06-16",
+   "status_note": "InSight Crime says he may be the highest-ranking TdA leader still free, but the group is fragmented.",
+   "status_source": {
+    "name": "InSight Crime",
+    "url": "https://insightcrime.org/es/noticias-crimen-organizado-venezuela/yohan-jose-romero-alias-johan-petrica/"
+   },
+   "reward_usd": 4000000,
+   "reward_source": {
+    "name": "CNN en Español",
+    "url": "https://cnnespanol.cnn.com/2026/06/16/latinoamerica/muerte-nino-guerrero-sucesion-tren-aragua-orix",
+    "date": "2026-06-16"
+   },
+   "charges": [
+    "Sanctioned by the US (2025)"
+   ],
+   "known_for": "Runs the Sindicato de Las Claritas gold-mining enclave in Bolívar.",
+   "sources": [
+    {
+     "name": "InSight Crime",
+     "url": "https://insightcrime.org/es/noticias-crimen-organizado-venezuela/yohan-jose-romero-alias-johan-petrica/"
+    },
+    {
+     "name": "CNN en Español",
+     "url": "https://cnnespanol.cnn.com/2026/06/16/latinoamerica/muerte-nino-guerrero-sucesion-tren-aragua-orix",
+     "date": "2026-06-16"
+    }
+   ],
+   "faction": "",
+   "photo": {
+    "file": null,
+    "placeholder": true,
+    "image_source_url": null,
+    "license": "n/a (neutral placeholder; no clean official or openly licensed photo found)",
+    "credit": null
+   }
+  },
+  {
+   "id": "churron",
+   "name": "Francisco Manuel Bermúdez Cagua",
+   "alias": "Churrón",
+   "group_ids": [
+    "choneros"
+   ],
+   "group_key": "choneros",
+   "title": "Led Los Choneros after Fito",
+   "role": "former_leader",
+   "status": "jailed",
+   "status_date": "2026-07-02",
+   "status_note": "Captured in Guayaquil 2026-07-02; held in La Cárcel del Encuentro pending extradition to the US.",
+   "status_source": {
+    "name": "Infobae",
+    "url": "https://www.infobae.com/america/america-latina/2026/07/03/detuvieron-en-ecuador-a-churron-el-lider-criminal-de-los-choneros-por-el-que-eeuu-ofrecia-usd-5-millones/",
+    "date": "2026-07-03"
+   },
+   "charges": [
+    "EDNY indictment (June 2025): cocaine conspiracy, firearms; former $5M reward"
+   ],
+   "known_for": "High-ranking lieutenant of Fito, per the US indictment.",
+   "sources": [
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/america/america-latina/2026/07/03/detuvieron-en-ecuador-a-churron-el-lider-criminal-de-los-choneros-por-el-que-eeuu-ofrecia-usd-5-millones/",
+     "date": "2026-07-03"
+    },
+    {
+     "name": "El Universo",
+     "url": "https://www.eluniverso.com/noticias/seguridad/cae-alias-churron-el-ultimo-cabecilla-de-los-choneros-requerido-por-estados-unidos-nota/"
+    }
+   ],
+   "faction": "",
+   "reward_usd": null,
+   "reward_source": null,
+   "photo": {
+    "file": null,
+    "placeholder": true,
+    "image_source_url": null,
+    "license": "n/a (neutral placeholder; no clean official or openly licensed photo found)",
+    "credit": null
+   }
+  },
+  {
+   "id": "lobo-menor",
+   "name": "Ángel Esteban Aguilar Morales",
+   "alias": "Lobo Menor",
+   "group_ids": [
+    "lobos"
+   ],
+   "group_key": "lobos",
+   "title": "Ran Los Lobos after Pipo's arrest",
+   "role": "former_leader",
+   "status": "jailed",
+   "status_date": "2026-03-20",
+   "status_note": "Arrested in Mexico City 2026-03-18 and sent to Ecuador; held in La Cárcel del Encuentro.",
+   "status_source": {
+    "name": "Primicias",
+    "url": "https://www.primicias.ec/politica/daniel-noboa-extraditado-alias-lobo-menor-lobos-asesinato-fernando-villavicencio-118529/",
+    "date": "2026-03-20"
+   },
+   "charges": [
+    "Charged in Ecuador over the 2023 killing of Fernando Villavicencio"
+   ],
+   "known_for": "Pipo's stepson; President Noboa called him the group's operational head.",
+   "sources": [
+    {
+     "name": "Primicias",
+     "url": "https://www.primicias.ec/politica/daniel-noboa-extraditado-alias-lobo-menor-lobos-asesinato-fernando-villavicencio-118529/"
+    },
+    {
+     "name": "El País",
+     "url": "https://elpais.com/mexico/2026-03-19/el-mundo-criminal-de-mexico-colombia-y-ecuador-converge-en-el-asesinato-de-fernando-villavicencio.html",
+     "date": "2026-03-19"
+    }
+   ],
+   "faction": "",
+   "reward_usd": null,
+   "reward_source": null,
+   "photo": {
+    "file": null,
+    "placeholder": true,
+    "image_source_url": null,
+    "license": "n/a (neutral placeholder; no clean official or openly licensed photo found)",
+    "credit": null
+   }
+  }
+ ],
+ "groups": [
+  {
+   "id": "chapitos",
+   "name": "Los Chapitos (Sinaloa)",
+   "leadership": "single",
+   "leadership_note": "Iván Archivaldo and Jesús Alfredo Guzmán Salazar jointly; both fugitives.",
+   "sources": [
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/mexico/2026/09/09/ivan-archivaldo-jesus-alfredo-guzman-y-mayito-flaco-siguen-profugos-que-se-sabe-de-ellos-a-2-anos-de-la-guerra-en-sinaloa/"
+    }
+   ]
+  },
+  {
+   "id": "mayiza",
+   "name": "La Mayiza / Los Mayos (Sinaloa)",
+   "leadership": "single",
+   "leadership_note": "Mayito Flaco, per US Treasury (Sept 2026).",
+   "sources": [
+    {
+     "name": "US Treasury",
+     "url": "https://home.treasury.gov/news/press-releases/sb0636"
+    }
+   ]
+  },
+  {
+   "id": "cjng",
+   "name": "CJNG",
+   "leadership": "contested",
+   "leadership_note": "Leadership contested: US and Mexico name El 03/El Pelón; InSight Crime and the State Dept's OSAC say CJNG may be run by semi-autonomous regional commanders with no single head.",
+   "sources": [
+    {
+     "name": "InSight Crime",
+     "url": "https://insightcrime.org/es/noticias/the-insight-take-nuevo-lider-del-cjng/"
+    },
+    {
+     "name": "El Economista (OSAC report)",
+     "url": "https://www.eleconomista.com.mx/politica/muerte-mencho-afecto-operacion-regional-cjng-20261012-838103.html"
+    }
+   ]
+  },
+  {
+   "id": "gulf",
+   "name": "Gulf Cartel",
+   "leadership": "split",
+   "leadership_note": "Split into rival factions (DEA): Los Metros (Primito), Los Escorpiones (reportedly Escorpión 7), Los Ciclones, Los Rojos. No overall leader.",
+   "sources": [
+    {
+     "name": "DEA NDTA 2025",
+     "url": "https://www.dea.gov/sites/default/files/2025-05/2025%20National%20Drug%20Threat%20Assessment_Web%205-12-2025.pdf"
+    }
+   ]
+  },
+  {
+   "id": "cdn",
+   "name": "Cártel del Noreste",
+   "leadership": "single",
+   "leadership_note": "El Juanito, per InSight Crime and Mexican media.",
+   "sources": [
+    {
+     "name": "InSight Crime",
+     "url": "https://insightcrime.org/mexico-organized-crime-news/northeast-cartel/"
+    }
+   ]
+  },
+  {
+   "id": "lnfm",
+   "name": "La Nueva Familia Michoacana",
+   "leadership": "single",
+   "leadership_note": "Hurtado Olascoaga brothers; both fugitives with US rewards.",
+   "sources": [
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/mexico/2026/06/19/quien-es-quien-en-la-nueva-familia-michoacana-los-cuatro-hermanos-que-dirigen-uno-de-los-carteles-mas-buscados/"
+    }
+   ]
+  },
+  {
+   "id": "unidos",
+   "name": "Cárteles Unidos",
+   "leadership": "single",
+   "leadership_note": "El Abuelo, per HSI/State; 'El Gordo' Sierra Santana (Viagras) also a fugitive.",
+   "sources": [
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/mexico/2026/09/28/la-caceria-contra-lideres-de-carteles-unidos-se-reduce-a-dos-profugos-eeuu-ofrece-15-mdd-por-el-abuelo-farias-y-el-gordo/"
+    }
+   ]
+  },
+  {
+   "id": "tda",
+   "name": "Tren de Aragua",
+   "leadership": "contested",
+   "leadership_note": "Leadership contested since Niño Guerrero's reported death: Giovanny (Colombian authorities) vs Johan Petrica (InSight Crime); the network is fragmented.",
+   "sources": [
+    {
+     "name": "CNN en Español",
+     "url": "https://cnnespanol.cnn.com/2026/06/16/latinoamerica/muerte-nino-guerrero-sucesion-tren-aragua-orix"
+    },
+    {
+     "name": "InSight Crime",
+     "url": "https://insightcrime.org/es/noticias-crimen-organizado-venezuela/yohan-jose-romero-alias-johan-petrica/"
+    }
+   ]
+  },
+  {
+   "id": "choneros",
+   "name": "Los Choneros",
+   "leadership": "unknown",
+   "leadership_note": "Leadership unknown: Fito extradited (2025) and successor Churrón captured (July 2026); no confirmed head reported since.",
+   "sources": [
+    {
+     "name": "Diálogo Américas",
+     "url": "https://dialogo-americas.com/es/articles/ecuador-lleva-la-presion-contra-los-choneros-del-liderazgo-a-sus-redes-logisticas/"
+    }
+   ],
+   "leadership_unknown": "Leadership unknown: Fito extradited (2025) and successor Churrón captured (July 2026); no confirmed head reported since."
+  },
+  {
+   "id": "lobos",
+   "name": "Los Lobos",
+   "leadership": "unknown",
+   "leadership_note": "Leadership unknown: Pipo detained in Spain and Lobo Menor jailed (March 2026). InSight lists other senior figures (Palanqueta, Capitán Pico) without naming a head.",
+   "sources": [
+    {
+     "name": "InSight Crime",
+     "url": "https://insightcrime.org/es/noticias-crimen-organizado-ecuador/lobos/"
+    },
+    {
+     "name": "La Hora",
+     "url": "https://www.lahora.com.ec/seguridad/los-lobos-siguen-operando-pese-a-la-captura-de-sus-cabecillas-y-el-reto-es-golpear-su-patrimonio-20260319-0043.html"
+    }
+   ],
+   "leadership_unknown": "Leadership unknown: Pipo detained in Spain and Lobo Menor jailed (March 2026). InSight lists other senior figures (Palanqueta, Capitán Pico) without naming a head."
+  },
+  {
+   "id": "clan",
+   "name": "Clan del Golfo (EGC)",
+   "leadership": "single",
+   "leadership_note": "Chiquito Malo; extradition order reactivated July 2026.",
+   "sources": [
+    {
+     "name": "El País",
+     "url": "https://elpais.com/america-colombia/2026-07-01/petro-reactiva-la-orden-de-extradicion-contra-alias-chiquito-malo-lider-del-clan-del-golfo.html"
+    }
+   ]
+  },
+  {
+   "id": "eln",
+   "name": "ELN",
+   "leadership": "collective",
+   "leadership_note": "Collective Central Command (COCE); Antonio García is top commander.",
+   "sources": [
+    {
+     "name": "Infobae",
+     "url": "https://www.infobae.com/colombia/2026/09/28/gabino-antonio-garcia-pablo-beltran-y-otros-11-maximos-cabecillas-del-eln-fueron-condenados-a-20-anos-de-prision-por-el-reclutamiento-forzado-de-60-menores-de-edad/"
+    }
+   ]
+  },
+  {
+   "id": "ms13",
+   "name": "MS-13",
+   "leadership": "unknown",
+   "leadership_note": "Leadership unknown: historic ranfla jailed in El Salvador; NCTC says cliques and regional 'programs' operate with varying central control.",
+   "sources": [
+    {
+     "name": "NCTC",
+     "url": "https://www.dni.gov/nctc/terrorist_groups/ms13.html"
+    },
+    {
+     "name": "InSight Crime",
+     "url": "https://insightcrime.org/el-salvador-organized-crime-news/mara-salvatrucha-ms-13-profile/"
+    }
+   ],
+   "leadership_unknown": "Leadership unknown: historic ranfla jailed in El Salvador; NCTC says cliques and regional 'programs' operate with varying central control."
+  },
+  {
+   "id": "pcc",
+   "name": "PCC",
+   "leadership": "single",
+   "leadership_note": "Marcola heads the Sintonia Final from prison (São Paulo police); one member, 'Maranhão', reported free.",
+   "sources": [
+    {
+     "name": "Folha",
+     "url": "https://www1.folha.uol.com.br/cotidiano/2026/02/novo-organograma-do-pcc-tem-14-sintonias-e-35-lideres-soltos-aponta-policia-civil-de-sp.shtml"
+    }
+   ]
+  }
+ ],
+ "role_legend": {
+  "current_leader": "Reported to be running the group now",
+  "faction_leader": "Runs one faction of a split group",
+  "reported_successor": "Named as successor; not settled",
+  "former_leader": "Jailed, extradited, dead or cooperating"
+ },
+ "confidence_legend": [
+  "confirmed by officials",
+  "reported by multiple outlets",
+  "reported, contested"
+ ]
+}

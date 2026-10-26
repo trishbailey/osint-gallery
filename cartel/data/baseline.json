@@ -1,0 +1,100 @@
+{
+ "as_of": "2026-10-25",
+ "arcs": {
+  "andes": {
+   "phase": "Record coca output and Ecuador's gang war.",
+   "actors": [
+    "clan",
+    "eln",
+    "segmar",
+    "choneros",
+    "lobos"
+   ],
+   "turning_points": [
+    "2025-07-21 Fito extradited to the US.",
+    "2025-12-17 Clan del Golfo designated an FTO."
+   ],
+   "recent_log": []
+  },
+  "brazil": {
+   "phase": "The PCC and CV are designated FTOs (Jun 2026).",
+   "actors": [
+    "pcc",
+    "cv"
+   ],
+   "turning_points": [
+    "2026-06-05 PCC and CV designated FTOs."
+   ],
+   "recent_log": []
+  },
+  "mexico": {
+   "phase": "The Sinaloa civil war is in its second year, and the CJNG is in succession after El Mencho's death.",
+   "actors": [
+    "chapitos",
+    "mayiza",
+    "cjng",
+    "juarez",
+    "viagras"
+   ],
+   "turning_points": [
+    "2024-07-25 El Mayo Zambada is flown to the US.",
+    "2025-02-20 Eight groups designated FTOs.",
+    "2026-02-22 El Mencho killed.",
+    "2026-07-20 El Mayo sentenced to life."
+   ],
+   "recent_log": []
+  },
+  "money": {
+   "phase": "CMLNs dominate cartel laundering, and the US targets Mexican banks.",
+   "actors": [
+    "cmln"
+   ],
+   "turning_points": [
+    "2025-06-25 Section 2313a orders against CIBanco, Intercam and Vector.",
+    "2025-08-28 FinCEN CMLN advisory.",
+    "2026-01-30 Panama voids CK Hutchison's port concessions."
+   ],
+   "recent_log": []
+  },
+  "venezuela-caribbean": {
+   "phase": "Maduro is in US custody, US boat strikes continue, and a trial is proposed for June 2027.",
+   "actors": [
+    "soles",
+    "tda",
+    "eln"
+   ],
+   "turning_points": [
+    "2025-11-24 Cartel de los Soles designated an FTO.",
+    "2026-10-04 71 strikes and 238 killed, per the Just Security count."
+   ],
+   "recent_log": []
+  }
+ },
+ "fto": {
+  "Sinaloa Cartel": "2025-02-20",
+  "Los Chapitos": "2025-02-20",
+  "La Mayiza": "2025-02-20",
+  "Jalisco Cartel New Generation (CJNG)": "2025-02-20",
+  "Gulf Cartel": "2025-02-20",
+  "Cartel del Noreste": "2025-02-20",
+  "La Nueva Familia Michoacana": "2025-02-20",
+  "Cárteles Unidos": "2025-02-20",
+  "Los Viagras": "2026-07-16",
+  "Juárez Cartel / La Línea": "2026-07-16",
+  "Tren de Aragua": "2025-02-20",
+  "Cartel de los Soles": "2025-11-24",
+  "Clan del Golfo (Urabeños / EGC)": "2025-12-17",
+  "ELN": "1997-10-08",
+  "Segunda Marquetalia": "2021-12-01",
+  "Los Choneros": "2025-09-05",
+  "Los Lobos": "2025-09-05",
+  "PCC (Primeiro Comando da Capital)": "2026-06-05",
+  "Comando Vermelho": "2026-06-05",
+  "MS-13": "2025-02-20",
+  "Barrio 18": "2025-09-24",
+  "Los Tiguerones": "2026-09-10",
+  "Chone Killers": "2026-07-02",
+  "Viv Ansanm (Haiti)": "2025-05-05",
+  "Gran Grif (Haiti)": "2025-05-05"
+ }
+}

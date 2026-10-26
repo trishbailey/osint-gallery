@@ -1,0 +1,350 @@
+{
+ "type": "FeatureCollection",
+ "as_of": "2026-10-25",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -117.0,
+     32.54
+    ]
+   },
+   "properties": {
+    "id": "C1",
+    "name": "San Ysidro / Otay Mesa (San Diego)",
+    "kind": "port of entry",
+    "text": "The busiest land crossings. A top fentanyl seizure location; most drugs are hidden in passenger and commercial vehicles.",
+    "cites": [
+     "CBP_SEIZ",
+     "WOLA_FENT"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -115.5,
+     32.67
+    ]
+   },
+   "properties": {
+    "id": "C2",
+    "name": "Calexico",
+    "kind": "port of entry",
+    "text": "A California port of entry on the Pacific synthetic-drug corridor.",
+    "cites": [
+     "CBP_SEIZ"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -110.94,
+     31.34
+    ]
+   },
+   "properties": {
+    "id": "C3",
+    "name": "Nogales",
+    "kind": "port of entry",
+    "text": "Arizona's main crossing and a leading fentanyl seizure point, fed from Sinaloa through Sonora.",
+    "cites": [
+     "CBP_SEIZ",
+     "DEA25"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -114.78,
+     32.49
+    ]
+   },
+   "properties": {
+    "id": "C4",
+    "name": "Lukeville / San Luis",
+    "kind": "port of entry",
+    "text": "Arizona crossings in the Yuma and Tucson sectors.",
+    "cites": [
+     "CBP_SEIZ"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -106.45,
+     31.76
+    ]
+   },
+   "properties": {
+    "id": "C5",
+    "name": "El Paso / Ciudad Juárez",
+    "kind": "port of entry",
+    "text": "Contested by the Juárez Cartel/La Línea (designated an FTO in July 2026) and the Sinaloa Cartel.",
+    "cites": [
+     "CBP_SEIZ",
+     "IC_JUAREZ",
+     "FTO"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -99.5,
+     27.5
+    ]
+   },
+   "properties": {
+    "id": "C6",
+    "name": "Laredo / Nuevo Laredo",
+    "kind": "port of entry",
+    "text": "The largest US-Mexico cargo crossing. The Cartel del Noreste dominates the Mexican side.",
+    "cites": [
+     "CBP_SEIZ",
+     "IC_ZETAS"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -98.2,
+     26.09
+    ]
+   },
+   "properties": {
+    "id": "C7",
+    "name": "Pharr-Hidalgo / Reynosa",
+    "kind": "port of entry",
+    "text": "Gulf Cartel territory in the Rio Grande Valley.",
+    "cites": [
+     "CBP_SEIZ",
+     "IC_GULF"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -97.5,
+     25.9
+    ]
+   },
+   "properties": {
+    "id": "C8",
+    "name": "Brownsville / Matamoros",
+    "kind": "port of entry",
+    "text": "Gulf Cartel stronghold on the Gulf end of the border.",
+    "cites": [
+     "CBP_SEIZ",
+     "IC_GULF"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -80.19,
+     25.77
+    ]
+   },
+   "properties": {
+    "id": "C9",
+    "name": "South Florida (maritime and air)",
+    "kind": "maritime",
+    "text": "Landing zone for the Caribbean cocaine route.",
+    "cites": [
+     "UNODC_WDR25"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -66.1,
+     18.46
+    ]
+   },
+   "properties": {
+    "id": "C10",
+    "name": "Puerto Rico",
+    "kind": "maritime",
+    "text": "US entry point on the Caribbean route via Hispaniola.",
+    "cites": [
+     "UNODC_WDR25"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -104.31,
+     19.05
+    ]
+   },
+   "properties": {
+    "id": "H1",
+    "name": "Manzanillo",
+    "kind": "precursor port",
+    "text": "Mexico's busiest Pacific port. The DEA names Pacific ports as key entry points for precursors from China and India.",
+    "cites": [
+     "DEA25"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -102.2,
+     17.96
+    ]
+   },
+   "properties": {
+    "id": "H2",
+    "name": "Lázaro Cárdenas",
+    "kind": "precursor port",
+    "text": "Michoacán Pacific port. Its hinterland is contested by the CJNG, Los Viagras and Carteles Unidos.",
+    "cites": [
+     "DEA25",
+     "IC_CJNG"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.03,
+     3.88
+    ]
+   },
+   "properties": {
+    "id": "H3",
+    "name": "Buenaventura",
+    "kind": "departure port",
+    "text": "Colombia's main Pacific port and a cocaine departure point.",
+    "cites": [
+     "IC_URABENOS"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.89,
+     -2.19
+    ]
+   },
+   "properties": {
+    "id": "H4",
+    "name": "Guayaquil",
+    "kind": "departure port",
+    "text": "Ecuador's main container port, central to the cocaine-export economy.",
+    "cites": [
+     "IC_ECUADOR"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -46.33,
+     -23.96
+    ]
+   },
+   "properties": {
+    "id": "H5",
+    "name": "Santos",
+    "kind": "departure port",
+    "text": "Brazil's largest port. The PCC exports cocaine to Europe from here.",
+    "cites": [
+     "IC_PCC"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.27,
+     -11.56
+    ]
+   },
+   "properties": {
+    "id": "H6",
+    "name": "Chancay (COSCO)",
+    "kind": "China-linked port",
+    "text": "Port majority-owned by China's COSCO, opened Nov 2024. Assessed as a smuggling risk, with US-donated scanners. No confirmed major cocaine seizure is cited here.",
+    "cites": [
+     "AP_CHANCAY",
+     "UNODC_WDR25"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.57,
+     8.95
+    ]
+   },
+   "properties": {
+    "id": "H7",
+    "name": "Balboa / Cristóbal (Panama Canal)",
+    "kind": "China-linked port",
+    "text": "Panama's court voided CK Hutchison's concessions in Jan 2026, and COSCO suspended Balboa calls in Mar 2026.",
+    "cites": [
+     "REUTERS_PANAMA",
+     "REUTERS_COSCO"
+    ]
+   }
+  }
+ ],
+ "stats": {
+  "fy2025_border_fentanyl_lb": 11486,
+  "change_vs_fy2024_pct": -46,
+  "change_vs_fy2023_pct": -57,
+  "share_hard_drugs_at_ports_pct": ">85",
+  "cites": [
+   "WOLA_FENT",
+   "CBP_SEIZ"
+  ],
+  "note": "Seizures measure enforcement and traffic together. A fall can mean less smuggling, different concealment or different enforcement, so it is not proof of reduced supply."
+ }
+}

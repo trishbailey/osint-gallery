@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z61EKRP8QV');gtag('config','G-FE6CZGWX0J');
+</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Latin America Cartel Dashboard | Beacon Intelligence Group</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="xfeed.css"><link rel="stylesheet" href="leaders.css"><link rel="stylesheet" href="visual.css"></head>
+<body>
+<header><div><div class="brand"><span class="mark">BEACON</span> INTELLIGENCE GROUP</div><h1>Latin America cartel dashboard</h1></div><div id="asof" class="muted"></div></header>
+<main>
+<section class="tile maptile">
+ <div class="tilehead"><h2>Who is active where</h2><span class="muted">Click a state or department. Click a group to show only its footprint.</span></div>
+ <div id="grouplegend" class="chips"></div>
+ <div class="mapwrap"><svg id="mapsvg"></svg>
+  <div id="layers" class="overlay"><b>Overlay</b></div>
+  <div id="keybox" class="overlay"></div>
+ </div>
+ <details class="more"><summary>About this map and gaps in the data</summary><div id="mapnotes"></div></details>
+</section>
+<section id="kpis" class="kpis"></section>
+<section class="row2b">
+ <div class="tile"><div class="tilehead"><h2>Homicides in Mexico</h2><span class="muted">SESNSP victims data</span></div><div id="homchart" class="chart"></div><div id="homrank" class="rank"></div><div id="homnote" class="note small"></div></div>
+ <div class="tile"><div class="tilehead"><h2>Killings of mayors and journalists</h2><span class="muted">Dated; also a map overlay</span></div><div id="pvtime" class="chart"></div><div id="pvnote" class="note small"></div>
+  <div class="tilehead" style="margin-top:12px"><h2>Border seizures and overdose deaths</h2><span class="muted">Shown side by side; no causal link implied</span></div>
+  <div class="two"><div><div class="muted">Fentanyl seized, lb/month</div><div id="seizchart" class="chart"></div><div class="muted">Meth and cocaine seized, lb/month</div><div id="seizchart2" class="chart"></div></div><div><div class="muted">US overdose deaths, 12 months ending</div><div id="odchart" class="chart"></div><div class="muted">Border states, 12 months ending</div><div id="odchart2" class="chart"></div></div></div>
+  <div id="seiznote" class="note small"></div><div id="odnote" class="note small"></div></div>
+</section>
+<section class="row3">
+ <div class="tile"><div class="tilehead"><h2>Money</h2><span class="muted" id="moneyunit"></span></div><svg id="sankey"></svg><details class="more"><summary>More</summary><div id="moneymore"></div></details></div>
+ <div class="tile"><div class="tilehead"><h2>Network</h2><span class="muted">Click a node or line</span></div><div id="netlegend" class="minilegend"></div><svg id="netsvg"></svg></div>
+ <div class="tile"><div class="tilehead"><h2>China</h2><span class="muted">Click a tile</span></div><div id="china" class="chgrid"></div></div>
+</section>
+<section class="row2">
+ <div class="tile"><div class="tilehead"><h2>Who's who</h2><span class="muted">Click a card to expand</span></div><div id="cards" class="cards"></div></div>
+ <div class="tile ticker"><div class="tilehead"><h2>Latest headlines</h2></div><div id="evfilters" class="chips small"></div><div id="events"></div><button class="chip morebtn" onclick="const e=document.getElementById('events');this.textContent=e.classList.toggle('showall')?'show less':'more headlines'">more headlines</button></div>
+</section>
+<section class="tile ovtile"><details class="more" id="storydet"><summary><b>Storylines</b> <span class="muted">· click one to zoom the map</span></summary><p id="ovtext" class="ovtext"></p><div id="stories" class="stories"></div></details></section>
+<section class="tile"><details class="more"><summary>Background by theatre</summary><div id="arcs" class="arcs"></div></details>
+<h2 id="sources">Sources</h2><ol id="fnlist" class="fnlist"></ol><details class="more"><summary>Full source registry</summary><div id="srclist"></div></details></section>
+</main>
+<aside id="drawer"><button id="dclose" aria-label="Close">×</button><div id="dbody"></div></aside>
+<footer class="muted">Describes and analyzes what has happened; it does not predict or prescribe. Every item links to its source. Data: <a href="https://github.com/trishbailey/cartel-dashboard">github.com/trishbailey/cartel-dashboard</a>. Basemaps: Natural Earth (public domain).</footer>
+<script src="vendor/d3.min.js"></script><script src="vendor/d3-sankey.min.js"></script><script src="vendor/topojson-client.min.js"></script><script src="footnotes.js"></script><script src="app.js"></script><script src="xfeed.js"></script><script src="leaders.js"></script>
+</body></html>
