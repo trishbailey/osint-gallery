@@ -91,7 +91,7 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   const proj2=c=>proj(c);
   const layers={};const og=g.append("g");
   const mk=(k,label,color,draw)=>{layers[k]=og.append("g").style("display","none");draw(layers[k]);
-    const lab=document.createElement("label");lab.dataset.k=k;lab.innerHTML=`<input type="checkbox"> <span class="dot" style="background:${color}"></span> ${label}`;lab.querySelector("input").onchange=e=>layers[k].style("display",e.target.checked?null:"none");$("layers").appendChild(lab)};
+    const lab=document.createElement("label");lab.dataset.k=k;lab.innerHTML=`<input type="checkbox"> <span class="dot" style="background:${color}"></span> ${label}`;lab.querySelector("input").onchange=e=>{layers[k].style("display",e.target.checked?null:"none");if(k==="china"&&e.target.checked){const b=document.querySelector('.viewbtns .chip[data-v="all"]');if(b&&!b.classList.contains("on"))b.click()}};$("layers").appendChild(lab)};
   const rshow=p=>drawer(`<h2>${esc(p.name)}</h2><span class="tag">${esc(p.kind||p.category||"")}</span>${p.commodity?`<span class="tag">${esc(p.commodity)}</span>`:""}<p>${esc(p.text)}</p>${p.says_vs_does?`<p class="says">Says vs does: ${esc(p.says_vs_does)}</p>`:""}${cite(p.cites)}`);
   const lines=(sel,feat,color)=>{const dash=d=>d.properties.confidence==="reported"?null:"6 4";
     sel.append("g").selectAll("path").data(feat).join("path").attr("d",path).attr("fill","none").attr("stroke","#0b1526").attr("stroke-opacity",.9).attr("stroke-width",5).attr("stroke-linecap","round").attr("vector-effect","non-scaling-stroke").style("pointer-events","none");
