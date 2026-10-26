@@ -79,16 +79,18 @@ function play(){if(pos>=1)pos=0;d3.select('#play').text('❚❚ Pause');const s0
 d3.select('#play').on('click',()=>timer?stop():play());
 d3.select('#clock').on('input',function(){stop();setPos(this.value/1000);d3.select('#play').text(pos>=1?'↺ Replay':'▶ Play')});
 // ---- streamgraph
-(function(){const w=Math.max(320,document.getElementById('stream').clientWidth),h=Math.max(240,Math.round(w*0.32)),m={l:14,r:14,t:10,b:30};const days=ST.days.map(d=>new Date(d+'T12:00:00Z'));
- const data=ST.days.map((d,i)=>{const o={i};ST.series.forEach((s,j)=>o[j]=s.vals[i]);return o});
+// Day view shows only the recent range where the talking points have data: from the day before the first post (at most the last 14 days, at least 7) to the latest day.
+const DAYR=(()=>{const n=ST.days.length,f=ST.days.findIndex((d,i)=>ST.series.some(s=>s.vals[i]>0));let a=Math.max(f<0?0:f-1,n-14);a=Math.max(0,Math.min(a,n-7));return [a,n]})();
+(function(){const w=Math.max(320,document.getElementById('stream').clientWidth),h=Math.max(240,Math.round(w*0.32)),m={l:14,r:14,t:10,b:30};const DD=ST.days.slice(DAYR[0],DAYR[1]),O=DAYR[0];const days=DD.map(d=>new Date(d+'T12:00:00Z'));
+ const data=DD.map((d,i)=>{const o={i};ST.series.forEach((s,j)=>o[j]=s.vals[i+O]);return o});
  const keys=ST.series.map((s,j)=>j);const stk=d3.stack().keys(keys).offset(d3.stackOffsetWiggle).order(d3.stackOrderInsideOut)(data);
  const x=d3.scaleUtc().domain(d3.extent(days)).range([m.l,w-m.r]);const y=d3.scaleLinear().domain([d3.min(stk,l=>d3.min(l,d=>d[0])),d3.max(stk,l=>d3.max(l,d=>d[1]))]).range([h-m.b,m.t]);
  const area=d3.area().x((d,i)=>x(days[i])).y0(d=>y(d[0])).y1(d=>y(d[1])).curve(d3.curveBasis);
  const svg=d3.select('#stream').append('svg').attr('viewBox',`0 0 ${w} ${h}`).attr('role','img').attr('aria-label','Streamgraph of daily posts in the top five talking points');
  const ps=svg.append('g').selectAll('path').data(stk).join('path').attr('d',area).attr('fill',d=>TPC[d.key]).attr('fill-opacity',.9).attr('stroke','#0b1526').attr('stroke-width',.6);
- svg.append('g').attr('transform',`translate(0,${h-m.b})`).call(d3.axisBottom(x).ticks(d3.utcDay.every(w<600?3:1)).tickFormat(d3.utcFormat('%-d %b'))).call(g=>{g.selectAll('text').attr('font-size',13);g.selectAll('line,path').attr('stroke','#5a6f94')});
+ svg.append('g').attr('transform',`translate(0,${h-m.b})`).call(d3.axisBottom(x).ticks(d3.utcDay.every(Math.ceil(days.length/Math.max(2,Math.min(w<600?5:99,Math.floor(w/70)))))).tickFormat(d3.utcFormat('%-d %b'))).call(g=>{g.selectAll('text').attr('font-size',13);g.selectAll('line,path').attr('stroke','#5a6f94')});
  ps.on('mousemove',(e,d)=>{const [mx]=d3.pointer(e,svg.node());const i=d3.minIndex(days,dd=>Math.abs(x(dd)-mx*(w/svg.node().getBoundingClientRect().width)));
-   showTip(e,`<b>${esc(ST.series[d.key].name)}</b><br><i>${esc(ST.series[d.key].line)}</i><br>${fday(ST.days[i])}: ${ST.series[d.key].vals[i]} posts`)});svg.on('mouseleave',hideTip);ps.style('cursor','pointer').on('click',(e,d)=>openNarr(d.key));narrKeys(ps,d=>d.key);ps
+   showTip(e,`<b>${esc(ST.series[d.key].name)}</b><br><i>${esc(ST.series[d.key].line)}</i><br>${fday(DD[i])}: ${ST.series[d.key].vals[i+O]} posts`)});svg.on('mouseleave',hideTip);ps.style('cursor','pointer').on('click',(e,d)=>openNarr(d.key));narrKeys(ps,d=>d.key);ps
   .on('touchstart',(e,d)=>showTip(e.touches[0],`<b>${esc(ST.series[d.key].name)}</b><br><i>${esc(ST.series[d.key].line)}</i><br>${d3.sum(ST.series[d.key].vals)} posts in total`),{passive:true});
 })();
 // ---- matrix
@@ -252,7 +254,7 @@ function openBurst(b){d3.select('#ph').text(b.name);
 // ---- talking points by week and by month (built from the daily data)
 function periodChart(el,unit){const box=document.getElementById(el);const fmtD=d3.utcFormat('%-d %b');
  const key=d=>{const x=new Date(d+'T00:00:00Z');if(unit==='month')return d.slice(0,7)+'-01';const wd=(x.getUTCDay()+6)%7;return new Date(+x-wd*864e5).toISOString().slice(0,10)};
- const keys=[...new Set(ST.days.map(key))];
+ let keys=[...new Set(ST.days.map(key))];{const has=k=>ST.days.some((d,i)=>key(d)===k&&ST.series.some(s=>s.vals[i]>0));const f=keys.findIndex(has);if(f>0)keys=keys.slice(f)}
  const P=keys.map(k=>{const ds=ST.days.filter(d=>key(d)===k);const s=new Date(k+'T00:00:00Z');const e=unit==='month'?new Date(Date.UTC(s.getUTCFullYear(),s.getUTCMonth()+1,0)):new Date(+s+6*864e5);
   const a=new Date(ds[0]+'T00:00:00Z'),b=new Date(ds[ds.length-1]+'T00:00:00Z');const partial=+a>+s||+b<+e||ds[ds.length-1]===H.end.slice(0,10);
   const base=unit==='month'?d3.utcFormat('%B %Y')(s):`Week of ${fmtD(s)}`;
@@ -284,7 +286,7 @@ function periodChart(el,unit){const box=document.getElementById(el);const fmtD=d
  }}
 const VIEWS={day:['stream','Top talking points by day','Posts per day in each of the five talking points carried by the most accounts. Hover for counts; click one to see it spread on the map.'],
  week:['streamw','Top talking points by week','The same five talking points added up by week (Monday to Sunday). Partial weeks show the dates covered.'],
- month:['streamm','Top talking points by month','Posts per month, ranked. Collection began on 17 October, so October is partial; this becomes a stream once there are three months of data.']};
+ month:['streamm','Top talking points by month','Posts per month, ranked. The archive starts on 1 October, so the latest month is partial. This becomes a stream once there are three months of data.']};
 const drawn={day:1};
 function setView(v,push){if(!VIEWS[v])v='day';for(const k in VIEWS)document.getElementById(VIEWS[k][0]).hidden=k!==v;
  if(!drawn[v]){periodChart(VIEWS[v][0],v);drawn[v]=1}
