@@ -3,7 +3,7 @@
 <title>Russia's Shadow Fleet Tracker | Beacon Intelligence Group</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Z61EKRP8QV');</script>
-<link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css?v=2"></head><body>
+<link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css?v=3"></head><body>
 <header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">SHADOW FLEET · v1</span></a>
 <nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#map">Map</a><a href="#vessels">Ships</a><a href="../ukraine-money-flows/">Ukraine Money Flows</a></nav></header>
 <div class="layout">
@@ -38,8 +38,8 @@
 <div id="modes" class="seg modes" role="group" aria-label="View"><button data-m="story" aria-pressed="true">The story</button><button data-m="explore" aria-pressed="false">Explore the map</button></div>
 <div class="exonly banner"><label><input type="checkbox" id="rawt"> Show every event, filters and ship animation</label> <span class="muted">Default view: trips from Russian loading ports (line width = number of trips) and transfer areas (circle size = loitering). Lines link start and end points only; they are not the routes sailed.</span></div>
 <div class="rawonly stats" id="stats" aria-live="polite"></div>
-<div id="story" class="stonly"><div class="snav"><button id="prev" aria-label="Previous chapter">‹</button><span id="cpos"></span><button id="next" aria-label="Next chapter">›</button></div><div id="chapters" class="chapters"></div></div>
-<div id="map" role="region" aria-label="Map of shadow-fleet tanker activity"></div>
+<div class="sw2"><div id="story" class="stonly"><div class="snav"><button id="prev" aria-label="Previous chapter">‹</button><span id="cpos"></span><button id="next" aria-label="Next chapter">›</button></div><div id="chapters" class="chapters"></div></div>
+<div id="map" role="region" aria-label="Map of shadow-fleet tanker activity"></div></div>
 
 <p class="note rawonly">Moving ships travel in straight lines between recorded positions (port calls, loitering and transponder-gap points), so a path may cross land. Radar detections cover selected chokepoints only.</p>
 <details id="explainer" class="grp" open><summary><h2>The shadow fleet in brief</h2></summary>
@@ -72,5 +72,5 @@
 </ol></details>
 </main></div>
 <div id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="ptitle" hidden><button id="pclose" aria-label="Close profile">✕</button><div id="pbody"></div></div>
-<script src="vendor/leaflet.js"></script><script src="app.js?v=2"></script><script src="story.js?v=2"></script>
+<script src="vendor/leaflet.js"></script><script src="app.js?v=2"></script><script src="story.js?v=3"></script>
 </body></html>

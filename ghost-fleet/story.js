@@ -54,7 +54,9 @@ function fit(b){if(b&&b.length)map.flyToBounds(L.latLngBounds(b).pad(.15),{durat
 function go(i){cur=Math.max(0,Math.min(CH.length-1,i));lay.clearLayers();hideRaw();fit(CH[cur].d());
  cards.querySelectorAll(".chap").forEach((c,j)=>c.classList.toggle("on",j===cur));document.getElementById("cpos").textContent=`${cur+1} / ${CH.length}`;
  const el=cards.children[cur];if(GF.phone())cards.scrollTo({left:el.offsetLeft-cards.offsetLeft,behavior:"smooth"})}
-document.getElementById("prev").onclick=()=>go(cur-1);document.getElementById("next").onclick=()=>go(cur+1);
+function step(i){go(i);if(!GF.phone())cards.children[cur].scrollIntoView({behavior:"smooth",block:"center"})}
+document.getElementById("prev").onclick=()=>step(cur-1);document.getElementById("next").onclick=()=>step(cur+1);
+const io=new IntersectionObserver(es=>{if(GF.phone()||mode!=="story")return;es.forEach(e=>{if(e.isIntersecting){const i=+e.target.dataset.i;if(i!==cur)go(i)}})},{rootMargin:"-45% 0px -45% 0px"});cards.querySelectorAll(".chap").forEach(c=>io.observe(c));
 cards.querySelectorAll(".chap").forEach((c,i)=>c.onclick=()=>go(i));
 let st;cards.addEventListener("scroll",()=>{if(!GF.phone())return;clearTimeout(st);st=setTimeout(()=>{const i=Math.round(cards.scrollLeft/cards.children[0].offsetWidth);if(i!==cur)go(i)},150)});
 const raw=document.getElementById("rawt");
@@ -66,7 +68,7 @@ raw.onchange=()=>{document.body.classList.toggle("raw",raw.checked);explore()};
 document.querySelectorAll(".head").forEach(b=>b.onclick=()=>{const g=b.dataset.g;
  if(g==="hot"){setMode("explore");lay.clearLayers();fit(hotspots([S.sts[0][0]]).map(p=>[p[0]+3,p[1]+3]).concat(hotspots([S.sts[0][0]]).map(p=>[p[0]-3,p[1]-3])))}
  else if(g==="loads"){setMode("explore");lay.clearLayers();fit(flows(f=>f.from===S.loads[0][0]))}
- else{setMode("story");go(CH.findIndex(c=>c.k===g))}
- document.getElementById("map").scrollIntoView({behavior:"smooth",block:"center"})});
+ else{setMode("story");step(CH.findIndex(c=>c.k===g))}
+ if(GF.phone()||mode!=="story")document.getElementById("map").scrollIntoView({behavior:"smooth",block:"center"})});
 setMode("story");
 })();

@@ -78,3 +78,11 @@ body.story #map{height:min(62vh,620px)}
 @media(min-width:701px){body.story .chapters{grid-template-columns:repeat(5,1fr)}}
 .chapters{align-items:start}.modes button,.snav button{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:6px;cursor:pointer}
 @media(max-width:700px){.heads{display:flex;overflow-x:auto;scroll-snap-type:x mandatory}.head{flex:0 0 62%;scroll-snap-align:start}body.story #map{height:52vh}}
+@media(min-width:701px){
+ body.story .sw2{display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:16px;align-items:start}
+ body.story #story{order:0}body.story .chapters{display:flex;flex-direction:column;gap:14px;padding-bottom:45vh}
+ body.story .chap{min-height:38vh;opacity:.55;transition:opacity .2s}body.story .chap.on{opacity:1}
+ body.story .chap:not(.on) p,body.story .chap:not(.on) .key{display:block}
+ body.story .snav{position:sticky;top:0;z-index:2;background:var(--bg);padding:6px 0}
+ body.story #map{position:sticky!important;top:10px;height:calc(100vh - 20px);margin:0}
+}
