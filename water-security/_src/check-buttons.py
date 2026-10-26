@@ -215,22 +215,20 @@ def main():
                     )
                     if before == after:
                         fails.append(f"{width} basin {label}: zoom in did not change the scale")
-                if label in ("Nile", "Indus"):
-                    click(page.locator("#panel button[data-mode='leaf']"))
-                    page.wait_for_selector("#panel .leaflet-container", timeout=20000)
-                    leaf = page.evaluate(
+                    page.evaluate(
                         """() => {
-                          const wrap = document.querySelector('#panel .leaflet-container');
-                          const flow = document.querySelector('#panel .leaflet-overlay-pane path.flow-reach, #panel .leaflet-pane path.flow-reach');
-                          const note = document.querySelector('#panel .flow-note');
-                          const reset = document.querySelector('#panel [aria-label="Reset view"]');
-                          return {map: !!wrap, flow: !!(flow && (flow.getAttribute('d')||'').length>20), note: note && note.textContent.trim(), reset: !!reset};
+                          const btn = document.querySelector('#panel [aria-label="Reset zoom"]');
+                          if (btn) btn.click();
                         }"""
                     )
-                    if not leaf["map"] or not leaf["flow"] or not leaf["reset"]:
-                        fails.append(f"{width} basin {label}: leaflet overlay incomplete {leaf}")
-                    click(page.locator("#panel button[data-mode='d3']"))
-                    page.wait_for_timeout(80)
+                leaf = page.evaluate(
+                    """() => ({
+                      toggle: !!document.querySelector('#panel button[data-mode="leaf"], #panel .leaflet-container'),
+                      drawn: [...document.querySelectorAll('#panel button')].some(b => /leaflet|drawn map/i.test(b.textContent))
+                    })"""
+                )
+                if leaf["toggle"] or leaf["drawn"]:
+                    fails.append(f"{width} basin {label}: leaflet toggle still present {leaf}")
             page.close()
         browser.close()
     if fails:

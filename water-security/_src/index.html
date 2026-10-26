@@ -8,8 +8,6 @@
   gtag('config', 'G-Z61EKRP8QV');
 </script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <title>Water Security: Transboundary Basins</title>
 <meta name="description" content="Transboundary basins, dams, dependency and flashpoint history, by region.">
 <meta name="theme-color" content="#0b1526">
@@ -143,7 +141,7 @@ sup.fn a:hover{color:var(--gold)}
 .map-frame svg.chart:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .map-frame.zoom-live svg.chart{touch-action:none;cursor:grab}
 .zoom-ui{position:absolute;top:8px;right:8px;z-index:3;display:flex;flex-direction:column;gap:4px}
-.zoom-ui button{display:flex;align-items:center;justify-content:center;min-width:36px;min-height:36px;padding:0 8px;background:#12203a;color:#e6e9ef;border:1px solid #c8a24a;border-radius:8px;font:700 13px/1 "Helvetica Neue",Arial,sans-serif;cursor:pointer}
+.zoom-ui button{display:flex;align-items:center;justify-content:center;min-width:36px;min-height:36px;padding:0 8px;background:#12203a;color:#e6e9ef;border:1px solid #c8a24a;border-radius:8px;font:700 14px/1 "Helvetica Neue",Arial,sans-serif;cursor:pointer}
 .zoom-ui button:hover{background:#24365a}
 .asw{flex:none;display:block}
 .side-note.arrow-note{align-items:center}
@@ -164,25 +162,15 @@ sup.fn a:hover{color:var(--gold)}
 .flow-note{position:absolute;left:10px;right:10px;bottom:10px;z-index:4;margin:0;padding:6px 10px;background:rgba(11,21,38,.88);border:1px solid #24365a;border-radius:6px;font-size:15px;line-height:1.35;pointer-events:none}
 .mapbox>.flow-note{position:static;margin:6px 0 0}
 .basin-stage{width:100%}
-.basin-stage .map-frame,.basin-stage .leaf-wrap{display:block;width:100%}
-.basin-stage svg.chart{width:100%;height:70vh}
-.leaflet-map{width:100%;height:70vh;background:#0f1b31;border:1px solid var(--line);border-radius:4px}
-.leaflet-container{font:inherit;background:#0f1b31}
-.leaflet-bar a,.leaflet-bar button{background:#12203a;color:#e6e9ef;border-bottom:1px solid #c8a24a}
-.leaflet-bar a:hover,.leaflet-bar button:hover{background:#24365a}
-.leaflet-control-attribution{background:rgba(11,21,38,.8);color:#9aa6b8;font-size:13px}
-.leaflet-control-attribution a{color:#9cc1f0}
-.map-mode{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px;width:100%}
+.basin-stage .map-host{display:flex;flex-direction:column;align-items:center;width:100%}
+.basin-stage .map-host .places,.basin-stage .map-host .basin-extra{align-self:stretch}
+.basin-stage .map-frame{display:block;flex:0 0 auto;width:max-content;max-width:100%}
+.basin-stage svg.chart{display:block;max-width:none;height:auto}
+.map-hint{position:absolute;left:12px;right:64px;top:42%;z-index:5;text-align:center;color:#fff;font-size:15px;font-weight:600;text-shadow:0 0 4px #000,0 0 8px #000;pointer-events:none;opacity:0}
+.map-hint.on{opacity:1}
 .basin-weapon-head{margin:0 0 4px}
 #basin-weapon{flex-direction:row;flex-wrap:wrap;margin:0 0 8px}
 #basin-weapon .lg{width:auto}
-.leaf-hint{position:absolute;left:0;right:0;top:42%;z-index:800;text-align:center;color:#fff;font-size:15px;font-weight:600;text-shadow:0 0 4px #000,0 0 8px #000;pointer-events:none;opacity:0}
-.leaf-hint.on{opacity:1}
-.leaf-wrap{position:relative}
-.leaf-wrap.tfs{position:fixed;inset:0;z-index:80;background:#0b1526}
-.leaf-wrap.tfs .leaflet-map{height:100vh;border-radius:0}
-body.tfs-lock{overflow:hidden}
-.leaf-lab{background:rgba(11,21,38,.88);color:#e6e9ef;border:1px solid #24365a;border-radius:4px;padding:1px 5px;font:600 14px/1.3 "Helvetica Neue",Arial,sans-serif;white-space:nowrap}
 .phone-only{display:none}
 .fold-body{display:contents}
 #sheet-back{display:none}
@@ -245,8 +233,6 @@ details.places>summary{display:flex;align-items:center;min-height:44px;font-size
 svg.phone-map{overflow:hidden}
 .arrow-key{display:flex;align-items:center;gap:8px;margin:0 0 6px;font-size:14px;line-height:1.2;color:#e6e9ef;white-space:normal}
 .map-frame{display:block;width:100%}
-.basin-stage svg.chart{height:65vh}
-.leaflet-map{height:65vh}
 .zoom-ui{top:6px;right:6px}
 .zoom-ui button{min-width:44px;min-height:44px;font-size:16px}
 }
@@ -714,106 +700,6 @@ function arrowEnds(b,C){
  if(kd) a=kd.geometry.coordinates;
  const c=ptOf(b,b.down.c); return a&&c?[a,c]:null;
 }
-function lonLatArc(a,c){
- const dx=c[0]-a[0], dy=c[1]-a[1], len=Math.hypot(dx,dy)||1, k=Math.min(0.45,len*0.22);
- const cx=(a[0]+c[0])/2-dy/len*k, cy=(a[1]+c[1])/2+dx/len*k;
- return d3.range(0,1.0001,1/28).map(t=>[(1-t)*(1-t)*a[0]+2*t*(1-t)*cx+t*t*c[0],(1-t)*(1-t)*a[1]+2*t*(1-t)*cy+t*t*c[1]]);
-}
-function drawLeaflet(el,ids){
- if(typeof L==='undefined'){el.append('p').attr('class','cap').text('Leaflet did not load.'); return null}
- const bs=B.filter(b=>ids.map(Number).includes(+b.id));
- const key=cfgKey(ids.map(Number));
- let C=CFG[key]||{rivers:[],lakes:[],marks:[],start:{},mainDams:[]};
- if(bs.length&&bs.every(b=>b.aq)) C={rivers:[],lakes:[],marks:[],start:{},mainDams:[]};
- const wrap=el.append('div').attr('class','leaf-wrap');
- const div=wrap.append('div').attr('class','leaflet-map');
- if(!div.node().clientHeight) div.style('height','70vh');
- void div.node().offsetHeight;
- const touch=isPhone();
- const map=L.map(div.node(),{scrollWheelZoom:!touch,dragging:!touch,tap:false,zoomSnap:.5,minZoom:3,maxZoom:12,attributionControl:true,zoomControl:false});
- wrap.node().__map=map;
- map.createPane('lbl'); map.getPane('lbl').style.zIndex=450; map.getPane('lbl').style.pointerEvents='none';
- map.createPane('flow'); map.getPane('flow').style.zIndex=420; map.getPane('flow').style.pointerEvents='none';
- const E='https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_';
- L.tileLayer(E+'Base/MapServer/tile/{z}/{y}/{x}',{attribution:'© Esri, HERE, Garmin, OpenStreetMap',maxNativeZoom:16,maxZoom:17}).addTo(map);
- L.tileLayer(E+'Reference/MapServer/tile/{z}/{y}/{x}',{pane:'lbl',maxNativeZoom:16,maxZoom:17}).addTo(map);
- map.attributionControl.setPrefix(touch?'':'<a href="https://leafletjs.com">Leaflet</a>');
- const feats=bs.flatMap(b=>b.geo);
- const seed=feats.length?d3.geoCentroid(feats[0]):[20,0];
- map.setView([seed[1],seed[0]],4);
- const basins=L.geoJSON({type:'FeatureCollection',features:feats},{style:{color:'#6d8f8a',weight:1.5,fill:false,fillOpacity:0}}).addTo(map);
- bs.filter(b=>b.aq).forEach(b=>b.geo.forEach(f=>L.geoJSON(f,{style:{color:AQINK,weight:1.6,dashArray:'6 4',fill:false}}).addTo(map)));
- const segs=hydroSegs(ids.map(Number));
- const qmin=d3.min(segs,d=>d.q)||1, qmax=d3.max(segs,d=>d.q)||1;
- segs.forEach(s=>{const tq=qmax<=qmin?1:Math.max(0,Math.min(1,Math.log(s.q/qmin)/Math.log(qmax/qmin))); L.polyline(s.pts.map(p=>[p[1],p[0]]),{color:WATER,weight:0.8+tq*2.6,opacity:.9,interactive:false}).addTo(map)});
- DAMS.filter(d=>bs.some(b=>b.geo.some(f=>d3.geoContains(f,d.geometry.coordinates)))).forEach(d=>{
-  const gid=d.properties.GDW_ID, main=(C.mainDams||[]).includes(gid), hot=!!CONTESTED[gid], s=main?7:5, h=main?12:8;
-  const icon=L.divIcon({className:'',html:'<div style="width:0;height:0;border-left:'+s+'px solid transparent;border-right:'+s+'px solid transparent;border-bottom:'+h+'px solid '+(hot?CUT:'#fff')+';filter:drop-shadow(0 0 1px #041018)"></div>',iconSize:[s*2,h],iconAnchor:[s,h]});
-  const say=damSay(d);
-  L.marker([d.geometry.coordinates[1],d.geometry.coordinates[0]],{icon,keyboard:false}).bindTooltip('<b>'+say+'</b>',{direction:'top',opacity:1}).addTo(map);
- });
- bs.forEach(b=>{
-  const ends=arrowEnds(b,C); if(!ends) return;
-  const arc=lonLatArc(ends[0],ends[1]).map(p=>[p[1],p[0]]);
-  const flags=pairFlags(b);
-  const kind=[flags.cut?'Water cut off':'',flags.threat?'Cut-off threatened':''].filter(Boolean).join(' · ')||'No cut-off or threat on record';
-  const tip='<b>'+b.up.replace('United States of America','United States')+' → '+b.down.c.replace('United States of America','United States')+'</b><br>'+b.down.v+'% of renewable water from abroad<br>'+kind;
-  L.polyline(arc,{color:LEVER,weight:5,opacity:.95}).bindTooltip(tip,{opacity:1}).addTo(map);
-  if(flags.cut) L.polyline(arc,{color:CUT,weight:2.4,interactive:false,className:'lay-cut'}).addTo(map);
-  if(flags.threat) L.polyline(arc,{color:THR,weight:2.2,dashArray:flags.cut?'2 8':null,interactive:false,className:'lay-threat'}).addTo(map);
-  if(!flags.cut&&!flags.threat) L.polyline(arc,{color:'#fff',weight:2.2,interactive:false,className:'lay-neither'}).addTo(map);
- });
- const flows=reachFlows(ids,C,bs);
- const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
- const notes=[];
- flows.forEach(f=>{
-  L.polyline(f.line.map(p=>[p[1],p[0]]),{color:FLOW,weight:1.6,opacity:1,interactive:false,pane:'flow',className:'flow-reach'+(reduce?'':' anim')}).addTo(map);
-  if(reduce){
-   const a=f.line[f.line.length-2], b=f.line[f.line.length-1];
-   const ang=Math.atan2(b[1]-a[1],b[0]-a[0]);
-   const tip=L.divIcon({className:'',html:'<div style="width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid '+FLOW+';transform:rotate('+(ang*180/Math.PI+90)+'deg)"></div>',iconSize:[14,12],iconAnchor:[7,6]});
-   L.marker([b[1],b[0]],{icon:tip,interactive:false,keyboard:false,pane:'flow'}).addTo(map);
-  }
-  notes.push(f.caption);
- });
- if(notes.length) wrap.append('p').attr('class','flow-note').text(notes.join(' '));
- const bounds=basins.getBounds();
- const home=()=>{if(bounds&&bounds.isValid()) map.fitBounds(bounds,{padding:[28,28]}); else map.setView([20,20],3)};
- const labs=[];
- const nearFlow=ll=>flows.some(f=>f.line.some(p=>geoDist(p,ll)<0.18));
- function addLab(ll,text){
-  if(!ll||!text) return;
-  let p=ll;
-  if(nearFlow(p)) p=[ll[0]+0.4,ll[1]+0.28];
-  if(nearFlow(p)) return;
-  const icon=L.divIcon({className:'',html:'<div class="leaf-lab">'+String(text).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</div>',iconSize:[0,0]});
-  labs.push(L.marker([p[1],p[0]],{icon,interactive:false,keyboard:false}));
- }
- bs.forEach(b=>{
-  if(!b.aq&&b.down) addLab(ptOf(b,b.down.c), String(b.down.c).replace('United States of America','United States'));
-  (C.mainDams||[]).forEach(id=>{const d=DAMS.find(x=>x.properties.GDW_ID==id); if(d&&b.geo.some(f=>d3.geoContains(f,d.geometry.coordinates))) addLab(d.geometry.coordinates, shortDam(id,damSay(d)))});
- });
- let baseZ=5;
- function syncLabs(){const on=map.getZoom()>=baseZ+1.15; labs.forEach(m=>{if(on){if(!map.hasLayer(m)) m.addTo(map)}else if(map.hasLayer(m)) map.removeLayer(m)})}
- map.on('zoomend',syncLabs);
- const Ctl=L.Control.extend({options:{position:'topleft'},onAdd(){
-  const d=L.DomUtil.create('div','leaflet-bar');
-  d.innerHTML='<button type="button" data-expect="zoom" aria-label="Reset view">Reset</button><button type="button" data-expect="fullscreen" aria-label="Full screen">Full</button>';
-  L.DomEvent.disableClickPropagation(d);
-  d.querySelector('[aria-label="Reset view"]').addEventListener('click',ev=>{ev.preventDefault();ev.stopPropagation();home()});
-  d.querySelector('[aria-label="Full screen"]').addEventListener('click',ev=>{ev.preventDefault();ev.stopPropagation();const on=!wrap.node().classList.contains('tfs');wrap.node().classList.toggle('tfs',on);document.body.classList.toggle('tfs-lock',on);setTimeout(()=>{map.invalidateSize(); if(!on) home()},60)});
-  return d;
- }});
- new Ctl().addTo(map);
- if(touch){
-  const hint=document.createElement('div'); hint.className='leaf-hint'; hint.textContent='Use two fingers to move and zoom the map'; div.node().appendChild(hint);
-  let ht; div.node().addEventListener('touchstart',e=>{if(e.touches.length>1){map.dragging.enable();hint.classList.remove('on')}else{map.dragging.disable();hint.classList.add('on');clearTimeout(ht);ht=setTimeout(()=>hint.classList.remove('on'),1200)}},{passive:true});
-  div.node().addEventListener('touchend',e=>{if(!e.touches.length) map.dragging.disable()},{passive:true});
- }
- setTimeout(()=>{map.invalidateSize(); home(); baseZ=map.getZoom(); syncLabs()},40);
- return map;
-}
-
 function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));const feats=bs.flatMap(b=>b.geo);
  const sparse=!!opt.sparse;const zoomable=!opt.key;const fitFeats=(bs.some(b=>!b.aq)?bs.filter(b=>!b.aq):bs).flatMap(b=>b.geo);
  if(sparse&&!opt.basin&&fitFeats.length)h=phoneBoxH(fitFeats,w);
@@ -821,7 +707,7 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
  const key=opt.key||cfgKey(ids);
  if(key==='1,20,22'&&opt.key)svg.attr('id','map-nile');
  if(key==='3,5,9'&&opt.key)svg.attr('id','map-mideast');
- const pr=d3.geoMercator();const p=d3.geoPath(pr);if(sparse)pr.fitExtent([[16,16],[w-16,h-16]],{type:'FeatureCollection',features:fitFeats.length?fitFeats:feats});else{const pad0=Math.max(48,Math.round(Math.min(w,h)*0.06));pr.fitExtent([[pad0,pad0],[w-pad0,h-pad0]],{type:'FeatureCollection',features:fitFeats.length?fitFeats:feats})}
+ const pr=d3.geoMercator();const p=d3.geoPath(pr);const pad0=opt.basin?(w<520?36:88):(sparse?16:Math.max(48,Math.round(Math.min(w,h)*0.06)));pr.fitExtent([[pad0,pad0],[Math.max(pad0+40,w-pad0),Math.max(pad0+40,h-(opt.basin?72:pad0))]],{type:'FeatureCollection',features:fitFeats.length?fitFeats:feats});if(opt.basin)svg.style('width',w+'px').style('height',h+'px')
  const id='m'+Math.random().toString(36).slice(2,7);
  svg.append('defs').html(`<clipPath id="c${id}"><rect width="${w}" height="${h}"/></clipPath><pattern id="h${id}" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line y2="8" stroke="${AQINK}" stroke-width="2.2" stroke-opacity=".85"/></pattern>`);
  const fixZoomInk=()=>{if(!zoomable)return;svg.selectAll('path,line,circle,polyline').each(function(){if(this.closest('defs'))return;const s=this.getAttribute('stroke');if(s&&s!=='none')this.setAttribute('vector-effect','non-scaling-stroke')});svg.selectAll('text').each(function(){if(this.hasAttribute('data-base-fs'))return;const fs=parseFloat(this.style.fontSize)||(sparse?14:13);this.setAttribute('data-base-fs',String(fs))})};
@@ -847,10 +733,10 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
  g.append('g').selectAll('path').data(LAK.filter(d=>keepL.has(d.properties.name))).join('path').attr('d',p).attr('fill',GLOW).attr('fill-opacity',.55).attr('stroke',WATER).attr('stroke-width',.6).attr('pointer-events','none');
  const segs=hydroSegs(ids.map(Number)).sort((a,b)=>a.q-b.q);const qmin=d3.min(segs,d=>d.q)||1,qmax=d3.max(segs,d=>d.q)||1;
  const tq=q=>qmax<=qmin?1:Math.max(0,Math.min(1,Math.log(q/qmin)/Math.log(qmax/qmin)));
- const rw=q=>0.8+tq(q)*3.2;
+ const rw=q=>opt.basin?(0.4+tq(q)*0.95):(0.8+tq(q)*3.2);
  const flow=g.append('g').attr('class','lay-flow').attr('pointer-events','none');
  const line=d=>p({type:'LineString',coordinates:d.pts});
- flow.selectAll('path.glow').data(segs).join('path').attr('class','glow').attr('d',line).attr('fill','none').attr('stroke',GLOW).attr('stroke-linecap','round').attr('stroke-linejoin','round').attr('vector-effect','non-scaling-stroke').attr('stroke-width',d=>rw(d.q)+1.4).attr('stroke-opacity',0.18);
+ flow.selectAll('path.glow').data(segs).join('path').attr('class','glow').attr('d',line).attr('fill','none').attr('stroke',GLOW).attr('stroke-linecap','round').attr('stroke-linejoin','round').attr('vector-effect','non-scaling-stroke').attr('stroke-width',d=>rw(d.q)+(opt.basin?0.35:1.4)).attr('stroke-opacity',opt.basin?0.1:0.18);
  flow.selectAll('path.core').data(segs).join('path').attr('class','core').attr('data-ink','water').attr('d',line).attr('fill','none').attr('stroke',WATER).attr('stroke-linecap','round').attr('stroke-linejoin','round').attr('vector-effect','non-scaling-stroke').attr('stroke-width',d=>rw(d.q)).attr('stroke-opacity',d=>0.72+tq(d.q)*0.28);
  ab.forEach(b=>b.geo.forEach(f=>{const path=g.append('path').attr('data-bid',b.id).attr('class','aquifer lay-aq').attr('data-ink','aquifer').attr('d',p(f)).attr('fill',`url(#h${id})`).attr('stroke',AQINK).attr('stroke-width',1.5).attr('stroke-dasharray','6 4');
   path.append('title').text('Click for '+shown(b.name)+' details');
@@ -872,7 +758,7 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
   flowNotes.push(f.caption);
  });
  svg.property('flowNotes',flowNotes);
- const P=(sparse?placePhone:placer)(svg,w,h,sparse?2:Math.max(48,Math.round(Math.min(w,h)*0.06)));const lg=layer.append('g').attr('pointer-events','none');
+ const P=(opt.basin?placer:(sparse?placePhone:placer))(svg,w,h,opt.basin?12:(sparse?2:Math.max(48,Math.round(Math.min(w,h)*0.06))));const lg=layer.append('g').attr('class','lab-layer').attr('pointer-events','none');
  const dm=DAMS.filter(d=>bs.some(b=>b.geo.some(f=>d3.geoContains(f,d.geometry.coordinates))));
  const damBelongs=say=>{const s=String(say||'').toLowerCase();const owners=bs.filter(b=>!b.aq);const named=owners.filter(b=>C.rivers.some(r=>String(b.name).toLowerCase().includes(String(r[0]).toLowerCase())));const pool=named.length?named:owners;return pool.some(b=>{const rs=C.rivers.filter(r=>String(b.name).toLowerCase().includes(String(r[0]).toLowerCase()));if(!rs.length)return true;return rs.some(r=>s.includes(String(r[0]).toLowerCase()))})};
  const labs=[];const damNotes=[];const places=[];const damPts=[];
@@ -884,15 +770,15 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
   gg.on('mousemove',e=>{if(!pinned)tip(e,html)}).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement)).on('click',e=>{if(!isPhone())return;e.stopPropagation();tip(e,html);pinned=true});P.block(x,y,(r||6)+6);return gg};
  dm.forEach(d=>{const [x,y]=pr(d.geometry.coordinates);const gid=d.properties.GDW_ID;const hot=!!CONTESTED[gid];const main=(C.mainDams||[]).includes(gid);
   const say=damSay(d);const cap=(+d.properties.CAP_MCM/1000).toFixed(1);const yr=d.properties.YEAR_DAM>0?' · opened '+d.properties.YEAR_DAM:'';
-  if(sparse&&(!main||!damBelongs(say))){if(DAMSAY[gid]&&(main?!opt.sheet:true))addPlace(shortDam(gid,say),`<b>${say}</b><br>${cap} km³ storage${yr}`,1);return}damPts.push([x,y]);
+  if(opt.basin&&!main){const gg=layer.append('g').attr('class','cue lay-dam lay-minor').style('display','none');gg.append('circle').attr('class','minor-dot').attr('cx',x).attr('cy',y).attr('r',2.6).attr('fill','#e6e9ef').attr('stroke','none');gg.append('circle').attr('cx',x).attr('cy',y).attr('r',12).attr('fill','transparent');gg.on('mousemove',e=>{if(!pinned)tip(e,`<b>${say}</b><br>${cap} km³ storage${yr}`)}).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement)).on('click',e=>{if(!isPhone())return;e.stopPropagation();tip(e,`<b>${say}</b><br>${cap} km³ storage${yr}`);pinned=true});if(DAMSAY[gid])addPlace(shortDam(gid,say),`<b>${say}</b><br>${cap} km³ storage${yr}`,3);return}if(sparse&&!opt.basin&&(!main||!damBelongs(say))){if(DAMSAY[gid]&&(main?!opt.sheet:true))addPlace(shortDam(gid,say),`<b>${say}</b><br>${cap} km³ storage${yr}`,1);return}damPts.push([x,y]);
   const gg=layer.append('g').attr('class','cue lay-dam').style('cursor','pointer');
   gg.append('path').attr('data-ink','dam').attr('d',d3.symbol(d3.symbolTriangle,main?180:70)()).attr('transform',`translate(${x},${y})`).attr('fill',hot?CUT:NEI).attr('stroke',CASE).attr('stroke-width',main?1.6:1.2);
-  if(!sparse){gg.append('circle').attr('cx',x).attr('cy',y).attr('r',main?11:8).attr('fill','none').attr('stroke',CASE).attr('stroke-width',4);
+  if(!sparse&&!opt.basin){gg.append('circle').attr('cx',x).attr('cy',y).attr('r',main?11:8).attr('fill','none').attr('stroke',CASE).attr('stroke-width',4);
    gg.append('circle').attr('cx',x).attr('cy',y).attr('r',main?9:6.5).attr('fill','none').attr('stroke','#c8a24a').attr('stroke-width',2)}
   gg.append('circle').attr('cx',x).attr('cy',y).attr('r',sparse?22:16).attr('fill','transparent');
   gg.on('mousemove',e=>{if(!pinned)tip(e,`<b>${say}</b><br>${cap} km³ storage${yr}`)}).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement)).on('click',e=>{if(!isPhone())return;e.stopPropagation();tip(e,`<b>${say}</b><br>${cap} km³ storage${yr}`);pinned=true});
   P.block(x,y,main?16:10);
-  if(main){if(sparse){damNotes.push(say);labs.push({x,y,hot,gerd:gid===40398,text:shortDam(gid,say),say})}else labs.push({x,y,hot,gerd:gid===40398,text:damLabel(say,w)})}});
+  if(main){if(sparse||opt.basin){if(sparse)damNotes.push(say);labs.push({x,y,hot,gerd:gid===40398,text:shortDam(gid,say),say})}else labs.push({x,y,hot,gerd:gid===40398,text:damLabel(say,w)})}});
  const AR=[];const ag=layer.append('g');
  bs.forEach(b=>{if(!b.up||!b.down)return;const sv=(C.start||{})[b.id];let a=ptOf(b,b.up);if(Array.isArray(sv))a=sv;else if(sv){const dd=DAMS.find(d=>d.properties.GDW_ID==+sv.slice(4));if(dd)a=dd.geometry.coordinates}const rs=C.rivers.filter(r=>String(b.name).toLowerCase().includes(String(r[0]).toLowerCase()));const kd=(C.mainDams||[]).map(id=>DAMS.find(d=>d.properties.GDW_ID==id)).find(d=>d&&rs.some(r=>damSay(d).toLowerCase().includes(String(r[0]).toLowerCase())));if(kd)a=kd.geometry.coordinates;const c=ptOf(b,b.down.c);if(!a||!c)return;
   const [x1,y1]=pr(a),[x2,y2]=pr(c),dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy)||1;const k=(len<80?Math.max(40,len*.45):Math.max(len*.22,40))/len;
@@ -911,7 +797,26 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
   gg.append('circle').attr('data-ink','arrow').attr('cx',pts[0][0]).attr('cy',pts[0][1]).attr('r',4.5).attr('fill',LEVER).attr('stroke',CASE).attr('stroke-width',1.6);
   gg.on('mousemove',e=>{if(!pinned)tip(e,`<b>${b.up.replace('United States of America','United States')} → ${b.down.c.replace('United States of America','United States')}</b><br>${b.down.v}% of renewable water from abroad<br>${kind}`)}).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement)).on('click',e=>{if(!isPhone())return;e.stopPropagation();const html=`<b>${b.up.replace('United States of America','United States')} → ${b.down.c.replace('United States of America','United States')}</b><br>${b.down.v}% of renewable water from abroad<br>${kind}`;if(zoomable&&ids.length===1&&+ids[0]===+b.id){tip(e,html);pinned=true;return}clearTip();show(b.id,true)});
   pts.forEach(q=>P.block(q[0],q[1],(sparse?W/2+4:W/2+6)));if(sparse)P.block(pts[pts.length-1][0],pts[pts.length-1][1],26);AR.push(b)});
- if(sparse){ag.raise();
+ if(opt.basin){
+  el.selectAll('.basin-extra').remove();
+  const stB=t=>t.style('font-weight',700).style('font-size','14px').style('fill','#e6e9ef');
+  const nmB=c=>c.replace('United States of America','United States').replace('Democratic Republic of the Congo','DR Congo').replace('Dem. Rep. Congo','DR Congo').replace('The former Yugoslav Republic of Macedonia','North Macedonia');
+  labs.forEach(d=>{if(!P.add(lg,d.x,d.y-16,d.text,t=>{stB(t);if(d.gerd)t.style('fill','#ff6b81')},'lab-dam')&&sparse)addPlace(d.text,`<b>${d.say||d.text}</b>`,1)});
+  const seenB=[];
+  AR.forEach(b=>[b.up,b.down.c].forEach(name=>{const q=ptOf(b,name);if(!q)return;const [x,y]=pr(q);if(seenB.some(s=>s.n===name&&Math.hypot(s.x-x,s.y-y)<70))return;seenB.push({n:name,x,y});const label=nmB(name);if(!P.add(lg,x,y,label,t=>stB(t),null,(cx,cy)=>inCountry(pr,name,cx,cy))&&sparse)addPlace(label,`<b>${label}</b>`,2)}));
+  const mainsB=C.rivers.filter(r=>r[3]&&inside(r[2]));
+  const prefReB=/^(Nile|Euphrates|Indus|Mekong|Danube|Colorado|Paraná|Amu Darya|Syr Darya|Zambezi|Senegal|Niger|Dnipro|Rhine|Jordan|Helmand|Ganges|Brahmaputra|Salween|Okavango|Tigris|Uruguay)$/;
+  const keepB=mainsB.find(r=>prefReB.test(r[0]))||mainsB[0];
+  if(keepB){const [n,_,c]=keepB;let [x,y]=pr(c);if(!(x>=12&&y>=12&&x<=w-12&&y<=h-12)){const b0=bs.find(b=>!b.aq);if(b0)[x,y]=pr(d3.geoCentroid({type:'FeatureCollection',features:b0.geo}))}if(!P.add(lg,x,y,n,t=>{stB(t);t.style('font-style','italic').style('font-weight',600)},'lab-flow')&&sparse)addPlace(n,`<b>${n}</b>`,2)}
+  C.rivers.filter(r=>r[3]&&r!==keepB&&inside(r[2])).forEach(([n])=>addPlace(n,`<b>${n}</b>`,3));
+  C.lakes.filter(l=>inside(l[2])).forEach(([n])=>addPlace(n,`<b>${n}</b>`,3));
+  C.marks.filter(m=>inside(m[1])).forEach(([n])=>addPlace(n,`<b>${n}</b>`,3));
+  ab.forEach(b=>{const [x,y]=pr(d3.geoCentroid({type:'FeatureCollection',features:b.geo}));const name=shown(b.name);if(!P.add(lg,x,y,short(name),t=>stB(t),'lab-aq'))addPlace(short(name),`<b>${name}</b><br>Shared aquifer`,5)});
+  if(opt.sheet&&damNotes.length)el.append('p').attr('class','cap basin-extra').text([...new Set(damNotes)].join(' '));
+  const top=places.sort((a,b)=>a.pri-b.pri||a.title.localeCompare(b.title)).slice(0,8);
+  if(top.length){const det=el.append('details').attr('class','places basin-extra');det.append('summary').attr('data-expect','note').text('Other places');const list=det.append('div').attr('class','place-list');const note=det.append('p').attr('class','place-note').style('display','none');list.selectAll('button').data(top).join('button').attr('type','button').attr('class','chip').attr('data-expect','place').text(d=>d.title).on('click',(e,d)=>{e.stopPropagation();clearTip();note.style('display','block').html(d.detail)})}
+  lg.selectAll('line').attr('stroke','#9cc1f0');lg.raise();svg.node().__blk=blockers(svg);fixZoomInk();return}
+if(sparse){ag.raise();
   const stP=t=>t.style('font-weight',700).style('font-size','14px');
   const nm=c=>c.replace('United States of America','United States').replace('Democratic Republic of the Congo','DR Congo').replace('Dem. Rep. Congo','DR Congo').replace('The former Yugoslav Republic of Macedonia','North Macedonia');
   const strict=coord=>bs.some(b=>b.geo.some(f=>d3.geoContains(f,coord)));
@@ -950,9 +855,10 @@ const st=t=>t.style('font-weight',700).style('font-size',(sparse||opt.basin?'14'
   cue(x,y,`<b>${nm(n)}</b>${extra}`)}));
  lg.raise();svg.selectAll('.cue').raise();svg.node().__blk=blockers(svg);fixZoomInk();}
 paint();
-if(!sparse){const pad=Math.max(48,Math.round(Math.min(w,h)*0.06));
- const unionBox=()=>{const svgN=svg.node();let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity,n=0;svgN.querySelectorAll('path.basin,path.glow,path.core,g.lay-lever path,path.flow-reach,path[data-ink="dam"],circle[data-ink="arrow"],text').forEach(el=>{let b;try{b=el.getBBox()}catch(e){return}if(!(b.width>0||b.height>0))return;let x=b.x,y=b.y,ww=b.width,hh=b.height;const m=/translate\(\s*([-0-9.eE+]+)[ ,]\s*([-0-9.eE+]+)/.exec(el.getAttribute('transform')||'');if(m){x+=+m[1];y+=+m[2]}let rad=0;if(el.tagName!=='text'){rad=(+el.getAttribute('stroke-width')||0)/2;if(el.tagName==='circle')rad=Math.max(rad,+(el.getAttribute('r')||0))}else rad=0;if(el.tagName==='circle'){x=+el.getAttribute('cx')-(+el.getAttribute('r')||0);y=+el.getAttribute('cy')-(+el.getAttribute('r')||0);ww=hh=2*(+el.getAttribute('r')||0);rad=0}n++;x0=Math.min(x0,x-rad);y0=Math.min(y0,y-rad);x1=Math.max(x1,x+ww+rad);y1=Math.max(y1,y+hh+rad)});return n?{x0,y0,x1,y1}:null};
- const fitOnce=()=>{const box=unionBox();if(!box)return true;const bw=Math.max(1,box.x1-box.x0),bh=Math.max(1,box.y1-box.y0),cx=(box.x0+box.x1)/2,cy=(box.y0+box.y1)/2;const k=Math.min((w-2*pad)/bw,(h-2*pad)/bh);const tol=Math.max(2,Math.min(w,h)*0.004);const left=box.x0,right=w-box.x1,top=box.y0,bot=h-box.y1;const inside=left>=pad-0.05&&top>=pad-0.05&&right>=pad-0.05&&bot>=pad-0.05;const centered=Math.abs(cx-w/2)<=tol&&Math.abs(cy-h/2)<=tol;const lr=Math.abs(left-right)/Math.max(Math.abs(left),Math.abs(right),1);const tb=Math.abs(top-bot)/Math.max(Math.abs(top),Math.abs(bot),1);if(inside&&centered&&lr<=0.08&&tb<=0.08)return true;const kk=Math.max(0.15,Math.min(1,k));const tr=pr.translate();pr.scale(pr.scale()*kk);pr.translate([w/2-kk*(cx-tr[0]),h/2-kk*(cy-tr[1])]);paint();return false};for(let pass=0;pass<10;pass++){if(fitOnce())break;}}
+if(opt.basin||!sparse){const pad=opt.basin?(w<520?36:88):Math.max(48,Math.round(Math.min(w,h)*0.06));const padX=pad,padTop=opt.basin?16:pad,padBot=opt.basin?72:pad;
+ const sel=opt.basin?'path.basin,path.core,path.flow-reach,g.lay-lever path,path[data-ink="dam"]':'path.basin,path.glow,path.core,g.lay-lever path,path.flow-reach,path[data-ink="dam"],circle[data-ink="arrow"],text';
+ const unionBox=()=>{const svgN=svg.node();let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity,n=0;svgN.querySelectorAll(sel).forEach(el=>{let b;try{b=el.getBBox()}catch(e){return}if(!(b.width>0||b.height>0))return;let x=b.x,y=b.y,ww=b.width,hh=b.height;const m=/translate\(\s*([-0-9.eE+]+)[ ,]\s*([-0-9.eE+]+)/.exec(el.getAttribute('transform')||'');if(m){x+=+m[1];y+=+m[2]}let rad=0;if(el.tagName!=='text'){rad=(+el.getAttribute('stroke-width')||0)/2;if(el.tagName==='circle')rad=Math.max(rad,+(el.getAttribute('r')||0))}if(el.tagName==='circle'){x=+el.getAttribute('cx')-(+el.getAttribute('r')||0);y=+el.getAttribute('cy')-(+el.getAttribute('r')||0);ww=hh=2*(+el.getAttribute('r')||0);rad=0}n++;x0=Math.min(x0,x-rad);y0=Math.min(y0,y-rad);x1=Math.max(x1,x+ww+rad);y1=Math.max(y1,y+hh+rad)});return n?{x0,y0,x1,y1}:null};
+ const fitOnce=()=>{const box=unionBox();if(!box)return true;const bw=Math.max(1,box.x1-box.x0),bh=Math.max(1,box.y1-box.y0),cx=(box.x0+box.x1)/2,cy=(box.y0+box.y1)/2;const k=Math.min((w-2*padX)/bw,(h-padTop-padBot)/bh);const tol=Math.max(2,Math.min(w,h)*0.004);const left=box.x0,right=w-box.x1,top=box.y0,bot=h-box.y1;const targetCx=w/2,targetCy=padTop+(h-padTop-padBot)/2;const inside=left>=padX-1&&top>=padTop-1&&right>=padX-1&&bot>=padBot-1;const centered=Math.abs(cx-targetCx)<=tol&&Math.abs(cy-targetCy)<=tol;if(!opt.basin){const lr=Math.abs(left-right)/Math.max(Math.abs(left),Math.abs(right),1);const tb=Math.abs(top-bot)/Math.max(Math.abs(top),Math.abs(bot),1);if(inside&&centered&&lr<=0.08&&tb<=0.08)return true}else if(inside&&centered&&(Math.abs(left-padX)<=4||Math.abs(right-padX)<=4||Math.abs(top-padTop)<=4||Math.abs(bot-padBot)<=4))return true;const kk=opt.basin?Math.max(0.2,Math.min(8,k)):Math.max(0.15,Math.min(1,k));const tr=pr.translate();pr.scale(pr.scale()*kk);pr.translate([targetCx-kk*(cx-tr[0]),targetCy-kk*(cy-tr[1])]);paint();return false};for(let pass=0;pass<10;pass++){if(fitOnce())break}}
 const flowNotes=svg.property('flowNotes')||[];
  if(flowNotes.length) host.append('p').attr('class','flow-note').text(flowNotes.join(' '));
 if(zoomable){
@@ -966,10 +872,10 @@ if(zoomable){
   return false}).on('zoom',ev=>{
   const root=svg.select('g.zoom-root'); if(root.empty()) return;
   const tr=ev.transform; root.attr('transform',tr); const k=tr.k||1;
-  root.selectAll('text').each(function(){const base=+this.getAttribute('data-base-fs')||14; this.style.fontSize=(base/k)+'px'});
+  root.selectAll('text').each(function(){const base=+this.getAttribute('data-base-fs')||14; this.style.fontSize=(Math.max(13,base)/k)+'px'});root.selectAll('.lay-minor').style('display',k>=1.45?null:'none');root.selectAll('.minor-dot').attr('r',2.6/k);
   if(node.__tipAnchor) followTip(node)});
  svg.call(zoom);
- node.addEventListener('touchstart',ev=>{if(ev.touches.length>=2) frame.classed('zoom-live',true)},{passive:true});
+ if(isPhone()){const hint=frame.append('div').attr('class','map-hint').text('Use two fingers to move and zoom the map');let ht=0;node.addEventListener('touchstart',ev=>{if(ev.touches.length>=2){frame.classed('zoom-live',true);hint.classed('on',false);clearTimeout(ht)}else{hint.classed('on',true);clearTimeout(ht);ht=setTimeout(()=>hint.classed('on',false),1400)}},{passive:true})}else node.addEventListener('touchstart',ev=>{if(ev.touches.length>=2) frame.classed('zoom-live',true)},{passive:true});
  node.addEventListener('touchend',ev=>{if(!ev.touches||!ev.touches.length) frame.classed('zoom-live',false)},{passive:true});
  const ui=frame.append('div').attr('class','zoom-ui');
  const mk=(label,name,fn)=>ui.append('button').attr('type','button').attr('data-expect','zoom').attr('aria-label',name).text(label).on('pointerdown',ev=>ev.stopPropagation()).on('click',ev=>{ev.preventDefault();ev.stopPropagation();fn()});
@@ -1019,26 +925,21 @@ function historyBlock(parent,b){const items=histItems(b);if(!items.length)return
  const picked=items.slice().sort((a,c)=>c.rank-a.rank||c.y-a.y).slice(0,5).sort(byYear);
  draw(picked);
  if(all.length>5){const btn=det.append('button').attr('type','button').attr('class','hist-more').attr('data-expect','more').text('Show all ('+all.length+')');btn.on('click',()=>{draw(all);btn.remove()})}}
+function basinPx(b,mw){const feats=(b.geo&&b.geo.length)?b.geo:[];let aspect=1;if(feats.length){const pr0=d3.geoMercator();pr0.fitExtent([[0,0],[1000,1000]],{type:'FeatureCollection',features:feats});const bb=d3.geoPath(pr0).bounds({type:'FeatureCollection',features:feats});aspect=Math.max(0.34,(bb[1][0]-bb[0][0])/Math.max(1,bb[1][1]-bb[0][1]))}const padTop=16,padBot=72,padX=isPhone()?36:88;if(isPhone()){const inner=Math.max(80,mw-2*padX);const h=Math.round(Math.min(640,Math.max(240,inner/aspect+padTop+padBot)));return [mw,h]}let h=620,w=Math.round((h-padTop-padBot)*aspect+2*padX);if(w>mw){w=mw;h=Math.round(Math.min(620,Math.max(560,(w-2*padX)/aspect+padTop+padBot)))}return [Math.max(300,Math.min(mw,w)),h]}
 function show(id,scroll){clearTip();const ri=REG.findIndex(r=>r[1].flat().includes(+id));if(ri>=0)setRegion(ri);setArrowNotes([arrowSay([+id])]);
  const b=B.find(x=>x.id==id);d3.selectAll('#chips .chip').classed('on',d=>d.id==id);(()=>{let hit=false;d3.selectAll('#sumchips .chip').classed('on',function(){const on=!hit&&this.dataset.id==String(id);if(on)hit=true;return on})})();const P=d3.select('#panel').html('');P.append('button').attr('type','button').attr('class','back-region full').attr('data-expect','back').text('Back to region').on('click',()=>{clearTip();holdLevel(1);if(isPhone())closeSheet();const el=document.getElementById(ri>=0?'reg'+ri:'s-maps');if(el)el.scrollIntoView({behavior:'smooth',block:'start'})});
  const Lf=P.append('div');Lf.append('h3').text(shown(b.name));
  if(isPhone()&&scroll)openSheet();
  Lf.attr('class','full basin-stage');
  const stage=document.querySelector('#s-panel .stage-main');
- const mw=Math.max(300,(stage&&stage.clientWidth)||contentW()), mh=Math.max(420,Math.round(window.innerHeight*(isPhone()?0.65:0.70)));
+ const mw=Math.max(300,(stage&&stage.clientWidth)||contentW());
+ const [bw,bh]=basinPx(b,mw);
  const asay=arrowSay([b.id]);if(asay)Lf.append('p').attr('class','arrow-key').html(arrowSwatch()+'<span>'+asay+'</span>');
- const modes=Lf.append('div').attr('class','map-mode');
- modes.append('button').attr('type','button').attr('class','tab on').attr('data-mode','d3').attr('data-expect','map').attr('aria-pressed','true').text('Drawn map');
- modes.append('button').attr('type','button').attr('class','tab').attr('data-mode','leaf').attr('data-expect','map').attr('aria-pressed','false').text('Leaflet map');
  const wHead=Lf.append('p').attr('class','side-h basin-weapon-head').text('Water used as a weapon');
  Lf.append('div').attr('id','basin-weapon').attr('class','side-btns');
  if(!syncWeapon('#basin-weapon','#panel',[+b.id])) wHead.remove();
  const d3host=Lf.append('div').attr('class','map-host d3-host');
- const leafhost=Lf.append('div').attr('class','map-host leaf-host').style('display','none');
- drawMap(d3host,[b.id],mw,mh,Object.assign({basin:true},isPhone()?{sparse:true,sheet:true}:{}));
- let leafMade=false;
- const showMode=mode=>{modes.selectAll('button').classed('on',function(){return this.dataset.mode===mode}).attr('aria-pressed',function(){return this.dataset.mode===mode?'true':'false'});d3host.style('display',mode==='d3'?null:'none');leafhost.style('display',mode==='leaf'?null:'none');if(mode==='leaf'){if(!leafMade){drawLeaflet(leafhost,[+b.id]);leafMade=true}const wrap=leafhost.select('.leaf-wrap').node();if(wrap&&wrap.__map)setTimeout(()=>wrap.__map.invalidateSize(),40)}};
- modes.selectAll('button').on('click',function(){showMode(this.dataset.mode)});
+ drawMap(d3host,[b.id],bw,bh,Object.assign({basin:true},isPhone()?{sparse:true,sheet:true}:{}));
  historyBlock(Lf,b);
  const R=P.append('div');R.append('div').attr('class','kv').html(`<b>Headwater control:</b> ${nb(shown(b.hw))}<br><b>Dams and works:</b> ${nb(shown(b.dams))}<br><b>Upstream dam capacity:</b> ${b.upcap!=null?b.upcap+' km³ ('+b.up+')'+FN(1):nb()}<br><b>Storage vs annual flow:</b> ${nb(b.storage)}<br><b>Treaties:</b> ${b.tc||nb()}${b.status?' · '+b.status:''}${FN(3)}`);
  R.append('h3').text('Share from abroad');
