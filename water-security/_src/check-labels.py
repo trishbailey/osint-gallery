@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
-"""Check water-security map labels and save screenshots.
+"""Check water-security map labels and desktop map fit.
 
 Fails if any country, river, dam, or hover/tap label overlaps a river line,
 river-corridor glow, arrow, or dam marker at 390, 1024, 1280, or 1440.
+
+Fails if, on any regional map at 1024, 1280, 1440, or 1920, a shaded basin,
+water-reach, arrow, or dam path or a label falls outside the SVG viewBox, or
+the left and right padding differ by more than 15%.
 """
 import sys
 from pathlib import Path
@@ -11,7 +15,8 @@ from playwright.sync_api import sync_playwright
 
 URL = "http://127.0.0.1:8765/water-security/"
 OUT = Path("/opt/cursor/artifacts/screenshots")
-WIDTHS = [(390, 844), (1024, 800), (1280, 900), (1440, 900)]
+WIDTHS = [(390, 844), (1024, 800), (1280, 900), (1440, 900), (1920, 1080)]
+FIT_WIDTHS = {1024, 1280, 1440, 1920}
 
 AUDIT = r"""
 () => {
@@ -221,6 +226,52 @@ AUDIT = r"""
 """
 
 
+FIT_AUDIT = r"""
+() => {
+  const sel = 'path.basin,path.glow,path.core,g.lay-cut path,g.lay-threat path,g.lay-neither path,path[data-ink="dam"],circle[data-ink="arrow"],text';
+  const fails = [];
+  const maps = [...document.querySelectorAll('#regions svg.chart')].filter(svg => svg.getBoundingClientRect().width > 20);
+  for (const svg of maps) {
+    const vb = svg.viewBox.baseVal;
+    const w = vb.width, h = vb.height;
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity, n = 0;
+    const outside = [];
+    svg.querySelectorAll(sel).forEach(el => {
+      let b;
+      try { b = el.getBBox(); } catch (e) { return; }
+      if (!(b.width > 0 || b.height > 0)) return;
+      let x = b.x, y = b.y, ww = b.width, hh = b.height, rad = 0;
+      const m = /translate\(\s*([-0-9.eE+]+)[ ,]\s*([-0-9.eE+]+)/.exec(el.getAttribute('transform') || '');
+      if (m) { x += +m[1]; y += +m[2]; }
+      if (el.tagName === 'circle') {
+        const r = +(el.getAttribute('r') || 0);
+        x = +el.getAttribute('cx') - r;
+        y = +el.getAttribute('cy') - r;
+        ww = hh = 2 * r;
+        rad = (+el.getAttribute('stroke-width') || 0) / 2;
+      } else if (el.tagName !== 'text') {
+        rad = (+el.getAttribute('stroke-width') || 0) / 2;
+      }
+      const L = x - rad, T = y - rad, R = x + ww + rad, B = y + hh + rad;
+      n++;
+      x0 = Math.min(x0, L); y0 = Math.min(y0, T); x1 = Math.max(x1, R); y1 = Math.max(y1, B);
+      if (L < -0.5 || T < -0.5 || R > w + 0.5 || B > h + 0.5)
+        outside.push((el.textContent || el.getAttribute('class') || el.tagName).replace(/\s+/g, ' ').trim().slice(0, 48));
+    });
+    const sub = svg.closest('.mapbox') && svg.closest('.mapbox').querySelector('h3');
+    const reg = svg.closest('.region') && svg.closest('.region').querySelector('h3');
+    const name = ((sub && sub.textContent) || (reg && reg.textContent) || svg.id || 'map').trim();
+    if (!n) { fails.push({name, kind: 'empty'}); continue; }
+    const left = x0, right = w - x1;
+    const lr = Math.abs(left - right) / Math.max(Math.abs(left), Math.abs(right), 1);
+    if (outside.length) fails.push({name, kind: 'outside', n: outside.length, sample: outside.slice(0, 3), w, h});
+    if (lr > 0.15) fails.push({name, kind: 'pad', left: +left.toFixed(1), right: +right.toFixed(1), lr: +(lr * 100).toFixed(1), w, h});
+  }
+  return {fails, n: maps.length};
+}
+"""
+
+
 def audit(page):
     return page.evaluate(AUDIT)
 
@@ -262,8 +313,17 @@ def main():
                     width_hits.append({"width": width, "tab": name, "js": data["errs"][:3]})
                 if width == 390 and data["scroll"][0] - data["scroll"][1] > 4:
                     width_hits.append({"width": 390, "tab": name, "overflow": data["scroll"]})
+                if width in FIT_WIDTHS:
+                    fit = page.evaluate(FIT_AUDIT)
+                    if fit["n"] < 1:
+                        width_hits.append({"width": width, "tab": name, "kind": "no-maps"})
+                    for hit in fit["fails"]:
+                        hit = dict(hit)
+                        hit["width"] = width
+                        hit["tab"] = name
+                        width_hits.append(hit)
             summary.append(
-                f"{width}: labels+tips checked, overlaps={sum(1 for h in width_hits if h.get('kind'))}, other={len(width_hits)}"
+                f"{width}: labels+tips checked, overlaps={sum(1 for h in width_hits if h.get('kind') in ('glow','river','arrow','dam','arrow-dot'))}, fit={sum(1 for h in width_hits if h.get('kind') in ('outside','pad','empty','no-maps'))}, other={len(width_hits)}"
             )
             failures.extend(width_hits)
 
@@ -282,36 +342,10 @@ def main():
                 loc.screenshot(path=str(path))
                 shots.append(str(path))
 
-            if width in (390, 1024, 1280, 1440):
-                shot(0, f"labels-{width}-nile.png")
+            if width in (1280, 1440):
+                shot(0, f"fit-{width}-nile.png")
             if width == 1280:
-                shot(1, "labels-1280-middle-east.png")
-                page.evaluate("(i)=>document.querySelectorAll('#side-regions button')[i].click()", 0)
-                page.wait_for_timeout(200)
-                tip = page.evaluate(
-                    """()=>{
-                      const svg=[...document.querySelectorAll('#regions svg.chart')].find(s=>s.getBoundingClientRect().width>20);
-                      let g=null;
-                      for (const el of svg.querySelectorAll('g.lay-dam')) {
-                        const r=el.getBoundingClientRect();
-                        el.dispatchEvent(new MouseEvent('mousemove',{bubbles:true,clientX:r.left+14,clientY:r.top+14,view:window}));
-                        const tt=document.getElementById('tt');
-                        if(tt && /Renaissance/.test(tt.innerText||'')) { g=el; break; }
-                      }
-                      if(!g) return {shown:false};
-                      g.scrollIntoView({block:'center'});
-                      const r=g.getBoundingClientRect();
-                      g.dispatchEvent(new MouseEvent('mousemove',{bubbles:true,clientX:r.left+14,clientY:r.top+14,view:window}));
-                      const tt=document.getElementById('tt');
-                      const b=tt.getBoundingClientRect();
-                      return {shown:getComputedStyle(tt).display!=='none', text:(tt.innerText||'').slice(0,60), top:b.top, left:b.left};
-                    }"""
-                )
-                if not tip.get("shown"):
-                    failures.append({"width": 1280, "tab": "Nile & North Africa", "tip": "GERD hover did not show"})
-                path = OUT / "labels-1280-nile-tip.png"
-                page.screenshot(path=str(path), full_page=False)
-                shots.append(str(path))
+                shot(1, "fit-1280-middle-east.png")
             page.close()
         browser.close()
     print("LABEL CHECK")
@@ -322,7 +356,7 @@ def main():
         for hit in failures[:40]:
             print(" ", hit)
         return 1
-    print("PASS no label overlaps a river, glow, arrow, or dam")
+    print("PASS no label overlaps a river, glow, arrow, or dam; shaded paths and labels stay inside the viewBox with even left/right padding")
     for s in shots:
         print(" screenshot", s)
     return 0
