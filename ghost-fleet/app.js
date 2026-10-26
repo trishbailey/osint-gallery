@@ -107,5 +107,6 @@ const pb=document.getElementById("play");pb.onclick=()=>{playing=!playing;pb.set
 clock.oninput=frame;
 function setOne(v){one=v;document.getElementById("aOne").classList.toggle("on",v);document.getElementById("aAll").classList.toggle("on",!v);document.getElementById("aOne").setAttribute("aria-pressed",v);document.getElementById("aAll").setAttribute("aria-pressed",!v);frame()}
 document.getElementById("aAll").onclick=()=>setOne(false);document.getElementById("aOne").onclick=()=>{if(!sel){alert("Pick a ship first: click a dot, a table row or use Find a ship.");return}setOne(true)};
-map.on("zoomend",()=>{if(phone())draw()});draw();frame();const h=location.hash.match(/p=(\d{7})/);if(h)openP(h[1]);
+map.on("zoomend",()=>{if(phone())draw()});draw();frame();
+const RAWL=[...Object.values(layers),anim];window.GF={map,cv,esc,fmt,title,M,P,phone,openP,hideRaw(){RAWL.forEach(l=>map.removeLayer(l));if(playing)pb.click()},showRaw(){RAWL.forEach(l=>l.addTo(map));draw()}};const h=location.hash.match(/p=(\d{7})/);if(h)openP(h[1]);
 })();

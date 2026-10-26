@@ -25,3 +25,6 @@ Defined in `build.py` (HOT): transfer areas, Russian loading ports and Baltic ch
 - Cables: TeleGeography (CC BY-NC-SA); pipelines: EMODnet Human Activities (CC BY 4.0) -> data/infra.json (static).
 - Only vessels GFW classes as tankers (or unclassified) are shown; other listed ship types are dropped in build.py.
 - Skipped: NASA FIRMS (needs MAP_KEY), EIA prices (needs key, no Urals series).
+
+## Story mode (story.py, story.js)
+`story.py` runs at the end of `build.py` and writes `data/story.json`: trips (Russian loading-port call -> next foreign port call, skipping canal/strait transit stops and Crimean ports), flows by loading port and destination country, identity changes in 12 months, transfer-area loitering, transponder gaps vs GPS-interference days, and the case-study ships. Case-study IMOs are set in story.py; recheck them after each data refresh. Vessel list now also includes the EU Annex XLII list (OpenSanctions `eu_journal_sanctions`, program EU-RUS).
