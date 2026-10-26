@@ -18,3 +18,8 @@ Conflict shading (`../data/conflict_hex.geojson`) is derived from UCDP GED v26.1
 ## v1.3 (flags, gold routes, graphics instead of tables)
 - `pipeline/apply_v13.py` adds gold routes (`goldroutes`: Africa to UAE, UAE to Switzerland, UAE to crypto, and the A7A5 rail marked "reported"), their sources and the gold paragraphs. Run after apply_v12.
 - Belt and Road markers are an inline SVG Chinese flag symbol (`#cnflag` in index.html). Large tables were replaced with a backer dot matrix, a world-share bar chart, Russia cards, BRI cards and bars, and owner-grouped media tags. The full data is in the Google Sheet.
+
+## v1.4 — A7 in Africa (public sources only)
+- `pipeline/apply_v14.py` (idempotent) adds `a7` (country categories), `a7route` (gold → refinery → UAE → USDT/A7A5 → rubles, plus Hong Kong), `a7cog`, `a7fric`, a Sahel paragraph, and removes personal names from `goldroutes.a7`.
+- Big picture only: no personal names, wallets, domains or staff details. Each claim cites a public source.
+- Theme: CSS variables match cartel-dashboard (`--muted #9aa6b8` is text only). Data palettes are checked with CIEDE2000, minimum ΔE 20 per graphic.

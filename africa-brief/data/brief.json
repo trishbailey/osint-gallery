@@ -1028,6 +1028,102 @@
    "date": "2025",
    "url": "https://thesentry.org/reports/sudan-rsf-business-network-in-the-uae/",
    "type": "secondary"
+  },
+  {
+   "id": "cir-a7-africa-2026",
+   "title": "Sanctioned and expanding: Russia's A7 network deepens its Africa footprint",
+   "publisher": "Centre for Information Resilience",
+   "date": "2026-04-04",
+   "url": "https://www.info-res.org/reports/sanctioned-and-expanding-russias-a7-network-deepens-its-africa-footprint/",
+   "type": "secondary"
+  },
+  {
+   "id": "cir-a7-africa-pdf",
+   "title": "A7 in Africa (full report)",
+   "publisher": "Centre for Information Resilience",
+   "date": "2026-04-04",
+   "url": "https://www.info-res.org/app/uploads/2026/04/A7-Africa-Final.pdf",
+   "type": "secondary"
+  },
+  {
+   "id": "cir-a7-abroad-2025",
+   "title": "A7 Abroad",
+   "publisher": "Centre for Information Resilience",
+   "date": "2025-10-01",
+   "url": "https://www.info-res.org/app/uploads/2025/10/A7-Abroad-FINAL-Copy.pdf",
+   "type": "secondary"
+  },
+  {
+   "id": "cir-a7a5-2025",
+   "title": "A7A5: Circumventing Sanctions with Stablecoin Cryptocurrency",
+   "publisher": "Centre for Information Resilience",
+   "date": "2025-06-25",
+   "url": "https://www.info-res.org/app/uploads/2025/06/A7A5-Report-June-2025-Final-Draft-1.pdf",
+   "type": "secondary"
+  },
+  {
+   "id": "lawfare-a7-2025",
+   "title": "To Evade Sanctions, the Kremlin Turns to a Convicted Money Launderer",
+   "publisher": "Lawfare",
+   "date": "2025-11-18",
+   "url": "https://www.lawfaremedia.org/article/to-evade-sanctions--the-kremlin-turns-to-a-convicted-money-launderer",
+   "type": "secondary"
+  },
+  {
+   "id": "elliptic-a7a5-1bn",
+   "title": "The rise of A7A5: the Ruble stablecoin now transfers $1 billion per day",
+   "publisher": "Elliptic",
+   "date": "2025-07-27",
+   "url": "https://www.elliptic.co/insights/the-rise-of-a7a5-the-ruble-stablecoin-now-transfers-1-billion-per-day/",
+   "type": "secondary"
+  },
+  {
+   "id": "coindesk-eu-2026",
+   "title": "EU's largest measures against Russia yet include escalation of crypto sanctions evasion",
+   "publisher": "CoinDesk",
+   "date": "2026-04-27",
+   "url": "https://www.coindesk.com/policy/2026/04/27/eu-s-largest-measures-against-russia-yet-include-escalation-of-crypto-sanctions-evasion",
+   "type": "secondary"
+  },
+  {
+   "id": "lbma-russia-2022",
+   "title": "Good Delivery List Update: Gold & Silver Russian Refiners Suspended",
+   "publisher": "LBMA",
+   "date": "2022-03-07",
+   "url": "https://www.lbma.org.uk/articles/good-delivery-list-update-gold-silver-russian-refiners-suspended",
+   "type": "secondary"
+  },
+  {
+   "id": "interfax-soroma-2025",
+   "title": "Mali gold refinery with Russian shareholder to seek Good Delivery status",
+   "publisher": "Interfax",
+   "date": "2025-06-27",
+   "url": "https://interfax.com/newsroom/top-stories/112321/",
+   "type": "secondary"
+  },
+  {
+   "id": "reuters-soroma-build-2025",
+   "title": "Mali starts construction of Russia-backed gold refinery",
+   "publisher": "Reuters",
+   "date": "2025-06-17",
+   "url": "https://www.reuters.com/world/africa/mali-starts-construction-russia-backed-gold-refinery-2025-06-17/",
+   "type": "secondary"
+  },
+  {
+   "id": "bbc-soroma-2025",
+   "title": "Mali gold refinery: military ruler hails construction as assertion of 'economic sovereignty'",
+   "publisher": "BBC",
+   "date": "2025-06-17",
+   "url": "https://www.bbc.com/news/articles/c98w49220rko",
+   "type": "secondary"
+  },
+  {
+   "id": "adf-a7-2026",
+   "title": "Russia Launches Crypto Scheme in Africa",
+   "publisher": "Africa Defense Forum",
+   "date": "2026-05-19",
+   "url": "https://adf-magazine.com/2026/05/russia-launches-crypto-scheme-in-africa/",
+   "type": "secondary"
   }
  ],
  "regions": [
@@ -2883,6 +2979,9 @@
      ]
     },
     {
+     "t": "Russian officials have named Mali as a possible partner for the A7 payments network. When A7 opened its first African offices in September 2025, Russia's deputy finance minister listed Mali among interested countries. [[cir-a7-abroad-2025]] The Bamako refinery's Russian partner is Yadran Group, and no public source we found ties Yadran to A7. [[reuters-mali-refinery,interfax-soroma-2025]] Elliptic reports that A7's ruble token trades against the dollar token USDT in Kyrgyzstan and on a UAE platform, which lets dollars reach rubles outside the banking system. [[elliptic-a7a5-1bn]] PSB describes A7 as a sanctions-resistant settlement system for Russia's trade partners. [[cir-a7-abroad-2025]] The US, UK and EU treat it as sanctions evasion. [[ofac-a7-2025,uk-a7a5-2025,eu-19th-2025]]"
+    },
+    {
      "t": "Each side's case: the juntas say Western forces failed to stop the insurgency and that state control returns mineral revenue to citizens. [[reuters-somair-2025]] Orano says SOMAIR operated under valid agreements and calls the nationalisation unlawful. [[orano-somair-2025]] Algeria, the largest neighbour, approved sending military units to Niger in October 2026. [[lemonde-alg-niger-2026]]",
      "c": [
       "reuters-somair-2025",
@@ -4251,25 +4350,231 @@
    "gap": "We found no published volume of African gold converted to crypto in the UAE, and no source tying a specific African gold shipment to a crypto conversion."
   },
   "a7": {
-   "label": "A7A5, Russia's settlement rail",
+   "label": "A7 and A7A5, Russia's settlement rail",
    "status": "reported",
    "t": [
-    "A7 LLC is a Moscow cross-border payments firm owned by Ilan Shor and the state defence bank Promsvyazbank (PSB). Its ruble token A7A5 is issued by Old Vector in Kyrgyzstan and trades mainly on the Grinex exchange.",
+    "A7 LLC is a Moscow cross-border payments firm co-owned by the state defence bank Promsvyazbank (PSB). Its ruble token A7A5 is issued in Kyrgyzstan and trades mainly on the Grinex exchange.",
     "The US sanctioned A7, Grinex and Old Vector in August 2025, the UK sanctioned Grinex and Old Vector the same month, and the EU banned A7A5 transactions in October 2025.",
     "Elliptic counts more than $100 billion in A7A5 transfers by January 2026, mostly as a bridge between rubles and the dollar token USDT."
    ],
    "cites": [
-    "ofac-a7-2025",
-    "ofac-sdn-20250814",
-    "uk-a7a5-2025",
-    "eu-19th-2025",
+    "chainalysis-a7a5-2025",
+    "cir-a7-africa-2026",
+    "cir-a7a5-2025",
+    "elliptic-a7-leaks",
     "elliptic-a7a5-2025",
     "elliptic-a7a5-2026",
-    "elliptic-a7-leaks",
+    "eu-19th-2025",
     "ft-a7a5-2025",
-    "chainalysis-a7a5-2025"
+    "ofac-a7-2025",
+    "ofac-sdn-20250814",
+    "uk-a7a5-2025"
    ],
-   "africa": "None of these sources links A7 or A7A5 to African gold or trade. It is shown as the Russian settlement rail that a gold-to-crypto route could feed into, not as a documented Africa link."
+   "africa": "A7 opened offices in Nigeria and Zimbabwe in September 2025 and has courted Togo, Madagascar and Mali. No public source traces African gold through A7A5, so the gold leg stays marked reported."
   }
- }
+ },
+ "a7": {
+  "cats": {
+   "partner": {
+    "c": "#FF1744",
+    "n": "Office working through a local partner (reported)"
+   },
+   "office": {
+    "c": "#B388FF",
+    "n": "Declared office, no reported operations"
+   },
+   "outreach": {
+    "c": "#F4FF81",
+    "n": "Political outreach, no office"
+   },
+   "refinery": {
+    "c": "#80D8FF",
+    "n": "Russian-backed gold refinery, no public A7 tie"
+   }
+  },
+  "countries": [
+   {
+    "iso": "NGA",
+    "name": "Nigeria",
+    "cat": "partner",
+    "t": "A7 opened its Lagos office in September 2025. CIR reports that it appears to operate through a local partner company, and that companies named A7 Africa and A7 Nigeria were registered in Kyrgyzstan to a Nigerian owner. Nigeria's finance minister said he did not attend the opening.",
+    "cites": [
+     "cir-a7-africa-2026",
+     "adf-a7-2026"
+    ]
+   },
+   {
+    "iso": "ZWE",
+    "name": "Zimbabwe",
+    "cat": "office",
+    "t": "A7 opened a Harare office on the same day as Lagos, in September 2025, with Russia's deputy finance minister and the deputy chairman of the state bank PSB. Zimbabwe's finance minister was visible at the event.",
+    "cites": [
+     "cir-a7-africa-2026",
+     "cir-a7-abroad-2025"
+    ]
+   },
+   {
+    "iso": "TGO",
+    "name": "Togo",
+    "cat": "outreach",
+    "t": "CIR reports an undisclosed visit to Lomé in January 2026 by a delegation likely linked to A7, and A7 job adverts for a Togo country manager from March 2026. There is no office.",
+    "cites": [
+     "cir-a7-africa-2026",
+     "adf-a7-2026"
+    ]
+   },
+   {
+    "iso": "MDG",
+    "name": "Madagascar",
+    "cat": "outreach",
+    "t": "CIR reports the same delegation flew on to Antananarivo in January 2026, as Russia's Africa Corps arrived there. There is no office.",
+    "cites": [
+     "cir-a7-africa-2026",
+     "cir-a7-africa-pdf"
+    ]
+   },
+   {
+    "iso": "EGY",
+    "name": "Egypt",
+    "cat": "outreach",
+    "t": "At the Russia-Africa ministerial forum in Cairo in December 2025, Russia's foreign minister promoted A7 and invited African states to join Nigeria and Zimbabwe on the platform. There is no office.",
+    "cites": [
+     "cir-a7-africa-pdf"
+    ]
+   },
+   {
+    "iso": "MLI",
+    "name": "Mali",
+    "cat": "refinery",
+    "t": "Russia's deputy finance minister named Mali among interested countries at the A7 openings. Mali's new Bamako gold refinery is 38% owned by Russia's Yadran Group. No public source we found ties Yadran or the refinery to A7.",
+    "cites": [
+     "cir-a7-abroad-2025",
+     "reuters-mali-refinery",
+     "interfax-soroma-2025"
+    ]
+   }
+  ]
+ },
+ "a7route": {
+  "status": "reported",
+  "note": "Each step below is public. No public source traces a single shipment through every step.",
+  "steps": [
+   {
+    "n": "Sahel gold",
+    "t": "Mali produces about 50 t of gold a year. Yadran says most refinery feedstock will be Malian, with gold from other Sahel states such as Burkina Faso also considered.",
+    "cites": [
+     "reuters-mali-refinery",
+     "interfax-soroma-2025",
+     "bbc-soroma-2025"
+    ]
+   },
+   {
+    "n": "Bamako refinery",
+    "t": "SOROMA-SA is 62% Malian state and 38% Yadran Group, sized for up to 200 t a year. Building began in June 2025, so it is not yet refining.",
+    "cites": [
+     "reuters-mali-refinery",
+     "reuters-soroma-build-2025",
+     "interfax-soroma-2025"
+    ]
+   },
+   {
+    "n": "UAE",
+    "t": "Mali's gold has gone abroad for refining and sale to the UAE, South Africa and Switzerland since 1980. SWISSAID finds most undeclared African gold reaches the UAE.",
+    "cites": [
+     "reuters-soroma-build-2025",
+     "swissaid-uae-2025"
+    ]
+   },
+   {
+    "n": "USDT and A7A5",
+    "t": "A7A5 trades against the dollar token USDT on Kyrgyz exchanges and on Bitpapa, a sanctioned UAE peer-to-peer platform. Its issuer has injected over $1.3 billion in USDT into its own exchange.",
+    "cites": [
+     "elliptic-a7a5-1bn"
+    ]
+   },
+   {
+    "n": "Rubles",
+    "t": "A7A5 is pegged to the ruble and backed by ruble deposits at PSB, the sanctioned state defence bank that co-owns A7.",
+    "cites": [
+     "cir-a7a5-2025"
+    ]
+   }
+  ],
+  "parallel": {
+   "n": "Hong Kong channel",
+   "t": "An A7 sales presentation in August 2025 put 48% of A7 payments to Hong Kong and 30% to mainland China, mostly in yuan. Africa and others took 6%.",
+   "cites": [
+    "cir-a7-abroad-2025"
+   ]
+  }
+ },
+ "a7cog": [
+  {
+   "n": "State bank layer",
+   "t": "PSB, the sanctioned state defence bank, launched A7 in October 2024, co-owns it and holds the deposits behind A7A5. The state development bank VEB.RF backs it financially.",
+   "cites": [
+    "lawfare-a7-2025",
+    "cir-a7a5-2025"
+   ]
+  },
+  {
+   "n": "Kyrgyz crypto layer",
+   "t": "A7A5's issuer and its main exchanges are registered in Kyrgyzstan.",
+   "cites": [
+    "ofac-a7-2025",
+    "elliptic-a7a5-1bn"
+   ]
+  },
+  {
+   "n": "UAE and Hong Kong intermediaries",
+   "t": "Shared web infrastructure links A7 to companies in the UAE and Seychelles, and most A7 payments go to Hong Kong and China.",
+   "cites": [
+    "cir-a7a5-2025",
+    "cir-a7-abroad-2025"
+   ]
+  },
+  {
+   "n": "Kremlin political cover",
+   "t": "A deputy finance minister opened the African offices and the foreign minister promoted A7 to African states in Cairo.",
+   "cites": [
+    "cir-a7-africa-2026",
+    "cir-a7-africa-pdf"
+   ]
+  }
+ ],
+ "a7fric": [
+  {
+   "n": "United States, Aug 2025",
+   "t": "OFAC designated A7, the A7A5 issuer and the Grinex exchange.",
+   "cites": [
+    "ofac-a7-2025",
+    "ofac-sdn-20250814"
+   ]
+  },
+  {
+   "n": "United Kingdom, 2025",
+   "t": "The UK sanctioned A7 in May 2025, and the A7A5 issuer and Grinex in August 2025.",
+   "cites": [
+    "cir-a7a5-2025",
+    "uk-a7a5-2025"
+   ]
+  },
+  {
+   "n": "European Union, 2025–26",
+   "t": "The EU sanctioned A7 in July 2025 and banned A7A5 transactions in October 2025. Its April 2026 package hit the Kyrgyz exchange where much A7A5 trades and banned Russian crypto platforms.",
+   "cites": [
+    "elliptic-a7a5-1bn",
+    "eu-19th-2025",
+    "coindesk-eu-2026"
+   ]
+  },
+  {
+   "n": "LBMA, since 2022",
+   "t": "The London bullion market suspended Russian refiners in March 2022. Yadran says the Bamako refinery aims for LBMA Good Delivery status.",
+   "cites": [
+    "lbma-russia-2022",
+    "interfax-soroma-2025"
+   ]
+  }
+ ]
 }
