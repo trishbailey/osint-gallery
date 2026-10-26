@@ -15,10 +15,10 @@ function start(){const M=window.MAPX;if(!M||!window.__proj||!document.getElement
   eg.append("text").text(d=>d.n).attr("x",5).attr("y",4.5).attr("font-size",13).attr("fill","#ffffff").attr("stroke","#0b1526").attr("stroke-width",2.5).attr("paint-order","stroke")};
  const OFF={drug:[0,0],migr:[2.5,2.5],guns:[-2.5,-2.5]};
  const arrows=(s,color)=>{const ar=[],tmp=d3.select("body").append("svg").style("position","absolute").style("visibility","hidden").style("width",0).style("height",0),tp=tmp.append("path").node();
-  s.selectAll("path.ovl").each(function(){tp.setAttribute("d",this.getAttribute("d"));const L=tp.getTotalLength();if(!L||L<160)return;
-   /* one arrow per segment, 60% along; skip it if another arrow is already within 70px (overlapping or converging corridors) */
-   const a=tp.getPointAtLength(L*.6-1),b=tp.getPointAtLength(L*.6);if(ar.some(q=>Math.hypot(q.x-b.x,q.y-b.y)<70))return;ar.push({x:b.x,y:b.y,r:Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI})});tmp.remove();
-  s.append("g").style("pointer-events","none").selectAll("g").data(ar).join("g").attr("class","pt").attr("data-t",d=>`translate(${d.x},${d.y}) rotate(${d.r})`).attr("transform",function(){return `${this.dataset.t} scale(${1/(window.__zk||1)})`}).append("path").attr("d","M-7,-6L7,0L-7,6Z").attr("fill",color).attr("stroke","#0b1526").attr("stroke-width",1.5)};
+  s.selectAll("path.ovl").each(function(){tp.setAttribute("d",this.getAttribute("d"));const L=tp.getTotalLength();if(!L)return;
+   /* ONE arrowhead per route, at its arrival (destination) end; routes that converge on the same endpoint share one tip */
+   const a=tp.getPointAtLength(Math.max(0,L-6)),b=tp.getPointAtLength(L);if(ar.some(q=>Math.hypot(q.x-b.x,q.y-b.y)<12))return;ar.push({x:b.x,y:b.y,r:Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI})});tmp.remove();
+  s.append("g").style("pointer-events","none").selectAll("g").data(ar).join("g").attr("class","pt").attr("data-t",d=>`translate(${d.x},${d.y}) rotate(${d.r})`).attr("transform",function(){return `${this.dataset.t} scale(${1/(window.__zk||1)})`}).append("path").attr("d","M-15,-9L5,0L-15,9L-11,0Z").attr("fill",color).attr("stroke","#0b1526").attr("stroke-width",1.8).attr("stroke-linejoin","round")};
  Promise.all(L.map(l=>fetch(l.f).then(r=>r.json()))).then(gs=>{
   const notes=document.createElement("div");notes.id="routenotes";notes.className="rnotes muted small";
   gs.forEach((g,i)=>{const l=L[i],vs=g.features.map(f=>+f.properties.volume||0),mx=Math.max(...vs,1);
