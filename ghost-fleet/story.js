@@ -37,7 +37,7 @@ function big3(){L.geoJSON(GF.LAND,{filter:f=>Object.values(B3F).includes(f.prope
   L.polyline([f.a,an],{color:"#f5f7fa",weight:1,opacity:.8,interactive:false}).addTo(lay);
   L.marker(an,{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="pl">${esc(f.from)}</div>`}),interactive:false}).addTo(lay)});
  // country names: small and light; counts in sea callouts joined by leader lines
- const CNP={CHN:[37.5,93],IND:[23.5,77],TUR:[38.6,32.2]},BA=GF.phone()?{CHN:[19,130],IND:[-4,72],TUR:[27,14]}:{CHN:[19,130],IND:[5,65],TUR:[35.3,29.5]};
+ const CNP={CHN:[37.5,93],IND:[23.5,77],TUR:[38.6,32.2]},BA=GF.phone()?{CHN:[19,130],IND:[-4,72],TUR:[3,4]}:{CHN:[19,130],IND:[5,65],TUR:[27,15]};
  B3.forEach(c=>{
   L.polyline([B3P[c],BA[c]],{color:B3C[c],weight:1.5,opacity:1,interactive:false}).addTo(lay);
   L.marker(BA[c],{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="b3l" style="border-color:${B3C[c]}"><b style="color:${B3C[c]}">${B3N[c]||0}</b><span>trips · ${Math.round(100*(B3N[c]||0)/S.voyages)}%</span></div>`}),interactive:false}).addTo(lay)});
@@ -90,7 +90,7 @@ const RED="#e8423f",ARW=(()=>{const c=document.createElement("canvas");c.classNa
  function kick(){if(!raf&&R)raf=requestAnimationFrame(loop)}
  map.on("zoomstart movestart",()=>{c.style.opacity=0});map.on("zoomend moveend resize",()=>{c.style.opacity=1;proj();kick();draw(performance.now())});
  new IntersectionObserver(e=>{vis=e[0].isIntersecting;kick()}).observe(map.getContainer());document.addEventListener("visibilitychange",kick);rm.addEventListener&&rm.addEventListener("change",kick);
- return{set(rs,mx){R=rs;M=mx||1;proj();if(!R){x.clearRect(0,0,c.width,c.height);return}draw(performance.now());kick()},running:()=>!!raf}})();
+ return{set(rs,mx){R=rs;M=mx||1;proj();if(!R){x.clearRect(0,0,c.width,c.height);return}draw(performance.now());kick()},running:()=>!!raf,pts:()=>P.map(o=>o.p.map(q=>[q.x,q.y]))}})();
 GF.ARW=ARW;
 function fit(b){map.options.zoomSnap=.25;if(GF.phone())map.setMinZoom(1);map.invalidateSize();if(b&&b.length)map.flyToBounds(L.latLngBounds(b).pad(.15),{duration:.8,maxZoom:6})}
 function go(i){cur=Math.max(0,Math.min(CH.length-1,i));lay.clearLayers();ARW.set(null);hideRaw();fit(CH[cur].d());
