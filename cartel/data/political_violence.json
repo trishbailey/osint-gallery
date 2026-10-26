@@ -1,11 +1,13 @@
 {
- "title": "Killings of sitting mayors and journalists in Mexico since October 2024",
+ "title": "Killings of sitting mayors and journalists in Latin America and the Caribbean since October 2024",
  "first": "2024-10-06",
- "last": "2026-08-29",
+ "last": "2026-10-02",
  "cites": [
   "UNOTV_ALCALDES",
   "ETCETERA_PERIODISTAS",
-  "A19_PERIODISTAS"
+  "A19_PERIODISTAS",
+  "CPJ_KILLED_DB",
+  "UNESCO_OBS"
  ],
  "note": "Mayors: UnoTV's count of sitting mayors killed under the current administration (to 22 Jul 2026). Journalists: Revista Etcétera's list (to 22 Jul 2026, dates of confirmed death) plus El País for Ricardo Zúñiga Rosas. Lists differ from Article 19 (14 cases it links to journalistic work under this administration) and CPJ, which apply stricter motive tests. Candidates and other officials killed are not yet included; Data Cívica's 'Votar entre balas' tracker is the fuller source. Map points are approximate locations.",
  "events": [
@@ -23,7 +25,8 @@
    "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
    "cites": [
     "UNOTV_ALCALDES"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2024-10-15",
@@ -39,7 +42,8 @@
    "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
    "cites": [
     "UNOTV_ALCALDES"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2024-10-29",
@@ -55,7 +59,8 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2024-10-30",
@@ -71,7 +76,8 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2024-12-03",
@@ -87,7 +93,8 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2024-12-15",
@@ -103,7 +110,67 @@
    "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
    "cites": [
     "UNOTV_ALCALDES"
-   ]
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2024-12-24",
+   "name": "Jimmy Jean",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Moun Afe Bon",
+   "place": "Port-au-Prince",
+   "country": "Haiti",
+   "lonlat": [
+    -72.34,
+    18.54
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/jimmy-jean/",
+   "cites": [
+    "CPJ_KILLED_DB"
+   ],
+   "motive": "CPJ: work-related motive confirmed",
+   "perpetrator": "Criminal group (CPJ); gang gunfire on a press conference at a hospital reopening (IFJ)"
+  },
+  {
+   "date": "2024-12-24",
+   "name": "Marckendy Natoux",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Freelance",
+   "place": "Port-au-Prince",
+   "country": "Haiti",
+   "lonlat": [
+    -72.33,
+    18.55
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/marckendy-natoux/",
+   "cites": [
+    "CPJ_KILLED_DB"
+   ],
+   "motive": "CPJ: work-related motive confirmed",
+   "perpetrator": "Criminal group (CPJ)"
+  },
+  {
+   "date": "2025-01-11",
+   "name": "Eber Rigoberto Ponce Rosero",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Arenillas, El Oro",
+   "country": "Ecuador",
+   "lonlat": [
+    -80.06,
+    -3.55
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.teleamazonas.com/actualidad/noticias/politica/alcaldes-asesinados-detenidos-ecuador-radiografia-122562/",
+   "cites": [
+    "TELEAMAZONAS_ALCALDES",
+    "EXPRESO_ARENILLAS"
+   ],
+   "motive": "motive under investigation"
   },
   {
    "date": "2025-01-17",
@@ -119,7 +186,48 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2025-01-20",
+   "name": "Gastón Medina",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Cadena Sur",
+   "place": "Ica",
+   "country": "Peru",
+   "lonlat": [
+    -75.73,
+    -14.07
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/gaston-medina/",
+   "cites": [
+    "CPJ_KILLED_DB",
+    "IFJ_KILLED_2025"
+   ],
+   "motive": "CPJ: work-related motive confirmed"
+  },
+  {
+   "date": "2025-01-24",
+   "name": "Óscar Gómez Agudelo",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Rumba del Café",
+   "place": "Armenia, Quindío",
+   "country": "Colombia",
+   "lonlat": [
+    -75.68,
+    4.53
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/oscar-gomez-agudelo/",
+   "cites": [
+    "CPJ_KILLED_DB",
+    "IFJ_KILLED_2025"
+   ],
+   "motive": "CPJ: motive unconfirmed (motive under investigation)"
   },
   {
    "date": "2025-01-25",
@@ -135,7 +243,27 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2025-02-26",
+   "name": "Gerson Saúl Ajcúc Xot",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Chuarrancho (killed on the Ruta al Atlántico, Guatemala City)",
+   "country": "Guatemala",
+   "lonlat": [
+    -90.47,
+    14.65
+   ],
+   "precision": "attack site (approximate)",
+   "url": "https://lahora.gt/nacionales/ypena/2025/02/26/alcalde-de-chuarrancho-fallece-en-ataque-armado-en-ruta-al-atlantico/",
+   "cites": [
+    "LAHORA_CHUARRANCHO",
+    "PC_CHUARRANCHO"
+   ],
+   "motive": "motive under investigation"
   },
   {
    "date": "2025-03-02",
@@ -151,7 +279,28 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2025-03-04",
+   "name": "Patricio Aguilar",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "El Libertador",
+   "place": "Quinindé, Esmeraldas",
+   "country": "Ecuador",
+   "lonlat": [
+    -79.47,
+    0.33
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/patricio-aguilar/",
+   "cites": [
+    "CPJ_KILLED_DB",
+    "UNESCO_OBS"
+   ],
+   "motive": "CPJ: motive unconfirmed (motive under investigation)"
   },
   {
    "date": "2025-03-14",
@@ -167,23 +316,48 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
-   "date": "2025-05-15",
-   "name": "Mario Hernández García",
-   "role": "Sitting mayor",
-   "kind": "official",
-   "place": "Santiago Amoltepec, Oaxaca",
+   "date": "2025-03-21",
+   "name": "Ismael Alonzo González",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Freelance",
+   "place": "Quetzaltenango",
+   "country": "Guatemala",
    "lonlat": [
-    -97.5,
-    16.65
+    -91.52,
+    14.83
    ],
-   "precision": "municipality (approximate seat)",
-   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/ismael-alonzo-gonzalez/",
    "cites": [
-    "UNOTV_ALCALDES"
-   ]
+    "CPJ_KILLED_DB",
+    "UNESCO_OBS"
+   ],
+   "motive": "CPJ: motive unconfirmed (motive under investigation)"
+  },
+  {
+   "date": "2025-05-07",
+   "name": "Raúl Celis López",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Hora Cero",
+   "place": "Iquitos, Loreto",
+   "country": "Peru",
+   "lonlat": [
+    -73.25,
+    -3.75
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/raul-celis-lopez/",
+   "cites": [
+    "CPJ_KILLED_DB",
+    "IFJ_KILLED_2025"
+   ],
+   "motive": "CPJ: motive unconfirmed (motive under investigation)"
   },
   {
    "date": "2025-05-15",
@@ -199,7 +373,66 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2025-05-15",
+   "name": "Mario Hernández García",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Santiago Amoltepec, Oaxaca",
+   "lonlat": [
+    -97.5,
+    16.65
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2025-05-27",
+   "name": "Luís Augusto Carneiro da Costa",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Rádio Guarany FM",
+   "place": "Abaetetuba, Pará",
+   "country": "Brazil",
+   "lonlat": [
+    -48.88,
+    -1.72
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://www.unesco.org/en/safety-journalists/observatory/e3589c40-ae73-4bbc-b682-967ef82aa662",
+   "cites": [
+    "UNESCO_OBS",
+    "G1_ABAETETUBA"
+   ],
+   "motive": "Not in CPJ database; motive under investigation"
+  },
+  {
+   "date": "2025-05-31",
+   "name": "Javier Hércules (Javier Antonio Salinas)",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "ATN Noticias (A Todo Noticias, Canal 32)",
+   "place": "Copán department",
+   "country": "Honduras",
+   "lonlat": [
+    -88.78,
+    14.77
+   ],
+   "precision": "department (approximate)",
+   "url": "https://cpj.org/data/people/javier-hercules/",
+   "cites": [
+    "CPJ_KILLED_DB",
+    "UNESCO_OBS"
+   ],
+   "motive": "CPJ: work-related motive confirmed",
+   "perpetrator": "Criminal group (CPJ)"
   },
   {
    "date": "2025-06-02",
@@ -215,7 +448,8 @@
    "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
    "cites": [
     "UNOTV_ALCALDES"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2025-06-03",
@@ -231,7 +465,8 @@
    "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
    "cites": [
     "UNOTV_ALCALDES"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2025-06-05",
@@ -247,7 +482,8 @@
    "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
    "cites": [
     "UNOTV_ALCALDES"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2025-06-15",
@@ -263,7 +499,8 @@
    "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
    "cites": [
     "UNOTV_ALCALDES"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2025-06-21",
@@ -279,7 +516,8 @@
    "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
    "cites": [
     "UNOTV_ALCALDES"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2025-06-23",
@@ -295,7 +533,26 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2025-07-09",
+   "name": "Francisco Martínez",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "San Isidro, Intibucá (killed in Siguatepeque)",
+   "country": "Honduras",
+   "lonlat": [
+    -87.83,
+    14.6
+   ],
+   "precision": "attack site (approximate)",
+   "url": "https://www.dw.com/es/descartan-m%C3%B3vil-pol%C3%ADtico-en-asesinato-de-alcalde-en-honduras/a-73235261",
+   "cites": [
+    "DW_SANISIDRO"
+   ],
+   "motive": "Police rule out political motive and cite possible personal revenge; motive under investigation"
   },
   {
    "date": "2025-07-09",
@@ -311,7 +568,8 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2025-07-09",
@@ -327,7 +585,28 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2025-08-21",
+   "name": "Xavier Ramos",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "El Universo",
+   "place": "Guayaquil",
+   "country": "Ecuador",
+   "lonlat": [
+    -79.92,
+    -2.17
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://www.unesco.org/en/safety-journalists/observatory/0215b1f4-bfcb-4918-9d94-3086c0965ee4",
+   "cites": [
+    "UNESCO_OBS",
+    "EU_RAMOS"
+   ],
+   "motive": "Not in CPJ database; suspect charged with robbery resulting in death"
   },
   {
    "date": "2025-10-20",
@@ -343,7 +622,8 @@
    "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
    "cites": [
     "UNOTV_ALCALDES"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2025-10-25",
@@ -359,7 +639,28 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2025-10-28",
+   "name": "Fernando Álvarez Vera",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Fernando TV (digital)",
+   "place": "Salitre, Guayas",
+   "country": "Ecuador",
+   "lonlat": [
+    -79.82,
+    -1.83
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://www.unesco.org/en/safety-journalists/observatory/b8180dae-22eb-461b-ba94-9c2c60dc272e",
+   "cites": [
+    "UNESCO_OBS",
+    "RSF_ALVAREZ"
+   ],
+   "motive": "Not in CPJ database; motive under investigation"
   },
   {
    "date": "2025-11-01",
@@ -375,7 +676,86 @@
    "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
    "cites": [
     "UNOTV_ALCALDES"
-   ]
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2025-12-06",
+   "name": "Juan Fernando Núñez Guevara",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Kamila TV",
+   "place": "Chepén, La Libertad",
+   "country": "Peru",
+   "lonlat": [
+    -79.43,
+    -7.22
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/juan-fernando-nunez-guevara/",
+   "cites": [
+    "CPJ_KILLED_DB",
+    "IFJ_KILLED_2025"
+   ],
+   "motive": "CPJ: motive unconfirmed (motive under investigation)"
+  },
+  {
+   "date": "2025-12-06",
+   "name": "Nelson Luciano Marroquín",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Masagua, Escuintla",
+   "country": "Guatemala",
+   "lonlat": [
+    -90.86,
+    14.2
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.dw.com/es/asesinan-a-tiros-a-alcalde-en-el-sur-de-guatemala/a-75052356",
+   "cites": [
+    "DW_MASAGUA"
+   ],
+   "motive": "motive under investigation"
+  },
+  {
+   "date": "2025-12-16",
+   "name": "Jorge Zapeta Aguilar",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Libertad de Expresión",
+   "place": "San Pablo Jocopilas, Suchitepéquez",
+   "country": "Guatemala",
+   "lonlat": [
+    -91.45,
+    14.58
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/jorge-zapeta-aguilar/",
+   "cites": [
+    "CPJ_KILLED_DB",
+    "IFJ_KILLED_2025"
+   ],
+   "motive": "CPJ: motive unconfirmed (motive under investigation)"
+  },
+  {
+   "date": "2025-12-26",
+   "name": "Mitzar Bato Castillejos Tenazoa",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Radio Latin Plus",
+   "place": "Aguaytía, Ucayali",
+   "country": "Peru",
+   "lonlat": [
+    -75.51,
+    -9.04
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/mitzar-bato-castillejos-tenazoa/",
+   "cites": [
+    "CPJ_KILLED_DB",
+    "UNESCO_OBS"
+   ],
+   "motive": "CPJ: motive unconfirmed (motive under investigation)"
   },
   {
    "date": "2026-01-08",
@@ -391,7 +771,125 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2026-02-22",
+   "name": "Edward Amoroto",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Los Aquijes, Ica (died in Lima hospital)",
+   "country": "Peru",
+   "lonlat": [
+    -75.69,
+    -14.1
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://apnews.com/article/peru-ataque-alcalde-motocicleta-amazonia-homicidio-495c63ae19ed7a7e2abe5b39ed16bf7e",
+   "cites": [
+    "AP_COVIRIALI"
+   ],
+   "motive": "motive under investigation"
+  },
+  {
+   "date": "2026-02-26",
+   "name": "Iroshi Erik Ureta Campos",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Coviriali, Junín",
+   "country": "Peru",
+   "lonlat": [
+    -74.64,
+    -11.29
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://rpp.pe/peru/actualidad/fallecio-alcalde-de-coviriali-tras-ser-trasladado-de-emergencia-a-lima-por-heridas-de-bala-noticia-1677685",
+   "cites": [
+    "RPP_COVIRIALI",
+    "AP_COVIRIALI"
+   ],
+   "motive": "motive under investigation"
+  },
+  {
+   "date": "2026-04-26",
+   "name": "Carlos Humberto Cal Ical",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Freelance",
+   "place": "San Cristóbal Verapaz, Alta Verapaz",
+   "country": "Guatemala",
+   "lonlat": [
+    -90.48,
+    15.37
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/carlos-humberto-cal-ical/",
+   "cites": [
+    "CPJ_KILLED_DB",
+    "UNESCO_OBS"
+   ],
+   "motive": "CPJ: motive unconfirmed (motive under investigation)"
+  },
+  {
+   "date": "2026-05-05",
+   "name": "Mateo Pérez Rueda",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "El Confidente",
+   "place": "Briceño, Antioquia",
+   "country": "Colombia",
+   "lonlat": [
+    -75.55,
+    7.11
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/mateo-perez-rueda/",
+   "cites": [
+    "CPJ_KILLED_DB",
+    "UNESCO_OBS"
+   ],
+   "motive": "CPJ: work-related motive confirmed",
+   "perpetrator": "Criminal group (CPJ)"
+  },
+  {
+   "date": "2026-05-21",
+   "name": "Víctor Hugo Febre Calle",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Veintiséis de Octubre, Piura",
+   "country": "Peru",
+   "lonlat": [
+    -80.67,
+    -5.18
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://apnews.com/article/peru-asesinato-alcalde-piura-costa-sicarios-motocicletas-delincuencia-7ce74b9da9803b8854acf8c5346e5755",
+   "cites": [
+    "AP_PIURA",
+    "ANDINA_PIURA"
+   ],
+   "motive": "motive under investigation"
+  },
+  {
+   "date": "2026-06-06",
+   "name": "Cristian Herrera Niño",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Cúcuta al Rojo Vivo",
+   "place": "Cúcuta, Norte de Santander",
+   "country": "Colombia",
+   "lonlat": [
+    -72.5,
+    7.89
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/cristian-herrera-nino/",
+   "cites": [
+    "CPJ_KILLED_DB",
+    "UNESCO_OBS"
+   ],
+   "motive": "CPJ: motive unconfirmed (motive under investigation)"
   },
   {
    "date": "2026-06-11",
@@ -407,7 +905,8 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2026-06-13",
@@ -423,7 +922,8 @@
    "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
    "cites": [
     "UNOTV_ALCALDES"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2026-07-03",
@@ -439,7 +939,8 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2026-07-04",
@@ -455,7 +956,8 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2026-07-13",
@@ -471,7 +973,8 @@
    "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
    "cites": [
     "UNOTV_ALCALDES"
-   ]
+   ],
+   "country": "Mexico"
   },
   {
    "date": "2026-07-16",
@@ -487,23 +990,8 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
-  },
-  {
-   "date": "2026-07-22",
-   "name": "Valentín Lavín Romero",
-   "role": "Sitting mayor",
-   "kind": "official",
-   "place": "Temoac, Morelos",
-   "lonlat": [
-    -98.78,
-    18.77
    ],
-   "precision": "municipality (approximate seat)",
-   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
-   "cites": [
-    "UNOTV_ALCALDES"
-   ]
+   "country": "Mexico"
   },
   {
    "date": "2026-07-22",
@@ -519,7 +1007,45 @@
    "url": "https://etcetera.com.mx/artculos/periodistas-comunicadores-asesinados-sexenio-sheinbaum/",
    "cites": [
     "ETCETERA_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2026-07-22",
+   "name": "Valentín Lavín Romero",
+   "role": "Sitting mayor",
+   "kind": "official",
+   "place": "Temoac, Morelos",
+   "lonlat": [
+    -98.78,
+    18.77
+   ],
+   "precision": "municipality (approximate seat)",
+   "url": "https://www.unotv.com/nacional/van-13-alcaldes-asesinados-en-mexico-durante-la-reciente-administracion-recuento-de-2024-a-2026/",
+   "cites": [
+    "UNOTV_ALCALDES"
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2026-08-23",
+   "name": "René Manuel Cobos Merchán",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Fixer for national and foreign media",
+   "place": "Yaguachi, Guayas",
+   "country": "Ecuador",
+   "lonlat": [
+    -79.69,
+    -2.12
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://www.unesco.org/en/safety-journalists/observatory/fd919364-70e5-4e8c-8e49-569cc5fd26f3",
+   "cites": [
+    "UNESCO_OBS",
+    "FUNDAMEDIOS_COBOS"
+   ],
+   "motive": "Not in CPJ database; motive under investigation"
   },
   {
    "date": "2026-08-29",
@@ -536,7 +1062,50 @@
    "cites": [
     "ELPAIS_PERIODISTAS26",
     "A19_PERIODISTAS"
-   ]
+   ],
+   "country": "Mexico"
+  },
+  {
+   "date": "2026-09-10",
+   "name": "Joseph Willard Vancol",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Ti-Boukan FM",
+   "place": "Petit-Boucan (Grand-Goâve area)",
+   "country": "Haiti",
+   "lonlat": [
+    -72.77,
+    18.43
+   ],
+   "precision": "locality (approximate)",
+   "url": "https://cpj.org/data/people/joseph-willard-vancol/",
+   "cites": [
+    "CPJ_KILLED_DB",
+    "UNESCO_OBS"
+   ],
+   "motive": "CPJ: work-related motive confirmed",
+   "perpetrator": "Criminal group (CPJ)"
+  },
+  {
+   "date": "2026-10-02",
+   "name": "Evelio Lisandro López Sánchez",
+   "role": "Journalist or media worker",
+   "kind": "journalist",
+   "outlet": "Huehue es Noticias",
+   "place": "San Pedro Necta, Huehuetenango",
+   "country": "Guatemala",
+   "lonlat": [
+    -91.77,
+    15.49
+   ],
+   "precision": "municipality (approximate)",
+   "url": "https://cpj.org/data/people/evelio-lisandro-lopez-sanchez/",
+   "cites": [
+    "CPJ_KILLED_DB",
+    "UNESCO_OBS"
+   ],
+   "motive": "CPJ: motive unconfirmed (motive under investigation)"
   }
- ]
+ ],
+ "note_latam": "Outside Mexico: journalists from CPJ's killed database (confirmed and unconfirmed motive) cross-checked with UNESCO's observatory and IFJ, plus UNESCO cases CPJ does not list; sitting mayors (alcaldes, prefeitos) from national media. Ex-mayors and candidates are excluded. No sitting mayor or prefeito killing in Brazil or Colombia was found for the window."
 }
