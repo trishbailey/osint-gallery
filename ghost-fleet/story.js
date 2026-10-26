@@ -3,6 +3,7 @@
 while(!window.GF)await new Promise(r=>setTimeout(r,50));
 const {map,cv,hideRaw,showRaw,openP,esc,fmt,title,M}=GF;
 const S=await fetch("data/story.json").then(r=>r.json());
+if(!GF.WPI)GF.WPI=await fetch("data/wpi.json").then(r=>r.json()).catch(()=>[]);
 const CN={CHN:"China",IND:"India",TUR:"Turkey",KOR:"South Korea",BRA:"Brazil",EGY:"Egypt",MYS:"Malaysia",MAR:"Morocco",SDN:"Sudan",VEN:"Venezuela",IDN:"Indonesia",ARE:"UAE",LKA:"Sri Lanka",ESH:"Western Sahara",SGP:"Singapore"};
 const cn=c=>CN[c]||c;
 const LC={Primorsk:"#4fa3e0","Ust-Luga":"#4fa3e0",Novorossiysk:"#e8913a",Taman:"#e8913a",Kozmino:"#5cc98a",Murmansk:"#d97cb0"};
@@ -32,6 +33,10 @@ function big3(){L.geoJSON(GF.LAND,{filter:f=>Object.values(B3F).includes(f.prope
  const ph=GF.phone(),seen={};
  // ports: small dots only; the name shows on hover (desktop) or tap (phone), like the country names
  const PR=GF.PR||(GF.PR=L.svg({pane:"markerPane"}));fs.forEach(f=>{if(seen[f.from])return;seen[f.from]=1;L.circleMarker(f.a,{renderer:PR,radius:4,color:"#0b1526",weight:1.5,fillColor:"#f5f7fa",fillOpacity:1,interactive:false}).addTo(lay);L.circleMarker(f.a,{renderer:PR,radius:12,stroke:false,fillColor:"#fff",fillOpacity:.01}).bindTooltip(esc(f.from)+" (Russian loading port)",{direction:"top"}).on("click",e=>{L.DomEvent.stop(e);if(GF.TT)map.closeTooltip(GF.TT);GF.TT=L.tooltip({direction:"top",offset:[0,-8]}).setLatLng(f.a).setContent(esc(f.from)+" (Russian loading port)");map.openTooltip(GF.TT);map.once("click movestart",()=>GF.TT&&map.closeTooltip(GF.TT))}).addTo(lay)});
+ // arrival ports: same white dots at each distinct route end (most-used destination port); name = nearest World Port Index port, on hover/tap only
+ const AE={};rs.forEach(r=>{const e=r.line[r.line.length-1];AE[e.join()]=e});
+ Object.values(AE).forEach(e=>{const k=Math.cos(e[0]*Math.PI/180);let nm="",bd=1e9;(GF.WPI||[]).forEach(p=>{const d=(p[2]-e[0])**2+((p[3]-e[1])*k)**2;if(d<bd){bd=d;nm=p[0]}});const tx=esc(nm?title(nm):"Destination")+" (arrival port)";
+  L.circleMarker(e,{renderer:PR,radius:4,color:"#0b1526",weight:1.5,fillColor:"#f5f7fa",fillOpacity:1,interactive:false}).addTo(lay);L.circleMarker(e,{renderer:PR,radius:12,stroke:false,fillColor:"#fff",fillOpacity:.01}).bindTooltip(tx,{direction:"top"}).on("click",ev=>{L.DomEvent.stop(ev);if(GF.TT)map.closeTooltip(GF.TT);GF.TT=L.tooltip({direction:"top",offset:[0,-8]}).setLatLng(e).setContent(tx);map.openTooltip(GF.TT);map.once("click movestart",()=>GF.TT&&map.closeTooltip(GF.TT))}).addTo(lay)});
  // country names: small and light; counts in sea callouts joined by leader lines
  const CNP={CHN:[37.5,93],IND:[23.5,77],TUR:[38.6,32.2]},BA=GF.phone()?{CHN:[14,146],IND:[-10,77],TUR:[40,-39]}:{CHN:[22,138],IND:[0,79],TUR:[40,-29]};GF.BA=BA;
  B3.forEach(c=>{
