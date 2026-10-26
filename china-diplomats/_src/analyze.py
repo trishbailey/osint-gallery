@@ -216,11 +216,33 @@ countries=sorted({r['country'] for r in rows})
 def score(cf,cp):return round((cf-cp)/(cf+cp),3) if cf+cp>=2 else None
 GEO={'Antigua and Barbuda':'Antigua and Barb.','Congo (Rep.)':'Congo','DR Congo':'Dem. Rep. Congo','Equatorial Guinea':'Eq. Guinea','North Macedonia':'Macedonia','South Sudan':'S. Sudan','UAE':'United Arab Emirates','United States':'United States of America','China (HQ)':'China'}
 ENT={'ASEAN','African Union','EU','OPCW','UN/Intl orgs Geneva','UN/Intl orgs Vienna','United Nations (NY)'}
-tonemap=dict(period=per,periods=periods,countries=[])
-for c in countries:
-    tot=[sum(tc[(c,p)][i] for p in periods) for i in range(3)]
-    tonemap['countries'].append(dict(country=c,ll=CENT.get(c),geo=None if c in ENT else GEO.get(c,c),posts=tot[2],overall=score(tot[0],tot[1]),conf=tot[0],coop=tot[1],
-        vals=[dict(s=score(*tc[(c,p)][:2]),n=tc[(c,p)][2]) for p in periods]))
+# ---------- aggression (v2): per-post lexicon scoring in main languages ----------
+AGG=[r"hegemon",r"bull(y|ying|ies)",r"smear",r"slander",r"\blies\b",r"\blie\b",r"interfer",r"provocat",r"cold[- ]war mentality",r"zero-sum",r"so-called",r"hypocri",r"double standard",r"condemn",r"(firmly|strongly|resolutely) oppose",r"playing with fire",r"separatis",r"independence forces",r"containment",r"bloc confrontation",r"unilateral sanction",r"coerc",r"groundless",r"fabricat",r"politici[sz]",r"militari[sz]",r"right-wing",r"aggress",r"\bthreat",r"\bwarn",r"protectionis",r"immediately stop",r"stop .{0,20}immediately",r"disinformation",r"\bdesperate",r"\bshameless",r"irresponsible",r"strong dissatisfaction",r"stern representations",r"crush",r"\bvicious",r"\bmalicious",r"\bblackmail",r"\bhysteri",
+ r"霸权",r"霸凌",r"抹黑",r"干涉",r"挑衅",r"谴责",r"坚决反对",r"强烈不满",r"冷战思维",r"双重标准",r"所谓",r"污蔑",r"造谣",r"台独",r"军国主义",r"严正交涉",r"玩火",r"无耻",r"恶意",
+ r"hegemon[ií]a",r"injerencia",r"calumni",r"condena",r"provocaci[oó]n",r"amenaza",r"rechaz",r"hégémon",r"ingérence",r"calomni",r"condamn",r"provocation",r"menace",r"hegemonia",r"ingerência",r"calúnia",r"ameaça",r"Hegemon",r"Einmischung",r"Verleumdung",r"Provokation",r"verurteil",
+ r"覇権",r"中傷",r"内政干渉",r"挑発",r"非難",r"断固反対",r"強い不満",r"軍国主義",r"台湾独立",r"右翼",r"抗議",r"패권",r"내정간섭",r"도발",
+ r"гегемон",r"вмешательств",r"клевет",r"провокац",r"осужда",r"угроз",r"هيمنة",r"تدخل",r"افتراء",r"استفزاز",r"تهديد",r"إدانة"]
+FRI=[r"cooperat",r"win-win",r"friendship",r"friendly",r"partnership",r"mutual(ly)? benefi",r"shared future",r"exchange",r"together",r"congratulat",r"welcome",r"dialogue",r"\bpeace",r"people-to-people",r"cultur",r"festival",r"celebrat",r"\bthank",r"grateful",r"agreement",r"harmon",r"warm",r"beautiful",r"happy",r"brotherly",r"solidarity",r"\bjoin hands",
+ r"合作",r"共赢",r"友谊",r"友好",r"交流",r"携手",r"共同体",r"祝贺",r"欢迎",r"和平",r"感谢",r"美好",
+ r"cooperaci[oó]n",r"amistad",r"hermand",r"felicit",r"gracias",r"coopération",r"amitié",r"félicit",r"merci",r"cooperação",r"amizade",r"parabéns",r"obrigad",r"Zusammenarbeit",r"Freundschaft",r"Glückwunsch",
+ r"協力",r"友好",r"交流",r"平和",r"歓迎",r"祝賀",r"ウィンウィン",r"感謝",r"협력",r"우호",r"친선",
+ r"сотрудничеств",r"дружб",r"поздравл",r"спасибо",r"تعاون",r"صداقة",r"تهنئة",r"شكر"]
+AGR=re.compile("|".join(AGG),re.I);FRR=re.compile("|".join(FRI),re.I)
+for r in rows:
+    a=len(AGR.findall(r['text']));f=len(FRR.findall(r['text']));r['ag'],r['fr']=a,f
+    r['tl']='a' if a>f else 'f' if f>a else 'n'
+MINP=5
+GEO={'Antigua and Barbuda':'Antigua and Barb.','Congo (Rep.)':'Congo','DR Congo':'Dem. Rep. Congo','Equatorial Guinea':'Eq. Guinea','North Macedonia':'Macedonia','South Sudan':'S. Sudan','UAE':'United Arab Emirates','United States':'United States of America','China (HQ)':'China'}
+ENT={'ASEAN','African Union','EU','OPCW','UN/Intl orgs Geneva','UN/Intl orgs Vienna','United Nations (NY)'}
+tonemap=dict(min_posts=MINP,countries=[])
+byc=collections.defaultdict(list)
+for r in rows:byc[r['country']].append(r)
+snip=lambda r:dict(id=r['id'],h=r['h'],t=r['t'],text=r['text'][:220])
+for c,rs in sorted(byc.items()):
+    n=len(rs);na=sum(r['tl']=='a' for r in rs);nf=sum(r['tl']=='f' for r in rs)
+    harsh=sorted([r for r in rs if r['ag']>0],key=lambda r:-(r['ag']-r['fr']))[:3]
+    fri=sorted([r for r in rs if r['fr']>r['ag']],key=lambda r:-(r['fr']-r['ag']))[:3]
+    tonemap['countries'].append(dict(country=c,ll=CENT.get(c),geo=None if c in ENT else GEO.get(c,c),posts=n,agg=round(na/n,3),fri=round(nf/n,3),idx=round((nf-na)/n,3),harsh=[snip(r) for r in harsh],friendly=[snip(r) for r in fri]))
 # ---------- map spread: per named cluster ----------
 mapd=[dict(key=c['key'],name=c['name'],desc=c['desc'],n=c['n'],langs=c['langs'],ids=c['ids'][:60],first=c['first'],last=c['last'],accounts=c['accounts'],countries=c['countries'],
     spread=[dict(s,ll=CENT.get(s['country'])) for s in c['spread']]) for c in named]

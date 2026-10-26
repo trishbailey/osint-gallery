@@ -70,3 +70,4 @@ svg text{fill:var(--text);font-size:13px}
  .card{padding:12px}
  .panel{top:auto;height:80vh;border-left:0;border-top:2px solid var(--gold);border-radius:14px 14px 0 0}
 }
+#tpview{margin:8px 0 10px;gap:0}#tpview button{border-radius:0;min-width:84px}#tpview button:first-child{border-radius:6px 0 0 6px}#tpview button:last-child{border-radius:0 6px 6px 0}

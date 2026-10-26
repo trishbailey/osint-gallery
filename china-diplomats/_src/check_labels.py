@@ -7,7 +7,7 @@ JS="""()=>{const L=c=>{const v=c.match(/\\d+(\\.\\d+)?/g).slice(0,3).map(x=>{x/=
  const bg=[L('rgb(11,21,38)'),L('rgb(15,27,49)'),L('rgb(28,44,75)')];const out=[];
  document.querySelectorAll('svg text').forEach(t=>{const b=t.getBoundingClientRect();if(!b.width||getComputedStyle(t).display==='none')return;
   const px=parseFloat(getComputedStyle(t).fontSize)*t.getScreenCTM().a;const f=L(getComputedStyle(t).fill);
-  const cr=Math.min(...bg.map(g=>(Math.max(f,g)+.05)/(Math.min(f,g)+.05)));out.push({t:t.textContent,px,cr});});
+  let sib=t.parentNode.querySelector(':scope>rect');if(sib){const r=sib.getBoundingClientRect();if(!(b.left>=r.left-1&&b.right<=r.right+1&&b.top>=r.top-1&&b.bottom<=r.bottom+1))sib=null}const fb=sib&&sib.getAttribute('fill')&&getComputedStyle(sib).fill.startsWith('rgb')?[L(getComputedStyle(sib).fill)]:bg;const cr=Math.min(...fb.map(g=>(Math.max(f,g)+.05)/(Math.min(f,g)+.05)));out.push({t:t.textContent,px,cr});});
  return {n:out.length,minPx:Math.min(...out.map(o=>o.px)),minContrast:Math.min(...out.map(o=>o.cr)),bad:out.filter(o=>o.px<12.95||o.cr<4.5).slice(0,15)};}"""
 with sync_playwright() as p:
     b=p.chromium.launch(args=["--no-sandbox"]);pg=b.new_page(viewport={"width":int(sys.argv[2]) if len(sys.argv)>2 else 1440,"height":1000})
