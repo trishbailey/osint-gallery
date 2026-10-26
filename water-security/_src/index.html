@@ -35,6 +35,20 @@ section{padding:18px 0;border-bottom:1px solid var(--line);scroll-margin-top:72p
 #levels{position:sticky;top:0;z-index:35;display:flex;gap:8px;margin:0 -24px 12px;padding:8px 24px;background:var(--bg)}
 #levels a{flex:1;display:flex;align-items:center;justify-content:center;min-height:44px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text);text-decoration:none;font-size:15px;font-weight:700}
 #levels a.on{background:var(--gold);color:#0b1526;border-color:var(--gold)}
+#levels a{min-width:0;line-height:1.15;text-align:center}
+#s-record h3{font-size:18px;line-height:1.35;max-width:38em}
+.find-key{display:flex;flex-wrap:wrap;gap:6px 14px;margin:8px 0 0;font-size:14px;line-height:1.35}
+.find-key .k{display:inline-flex;align-items:center;gap:6px}
+#s-record .caveat{margin:14px 0 0;font-size:14px;line-height:1.45;color:var(--muted);max-width:48em}
+.find-flag{margin:8px 0 0;font-size:14px;line-height:1.4;color:#ff6b81}
+details.counter{margin:2px 0 0}
+details.counter>summary{display:flex;align-items:center;min-height:44px;cursor:pointer;color:var(--gold);font-size:15px;font-weight:700;list-style:none}
+details.counter>summary::-webkit-details-marker{display:none}
+details.counter>summary:before{content:"\25B8";margin-right:8px}
+details.counter[open]>summary:before{content:"\25BE"}
+details.counter p{margin:0 0 8px;font-size:15px;max-width:40em}
+svg.find{display:block;width:100%;max-width:100%;height:auto;background:#12203a;border-radius:8px}
+svg.find text{font-size:14px}
 .lvl-note{margin:0 0 10px;font-size:14px;line-height:1.4;color:var(--text);max-width:42em}
 .region{scroll-margin-top:76px}
 .basin-jumps{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0 2px}
@@ -221,11 +235,37 @@ svg.phone-map{overflow:hidden}
 </header>
 <main>
 <nav id="levels" aria-label="Detail level">
-  <a href="#s-maps" id="lv-regions" class="on" aria-current="step">1 Regions</a>
-  <a href="#s-panel" id="lv-basins">2 River basins</a>
+  <a href="#s-record" id="lv-lead" class="on" aria-current="step" title="What the record shows">Lead</a>
+  <a href="#s-maps" id="lv-regions" title="Level 1, regions">1 Regions</a>
+  <a href="#s-panel" id="lv-basins" title="Level 2, river basins">2 River basins</a>
 </nav>
-<div id="sumchips" class="phone-only" aria-label="Summary"></div>
+<section id="s-record">
+  <h2>What the record shows</h2>
+  <article>
+    <h3>The most water-dependent states have never had their water cut off. Cut-offs follow political ruptures.</h3>
+    <div id="find-a"></div>
+    <p class="find-key" id="find-a-key"></p>
+    <p class="lvl-note">Every cut-off came after a break: Partition, terror attacks, Taliban rule, the invasion of Ukraine.</p>
+    <details class="counter">
+      <summary>Counterpoint</summary>
+      <p>A very dependent state may be spared because cutting it would mean war.</p>
+    </details>
+  </article>
+  <article>
+    <h3>Every state water cut-off on record happened while a water treaty was in force.</h3>
+    <div id="find-b"></div>
+    <p class="find-key" id="find-b-key"></p>
+    <p class="lvl-note" id="find-b-note"></p>
+    <details class="counter">
+      <summary>Counterpoint</summary>
+      <p>Treaties exist where disputes exist, and may cap how much can be cut.</p>
+    </details>
+  </article>
+  <p class="caveat" id="find-caveat"></p>
+  <p class="find-flag" id="find-flag" hidden></p>
+</section>
 <p class="lead">Who is upstream, who depends, and where a dam is the lever. Gaps show as <span class="blank">no sourced figure</span>.</p>
+<div id="sumchips" class="phone-only" aria-label="Summary"></div>
 <section id="s-maps">
   <h2>Level 1 · Regions: the big picture</h2>
   <p class="lvl-note">Each map is one group of shared rivers.</p>
@@ -304,6 +344,7 @@ svg.phone-map{overflow:hidden}
       <li id="src-9">Arrows are smooth curves from the upstream source to the most dependent downstream country. They are not the river course. Arrow starts and the main river, country and dam labels are placed by hand. Other names appear on hover. Dam coordinates follow source 5.</li>
       <li id="src-10">US–Mexico 1944 water treaty and the 2020 occupation of La Boquilla Dam. Brookings, “Not dried up: US-Mexico water cooperation” (2020), <a href="https://www.brookings.edu/articles/not-dried-up-us-mexico-water-cooperation/">brookings.edu</a>. Reuters (September 2020), <a href="https://www.reuters.com/article/us-mexico-usa-water-idUSKBN2602K0/">reuters.com</a>.</li>
       <li id="src-11">HydroSHEDS HydroRIVERS v1.0 (Lehner and Grill 2013). Average discharge is DIS_AV_CMS, in cubic metres per second. Lines are the reaches inside each basin, simplified. <a href="https://www.hydrosheds.org/products/hydrorivers">hydrosheds.org/products/hydrorivers</a></li>
+      <li id="src-12">Utrecht Law Review, “Human Right to Water in the Helmand Basin” (2020). On Article 5 of the 1973 Afghan–Iranian Helmand treaty: Afghanistan is not to take any action to deprive Iran totally or partially of its water right. <a href="https://utrechtlawreview.org/articles/10.36633/ulr.566">utrechtlawreview.org/articles/10.36633/ulr.566</a></li>
     </ol>
   </details>
 </footer>
@@ -325,8 +366,8 @@ const CONTESTED={40398:'GERD',7070:'Merowe',299:'Atatürk',301:'Mosul',292:'Kayr
 const short=n=>n.split(/ [\/(]/)[0];
 function jumpName(b){if(b.aq){const w=String(b.name).split(/\s+/)[0];return (w==='North-Western'?'Sahara':w)+' aquifer ›'}let n=String(b.name).replace(/\s*\([^)]*\)/g,'').replace(/\s*\/\s*GERD/,'').trim();return n+' basin ›'}
 let levelLock=0;
-function setLevel(n){const a=document.getElementById('lv-regions'),b=document.getElementById('lv-basins');if(!a||!b)return;a.classList.toggle('on',n===1);b.classList.toggle('on',n===2);a.setAttribute('aria-current',n===1?'step':'false');b.setAttribute('aria-current',n===2?'step':'false')}
-function syncLevel(){if(Date.now()<levelLock)return;const panel=document.getElementById('s-panel');if(!panel)return;if(isPhone()){setLevel(panel.classList.contains('sheet')?2:1);return}setLevel(panel.getBoundingClientRect().top<=120?2:1)}
+function setLevel(n){[['lv-lead',0],['lv-regions',1],['lv-basins',2]].forEach(([id,k])=>{const el=document.getElementById(id);if(!el)return;el.classList.toggle('on',n===k);el.setAttribute('aria-current',n===k?'step':'false')})}
+function syncLevel(){if(Date.now()<levelLock)return;const panel=document.getElementById('s-panel'),maps=document.getElementById('s-maps');if(!panel||!maps)return;if(isPhone()){setLevel(panel.classList.contains('sheet')?2:(maps.getBoundingClientRect().top<=120?1:0));return}setLevel(panel.getBoundingClientRect().top<=120?2:(maps.getBoundingClientRect().top<=120?1:0))}
 function holdLevel(n){levelLock=Date.now()+800;setLevel(n)}
 const tt=d3.select('#tt');
 let pinned=false,tipOwner=null;
@@ -742,10 +783,115 @@ const rows=PAIRS.map(([id,u,d,lv])=>{const b=B.find(x=>x.id==id);const dv=b.dep.
  d3.select('#sankey-key').html(REG.map((r,i)=>`<span class="k"><i class="sw" style="background:${RC[i]}"></i>${r[0]}</span>`).join('')+'<span class="k">Width = percent from abroad</span>');
  phoneBars(d3.select('#sankey-list'),G.links.map(d=>({label:(d.source.name[0]==='▸'?d.source.name.slice(2):d.source.name)+' → '+d.target.name,v:d.value})).sort((a,b)=>b.v-a.v));
 })();
+function drawFindings(){
+ const flags=[];
+ const dep=new Map();
+ B.forEach(b=>(b.dep||[]).forEach(d=>{if(d.v==null||!d.c)return;const prev=dep.get(d.c);if(prev==null||d.v>prev)dep.set(d.c,d.v)}));
+ const stateCut=t=>{if(t.k!=='cut')return false;if(yearOf(t.d)<1900)return false;const h=t.h.toLowerCase();if(h.includes('islamic state')||h.includes('rapid support forces'))return false;if(/\bun\b/.test(h)&&h.includes('considers'))return false;return true};
+ const cuts=TL.filter(stateCut);
+ const targetOf=t=>{const h=t.h;if(/Pakistan/.test(h))return 'Pakistan';if(/\bIran\b/.test(h))return 'Iran';if(/Kazakhstan|Kazakh/.test(h))return 'Kazakhstan';if(/Mykolaiv/.test(h))return 'Ukraine';return null};
+ const dots=new Map();
+ cuts.forEach(t=>{const c=targetOf(t);if(!c)return;if(!dep.has(c)){flags.push(c+' is named in a cut-off and has no dependency figure.');return}if(!dots.has(c))dots.set(c,[]);const y=yearOf(t.d);const arr=dots.get(c);if(!arr.some(d=>d.y===y&&d.b===t.b))arr.push({y,b:t.b,h:t.h})});
+ const ranked=[...dep.entries()].map(([c,v])=>({c,v})).sort((a,b)=>b.v-a.v||a.c.localeCompare(b.c));
+ const top=ranked.slice(0,8);
+ const rows=top.concat(ranked.filter(r=>dots.has(r.c)&&!top.includes(r))).sort((a,b)=>b.v-a.v||a.c.localeCompare(b.c));
+ const expect=[['Egypt',98.3],['Turkmenistan',97],['Mauritania',96.5],['Sudan',96.1],['Hungary',94.2],['Bangladesh',91.4],['Niger',89.7],['Netherlands',87.9]];
+ expect.forEach(([name,v],i)=>{const g=top[i];if(!g||g.c!==name||Math.abs(g.v-v)>0.05)flags.push('Rank '+(i+1)+' was described as '+name+' '+v+'; the page has '+(g?g.c+' '+g.v:'nothing')+'.')});
+ const iran=dep.get('Iran');
+ if(iran==null||Math.abs(iran-6.8)>0.05)flags.push('Iran was described as 6.8; the page has '+(iran==null?'no figure':iran)+'.');
+ const iranYears=(dots.get('Iran')||[]).map(d=>d.y).sort((a,b)=>a-b);
+ if(iranYears.join(',')!=='1999,2022')flags.push('Iran was described with 1999 and 2022; the page has '+(iranYears.join(', ')||'no cut-off')+'.');
+ top.forEach(r=>{if(dots.has(r.c))flags.push(r.c+' is among the eight most dependent states and also has a cut-off.')});
+ const syr=[...new Set(cuts.filter(t=>t.b==='Syr Darya').map(t=>yearOf(t.d)))].sort((a,b)=>a-b);
+ let cave='Small sample ('+cuts.length+' deliberate state cut-offs); the record catches loud events, not quiet dam operations; dependency is national. Left out: Islamic State, the Rapid Support Forces, a 1991 UN proposal, and anything before 1900.';
+ if(syr.length)cave+=' The '+syr.join(', ')+' Syr Darya cuts are state cut-offs and are not one of the four breaks named above.';
+ document.getElementById('find-caveat').innerHTML=cave+FN('1,6');
+ const host=document.getElementById('find-a');
+ const W=Math.max(300,host.clientWidth||contentW());
+ const labelW=W<520?124:176,gutter=W<520?66:72,barW=Math.max(90,W-labelW-gutter),rowH=34,topH=22,H=topH+rows.length*rowH+10;
+ const svg=d3.select(host).append('svg').attr('class','find').attr('width',W).attr('height',H).attr('viewBox','0 0 '+W+' '+H).attr('role','img').attr('aria-label','Downstream dependency, highest first. Red dots are state cut-offs.');
+ svg.append('rect').attr('width',W).attr('height',H).attr('fill','#12203a');
+ const x=d3.scaleLinear().domain([0,100]).range([0,barW]);
+ svg.append('text').attr('x',labelW).attr('y',16).attr('fill','#9aa6b8').text('0');
+ svg.append('text').attr('x',labelW+barW).attr('y',16).attr('text-anchor','end').attr('fill','#9aa6b8').text('100%');
+ rows.forEach((r,i)=>{
+  const y=topH+i*rowH;
+  svg.append('text').attr('x',labelW-8).attr('y',y+22).attr('text-anchor','end').text(r.c);
+  svg.append('rect').attr('x',labelW).attr('y',y+10).attr('width',barW).attr('height',14).attr('rx',2).attr('fill','#0f1b31');
+  const bw=Math.max(r.v>0?2:0,x(r.v));
+  svg.append('rect').attr('data-ink','bar').attr('x',labelW).attr('y',y+10).attr('width',bw).attr('height',14).attr('rx',2).attr('fill','#4ea89e');
+  const ds=(dots.get(r.c)||[]).slice().sort((a,b)=>a.y-b.y);
+  ds.forEach((d,k)=>{
+   const onBar=bw>=ds.length*16+8;
+   let cx=onBar?labelW+bw-8-(ds.length-1-k)*16:labelW+Math.min(barW-10,bw+10+k*16);
+   cx=Math.max(labelW+8,Math.min(labelW+barW-8,cx));
+   const cy=y+17,say=d.y+' · '+d.h;
+   const hit=svg.append('circle').attr('cx',cx).attr('cy',cy).attr('r',12).attr('fill','none').style('pointer-events','all').style('cursor','pointer');
+   svg.append('circle').attr('data-ink','cut').attr('cx',cx).attr('cy',cy).attr('r',6).attr('fill','#ef4b4b').style('pointer-events','none');
+   hit.append('title').text(say);
+   hit.on('mousemove',e=>tip(e,say)).on('mouseleave',()=>untip()).on('click',e=>{e.stopPropagation();pinned=true;tip(e,say)});
+  });
+  svg.append('text').attr('x',labelW+barW+8).attr('y',y+22).text(r.v.toFixed(1)+'%');
+ });
+ document.getElementById('find-a-key').innerHTML='<span class="k"><i class="sw" style="background:#4ea89e"></i>Share from abroad, 2023'+FN(1)+'</span><span class="k"><i class="sw" style="background:#ef4b4b"></i>Cut-off, year on hover or tap'+FN(6)+'</span><span class="k">Top eight, then each named target. Scale starts at zero.</span>';
+ const strips=[
+  {basin:'Indus',title:'Indus',year:1960,label:'Indus Waters Treaty',want:[2025]},
+  {basin:'Helmand',title:'Helmand',year:1973,label:'Afghan–Iranian Helmand treaty',want:[1999,2022],art:true},
+  {basin:'Syr Darya',title:'Syr Darya',year:1998,label:'Syr Darya agreement',want:[1999,2000,2001]},
+  {basin:'Dnipro / Kakhovka',title:'Dnipro',year:1992,label:'Ukraine–Russia agreement',want:[2014,2022]}
+ ];
+ const now=new Date().getFullYear();
+ strips.forEach(s=>{
+  const b=B.find(x=>x.name===s.basin);
+  const has=!!(b&&(b.treaties||'').split(';').some(part=>part.trim().startsWith(s.year+'-')));
+  if(!has)flags.push(s.title+': no '+s.year+' treaty in the page data.');
+  s.years=[...new Set(cuts.filter(t=>t.b===s.basin&&yearOf(t.d)>=s.year).map(t=>yearOf(t.d)))].sort((a,c)=>a-c);
+  if(s.years.join(',')!==s.want.join(','))flags.push(s.title+' cut-offs inside the treaty were described as '+s.want.join(', ')+'; the page has '+(s.years.join(', ')||'none')+'.');
+  s.events=cuts.filter(t=>t.b===s.basin&&yearOf(t.d)>=s.year);
+ });
+ const early=cuts.filter(t=>{const s=strips.find(s=>s.basin===t.b);return s&&yearOf(t.d)<s.year});
+ const note=document.getElementById('find-b-note');
+ if(early.length===1&&early[0].b==='Indus'&&/April 1948/.test(early[0].h))note.textContent='One state cut-off is earlier: India, April 1948, before the Indus Waters Treaty of 1960 and before the 4 May 1948 canal agreement.';
+ else if(early.length)note.textContent='Earlier than the treaty on its river: '+early.map(t=>yearOf(t.d)+' · '+t.h).join(' ');
+ else note.remove();
+ const hostB=document.getElementById('find-b');
+ const Wb=Math.max(300,hostB.clientWidth||W),labB=Wb<520?100:140,rowB=56,topB=24,Hb=topB+strips.length*rowB+8;
+ const svgB=d3.select(hostB).append('svg').attr('class','find').attr('width',Wb).attr('height',Hb).attr('viewBox','0 0 '+Wb+' '+Hb).attr('role','img').attr('aria-label','Treaty timelines with cut-offs marked');
+ svgB.append('rect').attr('width',Wb).attr('height',Hb).attr('fill','#12203a');
+ const xb=d3.scaleLinear().domain([1960,now]).range([labB,Wb-16]);
+ (Wb<520?[1960,1990,now]:[1960,1980,2000,now]).forEach((y,i,arr)=>{svgB.append('text').attr('x',xb(y)).attr('y',16).attr('text-anchor',i===0?'start':(y===now?'end':'middle')).attr('fill','#9aa6b8').text(String(y))});
+ strips.forEach((s,i)=>{
+  const y=topB+i*rowB,mid=y+rowB/2;
+  svgB.append('text').attr('x',labB-8).attr('y',mid+5).attr('text-anchor','end').text(s.title);
+  const x1=xb(Math.max(1960,s.year)),x2=xb(now);
+  const blurb=s.label+', signed '+s.year+(s.art?', Article 5':'');
+  const bar=svgB.append('rect').attr('data-ink','treaty').attr('x',x1).attr('y',mid-5).attr('width',Math.max(2,x2-x1)).attr('height',10).attr('rx',2).attr('fill','#3192d8').style('cursor','pointer');
+  bar.append('title').text(blurb);
+  bar.on('mousemove',e=>tip(e,blurb)).on('mouseleave',()=>untip()).on('click',e=>{e.stopPropagation();pinned=true;tip(e,blurb)});
+  const years=s.years,offs=years.map(()=>0),cid=[];
+  years.forEach((yy,k)=>{cid[k]=k>0&&xb(yy)-xb(years[k-1])<18?cid[k-1]:k});
+  const groups={};
+  years.forEach((yy,k)=>{(groups[cid[k]]||(groups[cid[k]]=[])).push(k)});
+  Object.values(groups).forEach(ix=>{const gap=ix.length<2?99:xb(years[ix[1]])-xb(years[ix[0]]);const spread=ix.length===1?[0]:gap>=18?(ix.length===2?[-6,6]:[-8,0,8]):(ix.length===2?[-12,12]:[-16,0,16]);ix.forEach((k,j)=>{offs[k]=spread[j]||0})});
+  years.forEach((yy,k)=>{
+   const cx=Math.max(labB+8,Math.min(Wb-16,xb(yy))),cy=mid+offs[k],rad=Math.abs(offs[k])>=12?5:6;
+   const say=s.events.filter(t=>yearOf(t.d)===yy).map(t=>yearOf(t.d)+' · '+t.h).join(' · ');
+   const hit=svgB.append('circle').attr('cx',cx).attr('cy',cy).attr('r',Math.abs(offs[k])>=12?9:12).attr('fill','none').style('pointer-events','all').style('cursor','pointer');
+   svgB.append('circle').attr('data-ink','cut').attr('cx',cx).attr('cy',cy).attr('r',rad).attr('fill','#ef4b4b').style('pointer-events','none');
+   hit.append('title').text(say);
+   hit.on('mousemove',e=>tip(e,say)).on('mouseleave',()=>untip()).on('click',e=>{e.stopPropagation();pinned=true;tip(e,say)});
+  });
+ });
+ document.getElementById('find-b-key').innerHTML='<span class="k"><i class="sw" style="background:#3192d8"></i>Treaty, signing year to '+now+FN(3)+'</span><span class="k"><i class="sw" style="background:#ef4b4b"></i>Cut-off inside that span'+FN(6)+'</span><span class="k">Helmand bar: Article 5'+FN(12)+'</span>';
+ const flagEl=document.getElementById('find-flag');
+ if(flags.length){flagEl.hidden=false;flagEl.textContent=flags.join(' ')}
+}
+drawFindings();
 document.querySelectorAll('.fold-btn').forEach(btn=>btn.addEventListener('click',()=>{const sec=btn.closest('section');const open=sec.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false')}));
 document.getElementById('sheet-close').addEventListener('click',e=>{e.stopPropagation();closeSheet()});
 document.getElementById('sheet-back').addEventListener('click',()=>{closeKey();closeSheet()});
 document.querySelectorAll('a[href="#s-panel"]').forEach(a=>a.addEventListener('click',e=>{holdLevel(2);if(!isPhone())return;e.preventDefault();openSheet()}));
+document.getElementById('lv-lead').addEventListener('click',e=>{holdLevel(0);if(!isPhone())return;e.preventDefault();closeSheet();document.getElementById('s-record').scrollIntoView({behavior:'smooth',block:'start'})});
 document.getElementById('lv-regions').addEventListener('click',e=>{holdLevel(1);if(!isPhone())return;e.preventDefault();closeSheet();document.getElementById('s-maps').scrollIntoView({behavior:'smooth',block:'start'})});
 document.addEventListener('scroll',syncLevel,{passive:true});
 syncLevel();
