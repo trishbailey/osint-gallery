@@ -40,4 +40,8 @@ jobs:
           git add -A
           if git diff --cached --quiet; then echo "No dashboard changes"; exit 0; fi
           git commit -m "Sync dashboards: $(cat */.source 2>/dev/null | tr '\n' ' ')"
-          git pull --rebase origin main && git push
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && exit 0
+            echo "push raced with another commit; retry $i"; sleep $((i*5))
+          done
+          exit 1
