@@ -38,15 +38,13 @@ Promise.all([J("data/profiles.json"),J("data/group_countries.json"),J("data/grou
  const card=p=>{const col=COL[p.id]||"#e4572e";const gc=GCN.groups[p.id];const cs=gc?gc.countries:[];const s=p.membership_series||[];
    const srcs=[...new Set(s.map(d=>d.source))];
    return `<div class="pfcard" data-g="${p.id}" style="--c:${col}">
-   ${p.image?`<figure class="pfimg"><img src="${esc(p.image.src)}" alt="${esc(p.image.caption)}" loading="lazy"><figcaption>${esc(p.image.caption)}</figcaption></figure>`:""}
    <h3>${esc(p.name)}</h3>${p.abbr?`<div class="pfabbr">${esc(p.abbr)}</div>`:""}
    <p class="pfwhat">${esc(p.what)}${FNx(p.what_c)}</p>
    <div class="pffound">🏁 ${esc(p.founded)}${FNx(p.founded_c)}</div>
    <div class="pfflags">${cs.map(c=>`<span class="pfflag" title="${esc(NM[c.iso]||c.iso)}">${flag(c.iso)}<span class="pfcn">${esc(NM[c.iso]||c.iso)}</span></span>`).join("")}${gc?FNx([...new Set(cs.flatMap(c=>c.cites||[]))]):""}</div>
    <div class="pflines">${lines(p).map(x=>`<span class="pfchip">${EMO[x.id]||"•"} ${esc(SHORT[x.id]||LBL[x.id]||x.id)}${x.c?FNx(x.c):""}</span>`).join("")||`<span class="muted small">No sourced crime lines</span>`}</div>
-   <div class="pfszb">${sizeLines(p.id)}</div>
-   <div class="pfmem"><div class="pfmemh">Members over time</div>${chart(p,col)}<div class="pfnote">${p.series_note?esc(p.series_note):""}${srcs.length?FNx(srcs):""}</div></div>
-   <details class="pfmore"><summary>More</summary>${(p.more||[]).map(([t,c])=>`<p>${esc(t)}${FNx(c)}</p>`).join("")}</details></div>`};
+   ${p.image?`<figure class="pfimg"><img src="${esc(p.image.src)}" alt="${esc(p.image.caption)}" loading="lazy"><figcaption>${esc(p.image.caption)}</figcaption></figure>`:""}
+   <details class="pfmore"><summary>More</summary><div class="pfszb">${sizeLines(p.id)}</div><div class="pfmem"><div class="pfmemh">Members over time</div>${chart(p,col)}<div class="pfnote">${p.series_note?esc(p.series_note):""}${srcs.length?FNx(srcs):""}</div></div>${(p.more||[]).map(([t,c])=>`<p>${esc(t)}${FNx(c)}</p>`).join("")}</details></div>`};
  const sec=document.createElement("section");sec.className="tile pftile";sec.id="profiles";
  sec.innerHTML=`<details open class="pfdet"><summary><h2>Group profiles</h2><span class="muted"> · who each group is, where it operates, what it does</span></summary><div class="pfgrid">${PR.profiles.map(card).join("")}</div><div class="muted small">As of ${esc(PR.as_of)}. Descriptive only. Flags: sourced presence (home country first); absence means no sourced entry. Crime chips: primary/secondary activities in cited sources.</div><details class="pfcredits"><summary>Photo credits</summary><ul>${PR.profiles.filter(p=>p.image).map(p=>`<li>${esc(p.name||p.id)}: ${esc(p.image.caption)} · ${esc(p.image.author)}, ${esc(p.image.license)} (<a href="${esc(p.image.page)}" target="_blank" rel="noopener">Wikimedia Commons</a>)</li>`).join("")}</ul></details></details>`;
  const place=()=>{const wn=document.getElementById("whatsnew"),ld=document.getElementById("leaders");

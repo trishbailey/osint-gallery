@@ -3,7 +3,7 @@
 .pfgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;margin:10px 0}
 .pfcard{background:rgba(255,255,255,.03);border:1px solid #26385a;border-top:5px solid var(--c);border-radius:8px;padding:0 12px 10px;overflow:hidden}
 .pfcard.hl{box-shadow:0 0 0 2px var(--c)}
-.pfimg{margin:0 -12px 6px}.pfimg img{display:block;width:100%;height:120px;object-fit:cover}
+.pfimg{margin:6px -12px 6px}.pfimg img{display:block;width:100%;height:120px;object-fit:cover}
 .pfimg figcaption{font-size:13px;color:#8593a8;padding:2px 12px}.pfimg figcaption a{color:#8593a8}
 .pfcard h3{margin:8px 0 0;font-size:16px;color:var(--c)}
 .pfabbr{font-size:13px;color:#c9d2df}
@@ -24,4 +24,4 @@
 .pfmore p{font-size:13px;line-height:1.4;margin:5px 0}
 .pfcredits{margin-top:.4em;font-size:.85em}.pfcredits summary{cursor:pointer}.pfcredits ul{margin:.3em 0 0 1.2em;padding:0}
 
-.pfszb{font-size:13px;margin:6px 0 4px}.pfsz{line-height:1.45}.pfszn{font-size:12px;margin:0 0 2px 8px}
+.pfszb{font-size:13px;margin:6px 0 4px}.pfsz{line-height:1.45}.pfszn{font-size:13px;margin:0 0 2px 8px}
