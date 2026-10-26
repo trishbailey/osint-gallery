@@ -80,3 +80,36 @@ footer.wrap{display:block;border-top:1px solid var(--line);margin-top:60px;paddi
 .sk-stage{position:relative}.sk-year{font-size:64px;line-height:1;font-weight:800;color:#11273C;margin:10px 0 2px;letter-spacing:-.02em}.sk-sub{font-size:15px;color:#11273C;margin-bottom:6px}
 .sk-key{display:inline-flex;align-items:center;gap:6px;margin-right:14px;font-size:14px;color:#11273C;font-weight:700}.sk-key i{display:inline-block;width:22px;height:10px}
 .yr-tab[aria-pressed="true"]{background:#06707B;color:#fff}
+.weapons{margin-top:40px}.wp-nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:8px 0}.wp-back[disabled]{opacity:.45;cursor:default}
+.wp-crumbs{font-size:15px;color:#11273C}.wp-crumb{background:none;border:0;padding:4px 2px;font-size:15px;font-weight:700;color:#06707B;text-decoration:underline;cursor:pointer}.wp-crumb[aria-current]{color:#11273C;text-decoration:none;cursor:default}
+.wp-grid{display:grid;grid-template-columns:1fr;gap:16px}.wp-map{background:#fff;border:1px solid #d5dbe5}.wp-map g.tile:focus{outline:none}.wp-map g.tile:focus rect{stroke:#11273C;stroke-width:4}
+.wp-panel{background:#fff;border:2px solid #11273C;border-radius:6px;padding:14px 18px;font-size:15px;color:#11273C}.wp-panel h3{margin:0 0 4px}.wp-path{margin:0;color:#3d4f61;font-size:14px}.wp-total{font-size:18px;margin:6px 0}
+.wp-donors{padding-left:18px}.wp-donors li{margin:8px 0}.wp-own,.wp-src{font-size:14px}.wp-panel svg{vertical-align:-2px}
+
+/* Dark theme: tokens from trishbailey/cartel-dashboard public/style.css (Trish's rule for all dashboards). Overrides the light Beacon look above. */
+:root{--bg:#0b1526;--panel:#12203a;--panel2:#0f1b31;--line:#24365a;--text:#e6e9ef;--muted:#9aa6b8;--gold:#c8a24a;--red:#c0504d;
+ --ink:var(--text);--navy:var(--text);--teal:var(--gold);--brand:var(--gold);--card:var(--panel)}
+body{background:var(--bg);color:var(--text)}
+header{background:var(--panel2);border-bottom:3px solid var(--gold)}.brand,nav a,h1,h2,h3,.date,.lbl,.tile strong,.gfx-take strong{color:var(--text)}
+a,.brand-sub,.eyebrow,.lens,.tags,details summary,a.src,.leads b{color:var(--gold)}.skip{background:var(--panel);color:var(--text)}
+.hero{background:var(--panel2);color:var(--text)}.hero .eyebrow,.hero .leads b{color:var(--gold)}.hero .cite{background:#c8a24a26;color:var(--text)}
+.cite{background:#c8a24a26;color:var(--gold)}.muted,.gfx-src,.xq footer,footer.wrap,.wp-path{color:var(--muted)}
+.card,.tile,.xq,.gfx,.feat-link,.stg,.wp-map,.wp-panel,table,.ct-wrap{background:var(--panel);border-color:var(--line);color:var(--text)}
+.card,.stg,.feat-link,.tile{border-left-color:var(--gold)}.tile{border-top-color:var(--gold)}.two{background:var(--panel2)}
+th,#ct-table th{background:var(--panel2);color:var(--text)}td,#ct-table td{border-color:var(--line);color:var(--text)}#ct-table{color:var(--text)}
+.gfx-take,.lead.dark,.leads,.yr-help,.sk-year,.sk-sub,.sk-key,.sk-slider,.ct-controls,.wp-crumbs,.wp-crumb[aria-current],.wp-panel{color:var(--text)}
+.yr-tab,.contractors .tab{background:var(--panel2);color:var(--text);border-color:var(--gold)}.yr-tab:hover{background:var(--panel)}
+.yr-tab[aria-selected="true"],.yr-tab[aria-pressed="true"],.contractors .tab[aria-selected=true]{background:var(--gold);color:#0b1526}
+.yr-tab:focus-visible,.wp-map g.tile:focus rect{outline-color:var(--gold);stroke:var(--gold)}
+.ct-controls input,.ct-controls select{background:var(--panel2);color:var(--text);border-color:var(--line)}.ct-dl{background:var(--gold);color:#0b1526}
+.wp-crumb{color:var(--gold)}.wp-panel{border-color:var(--line)}.stg-h,.stg-arrow{color:var(--gold)}.stg-na{background:var(--panel2);color:var(--muted)}
+.timeline,.phases{border-left-color:var(--gold)}.timeline li:before{background:var(--gold)}
+.badge.skew,.corr{background:#c8a24a26;color:var(--gold);border-color:var(--gold)}.badge.pos{background:var(--gold);color:#0b1526}
+.lean{background:var(--panel2);color:var(--text)}.claim-reported,.claim-analysis{color:var(--text)}.claim-established,.oc-correct{color:#61E006}.claim-unconfirmed{color:var(--gold)}.oc-incorrect{color:var(--red)}
+.sk-slider input{accent-color:var(--gold)}button{font-family:inherit}
+svg text{fill-opacity:1}
+.us-made{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--gold);padding:10px 14px;margin:10px 0;font-size:15px;color:var(--text)}
+.us-made-h{font-weight:700;color:var(--gold);margin:0 0 4px;font-size:15px;text-transform:uppercase;letter-spacing:.8px}.us-made p{margin:0 0 6px}.us-made ul{margin:0;padding-left:20px}
+.us-v{font-weight:700;color:var(--text);border-bottom:1px dotted var(--gold);cursor:help}.us-v:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.defn{font-size:15px}
+.sk-year{font-size:clamp(32px,5vw,52px)}
