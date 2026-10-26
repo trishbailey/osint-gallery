@@ -102,7 +102,11 @@ for x in T.get('sites',[]):
     MAPD.append({'k':x['k'],'n':x['l'],'la':x['la'],'lo':x['lo'],'c':x['last30'][0],'cb':x['base'][0],'x':(round(l/b,1) if b else None),'up':l>b,'q':QT.get(x['k'],[]),'ex':x['ex'][:2],'bd':f'Type: {x["t"]}.'+(f' Linked to {T["air"]["link"][x["l"]]} of the {T["air"]["n"]} warnings to airlines.' if x['l'] in T['air'].get('link',{}) else ''),'gen':False,'dir':DIR.get(x['k'],'right'),'t':x['t'],'minor':x.get('minor',False)})
 UNMAPPED=[TR[k]['l'] for k in TR if k not in GEO or not TR[k]['last30'][0]]+(['Aramco sites not named ('+str(KD['aramco']['ngen'])+' posts)'] if 'aramco' in KD else [])
 
-CSS='''.wkl{margin:6px 0 0;padding-left:18px;font-size:14.5px;line-height:1.5}.wkl li{margin:4px 0;overflow-wrap:anywhere}
+CSS='''sup{font-size:13px;line-height:0}#trend .chip{border:1px solid var(--line)!important;box-shadow:none!important;background:none!important;width:100%}#trend .tsc{flex-direction:row;flex-wrap:nowrap}#trend .tsc .btn{flex:1}.trh,.sph{font-size:17px;margin:18px 0 4px}.chip{display:flex;align-items:center;gap:7px;background:none;border:1px solid var(--line);border-radius:16px;color:var(--text);font:inherit;font-size:14px;padding:5px 10px;cursor:pointer;min-height:34px;text-align:left}.chip i{width:13px;height:13px;border-radius:50%;flex:none}.chip[aria-pressed=false]{opacity:.45;text-decoration:line-through}.chip[aria-pressed=false] i{background:none!important;border:2px solid currentColor}#trc{width:100%}#trc svg{display:block}.trleg .tsc{margin-top:0}
+.mgrp{border:1px solid var(--line);border-radius:8px;margin:8px 0;background:#0f1b30}.mgrp>summary{list-style:none;cursor:pointer;min-height:48px;display:flex;align-items:center;justify-content:space-between;padding:6px 12px;font-size:15px;font-weight:600}.mgrp>summary::-webkit-details-marker{display:none}.mgrp>summary .mcnt{font-size:13px;color:#9fb0c8;font-weight:400;margin-left:auto}.mgrp>summary::after{content:"▾";color:var(--gold);margin-left:8px}.mgrp[open]>summary::after{content:"▴"}.mgrp>.mgbody{display:flex;flex-direction:column;gap:8px;padding:0 8px 10px}
+.wki{border:1px solid #24324f;border-radius:8px;padding:8px 10px;background:#0b1526;font-size:14px;overflow-wrap:anywhere}.wkh{display:none}.mgrp.all .wkh{display:block}.wkm{font-size:13px;color:#9fb0c8}.wkt{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0}.wtag{font-size:13px;border:1px solid #3a4f78;border-radius:10px;padding:0 7px;color:#dfe6f1}.wkx{margin:4px 0;line-height:1.45}.trn{font-size:13px;color:var(--gold)}.wki a{font-size:13px}.wsurge{font-size:15px;margin:4px 0 8px}.mdet{min-height:44px;width:100%;border-radius:22px;border:1px solid var(--gold);background:#1c2c4b;color:var(--text);font-size:14px;cursor:pointer}
+@media(max-width:700px){.trleg{flex-direction:row!important;flex-wrap:wrap}.trleg .tlh{flex-basis:100%}#trend .chip{width:auto;font-size:13px;padding:4px 9px;min-height:32px}#trend .tsc{flex-basis:100%}}
+.wkl{margin:6px 0 0;padding-left:18px;font-size:14.5px;line-height:1.5}.wkl li{margin:4px 0;overflow-wrap:anywhere}
 .tlab{background:rgba(11,21,38,.82);border:1px solid #24365a;color:#e6e9ef;font-size:13px;font-weight:600;padding:1px 5px;box-shadow:none;border-radius:4px}.tlab:before{display:none}#tmap{height:520px;border-radius:10px;border:1px solid var(--line);background:#0b1526}.leaflet-container{font:inherit}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--panel2);color:var(--text);border:1px solid var(--gold)}.leaflet-popup-content{font-size:14px;line-height:1.4;margin:10px 12px}.leaflet-popup-content a{color:var(--gold)}.tq{margin:6px 0;font-style:italic}.tdot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}.tl2w{overflow:visible}.tl2{font-size:13px;font-weight:600;color:#e6e9ef;white-space:nowrap;pointer-events:none;text-shadow:0 0 2px #0b1526,0 0 3px #0b1526,0 0 4px #0b1526}.tlk{overflow:visible;pointer-events:none}.tleg .tlh{font-size:13px;font-weight:700;color:var(--gold);margin-top:6px}.tleg .tln{font-size:13px;line-height:1.35}.tleg svg{flex:none}.tmk{background:none;border:0;pointer-events:none!important}.tmk svg{pointer-events:none}.tmk .hit{pointer-events:auto;cursor:pointer}.tl2t{background:transparent;border:0;box-shadow:none;color:#f3f5f8;font-size:13px;font-weight:600;padding:0 2px;text-shadow:0 0 2px #0b1526,0 0 3px #0b1526,0 0 5px #0b1526}.tl2t:before{display:none}.tm-bt{display:flex;border-radius:8px;overflow:hidden;border:1px solid #24365a;box-shadow:0 1px 4px rgba(0,0,0,.5)}.tm-bt button{font:inherit;font-size:13px;font-weight:600;padding:7px 12px;min-height:34px;border:0;background:#0f1b31;color:#e6e9ef;cursor:pointer}.tm-bt button[aria-pressed=true]{background:#c8a24a;color:#0b1526}.tm-ctl a{display:flex!important;align-items:center;justify-content:center;color:#1a2a44}.tm-hint{position:absolute;inset:auto 0 40%;text-align:center;z-index:800;pointer-events:none;opacity:0;transition:opacity .2s}.tm-hint.on{opacity:1}.tm-hint{color:#fff;font-size:15px;font-weight:600;text-shadow:0 0 4px #000,0 0 8px #000}#tmapw.tfs{position:fixed;inset:0;z-index:5000;background:#0b1526}#tmapw.tfs #tmap{height:100vh!important;border-radius:0}body.tfs-lock{overflow:hidden}@media (max-width:600px){.tleg{display:grid!important;grid-template-columns:1fr 1fr;gap:4px 10px}.tleg .lghint,.tleg .tlh,.tleg .tln{grid-column:1/-1}}.case-mk{color:var(--gold);font-weight:700;font-size:13px;white-space:nowrap;text-shadow:0 0 3px #000}@media (max-width:600px){#tmap{height:420px}}
 
 :root{--bg:#0b1526;--panel:#12203a;--panel2:#0f1b31;--line:#24365a;--text:#e6e9ef;--muted:#9aa6b8;--gold:#c8a24a;--red:#c0504d}
@@ -119,7 +123,7 @@ section{background:var(--panel);border:1px solid var(--line);border-radius:12px;
 .tb{display:grid;grid-template-columns:200px 1fr;gap:10px;align-items:center;margin:7px 0}.tb .gn{font-size:14px;font-weight:600;display:flex;gap:7px;align-items:center}.tb .gn i{width:12px;height:12px;border-radius:50%;flex:none}
 .chips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.chip{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:10px 12px}.chip b{font-size:24px;display:block}.chip span{font-size:14px;display:block}.chip em{font-style:normal;font-size:14px;color:var(--gold)}
 details{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:14px 0}summary{cursor:pointer;padding:14px 18px;font-weight:700;font-size:17px;min-height:44px}details .in{padding:0 18px 14px;font-size:15px}
-#src ol{font-size:13px;color:var(--muted);padding-left:20px}#src li{margin:4px 0}.nw{white-space:nowrap}sup a{text-decoration:none;font-size:12px;padding:0 1px}
+#src ol{font-size:13px;color:var(--muted);padding-left:20px}#src li{margin:4px 0}.nw{white-space:nowrap}sup a{text-decoration:none;font-size:13px;padding:0 1px}
 #tip{position:fixed;display:none;background:var(--panel2);border:1px solid var(--gold);border-radius:8px;padding:8px 11px;font-size:14px;z-index:20;max-width:270px;pointer-events:none}
 #sheet{visibility:hidden;position:fixed;left:0;right:0;bottom:0;background:var(--panel2);border-top:2px solid var(--gold);border-radius:14px 14px 0 0;padding:14px 18px 22px;font-size:15px;z-index:30;transform:translateY(110%);transition:transform .2s}#sheet.on{transform:none;visibility:visible}#sheet button{float:right}
 svg text{font-family:inherit}
@@ -127,7 +131,7 @@ svg text{font-family:inherit}
 .pf select,.pf input{min-height:44px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font:inherit;font-size:15px;width:100%}
 .pr{border:1px solid var(--line);border-radius:8px;margin:6px 0;background:var(--panel)}.pr summary{font-size:14.5px;font-weight:400;padding:10px 12px;display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center}
 .mono{font-family:ui-monospace,Menlo,Consolas,monospace;overflow-wrap:anywhere;word-break:break-all;font-size:14.5px}.pr .pt{font-size:13px;color:var(--gold)}.pr .pm{font-size:13px;text-align:right}.pr .pb{padding:0 12px 10px;font-size:14px}.pr .pb a{overflow-wrap:anywhere}.pr ul{margin:4px 0;padding-left:18px}
-.lgb{display:flex;align-items:center;gap:8px;background:var(--panel2);border:1px solid var(--line);border-radius:999px;color:var(--text);font:inherit;font-size:14px;padding:6px 12px;min-height:40px;cursor:pointer;text-align:left;transition:border-color .15s,background .15s}.lgb i{width:13px;height:13px;border-radius:50%;flex:none}.lgb:hover{border-color:var(--gold);background:#16294a}.lgb[aria-pressed=true]{border-color:var(--gold);background:#1d3157;box-shadow:inset 0 0 0 1px var(--gold);font-weight:700}.lgb:focus-visible,.node:focus-visible{outline:2px solid var(--gold);outline-offset:2px}.lghint{font-size:13.5px;color:var(--gold);font-weight:600;margin:0 0 2px}@keyframes lgp{0%,100%{border-color:var(--line)}50%{border-color:var(--gold)}}.leg .lgb{animation:lgp 1.2s ease-in-out 2}@media (prefers-reduced-motion:reduce){.leg .lgb{animation:none;transition:none}}@media (max-width:600px){.lghint{flex-basis:100%}.lgb{min-height:44px;font-size:13.5px}}#fsel{align-items:center!important;flex-wrap:nowrap;padding:8px 10px!important;gap:8px!important}#fsel .btn{padding:4px 10px;min-height:32px;font-size:13px;white-space:nowrap}#fsel>div{flex:1 1 auto;min-width:0}
+.node:focus-visible{outline:2px solid var(--gold);outline-offset:2px}.lghint{font-size:13.5px;color:var(--gold);font-weight:600;margin:0 0 2px}@media (max-width:600px){.lghint{flex-basis:100%}}#fsel{align-items:center!important;flex-wrap:nowrap;padding:8px 10px!important;gap:8px!important}#fsel .btn{padding:4px 10px;min-height:32px;font-size:13px;white-space:nowrap}#fsel>div{flex:1 1 auto;min-width:0}
 .node{cursor:pointer}#fsel{background:var(--panel2);border:1px solid var(--gold);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14.5px;display:flex;gap:12px;align-items:flex-start;justify-content:space-between}#fsel[hidden]{display:none}#fsel .btn{flex:none}
 #threats .thd{font-size:17px;font-weight:700;margin:2px 0 12px;max-width:900px}.tw{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
 .trow{display:grid;grid-template-columns:230px 1fr;gap:12px;align-items:center;width:100%;background:none;border:0;border-bottom:1px solid var(--line);color:var(--text);font:inherit;text-align:left;padding:7px 0;cursor:pointer;min-height:48px}.trow:hover,.trow:focus-visible{background:var(--panel2);outline:none}
@@ -143,7 +147,6 @@ def sbar(parts,total,cls=''):  # parts: [(label,value,color,tip)]
     return '<div class="sbar">'+''.join(f'<i style="flex:{v};background:{col}" tabindex="0" data-tip="{html.escape(tip)}">{round(100*v/total) if 100*v/total>=9 else ""}{"%" if 100*v/total>=9 else ""}</i>' for l,v,col,tip in parts if v)+'</div>'
 order=sorted(G,key=lambda g:-ao.get(g,0))
 s1bar=sbar([(gl(g),ao[g],G[g][1],f'<b>{gl(g)}</b><br>start {f(ao[g])} copied messages ({100*ao[g]/tot:.1f}%)') for g in order if ao[g]],tot)
-leg1=''.join(f'<button type="button" class="lgb" data-g="{g}" aria-pressed="false"><i style="background:{G[g][1]}"></i>{gl(g)}</button>' for g in ['houthi','hamas','iraqi','aligned','hezbollah','irgc','pij'])
 # payments: stacked bars per type (shared vs single)
 pb=''
 mx=max(t[1] for t in p['by_type'])
@@ -203,14 +206,13 @@ function toggleSel(g){SEL=SEL===g?null:g;applySel()}
 function applySel(){const s=SEL,fb=document.getElementById('flow');
  fb.querySelectorAll('path[data-s]').forEach(q=>q.setAttribute('fill-opacity',!s||q.dataset.s===s||q.dataset.t===s?1:.1));
  fb.querySelectorAll('.node').forEach(n=>{n.setAttribute('aria-pressed',n.dataset.g===s);n.style.opacity=!s||n.dataset.g===s||FP.some(r=>(r[0]===s&&r[1]===n.dataset.g)||(r[1]===s&&r[0]===n.dataset.g))?1:.3});
- document.querySelectorAll('.leg [data-g]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.g===s));
  const ro=document.getElementById('fsel');
  if(!s){ro.hidden=true}else{const SN={houthi:'Houthis',irgc:'IRGC',hezbollah:'Hezbollah',hamas:'Hamas',iraqi:'Iraqi militias',aligned:'Pro-Axis media',pij:'PIJ'},nm=g=>`<b style="color:${D.G[g][1]}">${SN[g]||D.G[g][0]}</b>`,out=FP.filter(r=>r[0]===s),inn=FP.filter(r=>r[1]===s),sum=a=>a.reduce((x,r)=>x+r[2],0);
   ro.hidden=false;ro.querySelector('div').innerHTML=`${nm(s)} · ${mode==='f30'?'last 30 days':'last 7 days'}: <b>${sum(out).toLocaleString()}</b> posted first · <b>${sum(inn).toLocaleString()}</b> copied from others`}
  const nt=document.getElementById('net');
  nt.querySelectorAll('path[data-s]').forEach(q=>q.setAttribute('stroke-opacity',!s||q.dataset.s===s||q.dataset.t===s?(s?.85:.42):.06));
  nt.querySelectorAll('circle[data-g]').forEach(c=>c.setAttribute('fill-opacity',!s||c.dataset.g===s||FP.concat(D.f30).some(r=>r[2]>=10&&((r[0]===s&&r[1]===c.dataset.g)||(r[1]===s&&r[0]===c.dataset.g)))?1:.3))}
-document.addEventListener('click',e=>{const b=e.target.closest('.leg [data-g]');if(b)toggleSel(b.dataset.g);if(e.target.closest('#fall')){SEL=null;applySel()}});
+document.addEventListener('click',e=>{if(e.target.closest('#fall')){SEL=null;applySel()}});
 document.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{mode=b.dataset.w;document.querySelectorAll('[data-w]').forEach(x=>x.setAttribute('aria-pressed',x===b));flow()});
 
 function netmap(){const box=document.getElementById('net');box.innerHTML='';const MP=D.MAP,cw=box.clientWidth,P=ph();
@@ -314,6 +316,37 @@ document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&wrap.classList.contains('tfs'))fs()});
 window.__tmap=m;home();upd()})();
 flow();let rw=innerWidth;addEventListener('resize',()=>{if(innerWidth!==rw){rw=innerWidth;flow()}});
+
+(function(){const T=D.T&&D.T.trend,box=document.getElementById('trc');if(!T||!box)return;
+ const C={riyadh:'#e5484d',kkia:'#3fd0e0',aramco:'#ff8c42',khamis:'#c86bfa',yanbu:'#5ad16b',israel:'#4f7dff',us:'#f2c94c',redsea:'#ff8fb8'};
+ let M='raw';const on=new Set(T.s.map(x=>x.k));const NS='http://www.w3.org/2000/svg';
+ const mk=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p&&p.appendChild(e);return e};
+ const MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+ const wd=s=>{const[y,m,d]=s.split('-').map(Number);return MO[m-1]+' '+d};
+ const val=(x,i)=>M==='raw'?x.n[i]:(T.tot[i]?x.n[i]/T.tot[i]*1e4:0);
+ const fmt=v=>M==='raw'?String(v):v.toFixed(1);
+ function draw(){box.innerHTML='';const W=Math.max(300,box.clientWidth),P=ph(),H=P?300:360,l=P?34:44,r=P?10:16,t=26,b=30,N=T.weeks.length;
+  const vis=T.s.filter(x=>on.has(x.k));let mx=1;vis.forEach(x=>x.n.forEach((_,i)=>mx=Math.max(mx,val(x,i))));
+  const st=[1,2,5,10,20,25,50,100,200,500];let step=st.find(q=>mx/q<=5)||100;const top=Math.ceil(mx/step)*step;
+  const X=i=>l+(i+.5)*(W-l-r)/N,Y=v=>t+(H-t-b)*(1-v/top);
+  const svg=mk('svg',{width:W,height:H,role:'img','aria-label':'Weekly Houthi threat posts naming each target, May to October 2026'},box);
+  for(let v=0;v<=top+1e-9;v+=step){mk('line',{x1:l,x2:W-r,y1:Y(v),y2:Y(v),stroke:'#24324f'},svg);const tx=mk('text',{x:l-6,y:Y(v)+4,fill:'#9fb0c8','font-size':13,'text-anchor':'end'},svg);tx.textContent=M==='raw'?v:(+v.toFixed(1))}
+  let pm='';T.weeks.forEach((w,i)=>{const m=w.slice(5,7);if(m!==pm){pm=m;const tx=mk('text',{x:X(i),y:H-8,fill:'#9fb0c8','font-size':13,'text-anchor':'middle'},svg);tx.textContent=MO[+m-1]}});
+  const evx=d=>{const i=T.weeks.findIndex((w,j)=>d>=w&&(j===N-1||d<T.weeks[j+1]));const dd=(new Date(d)-new Date(T.weeks[i]))/864e5;return l+(i+dd/7)*(W-l-r)/N};
+  T.events.forEach(e=>{const x=evx(e.d);mk('line',{x1:x,x2:x,y1:t-4,y2:H-b,stroke:e.kind==='warning'?'#f2c94c':'#e6e9ef','stroke-opacity':.35,'stroke-dasharray':'3 3'},svg);
+   const g=mk('g',{'data-tip':`<b>${wd(e.d)}: ${e.kind==='warning'?'evacuation warning':'claimed strike'}</b><br>${e.u.replace('https://','')}`,style:'cursor:pointer'},svg);
+   if(e.kind==='warning')mk('path',{d:`M${x-6},${t-14}L${x+6},${t-14}L${x},${t-4}Z`,fill:'#f2c94c'},g);else mk('circle',{cx:x,cy:t-9,r:4.5,fill:'#e6e9ef'},g);mk('rect',{x:x-8,y:t-20,width:16,height:20,fill:'transparent'},g)});
+  vis.slice().sort((a,b)=>(a.k==='riyadh')-(b.k==='riyadh')).forEach(x=>{const d=x.n.map((_,i)=>(i?'L':'M')+X(i).toFixed(1)+','+Y(val(x,i)).toFixed(1)).join('');
+   mk('path',{d,fill:'none',stroke:C[x.k],'stroke-width':x.k==='riyadh'?4:2.2,'stroke-linejoin':'round'},svg)});
+  for(let i=0;i<N;i++){const rows=vis.map(x=>[x,val(x,i)]).sort((a,b)=>b[1]-a[1]);
+   const tip=`<b>Week of ${wd(T.weeks[i])}</b> (${T.tot[i].toLocaleString()} Houthi posts)<br>`+rows.map(([x,v])=>`<span style="color:${C[x.k]}">●</span> ${x.l}: ${fmt(v)}${M==='rate'?' per 10,000':''}`).join('<br>');
+   mk('rect',{x:X(i)-(W-l-r)/N/2,y:t,width:(W-l-r)/N,height:H-t-b,fill:'transparent','data-tip':tip},svg)}
+ }
+ document.querySelectorAll('#trend .chip').forEach(c=>c.onclick=()=>{const k=c.dataset.k;if(on.has(k)){if(on.size>1)on.delete(k)}else on.add(k);c.setAttribute('aria-pressed',on.has(k));draw()});
+ document.querySelectorAll('[data-tm]').forEach(b=>b.onclick=()=>{M=b.dataset.tm;document.querySelectorAll('[data-tm]').forEach(x=>x.setAttribute('aria-pressed',x===b));draw()});
+ draw();let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(draw,150)});
+})();
+document.querySelectorAll('.wmore').forEach(b=>b.onclick=()=>{b.closest('.mgrp').classList.add('all');b.remove()});
 '''.replace('__D__',DATA).replace('__M__',json.dumps(MAPD,ensure_ascii=False)).replace('__RG__',open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'regions.json')).read())
 RX=mult(rz,"base","last30").replace("×","");AX=mult(ar,"base","last30").replace("×","")
 INTRO=(f'In the last 30 days, Houthi Telegram channels named Riyadh in threats {RX} times as often as in the months before, and Aramco {AX} times as often, while threats against Israel and the US fell. '
@@ -322,6 +355,30 @@ INTRO=(f'In the last 30 days, Houthi Telegram channels named Riyadh in threats {
 DESC=html.escape(f'Houthi threats now name Riyadh {RX}× and Aramco {AX}× as often as before; an Oct 13 evacuation warning was followed by claimed strikes on Oct 14.')
 BRIDGE=f'Iraqi militia channels reposted Houthi military statements {iq["n"]} times in the last 30 days, a median of {dur(iq["med"])} after the original.'
 MAPNOTE='Not mapped: '+', '.join(UNMAPPED)+' (no single place, or no threat posts in the last 30 days). Change compares threat posts per 10,000 Houthi posts with May–Sep. Quotes are translated from Arabic.'
+
+TRC={'riyadh':'#e5484d','kkia':'#3fd0e0','aramco':'#ff8c42','khamis':'#c86bfa','yanbu':'#5ad16b','israel':'#4f7dff','us':'#f2c94c','redsea':'#ff8fb8'}
+TR=T.get('trend')
+def _trcap(t):
+    from datetime import date as _d
+    S={x['k']:x for x in t['s']};W=t['weeks'];lw=W[-1]
+    wd=lambda w:_d(*map(int,w.split('-'))).strftime('%b %-d')
+    ri=S['riyadh']['n'];base_end=next((i for i,w in enumerate(W) if w>='2026-09-29'),len(W)-1)
+    bm=sum(ri[:base_end])/max(base_end,1);last=ri[-1]
+    parts=[f'Riyadh was named in {last} Houthi threat posts in the week of {wd(lw)}, against an average of {bm:.1f} a week from {wd(W[0])} to {wd(W[base_end-1])}'+(f' (about {last/bm:.0f}×)' if bm else '')]
+    k=S['kkia']['n'];fz=next((i for i,v in enumerate(k) if v),None)
+    if fz is not None: parts.append(f'King Khalid Airport went from none before the week of {wd(W[fz])} to {k[-1]} last week')
+    r=S['redsea']['n'];pk=max(range(len(r)),key=lambda i:r[i])
+    parts.append(f'Red Sea shipping peaked at {r[pk]} in the week of {wd(W[pk])} and was at {r[-1]} last week')
+    u=S['us']['n'];parts.append(f'the United States fell to {u[-1]} last week from {u[-2]} the week before' if u[-1]<u[-2] else f'the United States was at {u[-1]} last week')
+    return '. '.join(parts[:1])+'. '+'; '.join(parts[1:])+'.'
+if TR:
+    trcap=_trcap(TR)
+    chips=''.join(f'<button class="chip" type="button" data-k="{x["k"]}" aria-pressed="true"><i style="background:{TRC[x["k"]]}"></i>{html.escape(x["l"])}</button>' for x in TR['s'])
+    TREND=(f'<div class="row" id="trend"><div class="leg trleg"><div class="tlh">Show or hide a line</div>{chips}'
+      f'<div class="tlh">Scale</div><div class="tw tsc"><button class="btn" data-tm="raw" aria-pressed="true">Posts</button><button class="btn" data-tm="rate" aria-pressed="false">Per 10,000</button></div></div>'
+      f'<div><h3 class="trh">Weekly Houthi threat posts naming each target</h3><p class="prompt">Weeks run Tuesday to Monday, {nice(TR["weeks"][0])} to {nice(T["end"])}; the partial week of May 1–4 is left out. Hover or tap the chart for a week’s numbers; ▼ marks the Oct 13 warning, ● the claimed strikes.</p>'
+      f'<div id="trc"></div><p class="cap">{html.escape(trcap)}</p></div></div>')
+else: TREND=''
 WK=T.get('week',{});tl=lambda x:', '.join(x)
 lk=lambda u:f'<a href="{u}" target="_blank" rel="noopener nofollow">{u.replace("https://","")}</a>'
 wl=[]
@@ -329,7 +386,19 @@ if T['flag']: wl.append('<li><b>New or surging:</b> '+'; '.join(f'{html.escape(x
 if WK.get('warns'): wl+= [f'<li><b>Warning, {w["d"]}:</b> {html.escape(tl(w["t"]))} · {lk(w["u"])}</li>' for w in WK['warns']]
 else: wl.append('<li><b>Warnings:</b> no new official Houthi military warning naming a target this week.</li>')
 if WK.get('claims'): wl+= [f'<li><b>Claimed strike, {c["d"]}:</b> {html.escape(tl(c["t"]))} · {lk(c["u"])}</li>' for c in WK['claims']]
-WEEK=(f'<section id="week"><h2>New this week: {rng(T["end"])}</h2><p class="prompt">Houthi threat targets this week vs the 3 weeks before. Claims are the Houthis’ own.</p><ul class="wkl">{"".join(wl)}</ul></section>' if (T['flag'] or WK.get('warns') or WK.get('claims')) else f'<section id="week"><h2>New this week: {rng(T["end"])}</h2><p class="prompt">Nothing new in Houthi threats this week compared with the 3 weeks before.</p></section>')
+def _wit(it,hide):
+    al=f' · also posted by {it["also"]} other channel'+('s' if it['also']!=1 else '') if it['also'] else ''
+    tags=''.join(f'<span class="wtag">{html.escape(x)}</span>' for x in it['tags'])
+    tx=(f'<span class="trn">Translated from Arabic:</span> “{html.escape(it["en"])}”' if it.get('en') else f'<span class="trn">Arabic original, translation pending:</span> <span lang="ar" dir="rtl">{html.escape(it["ar"])}</span>')
+    return f'<div class="wki{" wkh" if hide else ""}"><div class="wkm">{html.escape(it["dt"])} ET · {html.escape(it["ch"])}{al}</div>{"<div class=wkt>"+tags+"</div>" if tags else ""}<p class="wkx">{tx}</p>{lk(it["u"])}</div>'
+def _wcat(c):
+    its=[WK['items'][k] for k in c['items']];n=len(its)
+    body=''.join(_wit(it,i>=10) for i,it in enumerate(its)) or '<p class="prompt">None this week.</p>'
+    if n>10: body+=f'<button class="mdet wmore" type="button">Show {n-10} more</button>'
+    return f'<details class="mgrp"><summary><span>{html.escape(c["l"])}</span> <span class="mcnt">{n} post{"s" if n!=1 else ""}</span></summary><div class="mgbody">{body}</div></details>'
+surge=''.join(wl[:1]).replace('<li>','<p class="wsurge">').replace('</li>','</p>') if T['flag'] else '<p class="wsurge"><b>New or surging:</b> no target met the rule this week.</p>'
+WEEK=(f'<section id="week"><h2>New this week: {rng(T["end"])}</h2>{surge}<p class="prompt">This week’s Houthi threat posts and claimed strikes by category, newest first. Reposts of the same text are folded into one entry; a post can appear in more than one category. Claims are the Houthis’ own. Tap a category to open it.</p>'
+      +''.join(_wcat(c) for c in WK.get('cats',[]))+'</section>')
 page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Houthi threats turn to Saudi Arabia | Axis Channel Network</title><meta name="description" content="{DESC}"><meta property="og:title" content="Houthi threats turn to Saudi Arabia"><meta property="og:description" content="{DESC}"><meta property="og:image" content="https://beacon-tools.onrender.com/axis-network/og.png"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><link rel="icon" href="../favicon.svg"><style>{CSS}</style></head><body><main>
 <h1>Houthi threats turn to Saudi Arabia</h1>
@@ -338,19 +407,13 @@ page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta na
 <div class="strip"><div class="st"><b>{c["channels"]}</b><span>channels</span></div><div class="st"><b>{f(c["posts"])}</b><span>posts collected</span></div><div class="st"><b>{f(x30)}</b><span>messages copied across groups</span></div></div>
 <section id="threats"><h2>Houthi threat targets</h2><p class="thd">{thead}</p>
 <div class="row"><div class="leg tleg"><div class="lghint">Tap a target for the threats</div><div class="tlh">Target type</div><span>__IC_city__City</span><span>__IC_airport__Airport</span><span>__IC_energy__Oil / energy site</span><span>__IC_military__Military base</span><span>__IC_government__Government building</span><span><i style="background:rgba(255,143,184,.45);border:2px solid #ff8fb8;border-radius:3px"></i>Province, country or strait</span><div class="tlh">Last 30 days vs before</div><span><svg width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="#e5484d" fill-opacity=".14" stroke="#e5484d" stroke-width="2"/><path d="M6 12L10 6L14 12z" fill="#e5484d"/></svg>Named more often</span><span><svg width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="#4f7dff" fill-opacity=".14" stroke="#4f7dff" stroke-width="2" stroke-dasharray="4 3"/><path d="M6 8L10 14L14 8z" fill="#4f7dff"/></svg>Named less often</span><span class="tln">Ring size = threat posts. Zoom in for exact sites, names and smaller targets.</span></div><div><div id="tmapw"><div id="tmap" role="region" aria-label="Map of Houthi threat targets"></div></div><p class="cap">{MAPNOTE}</p></div></div>
+{TREND}
 <div class="row"><div class="leg"><span><i style="background:#b24762"></i>Named more often</span><span><i style="background:#4379a8"></i>Named less often</span>
 <div class="tw"><button class="btn" data-tw="30" aria-pressed="true">30 days</button><button class="btn" data-tw="7" aria-pressed="false">7 days</button></div></div>
 <div><div class="lbl" id="ttitle"></div><p class="prompt">Change in threat posts naming each target, per 10,000 Houthi posts. Tap a row for counts and example posts.</p><div id="thr"></div></div></div>
 <p class="cap">{tcap}</p>{tcase}{tlines}{tcave}</section>
-<section id="map"><h2>How Houthi messaging spreads</h2><p class="thd">{BRIDGE}</p><h3 style="font-size:17px;margin:12px 0 4px">Which groups pass messages to which</h3><p class="prompt">Each circle is a group at its home base; lines show messages first posted by one group and later copied by another (last 30 days). Thicker lines mean more messages; moving dots show direction.</p>
-<div id="net"></div><p class="cap">Line colour = the group that posted first. Hover or tap a line or circle for numbers. Pro-Axis news outlets have no single base and are placed on their own. Flows under 10 messages are left out.</p></section>
-<section id="spread"><h2 style="font-size:18px">Where messages start and how they spread</h2><p class="prompt">Who posts first when the same message appears in several channels (last 30 days)</p>
-<div class="row"><div class="leg"><div class="lghint">Tap a group to highlight it</div>{leg1}</div><div>{s1bar}<div class="lbl">Copied across groups, <span id="ftitle">last 30 days</span>: posted first (left) → copied by (right)</div>
-<div style="display:flex;gap:8px;margin:6px 0"><button class="btn" data-w="f30" aria-pressed="true">30 days</button><button class="btn" data-w="f7" aria-pressed="false">7 days</button></div></div></div>
-<p class="prompt" style="color:var(--text);font-size:14.5px">Each band is messages one group posted first (left) and another group later copied (right), flowing left to right. Click or tap a group, here or in the list, to show only its flows.</p>
-<div id="fsel" hidden aria-live="polite"><div></div><button class="btn" id="fall" type="button">Show all</button></div>
-<div id="flow" style="width:100%;margin-top:6px"></div>
-<p class="cap">{cap1}</p></section>
+{WEEK}
+
 <section id="pay"><h2>Shared payment methods</h2><p class="prompt">Payment methods posted in the channels, by type</p>
 <p class="cap" style="margin:0 0 10px"><b>None of the {p["selectors"]} payment details is shared between two groups. {p["shared"]} are reposted by several channels of the same group, mostly the IRGC ({sum(1 for x in D["paylist"] if x["g"]=="irgc")} of {p["selectors"]}).</b></p>
 <div class="row"><div class="leg">{leg2}</div><div>{pb}</div></div><p class="cap">{cap2} Channels posting them: {pg}.</p>
@@ -358,7 +421,15 @@ page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta na
 <p class="prompt" style="color:var(--text)">Posted by the channels for fundraising, {nice(p["first"])} to {nice(p["last"])}; shown here for research reference only.</p>
 <div class="pf"><label>Group<select id="pg"><option value="">All groups</option></select></label><label>Type<select id="pt"><option value="">All types</option><option value="bank">Bank cards and accounts</option><option value="crypto">Crypto wallets</option><option value="other">Phones and campaigns</option></select></label><label class="ps">Search<input id="pq" type="search" placeholder="Number, wallet or channel"></label></div>
 <div id="pn" class="prompt" aria-live="polite"></div><div id="plist"></div></div></details></section>
-{WEEK}
+<section id="map"><h2>How Houthi messaging spreads</h2><p class="thd">{BRIDGE}</p><h3 style="font-size:17px;margin:12px 0 4px">Which groups pass messages to which</h3><p class="prompt">Each circle is a group at its home base; lines show messages first posted by one group and later copied by another (last 30 days). Thicker lines mean more messages; moving dots show direction.</p>
+<div id="net"></div><p class="cap">Line colour = the group that posted first. Hover or tap a line or circle for numbers. Pro-Axis news outlets have no single base and are placed on their own. Flows under 10 messages are left out.</p>
+<h3 id="spread" class="sph">Where messages start and how they spread</h3><p class="prompt">Who posts first when the same message appears in several channels (last 30 days)</p>
+<div>{s1bar}<div class="lbl">Copied across groups, <span id="ftitle">last 30 days</span>: posted first (left) → copied by (right)</div>
+<div style="display:flex;gap:8px;margin:6px 0"><button class="btn" data-w="f30" aria-pressed="true">30 days</button><button class="btn" data-w="f7" aria-pressed="false">7 days</button></div></div>
+<p class="prompt" style="color:var(--text);font-size:14.5px">Each band is messages one group posted first (left) and another group later copied (right), flowing left to right. Click or tap a group name to show only its flows.</p>
+<div id="fsel" hidden aria-live="polite"><div></div><button class="btn" id="fall" type="button">Show all</button></div>
+<div id="flow" style="width:100%;margin-top:6px"></div>
+<p class="cap">{cap1}</p></section>
 <details id="more"><summary>More: shared websites, method and sources</summary><div class="in"><p><b>Shared websites.</b> {infra}</p>
 <p><b>Method.</b> A message counts as copied when the same text appears in two or more channels; the first channel to post it is the origin. Same-group copies (for example between Houthi channels) are included in the top bar; the flow chart shows only copies between different groups. Flows under 10 messages are left out.</p>
 <div id="src"><b>Sources</b><ol>{''.join(f"<li>{html.escape(x)}</li>" for x in SRC)}{''.join(f"<li>{x}</li>" for x in tsrc)}</ol></div></div></details>
