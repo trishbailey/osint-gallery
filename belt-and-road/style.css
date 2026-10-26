@@ -1,23 +1,34 @@
-:root{--navy:#11273C;--teal:#087F8C;--bg:#F5F7FB}
-*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:var(--bg);color:var(--navy)}
-header{display:flex;justify-content:space-between;align-items:center;background:var(--navy);color:#fff;padding:12px 24px;font-size:14px}
-header a{color:#fff}.brand{font-weight:700;letter-spacing:.08em}.sub{margin-left:12px;font-weight:400;opacity:.85}
-.hero{padding:24px;max-width:1200px;margin:auto}h1{margin:0 0 8px;font-size:28px}
-main{max-width:1200px;margin:auto;padding:0 24px 40px}
-.filters{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;font-size:14px}.filters label{background:#fff;padding:4px 10px;border-radius:14px;border:1px solid #d5dbe5}
-.grid{display:grid;grid-template-columns:2fr 1fr;gap:16px}@media(max-width:800px){.grid{grid-template-columns:1fr}}
-svg{background:#fff;border-radius:8px;width:100%}.land{fill:#dfe5ee;stroke:#fff;stroke-width:.5}
+/* Beacon look, matched to /africa-brief/: white header, navy hero, Georgia headings, teal-edged cards */
+:root{--navy:#11273C;--teal:#087F8C;--bg:#F5F7FB;--ink:#1f2a37;--muted:#2f3b4a;--line:#dcded6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Arial,Helvetica,sans-serif}
+a{color:var(--teal);text-decoration:none}a:hover{text-decoration:underline}a:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+header{min-height:86px;padding:12px 5%;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#fff}
+.brand{color:var(--navy);font-size:21px;letter-spacing:3px;font-weight:600;line-height:1.2}.brand:hover{text-decoration:none}
+.brand-sub{display:block;font-size:13px;letter-spacing:1.8px;margin-top:6px;color:var(--teal)}
+nav{display:flex;flex-wrap:wrap;gap:22px;font-size:15px}nav a{color:var(--navy)}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:400;color:var(--navy);line-height:1.2;margin-top:0}
+h1{font-size:40px;letter-spacing:-.8px}
+.wrap{max-width:1200px;width:92%;margin:auto}
+.hero{background:var(--navy);color:#F5F7FB;padding:46px 0 36px}.hero h1{color:#fff}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin:0 0 10px;color:#7FE0E8}
+.lead{font-size:18px;max-width:900px;margin:0}
+main{padding:24px 0 48px}
+.regions{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.regions button{font:600 14px Arial,sans-serif;padding:7px 14px;border:1px solid var(--navy);background:#fff;color:var(--navy);border-radius:4px;cursor:pointer}
+.regions button.on{background:var(--navy);color:#fff}
+.brief{font-size:15px;background:var(--teal);color:#fff;padding:10px 14px;border-radius:4px;margin:0 0 12px}.brief a{color:#fff;font-weight:700;text-decoration:underline}
+.filters{display:flex;flex-wrap:wrap;gap:12px 18px;margin-bottom:12px;font-size:14px;font-weight:600;color:var(--navy)}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:16px}@media(max-width:860px){.grid{grid-template-columns:1fr}h1{font-size:30px}}
+svg#map{background:#fff;border:1px solid var(--line);width:100%;cursor:grab}
+.land{fill:#dfe5ee;stroke:#fff;stroke-width:.6}
 .mk{stroke:#fff;stroke-width:1.5;cursor:pointer}.mk.sel{stroke:var(--navy);stroke-width:3}
-.card{background:#fff;border-radius:8px;padding:16px;font-size:14px;max-height:520px;overflow:auto}.card h3{margin:0 0 6px;font-size:18px}
-.card dt{font-weight:700;color:var(--teal);margin-top:8px;font-size:13px;text-transform:uppercase}.card dd{margin:0}
-.muted{color:#4a5a6a;font-size:14px}a{color:var(--teal)}
-table{width:100%;border-collapse:collapse;margin-top:16px;background:#fff;font-size:14px}th,td{padding:8px;text-align:left;border-bottom:1px solid #e3e8ef}
-th{background:var(--navy);color:#fff;font-size:13px}tr{cursor:pointer}tr:hover{background:#eef6f7}
-.pill{font-size:13px;padding:1px 8px;border-radius:10px;color:#fff}.high{background:var(--teal)}.medium{background:#C98A1B}.low{background:#9A3B3B}
-.regions{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
-.regions button{font-size:14px;padding:6px 12px;border:1px solid #11273C;background:#fff;color:#11273C;border-radius:4px;cursor:pointer}
-.regions button.on{background:#11273C;color:#F5F7FB}
-.brief{font-size:15px;background:#087F8C;color:#fff;padding:10px 14px;border-radius:4px;margin:0 0 10px}
-.brief a{color:#fff;font-weight:700;text-decoration:underline}
-#map{cursor:grab}
 .mk,.land{vector-effect:non-scaling-stroke}
+.card{background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);padding:18px 20px;font-size:14px;max-height:540px;overflow:auto}
+.card h3{font-size:21px;margin:0 0 8px}
+.card dt{font-weight:700;color:var(--teal);margin-top:10px;font-size:13px;letter-spacing:.8px;text-transform:uppercase}.card dd{margin:0}
+.muted{color:var(--muted);font-size:14px}
+table{width:100%;border-collapse:collapse;margin-top:20px;background:#fff;font-size:14px;border:1px solid var(--line)}
+th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--navy);color:#fff;font-size:13px;letter-spacing:.6px;text-transform:uppercase}tr{cursor:pointer}tbody tr:hover{background:#eef6f7}
+.pill{font-size:13px;padding:1px 8px;border-radius:10px;color:#fff;font-weight:700}.high{background:var(--teal)}.medium{background:#9A6400}.low{background:#9A3B3B}

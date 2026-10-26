@@ -3,14 +3,15 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Z61EKRP8QV');</script>
 <link rel="stylesheet" href="style.css"></head><body>
-<header><span class="brand">BEACON INTELLIGENCE GROUP<span class="sub">BELT AND ROAD · v0.2</span></span><a href="data/belt_and_road.csv">Download CSV (32 entries)</a></header>
-<section class="hero"><h1>China's Belt and Road: what was built, lent and leased</h1>
-<p>Actions, not statements: ports, railways, mines, military bases and loans. Each entry gives what China gets, the host country's case, a confidence level and sources. Data as of <span id="dd"></span>.</p></section>
-<main><div class="regions" id="regions" role="group" aria-label="Region filter"></div>
+<header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">BELT AND ROAD · v0.3</span></a>
+<nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#top">Map</a><a href="#tbl">Projects</a><a href="#method">Method</a><a href="data/belt_and_road.csv">Download CSV</a></nav></header>
+<section class="hero"><div class="wrap"><p class="eyebrow">Actions, not statements</p><h1>China's Belt and Road: what was built, lent and leased</h1>
+<p class="lead">Ports, railways, mines, military and dual-use sites, and major loans across Africa, South Asia, Southeast Asia and South America. Each entry gives what China gets, the host country's case, a confidence level and sources. Data as of <span id="dd"></span>.</p></div></section>
+<main class="wrap" id="top"><div class="regions" id="regions" role="group" aria-label="Region filter"></div>
 <div id="africa-brief" class="brief" hidden><strong>Africa view:</strong> <a href="#" target="_blank" rel="noopener">Read the Africa Brief &rarr;</a></div>
 <div class="filters" id="filters"></div>
 <div class="grid"><svg id="map" viewBox="0 0 960 500" role="img" aria-label="World map of Chinese-backed projects"></svg>
 <aside id="panel" class="card"><p class="muted">Click a marker or a table row for details.</p></aside></div>
 <table id="tbl"><thead><tr><th>Name</th><th>Country</th><th>Region</th><th>Type</th><th>Confidence</th></tr></thead><tbody></tbody></table>
-<p class="muted">Confidence: high = primary document or multiple reputable reports; medium = single report or unconfirmed share; low = claim only. No .cn sources are used. Basemap: Natural Earth 1:110m.</p></main>
+<p class="muted" id="method">Confidence: high = primary document or multiple reputable reports; medium = single report or unconfirmed share; low = claim only. No .cn sources are used. Basemap: Natural Earth 1:110m.</p></main>
 <script src="vendor/d3.min.js"></script><script src="app.js"></script></body></html>

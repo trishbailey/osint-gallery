@@ -9,18 +9,18 @@ def typ(k):
     for t in ("port","railway","military","min","loan"):
         if t in k: return {"min":"mine","military":"military base","loan":"loan"}.get(t,t)
     if "naval" in k or "base" in k: return "military base"
-    if any(w in k for w in ("rail","hsr","metro")): return "railway"
+    if any(w in k for w in ("rail","hsr")): return "railway"
     return "infrastructure"
 def srcs(s): return [u.strip() for u in re.split(r"[;|]",s) if u.strip() and not bad_cn(u.strip())]
 E={}
 for r in csv.DictReader(open(os.path.join(S,"africa.csv"))):
     E[r["id"]]=dict(id=r["id"],name=r["name"],country=r["country"],region="africa",type=r["type"],kind=r["kind"],lat=float(r["lat"]),lon=float(r["lon"]),
       value=r["value"],backer=r["backer"],china_gets=r["china_gets"],host_case=r["host_case"],confidence=r["confidence"],confidence_reason="",sources=srcs(r["sources"]),origin=r["origin"])
-for r in csv.DictReader(open(os.path.join(S,"south_se_asia.csv"))):
+for r in [x for f in ("south_se_asia.csv","south_america.csv") for x in csv.DictReader(open(os.path.join(S,f)))]:
     if r["id"] in E: print("duplicate id skipped:",r["id"]); continue
     E[r["id"]]=dict(id=r["id"],name=r["name"],country=r["country"],region=r["region"],type=typ(r["kind"]),kind=r["kind"],lat=float(r["lat"]),lon=float(r["lon"]),
       value=r["value"],backer=r["lender_builder"],china_gets=r["china_gets"],host_case=r["host_position"],confidence=CONF.get(r["confidence"],r["confidence"]),
-      confidence_reason=r["confidence_reason"],sources=srcs(r["source_urls"]),origin="south_se_asia.csv")
+      confidence_reason=r["confidence_reason"],sources=srcs(r["source_urls"]),origin="south_america.csv" if r["region"]=="south-america" else "south_se_asia.csv")
 L=list(E.values())
 F=list(L[0].keys())
 for p in ("data/belt_and_road.csv",):
