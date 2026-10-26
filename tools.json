@@ -1,15 +1,15 @@
 {
   "site": {
-    "name": "Beacon OSINT Tools",
+    "name": "Beacon Tools & Dashboards",
     "eyebrow": "OSINT workspace",
-    "tagline": "Spotlight tools to focus narrowly and deeply on selected target accounts.",
+    "tagline": "Spotlight tools for focused, deep looks at selected targets, and live dashboards that track priority issues.",
     "owner": "Beacon Intelligence Group"
   },
   "tools": [
     {
       "id": "spotlight-x",
       "name": "X Account Spotlight",
-      "blurb": "X Account Spotlight collects and analyzes an X account\u2019s posts to uncover activity patterns, interactions, recurring themes, and language worth closer review.",
+      "blurb": "X Account Spotlight collects and analyzes an X account’s posts to uncover activity patterns, interactions, recurring themes, and language worth closer review.",
       "icon": "/icons/spotlight-x.svg",
       "enterUrl": "https://spotlight-x.onrender.com/",
       "previewDriveId": "",
@@ -29,7 +29,7 @@
     {
       "id": "bluesky",
       "name": "Bluesky Spotlight",
-      "blurb": "Bluesky Spotlight downloads one account\u2019s full public post history, then shows who that account interacts with, when it posts, and what it writes about.",
+      "blurb": "Bluesky Spotlight downloads one account’s full public post history, then shows who that account interacts with, when it posts, and what it writes about.",
       "icon": "/icons/bluesky.svg",
       "enterUrl": "https://bluesky-collector.onrender.com/",
       "previewDriveId": "",
@@ -119,22 +119,38 @@
     {
       "id": "axis-network",
       "name": "Axis Channel Network",
-      "blurb": "Findings map of how messages, websites and fundraising details move between Iran-aligned groups\u2019 public Telegram, Eitaa and X channels, 20 Sep \u2013 20 Oct 2026.",
+      "blurb": "Findings map of how messages, websites and fundraising details move between Iran-aligned groups’ public Telegram, Eitaa and X channels, 20 Sep – 20 Oct 2026.",
       "icon": "/icons/axis-network.svg",
       "enterUrl": "https://beacon-tools.onrender.com/axis-network/",
       "previewDriveId": "",
       "status": "live",
       "newTab": true
-    },
+    }
+  ],
+  "dashboards": [
     {
       "id": "world-brief",
       "name": "Strategic World Brief",
       "blurb": "Daily, cited brief that tracks 20 global storylines across security, politics, the economy and technology, with a story map, weekly synthesis and predictions log.",
       "icon": "/icons/world-brief.svg",
       "enterUrl": "https://world-brief-tpnb.onrender.com/",
-      "previewDriveId": "",
-      "status": "live",
-      "newTab": true
+      "status": "live"
+    },
+    {
+      "id": "critical-minerals",
+      "name": "Critical Minerals",
+      "blurb": "Tracks supply, prices, export controls and policy moves across the critical minerals that matter for defence and energy supply chains.",
+      "icon": "",
+      "enterUrl": "https://critical-minerals-pzcr.onrender.com/",
+      "status": "live"
+    },
+    {
+      "id": "ukraine-money-flows",
+      "name": "Ukraine Money Flows",
+      "blurb": "Follows aid, financing and funding flows to and around Ukraine, with sources for each figure.",
+      "icon": "",
+      "enterUrl": "https://ukraine-money-flows.onrender.com/",
+      "status": "live"
     }
   ]
 }
