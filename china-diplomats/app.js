@@ -46,7 +46,8 @@ const slug=n=>n.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').repla
 const sel=d3.select('#tp');sel.selectAll('option').data(SP).join('option').attr('value',(d,i)=>i).text(d=>`${d.name} (${d.accounts} accounts)`);
 sel.on('change',function(){setTP(+this.value)});
 d3.select('#chips').selectAll('button').data(SP).join('button').attr('class','chip').html(d=>`<span class="sw" style="background:${tpColor(d.name)||'transparent'};border:2px solid ${tpColor(d.name)||OTHER}"></span>${esc(d.name)}`).on('click',(e,d)=>setTP(SP.indexOf(d)));
-function setTP(i){cur=i;sel.property('value',i);d3.select('#chips').selectAll('button').attr('aria-pressed',(d,j)=>j===i);d3.select('#tpdesc').text(SP[i].desc);
+const tpread=d3.select(document.getElementById('chips').parentNode).insert('button','#chips + *').attr('id','tpread').attr('type','button').attr('class','btn').style('margin','8px 0').on('click',()=>openNarr(ST.series.findIndex(s=>s.name===SP[cur].name)));
+function setTP(i){cur=i;{const k=ST.series.findIndex(s=>s.name===SP[i].name);tpread.attr('hidden',k<0?'':null).text(`Read what “${SP[i].name}” says and see a sample post`)}sel.property('value',i);d3.select('#chips').selectAll('button').attr('aria-pressed',(d,j)=>j===i);d3.select('#tpdesc').text(SP[i].desc);
  d3.select('#sp-title').text(`How it spread: ${SP[i].name}`);setHash('narrative',slug(SP[i].name));stop();drawSpread();play()}
 function gotoNarr(name){const i=SP.findIndex(d=>d.name===name);if(i<0)return;setTP(i);document.getElementById('spread').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
 function initNarr(){const m=location.hash.match(/narrative=([\w-]+)/);const ini=!!m;const i=m?SP.findIndex(d=>slug(d.name)===m[1]):-1;if(i>=0){setTP(i);setTimeout(()=>document.getElementById('spread').scrollIntoView(),50)}else{setTP(0);setHash('narrative',null)}}
