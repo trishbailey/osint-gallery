@@ -93,6 +93,18 @@
    "note": "v1. Lives directly in this repo under /ghost-fleet/ (_src/) with its own workflow (ghost-fleet-rebuild.yml); not touched by the sync."
   },
   {
+   "slug": "china-diplomats",
+   "repo": "trishbailey/osint-gallery",
+   "private": false,
+   "build": "",
+   "publish": "",
+   "oldUrl": "",
+   "status": "in-repo",
+   "cardId": "china-diplomats",
+   "version": "1",
+   "note": "v1. Lives directly in this repo under /china-diplomats/ (_src/ sources, data/ JSON). Data refreshed by _src/daily.sh through a PR; not touched by the sync."
+  },
+  {
       "slug": "middle-east",
       "repo": "",
       "private": true,
