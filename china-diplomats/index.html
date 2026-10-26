@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="/icons/china-diplomats.svg" type="image/svg+xml"><script data-slash-fix>if(location.pathname==="/china-diplomats")location.replace("/china-diplomats/"+location.search+location.hash);</script>
+<title>China Diplomats on X | Beacon Intelligence Group</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Z61EKRP8QV');</script>
+<link rel="stylesheet" href="style.css?v=1"></head><body>
+<header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">CHINA DIPLOMATS ON X · v1</span></a>
+<nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#spread">Spread</a><a href="#themes">Themes</a><a href="#amp">Amplifiers</a><a href="#tone">Tone</a><a href="#cal">Bursts</a></nav></header>
+<div class="layout">
+<button id="ftoggle" aria-expanded="false" aria-controls="side">☰ Filters and legend</button>
+<aside id="side" aria-label="Filters and legend">
+ <div class="sheethead"><span>Filters and legend</span><button id="sclose" aria-label="Close filters">✕</button></div>
+ <h2 class="sh"><label for="tp">Talking point</label></h2>
+ <select id="tp"></select>
+ <p class="muted" id="tpdesc"></p>
+ <h2 class="sh">Account types</h2>
+ <div id="types" role="group" aria-label="Account types shown"></div>
+ <h2 class="sh">Spread map</h2><div class="legend" id="lg-kind"></div>
+ <h2 class="sh">Top talking points</h2><div class="legend" id="lg-tp"></div>
+ <h2 class="sh">Tone</h2><div class="legend" id="lg-tone"></div>
+</aside>
+<main>
+<h1>China Diplomats on X</h1>
+<p class="intro">China's foreign ministry, its embassies, consulates and ambassadors run a large network of X accounts. This page tracks what they post, which messages appear across many accounts at once, who reposts whom, and how the tone differs from country to country.</p>
+<p class="cover" id="cover"></p>
+<div id="heads" class="heads"></div>
+<div id="chips" class="chips" role="group" aria-label="Talking point"></div>
+
+<section id="spread" class="card"><h2 class="sh2">How a talking point spreads</h2>
+<p class="sub" id="sp-sub"></p>
+<div class="ctl"><button id="play" class="btn">▶ Play</button><input type="range" id="clock" min="0" max="1000" value="1000" aria-label="Time"><span id="clocklbl" class="muted"></span></div>
+<div id="map" class="viz"></div></section>
+
+<section id="themes" class="card"><h2 class="sh2">Top talking points by day</h2>
+<p class="sub">Posts per day in each of the five talking points carried by the most accounts. Hover for counts.</p>
+<div id="stream" class="viz"></div></section>
+
+<section id="who" class="card"><h2 class="sh2">Which accounts carry which talking points</h2>
+<p class="sub">The 25 accounts with the most posts in named talking points. Darker cells mean more posts.</p>
+<div id="matrix" class="viz scrollx"></div></section>
+
+<section id="amp" class="card"><h2 class="sh2">Who amplifies whom</h2>
+<p class="sub" id="amp-sub"></p>
+<div id="net" class="viz"></div></section>
+
+<section id="tone" class="card"><h2 class="sh2">Tone by country</h2>
+<p class="sub">Balance of confrontational words (such as "hegemony", "smear", "interference", "provocation") against cooperative words (such as "cooperation", "friendship", "win-win") in posts by the missions in each country. Countries with fewer than two matching words in a period are left blank.</p>
+<div class="ctl"><button id="tplay" class="btn">▶ Play</button><div class="seg" id="tsteps" role="group" aria-label="Period"></div></div>
+<div id="tmap" class="viz"></div></section>
+
+<section id="cal" class="card"><h2 class="sh2">Synchronized bursts</h2>
+<p class="sub">Each cell is one hour (UTC). Colour shows posts that were part of a burst: at least four accounts posting the same message within six hours. Click a day to read the posts.</p>
+<div id="calv" class="viz scrollx"></div></section>
+
+<details class="note"><summary>Sources and method</summary>
+<p id="method"></p></details>
+</main></div>
+<div id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="ph" hidden><div class="phead"><h2 id="ph"></h2><button id="pclose" aria-label="Close panel">✕</button></div><div id="pbody"></div></div>
+<div id="tip" class="tip" role="tooltip" hidden></div>
+<script src="vendor/d3.min.js"></script><script src="vendor/topojson-client.min.js"></script><script src="app.js?v=1"></script>
+</body></html>

@@ -119,6 +119,14 @@
   ],
   "dashboards": [
     {
+      "id": "china-diplomats",
+      "name": "China Diplomats on X",
+      "blurb": "Tracks about 230 X accounts run by China's foreign ministry, embassies, consulates and ambassadors: which messages spread across many accounts at once, who reposts whom, and how tone differs by country.",
+      "icon": "/icons/china-diplomats.svg",
+      "enterUrl": "https://beacon-tools.onrender.com/china-diplomats/",
+      "status": "live"
+    },
+    {
       "id": "ghost-fleet",
       "name": "Russia's Shadow Fleet",
       "blurb": "Maps where about 720 tankers in Russia's shadow fleet go: port calls, loitering at sea, transponder gaps and radar detections from the last 90 days, with animated ship movements and a profile for every ship.",
