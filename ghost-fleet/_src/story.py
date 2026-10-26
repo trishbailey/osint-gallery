@@ -62,6 +62,8 @@ S["cases"]={
    "flows":[[v["lp"],v["dp"],nm(v["imo"])] for v in nv]},
  "dark":{"imo":"9151890","name":nm("9151890"),"ev":slimv(gO)},
  "allgaps":slimv(gj)}
+exec(open(os.path.join(H,"classes.py")).read())
+json.dump(prof,open(os.path.join(D,"profiles.json"),"w"),separators=(",",":"),ensure_ascii=False)
 json.dump(S,open(os.path.join(D,"story.json"),"w"),separators=(",",":"))
 os.remove(os.path.join(D,"story_stats.json")) if os.path.exists(os.path.join(D,"story_stats.json")) else None
 print("STORY2",{k:S[k] for k in ("gaps","gapShips","gapsJamWindow","gapsJam","netName","netShips","netVoy")})

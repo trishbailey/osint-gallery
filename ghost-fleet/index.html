@@ -3,7 +3,7 @@
 <title>Russia's Shadow Fleet Tracker | Beacon Intelligence Group</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Z61EKRP8QV');</script>
-<link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css?v=3"></head><body>
+<link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css?v=4"></head><body>
 <header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">SHADOW FLEET · v1</span></a>
 <nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#map">Map</a><a href="#vessels">Ships</a><a href="../ukraine-money-flows/">Ukraine Money Flows</a></nav></header>
 <div class="layout">
@@ -11,6 +11,8 @@
 <aside id="side" aria-label="Map filters and key">
  <h2 class="rawonly sh" id="tprompt">Show on map</h2>
  <div class="rawonly legend" id="legend" role="group" aria-labelledby="tprompt"></div>
+ <h2 class="rawonly sh" id="clsp">Ship behaviour</h2>
+ <div class="rawonly" id="clsf" role="group" aria-labelledby="clsp"></div>
  <h2 class="sh">Seabed infrastructure</h2>
  <button class="hl wide" id="infra" aria-pressed="false"><span class="ln" style="background:#5cc98a"></span>Undersea cables <span class="ln" style="background:#f2d16b"></span>Pipelines (Europe)</button>
  <h2 class="sh">Reference layers</h2>
@@ -33,6 +35,9 @@
 <main>
 <h1 id="title">Where Russia's shadow-fleet tankers go</h1>
 <p class="intro">Russia moves much of its seaborne oil on ageing tankers with opaque owners, frequent name and flag changes and patchy insurance, often called the shadow fleet. This page follows about 720 of these tankers using public ship-tracking data from Global Fishing Watch, and shows how the fleet keeps oil moving: where it loads, where it waits, how ships change identity, who runs them and when they go dark. Step through the story below, or switch to Explore to use the map yourself.</p>
+<section id="trade" class="trade" aria-labelledby="trh"><h2 class="sh2" id="trh">Oil imports from Russia, by buyer</h2>
+<div class="seg" role="group" aria-label="Product"><button data-h="2709" aria-pressed="true">Crude oil</button><button data-h="2710" aria-pressed="false">Refined products</button></div>
+<div id="trbars" class="bars"></div><p class="note">Annual customs-reported import values in US$ bn (UN Comtrade). Customs figures lag by months and may be revised.</p></section>
 <h2 class="sh2">What the data shows</h2>
 <div id="heads" class="heads"></div>
 <div id="modes" class="seg modes" role="group" aria-label="View"><button data-m="story" aria-pressed="true">The story</button><button data-m="explore" aria-pressed="false">Explore the map</button></div>
