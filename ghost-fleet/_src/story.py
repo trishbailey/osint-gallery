@@ -65,6 +65,8 @@ S["cases"]={
 exec(open(os.path.join(H,"classes.py")).read())
 json.dump(prof,open(os.path.join(D,"profiles.json"),"w"),separators=(",",":"),ensure_ascii=False)
 json.dump(S,open(os.path.join(D,"story.json"),"w"),separators=(",",":"))
+try: exec(open(os.path.join(H,"shuttle.py")).read())
+except Exception as _e: print("shuttle build failed, keeping old data:",type(_e).__name__,_e)
 os.remove(os.path.join(D,"story_stats.json")) if os.path.exists(os.path.join(D,"story_stats.json")) else None
 print("STORY2",{k:S[k] for k in ("gaps","gapShips","gapsJamWindow","gapsJam","netName","netShips","netVoy")})
 print("CHAIN",[(e["t"],e["s"][:10],e.get("port"),e.get("hz"),e.get("hrs")) for e in cv["ev"]])

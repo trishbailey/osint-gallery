@@ -66,14 +66,6 @@ const CH=[
  {k:"classes",t:"6. Five ways of working",
   c:`Sorted by what they did over 12 months, ${K.core} tankers are regular Russia runners and ${K.hub} are transfer hub ships, whose trips mostly include loitering or meetings consistent with ship-to-ship transfers. ${K.dev} were recently renamed or reflagged and kept loading Russian oil, and ${K.taxi} mix Russian cargoes with other trade. Regular runners made ${(S.classVoy||{}).core} of the ${S.voyages} trips.`,x:`<div class="cbars">${Object.keys(CLS).filter(k=>k!=="other").sort((a,b)=>(K[b]||0)-(K[a]||0)).map(k=>`<div class="row" title="${CLS[k][2]}"><span>${CLS[k][0]}</span><i style="width:${(100*(K[k]||0)/Math.max(K.hub,K.core,K.dev,K.taxi)).toFixed(0)}%;background:${CLS[k][1]}"></i><b>${K[k]||0}</b></div>`).join("")}</div><p class="note">Some tankers have too few recorded trips to classify and are left off this map.</p>`,
   key:Object.keys(CLS).filter(k=>k!=="other").map(k=>[CLS[k][1],CLS[k][0]]),d:()=>lastPos()}];
-// headline findings
-const H=[[`${pct}%`,`of ${S.voyages.toLocaleString()} trips from Russian oil terminals ended in China, India or Turkey`,"route"],
- [S.changed.toLocaleString(),`of ${S.ships} tankers changed name, flag or MMSI in 12 months`,"identity"],
- [S.sts[0][1].toLocaleString(),`loitering events off ${S.sts[0][0].replace(/ \(.*/,"")}, the busiest transfer area`,"hot"],
- [S.loads[0][0],`busiest loading port (${S.loads[0][1]} trips), then ${S.loads[1][0]} (${S.loads[1][1]}) and ${S.loads[2][0]} (${S.loads[2][1]})`,"loads"],
- [`${K.core}`,`regular Russia runners among ${NC} tankers, plus ${K.hub} transfer hub ships`,"classes"],
- [S.gaps,`transponder switch-offs, none in reported GPS-interference zones`,"dark"]];
-document.getElementById("heads").innerHTML=H.map(h=>`<button class="head" data-g="${h[2]}"><b>${esc(h[0])}</b><span>${esc(h[1])}</span></button>`).join("");
 const box=document.getElementById("story"),cards=document.getElementById("chapters");
 cards.innerHTML=CH.map((c,i)=>`<article class="chap" data-i="${i}" tabindex="0"><h3>${c.t}</h3><p>${c.c}</p>${c.x||""}${c.key?`<div class="key">${c.key.map(k=>`<span><i style="background:${k[0]}"></i>${k[1]}</span>`).join("")}</div>`:""}${c.ship?`<button class="lnk" data-p="${c.ship}">Open ship profile</button>`:""}${c.chips?`<div>${c.chips.map(s=>`<span class="chip" role="button" tabindex="0" data-p="${s[0]}">${esc(title(s[1]))}</span>`).join("")}</div>`:""}</article>`).join("");
 cards.querySelectorAll("[data-p]").forEach(b=>b.onclick=e=>{e.stopPropagation();openP(b.dataset.p)});
@@ -108,17 +100,5 @@ function setMode(m){mode=m;document.body.classList.toggle("story",m==="story");d
  document.querySelectorAll("#modes button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===m));setTimeout(()=>map.invalidateSize(),0);m==="story"?go(cur):explore()}
 document.querySelectorAll("#modes button").forEach(b=>b.onclick=()=>setMode(b.dataset.m));
 raw.onchange=()=>{document.body.classList.toggle("raw",raw.checked);explore()};
-document.querySelectorAll(".head").forEach(b=>b.onclick=()=>{const g=b.dataset.g;
- if(g==="hot"){setMode("explore");lay.clearLayers();fit(hotspots([S.sts[0][0]]).map(p=>[p[0]+3,p[1]+3]).concat(hotspots([S.sts[0][0]]).map(p=>[p[0]-3,p[1]-3])))}
- else if(g==="loads"){setMode("explore");lay.clearLayers();fit(flows(f=>f.from===S.loads[0][0]))}
- else{setMode("story");step(CH.findIndex(c=>c.k===g))}
- if(GF.phone()||mode!=="story")document.getElementById("map").scrollIntoView({behavior:"smooth",block:"center"})});
 setMode("story");
-fetch("data/trade.json").then(r=>r.ok?r.json():null).then(T=>{const box=document.getElementById("trade");if(!T||!T.rows.length){box.remove();return}
- const CC={China:"#9b7be8",India:"#e8913a",Turkey:"#4fa3e0"};
- function draw(h){const rows=T.rows.filter(r=>r.hs===h),mx=Math.max(...rows.map(r=>r.usd));
-  document.getElementById("trbars").innerHTML=Object.keys(CC).map(c=>`<div class="tgrp"><div class="tc">${c}</div>${!rows.some(r=>r.c===c)?`<div class="muted">Not reported by ${c} for this product</div>`:T.years.map(y=>{const r=rows.find(r=>r.c===c&&r.y===y);
-   return r?`<div class="row" title="${c}, ${y}: US$ ${(r.usd/1e9).toFixed(1)} bn"><span>${y}</span><i style="width:${(100*r.usd/mx).toFixed(1)}%;background:${CC[c]}"></i><b>$${(r.usd/1e9).toFixed(1)} bn</b></div>`:`<div class="row"><span>${y}</span><em class="muted">not reported by partner</em></div>`}).join("")}</div>`).join("");
-  box.querySelectorAll(".seg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.h===h))}
- box.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>draw(b.dataset.h));draw("2709")});
 })();
