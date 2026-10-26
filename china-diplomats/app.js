@@ -4,8 +4,8 @@ const [H,ST,MX,BU,NET,TONE,SP,ACC,PO,RIP,WORLD]=await Promise.all(['headline','s
 const countries=topojson.feature(WORLD,WORLD.objects.countries).features.filter(f=>f.properties.name!=='Antarctica');
 const fmt=d3.format(','),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const KIND={post:['Original post','#4fc3b0'],repost:['Repost','#e8a33d'],quote:['Quote','#c46ad6'],reply:['Reply','#5d8fe6']};
-const TPC=['#4e9fe0','#e0703c','#5cbf7a','#b36bd6','#e6c34a'];
-const tpColor=name=>{const i=ST.series.findIndex(s=>s.name===name);return i>=0?TPC[i]:null};
+const TPC=['#4e9fe0','#e0703c','#5cbf7a','#b36bd6','#e6c34a','#4fc6c2','#9a9cf0','#c98a5a','#a8d65a'];
+const tpColor=name=>{const i=ST.series.findIndex(s=>s.name===name);return i>=0&&i<5?TPC[i]:null};
 const OTHER='#c8a24a';
 const hp=()=>new URLSearchParams(location.hash.slice(1));
 function setHash(k,v){const q=hp();if(v==null)q.delete(k);else q.set(k,v);const t=q.toString();history.replaceState(null,'',location.pathname+location.search+(t?'#'+t:''))}
@@ -34,7 +34,7 @@ d3.select('#cover').text(`Coverage: ${fday(H.start.slice(0,10))} to ${fd(H.end)}
 d3.select('#heads').selectAll('div').data([[H.accounts,'accounts tracked'],[H.active,'posted in this period'],[H.posts,'posts collected'],[H.countries,'countries and organisations'],[H.clusters,'messages shared by 3+ accounts'],[H.topburst_acc,'accounts pushed the '+H.topburst+' in bursts']]).join('div').attr('class','head').html(d=>`<b>${fmt(d[0])}</b><span>${d[1]}</span>`);
 // ---- legends and filters
 const lg=(id,items,sq)=>d3.select(id).selectAll('div').data(items).join('div').html(d=>`<span class="sw ${sq?'sq':''}" style="background:${d[1]}"></span>${esc(d[0])}`);
-lg('#lg-kind',Object.values(KIND));lg('#lg-tp',ST.series.map((s,i)=>[s.name,TPC[i]]),1);const drawTLeg=()=>{d3.select('#lg-tone').html('');lg('#lg-tone',TMODE==='count'?TONEB_C():TONEB_S(),1);d3.select('#lg-tone').append('div').attr('class','li').text(`Countries with fewer than ${TONE.min_posts} posts are not shown`)};drawTLeg();
+lg('#lg-kind',Object.values(KIND));lg('#lg-tp',ST.series.slice(0,5).map((s,i)=>[s.name,TPC[i]]),1);d3.select('#lg-tp').selectAll('div').style('cursor','pointer').attr('title','Click to read what it says').on('click',(e,d)=>openNarr(ST.series.findIndex(s=>s.name===d[0])));narrKeys(d3.select('#lg-tp').selectAll('div'),d=>ST.series.findIndex(s=>s.name===d[0]));const drawTLeg=()=>{d3.select('#lg-tone').html('');lg('#lg-tone',TMODE==='count'?TONEB_C():TONEB_S(),1);d3.select('#lg-tone').append('div').attr('class','li').text(`Countries with fewer than ${TONE.min_posts} posts are not shown`)};drawTLeg();
 d3.select('#types').selectAll('button').data(Object.entries(TYPES)).join('button').attr('class','tg').attr('aria-pressed','true').html(d=>`<span class="sw" style="background:${d[1]}"></span>${d[0]}`)
  .on('click',function(e,d){on.has(d[0])?on.delete(d[0]):on.add(d[0]);this.setAttribute('aria-pressed',on.has(d[0]));drawSpread(true);drawRipple()});
 const side=document.getElementById('side'),ft=document.getElementById('ftoggle');
@@ -80,19 +80,26 @@ d3.select('#play').on('click',()=>timer?stop():play());
 d3.select('#clock').on('input',function(){stop();setPos(this.value/1000);d3.select('#play').text(pos>=1?'↺ Replay':'▶ Play')});
 // ---- streamgraph
 // Day view shows only the recent range where the talking points have data: from the day before the first post (at most the last 14 days, at least 7) to the latest day.
-const DAYR=(()=>{const n=ST.days.length,f=ST.days.findIndex((d,i)=>ST.series.some(s=>s.vals[i]>0));let a=Math.max(f<0?0:f-1,n-14);a=Math.max(0,Math.min(a,n-7));return [a,n]})();
+const DAYR=(()=>{const n=ST.days.length,f=ST.days.findIndex((d,i)=>ST.series.slice(0,5).some(s=>s.vals[i]>0));let a=Math.max(f<0?0:f-1,n-14);a=Math.max(0,Math.min(a,n-7));return [a,n]})();
 (function(){const w=Math.max(320,document.getElementById('stream').clientWidth),h=Math.max(240,Math.round(w*0.32)),m={l:14,r:14,t:10,b:30};const DD=ST.days.slice(DAYR[0],DAYR[1]),O=DAYR[0];const days=DD.map(d=>new Date(d+'T12:00:00Z'));
- const data=DD.map((d,i)=>{const o={i};ST.series.forEach((s,j)=>o[j]=s.vals[i+O]);return o});
- const keys=ST.series.map((s,j)=>j);const stk=d3.stack().keys(keys).offset(d3.stackOffsetWiggle).order(d3.stackOrderInsideOut)(data);
+ const data=DD.map((d,i)=>{const o={i};ST.series.slice(0,5).forEach((s,j)=>o[j]=s.vals[i+O]);return o});
+ const keys=[0,1,2,3,4].filter(j=>ST.series[j]);const stk=d3.stack().keys(keys).offset(d3.stackOffsetWiggle).order(d3.stackOrderInsideOut)(data);
  const x=d3.scaleUtc().domain(d3.extent(days)).range([m.l,w-m.r]);const y=d3.scaleLinear().domain([d3.min(stk,l=>d3.min(l,d=>d[0])),d3.max(stk,l=>d3.max(l,d=>d[1]))]).range([h-m.b,m.t]);
  const area=d3.area().x((d,i)=>x(days[i])).y0(d=>y(d[0])).y1(d=>y(d[1])).curve(d3.curveBasis);
  const svg=d3.select('#stream').append('svg').attr('viewBox',`0 0 ${w} ${h}`).attr('role','img').attr('aria-label','Streamgraph of daily posts in the top five talking points');
  const ps=svg.append('g').selectAll('path').data(stk).join('path').attr('d',area).attr('fill',d=>TPC[d.key]).attr('fill-opacity',.9).attr('stroke','#0b1526').attr('stroke-width',.6);
  svg.append('g').attr('transform',`translate(0,${h-m.b})`).call(d3.axisBottom(x).ticks(d3.utcDay.every(Math.ceil(days.length/Math.max(2,Math.min(w<600?5:99,Math.floor(w/70)))))).tickFormat(d3.utcFormat('%-d %b'))).call(g=>{g.selectAll('text').attr('font-size',13);g.selectAll('line,path').attr('stroke','#5a6f94')});
  ps.on('mousemove',(e,d)=>{const [mx]=d3.pointer(e,svg.node());const i=d3.minIndex(days,dd=>Math.abs(x(dd)-mx*(w/svg.node().getBoundingClientRect().width)));
-   showTip(e,`<b>${esc(ST.series[d.key].name)}</b><br><i>${esc(ST.series[d.key].line)}</i><br>${fday(DD[i])}: ${ST.series[d.key].vals[i+O]} posts`)});svg.on('mouseleave',hideTip);ps.style('cursor','pointer').on('click',(e,d)=>openNarr(d.key));narrKeys(ps,d=>d.key);ps
+   showTip(e,`<b>${esc(ST.series[d.key].name)}</b><br><i>${esc(ST.series[d.key].line)}</i><br>${fday(DD[i])}: ${ST.series[d.key].vals[i+O]} posts`)});svg.on('mouseleave',hideTip);ps.style('cursor','pointer');hitOpen(svg,stk,x,y,days,w);narrKeys(ps,d=>d.key);ps
   .on('touchstart',(e,d)=>showTip(e.touches[0],`<b>${esc(ST.series[d.key].name)}</b><br><i>${esc(ST.series[d.key].line)}</i><br>${d3.sum(ST.series[d.key].vals)} posts in total`),{passive:true});
+ tpChips('stream',keys);
 })();
+// One click handler on the whole chart: opens the talking point under the pointer, or the nearest layer, so thin layers and finger taps still hit.
+function hitOpen(svg,stk,x,y,days,w){svg.style('cursor','pointer').on('click',e=>{const td=e.target&&e.target.__data__;if(td&&td.key!=null&&e.target.tagName==='path'){openNarr(td.key);return}const [mx,my]=d3.pointer(e,svg.node()),sc=w/svg.node().getBoundingClientRect().width,X=mx*sc,Y=my*sc;
+ const i=d3.minIndex(days,dd=>Math.abs(x(dd)-X)),v=y.invert(Y);let best=null,bd=1/0;stk.forEach(l=>{const a=l[i][0],b=l[i][1];if(b<=a)return;const dd=v<a?a-v:v>b?v-b:0;if(dd<bd){bd=dd;best=l.key}});
+ if(best!=null&&Y<y.range()[0])openNarr(best)})}
+// chips under each talking-points chart: click opens the explanation panel
+function tpChips(el,keys){d3.select('#'+el).append('div').attr('class','chips tpchips').attr('role','group').attr('aria-label','Open a talking point').selectAll('button').data(keys).join('button').attr('class','chip').attr('type','button').html(j=>`<span class="sw" style="background:${TPC[j]};border:2px solid ${TPC[j]}"></span>${esc(ST.series[j].name)}`).on('click',(e,j)=>openNarr(j))}
 // ---- matrix
 (function(){const P=MX.points,R=MX.rows.slice(0,25);const cw=112,lw=200,rh=30,top=74;const w=lw+cw*P.length+10,h=top+rh*R.length+6;
  const svg=d3.select('#matrix').append('svg').attr('class','native').attr('width',w).attr('height',h).attr('role','img').attr('aria-label','Matrix of accounts by talking point');
@@ -252,41 +259,32 @@ function openBurst(b){d3.select('#ph').text(b.name);
  panel.hidden=false;document.getElementById('pclose').focus()}
 
 // ---- talking points by week and by month (built from the daily data)
-function periodChart(el,unit){const box=document.getElementById(el);const fmtD=d3.utcFormat('%-d %b');
- const key=d=>{const x=new Date(d+'T00:00:00Z');if(unit==='month')return d.slice(0,7)+'-01';const wd=(x.getUTCDay()+6)%7;return new Date(+x-wd*864e5).toISOString().slice(0,10)};
- let keys=[...new Set(ST.days.map(key))];{const has=k=>ST.days.some((d,i)=>key(d)===k&&ST.series.some(s=>s.vals[i]>0));const f=keys.findIndex(has);if(f>0)keys=keys.slice(f)}
- const P=keys.map(k=>{const ds=ST.days.filter(d=>key(d)===k);const s=new Date(k+'T00:00:00Z');const e=unit==='month'?new Date(Date.UTC(s.getUTCFullYear(),s.getUTCMonth()+1,0)):new Date(+s+6*864e5);
-  const a=new Date(ds[0]+'T00:00:00Z'),b=new Date(ds[ds.length-1]+'T00:00:00Z');const partial=+a>+s||+b<+e||ds[ds.length-1]===H.end.slice(0,10);
-  const base=unit==='month'?d3.utcFormat('%B %Y')(s):`Week of ${fmtD(s)}`;
-  return {k,label:base,sub:partial?`partial: ${fmtD(a)}${+a===+b?'':'–'+fmtD(b)}`:`${fmtD(s)}–${fmtD(e)}`,vals:ST.series.map(sr=>d3.sum(ds,d=>sr.vals[ST.days.indexOf(d)]))}});
- const w=Math.max(320,box.clientWidth);
- if(P.length>=3){const h=Math.max(240,Math.round(w*0.32)),m={l:14,r:14,t:10,b:46};
-  const data=P.map(p=>{const o={};p.vals.forEach((v,j)=>o[j]=v);return o});const stk=d3.stack().keys(ST.series.map((s,j)=>j)).offset(d3.stackOffsetWiggle).order(d3.stackOrderInsideOut)(data);
-  const x=d3.scalePoint().domain(P.map(p=>p.k)).range([m.l+80,w-m.r-80]);const y=d3.scaleLinear().domain([d3.min(stk,l=>d3.min(l,d=>d[0])),d3.max(stk,l=>d3.max(l,d=>d[1]))]).range([h-m.b,m.t]);
-  const svg=d3.select(box).append('svg').attr('viewBox',`0 0 ${w} ${h}`).attr('role','img').attr('aria-label',`Streamgraph of posts per ${unit} in the top five talking points`);
-  const ps=svg.append('g').selectAll('path').data(stk).join('path').attr('d',d3.area().x((d,i)=>x(P[i].k)).y0(d=>y(d[0])).y1(d=>y(d[1])).curve(d3.curveBasis)).attr('fill',d=>TPC[d.key]).attr('fill-opacity',.9).attr('stroke','#0b1526').attr('stroke-width',.6).style('cursor','pointer');
-  const ax=svg.append('g').selectAll('g').data(P).join('g').attr('transform',p=>`translate(${x(p.k)},${h-m.b+18})`);
-  ax.append('text').attr('text-anchor','middle').attr('font-size',13).text(p=>p.label);ax.append('text').attr('y',17).attr('text-anchor','middle').attr('font-size',13).style('fill','#9aa6b8').text(p=>p.sub);
-  ps.on('mousemove',(e,d)=>{const [mx]=d3.pointer(e,svg.node());const sc=w/svg.node().getBoundingClientRect().width;const i=d3.minIndex(P,p=>Math.abs(x(p.k)-mx*sc));showTip(e,`<b>${esc(ST.series[d.key].name)}</b><br><i>${esc(ST.series[d.key].line)}</i><br>${P[i].label} (${P[i].sub}): ${P[i].vals[d.key]} posts<br>Click to read what it says`)});
-  svg.on('mouseleave',hideTip);ps.on('click',(e,d)=>openNarr(d.key));narrKeys(ps,d=>d.key);
- } else {
-  // too few periods for a stream: ranked bars per period
-  const nar=w<520,rowH=nar?52:34,lw=nar?0:Math.min(250,w*0.45),h=P.length*(ST.series.length*rowH+56)+6;
-  const svg=d3.select(box).append('svg').attr('viewBox',`0 0 ${w} ${h}`).attr('role','img').attr('aria-label',`Posts per ${unit} in the top five talking points`);
-  const mx=d3.max(P,p=>d3.max(p.vals));const x=d3.scaleLinear().domain([0,mx]).range([0,w-lw-60]);let y0=0;
-  P.forEach(p=>{svg.append('text').attr('x',0).attr('y',y0+22).attr('font-size',15).attr('font-weight',600).text(p.label);
-   svg.append('text').attr('x',0).attr('y',y0+40).attr('font-size',13).style('fill','#9aa6b8').text(p.sub);
-   const ord=ST.series.map((s,j)=>j).sort((a,b)=>p.vals[b]-p.vals[a]);
-   const g=svg.append('g').attr('transform',`translate(0,${y0+52})`).selectAll('g').data(ord).join('g').attr('transform',(j,i)=>`translate(0,${i*rowH})`).style('cursor','pointer').on('click',(e,j)=>openNarr(j));narrKeys(g,j=>j);
-   g.append('text').attr('x',nar?0:lw-10).attr('y',nar?14:rowH/2+3).attr('text-anchor',nar?'start':'end').attr('font-size',13).text(j=>ST.series[j].name);
-   g.append('rect').attr('x',lw).attr('y',nar?20:4).attr('height',rowH-12).attr('rx',3).attr('width',j=>Math.max(2,x(p.vals[j]))).attr('fill',j=>TPC[j]);
-   g.append('text').attr('x',j=>lw+x(p.vals[j])+8).attr('y',nar?rowH-18:rowH/2+3).attr('font-size',13).text(j=>p.vals[j]);
-   tipOn(g,j=>`<b>${esc(ST.series[j].name)}</b><br><i>${esc(ST.series[j].line)}</i><br>${p.label} (${p.sub}): ${p.vals[j]} posts<br>Click to read what it says`);
-   y0+=ST.series.length*rowH+56});
- }}
-const VIEWS={day:['stream','Top talking points by day','Posts per day in each of the five talking points carried by the most accounts. Hover for counts; click one to see it spread on the map.'],
- week:['streamw','Top talking points by week','The same five talking points added up by week (Monday to Sunday). Partial weeks show the dates covered.'],
- month:['streamm','Top talking points by month','Posts per month, ranked. The archive starts on 1 October, so the latest month is partial. This becomes a stream once there are three months of data.']};
+// Week = weekly points over the last five weeks; Month = daily points over the last 30 days. Each view picks its own top five talking points from its span, in the Day view's chart style.
+function periodChart(el,unit){const box=document.getElementById(el);const n=ST.days.length;
+ let pts,O;if(unit==='week'){const wk=d=>{const x=new Date(d+'T00:00:00Z');return new Date(+x-((x.getUTCDay()+6)%7)*864e5).toISOString().slice(0,10)};
+  const ks=[...new Set(ST.days.map(wk))].slice(-5);pts=ks.map(k=>({d:new Date(k+'T12:00:00Z'),ix:ST.days.map((d,i)=>wk(d)===k?i:-1).filter(i=>i>=0)}))}
+ else{pts=ST.days.slice(-30).map((d,i)=>({d:new Date(d+'T12:00:00Z'),ix:[n-Math.min(30,n)+i]}))}
+ const tot=j=>d3.sum(pts,p=>d3.sum(p.ix,i=>ST.series[j].vals[i]));
+ const keys=ST.series.map((s,j)=>j).filter(j=>tot(j)>0).sort((a,b)=>tot(b)-tot(a)).slice(0,5);
+ const val=(p,j)=>d3.sum(p.ix,i=>ST.series[j].vals[i]);
+ const f=pts.findIndex(p=>keys.some(j=>val(p,j)>0));if(f>1)pts=pts.slice(f-1);
+ const w=Math.max(320,box.clientWidth),h=Math.max(240,Math.round(w*0.32)),m={l:26,r:26,t:10,b:30};const days=pts.map(p=>p.d);
+ const data=pts.map(p=>{const o={};keys.forEach(j=>o[j]=val(p,j));return o});
+ const stk=d3.stack().keys(keys).offset(d3.stackOffsetWiggle).order(d3.stackOrderInsideOut)(data);
+ const x=d3.scaleUtc().domain(d3.extent(days)).range([m.l,w-m.r]);const y=d3.scaleLinear().domain([d3.min(stk,l=>d3.min(l,d=>d[0])),d3.max(stk,l=>d3.max(l,d=>d[1]))]).range([h-m.b,m.t]);
+ const area=d3.area().x((d,i)=>x(days[i])).y0(d=>y(d[0])).y1(d=>y(d[1])).curve(d3.curveBasis);
+ const svg=d3.select(box).append('svg').attr('viewBox',`0 0 ${w} ${h}`).attr('role','img').attr('aria-label',`Streamgraph of the top five talking points ${unit==='week'?'by week, last five weeks':'by day, last 30 days'}`);
+ const ps=svg.append('g').selectAll('path').data(stk).join('path').attr('d',area).attr('fill',d=>TPC[d.key]).attr('fill-opacity',.9).attr('stroke','#0b1526').attr('stroke-width',.6);
+ const nt=Math.max(2,Math.min(w<600?5:99,Math.floor(w/70))),step=Math.ceil(days.length/nt);
+ svg.append('g').attr('transform',`translate(0,${h-m.b})`).call(d3.axisBottom(x).tickValues(days.filter((d,i)=>(days.length-1-i)%step===0)).tickFormat(d3.utcFormat('%-d %b'))).call(g=>{g.selectAll('text').attr('font-size',13);g.selectAll('line,path').attr('stroke','#5a6f94')});
+ const fd2=d3.utcFormat('%-d %b');
+ ps.on('mousemove',(e,d)=>{const [mx]=d3.pointer(e,svg.node());const i=d3.minIndex(days,dd=>Math.abs(x(dd)-mx*(w/svg.node().getBoundingClientRect().width)));
+   showTip(e,`<b>${esc(ST.series[d.key].name)}</b><br><i>${esc(ST.series[d.key].line)}</i><br>${unit==='week'?'Week of '+fd2(days[i]):fday(ST.days[pts[i].ix[0]])}: ${data[i][d.key]} posts`)});svg.on('mouseleave',hideTip);ps.style('cursor','pointer');hitOpen(svg,stk,x,y,days,w);narrKeys(ps,d=>d.key);
+ ps.on('touchstart',(e,d)=>showTip(e.touches[0],`<b>${esc(ST.series[d.key].name)}</b><br><i>${esc(ST.series[d.key].line)}</i><br>${d3.sum(data,o=>o[d.key])} posts in this span`),{passive:true});
+ tpChips(el,keys)}
+const VIEWS={day:['stream','Top talking points by day','Posts per day in each of the five talking points carried by the most accounts. Hover for a summary; click a talking point to read what it says and see a sample post.'],
+ week:['streamw','Top talking points by week','Posts per week (Monday to Sunday) over the last five weeks, for the five talking points with the most posts in that span. Hover for a summary; click a talking point to read what it says and see a sample post.'],
+ month:['streamm','Top talking points by month','Posts per day over the last 30 days (the archive starts on 1 October), for the five talking points with the most posts this month. Hover for a summary; click a talking point to read what it says and see a sample post.']};
 const drawn={day:1};
 function setView(v,push){if(!VIEWS[v])v='day';for(const k in VIEWS)document.getElementById(VIEWS[k][0]).hidden=k!==v;
  if(!drawn[v]){periodChart(VIEWS[v][0],v);drawn[v]=1}
@@ -299,7 +297,7 @@ addEventListener('hashchange',()=>{const v=hp().get('view')||'day';setView(v)});
 document.getElementById('pclose').onclick=()=>{panel.hidden=true};
 function openNarr(k){const n=ST.series[k];if(!n)return;window._lastFocus=document.activeElement;
  const sm=n.sample;d3.select('#ph').text(n.name);
- d3.select('#pbody').html(`<p class="says">${esc(n.says)}</p>`+(sm?`<h3 class="sh3">Sample post</h3><div class="post"><div class="m">${esc((ACC.find(a=>a.h===sm.h)||{}).name||sm.h)} (@${esc(sm.h)}) · ${fd(sm.t)}</div><div>“${esc(sm.text)}”</div><div class="m">${sm.lang==='English'?'Original in English':`Translated from ${esc(sm.lang)}`}</div><a href="https://x.com/${encodeURIComponent(sm.h)}/status/${sm.id}" target="_blank" rel="noopener">Open on x.com ↗</a></div>`:''));
+ d3.select('#pbody').html(`<p class="says">${esc(n.says)}</p>`+(sm?`<h3 class="sh3">Sample post</h3><div class="post"><div class="m">${esc((ACC.find(a=>a.h===sm.h)||{}).name||sm.h)} (@${esc(sm.h)}) · ${fd(sm.t)}</div><div>“${esc(sm.text)}”</div><div class="m">${sm.lang==='English'?'Original in English':sm.orig?`Original in ${esc(sm.lang)}`:`Translated from ${esc(sm.lang)}`}</div><a href="https://x.com/${encodeURIComponent(sm.h)}/status/${sm.id}" target="_blank" rel="noopener">Open on x.com ↗</a></div>`:''));
  panel.hidden=false;document.getElementById('pclose').focus()}
 function narrKeys(sel,key){sel.attr('tabindex',0).attr('role','button').attr('aria-label',d=>{const k=key(d);return `${ST.series[k].name}: open explanation`}).on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openNarr(key(d))}})}
 document.getElementById('pclose').addEventListener('click',()=>{window._lastFocus&&window._lastFocus.focus&&window._lastFocus.focus()});
