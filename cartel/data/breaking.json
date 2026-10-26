@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-26T01:10:06Z",
+ "as_of": "2026-10-26T10:02:45Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -9,11 +9,138 @@
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
   {
+   "id": "92fb5c0ad2",
+   "status": "single_source",
+   "title": "Nuclear weapons are again central to European security at a time when uncertainty about Washington grows. Our new report examines how European NATO allies can strengthen deterrence, bolster assurance ",
+   "lang": "es",
+   "title_en": "Nuclear weapons are again central to European security at a time when uncertainty about Washington grows. Our new report examines how European NATO allies can strengthen deterrence, bolster assurance",
+   "first_report": "2026-10-26T09:35:11Z",
+   "first_report_precision": "minute",
+   "first_source": "Crisis Group",
+   "region_ids": [
+    "PRY-607"
+   ],
+   "country": "PRY",
+   "group_ids": [],
+   "outlets": [
+    "Crisis Group"
+   ],
+   "sources": [
+    {
+     "outlet": "crisisgroup",
+     "name": "Crisis Group",
+     "kind": "outlet",
+     "via": "X @CrisisGroup",
+     "url": "https://x.com/CrisisGroup/status/2114652049027514709",
+     "time": "2026-10-26T09:35:11Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "360e08e6ec",
+   "status": "single_source",
+   "title": "Fue capturado en el restaurante Pampas ubicado a metros del Centro Cívico de Mexicali; es buscado por secuestro.",
+   "lang": "es",
+   "title_en": "He was captured at the Pampas restaurant, located a short distance from the Mexicali Civic Center; he is wanted for kidnapping.",
+   "first_report": "2026-10-26T05:56:17Z",
+   "first_report_precision": "minute",
+   "first_source": "ZETA Tijuana",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "outlets": [
+    "ZETA Tijuana"
+   ],
+   "sources": [
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "X @ZETATijuana",
+     "url": "https://x.com/ZETATijuana/status/2114596959600144491",
+     "time": "2026-10-26T05:56:17Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "X @ZETATijuana",
+     "url": "https://x.com/ZETATijuana/status/2114606097927393603",
+     "time": "2026-10-26T06:32:35Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "b27076b3a0",
+   "status": "single_source",
+   "title": "Identifican en fosa clandestina restos de Mauricio Vázquez, jornalero mixteco desaparecido hace 10 meses en Navolato",
+   "lang": "es",
+   "title_en": "Remains of Mauricio Vázquez, a Mixtec farmworker who disappeared 10 months ago in Navolato, identified in a clandestine grave",
+   "first_report": "2026-10-26T05:41:45Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2114593302724944303",
+     "time": "2026-10-26T05:41:45Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "c7d85098c1",
+   "status": "single_source",
+   "title": "Asesinan a balazos a un dirigente sindical en un restaurante de Tuxpan, Veracruz",
+   "lang": "es",
+   "title_en": "Union leader shot dead in a restaurant in Tuxpan, Veracruz",
+   "first_report": "2026-10-26T03:58:35Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2734"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2114567339530183125",
+     "time": "2026-10-26T03:58:35Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
    "id": "affec9c584",
    "status": "single_source",
    "title": "Un exempleado del Supremo Tribunal de Justicia del Estado de Sinaloa (#STJES) fue #privadodelalibertad por un grupo armado con armas largas y cortas y equipo táctico en la colonia José María Morelos y",
    "lang": "es",
-   "title_en": "A former employee of the Sinaloa State Supreme Court of Justice (#STJES) was #deprivedofliberty by an armed group carrying long and short guns and tactical gear in the José María Morelos y",
+   "title_en": "A former employee of the Sinaloa State Supreme Court of Justice (#STJES) was #deprivedofliberty by an armed group carrying long and short guns and tactical gear in the José María Morelos y Pavón neighbourhood, in #Culiac",
    "first_report": "2026-10-25T23:57:31Z",
    "first_report_precision": "minute",
    "first_source": "Ríodoce",
@@ -77,10 +204,10 @@
    "first_report_precision": "minute",
    "first_source": "Gabinete de Seguridad (Mexico)",
    "region_ids": [
-    "MEX-2721",
     "MEX-2711",
-    "MEX-2712",
-    "MEX-2710"
+    "MEX-2721",
+    "MEX-2710",
+    "MEX-2712"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -109,8 +236,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2723",
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2723"
    ],
    "country": "MEX",
    "group_ids": [
@@ -680,8 +807,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "eln",
     "clan",
+    "eln",
     "exfarc"
    ],
    "outlets": [
@@ -779,14 +906,14 @@
    "first_report_precision": "day",
    "first_source": "El Universal",
    "region_ids": [
-    "MEX-2719",
     "MEX-2711",
+    "MEX-2719",
     "MEX-2735"
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "sinaloa"
+    "sinaloa",
+    "cjng"
    ],
    "outlets": [
     "El Universal"
@@ -846,8 +973,8 @@
    ],
    "country": "ECU",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "Diario Extra (Ecuador)"
@@ -876,8 +1003,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "Diario Extra (Ecuador)"
@@ -939,8 +1066,8 @@
    ],
    "country": "ECU",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "Metro Ecuador"
@@ -980,8 +1107,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
-    "sinaloa"
+    "sinaloa",
+    "mayiza"
    ],
    "outlets": [
     "Milenio"
@@ -1227,8 +1354,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "eln",
-    "exfarc"
+    "exfarc",
+    "eln"
    ],
    "outlets": [
     "Semana"
@@ -1261,9 +1388,9 @@
    ],
    "country": "COL",
    "group_ids": [
+    "choneros",
     "los_tiguerones",
-    "lobos",
-    "choneros"
+    "lobos"
    ],
    "outlets": [
     "Semana"
@@ -1379,13 +1506,13 @@
    "first_report_precision": "day",
    "first_source": "Eje Central",
    "region_ids": [
-    "MEX-2719",
-    "MEX-2720"
+    "MEX-2720",
+    "MEX-2719"
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "unidos"
+    "unidos",
+    "cjng"
    ],
    "outlets": [
     "Eje Central"
@@ -1414,10 +1541,10 @@
    "region_ids": [],
    "country": "COL",
    "group_ids": [
-    "eln",
-    "exfarc",
     "tda",
-    "clan"
+    "clan",
+    "exfarc",
+    "eln"
    ],
    "outlets": [
     "El Observador"
@@ -1815,8 +1942,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "tda",
-    "choneros"
+    "choneros",
+    "tda"
    ],
    "outlets": [
     "Infobae"
@@ -2279,296 +2406,6 @@
      "via": "X @infobaemexico",
      "url": "https://x.com/infobaemexico/status/2113973170570957288",
      "time": "2026-10-24T12:37:34Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "32ab964f08",
-   "status": "single_source",
-   "title": "Rivalry within one of the world’s largest drug trafficking groups in Sinaloa has sparked vicious fighting since 2024. To curb violence, Mexico should strengthen intelligence gathering and the prosecut",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-10-24T09:05:02Z",
-   "first_report_precision": "minute",
-   "first_source": "Crisis Group",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Crisis Group"
-   ],
-   "sources": [
-    {
-     "outlet": "crisisgroup",
-     "name": "Crisis Group",
-     "kind": "outlet",
-     "via": "X @CrisisGroup",
-     "url": "https://x.com/CrisisGroup/status/2113919685682938305",
-     "time": "2026-10-24T09:05:02Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "369cfe3c9f",
-   "status": "single_source",
-   "title": "Uno de los detenidos en la Ciudad de México fue identificado como líder de una célula delictiva dedicada a la venta de drogas, extorsión y homicidio.",
-   "lang": "es",
-   "title_en": "One of those arrested in Mexico City was identified as the leader of a criminal cell dedicated to drug dealing, extortion and homicide.",
-   "first_report": "2026-10-24T04:20:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Proceso",
-   "region_ids": [
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Proceso"
-   ],
-   "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2113847953664377313",
-     "time": "2026-10-24T04:20:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "519634e244",
-   "status": "single_source",
-   "title": "Un juez vinculó a #proceso al exalcalde de #PuertoAventuras, #QuintanaRoo Gilberto “N”, y a dos exfuncionarios municipales por su probable participación en el delito de #extorsión agravada contra una ",
-   "lang": "es",
-   "title_en": "A judge ordered former #PuertoAventuras, #QuintanaRoo mayor Gilberto \"N\" and two former municipal officials to stand trial for their alleged role in aggravated #extortion of a merchant.",
-   "first_report": "2026-10-24T04:15:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2113846695352254633",
-     "time": "2026-10-24T04:15:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "0d52d0366d",
-   "status": "single_source",
-   "title": "Un #adolescente fue #sentenciado a 4 años de internamiento en el Centro de Internamiento para Adolescentes (#CIA) por homicidio en #Sinaloa municipio,",
-   "lang": "es",
-   "title_en": "A #teenager was #sentenced to 4 years in the Adolescent Detention Centre (#CIA) for a homicide in #Sinaloa municipality",
-   "first_report": "2026-10-24T03:30:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2113835370987327883",
-     "time": "2026-10-24T03:30:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "9f72988e38",
-   "status": "single_source",
-   "title": "Tres hombres habrían protagonizado el ataque armado en el Malecón de Pedernales, Manabí, pasadas las 17:00, luego de un desfile cívico militar por las fiestas de cantonización y parroquialización.",
-   "lang": "es",
-   "title_en": "Three men allegedly carried out the armed attack on the Pedernales boardwalk, Manabí, after 17:00, following a civic-military parade for the canton's founding festivities.",
-   "first_report": "2026-10-24T02:55:28Z",
-   "first_report_precision": "minute",
-   "first_source": "Primicias",
-   "region_ids": [
-    "ECU-1282"
-   ],
-   "country": "ECU",
-   "group_ids": [],
-   "outlets": [
-    "Primicias"
-   ],
-   "sources": [
-    {
-     "outlet": "primicias",
-     "name": "Primicias",
-     "kind": "outlet",
-     "via": "X @Primicias",
-     "url": "https://x.com/Primicias/status/2113826680221409296",
-     "time": "2026-10-24T02:55:28Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "5dc061c192",
-   "status": "single_source",
-   "title": "🚨 El director de Seguridad Pública de Emiliano Zapata, Tabasco, Cleofás Juárez Lara, fue detenido durante cateos realizados por autoridades estatales",
-   "lang": "es",
-   "title_en": "🚨 The public security director of Emiliano Zapata, Tabasco, Cleofás Juárez Lara, was arrested during searches by state authorities",
-   "first_report": "2026-10-24T02:30:06Z",
-   "first_report_precision": "minute",
-   "first_source": "Animal Político",
-   "region_ids": [
-    "MEX-2725"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Animal Político"
-   ],
-   "sources": [
-    {
-     "outlet": "animal",
-     "name": "Animal Político",
-     "kind": "outlet",
-     "via": "X @Pajaropolitico",
-     "url": "https://x.com/Pajaropolitico/status/2113820296125812961",
-     "time": "2026-10-24T02:30:06Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "68c9d520ec",
-   "status": "single_source",
-   "title": "#CésarArmando fue declarado responsable del delito de homicidio calificado cometido con ventaja a propósito de un robo.",
-   "lang": "es",
-   "title_en": "#CésarArmando was found guilty of aggravated homicide committed with advantage in the course of a robbery.",
-   "first_report": "2026-10-24T02:30:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2113820274533478414",
-     "time": "2026-10-24T02:30:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "65fd57dda7",
-   "status": "single_source",
-   "title": "🇸🇻 | El Salvador indicted more than 560 suspected leaders of the Barrio 18 gang for nearly 14,500 crimes committed since 2012 in one of the biggest judicial proceedings promoted under President Nayib ",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-10-24T02:02:18Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [],
-   "country": "SLV",
-   "group_ids": [
-    "b18"
-   ],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2113813301628944715",
-     "time": "2026-10-24T02:02:18Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "161571612f",
-   "status": "single_source",
-   "title": "La autoridad estatal acusó a Iván Cazarín Molina por homicidio doloso calificado y lesiones dolosas calificadas, derivadas del ataque armado de enero de 2023 que dejó cinco víctimas mortales sobre la ",
-   "lang": "es",
-   "title_en": "State authorities charged Iván Cazarín Molina with aggravated intentional homicide and aggravated intentional injury, stemming from the January 2023 armed attack that left five dead on the federal highway to Xalapa",
-   "first_report": "2026-10-24T01:23:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2734"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2113803412840001989",
-     "time": "2026-10-24T01:23:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "0eb5fe074c",
-   "status": "single_source",
-   "title": "El oficialismo calificó las acusaciones de la gobernadora de Chihuahua como \"temerarias\", \"frívolas\" y \"sin pruebas\", luego de que dijera en entrevista que Ariadna Montiel tiene nexos con el crimen or",
-   "lang": "es",
-   "title_en": "The ruling party called the Chihuahua governor's accusations \"reckless\", \"frivolous\" and \"without evidence\" after she said in an interview that Ariadna Montiel has ties to organised crime.",
-   "first_report": "2026-10-24T01:20:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Proceso",
-   "region_ids": [
-    "MEX-2709"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Proceso"
-   ],
-   "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2113802655219024351",
-     "time": "2026-10-24T01:20:00Z",
      "time_precision": "minute"
     }
    ]
