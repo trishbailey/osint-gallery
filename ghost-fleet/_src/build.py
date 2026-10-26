@@ -141,4 +141,7 @@ for n,o in (("map.json",mapj),("tracks.json",tracks),("profiles.json",prof)):
     json.dump(o,open(os.path.join(D,n),"w"),separators=(",",":"),ensure_ascii=False)
 print("near-infra",sum(1 for e in vev if e.get("inf")),"events90",collections.Counter(e["t"] for e in vev),"sarcells",len(mapj["sar"]),"tracks",len(tracks),"csvpts",extra,
       "pts/track median",sorted(len(t) for t in tracks.values())[len(tracks)//2] if tracks else 0)
+try:
+    import importlib.util as _u; _sp=_u.spec_from_file_location("trade",os.path.join(H,"trade.py")); _m=_u.module_from_spec(_sp); _sp.loader.exec_module(_m); _m.run()
+except Exception as _e: print("trade refresh failed, keeping old data:",type(_e).__name__)
 exec(open(os.path.join(H,"story.py")).read())

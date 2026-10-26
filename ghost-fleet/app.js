@@ -6,7 +6,7 @@ const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&g
 const fmt=d=>new Date(d).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"});
 const title=s=>String(s||"").toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
 const day=864e5,t0=Date.parse(M.from),t1=Date.parse(M.to),nd=Math.round((t1-t0)/day);
-document.getElementById("drange").textContent=M.from+" to "+M.to;document.getElementById("acc").textContent=M.generated.slice(0,10);
+
 const map=L.map("map",{worldCopyJump:true,preferCanvas:true,minZoom:2,attributionControl:true}).setView([45,30],3);
 map.attributionControl.setPrefix('<a href="https://globalfishingwatch.org" target="_blank" rel="noopener">Powered by Global Fishing Watch.</a> Basemap: Natural Earth');
 L.geoJSON(LAND,{style:{color:"#4d6a99",weight:.7,fillColor:"#2a4066",fillOpacity:1},onEachFeature:(f,l)=>l.bindTooltip(esc(f.properties.n),{sticky:true})}).addTo(map);
@@ -16,12 +16,16 @@ let from=0,to=nd,sel=null;
 const layers={};for(const k in T)layers[k]=L.layerGroup().addTo(map);
 const cnt=t=>t==="sar"?M.sar.reduce((a,b)=>a+b.n,0):M.events.filter(e=>e.t===t).length;
 // legend
+const CL={hub:["Transfer hub ships","#e8913a","Most trips include loitering in transfer areas or meetings at sea, consistent with ship-to-ship transfers"],core:["Regular Russia runners","#4fa3e0","Load at Russian oil terminals in at least three of the last four quarters"],dev:["Recently renamed or reflagged","#d97cb0","New name, flag or MMSI in the last year, and loaded Russian oil at least twice since"],taxi:["Mixed-trade tankers","#5cc98a","Load in Russia now and then, and call at non-Russian ports in most quarters"],other:["Occasional or little data","#f2d16b","Too few recorded trips to fit a pattern"]};
+const clsOn=Object.fromEntries(Object.keys(CL).map(k=>[k,true]));
+{const cb=document.getElementById("clsf");cb.innerHTML=Object.entries(CL).map(([k,v])=>`<button class="hl wide" data-c="${k}" aria-pressed="true" title="${v[2]}"><span class="sw" style="background:${v[1]}"></span>${v[0]} <span class="muted">${Object.values(P).filter(p=>p.cls===k).length}</span></button>`).join("");
+ cb.querySelectorAll("button").forEach(b=>b.onclick=()=>{const k=b.dataset.c;clsOn[k]=!clsOn[k];b.setAttribute("aria-pressed",clsOn[k]);draw()})}
 const lg=document.getElementById("legend");
 for(const k in T){if(!cnt(k)){on[k]=false;continue}const b=document.createElement("button");b.setAttribute("aria-pressed",on[k]);b.innerHTML=`<span class="sw" style="background:${T[k].c}"></span>${T[k].l}<span class="ct">${cnt(k).toLocaleString()}</span>`;b.onclick=()=>{on[k]=!on[k];b.setAttribute("aria-pressed",on[k]);draw()};lg.appendChild(b)}
 // hotspots
 const hot=L.layerGroup().addTo(map);const hon={sts:false,load:false,choke:false};
 function drawHot(){hot.clearLayers();M.hot.forEach(h=>{if(!hon[h.k])return;L.circle([h.lat,h.lon],{radius:h.r*1000,color:HK[h.k],weight:2,dashArray:"6 4",fill:true,fillOpacity:.08,interactive:false}).addTo(hot);L.marker([h.lat,h.lon],{icon:L.divIcon({className:"",html:`<span style="background:#0f1b31;border:1px solid ${HK[h.k]};color:#e6e9ef;padding:1px 6px;border-radius:9px;font-size:13px;white-space:nowrap">${esc(h.n)}</span>`}),interactive:false}).addTo(hot)})}
-document.querySelectorAll(".hl").forEach(b=>{b.setAttribute("aria-pressed","false");b.onclick=()=>{const k=b.dataset.k;hon[k]=!hon[k];document.querySelectorAll(`.hl[data-k=${k}]`).forEach(x=>x.setAttribute("aria-pressed",hon[k]));drawHot();if(hon[k])document.getElementById("map").scrollIntoView({behavior:"smooth"})}});
+document.querySelectorAll(".hl:not([data-c])").forEach(b=>{b.setAttribute("aria-pressed","false");b.onclick=()=>{const k=b.dataset.k;hon[k]=!hon[k];document.querySelectorAll(`.hl[data-k=${k}]`).forEach(x=>x.setAttribute("aria-pressed",hon[k]));drawHot();if(hon[k])document.getElementById("map").scrollIntoView({behavior:"smooth"})}});
 // infrastructure
 const inf=L.layerGroup();let infOn=false;
 INF.cable.forEach(f=>L.polyline(f.c.map(c=>[c[1],c[0]]),{renderer:cv,color:"#5cc98a",weight:1.5,opacity:.7}).bindTooltip("Undersea cable: "+esc(f.n),{sticky:true}).addTo(inf));
@@ -51,7 +55,7 @@ function tip(e){const p=P[e.imo]||{};let s=`<b>${esc(p.name||e.imo)}</b> · IMO 
 function draw(){dl();const a=new Date(t0+from*day).toISOString().slice(0,10),b=new Date(t0+(to+1)*day).toISOString().slice(0,10);
  for(const k in layers)layers[k].clearLayers();let ne=0,nv=new Set();
  const clus=phone()&&!sel&&map.getZoom()<5,cells={};
- M.events.forEach(e=>{if(!on[e.t]||e.s<a||e.s>=b)return;if(sel&&e.imo!==sel)return;if(netSel!=null&&!M.nets[netSel].ships.includes(e.imo))return;ne++;nv.add(e.imo);
+ M.events.forEach(e=>{if(!on[e.t]||e.s<a||e.s>=b)return;if(sel&&e.imo!==sel)return;if(!sel&&P[e.imo]&&!clsOn[P[e.imo].cls||"other"])return;if(netSel!=null&&!M.nets[netSel].ships.includes(e.imo))return;ne++;nv.add(e.imo);
   if(clus){const k=Math.round(e.lat/8)+","+Math.round(e.lon/8);const c=cells[k]||(cells[k]={n:0,la:0,lo:0,t:{}});c.n++;c.la+=e.lat;c.lo+=e.lon;c.t[e.t]=(c.t[e.t]||0)+1;return}
   L.circleMarker([e.lat,e.lon],{renderer:cv,radius:e.t==="gap"?6:4,color:T[e.t].c,weight:1,fillColor:T[e.t].c,fillOpacity:.75}).bindTooltip(tip(e)).on("click",()=>openP(e.imo)).addTo(layers[e.t])});
  Object.values(cells).forEach(c=>{const top=Object.entries(c.t).sort((x,y)=>y[1]-x[1])[0][0];const r=Math.min(26,10+Math.sqrt(c.n));
@@ -82,7 +86,7 @@ if(M.shared.length)document.getElementById("addr").innerHTML=`<h3 class="sh">Add
 const panel=document.getElementById("panel");document.getElementById("pclose").onclick=()=>{panel.hidden=true;sel=null;draw();history.replaceState(null,"",location.pathname)};
 function openP(imo){const p=P[imo];if(!p)return;sel=imo;history.replaceState(null,"","#p="+imo);
  const B=p.base,lab={port:"Port calls",loitering:"Loitering",gap:"AIS gaps",encounter:"Meetings"};
- document.getElementById("pbody").innerHTML=`<h2 id="ptitle">${esc(p.name)}</h2><div class="muted">IMO ${p.imo}</div>
+ document.getElementById("pbody").innerHTML=`<h2 id="ptitle">${esc(p.name)}</h2><div class="muted">IMO ${p.imo}</div>${p.cls?`<div class="clsb"><span class="sw" style="background:${CL[p.cls][1]}"></span><b>${CL[p.cls][0]}</b><div class="muted">${CL[p.cls][2]}.</div></div>`:""}
  <h3>What stands out</h3>${p.notes.map(n=>`<div class="flag">${esc(n)}</div>`).join("")}
  <h3>Activity per month: earlier in the year vs last 90 days</h3><div class="cmp"><span></span><b>Earlier</b><b>Last 90 days</b>${Object.keys(lab).map(k=>`<span>${lab[k]}</span><span>${B[k][0]}</span><span>${B[k][1]}</span>`).join("")}</div>
  <h3>Usual ports (earlier in the year)</h3><div>${p.portsBefore.map(([k,v])=>`<span class="chip">${esc(title(k.split("|")[0]))} ${v}×</span>`).join("")||'<span class="muted">None recorded</span>'}</div>
@@ -108,5 +112,5 @@ clock.oninput=frame;
 function setOne(v){one=v;document.getElementById("aOne").classList.toggle("on",v);document.getElementById("aAll").classList.toggle("on",!v);document.getElementById("aOne").setAttribute("aria-pressed",v);document.getElementById("aAll").setAttribute("aria-pressed",!v);frame()}
 document.getElementById("aAll").onclick=()=>setOne(false);document.getElementById("aOne").onclick=()=>{if(!sel){alert("Pick a ship first: click a dot, a table row or use Find a ship.");return}setOne(true)};
 map.on("zoomend",()=>{if(phone())draw()});draw();frame();
-const RAWL=[...Object.values(layers),anim];window.GF={map,cv,esc,fmt,title,M,P,phone,openP,hideRaw(){RAWL.forEach(l=>map.removeLayer(l));if(playing)pb.click()},showRaw(){RAWL.forEach(l=>l.addTo(map));draw()}};const h=location.hash.match(/p=(\d{7})/);if(h)openP(h[1]);
+const RAWL=[...Object.values(layers),anim];window.GF={CL,map,cv,esc,fmt,title,M,P,phone,openP,hideRaw(){RAWL.forEach(l=>map.removeLayer(l));if(playing)pb.click()},showRaw(){RAWL.forEach(l=>l.addTo(map));draw()}};const h=location.hash.match(/p=(\d{7})/);if(h)openP(h[1]);
 })();
