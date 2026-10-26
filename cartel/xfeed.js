@@ -17,7 +17,7 @@ Promise.all([J("data/xfeed.json"),J("data/breaking.json"),J("data/territory.json
   if(terr)terr.groups.forEach(g=>{GN[g.id]=g.name;GC[g.id]=g.color});
   if(net){NET=net.groups;net.groups.forEach(g=>{if(!GN[g.id])GN[g.id]=g.name})}
   if(terr)terr.groups.forEach(g=>{if(g.network_id&&!GC[g.network_id])GC[g.network_id]=g.color});
-  strip();panel();waitMap();
+  strip();waitMap();
 });
 function gdots(ids){return (ids||[]).map(g=>`<span class="xg"><span class="dot" style="background:${GC[g]||"#56657f"}"></span>${esc(GN[g]||g)}</span>`).join("")}
 function gdots1(ids){return (ids||[]).slice(0,2).map(g=>`<span class="dot" title="${esc(GN[g]||g)}" style="background:${GC[g]||"#56657f"}"></span>`).join("")}
@@ -72,7 +72,7 @@ function hook(){
     if(b){sel.group=b.dataset.map;render();return}if(c&&NET[+c.dataset.k]){sel.group=NET[+c.dataset.k].id;render()}});
 }
 function drawerPosts(id){const db=document.getElementById("dbody");if(!db||!X)return;const ps=X.posts.filter(p=>p.region_ids.includes(id)).slice(0,8);
-  const d=document.createElement("div");d.className="xdr";d.innerHTML=`<h3>Latest from X (${ps.length?ps.length+" recent":"none in 7 days"})</h3>`+ps.map(p=>`<div class="rg"><a href="${esc(p.url)}" target="_blank" rel="noopener">@${esc(p.handle)}</a> <span class="muted">${esc(ago(p.created_at||p.date||X.as_of))}</span><div>${esc(p.text_en||p.text||"")}</div></div>`).join("");db.appendChild(d)}
+  const d=document.createElement("div");d.className="xdr";d.innerHTML=`<h3>Latest from X (${ps.length?ps.length+" recent":"none in 7 days"})</h3>`+ps.map(p=>`<div class="rg"><a href="${esc(p.url)}" target="_blank" rel="noopener">@${esc(p.handle)}</a> <span class="muted">${esc(ago(p.created_at||p.date||X.as_of))}</span><div>${bil(p.text_en,p.text,p.lang)}</div></div>`).join("");db.appendChild(d)}
 /* ---------- Latest from X ---------- */
 function panel(){
   const t=document.createElement("section");t.className="tile xpanel";t.id="xpanel";
