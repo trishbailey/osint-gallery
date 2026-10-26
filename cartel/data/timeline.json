@@ -3,15 +3,35 @@
  "note": "Founding years marked 'circa' are approximate in sources. Events are past, sourced facts only; no projections.",
  "lanes": [
   {
+   "region": "Mexico",
+   "circa": true,
+   "parent": null,
+   "ended": 1989,
+   "historic": true,
+   "id": "guadalajara",
+   "name": "Guadalajara Cartel",
+   "founded": 1980,
+   "cites": [
+    "IC_SINALOA"
+   ]
+  },
+  {
    "id": "sinaloa",
    "region": "Mexico",
    "founded": 1989,
    "circa": false,
-   "parent": null,
+   "parent": "guadalajara",
    "ended": null,
    "cites": [
     "IC_SINALOA"
-   ]
+   ],
+   "split": {
+    "year": 1989,
+    "text": "Félix Gallardo's arrest breaks up the Guadalajara cartel; Sinaloa emerges.",
+    "cites": [
+     "IC_SINALOA"
+    ]
+   }
   },
   {
    "id": "chapitos",
@@ -42,11 +62,18 @@
    "region": "Mexico",
    "founded": 2010,
    "circa": true,
-   "parent": null,
+   "parent": "sinaloa",
    "ended": null,
    "cites": [
     "IC_CJNG"
-   ]
+   ],
+   "split": {
+    "year": 2010,
+    "text": "Emerges from the Milenio cartel, a Sinaloa ally, after Nacho Coronel's death.",
+    "cites": [
+     "IC_CJNG"
+    ]
+   }
   },
   {
    "id": "gulf",
@@ -60,15 +87,43 @@
    ]
   },
   {
+   "region": "Mexico",
+   "circa": false,
+   "parent": "gulf",
+   "ended": null,
+   "historic": true,
+   "id": "zetas",
+   "name": "Los Zetas",
+   "founded": 2010,
+   "cites": [
+    "IC_ZETAS"
+   ],
+   "split": {
+    "year": 2010,
+    "text": "Zetas, the Gulf Cartel's armed wing, break away and go to war with it.",
+    "cites": [
+     "IC_ZETAS",
+     "IC_GULF"
+    ]
+   }
+  },
+  {
    "id": "cdn",
    "region": "Mexico",
    "founded": 2015,
    "circa": true,
-   "parent": "gulf",
+   "parent": "zetas",
    "ended": null,
    "cites": [
     "IC_ZETAS"
-   ]
+   ],
+   "split": {
+    "year": 2015,
+    "text": "Cartel del Noreste emerges from the Zetas around 2015.",
+    "cites": [
+     "IC_ZETAS"
+    ]
+   }
   },
   {
    "id": "lnfm",
@@ -110,11 +165,18 @@
    "region": "Mexico",
    "founded": 1993,
    "circa": true,
-   "parent": null,
+   "parent": "guadalajara",
    "ended": null,
    "cites": [
     "IC_JUAREZ"
-   ]
+   ],
+   "split": {
+    "year": 1989,
+    "text": "Juárez plaza emerges from the Guadalajara cartel break-up.",
+    "cites": [
+     "IC_SINALOA"
+    ]
+   }
   },
   {
    "id": "tda",

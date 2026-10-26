@@ -1,0 +1,817 @@
+{
+ "as_of": "2026-10-25",
+ "note": "Descriptive profiles; each claim cites data/sources.json ids. membership_series: published figures only, nothing interpolated; high=null means 'at least'. Countries come from group_countries.json, crime lines from groups_business.json (or 'lines' where that file has no entry).",
+ "profiles": [
+  {
+   "id": "sinaloa",
+   "name": "Sinaloa Cartel",
+   "abbr": null,
+   "aka": "Cártel de Sinaloa; split into Chapitos and Mayiza factions",
+   "what": "Mexico's oldest major trafficking organisation, now split into two warring factions.",
+   "what_c": [
+    "IC_SINALOA"
+   ],
+   "founded": "Late 1980s, Sinaloa (Mexico)",
+   "founded_c": [
+    "IC_SINALOA"
+   ],
+   "biz": [
+    "chapitos",
+    "mayiza"
+   ],
+   "more": [
+    [
+     "Grew out of the Guadalajara-era networks and was long run as a federation of semi-autonomous bosses (Guzmán, Zambada and others).",
+     [
+      "IC_SINALOA"
+     ]
+    ],
+    [
+     "Since September 2024 the Chapitos (sons of Joaquín Guzmán) and the Mayiza (Zambada loyalists) have fought each other in Sinaloa after Ismael Zambada was taken to the US.",
+     [
+      "ELPAIS_SIN",
+      "ACLED_SIN"
+     ]
+    ],
+    [
+     "US agencies name it a main supplier of fentanyl and other drugs to the US; revenue figures are not reliably known.",
+     [
+      "DEA25"
+     ]
+    ]
+   ],
+   "membership_series": [],
+   "image": {
+    "src": "img/profiles/sinaloa.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Vista_panor%C3%A1mica_de_Culiac%C3%A1n.jpg",
+    "author": "FAL56",
+    "license": "CC BY-SA 4.0",
+    "caption": "Culiacán, Sinaloa"
+   }
+  },
+  {
+   "id": "cjng",
+   "name": "Jalisco New Generation Cartel",
+   "abbr": "CJNG = Cártel de Jalisco Nueva Generación",
+   "what": "Fast-expanding Mexican cartel, reported in most Mexican states.",
+   "what_c": [
+    "NARCODATA_CJNG"
+   ],
+   "founded": "2010–11, Jalisco (Mexico), from the remnants of the Milenio Cartel and Nacho Coronel's network",
+   "founded_c": [
+    "JORNADA_CJNG",
+    "IC_CJNG"
+   ],
+   "biz": [
+    "cjng"
+   ],
+   "more": [
+    [
+     "Began as an armed wing (‘Matazetas’) after Ignacio Coronel's death in 2010; led for years by Nemesio Oseguera, ‘El Mencho’.",
+     [
+      "JORNADA_CJNG"
+     ]
+    ],
+    [
+     "Mexico's financial intelligence unit reported operations in 27 states in 2020; its main rival is the Sinaloa Cartel.",
+     [
+      "NARCODATA_CJNG",
+      "IC_CJNG"
+     ]
+    ],
+    [
+     "Leadership after El Mencho is contested in reporting.",
+     [
+      "IC_CJNG_BOSS"
+     ]
+    ]
+   ],
+   "series_note": "Published estimates (2022 model-based 28,764; 2026 NCTC 15,000–20,000) use different methods, so they are not plotted as a trend.",
+   "membership_series": [],
+   "image": {
+    "src": "img/profiles/cjng.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Skyline_Guadalajara_(cropped).jpg",
+    "author": "Allenpivot",
+    "license": "CC BY-SA 3.0",
+    "caption": "Guadalajara, Jalisco"
+   }
+  },
+  {
+   "id": "gulf",
+   "name": "Gulf Cartel",
+   "abbr": "CDG = Cártel del Golfo",
+   "what": "Historic Tamaulipas border cartel, now split into rival factions.",
+   "what_c": [
+    "IC_GULF_ES"
+   ],
+   "founded": "1980s (roots earlier), Tamaulipas (Mexico)",
+   "founded_c": [
+    "IC_GULF_ES"
+   ],
+   "biz": [
+    "gulf"
+   ],
+   "more": [
+    [
+     "Juan García Ábrego built it in the 1980s by moving Cali Cartel cocaine across the border; Osiel Cárdenas later created the armed wing that became Los Zetas.",
+     [
+      "IC_GULF_ES"
+     ]
+    ],
+    [
+     "Today it is fragmented into factions (Escorpiones, Ciclones, Metros and others) that fight over border crossings, drugs, arms and migrant smuggling.",
+     [
+      "IC_GULF_ES"
+     ]
+    ]
+   ],
+   "series_note": "No numeric membership estimate found (US NCTC says only ‘thousands’).",
+   "membership_series": [],
+   "image": {
+    "src": "img/profiles/gulf.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Parque_Perif%C3%A9rico_(Matamoros,_Tamaulipas)_(1).jpg",
+    "author": "MX",
+    "license": "CC BY-SA 4.0",
+    "caption": "Matamoros, Tamaulipas"
+   }
+  },
+  {
+   "id": "cdn",
+   "name": "Northeast Cartel",
+   "abbr": "CDN = Cártel del Noreste",
+   "what": "Zetas successor group based in Nuevo Laredo.",
+   "what_c": [
+    "IC_ZETAS"
+   ],
+   "founded": "Mid-2010s, Tamaulipas (Mexico), splinter of Los Zetas",
+   "founded_c": [
+    "IC_ZETAS"
+   ],
+   "biz": [
+    "cdn"
+   ],
+   "more": [
+    [
+     "Emerged as Los Zetas broke apart; controls key crossings around Nuevo Laredo.",
+     [
+      "IC_ZETAS"
+     ]
+    ],
+    [
+     "Detailed independent reporting on its structure is limited.",
+     [
+      "IC_ZETAS"
+     ]
+    ]
+   ],
+   "membership_series": [],
+   "image": {
+    "src": "img/profiles/cdn.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Nuevo_Laredo_south_side.png",
+    "author": "Miguel Angel Omaña Rojas",
+    "license": "CC BY-SA 4.0",
+    "caption": "Nuevo Laredo"
+   }
+  },
+  {
+   "id": "lnfm",
+   "name": "La Nueva Familia Michoacana",
+   "abbr": "LNFM",
+   "what": "Michoacán-rooted group now strongest in Guerrero, Mexico State and Michoacán.",
+   "what_c": [
+    "IC_FAMILIA"
+   ],
+   "founded": "2000s, Michoacán (Mexico); current form after La Familia's 2010–11 break-up",
+   "founded_c": [
+    "IC_FAMILIA"
+   ],
+   "biz": [
+    "lnfm"
+   ],
+   "more": [
+    [
+     "Successor to La Familia Michoacana, whose split also produced the Knights Templar.",
+     [
+      "IC_FAMILIA",
+      "IC_TEMPLARIOS"
+     ]
+    ],
+    [
+     "Known for extortion of farmers and businesses alongside drug production; it fights CJNG in the region.",
+     [
+      "IC_FAMILIA"
+     ]
+    ]
+   ],
+   "membership_series": [],
+   "image": {
+    "src": "img/profiles/lnfm.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tierra_caliente_Michoacan.jpg",
+    "author": "Mayo 452",
+    "license": "CC BY-SA 4.0",
+    "caption": "Tierra Caliente, Michoacán"
+   }
+  },
+  {
+   "id": "juarez",
+   "name": "Juárez Cartel / La Línea",
+   "abbr": null,
+   "what": "Chihuahua border cartel whose armed wing La Línea now carries the name.",
+   "what_c": [
+    "IC_JUAREZ"
+   ],
+   "founded": "1980s–90s, Ciudad Juárez (Mexico)",
+   "founded_c": [
+    "IC_JUAREZ"
+   ],
+   "biz": [],
+   "lines": [
+    "cocaine",
+    "marijuana",
+    "extortion"
+   ],
+   "lines_c": [
+    "IC_JUAREZ"
+   ],
+   "more": [
+    [
+     "Rose under Amado Carrillo Fuentes in the 1990s; weakened by its 2008–12 war with Sinaloa in Ciudad Juárez.",
+     [
+      "IC_JUAREZ"
+     ]
+    ],
+    [
+     "Membership and revenue are not reliably estimated.",
+     [
+      "IC_JUAREZ"
+     ]
+    ]
+   ],
+   "membership_series": [],
+   "image": {
+    "src": "img/profiles/juarez.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ciudad_Ju%C3%A1rez,_skyline.jpg",
+    "author": "Alejandro Rosales",
+    "license": "CC BY-SA 4.0",
+    "caption": "Ciudad Juárez"
+   }
+  },
+  {
+   "id": "clan",
+   "name": "Clan del Golfo",
+   "abbr": "also EGC = Ejército Gaitanista de Colombia (self-name)",
+   "what": "Colombia's largest armed criminal group, a successor to right-wing paramilitaries.",
+   "what_c": [
+    "IC_URABENOS",
+    "FIP_GAO25"
+   ],
+   "founded": "2006, Urabá region (Colombia), after paramilitary demobilisation",
+   "founded_c": [
+    "IC_URABENOS"
+   ],
+   "biz": [
+    "clan"
+   ],
+   "more": [
+    [
+     "Formed from demobilised AUC paramilitaries; also known as the Urabeños or AGC.",
+     [
+      "IC_URABENOS"
+     ]
+    ],
+    [
+     "Run as a franchise-like network that subcontracts local gangs; Colombian forces count it in more than 200 municipalities.",
+     [
+      "ELTIEMPO_CLAN",
+      "SILLA_GAO23"
+     ]
+    ],
+    [
+     "It controls major Caribbean cocaine departure points and is in on-off talks with the government.",
+     [
+      "IC_URABENOS"
+     ]
+    ]
+   ],
+   "series_note": "Colombian security-force counts (armed members plus support networks). Other claims (e.g. 13,500–14,000) are not plotted.",
+   "membership_series": [
+    {
+     "year": 2018,
+     "low": 3632,
+     "high": 3632,
+     "source": "ELTIEMPO_CLAN"
+    },
+    {
+     "year": 2023,
+     "low": 5000,
+     "high": null,
+     "source": "SILLA_GAO23",
+     "note": "at least, first half"
+    },
+    {
+     "year": 2024,
+     "low": 7551,
+     "high": 7551,
+     "source": "INFOBAE_GAO25",
+     "note": "December"
+    },
+    {
+     "year": 2025,
+     "low": 9840,
+     "high": 9840,
+     "source": "INFOBAE_GAO25",
+     "note": "December"
+    },
+    {
+     "year": 2026,
+     "low": 9915,
+     "high": 9915,
+     "source": "CARACOL_GAO26"
+    }
+   ],
+   "image": {
+    "src": "img/profiles/clan.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Carretera_hacia_Urab%C3%A1.jpg",
+    "author": "Scabredon",
+    "license": "Public domain",
+    "caption": "Road to Urabá, Antioquia"
+   }
+  },
+  {
+   "id": "eln",
+   "name": "National Liberation Army",
+   "abbr": "ELN = Ejército de Liberación Nacional",
+   "what": "Colombia's last major leftist guerrilla, heavily involved in illicit economies.",
+   "what_c": [
+    "IC_ELN"
+   ],
+   "founded": "1964, Santander (Colombia)",
+   "founded_c": [
+    "IC_ELN"
+   ],
+   "biz": [
+    "eln"
+   ],
+   "more": [
+    [
+     "Founded by students and priests inspired by the Cuban revolution.",
+     [
+      "IC_ELN"
+     ]
+    ],
+    [
+     "Operates on both sides of the Colombia–Venezuela border, taxing cocaine, mining and contraband; it has fought FARC dissidents in Catatumbo.",
+     [
+      "IC_ELN",
+      "IC_SOLES"
+     ]
+    ]
+   ],
+   "series_note": "Colombian security-force counts (armed members plus support networks).",
+   "membership_series": [
+    {
+     "year": 2022,
+     "low": 5851,
+     "high": 5851,
+     "source": "SILLA_GAO23"
+    },
+    {
+     "year": 2023,
+     "low": 6158,
+     "high": 6158,
+     "source": "SILLA_GAO23",
+     "note": "first half"
+    },
+    {
+     "year": 2025,
+     "low": 6810,
+     "high": 6810,
+     "source": "INFOBAE_GAO25",
+     "note": "December"
+    },
+    {
+     "year": 2026,
+     "low": 6877,
+     "high": 6877,
+     "source": "CARACOL_GAO26"
+    }
+   ],
+   "image": {
+    "src": "img/profiles/eln.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Flag_of_ELN.svg",
+    "author": "Fibonacci (talk)",
+    "license": "Public domain",
+    "caption": "ELN flag"
+   }
+  },
+  {
+   "id": "exfarc",
+   "name": "FARC dissidents",
+   "abbr": "EMC = Estado Mayor Central; Segunda Marquetalia and other splinters",
+   "what": "Factions of the former FARC guerrilla that rejected the 2016 peace deal.",
+   "what_c": [
+    "IC_EXFARC"
+   ],
+   "founded": "2016–19, Colombia",
+   "founded_c": [
+    "IC_EXFARC",
+    "IC_SEGMAR"
+   ],
+   "biz": [],
+   "lines": [
+    "cocaine",
+    "illegal_mining",
+    "extortion"
+   ],
+   "lines_c": [
+    "IC_EXFARC"
+   ],
+   "more": [
+    [
+     "Not one group: the EMC, its offshoots and the Segunda Marquetalia compete as well as cooperate.",
+     [
+      "IC_EXFARC",
+      "IC_SEGMAR"
+     ]
+    ],
+    [
+     "Security forces counted 3,919 in Iván Mordisco's EMC and 2,802 in Calarcá's EMBF as of July 2025.",
+     [
+      "FIP_GAO25"
+     ]
+    ]
+   ],
+   "series_note": "Faction counts change as groups split, so no consistent series.",
+   "membership_series": [],
+   "image": {
+    "src": "img/profiles/exfarc.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Flag_of_the_FARC-EP.svg",
+    "author": "MrPenguin20",
+    "license": "CC BY-SA 3.0",
+    "caption": "Former FARC-EP flag"
+   }
+  },
+  {
+   "id": "tda",
+   "name": "Tren de Aragua",
+   "abbr": null,
+   "what": "Venezuelan prison-born gang that spread with the Venezuelan migration.",
+   "what_c": [
+    "ELPAIS_TOCORON"
+   ],
+   "founded": "About 2013–14, Tocorón prison, Aragua (Venezuela)",
+   "founded_c": [
+    "ELPAIS_TOCORON",
+    "BBC_TDA"
+   ],
+   "biz": [
+    "tda"
+   ],
+   "more": [
+    [
+     "The name comes from a construction union on an unfinished railway in Aragua; Héctor ‘Niño Guerrero’ Guerrero built the group from Tocorón prison.",
+     [
+      "BBC_TDA"
+     ]
+    ],
+    [
+     "Venezuela retook Tocorón in September 2023; cells abroad act with much autonomy.",
+     [
+      "ELPAIS_TOCORON",
+      "IC_TDA_EMPIRE"
+     ]
+    ],
+    [
+     "Its size and US reach are disputed.",
+     [
+      "IC_TDA"
+     ]
+    ]
+   ],
+   "series_note": "Only one numeric range (NCTC 2,500–5,000, 2026).",
+   "membership_series": [],
+   "image": {
+    "src": "img/profiles/tda.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Venezuela_Aragua_location_map.svg",
+    "author": "Aragua_location_map.svg: Addicted04 derivative work: Spischo",
+    "license": "CC BY-SA 3.0",
+    "caption": "Aragua state, Venezuela (map)"
+   }
+  },
+  {
+   "id": "choneros",
+   "name": "Los Choneros",
+   "abbr": null,
+   "what": "Ecuador's oldest major gang, long dominant in prisons and coastal routes.",
+   "what_c": [
+    "IC_CHONEROS"
+   ],
+   "founded": "1998, Manta, Manabí (Ecuador)",
+   "founded_c": [
+    "EXPRESO_EC"
+   ],
+   "biz": [
+    "choneros"
+   ],
+   "more": [
+    [
+     "Named after founder Jorge Véliz, ‘El Chonero’; grew under ‘Rasquiña’, killed in 2020, then ‘Fito’, who escaped prison in January 2024.",
+     [
+      "EXPRESO_EC",
+      "PRIMICIAS_BANDAS"
+     ]
+    ],
+    [
+     "Ecuadorian police link its alliance to the Sinaloa Cartel.",
+     [
+      "PRIMICIAS_BANDAS"
+     ]
+    ]
+   ],
+   "series_note": "US (12,000) and Ecuadorian government (30,000) figures conflict and count different things.",
+   "membership_series": [],
+   "image": {
+    "src": "img/profiles/choneros.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2022-10-04a_Wide_view_of_the_city_of_Manta,_Ecuador.jpg",
+    "author": "Gordon Leggett",
+    "license": "CC BY-SA 4.0",
+    "caption": "Manta, Manabí"
+   }
+  },
+  {
+   "id": "lobos",
+   "name": "Los Lobos",
+   "abbr": null,
+   "what": "Ecuador's largest gang by most estimates, a Choneros splinter.",
+   "what_c": [
+    "IC_LOBOS"
+   ],
+   "founded": "About 2019, Cuenca (Ecuador), from a Choneros cell",
+   "founded_c": [
+    "EXPRESO_EC",
+    "ELUNIVERSO_LOBOS"
+   ],
+   "biz": [
+    "lobos"
+   ],
+   "more": [
+    [
+     "Led a breakaway coalition (‘Nueva Generación’) against the Choneros after Rasquiña's 2020 killing.",
+     [
+      "ELUNIVERSO_LOBOS"
+     ]
+    ],
+    [
+     "Ecuadorian police tie it to CJNG; it is also linked to illegal gold mining.",
+     [
+      "PRIMICIAS_BANDAS",
+      "IC_LOBOS"
+     ]
+    ]
+   ],
+   "series_note": "US (8,000) and Ecuadorian government (50,000) figures conflict.",
+   "membership_series": []
+  },
+  {
+   "id": "pcc",
+   "name": "First Capital Command",
+   "abbr": "PCC = Primeiro Comando da Capital",
+   "what": "Brazil's largest criminal faction, a prison gang turned transnational cocaine network.",
+   "what_c": [
+    "IC_PCC"
+   ],
+   "founded": "31 Aug 1993, Taubaté prison, São Paulo (Brazil)",
+   "founded_c": [
+    "ELPAIS_PCC"
+   ],
+   "biz": [
+    "pcc"
+   ],
+   "more": [
+    [
+     "Founded by eight inmates after the 1992 Carandiru massacre, presented as a prisoners' ‘union’; led for decades by Marcos Camacho, ‘Marcola’.",
+     [
+      "ELPAIS_PCC"
+     ]
+    ],
+    [
+     "Controls cocaine routes through Paraguay and Brazilian ports to Europe and Africa; rival of Comando Vermelho.",
+     [
+      "IC_PCC",
+      "IC_PARAGUAY"
+     ]
+    ],
+    [
+     "São Paulo operations have targeted PCC money-laundering schemes and fuel adulteration.",
+     [
+      "G1_PCC40K"
+     ]
+    ]
+   ],
+   "series_note": "São Paulo prosecutors' figures as reported by G1; only two points.",
+   "membership_series": [
+    {
+     "year": 2005,
+     "low": 5000,
+     "high": 5000,
+     "source": "G1_PCC40K",
+     "note": "approx."
+    },
+    {
+     "year": 2025,
+     "low": 40000,
+     "high": 40000,
+     "source": "G1_PCC40K"
+    }
+   ],
+   "image": {
+    "src": "img/profiles/pcc.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Taubateskyline.JPG",
+    "author": "Intruso",
+    "license": "CC0",
+    "caption": "Taubaté, São Paulo"
+   }
+  },
+  {
+   "id": "cv",
+   "name": "Red Command",
+   "abbr": "CV = Comando Vermelho",
+   "what": "Rio de Janeiro faction, Brazil's oldest, expanding into the Amazon.",
+   "what_c": [
+    "IC_CV"
+   ],
+   "founded": "Late 1970s, Ilha Grande prison, Rio de Janeiro (Brazil)",
+   "founded_c": [
+    "IC_CV"
+   ],
+   "biz": [],
+   "lines": [
+    "cocaine",
+    "marijuana",
+    "arms",
+    "extortion"
+   ],
+   "lines_c": [
+    "IC_CV"
+   ],
+   "more": [
+    [
+     "Formed in a prison where common prisoners mixed with political prisoners.",
+     [
+      "IC_CV"
+     ]
+    ],
+    [
+     "Main PCC rival; controls favelas in Rio and Amazon river routes.",
+     [
+      "IC_CV"
+     ]
+    ],
+    [
+     "No reliable membership figure found.",
+     [
+      "IC_CV"
+     ]
+    ]
+   ],
+   "membership_series": [],
+   "image": {
+    "src": "img/profiles/cv.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Complexo_do_Alem%C3%A3o.JPG",
+    "author": "Junius",
+    "license": "Public domain",
+    "caption": "Complexo do Alemão, Rio"
+   }
+  },
+  {
+   "id": "ms13",
+   "name": "Mara Salvatrucha",
+   "abbr": "MS-13",
+   "what": "Street gang born in Los Angeles, rooted in El Salvador, Honduras and Guatemala.",
+   "what_c": [
+    "IC_MS13"
+   ],
+   "founded": "1980s, Los Angeles (US), by Salvadoran migrants",
+   "founded_c": [
+    "IC_MS13"
+   ],
+   "biz": [
+    "ms13"
+   ],
+   "more": [
+    [
+     "In 2022 El Salvador's government cited about 70,000 gang members on the streets (all gangs); UK officials summarise MS-13 at about 78,000 members before the crackdown.",
+     [
+      "ELMUNDO_SV_70K",
+      "UK_CPIN_SV"
+     ]
+    ],
+    [
+     "Since the March 2022 state of exception more than 84,000 people have been detained; by late 2023 over 52,000 alleged MS-13 members were in custody.",
+     [
+      "CRS_SV_EXC",
+      "UK_CPIN_SV"
+     ]
+    ],
+    [
+     "It remains active in Honduras, Guatemala and US cities; main rival is Barrio 18.",
+     [
+      "IC_MS13",
+      "DOJ_MS13_HOU",
+      "IC_HONDURAS"
+     ]
+    ]
+   ],
+   "series_note": "Pre-2022 estimates count members; post-2022 figures count detentions, so they are not plotted together.",
+   "membership_series": [],
+   "image": {
+    "src": "img/profiles/ms13.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mara_Salvatrucha_Graffiti.jpg",
+    "author": "Walking the Tracks",
+    "license": "CC BY-SA 2.0",
+    "caption": "MS-13 graffiti (US)"
+   }
+  },
+  {
+   "id": "b18",
+   "name": "Barrio 18",
+   "abbr": "also 18th Street gang; Sureños and Revolucionarios factions",
+   "what": "Los Angeles–born street gang, MS-13's main rival in Central America.",
+   "what_c": [
+    "IC_B18"
+   ],
+   "founded": "1960s–70s, Los Angeles (US)",
+   "founded_c": [
+    "IC_B18"
+   ],
+   "biz": [],
+   "lines": [
+    "extortion",
+    "drugs_unspecified"
+   ],
+   "lines_c": [
+    "IC_B18"
+   ],
+   "more": [
+    [
+     "Split in El Salvador in 2005 into Sureños and Revolucionarios.",
+     [
+      "UK_CPIN_SV"
+     ]
+    ],
+    [
+     "Strong in Guatemala and Honduras; heavily hit by El Salvador's state of exception.",
+     [
+      "IC_B18",
+      "UK_CPIN_SV"
+     ]
+    ]
+   ],
+   "membership_series": []
+  },
+  {
+   "id": "haiti",
+   "name": "Viv Ansanm / Gran Grif",
+   "abbr": "Viv Ansanm = ‘Living Together’ gang coalition",
+   "what": "Coalitions of armed gangs controlling most of Port-au-Prince and parts of Artibonite.",
+   "what_c": [
+    "IC_HAITI"
+   ],
+   "founded": "2023–24, Haiti",
+   "founded_c": [
+    "IC_HAITI"
+   ],
+   "biz": [],
+   "lines": [
+    "kidnapping",
+    "extortion",
+    "arms"
+   ],
+   "lines_c": [
+    "IC_HAITI"
+   ],
+   "more": [
+    [
+     "Viv Ansanm joined the previously rival G9 and G-Pèp alliances in 2024; Gran Grif operates in Artibonite.",
+     [
+      "IC_HAITI"
+     ]
+    ],
+    [
+     "Membership estimates are not reliable.",
+     [
+      "IC_HAITI"
+     ]
+    ]
+   ],
+   "membership_series": [],
+   "image": {
+    "src": "img/profiles/haiti.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Port-au-Prince_Haiti_2008.JPG",
+    "author": "US Navy",
+    "license": "Public domain",
+    "caption": "Port-au-Prince (2008)"
+   }
+  }
+ ]
+}

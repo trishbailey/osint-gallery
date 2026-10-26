@@ -1,15 +1,15 @@
 /* Countries per group (data/group_countries.json): flag rows on cards, auto-zoom + "outside the map" note on cartel filter. */
 (function(){
-const I2={MEX:"MX",USA:"US",GTM:"GT",HND:"HN",SLV:"SV",COL:"CO",VEN:"VE",ECU:"EC",PER:"PE",CHL:"CL",BRA:"BR",PRY:"PY",HTI:"HT",BOL:"BO",ARG:"AR",ESP:"ES",AUS:"AU"};
-const NM={MEX:"Mexico",USA:"US",GTM:"Guatemala",HND:"Honduras",SLV:"El Salvador",COL:"Colombia",VEN:"Venezuela",ECU:"Ecuador",PER:"Peru",CHL:"Chile",BRA:"Brazil",PRY:"Paraguay",HTI:"Haiti"};
+const I2={MEX:"MX",USA:"US",GTM:"GT",HND:"HN",SLV:"SV",COL:"CO",VEN:"VE",ECU:"EC",PER:"PE",CHL:"CL",BRA:"BR",PRY:"PY",HTI:"HT",BOL:"BO",ARG:"AR",ESP:"ES",AUS:"AU",PRT:"PT"};
+const NM={MEX:"Mexico",USA:"US",GTM:"Guatemala",HND:"Honduras",SLV:"El Salvador",COL:"Colombia",VEN:"Venezuela",ECU:"Ecuador",PER:"Peru",CHL:"Chile",BRA:"Brazil",PRY:"Paraguay",HTI:"Haiti",PRT:"Portugal",BOL:"Bolivia",ARG:"Argentina",ESP:"Spain",AUS:"Australia"};
 const flag=i=>(I2[i]||"").replace(/./g,c=>String.fromCodePoint(127397+c.charCodeAt(0)))||i;
 const ALIAS={viv_ansanm:"haiti",chapitos:"sinaloa",mayiza:"sinaloa"};
 const ct=ids=>typeof cite==="function"?cite(ids):"";
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const OUT=new Set(["USA"]);const SA=new Set(["COL","VEN","ECU","PER","CHL","BRA","PRY","BOL","ARG"]);
+const OUT=new Set(["USA","PRT","ESP","AUS"]);const SA=new Set(["COL","VEN","ECU","PER","CHL","BRA","PRY","BOL","ARG"]);
 fetch("data/group_countries.json").then(r=>r.json()).then(GCN=>{
  const G=id=>GCN.groups[ALIAS[id]||id];
- const row=g=>{const l=g.countries,h=l[0];return `<div class="gcc" title="${esc(l.map(c=>NM[c.iso]||c.iso).join(", "))}"><span class="gch1">${flag(h.iso)}</span>${l.length>1?` + ${l.length-1} ${l.length===2?"country":"countries"} <span class="gcrest">${l.slice(1).map(c=>flag(c.iso)+" "+esc(NM[c.iso]||c.iso)).join(" · ")}</span>`:" only"}</div>`};
+ const row=g=>`<div class="gcc" style="display:flex;flex-wrap:wrap;gap:2px 6px;max-width:100%">${g.countries.map(c=>`<span class="gcf" title="${esc(NM[c.iso]||c.iso)}" style="cursor:help;font-size:16px">${flag(c.iso)}</span>`).join("")}</div>`;
  function deco(){document.querySelectorAll("#cards .gc:not([data-gcc])").forEach(el=>{const n=window.NET||(typeof NET!=="undefined"?NET:null);const x=n&&n.groups?n.groups[+el.dataset.k]:(n&&n[+el.dataset.k]);const g=x&&G(x.id);el.dataset.gcc=1;if(g)el.querySelector("h4").insertAdjacentHTML("afterend",row(g))});
   document.querySelectorAll(".nowgrid .ld:not([data-gcc])").forEach(el=>{const g=G(el.dataset.g.split(" ")[0]);el.dataset.gcc=1;const h=el.querySelector(".gch");if(g&&h)h.insertAdjacentHTML("afterend",row(g))})}
  let n=0;const t=setInterval(()=>{deco();if(++n>40)clearInterval(t)},300);

@@ -1,0 +1,1342 @@
+{
+ "type": "FeatureCollection",
+ "channel": "migrants",
+ "notes": {
+  "note": "Northbound land (solid), rail (long dash), sea (dotted), 2025 southbound reverse flow (dash-dot). Lines ending at the border are widened by US Border Patrol apprehensions in that sector in FY2024 (Oct 2023-Sep 2024; 1.53 million across nine sectors, Tucson highest at 463,567). That was the last full year before the collapse: FY2025 fell to 237,565, the lowest since 1970, with only about 65,500 after 20 January 2025, so these corridors now carry a small fraction of FY2024 traffic. Two lines into one sector share its total. Darién width is the 2023 crossing count.",
+  "sources": [
+   {
+    "url": "https://www.cbp.gov/newsroom/stats/migrant-protection-protocols-fy2024",
+    "name": "CBP",
+    "title": "USBP apprehensions by Southwest Border sector, FY2024 (Oct 2023-Sep 2024)",
+    "date": "FY2024"
+   },
+   {
+    "url": "https://www.cbp.gov/newsroom/national-media-release/lowest-fiscal-year-border-patrol-apprehensions-1970",
+    "name": "CBP",
+    "title": "Lowest fiscal year for Border Patrol apprehensions since 1970 (FY2025: 237,565)",
+    "date": "2025-10-07"
+   },
+   {
+    "url": "https://www.migrationpolicy.org/journal/feature/how-immigration-crackdowns-and-aid-cuts-are-reshaping-migration-across-central",
+    "name": "Migration Policy Institute",
+    "title": "How immigration crackdowns and aid cuts are reshaping migration across Central America",
+    "date": "2025"
+   },
+   {
+    "url": "https://hias.org/wp-content/uploads/Panama-Reverse-Flow-Monitoring-Factsheet_2025.pdf",
+    "name": "UNHCR / HIAS",
+    "title": "Panama reverse flow monitoring factsheet",
+    "date": "2025"
+   }
+  ]
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Necoclí / Turbo",
+    "to": "Lajas Blancas (Panama)",
+    "description": "The Darién crossing from Colombia to Panama carried a record 520,000+ people north in 2023, then collapsed to a trickle by 2025.",
+    "sources": [
+     {
+      "url": "https://www.migrationpolicy.org/journal/feature/how-immigration-crackdowns-and-aid-cuts-are-reshaping-migration-across-central",
+      "name": "Migration Policy Institute",
+      "title": "How immigration crackdowns and aid cuts are reshaping migration across Central America",
+      "date": "2025"
+     },
+     {
+      "url": "https://www.thenewhumanitarian.org/news-feature/2025/06/19/challenges-invisible-reverse-flow-migrantion-panama-americas",
+      "name": "The New Humanitarian",
+      "title": "The challenges facing 'invisible' reverse flow migrants in Panama",
+      "date": "2025-06-19"
+     }
+    ],
+    "year": "2023",
+    "volume": 520000
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -76.73,
+      8.4
+     ],
+     [
+      -77.6,
+      8.0
+     ],
+     [
+      -77.9,
+      8.5
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Lajas Blancas (Panama)",
+    "to": "Tecún Umán / Ciudad Hidalgo",
+    "description": "From Panama the route crosses Costa Rica (Paso Canoas to Peñas Blancas), Nicaragua, Honduras and Guatemala to the Mexican border.",
+    "sources": [
+     {
+      "url": "https://www.migrationpolicy.org/journal/feature/how-immigration-crackdowns-and-aid-cuts-are-reshaping-migration-across-central",
+      "name": "Migration Policy Institute",
+      "title": "How immigration crackdowns and aid cuts are reshaping migration across Central America",
+      "date": "2025"
+     },
+     {
+      "url": "https://apnews.com/article/costa-rica-panama-immigration-darien-27c86f83c2288b9519ddf71fc23726c0",
+      "name": "AP",
+      "title": "Costa Rica and Panama coordinate to move southbound migrants",
+      "date": "2025-03-03"
+     }
+    ],
+    "year": "2024"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.9,
+      8.5
+     ],
+     [
+      -79.52,
+      8.98
+     ],
+     [
+      -82.84,
+      8.53
+     ],
+     [
+      -85.62,
+      11.21
+     ],
+     [
+      -86.6,
+      14.0
+     ],
+     [
+      -90.51,
+      14.63
+     ],
+     [
+      -92.15,
+      14.68
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Tecún Umán / Ciudad Hidalgo",
+    "to": "Arriaga / Tonalá",
+    "description": "Tapachula is the bottleneck where about 60% of Mexico's 2021-23 asylum requests were filed; the coastal highway leads north.",
+    "sources": [
+     {
+      "url": "https://insightcrime.org/news/vortex-evil-gangs-narcos-tapachula-mexico/",
+      "name": "InSight Crime",
+      "title": "Vortex of Evil: Gangs and Narcos in Tapachula, Mexico",
+      "date": ""
+     }
+    ],
+    "year": "2023"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -92.15,
+      14.68
+     ],
+     [
+      -92.26,
+      14.9
+     ],
+     [
+      -93.8,
+      16.1
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "rail (La Bestia)",
+    "from": "Arriaga / Tonalá",
+    "to": "Mexico City",
+    "description": "The freight train known as La Bestia starts in Chiapas and runs to central Mexico.",
+    "sources": [
+     {
+      "url": "https://insightcrime.org/news/vortex-evil-gangs-narcos-tapachula-mexico/",
+      "name": "InSight Crime",
+      "title": "Vortex of Evil: Gangs and Narcos in Tapachula, Mexico",
+      "date": ""
+     },
+     {
+      "url": "https://globalinitiative.net/wp-content/uploads/2018/07/Organized-Crime-and-Central-American-Migration-in-Mexico-The-University-of-Texas-at-Austin-2018.pdf",
+      "name": "UT Austin / Global Initiative",
+      "title": "Organized crime and Central American migration in Mexico",
+      "date": "2018"
+     }
+    ],
+    "year": "2023"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -93.8,
+      16.1
+     ],
+     [
+      -96.13,
+      19.17
+     ],
+     [
+      -99.13,
+      19.43
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Villahermosa",
+    "to": "Matamoros",
+    "description": "The Gulf route through Veracruz to Tamaulipas is the most used and most violent, taxed by Gulf Cartel and Zetas splinters.",
+    "sources": [
+     {
+      "url": "https://globalinitiative.net/wp-content/uploads/2018/07/Organized-Crime-and-Central-American-Migration-in-Mexico-The-University-of-Texas-at-Austin-2018.pdf",
+      "name": "UT Austin / Global Initiative",
+      "title": "Organized crime and Central American migration in Mexico",
+      "date": "2018"
+     }
+    ],
+    "year": "2018"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -92.93,
+      17.99
+     ],
+     [
+      -96.13,
+      19.17
+     ],
+     [
+      -98.28,
+      26.08
+     ],
+     [
+      -97.5,
+      25.87
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Mexico City",
+    "to": "Nogales",
+    "description": "The Pacific route runs through Sinaloa Cartel territory to the Sonora crossings.",
+    "sources": [
+     {
+      "url": "https://globalinitiative.net/wp-content/uploads/2018/07/Organized-Crime-and-Central-American-Migration-in-Mexico-The-University-of-Texas-at-Austin-2018.pdf",
+      "name": "UT Austin / Global Initiative",
+      "title": "Organized crime and Central American migration in Mexico",
+      "date": "2018"
+     }
+    ],
+    "year": "2018"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -99.13,
+      19.43
+     ],
+     [
+      -103.35,
+      20.67
+     ],
+     [
+      -110.96,
+      29.07
+     ],
+     [
+      -110.94,
+      31.33
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Hermosillo",
+    "to": "Tijuana",
+    "description": "The Pacific route continues on to Baja California.",
+    "sources": [
+     {
+      "url": "https://globalinitiative.net/wp-content/uploads/2018/07/Organized-Crime-and-Central-American-Migration-in-Mexico-The-University-of-Texas-at-Austin-2018.pdf",
+      "name": "UT Austin / Global Initiative",
+      "title": "Organized crime and Central American migration in Mexico",
+      "date": "2018"
+     }
+    ],
+    "year": "2018"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -110.96,
+      29.07
+     ],
+     [
+      -115.45,
+      32.62
+     ],
+     [
+      -117.03,
+      32.53
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "sea",
+    "from": "Ocós (Guatemala)",
+    "to": "Salina Cruz / Huatulco",
+    "description": "Smugglers take people by fishing boat about 450 km along the Pacific coast, from Ocós to Oaxaca, to avoid checkpoints in Chiapas.",
+    "sources": [
+     {
+      "url": "https://insightcrime.org/news/human-smugglers-take-to-the-waves-along-mexicos-pacific-coast/",
+      "name": "InSight Crime",
+      "title": "Human smugglers take to the waves along Mexico's Pacific coast",
+      "date": ""
+     }
+    ],
+    "year": "2022"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -92.19,
+      14.51
+     ],
+     [
+      -95.6,
+      15.9
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Petén",
+    "to": "Villahermosa",
+    "description": "The El Ceibo–Tenosique crossing into Tabasco is the main eastern entry, about 60 km by road; MSF runs assistance points in Tenosique and coyotes charge thousands of dollars.",
+    "sources": [
+     {
+      "url": "https://mexiconewsdaily.com/news/migrants-find-new-route-into-mexico-via-tabasco-but-also-dangers/",
+      "name": "Mexico News Daily",
+      "title": "Migrants find new route into Mexico via Tabasco but also dangers",
+      "date": ""
+     },
+     {
+      "url": "https://www.msf.org.co/wp-content/uploads/2023/07/Mapa-MSF-en-ruta-contigo.pdf",
+      "name": "MSF",
+      "title": "Mapa MSF en ruta contigo (migrant route assistance points)",
+      "date": "2023-07"
+     }
+    ],
+    "year": "2023"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -90.0,
+      16.9
+     ],
+     [
+      -91.5,
+      17.25
+     ],
+     [
+      -91.42,
+      17.47
+     ],
+     [
+      -92.93,
+      17.99
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Mexico City",
+    "to": "Monterrey",
+    "description": "The central route runs from Mexico City through San Luis Potosí to Monterrey, the staging hub for the Coahuila and Tamaulipas crossings.",
+    "sources": [
+     {
+      "url": "https://globalinitiative.net/wp-content/uploads/2018/07/Organized-Crime-and-Central-American-Migration-in-Mexico-The-University-of-Texas-at-Austin-2018.pdf",
+      "name": "UT Austin / Global Initiative",
+      "title": "Organized crime and Central American migration in Mexico",
+      "date": "2018"
+     },
+     {
+      "url": "https://insightcrime.org/news/desperation-desert-migrant-smuggling-us-mexico-border/",
+      "name": "InSight Crime",
+      "title": "Desperation in the desert: the industrialization of migrant smuggling on the US-Mexico border",
+      "date": ""
+     }
+    ],
+    "year": "2018"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -99.13,
+      19.43
+     ],
+     [
+      -100.98,
+      22.15
+     ],
+     [
+      -100.31,
+      25.67
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "rail (La Bestia)",
+    "from": "Monterrey",
+    "to": "Ciudad Juárez",
+    "description": "In 2023 thousands of migrants rode freight trains north through Torreón toward Ciudad Juárez and Piedras Negras until Ferromex halted trains.",
+    "sources": [
+     {
+      "url": "https://www.reuters.com/world/americas/migrants-aboard-mexico-cargo-trains-stranded-miles-us-border-2023-09-30/",
+      "name": "Reuters",
+      "title": "Migrants aboard Mexico cargo trains stranded miles from U.S. border",
+      "date": "2023-09-30"
+     }
+    ],
+    "year": "2023"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -100.31,
+      25.67
+     ],
+     [
+      -103.41,
+      25.54
+     ],
+     [
+      -106.09,
+      28.63
+     ],
+     [
+      -106.45,
+      31.73
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Tijuana",
+    "to": "San Diego",
+    "description": "Tijuana feeds the San Diego sector, the second busiest in FY2024; Tijuana officials say organised crime now controls smuggling through transport payments or piso charged to let migrants pass.",
+    "sources": [
+     {
+      "url": "https://www.uniradiobaja.com/gobierno/crimen-organizado-controla-trafico-personas-pagos-traslado-o-cobro-piso-dejar-pasar-migrantes-dmam-tijuana-n729721",
+      "name": "Uniradio Informa",
+      "title": "Crimen organizado controla tráfico de personas con pagos por traslado o cobro de piso (Tijuana)",
+      "date": "2024"
+     },
+     {
+      "url": "https://zetatijuana.com/2024/02/las-mafias-en-garita-de-san-ysidro/",
+      "name": "Semanario ZETA",
+      "title": "Las mafias en Garita de San Ysidro",
+      "date": "2024-02"
+     },
+     {
+      "url": "https://www.cbp.gov/newsroom/stats/migrant-protection-protocols-fy2024",
+      "name": "CBP",
+      "title": "USBP apprehensions by Southwest Border sector, FY2024 (Oct 2023-Sep 2024)",
+      "date": "FY2024"
+     }
+    ],
+    "year": "2024",
+    "sector": "San Diego",
+    "encounters": 324260,
+    "encounters_year": "FY2024",
+    "volume": 324260,
+    "control": "Organised crime charges piso per migrant (Tijuana migrant affairs office); ZETA reports Sinaloa Cartel-linked and Arellano Félix-linked cells competing around the San Ysidro crossing.",
+    "control_sources": [
+     {
+      "url": "https://www.uniradiobaja.com/gobierno/crimen-organizado-controla-trafico-personas-pagos-traslado-o-cobro-piso-dejar-pasar-migrantes-dmam-tijuana-n729721",
+      "name": "Uniradio Informa",
+      "title": "Crimen organizado controla tráfico de personas con pagos por traslado o cobro de piso (Tijuana)",
+      "date": "2024"
+     },
+     {
+      "url": "https://zetatijuana.com/2024/02/las-mafias-en-garita-de-san-ysidro/",
+      "name": "Semanario ZETA",
+      "title": "Las mafias en Garita de San Ysidro",
+      "date": "2024-02"
+     }
+    ]
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -117.03,
+      32.53
+     ],
+     [
+      -117.16,
+      32.72
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Mexicali",
+    "to": "El Centro / Calexico",
+    "description": "Mexicali feeds the El Centro sector; Tijuana officials report migrants being moved from Tijuana toward Mexicali crossings.",
+    "sources": [
+     {
+      "url": "https://www.uniradiobaja.com/gobierno/crimen-organizado-controla-trafico-personas-pagos-traslado-o-cobro-piso-dejar-pasar-migrantes-dmam-tijuana-n729721",
+      "name": "Uniradio Informa",
+      "title": "Crimen organizado controla tráfico de personas con pagos por traslado o cobro de piso (Tijuana)",
+      "date": "2024"
+     },
+     {
+      "url": "https://www.cbp.gov/newsroom/stats/migrant-protection-protocols-fy2024",
+      "name": "CBP",
+      "title": "USBP apprehensions by Southwest Border sector, FY2024 (Oct 2023-Sep 2024)",
+      "date": "FY2024"
+     }
+    ],
+    "year": "2024",
+    "sector": "El Centro",
+    "encounters": 17484,
+    "encounters_year": "FY2024",
+    "volume": 17484
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -115.45,
+      32.62
+     ],
+     [
+      -115.5,
+      32.7
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "San Luis Río Colorado",
+    "to": "Yuma",
+    "description": "San Luis Río Colorado feeds the Yuma sector; in December 2023 CBP warned it might close the San Luis crossings as crossings surged.",
+    "sources": [
+     {
+      "url": "https://jornadabc.com.mx/region/entrada-de-frente-frio-complica-situacion-de-migrantes/",
+      "name": "La Jornada Baja California",
+      "title": "Entrada de frente frío complica situación de migrantes (Sonoyta, San Luis Río Colorado)",
+      "date": "2023-12-08"
+     },
+     {
+      "url": "https://www.cbp.gov/newsroom/stats/migrant-protection-protocols-fy2024",
+      "name": "CBP",
+      "title": "USBP apprehensions by Southwest Border sector, FY2024 (Oct 2023-Sep 2024)",
+      "date": "FY2024"
+     }
+    ],
+    "year": "2023",
+    "sector": "Yuma",
+    "encounters": 53877,
+    "encounters_year": "FY2024",
+    "volume": 53877
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -114.77,
+      32.46
+     ],
+     [
+      -114.62,
+      32.69
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Hermosillo",
+    "to": "Tucson",
+    "description": "Altar is the staging town for the desert crossing near Sásabe into the Tucson sector, the busiest in FY2024.",
+    "sources": [
+     {
+      "url": "https://insightcrime.org/news/sonora-mexico-under-siege-amid-sinaloa-cartel-battle-over-migrant-smuggling/",
+      "name": "InSight Crime",
+      "title": "Sinaloa Cartel battle over migrant smuggling in Sonora, Mexico",
+      "date": ""
+     },
+     {
+      "url": "https://insightcrime.org/news/desperation-desert-migrant-smuggling-us-mexico-border/",
+      "name": "InSight Crime",
+      "title": "Desperation in the desert: the industrialization of migrant smuggling on the US-Mexico border",
+      "date": ""
+     },
+     {
+      "url": "https://www.cbp.gov/newsroom/stats/migrant-protection-protocols-fy2024",
+      "name": "CBP",
+      "title": "USBP apprehensions by Southwest Border sector, FY2024 (Oct 2023-Sep 2024)",
+      "date": "FY2024"
+     }
+    ],
+    "year": "2023",
+    "sector": "Tucson",
+    "encounters": 463567,
+    "encounters_year": "FY2024",
+    "volume": 463567,
+    "control": "Sinaloa Cartel factions control the Altar–Sásabe corridor and collect at least $100 per migrant, plus about $1,000 for unguided 'permission' to cross (InSight Crime).",
+    "control_sources": [
+     {
+      "url": "https://insightcrime.org/news/desperation-desert-migrant-smuggling-us-mexico-border/",
+      "name": "InSight Crime",
+      "title": "Desperation in the desert: the industrialization of migrant smuggling on the US-Mexico border",
+      "date": ""
+     },
+     {
+      "url": "https://insightcrime.org/news/sonora-mexico-under-siege-amid-sinaloa-cartel-battle-over-migrant-smuggling/",
+      "name": "InSight Crime",
+      "title": "Sinaloa Cartel battle over migrant smuggling in Sonora, Mexico",
+      "date": ""
+     }
+    ]
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -110.96,
+      29.07
+     ],
+     [
+      -111.82,
+      30.71
+     ],
+     [
+      -111.54,
+      31.48
+     ],
+     [
+      -110.97,
+      32.22
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Hermosillo",
+    "to": "Lukeville / Ajo",
+    "description": "In December 2023 smugglers delivered thousands of migrants a day near Sonoyta–Lukeville, forcing CBP to close the Lukeville port (Tucson sector, Ajo station).",
+    "sources": [
+     {
+      "url": "https://apnews.com/article/lukeville-arizona-border-crossing-closed-ae04e8c861a95e98dbfc8d49244cf092",
+      "name": "AP",
+      "title": "Smugglers bring migrants to Arizona border crossing, overwhelming US agents",
+      "date": "2023-12"
+     },
+     {
+      "url": "https://jornadabc.com.mx/region/entrada-de-frente-frio-complica-situacion-de-migrantes/",
+      "name": "La Jornada Baja California",
+      "title": "Entrada de frente frío complica situación de migrantes (Sonoyta, San Luis Río Colorado)",
+      "date": "2023-12-08"
+     },
+     {
+      "url": "https://www.cbp.gov/newsroom/stats/migrant-protection-protocols-fy2024",
+      "name": "CBP",
+      "title": "USBP apprehensions by Southwest Border sector, FY2024 (Oct 2023-Sep 2024)",
+      "date": "FY2024"
+     }
+    ],
+    "year": "2023",
+    "sector": "Tucson",
+    "encounters": 463567,
+    "encounters_year": "FY2024",
+    "volume": 463567
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -110.96,
+      29.07
+     ],
+     [
+      -112.16,
+      30.72
+     ],
+     [
+      -112.86,
+      31.86
+     ],
+     [
+      -112.82,
+      32.05
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Chihuahua",
+    "to": "El Paso",
+    "description": "Ciudad Juárez feeds the El Paso sector; smugglers even use the storm-drain tunnels into El Paso, charging $6,000 or more.",
+    "sources": [
+     {
+      "url": "https://www.usatoday.com/story/news/investigations/2024/06/20/mexican-drug-cartels-migrant-vip-package/74154061007/",
+      "name": "USA Today",
+      "title": "Mexican drug cartels offer migrants VIP package for passage into US",
+      "date": "2024-06-20"
+     },
+     {
+      "url": "https://diario.mx/juarez/2025/jun/03/al-dia-70-detenciones-de-migrantes-1069206.html",
+      "name": "El Diario de Juárez",
+      "title": "Al día, 70 detenciones de migrantes",
+      "date": "2025-06-03"
+     },
+     {
+      "url": "https://www.cbp.gov/newsroom/stats/migrant-protection-protocols-fy2024",
+      "name": "CBP",
+      "title": "USBP apprehensions by Southwest Border sector, FY2024 (Oct 2023-Sep 2024)",
+      "date": "FY2024"
+     }
+    ],
+    "year": "2024",
+    "sector": "El Paso",
+    "encounters": 256102,
+    "encounters_year": "FY2024",
+    "volume": 256102,
+    "control": "La Línea controls the Juárez–El Paso polleros (La Jornada 2022) and moved 1,000+ migrants a month through drain tunnels (USA Today); La Empresa and Los Cabrera also operate in Juárez and the Valle (El Diario 2025).",
+    "control_sources": [
+     {
+      "url": "https://www.jornada.com.mx/2022/07/01/politica/008n2pol",
+      "name": "La Jornada",
+      "title": "El cruce de personas de Juárez a El Paso, en control de La Línea",
+      "date": "2022-07-01"
+     },
+     {
+      "url": "https://www.usatoday.com/story/news/investigations/2024/06/20/mexican-drug-cartels-migrant-vip-package/74154061007/",
+      "name": "USA Today",
+      "title": "Mexican drug cartels offer migrants VIP package for passage into US",
+      "date": "2024-06-20"
+     },
+     {
+      "url": "https://diario.mx/juarez/2025/jun/03/al-dia-70-detenciones-de-migrantes-1069206.html",
+      "name": "El Diario de Juárez",
+      "title": "Al día, 70 detenciones de migrantes",
+      "date": "2025-06-03"
+     },
+     {
+      "url": "https://insightcrime.org/mexico-organized-crime-news/la-linea/",
+      "name": "InSight Crime",
+      "title": "La Línea: profile",
+      "date": ""
+     }
+    ]
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -106.09,
+      28.63
+     ],
+     [
+      -106.45,
+      31.73
+     ],
+     [
+      -106.49,
+      31.76
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Nuevo Casas Grandes",
+    "to": "Columbus (NM)",
+    "description": "Puerto Palomas, west of Juárez, is a main irregular crossing in the El Paso sector's New Mexico stretch.",
+    "sources": [
+     {
+      "url": "https://diario.mx/juarez/2025/jun/03/al-dia-70-detenciones-de-migrantes-1069206.html",
+      "name": "El Diario de Juárez",
+      "title": "Al día, 70 detenciones de migrantes",
+      "date": "2025-06-03"
+     },
+     {
+      "url": "https://www.cbp.gov/newsroom/stats/migrant-protection-protocols-fy2024",
+      "name": "CBP",
+      "title": "USBP apprehensions by Southwest Border sector, FY2024 (Oct 2023-Sep 2024)",
+      "date": "FY2024"
+     }
+    ],
+    "year": "2025",
+    "sector": "El Paso",
+    "encounters": 256102,
+    "encounters_year": "FY2024",
+    "volume": 256102,
+    "control": "La Línea runs the main irregular crossing at Puerto Palomas, per Chihuahua authorities (El Diario 2025).",
+    "control_sources": [
+     {
+      "url": "https://diario.mx/juarez/2025/jun/03/al-dia-70-detenciones-de-migrantes-1069206.html",
+      "name": "El Diario de Juárez",
+      "title": "Al día, 70 detenciones de migrantes",
+      "date": "2025-06-03"
+     }
+    ]
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -107.91,
+      30.42
+     ],
+     [
+      -107.63,
+      31.77
+     ],
+     [
+      -107.64,
+      31.83
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Hidalgo del Parral",
+    "to": "Presidio (Big Bend)",
+    "description": "Chihuahua state police describe a Parral–Aldama–Ojinaga smuggling route into the Big Bend sector, the quietest of the nine.",
+    "sources": [
+     {
+      "url": "https://diario.mx/juarez/2025/jun/03/al-dia-70-detenciones-de-migrantes-1069206.html",
+      "name": "El Diario de Juárez",
+      "title": "Al día, 70 detenciones de migrantes",
+      "date": "2025-06-03"
+     },
+     {
+      "url": "https://www.cbp.gov/newsroom/stats/migrant-protection-protocols-fy2024",
+      "name": "CBP",
+      "title": "USBP apprehensions by Southwest Border sector, FY2024 (Oct 2023-Sep 2024)",
+      "date": "FY2024"
+     }
+    ],
+    "year": "2025",
+    "sector": "Big Bend",
+    "encounters": 4921,
+    "encounters_year": "FY2024",
+    "volume": 4921,
+    "control": "Los Cabrera are moving into the Parral–Aldama–Ojinaga route (Chihuahua state police via El Diario).",
+    "control_sources": [
+     {
+      "url": "https://diario.mx/juarez/2025/jun/03/al-dia-70-detenciones-de-migrantes-1069206.html",
+      "name": "El Diario de Juárez",
+      "title": "Al día, 70 detenciones de migrantes",
+      "date": "2025-06-03"
+     }
+    ]
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -105.67,
+      26.93
+     ],
+     [
+      -105.91,
+      28.84
+     ],
+     [
+      -104.41,
+      29.56
+     ],
+     [
+      -104.37,
+      29.56
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Monterrey",
+    "to": "Eagle Pass (Del Rio sector)",
+    "description": "In September 2023 thousands, mostly Venezuelans, travelled from Monterrey by train and bus to Piedras Negras and waded the Rio Grande into Eagle Pass (Del Rio sector).",
+    "sources": [
+     {
+      "url": "https://www.reuters.com/world/americas/migrants-aboard-mexico-cargo-trains-stranded-miles-us-border-2023-09-30/",
+      "name": "Reuters",
+      "title": "Migrants aboard Mexico cargo trains stranded miles from U.S. border",
+      "date": "2023-09-30"
+     },
+     {
+      "url": "https://www.elsiglodetorreon.com.mx/noticia/2023/miles-de-migrantes-arriban-a-piedras-negras-cruzan-el-rio-bravo-y-llegan-a-eua.html",
+      "name": "El Siglo de Torreón",
+      "title": "Miles de migrantes arriban a Piedras Negras, cruzan el río Bravo y llegan a EUA",
+      "date": "2023-09"
+     },
+     {
+      "url": "https://www.borderreport.com/border-report-tour/immigration/south-texas-border-patrol-sectors-saw-big-drops-in-migrant-encounters-in-fiscal-2024/",
+      "name": "Border Report",
+      "title": "South Texas Border Patrol sectors saw big drops in migrant encounters in Fiscal 2024",
+      "date": "2024-10"
+     },
+     {
+      "url": "https://www.cbp.gov/newsroom/stats/migrant-protection-protocols-fy2024",
+      "name": "CBP",
+      "title": "USBP apprehensions by Southwest Border sector, FY2024 (Oct 2023-Sep 2024)",
+      "date": "FY2024"
+     }
+    ],
+    "year": "2023",
+    "sector": "Del Rio",
+    "encounters": 244105,
+    "encounters_year": "FY2024",
+    "volume": 244105,
+    "control": "Cartel del Noreste holds influence in Piedras Negras and runs human smuggling into the US (US Treasury, 2025).",
+    "control_sources": [
+     {
+      "url": "https://home.treasury.gov/news/press-releases/sb0219",
+      "name": "US Treasury (OFAC)",
+      "title": "Treasury sanctions additional members and associate of Cartel del Noreste",
+      "date": "2025"
+     }
+    ]
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -100.31,
+      25.67
+     ],
+     [
+      -100.52,
+      28.7
+     ],
+     [
+      -100.5,
+      28.71
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Monterrey",
+    "to": "Laredo",
+    "description": "Nuevo Laredo feeds the Laredo sector; US prosecutors describe CDN-recruited smugglers moving migrants in tractor trailers past the I-35 checkpoint.",
+    "sources": [
+     {
+      "url": "https://www.justice.gov/usao-sdtx/pr/two-sent-prison-roles-cartel-linked-human-smuggling-scheme",
+      "name": "US Attorney SDTX",
+      "title": "Two sent to prison for roles in cartel-linked (CDN) human smuggling scheme",
+      "date": "2024-10-30"
+     },
+     {
+      "url": "https://www.borderreport.com/border-report-tour/immigration/south-texas-border-patrol-sectors-saw-big-drops-in-migrant-encounters-in-fiscal-2024/",
+      "name": "Border Report",
+      "title": "South Texas Border Patrol sectors saw big drops in migrant encounters in Fiscal 2024",
+      "date": "2024-10"
+     },
+     {
+      "url": "https://www.cbp.gov/newsroom/stats/migrant-protection-protocols-fy2024",
+      "name": "CBP",
+      "title": "USBP apprehensions by Southwest Border sector, FY2024 (Oct 2023-Sep 2024)",
+      "date": "FY2024"
+     }
+    ],
+    "year": "2024",
+    "sector": "Laredo",
+    "encounters": 31108,
+    "encounters_year": "FY2024",
+    "volume": 31108,
+    "control": "Cartel del Noreste: US court case (SDTX 2024) says CDN recruited smugglers; Treasury says CDN dominates the Laredo crossing.",
+    "control_sources": [
+     {
+      "url": "https://www.justice.gov/usao-sdtx/pr/two-sent-prison-roles-cartel-linked-human-smuggling-scheme",
+      "name": "US Attorney SDTX",
+      "title": "Two sent to prison for roles in cartel-linked (CDN) human smuggling scheme",
+      "date": "2024-10-30"
+     },
+     {
+      "url": "https://home.treasury.gov/news/press-releases/sb0219",
+      "name": "US Treasury (OFAC)",
+      "title": "Treasury sanctions additional members and associate of Cartel del Noreste",
+      "date": "2025"
+     }
+    ]
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -100.31,
+      25.67
+     ],
+     [
+      -99.51,
+      27.48
+     ],
+     [
+      -99.51,
+      27.53
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Monterrey",
+    "to": "McAllen",
+    "description": "Reynosa feeds the Rio Grande Valley sector, which once led the border and fell 60% in FY2024.",
+    "sources": [
+     {
+      "url": "https://www.borderreport.com/border-report-tour/immigration/south-texas-border-patrol-sectors-saw-big-drops-in-migrant-encounters-in-fiscal-2024/",
+      "name": "Border Report",
+      "title": "South Texas Border Patrol sectors saw big drops in migrant encounters in Fiscal 2024",
+      "date": "2024-10"
+     },
+     {
+      "url": "https://insightcrime.org/mexico-organized-crime-news/gulf-cartel-profile/",
+      "name": "InSight Crime",
+      "title": "Gulf Cartel: profile and current status",
+      "date": ""
+     },
+     {
+      "url": "https://www.cbp.gov/newsroom/stats/migrant-protection-protocols-fy2024",
+      "name": "CBP",
+      "title": "USBP apprehensions by Southwest Border sector, FY2024 (Oct 2023-Sep 2024)",
+      "date": "FY2024"
+     }
+    ],
+    "year": "2024",
+    "sector": "Rio Grande Valley",
+    "encounters": 135099,
+    "encounters_year": "FY2024",
+    "volume": 135099,
+    "control": "Gulf Cartel factions, chiefly the Scorpions and Cyclones, control Reynosa and Matamoros and smuggle migrants (InSight Crime).",
+    "control_sources": [
+     {
+      "url": "https://insightcrime.org/mexico-organized-crime-news/gulf-cartel-profile/",
+      "name": "InSight Crime",
+      "title": "Gulf Cartel: profile and current status",
+      "date": ""
+     }
+    ]
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -100.31,
+      25.67
+     ],
+     [
+      -98.28,
+      26.08
+     ],
+     [
+      -98.23,
+      26.2
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "northbound land",
+    "from": "Matamoros",
+    "to": "Brownsville",
+    "description": "Matamoros is the Gulf route's last stop, crossing into Brownsville in the Rio Grande Valley sector.",
+    "sources": [
+     {
+      "url": "https://www.borderreport.com/border-report-tour/immigration/south-texas-border-patrol-sectors-saw-big-drops-in-migrant-encounters-in-fiscal-2024/",
+      "name": "Border Report",
+      "title": "South Texas Border Patrol sectors saw big drops in migrant encounters in Fiscal 2024",
+      "date": "2024-10"
+     },
+     {
+      "url": "https://insightcrime.org/mexico-organized-crime-news/gulf-cartel-profile/",
+      "name": "InSight Crime",
+      "title": "Gulf Cartel: profile and current status",
+      "date": ""
+     },
+     {
+      "url": "https://www.cbp.gov/newsroom/stats/migrant-protection-protocols-fy2024",
+      "name": "CBP",
+      "title": "USBP apprehensions by Southwest Border sector, FY2024 (Oct 2023-Sep 2024)",
+      "date": "FY2024"
+     }
+    ],
+    "year": "2024",
+    "sector": "Rio Grande Valley",
+    "encounters": 135099,
+    "encounters_year": "FY2024",
+    "volume": 135099,
+    "control": "Gulf Cartel factions control Matamoros and smuggle migrants from the border (InSight Crime).",
+    "control_sources": [
+     {
+      "url": "https://insightcrime.org/mexico-organized-crime-news/gulf-cartel-profile/",
+      "name": "InSight Crime",
+      "title": "Gulf Cartel: profile and current status",
+      "date": ""
+     }
+    ]
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -97.5,
+      25.87
+     ],
+     [
+      -97.5,
+      25.9
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "southbound (reverse) 2025",
+    "from": "Peñas Blancas",
+    "to": "Panama City",
+    "description": "In 2025 Costa Rica and Panama bused southbound migrants along the old northbound route.",
+    "sources": [
+     {
+      "url": "https://apnews.com/article/costa-rica-panama-immigration-darien-27c86f83c2288b9519ddf71fc23726c0",
+      "name": "AP",
+      "title": "Costa Rica and Panama coordinate to move southbound migrants",
+      "date": "2025-03-03"
+     },
+     {
+      "url": "https://www.migrationpolicy.org/journal/feature/how-immigration-crackdowns-and-aid-cuts-are-reshaping-migration-across-central",
+      "name": "Migration Policy Institute",
+      "title": "How immigration crackdowns and aid cuts are reshaping migration across Central America",
+      "date": "2025"
+     }
+    ],
+    "year": "2025"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -85.62,
+      11.21
+     ],
+     [
+      -82.84,
+      8.53
+     ],
+     [
+      -79.52,
+      8.98
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "southbound (reverse) 2025",
+    "from": "Panama City",
+    "to": "Necoclí / Turbo",
+    "description": "Panama recorded 22,300+ people heading south to Colombia in 2025, mostly Venezuelans, many taking boats from Colón to Capurganá.",
+    "sources": [
+     {
+      "url": "https://hias.org/wp-content/uploads/Panama-Reverse-Flow-Monitoring-Factsheet_2025.pdf",
+      "name": "UNHCR / HIAS",
+      "title": "Panama reverse flow monitoring factsheet",
+      "date": "2025"
+     },
+     {
+      "url": "https://www.thenewhumanitarian.org/news-feature/2025/06/19/challenges-invisible-reverse-flow-migrantion-panama-americas",
+      "name": "The New Humanitarian",
+      "title": "The challenges facing 'invisible' reverse flow migrants in Panama",
+      "date": "2025-06-19"
+     }
+    ],
+    "year": "2025",
+    "volume": 22300
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -79.52,
+      8.98
+     ],
+     [
+      -79.3,
+      9.55
+     ],
+     [
+      -77.35,
+      8.63
+     ],
+     [
+      -76.73,
+      8.4
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "migrants",
+    "subtype": "southbound (reverse) 2025",
+    "from": "Panama City",
+    "to": "Buenaventura",
+    "description": "A Pacific boat route from Panama City via Jaque also returns migrants to Colombia.",
+    "sources": [
+     {
+      "url": "https://hias.org/wp-content/uploads/Panama-Reverse-Flow-Monitoring-Factsheet_2025.pdf",
+      "name": "UNHCR / HIAS",
+      "title": "Panama reverse flow monitoring factsheet",
+      "date": "2025"
+     }
+    ],
+    "year": "2025"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -79.52,
+      8.98
+     ],
+     [
+      -78.17,
+      7.52
+     ],
+     [
+      -78.0,
+      5.5
+     ],
+     [
+      -77.6,
+      4.3
+     ],
+     [
+      -77.07,
+      3.88
+     ]
+    ]
+   }
+  }
+ ]
+}

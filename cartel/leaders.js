@@ -12,7 +12,7 @@ const A=FN;
 const STI={at_large:"●",jailed:"⛓",extradited:"✈",dead:"✝",reported_dead:"✝?"};
 const BI={fentanyl:"💊",meth:"🧪",cocaine:"❄",heroin:"💉",marijuana:"🌿",drugs_unspecified:"📦",precursors:"⚗",migrant_smuggling:"🚶",human_trafficking:"⛓",extortion:"💰",kidnapping:"🎯",fuel_theft:"⛽",illegal_mining:"⛏",logging_fishing:"🌲",arms:"🔫",money_laundering:"🏦",legit_economies:"🏪"};
 const STL={at_large:"At large",jailed:"Jailed",extradited:"In US custody",dead:"Dead",reported_dead:"Reported dead"};
-const CST={convicted:["Convicted","#c0504d"],charged:["Charged","#c8a24a"],alleged:["Alleged","#9aa6b8"],sanctioned:["Sanctioned","#8e6cc0"],pardoned:["Pardoned","#4a9a8a"],acquitted:["Acquitted","#4a9a8a"],dropped:["Dropped","#4a9a8a"],delisted:["Delisted","#4a9a8a"]};
+const CST={convicted:["Convicted","#c0504d"],charged:["Charged","#c8a24a"],alleged:["Alleged","#5b8fd1"],sanctioned:["Sanctioned","#8e6cc0"],pardoned:["Pardoned","#4a9a8a"],acquitted:["Acquitted","#4a9a8a"],dropped:["Dropped","#4a9a8a"],delisted:["Delisted","#4a9a8a"]};
 const ORDER=["convicted","charged","alleged","sanctioned","pardoned","acquitted","dropped","delisted"];
 const usd=n=>"$"+(n>=1e6?(n/1e6)+"M":n.toLocaleString());
 Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json"),J("data/territory.json"),J("basemap/latam.topo.json"),J("data/groups_size.json"),J("data/groups_business.json")]).then(([ld,cp,net,ter,topo,sz,bz])=>{
@@ -49,7 +49,7 @@ Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json
  const grid=t.querySelector("#ldgrid");
  t.addEventListener("click",e=>{if(e.target.closest("a"))return;const c=e.target.closest(".gc,.fc");if(c)c.classList.toggle("open")});
  // plain linear bar charts (members, revenue)
- const GCOL={sinaloa:"#e4572e",cjng:"#2e86de",gulf:"#f4d35e",cdn:"#8d6e63",lnfm:"#9b5de5",clan:"#00bbf9",eln:"#f15bb5",tda:"#ef476f",choneros:"#06d6a0",lobos:"#118ab2",pcc:"#ffd166",ms13:"#4cc9f0",unidos:"#56657f"};
+ const GCOL={sinaloa:"#e4572e",cjng:"#2e86de",gulf:"#f4d35e",cdn:"#8d6e63",lnfm:"#9b5de5",clan:"#06d6a0",eln:"#e9ff70",tda:"#e0aaff",choneros:"#ff006e",lobos:"#6a994e",pcc:"#b5179e",ms13:"#4cc9f0",unidos:"#9d0208"};
  const fN=v=>Math.round(v).toLocaleString("en-US"),fB=v=>"$"+(v>=1e9?(v/1e9).toFixed(1).replace(/\.0$/,"")+"B":Math.round(v/1e6)+"M");
  const memRows=[],revRows=[],noMem=[],noRev=[],revNotes=[];
  Object.entries(sz.groups).forEach(([k,v])=>{
@@ -74,24 +74,24 @@ Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json
   const fl=d3.select(el).append("ol").attr("class","bnotes small");fl.html(rows.map(r=>`<li><b>${esc(r.g)}</b>: ${esc(r.lab)}${r.e.year&&!/estimate/.test(r.note)?` (${r.e.year})`:""}${r.note?"; "+esc(r.note):""}${FN(SRC(r.e))}</li>`).join(""))}
  const leg=`<div class="small muted rleg"><span class="lg1"></span> estimate <span class="lg2"></span> published range <span class="lg3">▶</span> &ldquo;at least&rdquo; (lower bound) <span class="lg4"></span> &ldquo;up to&rdquo; (upper bound)</div>`;
  bars("#szmem",memRows,v=>fN(v));
- t.querySelector("#szmem").insertAdjacentHTML("beforeend",leg+`<div class="small muted">No credible estimate: ${[...new Set(noMem)].map(esc).join(", ")||"none"}. Grey text under a bar = conflicting figure from another source.</div>`);
+ t.querySelector("#szmem").insertAdjacentHTML("beforeend",leg+`<div class="small muted">No credible estimate: ${[...new Set(noMem)].map(esc).join(", ")||"none"}. Conflicting figures from other sources are in the numbered notes.</div>`);
  bars("#szrev",revRows,v=>"$"+(v/1e9)+"B");
  t.querySelector("#szrev").insertAdjacentHTML("beforeend",leg+`<div class="small muted">No credible USD estimate: ${[...new Set(noRev)].map(esc).join(", ")}.</div><div class="small muted">${revNotes.map(esc).join(" · ")}.</div>`);
  // business heat-map
  const used=bz.lines.filter(x=>G.some(g=>(bz.groups[g.id]||{})[x.id]));
  t.querySelector("#bzgrid").innerHTML=`<table class="bz"><thead><tr><th></th>${used.map(x=>`<th title="${esc(x.label)}"><div class="vl"><span class="vli">${BI[x.id]||"·"}</span> ${esc(x.label)}</div></th>`).join("")}</tr></thead><tbody>${G.map(g=>`<tr><th>${esc(g.name)}</th>${used.map(x=>{const c=(bz.groups[g.id]||{})[x.id];return `<td>${c?`<span class="hm ${c.level}" title="${esc(x.label)}: ${c.level}">${c.level==="primary"?"●":c.level==="secondary"?"◐":"○"}</span>${FN({name:x.label,url:c.source_url})}`:""}</td>`}).join("")}</tr>`).join("")}</tbody></table><div class="small muted">● primary ◐ secondary ○ minor. Empty = no source found.</div>`;
- function setG(g,from){grid.parentNode.querySelectorAll(".ld").forEach(c=>{const m=!g||c.dataset.g.split(" ").includes(g);c.classList.toggle("hl",!!g&&m);c.classList.toggle("dim",!!g&&!m)});
+ function setG(g,from){grid.parentNode.querySelectorAll(".ld").forEach(c=>{const m=!g||c.dataset.g.split(" ").includes(g);c.classList.toggle("hl",!!g&&m);c.classList.remove("dim")});
   const n=g?grid.querySelectorAll(".ld.hl").length:0;
   t.querySelector("#ldnote").textContent=g?(from?`Highlighted from ${from}: `:"")+`${gname[g]||g}`+(n?"":" (not among the 14 tracked groups)"):"";}
  document.addEventListener("click",e=>{const c=e.target.closest("#grouplegend .chip[data-g]");if(c){setG(c.dataset.g,"map");return}
   const k=e.target.closest("#cards [data-map]");if(k)setG(k.dataset.map,"Who's who")},true);
- // ---------- documented corruption cases: one collapsed section (map overlay lives in app.js) ----------
+ // ---------- documented corruption cases: one collapsed section (no map overlay) ----------
  const s=document.createElement("section");s.className="tile cptile";s.id="capture";
  const cases=cp.cases.slice().sort((a,b)=>a.country.localeCompare(b.country)||ORDER.indexOf(a.status)-ORDER.indexOf(b.status)||b.date.localeCompare(a.date));
  const cname={};cp.countries.forEach(c=>cname[c.country]=c.name);
  s.innerHTML=`<details class="more"><summary><b>Documented corruption cases (${cp.cases.length})</b> <span class="muted">· convictions, charges, US sanctions, acquittals/dismissals; counts of cases, not a verdict on any government</span></summary>
  <div class="cpcases">${cp.countries.map(c=>`<h3>${esc(c.name)} (${c.total})</h3>`+cases.filter(x=>x.country===c.country).map(x=>`<div class="cp" style="border-left-color:${CST[x.status][1]}"><span class="st" style="background:${CST[x.status][1]}33;color:${CST[x.status][1]}">${CST[x.status][0]}</span> <b>${esc(x.person)}</b> <span class="m">· ${esc(x.office)} · ${esc(x.level)} · ${esc(x.date)}</span><div class="m">Group link: ${esc(x.group_link)}</div><div>${esc(x.note)}</div>${x.sources.map(A).join("")}</div>`).join("")).join("")}</div>
- <p class="small muted">${esc(cp.method)} Also available as the &ldquo;Documented corruption cases&rdquo; map overlay.</p></details>`;
+ <p class="small muted">${esc(cp.method)}</p></details>`;
  const ov=document.querySelector("section.ovtile");ov.parentNode.insertBefore(s,ov.nextElementSibling);
 }).catch(e=>console.error("leaders/capture:",e));
 })();

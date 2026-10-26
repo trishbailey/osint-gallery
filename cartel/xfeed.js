@@ -19,8 +19,8 @@ Promise.all([J("data/xfeed.json"),J("data/breaking.json"),J("data/territory.json
   if(terr)terr.groups.forEach(g=>{if(g.network_id&&!GC[g.network_id])GC[g.network_id]=g.color});
   strip();waitMap();
 });
-function gdots(ids){return (ids||[]).map(g=>`<span class="xg"><span class="dot" style="background:${GC[g]||"#56657f"}"></span>${esc(GN[g]||g)}</span>`).join("")}
-function gdots1(ids){return (ids||[]).slice(0,2).map(g=>`<span class="dot" title="${esc(GN[g]||g)}" style="background:${GC[g]||"#56657f"}"></span>`).join("")}
+function gdots(ids){return (ids||[]).map(g=>`<span class="xg"><span class="dot" style="background:${GC[g]||"#ffffff"}"></span>${esc(GN[g]||g)}</span>`).join("")}
+function gdots1(ids){return (ids||[]).slice(0,2).map(g=>`<span class="dot" title="${esc(GN[g]||g)}" style="background:${GC[g]||"#ffffff"}"></span>`).join("")}
 function rnames(ids){return (ids||[]).map(r=>esc(RN[r]||r)).join(", ")}
 /* ---------- Breaking strip ---------- */
 function strip(){
@@ -36,7 +36,7 @@ function strip(){
     <span class="bi ${c}" title="${l}">${ICO[e.status]}</span>${gdots1(e.group_ids)}<span class="btl">${bil(e.title_en,e.title,e.lang)}</span>
     <span class="bt">${e.region_ids&&e.region_ids.length?"📍"+rnames(e.region_ids.slice(0,1))+" · ":""}${esc(first)}</span>
     ${FN(e.sources.slice(0,6).map(x=>({url:x.url,name:x.name+(x.via.startsWith("X")?" (X)":""),title:e.title_en||e.title})))}</div>`}).join("")}</div>`;
-  const k=document.getElementById("kpis");k.parentNode.insertBefore(s,k);
+  const k=document.querySelector(".maptile")||document.getElementById("kpis");k.after(s);
   s.querySelectorAll(".bchips .chip").forEach(b=>b.onclick=()=>{s.querySelectorAll(".bchips .chip").forEach(x=>x.classList.toggle("on",x===b));s.querySelectorAll(".bcard").forEach(c=>c.style.display=!b.dataset.s||c.dataset.s===b.dataset.s?"":"none")});
   s.querySelectorAll(".bcard").forEach(c=>c.onclick=e=>{if(e.target.closest("a"))return;const r=c.dataset.r.split(",").filter(Boolean);if(r.length){zoomTo(r);sel.region=r[0];render();document.querySelector(".maptile").scrollIntoView({behavior:"smooth",block:"start"})}});
 }

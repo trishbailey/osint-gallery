@@ -21,6 +21,14 @@
       "IC_PCC"
      ],
      "note": "Mapped footprint in territory.json (e.g. Amambay)"
+    },
+    {
+     "iso": "PRT",
+     "basis": "beyond_map",
+     "cites": [
+      "PUBLICO_PCC_PT"
+     ],
+     "note": "São Paulo prosecutors (via Público, Jun 2025): 87 PCC members identified in Portugal, 29 in prison; Brazil's Federal Police calls the presence episodic"
     }
    ]
   },
@@ -143,9 +151,9 @@
      "iso": "USA",
      "basis": "beyond_map",
      "cites": [
-      "IC_MS13"
+      "DOJ_MS13_HOU"
      ],
-     "note": "InSight Crime profile: founded in Los Angeles, US cliques"
+     "note": "DOJ, Sep 2025: MS-13 racketeering conspiracy in Houston directed from El Salvador"
     }
    ]
   },
@@ -182,9 +190,9 @@
      "iso": "USA",
      "basis": "beyond_map",
      "cites": [
-      "IC_B18"
+      "DEA_B18_LA"
      ],
-     "note": "InSight Crime profile: founded in Los Angeles, US cliques"
+     "note": "DEA, Mar 2026: 18th Street, LA's largest street gang, 100,000+ members in the US"
     }
    ]
   },
@@ -218,9 +226,9 @@
      "iso": "USA",
      "basis": "beyond_map",
      "cites": [
-      "DEA25"
+      "DEA_SIN_SURGE"
      ],
-     "note": "DEA 2025 National Drug Threat Assessment: US distribution networks"
+     "note": "DEA, Sep 2025: 617 arrests across 23 US field divisions in a Sinaloa Cartel surge"
     }
    ]
   },
@@ -240,9 +248,9 @@
      "iso": "USA",
      "basis": "beyond_map",
      "cites": [
-      "DEA25"
+      "DEA_CJNG_SURGE"
      ],
-     "note": "DEA 2025 National Drug Threat Assessment: US distribution networks"
+     "note": "DEA, Sep 2025: 670 arrests across 23 US field divisions in a CJNG surge"
     }
    ]
   },
@@ -316,33 +324,33 @@
      "iso": "CHL",
      "basis": "reported",
      "cites": [
-      "IC_TDA"
+      "IC_TDA_EMPIRE"
      ],
-     "note": "InSight Crime profile: cells in Chile"
+     "note": "InSight Crime: cells in Arica, Tarapacá, Santiago and Concepción"
     },
     {
      "iso": "COL",
      "basis": "reported",
      "cites": [
-      "IC_TDA"
+      "IC_TDA_EMPIRE"
      ],
-     "note": "InSight Crime profile: cells in Colombia"
+     "note": "InSight Crime: permanent presence in Colombia (La Parada, Bogotá)"
     },
     {
      "iso": "PER",
      "basis": "reported",
      "cites": [
-      "IC_TDA"
+      "IC_TDA_EMPIRE"
      ],
-     "note": "InSight Crime profile: cells in Peru"
+     "note": "InSight Crime: cells in Lima, Arequipa and Trujillo"
     },
     {
      "iso": "USA",
      "basis": "beyond_map",
      "cites": [
-      "IC_TDA"
+      "DOJ_TDA_CRACKDOWN"
      ],
-     "note": "InSight Crime profile: expansion incl. US"
+     "note": "DOJ, Dec 2025: 260+ TdA members federally indicted since Jan 2025 (CO, NE, NM, NY, TX)"
     }
    ]
   }

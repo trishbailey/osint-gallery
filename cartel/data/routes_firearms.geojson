@@ -1,0 +1,638 @@
+{
+ "type": "FeatureCollection",
+ "channel": "firearms",
+ "notes": {
+  "note": "ATF: 74% of international crime guns traced to a purchaser in 2017-21 were recovered in Mexico; in 2022-23 Texas, Arizona and California dealers sourced 73% of traced Mexican crime guns, and 82% were recovered in states with a dominant Sinaloa or CJNG presence. Land (solid), sea (dotted), air (dashed). Width scaled by traced guns where sourced.",
+  "sources": [
+   {
+    "url": "https://www.atf.gov/media/18621/download",
+    "name": "ATF",
+    "title": "NFCTA Vol. IV Part VII: Firearm commerce, crime guns and the Southwest border",
+    "date": "2025"
+   },
+   {
+    "url": "https://www.atf.gov/firearms/report/firearms-trace-data/firearms-trace-data-mexico-2018-2023",
+    "name": "ATF",
+    "title": "Firearms trace data: Mexico 2018-2023",
+    "date": "2024"
+   },
+   "GAO_FIREARMS"
+  ]
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "land",
+    "from": "Phoenix",
+    "to": "Culiacán",
+    "description": "Arizona to Sonora is the single largest US–Mexico gun pipeline in ATF trace data; Arizona dealers sourced about 22% of traced Mexican crime guns in 2022-23.",
+    "sources": [
+     {
+      "url": "https://www.atf.gov/media/18621/download",
+      "name": "ATF",
+      "title": "NFCTA Vol. IV Part VII: Firearm commerce, crime guns and the Southwest border",
+      "date": "2025"
+     }
+    ],
+    "year": "2023",
+    "volume": 3969
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -112.07,
+      33.45
+     ],
+     [
+      -110.94,
+      31.33
+     ],
+     [
+      -110.96,
+      29.07
+     ],
+     [
+      -107.39,
+      24.8
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "land",
+    "from": "Houston",
+    "to": "Matamoros",
+    "description": "Texas to Tamaulipas is the second-largest pipeline; Texas dealers sourced 43% of traced Mexican crime guns (7,825 of 18,205).",
+    "sources": [
+     {
+      "url": "https://www.atf.gov/media/18621/download",
+      "name": "ATF",
+      "title": "NFCTA Vol. IV Part VII: Firearm commerce, crime guns and the Southwest border",
+      "date": "2025"
+     }
+    ],
+    "year": "2023",
+    "volume": 7825
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -95.37,
+      29.76
+     ],
+     [
+      -97.5,
+      25.87
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "land",
+    "from": "Dallas",
+    "to": "Monterrey",
+    "description": "Texas to Nuevo León is the third of ATF's top five pipelines.",
+    "sources": [
+     {
+      "url": "https://www.atf.gov/media/18621/download",
+      "name": "ATF",
+      "title": "NFCTA Vol. IV Part VII: Firearm commerce, crime guns and the Southwest border",
+      "date": "2025"
+     }
+    ],
+    "year": "2023"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -96.8,
+      32.78
+     ],
+     [
+      -99.51,
+      27.48
+     ],
+     [
+      -100.31,
+      25.67
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "land",
+    "from": "Albuquerque",
+    "to": "Ciudad Juárez",
+    "description": "Guns from Texas and New Mexico go south through Ciudad Juárez into Chihuahua (Texas–Chihuahua is a top-five pipeline).",
+    "sources": [
+     {
+      "url": "https://www.atf.gov/media/18621/download",
+      "name": "ATF",
+      "title": "NFCTA Vol. IV Part VII: Firearm commerce, crime guns and the Southwest border",
+      "date": "2025"
+     }
+    ],
+    "year": "2023"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -106.65,
+      35.08
+     ],
+     [
+      -106.45,
+      31.73
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "land",
+    "from": "Houston",
+    "to": "Guadalajara",
+    "description": "Texas to Guanajuato completes ATF's top five pipelines, which carry 32% of traced guns.",
+    "sources": [
+     {
+      "url": "https://www.atf.gov/media/18621/download",
+      "name": "ATF",
+      "title": "NFCTA Vol. IV Part VII: Firearm commerce, crime guns and the Southwest border",
+      "date": "2025"
+     }
+    ],
+    "year": "2023"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -95.37,
+      29.76
+     ],
+     [
+      -100.31,
+      25.67
+     ],
+     [
+      -103.35,
+      20.67
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "land",
+    "from": "Los Angeles",
+    "to": "Tijuana",
+    "description": "California dealers were the third US source (2,734 traced guns, 2022-23), mostly through Baja California.",
+    "sources": [
+     {
+      "url": "https://www.atf.gov/media/18621/download",
+      "name": "ATF",
+      "title": "NFCTA Vol. IV Part VII: Firearm commerce, crime guns and the Southwest border",
+      "date": "2025"
+     },
+     "GAO_FIREARMS"
+    ],
+    "year": "2023",
+    "volume": 2734
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -118.24,
+      34.05
+     ],
+     [
+      -117.03,
+      32.53
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "sea",
+    "from": "Miami",
+    "to": "Port-au-Prince",
+    "description": "UNODC's primary Haiti route: guns shipped from Florida in containers to public and private ports in Port-au-Prince.",
+    "sources": [
+     {
+      "url": "https://documents.un.org/doc/undoc/gen/n23/414/49/pdf/n2341449.pdf",
+      "name": "UNODC (S/2023/780)",
+      "title": "Report to the Security Council on illicit arms flows into Haiti",
+      "date": "2023"
+     },
+     {
+      "url": "https://docs.haitidocs.org/unodc-reports-to-sc-2024-07.pdf",
+      "name": "UNODC",
+      "title": "Report to the Security Council on illicit arms flows into Haiti, July 2024",
+      "date": "2024-07"
+     }
+    ],
+    "year": "2024"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -80.19,
+      25.76
+     ],
+     [
+      -80.0,
+      25.4
+     ],
+     [
+      -79.7,
+      24.3
+     ],
+     [
+      -78.8,
+      23.3
+     ],
+     [
+      -77.3,
+      22.75
+     ],
+     [
+      -75.3,
+      21.6
+     ],
+     [
+      -73.8,
+      19.95
+     ],
+     [
+      -73.1,
+      19.0
+     ],
+     [
+      -72.6,
+      18.7
+     ],
+     [
+      -72.34,
+      18.54
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "sea",
+    "from": "Fort Lauderdale",
+    "to": "Port-de-Paix",
+    "description": "Indirect shipments from Florida, sometimes via the Bahamas and Turks and Caicos, land in Port-de-Paix, Saint-Marc and Gonaïves.",
+    "sources": [
+     {
+      "url": "https://documents.un.org/doc/undoc/gen/n23/414/49/pdf/n2341449.pdf",
+      "name": "UNODC (S/2023/780)",
+      "title": "Report to the Security Council on illicit arms flows into Haiti",
+      "date": "2023"
+     }
+    ],
+    "year": "2023"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -80.12,
+      26.09
+     ],
+     [
+      -79.6,
+      27.1
+     ],
+     [
+      -77.6,
+      27.1
+     ],
+     [
+      -76.0,
+      26.4
+     ],
+     [
+      -74.8,
+      24.8
+     ],
+     [
+      -73.8,
+      23.2
+     ],
+     [
+      -72.3,
+      22.4
+     ],
+     [
+      -72.4,
+      20.3
+     ],
+     [
+      -72.83,
+      19.94
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "sea",
+    "from": "Fort Lauderdale",
+    "to": "Cap-Haïtien",
+    "description": "In April 2024 Haitian police seized guns in a container shipped from Port Everglades to Cap-Haïtien for Artibonite gangs.",
+    "sources": [
+     {
+      "url": "https://docs.haitidocs.org/unodc-reports-to-sc-2024-07.pdf",
+      "name": "UNODC",
+      "title": "Report to the Security Council on illicit arms flows into Haiti, July 2024",
+      "date": "2024-07"
+     }
+    ],
+    "year": "2024"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -80.12,
+      26.09
+     ],
+     [
+      -79.6,
+      27.1
+     ],
+     [
+      -77.6,
+      27.1
+     ],
+     [
+      -76.0,
+      26.4
+     ],
+     [
+      -74.8,
+      24.8
+     ],
+     [
+      -73.8,
+      23.2
+     ],
+     [
+      -72.3,
+      22.4
+     ],
+     [
+      -72.2,
+      19.76
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "land",
+    "from": "Santo Domingo",
+    "to": "Gonaïves",
+    "description": "Arms and ammunition also cross Haiti's land border from the Dominican Republic.",
+    "sources": [
+     {
+      "url": "https://documents.un.org/doc/undoc/gen/n23/414/49/pdf/n2341449.pdf",
+      "name": "UNODC (S/2023/780)",
+      "title": "Report to the Security Council on illicit arms flows into Haiti",
+      "date": "2023"
+     },
+     {
+      "url": "https://docs.haitidocs.org/unodc-reports-to-sc-2024-07.pdf",
+      "name": "UNODC",
+      "title": "Report to the Security Council on illicit arms flows into Haiti, July 2024",
+      "date": "2024-07"
+     }
+    ],
+    "year": "2024"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -69.9,
+      18.47
+     ],
+     [
+      -71.71,
+      19.55
+     ],
+     [
+      -72.69,
+      19.45
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "air",
+    "from": "Miami",
+    "to": "Manta",
+    "description": "Ecuadorian police name a Miami–Manta air route among three US-origin gun routes into Ecuador.",
+    "sources": [
+     {
+      "url": "https://www.reuters.com/world/americas/one-gun-34-dead-inside-ecuadors-war-black-market-weapons-2024-06-29/",
+      "name": "Reuters",
+      "title": "One gun, 34 dead: Inside Ecuador's war on black-market weapons",
+      "date": "2024-06-29"
+     },
+     {
+      "url": "https://insightcrime.org/news/indictment-ecuador-most-wanted-criminal-is-shift-security-policy/",
+      "name": "InSight Crime",
+      "title": "The US just indicted Ecuadorian gang boss 'Fito'",
+      "date": ""
+     }
+    ],
+    "year": "2024"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -80.19,
+      25.76
+     ],
+     [
+      -80.72,
+      -0.95
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "land",
+    "from": "Lima",
+    "to": "Guayaquil",
+    "description": "Three overland gun routes enter Ecuador from Peru, including US guns that arrive via Lima.",
+    "sources": [
+     {
+      "url": "https://www.reuters.com/world/americas/one-gun-34-dead-inside-ecuadors-war-black-market-weapons-2024-06-29/",
+      "name": "Reuters",
+      "title": "One gun, 34 dead: Inside Ecuador's war on black-market weapons",
+      "date": "2024-06-29"
+     },
+     {
+      "url": "https://insightcrime.org/news/indictment-ecuador-most-wanted-criminal-is-shift-security-policy/",
+      "name": "InSight Crime",
+      "title": "The US just indicted Ecuadorian gang boss 'Fito'",
+      "date": ""
+     }
+    ],
+    "year": "2024"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.04,
+      -12.05
+     ],
+     [
+      -80.45,
+      -3.57
+     ],
+     [
+      -79.9,
+      -2.19
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "sea",
+    "from": "Panama Canal",
+    "to": "Guayaquil",
+    "description": "Police also describe a sea route via the Galápagos, and guns hidden in containers have been seized at Guayaquil.",
+    "sources": [
+     {
+      "url": "https://www.reuters.com/world/americas/one-gun-34-dead-inside-ecuadors-war-black-market-weapons-2024-06-29/",
+      "name": "Reuters",
+      "title": "One gun, 34 dead: Inside Ecuador's war on black-market weapons",
+      "date": "2024-06-29"
+     },
+     {
+      "url": "https://insightcrime.org/news/illegal-arms-trafficking-is-ecuador-security-blind-spot/",
+      "name": "InSight Crime",
+      "title": "Illegal arms trafficking is Ecuador's security blind spot",
+      "date": ""
+     }
+    ],
+    "year": "2024"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -79.9,
+      9.1
+     ],
+     [
+      -79.7,
+      9.2
+     ],
+     [
+      -79.45,
+      8.6
+     ],
+     [
+      -79.9,
+      6.9
+     ],
+     [
+      -91.0,
+      0.5
+     ],
+     [
+      -81.2,
+      -2.3
+     ],
+     [
+      -80.1,
+      -2.9
+     ],
+     [
+      -79.9,
+      -2.19
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "channel": "firearms",
+    "subtype": "land",
+    "from": "Colombia–Ecuador border",
+    "to": "Esmeraldas",
+    "description": "A further route enters northern Ecuador from the Colombian border.",
+    "sources": [
+     {
+      "url": "https://www.reuters.com/world/americas/one-gun-34-dead-inside-ecuadors-war-black-market-weapons-2024-06-29/",
+      "name": "Reuters",
+      "title": "One gun, 34 dead: Inside Ecuador's war on black-market weapons",
+      "date": "2024-06-29"
+     }
+    ],
+    "year": "2024"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -77.7,
+      0.85
+     ],
+     [
+      -79.65,
+      0.97
+     ]
+    ]
+   }
+  }
+ ]
+}

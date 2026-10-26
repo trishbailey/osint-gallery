@@ -64,3 +64,16 @@ footer.wrap{display:block;border-top:1px solid var(--line);margin-top:60px;paddi
 @media(max-width:640px){.stg-arrow{display:none}}
 
 .card,.stg{border-left-color:var(--brand)}header{border-bottom:3px solid var(--brand)}
+
+/* ===== Dark theme (Cartel tokens from trishbailey/cartel-dashboard public/style.css) ===== */
+:root{--bg:#0b1526;--panel:#12203a;--panel2:#0f1b31;--line:#24365a;--text:#e6e9ef;--muted:#9aa6b8;--gold:#c8a24a;--red:#c0504d;
+--brand:#2BB3C0;--navy:#e6e9ef;--teal:#5CCFDA;--ink:#e6e9ef;--card:#12203a}
+body{background:var(--bg);color:var(--text)}a{color:#5CCFDA}a:focus-visible{outline-color:var(--gold)}
+header{background:var(--panel2);border-bottom-color:var(--line)}.brand{color:var(--text)}.brand-sub{color:var(--gold)}nav a{color:var(--text)}
+.skip{background:var(--panel);color:var(--text)}h1,h2,h3,h4{color:var(--text)}
+.hero{background:var(--panel2);border-bottom:2px solid var(--gold)}.eyebrow,.lens,.hero .eyebrow{color:var(--gold)}
+.card,.gfx,.tile,.stg,.two{background:var(--panel);border-color:var(--line);color:var(--text)}
+.gfx-take,.gfx-take strong,.lbl,.date{color:var(--text)}.gfx-src,.muted,footer.wrap{color:var(--muted)}
+.cite,.hero .cite{background:#1d3a4f;color:#9BE7EE}
+table{background:var(--panel)}th{background:var(--panel2);color:var(--gold);border-color:var(--line)}td{border-color:var(--line)}
+.stg-h,.stg-arrow,details summary,.tags{color:#5CCFDA}.stg-na{background:var(--panel2);color:var(--muted)}
