@@ -168,14 +168,6 @@ for n,m in enumerate(clusters[:40]):
             bursts.append(dict(cl=n,name=CL[n]['name'] or CL[n]['sample'][:90],named=bool(CL[n]['name']),start=rows[grp[0][1]]['t'],end=rows[grp[-1][1]]['t'],accounts=len(hs),
               countries=len({rows[i]['country'] for i in mem}),quote=q[:220]+('…' if len(q)>220 else ''),quote_en=bool(en),langs=dict(collections.Counter(rows[i]['lang'] for i in mem)),ids=[rows[i]['id'] for i in mem]))
 burst_ids={i for b in bursts for i in b['ids']}
-_KT=[('National Day','National Day greetings'),('Long March','Long March 90th anniversary'),('Global Governance','Global Governance Initiative'),('shared future','A community with a shared future'),('Taiwan','Taiwan and the UN seat')]
-# top 3 bursts (most distinct accounts, one per message) within the last 30 days
-_c30=(T(END)-dt.timedelta(days=30)).isoformat().replace('+00:00','Z');_seen=set();top3=[]
-for b in sorted([b for b in bursts if b['start']>=_c30],key=lambda b:(-b['accounts'],-b['countries'],b['start'])):
-    if b['name'] in _seen:continue
-    _ttl=b['name'] if b['named'] else next((v for k,v in _KT if k.lower() in (b['name']+' '+b['quote']).lower()),' '.join(b['name'].split()[:8])+'…')
-    _seen.add(b['name']);top3.append(dict(i=bursts.index(b),title=_ttl,spread_min=round((T(b['end'])-T(b['start'])).total_seconds()/60),sample=b['ids'][0]))
-    if len(top3)==3:break
 # ---------- amplifiers ----------
 E=collections.Counter();fast=collections.Counter();delays=[]
 for r in rows:
@@ -273,7 +265,7 @@ ENT={'ASEAN','African Union','EU','OPCW','UN/Intl orgs Geneva','UN/Intl orgs Vie
 # rolling 30-day window ending at the latest post (never earlier than the archive start)
 TW=max(T(START),T(END)-dt.timedelta(days=30));TWS=TW.strftime('%Y-%m-%dT%H:%M:%SZ')
 trows=[r for r in rows if r['t']>=TWS]
-tonemap=dict(min_posts=MINP,min_agg_posts=3,count_breaks=[3,10,50],agg_threshold=0.04,window=dict(start=TWS,end=END,days=(T(END).date()-TW.date()).days+1),countries=[],areas=[])
+tonemap=dict(min_posts=MINP,min_agg_posts=3,count_breaks=[3,10,50],agg_threshold=0.04,window=dict(start=TWS,end=END,days=(T(END).date()-TW.date()).days+1),countries=[])
 byc=collections.defaultdict(list)
 for r in trows:byc[r['country']].append(r)
 snip=lambda r:dict(id=r['id'],h=r['h'],t=r['t'],text=r['text'][:220])
@@ -282,7 +274,7 @@ for c,rs in sorted(byc.items()):
     harsh=sorted([r for r in rs if r['ag']>0],key=lambda r:-(r['ag']-r['fr']))[:3]
     fri=sorted([r for r in rs if r['fr']>r['ag']],key=lambda r:-(r['fr']-r['ag']))[:3]
     tonemap['countries'].append(dict(region=rs[0]['region'],country=c,ll=CENT.get(c),geo=None if c in ENT else GEO.get(c,c),posts=n,nagg=na,agg=round(na/n,3),fri=round(nf/n,3),idx=round((nf-na)/n,3),harsh=[snip(r) for r in harsh],friendly=[snip(r) for r in fri]))
-# ---------- key areas: regions with aggressive countries, plus a sentence generated from their aggressive posts ----------
+# ---------- explanations for aggressive posts (targets matched by keywords) ----------
 # Targets are counted from the aggressive posts themselves (multilingual keyword match); no model involved.
 TGT=[('Taiwan\u2019s independence camp and its leaders',r"taiwan|台湾|台灣|台独|台獨|lai ching|赖清德|賴清德|ライ|separatis|独立"),
  ('Japan\u2019s right wing and its wartime record',r"japan|日本|右翼|militari|軍国主義|军国主义|yasukuni|靖国|neomilitar|japon"),
@@ -292,23 +284,6 @@ TGT=[('Taiwan\u2019s independence camp and its leaders',r"taiwan|台湾|台灣|�
  ('foreign criticism over Xinjiang, Tibet and Hong Kong',r"xinjiang|新疆|tibet|西藏|hong kong|香港|dalai")]
 TGR=[(n,re.compile(x,re.I)) for n,x in TGT]
 def joinand(xs):return xs[0] if len(xs)==1 else ', '.join(xs[:-1])+' and '+xs[-1]
-scoredc=[c for c in tonemap['countries'] if c['posts']>=MINP and c['agg']>=tonemap['agg_threshold'] and c['nagg']>=tonemap['min_agg_posts'] and c['region'] not in('?','China HQ')]
-for reg in sorted({c['region'] for c in scoredc}):
-    cs=sorted([c for c in scoredc if c['region']==reg],key=lambda c:-c['agg']);names={c['country'] for c in cs}
-    ag=[r for r in trows if r['country'] in names and r['tl']=='a'];n=len(ag);parts=[];tg=[]
-    THE=lambda x:'the '+x if re.match(r'(Philippines|Netherlands|United |UAE|Dominican|Maldives|Bahamas|Gambia)',x) else x
-    for c in cs[:3]:
-        a_=[r for r in ag if r['country']==c['country']];k_=len(a_)
-        if not k_:continue
-        hits=sorted(((sum(1 for r in a_ if g.search(r['text'])),nm) for nm,g in TGR),reverse=True)
-        top=[(k,nm) for k,nm in hits if k>=max(1,0.3*k_)][:2];tg+=[dict(country=c['country'],name=nm,posts=k) for k,nm in top]
-        tps=collections.Counter(r.get('tp') for r in a_ if r.get('tp')).most_common(2)
-        np_=f"{k_} aggressive post{'s' if k_>1 else ''}"
-        if top: parts.append(f"In {THE(c['country'])} ({np_}), {'most' if k_>2 else 'they'} target {joinand([nm for k,nm in top])}.")
-        elif tps: parts.append(f"In {THE(c['country'])} ({np_}), they push {joinand(['\u201c'+t+'\u201d' for t,_ in tps])}.")
-        else: parts.append(f"In {THE(c['country'])} ({np_}), topics are mixed with no single target.")
-    sent=' '.join(parts)
-    tonemap['areas'].append(dict(name=reg,countries=[c['country'] for c in cs],top=cs[0]['agg'],n_agg=n,sentence=sent,targets=tg))
 LN={'ja':'Japanese','zh':'Chinese','es':'Spanish','fr':'French','ru':'Russian','ar':'Arabic','pt':'Portuguese','de':'German','ko':'Korean','cs':'Czech','et':'Estonian','lv':'Latvian'}
 def explain(ag):
     n=len(ag)
@@ -342,12 +317,8 @@ def explain(ag):
             if len(samples)==3:break
             if r['id'] not in {x['id'] for x in samples} and r['c'][:30] not in seen:seen.add(r['c'][:30]);samples.append(dict(id=r['id'],h=r['h'],country=r['country'],t=r['t'],text=r['text'][:400],lang=LN.get(r['lang']) if r['lang']!='en' else None))
     return dict(about=about,why=why,samples=samples)
-for a_ in tonemap['areas']:
-    a_['explain']=explain([r for r in trows if r['country'] in set(a_['countries']) and r['tl']=='a'])
 for c in tonemap['countries']:
     if c['posts']>=MINP:c['explain']=explain([r for r in byc[c['country']] if r['tl']=='a'])
-tonemap['areas'].sort(key=lambda a:-a['top'])
-print('tone window',TWS,END,[ (a['name'],a['countries'],a['sentence']) for a in tonemap['areas']])
 # ---------- map spread: per named cluster ----------
 mapd=[dict(key=c['key'],name=c['name'],desc=c['desc'],n=c['n'],langs=c['langs'],ids=c['ids'][:60],first=c['first'],last=c['last'],accounts=c['accounts'],countries=c['countries'],
     spread=[dict(s,ll=CENT.get(s['country'])) for s in c['spread']]) for c in named if c['accounts']>=7]  # spread map: only stories with more than 6 account dots
@@ -367,7 +338,7 @@ pp={r['id']:dict(h=r['h'],t=r['t'],k=r['k'],text=r['text'][:400],country=r['coun
 _tpn=sorted({r['tp'] for r in rows if r.get('tp')})
 archive=dict(narratives=_tpn,kinds=['post','repost','quote','reply'],rows=[[r['id'],r['h'],r['t'][:16],['post','repost','quote','reply'].index(r['k']) if r['k'] in ('post','repost','quote','reply') else 0,r['country'],_tpn.index(r['tp']) if r.get('tp') else -1,r['text']] for r in rows])
 head['list_checked']=dt.datetime.fromtimestamp(os.path.getmtime(os.path.join(H,'accounts.csv'))).strftime('%-d %b %Y')
-for nm_,obj in [('archive',archive),('headline',head),('stream',stream),('matrix',matrix),('bursts',dict(bursts=bursts,top3=top3)),('network',net),('ripples',pick),('tone',tonemap),('spread',mapd),('accounts',accts),('posts',pp)]:
+for nm_,obj in [('archive',archive),('headline',head),('stream',stream),('matrix',matrix),('bursts',dict(bursts=bursts)),('network',net),('ripples',pick),('tone',tonemap),('spread',mapd),('accounts',accts),('posts',pp)]:
     json.dump(obj,open(os.path.join(OUT,nm_+'.json'),'w'),ensure_ascii=False,separators=(',',':'))
 with open(os.path.join(H,'..','posts_export.csv'),'w',newline='') as fo:
     w=csv.writer(fo);w.writerow(['id','created_at_utc','handle','country','account_type','kind','lang','text','referenced_author','likes','reposts','views','cluster','url'])
