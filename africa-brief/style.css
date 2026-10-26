@@ -134,7 +134,7 @@ details summary{cursor:pointer;color:#82B1FF;font-weight:700;font-size:13px}
 .cog{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}.cogc{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:8px 10px}.cogc h4{margin:0 0 4px}.cogc p{margin:0;font-size:14px}
 .tline{border-left:3px solid var(--red);padding-left:22px;margin:8px 0 16px}.tline li{margin:6px 0}
 /* v1.5 dashboard standards */
-.kpis{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}.kpi{flex:1 1 160px;background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:8px 12px}.kpi b{display:block;font-size:24px;color:var(--text)}.kpi span{font-size:13px;color:var(--muted)}
+.kpis{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}.kpi{flex:1 1 0;min-width:200px;display:flex;align-items:baseline;gap:10px;background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:6px 12px}.kpi b{font-size:22px;white-space:nowrap;color:var(--text)}.kpi span{font-size:13px;color:var(--muted)}
 .prompt{margin:0 0 8px;font-size:14px;color:var(--text)}
 .chip,.btn,.lockey .chip{min-height:44px;padding:8px 14px}
 .chip:focus-within{outline:3px solid var(--gold);outline-offset:2px}
