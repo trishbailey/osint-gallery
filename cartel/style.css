@@ -78,3 +78,18 @@ sup.fn{font-size:13px;line-height:0;vertical-align:super}sup.fn a{color:#8a94a6;
 .viewbtns,.modebtns{flex-wrap:wrap;align-items:center}
 button,.chip[data-g],.chip[data-v]{min-height:44px}
 .nw{white-space:nowrap}.nw sup,.nw a{display:inline}
+/* Left sidebar beside the map: groups, then routes, then other overlays */
+.maprow{display:flex;gap:12px;align-items:flex-start}
+.mapside{flex:0 0 270px;max-width:270px;background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:10px;font-size:13px;}
+.maprow>.mapwrap{flex:1 1 auto;min-width:0}
+.sidehd{font-size:13px;margin:10px 0 6px;color:var(--gold);text-transform:uppercase;letter-spacing:.05em}.sidehd:first-child{margin-top:0}.sidehd .muted{text-transform:none;letter-spacing:0;font-weight:400}
+#grouplegend.sidechips{flex-direction:column;flex-wrap:nowrap;gap:4px;margin:0}
+#grouplegend.sidechips .chip{width:100%;justify-content:flex-start;text-align:left;border-radius:6px;min-height:32px;padding:3px 8px;flex-wrap:nowrap;font-size:13px}
+.chip .gname{flex:1 1 auto;min-width:0}.chip .gflags{font-size:15px;line-height:1;white-space:nowrap}
+.sidelayers{display:flex;flex-direction:column;gap:2px}.sidelayers label{display:flex;align-items:center;gap:6px;min-height:32px;cursor:pointer;font-size:13px;color:var(--text)}
+.sidelayers label input{width:18px;height:18px;flex:none}
+.zoombtns{position:absolute!important;right:10px;top:10px;display:flex;flex-direction:column;gap:4px;padding:4px!important;background:rgba(11,21,38,.9)!important}
+.zoombtns .zb{width:36px;height:36px;min-height:36px;font-size:20px;font-weight:700;line-height:1;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:4px;cursor:pointer;padding:0}
+.zoombtns .zb:hover{border-color:var(--gold)}
+@media (max-width:820px){.maprow{flex-direction:column}.mapside{flex:none;max-width:none;width:100%;max-height:none;position:static;box-sizing:border-box}}
+.mapside #layers label,.mapside #routebox label{min-height:32px!important;margin:0!important;padding:0!important;white-space:normal}

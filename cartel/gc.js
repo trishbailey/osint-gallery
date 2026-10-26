@@ -16,13 +16,13 @@ fetch("data/group_countries.json").then(r=>r.json()).then(GCN=>{
  const lg=document.getElementById("grouplegend");const note=document.createElement("div");note.id="gcnote";note.className="gcnote small";lg.after(note);
  lg.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;const id=b.dataset.g;note.innerHTML="";if(!id)return;const g=G(id);if(!g)return;
   const inmap=g.countries.filter(c=>!OUT.has(c.iso)).map(c=>c.iso);const v=inmap.every(i=>i==="MEX")?"mx":inmap.every(i=>SA.has(i))?"sa":"all";
-  setTimeout(()=>{const vb=document.querySelector(`[data-v="${v}"]`);if(vb&&!vb.classList.contains("on"))vb.click()},50);
+  setTimeout(()=>{if(window.MAPZ)window.MAPZ.view(v)},50);
   const out=g.countries.filter(c=>OUT.has(c.iso));
   note.innerHTML=`<b>Countries:</b> ${g.countries.map(c=>flag(c.iso)+" "+esc(NM[c.iso]||c.iso)).join(" · ")}`+(out.length?` — <b>Also active outside the map:</b> ${out.map(c=>esc(NM[c.iso]||c.iso)+ct(c.cites)).join(", ")}`:"")});
 }).catch(e=>console.warn("group_countries",e));
 })();
-/* Name the selected state in the map title (group + view). */
+/* Name the selected state in the map title (group). */
 (()=>{const h=document.querySelector(".maptile h2");if(!h)return;const base="Who is active where";
- const upd=()=>{const g=document.querySelector("#grouplegend .chip.on");const v=document.querySelector(".viewbtns .chip.on");
-  h.textContent=`${base}: ${g&&g.dataset.g?g.textContent.trim():"all groups"}${v?" · "+v.textContent.trim():""}`};
- document.addEventListener("click",e=>{if(e.target.closest("#grouplegend .chip,.viewbtns .chip"))setTimeout(upd,0)});setTimeout(upd,1500);setTimeout(upd,4000)})();
+ const upd=()=>{const g=document.querySelector("#grouplegend .chip.on");
+  h.textContent=`${base}: ${g&&g.dataset.g?(g.querySelector(".gname")||g).textContent.trim():"all groups"}`};
+ document.addEventListener("click",e=>{if(e.target.closest("#grouplegend .chip"))setTimeout(upd,0)});setTimeout(upd,1500);setTimeout(upd,4000)})();

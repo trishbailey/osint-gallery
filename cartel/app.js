@@ -40,7 +40,7 @@ function kpis(net,cross,money,events,terr){
 }
 function mapView(topo,adm,terr,routes,cross,china,GC){
   const svg=d3.select("#mapsvg"),W=svg.node().parentNode.clientWidth||1200,H=Math.round(Math.max(460,Math.min(W*0.62,window.innerHeight-250)));svg.attr("width",W).attr("height",H).style("height",H+"px");
-  const view=document.createElement("div");view.className="overlay viewbtns";view.innerHTML='<b>Map view: pick a region to zoom.</b><button class="chip on" data-v="mx">Mexico</button><button class="chip" data-v="all">All Latin America</button><button class="chip" data-v="sa">South America</button><button class="chip" data-v="world">World</button>';svg.node().parentNode.appendChild(view);
+  const view=document.createElement("div");view.className="overlay zoombtns";view.innerHTML='<button class="zb" data-z="in" title="Zoom in" aria-label="Zoom in">+</button><button class="zb" data-z="out" title="Zoom out" aria-label="Zoom out">&minus;</button><button class="zb" data-z="reset" title="Reset view" aria-label="Reset view">&#8634;</button>';svg.node().parentNode.appendChild(view);
   const proj=d3.geoConicEqualArea().parallels([-15,20]).rotate([135,0]).center([0,-2]).fitExtent([[10,10],[W-10,H-10]],{type:"MultiPoint",coordinates:[[-118,32.7],[-34.8,-7],[-70,-40],[-55,-34],[-81.3,-5]]});
   const path=d3.geoPath(proj),defs=svg.append("defs"),g=svg.append("g");
   adm.features.forEach(f=>{if(d3.geoArea(f)>2*Math.PI){const rv=p=>p.map(r=>r.slice().reverse());const g=f.geometry;g.coordinates=g.type==='Polygon'?rv(g.coordinates):g.coordinates.map(rv)}});
@@ -49,7 +49,9 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   const fitBox=(lo0,la0,lo1,la1)=>{const pts=[[lo0,la0],[lo1,la0],[lo0,la1],[lo1,la1],[(lo0+lo1)/2,la0],[(lo0+lo1)/2,la1]].map(proj);const xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]);const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);const k=Math.min(14,0.92/Math.max((x1-x0)/W,(y1-y0)/H));return d3.zoomIdentity.translate(W/2,H/2).scale(k).translate(-(x0+x1)/2,-(y0+y1)/2)};
   window.__proj=proj;const fitPts=ll=>{const pts=ll.map(proj),xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]),x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys),k=0.92/Math.max((x1-x0)/W,(y1-y0)/H);return d3.zoomIdentity.translate(W/2,H/2).scale(k).translate(-(x0+x1)/2,-(y0+y1)/2)};
   const VIEWS={mx:fitBox(-117.5,14,-86.5,32.8),all:d3.zoomIdentity,sa:fitBox(-82,-40,-34,13),world:fitPts([[121.5,31.2],[135,45],[100,45],[72.8,18.9],[80,8],[10,54],[-46.3,-24],[-118,34],[-70,-45],[2.4,6.4]])};
-  view.querySelectorAll("button").forEach(b=>b.onclick=()=>{view.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));svg.transition().duration(700).call(zoom.transform,VIEWS[b.dataset.v])});
+  view.querySelectorAll("button").forEach(b=>b.onclick=()=>{const z=b.dataset.z;if(z==="reset")svg.transition().duration(600).call(zoom.transform,VIEWS.mx);else svg.transition().duration(300).call(zoom.scaleBy,z==="in"?1.6:1/1.6)});
+  const fitLL=ll=>{if(!ll||!ll.length)return;const q=ll.length>1?ll:[[ll[0][0]-3,ll[0][1]-3],[ll[0][0]+3,ll[0][1]+3]];let t=fitPts(q);if(t.k>8){const c=t.invert([W/2,H/2]);t=d3.zoomIdentity.translate(W/2,H/2).scale(8).translate(-c[0],-c[1])}svg.transition().duration(700).call(zoom.transform,t)};
+  window.MAPZ={fitLL,view:v=>VIEWS[v]&&svg.transition().duration(700).call(zoom.transform,VIEWS[v])};
   const wg=g.append("g").attr("class","worldbase");fetch("basemap/world110.topo.json").then(r=>r.json()).then(w=>wg.selectAll("path").data(topojson.feature(w,w.objects.countries).features).join("path").attr("d",path).attr("fill","#24395e").attr("stroke","#4a6a9a").attr("stroke-width",.6).attr("vector-effect","non-scaling-stroke")).catch(e=>console.warn("world basemap",e));
   g.append("g").selectAll("path").data(topojson.feature(topo,topo.objects.countries).features).join("path").attr("d",path).attr("fill",d=>d.properties.iso==="USA"?"#16243f":"#1b2c4a");
   const pats={};
@@ -90,8 +92,9 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   // overlays
   const proj2=c=>proj(c);
   const layers={};const og=g.append("g");
+  const FITP={china:()=>china.items.filter(i=>i.lonlat).map(i=>i.lonlat),pvm:()=>DM.pv.events.filter(d=>d.kind==="official"&&d.lonlat).map(d=>d.lonlat),pvj:()=>DM.pv.events.filter(d=>d.kind==="journalist"&&d.lonlat).map(d=>d.lonlat)};
   const mk=(k,label,color,draw)=>{layers[k]=og.append("g").style("display","none");draw(layers[k]);
-    const lab=document.createElement("label");lab.dataset.k=k;lab.innerHTML=`<input type="checkbox"> <span class="dot" style="background:${color}"></span> ${label}`;lab.querySelector("input").onchange=e=>{layers[k].style("display",e.target.checked?null:"none");if(k==="china"&&e.target.checked){const b=document.querySelector('.viewbtns .chip[data-v="all"]');if(b&&!b.classList.contains("on"))b.click()}};$("layers").appendChild(lab)};
+    const lab=document.createElement("label");lab.dataset.k=k;lab.innerHTML=`<input type="checkbox"> <span class="dot" style="background:${color}"></span> ${label}`;lab.querySelector("input").onchange=e=>{layers[k].style("display",e.target.checked?null:"none");if(e.target.checked&&FITP[k])fitLL(FITP[k]())};$("layers").appendChild(lab)};
   const rshow=p=>drawer(`<h2>${esc(p.name)}</h2><span class="tag">${esc(p.kind||p.category||"")}</span>${p.commodity?`<span class="tag">${esc(p.commodity)}</span>`:""}<p>${esc(p.text)}</p>${p.says_vs_does?`<p class="says">Says vs does: ${esc(p.says_vs_does)}</p>`:""}${cite(p.cites)}`);
   const lines=(sel,feat,color)=>{const dash=d=>d.properties.confidence==="reported"?null:"6 4";
     sel.append("g").selectAll("path").data(feat).join("path").attr("d",path).attr("fill","none").attr("stroke","#0b1526").attr("stroke-opacity",.9).attr("stroke-width",5).attr("stroke-linecap","round").attr("vector-effect","non-scaling-stroke").style("pointer-events","none");
@@ -103,7 +106,6 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
     n.append("title").text(d=>`${(CHI[d.category]||[0,0,""])[2]}: ${d.name||d.title||""}`);n.append("circle").attr("r",10).attr("fill","#22aa00").attr("stroke","#0b1526").attr("stroke-width",1.5);n.append("text").attr("text-anchor","middle").attr("dy","0.35em").attr("fill","#0b1526").style("font-weight","800").style("font-size","13px").text(d=>(CHI[d.category]||["?"])[0]);n.append("text").attr("class","lbl").attr("x",13).attr("y",4).text(d=>d.title);});
   // map always shades by group presence
   const setMode=()=>{paint();key()};
-  MB.querySelectorAll("button").forEach(b=>b.onclick=()=>setMode(b.dataset.m));
   // seizures by area of responsibility, sized, placed at the area's main crossing (approximate)
   const AOR={"San Diego":[[-117.03,32.55],["San Diego Field Office","San Diego Sector"]],"El Centro":[[-115.5,32.68],["El Centro Sector"]],"Yuma":[[-114.62,32.49],["Yuma Sector"]],"Tucson":[[-110.94,31.34],["Tucson Field Office","Tucson Sector"]],
     "El Paso":[[-106.45,31.75],["El Paso Field Office","El Paso Sector"]],"Big Bend":[[-103.2,29.35],["Big Bend Sector"]],"Del Rio":[[-100.9,29.36],["Del Rio Sector"]],"Laredo":[[-99.5,27.5],["Laredo Field Office","Laredo Sector"]],"Rio Grande Valley":[[-98.2,26.1],["Rio Grande Valley Sector"]]};
@@ -122,7 +124,7 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   cl.each(function(){const t=this.querySelector("text"),b=t.getBBox();d3.select(this).insert("rect","text").attr("x",b.x-5).attr("y",b.y-2).attr("width",b.width+10).attr("height",b.height+4).attr("rx",(b.height+4)/2).attr("fill","#0b1526").attr("fill-opacity",.82)});
   window.__raiseLabels=()=>clg.raise();
   svg.call(zoom.transform,VIEWS.mx);
-  const layerOn=(k,on)=>{const lab=[...$("layers").querySelectorAll("label")].find(l=>l.dataset.k===k);if(lab){lab.querySelector("input").checked=on;layers[k].style("display",on?null:"none")}};
+  const layerOn=(k,on)=>{const lab=[...document.querySelectorAll(".mapside label")].find(l=>l.dataset.k===k);if(lab){lab.querySelector("input").checked=on;layers[k].style("display",on?null:"none")}};
   return {setF:id=>{setF(id);document.querySelector(".maptile").scrollIntoView({behavior:"smooth"})},setMode,layerOn,
     story:sl=>{setMode();setF("");fset=sl.groups&&sl.groups.length?sl.groups:null;L.querySelectorAll(".chip").forEach(b=>b.classList.remove("on"));paint();key();
       Object.keys(layers).forEach(k=>layerOn(k,(sl.layers||[]).includes(k)));svg.transition().duration(800).call(zoom.transform,fitBox(...sl.view));document.querySelector(".maptile").scrollIntoView({behavior:"smooth"})}};

@@ -2,9 +2,9 @@
    Uses the map's own overlay helper (window.MAPX.mk from app.js) so toggles live in the Overlay box. Click a line: side panel with footnotes. */
 (function(){
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const L=[{k:"drug",f:"data/routes_drugs.geojson",label:"Drug and precursor routes",color:"#f230fd",dash:{cocaine:null,precursor:"1 5",synthetic:"9 5"}},
- {k:"migr",f:"data/routes_migrants.geojson",label:"Migrant routes",color:"#88fc15",dash:{"northbound land":null,"rail (La Bestia)":"14 6","sea":"1 5","southbound (reverse) 2025":"9 4 1 4"}},
- {k:"guns",f:"data/routes_firearms.geojson",label:"Firearm routes (southbound)",color:"#ff2277",dash:{land:null,sea:"1 5",air:"9 5"}}];
+const L=[{k:"drug",f:"data/routes_drugs.geojson",label:"Drug and precursor routes",short:"Drugs and precursors",color:"#f230fd",dash:{cocaine:null,precursor:"1 5",synthetic:"9 5"}},
+ {k:"migr",f:"data/routes_migrants.geojson",label:"Migrant routes",short:"Migrants",color:"#88fc15",dash:{"northbound land":null,"rail (La Bestia)":"14 6","sea":"1 5","southbound (reverse) 2025":"9 4 1 4"}},
+ {k:"guns",f:"data/routes_firearms.geojson",label:"Firearm routes (southbound)",short:"Firearms",color:"#ff2277",dash:{land:null,sea:"1 5",air:"9 5"}}];
 const FN=r=>(window.FN?window.FN(r):"");
 function show(p,l){if(typeof drawer!=="function")return;drawer(`<h2>${esc(p.from)} → ${esc(p.to)}</h2><span class="tag" style="border-color:${l.color}">${esc(l.label)}</span><span class="tag">${esc(p.subtype)}</span><span class="tag">${esc(p.year)}</span><p>${esc(p.description)}${FN(p.sources)}</p>${p.sector?`<p><b>US Border Patrol sector:</b> ${esc(p.sector)}<br><b>Apprehensions:</b> ${(+p.encounters).toLocaleString()} (${esc(p.encounters_year)}, whole sector; FY2025 border-wide total fell to 237,565)</p>`:p.volume?`<p class="small">Sourced volume: ${(+p.volume).toLocaleString()}</p>`:""}${p.control?`<p><b>Controlling group / fee:</b> ${esc(p.control)}${FN(p.control_sources)}</p>`:""}<p class="muted small">Schematic corridor between places named in the sources.</p>`)}
 function start(){const M=window.MAPX;if(!M||!window.__proj||!document.getElementById("layers")){return setTimeout(start,200)}
@@ -24,11 +24,12 @@ function start(){const M=window.MAPX;if(!M||!window.__proj||!document.getElement
    M.mk(l.k,l.label,l.color,s=>{s.append("g").selectAll("path").data(g.features).join("path").attr("d",rp).attr("fill","none").attr("stroke","#0b1526").attr("stroke-opacity",.85).attr("stroke-width",d=>sw(d)+2.5).attr("stroke-linecap","round").attr("vector-effect","non-scaling-stroke").style("pointer-events","none");
     s.append("g").selectAll("path").data(g.features).join("path").attr("class","ovl rt-"+l.k).attr("d",rp).attr("fill","none").attr("stroke",l.color).attr("stroke-width",sw).attr("stroke-linecap","round").attr("vector-effect","non-scaling-stroke").style("cursor","pointer").on("click",(e,d)=>show(d.properties,l)).append("title").text(d=>`${d.properties.from} → ${d.properties.to} (${d.properties.subtype})`);s.attr("transform",`translate(${OFF[l.k]})`);arrows(s,l.color);ends(s,g.features,l.color)});
    if(M.layers&&M.layers[l.k])M.layers[l.k].lower();
-   const box=document.getElementById("layers"),lab=box.querySelector(`label[data-k="${l.k}"]`),hd=box.querySelector("b");
-   if(lab){const ref=[...box.querySelectorAll("label")].find(x=>!L.some(y=>y.k===x.dataset.k));box.insertBefore(lab,ref||null);
-    lab.querySelector(".dot").outerHTML=`<svg width="22" height="8" style="vertical-align:middle"><line x1="1" y1="4" x2="21" y2="4" stroke="${l.color}" stroke-width="3" stroke-linecap="round"/></svg>`}
+   const box=document.getElementById("routebox")||document.getElementById("layers"),lab=document.querySelector(`#layers label[data-k="${l.k}"]`);
+   if(lab){lab.innerHTML=`<input type="checkbox"> <svg width="22" height="8" style="vertical-align:middle"><line x1="1" y1="4" x2="21" y2="4" stroke="${l.color}" stroke-width="3" stroke-linecap="round"/></svg> <span>${esc(l.short)} (${g.features.length})</span>`;
+    const inp=lab.querySelector("input");inp.onchange=e=>M.layers[l.k].style("display",e.target.checked?null:"none");lab.dataset.o=i;
+    const after=[...box.querySelectorAll("label")].find(x=>+x.dataset.o>i);box.insertBefore(lab,after||null)}
    const subs=Object.keys(l.dash).filter(k=>g.features.some(f=>f.properties.subtype===k));
    notes.insertAdjacentHTML("beforeend",`<div data-k="${l.k}"><b style="color:${l.color}">${esc(l.label)}</b> (${g.features.length}). Click or hover a line for its type (${subs.join(", ")}). ${esc(g.notes.note)}${FN(g.notes.sources)}</div>`)});
-  const mw=document.querySelector(".maptile .mapwrap");if(mw)mw.after(notes);
+  const mn=document.getElementById("mapnotes");if(mn){notes.insertAdjacentHTML("afterbegin","<h3>Routes</h3>");mn.appendChild(notes)}
  }).catch(e=>console.warn("routes3:",e))}
 start();})();

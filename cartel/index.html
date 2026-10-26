@@ -20,11 +20,19 @@
 <section id="kpis" class="kpis"></section>
 <section class="tile maptile">
  <div class="tilehead"><h2>Who is active where</h2><span class="muted">Click a state or department. Click a group to show only its footprint.</span></div>
- <div id="ixnote" class="ixnote" role="note"><span class="ixi" aria-hidden="true">👆</span><span><b>Click a state</b> for latest posts and details · <b>Click a cartel</b> below to show only its territory (<b>All groups</b> resets) · Toggle overlays and map views · Tap cards for more</span><button id="ixx" title="Hide this tip" aria-label="Hide this tip">&times;</button></div>
- <div id="grouplegend" class="chips"></div>
+ <div id="ixnote" class="ixnote" role="note"><span class="ixi" aria-hidden="true">👆</span><span><b>Click a state</b> for latest posts and details · <b>Click a cartel</b> on the left to show only its territory (<b>All groups</b> resets) · Toggle routes and overlays · Scroll, pinch or drag to zoom and pan · Tap cards for more</span><button id="ixx" title="Hide this tip" aria-label="Hide this tip">&times;</button></div>
+ <div class="maprow">
+ <aside class="mapside" aria-label="Map filters and layers">
+  <h3 class="sidehd">Cartel groups <span class="muted">click to filter</span></h3>
+  <div id="grouplegend" class="chips sidechips"></div>
+  <h3 class="sidehd">Routes <span class="muted">tick to draw</span></h3>
+  <div id="routebox" class="sidelayers"></div>
+  <h3 class="sidehd">Other overlays</h3>
+  <div id="layers" class="sidelayers"></div>
+ </aside>
  <div class="mapwrap"><svg id="mapsvg"></svg>
-  <div id="layers" class="overlay"><b>Overlays: tick a box to draw routes, crossings or sites on the map.</b><br></div>
   <div id="keybox" class="overlay"></div>
+ </div>
  </div>
  <details class="more"><summary>About this map and gaps in the data</summary><div id="mapnotes"></div></details>
 </section>
@@ -46,4 +54,5 @@
 <script>(function(){var n=document.getElementById("ixnote");try{if(localStorage.getItem("ixHide")==="1")n.style.display="none"}catch(e){}document.getElementById("ixx").onclick=function(){n.style.display="none";try{localStorage.setItem("ixHide","1")}catch(e){}}})();</script>
 <script src="ix.js"></script>
 <script src="gc.js"></script>
+<script src="sidebar.js"></script>
 </body></html>

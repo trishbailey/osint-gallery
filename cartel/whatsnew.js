@@ -23,7 +23,7 @@ Promise.all([J("data/whatsnew.json"),J("data/territory.json")]).then(([wn,terr])
   const place=()=>{const ld=document.getElementById("leaders"),mt=document.querySelector(".maptile");const a=ld||mt;if(a)a.after(s);else (document.querySelector("main")||document.body).prepend(s)};
   place();let n=0;const iv=setInterval(()=>{const ld=document.getElementById("leaders");if(ld&&ld.nextElementSibling!==s){ld.after(s)}if(ld||++n>40)clearInterval(iv)},250);
   const chip=g=>{const b=document.querySelector(`#grouplegend .chip[data-g="${g||""}"]`);if(b)b.click()};
-  const view=v=>{const b=document.querySelector(`.viewbtns .chip[data-v="${v}"]`);if(b)b.click()};
+  const view=v=>{if(window.MAPZ)window.MAPZ.view(v)};
   const region=id=>{const p=[...document.querySelectorAll("#mapsvg path.adm")].find(p=>p.__data__&&p.__data__.properties&&p.__data__.properties.id===id);if(p)p.dispatchEvent(new MouseEvent("click",{bubbles:true}))};
   const go=(groups,v,regions,open)=>{chip((groups||[]).length===1?groups[0]:(groups||[]).find(g=>GC[g])||"");if(v)view(v);
     const mt=document.querySelector(".maptile");if(mt)mt.scrollIntoView({behavior:"smooth"});if(open&&regions&&regions[0])setTimeout(()=>region(regions[0]),400)};
