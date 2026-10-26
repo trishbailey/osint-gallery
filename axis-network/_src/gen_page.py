@@ -36,8 +36,37 @@ chips=[(f'{f(w["xcopies"])}','cross-group copies in the last 7 days',f'{sg(wchg)
  (f'{f(w["top_pairs"][0][2])}',f'{gl(w["top_pairs"][0][0])} → {gl(w["top_pairs"][0][1])}','the busiest route this week')]
 SRC=[f'Cross-group copies: identical message text (60+ characters after cleaning) posted by channels of two different groups, first post = origin. {f(c["posts"])} public Telegram posts from {c["channels"]} channels, {nice(c["start"])} to {nice(c["end"])}; main window {nice(D["window_start"])} to {nice(D["data_through"])}. Biggest cross-group source channels: '+', '.join(f'@{h} ({f(n)})' for h,_,n in D['topsrc30'])+'.',
  f'Payment methods (bank cards, bank accounts, donation phone numbers, named campaigns and crypto wallets) found in posts from {p["first"]} to {p["last"]}. Only {p["in_window"]} of {p["edges"]} postings fall inside the 30-day window, so this chart uses the whole payment collection.',
- f'Themes: {f(th["coded"])} Telegram posts sorted into topics by AI using a written codebook; a second independent check agreed 85.5% of the time. Five topics shown (Iran–Israel–US standoff includes Israeli strikes outside Palestine; home and world news includes domestic politics and security).',
  'Channel group labels follow the channels’ own branding and published reporting. Sadaa al-Masirah (@sadaa_almasirah) is the largest single Houthi source.']
+
+# Houthi threat targets (all numbers from data.json['threats'])
+T=D['threats']; TR={r['k']:r for r in T['rows']}
+def mult(r,a,b):
+    x,y=r[a][1],r[b][1]
+    return 'new' if x==0 and y>0 else (f'×{y/x:.1f}' if x else 'none')
+cs=T['case']; aq=T['air']; iq=T['iraqi']
+FN0=len(SRC)+1
+tsrc=[f'Houthi threat posts: posts from {T["nch"]} Houthi channels ({f(T["nposts"])} posts) that contain an Arabic or English warning or threat phrase (for example “legitimate target”, “we warn”, “will be targeted”) and name a target, matched by keyword. Identical texts are counted once. Rates are threat posts naming the target per 10,000 Houthi posts in the same window, so changes in overall posting volume do not distort them. Baseline {nice(T["base_start"])} to {nice(str(date.fromisoformat(T["w30_start"])-__import__("datetime").timedelta(days=1)))} ({f(T["tot"]["base"])} posts); last 30 days {nice(T["w30_start"])} to {nice(T["end"])} ({f(T["tot"]["last30"])} posts); last 7 days from {nice(T["w7_start"])} ({f(T["tot"]["last7"])} posts) against the 3 weeks before ({f(T["tot"]["prior21"])} posts).',
+ f'<a href="{cs["warn"]}" target="_blank" rel="noopener nofollow">Yemeni armed forces (Houthi) warning, @army21ye, {cs["warn_t"]}</a>',
+ f'<a href="{cs["claim"]}" target="_blank" rel="noopener nofollow">Houthi military media claim, @MilitaryMediaY, {cs["claim_t"]}</a>']+[f'<a href="{u}" target="_blank" rel="noopener nofollow">{html.escape(t)}</a>' for _,u,t in cs['press']]+[
+ f'Houthi warnings to airlines operating in Saudi airspace: {aq["n"]} threat posts since {nice(aq["first"])}; first <a href="{aq["first_url"]}" target="_blank" rel="noopener nofollow">{aq["first_url"].replace("https://","")}</a>, renewed in <a href="{aq["ex"]}" target="_blank" rel="noopener nofollow">{aq["ex"].replace("https://","")}</a>.']
+if iq: tsrc.append(f'Iraqi militia reposts: identical text first posted by the Houthi military channels @MilitaryMediaY or @army21ye and later posted by an Iraqi militia channel, last 30 days ({iq["n"]} reposts by {iq["ch"]} channels). Fastest repost of the Oct 14 claim: <a href="{iq["claim"][2]}" target="_blank" rel="noopener nofollow">@{iq["claim"][0]}</a>.')
+nF=lambda i:FN0+i
+rz=TR['riyadh']; ar=TR['aramco']; sth=TR['south']
+thead=(f'Houthi threats have shifted from Israel, the US and the Red Sea to named targets inside Saudi {nw("Arabia,",nF(0))} and claimed strikes have followed the {nw("warnings.",nF(1),nF(2),nF(3))}')
+tcap=(f'In the last 30 days, Houthi threat posts named Riyadh {mult(rz,"base","last30").replace("×","")} times as often as in the months before, and Aramco {mult(ar,"base","last30").replace("×","")} times as often. '
+      f'Threats naming the United States fell to {round(100*TR["us"]["last30"][1]/TR["us"]["base"][1])}% of their earlier rate and Israel to {round(100*TR["israel"]["last30"][1]/TR["israel"]["base"][1])}%, and the Red Sea dropped out ({TR["redsea"]["base"][0]} posts before, {TR["redsea"]["last30"][0]} in the last 30 {nw("days).",nF(0))}')
+tcase=(f'<div class="tcard"><div class="tch">Warning, then strike</div><ol class="tsteps">'
+ f'<li><b>{cs["warn_t"]}</b> Houthi forces tell civilians to leave three Saudi sites if Saudi Arabia strikes {nw("Sanaa:",nF(1))} {", ".join(cs["sites"])}.</li>'
+ f'<li><b>Overnight, Oct 13–14</b> A missile hits an administrative building at Aramco’s headquarters in Dhahran, causing a fire across several floors. Saudi Arabia’s energy ministry confirmed a fire; AP and Reuters reported heavy {nw("damage.",nF(3),nF(4),nF(5))}</li>'
+ f'<li><b>{cs["claim_t"]}</b> Houthi military media claim strikes on all three {nw("sites.",nF(2))} Press reports confirm only the Aramco headquarters hit.</li></ol></div>')
+tlines=(f'<ul class="tl"><li><b>New target: airlines.</b> Since {nice(aq["first"])}, Houthi channels have posted {aq["n"]} warnings telling international airlines that Saudi airspace is {nw("unsafe.",nF(6))}</li>'
+ +(f'<li><b>Iraqi militias amplify within minutes.</b> Iraqi militia channels reposted Houthi military statements {iq["n"]} times in the last 30 days, half of them within {round(iq["med"]/60,1):g} minutes; @{iq["claim"][0]} reposted the Oct 14 strike claim after {iq["claim"][1]} {nw("seconds.",nF(7))}</li>' if iq else '')+'</ul>')
+def flagli(x):
+    if x['why']=='first': return f'<li><b>{html.escape(x["l"])}</b> <span>named for the first time ({nice(x["first"])}, <a href="{x["url"]}" target="_blank" rel="noopener nofollow">post</a>)</span></li>'
+    return f'<li><b>{html.escape(x["l"])}</b> <span>{x["n7"]} threat posts this week, {x["r7"]:g} per 10,000 posts vs {x["rp"]:g} in the 3 weeks before</span></li>'
+tflag=(f'<div class="tnew"><div class="tch">New or surging this week ({rng(T["end"])})</div>'+(f'<ul>{"".join(flagli(x) for x in T["flag"])}</ul>' if T['flag'] else '<p class="prompt" style="margin:4px 0 0">No target met the rule this week.</p>')
+ +'<p class="tnote">Rule: a target’s 7-day rate is at least twice its rate in the 3 weeks before, with 5 or more posts, or a named facility appears in a threat post for the first time.</p></div>')
+tcave=f'<p class="tnote">Counts come from Arabic and English keyword matching. Strike claims are the Houthis’ own except where press reports confirm them. Data through {nice(T["end"])} (latest collected post).</p>'
 GA='''<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Z61EKRP8QV');</script>'''
 CSS='''
 :root{--bg:#0b1526;--panel:#12203a;--panel2:#0f1b31;--line:#24365a;--text:#e6e9ef;--muted:#9aa6b8;--gold:#c8a24a;--red:#c0504d}
@@ -64,7 +93,13 @@ svg text{font-family:inherit}
 .mono{font-family:ui-monospace,Menlo,Consolas,monospace;overflow-wrap:anywhere;word-break:break-all;font-size:14.5px}.pr .pt{font-size:13px;color:var(--gold)}.pr .pm{font-size:13px;text-align:right}.pr .pb{padding:0 12px 10px;font-size:14px}.pr .pb a{overflow-wrap:anywhere}.pr ul{margin:4px 0;padding-left:18px}
 .lgb{display:flex;align-items:center;gap:7px;background:none;border:1px solid transparent;border-radius:8px;color:var(--text);font:inherit;font-size:14px;padding:6px 8px;min-height:36px;cursor:pointer;text-align:left}.lgb i{width:13px;height:13px;border-radius:3px;flex:none}.lgb[aria-pressed=true]{border-color:var(--gold)}.lgb:focus-visible,.node:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .node{cursor:pointer}#fsel{background:var(--panel2);border:1px solid var(--gold);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14.5px;display:flex;gap:12px;align-items:flex-start;justify-content:space-between}#fsel[hidden]{display:none}#fsel .btn{flex:none}
-@media(max-width:700px){main{padding:14px 12px 30px}h1{font-size:24px}.intro{font-size:15.5px}.strip{gap:6px}.st{padding:8px}.st b{font-size:19px}.st span{font-size:13px}
+#threats .thd{font-size:17px;font-weight:700;margin:2px 0 12px;max-width:900px}.tw{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.trow{display:grid;grid-template-columns:230px 1fr;gap:12px;align-items:center;width:100%;background:none;border:0;border-bottom:1px solid var(--line);color:var(--text);font:inherit;text-align:left;padding:7px 0;cursor:pointer;min-height:48px}.trow:hover,.trow:focus-visible{background:var(--panel2);outline:none}
+.trow .tn{font-size:14.5px;font-weight:600}.trow .tv{display:block;font-size:13px;color:var(--muted);font-weight:400}.ttr{position:relative;height:26px}.ttr .z{position:absolute;top:-4px;bottom:-4px;width:2px;background:#e6e9ef}.ttr .bar{position:absolute;top:3px;height:20px;border-radius:3px}
+.tcard,.tnew{background:var(--panel2);border:1px solid var(--line);border-left:4px solid #b24762;border-radius:10px;padding:12px 14px;margin:14px 0 0}.tnew{border-left-color:var(--gold)}.tch{font-weight:700;font-size:16px;margin-bottom:4px}
+.tsteps{margin:4px 0 0;padding-left:20px;font-size:15px}.tsteps li{margin:5px 0}.tsteps b{color:var(--gold);margin-right:6px}.tl{font-size:15px;padding-left:20px;margin:12px 0 0}.tl li{margin:5px 0}.tnew ul{margin:4px 0 0;padding-left:20px;font-size:15px}.tnew span{color:var(--text)}.tnote{font-size:13px;color:var(--muted);margin:10px 0 0}
+#sheet a{overflow-wrap:anywhere}
+@media(max-width:700px){.trow{grid-template-columns:1fr;gap:4px}.tw{margin-top:4px}#threats .thd{font-size:16px}main{padding:14px 12px 30px}h1{font-size:24px}.intro{font-size:15.5px}.strip{gap:6px}.st{padding:8px}.st b{font-size:19px}.st span{font-size:13px}
  section{padding:12px}.row{grid-template-columns:1fr;gap:8px}.leg{flex-direction:row;flex-wrap:wrap;gap:6px 12px;font-size:13px}.tb{grid-template-columns:1fr;gap:2px;margin:8px 0}
  .chips{grid-template-columns:1fr;gap:6px}.chip{display:grid;grid-template-columns:auto 1fr;gap:0 10px;align-items:center}.chip b{grid-row:span 2;font-size:21px}.cap{font-size:14.5px}}
 '''
@@ -88,7 +123,7 @@ tb=tb.replace('margin:4px 0 12px','')
 leg3=''.join(f'<span><i style="background:{TC[i]}"></i>{l}</span>' for i,l in enumerate(th['cats']))
 chiph=''.join(f'<div class="chip"><b>{a}</b><span>{b}</span><em>{e}</em></div>' for a,b,e in chips)
 infra=f'{D["infra"]["sites"]} websites promoted by the channels were mapped to their servers. Only one link crosses groups: almoqawma.com, posted by both Hamas and Hezbollah channels, shared server addresses with the IRGC-linked pgsa.ir. Everything else stays inside one group.'
-DATA=json.dumps(dict(MAP=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'basemap.json'))),BG=D['by_group'],PL=D['paylist'],G={k:v for k,v in G.items()},f30=D['flow30'],f7=D['flow7']),ensure_ascii=False)
+DATA=json.dumps(dict(MAP=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'basemap.json'))),BG=D['by_group'],PL=D['paylist'],G={k:v for k,v in G.items()},f30=D['flow30'],f7=D['flow7'],T=D['threats']),ensure_ascii=False)
 JS='''
 const D=__D__,TIP=document.getElementById('tip'),SH=document.getElementById('sheet');
 const ph=()=>innerWidth<700;
@@ -178,12 +213,24 @@ function plist(){const q=PQ.value.trim().toLowerCase(),R=D.PL.filter(x=>(!PG.val
  document.getElementById('plist').innerHTML=R.map(x=>`<details class="pr"><summary><span class="mono" dir="auto">${esc(x.v)}</span><span class="pm">${x.ch.length} channel${x.ch.length>1?'s':''}</span><span class="pt">${esc(x.t)} · <span style="color:${D.G[x.g][1]}">${esc(D.G[x.g][0])}</span></span><span class="pm">${x.m} posts</span></summary><div class="pb">First seen ${x.f} · last seen ${x.l}<ul>${x.ch.map(c=>`<li>${esc(c[0])}: ${c[1]} post${c[1]>1?'s':''}. ${c[2].map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener nofollow">post ${i+1}</a>`).join(' · ')}</li>`).join('')}</ul></div></details>`).join('')}
 [PG,PT].forEach(e=>e.onchange=plist);PQ.oninput=plist;plist();
 netmap.id=0;netmap();addEventListener('resize',()=>{netmap();applySel()});
+let TW='30';
+function thr(){const T=D.T,a=TW==='30'?'base':'prior21',b=TW==='30'?'last30':'last7',box=document.getElementById('thr');
+ const fd=s=>new Date(s+'T00:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'});
+ const dm=d=>{const x=new Date(d+'T00:00:00Z');x.setUTCDate(x.getUTCDate()-1);return x.toISOString().slice(0,10)};
+ document.getElementById('ttitle').textContent=TW==='30'?`Last 30 days (${fd(T.w30_start)}–${fd(T.end)}) vs ${fd(T.base_start)}–${fd(dm(T.w30_start))}`:`Last 7 days (${fd(T.w7_start)}–${fd(T.end)}) vs the 3 weeks before`;
+ const R=T.rows.map(r=>({...r,d:+(r[b][1]-r[a][1]).toFixed(1)})).sort((x,y)=>y.d-x.d);
+ const mp=Math.max(1,...R.map(r=>r.d)),mn=Math.max(1,...R.map(r=>-r.d)),z=100*mn/(mp+mn);
+ box.innerHTML=R.map((r,i)=>{const w=100*Math.abs(r.d)/(mp+mn),up=r.d>=0,x=r[a][1],y=r[b][1],m=x?(y?`×${(y/x).toFixed(1)}`:"none now"):(y?"new":"");
+  return `<button type="button" class="trow" data-i="${r.k}" aria-label="${r.l}: ${x} to ${y} per 10,000 posts. Open details"><span class="tn">${r.l}<span class="tv">${x} → ${y} per 10,000 posts${m?' · '+m:''}</span></span><span class="ttr"><span class="bar" style="left:${up?z:z-w}%;width:${Math.max(w,.6)}%;background:${up?'#b24762':'#4379a8'}"></span><span class="z" style="left:calc(${z}% - 1px)"></span></span></button>`}).join('');
+ box.querySelectorAll('.trow').forEach(btn=>btn.onclick=()=>{const r=T.rows.find(q=>q.k===btn.dataset.i),lw=TW==='30'?'Earlier baseline':'3 weeks before',nw=TW==='30'?'Last 30 days':'Last 7 days';
+  SH.querySelector('div').innerHTML=`<b>${r.l}</b><br>${lw}: ${r[a][0]} threat posts (${r[a][1]} per 10,000 Houthi posts)<br>${nw}: ${r[b][0]} threat posts (${r[b][1]} per 10,000)`+(r.ex.length?`<br>Latest example posts: ${r.ex.map(e=>`<a href="${e[0]}" target="_blank" rel="noopener nofollow">${e[1]}</a>`).join(' · ')}`:'');SH.classList.add('on');TIP.style.display='none'})}
+document.querySelectorAll('[data-tw]').forEach(b=>b.onclick=()=>{TW=b.dataset.tw;document.querySelectorAll('[data-tw]').forEach(x=>x.setAttribute('aria-pressed',x===b));thr()});thr();
 flow();let rw=innerWidth;addEventListener('resize',()=>{if(innerWidth!==rw){rw=innerWidth;flow()}});
 '''.replace('__D__',DATA)
 page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Axis Channel Network</title><meta name="description" content="How Iran-aligned Telegram channels share messages and raise money."><link rel="icon" href="../favicon.svg"><style>{CSS}</style></head><body><main>
 <h1>Axis Channel Network</h1>
-<p class="intro">This page tracks {c["channels"]} public Telegram channels run by or aligned with Iran’s “Axis of Resistance”: the Houthis, the IRGC and Iranian state media, Hezbollah, Hamas, Palestinian Islamic Jihad and Iraqi militias. It shows where their messages start and how they spread, how they ask for money, and what each group talks about. Tap or hover any bar for details; sources are in the More section.</p>
+<p class="intro">This page tracks {c["channels"]} public Telegram channels run by or aligned with Iran’s “Axis of Resistance”: the Houthis, the IRGC and Iranian state media, Hezbollah, Hamas, Palestinian Islamic Jihad and Iraqi militias. It shows where their messages start and how they spread, how they ask for money, and which targets the Houthis threaten. Tap or hover any bar for details; sources are in the More section.</p>
 <div class="thru">Data through {nice(D["data_through"])} (latest collected post) · main window: {rng(D["data_through"],30)}</div>
 <div class="strip"><div class="st"><b>{c["channels"]}</b><span>channels</span></div><div class="st"><b>{f(c["posts"])}</b><span>posts collected</span></div><div class="st"><b>{f(x30)}</b><span>messages copied across groups</span></div></div>
 <section id="map"><h2>Which groups pass messages to which</h2><p class="prompt">Each circle is a group at its home base; lines show messages first posted by one group and later copied by another (last 30 days). Thicker lines mean more messages; moving dots show direction.</p>
@@ -202,11 +249,14 @@ page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta na
 <p class="prompt" style="color:var(--text)">Posted by the channels for fundraising, {nice(p["first"])} to {nice(p["last"])}; shown here for research reference only.</p>
 <div class="pf"><label>Group<select id="pg"><option value="">All groups</option></select></label><label>Type<select id="pt"><option value="">All types</option><option value="bank">Bank cards and accounts</option><option value="crypto">Crypto wallets</option><option value="other">Phones and campaigns</option></select></label><label class="ps">Search<input id="pq" type="search" placeholder="Number, wallet or channel"></label></div>
 <div id="pn" class="prompt" aria-live="polite"></div><div id="plist"></div></div></details></section>
-<section id="themes"><h2>What each group pushes</h2><p class="prompt">Share of each group’s posts by topic</p>
-<div class="row"><div class="leg">{leg3}</div><div>{tb}</div></div><p class="cap">{cap3}</p></section>
+<section id="threats"><h2>Houthi threat targets</h2><p class="thd">{thead}</p>
+<div class="row"><div class="leg"><span><i style="background:#b24762"></i>Named more often</span><span><i style="background:#4379a8"></i>Named less often</span>
+<div class="tw"><button class="btn" data-tw="30" aria-pressed="true">30 days</button><button class="btn" data-tw="7" aria-pressed="false">7 days</button></div></div>
+<div><div class="lbl" id="ttitle"></div><p class="prompt">Change in threat posts naming each target, per 10,000 Houthi posts. Tap a row for counts and example posts.</p><div id="thr"></div></div></div>
+<p class="cap">{tcap}</p>{tcase}{tlines}{tflag}{tcave}</section>
 <section id="week"><h2>New this week: {rng(D["data_through"])}</h2><p class="prompt"><b>{rng(D["data_through"])}</b>, compared with the 3 weeks before ({rng(str(date.fromisoformat(D["data_through"])-__import__("datetime").timedelta(days=7)),21)})</p><div class="chips">{chiph}</div></section>
 <details id="more"><summary>More: shared websites, method and sources</summary><div class="in"><p><b>Shared websites.</b> {infra}</p>
 <p><b>Method.</b> A message counts as copied when the same text appears in two or more channels; the first channel to post it is the origin. Same-group copies (for example between Houthi channels) are included in the top bar; the flow chart shows only copies between different groups. Flows under 10 messages are left out.</p>
-<div id="src"><b>Sources</b><ol>{''.join(f"<li>{html.escape(x)}</li>" for x in SRC)}</ol></div></div></details>
+<div id="src"><b>Sources</b><ol>{''.join(f"<li>{html.escape(x)}</li>" for x in SRC)}{''.join(f"<li>{x}</li>" for x in tsrc)}</ol></div></div></details>
 </main><div id="tip" role="tooltip"></div><div id="sheet" role="dialog" aria-label="Details"><button class="btn" aria-label="Close">Close</button><div></div></div><script>{JS}</script></body></html>'''
 open(os.path.join(H,'..','index.html'),'w').write(page); print('ok',len(page))

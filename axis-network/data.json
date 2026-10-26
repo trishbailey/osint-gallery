@@ -467,83 +467,6 @@
    ]
   ]
  },
- "themes": {
-  "cats": [
-   "Yemen–Saudi war",
-   "Palestine",
-   "Iran–Israel–US standoff",
-   "Martyrs and faith",
-   "Home and world news"
-  ],
-  "coded": 68314,
-  "by_group": {
-   "houthi": [
-    49.9,
-    12.7,
-    12.8,
-    14.2,
-    10.5
-   ],
-   "irgc": [
-    12.6,
-    4.7,
-    36.0,
-    9.8,
-    36.9
-   ],
-   "hezbollah": [
-    15.5,
-    10.3,
-    40.1,
-    10.0,
-    24.2
-   ],
-   "hamas": [
-    0.1,
-    82.6,
-    11.2,
-    1.9,
-    4.2
-   ],
-   "iraqi": [
-    20.0,
-    4.3,
-    30.4,
-    7.8,
-    37.5
-   ],
-   "aligned": [
-    12.3,
-    5.3,
-    50.1,
-    4.0,
-    28.3
-   ],
-   "pij": [
-    0.0,
-    17.0,
-    1.0,
-    82.0,
-    0.0
-   ]
-  },
-  "n": {
-   "irgc": 22344,
-   "houthi": 28543,
-   "hamas": 9970,
-   "hezbollah": 2702,
-   "iraqi": 3489,
-   "aligned": 1072,
-   "pij": 194
-  }
- },
- "infra": {
-  "nodes": 75,
-  "shared": [
-   "almoqawma.com"
-  ],
-  "sites": 20
- },
  "paylist": [
   {
    "v": "6063737005379720",
@@ -3096,5 +3019,464 @@
    "f": "2026-10-05",
    "l": "2026-10-05"
   }
- ]
+ ],
+ "themes": {
+  "cats": [
+   "Yemen–Saudi war",
+   "Palestine",
+   "Iran–Israel–US standoff",
+   "Martyrs and faith",
+   "Home and world news"
+  ],
+  "coded": 68314,
+  "by_group": {
+   "houthi": [
+    49.9,
+    12.7,
+    12.8,
+    14.2,
+    10.5
+   ],
+   "irgc": [
+    12.6,
+    4.7,
+    36.0,
+    9.8,
+    36.9
+   ],
+   "hezbollah": [
+    15.5,
+    10.3,
+    40.1,
+    10.0,
+    24.2
+   ],
+   "hamas": [
+    0.1,
+    82.6,
+    11.2,
+    1.9,
+    4.2
+   ],
+   "iraqi": [
+    20.0,
+    4.3,
+    30.4,
+    7.8,
+    37.5
+   ],
+   "aligned": [
+    12.3,
+    5.3,
+    50.1,
+    4.0,
+    28.3
+   ],
+   "pij": [
+    0.0,
+    17.0,
+    1.0,
+    82.0,
+    0.0
+   ]
+  },
+  "n": {
+   "irgc": 22344,
+   "houthi": 28543,
+   "hamas": 9970,
+   "hezbollah": 2702,
+   "iraqi": 3489,
+   "aligned": 1072,
+   "pij": 194
+  }
+ },
+ "infra": {
+  "nodes": 75,
+  "shared": [
+   "almoqawma.com"
+  ],
+  "sites": 20
+ },
+ "threats": {
+  "end": "2026-10-20",
+  "base_start": "2026-05-01",
+  "w30_start": "2026-09-21",
+  "w7_start": "2026-10-14",
+  "p21_start": "2026-09-23",
+  "tot": {
+   "base": 52400,
+   "last30": 39368,
+   "prior21": 27611,
+   "last7": 8691
+  },
+  "nthreat": 1904,
+  "nch": 25,
+  "nposts": 138301,
+  "rows": [
+   {
+    "k": "riyadh",
+    "l": "Riyadh",
+    "side": "sa",
+    "base": [
+     18,
+     3.4
+    ],
+    "last30": [
+     87,
+     22.1
+    ],
+    "prior21": [
+     61,
+     22.1
+    ],
+    "last7": [
+     26,
+     29.9
+    ],
+    "ex": [
+     [
+      "https://t.me/AlmasirahVideos/173831",
+      "2026-10-20"
+     ],
+     [
+      "https://t.me/AlmasirahVideos/173769",
+      "2026-10-19"
+     ],
+     [
+      "https://t.me/Saba_Newsye/330377",
+      "2026-10-19"
+     ]
+    ]
+   },
+   {
+    "k": "aramco",
+    "l": "Aramco oil company sites",
+    "side": "sa",
+    "base": [
+     15,
+     2.9
+    ],
+    "last30": [
+     39,
+     9.9
+    ],
+    "prior21": [
+     29,
+     10.5
+    ],
+    "last7": [
+     10,
+     11.5
+    ],
+    "ex": [
+     [
+      "https://t.me/AlmasirahVideos/173769",
+      "2026-10-19"
+     ],
+     [
+      "https://t.me/Saba_Newsye/330377",
+      "2026-10-19"
+     ],
+     [
+      "https://t.me/masirah_sada/196135",
+      "2026-10-14"
+     ]
+    ]
+   },
+   {
+    "k": "south",
+    "l": "Jizan, Najran and Asir (Saudi border provinces)",
+    "side": "sa",
+    "base": [
+     57,
+     10.9
+    ],
+    "last30": [
+     112,
+     28.4
+    ],
+    "prior21": [
+     67,
+     24.3
+    ],
+    "last7": [
+     38,
+     43.7
+    ],
+    "ex": [
+     [
+      "https://t.me/alforgan_net/181864",
+      "2026-10-19"
+     ],
+     [
+      "https://t.me/sadaa_almasirah/155524",
+      "2026-10-19"
+     ],
+     [
+      "https://t.me/almasirah_all/431796",
+      "2026-10-19"
+     ]
+    ]
+   },
+   {
+    "k": "uae",
+    "l": "United Arab Emirates",
+    "side": "gulf",
+    "base": [
+     10,
+     1.9
+    ],
+    "last30": [
+     10,
+     2.5
+    ],
+    "prior21": [
+     9,
+     3.3
+    ],
+    "last7": [
+     1,
+     1.2
+    ],
+    "ex": [
+     [
+      "https://t.me/masirah_sada/196135",
+      "2026-10-14"
+     ],
+     [
+      "https://t.me/almasirah_all/429067",
+      "2026-09-29"
+     ],
+     [
+      "https://t.me/alforgan_net/180041",
+      "2026-09-29"
+     ]
+    ]
+   },
+   {
+    "k": "bab",
+    "l": "Bab al-Mandab strait",
+    "side": "sea",
+    "base": [
+     17,
+     3.2
+    ],
+    "last30": [
+     8,
+     2.0
+    ],
+    "prior21": [
+     7,
+     2.5
+    ],
+    "last7": [
+     1,
+     1.2
+    ],
+    "ex": [
+     [
+      "https://t.me/masirah_sada/196135",
+      "2026-10-14"
+     ],
+     [
+      "https://t.me/SABAYEen/118622",
+      "2026-10-09"
+     ],
+     [
+      "https://t.me/MilitaryMediaY/46994",
+      "2026-10-09"
+     ]
+    ]
+   },
+   {
+    "k": "us",
+    "l": "United States",
+    "side": "us",
+    "base": [
+     254,
+     48.5
+    ],
+    "last30": [
+     45,
+     11.4
+    ],
+    "prior21": [
+     36,
+     13.0
+    ],
+    "last7": [
+     8,
+     9.2
+    ],
+    "ex": [
+     [
+      "https://t.me/almasirah_all/431845",
+      "2026-10-19"
+     ],
+     [
+      "https://t.me/AlmasirahVideos/173671",
+      "2026-10-19"
+     ],
+     [
+      "https://t.me/alforgan_net/181850",
+      "2026-10-19"
+     ]
+    ]
+   },
+   {
+    "k": "israel",
+    "l": "Israel",
+    "side": "il",
+    "base": [
+     172,
+     32.8
+    ],
+    "last30": [
+     35,
+     8.9
+    ],
+    "prior21": [
+     28,
+     10.1
+    ],
+    "last7": [
+     6,
+     6.9
+    ],
+    "ex": [
+     [
+      "https://t.me/Saba_Newsye/329744",
+      "2026-10-17"
+     ],
+     [
+      "https://t.me/sadaa_almasirah/155133",
+      "2026-10-16"
+     ],
+     [
+      "https://t.me/almasirah2/303522",
+      "2026-10-16"
+     ]
+    ]
+   },
+   {
+    "k": "hormuz",
+    "l": "Strait of Hormuz",
+    "side": "sea",
+    "base": [
+     72,
+     13.7
+    ],
+    "last30": [
+     11,
+     2.8
+    ],
+    "prior21": [
+     10,
+     3.6
+    ],
+    "last7": [
+     1,
+     1.2
+    ],
+    "ex": [
+     [
+      "https://t.me/masirah_sada/196135",
+      "2026-10-14"
+     ],
+     [
+      "https://t.me/almasirah_all/430864",
+      "2026-10-12"
+     ],
+     [
+      "https://t.me/almasirah_all/430843",
+      "2026-10-12"
+     ]
+    ]
+   },
+   {
+    "k": "redsea",
+    "l": "Red Sea shipping",
+    "side": "sea",
+    "base": [
+     55,
+     10.5
+    ],
+    "last30": [
+     0,
+     0.0
+    ],
+    "prior21": [
+     0,
+     0.0
+    ],
+    "last7": [
+     0,
+     0.0
+    ],
+    "ex": []
+   }
+  ],
+  "flag": [
+   {
+    "l": "Aramco headquarters, Dhahran/Dammam",
+    "why": "surging",
+    "n7": 6,
+    "r7": 6.9,
+    "rp": 2.5
+   },
+   {
+    "l": "Khamis Mushait air base",
+    "why": "surging",
+    "n7": 16,
+    "r7": 18.4,
+    "rp": 7.2
+   }
+  ],
+  "case": {
+   "warn": "https://t.me/army21ye/3878",
+   "claim": "https://t.me/MilitaryMediaY/47040",
+   "sites": [
+    "Aramco headquarters (Dammam/Dhahran)",
+    "King Khalid International Airport, Riyadh",
+    "Aramco refinery, Riyadh"
+   ],
+   "press": [
+    [
+     "AP",
+     "https://apnews.com/article/saudi-arabia-yemen-strikes-mideast-conflict-riyadh-c81a91347c00b17097c8fafde7e4eeec",
+     "AP, “Iran-backed Houthi rebels hit Saudi Aramco headquarters, officials say”, Oct 14, 2026"
+    ],
+    [
+     "Al Jazeera",
+     "https://www.aljazeera.com/news/2026/10/13/houthis-threaten-saudi-arabias-aramco-facilities-and-airports",
+     "Al Jazeera, “Houthis strike Aramco hours after Saudi-led coalition hits Sanaa oil site”, Oct 13, 2026 (citing the Saudi Energy Ministry via SPA)"
+    ],
+    [
+     "Reuters",
+     "https://www.al-monitor.com/originals/2026/10/saudi-aramco-headquarters-suffered-extensive-damage-houthi-attack-sources-say",
+     "Reuters via Al-Monitor, “Saudi Aramco headquarters suffered extensive damage in Houthi attack, sources say”, Oct 14, 2026"
+    ]
+   ],
+   "warn_t": "Oct 13, 13:15 UTC",
+   "claim_t": "Oct 14, 08:39 UTC",
+   "ok": true
+  },
+  "air": {
+   "n": 70,
+   "first": "2026-10-05",
+   "first_url": "https://t.me/Saba_Newsye/326827",
+   "ex": "https://t.me/MilitaryMediaY/47023"
+  },
+  "iraqi": {
+   "n": 125,
+   "med": 204,
+   "u2": 45,
+   "ch": 9,
+   "claim": [
+    "sajadsda",
+    27,
+    "https://t.me/sajadsda/232105"
+   ]
+  }
+ }
 }
