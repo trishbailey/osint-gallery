@@ -183,11 +183,27 @@ function openPost(a){const p=PO[a.id];d3.select('#ph').text(a.label);
   const featOf=c=>countries.find(f=>f.properties.name===c.geo);
  const fit=(cs,pad)=>{let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;cs.forEach(c=>{const f=c.geo&&featOf(c);const b=f?path.bounds(f):(()=>{const p=proj(c.ll);return [[p[0]-8,p[1]-8],[p[0]+8,p[1]+8]]})();x0=Math.min(x0,b[0][0]);y0=Math.min(y0,b[0][1]);x1=Math.max(x1,b[1][0]);y1=Math.max(y1,b[1][1])});
   const k=Math.min(4,0.9/Math.max((x1-x0)/W,(y1-y0)/HM));return {k,x:W/2-k*(x0+x1)/2,y:HM/2-k*(y0+y1)/2}};
- const setZ=(t,anim)=>{const tr=`translate(${t.x},${t.y}) scale(${t.k})`;(anim?zg.transition().duration(700):zg).attr('transform',tr);zg.selectAll('rect').attr('stroke-width',1/t.k).attr('transform',`rotate(45) scale(${1/Math.sqrt(t.k)})`)};
- const hotZ=fit(hot.filter(c=>c.geo||c.ll),0),clustered=hotZ.k>=1.8;let zoomed=clustered;
- const zb=d3.select('#tzoom');const zlab=()=>zb.text(zoomed?'Show whole world':'Zoom to hot spots').attr('aria-pressed',zoomed);
- setZ(zoomed?hotZ:{k:1,x:0,y:0});zlab();
- zb.on('click',()=>{zoomed=!zoomed;setZ(zoomed?hotZ:{k:1,x:0,y:0},1);zlab()});
+ const setZ=(t,anim)=>{const tr=`translate(${t.x},${t.y}) scale(${t.k})`;(anim?zg.transition().duration(900):zg).attr('transform',tr);zg.selectAll('rect').attr('stroke-width',1/t.k).attr('transform',`rotate(45) scale(${1/Math.sqrt(t.k)})`)};
+ const RM2=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ // Key areas: aggressive countries grouped by region (lon/lat boxes), ranked by their highest share.
+ const REG=[['wp','West Pacific (South China Sea and Japan)',(x,y)=>x>=90&&x<=160],['pi','Pacific Islands',(x,y)=>x>160||x<-150],['eu','Europe',(x,y)=>x>=-25&&x<90&&y>=35],['ea','Horn of Africa and East Africa',(x,y)=>x>=20&&x<90&&y<35],['af','Africa and Middle East',(x,y)=>x>=-25&&x<90&&y<35],['am','Americas',(x,y)=>true]];
+ const WHY={wp:'The embassy in Manila trades barbs with the Philippine Coast Guard spokesperson over the South China Sea, and posts in Japan accuse Japanese right-wing forces of distorting wartime history.',
+  pi:'Posts attack Taiwan\u2019s leader Lai Ching-te and repost foreign ministry criticism of the United States over cybersecurity.',
+  eu:'Posts condemn US arms sales to Taiwan, Taiwan\u2019s independence camp and Japanese \u201cneo-militarism\u201d, including a rebuttal of a Taiwanese minister\u2019s article in an Estonian newspaper.',
+  ea:'Posts accuse Japanese right-wing forces of using AI to whitewash war crimes and restate Beijing\u2019s claim to Taiwan on its 25 October anniversary.'};
+ const areas=REG.map(([id,name,t])=>({id,name,cs:hot.filter(c=>c.ll&&t(c.ll[0],c.ll[1]))})).filter(a=>a.cs.length);
+ {const used=new Set();areas.forEach(a=>{a.cs=a.cs.filter(c=>!used.has(c.country));a.cs.forEach(c=>used.add(c.country))})}
+ const AR=areas.filter(a=>a.cs.length).sort((a,b)=>b.cs[0].agg-a.cs[0].agg).slice(0,4);AR.forEach(a=>a.z=fit(a.cs));
+ let zoomed=true,act=AR[0];
+ const zb=d3.select('#tzoom');const zlab=()=>zb.text(zoomed?'Show whole world':'Zoom to key area').attr('aria-pressed',zoomed);
+ const outline=names=>g.attr('stroke',f=>names.has(f.properties.name)?'#c8a24a':'#2c426b').attr('stroke-width',f=>names.has(f.properties.name)?2.5:.4);
+ const pick=(a,anim)=>{act=a;zoomed=true;setZ(a.z,anim&&!RM2);zlab();outline(new Set(a.cs.map(c=>c.geo)));
+  d3.selectAll('.tarea').classed('on',d=>d===a).attr('aria-pressed',d=>d===a)};
+ ['#tareas','#tareas-m'].forEach(id=>d3.select(id).selectAll('li').data(AR).join('li').append('button').attr('type','button').attr('class','tarea')
+  .html(a=>`<b>${esc(a.name)}</b><span class="tc">${a.cs.map(c=>`<span class="sw sq" style="background:${aggCol(c.agg)}"></span>${esc(c.country)} ${pct(c.agg)}`).join(' · ')}</span>${WHY[a.id]?`<span class="tw">${esc(WHY[a.id])}</span>`:''}`)
+  .on('click',(e,a)=>pick(a,1)));
+ if(act)pick(act,0);else{zoomed=false;zlab()}
+ zb.on('click',()=>{if(zoomed){zoomed=false;setZ({k:1,x:0,y:0},!RM2);outline(new Set());d3.selectAll('.tarea').classed('on',false).attr('aria-pressed',false);zlab()}else if(act)pick(act,1)});
  d3.select('#ttop').selectAll('li').data(top).join('li').append('button').attr('class','tli').attr('type','button')
   .html((c,i)=>`<span class="sw sq" style="background:${aggCol(c.agg)}"></span><b>${i+1}. ${esc(c.country)}</b><span>${pct(c.agg)} aggressive · ${c.posts} posts</span>`)
   .on('click',function(e,c){zoomed=true;setZ(fit([c]),1);zlab();g.attr('stroke',f=>f.properties.name===c.geo?'#c8a24a':'#2c426b').attr('stroke-width',f=>f.properties.name===c.geo?2.5:.4);
