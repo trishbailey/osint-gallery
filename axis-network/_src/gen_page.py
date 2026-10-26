@@ -45,7 +45,9 @@ SRC=[f'Cross-group copies: identical message text (60+ characters after cleaning
  'Channel group labels follow the channels’ own branding and published reporting. Sadaa al-Masirah (@sadaa_almasirah) is the largest single Houthi source.']
 
 # Houthi threat targets (all numbers from data.json['threats'])
-T=D['threats']; TR={r['k']:r for r in T['rows']}
+T=D['threats']
+TRC={'riyadh':'#e5484d','kkia':'#3fd0e0','aramco':'#ff8c42','khamis':'#c86bfa','yanbu':'#5ad16b','israel':'#4f7dff','us':'#f2c94c','redsea':'#ff8fb8'}
+for _x in (T.get('trend') or {}).get('s',[]): _x['c']=TRC[_x['k']]; TR={r['k']:r for r in T['rows']}
 def mult(r,a,b):
     x,y=r[a][1],r[b][1]
     return 'new' if x==0 and y>0 else (f'×{y/x:.1f}' if x else 'none')
@@ -318,7 +320,7 @@ window.__tmap=m;home();upd()})();
 flow();let rw=innerWidth;addEventListener('resize',()=>{if(innerWidth!==rw){rw=innerWidth;flow()}});
 
 (function(){const T=D.T&&D.T.trend,box=document.getElementById('trc');if(!T||!box)return;
- const C={riyadh:'#e5484d',kkia:'#3fd0e0',aramco:'#ff8c42',khamis:'#c86bfa',yanbu:'#5ad16b',israel:'#4f7dff',us:'#f2c94c',redsea:'#ff8fb8'};
+ const C=Object.fromEntries(T.s.map(x=>[x.k,x.c]));
  let M='raw';const on=new Set(T.s.map(x=>x.k));const NS='http://www.w3.org/2000/svg';
  const mk=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p&&p.appendChild(e);return e};
  const MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -360,23 +362,25 @@ TRC={'riyadh':'#e5484d','kkia':'#3fd0e0','aramco':'#ff8c42','khamis':'#c86bfa','
 TR=T.get('trend')
 def _trcap(t):
     from datetime import date as _d
-    S={x['k']:x for x in t['s']};W=t['weeks'];lw=W[-1]
-    wd=lambda w:_d(*map(int,w.split('-'))).strftime('%b %-d')
-    ri=S['riyadh']['n'];base_end=next((i for i,w in enumerate(W) if w>='2026-09-29'),len(W)-1)
-    bm=sum(ri[:base_end])/max(base_end,1);last=ri[-1]
-    parts=[f'Riyadh was named in {last} Houthi threat posts in the week of {wd(lw)}, against an average of {bm:.1f} a week from {wd(W[0])} to {wd(W[base_end-1])}'+(f' (about {last/bm:.0f}×)' if bm else '')]
-    k=S['kkia']['n'];fz=next((i for i,v in enumerate(k) if v),None)
-    if fz is not None: parts.append(f'King Khalid Airport went from none before the week of {wd(W[fz])} to {k[-1]} last week')
-    r=S['redsea']['n'];pk=max(range(len(r)),key=lambda i:r[i])
-    parts.append(f'Red Sea shipping peaked at {r[pk]} in the week of {wd(W[pk])} and was at {r[-1]} last week')
-    u=S['us']['n'];parts.append(f'the United States fell to {u[-1]} last week from {u[-2]} the week before' if u[-1]<u[-2] else f'the United States was at {u[-1]} last week')
-    return '. '.join(parts[:1])+'. '+'; '.join(parts[1:])+'.'
+    W=t['weeks'];wd=lambda w:_d(*map(int,w.split('-'))).strftime('%b %-d')
+    be=next((i for i,w in enumerate(W) if w>='2026-09-29'),len(W)-1)
+    out=[]
+    for x in t['s']:
+        n=x['n'];last=n[-1];bm=sum(n[:be])/max(be,1);pk=max(range(len(n)),key=lambda i:n[i])
+        if x['k']=='riyadh':
+            out.append(f'Riyadh was named in {last} Houthi threat posts in the week of {wd(W[-1])}, against an average of {bm:.1f} a week from {wd(W[0])} to {wd(W[be-1])}'+(f' (about {last/bm:.0f}×)' if bm else ''))
+        elif not any(n[:be]) and any(n):
+            fz=next(i for i,v in enumerate(n) if v);out.append(f'{x["l"]} went from none before the week of {wd(W[fz])} to {last} last week')
+        elif pk<len(n)-1 and last<n[pk]:
+            out.append(f'{x["l"]} peaked at {n[pk]} in the week of {wd(W[pk])} and was at {last} last week')
+        else: out.append(f'{x["l"]} was at {last} last week, its highest')
+    return out[0]+'. '+'; '.join(out[1:])+'.'
 if TR:
     trcap=_trcap(TR)
     chips=''.join(f'<button class="chip" type="button" data-k="{x["k"]}" aria-pressed="true"><i style="background:{TRC[x["k"]]}"></i>{html.escape(x["l"])}</button>' for x in TR['s'])
     TREND=(f'<div class="row" id="trend"><div class="leg trleg"><div class="tlh">Show or hide a line</div>{chips}'
       f'<div class="tlh">Scale</div><div class="tw tsc"><button class="btn" data-tm="raw" aria-pressed="true">Posts</button><button class="btn" data-tm="rate" aria-pressed="false">Per 10,000</button></div></div>'
-      f'<div><h3 class="trh">Weekly Houthi threat posts naming each target</h3><p class="prompt">Weeks run Tuesday to Monday, {nice(TR["weeks"][0])} to {nice(T["end"])}; the partial week of May 1–4 is left out. Hover or tap the chart for a week’s numbers; ▼ marks the Oct 13 warning, ● the claimed strikes.</p>'
+      f'<div><h3 class="trh">Weekly Houthi threat posts naming the top 5 targets</h3><p class="prompt">Weeks run Tuesday to Monday, {nice(TR["weeks"][0])} to {nice(T["end"])}; the partial week of May 1–4 is left out. The five targets named most often over the whole period are shown (Riyadh always included). Hover or tap the chart for a week’s numbers; ▼ marks the Oct 13 warning, ● the claimed strikes.</p>'
       f'<div id="trc"></div><p class="cap">{html.escape(trcap)}</p></div></div>')
 else: TREND=''
 WK=T.get('week',{});tl=lambda x:', '.join(x)

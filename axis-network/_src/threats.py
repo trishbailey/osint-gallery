@@ -153,6 +153,11 @@ def build(posts_path, copies_csv=None):
     for k, lab, pat in TREND:
         m = th[th.text.str.contains(pat, regex=True)]
         tw['s'].append(dict(k=k, l=lab, n=[int(((m.date >= a) & (m.date < a + 7 * D)).sum()) for a in wks]))
+    # keep the top 5 by total mentions; Riyadh always stays in (it is the story)
+    TOPN = 5
+    rk = sorted(tw['s'], key=lambda x: -sum(x['n']))
+    keep = [x for x in rk if x['k'] == 'riyadh'] + [x for x in rk if x['k'] != 'riyadh']
+    tw['s'] = keep[:TOPN]; tw['ranked'] = [(x['k'], sum(x['n'])) for x in rk]
     SA = '|'.join([v[4] for v in SITES.values()] + [CHART[k][2] for k in CHART if CHART[k][1] == 'sa'])
     a0 = pd.Timestamp(CASE_WARN_DATE, tz='UTC')
     ev = [dict(d=CASE_WARN_DATE, kind='warning', u=CASE['warn'])]
