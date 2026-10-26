@@ -14,6 +14,12 @@ def rng(s,days=7):
     if a.month!=b.month: return f"{a:%b %-d}–{b:%b %-d}, {b.year}"
     return f"{a:%b %-d}–{b.day}, {b.year}"
 def nice(s): y,m,d=map(int,s.split('-')); return date(y,m,d).strftime('%b %-d, %Y')
+def dur(sec):  # seconds -> readable duration with correct units
+    sec=int(round(sec))
+    if sec<60: return f"{sec} seconds"
+    if sec<3600:
+        m,s=divmod(sec,60); return f"about {m} minute{'s'*(m!=1)}"+(f" {s} seconds" if s else "")
+    h,m=divmod(round(sec/60),60); return f"about {h} hour{'s'*(h!=1)}"+(f" {m} minutes" if m else "")
 c=D['collection']; x30=D['xcopies30']; ao=D['allorigin30']; tot=D['allcopies30']; o=D['origin30']; w=D['week']; p=D['pay']; th=D['themes']
 hpct=round(100*ao['houthi']/tot); topx=max(o,key=o.get); hx=round(100*o['houthi']/x30); tx=round(100*o[topx]/x30)
 armed=max((g for g in o if g!='aligned'),key=o.get)
@@ -60,7 +66,7 @@ tcase=(f'<div class="tcard"><div class="tch">Warning, then strike</div><ol class
  f'<li><b>Overnight, Oct 13–14</b> A missile hits an administrative building at Aramco’s headquarters in Dhahran, causing a fire across several floors. Saudi Arabia’s energy ministry confirmed a fire; AP and Reuters reported heavy {nw("damage.",nF(3),nF(4),nF(5))}</li>'
  f'<li><b>{cs["claim_t"]}</b> Houthi military media claim strikes on all three {nw("sites.",nF(2))} Press reports confirm only the Aramco headquarters hit.</li></ol></div>')
 tlines=(f'<ul class="tl"><li><b>New target: airlines.</b> Since {nice(aq["first"])}, Houthi channels have posted {aq["n"]} warnings telling international airlines that Saudi airspace is {nw("unsafe.",nF(6))}</li>'
- +(f'<li><b>Iraqi militias amplify within minutes.</b> Iraqi militia channels reposted Houthi military statements {iq["n"]} times in the last 30 days, half of them within {round(iq["med"]/60,1):g} minutes; @{iq["claim"][0]} reposted the Oct 14 strike claim after {iq["claim"][1]} {nw("seconds.",nF(7))}</li>' if iq else '')+'</ul>')
+ +(f'<li><b>Iraqi militias amplify within minutes.</b> Iraqi militia channels reposted Houthi military statements {iq["n"]} times in the last 30 days, half of them within {dur(iq["med"])}; @{iq["claim"][0]} reposted the Oct 14 strike claim after {iq["claim"][1]} {nw("seconds.",nF(7))}</li>' if iq else '')+'</ul>')
 def flagli(x):
     if x['why']=='first': return f'<li><b>{html.escape(x["l"])}</b> <span>named for the first time ({nice(x["first"])}, <a href="{x["url"]}" target="_blank" rel="noopener nofollow">post</a>)</span></li>'
     return f'<li><b>{html.escape(x["l"])}</b> <span>{x["n7"]} threat posts this week, {x["r7"]:g} per 10,000 posts vs {x["rp"]:g} in the 3 weeks before</span></li>'
@@ -272,7 +278,7 @@ INTRO=(f'In the last 30 days, Houthi Telegram channels named Riyadh in threats {
  f'On Oct 13 the Houthi military told civilians to evacuate Aramco’s headquarters, King Khalid Airport and the Riyadh refinery; on Oct 14 it claimed strikes on all three. '
  f'Based on {c["channels"]} public Telegram channels of Iran’s “Axis of Resistance”. Tap any target or bar for details; sources are in the More section.')
 DESC=html.escape(f'Houthi threats now name Riyadh {RX}× and Aramco {AX}× as often as before; an Oct 13 evacuation warning was followed by claimed strikes on Oct 14.')
-BRIDGE=f'Iraqi militia channels reposted Houthi military statements {iq["n"]} times in the last 30 days, a median {iq["med"]/60:.1f} minutes after the original.'
+BRIDGE=f'Iraqi militia channels reposted Houthi military statements {iq["n"]} times in the last 30 days, a median of {dur(iq["med"])} after the original.'
 MAPNOTE='Not mapped: '+', '.join(UNMAPPED)+' (no single place, or no threat posts in the last 30 days). Change compares threat posts per 10,000 Houthi posts with May–Sep. Quotes are translated from Arabic.'
 WK=T.get('week',{});tl=lambda x:', '.join(x)
 lk=lambda u:f'<a href="{u}" target="_blank" rel="noopener nofollow">{u.replace("https://","")}</a>'
