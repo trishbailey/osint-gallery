@@ -7,9 +7,11 @@ const KIND={post:['Original post','#4fc3b0'],repost:['Repost','#e8a33d'],quote:[
 const TPC=['#4e9fe0','#e0703c','#5cbf7a','#b36bd6','#e6c34a'];
 const tpColor=name=>{const i=ST.series.findIndex(s=>s.name===name);return i>=0?TPC[i]:null};
 const OTHER='#c8a24a';
+const hp=()=>new URLSearchParams(location.hash.slice(1));
+function setHash(k,v){const q=hp();if(v==null)q.delete(k);else q.set(k,v);const t=q.toString();history.replaceState(null,'',location.pathname+location.search+(t?'#'+t:''))}
 const TYPES={'Foreign ministry':'#e05a5a','Embassy':'#4e9fe0','Consulate':'#5cbf7a','Diplomat':'#e6b33a','Outside account':'#b36bd6'};
-const TONEB=[['Strongly cooperative','#3a86d6',-1,-0.6],['Cooperative','#45c1b4',-0.6,-0.2],['Mixed','#d9c255',-0.2,0.2],['Confrontational','#e8833a',0.2,0.6],['Strongly confrontational','#d6455d',0.6,1.01]];
-const toneCol=s=>s==null?null:TONEB.find(b=>s>=b[2]&&s<b[3])[1];
+const AGC=['#8e1b24','#d9b26a','#3fa45b'];const TONEB=[['Mostly aggressive',AGC[0]],['Neutral or mixed',AGC[1]],['Mostly friendly',AGC[2]]];
+const toneCol=d3.scaleLinear().domain([-0.35,0,0.35]).range(AGC).interpolate(d3.interpolateLab).clamp(true);
 const accType={};ACC.forEach(a=>accType[a.h]=a.type);
 let on=new Set(Object.keys(TYPES));
 const tip=d3.select('#tip');
@@ -23,7 +25,7 @@ d3.select('#cover').text(`Coverage: ${fday(H.start.slice(0,10))} to ${fd(H.end)}
 d3.select('#heads').selectAll('div').data([[H.accounts,'accounts tracked'],[H.active,'posted in this period'],[H.posts,'posts collected'],[H.countries,'countries and organisations'],[H.clusters,'messages shared by 3+ accounts'],[H.topburst_acc,'accounts pushed the '+H.topburst+' in bursts']]).join('div').attr('class','head').html(d=>`<b>${fmt(d[0])}</b><span>${d[1]}</span>`);
 // ---- legends and filters
 const lg=(id,items,sq)=>d3.select(id).selectAll('div').data(items).join('div').html(d=>`<span class="sw ${sq?'sq':''}" style="background:${d[1]}"></span>${esc(d[0])}`);
-lg('#lg-kind',Object.values(KIND));lg('#lg-tp',ST.series.map((s,i)=>[s.name,TPC[i]]),1);lg('#lg-tone',TONEB,1);
+lg('#lg-kind',Object.values(KIND));lg('#lg-tp',ST.series.map((s,i)=>[s.name,TPC[i]]),1);lg('#lg-tone',TONEB,1);d3.select('#lg-tone').append('div').attr('class','li').html(`<span class="sw" style="background:${AGC[1]};opacity:.3"></span>Faded: under ${TONE.min_posts} posts`);
 d3.select('#types').selectAll('button').data(Object.entries(TYPES)).join('button').attr('class','tg').attr('aria-pressed','true').html(d=>`<span class="sw" style="background:${d[1]}"></span>${d[0]}`)
  .on('click',function(e,d){on.has(d[0])?on.delete(d[0]):on.add(d[0]);this.setAttribute('aria-pressed',on.has(d[0]));drawSpread(true);drawRipple()});
 const side=document.getElementById('side'),ft=document.getElementById('ftoggle');
@@ -36,9 +38,9 @@ const sel=d3.select('#tp');sel.selectAll('option').data(SP).join('option').attr(
 sel.on('change',function(){setTP(+this.value)});
 d3.select('#chips').selectAll('button').data(SP).join('button').attr('class','chip').html(d=>`<span class="sw" style="background:${tpColor(d.name)||'transparent'};border:2px solid ${tpColor(d.name)||OTHER}"></span>${esc(d.name)}`).on('click',(e,d)=>setTP(SP.indexOf(d)));
 function setTP(i){cur=i;sel.property('value',i);d3.select('#chips').selectAll('button').attr('aria-pressed',(d,j)=>j===i);d3.select('#tpdesc').text(SP[i].desc);
- d3.select('#sp-title').text(`How it spread: ${SP[i].name}`);history.replaceState(null,'','#narrative='+slug(SP[i].name));stop();drawSpread();play()}
+ d3.select('#sp-title').text(`How it spread: ${SP[i].name}`);setHash('narrative',slug(SP[i].name));stop();drawSpread();play()}
 function gotoNarr(name){const i=SP.findIndex(d=>d.name===name);if(i<0)return;setTP(i);document.getElementById('spread').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
-function initNarr(){const m=location.hash.match(/narrative=([\w-]+)/);const i=m?SP.findIndex(d=>slug(d.name)===m[1]):-1;if(i>=0){setTP(i);setTimeout(()=>document.getElementById('spread').scrollIntoView(),50)}else{setTP(0);history.replaceState(null,'',location.pathname+location.search)}}
+function initNarr(){const m=location.hash.match(/narrative=([\w-]+)/);const ini=!!m;const i=m?SP.findIndex(d=>slug(d.name)===m[1]):-1;if(i>=0){setTP(i);setTimeout(()=>document.getElementById('spread').scrollIntoView(),50)}else{setTP(0);setHash('narrative',null)}}
 addEventListener('hashchange',()=>{const m=location.hash.match(/narrative=([\w-]+)/);const i=m?SP.findIndex(d=>slug(d.name)===m[1]):-1;if(i>=0&&i!==cur)setTP(i)});
 // ---- spread map
 const W=Math.max(320,document.getElementById('map').clientWidth),HM=Math.round(W*0.5);
@@ -94,8 +96,11 @@ d3.select('#clock').on('input',function(){stop();setPos(this.value/1000);d3.sele
 })();
 // ---- ripple: how one post is amplified over time
 const RP=RIP;let rcur=0,rpos=1,rtimer=null;const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const CTRY=[...new Set(ACC.map(a=>a.country).concat(['Botswana','Togo']))].filter(c=>c&&!/China|\(/.test(c)).sort((a,b)=>b.length-a.length);
+const dupT=d3.rollup(RP,v=>v.length,d=>d.theme);
+RP.forEach(d=>{d.sub='';if(dupT.get(d.theme)>1){const c=CTRY.find(c=>d.text.includes(c));d.sub=c?`: ${c}`:''}});
 const rchip=d3.select('#rchips').selectAll('button').data(RP).join('button').attr('class','chip')
- .html(d=>`<span class="sw" style="background:${tpColor(d.theme)||'transparent'};border:2px solid ${tpColor(d.theme)||OTHER}"></span>${esc(d.theme||d.text.slice(0,40))} <span class="m">${d.amps.length}</span>`)
+ .html(d=>`<span class="sw" style="background:${tpColor(d.theme)||'transparent'};border:2px solid ${tpColor(d.theme)||OTHER}"></span>${esc((d.theme||d.text.slice(0,40))+d.sub)} <span class="m">${new Date(d.t).toLocaleDateString('en-GB',{day:'numeric',month:'short',timeZone:'UTC'})} · ${d.amps.length}</span>`)
  .on('click',(e,d)=>{rcur=RP.indexOf(d);drawRipple();rplay()});
 function fdur(m){return m<60?Math.round(m)+' min':m<1440?(m/60).toFixed(m<600?1:0)+' h':(m/1440).toFixed(1)+' days'}
 let RG=null;
@@ -119,7 +124,7 @@ function drawRipple(){const r=RP[rcur];rchip.attr('aria-pressed',(d,i)=>i===rcur
  const lk=svg.append('g'),nd=svg.append('g');
  // measure pills, then place without overlaps
  const meas=svg.append('text').attr('font-size',13);
- const placed=[];const ctrW=(meas.text(r.label).node().getComputedTextLength()+30);placed.push({x:cx-ctrW/2,y:cy-16,w:ctrW,h:32});
+ const placed=[];const ctrW=(meas.text(r.label).node().getComputedTextLength()+30);placed.push({x:cx-ctrW/2,y:cy-16,w:ctrW,h:32});rings.forEach(m=>placed.push({x:cx-32,y:cy-rad(m)-22,w:64,h:20}));
  const ov=(a,b)=>a.x<b.x+b.w+6&&b.x<a.x+a.w+6&&a.y<b.y+b.h+4&&b.y<a.y+a.h+4;
  amps.forEach((a,i)=>{const pw=meas.text(a.label).node().getComputedTextLength()+30;let ang=-Math.PI/2+i*2.39996,rr=rad(a.delay),p;
   for(let k=0;k<400;k++){const x=cx+rr*Math.cos(ang),y=cy+rr*Math.sin(ang);p={x:x-pw/2,y:y-14,w:pw,h:28,cx:x,cy:y};
@@ -155,28 +160,26 @@ function openPost(a){const p=PO[a.id];d3.select('#ph').text(a.label);
  d3.select('#pbody').html(`<div class="post"><div class="m">@${esc(a.h)} · ${a.orig?'Original post':KIND[a.k]?.[0]||''} · ${fd(a.t)}</div><div>${esc(p?p.text:(a.text||''))}</div><a href="https://x.com/${encodeURIComponent(a.h)}/status/${a.id}" target="_blank" rel="noopener">Open on x.com ↗</a></div>`);
  panel.hidden=false;document.getElementById('pclose').focus()}
 
-// ---- tone map
-let tstep=-1,ttimer=null;
-(function(){const svg=d3.select('#tmap').append('svg').attr('viewBox',`0 0 ${W} ${HM}`).attr('role','img').attr('aria-label','World map of tone by country');
+// ---- aggression heat map
+(function(){const svg=d3.select('#tmap').append('svg').attr('viewBox',`0 0 ${W} ${HM}`).attr('role','img').attr('aria-label','World map of how aggressive or friendly posts are, by country');
  svg.append('path').attr('d',path({type:'Sphere'})).attr('fill','#0f1b31');
- svg.append('g').attr('id','tc').selectAll('path').data(countries).join('path').attr('d',path).attr('stroke','#2c426b').attr('stroke-width',.4);
- const ents=TONE.countries.filter(c=>!c.geo&&c.ll);const eg=svg.append('g').attr('id','te').selectAll('g').data(ents).join('g').attr('transform',d=>{const p=proj(d.ll);return `translate(${p[0]},${p[1]})`});
- eg.append('rect').attr('x',-6).attr('y',-6).attr('width',12).attr('height',12).attr('transform','rotate(45)').attr('stroke','#e6e9ef').attr('stroke-width',1);
- const lab=svg.append('text').attr('x',14).attr('y',HM-14).attr('font-size',15).attr('font-weight',600).style('fill','#c8a24a').attr('id','tlab');
- const lbl=p=>{const i=TONE.periods.indexOf(p),s=new Date(p+'T00:00:00Z'),e=new Date(+s+6*864e5),a=new Date(Math.max(+s,+new Date(H.start))),b=new Date(Math.min(+e,+new Date(H.end)));const part=(+a>+s||+b<+e-864e5)?' (partial week)':'';const f=d=>d.toLocaleDateString('en-GB',{day:'numeric',month:'short',timeZone:'UTC'});return (f(a)===f(b)?f(a):`${f(a)}–${f(b)}`)+part};
- const steps=[['All dates',-1]].concat(TONE.periods.map((p,i)=>[lbl(p),i]));
- d3.select('#tsteps').selectAll('button').data(steps).join('button').text(d=>d[0]).on('click',(e,d)=>{tstop();setT(d[1])});
- const byGeo={};TONE.countries.forEach(c=>{if(c.geo)byGeo[c.geo]=c});
- function val(c){if(!c)return null;return tstep<0?{s:c.overall,n:c.posts}:c.vals[tstep]}
- window.setT=function(i){tstep=i;d3.select('#tsteps').selectAll('button').attr('aria-pressed',d=>d[1]===i);
-  const paths=svg.select('#tc').selectAll('path').attr('fill',f=>{const v=val(byGeo[f.properties.name]);return v&&v.s!=null?toneCol(v.s):'#1b2c4a'});
-  tipOn(paths,f=>{const c=byGeo[f.properties.name];if(!c)return `<b>${esc(f.properties.name)}</b><br>No tracked mission account`;const v=val(c);return `<b>${esc(c.country)}</b><br>${v.n} posts${v.s==null?'<br>Too few tone words to score':`<br>Tone score ${v.s>0?'+':''}${v.s.toFixed(2)} (−1 cooperative, +1 confrontational)`}`});
-  svg.select('#te').selectAll('rect').attr('fill',c=>{const v=val(c);return v&&v.s!=null?toneCol(v.s):'#1b2c4a'});
-  tipOn(svg.select('#te').selectAll('g'),c=>{const v=val(c);return `<b>${esc(c.country)}</b> (multilateral or headquarters)<br>${v.n} posts${v.s==null?'<br>Too few tone words to score':`<br>Tone score ${v.s>0?'+':''}${v.s.toFixed(2)}`}`});
-  lab.text(steps.find(d=>d[1]===i)[0])};
- setT(-1);
+ const MP=TONE.min_posts,byGeo={};TONE.countries.forEach(c=>{if(c.geo)byGeo[c.geo]=c});
+ const pct=x=>Math.round(x*100)+'%';
+ const tip=c=>{if(!c)return '';const h=c.harsh[0],f=c.friendly[0];return `<b>${esc(c.country)}</b> · ${c.posts} posts${c.posts<MP?' (too few to judge, faded)':''}<br><span style="color:#e2646e">Aggressive ${pct(c.agg)}</span> · <span style="color:#6fd08a">Friendly ${pct(c.fri)}</span>`+(h?`<br><i>Harshest:</i> “${esc(h.text.slice(0,110))}…”`:'')+(f?`<br><i>Friendliest:</i> “${esc(f.text.slice(0,110))}…”`:'')+'<br>Click to read the posts'};
+ const g=svg.append('g').selectAll('path').data(countries).join('path').attr('d',path).attr('stroke','#2c426b').attr('stroke-width',.4)
+  .attr('fill',f=>{const c=byGeo[f.properties.name];return c?toneCol(c.idx):'#1b2c4a'}).attr('fill-opacity',f=>{const c=byGeo[f.properties.name];return c&&c.posts<MP?.3:1})
+  .style('cursor',f=>byGeo[f.properties.name]?'pointer':null).on('click',(e,f)=>{const c=byGeo[f.properties.name];if(c)openTone(c)});
+ tipOn(g,f=>{const c=byGeo[f.properties.name];return c?tip(c):`<b>${esc(f.properties.name)}</b><br>No tracked mission account`});
+ const ents=TONE.countries.filter(c=>!c.geo&&c.ll);const eg=svg.append('g').selectAll('g').data(ents).join('g').attr('transform',d=>{const p=proj(d.ll);return `translate(${p[0]},${p[1]})`}).style('cursor','pointer').on('click',(e,c)=>openTone(c));
+ eg.append('rect').attr('x',-7).attr('y',-7).attr('width',14).attr('height',14).attr('transform','rotate(45)').attr('stroke','#e6e9ef').attr('stroke-width',1).attr('fill',c=>toneCol(c.idx)).attr('fill-opacity',c=>c.posts<MP?.3:1);
+ tipOn(eg,c=>tip(c).replace('</b>','</b> (multilateral or headquarters)'));
+ const scored=TONE.countries.filter(c=>c.posts>=MP).sort((a,b)=>b.agg-a.agg);
+ d3.select('#tone-sub').text(`Each post is scored for aggressive wording (accusations of hegemony, smears, interference, warnings) and friendly wording (cooperation, friendship, congratulations) in English, Chinese, Japanese, Korean, Russian, Arabic, Spanish, French, Portuguese and German. Countries are coloured by the share of aggressive posts minus the share of friendly ones. Most aggressive: ${scored.slice(0,3).map(c=>`${c.country} (${pct(c.agg)} aggressive)`).join(', ')}. Countries with fewer than ${MP} posts are faded. Click a country to read its harshest and friendliest posts.`);
 })();
-function tstop(){if(ttimer){clearInterval(ttimer);ttimer=null}d3.select('#tplay').text('▶ Play')}
+function openTone(c){const row=(p,col)=>`<div class="post" style="border-left:4px solid ${col};padding-left:8px"><div class="m">@${esc(p.h)} · ${fd(p.t)}</div><div>${esc(p.text)}</div><a href="https://x.com/${encodeURIComponent(p.h)}/status/${p.id}" target="_blank" rel="noopener">Open on x.com ↗</a></div>`;
+ d3.select('#ph').text(`${c.country}: ${Math.round(c.agg*100)}% aggressive, ${Math.round(c.fri*100)}% friendly`);
+ d3.select('#pbody').html(`<p class="m">${c.posts} posts${c.posts<TONE.min_posts?' (too few to judge)':''}</p><h3 class="sh3">Harshest</h3>${c.harsh.map(p=>row(p,AGC[0])).join('')||'<p class="m">No aggressive wording found.</p>'}<h3 class="sh3">Friendliest</h3>${c.friendly.map(p=>row(p,AGC[2])).join('')||'<p class="m">No friendly wording found.</p>'}`);
+ panel.hidden=false;document.getElementById('pclose').focus()}
 d3.select('#tplay').on('click',()=>{if(ttimer)return tstop();let i=0;setT(0);d3.select('#tplay').text('❚❚ Pause');ttimer=setInterval(()=>{i++;if(i>=TONE.periods.length){tstop();setT(-1);return}setT(i)},1600)});
 const panel=document.getElementById('panel');
 // ---- bursts: grouped by talking point, with what was said
@@ -235,7 +238,17 @@ function periodChart(el,unit){const box=document.getElementById(el);const fmtD=d
    tipOn(g,j=>`<b>${esc(ST.series[j].name)}</b><br>${p.label} (${p.sub}): ${p.vals[j]} posts<br>Click to see it spread on the map`);
    y0+=ST.series.length*rowH+56});
  }}
-periodChart('streamw','week');periodChart('streamm','month');
+const VIEWS={day:['stream','Top talking points by day','Posts per day in each of the five talking points carried by the most accounts. Hover for counts; click one to see it spread on the map.'],
+ week:['streamw','Top talking points by week','The same five talking points added up by week (Monday to Sunday). Partial weeks show the dates covered.'],
+ month:['streamm','Top talking points by month','Posts per month, ranked. Collection began on 17 October, so October is partial; this becomes a stream once there are three months of data.']};
+const drawn={day:1};
+function setView(v,push){if(!VIEWS[v])v='day';for(const k in VIEWS)document.getElementById(VIEWS[k][0]).hidden=k!==v;
+ if(!drawn[v]){periodChart(VIEWS[v][0],v);drawn[v]=1}
+ d3.select('#tp-title').text(VIEWS[v][1]);d3.select('#tp-sub').text(VIEWS[v][2]);
+ d3.selectAll('#tpview button').attr('aria-pressed',function(){return this.dataset.v===v});if(push)setHash('view',v==='day'?null:v)}
+d3.selectAll('#tpview button').on('click',function(){setView(this.dataset.v,1)});
+setView(hp().get('view')||'day');
+addEventListener('hashchange',()=>{const v=hp().get('view')||'day';setView(v)});
 
 document.getElementById('pclose').onclick=()=>{panel.hidden=true};
 addEventListener('keydown',e=>{if(e.key==='Escape'){panel.hidden=true;side.classList.remove('open')}});
