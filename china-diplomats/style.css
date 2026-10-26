@@ -72,3 +72,15 @@ svg text{fill:var(--text);font-size:13px}
  .panel{top:auto;height:80vh;border-left:0;border-top:2px solid var(--gold);border-radius:14px 14px 0 0}
 }
 #tpview{margin:8px 0 10px;gap:0}#tpview button{border-radius:0;min-width:84px}#tpview button:first-child{border-radius:6px 0 0 6px}#tpview button:last-child{border-radius:0 6px 6px 0}
+.says{font-size:15px;line-height:1.55;margin:4px 0 12px}
+.legend.inline{display:flex;flex-wrap:wrap;gap:6px 16px;margin:4px 0 8px}.legend.inline .li{display:inline-flex;align-items:center;gap:6px;font-size:13px}
+
+.dd summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600;font-size:15px}
+.ddb{padding:4px 0 8px}
+.accl{display:grid;grid-template-columns:minmax(120px,200px) 1fr;gap:6px 14px;margin:0 0 10px}.accl dt{color:var(--gold);font-size:14px}.accl dd{margin:0;display:flex;flex-wrap:wrap;gap:4px 14px}
+.accl a{color:var(--text);font-size:14px;min-height:28px;display:inline-flex;align-items:center;gap:4px}
+.af{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:6px 0 10px}
+.af label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}
+.af input,.af select{min-height:44px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:0 10px;font-size:14px;color-scheme:dark}
+.acards{display:grid;gap:8px;margin:8px 0}.acard{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px}
+@media (max-width:700px){.accl{grid-template-columns:1fr}.af{grid-template-columns:1fr 1fr}.af label:first-child{grid-column:1/-1}}

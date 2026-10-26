@@ -110,7 +110,8 @@ named.sort(key=lambda c:-c['accounts'])
 d0=T(START).date();d1=T(END).date();days=[(d0+dt.timedelta(d)).isoformat() for d in range((d1-d0).days+1)]
 # ---------- streamgraph (top named talking points, daily) ----------
 TOP=named[:5]
-stream=dict(days=days,series=[dict(name=c['name'],vals=[0]*len(days)) for c in TOP])
+_NI={v['name']:v for v in NAMES.values()}
+stream=dict(days=days,series=[dict(name=c['name'],line=_NI.get(c['name'],{}).get('line',''),says=_NI.get(c['name'],{}).get('says',''),sample=_NI.get(c['name'],{}).get('sample'),vals=[0]*len(days)) for c in TOP])
 ki={c['key']:j for j,c in enumerate(TOP)}
 kn={c['name']:j for j,c in enumerate(TOP)}
 for r in rows:
@@ -259,7 +260,10 @@ head=dict(accounts=len(acc),topburst=_tb,topburst_acc=len(_bt.get(_tb,())),activ
     langs=dict(collections.Counter(r['lang'] for r in rows).most_common(8)))
 # ---------- posts for panels ----------
 pp={r['id']:dict(h=r['h'],t=r['t'],k=r['k'],text=r['text'][:400],country=r['country'],oa=r['oa']) for r in rows if r['id'] in burst_ids or r.get('tp')}
-for nm_,obj in [('headline',head),('stream',stream),('matrix',matrix),('bursts',dict(bursts=bursts,cal=cal,days=days)),('network',net),('ripples',pick),('tone',tonemap),('spread',mapd),('accounts',accts),('posts',pp)]:
+_tpn=sorted({r['tp'] for r in rows if r.get('tp')})
+archive=dict(narratives=_tpn,kinds=['post','repost','quote','reply'],rows=[[r['id'],r['h'],r['t'][:16],['post','repost','quote','reply'].index(r['k']) if r['k'] in ('post','repost','quote','reply') else 0,r['country'],_tpn.index(r['tp']) if r.get('tp') else -1,r['text']] for r in rows])
+head['list_checked']=dt.datetime.fromtimestamp(os.path.getmtime(os.path.join(H,'accounts.csv'))).strftime('%-d %b %Y')
+for nm_,obj in [('archive',archive),('headline',head),('stream',stream),('matrix',matrix),('bursts',dict(bursts=bursts,cal=cal,days=days)),('network',net),('ripples',pick),('tone',tonemap),('spread',mapd),('accounts',accts),('posts',pp)]:
     json.dump(obj,open(os.path.join(OUT,nm_+'.json'),'w'),ensure_ascii=False,separators=(',',':'))
 with open(os.path.join(H,'..','posts_export.csv'),'w',newline='') as fo:
     w=csv.writer(fo);w.writerow(['id','created_at_utc','handle','country','account_type','kind','lang','text','referenced_author','likes','reposts','views','cluster','url'])
