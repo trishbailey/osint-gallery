@@ -28,7 +28,7 @@ Promise.all([J("data/sources.json"),J("data/routes.geojson"),J("data/crossings.g
   kpis(net,cross,money,events,terr);
   const M=mapView(topo,adm,terr,routes,cross,china,GC);
   overview(ov,arcs,net,terr,events,M);
-  moneyTile(money);netTile(net,terr);cards(net,terr,M);ticker(events);background(arcs);sources(src);
+  moneyTile(money);netTile(net,terr,topo);cards(net,terr,M);ticker(events);background(arcs);sources(src);
 });
 function kpis(net,cross,money,events,terr){
   const fto=net.groups.filter(g=>g.fto).length, s=cross.stats;
@@ -151,7 +151,7 @@ function moneyTile(m){
   $("moneycov").innerHTML=`<h3>Money channels: what has a sourced figure</h3><table class="mcov">${CH.map(([a,b,c])=>`<tr><td>${esc(a)}</td><td class="${/no sourced/.test(b)?"muted":""}">${esc(b)}${c.length?cite(c):""}</td></tr>`).join("")}</table><div class="small muted">Rows without a figure are known channels where no credible, sourced annual figure was found. Report figures are amounts flagged, not proven laundering.</div>`;
   $("moneymore").innerHTML=`<p><b>${esc(m.takeaway)}</b></p><p>${esc(m.summary)}</p><h3>Typologies flagged (overlapping)</h3>${m.typologies.map(t=>`<div>${esc(t.name)}: $${t.value}bn</div>`).join("")}${cite(["FINCEN_CMLN_FTA"])}<h3>Related</h3>${m.related.map(r=>`<div><b>${esc(r.name)}</b>${r.value?` ($${r.value}bn)`:""}: ${esc(r.text||"")}${cite(r.cites)}</div>`).join("")}<p class="note">${esc(m.notes)}</p>`;
 }
-function netTile(net,terr){
+function netTile(net,terr,topo){
   const el=$("netsvg");el.style.width="100%";const W=Math.max(900,el.parentNode.clientWidth-28),H=W<1000?820:780;const svg=d3.select(el).attr("width",W).attr("height",H).attr("viewBox",`0 0 ${W} ${H}`);svg.selectAll("*").remove();
   const tc=Object.fromEntries(terr.groups.filter(g=>g.network_id).map(g=>[g.network_id,g.color]));const FB=window.CARTEL_FALL||{};const COL=id=>tc[id]||FB[id]||"#ff9f1c";
   const REG={MX:"Mexico",SV:"Central America",GT:"Central America",HN:"Central America",VE:"Venezuela & Colombia",CO:"Venezuela & Colombia",EC:"Ecuador",BR:"Brazil",HT:"Haiti"};
@@ -170,9 +170,14 @@ function netTile(net,terr){
   const sw=(k)=>`<svg width="30" height="10"><line x1="0" y1="5" x2="30" y2="5" stroke="${ST[k][0]}" stroke-width="${ST[k][1]}" ${ST[k][2]?`stroke-dasharray="${ST[k][2]}"`:""}/></svg>`;
   $("netlegend").style.cssText="display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:13px";$("netlegend").innerHTML=`<span>${sw("alliance")} <b style="color:#3ddc84">alliance</b></span> <span>${sw("rivalry")} <b style="color:#ff4d6d">rivalry / war</b></span> <span class="muted">yellow = faction, business or alleged tie (hover a line for details)</span>`;
   // region cluster halos
+  const CF=topo?topojson.feature(topo,topo.objects.countries).features:[];
+  const RISO={"Mexico":["MEX"],"Central America":["GTM","BLZ","SLV","HND","NIC","CRI","PAN"],"Venezuela & Colombia":["VEN","COL"],"Ecuador":["ECU"],"Brazil":["BRA"],"Haiti":["HTI"],"Facilitators":["USA"]};
+  const CNAME={MEX:"Mexico",GTM:"Guatemala",BLZ:"Belize",SLV:"El Salvador",HND:"Honduras",NIC:"Nicaragua",CRI:"Costa Rica",PAN:"Panama",VEN:"Venezuela",COL:"Colombia",ECU:"Ecuador",BRA:"Brazil",HTI:"Haiti",USA:"United States"};
   const rg=d3.groups(nodes,d=>d.reg);const hg=svg.append("g");
   rg.forEach(([r,ns])=>{const x0=d3.min(ns,d=>d.x-d.lw/2)-10,x1=d3.max(ns,d=>d.x+d.lw/2)+10,y0=d3.min(ns,d=>d.y)-50,y1=d3.max(ns,d=>d.y)+30;
-    hg.append("rect").attr("class","netreg").attr("x",x0).attr("y",y0).attr("width",x1-x0).attr("height",y1-y0).attr("rx",14);
+    const isos=RISO[r]||[],fs=CF.filter(f=>isos.includes(f.properties.iso));
+    if(fs.length){const fc={type:"FeatureCollection",features:fs},pr=d3.geoMercator().fitExtent([[x0+4,y0+22],[x1-4,y1-4]],fc),pa=d3.geoPath(pr);
+      hg.append("g").attr("class","netctry").selectAll("path").data(fs).join("path").attr("d",pa).append("title").text(f=>CNAME[f.properties.iso]||f.properties.iso)}
     hg.append("text").attr("class","nethd").attr("x",x0+10).attr("y",y0+15).text(r)});
   const cp=d=>{const dx=d.target.x-d.source.x,dy=d.target.y-d.source.y;return [(d.source.x+d.target.x)/2-dy*.15,(d.source.y+d.target.y)/2+dx*.15]};
   const eg=svg.append("g").selectAll("g").data(edges).join("g").attr("class","ne").style("cursor","pointer").on("click",(e,d)=>drawer(`<h2>${esc(d.source.name)} and ${esc(d.target.name)}</h2><span class="tag">${esc(d.kind)}</span><p>${esc(d.text)}</p>${cite(d.cites)}`));

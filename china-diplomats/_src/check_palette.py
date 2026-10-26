@@ -19,9 +19,12 @@ def de(c1,c2):
     RT=-2*math.sqrt(Cbp**7/(Cbp**7+25**7))*math.sin(math.radians(60*math.exp(-((hb-275)/25)**2)))
     return math.sqrt((dL/SL)**2+(dC/SC)**2+(dH/SH)**2+RT*(dC/SC)*(dH/SH))
 P={'kind':['#4fc3b0','#e8a33d','#c46ad6','#5d8fe6'],'talking points':['#4e9fe0','#e0703c','#5cbf7a','#b36bd6','#e6c34a'],
-   'account types':['#e05a5a','#4e9fe0','#5cbf7a','#e6b33a','#b36bd6'],'aggression':['#ffffff','#f7b3c2','#e0526f','#8e0c22'],'matrix ramp':['#fde4ea','#f08aa2','#c8304d','#640514']}
+   'account types':['#d4145a','#ffffff','#3d2bff','#ffaabb','#8b0000'],'account types vs themes and dot kinds':None,'aggression':['#ffffff','#f7b3c2','#e0526f','#8e0c22'],'matrix ramp':['#fde4ea','#f08aa2','#c8304d','#640514']}
 ok=True
+XU=['#4e9fe0','#e0703c','#5cbf7a','#b36bd6','#e6c34a','#4fc6c2','#9a9cf0','#c98a5a','#a8d65a','#4fc3b0','#e8a33d','#c46ad6','#5d8fe6']
 for n,cs in P.items():
+    if cs is None:
+        m=min((de(a,b),a,b) for a in P['account types'] for b in XU);print(f'{n}: min cross dE {m[0]:.1f} ({m[1]} vs {m[2]})');ok&=m[0]>=20;continue
     m=min((de(a,b),a,b) for a,b in itertools.combinations(cs,2));bg=min(de(c,'#12203a') for c in cs)
     print(f"{n}: min pair dE {m[0]:.1f} ({m[1]} vs {m[2]}), min vs panel {bg:.1f}");ok&=m[0]>=20 and bg>=20
 print('PASS' if ok else 'FAIL');sys.exit(0 if ok else 1)

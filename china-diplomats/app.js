@@ -6,10 +6,12 @@ const fmt=d3.format(','),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;'
 const KIND={post:['Original post','#4fc3b0'],repost:['Repost','#e8a33d'],quote:['Quote','#c46ad6'],reply:['Reply','#5d8fe6']};
 const TPC=['#4e9fe0','#e0703c','#5cbf7a','#b36bd6','#e6c34a','#4fc6c2','#9a9cf0','#c98a5a','#a8d65a'];
 const tpColor=name=>{const i=ST.series.findIndex(s=>s.name===name);return i>=0&&i<5?TPC[i]:null};
-const OTHER='#c8a24a';
+const OTHER='#c8a24a';var VK={};
 const hp=()=>new URLSearchParams(location.hash.slice(1));
 function setHash(k,v){const q=hp();if(v==null)q.delete(k);else q.set(k,v);const t=q.toString();history.replaceState(null,'',location.pathname+location.search+(t?'#'+t:''))}
-const TYPES={'Foreign ministry':'#e05a5a','Embassy':'#4e9fe0','Consulate':'#5cbf7a','Diplomat':'#e6b33a','Outside account':'#b36bd6'};
+const TYPES={'Foreign ministry':'#d4145a','Embassy':'#ffffff','Consulate':'#3d2bff','Diplomat':'#ffaabb','Outside account':'#8b0000'};
+const TSYM={'Foreign ministry':d3.symbolStar,'Embassy':d3.symbolSquare,'Consulate':d3.symbolTriangle,'Diplomat':d3.symbolDiamond,'Outside account':d3.symbolCircle};
+const tIcon=(t,s=16)=>`<svg class="ti" width="${s}" height="${s}" viewBox="-8 -8 16 16" aria-hidden="true"><path d="${d3.symbol(TSYM[t]||d3.symbolCircle,s===16?90:60)()}" fill="${TYPES[t]}" stroke="#0b1526" stroke-width="1"/></svg>`;
 const AGC=['#b0182f','#d9b26a','#3fa45b'];// AGG: aggressive-share steps. Not aggressive below AGT (4%): white. Pink to dark red = more aggressive.
 const AGT=0.04,AGS=[0.08,0.20],AGR=['#ffffff','#f7b3c2','#e0526f','#8e0c22'];
 const aggCol=a=>a<AGT?AGR[0]:a<AGS[0]?AGR[1]:a<AGS[1]?AGR[2]:AGR[3];
@@ -34,10 +36,9 @@ d3.select('#cover').text(`Coverage: ${fday(H.start.slice(0,10))} to ${fd(H.end)}
 d3.select('#heads').selectAll('div').data([[H.accounts,'accounts tracked'],[H.active,'posted in this period'],[H.posts,'posts collected'],[H.countries,'countries and organisations'],[H.clusters,'messages shared by 3+ accounts'],[H.topburst_acc,'accounts pushed the '+H.topburst+' in bursts']]).join('div').attr('class','head').html(d=>`<b>${fmt(d[0])}</b><span>${d[1]}</span>`);
 // ---- legends and filters
 const lg=(id,items,sq)=>d3.select(id).selectAll('div').data(items).join('div').html(d=>`<span class="sw ${sq?'sq':''}" style="background:${d[1]}"></span>${esc(d[0])}`);
-lg('#lg-kind',Object.values(KIND));lg('#lg-tp',ST.series.slice(0,5).map((s,i)=>[s.name,TPC[i]]),1);d3.select('#lg-tp').selectAll('div').style('cursor','pointer').attr('title','Click to read what it says').on('click',(e,d)=>openNarr(ST.series.findIndex(s=>s.name===d[0])));narrKeys(d3.select('#lg-tp').selectAll('div'),d=>ST.series.findIndex(s=>s.name===d[0]));const drawTLeg=()=>{d3.select('#lg-tone').html('');lg('#lg-tone',TMODE==='count'?TONEB_C():TONEB_S(),1);d3.select('#lg-tone').append('div').attr('class','li').text(`Countries with fewer than ${TONE.min_posts} posts are not shown`)};drawTLeg();
-d3.select('#types').selectAll('button').data(Object.entries(TYPES)).join('button').attr('class','tg').attr('aria-pressed','true').html(d=>`<span class="sw" style="background:${d[1]}"></span>${d[0]}`)
- .on('click',function(e,d){on.has(d[0])?on.delete(d[0]):on.add(d[0]);this.setAttribute('aria-pressed',on.has(d[0]));drawSpread(true);drawRipple()});
-if(innerWidth<700){const d=document.getElementById('tone-more');if(d)d.open=false}
+lg('#lg-kind',Object.values(KIND));const drawTLeg=()=>{d3.select('#lg-tone').html('');lg('#lg-tone',TMODE==='count'?TONEB_C():TONEB_S(),1);d3.select('#lg-tone').append('div').attr('class','li').text(`Countries with fewer than ${TONE.min_posts} posts are not shown`)};drawTLeg();
+d3.selectAll('.types').selectAll('button').data(Object.keys(TYPES)).join('button').attr('class','tg').attr('type','button').attr('aria-pressed','true').html(t=>`${tIcon(t)}${t}`)
+ .on('click',function(e,t){on.has(t)?on.delete(t):on.add(t);d3.selectAll('.types button').filter(x=>x===t).attr('aria-pressed',on.has(t));drawSpread(true);drawRipple()});
 // ---- talking point picker
 let cur=0;const NAR=SP.filter(d=>d.accounts>6&&d.spread.length>6);SP.length=0;NAR.forEach(d=>SP.push(d));
 const slug=n=>n.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
@@ -98,7 +99,8 @@ function hitOpen(svg,stk,x,y,days,w){svg.style('cursor','pointer').on('click',e=
  const i=d3.minIndex(days,dd=>Math.abs(x(dd)-X)),v=y.invert(Y);let best=null,bd=1/0;stk.forEach(l=>{const a=l[i][0],b=l[i][1];if(b<=a)return;const dd=v<a?a-v:v>b?v-b:0;if(dd<bd){bd=dd;best=l.key}});
  if(best!=null&&Y<y.range()[0])openNarr(best)})}
 // chips under each talking-points chart: click opens the explanation panel
-function tpChips(el,keys){d3.select('#'+el).append('div').attr('class','chips tpchips').attr('role','group').attr('aria-label','Open a talking point').selectAll('button').data(keys).join('button').attr('class','chip').attr('type','button').html(j=>`<span class="sw" style="background:${TPC[j]};border:2px solid ${TPC[j]}"></span>${esc(ST.series[j].name)}`).on('click',(e,j)=>openNarr(j))}
+function tpChips(el,keys){VK[el]=keys;if(!document.getElementById(el).hidden)tpLeg(keys)}
+function tpLeg(keys){d3.select('#lg-tp').html('').selectAll('div').data(keys).join('div').style('cursor','pointer').attr('title','Click to read what it says').html(k=>`<span class="sw sq" style="background:${TPC[k]}"></span>${esc(ST.series[k].name)}`).on('click',(e,k)=>openNarr(k));narrKeys(d3.select('#lg-tp').selectAll('div'),k=>k)}
 // ---- matrix
 (function(){const P=MX.points,R=MX.rows.slice(0,25);const cw=112,lw=200,rh=30,top=74;const w=lw+cw*P.length+10,h=top+rh*R.length+6;
  const svg=d3.select('#matrix').append('svg').attr('class','native').attr('width',w).attr('height',h).attr('role','img').attr('aria-label','Matrix of accounts by talking point');
@@ -135,7 +137,7 @@ function drawRipple(){const r=RP[rcur];rchip.attr('aria-pressed',(d,i)=>i===rcur
  const rs=d3.scaleLog().domain([1,maxD+1]);
  if(phone){const list=amps.slice(0,10);
   const row=d3.select('#netlist').selectAll('div').data(list).join('div').attr('class','dbar').on('click',(e,a)=>openPost(a));
-  row.html(a=>`<div class="dl"><span class="sw" style="background:${TYPES[a.type]}"></span>${esc(a.label)}</div><div class="dt"><i style="background:${TYPES[a.type]};width:${Math.max(4,rs(a.delay+1)*100)}%"></i><span>${fdur(a.delay)}</span></div>`);
+  row.html(a=>`<div class="dl">${tIcon(a.type)}${esc(a.label)}</div><div class="dt"><i style="background:${TYPES[a.type]};width:${Math.max(4,rs(a.delay+1)*100)}%"></i><span>${fdur(a.delay)}</span></div>`);
   RG={amps:list,phone:true};
  } else {
  const w=box.clientWidth,h=Math.min(760,Math.max(560,w*0.6)),cx=w/2,cy=h/2,R0=70,R1=Math.min(w*0.42,h*0.46);
@@ -156,7 +158,7 @@ function drawRipple(){const r=RP[rcur];rchip.attr('aria-pressed',(d,i)=>i===rcur
  const links=lk.selectAll('line').data(amps).join('line').attr('x1',cx).attr('y1',cy).attr('x2',a=>a._p.cx).attr('y2',a=>a._p.cy).attr('stroke',a=>TYPES[a.type]).attr('stroke-linecap','round');
  const g=nd.selectAll('g').data(amps).join('g').attr('transform',a=>`translate(${a._p.x},${a._p.y})`).style('cursor','pointer').on('click',(e,a)=>openPost(a));
  g.append('rect').attr('width',a=>a._p.w).attr('height',28).attr('rx',14).attr('fill','#0f1b31').attr('stroke',a=>TYPES[a.type]).attr('stroke-width',2);
- g.append('circle').attr('cx',12).attr('cy',14).attr('r',5).attr('fill',a=>TYPES[a.type]);
+ g.append('path').attr('transform','translate(12,14)').attr('d',a=>d3.symbol(TSYM[a.type]||d3.symbolCircle,70)()).attr('fill',a=>TYPES[a.type]).attr('stroke','#0b1526').attr('stroke-width',1);
  g.append('text').attr('x',22).attr('y',19).attr('font-size',13).text(a=>a.label);
  tipOn(g,a=>`<b>${esc(a.label)}</b> (@${esc(a.h)})<br>${esc(a.type)} · ${esc(a.country)}<br>${a.k==='quote'?'Quoted':'Reposted'} after ${fdur(a.delay)}, ${fd(a.t)}<br>Click to read it`);
  const pulse=svg.append('circle').attr('cx',cx).attr('cy',cy).attr('fill','none').attr('stroke',tpColor(r.theme)||OTHER).attr('stroke-width',3);
@@ -166,7 +168,7 @@ function drawRipple(){const r=RP[rcur];rchip.attr('aria-pressed',(d,i)=>i===rcur
  tipOn(cg,()=>`<b>Original post</b> by ${esc(r.label)}<br>${fd(r.t)}<br>“${esc(r.text.slice(0,140))}”`);
  const clk=svg.append('text').attr('x',14).attr('y',24).attr('font-size',15).attr('font-weight',600).style('fill','#c8a24a');
  RG={amps,links,g,pulse,clk,phone:false};}
- RG.maxD=maxD;rset(RM?1:0);if(RM)d3.select('#rplay').text('↺ Replay')}
+ RG.maxD=maxD;rset(RM?1:0);d3.select('#rplay').text(RM?'↺ Replay':'▶ Play')}
 // playback time runs on a log scale, so long-delay amplifiers don't stall it; labels show the real delay
 function rset(p){rpos=p;const m=p>=1?RG.maxD:Math.pow(RG.maxD+1,p)-1;d3.select('#rclock').property('value',Math.round(p*1000));
  const n=RG.amps.filter(a=>a.delay<=m).length;d3.select('#rlbl').text(`+${fdur(m)} after posting · ${n} of ${RG.amps.length} accounts joined`);
@@ -181,6 +183,7 @@ function rplay(){if(RM){rset(1);return}if(rpos>=1)rpos=0;const dur=5000/RSPD;con
 d3.select('#rplay').on('click',()=>rtimer?rstop():rplay());
 d3.select('#rreplay').on('click',()=>{rstop();rpos=0;rplay()});
 d3.select('#rspeed').on('click',function(){RSPD=RSPD===1?2:1;this.textContent=RSPD+'×';this.setAttribute('aria-label',`Playback speed ${RSPD}x, click to change`);if(rtimer){const p=rpos;rstop();rpos=p;rplay()}});
+{let seen=false;const io=new IntersectionObserver(es=>{if(!seen&&es.some(e=>e.isIntersecting)){seen=true;io.disconnect();rstop();rpos=0;rplay()}},{threshold:.35});io.observe(document.getElementById('net'))}
 d3.select('#rclock').on('input',function(){rstop();rset(this.value/1000);d3.select('#rplay').text(rpos>=1?'↺ Replay':'▶ Play')});
 function openPost(a){const p=PO[a.id];d3.select('#ph').text(a.label);
  d3.select('#pbody').html(`<div class="post"><div class="m">@${esc(a.h)} · ${a.orig?'Original post':KIND[a.k]?.[0]||''} · ${fd(a.t)}</div><div>${esc(p?p.text:(a.text||''))}</div><a href="https://x.com/${encodeURIComponent(a.h)}/status/${a.id}" target="_blank" rel="noopener">Open on x.com ↗</a></div>`);
@@ -192,9 +195,9 @@ function openPost(a){const p=PO[a.id];d3.select('#ph').text(a.label);
  const MP=TONE.min_posts,byGeo={};{const w=TONE.window,dd=x=>new Date(x).toLocaleDateString('en-GB',{day:'numeric',month:'short',timeZone:'UTC'});TONE.windowLabel=w?`Last 30 days (${dd(w.start)} to ${dd(w.end)}${w.days<30?', '+w.days+' days so far: archive starts '+dd(w.start):''})`:'';}TONE.countries.forEach(c=>{if(c.geo&&c.posts>=MP)byGeo[c.geo]=c});
  const pct=x=>Math.round(x*100)+'%';
  const tip=c=>{if(!c)return '';const h=c.harsh[0],f=c.friendly[0];return `<b>${esc(c.country)}</b> · ${c.posts} posts<br><span style="color:#e2646e">Aggressive ${pct(c.agg)}</span> · <span style="color:#6fd08a">Friendly ${pct(c.fri)}</span>`+(h?`<br><i>Harshest:</i> “${esc(h.text.slice(0,110))}…”`:'')+(f?`<br><i>Friendliest:</i> “${esc(f.text.slice(0,110))}…”`:'')+'<br>Click to read the posts'};
- const zg=svg.append('g');const g=zg.append('g').selectAll('path').data(countries).join('path').attr('d',path).attr('stroke','#2c426b').attr('stroke-width',.4)
+ const zg=svg.append('g');const g=zg.append('g').selectAll('path').data(countries).join('path').attr('d',path).attr('stroke','#0b1526').attr('stroke-width',.5)
   .attr('fill',f=>{const c=byGeo[f.properties.name];return c?colOf(c):'#1b2c4a'}).attr('vector-effect','non-scaling-stroke')
-  .style('cursor',f=>byGeo[f.properties.name]?'pointer':null).on('click',(e,f)=>{const c=byGeo[f.properties.name];if(c)openTone(c)});
+  .style('cursor',f=>byGeo[f.properties.name]?'pointer':null).on('click',(e,f)=>{const c=byGeo[f.properties.name];if(c){selC(f.properties.name);openTone(c)}});
  tipOn(g,f=>{const c=byGeo[f.properties.name];return c?tip(c):`<b>${esc(f.properties.name)}</b><br>Not shown (no tracked account or fewer than ${MP} posts)`});
  const ents=TONE.countries.filter(c=>!c.geo&&c.ll&&c.posts>=MP);const eg=zg.append('g').selectAll('g').data(ents).join('g').attr('transform',d=>{const p=proj(d.ll);return `translate(${p[0]},${p[1]})`}).style('cursor','pointer').on('click',(e,c)=>openTone(c));
  eg.append('rect').attr('x',-7).attr('y',-7).attr('width',14).attr('height',14).attr('transform','rotate(45)').attr('stroke','#e6e9ef').attr('stroke-width',1).attr('fill',c=>colOf(c));
@@ -205,7 +208,7 @@ function openPost(a){const p=PO[a.id];d3.select('#ph').text(a.label);
  const setHead=()=>{if(TMODE==='count'){const bc=scored.slice().sort((a,b)=>nagg(b)-nagg(a)),t=bc[0],sec=bc.slice(1,3);
    d3.select('#tone-head').text(`${t.country}: ${nagg(t)} aggressive posts, the most of any country. Next come ${JA(sec.map(c=>THE(c.country)+' ('+nagg(c)+')'))}.`)}
   else d3.select('#tone-head').text(`${nf} of ${scored.length} countries and organisations post little or no aggressive wording. The sharpest tone comes from ${JA(top.slice(0,3).map(c=>THE(c.country)))}.`)};setHead();
- d3.select('#tone-win').text(TONE.windowLabel);d3.select('#tone-sub').text(`Share of each mission's posts with aggressive wording (accusations of hegemony, smears, interference, warnings), scored in ten languages. White means under ${Math.round(AGT*100)}% or fewer than ${MINA()} aggressive posts (By share), or fewer than ${CB()[0]} aggressive posts (By count). Countries with fewer than ${MP} posts are not shown. Click a country or key area to see why its posts are harsh.`);
+ d3.select('#tone-win').text(TONE.windowLabel);d3.select('#tone-sub').text(`Share of each mission's posts with aggressive wording (accusations of hegemony, smears, interference, warnings), scored in ten languages. White means under ${Math.round(AGT*100)}% or fewer than ${MINA()} aggressive posts (By share), or fewer than ${CB()[0]} aggressive posts (By count). Countries with fewer than ${MP} posts are not shown. Click a country to see why its posts are harsh.`);
   const featOf=c=>countries.find(f=>f.properties.name===c.geo);
  const fit=(cs,pad)=>{let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;cs.forEach(c=>{const f=c.geo&&featOf(c);let b=f?path.bounds(f):null;const pt=r=>{const p=proj(c.ll||d3.geoCentroid(f));return [[p[0]-r,p[1]-r],[p[0]+r,p[1]+r]]};
    // countries split by the antimeridian (Fiji, Russia...) have bounds spanning the whole map; use a box around their capital/centroid instead
@@ -213,29 +216,19 @@ function openPost(a){const p=PO[a.id];d3.select('#ph').text(a.label);
   const k=Math.min(4,0.9/Math.max((x1-x0)/W,(y1-y0)/HM));return {k,x:W/2-k*(x0+x1)/2,y:HM/2-k*(y0+y1)/2}};
  const setZ=(t,anim)=>{const tr=`translate(${t.x},${t.y}) scale(${t.k})`;(anim?zg.transition().duration(900):zg).attr('transform',tr);zg.selectAll('rect').attr('stroke-width',1/t.k).attr('transform',`rotate(45) scale(${1/Math.sqrt(t.k)})`)};
  const RM2=matchMedia('(prefers-reduced-motion: reduce)').matches;
- // Key areas come from analyze.py (account regions, rolling 30-day window), with generated sentences.
- const byName={};scored.forEach(c=>byName[c.country]=c);
- const AR=(TONE.areas||[]).slice(0,4).map(a=>({...a,cs:a.countries.map(n=>byName[n]).filter(Boolean)})).filter(a=>a.cs.length);AR.forEach(a=>a.z=fit(a.cs));
- const ARC=(()=>{const bc=scored.slice().sort((a,b)=>nagg(b)-nagg(a));const t=bc[0];if(!t)return null;const a=AR.find(a=>a.cs.includes(t));if(a)return a;
-  const cs=[t];const z={name:t.country,countries:[t.country],cs,explain:null,sentence:''};z.z=fit(cs);return z})();
- const modeArea=()=>TMODE==='count'?(ARC||AR[0]):AR[0];
- let zoomed=true,act=modeArea();
- const zb=d3.select('#tzoom');const zlab=()=>zb.text(zoomed?'Show whole world':'Zoom to key area').attr('aria-pressed',zoomed);
- const outline=names=>g.attr('stroke',f=>names.has(f.properties.name)?'#c8a24a':'#2c426b').attr('stroke-width',f=>names.has(f.properties.name)?2.5:.4);
- const pick=(a,anim)=>{act=a;zoomed=true;setZ(a.z,anim&&!RM2);zlab();outline(new Set(a.cs.map(c=>c.geo)));
-  d3.selectAll('.tarea').classed('on',d=>d===a).attr('aria-pressed',d=>d===a)};
- ['#tareas'].forEach(id=>d3.select(id).selectAll('li').data(AR).join('li').append('button').attr('type','button').attr('class','tarea')
-  .html(a=>`<b>${esc(a.name)}</b><span class="tc">${a.cs.map(c=>`<span class="sw sq" style="background:${aggCol(c.agg)}"></span>${esc(c.country)} ${pct(c.agg)}`).join(' · ')}</span><span class="tw">${esc(a.sentence)}</span>`)
-  .on('click',(e,a)=>{pick(a,1);openExplain(a.name+': why the harsh posts',a.explain,a.cs.map(c=>`${c.country} ${pct(c.agg)} aggressive`).join(' · '))}));
- if(act)pick(act,0);else{zoomed=false;zlab()}
- zb.on('click',()=>{if(zoomed){zoomed=false;setZ({k:1,x:0,y:0},!RM2);outline(new Set());d3.selectAll('.tarea').classed('on',false).attr('aria-pressed',false);zlab()}else{const a=act||modeArea();if(a)pick(a,1)}});
- const drawTop=()=>{top=TMODE==='count'?scored.filter(c=>nagg(c)>=MINA()).sort((a,b)=>nagg(b)-nagg(a)).slice(0,5):hot.slice(0,5);d3.select('#ttop').html('');
- d3.select('#ttop').selectAll('li').data(top,c=>c.country).join('li').append('button').attr('class','tli').attr('type','button')
-  .html((c,i)=>`<span class="sw sq" style="background:${colOf(c)}"></span><b>${i+1}. ${esc(c.country)}</b><span>${TMODE==='count'?nagg(c)+' aggressive posts · '+pct(c.agg):pct(c.agg)+' aggressive · '+nagg(c)+' of '+c.posts+' posts'}</span>`)
-  .on('click',function(e,c){zoomed=true;setZ(fit([c]),1);zlab();g.attr('stroke',f=>f.properties.name===c.geo?'#c8a24a':'#2c426b').attr('stroke-width',f=>f.properties.name===c.geo?2.5:.4);
-   const r=document.getElementById('tmap').getBoundingClientRect(),b=this.getBoundingClientRect();openTone(c)});};drawTop();
- d3.selectAll('#tmode button').on('click',function(){TMODE=this.dataset.m;d3.selectAll('#tmode button').attr('aria-pressed',function(){return this.dataset.m===TMODE});g.attr('fill',f=>{const c=byGeo[f.properties.name];return c?colOf(c):'#1b2c4a'});eg.selectAll('rect').attr('fill',c=>colOf(c));drawTLeg();setHead();drawTop();if(zoomed){const a=modeArea();if(a)pick(a,1)}});
-
+ // Left column: one ranked list of countries (max 8) that meet the colouring thresholds for the current mode.
+ let zoomed=true,selc=null;
+ const zb=d3.select('#tzoom');const zlab=()=>zb.text(zoomed?'Show whole world':'Zoom to selected country').attr('aria-pressed',zoomed);
+ const selC=geo=>g.attr('stroke',f=>f.properties.name===geo?'#ffffff':'#0b1526').attr('stroke-width',f=>f.properties.name===geo?1:.5).filter(f=>f.properties.name===geo).raise();
+ const ranked=()=>TMODE==='count'?scored.filter(c=>nagg(c)>=CB()[0]).sort((a,b)=>nagg(b)-nagg(a)||b.agg-a.agg).slice(0,8):hot.slice(0,8);
+ const zoomTo=(c,anim)=>{selc=c;zoomed=true;setZ(fit([c]),anim&&!RM2);zlab();selC(c.geo||'');d3.selectAll('#ttop .tli').classed('on',d=>d===c).attr('aria-pressed',d=>d===c)};
+ const drawTop=()=>{top=ranked();d3.select('#ttop').html('');
+  d3.select('#ttop').selectAll('li').data(top,c=>c.country).join('li').append('button').attr('class','tli').attr('type','button').attr('aria-pressed','false')
+  .html((c,i)=>`<span class="sw sq" style="background:${colOf(c)}"></span><b>${i+1}. ${esc(c.country)}</b><span>${TMODE==='count'?nagg(c)+' aggressive posts':pct(c.agg)+' aggressive'}</span>`)
+  .on('click',(e,c)=>{zoomTo(c,1);openTone(c)});
+  if(top[0])zoomTo(top[0],0);else{zoomed=false;zlab()}};drawTop();
+ zb.on('click',()=>{if(zoomed){zoomed=false;setZ({k:1,x:0,y:0},!RM2);zlab()}else if(selc)zoomTo(selc,1)});
+ d3.selectAll('#tmode button').on('click',function(){TMODE=this.dataset.m;d3.selectAll('#tmode button').attr('aria-pressed',function(){return this.dataset.m===TMODE});g.attr('fill',f=>{const c=byGeo[f.properties.name];return c?colOf(c):'#1b2c4a'});eg.selectAll('rect').attr('fill',c=>colOf(c));drawTLeg();setHead();drawTop()});
 
 })();
 function explainHTML(x){if(!x)return '';const W=TONE.window;
@@ -255,19 +248,8 @@ const panel=document.getElementById('panel');
  card.append('h3').html(d=>`<span class="sw" style="background:${tpColor(d.name)||'transparent'};border:2px solid ${tpColor(d.name)||OTHER}"></span>${esc(d.name)} <span class="m">${d.bs.length} burst${d.bs.length>1?'s':''}</span>`);
  card.selectAll('button.br').data(d=>d.bs).join('button').attr('class','br').on('click',(e,b)=>openBurst(b))
   .html(b=>`<span class="bw">${fd(b.start)} to ${fd(b.end)}</span><span class="bn"><b>${b.accounts}</b> accounts · <b>${b.countries}</b> countries</span><span class="bq">“${esc(b.quote)}”</span>`);
- const days=BU.days,cs=30,lw=110,top=34,w=lw+24*cs+10,h=top+days.length*cs+12;
- const cell={};BU.bursts.forEach(b=>b.ids.forEach(id=>{const p=PO[id];if(!p)return;const k=p.t.slice(0,13);(cell[k]=cell[k]||[]).push(b)}));
- const svg=d3.select('#calv').append('svg').attr('class','native').attr('width',w).attr('height',h).attr('role','img').attr('aria-label','Calendar of bursts by day and hour, coloured by talking point');
- svg.selectAll('text.hr').data(d3.range(0,24,3)).join('text').attr('class','hr').attr('x',d=>lw+d*cs+cs/2).attr('y',top-10).attr('text-anchor','middle').attr('font-size',13).text(d=>String(d).padStart(2,'0')+':00');
- const gd=svg.selectAll('g.d').data(days).join('g').attr('class','d').attr('transform',(d,i)=>`translate(0,${top+i*cs})`);
- gd.append('text').attr('x',lw-12).attr('y',cs/2+5).attr('text-anchor','end').attr('font-size',13).text(d=>fday(d));
- const data=d=>d3.range(24).map(hh=>{const bs=cell[d+'T'+String(hh).padStart(2,'0')]||[];const t=d3.greatest(d3.rollups(bs,v=>v.length,b=>b.name),x=>x[1]);return {d,hh,n:bs.length,a:BU.cal[d]?.all[hh]||0,name:t?t[0]:null,bs:[...new Set(bs)]}});
- const cells=gd.selectAll('rect.c').data(data).join('rect').attr('class','c').attr('x',d=>lw+d.hh*cs+2).attr('y',2).attr('width',cs-4).attr('height',cs-4).attr('rx',3)
-  .attr('fill',d=>d.name?(tpColor(d.name)||'#0f1b31'):d.a?'#172a4b':'#101d35').attr('stroke',d=>d.name&&!tpColor(d.name)?OTHER:'none').attr('stroke-width',2.5)
-  .style('cursor',d=>d.name?'pointer':'default').on('click',(e,d)=>{if(d.bs.length)openBurst(d.bs[0])});
- tipOn(cells,d=>`<b>${fday(d.d)}, ${String(d.hh).padStart(2,'0')}:00 UTC</b><br>${d.a} posts${d.name?`<br>Burst: <b>${esc(d.name)}</b> (${d.n} posts)<br>Click to read them`:''}`);
 })();
-function openBurst(b){d3.select('#ph').text(b.name);
+function openBurst(b,ttl){d3.select('#ph').text(ttl||b.name);
  const body=d3.select('#pbody').html(`<p class="muted">${b.accounts} accounts in ${b.countries} countries and organisations, ${fd(b.start)} to ${fd(b.end)}</p>`);
  b.ids.forEach(id=>{const p=PO[id];if(!p)return;body.append('div').attr('class','post').html(`<div class="m">@${esc(p.h)} · ${esc(p.country)} · ${KIND[p.k][0]} · ${fd(p.t)}</div><div>${esc(p.text)}</div><a href="https://x.com/${encodeURIComponent(p.h)}/status/${id}" target="_blank" rel="noopener">Open on x.com ↗</a>`)});
  panel.hidden=false;document.getElementById('pclose').focus()}
@@ -307,6 +289,7 @@ const VIEWS={day:['stream','Top talking points by day','Posts per day in each of
 const drawn={day:1};
 function setView(v,push){if(!VIEWS[v])v='day';for(const k in VIEWS)document.getElementById(VIEWS[k][0]).hidden=k!==v;
  if(!drawn[v]){periodChart(VIEWS[v][0],v);drawn[v]=1}
+ if(VK[VIEWS[v][0]])tpLeg(VK[VIEWS[v][0]]);
  d3.select('#tp-title').text(VIEWS[v][1]);d3.select('#tp-sub').text(VIEWS[v][2]);
  d3.selectAll('#tpview button').attr('aria-pressed',function(){return this.dataset.v===v});if(push)setHash('view',v==='day'?null:v)}
 d3.selectAll('#tpview button').on('click',function(){setView(this.dataset.v,1)});
@@ -332,7 +315,7 @@ initNarr();drawRipple();
  d3.select('#acc-how').text(`Accounts are official PRC accounts on X: the foreign ministry and its spokespeople, embassies, consulates, missions and ambassadors. Each was checked live on X; accounts with no posts in over 90 days are dropped. List last checked: ${H.list_checked}.`);
  const order=['Foreign ministry','Embassy','Consulate','Diplomat','Outside account'];
  d3.select('#acc-list').html(order.filter(t=>G[t]).map(t=>{const cs=Object.keys(G[t]).sort();const n=cs.reduce((s,c)=>s+G[t][c].length,0);
-  return `<h3 class="sh3"><span class="sw" style="background:${TYPES[t]}"></span>${esc(t)} (${n})</h3><dl class="accl">`+cs.map(c=>`<dt>${esc(c)}</dt><dd>${G[t][c].map(a=>`<a href="https://x.com/${encodeURIComponent(a.h)}" target="_blank" rel="noopener">${esc(a.name)} <span class="m">@${esc(a.h)}</span></a>`).join('')}</dd>`).join('')+'</dl>'}).join(''));
+  return `<h3 class="sh3">${tIcon(t)}${esc(t)} (${n})</h3><dl class="accl">`+cs.map(c=>`<dt>${esc(c)}</dt><dd>${G[t][c].map(a=>`<a href="https://x.com/${encodeURIComponent(a.h)}" target="_blank" rel="noopener">${esc(a.name)} <span class="m">@${esc(a.h)}</span></a>`).join('')}</dd>`).join('')+'</dl>'}).join(''));
  const f=d=>new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'});
  d3.select('#read-txt').text(`This page shows only openly official Chinese government accounts on X, with posts from ${f(H.start)} to ${f(H.end)} (UTC). When many accounts use similar wording or post at the same time, that shows shared messaging; it is not proof of coordination or of who directs it. Aggression and friendliness scores measure word choice, not intent.`);
  let A=null,F=[],shown=0;
