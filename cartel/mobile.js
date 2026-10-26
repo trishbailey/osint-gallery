@@ -32,14 +32,14 @@ fetch("data/group_countries.json").then(r=>r.json()).catch(()=>({groups:{}})).th
    bar.querySelector(".mfstate").textContent=(on?nameOf(on.dataset.g):"All groups")+(r?` · ${r} route layer${r>1?"s":""}`:"")};
   side.addEventListener("click",()=>setTimeout(upd,60));side.addEventListener("change",upd);when(()=>document.querySelector("#grouplegend .chip"),upd);
  }
- /* 2. region clusters with counts on the map */
+ /* 2. region tap targets on the map: invisible hit area + region name (no numbered circles); tap the region to open its group list */
  const counts={};Object.keys(GCN.groups).forEach(id=>{const r=regOf(id);if(r)(counts[r]=counts[r]||[]).push(id)});
  when(()=>window.__proj&&document.querySelector("#mapsvg>g path"),()=>{
   const g=document.querySelector("#mapsvg>g"),NS="http://www.w3.org/2000/svg",cg=document.createElementNS(NS,"g");cg.setAttribute("class","mclusters");
   ORDER.filter(r=>counts[r]).forEach(r=>{const [x,y]=window.__proj(REG[r].ll),n=counts[r].length,R=16+n*1.6;
    const e=document.createElementNS(NS,"g");e.setAttribute("class","pt mclu");e.dataset.t=`translate(${x},${y})`;e.setAttribute("transform",`${e.dataset.t} scale(${1/(window.__zk||1)})`);
    e.setAttribute("role","button");e.setAttribute("tabindex","0");e.setAttribute("aria-label",`${REG[r].n}: ${n} groups`);
-   e.innerHTML=`<circle r="${R}" fill="#0b1526" fill-opacity=".85" stroke="#c8a24a" stroke-width="3"/><text text-anchor="middle" dy="5" fill="#e6e9ef">${n}</text><text class="ml" text-anchor="middle" y="${R+16}">${esc(REG[r].s)}</text>`;
+   e.innerHTML=`<circle r="${R}" fill="#0b1526" fill-opacity="0" stroke="none"/><text class="ml" text-anchor="middle" y="5">${esc(REG[r].s)}</text>`;
    const open=()=>{drawer(`<h2>${esc(REG[r].n)}</h2><p class="muted">${n} groups based here. Tap one to show only its footprint.</p><div class="mglist">${counts[r].map(id=>`<button class="mdet" data-mg="${id}">${esc(nameOf(id))}</button>`).join("")}</div><button class="mdet" data-mz="1">🔍 Zoom the map to this region</button><button class="mdet" data-mg="">Show all groups</button>`);
     $("dbody").querySelectorAll("[data-mg]").forEach(b=>b.onclick=()=>{const c=document.querySelector(`#grouplegend .chip[data-g="${b.dataset.mg}"]`);c&&c.click();closeAll();mt.scrollIntoView({behavior:"smooth"})});
     $("dbody").querySelector("[data-mz]").onclick=()=>{window.MAPZ&&window.MAPZ.fitLL(REG[r].box);closeAll()}};
