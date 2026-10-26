@@ -137,10 +137,14 @@ svg [data-tip]:focus-visible rect,svg rect[data-tip]:focus-visible{stroke:#c8a24
 @media(max-width:820px){.lg-row{grid-template-columns:1fr}.lg-keys{flex-direction:row;flex-wrap:wrap}.lg-k{width:auto}}
 .lg-side,.lg-main{min-width:0}.lg-side .yr-help{display:block;margin:0}
 @media(max-width:820px){.lg-side{padding:10px}.lg-k{min-height:44px}}
+/* full-width text blocks; year label as subheading */
+.lead,.leads,.prose-wide>p,.prose-wide>ul,.prose-wide>ol,.prose-wide section>p,.prose-wide section>ul{max-width:none}
+.sk-year{font-size:21px;line-height:1.25;font-weight:700;letter-spacing:0;margin:6px 0 2px}
+@media(max-width:640px){.sk-year{font-size:18px}}
 
 /* ---- phone layout (<= 640px); nothing below applies on desktop ---- */
 .m-only,.m-chips,.m-grp-h,.m-filt,.lg-sheet-h,.tt-x{display:none}
-.prose-wide>.m-grp>p,.prose-wide>.m-grp>ul{max-width:900px}
+.prose-wide>.m-grp>p,.prose-wide>.m-grp>ul{max-width:none}
 @media(max-width:640px){
 html,body{overflow-x:hidden}
 .d-only{display:none}.m-only{display:block}.gfx-svg .m-only svg,.m-svg{min-width:0!important}
@@ -172,7 +176,7 @@ h1{font-size:26px;letter-spacing:-.3px}h2{font-size:22px}.lead{font-size:16px}
 .tt .tt-x{display:block;margin:12px 0 0 auto}
 .wp-panel{position:fixed;left:0;right:0;bottom:0;z-index:65;max-height:70vh;overflow-y:auto;border-radius:16px 16px 0 0;margin:0;box-shadow:0 -10px 30px #000c;border:1px solid var(--gold)!important;border-bottom:0!important}
 .wp-nav{flex-wrap:wrap}.wp-crumbs{font-size:15px}
-.sk-year{font-size:30px;margin:4px 0 0}.sk-sub,.sk-us-note{font-size:14px}.us-made{font-size:14px}
+.sk-year{font-size:18px;margin:4px 0 0}.sk-sub,.sk-us-note{font-size:14px}.us-made{font-size:14px}
 .tabs,.yr-tabs{gap:6px}.contractors .tab,.yr-tab{min-height:44px;font-size:15px;padding:8px 12px;min-width:0}
 .m-tabs-inline{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
 footer.wrap{margin-top:30px}
