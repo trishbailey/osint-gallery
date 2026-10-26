@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-26T19:01:51Z",
+ "as_of": "2026-10-26T22:07:36Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -9,30 +9,148 @@
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
   {
-   "id": "527456607f",
-   "status": "official_claim_only",
-   "title": "Como parte del reforzamiento de la seguridad en Sinaloa y de las acciones para combatir la producción de drogas sintéticas, elementos de @SEMAR_mx y @SSPCMexico, en coordinación con @FGRMexico, locali",
+   "id": "d4ffe7859f",
+   "status": "single_source",
+   "title": "Un #operativo de elementos de la #Marina se desplegó por las sindicaturas de Bamoa y Estación Bamoa, en el municipio de #Guasave. Además de los vehículos terrestres de las fuerzas armadas, el operativ",
    "lang": "es",
-   "title_en": "As part of reinforcing security in Sinaloa and actions to combat synthetic drug production, personnel from @SEMAR_mx and @SSPCMexico, in coordination with @FGRMexico, loc",
-   "first_report": "2026-10-26T19:00:23Z",
+   "title_en": "A #Marina (Navy) #operation was deployed across the sindicaturas of Bamoa and Estación Bamoa, in the municipality of #Guasave. Besides the armed forces' ground vehicles, the operation also includes Black Hawk helicopters",
+   "first_report": "2026-10-26T22:02:35Z",
    "first_report_precision": "minute",
-   "first_source": "Gabinete de Seguridad (Mexico)",
+   "first_source": "Ríodoce",
    "region_ids": [
     "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [],
    "outlets": [
-    "Gabinete de Seguridad (Mexico)"
+    "Ríodoce"
    ],
    "sources": [
     {
-     "outlet": "gabsec",
-     "name": "Gabinete de Seguridad (Mexico)",
-     "kind": "official",
-     "via": "X @GabSeguridadMX",
-     "url": "https://x.com/GabSeguridadMX/status/2114794285581173050",
-     "time": "2026-10-26T19:00:23Z",
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2114840139469836642",
+     "time": "2026-10-26T22:02:35Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "03bf95bcfb",
+   "status": "single_source",
+   "title": "➡️ Reportan enfrentamiento entre civiles armados, Marina y Policía Estatal; despliegan operativo en Siete Ejidos, Guasave. 🚨🚔| Un fuerte operativo por tierra y aire se registró en la zona de Siete Eji",
+   "lang": "es",
+   "title_en": "➡️ A clash is reported between armed civilians, the Navy and State Police; an operation is deployed in Siete Ejidos, Guasave. A large land and air operation took place in the Siete Ejidos area, #Guasave, after an alleged",
+   "first_report": "2026-10-26T21:58:50Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2114839194082107646",
+     "time": "2026-10-26T21:58:50Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "272ab5725a",
+   "status": "single_source",
+   "title": "➡️ Menor resulta lesionado por esquirlas de bala durante ataque a domicilio en Rincón de Urías en Mazatlán. 🚨🚔| Un menor de edad resultó lesionado por esquirlas de bala durante un ataque armado contra",
+   "lang": "es",
+   "title_en": "➡️ A minor is wounded by bullet fragments during an attack on a home in Rincón de Urías, Mazatlán. A minor was wounded by bullet fragments during an armed attack on a home on San Quintín street, in the Rincón de Urías su",
+   "first_report": "2026-10-26T21:36:44Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2706",
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2114833634830000578",
+     "time": "2026-10-26T21:36:44Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "43626e6224",
+   "status": "single_source",
+   "title": "Con 40 patrullas, policías detienen a 24 personas por patinar en San Pedro Garza García Los participantes de una rodada nocturna fueron esposados, permanecieron arrestados cerca de 10 horas y recibier",
+   "lang": "es",
+   "title_en": "With 40 patrol cars, police detain 24 people for skating in San Pedro Garza García. Participants in a night-time ride were handcuffed, held for about 10 hours and fined up to 20,000 pesos. Eleven collectives reported all",
+   "first_report": "2026-10-26T21:00:01Z",
+   "first_report_precision": "minute",
+   "first_source": "Proceso",
+   "region_ids": [
+    "MEX-2714",
+    "PRY-606"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2114824393822031992",
+     "time": "2026-10-26T21:00:01Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "8f166f5993",
+   "status": "single_source",
+   "title": "Diputada de Morena propone reformar ley para enviar fichas de búsqueda de niñas y niños desaparecidos directamente a celulares en la Ciudad de México",
+   "lang": "es",
+   "title_en": "A Morena deputy proposes reforming the law so that search notices for missing girls and boys are sent directly to mobile phones in Mexico City",
+   "first_report": "2026-10-26T20:43:08Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2114820144715227432",
+     "time": "2026-10-26T20:43:08Z",
      "time_precision": "minute"
     }
    ]
@@ -42,11 +160,13 @@
    "status": "single_source",
    "title": "\"AL MEJOR CAZADOR SE LE VA LA LIEBRE\", ASÍ RECORDÓ PEÑA NIETO LA FUGA DE ‘EL CHAPO’ GUZMÁN DE EL ALTIPLANO A 10 AÑOS DE SU CAPTURA El expresidente habló para la docuserie “Operación Cisne Negro”, que ",
    "lang": "es",
-   "title_en": "\"EVEN THE BEST HUNTER LETS THE HARE GET AWAY\": HOW PEÑA NIETO RECALLED 'EL CHAPO' GUZMÁN'S ESCAPE FROM EL ALTIPLANO, 10 YEARS AFTER HIS CAPTURE. The former president spoke for the docuseries \"Operación Cisne Negro\", whic",
+   "title_en": "\"EVEN THE BEST HUNTER LETS THE HARE GET AWAY\": HOW PEÑA NIETO RECALLED 'EL CHAPO' GUZMÁN'S ESCAPE FROM EL ALTIPLANO, 10 YEARS AFTER HIS CAPTURE. The former president spoke for the docuseries \"Operación Cisne Negro\", prem",
    "first_report": "2026-10-26T18:30:00Z",
    "first_report_precision": "minute",
    "first_source": "Infobae",
-   "region_ids": [],
+   "region_ids": [
+    "MEX-2711"
+   ],
    "country": "MEX",
    "group_ids": [
     "sinaloa"
@@ -63,6 +183,114 @@
      "url": "https://x.com/infobaemexico/status/2114786641550184811",
      "time": "2026-10-26T18:30:00Z",
      "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2114816837951107471",
+     "time": "2026-10-26T20:30:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "60995d3022",
+   "status": "single_source",
+   "title": "#México 🟣⛓️ | Israel Leonel ‘N’, alias ‘Isra’, presunto operador de ‘Los Rusos’, célula delictiva ligada al Cártel de Sinaloa, fue capturado informó el Gabinete de Seguridad Detalles ➡️🔗",
+   "lang": "es",
+   "title_en": "#Mexico | Israel Leonel 'N', alias 'Isra', an alleged operator of 'Los Rusos', a criminal cell linked to the Sinaloa Cartel, has been captured, the Security Cabinet reported. Details ➡️",
+   "first_report": "2026-10-26T20:06:08Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2114810833616458109",
+     "time": "2026-10-26T20:06:08Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "7b7072bfe4",
+   "status": "single_source",
+   "title": "Restos de un ataque con #dronesucranianos alcanzaron el tren donde viajaba el #mexicano #CésarMontes y la plantilla del Lokomotiv de Moscú en #Rusia; hubo civiles heridos, pero el equipo resultó ileso",
+   "lang": "es",
+   "title_en": "Debris from a #Ukrainian drone attack hit the train carrying #Mexican #CésarMontes and the Lokomotiv Moscow squad in #Russia; civilians were injured, but the team was unharmed.",
+   "first_report": "2026-10-26T19:50:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2114806771705614646",
+     "time": "2026-10-26T19:50:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "527456607f",
+   "status": "official_claim_only",
+   "title": "Como parte del reforzamiento de la seguridad en Sinaloa y de las acciones para combatir la producción de drogas sintéticas, elementos de @SEMAR_mx y @SSPCMexico, en coordinación con @FGRMexico, locali",
+   "lang": "es",
+   "title_en": "As part of reinforcing security in Sinaloa and actions to combat synthetic drug production, personnel from @SEMAR_mx and @SSPCMexico, in coordination with @FGRMexico, located and disabled a clandestine laboratory for the",
+   "first_report": "2026-10-26T19:00:23Z",
+   "first_report_precision": "minute",
+   "first_source": "Gabinete de Seguridad (Mexico)",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Gabinete de Seguridad (Mexico)",
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "gabsec",
+     "name": "Gabinete de Seguridad (Mexico)",
+     "kind": "official",
+     "via": "X @GabSeguridadMX",
+     "url": "https://x.com/GabSeguridadMX/status/2114794285581173050",
+     "time": "2026-10-26T19:00:23Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2114802571718144463",
+     "time": "2026-10-26T19:33:18Z",
+     "time_precision": "minute"
     }
    ]
   },
@@ -71,7 +299,7 @@
    "status": "official_claim_only",
    "title": "En #Mexicali, #BajaCalifornia, elementos de @SEMAR_mx, #SSPC y @GN_MEXICO_, en coordinación con autoridades estatales, detuvieron a Israel Leonel “N”, identificado como operador regional de un grupo d",
    "lang": "es",
-   "title_en": "In #Mexicali, #BajaCalifornia, personnel from @SEMAR_mx, #SSPC and @GN_MEXICO_, in coordination with state authorities, arrested Israel Leonel \"N\", identified as a regional operator of a criminal gr",
+   "title_en": "In #Mexicali, #BajaCalifornia, personnel from @SEMAR_mx, #SSPC and @GN_MEXICO_, in coordination with state authorities, arrested Israel Leonel \"N\", identified as a regional operator of a criminal group.",
    "first_report": "2026-10-26T17:13:10Z",
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
@@ -100,15 +328,15 @@
    "status": "official_claim_only",
    "title": "El 23, 24 y 25 de octubre, autoridades federales realizaron detenciones, cateos, aseguramientos de armas y droga en #BajaCalifornia, #CDMX, #Colima, #Guerrero, #Jalisco, #Sinaloa, #Sonora, #Tabasco, #",
    "lang": "es",
-   "title_en": "On October 23, 24 and 25, federal authorities carried out arrests, searches, and seizures of weapons and drugs in #BajaCalifornia, #CDMX, #Colima, #Guerrero, #Jalisco, #Sinaloa, #Sonora, #Tabasco, #",
+   "title_en": "On October 23, 24 and 25, federal authorities carried out arrests, searches, and seizures of weapons and drugs in #BajaCalifornia, #CDMX, #Colima, #Guerrero, #Jalisco, #Sinaloa, #Sonora, #Tabasco, #Tamaulipas, #Veracruz ",
    "first_report": "2026-10-26T16:28:38Z",
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2719",
-    "MEX-2713",
-    "MEX-2734",
-    "MEX-2711"
+    "MEX-2718",
+    "MEX-2725",
+    "MEX-2711",
+    "MEX-2734"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -376,8 +604,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2723"
+    "MEX-2723",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
@@ -510,10 +738,10 @@
    "first_report_precision": "day",
    "first_source": "Diario Extra (Ecuador)",
    "region_ids": [
-    "MEX-2711",
     "MEX-2719",
-    "MEX-2706",
-    "MEX-2718"
+    "MEX-2711",
+    "MEX-2718",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [
@@ -846,8 +1074,8 @@
    "first_report_precision": "minute",
    "first_source": "Ríodoce",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2732"
+    "MEX-2732",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -905,10 +1133,10 @@
    "first_report_precision": "minute",
    "first_source": "Gabinete de Seguridad (Mexico)",
    "region_ids": [
-    "MEX-2710",
-    "MEX-2712",
     "MEX-2711",
-    "MEX-2721"
+    "MEX-2712",
+    "MEX-2721",
+    "MEX-2710"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -1396,8 +1624,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "clan",
     "eln",
+    "clan",
     "exfarc"
    ],
    "outlets": [
@@ -1495,8 +1723,8 @@
    "first_report_precision": "day",
    "first_source": "El Universal",
    "region_ids": [
-    "MEX-2711",
     "MEX-2719",
+    "MEX-2711",
     "MEX-2735"
    ],
    "country": "MEX",
@@ -1562,8 +1790,8 @@
    ],
    "country": "ECU",
    "group_ids": [
-    "choneros",
-    "lobos"
+    "lobos",
+    "choneros"
    ],
    "outlets": [
     "Diario Extra (Ecuador)"
@@ -1592,8 +1820,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "choneros",
-    "lobos"
+    "lobos",
+    "choneros"
    ],
    "outlets": [
     "Diario Extra (Ecuador)"
@@ -1655,8 +1883,8 @@
    ],
    "country": "ECU",
    "group_ids": [
-    "choneros",
-    "lobos"
+    "lobos",
+    "choneros"
    ],
    "outlets": [
     "Metro Ecuador"
@@ -1943,8 +2171,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "exfarc",
-    "eln"
+    "eln",
+    "exfarc"
    ],
    "outlets": [
     "Semana"
@@ -1971,15 +2199,15 @@
    "first_report_precision": "day",
    "first_source": "Semana",
    "region_ids": [
-    "COL-1317",
     "COL-1314",
+    "COL-1317",
     "COL-1421"
    ],
    "country": "COL",
    "group_ids": [
-    "choneros",
+    "los_tiguerones",
     "lobos",
-    "los_tiguerones"
+    "choneros"
    ],
    "outlets": [
     "Semana"
@@ -2095,13 +2323,13 @@
    "first_report_precision": "day",
    "first_source": "Eje Central",
    "region_ids": [
-    "MEX-2720",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2720"
    ],
    "country": "MEX",
    "group_ids": [
-    "unidos",
-    "cjng"
+    "cjng",
+    "unidos"
    ],
    "outlets": [
     "Eje Central"
@@ -2130,10 +2358,10 @@
    "region_ids": [],
    "country": "COL",
    "group_ids": [
-    "clan",
-    "tda",
     "exfarc",
-    "eln"
+    "eln",
+    "tda",
+    "clan"
    ],
    "outlets": [
     "El Observador"
@@ -2249,8 +2477,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "clan",
-    "tda"
+    "tda",
+    "clan"
    ],
    "outlets": [
     "Infobae"
@@ -2277,8 +2505,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "PAN-1340",
-    "ARG-1308"
+    "ARG-1308",
+    "PAN-1340"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -2365,8 +2593,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2719",
-    "MEX-2706"
+    "MEX-2706",
+    "MEX-2719"
    ],
    "country": "MEX",
    "group_ids": [
@@ -2489,8 +2717,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "choneros",
-    "tda"
+    "tda",
+    "choneros"
    ],
    "outlets": [
     "Infobae"
