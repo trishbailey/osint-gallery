@@ -82,8 +82,11 @@ def rep(m):
     # representative text: most common original text among members (longest content of earliest original post)
     c=collections.Counter(rows[i]['c'][:280] for i in m);return c.most_common(1)[0][0]
 CL=[]
-for n,m in enumerate(clusters[:40]):
-    key=rows[m[0]]['id']
+# A hand-named cluster keeps its name when the backfill adds earlier posts to it (its key is any member post id, not only the earliest), and named clusters outside the top 40 are kept.
+for m in clusters:
+    ids={rows[i]['id'] for i in m};nk=next((k for k in NAMES if k in ids),None)
+    if len(CL)>=40 and not nk: continue
+    n=len(CL);key=nk or rows[m[0]]['id']
     hs=[];seen=set()
     for i in m:
         if rows[i]['h'] not in seen:seen.add(rows[i]['h']);hs.append(i)
@@ -110,10 +113,21 @@ named.sort(key=lambda c:-c['accounts'])
 d0=T(START).date();d1=T(END).date();days=[(d0+dt.timedelta(d)).isoformat() for d in range((d1-d0).days+1)]
 # ---------- streamgraph (top named talking points, daily) ----------
 TOP=named[:5]
+# Week and Month views pick their own top talking points from their span, so keep every named talking point (Day's top five first, same order).
+TOP=TOP+sorted(named[5:],key=lambda c:-c['n'])
 _NI={v['name']:v for v in NAMES.values()}
 stream=dict(days=days,series=[dict(name=c['name'],line=_NI.get(c['name'],{}).get('line',''),says=_NI.get(c['name'],{}).get('says',''),sample=_NI.get(c['name'],{}).get('sample'),vals=[0]*len(days)) for c in TOP])
 ki={c['key']:j for j,c in enumerate(TOP)}
 kn={c['name']:j for j,c in enumerate(TOP)}
+# Talking points without a hand-picked sample get the earliest English original post (any language if none, shown as written).
+for sr in stream['series']:
+    if sr['sample']: continue
+    al=[r for r in rows if r.get('tp')==sr['name']];cc=collections.Counter(r['c'][:120] for r in al)
+    m=[r for r in al if r['k']!='repost' and len(r['text'])>=60]
+    kw=[w.lower() for w in re.findall(r"[A-Za-z]{3,}",sr['name']) if w.lower() not in {'the','and','china','heads','government','summitry','milestone','trip','video','seat'}]
+    m=[r for r in m if any(w in r['text'].lower() for w in kw)]
+    m.sort(key=lambda r:(-cc[r['c'][:120]],r['lang']!='en',r['t']))
+    if m:r=m[0];t=r['text'];sr['sample']=dict(id=r['id'],h=r['h'],t=r['t'],lang='English' if r['lang']=='en' else {'ja':'Japanese','zh':'Chinese','es':'Spanish','fr':'French','ru':'Russian','ar':'Arabic','pt':'Portuguese'}.get(r['lang'],r['lang']),orig=True,text=t if len(t)<=280 else t[:279].rsplit(' ',1)[0]+'…')
 for r in rows:
     if r.get('tp') in kn: stream['series'][kn[r['tp']]]['vals'][days.index(r['t'][:10])]+=1
 # ---------- matrix: which embassies push which talking points ----------
