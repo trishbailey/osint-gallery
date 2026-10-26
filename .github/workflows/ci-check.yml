@@ -1,0 +1,60 @@
+name: ci-check
+# One check on every change: retired GA tag, github.io / old onrender links,
+# shared-file edits without Trish's OK, and colour / label-size / 390px phone checks
+# on the dashboards a change touches. Run manually with all=true for a full audit.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      all:
+        description: "Browser-check every dashboard (full audit)"
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: ci-check-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Playwright Chromium
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+      - name: Run checks
+        env:
+          SHARED_OK: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'trish-approved') && '1' || '0' }}
+          EVENT: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BEFORE_SHA: ${{ github.event.before }}
+          ALL: ${{ inputs.all }}
+        run: |
+          if [ "$EVENT" = "pull_request" ]; then
+            python scripts/ci_check.py --changed-from "$BASE_SHA"
+          elif [ "$EVENT" = "push" ] && [ -n "$BEFORE_SHA" ] && [ "$BEFORE_SHA" != "0000000000000000000000000000000000000000" ]; then
+            # direct pushes (e.g. the sync bot) are already merged; shared-file edits are reported, page checks gate
+            SHARED_OK=1 python scripts/ci_check.py --changed-from "$BEFORE_SHA"
+          elif [ "$ALL" = "true" ]; then
+            python scripts/ci_check.py
+          else
+            python scripts/ci_check.py --static-only
+          fi
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-screens
+          path: ci-screens/
+          if-no-files-found: ignore
