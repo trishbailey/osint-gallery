@@ -429,29 +429,24 @@ const renderMinerals=()=>{const CN=["DRC","Rwanda","South Africa","Ghana","Niger
   const pEl=document.getElementById("panel");window._onPanel=()=>{if(PH())openSheet(pEl);};
   const side=document.querySelector(".mapside"),fb=document.createElement("button");fb.id="fbtn";fb.type="button";fb.className="fbtn";fb.innerHTML="Filters and legend";fb.setAttribute("aria-haspopup","dialog");
   document.querySelector(".mapgrid").before(fb);fb.onclick=()=>openSheet(side);
-  const pr=document.querySelector("#map>.prompt");if(PH()&&pr)pr.textContent="Each pill is a conflict region with the number of foreign powers involved there. Tap a pill or a country for details; use Filters for layers and the legend.";
+  const pr=document.querySelector("#map>.prompt");if(PH()&&pr)pr.textContent="Numbers mark conflict regions, listed under the map with the foreign powers involved. Tap a number, a list row or a country for details.";
   window._sheet={open:id=>openSheet(document.querySelector(id)),close:closeSheets};
   /* country tap on phone: details in the sheet */
   window._ctrySheet=(iso,name)=>{if(!PH())return;const ps=byIso.has(iso)?[...new Set(byIso.get(iso).map(x=>x.p))]:[];
    panel(`<p class="eyebrow">Country</p><h3>${esc(name)}</h3>${ps.length?`<p class="muted">Foreign involvement</p><ul class="plist">${ps.map(p=>`<li><svg class="pfi" viewBox="0 0 20 13.3" aria-hidden="true"><use href="#${CAPS[p].f}" width="20" height="13.3"/></svg><b>${esc(CAPS[p].n)}:</b> ${powItems(p,iso).map(x=>esc(x.t)+(x.ended?" (ended)":"")).join("; ")}</li>`).join("")}</ul>`:`<p>No foreign military or major economic involvement is tracked here.</p>`}`);};
   /* clusters: one pill per region with its foreign powers and a count */
   const gK=Z.append("g").attr("class","kclust");
-  const drawK=()=>{gK.selectAll("*").remove();if(!PH())return;const sw=svg.node().getBoundingClientRect().width||390,bs=W/sw;
-   const nodes=B.regions.map(r=>{const ps=ORD.filter(p=>r.countries.some(i=>byIso.has(i)&&byIso.get(i).some(x=>x.p===p)));const [x,y]=proj(r.label);return {r,ps,x,y,ax:x,ay:y};});
-   nodes.forEach(n=>{const g=gK.append("g").attr("class","kp").attr("tabindex",0).attr("role","button").attr("aria-label",`${n.r.name}: ${n.ps.length} foreign powers. Open details`);
-    const inner=g.append("g").attr("transform",`scale(${bs})`);const t=inner.append("text").attr("x",n.ps.length?30:8).attr("y",5).text(`${n.r.name}`);
-    const tw=t.node().getBBox().width;const cx=(n.ps.length?30:8)+tw+19;inner.append("circle").attr("class","kcb").attr("cx",cx).attr("cy",0).attr("r",11);const c=inner.append("text").attr("class","kc").attr("x",cx).attr("y",5).attr("text-anchor","middle").text(n.ps.length);
-    if(n.ps.length)inner.append("use").attr("href","#"+CAPS[n.ps[0]].f).attr("x",6).attr("y",-7.5).attr("width",18).attr("height",12);
-    const w=cx+15;inner.insert("rect","text").attr("class","kbg").attr("x",0).attr("y",-15).attr("width",w).attr("height",30).attr("rx",15);
-    inner.insert("rect",".kbg").attr("class","khit").attr("x",-2).attr("y",-22).attr("width",w+4).attr("height",44);
-    n.w=w*bs;n.h=30*bs;n.g=g;const go=()=>openRegion(n.r);g.on("click",e=>{e.stopPropagation();go();}).on("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}});});
-   /* separate pills: simple vertical relaxation inside the map */
-   nodes.forEach(n=>{n.x=Math.max(4*bs,Math.min(W-n.w-4*bs,n.x-n.w/2));});
-   for(let it=0;it<200;it++){let moved=false;for(const a of nodes)for(const b of nodes){if(a===b)continue;const ox=Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x),oy=Math.min(a.y+a.h/2,b.y+b.h/2)-Math.max(a.y-a.h/2,b.y-b.h/2)+6*bs;
-     if(ox>0&&oy>0){const d=(a.y<b.y||(a.y===b.y&&a.r.id<b.r.id))?-1:1;a.y+=d*oy/2;moved=true;}}if(!moved)break;}
-   nodes.forEach(n=>{n.y=Math.max(n.h/2+4*bs,Math.min(H-n.h/2-4*bs,n.y));});for(let it=0;it<100;it++){let mv=false;nodes.sort((a,b)=>a.y-b.y);for(let i=1;i<nodes.length;i++){const a=nodes[i-1],b=nodes[i];const ox=Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x),need=a.h+6*bs;if(ox>0&&b.y-a.y<need){b.y=a.y+need;mv=true;}}if(!mv)break;}
-   {let lim=H-4*bs;for(let i=nodes.length-1;i>=0;i--){const b=nodes[i];if(b.y+b.h/2>lim)b.y=lim-b.h/2;const a=nodes[i-1];if(a){const ox=Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x);lim=ox>0?b.y-b.h/2-6*bs:H-4*bs;}}}
-   nodes.forEach(n=>{n.g.attr("transform",`translate(${n.x},${n.y})`);if(Math.hypot(n.x+n.w/2-n.ax,n.y-n.ay)>20*bs)gK.insert("line",":first-child").attr("class","klead").attr("x1",n.ax).attr("y1",n.ay).attr("x2",Math.max(n.x,Math.min(n.x+n.w,n.ax))).attr("y2",n.y).style("stroke-width",1.5*bs);});
+  const drawK=()=>{gK.selectAll("*").remove();const ls=document.getElementById("rlistph");if(ls)ls.remove();if(!PH())return;const sw=svg.node().getBoundingClientRect().width||390,bs=W/sw;
+   const nodes=B.regions.map((r,i)=>{const ps=ORD.filter(p=>r.countries.some(c=>byIso.has(c)&&byIso.get(c).some(x=>x.p===p)));const [x,y]=proj(r.label);return {r,ps,i:i+1,x,y};});
+   /* small numbered markers; nudge apart so none overlap */
+   const R=12*bs;for(let it=0;it<60;it++)for(const a of nodes)for(const b of nodes){if(a===b)continue;const dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||1,m=2*R+3*bs;if(d<m){const k=(m-d)/2/d;a.x-=dx*k;a.y-=dy*k;b.x+=dx*k;b.y+=dy*k;}}
+   const go=n=>openRegion(n.r);
+   nodes.forEach(n=>{const g=gK.append("g").attr("class","kp").attr("transform",`translate(${n.x},${n.y}) scale(${bs})`).attr("tabindex",0).attr("role","button").attr("aria-label",`${n.i}. ${n.r.name}: ${n.ps.length} foreign powers. Open details`);
+    g.append("circle").attr("class","khit").attr("r",22);g.append("circle").attr("class","kbg").attr("r",12);g.append("text").attr("class","kn").attr("y",5).attr("text-anchor","middle").text(n.i);
+    g.on("click",e=>{e.stopPropagation();go(n);}).on("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go(n);}});});
+   const l=document.createElement("ol");l.id="rlistph";l.className="rlistph";l.setAttribute("aria-label","Conflict regions on the map");
+   l.innerHTML=nodes.map(n=>`<li><button type="button" data-r="${n.r.id}"><span class="rn">${n.i}</span><span class="rt">${esc(n.r.name)}</span><span class="rf">${n.ps.slice(0,3).map(p=>`<svg viewBox="0 0 20 13.3" aria-hidden="true"><use href="#${CAPS[p].f}" width="20" height="13.3"/></svg>`).join("")}</span><span class="rc">${n.ps.length} ${n.ps.length===1?"power":"powers"}</span></button></li>`).join("");
+   document.querySelector(".mapwrap").after(l);l.querySelectorAll("button").forEach(b=>b.onclick=()=>openRegion(B.regions.find(r=>r.id===b.dataset.r)));
    window._clusters=nodes.map(n=>({id:n.r.id,n:n.ps.length}));};
   drawK();document.getElementById("L-pow").addEventListener("change",e=>gK.style("display",e.target.checked?null:"none"));let rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(drawK,200);});
   /* collapsible sections on phone */
