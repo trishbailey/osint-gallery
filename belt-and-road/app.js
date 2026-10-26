@@ -3,14 +3,15 @@ const AFRICA_BRIEF_URL="../africa-brief/";
 // Dark-theme marker palette: min CIEDE2000 pair dE 26.7 (checked in code, see _src/palette_check.py)
 const COL={port:"#2EC4D6",railway:"#6E8CFF",mine:"#E8C24A","military base":"#FF5A57",loan:"#F27FD0",infrastructure:"#6FD36A"};
 const SYM={port:d3.symbolCircle,railway:d3.symbolSquare,mine:d3.symbolTriangle,"military base":d3.symbolStar,loan:d3.symbolDiamond,infrastructure:d3.symbolCross};
-const REG={all:"All regions",africa:"Africa","south-asia":"South Asia","southeast-asia":"Southeast Asia","south-america":"South America","central-asia":"Central Asia","middle-east":"Middle East",europe:"Europe and the Balkans"};
+const REG={all:"All regions",africa:"Africa","south-asia":"South Asia","southeast-asia":"Southeast Asia","south-america":"South America","central-asia":"Central Asia","middle-east":"Middle East",europe:"Europe and the Balkans",pacific:"Pacific Islands"};
 Promise.all([d3.json("data/bri.json"),d3.json("data/ne_110m.geojson")]).then(([D,W])=>{
  document.getElementById("dd").textContent=D.data_date;
  const byId=new Map(D.entries.map(e=>[e.id,e]));
  const tip=d3.select(".mapbox").append("div").attr("class","tip").style("display","none");
  const svg=d3.select("#map"),proj=d3.geoNaturalEarth1().fitSize([960,500],W),path=d3.geoPath(proj);
  const root=svg.append("g");
- root.append("g").selectAll("path").data(W.features).join("path").attr("class","land").attr("d",path);
+ const landSel=root.append("g").selectAll("path").data(W.features).join("path").attr("class","land").attr("d",path);
+ let rot=0;function setRot(r){if(r===rot)return;rot=r;proj.rotate([r,0]);landSel.attr("d",path)}
  const g=root.append("g");let k=1;
  const zoom=d3.zoom().scaleExtent([1,12]).on("zoom",ev=>{k=ev.transform.k;root.attr("transform",ev.transform);g.selectAll(".mk").attr("d",d=>d3.symbol(SYM[d.type],140/(k*k))())});
  svg.call(zoom);
@@ -48,8 +49,8 @@ Promise.all([d3.json("data/bri.json"),d3.json("data/ne_110m.geojson")]).then(([D
   ab.hidden=!(AFRICA_BRIEF_URL&&region==="africa");if(AFRICA_BRIEF_URL)ab.querySelector("a").href=AFRICA_BRIEF_URL}
  function route(){const h=new URLSearchParams(location.hash.slice(1));
   const p=h.get("p"),r=h.get("region");
-  if(p&&byId.has(p)){const e=byId.get(p);region=e.region;draw();show(e);zoomTo([e.lon,e.lat],5);document.getElementById("panel").scrollIntoView({block:"nearest"});return}
-  region=REG[r]?r:"all";cur=null;draw();zoomRegion();
+  if(p&&byId.has(p)){const e=byId.get(p);region=e.region;setRot(region==="pacific"?-160:0);draw();show(e);zoomTo([e.lon,e.lat],5);document.getElementById("panel").scrollIntoView({block:"nearest"});return}
+  region=REG[r]?r:"all";cur=null;setRot(region==="pacific"?-160:0);draw();zoomRegion();
   document.getElementById("panel").innerHTML='<p class="muted">Click a marker or a table row for details.</p>'}
  window.addEventListener("hashchange",route);route();
 });

@@ -2209,6 +2209,263 @@
     "https://www.debrecensun.hu/local/2025/05/21/catl-intends-to-raise-1-3-1-5-trillion-forints-through-a-share-issue-to-expand-its-debrecen-battery-factory/"
    ],
    "origin": "europe.csv"
+  },
+  {
+   "id": "bri-solomons-security-pact",
+   "name": "China-Solomon Islands security pact and policing deal",
+   "country": "Solomon Islands",
+   "region": "pacific",
+   "type": "infrastructure",
+   "kind": "policing / security agreement",
+   "lat": -9.43,
+   "lon": 159.95,
+   "value": "Security agreement signed April 2022 (text not published; a leaked draft allows Chinese police, armed police and military deployments); policing cooperation pact July 2023; Chinese police trainers, equipment and vehicles",
+   "backer": "Chinese government / Ministry of Public Security",
+   "china_gets": "A legal basis for Chinese security forces and ship visits in the South Pacific",
+   "host_case": "Honiara says there will be no Chinese base and that the deal fills security gaps; Australia, the US and New Zealand object",
+   "confidence": "medium",
+   "confidence_reason": "Signing is confirmed, but the final text is secret; its scope rests on a leaked draft",
+   "sources": [
+    "https://www.theguardian.com/world/2022/apr/20/the-deal-that-shocked-the-world-inside-the-china-solomons-security-pact",
+    "https://gjia.georgetown.edu/conflict-security/china-solomon-islands-security-agreement-and-competition-for-influence-in-oceania/",
+    "https://www.reuters.com/world/asia-pacific/china-solomon-islands-agree-strategic-partnership-2023-07-10/"
+   ],
+   "origin": "pacific.csv"
+  },
+  {
+   "id": "bri-honiara-stadium",
+   "name": "Honiara national stadium (2023 Pacific Games)",
+   "country": "Solomon Islands",
+   "region": "pacific",
+   "type": "infrastructure",
+   "kind": "stadium (grant)",
+   "lat": -9.44,
+   "lon": 159.98,
+   "value": "About $50m, built and paid for by China",
+   "backer": "Chinese government grant; Chinese contractor",
+   "china_gets": "A showcase project after the 2019 switch of diplomatic recognition from Taiwan",
+   "host_case": "The government welcomed it as the Games venue",
+   "confidence": "medium",
+   "confidence_reason": "Cost reported by the Washington Post only",
+   "sources": [
+    "https://www.washingtonpost.com/world/2022/08/11/solomon-islands-china-australia-pacific/"
+   ],
+   "origin": "pacific.csv"
+  },
+  {
+   "id": "bri-solomons-huawei-towers",
+   "name": "Huawei mobile towers (161 sites)",
+   "country": "Solomon Islands",
+   "region": "pacific",
+   "type": "loan",
+   "kind": "telecom towers (loan-financed)",
+   "lat": -8.9,
+   "lon": 160.4,
+   "value": "$66m China Exim loan (2022) for 161 towers built by Huawei; the country's first loan from China",
+   "backer": "China Exim; Huawei",
+   "china_gets": "A national telecom footprint for Huawei",
+   "host_case": "The government called it a historic financing partnership; Australia had earlier funded the Coral Sea cable to keep Huawei out",
+   "confidence": "high",
+   "confidence_reason": "Loan reported by the Guardian and the Georgetown Journal of International Affairs (GJIA)",
+   "sources": [
+    "https://www.theguardian.com/world/2022/aug/19/solomon-islands-secures-100m-china-loan-to-build-huawei-mobile-towers-in-historic-step",
+    "https://gjia.georgetown.edu/conflict-security/china-solomon-islands-security-agreement-and-competition-for-influence-in-oceania/"
+   ],
+   "origin": "pacific.csv"
+  },
+  {
+   "id": "bri-ramu-nico",
+   "name": "Ramu NiCo nickel-cobalt mine and Basamuk refinery",
+   "country": "Papua New Guinea",
+   "region": "pacific",
+   "type": "mine",
+   "kind": "mining (nickel-cobalt)",
+   "lat": -5.53,
+   "lon": 145.13,
+   "value": "About $2bn project; MCC-led company holds 85%; slurry spill at Basamuk in 2019 (about 200,000 litres, 80,000 reached the sea)",
+   "backer": "Metallurgical Corporation of China (MCC) with Jinchuan, Jiuquan and Jilin Jien",
+   "china_gets": "Nickel and cobalt supply for batteries",
+   "host_case": "PNG briefly shut the plant after the spill, then let it reopen; local communities remain concerned",
+   "confidence": "high",
+   "confidence_reason": "Ownership from the NI 43-101 technical report; spill reported by ABC and The National",
+   "sources": [
+    "https://minedocs.com/11/RamuNiCo_Technical_Report_07242019.pdf",
+    "https://www.abc.net.au/news/2019-10-25/chinese-owned-nickel-plant-in-png-shut-down-after-toxic-spill/11636086",
+    "https://www.thenational.com.pg/mine-ready-to-work-with-authority-on-investigation/"
+   ],
+   "origin": "pacific.csv"
+  },
+  {
+   "id": "bri-kumul-cable",
+   "name": "Kumul domestic submarine cable",
+   "country": "Papua New Guinea",
+   "region": "pacific",
+   "type": "loan",
+   "kind": "submarine cable (loan-financed)",
+   "lat": -9.44,
+   "lon": 147.18,
+   "value": "$229m China Exim buyer's credit for 85% of a $270m Huawei contract; about 5,500km of cable completed 2020; repayment terms amended in 2021",
+   "backer": "China Exim; Huawei",
+   "china_gets": "Huawei-built core of PNG's domestic internet backbone",
+   "host_case": "PNG DataCo struggled to repay; the cable's viability was questioned",
+   "confidence": "high",
+   "confidence_reason": "Loan in AidData",
+   "sources": [
+    "https://china.aiddata.org/projects/61213/",
+    "https://www.rnz.co.nz/international/programmes/datelinepacific/audio/2018748241/viability-of-png-cable-project-uncertain"
+   ],
+   "origin": "pacific.csv"
+  },
+  {
+   "id": "bri-luganville-wharf",
+   "name": "Luganville main wharf",
+   "country": "Vanuatu",
+   "region": "pacific",
+   "type": "port",
+   "kind": "port / wharf (loan-financed)",
+   "lat": -15.52,
+   "lon": 167.18,
+   "value": "RMB541.9m (about $87m) China Exim concessional loan (2014; 2%, 20 years); 361m wharf handed over in 2017",
+   "backer": "China Exim; Shanghai Construction Group",
+   "china_gets": "A deep-water wharf in the South Pacific; 2018 media reports of base talks were denied",
+   "host_case": "Vanuatu says it is a civilian cargo and cruise wharf",
+   "confidence": "high",
+   "confidence_reason": "Loan terms in AidData; base reports are denied and not used as evidence",
+   "sources": [
+    "https://china.aiddata.org/projects/37748/",
+    "https://www.rnz.co.nz/international/programmes/datelinepacific/audio/201856179/huge-new-vanuatu-wharf-a-boon-for-tourism",
+    "https://www.dailypost.vu/news/longest-wharf/article_3f868569-923c-50dc-a87e-14b3d369183c.html"
+   ],
+   "origin": "pacific.csv"
+  },
+  {
+   "id": "bri-vanuatu-roads",
+   "name": "Tanna and Malekula roads",
+   "country": "Vanuatu",
+   "region": "pacific",
+   "type": "loan",
+   "kind": "roads (loan-financed)",
+   "lat": -19.53,
+   "lon": 169.27,
+   "value": "RMB350m China Exim loan (2014; 2%, 20 years) for 45km of roads, finished 2019; a second RMB350m loan for phase 2",
+   "backer": "China Exim; CCECC",
+   "china_gets": "Construction contracts; China is Vanuatu's largest bilateral creditor",
+   "host_case": "Vanuatu says the roads improve island access",
+   "confidence": "high",
+   "confidence_reason": "Loan in AidData and FinObservatory",
+   "sources": [
+    "https://china.aiddata.org/projects/37763/",
+    "https://finobservatory.org/china-lending/VUT"
+   ],
+   "origin": "pacific.csv"
+  },
+  {
+   "id": "bri-tonga-exim",
+   "name": "Tonga's China Exim debt (Nuku'alofa rebuild)",
+   "country": "Tonga",
+   "region": "pacific",
+   "type": "loan",
+   "kind": "sovereign debt (Exim loans)",
+   "lat": -21.14,
+   "lon": -175.2,
+   "value": "China Exim held 47% of Tonga's external debt in mid-2024 (54% in 2023); repayments peaked at about 3% of GDP in FY2024; TOP$42m due in FY2025 (61% of debt service)",
+   "backer": "China Exim (loans for rebuilding the centre of Nuku'alofa after the 2006 riots)",
+   "china_gets": "Tonga's largest single creditor",
+   "host_case": "Tonga had repayments deferred under the G20 debt suspension scheme (DSSI) and now avoids new non-concessional borrowing",
+   "confidence": "high",
+   "confidence_reason": "From the IMF debt sustainability analysis and Tonga's Ministry of Finance",
+   "sources": [
+    "https://www.elibrary.imf.org/view/journals/002/2025/293/article-A003-en.xml",
+    "https://finance.gov.to/sites/default/files/2025-01/Annual%20Borrowing%20Plan%20FY%202025.pdf"
+   ],
+   "origin": "pacific.csv"
+  },
+  {
+   "id": "bri-samoa-vaiusu",
+   "name": "Vaiusu Bay wharf (cancelled)",
+   "country": "Samoa",
+   "region": "pacific",
+   "type": "port",
+   "kind": "port proposal (shelved)",
+   "lat": -13.83,
+   "lon": -171.83,
+   "value": "Proposed $100m China-backed wharf (earlier $300m and judged unviable by the ADB); cancelled in 2021; China already held about 40% of Samoa's external debt",
+   "backer": "China (proposed financier)",
+   "china_gets": "Nothing built",
+   "host_case": "New Prime Minister Fiame cancelled it as excessive debt exposure",
+   "confidence": "medium",
+   "confidence_reason": "Cancellation confirmed; the project never got past feasibility work",
+   "sources": [
+    "https://www.rnz.co.nz/news/pacific/448264/samoa-govt-confirms-china-backed-port-project-shelved",
+    "https://www.reuters.com/world/asia-pacific/samoas-new-leader-confirms-scrapping-china-funded-port-2021-07-30/",
+    "https://asiapacificreport.nz/2021/08/02/samoa-confirms-china-backed-vaiusu-bay-port-project-shelved/"
+   ],
+   "origin": "pacific.csv"
+  },
+  {
+   "id": "bri-kanton-airstrip",
+   "name": "Kanton Island airstrip upgrade",
+   "country": "Kiribati",
+   "region": "pacific",
+   "type": "infrastructure",
+   "kind": "airstrip upgrade (feasibility)",
+   "lat": -2.81,
+   "lon": -171.68,
+   "value": "No figures; China said in 2021 it was studying the feasibility of an upgrade at Kiribati's invitation",
+   "backer": "Chinese government (feasibility study)",
+   "china_gets": "A possible mid-Pacific runway about 3,000km from Hawaii",
+   "host_case": "Kiribati says the project is civilian (transport and tourism)",
+   "confidence": "low",
+   "confidence_reason": "Only feasibility work is confirmed, with no contract or financing; the strategic concerns are speculative",
+   "sources": [
+    "https://www.reuters.com/world/asia-pacific/kiribati-says-china-backed-pacific-airstrip-project-civilian-use-2021-05-13/",
+    "https://www.reuters.com/article/us-china-kiribati/china-says-it-is-exploring-feasibility-of-kiribati-airstrip-upgrades-idUSKBN2CP02I/"
+   ],
+   "origin": "pacific.csv"
+  },
+  {
+   "id": "bri-cook-islands",
+   "name": "Cook Islands-China partnership (seabed minerals, infrastructure)",
+   "country": "Cook Islands",
+   "region": "pacific",
+   "type": "mine",
+   "kind": "seabed minerals partnership",
+   "lat": -21.21,
+   "lon": -159.78,
+   "value": "Five-year action plan signed in February 2025 covering seabed-mineral research, infrastructure, ports and shipping; no figures; no mining licences",
+   "backer": "Chinese government",
+   "china_gets": "Access to research on one of the world's largest nodule fields",
+   "host_case": "The Cook Islands says it protects its interests; New Zealand objected to not being consulted and paused funding",
+   "confidence": "medium",
+   "confidence_reason": "The agreement is signed and public, but no projects have been delivered yet",
+   "sources": [
+    "https://www.rnz.co.nz/news/pacific/542678/cook-islands-strikes-deal-with-china-on-seabed-minerals",
+    "https://www.reuters.com/world/asia-pacific/cook-islands-pm-pledges-release-details-china-deal-2025-02-17/",
+    "https://www.reuters.com/world/asia-pacific/what-is-cook-islands-deal-with-china-what-has-worried-nz-2025-02-19/"
+   ],
+   "origin": "pacific.csv"
+  },
+  {
+   "id": "bri-fiji-police",
+   "name": "Fiji-China police cooperation agreement",
+   "country": "Fiji",
+   "region": "pacific",
+   "type": "infrastructure",
+   "kind": "policing agreement",
+   "lat": -18.14,
+   "lon": 178.44,
+   "value": "2011 memorandum kept after a 2024 review, but Chinese officers embedded in Fiji's police were sent home; Fijian officers still train in China",
+   "backer": "Chinese Ministry of Public Security",
+   "china_gets": "A policing foothold in a key Pacific state",
+   "host_case": "Rabuka's government narrowed it but did not cancel it",
+   "confidence": "high",
+   "confidence_reason": "The review outcome was reported by the Guardian, ABC and FBC",
+   "sources": [
+    "https://www.theguardian.com/world/2024/mar/15/fiji-china-police-exchange-intelligence-deal",
+    "https://www.abc.net.au/news/2024-03-28/fiji-orders-chinese-police-to-leave-the-country/103640992",
+    "https://www.fbcnews.com.fj/news/fiji-china-policing-agreement-resumes-under-limitations/"
+   ],
+   "origin": "pacific.csv"
   }
  ]
 }
