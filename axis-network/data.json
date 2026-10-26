@@ -1,0 +1,547 @@
+{
+ "data_through": "2026-10-20",
+ "window_start": "2026-09-21",
+ "collection": {
+  "channels": 135,
+  "posts": 293022,
+  "start": "2026-09-20",
+  "end": "2026-10-20"
+ },
+ "by_group": {
+  "houthi": {
+   "ch": 25,
+   "posts": 72792
+  },
+  "irgc": {
+   "ch": 54,
+   "posts": 108732
+  },
+  "hezbollah": {
+   "ch": 18,
+   "posts": 27705
+  },
+  "hamas": {
+   "ch": 10,
+   "posts": 34819
+  },
+  "iraqi": {
+   "ch": 23,
+   "posts": 40556
+  },
+  "aligned": {
+   "ch": 4,
+   "posts": 8096
+  },
+  "pij": {
+   "ch": 1,
+   "posts": 322
+  }
+ },
+ "flow30": [
+  [
+   "aligned",
+   "hezbollah",
+   893
+  ],
+  [
+   "houthi",
+   "irgc",
+   307
+  ],
+  [
+   "houthi",
+   "hezbollah",
+   220
+  ],
+  [
+   "irgc",
+   "hezbollah",
+   220
+  ],
+  [
+   "hezbollah",
+   "iraqi",
+   213
+  ],
+  [
+   "irgc",
+   "houthi",
+   181
+  ],
+  [
+   "houthi",
+   "iraqi",
+   178
+  ],
+  [
+   "aligned",
+   "iraqi",
+   145
+  ],
+  [
+   "iraqi",
+   "hezbollah",
+   142
+  ],
+  [
+   "hamas",
+   "irgc",
+   119
+  ],
+  [
+   "hezbollah",
+   "houthi",
+   96
+  ],
+  [
+   "hamas",
+   "hezbollah",
+   88
+  ],
+  [
+   "iraqi",
+   "houthi",
+   79
+  ],
+  [
+   "hezbollah",
+   "irgc",
+   79
+  ],
+  [
+   "aligned",
+   "houthi",
+   61
+  ],
+  [
+   "hezbollah",
+   "aligned",
+   56
+  ],
+  [
+   "irgc",
+   "iraqi",
+   47
+  ],
+  [
+   "hamas",
+   "iraqi",
+   35
+  ],
+  [
+   "iraqi",
+   "aligned",
+   28
+  ],
+  [
+   "irgc",
+   "hamas",
+   27
+  ],
+  [
+   "hamas",
+   "houthi",
+   14
+  ],
+  [
+   "iraqi",
+   "hamas",
+   11
+  ],
+  [
+   "houthi",
+   "hamas",
+   8
+  ],
+  [
+   "aligned",
+   "hamas",
+   8
+  ],
+  [
+   "houthi",
+   "aligned",
+   5
+  ],
+  [
+   "hezbollah",
+   "hamas",
+   4
+  ],
+  [
+   "hamas",
+   "aligned",
+   3
+  ],
+  [
+   "iraqi",
+   "irgc",
+   2
+  ],
+  [
+   "pij",
+   "hezbollah",
+   2
+  ]
+ ],
+ "flow7": [
+  [
+   "aligned",
+   "hezbollah",
+   203
+  ],
+  [
+   "houthi",
+   "irgc",
+   95
+  ],
+  [
+   "irgc",
+   "houthi",
+   72
+  ],
+  [
+   "houthi",
+   "iraqi",
+   64
+  ],
+  [
+   "houthi",
+   "hezbollah",
+   60
+  ],
+  [
+   "irgc",
+   "hezbollah",
+   47
+  ],
+  [
+   "iraqi",
+   "hezbollah",
+   43
+  ],
+  [
+   "hezbollah",
+   "iraqi",
+   42
+  ],
+  [
+   "aligned",
+   "iraqi",
+   40
+  ],
+  [
+   "aligned",
+   "houthi",
+   25
+  ],
+  [
+   "hamas",
+   "irgc",
+   25
+  ],
+  [
+   "hezbollah",
+   "irgc",
+   22
+  ],
+  [
+   "iraqi",
+   "houthi",
+   16
+  ],
+  [
+   "hamas",
+   "hezbollah",
+   16
+  ],
+  [
+   "hezbollah",
+   "houthi",
+   15
+  ],
+  [
+   "iraqi",
+   "aligned",
+   7
+  ],
+  [
+   "hamas",
+   "iraqi",
+   7
+  ],
+  [
+   "iraqi",
+   "hamas",
+   6
+  ],
+  [
+   "irgc",
+   "hamas",
+   6
+  ],
+  [
+   "irgc",
+   "iraqi",
+   3
+  ],
+  [
+   "aligned",
+   "hamas",
+   2
+  ],
+  [
+   "hezbollah",
+   "aligned",
+   1
+  ],
+  [
+   "hamas",
+   "aligned",
+   1
+  ],
+  [
+   "houthi",
+   "aligned",
+   1
+  ],
+  [
+   "iraqi",
+   "irgc",
+   1
+  ]
+ ],
+ "xcopies30": 3271,
+ "xstories30": 2663,
+ "origin30": {
+  "houthi": 718,
+  "irgc": 475,
+  "hezbollah": 448,
+  "hamas": 259,
+  "iraqi": 262,
+  "aligned": 1107,
+  "pij": 2
+ },
+ "allcopies30": 28497,
+ "allorigin30": {
+  "houthi": 19193,
+  "irgc": 486,
+  "hezbollah": 812,
+  "hamas": 5122,
+  "iraqi": 1774,
+  "aligned": 1108,
+  "pij": 2
+ },
+ "topsrc30": [
+  [
+   "almayadeen",
+   "aligned",
+   976
+  ],
+  [
+   "alalamarabic",
+   "irgc",
+   431
+  ],
+  [
+   "sadaa_almasirah",
+   "houthi",
+   329
+  ],
+  [
+   "ahednews",
+   "hezbollah",
+   232
+  ],
+  [
+   "alghadeertv",
+   "iraqi",
+   152
+  ]
+ ],
+ "week": {
+  "xcopies": 820,
+  "prev_weekly": 741.7,
+  "origin": {
+   "aligned": 270,
+   "houthi": 220,
+   "irgc": 128,
+   "hezbollah": 80,
+   "iraqi": 73,
+   "hamas": 49
+  },
+  "prev_origin": {
+   "aligned": 249.7,
+   "houthi": 156.7,
+   "hezbollah": 111.7,
+   "irgc": 107.3,
+   "hamas": 63.7,
+   "iraqi": 52.0,
+   "pij": 0.7
+  },
+  "top_pairs": [
+   [
+    "aligned",
+    "hezbollah",
+    203
+   ],
+   [
+    "houthi",
+    "irgc",
+    95
+   ],
+   [
+    "irgc",
+    "houthi",
+    72
+   ]
+  ]
+ },
+ "pay": {
+  "selectors": 84,
+  "channels": 17,
+  "cross_group": 0,
+  "shared": 53,
+  "max_channels": 5,
+  "by_type": [
+   [
+    "Bank card",
+    38,
+    20
+   ],
+   [
+    "Named donation campaign",
+    19,
+    18
+   ],
+   [
+    "Bank account (IBAN)",
+    15,
+    8
+   ],
+   [
+    "Donation phone number",
+    8,
+    3
+   ],
+   [
+    "Crypto wallet",
+    4,
+    4
+   ]
+  ],
+  "by_group": {
+   "irgc": 14,
+   "hamas": 2,
+   "iraqi": 1
+  },
+  "first": "2026-05-01",
+  "last": "2026-10-08",
+  "in_window": 3,
+  "edges": 201,
+  "top": [
+   [
+    "6037997950416207",
+    "Bank card",
+    5
+   ],
+   [
+    "پویش مشارکت کنند",
+    "Named donation campaign",
+    5
+   ],
+   [
+    "6037997950394024",
+    "Bank card",
+    5
+   ],
+   [
+    "IR930600220801120475149001",
+    "Bank account (IBAN)",
+    5
+   ],
+   [
+    "6063737005379720",
+    "Bank card",
+    5
+   ]
+  ]
+ },
+ "themes": {
+  "cats": [
+   "Yemen–Saudi war",
+   "Palestine",
+   "Iran–Israel–US standoff",
+   "Martyrs and faith",
+   "Home and world news"
+  ],
+  "coded": 68314,
+  "by_group": {
+   "houthi": [
+    49.9,
+    12.7,
+    12.8,
+    14.2,
+    10.5
+   ],
+   "irgc": [
+    12.6,
+    4.7,
+    36.0,
+    9.8,
+    36.9
+   ],
+   "hezbollah": [
+    15.5,
+    10.3,
+    40.1,
+    10.0,
+    24.2
+   ],
+   "hamas": [
+    0.1,
+    82.6,
+    11.2,
+    1.9,
+    4.2
+   ],
+   "iraqi": [
+    20.0,
+    4.3,
+    30.4,
+    7.8,
+    37.5
+   ],
+   "aligned": [
+    12.3,
+    5.3,
+    50.1,
+    4.0,
+    28.3
+   ],
+   "pij": [
+    0.0,
+    17.0,
+    1.0,
+    82.0,
+    0.0
+   ]
+  },
+  "n": {
+   "irgc": 22344,
+   "houthi": 28543,
+   "hamas": 9970,
+   "hezbollah": 2702,
+   "iraqi": 3489,
+   "aligned": 1072,
+   "pij": 194
+  }
+ },
+ "infra": {
+  "nodes": 75,
+  "shared": [
+   "almoqawma.com"
+  ],
+  "sites": 20
+ }
+}
