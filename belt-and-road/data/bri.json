@@ -1822,6 +1822,393 @@
     "https://www.jordannews.jo/Section-109/News/Arbitration-Panel-Dismisses-Case-on-Exorbitant-Pricing-in-NEPCO-APCO-Agreement-36843"
    ],
    "origin": "middle_east.csv"
+  },
+  {
+   "id": "bri-piraeus",
+   "name": "Piraeus Port Authority (PPA)",
+   "country": "Greece",
+   "region": "europe",
+   "type": "port",
+   "kind": "port",
+   "lat": 37.94,
+   "lon": 23.63,
+   "value": "51% bought for \u20ac280.5m (2016), raised to 67% for a further \u20ac88m (2021); container terminals II-III operated by COSCO since 2009; concession runs to 2052",
+   "backer": "COSCO Shipping",
+   "china_gets": "Control of the Mediterranean's largest container gateway into central and eastern Europe",
+   "host_case": "Greece sold the stake under its bailout privatisation programme; COSCO had completed only about a third of the required investments by 2021",
+   "confidence": "high",
+   "confidence_reason": "Terms published by the Athens exchange (Euronext Athens), Reuters and trade press",
+   "sources": [
+    "https://athens.euronext.com/en/node/651199",
+    "https://container-news.com/cosco-raises-its-piraeus-stake-to-67/",
+    "https://www.seatrade-maritime.com/ports-logistics/cosco-completes-increased-stake-in-piraeus-port-authority"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-budapest-belgrade",
+   "name": "Budapest-Belgrade railway",
+   "country": "Hungary / Serbia",
+   "region": "europe",
+   "type": "railway",
+   "kind": "railway (loan-financed)",
+   "lat": 46.1,
+   "lon": 19.7,
+   "value": "Hungary: $1.875bn China Exim loan (2020; 20 years, 2.5%) covering 85% of a 166km section; Serbia: several China Exim loans, with sections opened in 2022 and 2025",
+   "backer": "China Exim; China Railway Group / CRCC companies, partly with Hungarian partner RM International",
+   "china_gets": "Construction contracts and a rail link from Piraeus into central Europe",
+   "host_case": "Hungary classified the project's documents for 10 years; critics allege inflated costs; Serbia calls it a flagship project",
+   "confidence": "high",
+   "confidence_reason": "Loan terms from AidData and Reuters; Hungary's decision to classify the documents reported by Reuters",
+   "sources": [
+    "https://china.aiddata.org/projects/68443",
+    "https://www.reuters.com/article/hungary-china-railway-loan/update-3-hungary-china-sign-loan-deal-for-budapest-belgrade-chinese-rail-project-idUSL5N2CC6A0/",
+    "https://www.reuters.com/article/hungary-china-railway-law/hungary-classifies-budapest-belgrade-chinese-rail-project-idUSL8N2D14V2/"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-bar-boljare",
+   "name": "Bar-Boljare motorway, priority section",
+   "country": "Montenegro",
+   "region": "europe",
+   "type": "loan",
+   "kind": "motorway (loan-financed)",
+   "lat": 42.6,
+   "lon": 19.45,
+   "value": "$944m China Exim loan (2014; 20 years, 2% fixed) for 85% of a \u20ac809.6m contract for 41km; about $557m still owed in July 2026",
+   "backer": "China Exim; China Road and Bridge Corp (CRBC)",
+   "china_gets": "Construction contract, a sovereign-guaranteed loan, and tax exemptions for Chinese contractors",
+   "host_case": "Montenegro asked the EU for help refinancing in 2021 and hedged the currency risk; the debt is still large relative to its economy",
+   "confidence": "high",
+   "confidence_reason": "Loan agreement published by Montenegro's government and in AidData",
+   "sources": [
+    "https://china.aiddata.org/projects/42330",
+    "https://www.gov.me/en/article/129377--government-of-montenegro-selects-chinese-cccc-and-crbc-as-first-ranked-for-construction-of-highway-s-priority-section",
+    "https://en.vijesti.me/news-b/economy-d/819890/Ministry-of-Finance-total-effect-of-hedging-arrangement-934-million"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-smederevo",
+   "name": "HBIS Smederevo steelworks",
+   "country": "Serbia",
+   "region": "europe",
+   "type": "infrastructure",
+   "kind": "steel mill",
+   "lat": 44.65,
+   "lon": 20.93,
+   "value": "Bought for \u20ac46m in 2016",
+   "backer": "HBIS Group (Hesteel)",
+   "china_gets": "Ownership of Serbia's only integrated steelworks",
+   "host_case": "Serbia sold a loss-making state plant; residents complain about pollution",
+   "confidence": "high",
+   "confidence_reason": "Sale reported by the AP",
+   "sources": [
+    "https://apnews.com/general-news-785ed5a2724f42b8b5c764dc172cd1b8"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-bor-zijin",
+   "name": "Zijin Bor copper (RTB Bor) and Cukaru Peki",
+   "country": "Serbia",
+   "region": "europe",
+   "type": "mine",
+   "kind": "mining (copper)",
+   "lat": 44.08,
+   "lon": 22.1,
+   "value": "63% of RTB Bor for $350m (2018), with $1.26bn of investment pledged over 6 years, plus $200m to settle debts",
+   "backer": "Zijin Mining",
+   "china_gets": "Control of Serbia's copper mines and smelter",
+   "host_case": "Serbia sold the indebted state company on IMF advice; environmental fines and protests have followed",
+   "confidence": "high",
+   "confidence_reason": "Terms in Zijin's Hong Kong exchange filings and Reuters",
+   "sources": [
+    "https://www1.hkexnews.hk/listedco/listconews/sehk/2018/0917/ltn20180917921.pdf",
+    "https://www1.hkexnews.hk/listedco/listconews/sehk/2018/1219/ltn20181219377.pdf",
+    "https://www.reuters.com/article/markets/chinas-zijin-mining-to-take-stake-in-serbian-copper-complex-idUSL8N1VM2K6/"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-kostolac",
+   "name": "Kostolac B3 coal unit and Drmno mine expansion",
+   "country": "Serbia",
+   "region": "europe",
+   "type": "loan",
+   "kind": "power plant (loan-financed)",
+   "lat": 44.71,
+   "lon": 21.2,
+   "value": "$608m China Exim loan for 85% of a $715.6m contract; 350 MW unit handed over in December 2024 after delays",
+   "backer": "China Exim; CMEC",
+   "china_gets": "Construction contract and loan repayment",
+   "host_case": "Serbia says it strengthens energy security; Bankwatch criticises it as new coal",
+   "confidence": "high",
+   "confidence_reason": "Loan in AidData; handover announced by Serbia's government",
+   "sources": [
+    "https://china.aiddata.org/projects/42555",
+    "https://www.srbija.gov.rs/vest/en/239302/kostolac-b3-thermal-power-plant-becomes-part-of-eps-system.php",
+    "https://bankwatch.org/project/kostolac-lignite-power-plant-serbia"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-tollerort",
+   "name": "Container Terminal Tollerort (Hamburg)",
+   "country": "Germany",
+   "region": "europe",
+   "type": "port",
+   "kind": "port",
+   "lat": 53.54,
+   "lon": 9.95,
+   "value": "24.99% for \u20ac46.4m (2023), cut from 35% by the German government",
+   "backer": "COSCO Shipping Ports",
+   "china_gets": "A minority stake and preferred-hub status in Hamburg",
+   "host_case": "Germany capped the stake below 25% and declared the terminal critical infrastructure",
+   "confidence": "high",
+   "confidence_reason": "From COSCO's filing and HHLA's release",
+   "sources": [
+    "https://doc.irasia.com/listco/hk/coscoship/announcement/a230619.pdf",
+    "https://hhla.de/en/investors/releases/financial-disclosures/detail-view/hhla-and-cspl-finalise-minority-shareholding-in-ctt",
+    "https://www.reuters.com/markets/deals/china-cosco-shipping-subsidiary-climbs-german-nod-port-terminal-deal-2023-05-11/"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-zeebrugge",
+   "name": "CSP Zeebrugge Terminal",
+   "country": "Belgium",
+   "region": "europe",
+   "type": "port",
+   "kind": "port",
+   "lat": 51.33,
+   "lon": 3.2,
+   "value": "Bought out to 100% (76% from APM Terminals) in 2017",
+   "backer": "COSCO Shipping Ports",
+   "china_gets": "Full ownership of a North Sea container terminal",
+   "host_case": "A commercial sale, approved by Belgium",
+   "confidence": "high",
+   "confidence_reason": "From the COSCO and APM Terminals releases",
+   "sources": [
+    "https://ports.coscoshipping.com/en/Media/PressReleases/files/pdf/Acquisition%20of%20interest%20in%20APM%20Terminals%20Zeebrugge%20NV_Press%20release_e_final.pdf",
+    "https://www.apmterminals.com/en/news/news-releases/2017/news/apm-terminals-zeebrugge-completes-share-sale"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-rotterdam-euromax",
+   "name": "Euromax Terminal Rotterdam",
+   "country": "Netherlands",
+   "region": "europe",
+   "type": "port",
+   "kind": "port",
+   "lat": 51.96,
+   "lon": 4.04,
+   "value": "35% stake (2016)",
+   "backer": "COSCO Shipping Ports",
+   "china_gets": "A minority stake in a terminal at Europe's largest port",
+   "host_case": "A commercial sale",
+   "confidence": "medium",
+   "confidence_reason": "Stake confirmed by COSCO's release only",
+   "sources": [
+    "https://ports.coscoshipping.com/en/Media/PressReleases/content.php?id=20160513"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-valencia-noatum",
+   "name": "Noatum Port Holdings (Valencia and Bilbao terminals)",
+   "country": "Spain",
+   "region": "europe",
+   "type": "port",
+   "kind": "port",
+   "lat": 39.44,
+   "lon": -0.32,
+   "value": "51% for \u20ac203.5m (2017)",
+   "backer": "COSCO Shipping Ports",
+   "china_gets": "Control of Spain's major container terminal in Valencia, plus rail terminals",
+   "host_case": "A commercial sale",
+   "confidence": "high",
+   "confidence_reason": "From COSCO's release and Reuters",
+   "sources": [
+    "https://ports.coscoshipping.com/en/Media/PressReleases/content.php?id=20170612",
+    "https://www.reuters.com/article/us-cosco-ship-hold-noatum-port/chinas-cosco-shipping-buys-228-million-stake-in-spains-noatum-port-idUSKBN19405I/"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-peljesac",
+   "name": "Peljesac bridge",
+   "country": "Croatia",
+   "region": "europe",
+   "type": "infrastructure",
+   "kind": "bridge (EU-funded)",
+   "lat": 42.92,
+   "lon": 17.55,
+   "value": "Built under a HRK2.08bn (about \u20ac280m) contract; the EU paid \u20ac357m (85% of eligible costs); opened July 2022",
+   "backer": "China Road and Bridge Corp (CRBC) consortium; EU Cohesion Policy funds",
+   "china_gets": "A showcase EU contract won by a Chinese state firm; China provided no money",
+   "host_case": "Croatia and the EU present it as an EU project; the bid sparked EU subsidy concerns",
+   "confidence": "high",
+   "confidence_reason": "From the European Commission's regional-policy pages and Croatia's road agency",
+   "sources": [
+    "https://regions-and-cities.ec.europa.eu/policy/communication/campaigns/places-europe/1a-peljesac-bridge-croatia_en",
+    "https://hrvatske-ceste.hr/en/eu_projects/projects/55",
+    "https://total-croatia-news.com/news/business/contract-for-peljesac-bridge-construction-signed/"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-stanari",
+   "name": "Stanari lignite power plant",
+   "country": "Bosnia and Herzegovina",
+   "region": "europe",
+   "type": "loan",
+   "kind": "power plant (loan-financed)",
+   "lat": 44.75,
+   "lon": 17.83,
+   "value": "\u20ac350m China Development Bank loan; 300 MW; operating since 2016",
+   "backer": "CDB; Dongfang Electric",
+   "china_gets": "Construction contract and loan income",
+   "host_case": "Republika Srpska backs it; Energy Community has flagged state-aid problems",
+   "confidence": "high",
+   "confidence_reason": "Loan in AidData",
+   "sources": [
+    "https://china.aiddata.org/projects/42189/",
+    "http://rjea.ier.gov.ro/wp-content/uploads/2020/12/RJEA-vol-20-no-2_Dec-2020_articol-8.pdf"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-tuzla7",
+   "name": "Tuzla Unit 7 coal plant",
+   "country": "Bosnia and Herzegovina",
+   "region": "europe",
+   "type": "loan",
+   "kind": "power plant loan (cancelled)",
+   "lat": 44.53,
+   "lon": 18.68,
+   "value": "\u20ac614m China Exim loan never drawn; the EPC contract was terminated in 2024; \u20ac126.5m of advances recovered",
+   "backer": "China Exim; China Gezhouba / GEDI consortium",
+   "china_gets": "Nothing built",
+   "host_case": "Bosnia's power utility EPBiH ended the contract; disputes over refunds continue",
+   "confidence": "medium",
+   "confidence_reason": "Termination and refund amounts come from regional trade press and a parliamentary reply",
+   "sources": [
+    "https://serbia-energy.eu/bosnia-and-herzegovina-epbih-recovers-e126-5-million-advance-after-terminating-tuzla-unit-7-construction-contract/",
+    "https://predstavnickidom-pfbih.gov.ba/files/Zastupni%C4%8Dka%20pitanja/05_1-02-157_22%20-%20157-22%20Odg.%20na%20zastupni%C4%8Dko%20pitanje.pdf"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-mk-highways",
+   "name": "Kichevo-Ohrid and Miladinovci-Stip motorways",
+   "country": "North Macedonia",
+   "region": "europe",
+   "type": "loan",
+   "kind": "motorway (loan-financed)",
+   "lat": 41.3,
+   "lon": 20.9,
+   "value": "China Exim loans (about $278m for Miladinovci-Stip, which opened in 2019); Kichevo-Ohrid unfinished, with Exim financing ended and \u20ac175m of domestic bank funding",
+   "backer": "China Exim; Sinohydro",
+   "china_gets": "Construction contracts",
+   "host_case": "Repeated delays and cost overruns; Kichevo-Ohrid has a target of 2027",
+   "confidence": "medium",
+   "confidence_reason": "Miladinovci-Stip loan in AidData; Kichevo-Ohrid status from Macedonian media",
+   "sources": [
+    "https://china.aiddata.org/projects/66438",
+    "https://www.koha.mk/en/autostrada-pa-fund-kercove-oher-me-kosto-rekord/",
+    "https://balkaninsight.com/2017/06/20/poor-planning-halts-macedonia-s-highway-projects-06-20-2017/bi/macedonia/macedonia-politics-and-society/"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-portugal-edp-ren",
+   "name": "China Three Gorges in EDP and State Grid in REN",
+   "country": "Portugal",
+   "region": "europe",
+   "type": "infrastructure",
+   "kind": "energy utility stakes",
+   "lat": 38.72,
+   "lon": -9.14,
+   "value": "About 21% of EDP (2012); 25% of grid operator REN for \u20ac387m (2012)",
+   "backer": "China Three Gorges; State Grid",
+   "china_gets": "Board seats in Portugal's main power company and national grid",
+   "host_case": "Portugal sold the stakes during its bailout privatisations",
+   "confidence": "high",
+   "confidence_reason": "From EDP's market notice and Reuters",
+   "sources": [
+    "https://edp.com/en/investors/investor-information/market-notifications/ctg-acquires-and-parpublica-reduces-qualified",
+    "https://www.reuters.com/article/innovationNews/idUSTRE8180FN20120209/",
+    "https://www.ren.pt/pt-pt/sobre-nos/quem-somos"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-italy-exit",
+   "name": "Italy leaves the Belt and Road memorandum",
+   "country": "Italy",
+   "region": "europe",
+   "type": "infrastructure",
+   "kind": "policy (BRI exit)",
+   "lat": 41.9,
+   "lon": 12.5,
+   "value": "Signed the BRI memorandum of understanding in 2019 (the only G7 member to do so); declined to renew it in December 2023",
+   "backer": "n/a",
+   "china_gets": "Lost a G7 signatory; trade continues",
+   "host_case": "Italy said the MoU brought few benefits",
+   "confidence": "high",
+   "confidence_reason": "Withdrawal reported by Reuters and CSIS; this is a policy action, not a project",
+   "sources": [
+    "https://www.reuters.com/world/china/italys-belt-road-agreement-with-china-2023-12-06/",
+    "https://www.csis.org/analysis/italy-withdraws-chinas-belt-and-road-initiative"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-great-stone",
+   "name": "China-Belarus Great Stone industrial park",
+   "country": "Belarus",
+   "region": "europe",
+   "type": "infrastructure",
+   "kind": "industrial park",
+   "lat": 53.98,
+   "lon": 27.9,
+   "value": "About 112 sq km; around 157-160 resident companies; about $1.6bn in announced investment",
+   "backer": "China Merchants Group and Chinese state firms, with Belarus",
+   "china_gets": "A tax-privileged manufacturing and logistics base on the China-Europe rail route",
+   "host_case": "Belarus calls it a flagship of the partnership",
+   "confidence": "medium",
+   "confidence_reason": "Figures are announced investment, reported by Belarusian state media",
+   "sources": [
+    "https://www.belarus.by/en/business/business-environment/industrial-park-great-stone",
+    "https://eng.belta.by/economics/view/over-150-companies-implement-projects-in-great-stone-park-170850-2025/",
+    "https://www.sb.by/en/announced-investment-volume-of-great-stone-residents-approaching-1-6bn-.html"
+   ],
+   "origin": "europe.csv"
+  },
+  {
+   "id": "bri-hungary-ev",
+   "name": "CATL Debrecen battery plant and BYD Szeged car plant",
+   "country": "Hungary",
+   "region": "europe",
+   "type": "infrastructure",
+   "kind": "battery and EV plants (state aid)",
+   "lat": 47.5,
+   "lon": 21.7,
+   "value": "CATL: \u20ac7.3bn plant with about HUF129bn of direct Hungarian aid; BYD: more than HUF70bn of infrastructure support and other undisclosed aid",
+   "backer": "CATL, BYD (private but state-favoured); the Hungarian state is the subsidiser",
+   "china_gets": "Manufacturing inside the EU, close to European carmakers",
+   "host_case": "Hungary's government courts the plants; local protests over water and pollution",
+   "confidence": "medium",
+   "confidence_reason": "These are private Chinese firms rather than state-led BRI projects; aid figures come from leaked contracts and Hungarian media",
+   "sources": [
+    "https://www.intellinews.com/hungary-channels-close-to-4bn-in-subsidies-to-ev-battery-industry-377434/",
+    "https://www.intellinews.com/hungary-reviews-byd-deal-after-revealing-billions-in-undisclosed-state-support-457670/",
+    "https://www.debrecensun.hu/local/2025/05/21/catl-intends-to-raise-1-3-1-5-trillion-forints-through-a-share-issue-to-expand-its-debrecen-battery-factory/"
+   ],
+   "origin": "europe.csv"
   }
  ]
 }

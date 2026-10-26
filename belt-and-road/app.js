@@ -2,7 +2,7 @@
 const AFRICA_BRIEF_URL="../africa-brief/";
 const COL={port:"#087F8C",railway:"#11273C",mine:"#C98A1B","military base":"#9A3B3B",loan:"#6B4FA0",infrastructure:"#4A7A3D"};
 const SYM={port:d3.symbolCircle,railway:d3.symbolSquare,mine:d3.symbolTriangle,"military base":d3.symbolStar,loan:d3.symbolDiamond,infrastructure:d3.symbolCross};
-const REG={all:"All regions",africa:"Africa","south-asia":"South Asia","southeast-asia":"Southeast Asia","south-america":"South America","central-asia":"Central Asia","middle-east":"Middle East"};
+const REG={all:"All regions",africa:"Africa","south-asia":"South Asia","southeast-asia":"Southeast Asia","south-america":"South America","central-asia":"Central Asia","middle-east":"Middle East",europe:"Europe and the Balkans"};
 Promise.all([d3.json("data/bri.json"),d3.json("data/ne_110m.geojson")]).then(([D,W])=>{
  document.getElementById("dd").textContent=D.data_date;
  const byId=new Map(D.entries.map(e=>[e.id,e]));
