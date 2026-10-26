@@ -32,6 +32,7 @@ Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json
  const LS={single:"",split:"Split",contested:"Contested",collective:"Collective",unknown:"Unknown"};
  const bizIcons=g=>{const r=bz.groups[g]||{};return Object.entries(r).filter(([,c])=>c.level!=="minor").sort((a,b)=>a[1].level.localeCompare(b[1].level)).map(([k,c])=>`<span class="bi ${c.level}" title="${esc(BL[k])} (${c.level})">${BI[k]||"•"}</span>`).join("")};
  const sizeBadge=g=>{const[k,v]=sizeOf(g);const e=v&&v.members.find(x=>!x.no_credible_estimate);return e?`<span class="szb" title="${esc((k!==g?v.label+": ":"")+e.unit+", "+e.year)}">👥 ${rng(e)}${k!==g?"*":""}</span>`:`<span class="szb na" title="No credible membership estimate">👥 n/a</span>`};
+ const noCard=g=>{if(!["unidos"].includes(g))return "";const v=sz.groups[g];if(!v)return "";const nm=v.members.find(e=>e.no_credible_estimate),nr=v.revenue.find(e=>e.no_credible_estimate);return `<p class="small">Members: ${nm?"No credible estimate"+(nm.note&&nm.note!=="None found."?" ("+esc(nm.note.replace(/\.$/,""))+")":""):""}. Revenue: ${nr?"No credible estimate":""}.</p>`};
  const person=l=>`<div class="lp"><div class="ph">${ph(l)}</div><div class="lpt"><b>${esc(l.name)}</b>${l.alias?`<div class="al">“${esc(l.alias)}”</div>`:""}${l.faction&&l.role==="faction_leader"?`<div class="rl">${esc(l.faction)}</div>`:""}
   <div class="bdg">${ICON(l)}${l.confidence?`<span class="cf ${CONF[l.confidence][1]}" title="${esc(l.confidence)}">${CONF[l.confidence][0]}</span>`:""}${l.role==="reported_successor"?`<span class="cf c3">Successor?</span>`:""}${l.reward_usd?`<span class="rw" title="US reward">${usd(l.reward_usd)}</span>`:""}</div></div></div>`;
  const more=l=>`<div class="lmore"><b>${esc(l.name)}</b>: ${esc(l.title)}. ${esc(l.status_note)}${FN(l.status_source)}${l.reward_usd?` Reward up to ${usd(l.reward_usd)}${FN(l.reward_source)}.`:""} ${esc(l.known_for)}${l.leadership_note?" "+esc(l.leadership_note):""}${l.sources.map(FN).join("")}${l.charges.length?`<ul>${l.charges.map(c=>`<li>${esc(c)}</li>`).join("")}</ul>`:""}${(l.photo&&!l.photo.placeholder)?`<div class="lic">Photo: ${esc(l.photo.credit)}, ${esc(l.photo.license)}${FN({name:"photo",url:l.photo.image_source_url})}</div>`:""}</div>`;
@@ -41,42 +42,15 @@ Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json
   <div class="gch"><span class="gchip">${esc(g.name)}</span>${LS[g.leadership]?`<span class="lsb ${g.leadership}">${LS[g.leadership]}</span>`:""}</div>
   ${ls.length?ls.map(person).join(""):`<div class="unk">? Leadership unknown</div>`}
   <div class="gcf">${sizeBadge(g.id)}<span class="bis">${bizIcons(g.id)}</span></div>
-  <div class="bd"><p>${esc(g.leadership_note)}${g.sources.map(FN).join("")}</p>${ls.map(more).join("")}</div></div>`}).join("")}</div>
+  <div class="bd"><p>${esc(g.leadership_note)}${g.sources.map(FN).join("")}</p>${noCard(g.id)}${ls.map(more).join("")}</div></div>`}).join("")}</div>
  <details class="more former"><summary>Jailed, extradited or dead (${former.length})</summary><div class="fgrid">${former.map(l=>`<div class="fc ld" data-g="${l.group_key}" tabindex="0">${person(l)}<span class="gchip sm">${esc((G.find(g=>g.id===l.group_key)||{}).name||l.group_key)}</span><div class="bd">${more(l)}</div></div>`).join("")}</div></details>
- <div class="ldcharts"><div class="chbox"><h3>Members (published estimates)</h3><div id="szmem"></div></div><div class="chbox"><h3>Annual revenue, USD billions</h3><div id="szrev"></div></div><div class="chbox wide"><h3>How the business shifted</h3><div id="bzshift"></div></div></div>
+ <div class="ldcharts"><div class="chbox wide"><h3>How the business shifted</h3><div id="bzshift"></div></div></div>
  <details class="more"><summary>About these cards</summary><p class="small">${esc(ld.method)} As of ${esc(ld.as_of)}. ${esc(sz.note)} ${esc(bz.note)} * = figure for the whole Sinaloa Cartel.</p></details>`;
  {const mt=document.querySelector(".maptile");if(mt)mt.after(t);else anchor.parentNode.insertBefore(t,anchor);}
  const grid=t.querySelector("#ldgrid");
  t.addEventListener("click",e=>{if(e.target.closest("a"))return;const c=e.target.closest(".gc,.fc");if(c)c.classList.toggle("open")});
- // plain linear bar charts (members, revenue)
+ // group colours (members/revenue bar charts moved onto profile cards; kept for palette_check)
  const GCOL={sinaloa:"#8f8509",cjng:"#00ccff",gulf:"#ffa26a",cdn:"#307b0a",lnfm:"#1c70c5",clan:"#958fff",eln:"#8931ff",tda:"#29b47b",choneros:"#ff2400",lobos:"#b06208",pcc:"#ea34b2",ms13:"#f0c740",unidos:"#fd7db7"};
- const fN=v=>Math.round(v).toLocaleString("en-US"),fB=v=>"$"+(v>=1e9?(v/1e9).toFixed(1).replace(/\.0$/,"")+"B":Math.round(v/1e6)+"M");
- const memRows=[],revRows=[],noMem=[],noRev=[],revNotes=[];
- Object.entries(sz.groups).forEach(([k,v])=>{
-  const ms=v.members.filter(e=>!e.no_credible_estimate&&e.unit==="members");
-  if(!ms.length)noMem.push(v.label);else{const e=ms[0],alt=v.members.filter(x=>x!==e&&!x.no_credible_estimate&&!(x.source_name===e.source_name&&/armed/.test(x.unit)));
-   let note=alt.map(x=>`${x.source_name}: ${fN(x.low)}${/armed/.test(x.unit)?" armed":""} (${x.year})`).join("; ");if(k==="ms13")note="US only, 2018";
-   memRows.push({k,g:v.label,e,lo:e.low,hi:e.high,atl:e.high==null,upto:false,lab:(e.high==null?"at least ":"")+fN(e.low)+(e.high&&e.high!==e.low?"–"+fN(e.high):""),note})}
-  v.revenue.forEach(e=>{if(e.no_credible_estimate)noRev.push(v.label);else if(e.unit!=="annual_revenue_usd")revNotes.push(`${v.label}: pesos only (COP ${fN(e.low/1e9)}bn/yr, ${e.year}), not converted`);
-   else if(/PARTIAL/.test(e.note))revNotes.push(`${v.label}: partial only (${fB(e.low)}/yr from illegal gold mining in one area, ${e.year})`);
-   else revRows.push({k,g:v.label,e,lo:e.low??e.high,hi:e.high,atl:e.high==null,upto:e.low==null,lab:(e.low==null?"up to ":e.high==null?"at least ":"")+fB(e.low??e.high),note:`${e.year} estimate`})})});
- function bars(el,rows,fmt){rows.sort((a,b)=>(b.hi??b.lo)-(a.hi??a.lo));const W=440,rh=22,ml=150,mr=120,H=rows.length*rh+22;const mx=d3.max(rows,r=>Math.max(r.hi??r.lo,r.lo)*(r.atl?1.12:1));
-  const x=d3.scaleLinear([0,mx],[ml,W-mr]).nice();const sv=d3.select(el).append("svg").attr("viewBox",`0 0 ${W} ${H}`).attr("class","rbars");
-  sv.append("g").attr("transform",`translate(0,${H-20})`).call(d3.axisBottom(x).ticks(4).tickFormat(fmt)).attr("class","ax");
-  rows.forEach((r,i)=>{const y=i*rh+2,c=GCOL[r.k]||"#8fa0bb",gg=sv.append("g");gg.append("title").text(`${r.lab}. ${r.e.note}`);
-   gg.append("text").attr("x",ml-6).attr("y",y+12).attr("text-anchor","end").attr("class","bl").text(r.g.length>22?r.g.slice(0,21)+"…":r.g);
-   const solidEnd=r.upto?x(0):x(r.lo);if(!r.upto)gg.append("rect").attr("x",ml).attr("y",y+3).attr("height",12).attr("width",Math.max(2,solidEnd-ml)).attr("fill",c);
-   let end=solidEnd;if(r.upto){gg.append("rect").attr("x",ml).attr("y",y+3).attr("height",12).attr("width",x(r.hi)-ml).attr("fill",c).attr("fill-opacity",.35).attr("stroke",c).attr("stroke-dasharray","3 2");end=x(r.hi)}
-   else if(r.hi&&r.hi>r.lo){gg.append("rect").attr("x",solidEnd).attr("y",y+3).attr("height",12).attr("width",x(r.hi)-solidEnd).attr("fill",c).attr("fill-opacity",.4);end=x(r.hi)}
-   else if(r.atl){gg.append("path").attr("d",`M${solidEnd},${y+3}h14l7,6l-7,6h-14z`).attr("fill",c).attr("fill-opacity",.35);end=solidEnd+22}
-   gg.append("text").attr("x",end+4).attr("y",y+12).attr("class","bv").text(r.lab);
-   gg.append("text").attr("x",end+4+r.lab.length*6.2).attr("y",y+8).attr("class","bsup").text(i+1)});
-  const fl=d3.select(el).append("ol").attr("class","bnotes small");fl.html(rows.map(r=>`<li><b>${esc(r.g)}</b>: ${esc(r.lab)}${r.e.year&&!/estimate/.test(r.note)?` (${r.e.year})`:""}${r.note?"; "+esc(r.note):""}${FN(SRC(r.e))}</li>`).join(""))}
- const leg=`<div class="small muted rleg"><span class="lg1"></span> estimate <span class="lg2"></span> published range <span class="lg3">▶</span> &ldquo;at least&rdquo; (lower bound) <span class="lg4"></span> &ldquo;up to&rdquo; (upper bound)</div>`;
- bars("#szmem",memRows,v=>fN(v));
- t.querySelector("#szmem").insertAdjacentHTML("beforeend",leg+`<div class="small muted">No credible estimate: ${[...new Set(noMem)].map(esc).join(", ")||"none"}. Conflicting figures from other sources are in the numbered notes.</div>`);
- bars("#szrev",revRows,v=>"$"+(v/1e9)+"B");
- t.querySelector("#szrev").insertAdjacentHTML("beforeend",leg+`<div class="small muted">No credible USD estimate: ${[...new Set(noRev)].map(esc).join(", ")}.</div><div class="small muted">${revNotes.map(esc).join(" · ")}.</div>`);
  function setG(g,from){grid.parentNode.querySelectorAll(".ld").forEach(c=>{const m=!g||c.dataset.g.split(" ").includes(g);c.classList.toggle("hl",!!g&&m);c.classList.remove("dim")});
   const n=g?grid.querySelectorAll(".ld.hl").length:0;
   t.querySelector("#ldnote").textContent=g?(from?`Highlighted from ${from}: `:"")+`${gname[g]||g}`+(n?"":" (not among the 14 tracked groups)"):"";}

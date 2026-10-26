@@ -8,7 +8,21 @@ const flag=i=>(I2[i]||"").replace(/./g,c=>String.fromCodePoint(127397+c.charCode
 const EMO={fentanyl:"💊",meth:"⚗️",cocaine:"❄️",heroin:"💉",marijuana:"🌿",drugs_unspecified:"💊",precursors:"🧪",migrant_smuggling:"🚶",human_trafficking:"⛓️",extortion:"💰",kidnapping:"🚐",fuel_theft:"⛽",illegal_mining:"⛏️",logging_fishing:"🪵",arms:"🔫",money_laundering:"🏦",legit_economies:"🏢"};
 const SHORT={drugs_unspecified:"Drugs",precursors:"Precursors",migrant_smuggling:"Migrant smuggling",human_trafficking:"Trafficking",logging_fishing:"Logging/fishing",arms:"Arms",money_laundering:"Laundering",legit_economies:"Legal economies",illegal_mining:"Illegal mining"};
 const J=u=>fetch(u).then(r=>r.json());
-Promise.all([J("data/profiles.json"),J("data/group_countries.json"),J("data/groups_business.json"),J("data/territory.json")]).then(([PR,GCN,BIZ,T])=>{
+Promise.all([J("data/profiles.json"),J("data/group_countries.json"),J("data/groups_business.json"),J("data/territory.json"),J("data/groups_size.json").catch(()=>({groups:{}}))]).then(([PR,GCN,BIZ,T,SZ])=>{
+
+ const fN=v=>Math.round(v).toLocaleString("en-US"),fB=v=>"$"+(v>=1e9?(v/1e9).toFixed(1).replace(/\.0$/,"")+"B":Math.round(v/1e6)+"M");
+ const SRC=e=>e.source_url?{name:e.source_name||"source",url:e.source_url,date:e.year?String(e.year):""}:null;
+ const rngN=e=>(e.high==null?"at least ":e.low==null?"up to ":"")+fN(e.low??e.high)+(e.low!=null&&e.high!=null&&e.high!==e.low?"–"+fN(e.high):"");
+ const sizeLines=id=>{const v=(SZ.groups||{})[id];const NC=`<span class="muted">No credible estimate</span>`;
+   if(!v)return `<div class="pfsz">Members: ${NC}</div><div class="pfsz">Revenue: ${NC}</div>`;
+   const ms=v.members.filter(e=>!e.no_credible_estimate);const m0=ms.find(e=>e.unit==="members")||ms[0];
+   const ncm=v.members.find(e=>e.no_credible_estimate);
+   let h=`<div class="pfsz">Members: ${m0?`${rngN(m0)}${m0.unit!=="members"?" "+esc(m0.unit):""} (${m0.year})${FNx(SRC(m0))}`:NC+(ncm&&ncm.note&&ncm.note!=="None found."?` <span class="muted">(${esc(ncm.note.replace(/\.$/,""))})</span>`:"")}</div>`;
+   const alt=ms.filter(e=>e!==m0);
+   if(m0&&(alt.length||/US only/.test(m0.note||"")))h+=`<div class="pfszn muted">${/US only/.test(m0.note||"")?"US only. ":""}${alt.map(e=>`${esc(e.source_name)}: ${fN(e.low)}${e.unit!=="members"?" "+esc(e.unit):""} (${e.year})${FNx(SRC(e))}`).join("; ")}${alt.some(e=>/contested/i.test(e.note||""))?" (contested)":""}</div>`;
+   const rs=v.revenue.filter(e=>!e.no_credible_estimate);
+   h+=`<div class="pfsz">Revenue: ${rs.length?rs.map(e=>e.unit==="annual_revenue_cop"?`COP ${fN(e.low/1e9)}bn/yr (${e.year}), not converted${FNx(SRC(e))}`:/PARTIAL/.test(e.note||"")?`partial only: ${fB(e.low)}/yr from illegal gold mining in one area (${e.year})${FNx(SRC(e))}`:`${e.low==null?"up to ":e.high==null?"at least ":""}${fB(e.low??e.high)}/yr (${e.year})${FNx(SRC(e))}`).join("; "):NC}</div>`;
+   return h};
  const COL=Object.fromEntries(T.groups.map(g=>[g.id,g.color]));
  const LBL=Object.fromEntries(BIZ.lines.map(l=>[l.id,l.label]));const RANK={primary:0,secondary:1,minor:2};
  const lines=p=>{if(p.lines)return p.lines.map(id=>({id,c:p.lines_c}));const m={};(p.biz||[]).forEach(g=>{const b=BIZ.groups[g]||{};Object.entries(b).forEach(([id,v])=>{if(!v||!v.level)return;const r=RANK[v.level]??3;if(!(id in m)||r<m[id].r)m[id]={r,url:v.source_url}})});
@@ -30,6 +44,7 @@ Promise.all([J("data/profiles.json"),J("data/group_countries.json"),J("data/grou
    <div class="pffound">🏁 ${esc(p.founded)}${FNx(p.founded_c)}</div>
    <div class="pfflags">${cs.map(c=>`<span class="pfflag" title="${esc(NM[c.iso]||c.iso)}">${flag(c.iso)}<span class="pfcn">${esc(NM[c.iso]||c.iso)}</span></span>`).join("")}${gc?FNx([...new Set(cs.flatMap(c=>c.cites||[]))]):""}</div>
    <div class="pflines">${lines(p).map(x=>`<span class="pfchip">${EMO[x.id]||"•"} ${esc(SHORT[x.id]||LBL[x.id]||x.id)}${x.c?FNx(x.c):""}</span>`).join("")||`<span class="muted small">No sourced crime lines</span>`}</div>
+   <div class="pfszb">${sizeLines(p.id)}</div>
    <div class="pfmem"><div class="pfmemh">Members over time</div>${chart(p,col)}<div class="pfnote">${p.series_note?esc(p.series_note):""}${srcs.length?FNx(srcs):""}</div></div>
    <details class="pfmore"><summary>More</summary>${(p.more||[]).map(([t,c])=>`<p>${esc(t)}${FNx(c)}</p>`).join("")}</details></div>`};
  const sec=document.createElement("section");sec.className="tile pftile";sec.id="profiles";
