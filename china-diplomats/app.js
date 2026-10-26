@@ -262,4 +262,33 @@ addEventListener('keydown',e=>{if(e.key==='Escape'){if(!panel.hidden&&window._la
 d3.select('#method').html(`Posts were collected from ${H.accounts} X accounts run by China's foreign ministry, embassies, consulates, ambassadors and missions to international organisations, using X's full-archive search through a free connector. This version covers ${fday(H.start.slice(0,10))} to ${fd(H.end)}; earlier posts are not included. Messages count as the same talking point when posts repost the same original or when their text is a near-duplicate (character n-gram similarity, which works across scripts but does not match translations into other languages). Eight large clusters were reviewed and named by hand; related clusters were merged under one name. A burst is four or more accounts posting the same message within six hours. Tone counts words from fixed confrontational and cooperative word lists in English, Chinese, Japanese, Spanish, French, Portuguese, Russian and Arabic; it measures word choice, not intent. Location is the country an account is posted to, not where a post was written. Basemap: Natural Earth via world-atlas. The page describes past activity and makes no forecasts.`);
 window._check={ready:true};
 initNarr();drawRipple();
+
+// ---- drop-downs
+(function(){const G={};ACC.forEach(a=>{(G[a.type]=G[a.type]||{});(G[a.type][a.country]=G[a.type][a.country]||[]).push(a)});
+ d3.select('#dd-acc summary').text(`Accounts tracked (${ACC.length})`);
+ d3.select('#acc-how').text(`Accounts are official PRC accounts on X: the foreign ministry and its spokespeople, embassies, consulates, missions and ambassadors. Each was checked live on X; accounts with no posts in over 90 days are dropped. List last checked: ${H.list_checked}.`);
+ const order=['Foreign ministry','Embassy','Consulate','Diplomat','Outside account'];
+ d3.select('#acc-list').html(order.filter(t=>G[t]).map(t=>{const cs=Object.keys(G[t]).sort();const n=cs.reduce((s,c)=>s+G[t][c].length,0);
+  return `<h3 class="sh3"><span class="sw" style="background:${TYPES[t]}"></span>${esc(t)} (${n})</h3><dl class="accl">`+cs.map(c=>`<dt>${esc(c)}</dt><dd>${G[t][c].map(a=>`<a href="https://x.com/${encodeURIComponent(a.h)}" target="_blank" rel="noopener">${esc(a.name)} <span class="m">@${esc(a.h)}</span></a>`).join('')}</dd>`).join('')+'</dl>'}).join(''));
+ const f=d=>new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'});
+ d3.select('#read-txt').text(`This page shows only openly official Chinese government accounts on X, with posts from ${f(H.start)} to ${f(H.end)} (UTC). When many accounts use similar wording or post at the same time, that shows shared messaging; it is not proof of coordination or of who directs it. Aggression and friendliness scores measure word choice, not intent.`);
+ let A=null,F=[],shown=0;
+ const fill=(id,vals)=>d3.select(id).selectAll('option.v').data(vals).join('option').attr('class','v').attr('value',d=>d[0]).text(d=>d[1]);
+ async function load(){if(A)return;A=await (await fetch('data/archive.json')).json();
+  fill('#aacc',[...new Set(A.rows.map(r=>r[1]))].sort((a,b)=>a.localeCompare(b)).map(h=>[h,'@'+h]));
+  fill('#actry',[...new Set(A.rows.map(r=>r[4]))].filter(c=>c&&c!=='?').sort().map(c=>[c,c]));
+  fill('#anar',A.narratives.map((n,i)=>[i,n]));
+  const ds=A.rows.map(r=>r[2].slice(0,10)).sort();['#afrom','#ato'].forEach(s=>d3.select(s).attr('min',ds[0]).attr('max',ds[ds.length-1]));run()}
+ function run(){if(!A)return;const q=document.getElementById('aq').value.trim().toLowerCase(),ac=aacc.value,ct=actry.value,nr=anar.value,fr=afrom.value,to=ato.value;
+  F=A.rows.filter(r=>(!q||r[6].toLowerCase().includes(q))&&(!ac||r[1]===ac)&&(!ct||r[4]===ct)&&(nr===''||r[5]===+nr)&&(!fr||r[2].slice(0,10)>=fr)&&(!to||r[2].slice(0,10)<=to)).sort((a,b)=>a[2]<b[2]?1:-1);
+  shown=0;d3.select('#ares').html('');more();d3.select('#acount').text(`${fmt(F.length)} of ${fmt(A.rows.length)} posts match`)}
+ function more(){const nx=F.slice(shown,shown+50);shown+=nx.length;
+  d3.select('#ares').insert('div').attr('class','acards').html(nx.map(r=>`<article class="post acard"><div class="m">@${esc(r[1])} · ${esc(r[4])} · ${esc(r[2].replace('T',' '))} UTC · ${A.kinds[r[3]]}${r[5]>=0?` · ${esc(A.narratives[r[5]])}`:''}</div><div>${esc(r[6])}</div><a href="https://x.com/${encodeURIComponent(r[1])}/status/${r[0]}" target="_blank" rel="noopener">Open on x.com ↗</a></article>`).join(''));
+  document.getElementById('amore').hidden=shown>=F.length}
+ let tm;['aq','aacc','actry','anar','afrom','ato'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{clearTimeout(tm);tm=setTimeout(run,200)}));
+ amore.onclick=more;
+ acsv.onclick=()=>{if(!A)return;const e=v=>'"'+String(v).replace(/"/g,'""')+'"';const csv='id,account,country,time_utc,kind,talking_point,text,url\n'+F.map(r=>[r[0],r[1],r[4],r[2],A.kinds[r[3]],r[5]>=0?A.narratives[r[5]]:'',r[6],`https://x.com/${r[1]}/status/${r[0]}`].map(e).join(',')).join('\n');
+  const u=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv'}));const a=document.createElement('a');a.href=u;a.download='china-diplomats-posts.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
+ document.getElementById('dd-arch').addEventListener('toggle',e=>{if(e.target.open)load()});
+})();
 })();

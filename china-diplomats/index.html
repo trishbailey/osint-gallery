@@ -63,6 +63,19 @@
 <p class="sub">Each cell is one hour (UTC), coloured by the talking point of the burst in that hour (outlined cells are other topics, named in the tooltip). Click a coloured cell to read the posts.</p>
 <div id="calv" class="viz scrollx"></div></section>
 
+<details class="note dd" id="dd-acc"><summary>Accounts tracked</summary><div class="ddb">
+<p class="m" id="acc-how"></p><div id="acc-list"></div></div></details>
+<details class="note dd" id="dd-read"><summary>How to read this</summary><div class="ddb"><p id="read-txt"></p></div></details>
+<details class="note dd" id="dd-arch"><summary>Search the archive</summary><div class="ddb">
+<form id="af" class="af" role="search" aria-label="Search all collected posts" onsubmit="return false">
+<label>Words<input id="aq" type="search" placeholder="e.g. hegemony, Taiwan, 合作"></label>
+<label>Account<select id="aacc"><option value="">All accounts</option></select></label>
+<label>Country<select id="actry"><option value="">All countries</option></select></label>
+<label>Talking point<select id="anar"><option value="">All talking points</option></select></label>
+<label>From<input id="afrom" type="date"></label><label>To<input id="ato" type="date"></label>
+</form>
+<div class="ctl"><span id="acount" class="m" aria-live="polite">Loading posts…</span><button id="acsv" class="btn" type="button">Download CSV</button></div>
+<div id="ares"></div><button id="amore" class="btn" type="button" hidden>Show more</button></div></details>
 <details class="note"><summary>Sources and method</summary>
 <p id="method"></p></details>
 </main></div>
