@@ -10,21 +10,27 @@ K={
 'coastal-wa':r'\b(ghana|accra|benin|bénin|cotonou|togo|lomé|lome|côte d\'ivoire|cote d\'ivoire|ivory coast|ivoirien|abidjan|galamsey)\b|غانا|بنين|توغو|Гана|Бенин|Того',
 'southern':r'\b(mozambique|moçambique|cabo delgado|maputo|zimbabwe|harare|zambia|zâmbia|lusaka|frelimo|chapo|mnangagwa|hichilema)\b|موزمبيق|زيمبابوي|Мозамбик|Зимбабв|Замби',
 'north':r'\b(libya|libye|líbia|tripoli|benghazi|haftar|dbeibah|algeria|algérie|alger|egypt|égypte|egito|cairo|le caire|tunisia|tunisie|tunis|morocco|maroc|rabat)\b|ليبيا|الجزائر|مصر|تونس|المغرب|Ливи|Алжир|Египет|Тунис|Марокко|Misri\b|Libya\b'}
-now=time.time();out={}
+K['continent']=r'\b(africa|african|afrique|africain|africaine|áfrica|africano|african union|union africaine|ecowas|cedeao|alliance des états du sahel|africa corps)\b|أفريقيا|الأفريقي|Африк'
+POW=re.compile(r'(?<!\w)(russia|russie|rússia|china|chine|china\'s|france|french|français|united states|u\.s\.|us |washington|trump|turkey|turquie|uae|emirates|émirats|wagner|africa corps|moscow|moscou|beijing|pékin|summit|sommet|african union|union africaine|ecowas|cedeao|AES|Россия|Китай|США|Франци|روسيا|الصين|فرنسا)(?!\w)',re.I)
+REG=[k for k in K if k!='continent']
+now=time.time();out={};MAXAGE=14*86400
 LANG1=lambda o:o['languages'].split(',')[0].split('(')[0].strip()
 for rid,pat in K.items():
     rx=re.compile(r'(?<!\w)(?:'+pat.replace('\\b','')+r')(?!\w)',re.I)
     NEG=re.compile(r'PMU|football|ligue|champions|CAF |festival|décès|faire-part|obsèques|messe|loto|match|coupe|cup\b|Formula|F1|concert|exposição|miss |fashion|Ballon|Яшин|футбол|كرة|مباراة|Digital',re.I);cand=[]
     for oid,items in raw['items'].items():
         for it in items:
-            if it['ts']>now+3600: continue
-            if rx.search(it['title']) and not NEG.search(it['title']): cand.append(it)
+            if it['ts']>now+3600 or it['ts']<now-MAXAGE: continue
+            if not rx.search(it['title']) or NEG.search(it['title']): continue
+            if rid=='continent' and (not POW.search(it['title']) or any(re.search(r'(?<!\w)(?:'+K[r].replace('\\b','')+r')(?!\w)',it['title'],re.I) for r in REG)): continue
+            cand.append(it)
     cand.sort(key=lambda x:-x['ts']);pick=[];cnt={};seen=set()
     for it in cand:
         st=O[it['outlet']]['state_media'].lower().startswith(('yes','de facto'))
-        if cnt.get(it['outlet'],0)>=1 or it['title'].lower() in seen or (st and sum(1 for p in pick if O[p['outlet']]['state_media'].lower().startswith(('yes','de facto')))>=2): continue
-        cnt[it['outlet']]=cnt.get(it['outlet'],0)+1;seen.add(it['title'].lower());pick.append(it)
-        if len(pick)==5: break
+        key=re.sub(r'\W+',' ',it['title'].lower()).strip()
+        if cnt.get(it['outlet'],0)>=4 or key in seen or it['link'] in seen or (st and sum(1 for p in pick if O[p['outlet']]['state_media'].lower().startswith(('yes','de facto')))>=6): continue
+        cnt[it['outlet']]=cnt.get(it['outlet'],0)+1;seen.add(key);seen.add(it['link']);pick.append(it)
+        if len(pick)==40: break
     out[rid]=pick
     print(rid,len(cand),[ (p['outlet'],time.strftime('%m-%d',time.gmtime(p['ts']))) for p in pick])
 json.dump(out,open('picked.json','w'),ensure_ascii=False,indent=0)
