@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-26T10:02:45Z",
+ "as_of": "2026-10-26T13:02:26Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -12,8 +12,8 @@
    "id": "92fb5c0ad2",
    "status": "single_source",
    "title": "Nuclear weapons are again central to European security at a time when uncertainty about Washington grows. Our new report examines how European NATO allies can strengthen deterrence, bolster assurance ",
-   "lang": "es",
-   "title_en": "Nuclear weapons are again central to European security at a time when uncertainty about Washington grows. Our new report examines how European NATO allies can strengthen deterrence, bolster assurance",
+   "lang": "en",
+   "title_en": null,
    "first_report": "2026-10-26T09:35:11Z",
    "first_report_precision": "minute",
    "first_source": "Crisis Group",
@@ -204,10 +204,10 @@
    "first_report_precision": "minute",
    "first_source": "Gabinete de Seguridad (Mexico)",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2721",
+    "MEX-2712",
     "MEX-2710",
-    "MEX-2712"
+    "MEX-2721",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -236,8 +236,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2723"
+    "MEX-2723",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
@@ -636,8 +636,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
-    "sinaloa"
+    "sinaloa",
+    "chapitos"
    ],
    "outlets": [
     "El Heraldo de México",
@@ -715,8 +715,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "pcc",
-    "cv"
+    "cv",
+    "pcc"
    ],
    "outlets": [
     "BBC"
@@ -745,8 +745,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "pcc",
-    "cv"
+    "cv",
+    "pcc"
    ],
    "outlets": [
     "El Observador"
@@ -775,8 +775,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "pcc",
-    "cv"
+    "cv",
+    "pcc"
    ],
    "outlets": [
     "El Observador"
@@ -807,8 +807,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "clan",
     "eln",
+    "clan",
     "exfarc"
    ],
    "outlets": [
@@ -906,9 +906,9 @@
    "first_report_precision": "day",
    "first_source": "El Universal",
    "region_ids": [
-    "MEX-2711",
     "MEX-2719",
-    "MEX-2735"
+    "MEX-2735",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1383,14 +1383,14 @@
    "first_source": "Semana",
    "region_ids": [
     "COL-1314",
-    "COL-1317",
-    "COL-1421"
+    "COL-1421",
+    "COL-1317"
    ],
    "country": "COL",
    "group_ids": [
     "choneros",
-    "los_tiguerones",
-    "lobos"
+    "lobos",
+    "los_tiguerones"
    ],
    "outlets": [
     "Semana"
@@ -1511,8 +1511,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "unidos",
-    "cjng"
+    "cjng",
+    "unidos"
    ],
    "outlets": [
     "Eje Central"
@@ -1541,10 +1541,10 @@
    "region_ids": [],
    "country": "COL",
    "group_ids": [
-    "tda",
-    "clan",
     "exfarc",
-    "eln"
+    "eln",
+    "clan",
+    "tda"
    ],
    "outlets": [
     "El Observador"
@@ -1660,8 +1660,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "tda",
-    "clan"
+    "clan",
+    "tda"
    ],
    "outlets": [
     "Infobae"
@@ -1818,8 +1818,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2719",
-    "MEX-2706"
+    "MEX-2706",
+    "MEX-2719"
    ],
    "country": "MEX",
    "group_ids": [
@@ -2245,8 +2245,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "pcc",
-    "cv"
+    "cv",
+    "pcc"
    ],
    "outlets": [
     "InSight Crime"
@@ -2377,35 +2377,6 @@
      "via": "X @InSightCrime",
      "url": "https://x.com/InSightCrime/status/2114011206730088840",
      "time": "2026-10-24T15:08:42Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "5488f7bdb6",
-   "status": "single_source",
-   "title": "La Reina de los Lobos encontró su recompensa después de enfrentar cuestionamientos y derrotas en su trayectoria, al conquistar uno de los torneos internacionales más importantes de la división femenil",
-   "lang": "es",
-   "title_en": "The Queen of the Wolves found her reward after facing doubts and defeats in her career, winning one of the most important international tournaments in the CMLL women's division",
-   "first_report": "2026-10-24T12:37:34Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "lobos"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2113973170570957288",
-     "time": "2026-10-24T12:37:34Z",
      "time_precision": "minute"
     }
    ]
