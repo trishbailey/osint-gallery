@@ -296,10 +296,11 @@ B.forEach(b=>{b.max=b.dep.length?d3.max(b.dep,d=>d.v):null;b.down=b.dep.filter(d
  b.flag=TL.some(t=>t.b===b.name&&(t.k==='cut'||t.k==='threat'));b.lev=TL.some(t=>t.b===b.name&&t.k==='cut')?'cut':TL.some(t=>t.b===b.name&&(t.k==='threat'||t.k==='dam'))?'threat':'none';b.aq=b.type==='aquifer';
  b.pts=PTS.filter(p=>(TF[b.id]||[]).includes(p.properties.Basin_Name));});
 const ptOf=(b,c)=>{const p=b.pts.filter(p=>p.properties.NAME===c).sort((x,y)=>(y.properties.Area_km2||0)-(x.properties.Area_km2||0))[0];return p&&p.geometry.coordinates};
+const halo=t=>t.attr('stroke','#0b1526').attr('stroke-width',3).attr('paint-order','stroke').attr('stroke-linejoin','round');
 function placer(svg,w,h,inset){const boxes=[];const ov=(a,b)=>a.x<b.x+b.w&&b.x<a.x+a.w&&a.y<b.y+b.h&&b.y<a.y+a.h;
  return {block(x,y,r){boxes.push({x:x-r,y:y-r,w:2*r,h:2*r})},
  add(g,x,y,text,style,cls){const sub=g.append('g').attr('class',cls||null);const lines=String(text).split('\n');const t=sub.append('text').attr('text-anchor','middle');
-  lines.forEach((ln,i)=>t.append('tspan').attr('x',0).attr('dy',i?'1.2em':0).text(ln));if(style)style(t);
+  lines.forEach((ln,i)=>t.append('tspan').attr('x',0).attr('dy',i?'1.2em':0).text(ln));if(style)style(t);halo(t);
   let bb=t.node().getBBox();const W=bb.width+14,H=Math.max(20,bb.height+10);
   const C=[[0,0]];for(const r of [12,22,34,48,64,82,104,130,160,196,236,280,330]){for(let a=0;a<24;a++)C.push([r*Math.cos(a*Math.PI/12),r*Math.sin(a*Math.PI/12)])}
   const edges=[];let edge=inset==null?2:inset;if(W>w-2*edge)edge=Math.max(8,Math.floor((w-W)/2)-1);if(H>h-2*edge)edge=Math.max(8,Math.min(edge,Math.floor((h-H)/2)-1));edges.push(Math.max(2,edge));if(edges[0]>8)edges.push(8);
@@ -307,7 +308,6 @@ function placer(svg,w,h,inset){const boxes=[];const ov=(a,b)=>a.x<b.x+b.w&&b.x<a
    if(bx.x<edgeTry||bx.y<edgeTry||bx.x+W>w-edgeTry||bx.y+H>h-edgeTry)continue;if(boxes.some(b=>ov(b,bx)))continue;
    boxes.push(bx);
    if(Math.hypot(dx,dy)>14)sub.insert('line',':first-child').attr('x1',x).attr('y1',y).attr('x2',cx).attr('y2',cy).attr('stroke','#9aa6b8').attr('stroke-width',1);
-   sub.insert('rect',()=>t.node()).attr('x',bx.x).attr('y',bx.y).attr('width',W).attr('height',H).attr('rx',8).attr('fill','#0b1526').attr('stroke','#24365a');
    t.selectAll('tspan').attr('x',cx);bb=t.node().getBBox();t.attr('y',cy-(bb.y+bb.height/2));return true}}
   sub.remove();return false}}}
 const DAMSAY={
@@ -343,8 +343,8 @@ function shortDam(gid,say){if(+gid===40398)return 'GERD dam';return String(say||
 function phoneBoxH(feats,w){const b=d3.geoBounds({type:'FeatureCollection',features:feats});const my=lat=>Math.log(Math.tan(Math.PI/4+Math.max(-80,Math.min(80,lat))*Math.PI/360));const gw=Math.max(0.02,(b[1][0]-b[0][0])*Math.PI/180);const gh=Math.max(0.02,Math.abs(my(b[1][1])-my(b[0][1])));return Math.max(260,Math.min(760,Math.round(36+Math.max(40,w-32)*gh/gw)))}
 function placePhone(svg,w,h){const boxes=[];const ov=(a,b)=>a.x<b.x+b.w&&b.x<a.x+a.w&&a.y<b.y+b.h&&b.y<a.y+a.h;
  return {block(x,y,r){boxes.push({x:x-r-3,y:y-r-3,w:2*r+6,h:2*r+6})},
-  add(g,x,y,text,style,cls){const label=String(text||'').replace(/\n/g,' ').trim();if(!label)return false;const sub=g.append('g').attr('class',cls||null);const t=sub.append('text').attr('text-anchor','middle').text(label);if(style)style(t);const bb=t.node().getBBox();const W=bb.width+12,H=Math.max(18,bb.height+8);if(!(bb.width>0)||W>w-8){sub.remove();return false}const tries=[[0,-18],[0,20],[0,-28],[0,30],[24,-28],[-24,-28],[0,-40],[0,42],[-52,-6],[52,-6],[-52,24],[52,24],[36,-48],[-36,-48],[0,-64],[0,66],[-100,4],[100,4],[-100,-30],[100,-30]];
-   for(const [dx,dy] of tries){let cx=x+dx,cy=y+dy;cx=Math.max(4+W/2,Math.min(w-4-W/2,cx));cy=Math.max(4+H/2,Math.min(h-4-H/2,cy));const bx={x:cx-W/2,y:cy-H/2,w:W,h:H};if(bx.x<2||bx.y<2||bx.x+W>w-2||bx.y+H>h-2)continue;if(boxes.some(b=>ov(b,bx)))continue;boxes.push(bx);sub.insert('rect',()=>t.node()).attr('x',bx.x).attr('y',bx.y).attr('width',W).attr('height',H).attr('rx',6).attr('fill','#0b1526').attr('stroke','#24365a');t.attr('x',cx).attr('y',cy-(bb.y+bb.height/2));return true}sub.remove();return false}}}
+  add(g,x,y,text,style,cls){const label=String(text||'').replace(/\n/g,' ').trim();if(!label)return false;const sub=g.append('g').attr('class',cls||null);const t=sub.append('text').attr('text-anchor','middle').text(label);if(style)style(t);halo(t);const bb=t.node().getBBox();const W=bb.width+12,H=Math.max(18,bb.height+8);if(!(bb.width>0)||W>w-8){sub.remove();return false}const tries=[[0,-18],[0,20],[0,-28],[0,30],[24,-28],[-24,-28],[0,-40],[0,42],[-52,-6],[52,-6],[-52,24],[52,24],[36,-48],[-36,-48],[0,-64],[0,66],[-100,4],[100,4],[-100,-30],[100,-30]];
+   for(const [dx,dy] of tries){let cx=x+dx,cy=y+dy;cx=Math.max(4+W/2,Math.min(w-4-W/2,cx));cy=Math.max(4+H/2,Math.min(h-4-H/2,cy));const bx={x:cx-W/2,y:cy-H/2,w:W,h:H};if(bx.x<2||bx.y<2||bx.x+W>w-2||bx.y+H>h-2)continue;if(boxes.some(b=>ov(b,bx)))continue;boxes.push(bx);t.attr('x',cx).attr('y',cy-(bb.y+bb.height/2));return true}sub.remove();return false}}}
 function shown(n){return String(n||'').replace('Nile / GERD','Nile / Grand Ethiopian Renaissance Dam (GERD)').replace(/\bDnipro HPP\b/g,'Dnipro Hydroelectric Station').replace(/\(OMVS works\)/g,'(Senegal River basin authority works)')}
 const CFG={
  '1,20,22':{start:{1:'dam:40398'},mainDams:[40398],
