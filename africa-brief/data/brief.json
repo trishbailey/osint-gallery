@@ -1310,7 +1310,7 @@
   },
   {
    "id": "great-lakes",
-   "name": "Great Lakes and eastern DRC",
+   "name": "Great Lakes and eastern Congo",
    "countries": [
     "COD",
     "RWA",
@@ -5382,7 +5382,7 @@
     "b": [
      {
       "p": "UAE",
-      "t": "Arms via Chad (UAE denies); gold purchases",
+      "t": "Arms via Chad (the United Arab Emirates denies this); gold purchases",
       "st": "alleged",
       "cites": [
        "un-sudan-2024",
@@ -5453,7 +5453,7 @@
     ]
    },
    "b": {
-    "n": "JNIM and Islamic State Sahel",
+    "n": "Al-Qaeda-linked JNIM (Group for the Support of Islam and Muslims) and Islamic State Sahel",
     "g": [
      "jnim",
      "issp"
@@ -5464,7 +5464,7 @@
     "b": [
      {
       "p": "Ukraine",
-      "t": "Intelligence to the CSP, alleged by Mali; the rebels deny outside help",
+      "t": "Intelligence to the Tuareg separatist alliance (CSP), alleged by Mali; the rebels deny outside help",
       "st": "alleged",
       "cites": [
        "reuters-mali-ukraine-2024",
@@ -5473,7 +5473,7 @@
      }
     ]
    },
-   "details": "The juntas say Russia helps where France failed. JNIM and IS Sahel fight each other as well as the states. The CSP says it fights for northern self-rule.",
+   "details": "The juntas say Russia helps where France failed. JNIM and Islamic State Sahel fight each other as well as the states. The CSP says it fights for northern self-rule.",
    "cites": [
     "reuters-mali-2025",
     "acled-issp-2024"
@@ -5482,7 +5482,7 @@
   {
    "id": "lake-chad",
    "region": "lake-chad",
-   "title": "Lake Chad basin: four states vs ISWAP and Boko Haram",
+   "title": "Lake Chad basin: four states vs Islamic State West Africa Province and Boko Haram",
    "iso": [
     "NGA",
     "TCD",
@@ -5498,12 +5498,12 @@
     "b": []
    },
    "b": {
-    "n": "ISWAP and Boko Haram (JAS)",
+    "n": "Islamic State West Africa Province (ISWAP) and Boko Haram",
     "g": [
      "iswap"
     ],
     "m": [
-     "Boko Haram fights ISWAP as well as the states"
+     "Boko Haram fights Islamic State West Africa Province as well as the states"
     ],
     "b": []
    },
@@ -5516,7 +5516,7 @@
   {
    "id": "somalia",
    "region": "horn",
-   "title": "Somalia: federal government vs al-Shabaab and IS-Somalia",
+   "title": "Somalia: federal government vs al-Shabaab and Islamic State Somalia",
    "iso": [
     "SOM"
    ],
@@ -5529,7 +5529,7 @@
     "b": [
      {
       "p": "US",
-      "t": "AFRICOM airstrikes",
+      "t": "US Africa Command (AFRICOM) airstrikes",
       "st": "documented",
       "cites": [
        "africom-isis-somalia-2025"
@@ -5537,7 +5537,7 @@
      },
      {
       "p": "Turkey",
-      "t": "Training at Camp TURKSOM",
+      "t": "Training at Camp TURKSOM, Turkey's military base in Mogadishu",
       "st": "documented",
       "cites": [
        "reuters-turksom-2017"
@@ -5554,7 +5554,7 @@
     "m": [],
     "b": []
    },
-   "details": "Puntland leads the campaign against IS-Somalia in the Golis Mountains, backed by US strikes.",
+   "details": "Puntland leads the campaign against Islamic State Somalia in the Golis Mountains, backed by US strikes.",
    "cites": [
     "africom-isis-somalia-2025",
     "hiiraan-africom-2026"
@@ -5563,7 +5563,7 @@
   {
    "id": "drc",
    "region": "great-lakes",
-   "title": "Eastern DR Congo: government vs M23",
+   "title": "Eastern DR Congo: government vs M23 rebels",
    "iso": [
     "COD"
    ],
@@ -5575,7 +5575,7 @@
     "b": []
    },
    "b": {
-    "n": "M23 / Congo River Alliance (AFC)",
+    "n": "M23 rebels (March 23 Movement) and Congo River Alliance (AFC)",
     "m": [],
     "b": [
      {
@@ -5598,7 +5598,7 @@
      ]
     }
    ],
-   "details": "Rwanda denies supporting M23 and cites the FDLR threat on its border. M23 holds the Rubaya coltan mines.",
+   "details": "Rwanda denies supporting M23 and cites the threat from the FDLR, a Hutu-led rebel group in Congo, on its border. M23 holds the Rubaya coltan mines.",
    "cites": [
     "un-drc-2024",
     "un-drc-s2024-969"
@@ -5612,7 +5612,7 @@
     "LBY"
    ],
    "a": {
-    "n": "Haftar's eastern forces (Libyan National Army)",
+    "n": "Eastern forces led by Khalifa Haftar (Libyan National Army)",
     "m": [],
     "b": [
      {
@@ -5762,7 +5762,7 @@
   }
  ],
  "galign": {
-  "jnim": "al-Qa'ida, via AQIM",
+  "jnim": "al-Qaeda, via al-Qaeda in the Islamic Maghreb (AQIM)",
   "issp": "Islamic State",
   "iswap": "Islamic State",
   "shabaab": "al-Qa'ida",

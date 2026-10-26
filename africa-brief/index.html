@@ -15,13 +15,13 @@
 <p class="hero lead">Data as of <span id="dd"></span>. Superscript numbers link to the source list at the bottom.</p>
 <main>
 <section class="kpis" id="kpis" aria-label="Headline numbers"></section>
-<section class="tile" id="map"><p class="prompt">Hover or tap a flag or a country to see lines from the foreign capital. Click a region to open its details.</p><div class="layers" role="group" aria-label="Map layers">
+<section class="tile" id="map"><p class="prompt">Hover or tap a flag or a country to see lines from the foreign capital. Click a region to open its details.</p><div class="mapgrid"><aside class="mapside" aria-label="Map legend and layers"><h3 class="sideh">Layers</h3><div class="layers" role="group" aria-label="Map layers">
 <label class="chip"><input type="checkbox" id="L-conf" checked> Conflict deaths</label>
 <label class="chip"><input type="checkbox" id="L-pow" checked> Foreign powers</label>
 <details class="morel"><summary class="chip">More layers</summary><div class="layers">
 <label class="chip"><input type="checkbox" id="L-res"> Natural resources</label>
 <label class="chip"><input type="checkbox" id="L-allres"> All resource sites</label></div></details></div>
-<div class="mapgrid"><div><div class="mapwrap"><svg id="svg" viewBox="0 0 900 820" role="img" aria-label="Map of Africa"></svg><button class="btn mapbtn" id="reset">Reset view</button></div><svg id="legsvg" class="legsvg" viewBox="0 0 900 300" role="img" aria-label="Map legend"></svg><p id="mapnote" class="mapnote"></p></div>
+<svg id="legsvg" class="legsvg" viewBox="0 0 260 600" role="group" aria-label="Legend: click an item to hide or show it"></svg></aside><div><div class="mapwrap"><svg id="svg" viewBox="0 0 900 820" role="img" aria-label="Map of Africa"></svg><button class="btn mapbtn" id="reset">Reset view</button></div><p id="mapnote" class="mapnote"></p></div>
 <aside id="panel" class="tile"><p class="eyebrow">Select a region, resource or link</p><p class="muted">Click a region to zoom in and open its section. Hover or tap a flag for what that power does there and a line from its capital.</p></aside></div></section>
 <section class="tile" id="backers"><h2>Who is fighting whom, and who backs them</h2><div id="cfsec"></div></section>
 <section class="tile" id="minerals"><h2 id="mnh">Africa's share of world mine output, by mineral (USGS)</h2><div id="mnsec"></div></section>
