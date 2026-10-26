@@ -130,7 +130,10 @@ for n,m in enumerate(clusters[:40]):
         hs={rows[i]['h'] for _,i in grp}
         if len(hs)>=4:
             for _,i in grp:used.add(i)
-            bursts.append(dict(cl=n,name=CL[n]['name'] or CL[n]['sample'][:90],start=rows[grp[0][1]]['t'],end=rows[grp[-1][1]]['t'],accounts=len(hs),ids=[rows[i]['id'] for _,i in grp]))
+            mem=[i for _,i in grp];en=[rows[i]['c'] for i in mem if rows[i]['lang']=='en' and len(rows[i]['c'])>20]
+            q=collections.Counter(en).most_common(1)[0][0] if en else rows[mem[0]]['c']
+            bursts.append(dict(cl=n,name=CL[n]['name'] or CL[n]['sample'][:90],named=bool(CL[n]['name']),start=rows[grp[0][1]]['t'],end=rows[grp[-1][1]]['t'],accounts=len(hs),
+              countries=len({rows[i]['country'] for i in mem}),quote=q[:220]+('…' if len(q)>220 else ''),quote_en=bool(en),langs=dict(collections.Counter(rows[i]['lang'] for i in mem)),ids=[rows[i]['id'] for i in mem]))
 burst_ids={i for b in bursts for i in b['ids']}
 cal={}
 for r in rows:
@@ -144,13 +147,58 @@ for r in rows:
         dm=(T(r['t'])-T(r['ot'])).total_seconds()/60
         E[(r['h'],r['oa'])]+=1;delays.append(dm)
         if dm<=60:fast[(r['h'],r['oa'])]+=1
-deg=collections.Counter()
-for (a_,b_),w in E.items():deg[a_]+=w;deg[b_]+=w
-keep={h for h,_ in deg.most_common(45)}
-nodes=[dict(id=h,type=typ(acc.get(h.lower())),country=acc.get(h.lower(),{}).get('country_posted','Outside account'),deg=deg[h],
-    out=sum(w for (a_,b_),w in E.items() if a_==h),inn=sum(w for (a_,b_),w in E.items() if b_==h)) for h in keep]
-links=[dict(s=a_,t=b_,w=w,fast=fast[(a_,b_)]) for (a_,b_),w in E.items() if a_ in keep and b_ in keep]
+LBL_OVR={'MFA_China':'Foreign Ministry spokesperson','SpoxCHN_MaoNing':'Spokesperson Mao Ning','SpoxCHN_LinJian':'Spokesperson Lin Jian','DGAfrica_MFA':'MFA Africa dept (Du Xiaohui)',
+ 'Ambassador_Liu':'Liu Yuxi (MFA)','ChnConsul_osaka':'Consulate in Osaka','ChnEmbassy_jp':'Embassy in Japan','XisMoments':"Xi's Moments (state media)",'CgtnJapanese':'CGTN Japanese','XHNews':'Xinhua News',
+ 'CGTNOfficial':'CGTN','PDChina':"People's Daily",'globaltimesnews':'Global Times','ChinaDaily':'China Daily','peopledailyJP':"People's Daily Japan",
+ 'ChnConsulateFuk':'Consulate in Fukuoka','CG_GuoShaochun':'Consul General in New York','ChinaConsAlmaty':'Consulate in Almaty','ConsulChinaRJ':'Consulate in Rio de Janeiro','CGPRCinDubai':'Consulate in Dubai',
+ 'ChnConsulateNgt':'Consulate in Niigata','chinaconsulist':'Consulate in Istanbul','ChinaConsulate':'Consulate in Chicago','ChnConsulateNag':'Consulate in Nagasaki','ChnConsulateSpk':'Consulate in Sapporo',
+ 'CG_ZhangJianmin':'Consul General in Los Angeles','CGChinaSP':'Consulate in São Paulo','TheGoldenMean2':'The Golden Mean (blog)','work_worth':'Worth Work Words (blog)','sakuranohana_cj':'Sakura no Hana (blog)'}
+def latin(n):
+    m=re.findall(r"[A-Za-z][A-Za-z.'\- ]+[A-Za-z]",n or '');return max(m,key=len).strip() if m else ''
+def label(h):
+    if h in LBL_OVR:return LBL_OVR[h]
+    a=acc.get(h.lower())
+    if not a:
+        n=next((u['name'] for u in users.values() if u.get('username')==h),h);return latin(n) or n
+    t,c,n=a['type'],a['country_posted'],a['name']
+    if t=='embassy':return f'Embassy in {c}'
+    if t=='consulate':
+        m=re.search(r'(?:in|at|en|à|em|in) ([A-Z][a-zé]+(?: [A-Z][a-z]+)?)',n)
+        city=m.group(1) if m and m.group(1) not in('US','UK') else None
+        return f'Consulate in {city}' if city else f'Consulate ({c})'
+    if t=='ambassador':return f'Ambassador to {c}' if 'Amb' in h or 'amb' in n.lower() else f'{latin(n) or h} ({c})'
+    return f'{latin(n) or h} ({c})'
+def region(h):
+    a=acc.get(h.lower())
+    if not a:return 'State media and other'
+    m=re.search(r'region=([^;]+)',a['notes']);return m.group(1).strip() if m else '?'
+inn=collections.Counter();outc=collections.Counter()
+for (a_,b_),w in E.items():outc[a_]+=w;inn[b_]+=w
+allh={x for e in E for x in e}
+nodes=[dict(id=h,label=label(h),type=typ(acc.get(h.lower())),country=acc.get(h.lower(),{}).get('country_posted','Outside account'),region=region(h),out=outc[h],inn=inn[h]) for h in allh]
+links=[dict(s=a_,t=b_,w=w,fast=fast[(a_,b_)]) for (a_,b_),w in E.items()]
 net=dict(nodes=nodes,links=links,total_edges=sum(E.values()),fast_share=round(sum(fast.values())/max(1,sum(E.values())),3),median_delay_min=round(float(np.median(delays)),1) if delays else None)
+# ---------- ripples: most amplified original posts ----------
+byo2=collections.defaultdict(list)
+for r in rows:
+    if r['k'] in('repost','quote') and r['oid'] and r['ot'] and r['oa']!=r['h']: byo2[r['oid']].append(r)
+tpid={r['id']:r.get('tp') for r in rows}
+ripples=[]
+for oid,rs in sorted(byo2.items(),key=lambda x:-len({r['h'] for r in x[1]}))[:40]:
+    seen=set();am=[]
+    for r in sorted(rs,key=lambda r:r['t']):
+        if r['h'] in seen:continue
+        seen.add(r['h']);am.append(dict(h=r['h'],label=label(r['h']),type=typ(acc.get(r['h'].lower())),country=r['country'],t=r['t'],k=r['k'],id=r['id'],delay=round((T(r['t'])-T(r['ot'])).total_seconds()/60,1)))
+    theme=collections.Counter(x.get('tp') for x in rows if x.get('oid')==oid and x.get('tp')).most_common(1)
+    oa=rs[0]['oa'];ripples.append(dict(oid=oid,h=oa,label=label(oa),type=typ(acc.get(oa.lower())),t=rs[0]['ot'],text=clean(refs[oid]['text'])[:260],theme=theme[0][0] if theme else None,amps=am))
+# keep the most amplified post per theme first, then the rest; at most 8
+pick=[];th=set()
+for r in ripples:
+    if r['theme'] and r['theme'] not in th: th.add(r['theme']);pick.append(r)
+for r in ripples:
+    if len(pick)>=8:break
+    if r not in pick and len(r['amps'])>=6: pick.append(r)
+pick=sorted(pick,key=lambda r:-len(r['amps']))[:8]
 # ---------- tone ----------
 CONF=r"hegemon|bully|bullying|smear|slander|lies\b|\blie\b|interfer|provocat|cold war mentality|zero-sum|so-called|hypocri|double standard|condemn|firmly oppose|strongly oppose|resolutely oppose|playing with fire|separatis|independence forces|containment|bloc confrontation|unilateral sanction|coerc|groundless|fabricat|politiciz|militaris|militariz|right-wing|aggress|threat|warn|protectionis|stop .{0,20}immediately|霸权|霸凌|抹黑|干涉|挑衅|谴责|坚决反对|强烈不满|冷战思维|双重标准|所谓|污蔑|造谣|台独|军国主义|hegemonía|injerencia|calumnia|condena|hégémonie|ingérence|calomnie|condamn|覇権|中傷|内政干渉|挑発|非難|断固反対|強い不満|軍国主義|台湾独立|右翼|抗議|гегемон|вмешательств|клевет|провокац|هيمنة|تدخل"
 COOP=r"cooperat|win-win|friendship|friendly|partnership|mutual benefit|mutually beneficial|shared future|exchange|development|together|congratulat|welcome|joint|dialogue|peace|people-to-people|culture|cultural|festival|celebrat|thank|grateful|signing|agreement|harmon|合作|共赢|友谊|友好|交流|发展|携手|共同体|祝贺|欢迎|和平|cooperación|amistad|desarrollo|coopération|amitié|développement|cooperação|amizade|協力|友好|交流|発展|平和|歓迎|祝賀|ウィンウィン|сотрудничеств|дружб|развити|تعاون|صداقة|تنمية"
@@ -180,12 +228,16 @@ mapd=[dict(key=c['key'],name=c['name'],desc=c['desc'],n=c['n'],langs=c['langs'],
 pc=collections.Counter(r['h'] for r in rows)
 accts=[dict(h=r['handle'],name=r['name'],type=typ(r),country=r['country_posted'],followers=int(r['followers'] or 0),posts=pc.get(r['handle'],0),ll=CENT.get(r['country_posted'])) for r in acc.values()]
 # ---------- headline ----------
-head=dict(accounts=len(acc),active=len({r['h'] for r in rows if r['h'].lower() in acc}),posts=N,reposts=sum(r['k']=='repost' for r in rows),
+_bt=collections.defaultdict(set)
+for b in bursts:
+    for i in b['ids']:_bt[b['name']].add(next(r['h'] for r in rows if r['id']==i))
+_tb=max(_bt,key=lambda k:len(_bt[k])) if _bt else ''
+head=dict(accounts=len(acc),topburst=_tb,topburst_acc=len(_bt.get(_tb,())),active=len({r['h'] for r in rows if r['h'].lower() in acc}),posts=N,reposts=sum(r['k']=='repost' for r in rows),
     countries=len({r['country'] for r in rows if r['country']!='?'}),clusters=len(clusters),bursts=len(bursts),start=START,end=END,days=len(days),
     langs=dict(collections.Counter(r['lang'] for r in rows).most_common(8)))
 # ---------- posts for panels ----------
 pp={r['id']:dict(h=r['h'],t=r['t'],k=r['k'],text=r['text'][:400],country=r['country'],oa=r['oa']) for r in rows if r['id'] in burst_ids or r.get('tp')}
-for nm_,obj in [('headline',head),('stream',stream),('matrix',matrix),('bursts',dict(bursts=bursts,cal=cal,days=days)),('network',net),('tone',tonemap),('spread',mapd),('accounts',accts),('posts',pp)]:
+for nm_,obj in [('headline',head),('stream',stream),('matrix',matrix),('bursts',dict(bursts=bursts,cal=cal,days=days)),('network',net),('ripples',pick),('tone',tonemap),('spread',mapd),('accounts',accts),('posts',pp)]:
     json.dump(obj,open(os.path.join(OUT,nm_+'.json'),'w'),ensure_ascii=False,separators=(',',':'))
 with open(os.path.join(H,'..','posts_export.csv'),'w',newline='') as fo:
     w=csv.writer(fo);w.writerow(['id','created_at_utc','handle','country','account_type','kind','lang','text','referenced_author','likes','reposts','views','cluster','url'])
