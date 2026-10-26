@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FE6CZGWX0J');
+  gtag('config', 'G-Z61EKRP8QV');
+</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Africa Brief | Beacon Intelligence Group</title><link rel="stylesheet" href="style.css"></head><body>
+<header><a class="brand" href="#">BEACON INTELLIGENCE GROUP<span class="brand-sub">AFRICA BRIEF · PROTOTYPE</span></a>
+<nav><a href="#map">Map</a><a href="#regions">Regions</a><a href="#flows">Money flows</a><a href="#bri">Belt and Road</a><a href="#media">Media</a><a href="#method">Method</a></nav></header>
+<section class="hero"><div class="wrap"><p class="eyebrow">Context first</p><h1>Conflicts in Africa: who, why, money and minerals</h1>
+<p class="lead">Each layer is built from sourced actions, not statements. Seed data as of <span id="dd"></span>.</p></div></section>
+<main class="wrap" id="map"><div class="layers" role="group" aria-label="Map layers">
+<label><input type="checkbox" id="L-conf" checked> Conflict regions</label>
+<label><input type="checkbox" id="L-res" checked> Natural resources</label>
+<label><input type="checkbox" id="L-for" checked> Foreign involvement</label>
+<label><input type="checkbox" id="L-bri" checked> China / Belt and Road</label>
+<label><input type="checkbox" id="L-all"> Show all backing lines</label>
+<label><input type="checkbox" id="L-allres"> Show all resource sites</label></div>
+<div class="mapgrid"><svg id="svg" viewBox="0 0 900 820" style="max-width:900px" role="img" aria-label="Map of Africa"></svg><p id="mapnote" class="mapnote"></p>
+<aside id="panel" class="card"><p class="eyebrow">Select a region, resource or link</p><p class="muted">Hover or click a shaded region to see its backing arcs; tick "Show all backing arcs" for everything.</p></aside></div>
+<h2 id="regions">Regions</h2><div id="rlist"></div>
+<h2 id="flows">Money flows: where conflict-linked resources go</h2><p class="muted">Only sourced figures are drawn; each band shows its year and source. Widths are scaled within each chart only. Flows without a published figure (for example Mali and Burkina Faso gold by destination, or Mali gold to Russia) are left out.</p>
+<h3>Gold, tonnes</h3><svg id="sk-gold" class="sankey" viewBox="0 0 1060 520"></svg><div id="sk-gold-notes" class="sknotes"></div>
+<h3>Battery minerals, tonnes</h3><svg id="sk-battery" class="sankey" viewBox="0 0 1060 220"></svg><div id="sk-battery-notes" class="sknotes"></div>
+<h2 id="bri">China and the Belt and Road</h2><div id="brisec"></div>
+<h2 id="media">Who owns the news</h2><div id="mediasec"></div>
+<h2 id="method">Method and source notes</h2><div id="methodsec" class="method"></div></main>
+<footer class="foot"><div class="wrap"><a class="brand" href="https://beaconintelligencegroup.com">BEACON INTELLIGENCE GROUP</a><p>Africa Brief prototype. Descriptive analysis only; no forecasts or recommendations. <a href="https://beaconintelligencegroup.com">beaconintelligencegroup.com</a></p><p>Conflict data: UCDP (CC BY 4.0). Basemap: Natural Earth (public domain). Headlines link to their publishers; translations are machine-made with the open-source NLLB-200 model run locally.</p></div></footer>
+<script src="vendor/d3.min.js"></script><script src="config.js"></script><script src="app.js"></script></body></html>

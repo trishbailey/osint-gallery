@@ -157,6 +157,14 @@
       "icon": "/icons/belt-and-road.svg",
       "enterUrl": "https://beacon-tools.onrender.com/belt-and-road/",
       "status": "live"
+    },
+    {
+      "id": "africa-brief",
+      "name": "Africa Brief",
+      "blurb": "Sourced map of conflicts in Africa: who backs whom, the resources at stake, money flows and China's Belt and Road projects, with region explainers and translated local news.",
+      "icon": "/icons/africa-brief.svg",
+      "enterUrl": "https://beacon-tools.onrender.com/africa-brief/",
+      "status": "live"
     }
   ]
 }
