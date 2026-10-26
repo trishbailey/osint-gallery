@@ -166,7 +166,7 @@ function openPost(a){const p=PO[a.id];d3.select('#ph').text(a.label);
 // ---- aggression heat map
 (function(){const svg=d3.select('#tmap').append('svg').attr('data-ci-ignore','aggression diverging ramp').attr('viewBox',`0 0 ${W} ${HM}`).attr('role','img').attr('aria-label','World map of how aggressive or friendly posts are, by country');
  svg.append('path').attr('d',path({type:'Sphere'})).attr('fill','#0f1b31');
- const MP=TONE.min_posts,byGeo={};TONE.countries.forEach(c=>{if(c.geo&&c.posts>=MP)byGeo[c.geo]=c});
+ const MP=TONE.min_posts,byGeo={};{const w=TONE.window,dd=x=>new Date(x).toLocaleDateString('en-GB',{day:'numeric',month:'short',timeZone:'UTC'});TONE.windowLabel=w?`Last 30 days (${dd(w.start)} to ${dd(w.end)}${w.days<30?', '+w.days+' days so far: archive starts '+dd(w.start):''})`:'';}TONE.countries.forEach(c=>{if(c.geo&&c.posts>=MP)byGeo[c.geo]=c});
  const pct=x=>Math.round(x*100)+'%';
  const tip=c=>{if(!c)return '';const h=c.harsh[0],f=c.friendly[0];return `<b>${esc(c.country)}</b> · ${c.posts} posts<br><span style="color:#e2646e">Aggressive ${pct(c.agg)}</span> · <span style="color:#6fd08a">Friendly ${pct(c.fri)}</span>`+(h?`<br><i>Harshest:</i> “${esc(h.text.slice(0,110))}…”`:'')+(f?`<br><i>Friendliest:</i> “${esc(f.text.slice(0,110))}…”`:'')+'<br>Click to read the posts'};
  const zg=svg.append('g');const g=zg.append('g').selectAll('path').data(countries).join('path').attr('d',path).attr('stroke','#2c426b').attr('stroke-width',.4)
@@ -179,40 +179,38 @@ function openPost(a){const p=PO[a.id];d3.select('#ph').text(a.label);
  const scored=TONE.countries.filter(c=>c.posts>=MP).sort((a,b)=>b.agg-a.agg);
  const hot=scored.filter(c=>c.agg>=AGT),top=hot.slice(0,5),nf=scored.filter(c=>c.agg<AGT).length;
  d3.select('#tone-head').text(`${nf} of ${scored.length} countries and organisations post almost no aggressive wording. The sharpest tone comes from ${(n=>n.slice(0,-1).join(', ')+' and '+n[n.length-1])(top.slice(0,3).map(c=>/^(Philippines|Netherlands|United |UAE|EU|African Union|Czech)/.test(c.country)?'the '+c.country:c.country))}.`);
- d3.select('#tone-sub').text(`Share of each mission's posts with aggressive wording (accusations of hegemony, smears, interference, warnings), scored in ten languages. White means under ${Math.round(AGT*100)}%. Countries with fewer than ${MP} posts are not shown. Click a country to read its harshest and friendliest posts.`);
+ d3.select('#tone-win').text(TONE.windowLabel);d3.select('#tone-sub').text(`Share of each mission's posts with aggressive wording (accusations of hegemony, smears, interference, warnings), scored in ten languages. White means under ${Math.round(AGT*100)}%. Countries with fewer than ${MP} posts are not shown. Click a country or key area to see why its posts are harsh.`);
   const featOf=c=>countries.find(f=>f.properties.name===c.geo);
  const fit=(cs,pad)=>{let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;cs.forEach(c=>{const f=c.geo&&featOf(c);const b=f?path.bounds(f):(()=>{const p=proj(c.ll);return [[p[0]-8,p[1]-8],[p[0]+8,p[1]+8]]})();x0=Math.min(x0,b[0][0]);y0=Math.min(y0,b[0][1]);x1=Math.max(x1,b[1][0]);y1=Math.max(y1,b[1][1])});
   const k=Math.min(4,0.9/Math.max((x1-x0)/W,(y1-y0)/HM));return {k,x:W/2-k*(x0+x1)/2,y:HM/2-k*(y0+y1)/2}};
  const setZ=(t,anim)=>{const tr=`translate(${t.x},${t.y}) scale(${t.k})`;(anim?zg.transition().duration(900):zg).attr('transform',tr);zg.selectAll('rect').attr('stroke-width',1/t.k).attr('transform',`rotate(45) scale(${1/Math.sqrt(t.k)})`)};
  const RM2=matchMedia('(prefers-reduced-motion: reduce)').matches;
- // Key areas: aggressive countries grouped by region (lon/lat boxes), ranked by their highest share.
- const REG=[['wp','West Pacific (South China Sea and Japan)',(x,y)=>x>=90&&x<=160],['pi','Pacific Islands',(x,y)=>x>160||x<-150],['eu','Europe',(x,y)=>x>=-25&&x<90&&y>=35],['ea','Horn of Africa and East Africa',(x,y)=>x>=20&&x<90&&y<35],['af','Africa and Middle East',(x,y)=>x>=-25&&x<90&&y<35],['am','Americas',(x,y)=>true]];
- const WHY={wp:'The embassy in Manila trades barbs with the Philippine Coast Guard spokesperson over the South China Sea, and posts in Japan accuse Japanese right-wing forces of distorting wartime history.',
-  pi:'Posts attack Taiwan\u2019s leader Lai Ching-te and repost foreign ministry criticism of the United States over cybersecurity.',
-  eu:'Posts condemn US arms sales to Taiwan, Taiwan\u2019s independence camp and Japanese \u201cneo-militarism\u201d, including a rebuttal of a Taiwanese minister\u2019s article in an Estonian newspaper.',
-  ea:'Posts accuse Japanese right-wing forces of using AI to whitewash war crimes and restate Beijing\u2019s claim to Taiwan on its 25 October anniversary.'};
- const areas=REG.map(([id,name,t])=>({id,name,cs:hot.filter(c=>c.ll&&t(c.ll[0],c.ll[1]))})).filter(a=>a.cs.length);
- {const used=new Set();areas.forEach(a=>{a.cs=a.cs.filter(c=>!used.has(c.country));a.cs.forEach(c=>used.add(c.country))})}
- const AR=areas.filter(a=>a.cs.length).sort((a,b)=>b.cs[0].agg-a.cs[0].agg).slice(0,4);AR.forEach(a=>a.z=fit(a.cs));
+ // Key areas come from analyze.py (account regions, rolling 30-day window), with generated sentences.
+ const byName={};scored.forEach(c=>byName[c.country]=c);
+ const AR=(TONE.areas||[]).slice(0,4).map(a=>({...a,cs:a.countries.map(n=>byName[n]).filter(Boolean)})).filter(a=>a.cs.length);AR.forEach(a=>a.z=fit(a.cs));
  let zoomed=true,act=AR[0];
  const zb=d3.select('#tzoom');const zlab=()=>zb.text(zoomed?'Show whole world':'Zoom to key area').attr('aria-pressed',zoomed);
  const outline=names=>g.attr('stroke',f=>names.has(f.properties.name)?'#c8a24a':'#2c426b').attr('stroke-width',f=>names.has(f.properties.name)?2.5:.4);
  const pick=(a,anim)=>{act=a;zoomed=true;setZ(a.z,anim&&!RM2);zlab();outline(new Set(a.cs.map(c=>c.geo)));
   d3.selectAll('.tarea').classed('on',d=>d===a).attr('aria-pressed',d=>d===a)};
  ['#tareas','#tareas-m'].forEach(id=>d3.select(id).selectAll('li').data(AR).join('li').append('button').attr('type','button').attr('class','tarea')
-  .html(a=>`<b>${esc(a.name)}</b><span class="tc">${a.cs.map(c=>`<span class="sw sq" style="background:${aggCol(c.agg)}"></span>${esc(c.country)} ${pct(c.agg)}`).join(' · ')}</span>${WHY[a.id]?`<span class="tw">${esc(WHY[a.id])}</span>`:''}`)
-  .on('click',(e,a)=>pick(a,1)));
+  .html(a=>`<b>${esc(a.name)}</b><span class="tc">${a.cs.map(c=>`<span class="sw sq" style="background:${aggCol(c.agg)}"></span>${esc(c.country)} ${pct(c.agg)}`).join(' · ')}</span><span class="tw">${esc(a.sentence)}</span>`)
+  .on('click',(e,a)=>{pick(a,1);openExplain(a.name+': why the harsh posts',a.explain,a.cs.map(c=>`${c.country} ${pct(c.agg)} aggressive`).join(' · '))}));
  if(act)pick(act,0);else{zoomed=false;zlab()}
  zb.on('click',()=>{if(zoomed){zoomed=false;setZ({k:1,x:0,y:0},!RM2);outline(new Set());d3.selectAll('.tarea').classed('on',false).attr('aria-pressed',false);zlab()}else if(act)pick(act,1)});
  d3.select('#ttop').selectAll('li').data(top).join('li').append('button').attr('class','tli').attr('type','button')
   .html((c,i)=>`<span class="sw sq" style="background:${aggCol(c.agg)}"></span><b>${i+1}. ${esc(c.country)}</b><span>${pct(c.agg)} aggressive · ${c.posts} posts</span>`)
   .on('click',function(e,c){zoomed=true;setZ(fit([c]),1);zlab();g.attr('stroke',f=>f.properties.name===c.geo?'#c8a24a':'#2c426b').attr('stroke-width',f=>f.properties.name===c.geo?2.5:.4);
-   const r=document.getElementById('tmap').getBoundingClientRect(),b=this.getBoundingClientRect();showTip({clientX:r.left+8,clientY:Math.max(8,r.bottom-40)},tip(c));setTimeout(()=>{hideTip();openTone(c)},2200)});
+   const r=document.getElementById('tmap').getBoundingClientRect(),b=this.getBoundingClientRect();openTone(c)});
 
 })();
+function explainHTML(x){if(!x)return '';const W=TONE.window;
+ return `<h3 class="sh3">What the harsh posts are about</h3>${x.about.map(t=>`<p>${esc(t)}</p>`).join('')}`+(x.why.length?`<h3 class="sh3">Why</h3>${x.why.map(t=>`<p>${esc(t)}</p>`).join('')}`:'')
+ +`<h3 class="sh3">Sample aggressive posts</h3>`+x.samples.map(p=>`<div class="post" style="border-left:4px solid ${AGR[3]};padding-left:8px"><div class="m">@${esc(p.h)} · ${esc(p.country)} · ${fd(p.t)}${p.lang?` · original in ${esc(p.lang)}, not translated`:''}</div><div>${esc(p.text)}</div><a href="https://x.com/${encodeURIComponent(p.h)}/status/${p.id}" target="_blank" rel="noopener">Open on x.com ↗</a></div>`).join('')}
+function openExplain(title,x,sub){d3.select('#ph').text(title);d3.select('#pbody').html(`<p class="m">${esc(sub)} · ${esc(TONE.windowLabel)}</p>`+(explainHTML(x)||'<p>No aggressive posts in this window.</p>'));panel.hidden=false;document.getElementById('pclose').focus()}
 function openTone(c){const row=(p,col)=>`<div class="post" style="border-left:4px solid ${col};padding-left:8px"><div class="m">@${esc(p.h)} · ${fd(p.t)}</div><div>${esc(p.text)}</div><a href="https://x.com/${encodeURIComponent(p.h)}/status/${p.id}" target="_blank" rel="noopener">Open on x.com ↗</a></div>`;
  d3.select('#ph').text(`${c.country}: ${Math.round(c.agg*100)}% aggressive, ${Math.round(c.fri*100)}% friendly`);
- d3.select('#pbody').html(`<p class="m">${c.posts} posts${c.posts<TONE.min_posts?' (too few to judge)':''}</p><h3 class="sh3">Harshest</h3>${c.harsh.map(p=>row(p,AGC[0])).join('')||'<p class="m">No aggressive wording found.</p>'}<h3 class="sh3">Friendliest</h3>${c.friendly.map(p=>row(p,AGC[2])).join('')||'<p class="m">No friendly wording found.</p>'}`);
+ d3.select('#pbody').html(`<p class="m">${c.posts} posts · ${esc(TONE.windowLabel)}</p>${c.agg>0?explainHTML(c.explain):''}<h3 class="sh3">Harshest</h3>${c.harsh.map(p=>row(p,AGC[0])).join('')||'<p class="m">No aggressive wording found.</p>'}<h3 class="sh3">Friendliest</h3>${c.friendly.map(p=>row(p,AGC[2])).join('')||'<p class="m">No friendly wording found.</p>'}`);
  panel.hidden=false;document.getElementById('pclose').focus()}
 d3.select('#tplay').on('click',()=>{if(ttimer)return tstop();let i=0;setT(0);d3.select('#tplay').text('❚❚ Pause');ttimer=setInterval(()=>{i++;if(i>=TONE.periods.length){tstop();setT(-1);return}setT(i)},1600)});
 const panel=document.getElementById('panel');
