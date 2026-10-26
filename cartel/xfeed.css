@@ -16,3 +16,5 @@
 .xg{display:inline-flex;align-items:center;gap:3px}.xg .dot{width:9px;height:9px}
 .xb circle{fill:#c0504d;stroke:#0b1526;stroke-width:1.5}.xb text{fill:#fff;font-size:12px;font-weight:700;text-anchor:middle}
 .xkey{margin-top:4px}.xbk{display:inline-block;width:16px;height:16px;border-radius:50%;background:#c0504d;color:#fff;font-size:11px;text-align:center;line-height:16px;font-weight:700}
+.brow{display:block;overflow-x:hidden;overflow-y:auto;max-height:420px;padding-right:6px;scrollbar-width:thin;scrollbar-color:#56657f transparent;-webkit-mask-image:linear-gradient(#000 88%,transparent);mask-image:linear-gradient(#000 88%,transparent)}
+.brow .bcard{margin-bottom:6px;padding:5px 10px}.brow::-webkit-scrollbar{width:8px}.brow::-webkit-scrollbar-thumb{background:#56657f;border-radius:4px}

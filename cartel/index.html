@@ -12,12 +12,13 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Latin America Cartel Dashboard | Beacon Intelligence Group</title>
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="xfeed.css"><link rel="stylesheet" href="leaders.css"><link rel="stylesheet" href="visual.css"></head>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="xfeed.css"><link rel="stylesheet" href="leaders.css"><link rel="stylesheet" href="visual.css"><link rel="stylesheet" href="timeline.css"></head>
 <body>
 <header><div><div class="brand"><span class="mark">BEACON</span> INTELLIGENCE GROUP</div><h1>Latin America cartel dashboard</h1></div><div id="asof" class="muted"></div></header>
 <main>
 <section class="tile maptile">
  <div class="tilehead"><h2>Who is active where</h2><span class="muted">Click a state or department. Click a group to show only its footprint.</span></div>
+ <div id="ixnote" class="ixnote" role="note"><span class="ixi" aria-hidden="true">👆</span><span><b>Click a state</b> for latest posts and details · <b>Click a cartel</b> below to show only its territory (<b>All groups</b> resets) · Toggle overlays and map views · Tap cards for more</span><button id="ixx" title="Hide this tip" aria-label="Hide this tip">&times;</button></div>
  <div id="grouplegend" class="chips"></div>
  <div class="mapwrap"><svg id="mapsvg"></svg>
   <div id="layers" class="overlay"><b>Overlay</b></div>
@@ -34,12 +35,12 @@
   <div id="seiznote" class="note small"></div><div id="odnote" class="note small"></div></div>
 </section>
 <section class="row3">
- <div class="tile"><div class="tilehead"><h2>Money</h2><span class="muted" id="moneyunit"></span></div><svg id="sankey"></svg><details class="more"><summary>More</summary><div id="moneymore"></div></details></div>
- <div class="tile"><div class="tilehead"><h2>Network</h2><span class="muted">Click a node or line</span></div><div id="netlegend" class="minilegend"></div><svg id="netsvg"></svg></div>
- <div class="tile"><div class="tilehead"><h2>China</h2><span class="muted">Click a tile</span></div><div id="china" class="chgrid"></div></div>
+ <div class="tile"><div class="tilehead"><h2>Money</h2><span class="muted" id="moneyunit"></span></div><div id="moneycav" class="cav small"></div><svg id="sankey"></svg><div id="moneycov"></div><details class="more"><summary>More</summary><div id="moneymore"></div></details></div>
+ <div class="tile"><div class="tilehead"><h2>Network</h2><span class="muted">Hover or click a group</span></div><div id="netlegend" class="minilegend"></div><svg id="netsvg"></svg></div>
+ <div class="tile"><div class="tilehead"><h2>China</h2></div><p class="small">China-linked sites (precursor chemicals, ports, laundering, loans) are on the map: turn on <b>China-linked sites</b> in the Overlay box. All sourced items have a location.</p></div>
 </section>
 <section class="row2">
- <div class="tile"><div class="tilehead"><h2>Who's who</h2><span class="muted">Click a card to expand</span></div><div id="cards" class="cards"></div></div>
+ <div class="tile"><div class="tilehead"><h2>How the groups formed and grew</h2><span class="muted">Hover an icon · click a lane</span></div><div id="timeline"></div><div id="cards" class="cards" hidden style="display:none"></div></div>
  <div class="tile ticker"><div class="tilehead"><h2>Latest headlines</h2></div><div id="evfilters" class="chips small"></div><div id="events"></div><button class="chip morebtn" onclick="const e=document.getElementById('events');this.textContent=e.classList.toggle('showall')?'show less':'more headlines'">more headlines</button></div>
 </section>
 <section class="tile ovtile"><details class="more" id="storydet"><summary><b>Storylines</b> <span class="muted">· click one to zoom the map</span></summary><p id="ovtext" class="ovtext"></p><div id="stories" class="stories"></div></details></section>
@@ -48,5 +49,8 @@
 </main>
 <aside id="drawer"><button id="dclose" aria-label="Close">×</button><div id="dbody"></div></aside>
 <footer class="muted">Describes and analyzes what has happened; it does not predict or prescribe. Every item links to its source. Data: <a href="https://github.com/trishbailey/cartel-dashboard">github.com/trishbailey/cartel-dashboard</a>. Basemaps: Natural Earth (public domain).</footer>
-<script src="vendor/d3.min.js"></script><script src="vendor/d3-sankey.min.js"></script><script src="vendor/topojson-client.min.js"></script><script src="footnotes.js"></script><script src="app.js"></script><script src="xfeed.js"></script><script src="leaders.js"></script>
+<script src="vendor/d3.min.js"></script><script src="vendor/d3-sankey.min.js"></script><script src="vendor/topojson-client.min.js"></script><script src="footnotes.js"></script><script src="app.js"></script><script src="xfeed.js"></script><script src="leaders.js"></script><script src="timeline.js"></script>
+<script>(function(){var n=document.getElementById("ixnote");try{if(localStorage.getItem("ixHide")==="1")n.style.display="none"}catch(e){}document.getElementById("ixx").onclick=function(){n.style.display="none";try{localStorage.setItem("ixHide","1")}catch(e){}}})();</script>
+<script src="ix.js"></script>
+<script src="gc.js"></script>
 </body></html>

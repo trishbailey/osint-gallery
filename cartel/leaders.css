@@ -61,3 +61,5 @@ table.bz tbody th{text-align:left;white-space:nowrap;font-weight:600}table.bz th
 .hm{font-size:13px;color:#e0605c}.hm.secondary{color:#e2c36a}.hm.minor{color:#9aa6b8}
 #pagesources ol{font-size:11.5px;columns:2;color:#8fa0bb}#pagesources a{color:#9cc4ff;word-break:break-all}
 @media(max-width:800px){.ldcharts{grid-template-columns:1fr}#pagesources ol{columns:1}}
+.rbars .bl,.rbars .bv{font-size:11px}.rbars .bv{fill:#dfe6f1}.rbars .bn{font-size:9.5px;fill:#8fa0bb}.rbars .ax text{font-size:10px}
+.rleg span[class^=lg]{display:inline-block;width:14px;height:9px;vertical-align:middle;margin-left:6px}.rleg .lg1{background:#c3ccd9}.rleg .lg2{background:#c3ccd966}.rleg .lg3{width:auto;height:auto;color:#c3ccd9}.rleg .lg4{background:#c3ccd944;border:1px dashed #c3ccd9}

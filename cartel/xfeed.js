@@ -26,7 +26,7 @@ function rnames(ids){return (ids||[]).map(r=>esc(RN[r]||r)).join(", ")}
 function strip(){
   if(!B||!B.events||!B.events.length)return;
   const s=document.createElement("section");s.className="tile bstrip";s.id="breaking";
-  const ev=B.events.slice(0,24);
+  const ev=B.events.slice(0,40);
   const cnt=k=>B.events.filter(e=>e.status===k).length;
   s.innerHTML=`<div class="tilehead"><h2>Breaking</h2><span class="muted">Last 48 hours · verified outlets and official accounts only · <span class="bx bx-ok">Confirmed</span> ${cnt("confirmed")} <span class="bx bx-one">Single source</span> ${cnt("single_source")} <span class="bx bx-off">Official claim only</span> ${cnt("official_claim_only")}</span></div>
   <div class="bchips"><button class="chip on" data-s="">All</button><button class="chip" data-s="confirmed">Confirmed only</button></div>
@@ -36,7 +36,7 @@ function strip(){
     <span class="bi ${c}" title="${l}">${ICO[e.status]}</span>${gdots1(e.group_ids)}<span class="btl">${bil(e.title_en,e.title,e.lang)}</span>
     <span class="bt">${e.region_ids&&e.region_ids.length?"📍"+rnames(e.region_ids.slice(0,1))+" · ":""}${esc(first)}</span>
     ${FN(e.sources.slice(0,6).map(x=>({url:x.url,name:x.name+(x.via.startsWith("X")?" (X)":""),title:e.title_en||e.title})))}</div>`}).join("")}</div>`;
-  const k=document.getElementById("kpis");k.parentNode.insertBefore(s,k);capped(s.querySelector(".brow"),5);
+  const k=document.getElementById("kpis");k.parentNode.insertBefore(s,k);
   s.querySelectorAll(".bchips .chip").forEach(b=>b.onclick=()=>{s.querySelectorAll(".bchips .chip").forEach(x=>x.classList.toggle("on",x===b));s.querySelectorAll(".bcard").forEach(c=>c.style.display=!b.dataset.s||c.dataset.s===b.dataset.s?"":"none")});
   s.querySelectorAll(".bcard").forEach(c=>c.onclick=e=>{if(e.target.closest("a"))return;const r=c.dataset.r.split(",").filter(Boolean);if(r.length){zoomTo(r);sel.region=r[0];render();document.querySelector(".maptile").scrollIntoView({behavior:"smooth",block:"start"})}});
 }
@@ -52,7 +52,7 @@ function zoomTo(ids){
   d3.select(g).selectAll(".pt").attr("transform",function(){return `${this.dataset.t} scale(${1/k})`});
   ps.forEach(p=>{d3.select(p).attr("stroke","#fff").raise();setTimeout(()=>d3.select(p).attr("stroke","none"),2500)});
 }
-function waitMap(n=0){if(mapG()){badges();hook()}else if(n<60)setTimeout(()=>waitMap(n+1),250)}
+function waitMap(n=0){if(mapG()){hook()}else if(n<60)setTimeout(()=>waitMap(n+1),250)}
 function badges(){
   if(!X)return;const g=mapG(),cut=Date.now()-864e5,c={};
   X.posts.forEach(p=>{if(new Date(p.created_at)>=cut)p.region_ids.forEach(r=>c[r]=(c[r]||0)+1)});
@@ -66,11 +66,13 @@ function badges(){
 }
 /* ---------- selection hooks (read-only listeners on app.js controls) ---------- */
 function hook(){
-  document.getElementById("mapsvg").addEventListener("click",e=>{const p=e.target.closest("path.adm");if(p&&p.__data__){sel.region=p.__data__.properties.id;render()}});
+  document.getElementById("mapsvg").addEventListener("click",e=>{const p=e.target.closest("path.adm");if(p&&p.__data__){sel.region=p.__data__.properties.id;render();setTimeout(()=>drawerPosts(sel.region),0)}});
   document.getElementById("grouplegend").addEventListener("click",e=>{const b=e.target.closest(".chip");if(b){sel.group=b.dataset.g||null;render()}});
   document.getElementById("cards").addEventListener("click",e=>{const b=e.target.closest("[data-map]");const c=e.target.closest(".gc");
     if(b){sel.group=b.dataset.map;render();return}if(c&&NET[+c.dataset.k]){sel.group=NET[+c.dataset.k].id;render()}});
 }
+function drawerPosts(id){const db=document.getElementById("dbody");if(!db||!X)return;const ps=X.posts.filter(p=>p.region_ids.includes(id)).slice(0,8);
+  const d=document.createElement("div");d.className="xdr";d.innerHTML=`<h3>Latest from X (${ps.length?ps.length+" recent":"none in 7 days"})</h3>`+ps.map(p=>`<div class="rg"><a href="${esc(p.url)}" target="_blank" rel="noopener">@${esc(p.handle)}</a> <span class="muted">${esc(ago(p.created_at||p.date||X.as_of))}</span><div>${esc(p.text_en||p.text||"")}</div></div>`).join("");db.appendChild(d)}
 /* ---------- Latest from X ---------- */
 function panel(){
   const t=document.createElement("section");t.className="tile xpanel";t.id="xpanel";

@@ -1,0 +1,957 @@
+{
+ "as_of": "2026-10-25",
+ "note": "Founding years marked 'circa' are approximate in sources. Events are past, sourced facts only; no projections.",
+ "lanes": [
+  {
+   "id": "sinaloa",
+   "region": "Mexico",
+   "founded": 1989,
+   "circa": false,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_SINALOA"
+   ]
+  },
+  {
+   "id": "chapitos",
+   "region": "Mexico",
+   "founded": 2024,
+   "circa": false,
+   "parent": "sinaloa",
+   "ended": null,
+   "cites": [
+    "ACLED_SIN",
+    "ELPAIS_SIN"
+   ]
+  },
+  {
+   "id": "mayiza",
+   "region": "Mexico",
+   "founded": 2024,
+   "circa": false,
+   "parent": "sinaloa",
+   "ended": null,
+   "cites": [
+    "ACLED_SIN",
+    "JORNADA_SIN"
+   ]
+  },
+  {
+   "id": "cjng",
+   "region": "Mexico",
+   "founded": 2010,
+   "circa": true,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_CJNG"
+   ]
+  },
+  {
+   "id": "gulf",
+   "region": "Mexico",
+   "founded": 1984,
+   "circa": true,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_GULF"
+   ]
+  },
+  {
+   "id": "cdn",
+   "region": "Mexico",
+   "founded": 2015,
+   "circa": true,
+   "parent": "gulf",
+   "ended": null,
+   "cites": [
+    "IC_ZETAS"
+   ]
+  },
+  {
+   "id": "lnfm",
+   "region": "Mexico",
+   "founded": 2006,
+   "circa": true,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_FAMILIA",
+    "FTO"
+   ]
+  },
+  {
+   "id": "unidos",
+   "region": "Mexico",
+   "founded": 2020,
+   "circa": true,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "FTO",
+    "IC_CJNG"
+   ]
+  },
+  {
+   "id": "viagras",
+   "region": "Mexico",
+   "founded": 2013,
+   "circa": true,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "STATE_JUAREZ"
+   ]
+  },
+  {
+   "id": "juarez",
+   "region": "Mexico",
+   "founded": 1993,
+   "circa": true,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_JUAREZ"
+   ]
+  },
+  {
+   "id": "tda",
+   "region": "Venezuela",
+   "founded": 2014,
+   "circa": true,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_TDA"
+   ]
+  },
+  {
+   "id": "soles",
+   "region": "Venezuela",
+   "founded": 1993,
+   "circa": true,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_SOLES"
+   ]
+  },
+  {
+   "id": "clan",
+   "region": "Colombia",
+   "founded": 2006,
+   "circa": true,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_URABENOS"
+   ]
+  },
+  {
+   "id": "eln",
+   "region": "Colombia",
+   "founded": 1964,
+   "circa": false,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_ELN"
+   ]
+  },
+  {
+   "id": "exfarc",
+   "region": "Colombia",
+   "founded": 2016,
+   "circa": false,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_EXFARC"
+   ]
+  },
+  {
+   "id": "segmar",
+   "region": "Colombia",
+   "founded": 2019,
+   "circa": false,
+   "parent": "exfarc",
+   "ended": null,
+   "cites": [
+    "IC_SEGMAR"
+   ]
+  },
+  {
+   "id": "choneros",
+   "region": "Ecuador",
+   "founded": 1998,
+   "circa": true,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_CHONEROS"
+   ]
+  },
+  {
+   "id": "lobos",
+   "region": "Ecuador",
+   "founded": 2020,
+   "circa": false,
+   "parent": "choneros",
+   "ended": null,
+   "cites": [
+    "IC_LOBOS"
+   ]
+  },
+  {
+   "id": "chone_killers",
+   "region": "Ecuador",
+   "founded": 2020,
+   "circa": true,
+   "parent": "choneros",
+   "ended": null,
+   "cites": [
+    "IC_ECUADOR"
+   ]
+  },
+  {
+   "id": "los_tiguerones",
+   "region": "Ecuador",
+   "founded": 2020,
+   "circa": true,
+   "parent": "choneros",
+   "ended": null,
+   "cites": [
+    "IC_ECUADOR"
+   ]
+  },
+  {
+   "id": "pcc",
+   "region": "Brazil",
+   "founded": 1993,
+   "circa": false,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_PCC"
+   ]
+  },
+  {
+   "id": "cv",
+   "region": "Brazil",
+   "founded": 1979,
+   "circa": false,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_CV"
+   ]
+  },
+  {
+   "id": "ms13",
+   "region": "Central America",
+   "founded": 1980,
+   "circa": true,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_MS13"
+   ]
+  },
+  {
+   "id": "b18",
+   "region": "Central America",
+   "founded": 1980,
+   "circa": true,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_B18"
+   ]
+  },
+  {
+   "id": "viv_ansanm",
+   "region": "Haiti",
+   "founded": 2023,
+   "circa": false,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_HAITI"
+   ]
+  },
+  {
+   "id": "gran_grif",
+   "region": "Haiti",
+   "founded": 2018,
+   "circa": true,
+   "parent": null,
+   "ended": null,
+   "cites": [
+    "IC_HAITI"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "group": "sinaloa",
+   "year": 1989,
+   "type": "split",
+   "text": "Arrest of Miguel Ángel Félix Gallardo breaks up the Guadalajara cartel; Sinaloa, Tijuana (Arellano Félix) and Juárez plazas emerge.",
+   "cites": [
+    "IC_SINALOA"
+   ]
+  },
+  {
+   "group": "sinaloa",
+   "year": 1993,
+   "type": "captured",
+   "text": "Joaquín 'El Chapo' Guzmán arrested in Guatemala.",
+   "cites": [
+    "IC_SINALOA"
+   ]
+  },
+  {
+   "group": "sinaloa",
+   "year": 2001,
+   "type": "expand",
+   "text": "El Chapo escapes Puente Grande; Sinaloa federation expands to the border corridors.",
+   "cites": [
+    "IC_SINALOA"
+   ]
+  },
+  {
+   "group": "sinaloa",
+   "year": 2008,
+   "type": "split",
+   "text": "Beltrán Leyva brothers break with Sinaloa, starting a bloody war.",
+   "cites": [
+    "IC_SINALOA"
+   ]
+  },
+  {
+   "group": "sinaloa",
+   "year": 2016,
+   "type": "captured",
+   "text": "El Chapo recaptured; extradited to the US in 2017.",
+   "cites": [
+    "IC_SINALOA"
+   ]
+  },
+  {
+   "group": "sinaloa",
+   "year": 2024,
+   "type": "split",
+   "text": "El Mayo Zambada taken to the US (Jul 2024); Chapitos–Mayiza war erupts in Sept 2024.",
+   "cites": [
+    "ACLED_SIN",
+    "ELPAIS_SIN"
+   ]
+  },
+  {
+   "group": "sinaloa",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated a Foreign Terrorist Organization (20 Feb 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "sinaloa",
+   "year": 2026,
+   "type": "captured",
+   "text": "El Mayo sentenced to life in the US.",
+   "cites": [
+    "DOJ_MAYO_SENT"
+   ]
+  },
+  {
+   "group": "chapitos",
+   "year": 2023,
+   "type": "captured",
+   "text": "Ovidio Guzmán extradited to the US (Sept 2023); pleaded guilty Jul 2025.",
+   "cites": [
+    "DOJ_OVIDIO"
+   ]
+  },
+  {
+   "group": "chapitos",
+   "year": 2024,
+   "type": "split",
+   "text": "Open war with the Mayiza after El Mayo's abduction.",
+   "cites": [
+    "ACLED_SIN",
+    "ELPAIS_SIN"
+   ]
+  },
+  {
+   "group": "chapitos",
+   "year": 2025,
+   "type": "captured",
+   "text": "Joaquín Guzmán López pleads guilty in Chicago.",
+   "cites": [
+    "DOJ_JOAQUIN"
+   ]
+  },
+  {
+   "group": "mayiza",
+   "year": 2025,
+   "type": "fto",
+   "text": "Covered by the Sinaloa Cartel FTO designation.",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "cjng",
+   "year": 2010,
+   "type": "split",
+   "text": "Emerges from the Milenio cartel after the 2010 death of Sinaloa ally Nacho Coronel.",
+   "cites": [
+    "IC_CJNG"
+   ]
+  },
+  {
+   "group": "cjng",
+   "year": 2015,
+   "type": "expand",
+   "text": "Downs a military helicopter in Jalisco; becomes Mexico's fastest-growing cartel.",
+   "cites": [
+    "IC_CJNG"
+   ]
+  },
+  {
+   "group": "cjng",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (20 Feb 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "cjng",
+   "year": 2026,
+   "type": "killed",
+   "text": "Leader Nemesio 'El Mencho' Oseguera killed (22 Feb 2026).",
+   "cites": [
+    "ELPAIS_MENCHO",
+    "IC_CJNG_BOSS"
+   ]
+  },
+  {
+   "group": "gulf",
+   "year": 1984,
+   "type": "found",
+   "text": "Juan García Ábrego turns a Tamaulipas smuggling network into a cocaine cartel.",
+   "cites": [
+    "IC_GULF"
+   ]
+  },
+  {
+   "group": "gulf",
+   "year": 1996,
+   "type": "captured",
+   "text": "García Ábrego arrested and deported to the US.",
+   "cites": [
+    "IC_GULF"
+   ]
+  },
+  {
+   "group": "gulf",
+   "year": 2003,
+   "type": "captured",
+   "text": "Osiel Cárdenas arrested; his Zetas enforcers grow powerful.",
+   "cites": [
+    "IC_GULF",
+    "IC_ZETAS"
+   ]
+  },
+  {
+   "group": "gulf",
+   "year": 2010,
+   "type": "split",
+   "text": "Zetas break from the Gulf Cartel, igniting war in the northeast.",
+   "cites": [
+    "IC_ZETAS",
+    "IC_GULF"
+   ]
+  },
+  {
+   "group": "gulf",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (20 Feb 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "cdn",
+   "year": 2010,
+   "type": "split",
+   "text": "Zetas split from Gulf (2010); Cartel del Noreste emerges from the Zetas around 2015.",
+   "cites": [
+    "IC_ZETAS"
+   ]
+  },
+  {
+   "group": "cdn",
+   "year": 2013,
+   "type": "captured",
+   "text": "Zetas leader Miguel Treviño (Z-40) captured.",
+   "cites": [
+    "IC_ZETAS"
+   ]
+  },
+  {
+   "group": "cdn",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (20 Feb 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "lnfm",
+   "year": 2006,
+   "type": "found",
+   "text": "La Familia Michoacana, a former Gulf/Zetas ally, announces itself in Michoacán.",
+   "cites": [
+    "IC_FAMILIA"
+   ]
+  },
+  {
+   "group": "lnfm",
+   "year": 2010,
+   "type": "split",
+   "text": "Death of Nazario Moreno splits Familia; Knights Templar formed in 2011.",
+   "cites": [
+    "IC_FAMILIA",
+    "IC_TEMPLARIOS"
+   ]
+  },
+  {
+   "group": "lnfm",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (20 Feb 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "unidos",
+   "year": 2014,
+   "type": "alliance",
+   "text": "Knights Templar weakened by vigilante uprising and arrests; local groups later ally as Cárteles Unidos against CJNG.",
+   "cites": [
+    "IC_TEMPLARIOS",
+    "IC_CJNG"
+   ]
+  },
+  {
+   "group": "unidos",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (20 Feb 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "viagras",
+   "year": 2026,
+   "type": "fto",
+   "text": "Designated an FTO (16 Jul 2026).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "juarez",
+   "year": 1993,
+   "type": "found",
+   "text": "Amado Carrillo Fuentes takes over the Juárez plaza, 'Lord of the Skies'.",
+   "cites": [
+    "IC_JUAREZ"
+   ]
+  },
+  {
+   "group": "juarez",
+   "year": 1997,
+   "type": "killed",
+   "text": "Amado Carrillo dies during plastic surgery.",
+   "cites": [
+    "IC_JUAREZ"
+   ]
+  },
+  {
+   "group": "juarez",
+   "year": 2008,
+   "type": "expand",
+   "text": "War with Sinaloa makes Ciudad Juárez the world's most violent city; La Línea is its armed wing.",
+   "cites": [
+    "IC_JUAREZ"
+   ]
+  },
+  {
+   "group": "juarez",
+   "year": 2026,
+   "type": "fto",
+   "text": "Juárez Cartel / La Línea designated an FTO (16 Jul 2026).",
+   "cites": [
+    "STATE_JUAREZ",
+    "FTO"
+   ]
+  },
+  {
+   "group": "tda",
+   "year": 2014,
+   "type": "found",
+   "text": "Grows out of Tocorón prison in Aragua state under 'Niño Guerrero'.",
+   "cites": [
+    "IC_TDA"
+   ]
+  },
+  {
+   "group": "tda",
+   "year": 2018,
+   "type": "expand",
+   "text": "Expands across South America following the Venezuelan exodus.",
+   "cites": [
+    "IC_TDA"
+   ]
+  },
+  {
+   "group": "tda",
+   "year": 2023,
+   "type": "raid",
+   "text": "Venezuelan forces retake Tocorón; leadership escapes.",
+   "cites": [
+    "IC_TDA"
+   ]
+  },
+  {
+   "group": "tda",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (20 Feb 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "soles",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (24 Nov 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "soles",
+   "year": 2026,
+   "type": "captured",
+   "text": "Nicolás Maduro in US custody.",
+   "cites": [
+    "DOJ_MADURO",
+    "REUTERS_MADURO_TRIAL"
+   ]
+  },
+  {
+   "group": "clan",
+   "year": 2006,
+   "type": "found",
+   "text": "Formed from demobilised AUC paramilitaries in Urabá.",
+   "cites": [
+    "IC_URABENOS"
+   ]
+  },
+  {
+   "group": "clan",
+   "year": 2021,
+   "type": "captured",
+   "text": "Leader Dairo Úsuga 'Otoniel' captured; extradited 2022.",
+   "cites": [
+    "IC_URABENOS"
+   ]
+  },
+  {
+   "group": "clan",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (17 Dec 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "eln",
+   "year": 1964,
+   "type": "found",
+   "text": "Founded as a Marxist guerrilla in Santander.",
+   "cites": [
+    "IC_ELN"
+   ]
+  },
+  {
+   "group": "eln",
+   "year": 1997,
+   "type": "fto",
+   "text": "Designated an FTO (8 Oct 1997).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "exfarc",
+   "year": 2016,
+   "type": "split",
+   "text": "FARC peace deal; holdout fronts become ex-FARC dissidents.",
+   "cites": [
+    "IC_EXFARC"
+   ]
+  },
+  {
+   "group": "segmar",
+   "year": 2019,
+   "type": "split",
+   "text": "Iván Márquez rearms, launching Segunda Marquetalia.",
+   "cites": [
+    "IC_SEGMAR"
+   ]
+  },
+  {
+   "group": "segmar",
+   "year": 2021,
+   "type": "fto",
+   "text": "Designated an FTO (Dec 2021).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "choneros",
+   "year": 2020,
+   "type": "killed",
+   "text": "Leader Jorge Luis Zambrano 'Rasquiña' killed (Dec 2020), splintering the group.",
+   "cites": [
+    "IC_CHONEROS"
+   ]
+  },
+  {
+   "group": "choneros",
+   "year": 2024,
+   "type": "expand",
+   "text": "Fito escapes prison (Jan 2024); Ecuador declares internal armed conflict.",
+   "cites": [
+    "IC_ECUADOR",
+    "IC_CHONEROS"
+   ]
+  },
+  {
+   "group": "choneros",
+   "year": 2025,
+   "type": "captured",
+   "text": "Fito recaptured and extradited to the US.",
+   "cites": [
+    "DEA_FITO"
+   ]
+  },
+  {
+   "group": "choneros",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (5 Sept 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "lobos",
+   "year": 2020,
+   "type": "split",
+   "text": "Breaks from Los Choneros after Rasquiña's killing.",
+   "cites": [
+    "IC_LOBOS"
+   ]
+  },
+  {
+   "group": "lobos",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (5 Sept 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "chone_killers",
+   "year": 2026,
+   "type": "fto",
+   "text": "Designated an FTO (2 Jul 2026).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "los_tiguerones",
+   "year": 2026,
+   "type": "fto",
+   "text": "Designated an FTO (10 Sept 2026).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "pcc",
+   "year": 1993,
+   "type": "found",
+   "text": "Founded inside Taubaté prison, São Paulo.",
+   "cites": [
+    "IC_PCC"
+   ]
+  },
+  {
+   "group": "pcc",
+   "year": 2006,
+   "type": "expand",
+   "text": "Coordinated attacks paralyse São Paulo; later expands to Paraguay and Bolivia.",
+   "cites": [
+    "IC_PCC"
+   ]
+  },
+  {
+   "group": "pcc",
+   "year": 2026,
+   "type": "fto",
+   "text": "Designated an FTO (5 Jun 2026).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "cv",
+   "year": 1979,
+   "type": "found",
+   "text": "Emerges in Ilha Grande prison, Rio de Janeiro.",
+   "cites": [
+    "IC_CV"
+   ]
+  },
+  {
+   "group": "cv",
+   "year": 2016,
+   "type": "split",
+   "text": "PCC–CV truce collapses; prison massacres follow in 2017.",
+   "cites": [
+    "IC_CV",
+    "IC_PCC"
+   ]
+  },
+  {
+   "group": "cv",
+   "year": 2026,
+   "type": "fto",
+   "text": "Designated an FTO (5 Jun 2026).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "ms13",
+   "year": 1980,
+   "type": "found",
+   "text": "Formed by Salvadoran migrants in Los Angeles in the 1980s.",
+   "cites": [
+    "IC_MS13"
+   ]
+  },
+  {
+   "group": "ms13",
+   "year": 1996,
+   "type": "expand",
+   "text": "US deportations spread the gang to Central America.",
+   "cites": [
+    "IC_MS13"
+   ]
+  },
+  {
+   "group": "ms13",
+   "year": 2022,
+   "type": "captured",
+   "text": "El Salvador's state of exception jails tens of thousands.",
+   "cites": [
+    "IC_MS13"
+   ]
+  },
+  {
+   "group": "ms13",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (20 Feb 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "b18",
+   "year": 1980,
+   "type": "found",
+   "text": "Rooted in an older Los Angeles street gang; deported to Central America in the 1990s.",
+   "cites": [
+    "IC_B18"
+   ]
+  },
+  {
+   "group": "b18",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (24 Sept 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "viv_ansanm",
+   "year": 2023,
+   "type": "alliance",
+   "text": "Port-au-Prince gang coalitions G9 and G-Pèp unite as Viv Ansanm (Sept 2023).",
+   "cites": [
+    "IC_HAITI"
+   ]
+  },
+  {
+   "group": "viv_ansanm",
+   "year": 2024,
+   "type": "expand",
+   "text": "Coalition attacks force the prime minister out (Mar 2024).",
+   "cites": [
+    "IC_HAITI"
+   ]
+  },
+  {
+   "group": "viv_ansanm",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (5 May 2025).",
+   "cites": [
+    "FTO"
+   ]
+  },
+  {
+   "group": "gran_grif",
+   "year": 2025,
+   "type": "fto",
+   "text": "Designated an FTO (5 May 2025).",
+   "cites": [
+    "FTO"
+   ]
+  }
+ ]
+}
