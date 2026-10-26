@@ -4,9 +4,9 @@
 <title>China Diplomats on X | Beacon Intelligence Group</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Z61EKRP8QV');</script>
-<link rel="stylesheet" href="style.css?v=1"></head><body>
+<link rel="stylesheet" href="style.css?v=2"></head><body>
 <header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">CHINA DIPLOMATS ON X · v1</span></a>
-<nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#spread">Spread</a><a href="#themes">Themes</a><a href="#amp">Amplifiers</a><a href="#tone">Tone</a><a href="#cal">Bursts</a></nav></header>
+<nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#spread">Spread</a><a href="#themes">Themes</a><a href="#amp">Ripple</a><a href="#tone">Tone</a><a href="#cal">Bursts</a></nav></header>
 <div class="layout">
 <button id="ftoggle" aria-expanded="false" aria-controls="side">☰ Filters and legend</button>
 <aside id="side" aria-label="Filters and legend">
@@ -25,9 +25,9 @@
 <p class="intro">China's foreign ministry, its embassies, consulates and ambassadors run a large network of X accounts. This page tracks what they post, which messages appear across many accounts at once, who reposts whom, and how the tone differs from country to country.</p>
 <p class="cover" id="cover"></p>
 <div id="heads" class="heads"></div>
-<div id="chips" class="chips" role="group" aria-label="Talking point"></div>
 
-<section id="spread" class="card"><h2 class="sh2">How a talking point spreads</h2>
+<section id="spread" class="card"><h2 class="sh2" id="sp-title">How a talking point spreads</h2>
+<div id="chips" class="chips" role="group" aria-label="Choose a narrative"></div>
 <p class="sub" id="sp-sub"></p>
 <div class="ctl"><button id="play" class="btn">▶ Play</button><input type="range" id="clock" min="0" max="1000" value="1000" aria-label="Time"><span id="clocklbl" class="muted"></span></div>
 <div id="map" class="viz"></div></section>
@@ -35,22 +35,33 @@
 <section id="themes" class="card"><h2 class="sh2">Top talking points by day</h2>
 <p class="sub">Posts per day in each of the five talking points carried by the most accounts. Hover for counts.</p>
 <div id="stream" class="viz"></div></section>
+<section id="themesw" class="card"><h2 class="sh2">Top talking points by week</h2>
+<p class="sub">The same five talking points, added up by week (Monday to Sunday). Weeks only partly covered by the data are marked. Click a talking point to see it spread on the map.</p>
+<div id="streamw" class="viz"></div></section>
+<section id="themesm" class="card"><h2 class="sh2">Top talking points by month</h2>
+<p class="sub">Posts per month, ranked. Collection began on 17 October, so October is partial; this chart turns into a stream once there are three months of data.</p>
+<div id="streamm" class="viz"></div></section>
 
 <section id="who" class="card"><h2 class="sh2">Which accounts carry which talking points</h2>
 <p class="sub">The 25 accounts with the most posts in named talking points. Darker cells mean more posts.</p>
 <div id="matrix" class="viz scrollx"></div></section>
 
-<section id="amp" class="card"><h2 class="sh2">Who amplifies whom</h2>
+<section id="amp" class="card"><h2 class="sh2">How one post ripples out</h2>
+<div id="rchips" class="chips" role="group" aria-label="Choose a post"></div>
 <p class="sub" id="amp-sub"></p>
-<div id="net" class="viz"></div></section>
+<div class="ctl"><button id="rplay" class="btn">▶ Play</button><input type="range" id="rclock" min="0" max="1000" value="0" aria-label="Time since the original post"><span id="rlbl" class="muted"></span></div>
+<div id="net" class="viz"></div><div id="netlist"></div></section>
 
 <section id="tone" class="card"><h2 class="sh2">Tone by country</h2>
 <p class="sub">Balance of confrontational words (such as "hegemony", "smear", "interference", "provocation") against cooperative words (such as "cooperation", "friendship", "win-win") in posts by the missions in each country. Countries with fewer than two matching words in a period are left blank.</p>
 <div class="ctl"><button id="tplay" class="btn">▶ Play</button><div class="seg" id="tsteps" role="group" aria-label="Period"></div></div>
 <div id="tmap" class="viz"></div></section>
 
-<section id="cal" class="card"><h2 class="sh2">Synchronized bursts</h2>
-<p class="sub">Each cell is one hour (UTC). Colour shows posts that were part of a burst: at least four accounts posting the same message within six hours. Click a day to read the posts.</p>
+<section id="cal" class="card"><h2 class="sh2">When many accounts posted the same message</h2>
+<p class="sub">A burst is four or more accounts posting the same message within six hours. Bursts are grouped by what they said; click one to read the posts.</p>
+<div id="bgroups" class="bgroups"></div>
+<h3 class="sh3">Burst calendar</h3>
+<p class="sub">Each cell is one hour (UTC), coloured by the talking point of the burst in that hour (outlined cells are other topics, named in the tooltip). Click a coloured cell to read the posts.</p>
 <div id="calv" class="viz scrollx"></div></section>
 
 <details class="note"><summary>Sources and method</summary>
@@ -58,5 +69,5 @@
 </main></div>
 <div id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="ph" hidden><div class="phead"><h2 id="ph"></h2><button id="pclose" aria-label="Close panel">✕</button></div><div id="pbody"></div></div>
 <div id="tip" class="tip" role="tooltip" hidden></div>
-<script src="vendor/d3.min.js"></script><script src="vendor/topojson-client.min.js"></script><script src="app.js?v=1"></script>
+<script src="vendor/d3.min.js"></script><script src="vendor/topojson-client.min.js"></script><script src="app.js?v=2"></script>
 </body></html>

@@ -97,6 +97,62 @@ def ingest(args):
     print('new posts',n,'total',len(seen),'pending',len(pending()),'calls logged',len(s['calls']))
 def status(args):
     s=load_state(); print(json.dumps({k:v for k,v in s.items() if k!='calls'}),'calls',len(s['calls']),'pending',pending())
+
+# ---- backfill mode: walk backwards day by day (UTC days), packed batches <=1000 chars ----
+# python3 collector.py backfill next            -> prints JSON args for the next call (or DONE)
+# python3 collector.py backfill ingest <file>   -> ingests that result (dedupe by id) and advances cursor
+# python3 collector.py backfill status
+# Cursor in STATE/backfill.json: {"day_end":ISO, "batch":i, "token":..., "floor":ISO, "calls":n}
+BF_FLOOR='2026-09-01T00:00:00Z'
+def packed_batches(limit=1000):
+    r=sorted(csv.DictReader(open(ACC)),key=lambda x:x['handle'].lower()); out=[]; cur=[]
+    for x in r:
+        h='from:'+x['handle']
+        if cur and len('('+' OR '.join(cur+[h])+')')>limit: out.append(cur); cur=[]
+        cur.append(h)
+    if cur: out.append(cur)
+    return ['('+' OR '.join(c)+')' for c in out]
+def bf_load():
+    try: return json.load(open(P('backfill.json')))
+    except Exception: return {"day_end":"2026-10-18T00:00:00Z","batch":0,"token":None,"floor":BF_FLOOR,"calls":0,"posts_added":0,"covered_from":"2026-10-18T00:00:00Z"}
+def bf_args(b):
+    de=dt.datetime.fromisoformat(b['day_end'].replace('Z','')); ds=max(de-dt.timedelta(days=b.get('span',BF_DAYS)),dt.datetime.fromisoformat(b['floor'].replace('Z','')))
+    a={"max_results":BF_MAX,"sort_order":"recency","post.fields":FIELDS["post.fields"],"expansions":FIELDS["expansions"],"user.fields":FIELDS["user.fields"],
+       "query":packed_batches()[b['batch']],"start_time":iso(ds),"end_time":b['day_end']}
+    if b.get('token'): a['pagination_token']=b['token']
+    return a
+BF_MAX=int(os.environ.get('CD_BF_MAX','25'))
+BF_DAYS=int(os.environ.get('CD_BF_DAYS','2'))
+def backfill(args):
+    b=bf_load(); cmd=args[0]
+    if cmd=='status': print(json.dumps(b),'batches',len(packed_batches())); return
+    if b['day_end']<=b['floor']: print('DONE'); return
+    if cmd=='next': print(json.dumps(bf_args(b),ensure_ascii=False)); return
+    if cmd=='ingest':
+        j,raw=parse_result(args[1])
+        if 'data' not in j and 'meta' not in j: print('ERROR',raw[:400]); sys.exit(1)
+        seen=set(json.loads(l)['id'] for l in open(P('posts.jsonl'))) if os.path.exists(P('posts.jsonl')) else set()
+        uf=P('users.json'); rf=P('refs.json')
+        users=json.load(open(uf)) if os.path.exists(uf) else {}; refs=json.load(open(rf)) if os.path.exists(rf) else {}
+        inc=j.get('includes',{})
+        for u in inc.get('users',[]): users[u['id']]={'username':u.get('username'),'name':u.get('name')}
+        for t in inc.get('tweets',[]): refs[t['id']]={k:t.get(k) for k in ('author_id','created_at','text','lang')}
+        s=load_state(); n=0
+        with open(P('posts.jsonl'),'a') as fo:
+            for p in j.get('data',[]):
+                if p['id'] in seen: continue
+                seen.add(p['id']); fo.write(json.dumps(p,ensure_ascii=False)+'\n'); n+=1
+                if not s.get('oldest_time') or p['created_at']<s['oldest_time']: s['oldest_time']=p['created_at']
+        json.dump(users,open(uf,'w')); json.dump(refs,open(rf,'w')); save_state(s)
+        b['calls']+=1; b['posts_added']+=n
+        nt=j.get('meta',{}).get('next_token')
+        if nt: b['token']=nt
+        else:
+            b['token']=None; b['batch']+=1
+            if b['batch']>=len(packed_batches()):
+                b['batch']=0; b['covered_from']=bf_args(b)['start_time']; b['day_end']=b['covered_from']; b['span']=BF_DAYS
+        json.dump(b,open(P('backfill.json'),'w'),indent=1)
+        print('added',n,'| cursor',b['day_end'],'batch',b['batch'],'tok',bool(b['token']),'| covered_from',b['covered_from'],'calls',b['calls'],'added_total',b['posts_added'])
 if __name__=='__main__':
     os.makedirs(STATE,exist_ok=True)
-    {'plan':plan,'calls':calls,'ingest':ingest,'status':status}[sys.argv[1]](sys.argv[2:])
+    {'plan':plan,'calls':calls,'ingest':ingest,'status':status,'backfill':backfill}[sys.argv[1]](sys.argv[2:])
