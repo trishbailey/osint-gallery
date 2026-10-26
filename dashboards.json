@@ -55,13 +55,14 @@
     },
     {
       "slug": "water-security",
-      "repo": "",
-      "private": true,
+      "repo": "trishbailey/osint-gallery",
+      "private": false,
       "build": "",
-      "publish": "public",
+      "publish": "",
       "oldUrl": "",
-      "status": "reserved",
-      "cardId": "water-security"
+      "status": "in-repo",
+      "cardId": "water-security",
+      "note": "Lives directly in this repo under /water-security/ (_src/). Live page, not touched by the sync."
     },
     {
       "slug": "belt-and-road",
