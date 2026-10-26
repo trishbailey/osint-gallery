@@ -160,9 +160,9 @@ function netTile(net,terr){
    .force("col",d3.forceCollide(d=>Math.max(34,d.lw/2+6)).iterations(4)).stop();
   for(let i=0;i<500;i++)sim.tick();
   nodes.forEach(d=>{d.x=Math.max(d.lw/2+8,Math.min(W-d.lw/2-8,d.x));d.y=Math.max(60,Math.min(H-24,d.y))});
-  const ST={alliance:["#3ddc84",3,null],rivalry:["#ff4d6d",3,"8 5"],service:["#a7f3c4",2.5,null],"alleged link":["#a7f3c4",2.5,"2 4"],faction:["#a7f3c4",2.5,null]};const KL={service:"business / service tie (lighter alliance line)",faction:"faction of the same group (lighter alliance line)","alleged link":"alleged link, unproven (lighter dotted line)"};
+  const ST={alliance:["#3ddc84",3,null],rivalry:["#ff4d6d",3,"8 5"],service:["#ffee00",2.5,null],"alleged link":["#ffee00",2.5,"2 4"],faction:["#ffee00",2.5,null]};const KL={service:"business / service tie (yellow line)",faction:"faction of the same group (yellow line)","alleged link":"alleged link, unproven (yellow dotted line)"};
   const sw=(k)=>`<svg width="30" height="10"><line x1="0" y1="5" x2="30" y2="5" stroke="${ST[k][0]}" stroke-width="${ST[k][1]}" ${ST[k][2]?`stroke-dasharray="${ST[k][2]}"`:""}/></svg>`;
-  $("netlegend").style.cssText="display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:13px";$("netlegend").innerHTML=`<span>${sw("alliance")} <b style="color:#3ddc84">alliance</b></span> <span>${sw("rivalry")} <b style="color:#ff4d6d">rivalry / war</b></span> <span class="muted">lighter green = faction, business or alleged tie (hover a line for details)</span>`;
+  $("netlegend").style.cssText="display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:13px";$("netlegend").innerHTML=`<span>${sw("alliance")} <b style="color:#3ddc84">alliance</b></span> <span>${sw("rivalry")} <b style="color:#ff4d6d">rivalry / war</b></span> <span class="muted">yellow = faction, business or alleged tie (hover a line for details)</span>`;
   // region cluster halos
   const rg=d3.groups(nodes,d=>d.reg);const hg=svg.append("g");
   rg.forEach(([r,ns])=>{const x0=d3.min(ns,d=>d.x-d.lw/2)-10,x1=d3.max(ns,d=>d.x+d.lw/2)+10,y0=d3.min(ns,d=>d.y)-50,y1=d3.max(ns,d=>d.y)+30;
