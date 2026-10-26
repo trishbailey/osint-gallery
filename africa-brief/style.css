@@ -1,5 +1,5 @@
 /* Africa Brief: dark look matched to the Beacon cartel dashboard (cartel/style.css tokens). All text >=13px, WCAG AA on dark panels. */
-:root{--bg:#0b1526;--panel:#12203a;--panel2:#0f1b31;--line:#24365a;--text:#e6e9ef;--muted:#b9cdf0;--gold:#c8a24a;--red:#c0504d;--link:#9cc1f0}
+:root{--bg:#0b1526;--panel:#12203a;--panel2:#0f1b31;--line:#24365a;--text:#e6e9ef;--muted:#9aa6b8;--gold:#c8a24a;--red:#c0504d;--link:#9cc1f0}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 "Helvetica Neue",Arial,sans-serif}
 a{color:var(--link)}a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
@@ -125,3 +125,11 @@ details summary{cursor:pointer;color:#82B1FF;font-weight:700;font-size:13px}
 .ocard .cnt{font-size:13px;color:var(--muted);font-weight:400}
 .otag{display:inline-block;margin:4px 6px 0 0;padding:3px 8px;border:1px solid #4f7fd1;border-radius:12px;font-size:13px}.otag.unv{border-style:dashed}.otag i{font-style:normal}
 .okey{display:flex;gap:18px;flex-wrap:wrap;font-size:13px}.okey i{font-style:normal}
+.steps{list-style:none;display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;padding:0;margin:10px 0}
+.step{background:var(--panel2);border:1px solid var(--line);border-top:4px solid #FF80FF;border-radius:6px;padding:8px 10px;flex:1 1 150px;position:relative}
+.step h4{margin:0 0 4px;font-size:15px}.step p{margin:0;font-size:14px}
+.sn{display:inline-block;background:#FF80FF;color:#0b1526;font-weight:700;border-radius:50%;width:22px;height:22px;text-align:center;line-height:22px;font-size:13px;margin-bottom:4px}
+.arr{align-self:center;color:#FF80FF;font-size:22px;font-weight:700}
+.step.par{border-top-color:#80D8FF;margin-bottom:12px}
+.cog{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}.cogc{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:8px 10px}.cogc h4{margin:0 0 4px}.cogc p{margin:0;font-size:14px}
+.tline{border-left:3px solid var(--red);padding-left:22px;margin:8px 0 16px}.tline li{margin:6px 0}
