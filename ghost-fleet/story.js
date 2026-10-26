@@ -26,16 +26,12 @@ const B3=["CHN","IND","TUR"],B3C={CHN:"#9b7be8",IND:"#e8913a",TUR:"#4fa3e0"},B3F
 function big3(){L.geoJSON(GF.LAND,{filter:f=>Object.values(B3F).includes(f.properties.n),style:f=>{const c=B3.find(k=>B3F[k]===f.properties.n);return{color:"#0b1526",weight:1,fillColor:B3C[c],fillOpacity:.7}},onEachFeature:(f,l)=>l.bindTooltip(esc(f.properties.n),{sticky:true})}).addTo(lay);
  const fs=S.flows.filter(f=>B3.includes(f.to)),rs=(S.routes||[]).slice().sort((x,y)=>y.n-x.n),mx=Math.max(...rs.map(r=>r.n));
  // sea-lane routes precomputed in the build (searoute); widest drawn first so thinner lanes stay visible on top
- rs.forEach(r=>L.polyline(r.line,{renderer:cv,color:"#0b1526",weight:2+5*r.n/mx+3,opacity:.85,interactive:false,lineJoin:"round"}).addTo(lay));
- rs.forEach(r=>L.polyline(r.line,{renderer:cv,color:RED,weight:2+5*r.n/mx,opacity:.35,lineJoin:"round",smoothFactor:1.5}).bindTooltip(`<b>${esc(r.from)} → ${esc(cn(r.to))}</b><br>${r.n} trips in 12 months (aggregate route, not a ship track)`,{sticky:true}).addTo(lay));
+ rs.forEach(r=>L.polyline(r.line,{renderer:cv,color:"#0b1526",weight:1+.5*r.n/mx+2,opacity:.35,interactive:false,lineJoin:"round"}).addTo(lay));
+ rs.forEach(r=>L.polyline(r.line,{renderer:cv,color:RED,weight:1+.5*r.n/mx,opacity:.7,lineJoin:"round",smoothFactor:1.5}).bindTooltip(`<b>${esc(r.from)} → ${esc(cn(r.to))}</b><br>${r.n} trips in 12 months (aggregate route, not a ship track)`,{sticky:true}).addTo(lay));
  ARW.set(rs,mx);
  const ph=GF.phone(),seen={};
- // port labels: fixed sea anchors + thin leader lines (geographic, so they hold at any zoom)
- const PA={Kozmino:[39.6,134.6],Primorsk:[62.3,21],"Ust-Luga":[57.8,26.5],Novorossiysk:[42.2,39.8],Taman:[47.6,38.5],Murmansk:[73,40]};if(ph)Object.assign(PA,{Kozmino:[39.5,126],Primorsk:[64.5,31],Novorossiysk:[42.2,39.8]});const PH=["Kozmino","Primorsk","Novorossiysk","Murmansk"];
- fs.forEach(f=>{if(seen[f.from])return;seen[f.from]=1;const dot=L.circleMarker(f.a,{radius:5,color:"#0b1526",weight:2,fillColor:"#f5f7fa",fillOpacity:1}).bindTooltip(esc(f.from)+" (loading port)").addTo(lay);
-  const an=PA[f.from];if(!an||(ph&&!PH.includes(f.from)))return;
-  L.polyline([f.a,an],{color:"#f5f7fa",weight:1,opacity:.8,interactive:false}).addTo(lay);
-  L.marker(an,{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="pl">${esc(f.from)}</div>`}),interactive:false}).addTo(lay)});
+ // ports: small dots only; the name shows on hover (desktop) or tap (phone), like the country names
+ const PR=GF.PR||(GF.PR=L.svg({pane:"markerPane"}));fs.forEach(f=>{if(seen[f.from])return;seen[f.from]=1;L.circleMarker(f.a,{renderer:PR,radius:4,color:"#0b1526",weight:1.5,fillColor:"#f5f7fa",fillOpacity:1,interactive:false}).addTo(lay);L.circleMarker(f.a,{renderer:PR,radius:12,stroke:false,fillColor:"#fff",fillOpacity:.01}).bindTooltip(esc(f.from)+" (Russian loading port)",{direction:"top"}).on("click",e=>{L.DomEvent.stop(e);if(GF.TT)map.closeTooltip(GF.TT);GF.TT=L.tooltip({direction:"top",offset:[0,-8]}).setLatLng(f.a).setContent(esc(f.from)+" (Russian loading port)");map.openTooltip(GF.TT);map.once("click movestart",()=>GF.TT&&map.closeTooltip(GF.TT))}).addTo(lay)});
  // country names: small and light; counts in sea callouts joined by leader lines
  const CNP={CHN:[37.5,93],IND:[23.5,77],TUR:[38.6,32.2]},BA=GF.phone()?{CHN:[14,146],IND:[-10,77],TUR:[40,-39]}:{CHN:[22,138],IND:[0,79],TUR:[40,-29]};GF.BA=BA;
  B3.forEach(c=>{
@@ -81,11 +77,11 @@ let cur=0,mode="story";
 const RED="#e8423f",ARW=(()=>{const c=document.createElement("canvas");c.className="arw";map.createPane("arwp").style.zIndex=450;map.getPane("arwp").appendChild(c);const nt=document.createElement("div");nt.className="arwnote";nt.textContent="Red arrows: tanker trips from Russian oil ports to each buyer, combined along common sea lanes";map.getContainer().appendChild(nt);const x=c.getContext("2d");
  const rm=matchMedia("(prefers-reduced-motion: reduce)");let R=null,M=1,P=[],vis=true,raf=0,t0=performance.now();
  function proj(){const s=map.getSize(),d=devicePixelRatio||1;c.width=s.x*d;c.height=s.y*d;c.style.width=s.x+"px";c.style.height=s.y+"px";x.setTransform(d,0,0,d,0,0);L.DomUtil.setPosition(c,map.containerPointToLayerPoint([0,0]));
-  P=(R||[]).map(r=>{const p=r.line.map(q=>map.latLngToContainerPoint(q)),L=[0];for(let i=1;i<p.length;i++)L.push(L[i-1]+p[i].distanceTo(p[i-1]));const k=r.n/M;return{p,L,T:L[L.length-1],gap:Math.max(16,60-44*k),sz:2.5+3*k}})}
+  P=(R||[]).map(r=>{const p=r.line.map(q=>map.latLngToContainerPoint(q)),L=[0];for(let i=1;i<p.length;i++)L.push(L[i-1]+p[i].distanceTo(p[i-1]));const k=r.n/M;return{p,L,T:L[L.length-1],gap:250-100*k,sz:2.2+1*k}})}
  function at(o,d){let i=1;while(i<o.L.length-1&&o.L[i]<d)i++;const a=o.p[i-1],b=o.p[i],f=(d-o.L[i-1])/((o.L[i]-o.L[i-1])||1);return[a.x+(b.x-a.x)*f,a.y+(b.y-a.y)*f,Math.atan2(b.y-a.y,b.x-a.x)]}
  function chev(px,py,an,s,head){x.save();x.translate(px,py);x.rotate(an);x.beginPath();if(head){x.moveTo(s*1.6,0);x.lineTo(-s,s*1.2);x.lineTo(-s,-s*1.2);x.closePath();x.fill()}else{x.moveTo(-s,-s);x.lineTo(s*.6,0);x.lineTo(-s,s);x.stroke()}x.restore()}
- function draw(now){x.clearRect(0,0,c.width,c.height);if(!R)return;const off=rm.matches?0:((now-t0)/1000*28);x.strokeStyle=x.fillStyle=RED;x.lineCap=x.lineJoin="round";
-  P.forEach(o=>{x.lineWidth=Math.max(1.6,o.sz*.45);for(let d=(off%o.gap);d<o.T-o.sz*2;d+=o.gap){const[a,b,an]=at(o,d);chev(a,b,an,o.sz,false)}const[a,b,an]=at(o,o.T-.01);chev(a,b,an,o.sz+.8,true)})}
+ function draw(now){x.clearRect(0,0,c.width,c.height);if(!R)return;const off=rm.matches?0:((now-t0)/1000*16);x.strokeStyle=x.fillStyle=RED;x.lineCap=x.lineJoin="round";
+  P.forEach(o=>{x.lineWidth=1.3;for(let d=(off%o.gap);d<o.T-o.sz*2;d+=o.gap){const[a,b,an]=at(o,d);chev(a,b,an,o.sz,false)}const[a,b,an]=at(o,o.T-.01);chev(a,b,an,o.sz,true)})}
  function loop(now){raf=0;if(!R)return;draw(now);if(vis&&!rm.matches&&!document.hidden)raf=requestAnimationFrame(loop)}
  function kick(){if(!raf&&R)raf=requestAnimationFrame(loop)}
  map.on("zoomstart movestart",()=>{c.style.opacity=0});map.on("zoomend moveend resize",()=>{c.style.opacity=1;proj();kick();draw(performance.now())});
