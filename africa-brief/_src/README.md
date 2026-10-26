@@ -14,3 +14,7 @@ Conflict shading (`../data/conflict_hex.geojson`) is derived from UCDP GED v26.1
 - `pipeline/storylines.py` defines the standing storylines per region (context header fields, `kw` match regex, optional `req`/`not` guards, map places, sources). `news/cluster.py` runs after `translate.py`, groups same-event items and hangs them on a storyline only on a specific keyword match, otherwise under "Other developments". Output: `data/stories.json`.
 - `data/ucdp_monthly.json`: UCDP GED best-estimate deaths per region per month (24 months).
 - `validate_brief.py` also rejects semicolon-joined text, "actions vs statements" text, unknown places, groups or cites, and storylines with missing context or watch-for lines. `check_labels.py [port]` checks every visible map label is at least 13px and 4.5:1 contrast.
+
+## v1.3 (flags, gold routes, graphics instead of tables)
+- `pipeline/apply_v13.py` adds gold routes (`goldroutes`: Africa to UAE, UAE to Switzerland, UAE to crypto, and the A7A5 rail marked "reported"), their sources and the gold paragraphs. Run after apply_v12.
+- Belt and Road markers are an inline SVG Chinese flag symbol (`#cnflag` in index.html). Large tables were replaced with a backer dot matrix, a world-share bar chart, Russia cards, BRI cards and bars, and owner-grouped media tags. The full data is in the Google Sheet.
