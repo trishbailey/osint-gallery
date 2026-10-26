@@ -10,16 +10,24 @@ bad=0
 with sync_playwright() as p:
     b=p.chromium.launch(args=["--no-sandbox"]);pg=b.new_page(viewport={"width":1440,"height":1000})
     errs=[];pg.on("pageerror",lambda e:errs.append(str(e)))
-    for hsh in ["#region=africa","#region=pacific","#region=europe","#region=all"]:
+    for hsh in ["#region=africa","#region=pacific","#region=europe","#region=central-america-caribbean","#region=all"]:
         pg.goto(base+hsh);pg.wait_for_function("window._ready");pg.wait_for_timeout(1200)
+        pg.evaluate("()=>document.querySelectorAll('#legend button[aria-pressed=false]').forEach(b=>b.click())");pg.wait_for_timeout(300)
         r=pg.evaluate(JS);fills=sorted(set(pg.eval_on_selector_all("#map .mk","e=>e.map(x=>getComputedStyle(x).fill)")))
+        lf=sorted(set(pg.eval_on_selector_all("#map .land","e=>e.map(x=>getComputedStyle(x).fill)")))
         hx=['#%02x%02x%02x'%tuple(int(c) for c in f[4:-1].split(',')) for f in fills]
+        lh=['#%02x%02x%02x'%tuple(int(c) for c in f[4:-1].split(',')) for f in lf];ld=min(de(a,c) for a,c in itertools.combinations(lh,2)) if len(lh)>1 else 99
+        hx=hx+lh
         md=min((de(a,c),a,c) for a,c in itertools.combinations(hx,2)) if len(hx)>1 else None
         small=pg.evaluate("()=>[...document.querySelectorAll('button')].filter(b=>b.offsetParent&&b.getBoundingClientRect().height<44).map(b=>b.textContent.slice(0,30))")
         title=pg.inner_text("#title");agg=pg.evaluate("()=>[...document.querySelectorAll('#map .mk')].some(m=>m.__data__.id.startsWith('bri-loans'))")
-        print(hsh,"|",title,"| labels",r,"| marker fills",len(hx),"min dE",md,"| <44px",small,"| agg on map",agg)
+        print(hsh,"|",title,"| labels",r,"| marker fills",len(hx),"min dE",md,"| <44px",small,"| agg on map",agg,"| area fills",lh)
         if r["bad"] or (md and md[0]<20) or small or agg or (r["n"] and r["minPx"]<12.95): bad=1
         if pre: pg.screenshot(path=f"{pre}-{hsh.split('=')[1]}.png")
+    pg.goto(base+"#region=central-america-caribbean");pg.wait_for_function("window._ready");pg.wait_for_timeout(1200)
+    n0=pg.eval_on_selector_all("#map .lines path","e=>e.length");bb=pg.locator("#map .mk").last.bounding_box();pg.mouse.move(bb["x"]+bb["width"]/2,bb["y"]+bb["height"]/2);pg.wait_for_timeout(200);n1=pg.eval_on_selector_all("#map .lines path","e=>e.length");tipv=pg.is_visible(".tip")
+    print("lines before hover",n0,"after",n1,"tooltip",tipv)
+    if n0 or not n1 or not tipv: bad=1
     pg.goto(base+"#p=bri-luganville-wharf");pg.wait_for_function("window._ready");pg.wait_for_timeout(1200)
     op=pg.evaluate("()=>document.getElementById('panel').classList.contains('open')");t=pg.inner_text("#ptitle")
     pg.click("#pbody sup a");pg.wait_for_timeout(300);srcopen=pg.evaluate("()=>document.getElementById('srcs').open")
@@ -28,5 +36,8 @@ with sync_playwright() as p:
     gt=pg.evaluate("()=>[...document.scripts].map(s=>s.src||s.textContent).join(' ').match(/G-[A-Z0-9]+/g)")
     print("panel open",op,t,"| sources expand",srcopen,"| esc closes",cl,"| GA",sorted(set(gt)),"| errors",errs)
     if not(op and srcopen and cl) or errs: bad=1
+    if pre:
+        m=b.new_page(viewport={"width":390,"height":844},device_scale_factor=2,is_mobile=True);m.goto(base+"#region=central-america-caribbean");m.wait_for_function("window._ready");m.wait_for_timeout(1500);m.screenshot(path=f"{pre}-mobile.png",full_page=True)
+        pg.goto(base+"#region=central-america-caribbean");pg.wait_for_function("window._ready");pg.wait_for_timeout(1500);pg.screenshot(path=f"{pre}-desktop.png",full_page=True)
     b.close()
 print("FAIL" if bad else "PASS");sys.exit(bad)

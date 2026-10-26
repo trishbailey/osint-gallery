@@ -1,4 +1,4 @@
-/* v0.9 (v0.7 theme): dark theme matched to the Cartel dashboard (trishbailey/cartel-dashboard public/style.css variables) */
+/* v1.0 (v0.7 theme): dark theme matched to the Cartel dashboard (trishbailey/cartel-dashboard public/style.css variables) */
 :root{--bg:#0b1526;--panel:#12203a;--panel2:#0f1b31;--line:#24365a;--text:#e6e9ef;--muted:#9aa6b8;--gold:#c8a24a;--red:#c0504d;--land:#1b2c4a}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Arial,Helvetica,sans-serif}
@@ -19,9 +19,6 @@ main{padding:24px 0 48px}
 .regions button:hover{border-color:var(--gold)}
 .regions button.on{background:var(--gold);border-color:var(--gold);color:#0b1526}
 .brief{font-size:15px;background:var(--panel);border:1px solid var(--gold);border-left:4px solid var(--gold);color:var(--text);padding:10px 14px;border-radius:4px;margin:0 0 12px}.brief a{color:var(--gold);font-weight:700;text-decoration:underline}
-
-
-}
 .mapbox{position:relative}
 svg#map{background:var(--panel2);border:1px solid var(--line);width:100%;cursor:grab;display:block}
 .land{fill:var(--land);stroke:#3a5180;stroke-width:.6}
@@ -61,3 +58,28 @@ h1{font-size:34px;margin:6px 0 14px}h2{font-size:24px;margin:28px 0 10px}@media(
 sup{font-size:13px;margin-left:3px}sup a{padding:0 1px}
 .srcs{margin-top:18px;font-size:13px;color:var(--muted)}.srcs summary{cursor:pointer;min-height:44px;display:flex;align-items:center}.srcs a{color:var(--muted);text-decoration:underline}
 .small{font-size:13px;margin-top:24px}
+
+/* v1.0 layout: left sidebar with simplified, clickable legends and filters */
+.layout{display:grid;grid-template-columns:290px minmax(0,1fr);gap:24px;max-width:1400px;width:94%;margin:auto;padding:20px 0 48px}
+main{padding:0;min-width:0}
+#side{position:sticky;top:12px;align-self:start;max-height:calc(100vh - 24px);overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:12px 14px}
+.sh{font:700 13px Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin:12px 0 6px}
+#side .regions,#side .legend{display:flex;flex-direction:column;gap:4px;margin:0}
+#side .regions button{display:flex;justify-content:space-between;align-items:center;text-align:left;width:100%;font-size:14px;padding:6px 10px}
+.regions .n{font-weight:400;opacity:.85}
+#side .legend button{width:100%;font-size:14px;padding:6px 10px;border-width:1px;justify-content:flex-start;text-align:left}
+#side .legend button[aria-pressed=true]{border-color:var(--gold);background:#182a4a}
+#side .legend button[aria-pressed=false]{text-decoration:none}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block;border:2px solid}.dot.high{border-color:#6FD36A;background:#6FD36A}.dot.medium{border-color:var(--gold);background:var(--gold)}.dot.low{border-color:#ff7a77;background:#ff7a77}
+.key{list-style:none;padding:0;margin:0;font-size:14px}.key li{display:flex;align-items:center;gap:8px;margin:4px 0}
+.sw{display:inline-block;width:14px;height:14px;border:1px solid #3a5180;border-radius:2px}.sw.ln{height:4px;border:0;background:var(--gold);box-shadow:0 0 0 2px #0b1526}
+.xlink{display:block;margin-top:14px;min-height:44px;padding:10px 12px;border:1px solid var(--gold);border-left:4px solid var(--gold);border-radius:4px;color:var(--text);font-weight:700;font-size:14px;line-height:1.35}
+.intro{font-size:16px;max-width:820px;margin:0 0 14px}
+.fl{width:20px;height:15px;border:1px solid #0b1526;border-radius:2px;vertical-align:-2px;margin-right:4px;flex:none}
+.cc{display:flex;align-items:center;flex-wrap:wrap;gap:2px}
+.gh{display:flex;align-items:center;gap:8px;font:700 16px Arial,sans-serif;margin:18px 0 8px}
+.land.hosted{stroke:#5a7aa8}
+.lines path{pointer-events:none;stroke-linecap:round}
+.nw{white-space:nowrap}
+abbr{text-decoration:none}
+@media(max-width:860px){.layout{grid-template-columns:1fr}#side{position:static;max-height:none}#side .regions{flex-direction:row;flex-wrap:wrap}#side .regions button{width:auto}}

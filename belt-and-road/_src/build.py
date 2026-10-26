@@ -16,17 +16,17 @@ E={}
 for r in csv.DictReader(open(os.path.join(S,"africa.csv"))):
     E[r["id"]]=dict(id=r["id"],name=r["name"],country=r["country"],region="africa",type=r["type"],kind=r["kind"],lat=float(r["lat"]),lon=float(r["lon"]),
       value=r["value"],backer=r["backer"],china_gets=r["china_gets"],host_case=r["host_case"],confidence=r["confidence"],confidence_reason="",sources=srcs(r["sources"]),origin=r["origin"])
-for r in [x for f in ("south_se_asia.csv","south_america.csv","central_asia.csv","middle_east.csv","europe.csv","pacific.csv") for x in csv.DictReader(open(os.path.join(S,f)))]:
+for r in [x for f in ("south_se_asia.csv","south_america.csv","central_asia.csv","middle_east.csv","europe.csv","pacific.csv","central_america_caribbean.csv") for x in csv.DictReader(open(os.path.join(S,f)))]:
     if r["id"] in E: print("duplicate id skipped:",r["id"]); continue
     E[r["id"]]=dict(id=r["id"],name=r["name"],country=r["country"],region=r["region"],type=typ(r["kind"]),kind=r["kind"],lat=float(r["lat"]),lon=float(r["lon"]),
       value=r["value"],backer=r["lender_builder"],china_gets=r["china_gets"],host_case=r["host_position"],confidence=CONF.get(r["confidence"],r["confidence"]),
-      confidence_reason=r["confidence_reason"],sources=srcs(r["source_urls"]),origin={"south-america":"south_america.csv","central-asia":"central_asia.csv","middle-east":"middle_east.csv","europe":"europe.csv","pacific":"pacific.csv"}.get(r["region"],"south_se_asia.csv"))
+      confidence_reason=r["confidence_reason"],sources=srcs(r["source_urls"]),origin={"south-america":"south_america.csv","central-asia":"central_asia.csv","middle-east":"middle_east.csv","europe":"europe.csv","pacific":"pacific.csv","central-america-caribbean":"central_america_caribbean.csv"}.get(r["region"],"south_se_asia.csv"))
 L=list(E.values())
 F=list(L[0].keys())
 for p in ("data/belt_and_road.csv",):
     with open(os.path.join(R,p),"w",newline="") as f:
         w=csv.DictWriter(f,F); w.writeheader()
         for e in L: w.writerow({**e,"sources":"; ".join(e["sources"])})
-json.dump({"data_date":datetime.date.today().isoformat(),"entries":L},open(os.path.join(R,"data/bri.json"),"w"),indent=1)
+json.dump({"data_date":datetime.date.today().isoformat(),"glossary":json.load(open(os.path.join(S,"glossary.json"))),"iso":json.load(open(os.path.join(S,"iso.json"))),"entries":L},open(os.path.join(R,"data/bri.json"),"w"),indent=1)
 from collections import Counter
 print(len(L),"entries",Counter(e["region"] for e in L),Counter(e["type"] for e in L))
