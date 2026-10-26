@@ -61,7 +61,8 @@ svg text{fill:var(--text);font-size:13px}
  #netlist{display:block}.bgroups{grid-template-columns:1fr}
  body{font-size:15px}header{padding:6px 12px}nav{display:none}
  .layout{display:block}
- #ftoggle{display:block;position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:40;min-height:48px;padding:0 20px;background:var(--gold);color:#0b1526;border:0;border-radius:24px;font-weight:700;font-size:15px;box-shadow:0 4px 16px #000a}
+ #ftoggle{display:block;position:fixed;bottom:0;left:0;right:0;width:100%;z-index:40;min-height:56px;padding:0 20px calc(env(safe-area-inset-bottom));background:var(--gold);color:#0b1526;border:0;border-top:1px solid #0b1526;border-radius:0;font-weight:700;font-size:15px}
+ body{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
  aside{position:fixed;left:0;right:0;bottom:0;top:auto;max-height:75vh;border-right:0;border-top:2px solid var(--gold);border-radius:14px 14px 0 0;z-index:45;transform:translateY(105%);visibility:hidden;transition:transform .25s,visibility .25s}
  aside.open{transform:none;visibility:visible}
  .sheethead{display:flex;justify-content:space-between;align-items:center;font-weight:700;margin-bottom:6px}
