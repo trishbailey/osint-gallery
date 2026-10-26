@@ -81,14 +81,17 @@ clusters.sort(key=lambda m:(-len({rows[i]['h'] for i in m}),-len(m)))
 def rep(m):
     # representative text: most common original text among members (longest content of earliest original post)
     c=collections.Counter(rows[i]['c'][:280] for i in m);return c.most_common(1)[0][0]
-CL=[]
-for n,m in enumerate(clusters[:40]):
-    key=rows[m[0]]['id']
+CL=[];CLM=[]
+# A hand-named cluster keeps its name when the backfill adds earlier posts to it (its key is any member post id, not only the earliest), and named clusters outside the top 40 are kept.
+for m in clusters:
+    ids={rows[i]['id'] for i in m};nk=next((k for k in NAMES if k in ids),None)
+    if len(CL)>=40 and not nk: continue
+    n=len(CL);key=nk or rows[m[0]]['id']
     hs=[];seen=set()
     for i in m:
         if rows[i]['h'] not in seen:seen.add(rows[i]['h']);hs.append(i)
     nm=NAMES.get(key,{})
-    CL.append(dict(key=key,n=len(m),accounts=len(seen),countries=len({rows[i]['country'] for i in m}),first=rows[m[0]]['t'],last=rows[m[-1]]['t'],
+    CLM.append(m);CL.append(dict(key=key,n=len(m),accounts=len(seen),countries=len({rows[i]['country'] for i in m}),first=rows[m[0]]['t'],last=rows[m[-1]]['t'],
         langs=dict(collections.Counter(rows[i]['lang'] for i in m).most_common(4)),sample=rep(m),name=nm.get('name'),desc=nm.get('desc'),
         spread=[dict(h=rows[i]['h'],t=rows[i]['t'],k=rows[i]['k'],country=rows[i]['country'],id=rows[i]['id']) for i in hs]))
     for i in m: rows[i].setdefault('cl',n)
@@ -97,23 +100,52 @@ json.dump(CL,open(os.path.join(H,'clusters_review.json'),'w'),ensure_ascii=False
 grp=collections.OrderedDict()
 for n,c in enumerate(CL):
     if c['name']: grp.setdefault(c['name'],[]).append(n)
+# Topic guard: a post stays in a named talking point only if it is long enough and mentions the topic (topic_rules.json).
+RULES=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'topic_rules.json')))
+def on_topic(i,nm_):
+    kw=RULES.get(nm_)
+    if not kw: return True
+    if isinstance(kw,list): kw={'any':kw}
+    t=rows[i]['c'];tl=t.lower();L=len(t)+sum(1 for ch in t if '\u3040'<=ch<='\u9fff')
+    return L>=RULES['_min_len'] and any(k.lower() in tl for k in kw['any']) and (not kw.get('also') or any(k.lower() in tl for k in kw['also'])) and not any(k.lower() in tl for k in kw.get('not',[]))
+# A named topic with no surviving cluster (e.g. after the backfill re-clusters) can be re-formed from the posts that match its keywords, if 5+ accounts carry it.
+for nm_ in [k for k in RULES if not k.startswith('_') and k not in grp]:
+    m=[i for i in range(N) if on_topic(i,nm_)]
+    if len({rows[i]['h'] for i in m})>=5: CLM.append(m);CL.append(dict(key=rows[m[0]]['id'],name=nm_,desc=None));grp[nm_]=[len(CL)-1]
 named=[]
 for nm_,ixs in grp.items():
-    m=sorted({i for n in ixs for i in clusters[n]},key=lambda i:rows[i]['t']);seen=set();hs=[]
+    m=sorted({i for n in ixs for i in CLM[n] if on_topic(i,nm_)},key=lambda i:rows[i]['t']);seen=set();hs=[]
+    if os.environ.get('CD_DEBUG'):
+        for i in sorted({i for n in ixs for i in CLM[n] if not on_topic(i,nm_)}): print('DROP',nm_[:12],'|',rows[i]['lang'],len(rows[i]['c']),rows[i]['c'][:110].replace('\n',' '))
+    if len({rows[i]['h'] for i in m})<3: continue
     for i in m:
         if rows[i]['h'] not in seen:seen.add(rows[i]['h']);hs.append(i)
         rows[i]['tp']=nm_
     named.append(dict(key=CL[ixs[0]]['key'],name=nm_,desc=CL[ixs[0]]['desc'],n=len(m),accounts=len(seen),countries=len({rows[i]['country'] for i in m}),first=rows[m[0]]['t'],last=rows[m[-1]]['t'],
         langs=dict(collections.Counter(rows[i]['lang'] for i in m).most_common(4)),spread=[dict(h=rows[i]['h'],t=rows[i]['t'],k=rows[i]['k'],country=rows[i]['country'],id=rows[i]['id']) for i in hs],ids=[rows[i]['id'] for i in m]))
+if os.environ.get('CD_DEBUG'):
+    for c in named:
+        for t in sorted({rows[i]['c'][:100].replace('\n',' ') for i in range(N) if rows[i].get('tp')==c['name']}): print('MEM',c['name'][:12],'|',t)
 named.sort(key=lambda c:-c['accounts'])
 # ---------- days ----------
 d0=T(START).date();d1=T(END).date();days=[(d0+dt.timedelta(d)).isoformat() for d in range((d1-d0).days+1)]
 # ---------- streamgraph (top named talking points, daily) ----------
 TOP=named[:5]
+# Week and Month views pick their own top talking points from their span, so keep every named talking point (Day's top five first, same order).
+TOP=TOP+sorted(named[5:],key=lambda c:-c['n'])
 _NI={v['name']:v for v in NAMES.values()}
 stream=dict(days=days,series=[dict(name=c['name'],line=_NI.get(c['name'],{}).get('line',''),says=_NI.get(c['name'],{}).get('says',''),sample=_NI.get(c['name'],{}).get('sample'),vals=[0]*len(days)) for c in TOP])
 ki={c['key']:j for j,c in enumerate(TOP)}
 kn={c['name']:j for j,c in enumerate(TOP)}
+# Talking points without a hand-picked sample get the earliest English original post (any language if none, shown as written).
+for sr in stream['series']:
+    if sr['sample']: continue
+    al=[r for r in rows if r.get('tp')==sr['name']];cc=collections.Counter(r['c'][:120] for r in al)
+    m=[r for r in al if r['k']!='repost' and len(r['text'])>=60]
+    kw=[w.lower() for w in re.findall(r"[A-Za-z]{3,}",sr['name']) if w.lower() not in {'the','and','china','heads','government','summitry','milestone','trip','video','seat'}]
+    m=[r for r in m if any(w in r['text'].lower() for w in kw)]
+    m.sort(key=lambda r:(-cc[r['c'][:120]],r['lang']!='en',r['t']))
+    if m:r=m[0];t=r['text'];sr['sample']=dict(id=r['id'],h=r['h'],t=r['t'],lang='English' if r['lang']=='en' else {'ja':'Japanese','zh':'Chinese','es':'Spanish','fr':'French','ru':'Russian','ar':'Arabic','pt':'Portuguese'}.get(r['lang'],r['lang']),orig=True,text=t if len(t)<=280 else t[:279].rsplit(' ',1)[0]+'…')
 for r in rows:
     if r.get('tp') in kn: stream['series'][kn[r['tp']]]['vals'][days.index(r['t'][:10])]+=1
 # ---------- matrix: which embassies push which talking points ----------
