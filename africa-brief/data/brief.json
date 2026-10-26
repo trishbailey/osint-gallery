@@ -1,0 +1,3334 @@
+{
+ "data_date": "2026-10-25",
+ "sources": [
+  {
+   "id": "usgs-gold",
+   "title": "USGS Mineral Commodity Summaries 2026: gold",
+   "publisher": "USGS",
+   "date": "2026-02-01",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-gold.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "usgs-cobalt",
+   "title": "USGS Mineral Commodity Summaries 2026: cobalt",
+   "publisher": "USGS",
+   "date": "2026-02-01",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-cobalt.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "usgs-copper",
+   "title": "USGS Mineral Commodity Summaries 2026: copper",
+   "publisher": "USGS",
+   "date": "2026-02-01",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-copper.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "usgs-tantalum",
+   "title": "USGS Mineral Commodity Summaries 2026: tantalum",
+   "publisher": "USGS",
+   "date": "2026-02-01",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-tantalum.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "usgs-tin",
+   "title": "USGS Mineral Commodity Summaries 2026: tin",
+   "publisher": "USGS",
+   "date": "2026-02-01",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-tin.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "usgs-tungsten",
+   "title": "USGS Mineral Commodity Summaries 2026: tungsten",
+   "publisher": "USGS",
+   "date": "2026-02-01",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-tungsten.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "usgs-lithium",
+   "title": "USGS Mineral Commodity Summaries 2026: lithium",
+   "publisher": "USGS",
+   "date": "2026-02-01",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-lithium.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "usgs-rare-earths",
+   "title": "USGS Mineral Commodity Summaries 2026: rare-earths",
+   "publisher": "USGS",
+   "date": "2026-02-01",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-rare-earths.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "usgs-graphite",
+   "title": "USGS Mineral Commodity Summaries 2026: graphite",
+   "publisher": "USGS",
+   "date": "2026-02-01",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-graphite.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "usgs-manganese",
+   "title": "USGS Mineral Commodity Summaries 2026: manganese",
+   "publisher": "USGS",
+   "date": "2026-02-01",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-manganese.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "usgs-bauxite-alumina",
+   "title": "USGS Mineral Commodity Summaries 2026: bauxite-alumina",
+   "publisher": "USGS",
+   "date": "2026-02-01",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-bauxite-alumina.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "un-drc-2024",
+   "title": "UN Group of Experts on the DRC, midterm report S/2024/432",
+   "publisher": "UN Security Council",
+   "date": "2024-07-08",
+   "url": "https://docs.un.org/en/S/2024/432",
+   "type": "primary"
+  },
+  {
+   "id": "un-sudan-2024",
+   "title": "UN Panel of Experts on Sudan, final report S/2024/65",
+   "publisher": "UN Security Council",
+   "date": "2024-01-15",
+   "url": "https://docs.un.org/en/S/2024/65",
+   "type": "primary"
+  },
+  {
+   "id": "reuters-mali-2025",
+   "title": "Africa Corps to stay in Mali after Russia's Wagner mercenary group leaves",
+   "publisher": "Reuters",
+   "date": "2025-06-06",
+   "url": "https://www.reuters.com/world/africa/russias-wagner-mercenary-group-says-it-is-leaving-mali-after-mission-2025-06-06/",
+   "type": "press"
+  },
+  {
+   "id": "ap-chad-2025",
+   "title": "France hands over last military base in Chad",
+   "publisher": "AP",
+   "date": "2025-01-30",
+   "url": "https://apnews.com/article/chad-france-military-bases-withdrawal-bd1c1e5a075f3a4b0dba01801c081728",
+   "type": "press"
+  },
+  {
+   "id": "wna-uranium",
+   "title": "World Uranium Mining Production",
+   "publisher": "World Nuclear Association",
+   "date": "2025-01-01",
+   "url": "https://world-nuclear.org/information-library/nuclear-fuel-cycle/mining-of-uranium/world-uranium-mining-production",
+   "type": "industry"
+  },
+  {
+   "id": "wna-namibia",
+   "title": "Uranium in Namibia (country profile)",
+   "publisher": "World Nuclear Association",
+   "date": "2025-01-01",
+   "url": "https://world-nuclear.org/information-library/country-profiles/countries-g-n/Namibia",
+   "type": "industry"
+  },
+  {
+   "id": "reuters-somair-2025",
+   "title": "Niger to nationalise uranium mine operated by France's Orano",
+   "publisher": "Reuters",
+   "date": "2025-06-19",
+   "url": "https://www.reuters.com/world/africa/niger-nationalize-somair-uranium-venture-operated-by-frances-orano-2025-06-19/",
+   "type": "press"
+  },
+  {
+   "id": "orano-somair-2025",
+   "title": "Orano opposes nationalization plans of SOMAIR in Niger",
+   "publisher": "Orano (company statement)",
+   "date": "2025-06-20",
+   "url": "https://www.orano.group/en/news/news-group/2025/june/orano-opposes-nationalization-plans-of-somair-in-niger",
+   "type": "primary"
+  },
+  {
+   "id": "eia-nigeria",
+   "title": "Country Analysis Brief: Nigeria",
+   "publisher": "US EIA",
+   "date": "2025-01-01",
+   "url": "https://www.eia.gov/international/content/analysis/countries_long/Nigeria/",
+   "type": "primary"
+  },
+  {
+   "id": "eia-libya",
+   "title": "Country Analysis Brief: Libya",
+   "publisher": "US EIA",
+   "date": "2024-11-01",
+   "url": "https://www.eia.gov/international/content/analysis/countries_long/Libya/pdf/libya.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "reuters-mozlng-2025",
+   "title": "TotalEnergies and partners lift force majeure on $20 billion Mozambique LNG project",
+   "publisher": "Reuters",
+   "date": "2025-10-25",
+   "url": "https://www.reuters.com/sustainability/climate-energy/totalenergies-partners-lift-force-majeure-20-billion-mozambique-lng-project-2025-10-25/",
+   "type": "press"
+  },
+  {
+   "id": "swissaid-gold-2024",
+   "title": "On the trail of African gold (2024)",
+   "publisher": "SWISSAID",
+   "date": "2024-05-30",
+   "url": "https://swissaid.kinsta.cloud/wp-content/uploads/2024/05/SWISSAID_On-the-trail-of-african-gold_2024_ENG-1.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "ofac-wagner-gold",
+   "title": "Treasury Sanctions Illicit Gold Companies Funding Wagner Forces (jy1581)",
+   "publisher": "US Treasury",
+   "date": "2023-06-27",
+   "url": "https://home.treasury.gov/news/press-releases/jy1581",
+   "type": "primary"
+  },
+  {
+   "id": "ofac-rsf-2025",
+   "title": "Treasury Sanctions Sudanese Paramilitary Leader, Weapons Supplier, and Related Companies (jy2772)",
+   "publisher": "US Treasury",
+   "date": "2025-01-07",
+   "url": "https://home.treasury.gov/news/press-releases/jy2772",
+   "type": "primary"
+  },
+  {
+   "id": "reuters-mali-refinery",
+   "title": "Mali starts construction of Russia-backed gold refinery",
+   "publisher": "Reuters",
+   "date": "2025-06-17",
+   "url": "https://www.reuters.com/world/africa/mali-starts-construction-russia-backed-gold-refinery-2025-06-17/",
+   "type": "press"
+  },
+  {
+   "id": "reuters-sicomines-2024",
+   "title": "Chinese companies to invest up to $7 billion in Congo mining infrastructure",
+   "publisher": "Reuters",
+   "date": "2024-01-27",
+   "url": "https://www.reuters.com/markets/commodities/chinese-invest-up-7-bln-congo-mining-infrastructure-statement-2024-01-27/",
+   "type": "press"
+  },
+  {
+   "id": "bu-cla-2024",
+   "title": "Chinese Loans to Africa Database, 2000-2023",
+   "publisher": "Boston University GDP Center",
+   "date": "2024-08-21",
+   "url": "https://www.bu.edu/gdp/2024/08/21/relative-risk-and-the-rate-of-return-chinese-loans-to-africa-database-2000-2023/",
+   "type": "primary"
+  },
+  {
+   "id": "state-drc-rwanda-2025",
+   "title": "Peace Agreement Between the DRC and the Republic of Rwanda",
+   "publisher": "US State Department",
+   "date": "2025-06-27",
+   "url": "https://www.state.gov/peace-agreement-between-the-democratic-republic-of-the-congo-and-the-republic-of-rwanda",
+   "type": "primary"
+  },
+  {
+   "id": "state-reif-2025",
+   "title": "Regional Economic Integration Framework between the DRC and Rwanda",
+   "publisher": "US State Department",
+   "date": "2025-12-04",
+   "url": "https://www.state.gov/regional-economic-integration-framework-between-the-government-of-the-democratic-republic-of-the-congo-and-the-government-of-the-republic-of-rwanda",
+   "type": "primary"
+  },
+  {
+   "id": "wapo-baykar-2025",
+   "title": "A Turkish arms firm helped fuel Sudan's brutal civil war, records show",
+   "publisher": "Washington Post",
+   "date": "2025-03-07",
+   "url": "https://www.washingtonpost.com/world/2025/03/07/sudan-war-turkey-baykar-rsf-saf/",
+   "type": "press"
+  },
+  {
+   "id": "reuters-iran-drones-2024",
+   "title": "Sudan civil war: are Iranian drones helping the army gain ground?",
+   "publisher": "Reuters",
+   "date": "2024-04-10",
+   "url": "https://www.reuters.com/world/middle-east/are-iranian-drones-turning-tide-sudans-civil-war-2024-04-10/",
+   "type": "press"
+  },
+  {
+   "id": "reuters-egypt-drones-2026",
+   "title": "Egypt's drone deployment to border raises stakes in Sudan's civil war",
+   "publisher": "Reuters",
+   "date": "2026-02-02",
+   "url": "https://www.reuters.com/world/africa/egypts-drone-deployment-border-raises-stakes-sudans-civil-war-2026-02-02/",
+   "type": "press"
+  },
+  {
+   "id": "reuters-gerd-2025",
+   "title": "Ethiopia opens Africa's largest hydroelectric dam to Egyptian protest",
+   "publisher": "Reuters",
+   "date": "2025-09-09",
+   "url": "https://www.reuters.com/sustainability/boards-policy-regulation/ethiopia-opens-africas-largest-hydroelectric-dam-egyptian-protest-2025-09-09/",
+   "type": "press"
+  },
+  {
+   "id": "fao-lakechad",
+   "title": "Lake Chad facing humanitarian disaster",
+   "publisher": "FAO",
+   "date": "2009-10-01",
+   "url": "https://www.fao.org/newsroom/detail/Lake-Chad-facing-humanitarian-disaster/en",
+   "type": "primary"
+  },
+  {
+   "id": "usgs-cobalt-2026",
+   "title": "Mineral Commodity Summaries 2026: Cobalt",
+   "publisher": "USGS",
+   "date": "2026-02-01",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-cobalt.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "reuters-sgr-2017",
+   "title": "Kenya inaugurates Chinese-built railway linking port to capital",
+   "publisher": "Reuters",
+   "date": "2017-05-31",
+   "url": "https://www.reuters.com/article/us-kenya-railways/kenya-inaugurates-chinese-built-railway-linking-port-to-capital-idUSKBN18R2TR/",
+   "type": "press"
+  },
+  {
+   "id": "reuters-sgr-docs-2022",
+   "title": "Kenya publishes loan documents for Chinese-built railway",
+   "publisher": "Reuters",
+   "date": "2022-11-07",
+   "url": "https://www.reuters.com/world/africa/kenya-publishes-loan-documents-chinese-built-railway-2022-11-07/",
+   "type": "press"
+  },
+  {
+   "id": "bd-sgr-2020",
+   "title": "Burden on taxpayers as Treasury starts repayment of SGR loan",
+   "publisher": "Business Daily (Kenya)",
+   "date": "2020-01-01",
+   "url": "https://www.businessdailyafrica.com/bd/economy/burden-on-taxpayers-as-treasury-starts-repayment-of-sgr-loan-2274900",
+   "type": "press"
+  },
+  {
+   "id": "reuters-djib-base-2017",
+   "title": "China formally opens first overseas military base in Djibouti",
+   "publisher": "Reuters",
+   "date": "2017-08-01",
+   "url": "https://www.reuters.com/article/world/china-formally-opens-first-overseas-military-base-in-djibouti-idUSKBN1AH3E1/",
+   "type": "press"
+  },
+  {
+   "id": "crs-djibouti",
+   "title": "China's Engagement in Djibouti (IF11304)",
+   "publisher": "US Congressional Research Service",
+   "date": "2023-01-01",
+   "url": "https://www.everycrsreport.com/reports/IF11304.html",
+   "type": "primary"
+  },
+  {
+   "id": "hkex-cm-djib-2012",
+   "title": "China Merchants Holdings: acquisition of 23.5% of Port de Djibouti S.A.",
+   "publisher": "HKEX filing",
+   "date": "2012-12-30",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2012/1230/ltn20121230025.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "aiddata-addis-djib",
+   "title": "China Eximbank restructures Addis Ababa-Djibouti Railway loans (record 96154)",
+   "publisher": "AidData",
+   "date": "2023-01-01",
+   "url": "https://china.aiddata.org/projects/96154/",
+   "type": "primary"
+  },
+  {
+   "id": "erc-addis-djib",
+   "title": "The Ethiopian-Djibouti railway",
+   "publisher": "Ethiopian Railways Corporation",
+   "date": "2024-01-01",
+   "url": "https://erc.gov.et/project/the-ethiopian-djibouti-railway/",
+   "type": "primary"
+  },
+  {
+   "id": "lapsset-lamu-2021",
+   "title": "Port of Lamu operationalized (first berth)",
+   "publisher": "LAPSSET Corridor Development Authority",
+   "date": "2021-05-20",
+   "url": "https://lapsset.go.ke/2024/01/30/testing-news/",
+   "type": "primary"
+  },
+  {
+   "id": "nation-lamu-2021",
+   "title": "Uhuru witnesses arrival of first ship at new Lamu port",
+   "publisher": "Daily Nation",
+   "date": "2021-05-20",
+   "url": "https://nation.africa/kenya/news/kenya-receives-first-ship-at-new-lamu-port-3407946",
+   "type": "press"
+  },
+  {
+   "id": "dn-bagamoyo-2025",
+   "title": "TPA rehabilitates 10 ports, dismisses Bagamoyo Port deal",
+   "publisher": "Daily News (Tanzania)",
+   "date": "2025-02-24",
+   "url": "https://dailynews.co.tz/tpa-rehabilitates-10-ports-dismisses-bagamoyo-port-deal/",
+   "type": "press"
+  },
+  {
+   "id": "cce-bagamoyo-2025",
+   "title": "Tanzania Ports Authority, AGL sign MoU for Bagamoyo Port development",
+   "publisher": "CCE Online News",
+   "date": "2025-12-13",
+   "url": "https://cceonlinenews.com/news/bagamoyo-port-development-tanzania/",
+   "type": "press"
+  },
+  {
+   "id": "bu-cla-db",
+   "title": "Chinese Loans to Africa Database (2000-2024)",
+   "publisher": "Boston University GDP Center",
+   "date": "2025-01-01",
+   "url": "https://www.bu.edu/gdp/chinese-loans-to-africa-database/",
+   "type": "primary"
+  },
+  {
+   "id": "guardian-jebelamer-2020",
+   "title": "Militia strike gold to cast a shadow over Sudan's hopes of prosperity",
+   "publisher": "The Guardian",
+   "date": "2020-02-10",
+   "url": "https://www.theguardian.com/global-development/2020/feb/10/militia-strike-gold-to-cast-a-shadow-over-sudans-hopes-of-prosperity",
+   "type": "press"
+  },
+  {
+   "id": "dabanga-jebelamer-2020",
+   "title": "Sudan govt takes control of Darfur's Jebel Amer gold mines",
+   "publisher": "Dabanga",
+   "date": "2020-10-01",
+   "url": "https://www.dabangasudan.org/en/all-news/article/sudan-govt-takes-control-of-darfur-s-jebel-amer-gold-mines",
+   "type": "press"
+  },
+  {
+   "id": "gitoc-acled-2024",
+   "title": "Building armed group legitimacy: non-state armed groups and illicit economies in West Africa",
+   "publisher": "GI-TOC and ACLED",
+   "date": "2024-12-01",
+   "url": "https://globalinitiative.net/wp-content/uploads/2024/12/Building-armed-group-legitimacy-Non-state-armed-groups-and-illicit-economies-in-West-Africa-GI-TOC-and-ACLED-December-2024.v2.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "reuters-niger-gold-2025",
+   "title": "Niger targets jihadist financing, kills 13 in illegal gold mine raids",
+   "publisher": "Reuters",
+   "date": "2025-06-16",
+   "url": "https://www.reuters.com/world/africa/niger-targets-jihadist-financing-kills-13-illegal-gold-mine-raids-2025-06-16/",
+   "type": "press"
+  },
+  {
+   "id": "fgr-2024",
+   "title": "Fidelity Gold Refinery FY2024 integrated annual report",
+   "publisher": "Fidelity Gold Refinery (Zimbabwe)",
+   "date": "2026-03-01",
+   "url": "https://mif.co.zw/wp-content/uploads/2026/03/Fidelity-Gold-FY24-Annual-Report-1.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "herald-zim-asm-2025",
+   "title": "Small-scale miners hailed for 65% contribution to national gold output",
+   "publisher": "The Herald (Zimbabwe, state-owned)",
+   "date": "2025-01-15",
+   "url": "https://www.heraldonline.co.zw/small-scale-miners-hailed-for-65-contribution-to-national-gold-output/",
+   "type": "press"
+  },
+  {
+   "id": "un-drc-2025",
+   "title": "UN Group of Experts on the DRC, final report 2025",
+   "publisher": "UN Security Council (via ecoi.net)",
+   "date": "2025-07-01",
+   "url": "https://www.ecoi.net/en/file/local/2135580/n2532744.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "reuters-ssd-pipeline-2024",
+   "title": "Sudan war causes stoppages on South Sudan oil pipeline, officials say",
+   "publisher": "Reuters",
+   "date": "2024-03-25",
+   "url": "https://www.reuters.com/business/energy/sudan-war-causes-stoppages-south-sudan-oil-pipeline-officials-say-2024-03-25/",
+   "type": "press"
+  },
+  {
+   "id": "reuters-ssd-fm-2025",
+   "title": "Sudan lifts force majeure on oil to Port Sudan",
+   "publisher": "Reuters",
+   "date": "2025-01-06",
+   "url": "https://www.reuters.com/world/africa/sudan-lifts-force-majeure-oil-port-sudan-2025-01-06/",
+   "type": "press"
+  },
+  {
+   "id": "reuters-niger-benin-2024",
+   "title": "Niger resumes oil exports via Benin after suspension",
+   "publisher": "Reuters",
+   "date": "2024-08-21",
+   "url": "https://www.reuters.com/markets/commodities/niger-resumes-oil-exports-via-benin-after-suspension-2024-08-21/",
+   "type": "press"
+  },
+  {
+   "id": "reuters-niger-pipeline-attack-2024",
+   "title": "Niger group claims attack on China-backed pipeline, threatens more",
+   "publisher": "Reuters",
+   "date": "2024-06-18",
+   "url": "https://www.reuters.com/world/africa/niger-group-claims-attack-china-backed-pipeline-threatens-more-2024-06-18/",
+   "type": "press"
+  },
+  {
+   "id": "eia-algeria",
+   "title": "Country Analysis Brief: Algeria",
+   "publisher": "US EIA",
+   "date": "2024-01-01",
+   "url": "https://www.eia.gov/international/content/analysis/countries_long/Algeria/algeria.PDF",
+   "type": "primary"
+  },
+  {
+   "id": "medgaz-faq",
+   "title": "Medgaz FAQs (capacity)",
+   "publisher": "Medgaz S.A.",
+   "date": "2025-01-01",
+   "url": "https://www.medgaz.com/en/more-information/faqs/",
+   "type": "primary"
+  },
+  {
+   "id": "fao-gezira-2024",
+   "title": "Geospatial cropland monitoring and crop type mapping of the Gezira irrigation scheme",
+   "publisher": "FAO",
+   "date": "2024-06-01",
+   "url": "https://www.fao.org/geospatial/resources/detail/en/c/1698177/",
+   "type": "primary"
+  },
+  {
+   "id": "fao-sudan-ag-2024",
+   "title": "5 things you should know about how conflict in Sudan is devastating agriculture",
+   "publisher": "FAO",
+   "date": "2024-03-01",
+   "url": "https://www.fao.org/emergencies/resources-repository/news/detail/5-things-you-should-know-about-how-conflict-in-sudan-is-devastating-agriculture-and-people's-food-security/en",
+   "type": "primary"
+  },
+  {
+   "id": "agwat-gezira-2024",
+   "title": "Multiscale spatial variability in land and water productivity across the Gezira irrigation scheme",
+   "publisher": "Agricultural Water Management (Elsevier)",
+   "date": "2024-10-01",
+   "url": "https://ideas.repec.org/a/eee/agiwat/v304y2024ics0378377424004189.html",
+   "type": "primary"
+  },
+  {
+   "id": "ecofin-ghana-asm-2025",
+   "title": "Ghana's small-scale gold output rises 70% in 2024",
+   "publisher": "Ecofin Agency",
+   "date": "2025-02-06",
+   "url": "https://www.ecofinagency.com/news-industry/0206-47097-ghana-s-small-scale-gold-output-rises-70-in-2024",
+   "type": "press"
+  },
+  {
+   "id": "eni-baleine",
+   "title": "Baleine: industrial development and energy access",
+   "publisher": "Eni",
+   "date": "2025-01-01",
+   "url": "https://www.eni.com/en-IT/actions/global-activities/cote-d-ivoire/baleine.html",
+   "type": "primary"
+  },
+  {
+   "id": "rfi-alkhadim-2025",
+   "title": "Libya's Al-Khadim airbase becomes a hub for Russian arms in the Sahel",
+   "publisher": "RFI (French state-funded)",
+   "date": "2025-06-23",
+   "url": "https://www.rfi.fr/en/africa/20250623-libya-s-al-khadim-airbase-becomes-a-hub-for-russian-arms-in-the-sahel",
+   "type": "press"
+  },
+  {
+   "id": "cnn-libya-flights-2024",
+   "title": "Spike in Russian flights from Syria to Libyan desert base",
+   "publisher": "CNN",
+   "date": "2024-12-31",
+   "url": "https://www.cnn.com/2024/12/31/middleeast/spike-russian-flights-libya-desert-base-intl",
+   "type": "press"
+  },
+  {
+   "id": "reuters-ru-sudan-base-2025",
+   "title": "Russian Red Sea base deal still on the table, Sudanese FM says",
+   "publisher": "Reuters",
+   "date": "2025-02-12",
+   "url": "https://www.reuters.com/world/russia-sudan-agree-red-sea-naval-base-sudanese-foreign-minister-says-2025-02-12/",
+   "type": "press"
+  },
+  {
+   "id": "bbc-ru-sudan-base-2025",
+   "title": "Sudan-Russia deal: final agreement reached over Red Sea naval base",
+   "publisher": "BBC",
+   "date": "2025-02-12",
+   "url": "https://www.bbc.com/news/articles/c30del8dz51o",
+   "type": "press"
+  },
+  {
+   "id": "reuters-niger-nuclear-2025",
+   "title": "Niger says it wants to build two nuclear reactors in partnership with Russia",
+   "publisher": "Reuters",
+   "date": "2025-09-25",
+   "url": "https://www.reuters.com/business/energy/niger-says-it-wants-build-two-nuclear-reactors-partnership-with-russia-2025-09-25/",
+   "type": "press"
+  },
+  {
+   "id": "reuters-wagner-mali-2021",
+   "title": "Exclusive: Deal allowing Russian mercenaries into Mali is close - sources",
+   "publisher": "Reuters",
+   "date": "2021-09-13",
+   "url": "https://www.reuters.com/world/africa/exclusive-deal-allowing-russian-mercenaries-into-mali-is-close-sources-2021-09-13/",
+   "type": "press"
+  },
+  {
+   "id": "africom-niger-2024",
+   "title": "U.S. withdrawal from Niger completed",
+   "publisher": "US Africa Command",
+   "date": "2024-09-16",
+   "url": "https://www.africom.mil/pressrelease/35590/us-withdrawal-from-niger-completed",
+   "type": "primary"
+  },
+  {
+   "id": "africom-isis-somalia-2025",
+   "title": "U.S. forces conclude operation targeting ISIS-Somalia",
+   "publisher": "US Africa Command",
+   "date": "2025-08-15",
+   "url": "https://www.africom.mil/pressrelease/35972/us-forces-conclude-operation-targeting-isis-somalia",
+   "type": "primary"
+  },
+  {
+   "id": "hiiraan-africom-2026",
+   "title": "Rising ISIS threats drive AFRICOM airstrikes in Somalia (124 strikes in 2025)",
+   "publisher": "Hiiraan Online",
+   "date": "2026-02-01",
+   "url": "https://www.hiiraan.com/news4/2026/Feb/204319/rising_isis_threats_to_us_homeland_drive_africom_airstrikes_against_terrorists_in_somalia.aspx",
+   "type": "press"
+  },
+  {
+   "id": "rferl-iran-base-2024",
+   "title": "Iran, Sudan reject report claiming Tehran seeks Red Sea base",
+   "publisher": "RFE/RL (US state-funded)",
+   "date": "2024-03-04",
+   "url": "https://www.rferl.org/a/iran-sudan-red-sea-base/32847248.html",
+   "type": "press"
+  },
+  {
+   "id": "reuters-sudan-backers-2023",
+   "title": "Sudan's conflict: who is backing the rival commanders?",
+   "publisher": "Reuters",
+   "date": "2023-05-03",
+   "url": "https://www.reuters.com/world/africa/sudans-conflict-whos-backing-rival-commanders-2023-05-03/",
+   "type": "press"
+  },
+  {
+   "id": "bu-cla-2024-brief",
+   "title": "Relative Risk and the Rate of Return: Chinese Loans to Africa 2000-2023 (policy brief, top-10 borrowers)",
+   "publisher": "Boston University GDP Center",
+   "date": "2024-08-21",
+   "url": "https://www.bu.edu/gdp/files/2024/08/GCI-PB-23-CLA-2024-FIN.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "pti-lekki-2023",
+   "title": "Lekki Port officially opened by Nigerian President",
+   "publisher": "Port Technology International",
+   "date": "2023-01-23",
+   "url": "https://www.porttechnology.org/news/global-trade/lekki-port-officially-opened-by-nigerian-president/",
+   "type": "press"
+  },
+  {
+   "id": "kct-kribi",
+   "title": "Kribi Conteneurs Terminal: presentation (shareholders)",
+   "publisher": "Kribi Conteneurs Terminal",
+   "date": "2025-01-01",
+   "url": "https://kribi-conteneurs-terminal.com/en/kbri-conteneurs-terminal/",
+   "type": "primary"
+  },
+  {
+   "id": "wb-dar-2024",
+   "title": "Dar es Salaam Maritime Gateway Project, implementation status (P150496)",
+   "publisher": "World Bank",
+   "date": "2024-11-19",
+   "url": "https://documents1.worldbank.org/curated/en/099111924060013367/pdf/P150496-396c380e-ab07-4237-ad07-cdcf24179c62.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "reuters-dpworld-dar-2023",
+   "title": "Tanzania signs deals with DP World to operate Dar es Salaam port berths",
+   "publisher": "Reuters",
+   "date": "2023-10-22",
+   "url": "https://www.reuters.com/world/africa/tanzania-signs-deals-with-dp-world-operate-dar-es-salaam-port-berths-2023-10-22/",
+   "type": "press"
+  },
+  {
+   "id": "swakop-sr-2023",
+   "title": "Swakop Uranium 2023 Sustainability Report",
+   "publisher": "Swakop Uranium",
+   "date": "2024-06-01",
+   "url": "http://www.swakopuranium.com/swakopuranium/c032012171/2025-09/05/8532496bcece4f58b9696816e1ea2eb3/files/2023%20Swakop%20Uranium%20Sustainability%20Report.pdf.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "nui-2023",
+   "title": "Namibian Uranium Institute / Association annual review 2023",
+   "publisher": "Namibian Uranium Association",
+   "date": "2024-07-01",
+   "url": "https://www.namibianuranium.org/wp-content/uploads/2024/07/NUI-NUA-anuual-report-2023.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "rossing-cnuc-2019",
+   "title": "A new era for Rossing Uranium (CNUC hand-over information)",
+   "publisher": "Rossing Uranium",
+   "date": "2019-07-25",
+   "url": "https://www.rossing.com/files/Rossing%20Uranium_CNUC%20Hand-over%20information%2025%20July%202019.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "reuters-huayou-arcadia-2021",
+   "title": "China's Huayou buys lithium mine in Zimbabwe for $422 mln",
+   "publisher": "Reuters",
+   "date": "2021-12-22",
+   "url": "https://www.reuters.com/business/chinas-huayou-buys-lithium-mine-zimbabwe-422-mln-2021-12-22/",
+   "type": "press"
+  },
+  {
+   "id": "prospect-asx-2022",
+   "title": "Binding agreements executed for sale of Arcadia (ASX announcement)",
+   "publisher": "Prospect Resources (ASX filing)",
+   "date": "2022-01-01",
+   "url": "https://prospectresources.com.au/wp-content/uploads/2022/07/61070453.pdf",
+   "type": "primary"
+  },
+  {
+   "id": "yicai-sinomine-2022",
+   "title": "Sinomine soars on USD180 million deal to gain control of Zimbabwean mine",
+   "publisher": "Yicai Global",
+   "date": "2022-01-30",
+   "url": "https://www.yicaiglobal.com/news/sinomine-soars-by-limit-on-usd180-million-deal-to-gain-control-of-zimbabwean-mine",
+   "type": "press"
+  },
+  {
+   "id": "reuters-benin-54-2025",
+   "title": "Benin says Al Qaeda affiliate attack killed 54 soldiers last week",
+   "publisher": "Reuters",
+   "date": "2025-04-24",
+   "url": "https://www.reuters.com/world/africa/benin-says-al-qaeda-affiliate-attack-killed-54-soldiers-last-week-2025-04-24/",
+   "type": "secondary"
+  },
+  {
+   "id": "acled-rwanda-moz-2025",
+   "title": "Rwanda in Mozambique: Limits to civilian protection",
+   "publisher": "ACLED",
+   "date": "2025-06-01",
+   "url": "https://acleddata.com/report/rwanda-mozambique-limits-civilian-protection",
+   "type": "secondary"
+  },
+  {
+   "id": "club-moz-rwanda-2025",
+   "title": "Mozambique: New Rwandan contingent in Cabo Delgado replaces existing one - minister",
+   "publisher": "Club of Mozambique",
+   "date": "2025-02-06",
+   "url": "https://clubofmozambique.com/news/mozambique-new-rwandan-contingent-in-cabo-delgado-replaces-existing-one-minister/",
+   "type": "secondary"
+  },
+  {
+   "id": "reuters-nigeria-surge-2025",
+   "title": "Surge in attacks signals jihadist comeback in Nigeria's northeast",
+   "publisher": "Reuters",
+   "date": "2025-04-29",
+   "url": "https://www.reuters.com/world/africa/surge-attacks-signals-jihadist-comeback-nigerias-northeast-2025-04-29/",
+   "type": "secondary"
+  },
+  {
+   "id": "iss-iswap-2025",
+   "title": "Lake Chad Basin's military bases in ISWAP's crosshairs",
+   "publisher": "ISS Africa",
+   "date": "2025-07-14",
+   "url": "https://issafrica.org/iss-today/lake-chad-basin-s-military-bases-in-iswap-s-crosshairs",
+   "type": "secondary"
+  },
+  {
+   "id": "reuters-car-court-2026",
+   "title": "Central African Republic court validates Touadera's re-election",
+   "publisher": "Reuters",
+   "date": "2026-01-19",
+   "url": "https://www.reuters.com/world/africa/central-african-republic-court-validates-touaderas-re-election-2026-01-19/",
+   "type": "secondary"
+  },
+  {
+   "id": "icg-car-2026",
+   "title": "Central African Republic: Consolidating Security Gains after the Elections",
+   "publisher": "International Crisis Group",
+   "date": "2026-01-01",
+   "url": "https://www.crisisgroup.org/qna/africa/central-african-republic-russia-rwanda/centrafrique-apres-les-elections-consolider-les-gains-securitaires",
+   "type": "secondary"
+  },
+  {
+   "id": "reuters-eth-eri-2025",
+   "title": "Explainer: Why are Ethiopia and Eritrea on the brink of a possible war?",
+   "publisher": "Reuters",
+   "date": "2025-03-14",
+   "url": "https://www.reuters.com/world/africa/why-are-ethiopia-eritrea-brink-possible-war-2025-03-14/",
+   "type": "secondary"
+  },
+  {
+   "id": "bbc-eth-eri-2025",
+   "title": "Escalating war of words between Ethiopia and Eritrea triggers fears of conflict",
+   "publisher": "BBC Monitoring",
+   "date": "2025-11-23",
+   "url": "https://www.bbc.com/news/articles/cvgwg042vr4o",
+   "type": "secondary"
+  },
+  {
+   "id": "reuters-elfasher-2025",
+   "title": "Sudan's RSF says it captured al-Fashir army headquarters",
+   "publisher": "Reuters",
+   "date": "2025-10-26",
+   "url": "https://www.reuters.com/world/africa/sudans-rsf-says-it-captured-al-fashir-army-headquarters-2025-10-26/",
+   "type": "secondary"
+  },
+  {
+   "id": "swissaid-uae-2025",
+   "title": "United Arab Emirates: More Than Ever a Hub for Conflict Gold (press release on 2024 UAE Comtrade data)",
+   "publisher": "SWISSAID",
+   "date": "2025-11-04",
+   "url": "https://www.swissaid.ch/en/media/united-arab-emirates-more-than-ever-a-hub-for-conflict-gold/",
+   "type": "secondary"
+  },
+  {
+   "id": "un-drc-s2024-969",
+   "title": "UN Group of Experts on the DRC, final report S/2024/969",
+   "publisher": "UN Security Council",
+   "date": "2024-12-27",
+   "url": "https://documents.un.org/doc/undoc/gen/n24/373/37/pdf/n2437337.pdf",
+   "type": "secondary"
+  },
+  {
+   "id": "reuters-drc-rwanda-coltan-2025",
+   "title": "Congo rebels muddy minerals market with illegal Rwanda exports, says UN report",
+   "publisher": "Reuters",
+   "date": "2025-01-08",
+   "url": "https://www.reuters.com/world/africa/congo-rebels-muddy-minerals-market-with-illegal-rwanda-exports-says-un-report-2025-01-08/",
+   "type": "secondary"
+  },
+  {
+   "id": "wits-cobalt-2024",
+   "title": "China imports of cobalt mattes and intermediates (HS 810510) by partner, 2024",
+   "publisher": "World Bank WITS / UN Comtrade",
+   "date": "2025-01-01",
+   "url": "https://wits.worldbank.org/trade/comtrade/en/country/CHN/year/2024/tradeflow/Imports/partner/ALL/product/810510",
+   "type": "secondary"
+  },
+  {
+   "id": "radiotamazuj-drones-2026",
+   "title": "Sudan drone strikes kill 306 in three weeks, UN rights body says",
+   "publisher": "Radio Tamazuj",
+   "date": "2026-10-25",
+   "url": "https://www.radiotamazuj.org/en/news/article/sudan-drone-strikes-kill-306-in-three-weeks-un-rights-body-says",
+   "type": "secondary"
+  },
+  {
+   "id": "lemonde-alg-niger-2026",
+   "title": "En Algérie, le Parlement autorise l'envoi d'unités militaires au Niger",
+   "publisher": "Le Monde Afrique",
+   "date": "2026-10-25",
+   "url": "https://www.lemonde.fr/afrique/article/2026/10/25/en-algerie-le-parlement-autorise-l-envoi-d-unites-militaires-au-niger_6800111_3212.html",
+   "type": "secondary"
+  },
+  {
+   "id": "ucdp-ged",
+   "title": "UCDP Georeferenced Event Dataset v26.1 and Candidate GED v26.01.26.09",
+   "publisher": "Uppsala Conflict Data Program",
+   "date": "2026-10-01",
+   "url": "https://ucdp.uu.se/downloads/",
+   "type": "secondary"
+  }
+ ],
+ "regions": [
+  {
+   "id": "sahel",
+   "name": "Central Sahel",
+   "countries": [
+    "MLI",
+    "BFA",
+    "NER"
+   ],
+   "label": [
+    -1,
+    16
+   ],
+   "summary": "Military juntas in Mali, Burkina Faso and Niger expelled French and UN forces, turned to Russian security partners, and asserted state control over gold and uranium.",
+   "cites": [
+    "reuters-mali-2025",
+    "reuters-somair-2025"
+   ]
+  },
+  {
+   "id": "lake-chad",
+   "name": "Lake Chad basin",
+   "countries": [
+    "TCD",
+    "NGA",
+    "CMR"
+   ],
+   "label": [
+    16,
+    14
+   ],
+   "summary": "Lake Chad shrank about 90% between 1963 and 2001; Chad ended its defence pact with France in Nov 2024.",
+   "cites": [
+    "ap-chad-2025",
+    "fao-lakechad"
+   ]
+  },
+  {
+   "id": "sudan",
+   "name": "Sudan",
+   "countries": [
+    "SDN"
+   ],
+   "label": [
+    30,
+    17
+   ],
+   "summary": "SAF-RSF war since April 2023, with drones from Turkey and Iran on the SAF side and UAE-linked supply and gold networks on the RSF side.",
+   "cites": [
+    "un-sudan-2024",
+    "ofac-rsf-2025",
+    "wapo-baykar-2025",
+    "reuters-iran-drones-2024",
+    "rferl-iran-base-2024"
+   ]
+  },
+  {
+   "id": "great-lakes",
+   "name": "Great Lakes and eastern DRC",
+   "countries": [
+    "COD",
+    "RWA",
+    "UGA",
+    "BDI"
+   ],
+   "label": [
+    23,
+    -4
+   ],
+   "summary": "M23 holds mining areas in North Kivu; UN experts documented Rwandan troops alongside it. The US brokered a 2025 peace and minerals framework.",
+   "cites": [
+    "un-drc-2024",
+    "state-drc-rwanda-2025"
+   ]
+  },
+  {
+   "id": "car",
+   "name": "Central African Rep.",
+   "countries": [
+    "CAF"
+   ],
+   "label": [
+    21,
+    7.6
+   ],
+   "summary": "Wagner-linked firms hold gold rights, including Ndassima.",
+   "cites": [
+    "ofac-wagner-gold"
+   ]
+  },
+  {
+   "id": "horn",
+   "name": "Horn and Red Sea",
+   "countries": [
+    "ETH",
+    "ERI",
+    "SOM",
+    "DJI",
+    "SSD"
+   ],
+   "label": [
+    42,
+    8
+   ],
+   "summary": "Ethiopia opened GERD in Sept 2025 over Egyptian objections; AFRICOM ran 124 strikes in Somalia in 2025.",
+   "cites": [
+    "reuters-gerd-2025",
+    "hiiraan-africom-2026"
+   ]
+  },
+  {
+   "id": "coastal-wa",
+   "name": "Coastal West Africa spillover",
+   "countries": [
+    "BEN",
+    "TGO",
+    "GHA",
+    "CIV"
+   ],
+   "label": [
+    -2,
+    7.5
+   ],
+   "summary": "Ghana artisanal gold reached 39% of output in 2024; Lekki port (CHEC 52.5%) and Cote d'Ivoire's Baleine field anchor the coast. Sahel jihadist spillover entries still pending.",
+   "cites": [
+    "ecofin-ghana-asm-2025",
+    "pti-lekki-2023"
+   ]
+  },
+  {
+   "id": "southern",
+   "name": "Southern Africa",
+   "countries": [
+    "MOZ",
+    "ZWE",
+    "ZMB"
+   ],
+   "label": [
+    34,
+    -17
+   ],
+   "summary": "Mozambique LNG in insurgency-hit Cabo Delgado restarted Oct 2025.",
+   "cites": [
+    "reuters-mozlng-2025"
+   ]
+  },
+  {
+   "id": "north",
+   "name": "North Africa",
+   "countries": [
+    "LBY",
+    "DZA",
+    "EGY",
+    "TUN",
+    "MAR"
+   ],
+   "label": [
+    12,
+    28
+   ],
+   "summary": "Libya's oil is split between rival authorities; the east-based government shut fields in Aug 2024.",
+   "cites": [
+    "eia-libya"
+   ]
+  }
+ ],
+ "resources": [
+  {
+   "id": "gold-ghana",
+   "type": "gold",
+   "name": "Ghana (industrial + artisanal)",
+   "lonlat": [
+    -1.8,
+    6.5
+   ],
+   "quantity": "150 t",
+   "year": 2025,
+   "world_share": "4.5%",
+   "controller": "Industrial mines by foreign firms; large artisanal (galamsey) sector",
+   "controller_type": "foreign firm / artisanal",
+   "conflict_region": "coastal-wa",
+   "cites": [
+    "usgs-gold",
+    "swissaid-gold-2024"
+   ],
+   "confidence": "documented",
+   "note": "SWISSAID names Ghana among the three largest gold-smuggling countries."
+  },
+  {
+   "id": "gold-southafrica",
+   "type": "gold",
+   "name": "South Africa",
+   "lonlat": [
+    27.5,
+    -26.3
+   ],
+   "quantity": "90 t",
+   "year": 2025,
+   "world_share": "2.7%",
+   "controller": "Listed mining companies",
+   "controller_type": "private firm",
+   "conflict_region": null,
+   "cites": [
+    "usgs-gold"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "gold-mali-asm",
+   "type": "gold",
+   "name": "Mali artisanal gold",
+   "lonlat": [
+    -8.5,
+    12.0
+   ],
+   "quantity": "not given by USGS; part of 321-474 t/yr undeclared African ASM gold",
+   "year": 2022,
+   "world_share": "n/a",
+   "controller": "Artisanal miners; traders; export largely undeclared to UAE",
+   "controller_type": "artisanal",
+   "conflict_region": "sahel",
+   "cites": [
+    "swissaid-gold-2024"
+   ],
+   "confidence": "documented",
+   "note": "SWISSAID: most African gold smuggling is in Mali, Ghana and Zimbabwe."
+  },
+  {
+   "id": "gold-sudan-rsf",
+   "type": "gold",
+   "name": "Sudan gold bought for RSF benefit",
+   "lonlat": [
+    24.0,
+    13.5
+   ],
+   "quantity": "amount not public",
+   "year": 2025,
+   "world_share": "n/a",
+   "controller": "RSF-linked buyers (AZ Gold, UAE-based, OFAC-designated)",
+   "controller_type": "armed group",
+   "conflict_region": "sudan",
+   "cites": [
+    "ofac-rsf-2025"
+   ],
+   "confidence": "documented",
+   "note": "OFAC: AZ Gold bought Sudanese gold, presumably for RSF benefit, and moved it to Dubai."
+  },
+  {
+   "id": "gold-car-ndassima",
+   "type": "gold",
+   "name": "Ndassima gold mine (CAR)",
+   "lonlat": [
+    20.9,
+    6.1
+   ],
+   "quantity": "value assessed >US$1bn in deposit",
+   "year": 2023,
+   "world_share": "n/a",
+   "controller": "Midas Ressources (Prigozhin/Wagner-linked, OFAC-designated)",
+   "controller_type": "foreign armed group / firm",
+   "conflict_region": "car",
+   "cites": [
+    "ofac-wagner-gold"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "gold-mali-refinery",
+   "type": "gold",
+   "name": "Bamako gold refinery (under construction)",
+   "lonlat": [
+    -7.98,
+    12.65
+   ],
+   "quantity": "planned 200 t/yr capacity",
+   "year": 2025,
+   "world_share": "n/a",
+   "controller": "SOROMA-SA: 62% Malian state, Russia's Yadran Group + Swiss investor",
+   "controller_type": "state / foreign firm",
+   "conflict_region": "sahel",
+   "cites": [
+    "reuters-mali-refinery"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "u-namibia",
+   "type": "uranium",
+   "name": "Namibia (Husab, Rössing)",
+   "lonlat": [
+    15.0,
+    -22.5
+   ],
+   "quantity": "7,333 tU",
+   "year": 2024,
+   "world_share": "12%",
+   "controller": "Mines majority-owned by Chinese state-owned firms, per WNA profile",
+   "controller_type": "foreign state firm",
+   "conflict_region": null,
+   "cites": [
+    "wna-uranium",
+    "wna-namibia"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "u-niger-somair",
+   "type": "uranium",
+   "name": "SOMAIR, Arlit (Niger)",
+   "lonlat": [
+    7.35,
+    18.75
+   ],
+   "quantity": "962 tU (Niger total)",
+   "year": 2024,
+   "world_share": "1.6%",
+   "controller": "Nationalised by Niger junta June 2025; Orano held 63.4% and disputes it at ICSID",
+   "controller_type": "state (contested)",
+   "conflict_region": "sahel",
+   "cites": [
+    "wna-uranium",
+    "reuters-somair-2025",
+    "orano-somair-2025"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "co-drc",
+   "type": "cobalt",
+   "name": "DRC Copperbelt (Lualaba / Haut-Katanga)",
+   "lonlat": [
+    26.5,
+    -10.8
+   ],
+   "quantity": "230,000 t",
+   "year": 2025,
+   "world_share": "74%",
+   "controller": "Mix of Chinese-owned, Swiss/UK-listed and state (Gécamines) operators",
+   "controller_type": "foreign firm / state",
+   "conflict_region": "great-lakes",
+   "cites": [
+    "usgs-cobalt"
+   ],
+   "confidence": "documented",
+   "note": "Region overlap: same country as the eastern war, but ~1,500 km from the front."
+  },
+  {
+   "id": "co-madagascar",
+   "type": "cobalt",
+   "name": "Madagascar (Ambatovy)",
+   "lonlat": [
+    48.4,
+    -18.8
+   ],
+   "quantity": "3,900 t",
+   "year": 2025,
+   "world_share": "1.3%",
+   "controller": "Ambatovy JV",
+   "controller_type": "foreign firm",
+   "conflict_region": null,
+   "cites": [
+    "usgs-cobalt"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "cu-drc",
+   "type": "copper",
+   "name": "DRC Copperbelt (incl. Sicomines)",
+   "lonlat": [
+    25.8,
+    -10.5
+   ],
+   "quantity": "3,200 kt",
+   "year": 2025,
+   "world_share": "14%",
+   "controller": "Foreign firms incl. Sicomines (68% Chinese firms, 32% Gécamines)",
+   "controller_type": "foreign firm / state",
+   "conflict_region": "great-lakes",
+   "cites": [
+    "usgs-copper",
+    "reuters-sicomines-2024"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "cu-zambia",
+   "type": "copper",
+   "name": "Zambia Copperbelt",
+   "lonlat": [
+    28.2,
+    -12.8
+   ],
+   "quantity": "940 kt",
+   "year": 2025,
+   "world_share": "4%",
+   "controller": "Foreign-owned mines",
+   "controller_type": "foreign firm",
+   "conflict_region": "southern",
+   "cites": [
+    "usgs-copper"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "ta-drc",
+   "type": "coltan",
+   "name": "DRC tantalum (Kivus incl. Rubaya)",
+   "lonlat": [
+    28.9,
+    -1.55
+   ],
+   "quantity": "1,300 t Ta",
+   "year": 2025,
+   "world_share": "52%",
+   "controller": "Partly M23-held (Rubaya); artisanal",
+   "controller_type": "armed group / artisanal",
+   "conflict_region": "great-lakes",
+   "cites": [
+    "usgs-tantalum",
+    "un-drc-2024"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "ta-rwanda",
+   "type": "coltan",
+   "name": "Rwanda tantalum exports",
+   "lonlat": [
+    29.9,
+    -1.95
+   ],
+   "quantity": "400 t Ta",
+   "year": 2025,
+   "world_share": "16%",
+   "controller": "Rwandan exporters; UN experts trace part of supply to M23-held areas",
+   "controller_type": "state / firm",
+   "conflict_region": "great-lakes",
+   "cites": [
+    "usgs-tantalum",
+    "un-drc-2024"
+   ],
+   "confidence": "credible allegation",
+   "note": "Production vs smuggled-in supply cannot be separated from USGS figures."
+  },
+  {
+   "id": "ta-nigeria",
+   "type": "coltan",
+   "name": "Nigeria tantalum",
+   "lonlat": [
+    8.9,
+    9.9
+   ],
+   "quantity": "390 t Ta",
+   "year": 2025,
+   "world_share": "16%",
+   "controller": "Artisanal",
+   "controller_type": "artisanal",
+   "conflict_region": "lake-chad",
+   "cites": [
+    "usgs-tantalum"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "sn-drc",
+   "type": "tin",
+   "name": "DRC tin (Bisie, Kivus)",
+   "lonlat": [
+    27.9,
+    -1.0
+   ],
+   "quantity": "27,000 t",
+   "year": 2025,
+   "world_share": "9%",
+   "controller": "Alphamin (Bisie) and artisanal",
+   "controller_type": "foreign firm / artisanal",
+   "conflict_region": "great-lakes",
+   "cites": [
+    "usgs-tin"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "sn-rwanda",
+   "type": "tin",
+   "name": "Rwanda tin",
+   "lonlat": [
+    29.7,
+    -1.8
+   ],
+   "quantity": "4,600 t",
+   "year": 2025,
+   "world_share": "1.6%",
+   "controller": "Rwandan producers",
+   "controller_type": "firm",
+   "conflict_region": "great-lakes",
+   "cites": [
+    "usgs-tin"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "w-rwanda",
+   "type": "tungsten",
+   "name": "Rwanda tungsten",
+   "lonlat": [
+    30.1,
+    -1.6
+   ],
+   "quantity": "1,300 t",
+   "year": 2025,
+   "world_share": "1.5%",
+   "controller": "Rwandan producers",
+   "controller_type": "firm",
+   "conflict_region": "great-lakes",
+   "cites": [
+    "usgs-tungsten"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "li-zimbabwe",
+   "type": "lithium",
+   "name": "Zimbabwe lithium",
+   "lonlat": [
+    31.0,
+    -18.5
+   ],
+   "quantity": "28,000 t Li",
+   "year": 2025,
+   "world_share": "9.7%",
+   "controller": "Five mineral operations, mostly Chinese-owned",
+   "controller_type": "foreign firm",
+   "conflict_region": "southern",
+   "cites": [
+    "usgs-lithium"
+   ],
+   "confidence": "documented",
+   "note": "USGS confirms five operations; Chinese ownership needs a company-filing source."
+  },
+  {
+   "id": "li-mali",
+   "type": "lithium",
+   "name": "Mali lithium (Goulamina, Bougouni)",
+   "lonlat": [
+    -7.9,
+    11.4
+   ],
+   "quantity": "9,400 t Li",
+   "year": 2025,
+   "world_share": "3.2%",
+   "controller": "Two operations started 2024",
+   "controller_type": "foreign firm / state",
+   "conflict_region": "sahel",
+   "cites": [
+    "usgs-lithium"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "ree-nigeria",
+   "type": "rare-earths",
+   "name": "Nigeria rare earths",
+   "lonlat": [
+    8.9,
+    10.3
+   ],
+   "quantity": "1,500 t REO",
+   "year": 2025,
+   "world_share": "0.4%",
+   "controller": "Not given in source",
+   "controller_type": "unknown",
+   "conflict_region": "lake-chad",
+   "cites": [
+    "usgs-rare-earths"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "gr-mozambique",
+   "type": "graphite",
+   "name": "Balama, Mozambique",
+   "lonlat": [
+    38.5,
+    -13.3
+   ],
+   "quantity": "60,000 t",
+   "year": 2025,
+   "world_share": "3.3%",
+   "controller": "Syrah Resources (Balama, restarted 2025)",
+   "controller_type": "foreign firm",
+   "conflict_region": "southern",
+   "cites": [
+    "usgs-graphite"
+   ],
+   "confidence": "documented",
+   "note": "Cabo Delgado insurgency province borders Balama's Niassa/Cabo Delgado area."
+  },
+  {
+   "id": "gr-madagascar",
+   "type": "graphite",
+   "name": "Madagascar graphite",
+   "lonlat": [
+    48.0,
+    -19.5
+   ],
+   "quantity": "80,000 t",
+   "year": 2025,
+   "world_share": "4.4%",
+   "controller": "Not given in source",
+   "controller_type": "unknown",
+   "conflict_region": null,
+   "cites": [
+    "usgs-graphite"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "gr-tanzania",
+   "type": "graphite",
+   "name": "Tanzania graphite (Manyara, Lindi, Tanga)",
+   "lonlat": [
+    36.5,
+    -6.0
+   ],
+   "quantity": "75,000 t",
+   "year": 2025,
+   "world_share": "4.2%",
+   "controller": "Tanzanian, Chinese and Australian companies",
+   "controller_type": "foreign firm",
+   "conflict_region": null,
+   "cites": [
+    "usgs-graphite"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "mn-southafrica",
+   "type": "manganese",
+   "name": "South Africa (Kalahari field)",
+   "lonlat": [
+    23.0,
+    -27.2
+   ],
+   "quantity": "7,600 kt",
+   "year": 2025,
+   "world_share": "38%",
+   "controller": "Listed miners",
+   "controller_type": "private firm",
+   "conflict_region": null,
+   "cites": [
+    "usgs-manganese"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "mn-gabon",
+   "type": "manganese",
+   "name": "Gabon (Moanda)",
+   "lonlat": [
+    13.2,
+    -1.55
+   ],
+   "quantity": "5,000 kt",
+   "year": 2025,
+   "world_share": "25%",
+   "controller": "Comilog (Eramet)",
+   "controller_type": "foreign firm",
+   "conflict_region": null,
+   "cites": [
+    "usgs-manganese"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "mn-ghana",
+   "type": "manganese",
+   "name": "Ghana (Nsuta)",
+   "lonlat": [
+    -2.0,
+    5.3
+   ],
+   "quantity": "2,000 kt",
+   "year": 2025,
+   "world_share": "10%",
+   "controller": "Not given in source",
+   "controller_type": "unknown",
+   "conflict_region": "coastal-wa",
+   "cites": [
+    "usgs-manganese"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "bx-guinea",
+   "type": "bauxite",
+   "name": "Guinea bauxite (Boké)",
+   "lonlat": [
+    -14.3,
+    10.9
+   ],
+   "quantity": "150,000 kt",
+   "year": 2025,
+   "world_share": "34%",
+   "controller": "Foreign consortia; GAC licences (UAE's EGA) revoked and given to a state-backed firm, Aug 2025",
+   "controller_type": "state / foreign firm",
+   "conflict_region": null,
+   "cites": [
+    "usgs-bauxite-alumina"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "oil-nigeria",
+   "type": "oil",
+   "name": "Niger Delta crude",
+   "lonlat": [
+    6.3,
+    4.9
+   ],
+   "quantity": "~1.5 million b/d",
+   "year": 2024,
+   "world_share": "n/a",
+   "controller": "NNPC + IOC joint ventures; theft and militant disruption",
+   "controller_type": "state / foreign firm",
+   "conflict_region": "lake-chad",
+   "cites": [
+    "eia-nigeria"
+   ],
+   "confidence": "documented",
+   "note": "Lake Chad region is Nigeria's north-east; the Delta overlap is with a separate, militancy-and-theft conflict."
+  },
+  {
+   "id": "oil-libya",
+   "type": "oil",
+   "name": "Libya oil fields (Sirte basin, Sharara)",
+   "lonlat": [
+    19.5,
+    28.5
+   ],
+   "quantity": "~1.18 million b/d before Aug 2024 shutdown",
+   "year": 2024,
+   "world_share": "n/a",
+   "controller": "NOC; eastern authorities aligned with Haftar control most fields and ports",
+   "controller_type": "state (divided)",
+   "conflict_region": "north",
+   "cites": [
+    "eia-libya"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "gas-mozambique",
+   "type": "gas",
+   "name": "Mozambique LNG, Cabo Delgado",
+   "lonlat": [
+    40.5,
+    -10.8
+   ],
+   "quantity": "US$20bn project; force majeure lifted Oct 2025",
+   "year": 2025,
+   "world_share": "n/a",
+   "controller": "TotalEnergies-led consortium",
+   "controller_type": "foreign firm",
+   "conflict_region": "southern",
+   "cites": [
+    "reuters-mozlng-2025"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "gold-jebel-amer",
+   "type": "gold",
+   "name": "Jebel Amer artisanal gold (North Darfur)",
+   "lonlat": [
+    23.6,
+    14.6
+   ],
+   "quantity": "amount not public",
+   "year": 2020,
+   "world_share": "n/a",
+   "controller": "RSF-linked Al Junaid (from 2017); state took formal control Oct 2020 but kept working with Al Junaid",
+   "controller_type": "armed group / artisanal",
+   "conflict_region": "sudan",
+   "cites": [
+    "guardian-jebelamer-2020",
+    "dabanga-jebelamer-2020",
+    "un-sudan-2024"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "gold-burkina-asm",
+   "type": "gold",
+   "name": "Burkina Faso artisanal gold (Sahel region)",
+   "lonlat": [
+    -0.5,
+    14.0
+   ],
+   "quantity": "not quantified in source",
+   "year": 2024,
+   "world_share": "n/a",
+   "controller": "Artisanal miners; JNIM taxes or tolerates sites in exchange for revenue",
+   "controller_type": "armed group / artisanal",
+   "conflict_region": "sahel",
+   "cites": [
+    "gitoc-acled-2024"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "gold-niger-asm",
+   "type": "gold",
+   "name": "Niger artisanal gold (Tillaberi, Tagueye area)",
+   "lonlat": [
+    1.0,
+    14.2
+   ],
+   "quantity": "not quantified in source",
+   "year": 2025,
+   "world_share": "n/a",
+   "controller": "Jihadist-controlled informal sites; army raided them in June 2025",
+   "controller_type": "armed group / artisanal",
+   "conflict_region": "sahel",
+   "cites": [
+    "reuters-niger-gold-2025"
+   ],
+   "confidence": "reported",
+   "note": ""
+  },
+  {
+   "id": "gold-drc-east-asm",
+   "type": "gold",
+   "name": "Eastern DRC artisanal gold (Lomera/Luhihi, Twangiza, South Kivu)",
+   "lonlat": [
+    28.6,
+    -2.7
+   ],
+   "quantity": "not quantified in source",
+   "year": 2025,
+   "world_share": "n/a",
+   "controller": "AFC/M23 taxes ore and monitors flows in areas it holds",
+   "controller_type": "armed group / artisanal",
+   "conflict_region": "great-lakes",
+   "cites": [
+    "un-drc-2025"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "gold-zimbabwe-asm",
+   "type": "gold",
+   "name": "Zimbabwe small-scale gold",
+   "lonlat": [
+    30.0,
+    -18.5
+   ],
+   "quantity": "23.75 t of 36.49 t delivered (about 65%)",
+   "year": 2024,
+   "world_share": "n/a",
+   "controller": "Artisanal and small-scale miners selling to state-owned Fidelity Gold Refinery",
+   "controller_type": "artisanal / state buyer",
+   "conflict_region": "southern",
+   "cites": [
+    "fgr-2024",
+    "herald-zim-asm-2025"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "gold-ghana-asm",
+   "type": "gold",
+   "name": "Ghana artisanal gold (galamsey)",
+   "lonlat": [
+    -2.0,
+    6.2
+   ],
+   "quantity": "1.9 Moz of 4.8 Moz (39%)",
+   "year": 2024,
+   "world_share": "n/a",
+   "controller": "Small-scale miners, many unlicensed; state GoldBod buying",
+   "controller_type": "artisanal",
+   "conflict_region": "coastal-wa",
+   "cites": [
+    "ecofin-ghana-asm-2025"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "oil-cotedivoire-baleine",
+   "type": "oil",
+   "name": "Baleine field, Cote d'Ivoire",
+   "lonlat": [
+    -4.6,
+    4.9
+   ],
+   "quantity": "about 22,000 boe/d; 2.5bn bbl oil in place (Eni)",
+   "year": 2025,
+   "world_share": "n/a",
+   "controller": "Eni-operated with Petroci",
+   "controller_type": "foreign firm",
+   "conflict_region": "coastal-wa",
+   "cites": [
+    "eni-baleine"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "oil-ssd-portsudan",
+   "type": "oil",
+   "name": "South Sudan crude via Sudan to Port Sudan",
+   "lonlat": [
+    32.0,
+    10.5
+   ],
+   "quantity": "about 150,000 b/d before Feb 2024 rupture; 90,000 b/d restart target Jan 2025",
+   "year": 2025,
+   "world_share": "n/a",
+   "controller": "South Sudan state; Petrodar and GNPOC pipelines run through SAF-RSF war zone",
+   "controller_type": "state / pipeline transit",
+   "conflict_region": "sudan",
+   "cites": [
+    "reuters-ssd-pipeline-2024",
+    "reuters-ssd-fm-2025"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "oil-niger-benin",
+   "type": "oil",
+   "name": "Niger-Benin pipeline (Agadem to Seme)",
+   "lonlat": [
+    12.0,
+    15.8
+   ],
+   "quantity": "90,000 b/d capacity; shut Jun-Aug 2024; attacked Jun 2024",
+   "year": 2024,
+   "world_share": "n/a",
+   "controller": "CNPC/WAPCO (Chinese state firm)",
+   "controller_type": "foreign state firm",
+   "conflict_region": "sahel",
+   "cites": [
+    "reuters-niger-benin-2024",
+    "reuters-niger-pipeline-attack-2024"
+   ],
+   "confidence": "documented",
+   "note": ""
+  },
+  {
+   "id": "gas-algeria",
+   "type": "gas",
+   "name": "Algeria gas (Hassi R'Mel) and export pipelines to Europe",
+   "lonlat": [
+    3.3,
+    32.9
+   ],
+   "quantity": "record 3.7 Tcf output 2023; TransMed 33.5 bcm/yr, Medgaz 10.16 bcm/yr",
+   "year": 2023,
+   "world_share": "n/a",
+   "controller": "Sonatrach (state)",
+   "controller_type": "state",
+   "conflict_region": "north",
+   "cites": [
+    "eia-algeria",
+    "medgaz-faq"
+   ],
+   "confidence": "documented",
+   "note": "Maghreb-Europe pipeline via Morocco idle since 2021."
+  },
+  {
+   "id": "w-nile-gerd",
+   "type": "water",
+   "name": "Blue Nile / GERD",
+   "lonlat": [
+    35.09,
+    11.21
+   ],
+   "quantity": "5,150 MW dam inaugurated",
+   "year": 2025,
+   "world_share": "n/a",
+   "controller": "Ethiopian state",
+   "controller_type": "state",
+   "conflict_region": "horn",
+   "cites": [
+    "reuters-gerd-2025"
+   ],
+   "confidence": "documented",
+   "note": "Egypt says it relies on the Nile for ~90% of its fresh water and called the opening illegal; Ethiopia says it harms no one downstream."
+  },
+  {
+   "id": "w-lake-chad",
+   "type": "water",
+   "name": "Lake Chad",
+   "lonlat": [
+    14.0,
+    13.3
+   ],
+   "quantity": "~25,000 km² (1963) to <1,500 km² (2001)",
+   "year": 2001,
+   "world_share": "n/a",
+   "controller": "Shared: Chad, Cameroon, Niger, Nigeria",
+   "controller_type": "state",
+   "conflict_region": "lake-chad",
+   "cites": [
+    "fao-lakechad"
+   ],
+   "confidence": "documented"
+  },
+  {
+   "id": "land-sudan-gezira",
+   "type": "arable",
+   "name": "Gezira irrigated scheme (Sudan)",
+   "lonlat": [
+    33.0,
+    14.4
+   ],
+   "quantity": "about 2.1m feddan (~882,000 ha); wheat and sorghum output nearly 50% below normal after RSF took Wad Madani (Dec 2023)",
+   "year": 2024,
+   "world_share": "n/a",
+   "controller": "Contested in SAF-RSF war (RSF held Wad Madani Dec 2023 - Jan 2025)",
+   "controller_type": "contested",
+   "conflict_region": "sudan",
+   "cites": [
+    "fao-gezira-2024",
+    "fao-sudan-ag-2024",
+    "agwat-gezira-2024"
+   ],
+   "confidence": "documented"
+  }
+ ],
+ "links": [
+  {
+   "id": "rw-m23",
+   "backer": "Rwanda",
+   "backer_lonlat": [
+    29.9,
+    -2.0
+   ],
+   "actor": "M23 / AFC",
+   "region": "great-lakes",
+   "target_lonlat": [
+    29.0,
+    -1.3
+   ],
+   "means": [
+    "troops",
+    "weapons"
+   ],
+   "actions": "UN Group of Experts reported 3,000-4,000 Rwanda Defence Force troops operating in North Kivu alongside M23.",
+   "returns": "Coltan from M23-held Rubaya traced into Rwandan supply chains.",
+   "position": "Rwanda denies supporting M23 and cites the FDLR threat on its border.",
+   "confidence": "documented",
+   "cites": [
+    "un-drc-2024"
+   ]
+  },
+  {
+   "id": "uae-rsf",
+   "backer": "United Arab Emirates",
+   "backer_lonlat": [
+    54.4,
+    24.4
+   ],
+   "actor": "Rapid Support Forces",
+   "region": "sudan",
+   "target_lonlat": [
+    24.9,
+    13.6
+   ],
+   "means": [
+    "weapons",
+    "logistics",
+    "money"
+   ],
+   "actions": "UN Panel found allegations of UAE arms deliveries to the RSF via eastern Chad credible; OFAC designated seven UAE-based companies that supplied the RSF with money and equipment.",
+   "returns": "Sudanese gold bought by UAE-based AZ Gold and moved to Dubai; account accessible to RSF procurement chief.",
+   "position": "The UAE denies arming any party and says its flights carry humanitarian aid; the OFAC targets are private firms, not the UAE state.",
+   "confidence": "credible allegation",
+   "cites": [
+    "un-sudan-2024",
+    "ofac-rsf-2025"
+   ]
+  },
+  {
+   "id": "uae-gold-hub",
+   "backer": "United Arab Emirates (gold market)",
+   "backer_lonlat": [
+    55.3,
+    25.2
+   ],
+   "actor": "Artisanal gold trade (Mali, Ghana, Zimbabwe)",
+   "region": "sahel",
+   "target_lonlat": [
+    -4.0,
+    10.0
+   ],
+   "means": [
+    "market"
+   ],
+   "actions": "SWISSAID found 405 t of African gold imported into the UAE in 2022 was not declared as exports by African countries; 80-85% of African ASM gold went to the UAE.",
+   "returns": "Gold refining and trade volume for Dubai; undeclared value of about US$30.7bn for 2022 smuggling.",
+   "position": "The UAE has said it is tightening due-diligence rules for gold refiners.",
+   "confidence": "documented",
+   "cites": [
+    "swissaid-gold-2024"
+   ]
+  },
+  {
+   "id": "ru-mali",
+   "backer": "Russia (Africa Corps)",
+   "backer_lonlat": [
+    37.6,
+    55.7
+   ],
+   "actor": "Mali transitional government",
+   "region": "sahel",
+   "target_lonlat": [
+    -8.0,
+    12.6
+   ],
+   "means": [
+    "troops",
+    "advisers"
+   ],
+   "actions": "Reuters (2021) reported the proposed Wagner deal at about $10.8m a month for ~1,000 fighters (terms not independently confirmed). Wagner left Mali in June 2025; the Kremlin-controlled Africa Corps stayed, about 70-80% ex-Wagner.",
+   "returns": "Stake for Russia's Yadran Group in the Bamako gold refinery (see ru-mali-gold).",
+   "position": "Bamako and Moscow describe it as state-to-state security cooperation.",
+   "confidence": "documented",
+   "cites": [
+    "reuters-mali-2025",
+    "reuters-wagner-mali-2021"
+   ]
+  },
+  {
+   "id": "ru-mali-gold",
+   "backer": "Russia (Yadran Group)",
+   "backer_lonlat": [
+    37.6,
+    55.7
+   ],
+   "actor": "Mali state (SOROMA-SA)",
+   "region": "sahel",
+   "target_lonlat": [
+    -7.98,
+    12.65
+   ],
+   "means": [
+    "investment"
+   ],
+   "actions": "Construction of a 200 t/yr gold refinery began June 2025; Mali holds 62%, Yadran and a Swiss investor the rest.",
+   "returns": "Minority stake in refining of Malian gold.",
+   "position": "Mali presents it as ending raw-gold exports and asserting economic sovereignty.",
+   "confidence": "documented",
+   "cites": [
+    "reuters-mali-refinery"
+   ]
+  },
+  {
+   "id": "ru-car-gold",
+   "backer": "Russia (Wagner network)",
+   "backer_lonlat": [
+    37.6,
+    55.7
+   ],
+   "actor": "Central African Republic government",
+   "region": "car",
+   "target_lonlat": [
+    18.56,
+    4.36
+   ],
+   "means": [
+    "troops",
+    "firms"
+   ],
+   "actions": "OFAC: Wagner-linked Midas holds rights to the Ndassima gold mine and with Wagner denied CAR inspectors access; Diamville converted CAR gold into dollars.",
+   "returns": "Ndassima gold rights (deposit assessed >US$1bn) and CAR gold and diamond trade.",
+   "position": "CAR's government describes Russian personnel as instructors invited under a bilateral agreement.",
+   "confidence": "documented",
+   "cites": [
+    "ofac-wagner-gold"
+   ]
+  },
+  {
+   "id": "tr-saf",
+   "backer": "Turkey (Baykar)",
+   "backer_lonlat": [
+    32.85,
+    39.93
+   ],
+   "actor": "Sudanese Armed Forces",
+   "region": "sudan",
+   "target_lonlat": [
+    32.5,
+    15.6
+   ],
+   "means": [
+    "drones"
+   ],
+   "actions": "Contract and end-user records show Baykar sent at least US$120m of weapons, including TB2 drones and hundreds of warheads, to the SAF in 2024.",
+   "returns": "Not public in sources used (sale revenue only).",
+   "position": "Baykar did not deny the sale in the cited report; Ankara backs the SAF-led government as Sudan's legitimate authority.",
+   "confidence": "documented",
+   "cites": [
+    "wapo-baykar-2025"
+   ]
+  },
+  {
+   "id": "ir-saf",
+   "backer": "Iran",
+   "backer_lonlat": [
+    51.4,
+    35.7
+   ],
+   "actor": "Sudanese Armed Forces",
+   "region": "sudan",
+   "target_lonlat": [
+    32.6,
+    15.9
+   ],
+   "means": [
+    "drones"
+   ],
+   "actions": "Satellite imagery showed a Mohajer-6 at the SAF's Wadi Sayyidna base (Jan 2024); six Qeshm Fars Air cargo flights went from Iran to Port Sudan in Dec 2023-Jan 2024.",
+   "returns": "Not established. WSJ reported (Mar 2024) Iran sought a Red Sea base in return; Sudan and Iran both denied it. Diplomatic ties restored in 2023.",
+   "position": "A senior SAF source denied the drones came directly from Iran.",
+   "confidence": "credible allegation",
+   "cites": [
+    "reuters-iran-drones-2024",
+    "rferl-iran-base-2024"
+   ]
+  },
+  {
+   "id": "eg-saf",
+   "backer": "Egypt",
+   "backer_lonlat": [
+    31.2,
+    30.0
+   ],
+   "actor": "Sudanese Armed Forces",
+   "region": "sudan",
+   "target_lonlat": [
+    28.0,
+    22.3
+   ],
+   "means": [
+    "drones"
+   ],
+   "actions": "Satellite images showed a Turkish-made Akinci combat drone at Egypt's East Oweinat airstrip near the Sudan border in Dec 2025.",
+   "returns": "No material return documented; Reuters describes Egypt's interest as a SAF-run state aligned with Cairo on Nile water (GERD) and border security.",
+   "position": "Cairo backs Sudan's state institutions and the army as the legitimate authority.",
+   "confidence": "reported",
+   "cites": [
+    "reuters-egypt-drones-2026",
+    "reuters-sudan-backers-2023"
+   ]
+  },
+  {
+   "id": "cn-drc-sicomines",
+   "backer": "China (Sinohydro, China Railway)",
+   "backer_lonlat": [
+    116.4,
+    39.9
+   ],
+   "actor": "DRC government",
+   "region": "great-lakes",
+   "target_lonlat": [
+    25.8,
+    -10.5
+   ],
+   "means": [
+    "investment",
+    "infrastructure"
+   ],
+   "actions": "Amended Sicomines deal (2024): Chinese partners to fund up to US$7bn of infrastructure, tied to copper prices.",
+   "returns": "68% of the Sicomines copper-cobalt venture.",
+   "position": "Kinshasa says the renegotiation raised its share of benefits.",
+   "confidence": "documented",
+   "cites": [
+    "reuters-sicomines-2024"
+   ]
+  },
+  {
+   "id": "cn-loans",
+   "backer": "China (state lenders)",
+   "backer_lonlat": [
+    116.4,
+    39.9
+   ],
+   "actor": "49 African governments",
+   "region": "continental",
+   "target_lonlat": [
+    20.0,
+    2.0
+   ],
+   "means": [
+    "loans"
+   ],
+   "actions": "1,306 loan commitments worth US$182.28bn, 2000-2023 (commitments, not disbursements).",
+   "returns": "Varies by loan; resource-backed in some cases (not itemised here).",
+   "position": "Beijing frames lending as development finance with no political conditions.",
+   "confidence": "documented",
+   "cites": [
+    "bu-cla-2024"
+   ]
+  },
+  {
+   "id": "us-drc-rwanda",
+   "backer": "United States",
+   "backer_lonlat": [
+    -77.0,
+    38.9
+   ],
+   "actor": "DRC and Rwanda governments",
+   "region": "great-lakes",
+   "target_lonlat": [
+    28.5,
+    -2.5
+   ],
+   "means": [
+    "mediation",
+    "investment"
+   ],
+   "actions": "Brokered the 27 June 2025 DRC-Rwanda peace agreement and a Regional Economic Integration Framework on critical-mineral supply chains (signed 4 Dec 2025).",
+   "returns": "Framework for US-linked investment in DRC and Rwanda mineral supply chains.",
+   "position": "Washington presents it as peace through economic integration; critics argue minerals access is the main US aim.",
+   "confidence": "documented",
+   "cites": [
+    "state-drc-rwanda-2025",
+    "state-reif-2025"
+   ]
+  },
+  {
+   "id": "fr-chad",
+   "backer": "France (drawdown)",
+   "backer_lonlat": [
+    2.35,
+    48.85
+   ],
+   "actor": "Chad",
+   "region": "lake-chad",
+   "target_lonlat": [
+    15.0,
+    12.1
+   ],
+   "means": [
+    "withdrawal"
+   ],
+   "actions": "France handed over its last base in Chad on 30 January 2025, two months after N'Djamena ended the defence pact.",
+   "returns": "n/a (withdrawal)",
+   "position": "Chad says the break is military only, not diplomatic.",
+   "confidence": "documented",
+   "cites": [
+    "ap-chad-2025"
+   ]
+  },
+  {
+   "id": "ru-libya",
+   "backer": "Russia (Africa Corps)",
+   "backer_lonlat": [
+    37.6,
+    55.7
+   ],
+   "actor": "Haftar's LNA (eastern Libya)",
+   "region": "north",
+   "target_lonlat": [
+    20.9,
+    31.9
+   ],
+   "means": [
+    "logistics",
+    "troops"
+   ],
+   "actions": "Cargo flights from Syria to Al-Khadim airbase rose in late 2024; RFI reports the base serves as a hub for Russian arms moving to Mali, Burkina Faso and other Sahel states.",
+   "returns": "A Mediterranean and Sahel logistics hub after Syria.",
+   "position": "Moscow describes its presence as security cooperation at the invitation of Libyan authorities.",
+   "confidence": "reported",
+   "cites": [
+    "rfi-alkhadim-2025",
+    "cnn-libya-flights-2024"
+   ]
+  },
+  {
+   "id": "ru-sudan-base",
+   "backer": "Russia",
+   "backer_lonlat": [
+    37.6,
+    55.7
+   ],
+   "actor": "SAF-led government (Port Sudan)",
+   "region": "sudan",
+   "target_lonlat": [
+    37.2,
+    19.6
+   ],
+   "means": [
+    "basing deal"
+   ],
+   "actions": "Sudan's foreign minister said in Feb 2025 the two sides agreed on a 25-year naval logistics point near Port Sudan (up to 4 ships, 300 personnel), pending ratification.",
+   "returns": "A Red Sea naval foothold.",
+   "position": "Khartoum says ratification awaits an elected parliament; the deal is unratified.",
+   "confidence": "documented",
+   "cites": [
+    "reuters-ru-sudan-base-2025",
+    "bbc-ru-sudan-base-2025"
+   ]
+  },
+  {
+   "id": "ru-niger",
+   "backer": "Russia (Rosatom; Africa Corps)",
+   "backer_lonlat": [
+    37.6,
+    55.7
+   ],
+   "actor": "Niger junta",
+   "region": "sahel",
+   "target_lonlat": [
+    2.1,
+    13.5
+   ],
+   "means": [
+    "nuclear cooperation",
+    "security"
+   ],
+   "actions": "Niger said in Sept 2025 it wants Rosatom to build two reactors and cooperate on uranium; no construction contract reported.",
+   "returns": "Prospective nuclear and uranium access after Orano's exit.",
+   "position": "Niamey frames it as sovereignty over its uranium.",
+   "confidence": "reported",
+   "cites": [
+    "reuters-niger-nuclear-2025",
+    "reuters-somair-2025"
+   ]
+  },
+  {
+   "id": "us-somalia",
+   "backer": "United States (AFRICOM)",
+   "backer_lonlat": [
+    -77.0,
+    38.9
+   ],
+   "actor": "Somali federal government / Puntland vs ISIS-Somalia and al-Shabaab",
+   "region": "horn",
+   "target_lonlat": [
+    49.5,
+    10.8
+   ],
+   "means": [
+    "airstrikes"
+   ],
+   "actions": "AFRICOM carried out 124 airstrikes in Somalia in 2025, many against ISIS-Somalia in Puntland's Golis Mountains.",
+   "returns": "Counter-terrorism aims; no resource return identified.",
+   "position": "Washington says the strikes protect the US homeland and support Somali forces.",
+   "confidence": "documented",
+   "cites": [
+    "africom-isis-somalia-2025",
+    "hiiraan-africom-2026"
+   ]
+  },
+  {
+   "id": "us-niger-exit",
+   "backer": "United States (drawdown)",
+   "backer_lonlat": [
+    -77.0,
+    38.9
+   ],
+   "actor": "Niger junta",
+   "region": "sahel",
+   "target_lonlat": [
+    8.0,
+    16.97
+   ],
+   "means": [
+    "withdrawal"
+   ],
+   "actions": "US forces left Air Base 201 (Agadez) on 5 Aug 2024 and completed withdrawal from Niger on 15 Sep 2024.",
+   "returns": "n/a (loss of the main US drone base in the Sahel).",
+   "position": "Niamey revoked the military accord, calling it imposed.",
+   "confidence": "documented",
+   "cites": [
+    "africom-niger-2024"
+   ]
+  },
+  {
+   "id": "fr-niger-uranium",
+   "backer": "France (Orano, drawdown)",
+   "backer_lonlat": [
+    2.35,
+    48.85
+   ],
+   "actor": "Niger junta",
+   "region": "sahel",
+   "target_lonlat": [
+    7.35,
+    18.75
+   ],
+   "means": [
+    "withdrawal"
+   ],
+   "actions": "Niger nationalised SOMAIR in June 2025, removing Orano's 63.4% control; Orano took it to arbitration.",
+   "returns": "Loss of uranium access for Orano (reverse flow).",
+   "position": "Niamey frames it as resource sovereignty; Orano calls it unlawful.",
+   "confidence": "documented",
+   "cites": [
+    "reuters-somair-2025",
+    "orano-somair-2025"
+   ]
+  }
+ ],
+ "bri": [
+  {
+   "id": "bri-sgr-kenya",
+   "kind": "railway",
+   "name": "Mombasa-Nairobi Standard Gauge Railway",
+   "lonlat": [
+    38.5,
+    -2.8
+   ],
+   "country": "Kenya",
+   "region": null,
+   "value": "$3.2bn; 2014 loans of $1.6bn concessional and $1.63bn commercial",
+   "lender_builder": "China Exim Bank (about 90%); China Road and Bridge Corp built and operated it",
+   "china_gets": "Building and operating contracts for a Chinese state firm; Libor+3.6% on the commercial loan; a 15-year take-or-pay cargo guarantee",
+   "host_position": "Kenya's biggest project since independence; Ruto published the loan documents in 2022",
+   "cites": [
+    "reuters-sgr-2017",
+    "bd-sgr-2020",
+    "reuters-sgr-docs-2022"
+   ],
+   "confidence": "documented"
+  },
+  {
+   "id": "bri-addis-djibouti",
+   "kind": "railway",
+   "name": "Addis Ababa-Djibouti Railway",
+   "lonlat": [
+    41.0,
+    9.6
+   ],
+   "country": "Ethiopia / Djibouti",
+   "region": "horn",
+   "value": "About $4bn; Ethiopia's $2.49bn China Exim loan was restructured in 2018 and now matures in 2044",
+   "lender_builder": "China Exim Bank; CREC and CCECC built it",
+   "china_gets": "Building contracts for CREC, CCECC and NORINCO; Libor+3% interest; a supply corridor to Djibouti's ports, where China Merchants owns a stake",
+   "host_position": "Ethiopia's main route to the sea",
+   "cites": [
+    "aiddata-addis-djib",
+    "erc-addis-djib"
+   ],
+   "confidence": "documented"
+  },
+  {
+   "id": "bri-djibouti-port",
+   "kind": "port",
+   "name": "Port de Djibouti / Doraleh stake",
+   "lonlat": [
+    43.15,
+    11.6
+   ],
+   "country": "Djibouti",
+   "region": "horn",
+   "value": "China Merchants bought 23.5% of Port de Djibouti S.A. for $185m in 2012-13",
+   "lender_builder": "China Merchants Port Holdings",
+   "china_gets": "A share in Djibouti's port operator, on the Bab el-Mandeb strait",
+   "host_position": "Djibouti presents itself as a neutral hub that hosts many countries' bases",
+   "cites": [
+    "hkex-cm-djib-2012"
+   ],
+   "confidence": "documented"
+  },
+  {
+   "id": "bri-djibouti-base",
+   "kind": "military base",
+   "name": "PLA support base, Djibouti",
+   "lonlat": [
+    42.95,
+    11.5
+   ],
+   "country": "Djibouti",
+   "region": "horn",
+   "value": "Opened 1 Aug 2017; lease reported at about $20m a year",
+   "lender_builder": "People's Liberation Army Navy",
+   "china_gets": "China's first overseas base; about 400 PLA marines and a pier for large warships (US DoD, cited by CRS)",
+   "host_position": "Beijing calls it a support facility for anti-piracy and evacuation missions",
+   "cites": [
+    "reuters-djib-base-2017",
+    "crs-djibouti"
+   ],
+   "confidence": "documented"
+  },
+  {
+   "id": "bri-lamu",
+   "kind": "port",
+   "name": "Lamu Port (LAPSSET)",
+   "lonlat": [
+    40.9,
+    -2.27
+   ],
+   "country": "Kenya",
+   "region": null,
+   "value": "First 3 berths; berth 1 opened 20 May 2021",
+   "lender_builder": "Built by China Communications Construction Co; funded by Kenya",
+   "china_gets": "A building contract for CCCC; no Chinese ownership stake found",
+   "host_position": "Kenya's gateway to South Sudan and Ethiopia",
+   "cites": [
+    "lapsset-lamu-2021",
+    "nation-lamu-2021"
+   ],
+   "confidence": "documented"
+  },
+  {
+   "id": "bri-bagamoyo",
+   "kind": "port (stalled)",
+   "name": "Bagamoyo Port",
+   "lonlat": [
+    38.9,
+    -6.44
+   ],
+   "country": "Tanzania",
+   "region": null,
+   "value": "$10bn plan agreed in 2013 with China Merchants and Oman; suspended in 2019; the Chinese partner pulled out in 2022",
+   "lender_builder": "Formerly China Merchants; now an MoU with AGL (MSC), signed Dec 2025",
+   "china_gets": "Nothing; the talks collapsed",
+   "host_position": "Tanzania's ports authority rejected the terms: tax exemptions and the investors' freedom to set port charges",
+   "cites": [
+    "dn-bagamoyo-2025",
+    "cce-bagamoyo-2025"
+   ],
+   "confidence": "documented"
+  },
+  {
+   "id": "bri-sicomines",
+   "kind": "mining stake",
+   "name": "Sicomines copper-cobalt (minerals for infrastructure)",
+   "lonlat": [
+    25.5,
+    -10.7
+   ],
+   "country": "DR Congo",
+   "region": "great-lakes",
+   "value": "Up to $7bn of infrastructure under the revised 2024 deal",
+   "lender_builder": "Sinohydro and China Railway Group",
+   "china_gets": "Copper and cobalt output in exchange for infrastructure",
+   "host_position": "Kinshasa renegotiated the deal for more infrastructure",
+   "cites": [
+    "reuters-sicomines-2024"
+   ],
+   "confidence": "documented"
+  },
+  {
+   "id": "bri-loans",
+   "kind": "loans (continental)",
+   "name": "Chinese loans to Africa, 2000-2024",
+   "lonlat": [
+    20.0,
+    2.0
+   ],
+   "country": "49 governments",
+   "region": "continental",
+   "value": "$180.87bn in 1,319 loan commitments from 42 lenders (amounts committed, not paid out)",
+   "lender_builder": "China Exim Bank, China Development Bank and others",
+   "china_gets": "Interest; contracts for Chinese firms; repayment in resources in some deals",
+   "host_position": "Governments say they borrowed to fill gaps Western lenders left",
+   "cites": [
+    "bu-cla-db"
+   ],
+   "confidence": "documented"
+  },
+  {
+   "id": "bri-loans-top",
+   "kind": "loans (by country)",
+   "name": "Top Chinese borrowers in Africa, 2000-2023",
+   "lonlat": [
+    14.0,
+    -11.5
+   ],
+   "country": "Angola (top)",
+   "region": "continental",
+   "value": "Angola $46.05bn cumulative; ranking after it: Ethiopia, Egypt, Nigeria, Kenya, Zambia, South Africa, Sudan, Ghana, Cameroon (dollar figures for those not in the brief)",
+   "lender_builder": "China Exim Bank, China Development Bank",
+   "china_gets": "Oil-backed repayment in Angola's case; contracts for Chinese firms",
+   "host_position": "Angola negotiated debt relief in 2024 rather than restructuring",
+   "cites": [
+    "bu-cla-2024-brief"
+   ],
+   "confidence": "documented"
+  },
+  {
+   "id": "bri-lekki",
+   "kind": "port",
+   "name": "Lekki Deep Sea Port",
+   "lonlat": [
+    3.98,
+    6.42
+   ],
+   "country": "Nigeria",
+   "region": "coastal-wa",
+   "value": "Opened 23 Jan 2023",
+   "lender_builder": "China Harbour Engineering (CHEC) built it; China Development Bank financed",
+   "china_gets": "CHEC 52.5% stake (Tolaram 22.5%, Lagos 20%, NPA 5%)",
+   "host_position": "Lagos calls it Nigeria's first deep-sea port",
+   "cites": [
+    "pti-lekki-2023"
+   ],
+   "confidence": "documented"
+  },
+  {
+   "id": "bri-dar",
+   "kind": "port (contractor)",
+   "name": "Dar es Salaam port upgrade",
+   "lonlat": [
+    39.29,
+    -6.82
+   ],
+   "country": "Tanzania",
+   "region": null,
+   "value": "World Bank-financed berths 1-7, RoRo, channel works",
+   "lender_builder": "China Harbour Engineering (contractor); World Bank financing",
+   "china_gets": "Construction contracts only; operators are DP World (berths 4-7) and Adani (CT2)",
+   "host_position": "Dar es Salaam chose Gulf and Indian operators",
+   "cites": [
+    "wb-dar-2024",
+    "reuters-dpworld-dar-2023"
+   ],
+   "confidence": "documented"
+  },
+  {
+   "id": "bri-kribi",
+   "kind": "port",
+   "name": "Kribi deep-water port",
+   "lonlat": [
+    9.9,
+    2.73
+   ],
+   "country": "Cameroon",
+   "region": null,
+   "value": "Container terminal run by KCT consortium",
+   "lender_builder": "China Harbour Engineering built it; CHEC is a KCT shareholder with CMA CGM and Bollore",
+   "china_gets": "Shareholding in the terminal operator (exact % not confirmed in a filing)",
+   "host_position": "Cameroon's main deep-water port",
+   "cites": [
+    "kct-kribi"
+   ],
+   "confidence": "reported"
+  },
+  {
+   "id": "bri-husab",
+   "kind": "mining stake",
+   "name": "Husab and Rossing uranium",
+   "lonlat": [
+    15.0,
+    -22.6
+   ],
+   "country": "Namibia",
+   "region": null,
+   "value": "Husab 5,318 t U3O8 (2023); Rossing 68.62% CNUC",
+   "lender_builder": "CGN and China-Africa Development Fund (Taurus Minerals, 90% of Swakop Uranium); CNNC's CNUC at Rossing",
+   "china_gets": "Uranium supply; Namibia's state Epangelo holds 10% of Husab",
+   "host_position": "Namibia keeps a state stake and royalty",
+   "cites": [
+    "swakop-sr-2023",
+    "nui-2023",
+    "rossing-cnuc-2019"
+   ],
+   "confidence": "documented"
+  },
+  {
+   "id": "bri-zim-lithium",
+   "kind": "mining stake",
+   "name": "Arcadia and Bikita lithium",
+   "lonlat": [
+    31.3,
+    -17.8
+   ],
+   "country": "Zimbabwe",
+   "region": "southern",
+   "value": "Huayou paid $422m for 100% of Arcadia (completed Apr 2022); Sinomine paid $180m for 74% of Bikita",
+   "lender_builder": "Zhejiang Huayou Cobalt; Sinomine Resource",
+   "china_gets": "Lithium concentrate for Chinese battery supply chains",
+   "host_position": "Zimbabwe banned raw lithium ore exports in Dec 2022 to force local processing",
+   "cites": [
+    "reuters-huayou-arcadia-2021",
+    "prospect-asx-2022",
+    "yicai-sinomine-2022"
+   ],
+   "confidence": "documented"
+  }
+ ],
+ "explainers": {
+  "sahel": {
+   "who": [
+    {
+     "t": "Juntas in Mali, Burkina Faso and Niger fight JNIM (al-Qaeda) and Islamic State affiliates; Mali's army works with Russia's Africa Corps, which replaced Wagner in 2025.",
+     "c": [
+      "reuters-mali-2025",
+      "gitoc-acled-2024"
+     ]
+    },
+    {
+     "t": "Algeria's parliament approved sending troops to Niger in Oct 2026, its first foreign deployment since 1973.",
+     "c": [
+      "lemonde-alg-niger-2026"
+     ]
+    }
+   ],
+   "drivers": [
+    {
+     "t": "Armed groups tax and protect artisanal gold sites in Burkina Faso, Mali and Niger, which gives them income and local standing.",
+     "c": [
+      "gitoc-acled-2024",
+      "reuters-niger-gold-2025"
+     ]
+    },
+    {
+     "t": "The juntas have reasserted state control of mining: Niger moved to nationalise Orano's SOMAIR uranium mine, and Mali began building a Russia-backed refinery.",
+     "c": [
+      "reuters-somair-2025",
+      "reuters-mali-refinery"
+     ]
+    }
+   ],
+   "money": [
+    {
+     "t": "SWISSAID found 405 t of African gold entering the UAE in 2022 that African states had not declared as exports; it put 80-85% of African artisanal gold flows through the UAE.",
+     "c": [
+      "swissaid-gold-2024"
+     ]
+    },
+    {
+     "t": "Russia's Yadran Group holds a stake in the planned Mali refinery; Rosatom signed for nuclear reactor plans with Niger.",
+     "c": [
+      "reuters-mali-refinery",
+      "reuters-niger-nuclear-2025"
+     ]
+    }
+   ],
+   "case": [
+    {
+     "t": "Juntas: Western forces failed to stop the insurgency, and control of gold and uranium returns revenue to citizens.",
+     "c": [
+      "reuters-somair-2025"
+     ]
+    },
+    {
+     "t": "France and Orano: SOMAIR operated under valid agreements, and Orano opposes nationalisation as unlawful.",
+     "c": [
+      "orano-somair-2025"
+     ]
+    },
+    {
+     "t": "Russia presents Africa Corps as state-to-state security help requested by Bamako.",
+     "c": [
+      "reuters-mali-2025"
+     ]
+    }
+   ],
+   "avs": [
+    {
+     "t": "Russia calls its role partnership with sovereign states; its Africa Corps and allied firms take mining and refinery stakes in Mali.",
+     "c": [
+      "reuters-mali-2025",
+      "reuters-mali-refinery"
+     ]
+    },
+    {
+     "t": "The UAE says it is tightening due diligence on gold refiners, yet its imports of undeclared African gold remain the largest single flow.",
+     "c": [
+      "swissaid-gold-2024",
+      "swissaid-uae-2025"
+     ]
+    }
+   ]
+  },
+  "lake-chad": {
+   "who": [
+    {
+     "t": "Boko Haram and Islamic State West Africa Province (ISWAP) fight the armies of Nigeria, Cameroon, Chad and Niger.",
+     "c": [
+      "reuters-nigeria-surge-2025",
+      "iss-iswap-2025"
+     ]
+    },
+    {
+     "t": "France handed over its last base in Chad in Jan 2025 after Chad ended the defence pact.",
+     "c": [
+      "ap-chad-2025"
+     ]
+    }
+   ],
+   "drivers": [
+    {
+     "t": "Lake Chad shrank by about 90% between 1963 and 2001, cutting fishing, farming and grazing livelihoods.",
+     "c": [
+      "fao-lakechad"
+     ]
+    },
+    {
+     "t": "ISS counted at least 15 ISWAP attacks on remote military outposts in the first half of 2025; defectors said Islamic State sent trainers.",
+     "c": [
+      "iss-iswap-2025"
+     ]
+    }
+   ],
+   "money": [
+    {
+     "t": "ISS reports that ISWAP seizes weapons from overrun bases and extorts civilians on the islands it controls.",
+     "c": [
+      "iss-iswap-2025"
+     ]
+    }
+   ],
+   "case": [
+    {
+     "t": "Nigeria set up the remote outposts to resettle displaced civilians in destroyed towns.",
+     "c": [
+      "iss-iswap-2025"
+     ]
+    },
+    {
+     "t": "Chad says ending the French pact restores full sovereignty over its security choices.",
+     "c": [
+      "ap-chad-2025"
+     ]
+    }
+   ],
+   "avs": []
+  },
+  "sudan": {
+   "who": [
+    {
+     "t": "The Sudanese Armed Forces (SAF) and the Rapid Support Forces (RSF) have fought since April 2023; the RSF took the SAF headquarters in El Fasher in Oct 2025.",
+     "c": [
+      "reuters-elfasher-2025"
+     ]
+    },
+    {
+     "t": "SAF backers: Turkish Baykar drones, Iranian drones and Egyptian support. RSF backers: UAE-linked supply networks found credible by UN experts.",
+     "c": [
+      "wapo-baykar-2025",
+      "reuters-iran-drones-2024",
+      "reuters-egypt-drones-2026",
+      "un-sudan-2024"
+     ]
+    }
+   ],
+   "drivers": [
+    {
+     "t": "Gold is the main hard-currency source for both sides; the RSF's commercial roots lie in Jebel Amer gold in Darfur.",
+     "c": [
+      "guardian-jebelamer-2020",
+      "un-sudan-2024"
+     ]
+    },
+    {
+     "t": "The war has hit the Gezira farm scheme, Sudan's breadbasket; UN rights chief said drone strikes killed 306 people in three weeks in Oct 2026.",
+     "c": [
+      "fao-sudan-ag-2024",
+      "radiotamazuj-drones-2026"
+     ]
+    }
+   ],
+   "money": [
+    {
+     "t": "The UAE imported 29 t of gold directly from Sudan in 2024, plus 18 t from Chad and 9 t from Libya, which SWISSAID calls exit points for RSF gold.",
+     "c": [
+      "swissaid-uae-2025"
+     ]
+    },
+    {
+     "t": "OFAC sanctioned UAE-based firms for supplying the RSF with money and equipment.",
+     "c": [
+      "ofac-rsf-2025"
+     ]
+    }
+   ],
+   "case": [
+    {
+     "t": "SAF: it is the legitimate national army defending the state against a rebel militia.",
+     "c": [
+      "reuters-sudan-backers-2023"
+     ]
+    },
+    {
+     "t": "RSF: it says it fights a regime of former Bashir-era Islamists.",
+     "c": [
+      "reuters-sudan-backers-2023"
+     ]
+    },
+    {
+     "t": "UAE: it denies arming any party and says its flights carry aid.",
+     "c": [
+      "un-sudan-2024"
+     ]
+    }
+   ],
+   "avs": [
+    {
+     "t": "The UAE publicly backs a ceasefire while UN experts found credible evidence of arms flights to the RSF via eastern Chad.",
+     "c": [
+      "un-sudan-2024"
+     ]
+    },
+    {
+     "t": "Iran and Sudan rejected reports of a Red Sea base deal while Iranian drones were reported in SAF use.",
+     "c": [
+      "rferl-iran-base-2024",
+      "reuters-iran-drones-2024"
+     ]
+    }
+   ]
+  },
+  "great-lakes": {
+   "who": [
+    {
+     "t": "M23/AFC holds much of North and South Kivu; UN experts reported 3,000-4,000 Rwandan troops fighting alongside it.",
+     "c": [
+      "un-drc-2024"
+     ]
+    },
+    {
+     "t": "The US brokered a DRC-Rwanda peace agreement and a regional economic framework in 2025.",
+     "c": [
+      "state-drc-rwanda-2025",
+      "state-reif-2025"
+     ]
+    }
+   ],
+   "drivers": [
+    {
+     "t": "Rubaya's coltan mines, held by M23 since April 2024, supply a large share of world tantalum.",
+     "c": [
+      "un-drc-s2024-969",
+      "usgs-tantalum"
+     ]
+    },
+    {
+     "t": "Rwanda cites the FDLR, a militia with roots in the 1994 genocide, as a security threat on its border.",
+     "c": [
+      "un-drc-2024"
+     ]
+    }
+   ],
+   "money": [
+    {
+     "t": "UN experts found at least 150 t of coltan was fraudulently exported from Rubaya to Rwanda and mixed with Rwandan output; M23 collected at least $800,000 a month in taxes.",
+     "c": [
+      "un-drc-s2024-969",
+      "reuters-drc-rwanda-coltan-2025"
+     ]
+    },
+    {
+     "t": "China imported 628,191 t of cobalt intermediates from the DRC in 2024, 98% of its imports by weight.",
+     "c": [
+      "wits-cobalt-2024"
+     ]
+    }
+   ],
+   "case": [
+    {
+     "t": "Rwanda: it denies backing M23 and says it defends itself against the FDLR.",
+     "c": [
+      "un-drc-2024"
+     ]
+    },
+    {
+     "t": "DRC: it calls M23 a Rwandan proxy looting its minerals.",
+     "c": [
+      "un-drc-2025"
+     ]
+    },
+    {
+     "t": "US: the framework links peace to legal mineral trade and investment.",
+     "c": [
+      "state-reif-2025"
+     ]
+    }
+   ],
+   "avs": [
+    {
+     "t": "Rwanda denies involvement while UN experts documented its troops and coltan flows into its supply chain.",
+     "c": [
+      "un-drc-2024",
+      "un-drc-s2024-969"
+     ]
+    }
+   ]
+  },
+  "car": {
+   "who": [
+    {
+     "t": "President Touadéra won a third term in the Dec 2025 vote, validated with 77.9%; Wagner fighters (about 1,500) and Rwandan troops back his government.",
+     "c": [
+      "reuters-car-court-2026",
+      "icg-car-2026"
+     ]
+    }
+   ],
+   "drivers": [
+    {
+     "t": "Armed groups and state forces compete over gold, diamond and timber zones; Wagner-linked firms hold gold rights including Ndassima.",
+     "c": [
+      "ofac-wagner-gold",
+      "icg-car-2026"
+     ]
+    }
+   ],
+   "money": [
+    {
+     "t": "Crisis Group reports that Russians run gold mines, cut timber and receive tax exemptions in return for security; OFAC sanctioned Wagner gold firms.",
+     "c": [
+      "icg-car-2026",
+      "ofac-wagner-gold"
+     ]
+    }
+   ],
+   "case": [
+    {
+     "t": "Bangui: Russian and Rwandan forces delivered security gains that UN peacekeeping did not.",
+     "c": [
+      "icg-car-2026"
+     ]
+    },
+    {
+     "t": "Moscow presses for Africa Corps, under its defence ministry, to replace Wagner and for CAR to pay more.",
+     "c": [
+      "icg-car-2026"
+     ]
+    }
+   ],
+   "avs": [
+    {
+     "t": "Russia describes its role as security cooperation, while Wagner-controlled firms earn from gold and timber concessions.",
+     "c": [
+      "icg-car-2026",
+      "ofac-wagner-gold"
+     ]
+    }
+   ]
+  },
+  "horn": {
+   "who": [
+    {
+     "t": "Ethiopia and Eritrea traded threats over Ethiopian claims to Eritrea's Assab port through 2025; Eritrea signed a security pact with Egypt.",
+     "c": [
+      "reuters-eth-eri-2025",
+      "bbc-eth-eri-2025"
+     ]
+    },
+    {
+     "t": "In Somalia, AFRICOM ran 124 strikes in 2025 against ISIS-Somalia and al-Shabaab.",
+     "c": [
+      "hiiraan-africom-2026",
+      "africom-isis-somalia-2025"
+     ]
+    }
+   ],
+   "drivers": [
+    {
+     "t": "Ethiopia opened the GERD dam in Sept 2025; Egypt says it threatens its Nile water.",
+     "c": [
+      "reuters-gerd-2025"
+     ]
+    },
+    {
+     "t": "Landlocked Ethiopia's leaders call sea access existential.",
+     "c": [
+      "bbc-eth-eri-2025"
+     ]
+    }
+   ],
+   "money": [
+    {
+     "t": "China financed and built the Addis Ababa-Djibouti railway and runs its first overseas military base in Djibouti.",
+     "c": [
+      "aiddata-addis-djib",
+      "reuters-djib-base-2017"
+     ]
+    }
+   ],
+   "case": [
+    {
+     "t": "Ethiopia: GERD is a development project and sea access a peaceful goal.",
+     "c": [
+      "reuters-gerd-2025",
+      "reuters-eth-eri-2025"
+     ]
+    },
+    {
+     "t": "Eritrea: Ethiopia's push is irredentism and a red line.",
+     "c": [
+      "bbc-eth-eri-2025"
+     ]
+    },
+    {
+     "t": "Egypt: the dam was filled without a binding agreement.",
+     "c": [
+      "reuters-gerd-2025"
+     ]
+    }
+   ],
+   "avs": [
+    {
+     "t": "Abiy ruled out war over sea access in Mar 2025; later his army chief and an ambassador spoke of taking Assab back.",
+     "c": [
+      "reuters-eth-eri-2025",
+      "bbc-eth-eri-2025"
+     ]
+    }
+   ]
+  },
+  "coastal-wa": {
+   "who": [
+    {
+     "t": "JNIM has spread from the Sahel into northern Benin and Togo; Benin said 54 soldiers died in an April 2025 attack.",
+     "c": [
+      "reuters-benin-54-2025"
+     ]
+    }
+   ],
+   "drivers": [
+    {
+     "t": "Artisanal gold reached 39% of Ghana's output in 2024.",
+     "c": [
+      "ecofin-ghana-asm-2025"
+     ]
+    },
+    {
+     "t": "Lekki port in Nigeria (CHEC 52.5%) and Côte d'Ivoire's Baleine field anchor coastal investment.",
+     "c": [
+      "pti-lekki-2023",
+      "eni-baleine"
+     ]
+    }
+   ],
+   "money": [
+    {
+     "t": "The UAE imported 52 t of gold from Togo in 2024, a country that produces almost none.",
+     "c": [
+      "swissaid-uae-2025"
+     ]
+    }
+   ],
+   "case": [
+    {
+     "t": "Benin's government at first said eight soldiers died, then acknowledged 54.",
+     "c": [
+      "reuters-benin-54-2025"
+     ]
+    }
+   ],
+   "avs": [
+    {
+     "t": "Benin's initial toll of eight was revised to 54 after JNIM claimed 70.",
+     "c": [
+      "reuters-benin-54-2025"
+     ]
+    }
+   ]
+  },
+  "southern": {
+   "who": [
+    {
+     "t": "An Islamic State-linked insurgency in Cabo Delgado is fought by Mozambique's army and over 4,000 Rwandan troops.",
+     "c": [
+      "acled-rwanda-moz-2025",
+      "club-moz-rwanda-2025"
+     ]
+    }
+   ],
+   "drivers": [
+    {
+     "t": "TotalEnergies' $20bn Mozambique LNG project lifted force majeure in Oct 2025.",
+     "c": [
+      "reuters-mozlng-2025"
+     ]
+    },
+    {
+     "t": "Zimbabwe's artisanal miners produce most of its gold, bought by the state's Fidelity refinery.",
+     "c": [
+      "herald-zim-asm-2025",
+      "fgr-2024"
+     ]
+    }
+   ],
+   "money": [
+    {
+     "t": "The EU funded the Rwandan deployment through the European Peace Facility.",
+     "c": [
+      "club-moz-rwanda-2025"
+     ]
+    },
+    {
+     "t": "Chinese firms bought Zimbabwe's Arcadia and Bikita lithium mines.",
+     "c": [
+      "reuters-huayou-arcadia-2021",
+      "yicai-sinomine-2022"
+     ]
+    }
+   ],
+   "case": [
+    {
+     "t": "Mozambique says the Rwandan troops are rotations under a bilateral agreement, not an escalation.",
+     "c": [
+      "club-moz-rwanda-2025"
+     ]
+    },
+    {
+     "t": "ACLED notes Rwanda's counter-insurgency record but limits to civilian protection.",
+     "c": [
+      "acled-rwanda-moz-2025"
+     ]
+    }
+   ],
+   "avs": [
+    {
+     "t": "Kigali presents its Mozambique mission as security help; the deployment protects the LNG zone it helps reopen.",
+     "c": [
+      "acled-rwanda-moz-2025",
+      "reuters-mozlng-2025"
+     ]
+    }
+   ]
+  },
+  "north": {
+   "who": [
+    {
+     "t": "Libya is split between Tripoli and Haftar's eastern LNA, which hosts Russian Africa Corps logistics at al-Khadim airbase.",
+     "c": [
+      "eia-libya",
+      "rfi-alkhadim-2025"
+     ]
+    }
+   ],
+   "drivers": [
+    {
+     "t": "Oil revenue is split between rival authorities; the east shut fields in Aug 2024.",
+     "c": [
+      "eia-libya"
+     ]
+    },
+    {
+     "t": "Algeria supplies gas to Europe via Medgaz and approved sending troops to Niger in Oct 2026.",
+     "c": [
+      "medgaz-faq",
+      "lemonde-alg-niger-2026"
+     ]
+    }
+   ],
+   "money": [
+    {
+     "t": "The UAE imported 27 t of gold from Egypt and 9 t from Libya in 2024.",
+     "c": [
+      "swissaid-uae-2025"
+     ]
+    }
+   ],
+   "case": [],
+   "avs": [
+    {
+     "t": "Russia frames Africa Corps as state-to-state partnership; flight tracking showed a spike in Russian military flights from Syria to eastern Libya, and al-Khadim became a hub for arms bound for the Sahel.",
+     "c": [
+      "reuters-mali-2025",
+      "cnn-libya-flights-2024",
+      "rfi-alkhadim-2025"
+     ]
+    }
+   ]
+  }
+ },
+ "sankey": {
+  "gold": [
+   {
+    "from": "Sudan",
+    "to": "UAE",
+    "t": 29,
+    "year": "2024",
+    "cite": "swissaid-uae-2025"
+   },
+   {
+    "from": "Chad",
+    "to": "UAE",
+    "t": 18,
+    "year": "2024",
+    "cite": "swissaid-uae-2025"
+   },
+   {
+    "from": "Libya",
+    "to": "UAE",
+    "t": 9,
+    "year": "2024",
+    "cite": "swissaid-uae-2025"
+   },
+   {
+    "from": "Egypt",
+    "to": "UAE",
+    "t": 27,
+    "year": "2024",
+    "cite": "swissaid-uae-2025"
+   },
+   {
+    "from": "Uganda",
+    "to": "UAE",
+    "t": 31,
+    "year": "2024",
+    "cite": "swissaid-uae-2025"
+   },
+   {
+    "from": "Rwanda",
+    "to": "UAE",
+    "t": 19,
+    "year": "2024",
+    "cite": "swissaid-uae-2025"
+   },
+   {
+    "from": "Togo",
+    "to": "UAE",
+    "t": 52,
+    "year": "2024",
+    "cite": "swissaid-uae-2025"
+   },
+   {
+    "from": "Russia",
+    "to": "UAE",
+    "t": 66,
+    "year": "2024",
+    "cite": "swissaid-uae-2025"
+   },
+   {
+    "from": "UAE",
+    "to": "Switzerland",
+    "t": 316,
+    "year": "Jan-Sep 2025",
+    "cite": "swissaid-uae-2025"
+   }
+  ],
+  "battery": [
+   {
+    "from": "DRC (Rubaya, M23-held)",
+    "to": "Rwanda",
+    "t": 150,
+    "year": "2024 (coltan, at least)",
+    "cite": "un-drc-s2024-969"
+   },
+   {
+    "from": "DRC",
+    "to": "China",
+    "t": 628191,
+    "year": "2024 (cobalt intermediates, gross t)",
+    "cite": "wits-cobalt-2024"
+   }
+  ]
+ }
+}

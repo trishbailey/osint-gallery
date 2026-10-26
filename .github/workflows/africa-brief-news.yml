@@ -1,0 +1,33 @@
+name: africa-brief-news
+on:
+  schedule:
+    - cron: "30 9 * * *"   # 09:30 UTC = 5:30 AM ET (EDT) / 4:30 AM ET (EST)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: {group: africa-brief-news, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip, cache-dependency-path: africa-brief/_src/requirements-ci.txt}
+      - name: Install (CPU-only torch)
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -r africa-brief/_src/requirements-ci.txt
+      - name: Cache NLLB model
+        uses: actions/cache@v4
+        with: {path: ~/.cache/huggingface, key: nllb-200-distilled-600M-v1}
+      - name: Rebuild news, translate locally, validate (fail = keep yesterday's page)
+        env: {TRANSLATE: "1", HF_HUB_DISABLE_TELEMETRY: "1"}
+        run: bash africa-brief/_src/rebuild.sh
+      - name: Commit data
+        run: |
+          git config user.name "africa-brief-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add africa-brief/data/media.json africa-brief/_src/news/news.json africa-brief/_src/news/picked.json
+          git diff --cached --quiet || git commit -m "Africa Brief news refresh $(date -u +%F)"
+          git pull --rebase -X theirs origin main && git push
