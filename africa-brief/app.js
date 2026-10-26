@@ -109,7 +109,7 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
  const LS=d3.select("#legsvg"),lg=LS.append("g").attr("class","legend").attr("transform","translate(14,26)");
  let y=0,cx=0,cy=0,my=0,col=0;const COLW=440;
  const head=t=>{if(y>0){my=Math.max(my,y);col++;if(col%2===0){cy+=my+16;my=0;cx=0;}else cx+=COLW;y=0;}lg.append("text").attr("class","lh").attr("x",cx).attr("y",cy+y).text(t);y+=21;},item=(draw,t)=>{const g=lg.append("g").attr("transform",`translate(${cx+8},${cy+y})`);draw(g);g.append("text").attr("x",30).text(t);y+=20;};
- head("Conflict deaths, last 12 months (Uppsala Conflict Data Program)");[["25–99",0],["100–499",1],["500 or more",2]].forEach(([t,i])=>item(g=>g.append("rect").attr("width",16).attr("height",13).attr("y",-11).attr("fill",HC[i]),t+" deaths per "+M.hex_km+" km cell"));
+ head("Conflict deaths, last 12 months");item(g=>{},"Source: Uppsala Conflict Data Program");[["25–99",0],["100–499",1],["500 or more",2]].forEach(([t,i])=>item(g=>g.append("rect").attr("width",16).attr("height",13).attr("y",-11).attr("fill",HC[i]),t+" deaths per "+M.hex_km+" km cell"));
  head("Resources");Object.values(CATS).forEach(c=>item(g=>g.append("path").attr("d",d3.symbol(c.s,120)()).attr("transform","translate(8,-5)").attr("fill",c.c),c.n));
  head("Outside powers");item(g=>g.append("line").attr("x1",0).attr("x2",20).attr("y1",-5).attr("y2",-5).attr("stroke",BC.Russia).attr("stroke-width",3),"Backer line (colour per power)");
  item(g=>g.append("line").attr("x1",0).attr("x2",20).attr("y1",-5).attr("y2",-5).attr("stroke",BC.France).attr("stroke-width",3).attr("stroke-dasharray","4 3"),"Withdrawal");
