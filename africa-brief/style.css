@@ -174,3 +174,8 @@ details summary{cursor:pointer;color:#82B1FF;font-weight:700;font-size:13px}
 .skp rect{fill:#0b1526;stroke:#24365a}.skp text{fill:#fff;font:600 15px "Helvetica Neue",Arial,sans-serif;pointer-events:none}
 .sksm,.skcl{cursor:pointer}.sksm rect{stroke:#FFE272}.skcl rect{stroke:#FF80FF;stroke-dasharray:4 3}.skc{fill:none;stroke:#FF80FF;stroke-width:2;stroke-dasharray:6 5}
 .cfloc .lreg{fill:#2c4a7a;stroke:#9cc1f0;stroke-width:.8}.cfloc .lland{fill:#1a2a47;stroke:#33507f;stroke-width:.5}
+/* v1.6.1 country labels */
+.clabel{font:700 13px "Helvetica Neue",Arial,sans-serif;fill:#F5F7FF;pointer-events:none}
+.clabels rect{fill:#0b1526;stroke:#24365a;stroke-width:.8}
+.clead{stroke:#9fb3d9;stroke-width:1}.cdot{fill:#9fb3d9}
+.rlabel{fill:#FFE272}

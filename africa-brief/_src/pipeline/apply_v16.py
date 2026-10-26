@@ -138,7 +138,7 @@ for k in ("a7","a7route","a7cog","a7fric"):B.pop(k,None)
 ex=B["explainers"]["sahel"]["paras"]
 B["explainers"]["sahel"]["paras"]=[p for p in ex if "A7" not in p["t"]]
 g=B["goldroutes"]
-g["a7"]={"t":"Russia's sanctioned A7 payment network and its ruble stablecoin A7A5 are one reported route by which Sahel gold proceeds can reach Russia. No public source traces a specific shipment of African gold through it.","cites":["cir-a7-africa-2026","cir-a7a5-2025","elliptic-a7a5-1bn"]}
+g["a7"]={"t":"Russia's A7 payment network and its ruble stablecoin A7A5 are one reported route by which Sahel gold proceeds can reach Russia. No public source traces a specific shipment of African gold through it.","cites":["cir-a7-africa-2026","cir-a7a5-2025","elliptic-a7a5-1bn"]}
 g["crypto"]={"label":"UAE to crypto and stablecoins","status":"reported",
  "t":"Sahel gold from Mali, Burkina Faso and Niger mostly goes to the UAE, where Russian-linked networks have sold African gold for cash. Researchers report that proceeds can then move through the dollar token USDT and the ruble token A7A5, but no public source gives a tonnage or traces a specific Sahel shipment into crypto.",
  "cites":["gitoc-wa-gold-2022","acss-bloodgold-2023","ofac-wagner-gold","cir-a7-abroad-2025","elliptic-a7a5-1bn"]}
