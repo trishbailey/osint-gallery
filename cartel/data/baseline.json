@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-25",
+ "as_of": "2026-10-26",
  "arcs": {
   "andes": {
    "phase": "Record coca output and Ecuador's gang war.",
@@ -16,6 +16,17 @@
    ],
    "recent_log": []
   },
+  "border-fentanyl": {
+   "phase": "Fentanyl seizures at the Southwest border have fallen since 2023, while provisional US overdose deaths have also fallen.",
+   "actors": [
+    "sinaloa",
+    "cjng"
+   ],
+   "turning_points": [
+    "2025-02-20 Eight groups designated FTOs."
+   ],
+   "recent_log": []
+  },
   "brazil": {
    "phase": "The PCC and CV are designated FTOs (Jun 2026).",
    "actors": [
@@ -24,6 +35,39 @@
    ],
    "turning_points": [
     "2026-06-05 PCC and CV designated FTOs."
+   ],
+   "recent_log": []
+  },
+  "cjng": {
+   "phase": "The CJNG has been in a leadership succession since El Mencho was killed in February 2026.",
+   "actors": [
+    "cjng"
+   ],
+   "turning_points": [
+    "2026-02-22 El Mencho killed."
+   ],
+   "recent_log": []
+  },
+  "colombia": {
+   "phase": "The Clan del Golfo, the ELN and FARC dissident factions compete over coca and routes.",
+   "actors": [
+    "clan",
+    "eln",
+    "exfarc"
+   ],
+   "turning_points": [
+    "2025-12-17 Clan del Golfo designated an FTO."
+   ],
+   "recent_log": []
+  },
+  "ecuador": {
+   "phase": "Los Choneros and Los Lobos fight over Ecuador's cocaine export economy.",
+   "actors": [
+    "choneros",
+    "lobos"
+   ],
+   "turning_points": [
+    "2025-07-21 Fito extradited to the US."
    ],
    "recent_log": []
   },
@@ -53,6 +97,18 @@
     "2025-06-25 Section 2313a orders against CIBanco, Intercam and Vector.",
     "2025-08-28 FinCEN CMLN advisory.",
     "2026-01-30 Panama voids CK Hutchison's port concessions."
+   ],
+   "recent_log": []
+  },
+  "sinaloa-war": {
+   "phase": "The Chapitos and the Mayiza have fought for control of the Sinaloa Cartel since September 2024.",
+   "actors": [
+    "chapitos",
+    "mayiza"
+   ],
+   "turning_points": [
+    "2024-07-25 El Mayo Zambada is flown to the US.",
+    "2026-07-20 El Mayo sentenced to life."
    ],
    "recent_log": []
   },

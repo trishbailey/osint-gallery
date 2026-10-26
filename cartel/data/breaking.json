@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-26T13:02:26Z",
+ "as_of": "2026-10-26T16:06:08Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,35 +8,6 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
-  {
-   "id": "92fb5c0ad2",
-   "status": "single_source",
-   "title": "Nuclear weapons are again central to European security at a time when uncertainty about Washington grows. Our new report examines how European NATO allies can strengthen deterrence, bolster assurance ",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-10-26T09:35:11Z",
-   "first_report_precision": "minute",
-   "first_source": "Crisis Group",
-   "region_ids": [
-    "PRY-607"
-   ],
-   "country": "PRY",
-   "group_ids": [],
-   "outlets": [
-    "Crisis Group"
-   ],
-   "sources": [
-    {
-     "outlet": "crisisgroup",
-     "name": "Crisis Group",
-     "kind": "outlet",
-     "via": "X @CrisisGroup",
-     "url": "https://x.com/CrisisGroup/status/2114652049027514709",
-     "time": "2026-10-26T09:35:11Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
   {
    "id": "360e08e6ec",
    "status": "single_source",
@@ -73,6 +44,73 @@
      "via": "X @ZETATijuana",
      "url": "https://x.com/ZETATijuana/status/2114606097927393603",
      "time": "2026-10-26T06:32:35Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "X @ZETATijuana",
+     "url": "https://x.com/ZETATijuana/status/2114737810296951128",
+     "time": "2026-10-26T15:15:58Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "62c0185a20",
+   "status": "single_source",
+   "title": "En la urbanización Altamira, una edificación de dos pisos de lo que parecía iba ser una obra residencial, quedó inconclusa. Pertenecía al círculo de Alex Saab. En la fachada se ve ahora un cartel desc",
+   "lang": "es",
+   "title_en": "In the Altamira development, a two-storey building that appeared to be a residential project was left unfinished. It belonged to Alex Saab's circle. A faded DGCIM sign now hangs on the facade",
+   "first_report": "2026-10-26T14:15:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Armando.Info",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Armando.Info"
+   ],
+   "sources": [
+    {
+     "outlet": "armando",
+     "name": "Armando.Info",
+     "kind": "outlet",
+     "via": "X @ArmandoInfo",
+     "url": "https://x.com/ArmandoInfo/status/2114722466622787634",
+     "time": "2026-10-26T14:15:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "92fb5c0ad2",
+   "status": "single_source",
+   "title": "Nuclear weapons are again central to European security at a time when uncertainty about Washington grows. Our new report examines how European NATO allies can strengthen deterrence, bolster assurance ",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-26T09:35:11Z",
+   "first_report_precision": "minute",
+   "first_source": "Crisis Group",
+   "region_ids": [
+    "PRY-607"
+   ],
+   "country": "PRY",
+   "group_ids": [],
+   "outlets": [
+    "Crisis Group"
+   ],
+   "sources": [
+    {
+     "outlet": "crisisgroup",
+     "name": "Crisis Group",
+     "kind": "outlet",
+     "via": "X @CrisisGroup",
+     "url": "https://x.com/CrisisGroup/status/2114652049027514709",
+     "time": "2026-10-26T09:35:11Z",
      "time_precision": "minute"
     }
    ]
@@ -145,8 +183,8 @@
    "first_report_precision": "minute",
    "first_source": "Ríodoce",
    "region_ids": [
-    "MEX-2732",
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2732"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -204,10 +242,10 @@
    "first_report_precision": "minute",
    "first_source": "Gabinete de Seguridad (Mexico)",
    "region_ids": [
-    "MEX-2712",
-    "MEX-2710",
     "MEX-2721",
-    "MEX-2711"
+    "MEX-2710",
+    "MEX-2711",
+    "MEX-2712"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -636,8 +674,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
-    "chapitos"
+    "chapitos",
+    "sinaloa"
    ],
    "outlets": [
     "El Heraldo de México",
@@ -906,14 +944,14 @@
    "first_report_precision": "day",
    "first_source": "El Universal",
    "region_ids": [
-    "MEX-2719",
     "MEX-2735",
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2719"
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
-    "cjng"
+    "cjng",
+    "sinaloa"
    ],
    "outlets": [
     "El Universal"
@@ -1107,8 +1145,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
-    "mayiza"
+    "mayiza",
+    "sinaloa"
    ],
    "outlets": [
     "Milenio"
@@ -1383,8 +1421,8 @@
    "first_source": "Semana",
    "region_ids": [
     "COL-1314",
-    "COL-1421",
-    "COL-1317"
+    "COL-1317",
+    "COL-1421"
    ],
    "country": "COL",
    "group_ids": [
@@ -1541,10 +1579,10 @@
    "region_ids": [],
    "country": "COL",
    "group_ids": [
-    "exfarc",
+    "tda",
     "eln",
-    "clan",
-    "tda"
+    "exfarc",
+    "clan"
    ],
    "outlets": [
     "El Observador"
@@ -1660,8 +1698,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "clan",
-    "tda"
+    "tda",
+    "clan"
    ],
    "outlets": [
     "Infobae"
@@ -1818,8 +1856,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2706",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1850,8 +1888,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2719",
-    "MEX-2734"
+    "MEX-2734",
+    "MEX-2719"
    ],
    "country": "MEX",
    "group_ids": [
@@ -2348,35 +2386,6 @@
      "via": "X @ArmandoInfo",
      "url": "https://x.com/ArmandoInfo/status/2114039217060028691",
      "time": "2026-10-24T17:00:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "504d484278",
-   "status": "single_source",
-   "title": "🎙️When Héctor searched for his missing son, Dani in Guadalajara, Mexico, the clues he found led him to a more complex question: What happens when those who should be searching for your son may be invo",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-10-24T15:08:42Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2114011206730088840",
-     "time": "2026-10-24T15:08:42Z",
      "time_precision": "minute"
     }
    ]
