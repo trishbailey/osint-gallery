@@ -28,6 +28,6 @@ jobs:
         run: |
           git config user.name "africa-brief-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add africa-brief/data/media.json africa-brief/_src/news/news.json africa-brief/_src/news/picked.json
+          git add africa-brief/data/media.json africa-brief/data/stories.json africa-brief/_src/news/news.json africa-brief/_src/news/picked.json
           git diff --cached --quiet || git commit -m "Africa Brief news refresh $(date -u +%F)"
           git pull --rebase -X theirs origin main && git push
