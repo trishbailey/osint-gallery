@@ -14,6 +14,12 @@ def rng(s,days=7):
     if a.month!=b.month: return f"{a:%b %-d}–{b:%b %-d}, {b.year}"
     return f"{a:%b %-d}–{b.day}, {b.year}"
 def nice(s): y,m,d=map(int,s.split('-')); return date(y,m,d).strftime('%b %-d, %Y')
+def dur(sec):  # seconds -> readable duration with correct units
+    sec=int(round(sec))
+    if sec<60: return f"{sec} seconds"
+    if sec<3600:
+        m,s=divmod(sec,60); return f"about {m} minute{'s'*(m!=1)}"+(f" {s} seconds" if s else "")
+    h,m=divmod(round(sec/60),60); return f"about {h} hour{'s'*(h!=1)}"+(f" {m} minutes" if m else "")
 c=D['collection']; x30=D['xcopies30']; ao=D['allorigin30']; tot=D['allcopies30']; o=D['origin30']; w=D['week']; p=D['pay']; th=D['themes']
 hpct=round(100*ao['houthi']/tot); topx=max(o,key=o.get); hx=round(100*o['houthi']/x30); tx=round(100*o[topx]/x30)
 armed=max((g for g in o if g!='aligned'),key=o.get)
@@ -60,7 +66,7 @@ tcase=(f'<div class="tcard"><div class="tch">Warning, then strike</div><ol class
  f'<li><b>Overnight, Oct 13–14</b> A missile hits an administrative building at Aramco’s headquarters in Dhahran, causing a fire across several floors. Saudi Arabia’s energy ministry confirmed a fire; AP and Reuters reported heavy {nw("damage.",nF(3),nF(4),nF(5))}</li>'
  f'<li><b>{cs["claim_t"]}</b> Houthi military media claim strikes on all three {nw("sites.",nF(2))} Press reports confirm only the Aramco headquarters hit.</li></ol></div>')
 tlines=(f'<ul class="tl"><li><b>New target: airlines.</b> Since {nice(aq["first"])}, Houthi channels have posted {aq["n"]} warnings telling international airlines that Saudi airspace is {nw("unsafe.",nF(6))}</li>'
- +(f'<li><b>Iraqi militias amplify within minutes.</b> Iraqi militia channels reposted Houthi military statements {iq["n"]} times in the last 30 days, half of them within {round(iq["med"]/60,1):g} minutes; @{iq["claim"][0]} reposted the Oct 14 strike claim after {iq["claim"][1]} {nw("seconds.",nF(7))}</li>' if iq else '')+'</ul>')
+ +(f'<li><b>Iraqi militias amplify within minutes.</b> Iraqi militia channels reposted Houthi military statements {iq["n"]} times in the last 30 days, half of them within {dur(iq["med"])}; @{iq["claim"][0]} reposted the Oct 14 strike claim after {iq["claim"][1]} {nw("seconds.",nF(7))}</li>' if iq else '')+'</ul>')
 def flagli(x):
     if x['why']=='first': return f'<li><b>{html.escape(x["l"])}</b> <span>named for the first time ({nice(x["first"])}, <a href="{x["url"]}" target="_blank" rel="noopener nofollow">post</a>)</span></li>'
     return f'<li><b>{html.escape(x["l"])}</b> <span>{x["n7"]} threat posts this week, {x["r7"]:g} per 10,000 posts vs {x["rp"]:g} in the 3 weeks before</span></li>'
@@ -73,15 +79,31 @@ GEO={'riyadh':(24.71,46.68,'Riyadh'),'aramco':(26.29,50.11,'Aramco HQ, Dhahran')
 QT={'riyadh':[('“Evacuate immediately and stay away from the targets our forces will strike” if Saudi Arabia hits Sanaa, listing King Khalid Airport and Aramco’s Riyadh refinery.','Oct 13','https://t.me/army21ye/3878'),('Houthi military claims missiles and drones hit King Khalid International Airport and the Aramco refinery in Riyadh.','Oct 14','https://t.me/MilitaryMediaY/47040')],
  'aramco':[('Houthi military tells civilians to evacuate “Aramco headquarters in Dammam” before any strike.','Oct 13','https://t.me/army21ye/3878'),('Houthi military claims a “large number” of ballistic and cruise missiles and drones hit Aramco in Dhahran.','Oct 14','https://t.me/MilitaryMediaY/47040')],
  'south':[('Houthi military claims strikes on Abha airport, Khamis Mushait air base and “sensitive sites” in Najran and Jizan.','Oct 5','https://t.me/masirah_sada/191126')]}
-MAPD=[]
+QT['kkia']=QT['riyadh'];QT['aramhq']=QT['aramco'];QT['khamis']=QT['south']
+KD=T.get('kind',{});MAPD=[]
+def bd(k,nm):
+    x=KD.get(k)
+    if not x: return ''
+    nd=', '.join(f'{a} {n}' for a,n in sorted(x['named'].items(),key=lambda z:-z[1]))
+    gn=', '.join(f'{a} {n}' for a,n in sorted(x['general'].items(),key=lambda z:-z[1]))
+    return f'Of {x["n"]} threat posts naming {nm}: {x["n"]-x["ngen"]} name a specific site ({nd}); {x["ngen"]} name no site ({gn}). Posts can name several sites.'
+LBL={'riyadh':'Riyadh (city)','south':'Jizan/Najran/Asir','uae':'UAE','bab':'Bab al-Mandab','hormuz':'Hormuz','israel':'Israel'}
+DIR={'riyadh':'left','kkia':'top','ryref':'bottom','aramhq':'top','abha':'left','khamis':'right','south':'bottom','yanbu':'bottom','rabigh':'left','uae':'bottom','bab':'left','hormuz':'right','israel':'right','shaybah':'right','jizanap':'left','najranap':'right','jedap':'left','dmmap':'top'}
 for k,(la,lo,nm) in GEO.items():
     r=TR.get(k)
-    if not r or not r['last30'][0]: continue
+    if not r or k=='aramco': continue
     b,l=r['base'][1],r['last30'][1]
-    MAPD.append({'k':k,'n':nm,'la':la,'lo':lo,'c':r['last30'][0],'cb':r['base'][0],'x':(round(l/b,1) if b else None),'up':l>b,'q':QT.get(k,[]),'ex':r['ex'][:2]})
-UNMAPPED=[TR[k]['l'] for k in TR if k not in GEO or not TR[k]['last30'][0]]
+    cc=r['last30'][0]; extra=''
+    if k in KD: cc=KD[k]['ngen']; extra=bd(k,LBL[k].split(' (')[0])
+    if not cc: continue
+    MAPD.append({'k':k,'n':LBL.get(k,nm),'la':la,'lo':lo,'c':cc,'cb':r['base'][0],'x':(round(l/b,1) if b else None),'up':l>b,'q':QT.get(k,[]),'ex':(KD[k]['ex'] if k in KD else r['ex'][:2]),'bd':extra,'gen':k in KD,'dir':DIR.get(k,'right')})
+for x in T.get('sites',[]):
+    b,l=x['base'][1],x['last30'][1]
+    MAPD.append({'k':x['k'],'n':x['l'],'la':x['la'],'lo':x['lo'],'c':x['last30'][0],'cb':x['base'][0],'x':(round(l/b,1) if b else None),'up':l>b,'q':QT.get(x['k'],[]),'ex':x['ex'][:2],'bd':f'Type: {x["t"]}.'+(f' Linked to {T["air"]["link"][x["l"]]} of the {T["air"]["n"]} warnings to airlines.' if x['l'] in T['air'].get('link',{}) else ''),'gen':False,'dir':DIR.get(x['k'],'right')})
+UNMAPPED=[TR[k]['l'] for k in TR if k not in GEO or not TR[k]['last30'][0]]+(['Aramco sites not named ('+str(KD['aramco']['ngen'])+' posts)'] if 'aramco' in KD else [])
 
-CSS='''#tmap{height:440px;border-radius:10px;border:1px solid var(--line);background:#0b1526}.leaflet-container{font:inherit}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--panel2);color:var(--text);border:1px solid var(--gold)}.leaflet-popup-content{font-size:14px;line-height:1.4;margin:10px 12px}.leaflet-popup-content a{color:var(--gold)}.tq{margin:6px 0;font-style:italic}.tdot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}.case-mk{color:var(--gold);font-weight:700;font-size:13px;white-space:nowrap;text-shadow:0 0 3px #000}@media (max-width:600px){#tmap{height:360px}}
+CSS='''.wkl{margin:6px 0 0;padding-left:18px;font-size:14.5px;line-height:1.5}.wkl li{margin:4px 0;overflow-wrap:anywhere}
+.tlab{background:rgba(11,21,38,.82);border:1px solid #24365a;color:#e6e9ef;font-size:13px;font-weight:600;padding:1px 5px;box-shadow:none;border-radius:4px}.tlab:before{display:none}#tmap{height:480px;border-radius:10px;border:1px solid var(--line);background:#0b1526}.leaflet-container{font:inherit}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--panel2);color:var(--text);border:1px solid var(--gold)}.leaflet-popup-content{font-size:14px;line-height:1.4;margin:10px 12px}.leaflet-popup-content a{color:var(--gold)}.tq{margin:6px 0;font-style:italic}.tdot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}.tl2w{overflow:visible}.tl2{font-size:13px;font-weight:600;color:#e6e9ef;white-space:nowrap;pointer-events:none;text-shadow:0 0 2px #0b1526,0 0 3px #0b1526,0 0 4px #0b1526}.tlk{overflow:visible;pointer-events:none}.case-mk{color:var(--gold);font-weight:700;font-size:13px;white-space:nowrap;text-shadow:0 0 3px #000}@media (max-width:600px){#tmap{height:420px}}
 
 :root{--bg:#0b1526;--panel:#12203a;--panel2:#0f1b31;--line:#24365a;--text:#e6e9ef;--muted:#9aa6b8;--gold:#c8a24a;--red:#c0504d}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
@@ -241,13 +263,21 @@ document.querySelectorAll('[data-tw]').forEach(b=>b.onclick=()=>{TW=b.dataset.tw
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{attribution:'Tiles © Esri',maxZoom:9}).addTo(m);
 const e=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));const b=[];
 M.forEach(t=>{const col=t.up?'#c0504d':'#4379a8',r=Math.max(7,Math.sqrt(t.c)*3.2);
- const x=t.x==null?'new':(t.x>=1?`${t.x}× its earlier rate`:`${Math.round(t.x*100)}% of its earlier rate`);
- let h=`<b>${e(t.n)}</b><br><span class="tdot" style="background:${col}"></span>${t.c} threat posts in last 30 days (${t.cb} in May–Sep), ${x}`;
+ const x=t.x==null?'new (not named before)':(t.x>=1?`${t.x}× its earlier rate`:`${Math.round(t.x*100)}% of its earlier rate`);
+ let h=`<b>${e(t.n)}</b><br><span class="tdot" style="background:${col}"></span>${t.c} threat posts${t.gen?' with no specific site':''} in last 30 days, ${x}`;
+ if(t.bd)h+=`<div style="margin-top:6px">${e(t.bd)}</div>`;
  if(t.q.length)h+=t.q.map(q=>`<div class="tq">${e(q[0])}</div><div>${q[1]} · <a href="${q[2]}" target="_blank" rel="noopener nofollow">${q[2].replace('https://','')}</a></div>`).join('');
  else h+=`<div class="tq">Mentions only; no clear direct threat line in the sample.</div>`+t.ex.map(u=>`<div><a href="${u[0]}" target="_blank" rel="noopener nofollow">${u[0].replace('https://','')}</a> · ${u[1]}</div>`).join('');
- L.circleMarker([t.la,t.lo],{radius:r,color:col,weight:2,fillColor:col,fillOpacity:.55}).addTo(m).bindPopup(h,{maxWidth:280});b.push([t.la,t.lo]);
- if(t.k==='aramco')L.marker([t.la,t.lo],{icon:L.divIcon({className:'',html:`<span class="case-mk" style="position:absolute;right:12px;bottom:10px">${innerWidth<600?'Oct 13 warning → strike':'Oct 13 warning → Oct 14 claimed strike'}</span>`,iconSize:[0,0],iconAnchor:[0,0]}),interactive:false}).addTo(m)});
- m.fitBounds(b,{padding:[24,24]})})();
+ if(t.k==='aramhq')h+=`<div style="margin-top:6px"><b>Oct 13 warning → Oct 14 claimed strike</b></div>`;
+ L.circleMarker([t.la,t.lo],{radius:r,color:col,weight:2,fillColor:col,fillOpacity:.55}).addTo(m).bindPopup(h,{maxWidth:280});b.push([t.la,t.lo]);t.r=r});
+ const SN={riyadh:'Riyadh',kkia:'Riyadh airport',ryref:'Riyadh refinery',south:'Saudi border provinces',khamis:'Khamis Mushait',israel:'Israel',yanbu:'Yanbu',aramhq:'Aramco HQ',abha:'Abha',bab:'Bab al-Mandab',hormuz:'Hormuz',uae:'UAE'};
+ const OF={riyadh:[-56,-44],kkia:[34,-40],south:[-58,46],khamis:[-70,-34],israel:[-46,-40],yanbu:[-50,30],aramhq:[30,-36],abha:[-60,20],bab:[-50,30],hormuz:[24,-36],uae:[30,34],ryref:[40,30]};
+ const LG=L.layerGroup(),top=[...M].sort((p,q)=>q.c-p.c).slice(0,5);
+ top.forEach(t=>{const o=OF[t.k]||[40,-30],dx=o[0],dy=o[1],L0=Math.hypot(dx,dy),sx=dx*(t.r+2)/L0,sy=dy*(t.r+2)/L0,lft=dx<0;
+  const html=`<svg class="tlk" style="position:absolute;left:${Math.min(sx,dx)-1}px;top:${Math.min(sy,dy)-1}px" width="${Math.abs(dx-sx)+2}" height="${Math.abs(dy-sy)+2}"><line x1="${sx-Math.min(sx,dx)+1}" y1="${sy-Math.min(sy,dy)+1}" x2="${dx-Math.min(sx,dx)+1}" y2="${dy-Math.min(sy,dy)+1}" stroke="#9aa7bd" stroke-width="1"/></svg><span class="tl2" style="position:absolute;top:${dy-9}px;${lft?`right:${-dx+3}px`:`left:${dx+3}px`}">${e(SN[t.k]||t.n)}</span>`;
+  LG.addLayer(L.marker([t.la,t.lo],{icon:L.divIcon({className:'tl2w',html,iconSize:[0,0],iconAnchor:[0,0]}),interactive:false,keyboard:false}))});
+ const PH=innerWidth<=480,upd=()=>{const on=!PH||m.getZoom()>=6;if(on&&!m.hasLayer(LG))LG.addTo(m);if(!on&&m.hasLayer(LG))m.removeLayer(LG)};m.on('zoomend',upd);
+ m.fitBounds(b,{padding:[24,24]});upd()})();
 flow();let rw=innerWidth;addEventListener('resize',()=>{if(innerWidth!==rw){rw=innerWidth;flow()}});
 '''.replace('__D__',DATA).replace('__M__',json.dumps(MAPD,ensure_ascii=False))
 RX=mult(rz,"base","last30").replace("×","");AX=mult(ar,"base","last30").replace("×","")
@@ -255,8 +285,16 @@ INTRO=(f'In the last 30 days, Houthi Telegram channels named Riyadh in threats {
  f'On Oct 13 the Houthi military told civilians to evacuate Aramco’s headquarters, King Khalid Airport and the Riyadh refinery; on Oct 14 it claimed strikes on all three. '
  f'Based on {c["channels"]} public Telegram channels of Iran’s “Axis of Resistance”. Tap any target or bar for details; sources are in the More section.')
 DESC=html.escape(f'Houthi threats now name Riyadh {RX}× and Aramco {AX}× as often as before; an Oct 13 evacuation warning was followed by claimed strikes on Oct 14.')
-BRIDGE=f'Iraqi militia channels reposted Houthi military statements {iq["n"]} times in the last 30 days, a median {iq["med"]/60:.1f} minutes after the original.'
+BRIDGE=f'Iraqi militia channels reposted Houthi military statements {iq["n"]} times in the last 30 days, a median of {dur(iq["med"])} after the original.'
 MAPNOTE='Not mapped: '+', '.join(UNMAPPED)+' (no single place, or no threat posts in the last 30 days). Change compares threat posts per 10,000 Houthi posts with May–Sep. Quotes are translated from Arabic.'
+WK=T.get('week',{});tl=lambda x:', '.join(x)
+lk=lambda u:f'<a href="{u}" target="_blank" rel="noopener nofollow">{u.replace("https://","")}</a>'
+wl=[]
+if T['flag']: wl.append('<li><b>New or surging:</b> '+'; '.join(f'{html.escape(x["l"])} ({x["n7"]} posts, {x["r7"]:g} vs {x["rp"]:g} per 10,000)' if x['why']!='first' else f'{html.escape(x["l"])} (first named {nice(x["first"])}, {lk(x["url"])})' for x in T['flag'])+'</li>')
+if WK.get('warns'): wl+= [f'<li><b>Warning, {w["d"]}:</b> {html.escape(tl(w["t"]))} · {lk(w["u"])}</li>' for w in WK['warns']]
+else: wl.append('<li><b>Warnings:</b> no new official Houthi military warning naming a target this week.</li>')
+if WK.get('claims'): wl+= [f'<li><b>Claimed strike, {c["d"]}:</b> {html.escape(tl(c["t"]))} · {lk(c["u"])}</li>' for c in WK['claims']]
+WEEK=(f'<section id="week"><h2>New this week: {rng(T["end"])}</h2><p class="prompt">Houthi threat targets this week vs the 3 weeks before. Claims are the Houthis’ own.</p><ul class="wkl">{"".join(wl)}</ul></section>' if (T['flag'] or WK.get('warns') or WK.get('claims')) else f'<section id="week"><h2>New this week: {rng(T["end"])}</h2><p class="prompt">Nothing new in Houthi threats this week compared with the 3 weeks before.</p></section>')
 page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Houthi threats turn to Saudi Arabia | Axis Channel Network</title><meta name="description" content="{DESC}"><meta property="og:title" content="Houthi threats turn to Saudi Arabia"><meta property="og:description" content="{DESC}"><meta property="og:image" content="https://beacon-tools.onrender.com/axis-network/og.png"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><link rel="icon" href="../favicon.svg"><style>{CSS}</style></head><body><main>
 <h1>Houthi threats turn to Saudi Arabia</h1>
@@ -264,11 +302,11 @@ page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta na
 <div class="thru">Data through {nice(D["data_through"])} (latest collected post) · main window: {rng(D["data_through"],30)}</div>
 <div class="strip"><div class="st"><b>{c["channels"]}</b><span>channels</span></div><div class="st"><b>{f(c["posts"])}</b><span>posts collected</span></div><div class="st"><b>{f(x30)}</b><span>messages copied across groups</span></div></div>
 <section id="threats"><h2>Houthi threat targets</h2><p class="thd">{thead}</p>
-<div class="row"><div class="leg"><div class="lghint">Tap a target to see the threats</div><span><i style="background:#c0504d;border-radius:50%"></i>Named more often</span><span><i style="background:#4379a8;border-radius:50%"></i>Named less often</span><span style="font-size:13px">Bigger circle = more threat posts, last 30 days</span></div><div><div id="tmap" role="region" aria-label="Map of Houthi threat targets"></div><p class="cap">{MAPNOTE}</p></div></div>
+<div class="row"><div class="leg"><div class="lghint">Tap a target to see the threats</div><span><i style="background:#c0504d;border-radius:50%"></i>Named more often</span><span><i style="background:#4379a8;border-radius:50%"></i>Named less often</span><span style="font-size:13px">Bigger circle = more threat posts, last 30 days. Named sites (airports, oil sites, bases) have their own circles; city and province circles count posts that name no site.</span></div><div><div id="tmap" role="region" aria-label="Map of Houthi threat targets"></div><p class="cap">{MAPNOTE}</p></div></div>
 <div class="row"><div class="leg"><span><i style="background:#b24762"></i>Named more often</span><span><i style="background:#4379a8"></i>Named less often</span>
 <div class="tw"><button class="btn" data-tw="30" aria-pressed="true">30 days</button><button class="btn" data-tw="7" aria-pressed="false">7 days</button></div></div>
 <div><div class="lbl" id="ttitle"></div><p class="prompt">Change in threat posts naming each target, per 10,000 Houthi posts. Tap a row for counts and example posts.</p><div id="thr"></div></div></div>
-<p class="cap">{tcap}</p>{tcase}{tlines}{tflag}{tcave}</section>
+<p class="cap">{tcap}</p>{tcase}{tlines}{tcave}</section>
 <section id="map"><h2>How Houthi messaging spreads</h2><p class="thd">{BRIDGE}</p><h3 style="font-size:17px;margin:12px 0 4px">Which groups pass messages to which</h3><p class="prompt">Each circle is a group at its home base; lines show messages first posted by one group and later copied by another (last 30 days). Thicker lines mean more messages; moving dots show direction.</p>
 <div id="net"></div><p class="cap">Line colour = the group that posted first. Hover or tap a line or circle for numbers. Pro-Axis news outlets have no single base and are placed on their own. Flows under 10 messages are left out.</p></section>
 <section id="spread"><h2 style="font-size:18px">Where messages start and how they spread</h2><p class="prompt">Who posts first when the same message appears in several channels (last 30 days)</p>
@@ -285,7 +323,7 @@ page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta na
 <p class="prompt" style="color:var(--text)">Posted by the channels for fundraising, {nice(p["first"])} to {nice(p["last"])}; shown here for research reference only.</p>
 <div class="pf"><label>Group<select id="pg"><option value="">All groups</option></select></label><label>Type<select id="pt"><option value="">All types</option><option value="bank">Bank cards and accounts</option><option value="crypto">Crypto wallets</option><option value="other">Phones and campaigns</option></select></label><label class="ps">Search<input id="pq" type="search" placeholder="Number, wallet or channel"></label></div>
 <div id="pn" class="prompt" aria-live="polite"></div><div id="plist"></div></div></details></section>
-<section id="week"><h2>New this week: {rng(D["data_through"])}</h2><p class="prompt"><b>{rng(D["data_through"])}</b>, compared with the 3 weeks before ({rng(str(date.fromisoformat(D["data_through"])-__import__("datetime").timedelta(days=7)),21)})</p><div class="chips">{chiph}</div></section>
+{WEEK}
 <details id="more"><summary>More: shared websites, method and sources</summary><div class="in"><p><b>Shared websites.</b> {infra}</p>
 <p><b>Method.</b> A message counts as copied when the same text appears in two or more channels; the first channel to post it is the origin. Same-group copies (for example between Houthi channels) are included in the top bar; the flow chart shows only copies between different groups. Flows under 10 messages are left out.</p>
 <div id="src"><b>Sources</b><ol>{''.join(f"<li>{html.escape(x)}</li>" for x in SRC)}{''.join(f"<li>{x}</li>" for x in tsrc)}</ol></div></div></details>

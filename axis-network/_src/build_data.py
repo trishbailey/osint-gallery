@@ -59,5 +59,8 @@ sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); import threats, w
 POSTS=os.environ.get('AXIS_POSTS','/workspace/threats/posts.pkl')
 if os.path.exists(POSTS): d['threats']=threats.build(POSTS,W+'v3/merged/coordination_copies_v4.csv')
 elif os.path.exists(OUT): d['threats']=json.load(open(OUT)).get('threats'); print('threats: posts file missing, kept previous result')
+# collection strip: from the raw post table (same file the threats section uses), so weekly rebuilds stay correct
+if os.path.exists(POSTS):
+    _P=pd.read_pickle(POSTS); d['collection']=dict(channels=int(_P.channel.nunique()),posts=int(len(_P)),start=str(_P.date.min().date()),end=str(_P.date.max().date()))
 json.dump(d,open(OUT,'w'),ensure_ascii=False,indent=1); print(json.dumps({k:d[k] for k in ['data_through','window_start','collection','xcopies30','origin30','allorigin30','week']},indent=0))
 print(d['pay'])

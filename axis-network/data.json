@@ -1,11 +1,11 @@
 {
- "data_through": "2026-10-20",
- "window_start": "2026-09-21",
+ "data_through": "2026-10-26",
+ "window_start": "2026-09-27",
  "collection": {
-  "channels": 135,
-  "posts": 293022,
-  "start": "2026-09-20",
-  "end": "2026-10-20"
+  "channels": 120,
+  "posts": 562283,
+  "start": "2026-05-01",
+  "end": "2026-10-26"
  },
  "by_group": {
   "houthi": {
@@ -41,42 +41,37 @@
   [
    "aligned",
    "hezbollah",
-   893
+   779
   ],
   [
    "houthi",
    "irgc",
-   307
+   341
   ],
   [
    "houthi",
    "hezbollah",
-   220
+   257
+  ],
+  [
+   "hezbollah",
+   "iraqi",
+   222
   ],
   [
    "irgc",
    "hezbollah",
-   220
+   208
   ],
   [
-   "hezbollah",
+   "houthi",
    "iraqi",
-   213
+   189
   ],
   [
    "irgc",
    "houthi",
-   181
-  ],
-  [
-   "houthi",
-   "iraqi",
-   178
-  ],
-  [
-   "aligned",
-   "iraqi",
-   145
+   189
   ],
   [
    "iraqi",
@@ -84,59 +79,64 @@
    142
   ],
   [
+   "aligned",
+   "iraqi",
+   135
+  ],
+  [
    "hamas",
    "irgc",
-   119
+   114
   ],
   [
    "hezbollah",
    "houthi",
-   96
-  ],
-  [
-   "hamas",
-   "hezbollah",
-   88
+   101
   ],
   [
    "iraqi",
    "houthi",
-   79
+   92
+  ],
+  [
+   "hamas",
+   "hezbollah",
+   87
   ],
   [
    "hezbollah",
    "irgc",
-   79
+   80
   ],
   [
    "aligned",
    "houthi",
+   77
+  ],
+  [
+   "hezbollah",
+   "aligned",
    61
   ],
   [
-   "hezbollah",
-   "aligned",
-   56
-  ],
-  [
    "irgc",
    "iraqi",
-   47
+   42
   ],
   [
    "hamas",
    "iraqi",
-   35
+   32
+  ],
+  [
+   "irgc",
+   "hamas",
+   31
   ],
   [
    "iraqi",
    "aligned",
    28
-  ],
-  [
-   "irgc",
-   "hamas",
-   27
   ],
   [
    "hamas",
@@ -146,17 +146,12 @@
   [
    "iraqi",
    "hamas",
-   11
+   9
   ],
   [
-   "houthi",
+   "hezbollah",
    "hamas",
-   8
-  ],
-  [
-   "aligned",
-   "hamas",
-   8
+   6
   ],
   [
    "houthi",
@@ -164,7 +159,12 @@
    5
   ],
   [
-   "hezbollah",
+   "houthi",
+   "hamas",
+   5
+  ],
+  [
+   "aligned",
    "hamas",
    4
   ],
@@ -176,11 +176,21 @@
   [
    "iraqi",
    "irgc",
-   2
+   3
   ],
   [
    "pij",
    "hezbollah",
+   3
+  ],
+  [
+   "pij",
+   "aligned",
+   2
+  ],
+  [
+   "pij",
+   "iraqi",
    2
   ]
  ],
@@ -188,111 +198,131 @@
   [
    "aligned",
    "hezbollah",
-   203
+   143
   ],
   [
    "houthi",
    "irgc",
-   95
+   88
+  ],
+  [
+   "houthi",
+   "hezbollah",
+   68
+  ],
+  [
+   "hezbollah",
+   "iraqi",
+   63
   ],
   [
    "irgc",
    "houthi",
-   72
+   55
   ],
   [
    "houthi",
    "iraqi",
-   64
-  ],
-  [
-   "houthi",
-   "hezbollah",
-   60
+   44
   ],
   [
    "irgc",
    "hezbollah",
-   47
-  ],
-  [
-   "iraqi",
-   "hezbollah",
-   43
-  ],
-  [
-   "hezbollah",
-   "iraqi",
    42
   ],
   [
-   "aligned",
    "iraqi",
+   "hezbollah",
    40
   ],
   [
    "aligned",
-   "houthi",
-   25
-  ],
-  [
-   "hamas",
-   "irgc",
-   25
-  ],
-  [
-   "hezbollah",
-   "irgc",
-   22
+   "iraqi",
+   32
   ],
   [
    "iraqi",
    "houthi",
-   16
+   30
   ],
   [
    "hamas",
-   "hezbollah",
-   16
+   "irgc",
+   27
   ],
   [
    "hezbollah",
    "houthi",
-   15
+   25
+  ],
+  [
+   "aligned",
+   "houthi",
+   21
+  ],
+  [
+   "hezbollah",
+   "aligned",
+   21
+  ],
+  [
+   "hezbollah",
+   "irgc",
+   18
+  ],
+  [
+   "hamas",
+   "hezbollah",
+   17
+  ],
+  [
+   "irgc",
+   "hamas",
+   12
   ],
   [
    "iraqi",
    "aligned",
-   7
-  ],
-  [
-   "hamas",
-   "iraqi",
-   7
-  ],
-  [
-   "iraqi",
-   "hamas",
-   6
-  ],
-  [
-   "irgc",
-   "hamas",
-   6
+   10
   ],
   [
    "irgc",
    "iraqi",
+   8
+  ],
+  [
+   "hamas",
+   "iraqi",
+   5
+  ],
+  [
+   "hezbollah",
+   "hamas",
    3
   ],
   [
+   "pij",
+   "iraqi",
+   2
+  ],
+  [
+   "pij",
    "aligned",
+   2
+  ],
+  [
+   "iraqi",
    "hamas",
    2
   ],
   [
-   "hezbollah",
    "aligned",
+   "hamas",
+   1
+  ],
+  [
+   "hamas",
+   "houthi",
    1
   ],
   [
@@ -301,127 +331,128 @@
    1
   ],
   [
-   "houthi",
-   "aligned",
-   1
-  ],
-  [
    "iraqi",
    "irgc",
    1
+  ],
+  [
+   "pij",
+   "hezbollah",
+   1
   ]
  ],
- "xcopies30": 3271,
- "xstories30": 2663,
+ "xcopies30": 3263,
+ "xstories30": 2647,
  "origin30": {
-  "houthi": 718,
-  "irgc": 475,
-  "hezbollah": 448,
-  "hamas": 259,
-  "iraqi": 262,
-  "aligned": 1107,
-  "pij": 2
+  "houthi": 797,
+  "irgc": 470,
+  "hezbollah": 470,
+  "hamas": 250,
+  "iraqi": 274,
+  "aligned": 995,
+  "pij": 7
  },
- "allcopies30": 28497,
+ "allcopies30": 26174,
  "allorigin30": {
-  "houthi": 19193,
-  "irgc": 486,
-  "hezbollah": 812,
-  "hamas": 5122,
-  "iraqi": 1774,
-  "aligned": 1108,
-  "pij": 2
+  "houthi": 17259,
+  "irgc": 483,
+  "hezbollah": 817,
+  "hamas": 4826,
+  "iraqi": 1787,
+  "aligned": 995,
+  "pij": 7
  },
  "topsrc30": [
   [
    "almayadeen",
    "aligned",
-   976
+   851
   ],
   [
    "alalamarabic",
    "irgc",
-   431
+   432
   ],
   [
    "sadaa_almasirah",
    "houthi",
-   329
+   426
   ],
   [
    "ahednews",
    "hezbollah",
-   232
+   262
   ],
   [
-   "alghadeertv",
-   "iraqi",
-   152
+   "MilitaryMediaY",
+   "houthi",
+   156
   ]
  ],
  "week": {
-  "xcopies": 820,
-  "prev_weekly": 741.7,
+  "xcopies": 783,
+  "prev_weekly": 760.3,
   "origin": {
-   "aligned": 270,
-   "houthi": 220,
-   "irgc": 128,
-   "hezbollah": 80,
-   "iraqi": 73,
-   "hamas": 49
+   "houthi": 200,
+   "aligned": 197,
+   "hezbollah": 130,
+   "irgc": 117,
+   "iraqi": 83,
+   "hamas": 51,
+   "pij": 5
   },
   "prev_origin": {
-   "aligned": 249.7,
-   "houthi": 156.7,
-   "hezbollah": 111.7,
-   "irgc": 107.3,
-   "hamas": 63.7,
-   "iraqi": 52.0,
-   "pij": 0.7
+   "aligned": 240.7,
+   "houthi": 192.3,
+   "irgc": 106.0,
+   "hezbollah": 104.3,
+   "hamas": 58.3,
+   "iraqi": 58.3,
+   "pij": 0.3
   },
   "top_pairs": [
    [
     "aligned",
     "hezbollah",
-    203
+    143
    ],
    [
     "houthi",
     "irgc",
-    95
+    88
    ],
    [
-    "irgc",
     "houthi",
-    72
+    "hezbollah",
+    68
    ]
   ]
  },
  "pay": {
-  "selectors": 84,
+  "selectors": 98,
   "channels": 17,
   "cross_group": 0,
-  "shared": 53,
-  "max_channels": 5,
+  "shared": 59,
+  "max_channels": 7,
   "by_type": [
    [
     "Bank card",
-    38,
-    20
+    43,
+    24
    ],
    [
     "Named donation campaign",
-    19,
-    18
+    24,
+    20
    ],
    [
     "Bank account (IBAN)",
-    15,
+    18,
     8
    ],
    [
     "Donation phone number",
-    8,
+    9,
     3
    ],
    [
@@ -436,14 +467,19 @@
    "iraqi": 1
   },
   "first": "2026-05-01",
-  "last": "2026-10-08",
-  "in_window": 3,
-  "edges": 201,
+  "last": "2026-10-26",
+  "in_window": 63,
+  "edges": 235,
   "top": [
    [
-    "6037997950416207",
+    "5041721113821434",
     "Bank card",
-    5
+    7
+   ],
+   [
+    "6037997599856011",
+    "Bank card",
+    7
    ],
    [
     "پویش مشارکت کنند",
@@ -451,23 +487,176 @@
     5
    ],
    [
-    "6037997950394024",
+    "6063737005379720",
     "Bank card",
     5
    ],
    [
-    "IR930600220801120475149001",
-    "Bank account (IBAN)",
-    5
-   ],
-   [
-    "6063737005379720",
+    "6037997950416207",
     "Bank card",
     5
    ]
   ]
  },
  "paylist": [
+  {
+   "v": "6037997599856011",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepahcybery",
+     24,
+     [
+      "https://t.me/sepahcybery/151854",
+      "https://t.me/sepahcybery/151640",
+      "https://t.me/sepahcybery/151351",
+      "https://t.me/sepahcybery/151084",
+      "https://t.me/sepahcybery/150790"
+     ]
+    ],
+    [
+     "@sepah",
+     19,
+     [
+      "https://t.me/sepah/75713",
+      "https://t.me/sepah/75214",
+      "https://t.me/sepah/74943",
+      "https://t.me/sepah/74654",
+      "https://t.me/sepah/74308"
+     ]
+    ],
+    [
+     "@sepah_ir",
+     22,
+     [
+      "https://t.me/sepah_ir/31976",
+      "https://t.me/sepah_ir/31863",
+      "https://t.me/sepah_ir/31698",
+      "https://t.me/sepah_ir/31570",
+      "https://t.me/sepah_ir/31404"
+     ]
+    ],
+    [
+     "@sarbazane_g",
+     23,
+     [
+      "https://t.me/sarbazane_g/133681",
+      "https://t.me/sarbazane_g/133561",
+      "https://t.me/sarbazane_g/133166",
+      "https://t.me/sarbazane_g/132926",
+      "https://t.me/sarbazane_g/132602"
+     ]
+    ],
+    [
+     "@sepah_quds",
+     3,
+     [
+      "https://t.me/sepah_quds/230014",
+      "https://t.me/sepah_quds/229694",
+      "https://t.me/sepah_quds/229476"
+     ]
+    ],
+    [
+     "@sepah_pasdaran",
+     3,
+     [
+      "https://t.me/sepah_pasdaran/214014",
+      "https://t.me/sepah_pasdaran/213695",
+      "https://t.me/sepah_pasdaran/213463"
+     ]
+    ],
+    [
+     "@SaberinFa",
+     3,
+     [
+      "https://t.me/SaberinFa/87369",
+      "https://t.me/SaberinFa/87062",
+      "https://t.me/SaberinFa/86820"
+     ]
+    ]
+   ],
+   "m": 97,
+   "f": "2026-07-27",
+   "l": "2026-10-19"
+  },
+  {
+   "v": "5041721113821434",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepahcybery",
+     10,
+     [
+      "https://t.me/sepahcybery/147167",
+      "https://t.me/sepahcybery/146799",
+      "https://t.me/sepahcybery/146276",
+      "https://t.me/sepahcybery/145918",
+      "https://t.me/sepahcybery/145477"
+     ]
+    ],
+    [
+     "@sepah",
+     9,
+     [
+      "https://t.me/sepah/71359",
+      "https://t.me/sepah/70979",
+      "https://t.me/sepah/70444",
+      "https://t.me/sepah/70078",
+      "https://t.me/sepah/69618"
+     ]
+    ],
+    [
+     "@sepah_ir",
+     10,
+     [
+      "https://t.me/sepah_ir/29704",
+      "https://t.me/sepah_ir/29592",
+      "https://t.me/sepah_ir/29465",
+      "https://t.me/sepah_ir/29358",
+      "https://t.me/sepah_ir/29236"
+     ]
+    ],
+    [
+     "@sarbazane_g",
+     10,
+     [
+      "https://t.me/sarbazane_g/130267",
+      "https://t.me/sarbazane_g/130040",
+      "https://t.me/sarbazane_g/129756",
+      "https://t.me/sarbazane_g/129607",
+      "https://t.me/sarbazane_g/129337"
+     ]
+    ],
+    [
+     "@sepah_quds",
+     1,
+     [
+      "https://t.me/sepah_quds/230197"
+     ]
+    ],
+    [
+     "@sepah_pasdaran",
+     1,
+     [
+      "https://t.me/sepah_pasdaran/214227"
+     ]
+    ],
+    [
+     "@SaberinFa",
+     1,
+     [
+      "https://t.me/SaberinFa/87604"
+     ]
+    ]
+   ],
+   "m": 42,
+   "f": "2026-06-18",
+   "l": "2026-10-22"
+  },
   {
    "v": "6063737005379720",
    "t": "Bank card",
@@ -532,6 +721,132 @@
    "l": "2026-07-24"
   },
   {
+   "v": "6037997950394024",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepahcybery",
+     9,
+     [
+      "https://t.me/sepahcybery/151561",
+      "https://t.me/sepahcybery/151028",
+      "https://t.me/sepahcybery/150059",
+      "https://t.me/sepahcybery/148842",
+      "https://t.me/sepahcybery/148014"
+     ]
+    ],
+    [
+     "@sepah",
+     5,
+     [
+      "https://t.me/sepah/75423",
+      "https://t.me/sepah/73920",
+      "https://t.me/sepah/72228",
+      "https://t.me/sepah/70837",
+      "https://t.me/sepah/78300"
+     ]
+    ],
+    [
+     "@sepah_pasdaran",
+     5,
+     [
+      "https://t.me/sepah_pasdaran/211188",
+      "https://t.me/sepah_pasdaran/210735",
+      "https://t.me/sepah_pasdaran/210369",
+      "https://t.me/sepah_pasdaran/213405",
+      "https://t.me/sepah_pasdaran/212524"
+     ]
+    ],
+    [
+     "@SaberinFa",
+     5,
+     [
+      "https://t.me/SaberinFa/84216",
+      "https://t.me/SaberinFa/83659",
+      "https://t.me/SaberinFa/83239",
+      "https://t.me/SaberinFa/86742",
+      "https://t.me/SaberinFa/85684"
+     ]
+    ],
+    [
+     "@sarbazane_g",
+     2,
+     [
+      "https://t.me/sarbazane_g/130381",
+      "https://t.me/sarbazane_g/134560"
+     ]
+    ]
+   ],
+   "m": 26,
+   "f": "2026-07-19",
+   "l": "2026-10-21"
+  },
+  {
+   "v": "6037997950416207",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepahcybery",
+     9,
+     [
+      "https://t.me/sepahcybery/151561",
+      "https://t.me/sepahcybery/151028",
+      "https://t.me/sepahcybery/150059",
+      "https://t.me/sepahcybery/148842",
+      "https://t.me/sepahcybery/148014"
+     ]
+    ],
+    [
+     "@sepah",
+     5,
+     [
+      "https://t.me/sepah/75423",
+      "https://t.me/sepah/73920",
+      "https://t.me/sepah/72228",
+      "https://t.me/sepah/70837",
+      "https://t.me/sepah/78300"
+     ]
+    ],
+    [
+     "@sepah_pasdaran",
+     5,
+     [
+      "https://t.me/sepah_pasdaran/211188",
+      "https://t.me/sepah_pasdaran/210735",
+      "https://t.me/sepah_pasdaran/210369",
+      "https://t.me/sepah_pasdaran/213405",
+      "https://t.me/sepah_pasdaran/212524"
+     ]
+    ],
+    [
+     "@SaberinFa",
+     5,
+     [
+      "https://t.me/SaberinFa/84216",
+      "https://t.me/SaberinFa/83659",
+      "https://t.me/SaberinFa/83239",
+      "https://t.me/SaberinFa/86742",
+      "https://t.me/SaberinFa/85684"
+     ]
+    ],
+    [
+     "@sarbazane_g",
+     2,
+     [
+      "https://t.me/sarbazane_g/130381",
+      "https://t.me/sarbazane_g/134560"
+     ]
+    ]
+   ],
+   "m": 26,
+   "f": "2026-07-19",
+   "l": "2026-10-21"
+  },
+  {
    "v": "IR930600220801120475149001",
    "t": "Bank account (IBAN)",
    "k": "bank",
@@ -593,7 +908,7 @@
    "l": "2026-07-24"
   },
   {
-   "v": "6037997950394024",
+   "v": "5892107050077463",
    "t": "Bank card",
    "k": "bank",
    "g": "irgc",
@@ -602,109 +917,49 @@
      "@sepahcybery",
      7,
      [
-      "https://t.me/sepahcybery/151561",
-      "https://t.me/sepahcybery/151028",
       "https://t.me/sepahcybery/150059",
-      "https://t.me/sepahcybery/148842",
-      "https://t.me/sepahcybery/148014"
+      "https://t.me/sepahcybery/148014",
+      "https://t.me/sepahcybery/146991",
+      "https://t.me/sepahcybery/146040",
+      "https://t.me/sepahcybery/153966"
      ]
     ],
     [
      "@sepah",
-     4,
+     5,
      [
-      "https://t.me/sepah/75423",
       "https://t.me/sepah/73920",
       "https://t.me/sepah/72228",
-      "https://t.me/sepah/70837"
+      "https://t.me/sepah/77806",
+      "https://t.me/sepah/77491",
+      "https://t.me/sepah/76927"
      ]
     ],
     [
      "@sepah_pasdaran",
-     3,
+     1,
      [
-      "https://t.me/sepah_pasdaran/211188",
-      "https://t.me/sepah_pasdaran/210735",
-      "https://t.me/sepah_pasdaran/210369"
+      "https://t.me/sepah_pasdaran/213848"
      ]
     ],
     [
      "@SaberinFa",
-     3,
+     1,
      [
-      "https://t.me/SaberinFa/84216",
-      "https://t.me/SaberinFa/83659",
-      "https://t.me/SaberinFa/83239"
+      "https://t.me/SaberinFa/87205"
      ]
     ],
     [
      "@sarbazane_g",
      1,
      [
-      "https://t.me/sarbazane_g/130381"
+      "https://t.me/sarbazane_g/135556"
      ]
     ]
    ],
-   "m": 18,
-   "f": "2026-07-19",
-   "l": "2026-09-14"
-  },
-  {
-   "v": "6037997950416207",
-   "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@sepahcybery",
-     7,
-     [
-      "https://t.me/sepahcybery/151561",
-      "https://t.me/sepahcybery/151028",
-      "https://t.me/sepahcybery/150059",
-      "https://t.me/sepahcybery/148842",
-      "https://t.me/sepahcybery/148014"
-     ]
-    ],
-    [
-     "@sepah",
-     4,
-     [
-      "https://t.me/sepah/75423",
-      "https://t.me/sepah/73920",
-      "https://t.me/sepah/72228",
-      "https://t.me/sepah/70837"
-     ]
-    ],
-    [
-     "@sepah_pasdaran",
-     3,
-     [
-      "https://t.me/sepah_pasdaran/211188",
-      "https://t.me/sepah_pasdaran/210735",
-      "https://t.me/sepah_pasdaran/210369"
-     ]
-    ],
-    [
-     "@SaberinFa",
-     3,
-     [
-      "https://t.me/SaberinFa/84216",
-      "https://t.me/SaberinFa/83659",
-      "https://t.me/SaberinFa/83239"
-     ]
-    ],
-    [
-     "@sarbazane_g",
-     1,
-     [
-      "https://t.me/sarbazane_g/130381"
-     ]
-    ]
-   ],
-   "m": 18,
-   "f": "2026-07-19",
-   "l": "2026-09-14"
+   "m": 15,
+   "f": "2026-07-14",
+   "l": "2026-10-17"
   },
   {
    "v": "پویش مشارکت کنند",
@@ -751,116 +1006,6 @@
    "m": 5,
    "f": "2026-05-04",
    "l": "2026-08-25"
-  },
-  {
-   "v": "6037997599856011",
-   "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@sepahcybery",
-     15,
-     [
-      "https://t.me/sepahcybery/151854",
-      "https://t.me/sepahcybery/151640",
-      "https://t.me/sepahcybery/151351",
-      "https://t.me/sepahcybery/151084",
-      "https://t.me/sepahcybery/150790"
-     ]
-    ],
-    [
-     "@sepah",
-     11,
-     [
-      "https://t.me/sepah/75713",
-      "https://t.me/sepah/75214",
-      "https://t.me/sepah/74943",
-      "https://t.me/sepah/74654",
-      "https://t.me/sepah/74308"
-     ]
-    ],
-    [
-     "@sepah_ir",
-     15,
-     [
-      "https://t.me/sepah_ir/31976",
-      "https://t.me/sepah_ir/31863",
-      "https://t.me/sepah_ir/31698",
-      "https://t.me/sepah_ir/31570",
-      "https://t.me/sepah_ir/31404"
-     ]
-    ],
-    [
-     "@sarbazane_g",
-     14,
-     [
-      "https://t.me/sarbazane_g/133681",
-      "https://t.me/sarbazane_g/133561",
-      "https://t.me/sarbazane_g/133166",
-      "https://t.me/sarbazane_g/132926",
-      "https://t.me/sarbazane_g/132602"
-     ]
-    ]
-   ],
-   "m": 55,
-   "f": "2026-07-27",
-   "l": "2026-09-17"
-  },
-  {
-   "v": "5041721113821434",
-   "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@sepahcybery",
-     9,
-     [
-      "https://t.me/sepahcybery/147167",
-      "https://t.me/sepahcybery/146799",
-      "https://t.me/sepahcybery/146276",
-      "https://t.me/sepahcybery/145918",
-      "https://t.me/sepahcybery/145477"
-     ]
-    ],
-    [
-     "@sepah",
-     8,
-     [
-      "https://t.me/sepah/71359",
-      "https://t.me/sepah/70979",
-      "https://t.me/sepah/70444",
-      "https://t.me/sepah/70078",
-      "https://t.me/sepah/69618"
-     ]
-    ],
-    [
-     "@sepah_ir",
-     9,
-     [
-      "https://t.me/sepah_ir/29704",
-      "https://t.me/sepah_ir/29592",
-      "https://t.me/sepah_ir/29465",
-      "https://t.me/sepah_ir/29358",
-      "https://t.me/sepah_ir/29236"
-     ]
-    ],
-    [
-     "@sarbazane_g",
-     9,
-     [
-      "https://t.me/sarbazane_g/130267",
-      "https://t.me/sarbazane_g/130040",
-      "https://t.me/sarbazane_g/129756",
-      "https://t.me/sarbazane_g/129607",
-      "https://t.me/sarbazane_g/129337"
-     ]
-    ]
-   ],
-   "m": 35,
-   "f": "2026-06-18",
-   "l": "2026-07-23"
   },
   {
    "v": "6037997950309105",
@@ -978,7 +1123,7 @@
     ],
     [
      "@masaf",
-     7,
+     9,
      [
       "https://t.me/masaf/237784",
       "https://t.me/masaf/234823",
@@ -1002,9 +1147,9 @@
      ]
     ]
    ],
-   "m": 10,
+   "m": 12,
    "f": "2026-06-12",
-   "l": "2026-09-20"
+   "l": "2026-10-18"
   },
   {
    "v": "پویش حیاتی مشارکت کنید",
@@ -1129,6 +1274,45 @@
    "l": "2026-06-18"
   },
   {
+   "v": "پویش جان ایران با",
+   "t": "Named campaign",
+   "k": "other",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepahcybery",
+     1,
+     [
+      "https://t.me/sepahcybery/141705"
+     ]
+    ],
+    [
+     "@sepah_quds",
+     1,
+     [
+      "https://t.me/sepah_quds/215815"
+     ]
+    ],
+    [
+     "@sepah",
+     1,
+     [
+      "https://t.me/sepah/66194"
+     ]
+    ],
+    [
+     "@SaberinFa",
+     1,
+     [
+      "https://t.me/SaberinFa/72155"
+     ]
+    ]
+   ],
+   "m": 4,
+   "f": "2026-05-26",
+   "l": "2026-05-26"
+  },
+  {
    "v": "پویش جان ایران شدند",
    "t": "Named campaign",
    "k": "other",
@@ -1168,43 +1352,128 @@
    "l": "2026-05-26"
   },
   {
-   "v": "پویش جان ایران با",
-   "t": "Named campaign",
-   "k": "other",
+   "v": "5892108891091804",
+   "t": "Bank card",
+   "k": "bank",
    "g": "irgc",
    "ch": [
-    [
-     "@sepahcybery",
-     1,
-     [
-      "https://t.me/sepahcybery/141705"
-     ]
-    ],
-    [
-     "@sepah_quds",
-     1,
-     [
-      "https://t.me/sepah_quds/215815"
-     ]
-    ],
     [
      "@sepah",
      1,
      [
-      "https://t.me/sepah/66194"
+      "https://t.me/sepah/77872"
      ]
     ],
     [
-     "@SaberinFa",
+     "@sepah_ir",
      1,
      [
-      "https://t.me/SaberinFa/72155"
+      "https://t.me/sepah_ir/33004"
+     ]
+    ],
+    [
+     "@Saberin_ir",
+     1,
+     [
+      "https://t.me/Saberin_ir/69908"
+     ]
+    ],
+    [
+     "@sarbazane_g",
+     1,
+     [
+      "https://t.me/sarbazane_g/135624"
      ]
     ]
    ],
    "m": 4,
-   "f": "2026-05-26",
-   "l": "2026-05-26"
+   "f": "2026-10-15",
+   "l": "2026-10-15"
+  },
+  {
+   "v": "6063737005084361",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepahcybery",
+     5,
+     [
+      "https://t.me/sepahcybery/152047",
+      "https://t.me/sepahcybery/150946",
+      "https://t.me/sepahcybery/150221",
+      "https://t.me/sepahcybery/153576",
+      "https://t.me/sepahcybery/153339"
+     ]
+    ],
+    [
+     "@sepah",
+     5,
+     [
+      "https://t.me/sepah/75904",
+      "https://t.me/sepah/74808",
+      "https://t.me/sepah/74086",
+      "https://t.me/sepah/77419",
+      "https://t.me/sepah/77183"
+     ]
+    ],
+    [
+     "@sarbazane_g",
+     5,
+     [
+      "https://t.me/sarbazane_g/133824",
+      "https://t.me/sarbazane_g/133059",
+      "https://t.me/sarbazane_g/132418",
+      "https://t.me/sarbazane_g/135211",
+      "https://t.me/sarbazane_g/135014"
+     ]
+    ]
+   ],
+   "m": 15,
+   "f": "2026-08-28",
+   "l": "2026-10-09"
+  },
+  {
+   "v": "IR300600260701112841775001",
+   "t": "Bank account (IBAN)",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepahcybery",
+     4,
+     [
+      "https://t.me/sepahcybery/152047",
+      "https://t.me/sepahcybery/150946",
+      "https://t.me/sepahcybery/153576",
+      "https://t.me/sepahcybery/153339"
+     ]
+    ],
+    [
+     "@sepah",
+     4,
+     [
+      "https://t.me/sepah/75904",
+      "https://t.me/sepah/74808",
+      "https://t.me/sepah/77419",
+      "https://t.me/sepah/77183"
+     ]
+    ],
+    [
+     "@sarbazane_g",
+     4,
+     [
+      "https://t.me/sarbazane_g/133824",
+      "https://t.me/sarbazane_g/133059",
+      "https://t.me/sarbazane_g/135211",
+      "https://t.me/sarbazane_g/135014"
+     ]
+    ]
+   ],
+   "m": 12,
+   "f": "2026-09-05",
+   "l": "2026-10-09"
   },
   {
    "v": "6104337302241417",
@@ -1247,44 +1516,6 @@
    "l": "2026-06-04"
   },
   {
-   "v": "6063737005084361",
-   "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@sepahcybery",
-     3,
-     [
-      "https://t.me/sepahcybery/152047",
-      "https://t.me/sepahcybery/150946",
-      "https://t.me/sepahcybery/150221"
-     ]
-    ],
-    [
-     "@sepah",
-     3,
-     [
-      "https://t.me/sepah/75904",
-      "https://t.me/sepah/74808",
-      "https://t.me/sepah/74086"
-     ]
-    ],
-    [
-     "@sarbazane_g",
-     3,
-     [
-      "https://t.me/sarbazane_g/133824",
-      "https://t.me/sarbazane_g/133059",
-      "https://t.me/sarbazane_g/132418"
-     ]
-    ]
-   ],
-   "m": 9,
-   "f": "2026-08-28",
-   "l": "2026-09-20"
-  },
-  {
    "v": "6063731051178847",
    "t": "Bank card",
    "k": "bank",
@@ -1321,41 +1552,6 @@
    "m": 9,
    "f": "2026-05-31",
    "l": "2026-07-25"
-  },
-  {
-   "v": "IR300600260701112841775001",
-   "t": "Bank account (IBAN)",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@sepahcybery",
-     2,
-     [
-      "https://t.me/sepahcybery/152047",
-      "https://t.me/sepahcybery/150946"
-     ]
-    ],
-    [
-     "@sepah",
-     2,
-     [
-      "https://t.me/sepah/75904",
-      "https://t.me/sepah/74808"
-     ]
-    ],
-    [
-     "@sarbazane_g",
-     2,
-     [
-      "https://t.me/sarbazane_g/133824",
-      "https://t.me/sarbazane_g/133059"
-     ]
-    ]
-   ],
-   "m": 6,
-   "f": "2026-09-05",
-   "l": "2026-09-20"
   },
   {
    "v": "09104350851",
@@ -1462,8 +1658,144 @@
    "l": "2026-07-07"
   },
   {
+   "v": "0xe721438df16fc55a602597836d40794689b2e4af",
+   "t": "Crypto wallet (ETH / EVM)",
+   "k": "crypto",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepah_quds",
+     2,
+     [
+      "https://t.me/sepah_quds/217566",
+      "https://t.me/sepah_quds/214333"
+     ]
+    ],
+    [
+     "@sepah_pasdaran",
+     1,
+     [
+      "https://t.me/sepah_pasdaran/200705"
+     ]
+    ],
+    [
+     "@SaberinFa",
+     2,
+     [
+      "https://t.me/SaberinFa/74246",
+      "https://t.me/SaberinFa/70472"
+     ]
+    ]
+   ],
+   "m": 5,
+   "f": "2026-05-08",
+   "l": "2026-06-12"
+  },
+  {
+   "v": "5892107010701079",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepah_quds",
+     2,
+     [
+      "https://t.me/sepah_quds/217566",
+      "https://t.me/sepah_quds/214333"
+     ]
+    ],
+    [
+     "@sepah_pasdaran",
+     1,
+     [
+      "https://t.me/sepah_pasdaran/200705"
+     ]
+    ],
+    [
+     "@SaberinFa",
+     2,
+     [
+      "https://t.me/SaberinFa/74246",
+      "https://t.me/SaberinFa/70472"
+     ]
+    ]
+   ],
+   "m": 5,
+   "f": "2026-05-08",
+   "l": "2026-06-12"
+  },
+  {
+   "v": "5859838820415648",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepah_quds",
+     2,
+     [
+      "https://t.me/sepah_quds/217566",
+      "https://t.me/sepah_quds/214333"
+     ]
+    ],
+    [
+     "@sepah_pasdaran",
+     1,
+     [
+      "https://t.me/sepah_pasdaran/200705"
+     ]
+    ],
+    [
+     "@SaberinFa",
+     2,
+     [
+      "https://t.me/SaberinFa/74246",
+      "https://t.me/SaberinFa/70472"
+     ]
+    ]
+   ],
+   "m": 5,
+   "f": "2026-05-08",
+   "l": "2026-06-12"
+  },
+  {
    "v": "bc1q8dc88dxfg2y4funlvr2szqns8zct8g84yl20p4",
    "t": "Crypto wallet (BTC)",
+   "k": "crypto",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepah_quds",
+     2,
+     [
+      "https://t.me/sepah_quds/217566",
+      "https://t.me/sepah_quds/214333"
+     ]
+    ],
+    [
+     "@sepah_pasdaran",
+     1,
+     [
+      "https://t.me/sepah_pasdaran/200705"
+     ]
+    ],
+    [
+     "@SaberinFa",
+     2,
+     [
+      "https://t.me/SaberinFa/74246",
+      "https://t.me/SaberinFa/70472"
+     ]
+    ]
+   ],
+   "m": 5,
+   "f": "2026-05-08",
+   "l": "2026-06-12"
+  },
+  {
+   "v": "TLu49M9Bi5V5RBUoKDW3uaGgWy81LyTRzs",
+   "t": "Crypto wallet (USDT-TRC20)",
    "k": "crypto",
    "g": "irgc",
    "ch": [
@@ -1564,140 +1896,70 @@
    "l": "2026-06-12"
   },
   {
-   "v": "5892107010701079",
+   "v": "5041727010882924",
    "t": "Bank card",
    "k": "bank",
    "g": "irgc",
    "ch": [
     [
-     "@sepah_quds",
+     "@sepahcybery",
      2,
      [
-      "https://t.me/sepah_quds/217566",
-      "https://t.me/sepah_quds/214333"
+      "https://t.me/sepahcybery/151166",
+      "https://t.me/sepahcybery/152248"
      ]
     ],
     [
-     "@sepah_pasdaran",
+     "@sepah",
      1,
      [
-      "https://t.me/sepah_pasdaran/200705"
+      "https://t.me/sepah/76104"
      ]
     ],
     [
-     "@SaberinFa",
-     2,
+     "@sarbazane_g",
+     1,
      [
-      "https://t.me/SaberinFa/74246",
-      "https://t.me/SaberinFa/70472"
+      "https://t.me/sarbazane_g/134000"
      ]
     ]
    ],
-   "m": 5,
-   "f": "2026-05-08",
-   "l": "2026-06-12"
+   "m": 4,
+   "f": "2026-09-08",
+   "l": "2026-09-22"
   },
   {
-   "v": "0xe721438df16fc55a602597836d40794689b2e4af",
-   "t": "Crypto wallet (ETH / EVM)",
-   "k": "crypto",
-   "g": "irgc",
-   "ch": [
-    [
-     "@sepah_quds",
-     2,
-     [
-      "https://t.me/sepah_quds/217566",
-      "https://t.me/sepah_quds/214333"
-     ]
-    ],
-    [
-     "@sepah_pasdaran",
-     1,
-     [
-      "https://t.me/sepah_pasdaran/200705"
-     ]
-    ],
-    [
-     "@SaberinFa",
-     2,
-     [
-      "https://t.me/SaberinFa/74246",
-      "https://t.me/SaberinFa/70472"
-     ]
-    ]
-   ],
-   "m": 5,
-   "f": "2026-05-08",
-   "l": "2026-06-12"
-  },
-  {
-   "v": "5859838820415648",
+   "v": "5041727010882932",
    "t": "Bank card",
    "k": "bank",
    "g": "irgc",
    "ch": [
     [
-     "@sepah_quds",
+     "@sepahcybery",
      2,
      [
-      "https://t.me/sepah_quds/217566",
-      "https://t.me/sepah_quds/214333"
+      "https://t.me/sepahcybery/151166",
+      "https://t.me/sepahcybery/152248"
      ]
     ],
     [
-     "@sepah_pasdaran",
+     "@sepah",
      1,
      [
-      "https://t.me/sepah_pasdaran/200705"
+      "https://t.me/sepah/76104"
      ]
     ],
     [
-     "@SaberinFa",
-     2,
+     "@sarbazane_g",
+     1,
      [
-      "https://t.me/SaberinFa/74246",
-      "https://t.me/SaberinFa/70472"
+      "https://t.me/sarbazane_g/134000"
      ]
     ]
    ],
-   "m": 5,
-   "f": "2026-05-08",
-   "l": "2026-06-12"
-  },
-  {
-   "v": "TLu49M9Bi5V5RBUoKDW3uaGgWy81LyTRzs",
-   "t": "Crypto wallet (USDT-TRC20)",
-   "k": "crypto",
-   "g": "irgc",
-   "ch": [
-    [
-     "@sepah_quds",
-     2,
-     [
-      "https://t.me/sepah_quds/217566",
-      "https://t.me/sepah_quds/214333"
-     ]
-    ],
-    [
-     "@sepah_pasdaran",
-     1,
-     [
-      "https://t.me/sepah_pasdaran/200705"
-     ]
-    ],
-    [
-     "@SaberinFa",
-     2,
-     [
-      "https://t.me/SaberinFa/74246",
-      "https://t.me/SaberinFa/70472"
-     ]
-    ]
-   ],
-   "m": 5,
-   "f": "2026-05-08",
-   "l": "2026-06-12"
+   "m": 4,
+   "f": "2026-09-08",
+   "l": "2026-09-22"
   },
   {
    "v": "IR130560611828007270488201",
@@ -1860,7 +2122,7 @@
    "l": "2026-08-16"
   },
   {
-   "v": "پویش قربانی برای سلامتی",
+   "v": "پویش مهم بپیوندید",
    "t": "Named campaign",
    "k": "other",
    "g": "irgc",
@@ -1892,7 +2154,7 @@
    "l": "2026-08-16"
   },
   {
-   "v": "پویش مهم بپیوندید",
+   "v": "پویش قربانی برای سلامتی",
    "t": "Named campaign",
    "k": "other",
    "g": "irgc",
@@ -2180,33 +2442,36 @@
    "l": "2026-07-28"
   },
   {
-   "v": "5892107050077463",
-   "t": "Bank card",
-   "k": "bank",
+   "v": "پویش تامین رهن برای",
+   "t": "Named campaign",
+   "k": "other",
    "g": "irgc",
    "ch": [
     [
      "@sepahcybery",
-     4,
+     1,
      [
-      "https://t.me/sepahcybery/150059",
-      "https://t.me/sepahcybery/148014",
-      "https://t.me/sepahcybery/146991",
-      "https://t.me/sepahcybery/146040"
+      "https://t.me/sepahcybery/153966"
      ]
     ],
     [
      "@sepah",
-     2,
+     1,
      [
-      "https://t.me/sepah/73920",
-      "https://t.me/sepah/72228"
+      "https://t.me/sepah/77806"
+     ]
+    ],
+    [
+     "@sarbazane_g",
+     1,
+     [
+      "https://t.me/sarbazane_g/135556"
      ]
     ]
    ],
-   "m": 6,
-   "f": "2026-07-14",
-   "l": "2026-08-26"
+   "m": 3,
+   "f": "2026-10-14",
+   "l": "2026-10-14"
   },
   {
    "v": "0x33c5df0bf813be615c9513c307ac1a555ef997cb",
@@ -2411,6 +2676,56 @@
    "l": "2026-06-04"
   },
   {
+   "v": "6037997950021973",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepahcybery",
+     1,
+     [
+      "https://t.me/sepahcybery/153895"
+     ]
+    ],
+    [
+     "@sepah",
+     1,
+     [
+      "https://t.me/sepah/77735"
+     ]
+    ]
+   ],
+   "m": 2,
+   "f": "2026-10-13",
+   "l": "2026-10-13"
+  },
+  {
+   "v": "پویش سرپناهی از مهر؛",
+   "t": "Named campaign",
+   "k": "other",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepahcybery",
+     1,
+     [
+      "https://t.me/sepahcybery/153649"
+     ]
+    ],
+    [
+     "@sepah",
+     1,
+     [
+      "https://t.me/sepah/77491"
+     ]
+    ]
+   ],
+   "m": 2,
+   "f": "2026-10-10",
+   "l": "2026-10-10"
+  },
+  {
    "v": "IR450120020000005468601045",
    "t": "Bank account (IBAN)",
    "k": "bank",
@@ -2455,28 +2770,6 @@
    "l": "2026-07-23"
   },
   {
-   "v": "6037691990014623",
-   "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@masaf",
-     8,
-     [
-      "https://t.me/masaf/237536",
-      "https://t.me/masaf/234722",
-      "https://t.me/masaf/232391",
-      "https://t.me/masaf/229777",
-      "https://t.me/masaf/217402"
-     ]
-    ]
-   ],
-   "m": 8,
-   "f": "2026-05-08",
-   "l": "2026-09-19"
-  },
-  {
    "v": "IR050190000000103555185003",
    "t": "Bank account (IBAN)",
    "k": "bank",
@@ -2484,7 +2777,7 @@
    "ch": [
     [
      "@masaf",
-     8,
+     11,
      [
       "https://t.me/masaf/237536",
       "https://t.me/masaf/234722",
@@ -2494,9 +2787,75 @@
      ]
     ]
    ],
-   "m": 8,
+   "m": 11,
    "f": "2026-05-08",
-   "l": "2026-09-19"
+   "l": "2026-10-17"
+  },
+  {
+   "v": "6037691990014623",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@masaf",
+     11,
+     [
+      "https://t.me/masaf/237536",
+      "https://t.me/masaf/234722",
+      "https://t.me/masaf/232391",
+      "https://t.me/masaf/229777",
+      "https://t.me/masaf/217402"
+     ]
+    ]
+   ],
+   "m": 11,
+   "f": "2026-05-08",
+   "l": "2026-10-17"
+  },
+  {
+   "v": "6037997599377331",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@Saberin_ir",
+     7,
+     [
+      "https://t.me/Saberin_ir/67953",
+      "https://t.me/Saberin_ir/66924",
+      "https://t.me/Saberin_ir/69213",
+      "https://t.me/Saberin_ir/68964",
+      "https://t.me/Saberin_ir/68675"
+     ]
+    ]
+   ],
+   "m": 7,
+   "f": "2026-08-25",
+   "l": "2026-10-26"
+  },
+  {
+   "v": "پویش به صورت مستمر",
+   "t": "Named campaign",
+   "k": "other",
+   "g": "irgc",
+   "ch": [
+    [
+     "@masaf",
+     5,
+     [
+      "https://t.me/masaf/233844",
+      "https://t.me/masaf/214064",
+      "https://t.me/masaf/240330",
+      "https://t.me/masaf/238411",
+      "https://t.me/masaf/244276"
+     ]
+    ]
+   ],
+   "m": 5,
+   "f": "2026-06-11",
+   "l": "2026-10-20"
   },
   {
    "v": "5041721112169215",
@@ -2565,6 +2924,28 @@
    "l": "2026-08-03"
   },
   {
+   "v": "IR740170000000352664728002",
+   "t": "Bank account (IBAN)",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@mahdaviatsiasi",
+     5,
+     [
+      "https://t.me/mahdaviatsiasi/88227",
+      "https://t.me/mahdaviatsiasi/88143",
+      "https://t.me/mahdaviatsiasi/88056",
+      "https://t.me/mahdaviatsiasi/87894",
+      "https://t.me/mahdaviatsiasi/79694"
+     ]
+    ]
+   ],
+   "m": 5,
+   "f": "2026-05-09",
+   "l": "2026-08-01"
+  },
+  {
    "v": "6037991780769752",
    "t": "Bank card",
    "k": "bank",
@@ -2587,26 +2968,25 @@
    "l": "2026-08-01"
   },
   {
-   "v": "IR740170000000352664728002",
-   "t": "Bank account (IBAN)",
-   "k": "bank",
+   "v": "پویش هدیه بابا به",
+   "t": "Named campaign",
+   "k": "other",
    "g": "irgc",
    "ch": [
     [
-     "@mahdaviatsiasi",
-     5,
+     "@masaf",
+     4,
      [
-      "https://t.me/mahdaviatsiasi/88227",
-      "https://t.me/mahdaviatsiasi/88143",
-      "https://t.me/mahdaviatsiasi/88056",
-      "https://t.me/mahdaviatsiasi/87894",
-      "https://t.me/mahdaviatsiasi/79694"
+      "https://t.me/masaf/216308",
+      "https://t.me/masaf/210113",
+      "https://t.me/masaf/238745",
+      "https://t.me/masaf/244783"
      ]
     ]
    ],
-   "m": 5,
-   "f": "2026-05-09",
-   "l": "2026-08-01"
+   "m": 4,
+   "f": "2026-05-23",
+   "l": "2026-10-22"
   },
   {
    "v": "IR960700010002208016821006",
@@ -2729,6 +3109,84 @@
    "l": "2026-06-22"
   },
   {
+   "v": "6037691990359184",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@masaf",
+     3,
+     [
+      "https://t.me/masaf/209984",
+      "https://t.me/masaf/240500",
+      "https://t.me/masaf/245451"
+     ]
+    ]
+   ],
+   "m": 3,
+   "f": "2026-05-23",
+   "l": "2026-10-25"
+  },
+  {
+   "v": "پویش مهر مهدوی شریک",
+   "t": "Named campaign",
+   "k": "other",
+   "g": "irgc",
+   "ch": [
+    [
+     "@masaf",
+     3,
+     [
+      "https://t.me/masaf/238745",
+      "https://t.me/masaf/244783",
+      "https://t.me/masaf/244782"
+     ]
+    ]
+   ],
+   "m": 3,
+   "f": "2026-09-24",
+   "l": "2026-10-22"
+  },
+  {
+   "v": "5041721062806279",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepah_quds",
+     2,
+     [
+      "https://t.me/sepah_quds/221045",
+      "https://t.me/sepah_quds/228250"
+     ]
+    ]
+   ],
+   "m": 2,
+   "f": "2026-07-11",
+   "l": "2026-09-26"
+  },
+  {
+   "v": "IR320700001000225281250002",
+   "t": "Bank account (IBAN)",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepah_quds",
+     2,
+     [
+      "https://t.me/sepah_quds/221045",
+      "https://t.me/sepah_quds/228250"
+     ]
+    ]
+   ],
+   "m": 2,
+   "f": "2026-07-11",
+   "l": "2026-09-26"
+  },
+  {
    "v": "5041721112169173",
    "t": "Bank card",
    "k": "bank",
@@ -2746,25 +3204,6 @@
    "m": 2,
    "f": "2026-06-14",
    "l": "2026-07-06"
-  },
-  {
-   "v": "6037997599377331",
-   "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@Saberin_ir",
-     2,
-     [
-      "https://t.me/Saberin_ir/67953",
-      "https://t.me/Saberin_ir/66924"
-     ]
-    ]
-   ],
-   "m": 2,
-   "f": "2026-08-25",
-   "l": "2026-09-12"
   },
   {
    "v": "6037697090099273",
@@ -2804,42 +3243,6 @@
    "l": "2026-06-17"
   },
   {
-   "v": "5041727010882932",
-   "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@sepahcybery",
-     1,
-     [
-      "https://t.me/sepahcybery/151166"
-     ]
-    ]
-   ],
-   "m": 1,
-   "f": "2026-09-08",
-   "l": "2026-09-08"
-  },
-  {
-   "v": "5041727010882924",
-   "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@sepahcybery",
-     1,
-     [
-      "https://t.me/sepahcybery/151166"
-     ]
-    ]
-   ],
-   "m": 1,
-   "f": "2026-09-08",
-   "l": "2026-09-08"
-  },
-  {
    "v": "6037707000397137",
    "t": "Bank card",
    "k": "bank",
@@ -2856,42 +3259,6 @@
    "m": 1,
    "f": "2026-09-09",
    "l": "2026-09-09"
-  },
-  {
-   "v": "IR320700001000225281250002",
-   "t": "Bank account (IBAN)",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@sepah_quds",
-     1,
-     [
-      "https://t.me/sepah_quds/221045"
-     ]
-    ]
-   ],
-   "m": 1,
-   "f": "2026-07-11",
-   "l": "2026-07-11"
-  },
-  {
-   "v": "5041721062806279",
-   "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@sepah_quds",
-     1,
-     [
-      "https://t.me/sepah_quds/221045"
-     ]
-    ]
-   ],
-   "m": 1,
-   "f": "2026-07-11",
-   "l": "2026-07-11"
   },
   {
    "v": "6104338800617231",
@@ -2966,24 +3333,6 @@
    "l": "2026-06-14"
   },
   {
-   "v": "6037691990359184",
-   "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@masaf",
-     1,
-     [
-      "https://t.me/masaf/209984"
-     ]
-    ]
-   ],
-   "m": 1,
-   "f": "2026-05-23",
-   "l": "2026-05-23"
-  },
-  {
    "v": "5892107050198434",
    "t": "Bank card",
    "k": "bank",
@@ -3018,6 +3367,132 @@
    "m": 1,
    "f": "2026-10-05",
    "l": "2026-10-05"
+  },
+  {
+   "v": "6221061207228273",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@serfan_jahate_ettela",
+     1,
+     [
+      "https://t.me/serfan_jahate_ettela/568729"
+     ]
+    ]
+   ],
+   "m": 1,
+   "f": "2026-09-23",
+   "l": "2026-09-23"
+  },
+  {
+   "v": "IR390190000000332838546003",
+   "t": "Bank account (IBAN)",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@masaf",
+     1,
+     [
+      "https://t.me/masaf/240500"
+     ]
+    ]
+   ],
+   "m": 1,
+   "f": "2026-10-02",
+   "l": "2026-10-02"
+  },
+  {
+   "v": "5892107046137041",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@serfan_jahate_ettela",
+     1,
+     [
+      "https://t.me/serfan_jahate_ettela/571466"
+     ]
+    ]
+   ],
+   "m": 1,
+   "f": "2026-10-23",
+   "l": "2026-10-23"
+  },
+  {
+   "v": "6063731148514558",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@serfan_jahate_ettela",
+     1,
+     [
+      "https://t.me/serfan_jahate_ettela/571466"
+     ]
+    ]
+   ],
+   "m": 1,
+   "f": "2026-10-23",
+   "l": "2026-10-23"
+  },
+  {
+   "v": "09151220771",
+   "t": "Phone number",
+   "k": "other",
+   "g": "irgc",
+   "ch": [
+    [
+     "@serfan_jahate_ettela",
+     1,
+     [
+      "https://t.me/serfan_jahate_ettela/571466"
+     ]
+    ]
+   ],
+   "m": 1,
+   "f": "2026-10-23",
+   "l": "2026-10-23"
+  },
+  {
+   "v": "IR020150000003101092740065",
+   "t": "Bank account (IBAN)",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@serfan_jahate_ettela",
+     1,
+     [
+      "https://t.me/serfan_jahate_ettela/571466"
+     ]
+    ]
+   ],
+   "m": 1,
+   "f": "2026-10-23",
+   "l": "2026-10-23"
+  },
+  {
+   "v": "IR410600362870010667399001",
+   "t": "Bank account (IBAN)",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@serfan_jahate_ettela",
+     1,
+     [
+      "https://t.me/serfan_jahate_ettela/571466"
+     ]
+    ]
+   ],
+   "m": 1,
+   "f": "2026-10-23",
+   "l": "2026-10-23"
   }
  ],
  "themes": {
@@ -3098,53 +3573,53 @@
   "sites": 20
  },
  "threats": {
-  "end": "2026-10-20",
+  "end": "2026-10-26",
   "base_start": "2026-05-01",
-  "w30_start": "2026-09-21",
-  "w7_start": "2026-10-14",
-  "p21_start": "2026-09-23",
+  "w30_start": "2026-09-27",
+  "w7_start": "2026-10-20",
+  "p21_start": "2026-09-29",
   "tot": {
-   "base": 52400,
-   "last30": 39368,
-   "prior21": 27611,
-   "last7": 8691
+   "base": 60418,
+   "last30": 38573,
+   "prior21": 27724,
+   "last7": 8415
   },
-  "nthreat": 1904,
+  "nthreat": 2038,
   "nch": 25,
-  "nposts": 138301,
+  "nposts": 148594,
   "rows": [
    {
     "k": "riyadh",
     "l": "Riyadh",
     "side": "sa",
     "base": [
-     18,
-     3.4
+     26,
+     4.3
     ],
     "last30": [
-     87,
-     22.1
+     126,
+     32.7
     ],
     "prior21": [
-     61,
-     22.1
+     76,
+     27.4
     ],
     "last7": [
-     26,
-     29.9
+     48,
+     57.0
     ],
     "ex": [
      [
-      "https://t.me/AlmasirahVideos/173831",
-      "2026-10-20"
+      "https://t.me/almasirah_all/432917",
+      "2026-10-26"
      ],
      [
-      "https://t.me/AlmasirahVideos/173769",
-      "2026-10-19"
+      "https://t.me/AlmasirahVideos/174924",
+      "2026-10-26"
      ],
      [
-      "https://t.me/Saba_Newsye/330377",
-      "2026-10-19"
+      "https://t.me/almasirah_all/432873",
+      "2026-10-26"
      ]
     ]
    },
@@ -3153,33 +3628,33 @@
     "l": "Aramco oil company sites",
     "side": "sa",
     "base": [
-     15,
-     2.9
+     19,
+     3.1
     ],
     "last30": [
-     39,
-     9.9
+     49,
+     12.7
     ],
     "prior21": [
-     29,
-     10.5
+     35,
+     12.6
     ],
     "last7": [
-     10,
-     11.5
+     14,
+     16.6
     ],
     "ex": [
      [
-      "https://t.me/AlmasirahVideos/173769",
-      "2026-10-19"
+      "https://t.me/AlmasirahVideos/174812",
+      "2026-10-25"
      ],
      [
-      "https://t.me/Saba_Newsye/330377",
-      "2026-10-19"
+      "https://t.me/almasirah2/305004",
+      "2026-10-25"
      ],
      [
-      "https://t.me/masirah_sada/196135",
-      "2026-10-14"
+      "https://t.me/Saba_Newsye/331845",
+      "2026-10-25"
      ]
     ]
    },
@@ -3188,33 +3663,33 @@
     "l": "Jizan, Najran and Asir (Saudi border provinces)",
     "side": "sa",
     "base": [
-     57,
-     10.9
+     91,
+     15.1
     ],
     "last30": [
-     112,
-     28.4
+     103,
+     26.7
     ],
     "prior21": [
      67,
-     24.3
+     24.2
     ],
     "last7": [
-     38,
-     43.7
+     25,
+     29.7
     ],
     "ex": [
      [
-      "https://t.me/alforgan_net/181864",
-      "2026-10-19"
+      "https://t.me/ansarallh_yemen/64359",
+      "2026-10-26"
      ],
      [
-      "https://t.me/sadaa_almasirah/155524",
-      "2026-10-19"
+      "https://t.me/Saba_Newsye/332034",
+      "2026-10-25"
      ],
      [
-      "https://t.me/almasirah_all/431796",
-      "2026-10-19"
+      "https://t.me/alforgan_net/182482",
+      "2026-10-25"
      ]
     ]
    },
@@ -3224,19 +3699,19 @@
     "side": "gulf",
     "base": [
      10,
-     1.9
+     1.7
     ],
     "last30": [
      10,
-     2.5
+     2.6
     ],
     "prior21": [
-     9,
-     3.3
+     8,
+     2.9
     ],
     "last7": [
-     1,
-     1.2
+     0,
+     0.0
     ],
     "ex": [
      [
@@ -3259,32 +3734,32 @@
     "side": "sea",
     "base": [
      17,
-     3.2
+     2.8
     ],
     "last30": [
-     8,
-     2.0
+     11,
+     2.9
     ],
     "prior21": [
-     7,
-     2.5
+     8,
+     2.9
     ],
     "last7": [
-     1,
-     1.2
+     3,
+     3.6
     ],
     "ex": [
      [
-      "https://t.me/masirah_sada/196135",
-      "2026-10-14"
+      "https://t.me/AlmasirahVideos/174510",
+      "2026-10-24"
      ],
      [
-      "https://t.me/SABAYEen/118622",
-      "2026-10-09"
+      "https://t.me/sadaa_almasirah/156354",
+      "2026-10-24"
      ],
      [
-      "https://t.me/MilitaryMediaY/46994",
-      "2026-10-09"
+      "https://t.me/almasirah2/304740",
+      "2026-10-24"
      ]
     ]
    },
@@ -3293,20 +3768,20 @@
     "l": "United States",
     "side": "us",
     "base": [
-     254,
-     48.5
+     261,
+     43.2
     ],
     "last30": [
-     45,
-     11.4
+     38,
+     9.9
     ],
     "prior21": [
-     36,
-     13.0
+     32,
+     11.5
     ],
     "last7": [
-     8,
-     9.2
+     0,
+     0.0
     ],
     "ex": [
      [
@@ -3328,33 +3803,33 @@
     "l": "Israel",
     "side": "il",
     "base": [
-     172,
-     32.8
+     175,
+     29.0
     ],
     "last30": [
-     35,
-     8.9
+     40,
+     10.4
     ],
     "prior21": [
      28,
      10.1
     ],
     "last7": [
-     6,
-     6.9
+     8,
+     9.5
     ],
     "ex": [
      [
-      "https://t.me/Saba_Newsye/329744",
-      "2026-10-17"
+      "https://t.me/Saba_Newsye/331904",
+      "2026-10-25"
      ],
      [
-      "https://t.me/sadaa_almasirah/155133",
-      "2026-10-16"
+      "https://t.me/sadaa_almasirah/156278",
+      "2026-10-23"
      ],
      [
-      "https://t.me/almasirah2/303522",
-      "2026-10-16"
+      "https://t.me/almasirah2/304675",
+      "2026-10-23"
      ]
     ]
    },
@@ -3364,19 +3839,19 @@
     "side": "sea",
     "base": [
      72,
-     13.7
+     11.9
     ],
     "last30": [
      11,
-     2.8
+     2.9
     ],
     "prior21": [
-     10,
-     3.6
+     11,
+     4.0
     ],
     "last7": [
-     1,
-     1.2
+     0,
+     0.0
     ],
     "ex": [
      [
@@ -3399,37 +3874,409 @@
     "side": "sea",
     "base": [
      55,
-     10.5
+     9.1
     ],
     "last30": [
-     0,
-     0.0
+     3,
+     0.8
     ],
     "prior21": [
      0,
      0.0
     ],
     "last7": [
+     3,
+     3.6
+    ],
+    "ex": [
+     [
+      "https://t.me/AlmasirahVideos/174510",
+      "2026-10-24"
+     ],
+     [
+      "https://t.me/sadaa_almasirah/156354",
+      "2026-10-24"
+     ],
+     [
+      "https://t.me/almasirah2/304740",
+      "2026-10-24"
+     ]
+    ]
+   }
+  ],
+  "sites": [
+   {
+    "k": "kkia",
+    "l": "King Khalid Airport",
+    "t": "airport",
+    "la": 24.96,
+    "lo": 46.7,
+    "base": [
      0,
      0.0
     ],
-    "ex": []
-   }
-  ],
-  "flag": [
-   {
-    "l": "Aramco headquarters, Dhahran/Dammam",
-    "why": "surging",
-    "n7": 6,
-    "r7": 6.9,
-    "rp": 2.5
+    "last30": [
+     46,
+     11.9
+    ],
+    "last7": [
+     21,
+     25.0
+    ],
+    "prior21": [
+     25,
+     9.0
+    ],
+    "ex": [
+     [
+      "https://t.me/almasirah_all/432795",
+      "2026-10-25"
+     ],
+     [
+      "https://t.me/SabaNewsyeMedia/287412",
+      "2026-10-25"
+     ],
+     [
+      "https://t.me/SabaNewsyeMedia/287413",
+      "2026-10-25"
+     ]
+    ]
    },
    {
+    "k": "ryref",
+    "l": "Riyadh refinery",
+    "t": "energy",
+    "la": 24.55,
+    "lo": 46.86,
+    "base": [
+     0,
+     0.0
+    ],
+    "last30": [
+     7,
+     1.8
+    ],
+    "last7": [
+     0,
+     0.0
+    ],
+    "prior21": [
+     7,
+     2.5
+    ],
+    "ex": [
+     [
+      "https://t.me/masirah_sada/196135",
+      "2026-10-14"
+     ],
+     [
+      "https://t.me/AlmasirahVideos/172812",
+      "2026-10-14"
+     ],
+     [
+      "https://t.me/Saba_Newsye/328932",
+      "2026-10-14"
+     ]
+    ]
+   },
+   {
+    "k": "aramhq",
+    "l": "Aramco HQ (Dhahran)",
+    "t": "energy",
+    "la": 26.31,
+    "lo": 50.14,
+    "base": [
+     0,
+     0.0
+    ],
+    "last30": [
+     13,
+     3.4
+    ],
+    "last7": [
+     0,
+     0.0
+    ],
+    "prior21": [
+     13,
+     4.7
+    ],
+    "ex": [
+     [
+      "https://t.me/masirah_sada/196135",
+      "2026-10-14"
+     ],
+     [
+      "https://t.me/AlmasirahVideos/172812",
+      "2026-10-14"
+     ],
+     [
+      "https://t.me/Saba_Newsye/328932",
+      "2026-10-14"
+     ]
+    ]
+   },
+   {
+    "k": "abha",
+    "l": "Abha airport",
+    "t": "airport",
+    "la": 18.24,
+    "lo": 42.66,
+    "base": [
+     5,
+     0.8
+    ],
+    "last30": [
+     8,
+     2.1
+    ],
+    "last7": [
+     0,
+     0.0
+    ],
+    "prior21": [
+     8,
+     2.9
+    ],
+    "ex": [
+     [
+      "https://t.me/MilitaryMediaY/46925",
+      "2026-10-06"
+     ],
+     [
+      "https://t.me/SabaNewsyeMedia/283244",
+      "2026-10-06"
+     ],
+     [
+      "https://t.me/SabaNewsyeMedia/283243",
+      "2026-10-06"
+     ]
+    ]
+   },
+   {
+    "k": "khamis",
     "l": "Khamis Mushait air base",
+    "t": "military",
+    "la": 18.3,
+    "lo": 42.8,
+    "base": [
+     27,
+     4.5
+    ],
+    "last30": [
+     41,
+     10.6
+    ],
+    "last7": [
+     10,
+     11.9
+    ],
+    "prior21": [
+     31,
+     11.2
+    ],
+    "ex": [
+     [
+      "https://t.me/Saba_Newsye/332034",
+      "2026-10-25"
+     ],
+     [
+      "https://t.me/MilitaryMediaY/47126",
+      "2026-10-25"
+     ],
+     [
+      "https://t.me/AlmasirahVideos/174704",
+      "2026-10-25"
+     ]
+    ]
+   },
+   {
+    "k": "yanbu",
+    "l": "Yanbu oil port",
+    "t": "energy",
+    "la": 24.09,
+    "lo": 38.06,
+    "base": [
+     29,
+     4.8
+    ],
+    "last30": [
+     14,
+     3.6
+    ],
+    "last7": [
+     10,
+     11.9
+    ],
+    "prior21": [
+     4,
+     1.4
+    ],
+    "ex": [
+     [
+      "https://t.me/alforgan_net/182328",
+      "2026-10-24"
+     ],
+     [
+      "https://t.me/AlmasirahVideos/174511",
+      "2026-10-24"
+     ],
+     [
+      "https://t.me/sadaa_almasirah/156356",
+      "2026-10-24"
+     ]
+    ]
+   }
+  ],
+  "kind": {
+   "riyadh": {
+    "n": 126,
+    "named": {
+     "King Khalid Airport": 45,
+     "Riyadh refinery": 7,
+     "Aramco HQ (Dhahran)": 13,
+     "Rabigh refinery": 4,
+     "Abha airport": 3,
+     "Khamis Mushait air base": 12,
+     "Yanbu oil port": 6,
+     "King Fahd Airport (Dammam)": 2
+    },
+    "general": {
+     "place named generally": 46,
+     "military (unnamed)": 1,
+     "airport (unnamed)": 21,
+     "energy (unnamed)": 3
+    },
+    "ngen": 71,
+    "ex": [
+     [
+      "https://t.me/almasirah_all/432917",
+      "2026-10-26"
+     ],
+     [
+      "https://t.me/AlmasirahVideos/174924",
+      "2026-10-26"
+     ]
+    ]
+   },
+   "aramco": {
+    "n": 49,
+    "named": {
+     "King Khalid Airport": 15,
+     "Riyadh refinery": 7,
+     "Aramco HQ (Dhahran)": 13,
+     "Rabigh refinery": 4,
+     "Abha airport": 3,
+     "Khamis Mushait air base": 3,
+     "Yanbu oil port": 6,
+     "King Fahd Airport (Dammam)": 2
+    },
+    "general": {
+     "airport (unnamed)": 9,
+     "energy (unnamed)": 16
+    },
+    "ngen": 25,
+    "ex": [
+     [
+      "https://t.me/AlmasirahVideos/174812",
+      "2026-10-25"
+     ],
+     [
+      "https://t.me/almasirah2/305004",
+      "2026-10-25"
+     ]
+    ]
+   },
+   "south": {
+    "n": 103,
+    "named": {
+     "King Khalid Airport": 11,
+     "Rabigh refinery": 4,
+     "Abha airport": 8,
+     "Khamis Mushait air base": 41,
+     "Yanbu oil port": 6
+    },
+    "general": {
+     "place named generally": 47,
+     "airport (unnamed)": 3
+    },
+    "ngen": 50,
+    "ex": [
+     [
+      "https://t.me/ansarallh_yemen/64359",
+      "2026-10-26"
+     ],
+     [
+      "https://t.me/alforgan_net/182482",
+      "2026-10-25"
+     ]
+    ]
+   }
+  },
+  "week": {
+   "start": "2026-10-20",
+   "warns": [],
+   "claims": [
+    {
+     "d": "Oct 25",
+     "t": [
+      "King Khalid Airport",
+      "Khamis Mushait air base",
+      "Riyadh",
+      "Jizan, Najran and Asir"
+     ],
+     "u": "https://t.me/army21ye/3958"
+    },
+    {
+     "d": "Oct 24",
+     "t": [
+      "Rabigh refinery",
+      "Khamis Mushait air base",
+      "Yanbu oil port",
+      "King Khalid Airport",
+      "King Fahd Airport (Dammam)",
+      "Najran airport"
+     ],
+     "u": "https://t.me/MilitaryMediaY/47113"
+    },
+    {
+     "d": "Oct 22",
+     "t": [
+      "Yanbu oil port",
+      "King Fahd Airport (Dammam)"
+     ],
+     "u": "https://t.me/army21ye/3934"
+    }
+   ]
+  },
+  "flag": [
+   {
+    "l": "Riyadh",
     "why": "surging",
-    "n7": 16,
-    "r7": 18.4,
-    "rp": 7.2
+    "n7": 48,
+    "r7": 57.0,
+    "rp": 27.4
+   },
+   {
+    "l": "King Khalid International Airport, Riyadh",
+    "why": "surging",
+    "n7": 21,
+    "r7": 25.0,
+    "rp": 9.0
+   },
+   {
+    "l": "Yanbu oil port",
+    "why": "surging",
+    "n7": 10,
+    "r7": 11.9,
+    "rp": 1.4
+   },
+   {
+    "l": "Saudi defence ministry",
+    "why": "surging",
+    "n7": 6,
+    "r7": 7.1,
+    "rp": 0.0
    }
   ],
   "case": {
@@ -3462,16 +4309,20 @@
    "ok": true
   },
   "air": {
-   "n": 70,
+   "link": {
+    "King Khalid Airport": 5,
+    "Abha airport": 6
+   },
+   "n": 81,
    "first": "2026-10-05",
    "first_url": "https://t.me/Saba_Newsye/326827",
    "ex": "https://t.me/MilitaryMediaY/47023"
   },
   "iraqi": {
-   "n": 125,
-   "med": 204,
-   "u2": 45,
-   "ch": 9,
+   "n": 143,
+   "med": 225,
+   "u2": 48,
+   "ch": 8,
    "claim": [
     "sajadsda",
     27,
