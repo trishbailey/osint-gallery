@@ -78,3 +78,4 @@ table.bz thead th{height:190px}table.bz .vl{bottom:6px;left:calc(50% - 9px);font
 .shax text{font-size:13px;fill:#c9d2e0}.shax path,.shax line{stroke:#3a5080}.shref{stroke:#c8a24a;stroke-dasharray:4 4;stroke-width:1.5}.shlab{font-size:13.5px;font-weight:600;paint-order:stroke;stroke:#0f1b31;stroke-width:4px}
 .shpt{cursor:pointer}.shtip{position:absolute;display:none;z-index:9999;background:#12203a;border:1px solid #24365a;color:#e6e9ef;font-size:13px;padding:6px 8px;border-radius:6px;pointer-events:none}
 @media(max-width:800px){.shgrid{grid-template-columns:1fr}}
+.shleg{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:13px;color:#e6e9ef;margin:4px 0 2px}.shleg i{display:inline-block;width:14px;height:4px;border-radius:2px;margin-right:5px;vertical-align:middle}
