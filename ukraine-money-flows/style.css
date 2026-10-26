@@ -114,3 +114,13 @@ svg text{fill-opacity:1}
 .defn{font-size:15px}
 .sk-year{font-size:clamp(32px,5vw,52px)}
 .sk-us-note{font-size:15px;color:var(--text);margin:0 0 8px;border-left:3px solid var(--gold);padding-left:10px}
+
+/* shared tooltip + compact swatch legends */
+.tt{position:absolute;z-index:50;max-width:min(360px,calc(100vw - 16px));background:#0f1b31;color:#e6e9ef;border:1px solid #c8a24a;border-radius:6px;padding:10px 12px;font:14px/1.45 Arial,sans-serif;box-shadow:0 6px 20px #000a;pointer-events:none}
+.tt.pin{pointer-events:auto}.tt b{font-size:15px}.tt .tt-src{color:#c8a24a;font-size:13px;text-decoration:underline}.tt .tt-src:focus-visible{outline:2px solid #c8a24a}
+.tt svg{vertical-align:middle;margin-left:4px}.tt .tt-k{color:#c8cfdb}
+[data-tip]{cursor:pointer}[data-tip]:focus{outline:none}[data-tip]:focus-visible{outline:3px solid #c8a24a;outline-offset:2px}
+svg [data-tip]:focus-visible rect,svg rect[data-tip]:focus-visible{stroke:#c8a24a;stroke-width:3}
+.sw-legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:10px 0 0;font-size:14px;color:#e6e9ef}.sw{display:inline-flex;align-items:center;gap:7px}.sw i{display:inline-block;width:14px;height:14px;border-radius:3px}
+.tt-info{min-height:44px;min-width:44px;background:transparent;border:1px solid #24365a;border-radius:6px;color:#e6e9ef;font:14px Arial,sans-serif;padding:0 12px;cursor:pointer;margin-top:8px}
+.tt-info:hover,.tt-info:focus-visible{border-color:#c8a24a;outline:none}
