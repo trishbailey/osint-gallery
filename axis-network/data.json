@@ -3909,8 +3909,8 @@
     "k": "kkia",
     "l": "King Khalid Airport",
     "t": "airport",
-    "la": 24.96,
-    "lo": 46.7,
+    "la": 24.958,
+    "lo": 46.699,
     "base": [
      0,
      0.0
@@ -3940,14 +3940,15 @@
       "https://t.me/SabaNewsyeMedia/287413",
       "2026-10-25"
      ]
-    ]
+    ],
+    "minor": false
    },
    {
     "k": "ryref",
     "l": "Riyadh refinery",
     "t": "energy",
-    "la": 24.55,
-    "lo": 46.86,
+    "la": 24.519,
+    "lo": 46.868,
     "base": [
      0,
      0.0
@@ -3977,14 +3978,15 @@
       "https://t.me/Saba_Newsye/328932",
       "2026-10-14"
      ]
-    ]
+    ],
+    "minor": false
    },
    {
     "k": "aramhq",
     "l": "Aramco HQ (Dhahran)",
     "t": "energy",
-    "la": 26.31,
-    "lo": 50.14,
+    "la": 26.312,
+    "lo": 50.147,
     "base": [
      0,
      0.0
@@ -4014,14 +4016,53 @@
       "https://t.me/Saba_Newsye/328932",
       "2026-10-14"
      ]
-    ]
+    ],
+    "minor": false
+   },
+   {
+    "k": "rabigh",
+    "l": "Rabigh refinery",
+    "t": "energy",
+    "la": 22.719,
+    "lo": 39.017,
+    "base": [
+     0,
+     0.0
+    ],
+    "last30": [
+     4,
+     1.0
+    ],
+    "last7": [
+     0,
+     0.0
+    ],
+    "prior21": [
+     4,
+     1.4
+    ],
+    "ex": [
+     [
+      "https://t.me/masirah_sada/191126",
+      "2026-10-05"
+     ],
+     [
+      "https://t.me/Saba_Newsye/326986",
+      "2026-10-05"
+     ],
+     [
+      "https://t.me/AlmasirahVideos/171271",
+      "2026-10-05"
+     ]
+    ],
+    "minor": true
    },
    {
     "k": "abha",
     "l": "Abha airport",
     "t": "airport",
     "la": 18.24,
-    "lo": 42.66,
+    "lo": 42.657,
     "base": [
      5,
      0.8
@@ -4051,14 +4092,15 @@
       "https://t.me/SabaNewsyeMedia/283243",
       "2026-10-06"
      ]
-    ]
+    ],
+    "minor": false
    },
    {
     "k": "khamis",
     "l": "Khamis Mushait air base",
     "t": "military",
-    "la": 18.3,
-    "lo": 42.8,
+    "la": 18.297,
+    "lo": 42.804,
     "base": [
      27,
      4.5
@@ -4088,14 +4130,15 @@
       "https://t.me/AlmasirahVideos/174704",
       "2026-10-25"
      ]
-    ]
+    ],
+    "minor": false
    },
    {
     "k": "yanbu",
     "l": "Yanbu oil port",
     "t": "energy",
-    "la": 24.09,
-    "lo": 38.06,
+    "la": 23.975,
+    "lo": 38.236,
     "base": [
      29,
      4.8
@@ -4125,7 +4168,80 @@
       "https://t.me/sadaa_almasirah/156356",
       "2026-10-24"
      ]
-    ]
+    ],
+    "minor": false
+   },
+   {
+    "k": "dmmap",
+    "l": "King Fahd Airport (Dammam)",
+    "t": "airport",
+    "la": 26.471,
+    "lo": 49.798,
+    "base": [
+     0,
+     0.0
+    ],
+    "last30": [
+     2,
+     0.5
+    ],
+    "last7": [
+     0,
+     0.0
+    ],
+    "prior21": [
+     2,
+     0.7
+    ],
+    "ex": [
+     [
+      "https://t.me/Saba_Newsye/328171",
+      "2026-10-11"
+     ],
+     [
+      "https://t.me/MilitaryMediaY/47010",
+      "2026-10-11"
+     ]
+    ],
+    "minor": true
+   },
+   {
+    "k": "mod",
+    "l": "Saudi defence ministry",
+    "t": "government",
+    "la": 24.668,
+    "lo": 46.717,
+    "base": [
+     0,
+     0.0
+    ],
+    "last30": [
+     6,
+     1.6
+    ],
+    "last7": [
+     6,
+     7.1
+    ],
+    "prior21": [
+     0,
+     0.0
+    ],
+    "ex": [
+     [
+      "https://t.me/almasirah_all/432299",
+      "2026-10-22"
+     ],
+     [
+      "https://t.me/almasirah_all/432300",
+      "2026-10-22"
+     ],
+     [
+      "https://t.me/almasirah_all/432276",
+      "2026-10-22"
+     ]
+    ],
+    "minor": false
    }
   ],
   "kind": {
@@ -4139,7 +4255,8 @@
      "Abha airport": 3,
      "Khamis Mushait air base": 12,
      "Yanbu oil port": 6,
-     "King Fahd Airport (Dammam)": 2
+     "King Fahd Airport (Dammam)": 2,
+     "Saudi defence ministry": 6
     },
     "general": {
      "place named generally": 46,
@@ -4169,7 +4286,8 @@
      "Abha airport": 3,
      "Khamis Mushait air base": 3,
      "Yanbu oil port": 6,
-     "King Fahd Airport (Dammam)": 2
+     "King Fahd Airport (Dammam)": 2,
+     "Saudi defence ministry": 6
     },
     "general": {
      "airport (unnamed)": 9,
@@ -4194,7 +4312,8 @@
      "Rabigh refinery": 4,
      "Abha airport": 8,
      "Khamis Mushait air base": 41,
-     "Yanbu oil port": 6
+     "Yanbu oil port": 6,
+     "Saudi defence ministry": 6
     },
     "general": {
      "place named generally": 47,
