@@ -93,3 +93,4 @@ body.story #map{height:min(62vh,620px)}
 .trade{margin:6px 0 14px}.trade .seg{margin:6px 0}.trade .seg button{min-height:44px}#trbars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tgrp .row{grid-template-columns:44px 1fr 74px}.tc{font-weight:600;font-size:14px;margin-bottom:2px}.tgrp em{font-size:13px;grid-column:2/4}
 @media(max-width:700px){#trbars{grid-template-columns:1fr}.cbars .row{grid-template-columns:120px 1fr 40px}}
 .trade .seg button[aria-pressed=true]{border:2px solid var(--gold);color:var(--gold)}
+.b3l{transform:translate(-50%,-50%);background:#0b1526e6;border:2px solid;border-radius:8px;padding:4px 8px;white-space:nowrap;text-align:center;color:#fff}.b3l b{display:block;font-size:17px}.b3l span{font-size:13px}@media(max-width:700px){.b3l{padding:2px 6px}.b3l b{font-size:14px}}
