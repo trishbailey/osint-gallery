@@ -13,7 +13,7 @@ with sync_playwright() as p:
     b=p.chromium.launch(args=["--no-sandbox"]);pg=b.new_page(viewport={"width":1440,"height":1000})
     errs=[];pg.on("pageerror",lambda e:errs.append(str(e)))
     pg.goto(f"http://127.0.0.1:{port}/africa-brief/");pg.wait_for_function("window._check",timeout=20000)
-    pg.evaluate("document.querySelectorAll('details.region').forEach(d=>d.open=true)");pg.check("#L-ru");pg.check("#L-all");pg.wait_for_timeout(800)
+    pg.evaluate("document.querySelectorAll('details.region').forEach(d=>d.open=true)");pg.evaluate("document.querySelector('details.morel').open=true");pg.check("#L-res");pg.check("#L-allres");pg.hover('.prow[data-iso=\"SDN\"] .pf[data-p=\"Russia\"]');pg.wait_for_timeout(800)
     r=pg.evaluate(JS);print("errors",errs);print(r)
     ok=not errs and r["minPx"]>=12.95 and r["minContrast"]>=4.5
     print("PASS" if ok else "FAIL");b.close();sys.exit(0 if ok else 1)
