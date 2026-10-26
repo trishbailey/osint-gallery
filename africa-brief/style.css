@@ -192,9 +192,56 @@ details summary{cursor:pointer;color:#82B1FF;font-weight:700;font-size:13px}
 .litem.off>*:not(.lhit){opacity:.35}.litem.off text{text-decoration:line-through}
 .legend .lsub{font-size:13px;fill:#c9d4ea}
 .pline{filter:drop-shadow(0 0 1.5px #0b1526) drop-shadow(0 0 1px #0b1526)}
-.cfloc .lreg{fill:#3E6A9E}
+.cfloc .lreg{fill:#3F8FD0}
 .mgrid{display:grid;grid-template-columns:220px minmax(0,1fr);gap:16px;align-items:start}@media(max-width:800px){.mgrid{grid-template-columns:1fr}}
 .mside{display:flex;flex-direction:column;gap:4px;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:10px;margin:0}
 .mk{display:flex;align-items:center;gap:8px;background:none;border:1px solid transparent;border-radius:4px;color:#e6e9ef;font:14px "Helvetica Neue",Arial,sans-serif;text-align:left;padding:5px 6px;cursor:pointer;min-height:32px}
 .mk:hover,.mk:focus-visible{background:#24365a;border-color:#FFE272}.mk.off{opacity:.45;text-decoration:line-through}.mk i{flex:none;width:14px;height:14px;border-radius:3px}
 .mbars .bf.off{opacity:.12}
+/* ---------- phone layout (max 600px); desktop untouched ---------- */
+.kclust,.fbtn,.goldph,#scrim,.shx{display:none}
+@media(max-width:600px){
+ html,body{overflow-x:hidden}
+ header{padding:10px 12px 8px}.brand-sub{display:block}header>a,header .brand{min-height:44px;display:flex;align-items:center}
+ nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%}
+ nav a{min-height:44px;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--panel2);border:1px solid var(--line);border-radius:22px;font-size:13px;padding:2px 6px}
+ main,.wrap{padding-left:10px!important;padding-right:10px!important}
+ .kpis{gap:6px}.kpi{flex:0 1 auto;min-width:0;padding:6px 10px;border-radius:18px;gap:6px;min-height:44px;align-items:center}
+ .kpi b{font-size:17px}.kpi span{font-size:13px;line-height:1.3}
+ .tile{padding:10px 10px}
+ .fbtn{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;margin:0 0 8px;background:#1c2c4b;border:1px solid var(--gold);color:var(--text);border-radius:22px;font:700 15px "Helvetica Neue",Arial,sans-serif;cursor:pointer}
+ .mapgrid{display:block!important}
+ .mapside,#panel{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;max-height:72vh;overflow:auto;background:var(--panel);border-top:2px solid var(--gold);border-radius:14px 14px 0 0;padding:8px 14px 18px;transform:translateY(105%);transition:transform .25s ease;visibility:hidden;box-sizing:border-box;margin:0}
+ .mapside.sheet-open,#panel.sheet-open{transform:none;visibility:visible}
+ .shx{display:flex;align-items:center;justify-content:center;margin:0 0 6px auto;min-height:44px;min-width:88px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:22px;font:700 14px "Helvetica Neue",Arial,sans-serif}
+ #scrim{position:fixed;inset:0;z-index:55;background:rgba(5,10,20,.6)}body.sheet-on #scrim{display:block}
+ .mapwrap svg{max-width:100%}
+ .kclust{display:inline}.pflags,.plines,.toplabels{display:none!important}
+ .kp{cursor:pointer}.kp text{font:700 13px "Helvetica Neue",Arial,sans-serif;fill:#FFE272}.kp .kc{fill:#0b1526}
+ .kp .kbg{fill:#0b1526;stroke:#FFE272;stroke-width:1.5}.kp .khit{fill:transparent}
+ .kp .kc{paint-order:normal}.klead{stroke:#FFE272;opacity:.8}
+ .kp .kcb{fill:#FFE272}.kp:focus{outline:none}.kp:focus .kbg{stroke-width:3}
+ .chip,label.chip{min-height:44px}
+ details>summary{min-height:44px;display:flex;align-items:center}
+ button,.btn{min-height:44px}
+ .pcol>h2{padding:0;border:0}.secbtn{all:unset;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;width:100%;min-height:44px;cursor:pointer;font:inherit;color:inherit}
+ .secbtn::after{content:"▾";color:var(--gold);font-size:18px;margin-left:8px}.secbtn[aria-expanded="false"]::after{content:"▸"}
+ .secbtn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+ .pcol.collapsed>*:not(h2){display:none!important}
+ /* gold: phone bars replace the Sankey */
+ .skwrap{display:none!important}.goldsvg{min-width:0}
+ .goldph{display:block}.goldph h4.gph{margin:14px 0 6px;font-size:15px;color:#FFE272}
+ .gkey{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px}.gkey i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+ .gbar{margin:0 0 8px}.gl2{display:flex;justify-content:space-between;font-size:14px;gap:8px}
+ .gbar .bt{display:flex;height:22px;background:var(--panel2);border-radius:3px;overflow:hidden}
+ .gbar .bf{display:block;height:100%;min-width:3px;border-right:1px solid #0b1526;cursor:pointer}
+ .gbar .bf:focus{outline:2px solid #fff;outline-offset:-2px}
+ .gnote{font-size:14px}
+ /* minerals: label and value on one line, bar full width */
+ .mgrid{display:block!important}.mside{flex-direction:row!important;flex-wrap:wrap;margin-bottom:8px}
+ .mbars .bar{display:grid!important;grid-template-columns:1fr auto!important;grid-template-areas:"l v" "t t" "x x";gap:4px 8px;min-height:44px}
+ .mbars .bar>.bl{grid-area:l}.mbars .bar>.bt{grid-area:t;min-height:16px}.mbars .bar>:nth-child(3){grid-area:v}.mbars .bar>:nth-child(4){grid-area:x;font-size:13px}
+ .tip{max-width:calc(100vw - 24px)}.mapside .legsvg{max-width:300px}
+ table{display:block;overflow-x:auto;max-width:100%}
+ svg text{font-size:max(13px,1em)}
+}

@@ -1,7 +1,8 @@
+const PH=()=>matchMedia("(max-width:600px)").matches;
 const BRI_URL=window.BRI_DASHBOARD_URL||"../belt-and-road/";
 const briHref=id=>BRI_URL+(id?"#p="+encodeURIComponent(id):"#region=africa");
 const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const COLORS={hex:["#C4A86A","#A05A3A","#5C2626"]};
+const COLORS={hex:["#E3B341","#E0607E","#9B57D3"]};
 const BC={Russia:"#FF80FF",UAE:"#FFE272",Turkey:"#00FFE5",Iran:"#00FF00",Egypt:"#CC7A00",US:"#00CBFF",France:"#5B72CC",China:"#E52249",Rwanda:"#FF8E72"};
 const FLAG=(sel,w)=>{w=w||20;const h=w*2/3;sel.append("rect").attr("x",-w/2-3).attr("y",-h/2-3).attr("width",w+6).attr("height",h+6).attr("fill","transparent");sel.append("use").attr("href","#cnflag").attr("x",-w/2).attr("y",-h/2).attr("width",w).attr("height",h);};
 const SHEET="https://docs.google.com/spreadsheets/d/1fCulxY6AJ0br-O5hstRmIP9Lfco4-CMjYdHpH3Q7hTc/edit";
@@ -25,7 +26,7 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
  const afr={type:"FeatureCollection",features:geo.features.filter(f=>f.properties.CONTINENT==="Africa")};
  const proj=d3.geoMercator().fitExtent([[20,20],[W-20,H-20]],afr),path=d3.geoPath(proj);
  const r2c={};B.regions.forEach(r=>r.countries.forEach(c=>r2c[c]=r));
- const panel=h=>{document.getElementById("panel").innerHTML=h;renderSources();};
+ const panel=h=>{document.getElementById("panel").innerHTML=h;renderSources();window._onPanel&&window._onPanel();};
  const Z=svg.append("g");
  Z.append("rect").attr("class","sea").attr("x",-2000).attr("y",-2000).attr("width",5000).attr("height",5000);
  Z.append("g").selectAll("path").data(geo.features).join("path").attr("d",path).attr("class",f=>f.properties.CONTINENT==="Africa"?"country":"other");
@@ -110,8 +111,8 @@ const cOver=(e,f)=>{const iso=f.properties.ADM0_A3;if(pinned)return;let sub="";i
 const cOut=()=>{if(pinned)return;clearLines();tipHide();};
 Z.selectAll("path.country").attr("tabindex",0).attr("aria-label",f=>cName(f)+(byIso.has(f.properties.ADM0_A3)?", foreign involvement":"")).each(function(){d3.select(this).select("title").remove();})
  .on("mouseenter",cOver).on("mousemove",(e,f)=>{if(!pinned&&e.clientX!=null)window._tip&&tipShow(document.getElementById("tip").innerHTML,e);}).on("mouseleave",cOut).on("focus",cOver).on("blur",()=>{pinned=false;cOut();})
- .on("click",(e,f)=>{e.stopPropagation();pinned=false;cOver(e,f);pinned=true;});
-gC.selectAll("path.conf").each(function(){d3.select(this).select("title").remove();}).on("click.name",(e,f)=>{pinned=false;cOver(e,f);pinned=true;}).on("mouseenter",cOver).on("mouseleave",cOut);
+ .on("click",(e,f)=>{e.stopPropagation();pinned=false;cOver(e,f);pinned=true;if(PH()){tipHide();window._ctrySheet(f.properties.ADM0_A3,cName(f));}});
+gC.selectAll("path.conf").each(function(){d3.select(this).select("title").remove();}).on("click.name",(e,f)=>{pinned=false;cOver(e,f);pinned=true;if(PH())tipHide();}).on("mouseenter",cOver).on("mouseleave",cOut);
 Z.select("rect.sea").on("click",()=>{pinned=false;clearLines();tipHide();});
 document.addEventListener("click",e=>{if(pinned&&!e.target.closest("#svg")){pinned=false;clearLines();tipHide();}});
 const hlConf=isos=>{gHL.selectAll("*").remove();if(!isos)return;gHL.selectAll("path").data(afr.features.filter(f=>isos.includes(f.properties.ADM0_A3))).join("path").attr("d",path).attr("class","hlpath");};
@@ -143,8 +144,8 @@ gP.raise();gPL.raise();
 const LS=d3.select("#legsvg"),lg=LS.append("g").attr("class","legend").attr("transform","translate(10,22)");let ly=0;
 const offP=new Set(),offC=new Set();let offEnded=false;
 const item=(txt,draw,on,click,aria)=>{const g=lg.append("g").attr("class","litem").attr("transform",`translate(0,${ly})`).attr("tabindex",0).attr("role","button").attr("aria-label",aria||txt).attr("aria-pressed",on());
- g.append("rect").attr("class","lhit").attr("x",-6).attr("y",-15).attr("width",228).attr("height",22).attr("rx",4);draw(g);g.append("text").attr("x",32).text(txt);
- const upd=()=>g.classed("off",!on()).attr("aria-pressed",on());const go=()=>{click();upd();syncL();};g.on("click",go).on("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}});ly+=24;return upd;};
+ g.append("rect").attr("class","lhit").attr("x",-6).attr("y",-15).attr("width",228).attr("height",PH()?42:22).attr("y",PH()?-25:-15).attr("rx",4);draw(g);g.append("text").attr("x",32).text(txt);
+ const upd=()=>g.classed("off",!on()).attr("aria-pressed",on());const go=()=>{click();upd();syncL();};g.on("click",go).on("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}});ly+=PH()?44:24;return upd;};
 const head=t=>{lg.append("text").attr("class","lh").attr("y",ly).text(t);ly+=24;};
 const ups=[];const syncL=()=>ups.forEach(u=>u());
 const cb=id=>document.getElementById(id),setCb=(id,v)=>{cb(id).checked=v;cb(id).onchange({target:{checked:v}});};
@@ -171,7 +172,7 @@ document.getElementById("L-allres").onchange=e=>{if(e.target.checked&&!document.
  const rb=document.getElementById("reset");rb.onclick=()=>{svg.transition().duration(600).call(zoom.transform,d3.zoomIdentity);rb.classList.remove("show");};
  function openRegion(r,f){const fc={type:"FeatureCollection",features:afr.features.filter(x=>r.countries.includes(x.properties.ADM0_A3))};
   const [[x0,y0],[x1,y1]]=path.bounds(fc),k=Math.min(4,0.8/Math.max((x1-x0)/W,(y1-y0)/H));
-  svg.transition().duration(700).call(zoom.transform,d3.zoomIdentity.translate(W/2,H/2).scale(k).translate(-(x0+x1)/2,-(y0+y1)/2));rb.classList.add("show");
+  if(!PH()){svg.transition().duration(700).call(zoom.transform,d3.zoomIdentity.translate(W/2,H/2).scale(k).translate(-(x0+x1)/2,-(y0+y1)/2));rb.classList.add("show");}
   showR(r,f);const d=document.getElementById("r-"+r.id);if(d)d.open=true;setNews(r.id);}
  window._openRegion=id=>openRegion(B.regions.find(r=>r.id===id));
 /* ---------- armed groups: affiliation only ---------- */
@@ -298,7 +299,7 @@ const renderConflicts=()=>{const CF=B.conflicts,RN0=Object.fromEntries(B.regions
  const flagI=w=>`<svg class="flagi" width="${w}" height="${w*2/3}" viewBox="0 0 ${w} ${w*2/3}" aria-hidden="true"><use href="#cnflag" width="${w}" height="${w*2/3}"/></svg>`;
 const goldChart=()=>{const R=B.goldroutes,SK=R.sankey,el=document.getElementById("flowsec");
  el.innerHTML=`<p>Where Africa's declared gold went in ${SK.year}, as recorded by the importing countries, and where the UAE sent gold on. Band width is tonnes.${fn(SK.cites)}</p><p class="prompt">Hover a band to see its tonnes and source, or hover a place to highlight its flows.</p>
- <div class="skwrap"><svg id="goldsvg" class="goldsvg" viewBox="0 0 1320 640" role="img" aria-label="Sankey chart of African gold exports by destination, ${SK.year}"></svg></div>
+ <div class="skwrap"><svg id="goldsvg" class="goldsvg" viewBox="0 0 1320 640" role="img" aria-label="Sankey chart of African gold exports by destination, ${SK.year}"></svg></div><div id="goldph" class="goldph"></div>
  <p class="muted">${esc(SK.note)}${fn(SK.cites)} ${SK.excluded.map(x=>`Left out: ${esc(x.origin)} → ${esc(x.hub)} (${x.tonnes} t), because the ${esc(x.why)}.`).join(" ")}</p>
  <div class="rcards">
   <div class="rcard" style="border-top-color:#FFE272"><h4>1. ${esc(R.uae.label)}</h4><p><b>${R.uae.smuggled.t} t</b> of African gold reached the UAE in ${R.uae.smuggled.year} without being declared for export in Africa. That was 66.5% of the UAE's gold imports from Africa.${fn([R.uae.smuggled.cite])} Over ${R.uae.decade.year} the undeclared total was ${R.uae.decade.t.toLocaleString()} t.${fn([R.uae.decade.cite])}</p><ul>${R.uae.cases.map(c=>`<li>${stB(c.status)} ${esc(c.t)}${fn(c.cites)}</li>`).join("")}</ul></div>
@@ -310,6 +311,20 @@ const goldChart=()=>{const R=B.goldroutes,SK=R.sankey,el=document.getElementById
  const sv=d3.select("#goldsvg"),SW=1320,SH=640;
  const OC={"Sahel (Mali, Burkina Faso, Niger)":"#FFE272","Sudan":"#FF80FF","Ghana":"#00FF00","South Africa":"#00CBFF","Guinea":"#FF8E72","Other African countries":"#CC7A00"};
  const links=[...SK.links.map(l=>({source:l.s,target:l.t,value:l.tonnes,k:"in"})),...SK.reexports.map(l=>({source:"UAE",target:l.t,value:l.tonnes,k:"re"}))];
+ {/* phone: same flows as stacked bars, one scale, top to bottom */
+  const ph=document.getElementById("goldph"),mx=d3.max([...d3.rollups(links.filter(l=>l.k==="in"),v=>d3.sum(v,l=>l.value),l=>l.source).map(d=>d[1]),...d3.rollups(links,v=>d3.sum(v,l=>l.value),l=>l.target).map(d=>d[1])]);
+  const nm=k=>k==="UAE"?"United Arab Emirates":String(k).replace("UAE → ","");const seg=(l,c)=>`<span class="bf" tabindex="0" role="button" style="width:${l.value/mx*100}%;background:${c}" data-tip="${esc(`<b>${nm(l.source)} → ${nm(l.target)}: ${l.value} tonnes (${SK.year||""})</b>`)}" aria-label="${esc(`${nm(l.source)} to ${nm(l.target)}: ${l.value} tonnes`)}"></span>`;
+  const grp=(title,keys,by,col)=>`<h4 class="gph">${title}</h4><div class="gbars">${keys.map(k=>{const ls=links.filter(by(k));const t=Math.round(d3.sum(ls,l=>l.value)*10)/10;return `<div class="gbar"><div class="gl2"><span>${esc(nm(k))}</span><b>${t} t</b></div><div class="bt">${ls.sort((a,b)=>b.value-a.value).map(l=>seg(l,col(l))).join("")}</div></div>`;}).join("")}</div>`;
+  const ins=links.filter(l=>l.k==="in"),O=[...new Set(ins.map(l=>l.source))].sort((a,b)=>d3.sum(ins.filter(l=>l.source===b),l=>l.value)-d3.sum(ins.filter(l=>l.source===a),l=>l.value));
+  const D=[...new Set(ins.map(l=>l.target))].sort((a,b)=>d3.sum(ins.filter(l=>l.target===b),l=>l.value)-d3.sum(ins.filter(l=>l.target===a),l=>l.value));
+  const RE=links.filter(l=>l.k==="re").sort((a,b)=>b.value-a.value);
+  ph.innerHTML=`<p class="prompt">Tap a bar segment for its tonnes. All bars use one scale.</p><div class="gkey">${Object.entries(OC).map(([k,c])=>`<span><i style="background:${c}"></i>${esc(k)}</span>`).join("")}</div>
+   ${grp("1. Where the gold comes from",O,k=>l=>l.k==="in"&&l.source===k,l=>OC[l.source]||"#CC7A00")}
+   ${grp("2. Where it goes first",D,k=>l=>l.k==="in"&&l.target===k,l=>OC[l.source]||"#CC7A00")}
+   ${grp("3. Where the United Arab Emirates sends gold on (all origins)",RE.map(l=>l.target),k=>l=>l.k==="re"&&l.target===k,()=>"#00FFE5")}
+   <p class="gnote"><b>${SK.smuggled.share}</b> of the United Arab Emirates' African gold imports were not declared at export in Africa (SWISSAID, ${SK.smuggled.year}).${fn([SK.smuggled.cite])}</p>
+   <p class="gnote gcr">Crypto step: proceeds are reported to move through the dollar token USDT and the ruble token A7A5. No public source gives a tonnage.</p>`;
+  ph.querySelectorAll(".bf").forEach(b=>{const s=e=>{e.stopPropagation();tipAt(b.dataset.tip,b);};b.addEventListener("click",s);b.addEventListener("focus",s);b.addEventListener("mouseenter",e=>tipShow(b.dataset.tip,e));b.addEventListener("pointerleave",e=>{if(e.pointerType==="mouse")tipHide();});b.addEventListener("blur",tipHide);});}
  const names=[...new Set(links.flatMap(l=>[l.source,l.target]))];
  const sk=d3.sankey().nodeId(d=>d.name).nodeWidth(10).nodePadding(16).nodeSort(null).extent([[340,20],[SW-310,SH-60]]);
  const G0=sk({nodes:names.map(name=>({name})),links:links.map(d=>Object.assign({},d))});
@@ -317,7 +332,7 @@ const goldChart=()=>{const R=B.goldroutes,SK=R.sankey,el=document.getElementById
  const lk=sv.append("g").attr("fill","none").selectAll("path").data(G0.links).join("path").attr("class","skl").attr("d",d3.sankeyLinkHorizontal())
   .attr("stroke",l=>l.k==="re"?"#00FFE5":OC[l.source.name]||"#CC7A00").attr("stroke-width",l=>Math.max(1.5,l.width)).attr("stroke-opacity",.75)
   .attr("tabindex",0).attr("aria-label",l=>`${l.source.name} to ${l.target.name.replace("UAE → ","")}: ${l.value} tonnes`);
- const ltip=l=>l.k==="re"?`<b>UAE → ${esc(l.target.name.replace("UAE → ",""))}: ${l.value} t (${SK.year})</b><div class="tsub">Gold of all origins, not only African. UN Comtrade, imports from the UAE reported by the partner <span class="tfn">[${fnNums(SK.cites)}]</span></div>`:`<b>${esc(l.source.name)} → ${esc(l.target.name)}: ${l.value} t (${SK.year})</b><div class="tsub">${(100*l.value/SK.total).toFixed(1)}% of the African gold drawn. UN Comtrade HS 7108, imports reported by ${l.target.name==="All other"?"the smaller hubs":esc(l.target.name)} <span class="tfn">[${fnNums(SK.cites)}]</span></div>`;
+ const ltip=l=>l.k==="re"?`<b>UAE → ${esc(l.target.name.replace("UAE → ",""))}: ${l.value} t (${SK.year||""})</b><div class="tsub">Gold of all origins, not only African. UN Comtrade, imports from the UAE reported by the partner <span class="tfn">[${fnNums(SK.cites)}]</span></div>`:`<b>${esc(l.source.name)} → ${esc(l.target.name)}: ${l.value} t (${SK.year})</b><div class="tsub">${(100*l.value/SK.total).toFixed(1)}% of the African gold drawn. UN Comtrade HS 7108, imports reported by ${l.target.name==="All other"?"the smaller hubs":esc(l.target.name)} <span class="tfn">[${fnNums(SK.cites)}]</span></div>`;
  lk.on("mousemove",(e,l)=>{lk.attr("stroke-opacity",x=>x===l?.95:.35);tipShow(ltip(l),e);}).on("mouseleave",()=>{lk.attr("stroke-opacity",.75);tipHide();})
   .on("focus",function(e,l){lk.attr("stroke-opacity",x=>x===l?.95:.35);tipAt(ltip(l),this);}).on("blur",()=>{lk.attr("stroke-opacity",.75);tipHide();})
   .on("click",(e,l)=>{e.stopPropagation();lk.attr("stroke-opacity",x=>x===l?.95:.35);tipShow(ltip(l),e);});
@@ -354,10 +369,10 @@ const renderMinerals=()=>{const CN=["DRC","Rwanda","South Africa","Ghana","Niger
  document.querySelectorAll(".mk").forEach(b=>b.onclick=()=>{const on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",on);b.classList.toggle("off",!on);document.querySelectorAll(`.mbars .bf[data-k="${CSS.escape(b.dataset.k)}"]`).forEach(x=>x.classList.toggle("off",!on));});
  document.getElementById("mnh").textContent=`Africa's share of world mine output, by mineral (US Geological Survey, ${d3.min(yrs)===d3.max(yrs)?d3.max(yrs):d3.min(yrs)+"–"+d3.max(yrs)})`;
  document.querySelectorAll(".mbars .bar").forEach(b=>{const x=rows[+b.dataset.i];
-  b.addEventListener("mousemove",e=>{const s=e.target.closest(".bf");tipShow(tipH(x,s?x.a[+s.dataset.j]:null),e);});b.addEventListener("mouseleave",tipHide);
+  b.addEventListener("mousemove",e=>{const s=e.target.closest(".bf");tipShow(tipH(x,s?x.a[+s.dataset.j]:null),e);});b.addEventListener("pointerleave",e=>{if(e.pointerType==="mouse")tipHide();});b.addEventListener("blur",tipHide);
   b.addEventListener("focus",()=>tipAt(tipH(x),b.querySelector(".bt")));b.addEventListener("blur",tipHide);
   b.addEventListener("click",e=>{e.stopPropagation();const s=e.target.closest(".bf");tipShow(tipH(x,s?x.a[+s.dataset.j]:null),e);});});
- document.addEventListener("click",e=>{if(!e.target.closest(".mbars,#svg,#goldsvg"))tipHide();});};
+ document.addEventListener("click",e=>{if(!e.target.closest(".mbars,#svg,#goldsvg,#goldph"))tipHide();});};
  /* ---------- BRI, media, method ---------- */
  const fillRest=()=>{
  document.getElementById("brisec").innerHTML=`<aside class="bri-cta"><div><p class="eyebrow">Beacon global dashboard</p><h3>China's role in Africa and beyond</h3><p>The Belt and Road dashboard tracks China's loans, ports, railways, bases and mining stakes worldwide.</p></div><a class="bri-btn" href="${briHref()}">Explore the Belt and Road dashboard →</a></aside><p>Fourteen China-linked projects sit in or near the conflict regions on this map. They include railways, ports, Africa's first Chinese military base, mining stakes and state loans. China's state lenders have lent to 49 African governments since 2000.${fn(["bu-cla-2024","bu-cla-db"])} Each card shows what China built or lent. Open it for what China gets and the host government's case.</p>
@@ -387,6 +402,46 @@ const renderMinerals=()=>{const CN=["DRC","Rwanda","South Africa","Ghana","Niger
  document.addEventListener("click",e=>{const x=e.target.closest("sup.fn a");if(x)document.getElementById("srcdet").open=true;});
  kpis();setNews("sahel");renderConflicts();renderMinerals();goldChart();fillRest();abbr();renderSources();
   renderSources();
+ /* ---------- phone layout (max 600px): chips, region clusters, bottom sheets, collapsible sections ---------- */
+ {const scrim=document.createElement("div");scrim.id="scrim";document.body.appendChild(scrim);
+  const closeSheets=()=>{document.querySelectorAll(".sheet-open").forEach(x=>x.classList.remove("sheet-open"));document.body.classList.remove("sheet-on");};
+  const addX=el=>{if(el.querySelector(":scope>.shx"))return;const b=document.createElement("button");b.className="shx";b.type="button";b.textContent="Close";b.setAttribute("aria-label","Close details");b.onclick=closeSheets;el.prepend(b);};
+  const openSheet=el=>{if(!PH())return;closeSheets();addX(el);el.classList.add("sheet-open");document.body.classList.add("sheet-on");el.scrollTop=0;el.querySelector(".shx").focus({preventScroll:true});};
+  scrim.onclick=closeSheets;document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheets();});
+  const pEl=document.getElementById("panel");window._onPanel=()=>{if(PH())openSheet(pEl);};
+  const side=document.querySelector(".mapside"),fb=document.createElement("button");fb.id="fbtn";fb.type="button";fb.className="fbtn";fb.innerHTML="Filters and legend";fb.setAttribute("aria-haspopup","dialog");
+  document.querySelector(".mapgrid").before(fb);fb.onclick=()=>openSheet(side);
+  const pr=document.querySelector("#map>.prompt");if(PH()&&pr)pr.textContent="Each pill is a conflict region with the number of foreign powers involved there. Tap a pill or a country for details; use Filters for layers and the legend.";
+  window._sheet={open:id=>openSheet(document.querySelector(id)),close:closeSheets};
+  /* country tap on phone: details in the sheet */
+  window._ctrySheet=(iso,name)=>{if(!PH())return;const ps=byIso.has(iso)?[...new Set(byIso.get(iso).map(x=>x.p))]:[];
+   panel(`<p class="eyebrow">Country</p><h3>${esc(name)}</h3>${ps.length?`<p class="muted">Foreign involvement</p><ul class="plist">${ps.map(p=>`<li><svg class="pfi" viewBox="0 0 20 13.3" aria-hidden="true"><use href="#${CAPS[p].f}" width="20" height="13.3"/></svg><b>${esc(CAPS[p].n)}:</b> ${powItems(p,iso).map(x=>esc(x.t)+(x.ended?" (ended)":"")).join("; ")}</li>`).join("")}</ul>`:`<p>No foreign military or major economic involvement is tracked here.</p>`}`);};
+  /* clusters: one pill per region with its foreign powers and a count */
+  const gK=Z.append("g").attr("class","kclust");
+  const drawK=()=>{gK.selectAll("*").remove();if(!PH())return;const sw=svg.node().getBoundingClientRect().width||390,bs=W/sw;
+   const nodes=B.regions.map(r=>{const ps=ORD.filter(p=>r.countries.some(i=>byIso.has(i)&&byIso.get(i).some(x=>x.p===p)));const [x,y]=proj(r.label);return {r,ps,x,y,ax:x,ay:y};});
+   nodes.forEach(n=>{const g=gK.append("g").attr("class","kp").attr("tabindex",0).attr("role","button").attr("aria-label",`${n.r.name}: ${n.ps.length} foreign powers. Open details`);
+    const inner=g.append("g").attr("transform",`scale(${bs})`);const t=inner.append("text").attr("x",n.ps.length?30:8).attr("y",5).text(`${n.r.name}`);
+    const tw=t.node().getBBox().width;const cx=(n.ps.length?30:8)+tw+19;inner.append("circle").attr("class","kcb").attr("cx",cx).attr("cy",0).attr("r",11);const c=inner.append("text").attr("class","kc").attr("x",cx).attr("y",5).attr("text-anchor","middle").text(n.ps.length);
+    if(n.ps.length)inner.append("use").attr("href","#"+CAPS[n.ps[0]].f).attr("x",6).attr("y",-7.5).attr("width",18).attr("height",12);
+    const w=cx+15;inner.insert("rect","text").attr("class","kbg").attr("x",0).attr("y",-15).attr("width",w).attr("height",30).attr("rx",15);
+    inner.insert("rect",".kbg").attr("class","khit").attr("x",-2).attr("y",-22).attr("width",w+4).attr("height",44);
+    n.w=w*bs;n.h=30*bs;n.g=g;const go=()=>openRegion(n.r);g.on("click",e=>{e.stopPropagation();go();}).on("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}});});
+   /* separate pills: simple vertical relaxation inside the map */
+   nodes.forEach(n=>{n.x=Math.max(4*bs,Math.min(W-n.w-4*bs,n.x-n.w/2));});
+   for(let it=0;it<200;it++){let moved=false;for(const a of nodes)for(const b of nodes){if(a===b)continue;const ox=Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x),oy=Math.min(a.y+a.h/2,b.y+b.h/2)-Math.max(a.y-a.h/2,b.y-b.h/2)+6*bs;
+     if(ox>0&&oy>0){const d=(a.y<b.y||(a.y===b.y&&a.r.id<b.r.id))?-1:1;a.y+=d*oy/2;moved=true;}}if(!moved)break;}
+   nodes.forEach(n=>{n.y=Math.max(n.h/2+4*bs,Math.min(H-n.h/2-4*bs,n.y));});for(let it=0;it<100;it++){let mv=false;nodes.sort((a,b)=>a.y-b.y);for(let i=1;i<nodes.length;i++){const a=nodes[i-1],b=nodes[i];const ox=Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x),need=a.h+6*bs;if(ox>0&&b.y-a.y<need){b.y=a.y+need;mv=true;}}if(!mv)break;}
+   {let lim=H-4*bs;for(let i=nodes.length-1;i>=0;i--){const b=nodes[i];if(b.y+b.h/2>lim)b.y=lim-b.h/2;const a=nodes[i-1];if(a){const ox=Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x);lim=ox>0?b.y-b.h/2-6*bs:H-4*bs;}}}
+   nodes.forEach(n=>{n.g.attr("transform",`translate(${n.x},${n.y})`);if(Math.hypot(n.x+n.w/2-n.ax,n.y-n.ay)>20*bs)gK.insert("line",":first-child").attr("class","klead").attr("x1",n.ax).attr("y1",n.ay).attr("x2",Math.max(n.x,Math.min(n.x+n.w,n.ax))).attr("y2",n.y).style("stroke-width",1.5*bs);});
+   window._clusters=nodes.map(n=>({id:n.r.id,n:n.ps.length}));};
+  drawK();document.getElementById("L-pow").addEventListener("change",e=>gK.style("display",e.target.checked?null:"none"));let rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(drawK,200);});
+  /* collapsible sections on phone */
+  if(PH())["backers","minerals","flows","bri","media","news","regions","method"].forEach((id,i)=>{const s=document.getElementById(id);if(!s)return;const h=s.querySelector(":scope>h2");if(!h)return;
+   const b=document.createElement("button");b.type="button";b.className="secbtn";b.setAttribute("aria-expanded",i===0?"true":"false");b.setAttribute("aria-controls",id);b.innerHTML=h.innerHTML;h.innerHTML="";h.appendChild(b);s.classList.add("pcol");if(i)s.classList.add("collapsed");
+   b.onclick=()=>{const open=s.classList.toggle("collapsed")===false;b.setAttribute("aria-expanded",open);};});
+  document.querySelectorAll('nav a[href^="#"]').forEach(a=>a.addEventListener("click",()=>{const s=document.querySelector(a.getAttribute("href"));if(s&&s.classList.contains("collapsed")){s.classList.remove("collapsed");s.querySelector(".secbtn")?.setAttribute("aria-expanded","true");}}));
+ }
  window._fn=()=>({n:FNL.length,ids:FNL});
  window._check=()=>{const ts=[...document.querySelectorAll("svg text")].filter(t=>t.getBBox().width>0&&getComputedStyle(t).display!=="none"&&t.closest("svg").getBoundingClientRect().width>0);
   return {labels:ts.length,minFontPx:Math.min(...ts.map(t=>parseFloat(getComputedStyle(t).fontSize)*t.getScreenCTM().a)),small:ts.filter(t=>parseFloat(getComputedStyle(t).fontSize)*t.getScreenCTM().a<12.95).map(t=>t.textContent).slice(0,20)};};
