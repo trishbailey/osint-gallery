@@ -1,0 +1,23 @@
+:root{--navy:#11273C;--teal:#087F8C;--bg:#F5F7FB}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:var(--bg);color:var(--navy)}
+header{display:flex;justify-content:space-between;align-items:center;background:var(--navy);color:#fff;padding:12px 24px;font-size:14px}
+header a{color:#fff}.brand{font-weight:700;letter-spacing:.08em}.sub{margin-left:12px;font-weight:400;opacity:.85}
+.hero{padding:24px;max-width:1200px;margin:auto}h1{margin:0 0 8px;font-size:28px}
+main{max-width:1200px;margin:auto;padding:0 24px 40px}
+.filters{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;font-size:14px}.filters label{background:#fff;padding:4px 10px;border-radius:14px;border:1px solid #d5dbe5}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:16px}@media(max-width:800px){.grid{grid-template-columns:1fr}}
+svg{background:#fff;border-radius:8px;width:100%}.land{fill:#dfe5ee;stroke:#fff;stroke-width:.5}
+.mk{stroke:#fff;stroke-width:1.5;cursor:pointer}.mk.sel{stroke:var(--navy);stroke-width:3}
+.card{background:#fff;border-radius:8px;padding:16px;font-size:14px;max-height:520px;overflow:auto}.card h3{margin:0 0 6px;font-size:18px}
+.card dt{font-weight:700;color:var(--teal);margin-top:8px;font-size:13px;text-transform:uppercase}.card dd{margin:0}
+.muted{color:#4a5a6a;font-size:14px}a{color:var(--teal)}
+table{width:100%;border-collapse:collapse;margin-top:16px;background:#fff;font-size:14px}th,td{padding:8px;text-align:left;border-bottom:1px solid #e3e8ef}
+th{background:var(--navy);color:#fff;font-size:13px}tr{cursor:pointer}tr:hover{background:#eef6f7}
+.pill{font-size:13px;padding:1px 8px;border-radius:10px;color:#fff}.high{background:var(--teal)}.medium{background:#C98A1B}.low{background:#9A3B3B}
+.regions{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.regions button{font-size:14px;padding:6px 12px;border:1px solid #11273C;background:#fff;color:#11273C;border-radius:4px;cursor:pointer}
+.regions button.on{background:#11273C;color:#F5F7FB}
+.brief{font-size:15px;background:#087F8C;color:#fff;padding:10px 14px;border-radius:4px;margin:0 0 10px}
+.brief a{color:#fff;font-weight:700;text-decoration:underline}
+#map{cursor:grab}
+.mk,.land{vector-effect:non-scaling-stroke}

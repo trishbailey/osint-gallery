@@ -149,6 +149,14 @@
       "icon": "/icons/axis-network.svg",
       "enterUrl": "https://beacon-tools.onrender.com/axis-network/",
       "status": "live"
+    },
+    {
+      "id": "belt-and-road",
+      "name": "Belt and Road",
+      "blurb": "Map of 32 Chinese-backed ports, railways, mines, bases and loans across Africa, South Asia and Southeast Asia, with what China gets, the host country's case, confidence and sources.",
+      "icon": "/icons/belt-and-road.svg",
+      "enterUrl": "https://beacon-tools.onrender.com/belt-and-road/",
+      "status": "live"
     }
   ]
 }
