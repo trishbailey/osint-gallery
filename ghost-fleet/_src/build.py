@@ -31,7 +31,15 @@ for f in glob.glob(os.path.join(D,"positions","*.csv")):
         if imo in vs and ts and ts[:10]>=cut:
             try: pts[imo].append((ts.replace(" ","T")[:16],round(float(r["lat"]),3),round(float(r.get("lon") or r.get("longitude")),3))); extra+=1
             except Exception: pass
-tracks={i:sorted(set(p)) for i,p in pts.items() if len(p)>=2}
+def thin(ps,mins=30):
+    # page tracks keep at most one point per 30 min per ship (dense Kystverket feeds stay in data/positions)
+    out=[];last=None
+    for p in ps:
+        t=dt.datetime.fromisoformat(p[0][:16])
+        if last is None or (t-last).total_seconds()>=mins*60: out.append(p);last=t
+    if out[-1]!=ps[-1]: out.append(ps[-1])
+    return out
+tracks={i:thin(sorted(set(p))) for i,p in pts.items() if len(p)>=2}
 CFG=json.load(open(os.path.join(H,"config.json")))
 HOT={k:(v["kind"],v["lat"],v["lon"],v["km"]) for k,v in CFG["hotspots"].items()}
 import math
