@@ -313,46 +313,64 @@ const goldChart=()=>{const R=B.goldroutes,SK=R.sankey,el=document.getElementById
  const links=[...SK.links.map(l=>({source:l.s,target:l.t,value:l.tonnes,k:"in"})),...SK.reexports.map(l=>({source:"UAE",target:l.t,value:l.tonnes,k:"re"}))];
  {/* phone: same flows as stacked bars, one scale, top to bottom */
   const ph=document.getElementById("goldph"),mx=d3.max([...d3.rollups(links.filter(l=>l.k==="in"),v=>d3.sum(v,l=>l.value),l=>l.source).map(d=>d[1]),...d3.rollups(links,v=>d3.sum(v,l=>l.value),l=>l.target).map(d=>d[1])]);
-  const nm=k=>k==="UAE"?"United Arab Emirates":String(k).replace("UAE → ","");const seg=(l,c)=>`<span class="bf" tabindex="0" role="button" style="width:${l.value/mx*100}%;background:${c}" data-tip="${esc(`<b>${nm(l.source)} → ${nm(l.target)}: ${l.value} tonnes (${SK.year||""})</b>`)}" aria-label="${esc(`${nm(l.source)} to ${nm(l.target)}: ${l.value} tonnes`)}"></span>`;
+  const nm=k=>k==="UAE"?"United Arab Emirates":k==="USA"?"United States":k==="All other"?"Other destinations":k==="Hong Kong"?"Hong Kong (direct)":String(k).startsWith("UAE → ")?String(k).replace("UAE → ","").replace(/^all other$/,"Other places")+" via UAE":k;const seg=(l,c)=>`<span class="bf" tabindex="0" role="button" style="width:${l.value/mx*100}%;background:${c}" data-tip="${esc(`<b>${nm(l.source)} → ${nm(l.target)}: ${l.value} tonnes (${SK.year||""})</b>`)}" aria-label="${esc(`${nm(l.source)} to ${nm(l.target)}: ${l.value} tonnes`)}"></span>`;
   const grp=(title,keys,by,col)=>`<h4 class="gph">${title}</h4><div class="gbars">${keys.map(k=>{const ls=links.filter(by(k));const t=Math.round(d3.sum(ls,l=>l.value)*10)/10;return `<div class="gbar"><div class="gl2"><span>${esc(nm(k))}</span><b>${t} t</b></div><div class="bt">${ls.sort((a,b)=>b.value-a.value).map(l=>seg(l,col(l))).join("")}</div></div>`;}).join("")}</div>`;
   const ins=links.filter(l=>l.k==="in"),O=[...new Set(ins.map(l=>l.source))].sort((a,b)=>d3.sum(ins.filter(l=>l.source===b),l=>l.value)-d3.sum(ins.filter(l=>l.source===a),l=>l.value));
   const D=[...new Set(ins.map(l=>l.target))].sort((a,b)=>d3.sum(ins.filter(l=>l.target===b),l=>l.value)-d3.sum(ins.filter(l=>l.target===a),l=>l.value));
   const RE=links.filter(l=>l.k==="re").sort((a,b)=>b.value-a.value);
   ph.innerHTML=`<p class="prompt">Tap a bar segment for its tonnes. All bars use one scale.</p><div class="gkey">${Object.entries(OC).map(([k,c])=>`<span><i style="background:${c}"></i>${esc(k)}</span>`).join("")}</div>
    ${grp("1. Where the gold comes from",O,k=>l=>l.k==="in"&&l.source===k,l=>OC[l.source]||"#CC7A00")}
-   ${grp("2. Where it goes first",D,k=>l=>l.k==="in"&&l.target===k,l=>OC[l.source]||"#CC7A00")}
-   ${grp("3. Where the United Arab Emirates sends gold on (all origins)",RE.map(l=>l.target),k=>l=>l.k==="re"&&l.target===k,()=>"#00FFE5")}
+   ${grp("2. First buyer: direct from Africa, or the United Arab Emirates",D,k=>l=>l.k==="in"&&l.target===k,l=>OC[l.source]||"#CC7A00")}
+   ${grp("3. What the United Arab Emirates sends on (all origins)",RE.map(l=>l.target),k=>l=>l.k==="re"&&l.target===k,()=>"#00FFE5")}
    <p class="gnote"><b>${SK.smuggled.share}</b> of the United Arab Emirates' African gold imports were not declared at export in Africa (SWISSAID, ${SK.smuggled.year}).${fn([SK.smuggled.cite])}</p>
    <p class="gnote gcr">Crypto step: proceeds are reported to move through the dollar token USDT and the ruble token A7A5. No public source gives a tonnage.</p>`;
   ph.querySelectorAll(".bf").forEach(b=>{const s=e=>{e.stopPropagation();tipAt(b.dataset.tip,b);};b.addEventListener("click",s);b.addEventListener("focus",s);b.addEventListener("mouseenter",e=>tipShow(b.dataset.tip,e));b.addEventListener("pointerleave",e=>{if(e.pointerType==="mouse")tipHide();});b.addEventListener("blur",tipHide);});}
- const names=[...new Set(links.flatMap(l=>[l.source,l.target]))];
- const sk=d3.sankey().nodeId(d=>d.name).nodeWidth(10).nodePadding(16).nodeSort(null).extent([[340,20],[SW-310,SH-60]]);
- const G0=sk({nodes:names.map(name=>({name})),links:links.map(d=>Object.assign({},d))});
- const src=l=>l.k==="in"?SK.cites:SK.cites;
- const lk=sv.append("g").attr("fill","none").selectAll("path").data(G0.links).join("path").attr("class","skl").attr("d",d3.sankeyLinkHorizontal())
-  .attr("stroke",l=>l.k==="re"?"#00FFE5":OC[l.source.name]||"#CC7A00").attr("stroke-width",l=>Math.max(1.5,l.width)).attr("stroke-opacity",.75)
-  .attr("tabindex",0).attr("aria-label",l=>`${l.source.name} to ${l.target.name.replace("UAE → ","")}: ${l.value} tonnes`);
- const ltip=l=>l.k==="re"?`<b>UAE → ${esc(l.target.name.replace("UAE → ",""))}: ${l.value} t (${SK.year||""})</b><div class="tsub">Gold of all origins, not only African. UN Comtrade, imports from the UAE reported by the partner <span class="tfn">[${fnNums(SK.cites)}]</span></div>`:`<b>${esc(l.source.name)} → ${esc(l.target.name)}: ${l.value} t (${SK.year})</b><div class="tsub">${(100*l.value/SK.total).toFixed(1)}% of the African gold drawn. UN Comtrade HS 7108, imports reported by ${l.target.name==="All other"?"the smaller hubs":esc(l.target.name)} <span class="tfn">[${fnNums(SK.cites)}]</span></div>`;
- lk.on("mousemove",(e,l)=>{lk.attr("stroke-opacity",x=>x===l?.95:.35);tipShow(ltip(l),e);}).on("mouseleave",()=>{lk.attr("stroke-opacity",.75);tipHide();})
-  .on("focus",function(e,l){lk.attr("stroke-opacity",x=>x===l?.95:.35);tipAt(ltip(l),this);}).on("blur",()=>{lk.attr("stroke-opacity",.75);tipHide();})
-  .on("click",(e,l)=>{e.stopPropagation();lk.attr("stroke-opacity",x=>x===l?.95:.35);tipShow(ltip(l),e);});
- const nd=sv.append("g").selectAll("g").data(G0.nodes).join("g").attr("class","skn").attr("tabindex",0);
+ /* two linked stages: Africa -> first destination (UAE is one of them, at the bottom), then a separate UAE onward stage */
+ const ins=links.filter(l=>l.k==="in"),res=links.filter(l=>l.k==="re").sort((a,b)=>b.value-a.value);
+ let OR=[...new Set(ins.map(l=>l.source))],DS=[...new Set(ins.map(l=>l.target))].filter(d=>d!=="UAE"),DO=[...DS,"UAE"];
+ const bc=(n,side,order)=>{const ls=ins.filter(l=>(side?l.target:l.source)===n);return d3.sum(ls,l=>l.value*order.indexOf(side?l.source:l.target))/d3.sum(ls,l=>l.value);};
+ for(let it=0;it<10;it++){OR.sort((a,b)=>bc(a,0,DO)-bc(b,0,DO));DS.sort((a,b)=>bc(a,1,OR)-bc(b,1,OR));DO=[...DS,"UAE"];}
+ const oi=new Map([...OR,...DO].map((n,i)=>[n,i]));
+ const sk=d3.sankey().nodeId(d=>d.name).nodeWidth(12).nodePadding(15).nodeSort((a,b)=>oi.get(a.name)-oi.get(b.name)).extent([[300,46],[640,SH-70]]);
+ const G0=sk({nodes:[...OR,...DO].map(name=>({name})),links:ins.map(d=>Object.assign({},d))});
+ const U=G0.nodes.find(d=>d.name==="UAE"),ky=(U.y1-U.y0)/U.value,X2=930,rp=12;
+ const rtot=d3.sum(res,l=>l.value);let ty=Math.min(U.y0-20,SH-52-(rtot*ky+rp*(res.length-1))),sy=U.y0;
+ const RN=res.map(l=>{const h=l.value*ky,n={name:l.target,value:l.value,x0:X2,x1:X2+12,y0:ty,y1:ty+h,sourceLinks:[],targetLinks:[]};const sh=l.value/rtot*(U.y1-U.y0);
+  const L={source:U,target:n,value:l.value,k:"re",sa:sy,sb:sy+sh,ta:ty,tb:ty+h};n.targetLinks.push(L);ty+=h+rp;sy+=sh;return [n,L];});
+ const rib=l=>{const x0=U.x1,x1=l.target.x0,xm=(x0+x1)/2;return `M${x0},${l.sa}C${xm},${l.sa} ${xm},${l.ta} ${x1},${l.ta}L${x1},${l.tb}C${xm},${l.tb} ${xm},${l.sb} ${x0},${l.sb}Z`;};
+ const lab=n=>n==="UAE"?"United Arab Emirates":n==="USA"?"United States":n==="All other"?"Other destinations":n==="Hong Kong"?"Hong Kong (direct)":n.startsWith("UAE → ")?n.replace("UAE → ","").replace(/^all other$/,"Other places")+" via UAE":n;
+ sv.append("text").attr("class","skh").attr("x",300).attr("y",24).text("1. From Africa to the first buyer");
+ sv.append("text").attr("class","skh").attr("x",X2).attr("y",Math.max(24,RN[0][0].y0-14)).text("2. Sent on by the United Arab Emirates");
+ const gA=sv.append("g").attr("fill","none");
+ gA.selectAll("path").data(G0.links).join("path").attr("class","skl").attr("d",d3.sankeyLinkHorizontal()).attr("stroke",l=>OC[l.source.name]||"#CC7A00").attr("stroke-width",l=>Math.max(1.5,l.width)).attr("stroke-opacity",.75);
+ sv.append("g").selectAll("path").data(RN.map(d=>d[1])).join("path").attr("class","skl skr").attr("d",rib).attr("fill","#00FFE5").attr("fill-opacity",.75).attr("stroke","none");
+ const lk=sv.selectAll(".skl").attr("tabindex",0).attr("aria-label",l=>`${lab(l.source.name)} to ${lab(l.target.name)}: ${l.value} tonnes`);
+ const op=(l,v)=>sv.selectAll(".skl").each(function(x){const s=d3.select(this);s.attr(x.k==="re"?"fill-opacity":"stroke-opacity",v(x));});
+ const ltip=l=>l.k==="re"?`<b>${esc(lab(l.target.name))}: ${l.value} t (${SK.year||""})</b><div class="tsub">Gold of all origins sent on by the United Arab Emirates, not only African. UN Comtrade, imports from the UAE reported by the partner <span class="tfn">[${fnNums(SK.cites)}]</span></div>`:`<b>${esc(l.source.name)} → ${esc(lab(l.target.name))}: ${l.value} t (${SK.year})</b><div class="tsub">${(100*l.value/SK.total).toFixed(1)}% of the African gold drawn. UN Comtrade HS 7108, imports reported by ${l.target.name==="All other"?"the smaller hubs":esc(lab(l.target.name))} <span class="tfn">[${fnNums(SK.cites)}]</span></div>`;
+ const dim=l=>op(l,x=>x===l?.95:.3),rst=()=>op(null,()=>.75);
+ lk.on("mousemove",(e,l)=>{dim(l);tipShow(ltip(l),e);}).on("mouseleave",()=>{rst();tipHide();})
+  .on("focus",function(e,l){dim(l);tipAt(ltip(l),this);}).on("blur",()=>{rst();tipHide();})
+  .on("click",(e,l)=>{e.stopPropagation();dim(l);tipShow(ltip(l),e);});
+ const ALL=[...G0.nodes,...RN.map(d=>d[0])];
+ const nd=sv.append("g").selectAll("g").data(ALL).join("g").attr("class","skn").attr("tabindex",0).attr("aria-label",d=>`${lab(d.name)}: ${Math.round(d.value*10)/10} tonnes`);
  nd.append("rect").attr("x",d=>d.x0).attr("y",d=>d.y0).attr("width",d=>d.x1-d.x0).attr("height",d=>Math.max(2,d.y1-d.y0)).attr("rx",4).attr("fill",d=>OC[d.name]||(d.name.startsWith("UAE")?"#00FFE5":"#F5F7FF"));
- const nOn=d=>lk.attr("stroke-opacity",l=>l.source===d||l.target===d?.95:.15);
- nd.on("mouseenter",(e,d)=>nOn(d)).on("focus",(e,d)=>nOn(d)).on("mouseleave",()=>lk.attr("stroke-opacity",.75)).on("blur",()=>lk.attr("stroke-opacity",.75));
+ const nOn=d=>op(null,l=>l.source===d||l.target===d||(d===U&&l.k==="re")?.95:.15);
+ nd.on("mouseenter",(e,d)=>nOn(d)).on("focus",(e,d)=>nOn(d)).on("mouseleave",rst).on("blur",rst);
  const pill=(x,y,txt,anc,cls)=>{const g=sv.append("g").attr("class","skp "+(cls||""));const t=g.append("text").attr("x",x).attr("y",y).attr("text-anchor",anc).text(txt);const b=t.node().getBBox();g.insert("rect","text").attr("x",b.x-6).attr("y",b.y-2).attr("width",b.width+12).attr("height",b.height+4).attr("rx",(b.height+4)/2);return g;};
- G0.nodes.forEach(d=>{const v=Math.round(Math.max(d.value,0)*10)/10,col=d.depth,ym=(d.y0+d.y1)/2+5;
-  if(d.sourceLinks.length&&!d.targetLinks.length)pill(d.x0-8,ym,`${d.name} ${v} t`,"end");
-  else if(!d.sourceLinks.length)pill(d.x1+8,ym,`${d.name.replace("UAE → ","")} ${v} t`,"start");
-  else pill(d.x1+8,d.y0-6,`${d.name} ${Math.round(d3.sum(d.targetLinks,l=>l.value)*10)/10} t in`,"start");});
- const U=G0.nodes.find(d=>d.name==="UAE");
- const sm=SK.smuggled,sg=pill(U.x0-8,U.y1+20,`${sm.share} undeclared at export (SWISSAID, ${sm.year})`,"end","sksm").attr("tabindex",0);
+ ALL.forEach(d=>{const v=Math.round(d.value*10)/10,ym=(d.y0+d.y1)/2+5;
+  if(OR.includes(d.name))pill(d.x0-8,ym,`${d.name} ${v} t`,"end");
+  else if(d===U)pill(d.x1+8,d.y0-8,`${lab(d.name)} ${v} t in`,"start","skhub");
+  else pill(d.x1+8,ym,`${lab(d.name)} ${v} t`,"start");});
+ /* keep stacked labels in the right column apart */
+ {const col=sv.selectAll(".skp").filter(function(){return +this.querySelector("text").getAttribute("x")>600&&!this.classList.contains("skhub");}).nodes();
+  [[600,900],[900,1400]].forEach(([a,b])=>{const ps=col.filter(g=>{const x=+g.querySelector("text").getAttribute("x");return x>a&&x<b;}).sort((p,q)=>p.getBBox().y-q.getBBox().y);let last=-1e9;ps.forEach(g=>{const bb=g.getBBox();const dy=Math.max(0,last+3-bb.y);if(dy)g.setAttribute("transform",`translate(0,${dy})`);last=bb.y+bb.height+dy;});});}
+ const sm=SK.smuggled,sg=pill(U.x0-8,U.y1+22,`${sm.share} undeclared at export (SWISSAID, ${sm.year})`,"end","sksm").attr("tabindex",0);
  sg.on("mousemove",e=>tipShow(`<b>Undeclared African gold in the UAE</b><div class="tsub">${esc(sm.what)} <span class="tfn">[${fnNums([sm.cite])}]</span></div>`,e)).on("mouseleave",tipHide).on("focus",function(){tipAt(`<b>Undeclared African gold in the UAE</b><div class="tsub">${esc(sm.what)}</div>`,this);}).on("blur",tipHide);
- const cy=SH-26,cx=U.x1;sv.append("path").attr("class","skc").attr("d",`M${cx},${U.y1}C${cx+120},${U.y1} ${cx+120},${cy} ${SW-310},${cy}`);
- const cg=pill(SW-302,cy+5,"USDT / A7A5 crypto (reported, no tonnage)","start","skcl").attr("tabindex",0);
+ const cy=SH-14,cx=U.x1;sv.append("path").attr("class","skc").attr("d",`M${cx},${U.y1}C${cx+80},${U.y1} ${cx+80},${cy} ${X2},${cy}`);
+ const cg=pill(X2+8,cy+5,"USDT / A7A5 crypto (reported, no tonnage)","start","skcl").attr("tabindex",0);
  const ct=`<b>UAE → crypto: USDT and A7A5</b><div class="tsub">Status: reported. ${esc(R.crypto.t)} Drawn with no width because no tonnage is published. <span class="tfn">[${fnNums(R.crypto.cites)}]</span></div>`;
  cg.on("mousemove",e=>tipShow(ct,e)).on("mouseleave",tipHide).on("focus",function(){tipAt(ct,this);}).on("blur",tipHide);
- window._sankey={year:SK.year,links:G0.links.length};};
+ window._sankey={year:SK.year,links:G0.links.length+RN.length,dest:Object.fromEntries(G0.nodes.filter(d=>!OR.includes(d.name)).map(d=>[d.name,Math.round(d.value*10)/10])),order:{OR,DO}};};
 const DN=c=>c==="DRC"?"DR Congo":c;
 const renderMinerals=()=>{const CN=["DRC","Rwanda","South Africa","Ghana","Nigeria","Madagascar","Namibia","Niger","Zambia","Zimbabwe","Mali","Mozambique","Tanzania","Gabon","Guinea"];
  const ctry=n=>n.startsWith("SOMAIR")?"Niger":n.startsWith("Balama")?"Mozambique":(CN.find(c=>n.startsWith(c)||n.includes("("+c)||n.includes(c+")"))||n.split(" ")[0]);
