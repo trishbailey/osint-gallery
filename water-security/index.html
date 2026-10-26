@@ -103,6 +103,13 @@ sup.fn a:hover{color:var(--gold)}
 .lg .sw{box-shadow:inset 0 0 0 1px rgba(11,21,38,.5)}
 .side-note{font-size:13px;line-height:1.45;margin:8px 0 0;display:flex;gap:8px;align-items:flex-start}
 .arrow-key{display:none}
+.map-frame{position:relative;display:inline-block;max-width:100%;vertical-align:top}
+.map-frame svg.chart{touch-action:pan-y}
+.map-frame svg.chart:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.map-frame.zoom-live svg.chart{touch-action:none;cursor:grab}
+.zoom-ui{position:absolute;top:8px;right:8px;z-index:3;display:flex;flex-direction:column;gap:4px}
+.zoom-ui button{display:flex;align-items:center;justify-content:center;min-width:36px;min-height:36px;padding:0 8px;background:#12203a;color:#e6e9ef;border:1px solid #c8a24a;border-radius:8px;font:700 13px/1 "Helvetica Neue",Arial,sans-serif;cursor:pointer}
+.zoom-ui button:hover{background:#24365a}
 .asw{flex:none;display:block}
 .side-note.arrow-note{align-items:center}
 .side-note.arrow-note span{white-space:nowrap;color:var(--text)}
@@ -172,6 +179,9 @@ details.places>summary{display:flex;align-items:center;min-height:44px;font-size
 .place-note{font-size:14px;line-height:1.45;margin:0 0 8px}
 svg.phone-map{overflow:hidden}
 .arrow-key{display:flex;align-items:center;gap:8px;margin:0 0 6px;font-size:14px;line-height:1.2;color:#e6e9ef;white-space:nowrap}
+.map-frame{display:block;width:100%}
+.zoom-ui{top:6px;right:6px}
+.zoom-ui button{min-width:44px;min-height:44px;font-size:16px}
 }
 </style></head><body>
 <div id="sheet-back"></div>
@@ -292,8 +302,9 @@ function syncLevel(){if(Date.now()<levelLock)return;const panel=document.getElem
 function holdLevel(n){levelLock=Date.now()+800;setLevel(n)}
 const tt=d3.select('#tt');
 let pinned=false,tipOwner=null;
-const clearTip=()=>{pinned=false;tipOwner=null;tt.style('display','none').html('')};
-const tip=(e,h,owner)=>{const own=owner||(e&&e.target&&e.target.ownerSVGElement)||null;if(own&&tipOwner&&own!==tipOwner)pinned=false;if(own)tipOwner=own;tt.style('display','block').html(h);const n=tt.node(),tw=n.offsetWidth,th=n.offsetHeight;const fits=(x,y)=>x>=8&&y>=8&&x+tw<=innerWidth-8&&y+th<=innerHeight-8;const bad=rect=>{let hit=false;document.querySelectorAll('#regions svg.chart,#panel svg.chart').forEach(svg=>{if(hit||!svg.__blk)return;const sr=svg.getBoundingClientRect();if(sr.width<20||sr.height<20)return;if(rect.right<sr.left||rect.left>sr.right||rect.bottom<sr.top||rect.top>sr.bottom)return;const ctm=svg.getScreenCTM();if(!ctm)return;const inv=ctm.inverse(),pt=svg.createSVGPoint();const to=(px,py)=>{pt.x=px;pt.y=py;return pt.matrixTransform(inv)};const a=to(Math.max(rect.left,sr.left),Math.max(rect.top,sr.top)),b=to(Math.min(rect.right,sr.right),Math.min(rect.bottom,sr.bottom));const bx={x:Math.min(a.x,b.x),y:Math.min(a.y,b.y),w:Math.abs(b.x-a.x),h:Math.abs(b.y-a.y)};if(bx.w>1&&bx.h>1&&svg.__blk.hits(bx))hit=true});return hit};const spots=[[e.clientX+14,e.clientY+14],[e.clientX-tw-14,e.clientY+14],[e.clientX+14,e.clientY-th-14],[e.clientX-tw-14,e.clientY-th-14]];const maxR=Math.hypot(innerWidth,innerHeight);for(let rad=32;rad<=maxR;rad+=24){const m=Math.max(8,Math.round(rad/16));for(let i=0;i<m;i++){const a=i/m*Math.PI*2;spots.push([e.clientX+Math.cos(a)*rad-tw/2,e.clientY+Math.sin(a)*rad-th/2])}}for(let y=8;y+th<=innerHeight-8;y+=Math.max(28,th-8))for(let x=8;x+tw<=innerWidth-8;x+=Math.max(36,Math.floor(tw/3)))spots.push([x,y]);let placed=false;for(const [x,y] of spots){if(!fits(x,y))continue;tt.style('left',x+'px').style('top',y+'px');if(!bad(n.getBoundingClientRect())){placed=true;break}}if(!placed)tt.style('display','none')};
+const clearTip=()=>{pinned=false;tipOwner=null;tt.style('display','none').html('');document.querySelectorAll('svg.chart').forEach(s=>{s.__tipAnchor=null})};
+const tip=(e,h,owner)=>{const own=owner||(e&&e.target&&e.target.ownerSVGElement)||null;if(own&&tipOwner&&own!==tipOwner)pinned=false;if(own)tipOwner=own;tt.style('display','block').html(h);const n=tt.node(),tw=n.offsetWidth,th=n.offsetHeight;const fits=(x,y)=>x>=8&&y>=8&&x+tw<=innerWidth-8&&y+th<=innerHeight-8;const bad=rect=>{let hit=false;document.querySelectorAll('#regions svg.chart,#panel svg.chart').forEach(svg=>{if(hit||!svg.__blk)return;const sr=svg.getBoundingClientRect();if(sr.width<20||sr.height<20)return;if(rect.right<sr.left||rect.left>sr.right||rect.bottom<sr.top||rect.top>sr.bottom)return;const root=svg.querySelector('g.zoom-root');if(root){const z=d3.zoomTransform(svg);if(z&&(z.k!==1||z.x||z.y))return}const ctm=svg.getScreenCTM();if(!ctm)return;const inv=ctm.inverse(),pt=svg.createSVGPoint();const to=(px,py)=>{pt.x=px;pt.y=py;return pt.matrixTransform(inv)};const a=to(Math.max(rect.left,sr.left),Math.max(rect.top,sr.top)),b=to(Math.min(rect.right,sr.right),Math.min(rect.bottom,sr.bottom));const bx={x:Math.min(a.x,b.x),y:Math.min(a.y,b.y),w:Math.abs(b.x-a.x),h:Math.abs(b.y-a.y)};if(bx.w>1&&bx.h>1&&svg.__blk.hits(bx))hit=true});return hit};const spots=[[e.clientX+14,e.clientY+14],[e.clientX-tw-14,e.clientY+14],[e.clientX+14,e.clientY-th-14],[e.clientX-tw-14,e.clientY-th-14]];const maxR=Math.hypot(innerWidth,innerHeight);for(let rad=32;rad<=maxR;rad+=24){const m=Math.max(8,Math.round(rad/16));for(let i=0;i<m;i++){const a=i/m*Math.PI*2;spots.push([e.clientX+Math.cos(a)*rad-tw/2,e.clientY+Math.sin(a)*rad-th/2])}}for(let y=8;y+th<=innerHeight-8;y+=Math.max(28,th-8))for(let x=8;x+tw<=innerWidth-8;x+=Math.max(36,Math.floor(tw/3)))spots.push([x,y]);let placed=false;for(const [x,y] of spots){if(!fits(x,y))continue;tt.style('left',x+'px').style('top',y+'px');if(!bad(n.getBoundingClientRect())){placed=true;break}}if(!placed){tt.style('display','none');if(own)own.__tipAnchor=null}else if(own&&own.querySelector('g.zoom-root')&&e&&e.clientX!=null){const zr=own.querySelector('g.zoom-root');const zc=zr.getScreenCTM();if(zc){const zp=own.createSVGPoint();zp.x=e.clientX;zp.y=e.clientY;const zu=zp.matrixTransform(zc.inverse());own.__tipAnchor={x:zu.x,y:zu.y,html:h}}}};
+function followTip(svg){const a=svg.__tipAnchor;if(!a||tipOwner!==svg)return;const root=svg.querySelector('g.zoom-root');if(!root)return;const ctm=root.getScreenCTM();if(!ctm)return;const pt=svg.createSVGPoint();pt.x=a.x;pt.y=a.y;const s=pt.matrixTransform(ctm);const sr=svg.getBoundingClientRect();if(s.x<sr.left||s.x>sr.right||s.y<sr.top||s.y>sr.bottom){tt.style('display','none');return}tip({clientX:s.x,clientY:s.y,target:{ownerSVGElement:svg}},a.html,svg)}
 const untip=owner=>{if(owner&&tipOwner&&owner!==tipOwner)return;if(pinned)return;tt.style('display','none');tipOwner=null};
 const isPhone=()=>matchMedia('(max-width:900px)').matches;
 document.addEventListener('scroll',clearTip,true);
@@ -442,16 +453,17 @@ function band(pts,W){
  const e=pts[j],tip=pts[n-1];let dx=tip[0]-e[0],dy=tip[1]-e[1];const l=Math.hypot(dx,dy)||1;dx/=l;dy/=l;const hw=W*.9+5;
  return 'M'+L.map(p=>p.join(',')).join('L')+`L${e[0]-dy*hw},${e[1]+dx*hw}L${tip[0]},${tip[1]}L${e[0]+dy*hw},${e[1]-dx*hw}`+'L'+R.reverse().map(p=>p.join(',')).join('L')+'Z'}
 function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));const feats=bs.flatMap(b=>b.geo);
- const sparse=!!opt.sparse;const fitFeats=(bs.some(b=>!b.aq)?bs.filter(b=>!b.aq):bs).flatMap(b=>b.geo);
+ const sparse=!!opt.sparse;const zoomable=!opt.key;const fitFeats=(bs.some(b=>!b.aq)?bs.filter(b=>!b.aq):bs).flatMap(b=>b.geo);
  if(sparse&&fitFeats.length)h=phoneBoxH(fitFeats,w);
- const svg=el.append('svg').attr('class','chart'+(sparse?' phone-map':'')).attr('width',w).attr('height',h).attr('viewBox',`0 0 ${w} ${h}`).attr('role','img');
+ const host=zoomable?el.append('div').attr('class','map-frame'):el;const svg=host.append('svg').attr('class','chart'+(sparse?' phone-map':'')).attr('width',w).attr('height',h).attr('viewBox',`0 0 ${w} ${h}`).attr('role','img');
  const key=opt.key||cfgKey(ids);
  if(key==='1,20,22'&&opt.key)svg.attr('id','map-nile');
  if(key==='3,5,9'&&opt.key)svg.attr('id','map-mideast');
  const pr=d3.geoMercator();const p=d3.geoPath(pr);if(sparse)pr.fitExtent([[16,16],[w-16,h-16]],{type:'FeatureCollection',features:fitFeats.length?fitFeats:feats});else{const pad0=Math.max(48,Math.round(Math.min(w,h)*0.06));pr.fitExtent([[pad0,pad0],[w-pad0,h-pad0]],{type:'FeatureCollection',features:fitFeats.length?fitFeats:feats})}
  const id='m'+Math.random().toString(36).slice(2,7);
  svg.append('defs').html(`<clipPath id="c${id}"><rect width="${w}" height="${h}"/></clipPath><pattern id="h${id}" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line y2="8" stroke="${AQINK}" stroke-width="2.2" stroke-opacity=".85"/></pattern>`);
- function paint(){svg.selectAll('g').remove();const g=svg.append('g').attr('clip-path',`url(#c${id})`);
+ const fixZoomInk=()=>{if(!zoomable)return;svg.selectAll('path,line,circle,polyline').each(function(){if(this.closest('defs'))return;const s=this.getAttribute('stroke');if(s&&s!=='none')this.setAttribute('vector-effect','non-scaling-stroke')});svg.selectAll('text').each(function(){if(this.hasAttribute('data-base-fs'))return;const fs=parseFloat(this.style.fontSize)||(sparse?14:13);this.setAttribute('data-base-fs',String(fs))})};
+ function paint(){svg.selectAll('g').remove();const clip=svg.append('g').attr('clip-path',`url(#c${id})`);const g=zoomable?clip.append('g').attr('class','zoom-root'):clip;const layer=zoomable?g:svg;
  g.append('rect').attr('width',w).attr('height',h).attr('fill','#0f1b31');
  g.append('g').selectAll('path').data(COUNTRIES.filter(f=>f.properties.NAME!=='Antarctica')).join('path').attr('d',p).attr('fill','#1c2c4b').attr('stroke','#3a5278').attr('stroke-width',.6);
  const rb=bs.filter(b=>!b.aq),ab=bs.filter(b=>b.aq);
@@ -460,7 +472,7 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
   const path=bp.append('path').attr('class','basin').attr('data-bid',b.id).attr('d',p(f)).attr('fill','transparent').attr('stroke',LINE).attr('stroke-width',1.15).attr('pointer-events','all');
   path.append('title').text('Click for '+shown(b.name)+' details');
   const dep=b.down?`${b.down.c.replace('United States of America','the United States')} ${b.down.v}% of renewable water from abroad`:(b.max==null?'no sourced figure':b.max+'%');
-  path.on('click',()=>show(b.id,true)).on('mousemove',e=>tip(e,`<b>${shown(b.name)}</b><br>Most dependent: ${dep}`)).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement));
+  path.on('click',()=>{if(!(zoomable&&ids.length===1&&+ids[0]===+b.id))show(b.id,true)}).on('mousemove',e=>tip(e,`<b>${shown(b.name)}</b><br>Most dependent: ${dep}`)).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement));
  }));
  let C=CFG[key]||{rivers:[],lakes:[],marks:[],start:{},mainDams:[]};
  if(bs.length&&bs.every(b=>b.aq))C={rivers:[],lakes:[],marks:[],start:{},mainDams:[]};
@@ -479,13 +491,13 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
  flow.selectAll('path.core').data(segs).join('path').attr('class','core').attr('data-ink','water').attr('d',line).attr('fill','none').attr('stroke',WATER).attr('stroke-linecap','round').attr('stroke-linejoin','round').attr('stroke-width',d=>0.7+tq(d.q)*6.4).attr('stroke-opacity',d=>0.28+tq(d.q)*0.72);
  ab.forEach(b=>b.geo.forEach(f=>{const path=g.append('path').attr('data-bid',b.id).attr('class','aquifer lay-aq').attr('data-ink','aquifer').attr('d',p(f)).attr('fill',`url(#h${id})`).attr('stroke',AQINK).attr('stroke-width',1.5).attr('stroke-dasharray','6 4');
   path.append('title').text('Click for '+shown(b.name)+' details');
-  path.on('click',()=>show(b.id,true)).on('mousemove',e=>tip(e,`<b>${shown(b.name)}</b><br>Shared aquifer`)).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement))}));
- const P=(sparse?placePhone:placer)(svg,w,h,sparse?2:Math.max(48,Math.round(Math.min(w,h)*0.06)));const lg=svg.append('g').attr('pointer-events','none');
+  path.on('click',()=>{if(!(zoomable&&ids.length===1&&+ids[0]===+b.id))show(b.id,true)}).on('mousemove',e=>tip(e,`<b>${shown(b.name)}</b><br>Shared aquifer`)).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement))}));
+ const P=(sparse?placePhone:placer)(svg,w,h,sparse?2:Math.max(48,Math.round(Math.min(w,h)*0.06)));const lg=layer.append('g').attr('pointer-events','none');
  const dm=DAMS.filter(d=>bs.some(b=>b.geo.some(f=>d3.geoContains(f,d.geometry.coordinates))));
  const damBelongs=say=>{const s=String(say||'').toLowerCase();const owners=bs.filter(b=>!b.aq);const named=owners.filter(b=>C.rivers.some(r=>String(b.name).toLowerCase().includes(String(r[0]).toLowerCase())));const pool=named.length?named:owners;return pool.some(b=>{const rs=C.rivers.filter(r=>String(b.name).toLowerCase().includes(String(r[0]).toLowerCase()));if(!rs.length)return true;return rs.some(r=>s.includes(String(r[0]).toLowerCase()))})};
  const labs=[];const damNotes=[];const places=[];const damPts=[];
  const addPlace=(title,detail,pri)=>{title=String(title||'').replace(/\s+/g,' ').trim();if(!title||places.some(q=>q.title===title))return;places.push({title,detail,pri})};
- const cue=(x,y,html,r)=>{if(!(x>=8&&y>=8&&x<=w-8&&y<=h-8))return;const gg=svg.append('g').attr('class','cue').style('cursor','pointer');
+ const cue=(x,y,html,r)=>{if(!(x>=8&&y>=8&&x<=w-8&&y<=h-8))return;const gg=layer.append('g').attr('class','cue').style('cursor','pointer');
   gg.append('circle').attr('cx',x).attr('cy',y).attr('r',(r||6)+1.5).attr('fill','none').attr('stroke',CASE).attr('stroke-width',4);
   gg.append('circle').attr('cx',x).attr('cy',y).attr('r',r||6).attr('fill','none').attr('stroke','#c8a24a').attr('stroke-width',2);
   gg.append('circle').attr('cx',x).attr('cy',y).attr('r',sparse?26:Math.max(14,(r||6)+8)).attr('fill','transparent');
@@ -493,7 +505,7 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
  dm.forEach(d=>{const [x,y]=pr(d.geometry.coordinates);const gid=d.properties.GDW_ID;const hot=!!CONTESTED[gid];const main=(C.mainDams||[]).includes(gid);
   const say=damSay(d);const cap=(+d.properties.CAP_MCM/1000).toFixed(1);const yr=d.properties.YEAR_DAM>0?' · opened '+d.properties.YEAR_DAM:'';
   if(sparse&&(!main||!damBelongs(say))){if(DAMSAY[gid]&&(main?!opt.sheet:true))addPlace(shortDam(gid,say),`<b>${say}</b><br>${cap} km³ storage${yr}`,1);return}damPts.push([x,y]);
-  const gg=svg.append('g').attr('class','cue lay-dam').style('cursor','pointer');
+  const gg=layer.append('g').attr('class','cue lay-dam').style('cursor','pointer');
   gg.append('path').attr('data-ink','dam').attr('d',d3.symbol(d3.symbolTriangle,main?180:70)()).attr('transform',`translate(${x},${y})`).attr('fill',hot?CUT:NEI).attr('stroke',CASE).attr('stroke-width',main?1.6:1.2);
   if(!sparse){gg.append('circle').attr('cx',x).attr('cy',y).attr('r',main?11:8).attr('fill','none').attr('stroke',CASE).attr('stroke-width',4);
    gg.append('circle').attr('cx',x).attr('cy',y).attr('r',main?9:6.5).attr('fill','none').attr('stroke','#c8a24a').attr('stroke-width',2)}
@@ -501,7 +513,7 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
   gg.on('mousemove',e=>{if(!pinned)tip(e,`<b>${say}</b><br>${cap} km³ storage${yr}`)}).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement)).on('click',e=>{if(!isPhone())return;e.stopPropagation();tip(e,`<b>${say}</b><br>${cap} km³ storage${yr}`);pinned=true});
   P.block(x,y,main?16:10);
   if(main){if(sparse){damNotes.push(say);labs.push({x,y,hot,gerd:gid===40398,text:shortDam(gid,say),say})}else labs.push({x,y,hot,gerd:gid===40398,text:damLabel(say,w)})}});
- const AR=[];const ag=svg.append('g');
+ const AR=[];const ag=layer.append('g');
  bs.forEach(b=>{if(!b.up||!b.down)return;const sv=(C.start||{})[b.id];let a=ptOf(b,b.up);if(Array.isArray(sv))a=sv;else if(sv){const dd=DAMS.find(d=>d.properties.GDW_ID==+sv.slice(4));if(dd)a=dd.geometry.coordinates}const rs=C.rivers.filter(r=>String(b.name).toLowerCase().includes(String(r[0]).toLowerCase()));const kd=(C.mainDams||[]).map(id=>DAMS.find(d=>d.properties.GDW_ID==id)).find(d=>d&&rs.some(r=>damSay(d).toLowerCase().includes(String(r[0]).toLowerCase())));if(kd)a=kd.geometry.coordinates;const c=ptOf(b,b.down.c);if(!a||!c)return;
   const [x1,y1]=pr(a),[x2,y2]=pr(c),dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy)||1;const k=(len<80?Math.max(40,len*.45):Math.max(len*.22,40))/len;
   const C0=pr(d3.geoCentroid({type:'FeatureCollection',features:b.geo}));let sg=Math.hypot((x1+x2)/2+dy*k-C0[0],(y1+y2)/2-dx*k-C0[1])>Math.hypot((x1+x2)/2-dy*k-C0[0],(y1+y2)/2+dx*k-C0[1])?-1:1;
@@ -513,7 +525,7 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
   gg.append('path').attr('d',band(pts,W+6)).attr('fill',CASE).attr('stroke','none').attr('pointer-events','none');
   gg.append('path').attr('data-ink','arrow').attr('d',band(pts,W)).attr('fill',col).attr('stroke',CASE).attr('stroke-width',1.4).attr('stroke-linejoin','round');
   gg.append('circle').attr('data-ink','arrow').attr('cx',pts[0][0]).attr('cy',pts[0][1]).attr('r',4.5).attr('fill',NEI).attr('stroke',CASE).attr('stroke-width',1.6);
-  gg.on('mousemove',e=>{if(!pinned)tip(e,`<b>${b.up.replace('United States of America','United States')} → ${b.down.c.replace('United States of America','United States')}</b><br>${b.down.v}% of renewable water from abroad<br>${kind}`)}).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement)).on('click',e=>{if(!isPhone())return;e.stopPropagation();clearTip();show(b.id,true)});
+  gg.on('mousemove',e=>{if(!pinned)tip(e,`<b>${b.up.replace('United States of America','United States')} → ${b.down.c.replace('United States of America','United States')}</b><br>${b.down.v}% of renewable water from abroad<br>${kind}`)}).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement)).on('click',e=>{if(!isPhone())return;e.stopPropagation();const html=`<b>${b.up.replace('United States of America','United States')} → ${b.down.c.replace('United States of America','United States')}</b><br>${b.down.v}% of renewable water from abroad<br>${kind}`;if(zoomable&&ids.length===1&&+ids[0]===+b.id){tip(e,html);pinned=true;return}clearTip();show(b.id,true)});
   pts.forEach(q=>P.block(q[0],q[1],(sparse?W/2+4:W/2+6)));if(sparse)P.block(pts[pts.length-1][0],pts[pts.length-1][1],26);AR.push(b)});
  if(sparse){ag.raise();
   const stP=t=>t.style('font-weight',700).style('font-size','14px');
@@ -533,7 +545,7 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
   const top=places.sort((a,b)=>a.pri-b.pri||a.title.localeCompare(b.title)).slice(0,8);
   if(opt.sheet&&damNotes.length)el.append('p').attr('class','cap').text([...new Set(damNotes)].join(' '));
   if(top.length){const det=el.append('details').attr('class','places');det.append('summary').text('Other places');const list=det.append('div').attr('class','place-list');const note=det.append('p').attr('class','place-note').style('display','none');list.selectAll('button').data(top).join('button').attr('type','button').attr('class','chip').text(d=>d.title).on('click',(e,d)=>{e.stopPropagation();clearTip();note.style('display','block').html(d.detail)})}
-  svg.property('damNotes',[...new Set(damNotes)]);lg.raise();svg.node().__blk=blockers(svg);return}
+  svg.property('damNotes',[...new Set(damNotes)]);lg.raise();svg.node().__blk=blockers(svg);fixZoomInk();return}
 const st=t=>t.style('font-weight',700).style('font-size',sparse?'14px':'13px');
  const nm=c=>c.replace('United States of America','United States').replace('Democratic Republic of the Congo','DR Congo').replace('Dem. Rep. Congo','DR Congo').replace('The former Yugoslav Republic of Macedonia','North Macedonia');
  labs.forEach(d=>P.add(lg,d.x,d.y-16,d.text,t=>{st(t);t.style('fill',d.gerd?'#ff6b81':'#e6e9ef')},'lab-dam'));
@@ -552,11 +564,47 @@ const st=t=>t.style('font-weight',700).style('font-size',sparse?'14px':'13px');
   const [x,y]=pr(pt.geometry.coordinates);if((at[n]||[]).some(([u,v])=>Math.hypot(u-x,v-y)<160))return;(at[n]=at[n]||[]).push([x,y]);
   const dep=b.dep.find(d=>d.c===n);const extra=dep?`<br>${dep.v}% of renewable water from abroad`:'';
   cue(x,y,`<b>${nm(n)}</b>${extra}`)}));
- lg.raise();svg.selectAll('.cue').raise();svg.node().__blk=blockers(svg);}
+ lg.raise();svg.selectAll('.cue').raise();svg.node().__blk=blockers(svg);fixZoomInk();}
 paint();
 if(!sparse){const pad=Math.max(48,Math.round(Math.min(w,h)*0.06));
  const unionBox=()=>{const svgN=svg.node();let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity,n=0;svgN.querySelectorAll('path.basin,path.glow,path.core,g.lay-cut path,g.lay-threat path,g.lay-neither path,path[data-ink="dam"],circle[data-ink="arrow"],text').forEach(el=>{let b;try{b=el.getBBox()}catch(e){return}if(!(b.width>0||b.height>0))return;let x=b.x,y=b.y,ww=b.width,hh=b.height;const m=/translate\(\s*([-0-9.eE+]+)[ ,]\s*([-0-9.eE+]+)/.exec(el.getAttribute('transform')||'');if(m){x+=+m[1];y+=+m[2]}let rad=0;if(el.tagName!=='text'){rad=(+el.getAttribute('stroke-width')||0)/2;if(el.tagName==='circle')rad=Math.max(rad,+(el.getAttribute('r')||0))}else rad=0;if(el.tagName==='circle'){x=+el.getAttribute('cx')-(+el.getAttribute('r')||0);y=+el.getAttribute('cy')-(+el.getAttribute('r')||0);ww=hh=2*(+el.getAttribute('r')||0);rad=0}n++;x0=Math.min(x0,x-rad);y0=Math.min(y0,y-rad);x1=Math.max(x1,x+ww+rad);y1=Math.max(y1,y+hh+rad)});return n?{x0,y0,x1,y1}:null};
  const fitOnce=()=>{const box=unionBox();if(!box)return true;const bw=Math.max(1,box.x1-box.x0),bh=Math.max(1,box.y1-box.y0),cx=(box.x0+box.x1)/2,cy=(box.y0+box.y1)/2;const k=Math.min((w-2*pad)/bw,(h-2*pad)/bh);const tol=Math.max(2,Math.min(w,h)*0.004);const left=box.x0,right=w-box.x1,top=box.y0,bot=h-box.y1;const inside=left>=pad-0.05&&top>=pad-0.05&&right>=pad-0.05&&bot>=pad-0.05;const centered=Math.abs(cx-w/2)<=tol&&Math.abs(cy-h/2)<=tol;const lr=Math.abs(left-right)/Math.max(Math.abs(left),Math.abs(right),1);const tb=Math.abs(top-bot)/Math.max(Math.abs(top),Math.abs(bot),1);if(inside&&centered&&lr<=0.08&&tb<=0.08)return true;const kk=Math.max(0.15,Math.min(1,k));const tr=pr.translate();pr.scale(pr.scale()*kk);pr.translate([w/2-kk*(cx-tr[0]),h/2-kk*(cy-tr[1])]);paint();return false};for(let pass=0;pass<10;pass++){if(fitOnce())break;}}
+if(zoomable){
+ let live=false,armTimer=0,touch0=null,lastTap=0,zoomedAt=0;
+ const node=svg.node(),frame=host;
+ const arm=()=>{live=true;frame.classed('zoom-live',true)};
+ const disarm=()=>{live=false;frame.classed('zoom-live',false);clearTimeout(armTimer)};
+ svg.attr('tabindex','0');
+ const zoom=d3.zoom().scaleExtent([1,8]).extent([[0,0],[w,h]]).translateExtent([[0,0],[w,h]]).touchable(true).filter(ev=>{
+  if(ev.button)return false;
+  if(ev.type==='dblclick'){clearTimeout(armTimer);arm();return true}
+  if(ev.type&&ev.type.indexOf('touch')===0){const n=(ev.touches&&ev.touches.length)||0;if(n>=2){clearTimeout(armTimer);arm();return true}return live}
+  if(ev.ctrlKey||ev.metaKey)return ev.type==='wheel';
+  if(ev.type==='wheel'||ev.type==='mousedown'){if(isPhone())return false;return live||document.activeElement===node}
+  return false}).on('zoom',ev=>{
+  zoomedAt=Date.now();
+  const root=svg.select('g.zoom-root');if(root.empty())return;
+  const t=ev.transform;root.attr('transform',t);const k=t.k||1;
+  root.selectAll('text').each(function(){const base=+this.getAttribute('data-base-fs')||(sparse?14:13);this.style.fontSize=(base/k)+'px'});
+  if(node.__tipAnchor)followTip(node)});
+ svg.call(zoom);
+ svg.on('focus.zoomarm',()=>{if(!isPhone())arm()});
+ svg.on('click.zoomarm',()=>{if(!isPhone())arm()});
+ svg.on('blur.zoomarm',ev=>{if(isPhone())return;const rt=ev.relatedTarget;if(rt&&frame.node().contains(rt))return;disarm()});
+ node.addEventListener('touchstart',ev=>{if(ev.touches.length>=2){clearTimeout(armTimer);arm();return}if(ev.touches.length===1)touch0={x:ev.touches[0].clientX,y:ev.touches[0].clientY,t:Date.now()}},{passive:true});
+ node.addEventListener('touchend',ev=>{
+  if(!touch0||!ev.changedTouches||!ev.changedTouches[0])return;
+  const ch=ev.changedTouches[0],start=touch0;touch0=null;
+  if(Math.hypot(ch.clientX-start.x,ch.clientY-start.y)>=12||Date.now()-start.t>=500)return;
+  const now=Date.now();
+  if(now-lastTap<320){clearTimeout(armTimer);lastTap=0;const cx=ch.clientX,cy=ch.clientY;setTimeout(()=>{if(Date.now()-zoomedAt<500){arm();return}arm();const ctm=node.getScreenCTM();if(!ctm)return;const pt=node.createSVGPoint();pt.x=cx;pt.y=cy;const p=pt.matrixTransform(ctm.inverse());svg.call(zoom.scaleBy,2,[p.x,p.y])},30);return}
+  lastTap=now;if(live)return;clearTimeout(armTimer);armTimer=setTimeout(arm,340)},{passive:true});
+ const ui=frame.append('div').attr('class','zoom-ui');
+ const mk=(label,name,fn)=>ui.append('button').attr('type','button').attr('aria-label',name).text(label).on('pointerdown',ev=>{ev.stopPropagation();arm()}).on('click',ev=>{ev.preventDefault();ev.stopPropagation();arm();fn()});
+ mk('+','Zoom in',()=>svg.transition().duration(180).call(zoom.scaleBy,1.5));
+ mk('\u2212','Zoom out',()=>svg.transition().duration(180).call(zoom.scaleBy,1/1.5));
+ mk('Reset','Reset zoom',()=>svg.transition().duration(180).call(zoom.transform,d3.zoomIdentity));
+}
 return svg}
 const REG=[['Nile & North Africa',[[1,20,22]]],['Middle East',[[3,5,9]]],['South Asia',[[2,8]]],['Central Asia',[[6,7]]],['Southeast Asia',[[4,12]]],['Sub-Saharan Africa',[[14,15,13,19]]],['Americas & Europe',[[10],[18,21],[16,17,11]]]];
 const titles={'10':'Colorado / Rio Grande','18,21':'Paraná / La Plata and Guarani','16,17,11':'Danube, Rhine, Dnipro'};
