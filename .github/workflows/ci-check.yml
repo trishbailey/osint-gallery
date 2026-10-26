@@ -16,8 +16,8 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: ci-check-${{ github.ref }}
-  cancel-in-progress: true
+  group: ci-check-${{ github.event_name == 'push' && github.sha || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   check:
     runs-on: ubuntu-latest
