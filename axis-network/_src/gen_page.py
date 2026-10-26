@@ -46,6 +46,8 @@ SRC=[f'Cross-group copies: identical message text (60+ characters after cleaning
 
 # Houthi threat targets (all numbers from data.json['threats'])
 T=D['threats']
+FMALT='Animated map: Houthi, Hezbollah, IRGC, Iraqi militia, Hamas, PIJ and pro-Axis outlet channels, each at its home base, with dots streaming along lines between them to show messages later reposted by another group.'
+for _m in ('axis_flow_map.webm','axis_flow_map.mp4','axis_flow_map.gif','axis_flow_map_poster.jpg'): assert os.path.exists(os.path.join(H,'..','media',_m)), 'missing media/'+_m
 TRC={'riyadh':'#e5484d','kkia':'#3fd0e0','aramco':'#ff8c42','khamis':'#c86bfa','yanbu':'#5ad16b','israel':'#4f7dff','us':'#f2c94c','redsea':'#ff8fb8'}
 for _x in (T.get('trend') or {}).get('s',[]): _x['c']=TRC[_x['k']]; TR={r['k']:r for r in T['rows']}
 def mult(r,a,b):
@@ -104,7 +106,7 @@ for x in T.get('sites',[]):
     MAPD.append({'k':x['k'],'n':x['l'],'la':x['la'],'lo':x['lo'],'c':x['last30'][0],'cb':x['base'][0],'x':(round(l/b,1) if b else None),'up':l>b,'q':QT.get(x['k'],[]),'ex':x['ex'][:2],'bd':f'Type: {x["t"]}.'+(f' Linked to {T["air"]["link"][x["l"]]} of the {T["air"]["n"]} warnings to airlines.' if x['l'] in T['air'].get('link',{}) else ''),'gen':False,'dir':DIR.get(x['k'],'right'),'t':x['t'],'minor':x.get('minor',False)})
 UNMAPPED=[TR[k]['l'] for k in TR if k not in GEO or not TR[k]['last30'][0]]+(['Aramco sites not named ('+str(KD['aramco']['ngen'])+' posts)'] if 'aramco' in KD else [])
 
-CSS='''sup{font-size:13px;line-height:0}#trend .chip{border:1px solid var(--line)!important;box-shadow:none!important;background:none!important;width:100%}#trend .tsc{flex-direction:row;flex-wrap:nowrap}#trend .tsc .btn{flex:1}.trh,.sph{font-size:17px;margin:18px 0 4px}.chip{display:flex;align-items:center;gap:7px;background:none;border:1px solid var(--line);border-radius:16px;color:var(--text);font:inherit;font-size:14px;padding:5px 10px;cursor:pointer;min-height:34px;text-align:left}.chip i{width:13px;height:13px;border-radius:50%;flex:none}.chip[aria-pressed=false]{opacity:.45;text-decoration:line-through}.chip[aria-pressed=false] i{background:none!important;border:2px solid currentColor}#trc{width:100%}#trc svg{display:block}.trleg .tsc{margin-top:0}
+CSS='''.mswipe{display:none;font-size:13px;color:var(--gold);margin:4px 0}@media(max-width:700px){.mswipe{display:block}.fmsc{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px}.fmv .fmsc video,.fmv .fmsc img{width:1280px;max-width:none}}.fmv{margin:8px 0 4px}.fmv video,.fmv img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line);background:#fff}sup{font-size:13px;line-height:0}#trend .chip{border:1px solid var(--line)!important;box-shadow:none!important;background:none!important;width:100%}#trend .tsc{flex-direction:row;flex-wrap:nowrap}#trend .tsc .btn{flex:1}.trh,.sph{font-size:17px;margin:18px 0 4px}.chip{display:flex;align-items:center;gap:7px;background:none;border:1px solid var(--line);border-radius:16px;color:var(--text);font:inherit;font-size:14px;padding:5px 10px;cursor:pointer;min-height:34px;text-align:left}.chip i{width:13px;height:13px;border-radius:50%;flex:none}.chip[aria-pressed=false]{opacity:.45;text-decoration:line-through}.chip[aria-pressed=false] i{background:none!important;border:2px solid currentColor}#trc{width:100%}#trc svg{display:block}.trleg .tsc{margin-top:0}
 .mgrp{border:1px solid var(--line);border-radius:8px;margin:8px 0;background:#0f1b30}.mgrp>summary{list-style:none;cursor:pointer;min-height:48px;display:flex;align-items:center;justify-content:space-between;padding:6px 12px;font-size:15px;font-weight:600}.mgrp>summary::-webkit-details-marker{display:none}.mgrp>summary .mcnt{font-size:13px;color:#9fb0c8;font-weight:400;margin-left:auto}.mgrp>summary::after{content:"▾";color:var(--gold);margin-left:8px}.mgrp[open]>summary::after{content:"▴"}.mgrp>.mgbody{display:flex;flex-direction:column;gap:8px;padding:0 8px 10px}
 .wki{border:1px solid #24324f;border-radius:8px;padding:8px 10px;background:#0b1526;font-size:14px;overflow-wrap:anywhere}.wkh{display:none}.mgrp.all .wkh{display:block}.wkm{font-size:13px;color:#9fb0c8}.wkt{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0}.wtag{font-size:13px;border:1px solid #3a4f78;border-radius:10px;padding:0 7px;color:#dfe6f1}.wkx{margin:4px 0;line-height:1.45}.trn{font-size:13px;color:var(--gold)}.wki a{font-size:13px}.wsurge{font-size:15px;margin:4px 0 8px}.mdet{min-height:44px;width:100%;border-radius:22px;border:1px solid var(--gold);background:#1c2c4b;color:var(--text);font-size:14px;cursor:pointer}
 @media(max-width:700px){.trleg{flex-direction:row!important;flex-wrap:wrap}.trleg .tlh{flex-basis:100%}#trend .chip{width:auto;font-size:13px;padding:4px 9px;min-height:32px}#trend .tsc{flex-basis:100%}}
@@ -164,7 +166,7 @@ tb=tb.replace('margin:4px 0 12px','')
 leg3=''.join(f'<span><i style="background:{TC[i]}"></i>{l}</span>' for i,l in enumerate(th['cats']))
 chiph=''.join(f'<div class="chip"><b>{a}</b><span>{b}</span><em>{e}</em></div>' for a,b,e in chips)
 infra=f'{D["infra"]["sites"]} websites promoted by the channels were mapped to their servers. Only one link crosses groups: almoqawma.com, posted by both Hamas and Hezbollah channels, shared server addresses with the IRGC-linked pgsa.ir. Everything else stays inside one group.'
-DATA=json.dumps(dict(MAP=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'basemap.json'))),BG=D['by_group'],PL=D['paylist'],G={k:v for k,v in G.items()},f30=D['flow30'],f7=D['flow7'],T=D['threats']),ensure_ascii=False)
+DATA=json.dumps(dict(BG=D['by_group'],PL=D['paylist'],G={k:v for k,v in G.items()},f30=D['flow30'],f7=D['flow7'],T=D['threats']),ensure_ascii=False)
 JS='''
 const D=__D__,TIP=document.getElementById('tip'),SH=document.getElementById('sheet');
 const ph=()=>innerWidth<700;
@@ -211,46 +213,10 @@ function applySel(){const s=SEL,fb=document.getElementById('flow');
  const ro=document.getElementById('fsel');
  if(!s){ro.hidden=true}else{const SN={houthi:'Houthis',irgc:'IRGC',hezbollah:'Hezbollah',hamas:'Hamas',iraqi:'Iraqi militias',aligned:'Pro-Axis media',pij:'PIJ'},nm=g=>`<b style="color:${D.G[g][1]}">${SN[g]||D.G[g][0]}</b>`,out=FP.filter(r=>r[0]===s),inn=FP.filter(r=>r[1]===s),sum=a=>a.reduce((x,r)=>x+r[2],0);
   ro.hidden=false;ro.querySelector('div').innerHTML=`${nm(s)} · ${mode==='f30'?'last 30 days':'last 7 days'}: <b>${sum(out).toLocaleString()}</b> posted first · <b>${sum(inn).toLocaleString()}</b> copied from others`}
- const nt=document.getElementById('net');
- nt.querySelectorAll('path[data-s]').forEach(q=>q.setAttribute('stroke-opacity',!s||q.dataset.s===s||q.dataset.t===s?(s?.85:.42):.06));
- nt.querySelectorAll('circle[data-g]').forEach(c=>c.setAttribute('fill-opacity',!s||c.dataset.g===s||FP.concat(D.f30).some(r=>r[2]>=10&&((r[0]===s&&r[1]===c.dataset.g)||(r[1]===s&&r[0]===c.dataset.g)))?1:.3))}
+}
 document.addEventListener('click',e=>{if(e.target.closest('#fall')){SEL=null;applySel()}});
 document.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{mode=b.dataset.w;document.querySelectorAll('[data-w]').forEach(x=>x.setAttribute('aria-pressed',x===b));flow()});
 
-function netmap(){const box=document.getElementById('net');box.innerHTML='';const MP=D.MAP,cw=box.clientWidth,P=ph();
- const vx=P?240:0,vw=P?760:MP.W,vy=P?20:0,vh=P?640:MP.H,u=vw/cw,fs=n=>n*u;
- const pj=(lo,la)=>[MP.W/2+(lo-MP.lonc)*MP.K*MP.S,MP.H-(la-MP.lat0)*MP.S];
- const LOC={irgc:[51.39,35.69,'Tehran'],hezbollah:[35.5,33.89,'Beirut'],iraqi:[44.36,33.31,'Baghdad'],houthi:[44.2,15.35,'Sanaa'],hamas:[33.6,30.6,'Gaza'],pij:[34.3,28.2,'Gaza'],aligned:[P?38.5:27.5,P?24.5:25.5,'pan-regional']};
- const svg=el('svg',{viewBox:`${vx} ${vy} ${vw} ${vh}`,width:'100%',style:'display:block;border-radius:10px;background:#0d1a2e',role:'img','aria-label':'Map of copied messages between groups, last 30 days'},box);
- MP.paths.forEach(d=>el('path',{d,fill:'#16284a',stroke:'#2c4370','stroke-width':.8*u/1.3},svg));
- const pos={};for(const g in LOC)pos[g]=pj(LOC[g][0],LOC[g][1]);
- const E=D.f30.filter(r=>r[2]>=10),mx=Math.max(...E.map(r=>r[2])),eg=el('g',{},svg),dg=el('g',{},svg),parts=[];
- const ctl=(a,b)=>{const m=[(a[0]+b[0])/2,(a[1]+b[1])/2],dx=b[0]-a[0],dy=b[1]-a[1];return[m[0]-dy*.18,m[1]+dx*.18]};
- const bz=(a,c,b,t)=>[(1-t)**2*a[0]+2*(1-t)*t*c[0]+t*t*b[0],(1-t)**2*a[1]+2*(1-t)*t*c[1]+t*t*b[1]];
- E.forEach(([a,b,n])=>{const p0=pos[a],p2=pos[b],p1=ctl(p0,p2);const w=(1.5+11*Math.sqrt(n/mx))*Math.min(u,1.6);
-  const pt=el('path',{d:`M${p0} Q${p1} ${p2}`,fill:'none',stroke:D.G[a][1],'stroke-width':w,'stroke-opacity':.42,'stroke-linecap':'round',tabindex:0},eg);
-  pt.dataset.s=a;pt.dataset.t=b;pt.dataset.tip=`<b style="color:${D.G[a][1]}">${D.G[a][0]}</b> → <b style="color:${D.G[b][1]}">${D.G[b][0]}</b><br>${n.toLocaleString()} messages copied (30 days)`;
-  pt.addEventListener('mouseenter',()=>eg.querySelectorAll('path').forEach(q=>q.setAttribute('stroke-opacity',q===pt?.9:.12)));
-  pt.addEventListener('mouseleave',applySel);
-  const k=Math.max(1,Math.round(1+6*Math.sqrt(n/mx)));for(let j=0;j<k;j++)parts.push({c:el('circle',{r:2.6*Math.min(u,1.6),fill:'#e6e9ef','fill-opacity':.85},dg),p0,p1,p2,ph:j/k,sp:.05+.08*Math.sqrt(n/mx)})});
- const off={hamas:[-1,0],pij:[-1,0],hezbollah:[0,-1]};
- for(const g in LOC){const[x,y]=pos[g],r=fs(P?11:15),bg=D.BG[g]||{ch:0,posts:0};
-  const c=el('circle',{cx:x,cy:y,r,fill:D.G[g][1],stroke:'#0b1526','stroke-width':fs(2.5),tabindex:0},svg);
-  c.dataset.g=g;c.addEventListener('click',()=>toggleSel(g));c.dataset.tip=`<b style="color:${D.G[g][1]}">${D.G[g][0]}</b><br>${bg.ch} channels · ${bg.posts.toLocaleString()} posts · base: ${LOC[g][2]}`;
-  const o=off[g]||[0,1],tx=o[0]?x-r-fs(6):x,ty=o[1]<0?y-r-fs(8):o[1]>0?y+r+fs(16):y+fs(5);
-  const t=el('text',{x:tx,y:ty,'text-anchor':o[0]?'end':'middle','font-size':fs(P?13:14.5),'font-weight':700,fill:'#e6e9ef',stroke:'#0b1526','stroke-width':fs(3),'paint-order':'stroke'},svg);
-  t.textContent=P?{houthi:'Houthis',irgc:'IRGC / Iran',hezbollah:'Hezbollah',hamas:'Hamas',iraqi:'Iraqi militias',aligned:'Pro-Axis media',pij:'PIJ'}[g]:D.G[g][0];
-  if(!P){const t2=el('tspan',{x:tx,dy:fs(16),'font-size':fs(13),'font-weight':400,fill:'#b8c0cc'},t);t2.textContent=`${bg.ch} channels · ${LOC[g][2]}`}}
- if(matchMedia('(prefers-reduced-motion: reduce)').matches){parts.forEach(p=>{const[x,y]=bz(p.p0,p.p1,p.p2,p.ph);p.c.setAttribute('cx',x);p.c.setAttribute('cy',y)});return}
- const t0=performance.now(),id=++netmap.id;(function tick(now){if(id!==netmap.id)return;const T=(now-t0)/1000;parts.forEach(p=>{const[x,y]=bz(p.p0,p.p1,p.p2,(T*p.sp+p.ph)%1);p.c.setAttribute('cx',x);p.c.setAttribute('cy',y)});requestAnimationFrame(tick)})(t0)}
-const PG=document.getElementById('pg'),PT=document.getElementById('pt'),PQ=document.getElementById('pq');
-[...new Set(D.PL.map(x=>x.g))].forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=D.G[g][0];PG.appendChild(o)});
-const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-function plist(){const q=PQ.value.trim().toLowerCase(),R=D.PL.filter(x=>(!PG.value||x.g===PG.value)&&(!PT.value||x.k===PT.value)&&(!q||(x.v+' '+x.ch.map(c=>c[0]).join(' ')).toLowerCase().includes(q)));
- document.getElementById('pn').textContent=`${R.length} of ${D.PL.length} shown. Tap a row for channels, dates and source posts.`;
- document.getElementById('plist').innerHTML=R.map(x=>`<details class="pr"><summary><span class="mono" dir="auto">${esc(x.v)}</span><span class="pm">${x.ch.length} channel${x.ch.length>1?'s':''}</span><span class="pt">${esc(x.t)} · <span style="color:${D.G[x.g][1]}">${esc(D.G[x.g][0])}</span></span><span class="pm">${x.m} posts</span></summary><div class="pb">First seen ${x.f} · last seen ${x.l}<ul>${x.ch.map(c=>`<li>${esc(c[0])}: ${c[1]} post${c[1]>1?'s':''}. ${c[2].map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener nofollow">post ${i+1}</a>`).join(' · ')}</li>`).join('')}</ul></div></details>`).join('')}
-[PG,PT].forEach(e=>e.onchange=plist);PQ.oninput=plist;plist();
-netmap.id=0;netmap();addEventListener('resize',()=>{netmap();applySel()});
 let TW='30';
 function thr(){const T=D.T,a=TW==='30'?'base':'prior21',b=TW==='30'?'last30':'last7',box=document.getElementById('thr');
  const fd=s=>new Date(s+'T00:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'});
@@ -425,8 +391,9 @@ page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta na
 <p class="prompt" style="color:var(--text)">Posted by the channels for fundraising, {nice(p["first"])} to {nice(p["last"])}; shown here for research reference only.</p>
 <div class="pf"><label>Group<select id="pg"><option value="">All groups</option></select></label><label>Type<select id="pt"><option value="">All types</option><option value="bank">Bank cards and accounts</option><option value="crypto">Crypto wallets</option><option value="other">Phones and campaigns</option></select></label><label class="ps">Search<input id="pq" type="search" placeholder="Number, wallet or channel"></label></div>
 <div id="pn" class="prompt" aria-live="polite"></div><div id="plist"></div></div></details></section>
-<section id="map"><h2>How Houthi messaging spreads</h2><p class="thd">{BRIDGE}</p><h3 style="font-size:17px;margin:12px 0 4px">Which groups pass messages to which</h3><p class="prompt">Each circle is a group at its home base; lines show messages first posted by one group and later copied by another (last 30 days). Thicker lines mean more messages; moving dots show direction.</p>
-<div id="net"></div><p class="cap">Line colour = the group that posted first. Hover or tap a line or circle for numbers. Pro-Axis news outlets have no single base and are placed on their own. Flows under 10 messages are left out.</p>
+<section id="map"><h2>How Houthi messaging spreads</h2><p class="thd">{BRIDGE}</p><h3 style="font-size:17px;margin:12px 0 4px">Which groups pass messages to which</h3>
+<figure class="fmv"><p class="mswipe">Swipe sideways to see the whole map at full size.</p><div class="fmsc"><video autoplay muted loop playsinline preload="metadata" poster="media/axis_flow_map_poster.jpg" aria-label="{FMALT}"><source src="media/axis_flow_map.webm" type="video/webm"><source src="media/axis_flow_map.mp4" type="video/mp4"><img src="media/axis_flow_map.gif" alt="{FMALT}" loading="lazy"></video></div>
+<figcaption class="cap">Animated map of public Telegram posts, Sep 20–Oct 20, 2026 (135 channels). Each badge is a group at its home base; moving dots are messages turning up later on another group’s channels, and thicker lines mean more messages. The bar and flow chart below use the last 30 days.</figcaption></figure>
 <h3 id="spread" class="sph">Where messages start and how they spread</h3><p class="prompt">Who posts first when the same message appears in several channels (last 30 days)</p>
 <div>{s1bar}<div class="lbl">Copied across groups, <span id="ftitle">last 30 days</span>: posted first (left) → copied by (right)</div>
 <div style="display:flex;gap:8px;margin:6px 0"><button class="btn" data-w="f30" aria-pressed="true">30 days</button><button class="btn" data-w="f7" aria-pressed="false">7 days</button></div></div>
