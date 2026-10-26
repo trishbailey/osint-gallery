@@ -2,7 +2,7 @@ const PH=()=>matchMedia("(max-width:600px)").matches;
 const BRI_URL=window.BRI_DASHBOARD_URL||"../belt-and-road/";
 const briHref=id=>BRI_URL+(id?"#p="+encodeURIComponent(id):"#region=africa");
 const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const COLORS={hex:["#E3B341","#E0607E","#B36BE8"]};
+const COLORS={hex:["#F6A8A0","#E04040","#821414"]};
 const BC={Russia:"#FF80FF",UAE:"#FFE272",Turkey:"#00FFE5",Iran:"#00FF00",Egypt:"#CC7A00",US:"#00CBFF",France:"#5B72CC",China:"#E52249",Rwanda:"#FF8E72"};
 const FLAG=(sel,w)=>{w=w||20;const h=w*2/3;sel.append("rect").attr("x",-w/2-3).attr("y",-h/2-3).attr("width",w+6).attr("height",h+6).attr("fill","transparent");sel.append("use").attr("href","#cnflag").attr("x",-w/2).attr("y",-h/2).attr("width",w).attr("height",h);};
 const SHEET="https://docs.google.com/spreadsheets/d/1fCulxY6AJ0br-O5hstRmIP9Lfco4-CMjYdHpH3Q7hTc/edit";
@@ -36,7 +36,7 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
  const M=HX.meta,NOTE=`Shaded: about ${M.hex_km} km cells with at least ${M.threshold} conflict deaths (UCDP best estimate), ${M.period}. Source: ${M.source}. ${M.note}`;
  document.getElementById("mapnote").textContent=NOTE;
  const HC=COLORS.hex,gH=gC.append("g");
- gH.selectAll("path").data(HX.features).join("path").attr("d",path).attr("class","hex").attr("fill",f=>HC[f.properties.step-1])
+ gH.selectAll("path").data(HX.features).join("path").attr("d",path).attr("class","hex").attr("fill",f=>HC[f.properties.step-1]).attr("stroke",f=>f.properties.step===3?"#F6A8A0":null).attr("stroke-width",f=>f.properties.step===3?0.7:null)
   .on("click",(e,f)=>{const c=afr.features.find(a=>d3.geoContains(a,d3.geoCentroid(f)));const r=c&&r2c[c.properties.ADM0_A3];if(r)openRegion(r,f);else panel(`<p class="eyebrow">Conflict cell</p><h3>${esc(f.properties.country)}</h3><p><b>${f.properties.deaths}</b> deaths in ${f.properties.events} events, ${M.period}.</p>`);})
   .append("title").text(f=>`${f.properties.country}: ${f.properties.deaths} deaths, ${f.properties.events} events`);
  const tbl=ls=>`<h4>Outside backers</h4>${ls.map(l=>`<div class="bk" style="border-left-color:${BC[bk(l)]||"#FF80FF"}"><b>${esc(l.backer)}</b> → ${esc(l.actor)} <span class="badge st-${/document/i.test(l.confidence)?"documented":/alleg/i.test(l.confidence)?"alleged":"reported"}">${esc(l.confidence)}</span><br><span class="muted">${esc(l.means.join(", "))}</span><p>${esc(l.actions)}${fn(l.cites)}</p><p><b>Gets in return:</b> ${esc(l.returns)}</p>${l.position?`<p><b>Its own case:</b> ${esc(l.position)}</p>`:""}</div>`).join("")}`;
@@ -149,8 +149,8 @@ const item=(txt,draw,on,click,aria)=>{const g=lg.append("g").attr("class","litem
 const head=t=>{lg.append("text").attr("class","lh").attr("y",ly).text(t);ly+=24;};
 const ups=[];const syncL=()=>ups.forEach(u=>u());
 const cb=id=>document.getElementById(id),setCb=(id,v)=>{cb(id).checked=v;cb(id).onchange({target:{checked:v}});};
-head("Conflict deaths, 12 months");lg.append("text").attr("class","lsub").attr("y",ly-6).text("Uppsala Conflict Data Program");ly+=18;
-[["25 to 99",0],["100 to 499",1],["500 or more",2]].forEach(([t,i])=>ups.push(item(t,g=>g.append("rect").attr("width",20).attr("height",13).attr("y",-11).attr("fill",HC[i]),()=>cb("L-conf").checked,()=>setCb("L-conf",!cb("L-conf").checked),`Conflict deaths ${t}: toggle conflict layer`)));
+head("Conflict deaths, 12 months");lg.append("text").attr("class","lsub").attr("y",ly-6).text("Light to dark red: fewer to more");ly+=18;
+[["25 to 99",0],["100 to 499",1],["500 or more",2]].forEach(([t,i])=>ups.push(item(t,g=>g.append("rect").attr("width",20).attr("height",13).attr("y",-11).attr("fill",HC[i]).attr("stroke",i===2?"#F6A8A0":null),()=>cb("L-conf").checked,()=>setCb("L-conf",!cb("L-conf").checked),`Conflict deaths ${t}: toggle conflict layer`)));
 ly+=8;head("Foreign powers");lg.append("text").attr("class","lsub").attr("y",ly-6).text("Click to hide or show");ly+=18;
 const applyP=()=>{gP.selectAll(".pf").style("display",function(){const p=this.getAttribute("data-p"),en=this.classList.contains("ended");return offP.has(p)||(offEnded&&en)?"none":null;});};
 ORD.forEach(p=>ups.push(item(CAPS[p].n,g=>g.append("use").attr("href","#"+CAPS[p].f).attr("x",0).attr("y",-12).attr("width",20).attr("height",13.3),()=>cb("L-pow").checked&&!offP.has(p),()=>{if(!cb("L-pow").checked)setCb("L-pow",true);offP.has(p)?offP.delete(p):offP.add(p);applyP();},`${CAPS[p].n} flags: toggle`)));
@@ -214,7 +214,7 @@ const gTip=g=>{const x=G[g];if(!x)return "";const par=x.parent&&G[x.parent]?` ·
    if(!ok){el.remove();return;}used.push(ok);};
   [...(PL[r.id]||[]).map(p=>p.ll),...B.russia.filter(x=>RU_REGION[x.id]===r.id).map(x=>x.ll)].forEach(c=>{const [x,y]=pj(c);used.push({x:x-5,y:y-5,width:10,height:10});});
   const L={hex:sv.append("g"),res:sv.append("g"),bri:sv.append("g"),ru:sv.append("g"),places:sv.append("g")};
-  L.hex.selectAll("path").data(HX.features.filter(f=>inB(d3.geoCentroid(f)))).join("path").attr("d",pa).attr("fill",f=>HC[f.properties.step-1]).attr("fill-opacity",.85).append("title").text(f=>`${f.properties.country}: ${f.properties.deaths} deaths`);
+  L.hex.selectAll("path").data(HX.features.filter(f=>inB(d3.geoCentroid(f)))).join("path").attr("d",pa).attr("fill",f=>HC[f.properties.step-1]).attr("stroke",f=>f.properties.step===3?"#F6A8A0":null).attr("stroke-width",f=>f.properties.step===3?0.7:null).attr("fill-opacity",.85).append("title").text(f=>`${f.properties.country}: ${f.properties.deaths} deaths`);
   
   B.resources.filter(d=>inB(d.lonlat)&&(d.conflict_region===r.id||r.countries.some(c=>(d.country||"").includes(c)))).forEach(d=>{const [x,y]=pj(d.lonlat);L.res.append("path").attr("class","res").attr("fill",CATS[CAT(d.type)].c).attr("d",d3.symbol(CATS[CAT(d.type)].s,90)()).attr("transform",`translate(${x},${y})`).style("cursor","pointer").on("click",()=>resPanel(d)).append("title").text(d.name);});
   B.bri.filter(d=>inB(d.lonlat)&&(d.region===r.id)).forEach(d=>{const [x,y]=pj(d.lonlat);const g=L.bri.append("g").attr("class","bri").attr("transform",`translate(${x},${y+14})`).style("cursor","pointer").on("click",()=>{location.href=briHref(d.id);});FLAG(g,18);g.append("title").text(`China – Belt & Road: ${d.name}, click for the Belt and Road dashboard`);});
@@ -265,7 +265,7 @@ const renderConflicts=()=>{const CF=B.conflicts,RN0=Object.fromEntries(B.regions
   const pj=d3.geoMercator().fitExtent([[60,8],[194,182]],fc),pa=d3.geoPath(pj);
   sv.append("rect").attr("width",200).attr("height",190).attr("fill","#0f1b31");
   sv.append("g").selectAll("path").data(afr.features).join("path").attr("d",pa).attr("class",f=>c.iso.includes(f.properties.ADM0_A3)?"lreg":"lland");
-  sv.append("g").selectAll("path").data(HX.features.filter(f=>fc.features.some(x=>d3.geoContains(x,d3.geoCentroid(f))))).join("path").attr("d",pa).attr("fill",f=>HC[f.properties.step-1]).attr("fill-opacity",.9);
+  sv.append("g").selectAll("path").data(HX.features.filter(f=>fc.features.some(x=>d3.geoContains(x,d3.geoCentroid(f))))).join("path").attr("d",pa).attr("fill",f=>HC[f.properties.step-1]).attr("stroke",f=>f.properties.step===3?"#F6A8A0":null).attr("stroke-width",f=>f.properties.step===3?0.7:null).attr("fill-opacity",.9);
   const ins=sv.append("g").attr("transform","translate(4,118)");ins.append("rect").attr("width",54).attr("height",66).attr("rx",3).attr("class","insbg");
   const ip=d3.geoMercator().fitExtent([[3,3],[51,63]],afr),ia=d3.geoPath(ip);ins.append("path").attr("d",ia(afr)).attr("class","insaf");ins.append("path").attr("d",ia(fc)).attr("class","insc");});};
  /* ---------- news by storyline ---------- */
