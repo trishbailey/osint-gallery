@@ -260,7 +260,10 @@ head=dict(accounts=len(acc),topburst=_tb,topburst_acc=len(_bt.get(_tb,())),activ
     langs=dict(collections.Counter(r['lang'] for r in rows).most_common(8)))
 # ---------- posts for panels ----------
 pp={r['id']:dict(h=r['h'],t=r['t'],k=r['k'],text=r['text'][:400],country=r['country'],oa=r['oa']) for r in rows if r['id'] in burst_ids or r.get('tp')}
-for nm_,obj in [('headline',head),('stream',stream),('matrix',matrix),('bursts',dict(bursts=bursts,cal=cal,days=days)),('network',net),('ripples',pick),('tone',tonemap),('spread',mapd),('accounts',accts),('posts',pp)]:
+_tpn=sorted({r['tp'] for r in rows if r.get('tp')})
+archive=dict(narratives=_tpn,kinds=['post','repost','quote','reply'],rows=[[r['id'],r['h'],r['t'][:16],['post','repost','quote','reply'].index(r['k']) if r['k'] in ('post','repost','quote','reply') else 0,r['country'],_tpn.index(r['tp']) if r.get('tp') else -1,r['text']] for r in rows])
+head['list_checked']=dt.datetime.fromtimestamp(os.path.getmtime(os.path.join(H,'accounts.csv'))).strftime('%-d %b %Y')
+for nm_,obj in [('archive',archive),('headline',head),('stream',stream),('matrix',matrix),('bursts',dict(bursts=bursts,cal=cal,days=days)),('network',net),('ripples',pick),('tone',tonemap),('spread',mapd),('accounts',accts),('posts',pp)]:
     json.dump(obj,open(os.path.join(OUT,nm_+'.json'),'w'),ensure_ascii=False,separators=(',',':'))
 with open(os.path.join(H,'..','posts_export.csv'),'w',newline='') as fo:
     w=csv.writer(fo);w.writerow(['id','created_at_utc','handle','country','account_type','kind','lang','text','referenced_author','likes','reposts','views','cluster','url'])
