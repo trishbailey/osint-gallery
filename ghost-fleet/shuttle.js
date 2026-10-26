@@ -65,7 +65,7 @@ box.addEventListener("focusin",e=>{const t=e.target.closest("[data-tip]");if(t){
 // turnaround bars
 document.getElementById("shcyc").innerHTML=["CHN","IND","TUR"].map(k=>{const c=cy[k];return`<div class="srow" title="${esc(CN[k])}: median ${c.days} days between loads (${c.n} cycles)"><span class="sl">${flag(k)}${CN[k]}</span><span class="st"><i style="width:${(100*c.days/big).toFixed(1)}%;background:${CC[k]}"></i></span><b>${c.days} days</b></div>`}).join("");
 // concentration bar
-const dots=(n,k,lab,big,unit)=>{const C=40,r=Math.ceil(n/C),g=10;let c="";for(let i=0;i<n;i++)c+=`<circle cx="${(i%C)*g+5}" cy="${Math.floor(i/C)*g+5}" r="3.6" fill="${i<k?"#c8a24a":"#3f7fd0"}"/>`;
+const dots=(n,k,lab,big,unit)=>{const C=60,r=Math.ceil(n/C),g=7;let c="";for(let i=0;i<n;i++)c+=`<circle cx="${(i%C)*g+3.5}" cy="${Math.floor(i/C)*g+3.5}" r="2.7" fill="${i<k?"#c8a24a":"#3f7fd0"}"/>`;
  return`<div class="dg" title="${k} of ${n} ${unit}"><div class="dgh"><b>${big}%</b><span>of ${lab}: ${k} of ${n}</span></div><svg viewBox="0 0 ${C*g} ${r*g}" role="img" aria-label="${k} of ${n} ${unit} are core ships">${c}</svg></div>`};
 document.getElementById("shconc").innerHTML=dots(S.ships,S.core,"ships",S.coreShipPct,"ships")+dots(S.voyages,S.coreVoy,"voyages",S.coreVoyPct,"voyages");
 document.getElementById("shmore").innerHTML=`<p>None of the ${S.balticShips} ships that loaded at Primorsk or Ust-Luga on the Baltic made more than ${S.balticMax} voyages. The two buyers also draw on largely separate ships: of ${S.repeatIC} ships with two or more voyages to India or China, ${S.repeatOnePct}% served only one of them.</p>
