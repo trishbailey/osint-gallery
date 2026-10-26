@@ -172,6 +172,13 @@
       "blurb": "Findings map of how messages, websites and fundraising details move between Iran-aligned groups’ public Telegram, Eitaa and X channels, 20 Sep – 20 Oct 2026.",
       "icon": "/icons/axis-network.svg",
       "enterUrl": "https://beacon-tools.onrender.com/axis-network/",
+      "previewMedia": {
+        "webm": "/axis-network/preview/axis-network-flow.webm",
+        "mp4": "/axis-network/preview/axis-network-flow.mp4",
+        "gif": "/axis-network/preview/axis-network-flow.gif",
+        "poster": "/axis-network/preview/axis-network-flow-poster.jpg",
+        "alt": "Animated map: dots flow along lines between Houthis, IRGC / Iran, Hezbollah, Iraqi militias, Hamas, PIJ and pro-Axis media, showing messages copied between their public channels"
+      },
       "status": "live"
     },
     {
