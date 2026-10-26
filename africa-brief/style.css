@@ -246,3 +246,11 @@ details summary{cursor:pointer;color:#82B1FF;font-weight:700;font-size:13px}
  svg text{font-size:max(13px,1em)}
 }
 .goldsvg .skh{font:700 18px "Helvetica Neue",Arial,sans-serif;fill:#FFE272}.skhub rect{stroke:#00FFE5}
+.rlistph{display:none}
+@media(max-width:600px){
+ .kp .kbg{fill:#FFE272;stroke:#0b1526;stroke-width:2}.kp .kn{font:700 13px "Helvetica Neue",Arial,sans-serif;fill:#0b1526}.kp .khit{fill:transparent}
+ .rlistph{display:block;list-style:none;margin:8px 0 0;padding:0}.rlistph li{margin:0 0 4px}
+ .rlistph button{display:flex;align-items:center;gap:8px;width:100%;min-height:44px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;color:var(--text);font:14px "Helvetica Neue",Arial,sans-serif;padding:4px 10px;text-align:left;cursor:pointer}
+ .rlistph .rn{flex:none;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#FFE272;color:#0b1526;font-weight:700;font-size:13px}
+ .rlistph .rt{flex:1}.rlistph .rf{display:flex;gap:3px}.rlistph .rf svg{width:20px;height:13.3px}.rlistph .rc{font-weight:700;color:#FFE272;min-width:18px;text-align:right}
+}
