@@ -3904,6 +3904,344 @@
     ]
    }
   ],
+  "trend": {
+   "weeks": [
+    "2026-05-05",
+    "2026-05-12",
+    "2026-05-19",
+    "2026-05-26",
+    "2026-06-02",
+    "2026-06-09",
+    "2026-06-16",
+    "2026-06-23",
+    "2026-06-30",
+    "2026-07-07",
+    "2026-07-14",
+    "2026-07-21",
+    "2026-07-28",
+    "2026-08-04",
+    "2026-08-11",
+    "2026-08-18",
+    "2026-08-25",
+    "2026-09-01",
+    "2026-09-08",
+    "2026-09-15",
+    "2026-09-22",
+    "2026-09-29",
+    "2026-10-06",
+    "2026-10-13",
+    "2026-10-20"
+   ],
+   "tot": [
+    2094,
+    1991,
+    2809,
+    2516,
+    3180,
+    2718,
+    2352,
+    2276,
+    2074,
+    2675,
+    3455,
+    3187,
+    2778,
+    2509,
+    2472,
+    2221,
+    1874,
+    1884,
+    2684,
+    5407,
+    8662,
+    8882,
+    9760,
+    9082,
+    8415
+   ],
+   "s": [
+    {
+     "k": "riyadh",
+     "l": "Riyadh",
+     "n": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      5,
+      4,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      5,
+      10,
+      6,
+      31,
+      39,
+      48
+     ]
+    },
+    {
+     "k": "kkia",
+     "l": "King Khalid Airport",
+     "n": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      12,
+      10,
+      21
+     ]
+    },
+    {
+     "k": "aramco",
+     "l": "Aramco (all sites)",
+     "n": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      4,
+      1,
+      1,
+      2,
+      1,
+      2,
+      0,
+      0,
+      2,
+      0,
+      4,
+      5,
+      2,
+      28,
+      14
+     ]
+    },
+    {
+     "k": "khamis",
+     "l": "Khamis Mushait",
+     "n": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      19,
+      3,
+      5,
+      3,
+      12,
+      16,
+      10
+     ]
+    },
+    {
+     "k": "yanbu",
+     "l": "Yanbu",
+     "n": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      4,
+      13,
+      1,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      2,
+      6,
+      0,
+      0,
+      4,
+      10
+     ]
+    },
+    {
+     "k": "israel",
+     "l": "Israel",
+     "n": [
+      3,
+      4,
+      9,
+      9,
+      26,
+      8,
+      9,
+      23,
+      10,
+      6,
+      21,
+      6,
+      10,
+      4,
+      6,
+      5,
+      2,
+      0,
+      5,
+      6,
+      6,
+      8,
+      14,
+      6,
+      8
+     ]
+    },
+    {
+     "k": "us",
+     "l": "United States",
+     "n": [
+      11,
+      3,
+      9,
+      8,
+      22,
+      14,
+      10,
+      8,
+      9,
+      15,
+      39,
+      11,
+      21,
+      5,
+      4,
+      14,
+      8,
+      7,
+      14,
+      12,
+      12,
+      8,
+      16,
+      8,
+      0
+     ]
+    },
+    {
+     "k": "redsea",
+     "l": "Red Sea shipping",
+     "n": [
+      0,
+      0,
+      0,
+      0,
+      11,
+      0,
+      0,
+      7,
+      1,
+      0,
+      14,
+      7,
+      3,
+      3,
+      3,
+      5,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      3
+     ]
+    }
+   ],
+   "events": [
+    {
+     "d": "2026-10-13",
+     "kind": "warning",
+     "u": "https://t.me/army21ye/3878"
+    },
+    {
+     "d": "2026-10-14",
+     "kind": "claim",
+     "u": "https://t.me/MilitaryMediaY/47040"
+    },
+    {
+     "d": "2026-10-19",
+     "kind": "claim",
+     "u": "https://t.me/army21ye/3916"
+    },
+    {
+     "d": "2026-10-22",
+     "kind": "claim",
+     "u": "https://t.me/MilitaryMediaY/47103"
+    },
+    {
+     "d": "2026-10-24",
+     "kind": "claim",
+     "u": "https://t.me/army21ye/3946"
+    },
+    {
+     "d": "2026-10-25",
+     "kind": "claim",
+     "u": "https://t.me/MilitaryMediaY/47126"
+    }
+   ]
+  },
   "sites": [
    {
     "k": "kkia",
@@ -4366,7 +4704,739 @@
      ],
      "u": "https://t.me/army21ye/3934"
     }
-   ]
+   ],
+   "cats": [
+    {
+     "k": "claims",
+     "l": "Claimed strikes",
+     "items": [
+      "70a6e45e7d42",
+      "340a6038bf9a",
+      "cbe128de97b9",
+      "27dbaba9d27b",
+      "97ad5a4c02f3",
+      "63d4b749aed4",
+      "499c2826c28c",
+      "9956e7a61060"
+     ]
+    },
+    {
+     "k": "warn",
+     "l": "Warnings and evacuation notices",
+     "items": [
+      "4f11199c1eb0",
+      "a792fce06b10",
+      "24ab5452f7bc"
+     ]
+    },
+    {
+     "k": "air",
+     "l": "Airports and airline warnings",
+     "items": [
+      "3d11da3196e3",
+      "1de4c3aef019",
+      "2a52655cb268",
+      "fec74f0dc2a2",
+      "cbe128de97b9",
+      "327ae202bc37",
+      "9400a1e0f7bf",
+      "b49a667b7e78",
+      "61aa304a146f",
+      "be74b3f18877",
+      "fb6e83fa38c7",
+      "5be41f3a5883",
+      "27a6d877a801",
+      "27dbaba9d27b",
+      "97ad5a4c02f3",
+      "9b3f03fec31d",
+      "663c4e9bd7cf",
+      "499c2826c28c",
+      "9956e7a61060",
+      "55e2a74e4b4f"
+     ]
+    },
+    {
+     "k": "energy",
+     "l": "Oil and energy sites",
+     "items": [
+      "327ae202bc37",
+      "9400a1e0f7bf",
+      "27dbaba9d27b",
+      "97ad5a4c02f3",
+      "ebfe3cb36002",
+      "0aa8aa1cf771",
+      "9b3f03fec31d",
+      "663c4e9bd7cf",
+      "499c2826c28c",
+      "9956e7a61060",
+      "55e2a74e4b4f"
+     ]
+    },
+    {
+     "k": "mil",
+     "l": "Military bases",
+     "items": [
+      "cbe128de97b9",
+      "1b3a195abc44",
+      "27dbaba9d27b",
+      "97ad5a4c02f3",
+      "4993ea5395d9"
+     ]
+    },
+    {
+     "k": "gov",
+     "l": "Government",
+     "items": [
+      "4f11199c1eb0",
+      "a792fce06b10",
+      "9b3f03fec31d",
+      "663c4e9bd7cf",
+      "499c2826c28c",
+      "9956e7a61060",
+      "55e2a74e4b4f"
+     ]
+    },
+    {
+     "k": "city",
+     "l": "Cities and regions",
+     "items": [
+      "3d11da3196e3",
+      "68af05da5a98",
+      "1de4c3aef019",
+      "2a52655cb268",
+      "fec74f0dc2a2",
+      "cbe128de97b9",
+      "b49a667b7e78",
+      "1b3a195abc44",
+      "61aa304a146f",
+      "be74b3f18877",
+      "fb6e83fa38c7",
+      "5be41f3a5883",
+      "27a6d877a801",
+      "27dbaba9d27b",
+      "97ad5a4c02f3",
+      "4993ea5395d9",
+      "9b3f03fec31d",
+      "0d69b0ed4f77",
+      "663c4e9bd7cf",
+      "4f71b0bf8068",
+      "499c2826c28c",
+      "9956e7a61060",
+      "55e2a74e4b4f",
+      "a483113344f7"
+     ]
+    },
+    {
+     "k": "ius",
+     "l": "Israel, US and shipping",
+     "items": [
+      "4f11199c1eb0",
+      "a792fce06b10",
+      "0aa8aa1cf771",
+      "24ab5452f7bc"
+     ]
+    }
+   ],
+   "items": {
+    "3d11da3196e3": {
+     "id": "3d11da3196e3",
+     "dt": "Oct 26, 11:02 AM",
+     "ts": "2026-10-26T15:02:09+00:00",
+     "ch": "almasirahvideos",
+     "u": "https://t.me/AlmasirahVideos/174924",
+     "also": 1,
+     "tags": [
+      "Riyadh"
+     ],
+     "cats": [
+      "air",
+      "city"
+     ],
+     "ar": "الرياض تدفع بالمدنيين نحو المطارات رغم التحذيرات اليمنية المتكررة، في انتقال واضح من مرحلة إخفاء الخسائر إلى مربع لعب دور الضحية واستجداء التدخل الدولي علي مراد - كاتب وباحث",
+     "en": "Riyadh is pushing civilians toward the airports despite repeated Yemeni warnings, a clear shift from hiding its losses to playing the victim and begging for international intervention. (Ali Murad, writer and researcher)"
+    },
+    "70a6e45e7d42": {
+     "id": "70a6e45e7d42",
+     "dt": "Oct 26, 1:17 AM",
+     "ts": "2026-10-26T05:17:47+00:00",
+     "ch": "militarymediay",
+     "u": "https://t.me/MilitaryMediaY/47131",
+     "also": 0,
+     "tags": [],
+     "cats": [
+      "claims"
+     ],
+     "ar": "متحدث القوات المسلحة اليمنية العميد يحيى سريع: نفذت القوات المسلحة اليمنية بعون الله تعالى عمليتين عسكريتين نوعيتين استهدفت تحشيدات العدو السعودي ومخازن أسلحته في منطقة صلاح الدين بمحافظة عدن ومنطقة الوهط بمحافظة لحج وذلك بعدد من الصواريخ الباليستية وكانت الإصابات دقيقة بفضل الله، وخلفت عشرات …",
+     "en": "Armed forces spokesman Brig. Yahya Saree: With God's help, the Yemeni armed forces carried out two special military operations targeting Saudi enemy troop concentrations and weapons depots in the Salah al-Din area of Aden governorate and the al-Waht area of Lahj governorate with a number of ballistic missiles. The hits were accurate, by God's grace, and left dozens killed and wounded …"
+    },
+    "68af05da5a98": {
+     "id": "68af05da5a98",
+     "dt": "Oct 25, 11:53 PM",
+     "ts": "2026-10-26T03:53:36+00:00",
+     "ch": "ansarallh_yemen",
+     "u": "https://t.me/ansarallh_yemen/64359",
+     "also": 0,
+     "tags": [
+      "Jizan, Najran and Asir"
+     ],
+     "cats": [
+      "city"
+     ],
+     "ar": "برغم كل التحذيرات السعودية والتلويح بسجن كل من يصور الا ان الهنود مايقطع فيهم الفيديو يوثق محاولات الدفاعات السعودية وإطلاق مابين30-40صاروخ PAC-3 لاعتراض10صواريخ بالستيه من نوع بدرp1 اطلقت صباح اليوم باتجاه أبها علي النسي",
+     "en": "Despite all the Saudi warnings and threats to jail anyone filming, the Indians keep posting videos. The video shows Saudi air defences firing between 30 and 40 PAC-3 missiles to intercept 10 Badr P1 ballistic missiles launched this morning toward Abha. (Ali al-Nasi)"
+    },
+    "340a6038bf9a": {
+     "id": "340a6038bf9a",
+     "dt": "Oct 25, 10:54 PM",
+     "ts": "2026-10-26T02:54:28+00:00",
+     "ch": "army21ye",
+     "u": "https://t.me/army21ye/3963",
+     "also": 0,
+     "tags": [],
+     "cats": [
+      "claims"
+     ],
+     "ar": "نفذت القوات المسلحة اليمنية بعون الله تعالى عمليتين عسكريتين نوعيتين استهدفت تحشيدات العدو السعودي ومخازن أسلحته في منطقة صلاح الدين بمحافظة عدن ومنطقة الوهط بمحافظة لحج وذلك بعدد من الصواريخ الباليستية وكانت الإصابات دقيقة بفضل الله، وخلفت عشرات القتلى والجرحى من تلك التحشيدات وتم تدمير وإحراق عدد …",
+     "en": "With God's help, the Yemeni armed forces carried out two special military operations targeting Saudi enemy troop concentrations and weapons depots in the Salah al-Din area of Aden governorate and the al-Waht area of Lahj governorate with a number of ballistic missiles. The hits were accurate, by God's grace, and left dozens killed and wounded among those concentrations, and a number of vehicles and depots were destroyed and burned …"
+    },
+    "1de4c3aef019": {
+     "id": "1de4c3aef019",
+     "dt": "Oct 25, 2:44 PM",
+     "ts": "2026-10-25T18:44:53+00:00",
+     "ch": "almasirahvideos",
+     "u": "https://t.me/AlmasirahVideos/174793",
+     "also": 0,
+     "tags": [
+      "Riyadh"
+     ],
+     "cats": [
+      "air",
+      "city"
+     ],
+     "ar": "إعادة فتح مطار الرياض .. ماذا يعني استئناف التشغيل فعليًا في ظل استمرار التحذيرات؟ 14‏-05‏-1448هـ 25‏-10‏-2026م تقرير: عبدالله إسماعيل",
+     "en": "Riyadh airport reopens: what does resuming operations actually mean while the warnings remain in place? Report by Abdullah Ismail, Oct 25, 2026."
+    },
+    "2a52655cb268": {
+     "id": "2a52655cb268",
+     "dt": "Oct 25, 2:02 PM",
+     "ts": "2026-10-25T18:02:39+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/305018",
+     "also": 5,
+     "tags": [
+      "King Khalid Airport"
+     ],
+     "cats": [
+      "air",
+      "city"
+     ],
+     "ar": "القوات المسلحة: نجدد التحذير لشركات الملاحة الجوية العالمية والإقليمية والموظفين والمسافرين من السفر عبر مطار خالد الدولي في الرياض لأنه غير آمن",
+     "en": "Armed forces: We renew our warning to international and regional airlines, staff and travellers against travelling through King Khalid International Airport in Riyadh, because it is not safe."
+    },
+    "fec74f0dc2a2": {
+     "id": "fec74f0dc2a2",
+     "dt": "Oct 25, 2:01 PM",
+     "ts": "2026-10-25T18:01:39+00:00",
+     "ch": "saba_newsye",
+     "u": "https://t.me/Saba_Newsye/332031",
+     "also": 0,
+     "tags": [
+      "King Khalid Airport"
+     ],
+     "cats": [
+      "air",
+      "city"
+     ],
+     "ar": "متحدث القوات المسلحة: تجدد القوات المسلحة تحذيرها لشركات الملاحة الجوية العالمية والاقليمية والموظفين والمسافرين من السفر عبر مطار خالد الدولي في الرياض لأنه غير آمن وكذلك الأجواء السعودية الحصار بالحصار التصعيد بالتصعيد وكالة سبأ",
+     "en": "Armed forces spokesman: The armed forces renew their warning to international and regional airlines, staff and travellers against travelling through King Khalid International Airport in Riyadh, because it is not safe, and likewise Saudi airspace."
+    },
+    "cbe128de97b9": {
+     "id": "cbe128de97b9",
+     "dt": "Oct 25, 2:00 PM",
+     "ts": "2026-10-25T18:00:59+00:00",
+     "ch": "militarymediay",
+     "u": "https://t.me/MilitaryMediaY/47126",
+     "also": 1,
+     "tags": [
+      "King Khalid Airport",
+      "Khamis Mushait air base"
+     ],
+     "cats": [
+      "claims",
+      "air",
+      "mil",
+      "city"
+     ],
+     "ar": "بيان القوات المسلحة اليمنية بشأن تنفيذ ثلاث عمليات عسكرية نوعية استهدفت مطار الملك خالد الدولي وأهداف عسكرية في قاعدة خالد الجوية في خميس مشيط والقاعدة البحرية الجنوبية لقوات حرس الحدود بجيزان وخلفت قتلى وجرحى من جنود وضباط العدو السعودي - 25 أكتوبر 2026م بيانٌ صادرٌ عن القواتِ المسلحةِ اليمنيةِ …",
+     "en": "Statement of the Yemeni armed forces on carrying out three special military operations that targeted King Khalid International Airport, military targets at King Khalid Air Base in Khamis Mushait, and the Border Guard southern naval base in Jizan, leaving Saudi enemy soldiers and officers killed and wounded. Oct 25, 2026 …"
+    },
+    "327ae202bc37": {
+     "id": "327ae202bc37",
+     "dt": "Oct 25, 1:37 PM",
+     "ts": "2026-10-25T17:37:23+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/305004",
+     "also": 4,
+     "tags": [
+      "Aramco oil company sites"
+     ],
+     "cats": [
+      "air",
+      "energy"
+     ],
+     "ar": "مقدمة النشرة الرئيسة لقناة المسيرة – الأحد 14-05-1448هـ 25-10-2026م ماضون لإنهاء الحصار بخيارات مفاجئة ومتنوعة ومرحبون بمبادرة الأزهر، وأي جهود منصفة تنهي العدوان والحصار السعودي الظالم على اليمن تلك كلمة فصل وموقف حاسم في رسالة هامة وجهها الرئيس المشاط للشعب وللأمة الإسلامية بعد مرور أكثر من مئة …",
+     "en": "Opening of Al-Masirah's main news bulletin, Sunday Oct 25, 2026: We are pressing on to end the blockade with surprising and varied options, and we welcome the al-Azhar initiative and any fair effort that ends the unjust Saudi aggression and blockade on Yemen. That was the decisive word in an important message from President al-Mashat to the people and the Islamic nation after more than 100 days of escalation …"
+    },
+    "9400a1e0f7bf": {
+     "id": "9400a1e0f7bf",
+     "dt": "Oct 25, 8:32 AM",
+     "ts": "2026-10-25T12:32:16+00:00",
+     "ch": "saba_newsye",
+     "u": "https://t.me/Saba_Newsye/331845",
+     "also": 0,
+     "tags": [
+      "Aramco oil company sites"
+     ],
+     "cats": [
+      "air",
+      "energy"
+     ],
+     "ar": "مصدر عسكري لـ \"سبأ\": القوات المسلحة اليمنية تدعو المسافرين وشركات الطيران إلى تجنب المطارات السعودية ما عدا مكة والمدينة جدّد مصدر عسكري، تحذير القوات المسلحة اليمنية للمساهمين في شركة أرامكو السعودية من الخسائر جراء استمرار أسهمهم في الشركة. وكالة سبأ",
+     "en": "Military source to Saba: The Yemeni armed forces call on travellers and airlines to avoid Saudi airports except Mecca and Medina. A military source renewed the armed forces' warning to shareholders in Saudi Aramco of losses if they keep their shares in the company."
+    },
+    "b49a667b7e78": {
+     "id": "b49a667b7e78",
+     "dt": "Oct 25, 5:46 AM",
+     "ts": "2026-10-25T09:46:41+00:00",
+     "ch": "sadaa_almasirah",
+     "u": "https://t.me/sadaa_almasirah/156505",
+     "also": 3,
+     "tags": [
+      "King Khalid Airport"
+     ],
+     "cats": [
+      "air",
+      "city"
+     ],
+     "ar": "القوات المسلحة: نجدد تحذيرنا لجميع شركات الطيران العالمية والإقليمية والمحلية والموظفين والمسافرين من السفر عبر مطار خالد في الرياض لأنه غير آمن كونه هدفاً عسكرياً",
+     "en": "Armed forces: We renew our warning to all international, regional and local airlines, staff and travellers against travelling through King Khalid Airport in Riyadh, because it is not safe as it is a military target."
+    },
+    "1b3a195abc44": {
+     "id": "1b3a195abc44",
+     "dt": "Oct 25, 3:38 AM",
+     "ts": "2026-10-25T07:38:16+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/304887",
+     "also": 4,
+     "tags": [
+      "Khamis Mushait air base"
+     ],
+     "cats": [
+      "mil",
+      "city"
+     ],
+     "ar": "تحذيرات سعودية من خطر في أبها وخميس مشيط",
+     "en": "Saudi warnings of danger in Abha and Khamis Mushait."
+    },
+    "61aa304a146f": {
+     "id": "61aa304a146f",
+     "dt": "Oct 24, 5:32 PM",
+     "ts": "2026-10-24T21:32:44+00:00",
+     "ch": "saba_newsye",
+     "u": "https://t.me/Saba_Newsye/331784",
+     "also": 0,
+     "tags": [
+      "King Khalid Airport"
+     ],
+     "cats": [
+      "air",
+      "city"
+     ],
+     "ar": "القوات المسلحة تجدد تحذيرها من السفر عبر مطار خالد في الرياض جددت القوات المسلحة تحذيرها لجميع شركات الطيران العالمية والإقليمية والمحلية والموظفين والمسافرين من السفر عبر مطار خالد في الرياض. وكالة سبأ",
+     "en": "The armed forces renew their warning against travel through King Khalid Airport in Riyadh. The armed forces renewed their warning to all international, regional and local airlines, staff and travellers against travelling through King Khalid Airport in Riyadh."
+    },
+    "be74b3f18877": {
+     "id": "be74b3f18877",
+     "dt": "Oct 24, 5:14 PM",
+     "ts": "2026-10-24T21:14:51+00:00",
+     "ch": "alforgan_net",
+     "u": "https://t.me/alforgan_net/182408",
+     "also": 0,
+     "tags": [
+      "King Khalid Airport"
+     ],
+     "cats": [
+      "air",
+      "city"
+     ],
+     "ar": "متحدث القوات المسلحة : تجدد القوات المسلحة اليمنية تحذيرها لجميع شركات الطيران العالمية والإقليمية والمحلية والموظفين والمسافرين من السفر عبر مطار خالد في الرياض لأنه غير آمن كونه هدفاً عسكرياً لقواتنا.",
+     "en": "Armed forces spokesman: The Yemeni armed forces renew their warning to all international, regional and local airlines, staff and travellers against travelling through King Khalid Airport in Riyadh, because it is not safe as it is a military target for our forces."
+    },
+    "fb6e83fa38c7": {
+     "id": "fb6e83fa38c7",
+     "dt": "Oct 24, 5:13 PM",
+     "ts": "2026-10-24T21:13:56+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/304860",
+     "also": 5,
+     "tags": [
+      "King Khalid Airport"
+     ],
+     "cats": [
+      "air",
+      "city"
+     ],
+     "ar": "متحدث القوات المسلحة: تجدد قواتنا تحذيرها لجميع شركات الطيران العالمية والإقليمية والمحلية والموظفين والمسافرين من السفر عبر مطار خالد في الرياض لأنه غير آمن كونه هدفاً عسكرياً لقواتنا",
+     "en": "Armed forces spokesman: Our forces renew their warning to all international, regional and local airlines, staff and travellers against travelling through King Khalid Airport in Riyadh, because it is not safe as it is a military target for our forces."
+    },
+    "5be41f3a5883": {
+     "id": "5be41f3a5883",
+     "dt": "Oct 24, 5:13 PM",
+     "ts": "2026-10-24T21:13:07+00:00",
+     "ch": "saba_newsye",
+     "u": "https://t.me/Saba_Newsye/331782",
+     "also": 1,
+     "tags": [
+      "King Khalid Airport"
+     ],
+     "cats": [
+      "air",
+      "city"
+     ],
+     "ar": "المتحدث الرسمي للقوات المسلحة اليمنية العميد يحيى سريع: تجدد القوات المسلحة اليمنية تحذيرها لجميع شركات الطيران العالمية والإقليمية والمحلية والموظفين والمسافرين من السفر عبر مطار خالد في الرياض لأنه غير آمن كونه هدفاً عسكرياً لقواتنا. ويتحمل النظام السعودي تبعات أي تشغيل للمطار وما سيترتب على ذلك …",
+     "en": "Official armed forces spokesman Brig. Yahya Saree: The Yemeni armed forces renew their warning to all international, regional and local airlines, staff and travellers against travelling through King Khalid Airport in Riyadh, because it is not safe as it is a military target for our forces. The Saudi regime bears the consequences of any operation of the airport and what follows from it …"
+    },
+    "27a6d877a801": {
+     "id": "27a6d877a801",
+     "dt": "Oct 24, 5:10 PM",
+     "ts": "2026-10-24T21:10:54+00:00",
+     "ch": "army21ye",
+     "u": "https://t.me/army21ye/3952",
+     "also": 1,
+     "tags": [
+      "King Khalid Airport"
+     ],
+     "cats": [
+      "air",
+      "city"
+     ],
+     "ar": "تجدد القوات المسلحة اليمنية تحذيرها لجميع شركات الطيران العالمية والإقليمية والمحلية والموظفين والمسافرين من السفر عبر مطار خالد في الرياض لأنه غير آمن كونه هدفاً عسكرياً لقواتنا. ويتحمل النظام السعودي تبعات أي تشغيل للمطار وما سيترتب على ذلك لأن القوات المسلحة ستواصل عملياتها باتجاهه ولن يكون آمنا …",
+     "en": "The Yemeni armed forces renew their warning to all international, regional and local airlines, staff and travellers against travelling through King Khalid Airport in Riyadh, because it is not safe as it is a military target for our forces. The Saudi regime bears the consequences of any operation of the airport, because the armed forces will continue their operations against it and it will never be safe …"
+    },
+    "27dbaba9d27b": {
+     "id": "27dbaba9d27b",
+     "dt": "Oct 24, 12:00 PM",
+     "ts": "2026-10-24T16:00:51+00:00",
+     "ch": "militarymediay",
+     "u": "https://t.me/MilitaryMediaY/47113",
+     "also": 0,
+     "tags": [
+      "Rabigh refinery",
+      "Khamis Mushait air base",
+      "Yanbu oil port"
+     ],
+     "cats": [
+      "claims",
+      "air",
+      "energy",
+      "mil",
+      "city"
+     ],
+     "ar": "بيان القوات المسلحة اليمنية بشأن تنفيذ 7 عمليات نوعية في عمق العدو السعودي استهدفت مطارات الملك خالد وفهد ونجران وقاعدة خميس مشيط وأرامكو ينبع ومصفاة رابغ ومحطات ضخّ النفط الخام وأنبوب نقله من الشرق إلى الغرب حققت أهدافها بفضل الله - 24 أكتوبر 2026م بيانٌ صادرٌ عن القواتِ المسلحةِ اليمنيةِ بسمِ …",
+     "en": "Statement of the Yemeni armed forces on carrying out 7 special operations deep inside Saudi enemy territory, targeting King Khalid, King Fahd and Najran airports, the Khamis Mushait base, Aramco Yanbu, the Rabigh refinery, crude oil pumping stations and the east-west crude pipeline. They achieved their goals, by God's grace. Oct 24, 2026 …"
+    },
+    "97ad5a4c02f3": {
+     "id": "97ad5a4c02f3",
+     "dt": "Oct 24, 12:00 PM",
+     "ts": "2026-10-24T16:00:22+00:00",
+     "ch": "army21ye",
+     "u": "https://t.me/army21ye/3945",
+     "also": 0,
+     "tags": [
+      "King Khalid Airport",
+      "Rabigh refinery",
+      "Khamis Mushait air base",
+      "Najran airport"
+     ],
+     "cats": [
+      "claims",
+      "air",
+      "energy",
+      "mil",
+      "city"
+     ],
+     "ar": "بيان القوات المسلحة اليمنية بشأن تنفيذ سبع عمليات عسكرية نوعية بعدد من الصواريخ الباليستية والطائرات المسيّرة، استهدفت هذه العمليات مطار خالد الدولي بالرياض، وشركة أرامكو في ينبع، ومصفاة رابغ النفطية، ومحطات ضخ النفط الخام وأنبوب نقل النفط الخام من الشرق إلى الغرب، ومطار فهد الدولي بالدمام، ومطار …",
+     "en": "Statement of the Yemeni armed forces on carrying out seven special military operations with a number of ballistic missiles and drones. The operations targeted King Khalid International Airport in Riyadh, Aramco in Yanbu, the Rabigh oil refinery, crude oil pumping stations and the east-west crude pipeline, King Fahd International Airport in Dammam, Najran airport …"
+    },
+    "ebfe3cb36002": {
+     "id": "ebfe3cb36002",
+     "dt": "Oct 24, 4:21 AM",
+     "ts": "2026-10-24T08:21:45+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/304742",
+     "also": 5,
+     "tags": [
+      "Yanbu oil port"
+     ],
+     "cats": [
+      "energy"
+     ],
+     "ar": "إعلام سعودي: إطلاق الإنذار المبكر في ينبع ومناطق أخرى للتحذير من خطر",
+     "en": "Saudi media: early-warning sirens sounded in Yanbu and other areas to warn of danger."
+    },
+    "4f11199c1eb0": {
+     "id": "4f11199c1eb0",
+     "dt": "Oct 24, 4:09 AM",
+     "ts": "2026-10-24T08:09:29+00:00",
+     "ch": "almasirahvideos",
+     "u": "https://t.me/AlmasirahVideos/174510",
+     "also": 0,
+     "tags": [
+      "Bab al-Mandab strait",
+      "Red Sea shipping"
+     ],
+     "cats": [
+      "warn",
+      "gov",
+      "ius"
+     ],
+     "ar": "وزارة الخارجية: استهداف النظام السعودي لفنار جزيرة ميون يُعدّ انتهاكاً سافراً للقانون الدولي والقانون الدولي الإنساني نحذر من استمرار النظام السعودي في عسكرة مضيق باب المندب والبحر الأحمر وتحويلهما إلى ساحة حرب نؤكد على أن الملاحة في باب المندب والبحر الأحمر آمنة وأن من يهددها هو النظام السعودي",
+     "en": "Foreign ministry: The Saudi regime's attack on the lighthouse on Mayun island is a flagrant violation of international law and international humanitarian law. We warn against the Saudi regime continuing to militarise the Bab al-Mandab strait and the Red Sea and turn them into a war zone. We affirm that navigation in Bab al-Mandab and the Red Sea is safe and that the one threatening it is the Saudi regime."
+    },
+    "a792fce06b10": {
+     "id": "a792fce06b10",
+     "dt": "Oct 24, 4:04 AM",
+     "ts": "2026-10-24T08:04:33+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/304740",
+     "also": 3,
+     "tags": [
+      "Bab al-Mandab strait",
+      "Red Sea shipping"
+     ],
+     "cats": [
+      "warn",
+      "gov",
+      "ius"
+     ],
+     "ar": "وزارة الخارجية: نحذر من استمرار النظام السعودي في عسكرة مضيق باب المندب والبحر الأحمر وتحويلهما إلى ساحة حرب",
+     "en": "Foreign ministry: We warn against the Saudi regime continuing to militarise the Bab al-Mandab strait and the Red Sea and turn them into a war zone."
+    },
+    "0aa8aa1cf771": {
+     "id": "0aa8aa1cf771",
+     "dt": "Oct 23, 1:20 PM",
+     "ts": "2026-10-23T17:20:15+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/304675",
+     "also": 3,
+     "tags": [
+      "Aramco oil company sites",
+      "Israel"
+     ],
+     "cats": [
+      "energy",
+      "ius"
+     ],
+     "ar": "تتابعون في نشرة الأخبار الرئيسة لقناة المسيرة – الجمعة 12-05-1448هـ 23-10-2026م جرائمٌ سعوديةٌ جديدة أوقعت شهداءَ وجرحى في محافظتَي صنعاءَ وتعز وإعلامُ العدوِّ الإسرائيلي: استخباراتُنا تبني للرياضِ بنكَ الأهداف رجوم تسحَقُ أنساقَ وأرتالَ المُنافقينَ في عدةِ جبهات .. إبداعٌ في الدفاعِ عن الأرضِ …",
+     "en": "Headlines of Al-Masirah's main news bulletin, Friday Oct 23, 2026: New Saudi crimes kill and wound people in Sanaa and Taiz governorates; Israeli enemy media: our intelligence is building Riyadh's target bank; Rujum crushes columns of the hypocrites on several fronts …"
+    },
+    "4993ea5395d9": {
+     "id": "4993ea5395d9",
+     "dt": "Oct 22, 10:17 PM",
+     "ts": "2026-10-23T02:17:49+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/304580",
+     "also": 6,
+     "tags": [
+      "Khamis Mushait air base"
+     ],
+     "cats": [
+      "mil",
+      "city"
+     ],
+     "ar": "إعلام سعودي: إطلاق إنذار في خميس مشيط وأبها للتحذير من خطر",
+     "en": "Saudi media: sirens sounded in Khamis Mushait and Abha to warn of danger."
+    },
+    "9b3f03fec31d": {
+     "id": "9b3f03fec31d",
+     "dt": "Oct 22, 8:12 PM",
+     "ts": "2026-10-23T00:12:42+00:00",
+     "ch": "profilemngr",
+     "u": "https://t.me/profilemngr/2627",
+     "also": 1,
+     "tags": [
+      "Riyadh",
+      "Aramco oil company sites"
+     ],
+     "cats": [
+      "air",
+      "energy",
+      "gov",
+      "city"
+     ],
+     "ar": "برنامج ملفات | 11-05-1448هـ 22-10-2026م تقديم: أحمد عبدالوهاب الملف الأول: القوات المسلحة اليمنية تنفذ أربع عمليات نوعية تستهدف وزارة دفاع العدو السعودي ومطاراته ومنشآت أرامكو العقيد زكريا الشرعبي - مدير مركز المعلومات في التوجيه المعنوي الملف الثاني: رهانات الرياض تتعثر على امتداد مائة يوم من …",
+     "en": "'Files' programme, Oct 22, 2026, presented by Ahmed Abdulwahab. First file: The Yemeni armed forces carry out four special operations targeting the Saudi enemy's defence ministry, its airports and Aramco facilities, with Col. Zakaria al-Sharabi, director of the information centre at Moral Guidance. Second file: Riyadh's bets falter over 100 days of escalation …"
+    },
+    "0d69b0ed4f77": {
+     "id": "0d69b0ed4f77",
+     "dt": "Oct 22, 6:42 PM",
+     "ts": "2026-10-22T22:42:27+00:00",
+     "ch": "profilemngr",
+     "u": "https://t.me/profilemngr/2619",
+     "also": 2,
+     "tags": [
+      "Riyadh"
+     ],
+     "cats": [
+      "city"
+     ],
+     "ar": "الملف الثاني: رهانات الرياض تتعثر على امتداد مائة يوم من التصعيد.. عمليات يمنية في العمق والبحر والجبهات وتحذير من خيارات أوسع وأقسى محمد القحطاني - ناشط ومعارض سياسي سعودي د. عمر الحامد - أستاذ القانون الدولي",
+     "en": "Second file: Riyadh's bets falter over 100 days of escalation. Yemeni operations deep inland, at sea and on the fronts, and a warning of wider and harsher options. With Mohammed al-Qahtani, Saudi activist and political dissident, and Dr Omar al-Hamed, professor of international law."
+    },
+    "663c4e9bd7cf": {
+     "id": "663c4e9bd7cf",
+     "dt": "Oct 22, 3:42 PM",
+     "ts": "2026-10-22T19:42:53+00:00",
+     "ch": "profilemngr",
+     "u": "https://t.me/profilemngr/2609",
+     "also": 2,
+     "tags": [
+      "Riyadh",
+      "Aramco oil company sites"
+     ],
+     "cats": [
+      "air",
+      "energy",
+      "gov",
+      "city"
+     ],
+     "ar": "أربع عمليات يمنية نوعية تضرب العمق السعودي.. من وزارة الدفاع في الرياض إلى مطارات العدو ومنشآت أرامكو، وتحذير من مغبّة استهداف القبائل اليمنية.",
+     "en": "Four special Yemeni operations strike deep in Saudi Arabia, from the defence ministry in Riyadh to the enemy's airports and Aramco facilities, and a warning against the consequences of targeting Yemeni tribes."
+    },
+    "4f71b0bf8068": {
+     "id": "4f71b0bf8068",
+     "dt": "Oct 22, 12:17 PM",
+     "ts": "2026-10-22T16:17:51+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/304533",
+     "also": 6,
+     "tags": [
+      "Jizan, Najran and Asir"
+     ],
+     "cats": [
+      "city"
+     ],
+     "ar": "إعلام سعودي: إطلاق إنذار في نجران للتحذير من خطر",
+     "en": "Saudi media: sirens sounded in Najran to warn of danger."
+    },
+    "63d4b749aed4": {
+     "id": "63d4b749aed4",
+     "dt": "Oct 22, 8:01 AM",
+     "ts": "2026-10-22T12:01:30+00:00",
+     "ch": "army21ye",
+     "u": "https://t.me/army21ye/3935",
+     "also": 0,
+     "tags": [],
+     "cats": [
+      "claims"
+     ],
+     "ar": "بيان القوات المسلحة اليمنية بشأن تنفيذ عدد من العمليات العسكرية النوعية داخل العمق السعودي، مع إعلان موقف القوات المسلحة من تهديد العدو السعودي للقبائل اليمنية.",
+     "en": "Statement of the Yemeni armed forces on carrying out a number of special military operations deep inside Saudi Arabia, and announcing the armed forces' position on the Saudi enemy's threat against the Yemeni tribes."
+    },
+    "499c2826c28c": {
+     "id": "499c2826c28c",
+     "dt": "Oct 22, 8:01 AM",
+     "ts": "2026-10-22T12:01:25+00:00",
+     "ch": "army21ye",
+     "u": "https://t.me/army21ye/3933",
+     "also": 2,
+     "tags": [
+      "Yanbu oil port"
+     ],
+     "cats": [
+      "claims",
+      "air",
+      "energy",
+      "gov",
+      "city"
+     ],
+     "ar": "بيانٌ صادرٌ عن القواتِ المسلحةِ اليمنيةِ بسمِ اللهِ الرحمنِ الرحيمِ قالَ تعالى: {فَمَنِ اعْتَدَى عَلَيْكُمْ فَاعْتَدُوا عَلَيْهِ بِمِثْلِ مَا اعْتَدَى عَلَيْكُمْ} صدقَ اللهُ العظيم شنَّ العدوُّ السعوديُّ المجرمُ خلالَ عدوانِه وتصعيدِه الأخيرِ منذُ 100 يومٍ أكثرَ من 2900 غارةٍ جويةٍ وصاروخٍ استهدفَ …",
+     "en": "Statement issued by the Yemeni armed forces. In the name of God … 'Whoever transgresses against you, transgress against him in the same way.' During its latest aggression and escalation over 100 days, the criminal Saudi enemy has launched more than 2,900 air strikes and missiles targeting …"
+    },
+    "9956e7a61060": {
+     "id": "9956e7a61060",
+     "dt": "Oct 22, 8:00 AM",
+     "ts": "2026-10-22T12:00:14+00:00",
+     "ch": "militarymediay",
+     "u": "https://t.me/MilitaryMediaY/47103",
+     "also": 0,
+     "tags": [
+      "Yanbu oil port"
+     ],
+     "cats": [
+      "claims",
+      "air",
+      "energy",
+      "gov",
+      "city"
+     ],
+     "ar": "بيان القوات المسلحة اليمنية بشأن تنفيذ أربع عمليات عسكرية نوعية استهدفت مبنى وزارة الدفاعِ في عاصمة العدو السعودي الرياضِ وشركة أرامكو ينبع ومطاريّ فهد وأبها الدوليَّين - 22 أكتوبر 2026م بيانٌ صادرٌ عن القواتِ المسلحةِ اليمنيةِ بسمِ اللهِ الرحمنِ الرحيمِ قالَ تعالى: {فَمَنِ اعْتَدَى عَلَيْكُمْ …",
+     "en": "Statement of the Yemeni armed forces on carrying out four special military operations that targeted the defence ministry building in the Saudi enemy's capital Riyadh, Aramco Yanbu, and King Fahd and Abha international airports. Oct 22, 2026 …"
+    },
+    "55e2a74e4b4f": {
+     "id": "55e2a74e4b4f",
+     "dt": "Oct 22, 8:00 AM",
+     "ts": "2026-10-22T12:00:02+00:00",
+     "ch": "almasirahvideos",
+     "u": "https://t.me/AlmasirahVideos/174200",
+     "also": 6,
+     "tags": [
+      "Yanbu oil port",
+      "Saudi defence ministry"
+     ],
+     "cats": [
+      "air",
+      "energy",
+      "gov",
+      "city"
+     ],
+     "ar": "بيان القوات المسلحة اليمنية بشأن استهداف وزارة الدفاع السعودية في الرياض ومطاري فهد وأبها وشركة أرامكو في ينبع، وتحذير العدو السعودي من عواقب كارثية وخيارات كبرى غير متوقعة إذا تورط في استهداف القبائل اليمنية | 11-05-1448هـ - 22-10-2026م",
+     "en": "Statement of the Yemeni armed forces on targeting the Saudi defence ministry in Riyadh, King Fahd and Abha airports and Aramco in Yanbu, and warning the Saudi enemy of catastrophic consequences and major unexpected options if it becomes involved in targeting the Yemeni tribes. Oct 22, 2026."
+    },
+    "24ab5452f7bc": {
+     "id": "24ab5452f7bc",
+     "dt": "Oct 21, 9:47 AM",
+     "ts": "2026-10-21T13:47:38+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/304343",
+     "also": 3,
+     "tags": [
+      "Israel"
+     ],
+     "cats": [
+      "warn",
+      "ius"
+     ],
+     "ar": "قبائل بني بحر بصعدة: نبارك انتصارات وعمليات القوات المسلحة ونحذر مصر وباكستان من التورط مع النظام السعودي في جرائمه بحق اليمنيين إرضاء للعد الإسرائيلي",
+     "en": "Bani Bahr tribes in Saada: We bless the victories and operations of the armed forces, and we warn Egypt and Pakistan against joining the Saudi regime in its crimes against Yemenis to please the Israeli enemy."
+    },
+    "a483113344f7": {
+     "id": "a483113344f7",
+     "dt": "Oct 20, 4:16 AM",
+     "ts": "2026-10-20T08:16:37+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/304107",
+     "also": 7,
+     "tags": [
+      "Riyadh"
+     ],
+     "cats": [
+      "city"
+     ],
+     "ar": "إعلام سعودي: إطلاق إنذار في الرياض للتحذير من خطر",
+     "en": "Saudi media: sirens sounded in Riyadh to warn of danger."
+    }
+   }
   },
   "flag": [
    {

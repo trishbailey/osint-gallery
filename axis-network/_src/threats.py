@@ -3,7 +3,7 @@ Input: a pickle/parquet/CSV of posts with columns date,url,text,channel,group (d
 /workspace/threats/posts.pkl) and the coordination copies table (for Iraqi repost speed). No keys or session data.
 Windows: 30 days ending at the latest Houthi post vs the baseline from May 1 to the start of that window;
 7 days vs the 3 weeks before. Rates = threat posts naming a target per 10,000 deduplicated Houthi posts in the window."""
-import os, re, pandas as pd
+import os, re, json, pandas as pd
 BASE_START = '2026-05-01'
 THR = r'سنستهدف|سيتم استهداف|ستكون هدف|ستصبح هدف|هدفا مشروعا|هدف مشروع|أهداف مشروعة|اهدافا مشروعة|أهدافاً مشروعة|لن تكون بمنأى|لن يكون بمنأى|نحذر|تحذير|نتوعد|يتوعد|سنضرب|سنرد|ستدفع الثمن|لن نقف مكتوفي|حظر الملاحة|قرار الحظر|المرحلة .{0,10}من التصعيد|سيكون عرضة|will be targeted|legitimate target|we warn|will strike'
 # chart targets: key -> (label, side, regex)
@@ -40,6 +40,7 @@ CASE = dict(warn='https://t.me/army21ye/3878', claim='https://t.me/MilitaryMedia
         ('Reuters', 'https://www.al-monitor.com/originals/2026/10/saudi-aramco-headquarters-suffered-extensive-damage-houthi-attack-sources-say', 'Reuters via Al-Monitor, “Saudi Aramco headquarters suffered extensive damage in Houthi attack, sources say”, Oct 14, 2026')])
 AIR_EX = 'https://t.me/MilitaryMediaY/47023'  # Oct 12 statement renewing the warning to airlines
 MIL = ['militarymediay', 'army21ye']
+CASE_WARN_DATE = '2026-10-13'  # Houthi military evacuation warning (CASE['warn'])
 # map sites: label -> (short map label, type, lat, lon, regex). Only named, locatable places.
 SITES = {
  'kkia': ('King Khalid Airport', 'airport', 24.958, 46.699, FAC['King Khalid International Airport, Riyadh']),
@@ -143,6 +144,76 @@ def build(posts_path, copies_csv=None):
         if c: c['t'] += [x for x in t if x not in c['t']]
         elif len(claims) < 3: claims.append(dict(d=dd, t=list(t), u=r.url))
     week = dict(start=str(a7.date()), warns=warns, claims=claims)
+    # weekly trend (threat posts naming each target), 7-day weeks ending at the latest post, from BASE_START
+    TREND = [('riyadh', 'Riyadh', CHART['riyadh'][2]), ('kkia', 'King Khalid Airport', SITES['kkia'][4]), ('aramco', 'Aramco (all sites)', CHART['aramco'][2]),
+             ('khamis', 'Khamis Mushait', SITES['khamis'][4]), ('yanbu', 'Yanbu', SITES['yanbu'][4]), ('israel', 'Israel', CHART['israel'][2]),
+             ('us', 'United States', CHART['us'][2]), ('redsea', 'Red Sea shipping', CHART['redsea'][2])]
+    nwk = int((end - pd.Timestamp(BASE_START, tz='UTC')) / (7 * D)); wks = [end - (nwk - i) * 7 * D for i in range(nwk)]
+    tw = dict(weeks=[str(a.date()) for a in wks], tot=[int(((h.date >= a) & (h.date < a + 7 * D)).sum()) for a in wks], s=[])
+    for k, lab, pat in TREND:
+        m = th[th.text.str.contains(pat, regex=True)]
+        tw['s'].append(dict(k=k, l=lab, n=[int(((m.date >= a) & (m.date < a + 7 * D)).sum()) for a in wks]))
+    SA = '|'.join([v[4] for v in SITES.values()] + [CHART[k][2] for k in CHART if CHART[k][1] == 'sa'])
+    a0 = pd.Timestamp(CASE_WARN_DATE, tz='UTC')
+    ev = [dict(d=CASE_WARN_DATE, kind='warning', u=CASE['warn'])]
+    cs = h[(h.date >= a0) & h.channel.str.lower().isin(MIL) & h.text.str.contains(CL, regex=True) & h.text.str.contains(SA, regex=True)].sort_values('date')
+    for _, r in cs.iterrows():
+        dd = str(r.date.date())
+        if not any(e['d'] == dd and e['kind'] == 'claim' for e in ev): ev.append(dict(d=dd, kind='claim', u=r.url))
+    tw['events'] = ev
+    # New this week: the week's Houthi threat posts and strike claims, one row per statement (reposts folded in), by category
+    import hashlib, os as _os
+    RMK = re.compile(r'https?://\S+|t\.me/\S+|@\w+|[^\w\s]|\d|_|[a-zA-Z]', re.U)
+    def nkey(t):
+        t = re.sub('[\u064B-\u065F\u0670\u0640]', '', t)
+        for a, b in (('أ', 'ا'), ('إ', 'ا'), ('آ', 'ا'), ('ة', 'ه'), ('ى', 'ي')): t = t.replace(a, b)
+        return ' '.join(RMK.sub(' ', t).split())[:90]
+    TME = re.compile(r'\S*(?:t|\u24e3)\.me/\S+', re.I)
+    def clean(t):
+        t = TME.sub(' ', t)
+        t = t.split('---------')[0]; t = re.sub(r'#(\S+)', lambda m: m.group(1).replace('_', ' '), t)
+        t = re.sub(r'https?://\S+|\S*t\.me/\S+|Almasirah\.net\.ye|saba\.ye\S*|#\S+|@\w+|\[[^\]]*\]\(\)?|\]\(|\*+|[\U00010000-\U0010ffff\u2600-\u27bf\u2b55\ufe0f\u24c9\u24d5\u2550-\u2570]|[ـ]{3,}', ' ', t)
+        t = ' '.join(t.split())
+        P = r'(?:شاهد|عاجل|قناة المسيرة(?: الفضائية| مباشر)?|جودة (?:عالية|متوسطة|منخفضة)|دقة (?:عالية|متوسطة|منخفضة))'
+        t = re.sub(r'^[\s|:\-\[]*(?:' + P + r'[\s|:\-\[]*)+', '', t)
+        t = re.sub(r'(?:\s*(?:' + P + r'|صدى الخبر|وكالة سبأ|ملفات(?: قناة المسيرة)?|الحصار بالحصار|التصعيد بالتصعيد|١٠٠ يوم من تصعيد العدو السعودي))+\s*$', '', t)
+        t = re.sub(r'(?:\s*\|)+\s*$', '', t)
+        return ' '.join(t.split())
+    def excerpt(t):
+        t = clean(t)
+        return t if len(t) <= 300 else t[:300].rsplit(' ', 1)[0] + ' …'
+    wd = d[(d.group == 'houthi') & (d.date >= a7)].copy(); wd['text'] = wd.text.fillna('')
+    wd['nk'] = wd.text.map(lambda t: nkey(clean(t))[:45])
+    isc = wd.channel.str.lower().isin(MIL) & wd.text.str.contains(CL, regex=True) & ~wd.text.str.contains('لم تنفذ|لم نستهدف', regex=True)
+    wd = wd[(wd.text.str.contains(THR, regex=True) | isc) & (wd.nk.str.len() > 20)]
+    def rx(*p): return '|'.join(f'(?:{x})' for x in p if x)
+    ST = lambda ty: [v[4] for v in SITES.values() if v[1] == ty]
+    GN = dict(GEN)
+    CATS = [('claims', 'Claimed strikes', None), ('warn', 'Warnings and evacuation notices', WARN),
+            ('air', 'Airports and airline warnings', rx(*ST('airport'), AIR, GN['airport (unnamed)'])),
+            ('energy', 'Oil and energy sites', rx(*ST('energy'), CHART['aramco'][2], GN['energy (unnamed)'])),
+            ('mil', 'Military bases', rx(*ST('military'), GN['military (unnamed)'])),
+            ('gov', 'Government', rx(*ST('government'), GN['government'])),
+            ('city', 'Cities and regions', rx(CHART['riyadh'][2], CHART['south'][2], CHART['uae'][2], FAC['Jeddah'])),
+            ('ius', 'Israel, US and shipping', rx(CHART['israel'][2], CHART['us'][2], CHART['redsea'][2], CHART['bab'][2], CHART['hormuz'][2]))]
+    trp = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'week_tr.json')
+    TRN = json.load(open(trp, encoding='utf-8')) if _os.path.exists(trp) else {}
+    items = []
+    for k, g in wd.sort_values('date').groupby('nk', sort=False):
+        r = g.iloc[0]; cl_ = bool(isc.loc[g.index].any()); t = r.text
+        if cl_: r = g[isc.loc[g.index]].iloc[0]; t = r.text
+        cats = [c for c, _, p in CATS if (c == 'claims' and cl_) or (c == 'warn' and not cl_ and re.search(p, t, re.I)) or (c not in ('claims', 'warn') and p and re.search(p, t, re.I))]
+        tgs = tg(t)
+        if not cats or (not cl_ and not tgs): continue
+        if not cl_ and set(tgs) <= {'Israel'} and re.search('غزة|الخليل|الضفة|القطاع', t): continue
+        ex = excerpt(t)
+        if len(ex) < 30: continue
+        hk = hashlib.sha1(ex.encode()).hexdigest()[:12]
+        items.append(dict(id=hk, dt=r.date.tz_convert('America/New_York').strftime('%b %-d, %-I:%M %p'), ts=r.date.isoformat(), ch=r.channel, u=r.url,
+                          also=int(g.channel.nunique() - 1), tags=tg(t)[:4], cats=cats, ar=ex, en=TRN.get(hk)))
+    items.sort(key=lambda z: z['ts'], reverse=True)
+    week['cats'] = [dict(k=c, l=l, items=[i['id'] for i in items if c in i['cats']]) for c, l, _ in CATS]
+    week['items'] = {i['id']: i for i in items}
     # warning -> strike case (times from the posts themselves)
     byu = d.drop_duplicates('url').set_index('url')
     tm = lambda u: byu.date[u].strftime('%b %-d, %H:%M UTC') if u in byu.index else None
@@ -165,7 +236,7 @@ def build(posts_path, copies_csv=None):
                       claim=[c.channel.iloc[0], int(c.lag.iloc[0]), c.post_url.iloc[0]] if len(c) else None)
     return dict(end=str((end - D).date()), base_start=BASE_START, w30_start=str((end - 30 * D).date()), w7_start=str((end - 7 * D).date()),
                 p21_start=str((end - 28 * D).date()), tot=tot, nthreat=int(len(th)), nch=int(h.channel.nunique()), nposts=int(len(d[d.group == 'houthi'])),
-                rows=rows, sites=sites, kind=kind, week=week, flag=flag, case=case, air=air, iraqi=iq)
+                rows=rows, trend=tw, sites=sites, kind=kind, week=week, flag=flag, case=case, air=air, iraqi=iq)
 
 if __name__ == '__main__':
     import json, sys; print(json.dumps(build(sys.argv[1] if len(sys.argv) > 1 else '/workspace/threats/posts.pkl'), ensure_ascii=False, indent=1)[:3000])
