@@ -39,11 +39,25 @@ d['pay']=dict(selectors=int(len(s)),channels=int((n.kind=='channel').sum()),cros
   by_group={g:int(c) for g,c in n[n.kind=='channel'].group.value_counts().items()},
   first=str(e.first_seen.min()),last=str(e.last_seen.max()),in_window=int((e.last_seen>=d['window_start']).sum()),edges=int(len(e)),
   top=[[r.label,r.tl,int(r.n_channels)] for r in s.sort_values('n_channels',ascending=False).head(5).itertuples()])
+# payment drill-down list (full selectors, for research reference)
+CH=dict(zip(n.id,n.label)); TD={'card':'Bank card','iban':'Bank account (IBAN)','campaign':'Named campaign','donation_phone':'Phone number','eth_evm':'Crypto wallet (ETH / EVM)','btc':'Crypto wallet (BTC)','tron_usdt':'Crypto wallet (USDT-TRC20)'}
+pl=[]
+for r in s.itertuples():
+    E=e[e.target==r.id]
+    pl.append(dict(v=str(r.label),t=TD.get(r.type,'Other'),k='crypto' if r.type in('btc','eth_evm','tron_usdt') else 'bank' if r.type in('card','iban') else 'other',g=r.groups,
+     ch=[[CH.get(x.source,x.source),int(x.weight),[u.strip() for u in str(x.sample_posts).split('|') if u.strip().startswith('https://t.me/')]] for x in E.itertuples()],
+     m=int(E.weight.sum()),f=str(E.first_seen.min()),l=str(E.last_seen.max())))
+d['paylist']=sorted(pl,key=lambda x:(-len(x['ch']),-x['m']))
 # themes (AI-coded codebook tables; recomputed when the codebook run is refreshed)
 t=pd.read_pickle('/workspace/codebook/tabs.pkl'); th=t['th']
 TH={'Yemen–Saudi war':['YEMEN_SAUDI_WAR'],'Palestine':['PALESTINE'],'Iran–Israel–US standoff':['IRAN_STANDOFF_AND_DIPLOMACY','ISRAELI_STRIKES_OUTSIDE_PALESTINE'],'Martyrs and faith':['MARTYRS_FAITH_MOBILISATION'],'Home and world news':['DOMESTIC_GOVERNANCE_SECURITY','WORLD_AND_OTHER']}
 d['themes']=dict(cats=list(TH),coded=int(t['n'].sum()),by_group={g.lower():[round(float(sum(th.loc[k,g] for k in ks)),1) for ks in TH.values()] for g in ['HOUTHI','IRGC','HEZBOLLAH','HAMAS','IRAQI','ALIGNED','PIJ']},n={k.lower():int(v) for k,v in t['n'].items()})
 # shared web infrastructure (More section)
 I=json.load(open(W+'v3/infra.json')); d['infra']=dict(nodes=len(I['N']),shared=[x['l'] for x in I['N'] if x['g']=='shared' and x['t']=='domain'],sites=sum(1 for x in I['N'] if x['t']=='domain'))
+# Houthi threat targets (recomputed from the raw post collection; keeps the previous result if the posts file is absent)
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); import threats, warnings; warnings.filterwarnings('ignore')
+POSTS=os.environ.get('AXIS_POSTS','/workspace/threats/posts.pkl')
+if os.path.exists(POSTS): d['threats']=threats.build(POSTS,W+'v3/merged/coordination_copies_v4.csv')
+elif os.path.exists(OUT): d['threats']=json.load(open(OUT)).get('threats'); print('threats: posts file missing, kept previous result')
 json.dump(d,open(OUT,'w'),ensure_ascii=False,indent=1); print(json.dumps({k:d[k] for k in ['data_through','window_start','collection','xcopies30','origin30','allorigin30','week']},indent=0))
 print(d['pay'])
