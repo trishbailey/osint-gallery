@@ -25,8 +25,8 @@ B["goldroutes"]={
    "smuggled":{"t":405,"year":"2022","cite":"swissaid-gold-2024","what":"African gold imported by the UAE that was not declared for export in Africa (66.5% of the UAE's African gold imports)"},
    "decade":{"t":2569,"year":"2012-2022","cite":"swissaid-gold-2024"},
    "cases":[
-     {"status":"documented","t":"OFAC sanctioned UAE-based AZ Gold, managed by an RSF figure, for buying gold from Sudan.","cites":["ofac-rsf-2025"]},
-     {"status":"documented","t":"OFAC said Dubai-based Industrial Resources joined a Wagner-linked scheme that turned CAR gold into US dollars and moved cash to Russia by hand.","cites":["ofac-wagner-gold"]},
+     {"status":"documented","t":"The US Treasury said UAE-based AZ Gold, managed by an RSF figure, bought gold from Sudan.","cites":["ofac-rsf-2025"]},
+     {"status":"documented","t":"The US Treasury said Dubai-based Industrial Resources joined a Wagner-linked scheme that turned CAR gold into US dollars and moved cash to Russia by hand.","cites":["ofac-wagner-gold"]},
      {"status":"reported","t":"The Sentry traced RSF-linked businessmen behind four Dubai gold companies.","cites":["sentry-rsf-uae"]}]},
  "ch":{"label":"UAE to Switzerland","t":316,"year":"Jan-Sep 2025","cite":"swissaid-uae-2025","decade":{"t":1670,"year":"2012-2022","cite":"swissaid-trail-article"},
    "note":"Swiss rules record refined gold by its last place of processing, so gold from Dubai counts as Emirati."},

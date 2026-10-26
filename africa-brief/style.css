@@ -229,7 +229,7 @@ details summary{cursor:pointer;color:#82B1FF;font-weight:700;font-size:13px}
  .secbtn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
  .pcol.collapsed>*:not(h2){display:none!important}
  /* gold: phone bars replace the Sankey */
- .skwrap{display:none!important}.goldsvg{min-width:0}
+ .skwrap,.skhint{display:none!important}.goldsvg{min-width:0}
  .goldph{display:block}.goldph h4.gph{margin:14px 0 6px;font-size:15px;color:#FFE272}
  .gkey{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px}.gkey i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:5px;vertical-align:-1px}
  .gbar{margin:0 0 8px}.gl2{display:flex;justify-content:space-between;font-size:14px;gap:8px}

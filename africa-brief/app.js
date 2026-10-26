@@ -2,7 +2,7 @@ const PH=()=>matchMedia("(max-width:600px)").matches;
 const BRI_URL=window.BRI_DASHBOARD_URL||"../belt-and-road/";
 const briHref=id=>BRI_URL+(id?"#p="+encodeURIComponent(id):"#region=africa");
 const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const COLORS={hex:["#E3B341","#E0607E","#9B57D3"]};
+const COLORS={hex:["#E3B341","#E0607E","#B36BE8"]};
 const BC={Russia:"#FF80FF",UAE:"#FFE272",Turkey:"#00FFE5",Iran:"#00FF00",Egypt:"#CC7A00",US:"#00CBFF",France:"#5B72CC",China:"#E52249",Rwanda:"#FF8E72"};
 const FLAG=(sel,w)=>{w=w||20;const h=w*2/3;sel.append("rect").attr("x",-w/2-3).attr("y",-h/2-3).attr("width",w+6).attr("height",h+6).attr("fill","transparent");sel.append("use").attr("href","#cnflag").attr("x",-w/2).attr("y",-h/2).attr("width",w).attr("height",h);};
 const SHEET="https://docs.google.com/spreadsheets/d/1fCulxY6AJ0br-O5hstRmIP9Lfco4-CMjYdHpH3Q7hTc/edit";
@@ -298,7 +298,7 @@ const renderConflicts=()=>{const CF=B.conflicts,RN0=Object.fromEntries(B.regions
  const stOf=c=>/document/i.test(c)?"documented":/alleg/i.test(c)?"alleged":"reported";
  const flagI=w=>`<svg class="flagi" width="${w}" height="${w*2/3}" viewBox="0 0 ${w} ${w*2/3}" aria-hidden="true"><use href="#cnflag" width="${w}" height="${w*2/3}"/></svg>`;
 const goldChart=()=>{const R=B.goldroutes,SK=R.sankey,el=document.getElementById("flowsec");
- el.innerHTML=`<p>Where Africa's declared gold went in ${SK.year}, as recorded by the importing countries, and where the UAE sent gold on. Band width is tonnes.${fn(SK.cites)}</p><p class="prompt">Hover a band to see its tonnes and source, or hover a place to highlight its flows.</p>
+ el.innerHTML=`<p>Where Africa's declared gold went in ${SK.year}, as recorded by the importing countries, and where the UAE sent gold on. Band width is tonnes.${fn(SK.cites)}</p><p class="prompt skhint">Hover a band to see its tonnes and source, or hover a place to highlight its flows.</p>
  <div class="skwrap"><svg id="goldsvg" class="goldsvg" viewBox="0 0 1320 640" role="img" aria-label="Sankey chart of African gold exports by destination, ${SK.year}"></svg></div><div id="goldph" class="goldph"></div>
  <p class="muted">${esc(SK.note)}${fn(SK.cites)} ${SK.excluded.map(x=>`Left out: ${esc(x.origin)} → ${esc(x.hub)} (${x.tonnes} t), because the ${esc(x.why)}.`).join(" ")}</p>
  <div class="rcards">
