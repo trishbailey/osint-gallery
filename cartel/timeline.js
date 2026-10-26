@@ -27,7 +27,7 @@ function draw(host,T,N,TR,GC){
  let y=top;const ly={},rowsY=[];let pr=null,pf=null;
  lanes.forEach(l=>{if(l.region!==pr){if(pr!=null)y+=rgap;rowsY.push([l.region,y]);y+=18;pr=l.region;pf=null}else if(fam[l.id]!==pf)y+=fgap;pf=fam[l.id];ly[l.id]=y;y+=rh});
  const H=y+10;const TRUNK0=7,TRUNKD=11;const x=d3.scaleLinear().domain([1960,1978,2027]).range([LW,LW+50,W-RW]);
- host.innerHTML=`<div class="tl-legend tl-legend-top"><span><i class="tl-ic">🌱</i>Founded</span><span><i class="tl-ic">↗️</i>Expansion</span><span><i class="tl-ic">⛓️</i>Leader captured or killed</span><span><i class="tl-x">✕</i>Dissolved</span><span><svg width="40" height="14"><path d="M2,7 H30" stroke="#ffc971" stroke-width="4"/><path d="M28,1 L38,7 L28,13z" fill="#ffc971"/></svg>Parent → child (each link says "split from" or "formed from break-up"; dotted, no arrow = alliance, not a split)</span></div><div class="muted small" style="margin:-2px 0 6px">≈ = approximate founding year · click a lane to filter the map · hover a link for its source</div><div class="tl-wrap"><svg class="tl-svg" width="${W}" height="${H}"><defs></defs></svg><div class="tl-tip"></div></div><div class="tl-panel" hidden></div>`;
+ host.innerHTML=`<div class="tl-legend tl-legend-top"><span><i class="tl-ic">🌱</i>Founded</span><span><i class="tl-ic">↗️</i>Expansion</span><span><i class="tl-ic">⛓️</i>Leader captured or killed</span><span><svg width="30" height="12"><rect x="2" y="2" width="26" height="8" rx="4" fill="#ffc971" opacity=".45"/></svg>Faded bar = dissolved</span><span><svg width="40" height="14"><path d="M2,7 H30" stroke="#ffc971" stroke-width="4"/><path d="M28,1 L38,7 L28,13z" fill="#ffc971"/></svg>Parent → child (each link says "split from" or "formed from break-up"; dotted, no arrow = alliance, not a split)</span></div><div class="muted small" style="margin:-2px 0 6px">Hover a lane for its founding year · click a lane to filter the map · hover a link for its source</div><div class="tl-wrap"><svg class="tl-svg" width="${W}" height="${H}"><defs></defs></svg><div class="tl-tip"></div></div><div class="tl-panel" hidden></div>`;
  const sv=d3.select(host).select("svg.tl-svg"),defs=sv.select("defs"),tip=host.querySelector(".tl-tip"),panel=host.querySelector(".tl-panel"),wrap=host.querySelector(".tl-wrap");
  const showTip=(m,h)=>{const r=wrap.getBoundingClientRect();tip.innerHTML=h;tip.style.display="block";tip.style.left=Math.min(m.clientX-r.left+wrap.scrollLeft+12,wrap.scrollLeft+r.width-290)+"px";tip.style.top=(m.clientY-r.top+12)+"px"};
  const fam0=lanes.map(l=>l);let alt=0;let lastF=null;
@@ -39,13 +39,12 @@ function draw(host,T,N,TR,GC){
   const g=laneG.append("g").attr("class","tl-lane").attr("data-g",l.id).style("cursor","pointer");
   g.append("rect").attr("x",0).attr("y",ly[l.id]).attr("width",W).attr("height",rh).attr("class","tl-hit");
   const nm=(name[l.id]||l.id).replace(/\s*\(.*\)/,"").slice(0,34);
-  g.append("text").attr("class","tl-name"+(depth[l.id]?"":" root")).attr("x",LW-10).attr("y",yy+4.5).attr("text-anchor","end").text((depth[l.id]?"↳ ":"")+nm);
+  g.append("text").attr("class","tl-name"+(depth[l.id]?"":" root")).attr("x",LW-10).attr("y",yy+4.5).attr("text-anchor","end").text(nm);
   g.append("rect").attr("x",0).attr("y",yy-9).attr("width",4).attr("height",18).attr("fill",c);
   g.append("rect").attr("x",x0).attr("y",yy-5).attr("width",Math.max(4,x1-x0)).attr("height",10).attr("rx",5).attr("fill",c).attr("opacity",l.ended?.55:.95);
-  if(l.circa)g.append("text").attr("class","tl-circa").attr("x",x0-4).attr("y",yy+4.5).attr("text-anchor","end").text("≈");
-  if(l.ended)g.append("text").attr("class","tl-x").attr("x",x1+4).attr("y",yy+4.5).text("✕ "+l.ended);
+  if(l.ended)g.append("text").attr("class","tl-x").attr("x",x1+4).attr("y",yy+4.5).text("dissolved "+l.ended);
   const cc=cc0(l);if(cc.length){const b=g.append("text").attr("class","tl-cc").attr("x",W-RW+8).attr("y",yy+6).text(cc.map(flag).join(" "));b.append("title").text("Sourced presence: "+cc.join(", "))}
-  g.on("click",e=>{if(e.target.closest(".tl-ev"))return;openLane(l)});
+  g.append("title").text(`${name[l.id]||l.id}: ${l.circa?"c. ":"founded "}${l.founded}${l.ended?`, dissolved ${l.ended}`:""}`);g.on("click",e=>{if(e.target.closest(".tl-ev"))return;openLane(l)});
   if(l.parent&&ly[l.parent]!=null){const P=T.lanes.find(p=>p.id===l.parent),lk=l.link||{kind:"split",year:l.founded,label:`split from ${name[l.parent]||l.parent}, ${l.founded}`,text:"",cites:l.cites};
    const py=ly[l.parent]+rh/2,xt=x(P.founded)+TRUNK0+TRUNKD*sib[l.id],al=lk.kind==="alliance",cp=al?"#c9d3e3":c;
    const id="tla-"+l.id;defs.append("marker").attr("id",id).attr("viewBox","0 0 10 10").attr("refX",8).attr("refY",5).attr("markerWidth",4).attr("markerHeight",4).attr("orient","auto").append("path").attr("d","M0,0 L10,5 L0,10z").attr("fill",cp);
