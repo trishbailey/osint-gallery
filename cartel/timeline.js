@@ -61,7 +61,7 @@ function draw(host,T,N,TR,GC){
   const g=laneG.append("g").attr("class","tl-ev").attr("transform",`translate(${cx},${cy})`).style("cursor","pointer");
   g.append("circle").attr("r",8).attr("fill","#0d1420").attr("stroke",C(e.group)).attr("stroke-width",1.5);
   g.append("text").attr("class","tl-ic t-"+e.type).attr("text-anchor","middle").attr("y",4).text(ICON[e.type]||"•");
-  if(e.type==="fto"){g.append("rect").attr("x",-10).attr("y",8).attr("width",20).attr("height",10).attr("rx",3).attr("fill","#ffd166");g.append("text").attr("class","tl-fto").attr("text-anchor","middle").attr("y",16).text("FTO")}
+  if(e.type==="fto"){g.append("rect").attr("x",-17).attr("y",7).attr("width",34).attr("height",16).attr("rx",3).attr("fill","#ffd166");g.append("text").attr("class","tl-fto").attr("text-anchor","middle").attr("y",19.5).text("FTO")}
   g.append("title").text(`${e.year} · ${LBL[e.type]||e.type}`);
   g.on("mousemove",m=>showTip(m,`<b>${e.year} · ${esc(LBL[e.type]||e.type)}</b><br>${esc(e.text)}<br><span class="muted">${esc(FN.label(e.cites))}</span>`)).on("mouseleave",()=>tip.style.display="none")
    .on("click",()=>{openLane(lanes.find(l=>l.id===e.group),e)});

@@ -18,3 +18,11 @@ if(!side||!mw)return;
 const fit=()=>{if(!mq.matches){side.style.height="";return}side.style.height=mw.getBoundingClientRect().height+"px"};
 if(window.ResizeObserver)new ResizeObserver(fit).observe(mw);window.addEventListener("resize",fit);mq.addEventListener&&mq.addEventListener("change",fit);fit();
 })();
+/* Label floor: SVG text drawn inside a scaled viewBox can render below 13px; raise any such label so it shows at >=13px on screen */
+(function(){
+const fix=()=>document.querySelectorAll("svg text").forEach(t=>{const m=t.getScreenCTM&&t.getScreenCTM();if(!m)return;const s=Math.hypot(m.a,m.b);if(!s)return;
+ const f=parseFloat(getComputedStyle(t).fontSize);if(f*s<13)t.style.fontSize=(13.05/s).toFixed(2)+"px"});
+let q;const run=()=>{clearTimeout(q);q=setTimeout(fix,200)};
+[800,2000,4000,8000].forEach(d=>setTimeout(fix,d));window.addEventListener("resize",run);
+if(window.MutationObserver)new MutationObserver(run).observe(document.body,{childList:true,subtree:true});
+})();
