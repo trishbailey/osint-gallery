@@ -140,7 +140,7 @@ details.more>summary{min-height:44px;display:flex;align-items:center;font-size:1
 .lg li{display:flex;align-items:center;gap:6px}.lg-h{font-size:14px;color:var(--text);font-weight:700;margin:8px 0 0}
 .lg-chip{min-height:36px;width:100%;text-align:left;font:600 14px Arial,sans-serif;background:var(--panel2);color:var(--text);border:1px solid #357F7A;border-radius:5px;padding:6px 10px;cursor:pointer}
 .lg-chip:hover,.lg-chip:focus-visible{background:#357F7A;outline:2px solid var(--gold)}
-.mm-on:hover,.mm-on:focus{fill:#9C7F3A}
+.mm-on:hover,.mm-on:focus{fill:#C26AA8}
 @media(max-width:700px){.lg-wrap{grid-template-columns:1fr}.lg,.lg-click{flex-direction:row;flex-wrap:wrap}.lg-chip{width:auto}}
 .maptip{position:absolute;z-index:120;pointer-events:none;background:var(--panel2);color:var(--text);border:1px solid var(--gold);border-radius:4px;padding:4px 8px;font-size:14px}
 abbr[title]{text-decoration:underline dotted;cursor:help}
