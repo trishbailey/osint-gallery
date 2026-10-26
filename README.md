@@ -68,7 +68,7 @@ The single source of truth is `dashboards.json`. Reserved subpaths hold a "Comin
 2. Every 15 minutes (cron `7,22,37,52 * * * *`, off the busy :00/:15 marks), `.github/workflows/sync-dashboards.yml` in this repo runs `scripts/sync_dashboards.py`. For each `live` entry in `dashboards.json` it:
    - shallow-clones the repo's `main` branch,
    - runs the `build` command, if there is one,
-   - copies the publish dir (`public/`) to a temp folder and rewrites root-relative links (`href="/x"`, `src="/x"`, `url(/x)`, `fetch("/x")`) to `/<slug>/x`. It also changes the old `*.onrender.com` URL in og:url, canonical and og:image to `https://beacon-tools.onrender.com/<slug>/`, and adds the second GA tag (`G-FE6CZGWX0J`) next to `G-Z61EKRP8QV`,
+   - copies the publish dir (`public/`) to a temp folder and rewrites root-relative links (`href="/x"`, `src="/x"`, `url(/x)`, `fetch("/x")`) to `/<slug>/x`. It also changes the old `*.onrender.com` URL in og:url, canonical and og:image to `https://beacon-tools.onrender.com/<slug>/`, strips the retired GA tag `G-FE6CZGWX0J`, and adds `G-Z61EKRP8QV` only if the page lacks it,
    - replaces `/<slug>/` **only if clone and build both succeeded**. If anything fails, the previous version stays live,
    - points that dashboard's card in `tools.json` at `/<slug>/`.
 3. If anything changed, the workflow commits it to `main` and Render auto-deploys `beacon-tools`. An update is normally live 15 to 25 minutes after the dashboard repo's push. GitHub's scheduled runs are best-effort: they can be late or skipped under load, and a newly added schedule may take an hour or more to start firing.
@@ -80,7 +80,7 @@ Each subpath has a `.source` file showing the repo commit that is live (e.g. `/c
 - Commit the finished, validated site to `public/` on `main` (or provide a `build` command that produces it). The page must be `public/index.html`.
 - Only commit to `main` after validation passes. Whatever is on `main` gets published (World Brief already works this way: `render-brief` only commits after `validate_reasoner.py` passes).
 - Use relative links (`style.css`, `data/x.json`) or root-relative links (`/style.css`). Both work, because root-relative links are rewritten to the subpath. Don't build URLs in JavaScript from `location.origin + "/..."`, since those are not rewritten. Use relative paths instead.
-- Keep the GA tag `G-Z61EKRP8QV` in each page's `<head>`. The second tag is added automatically.
+- Keep the GA tag `G-Z61EKRP8QV` in each page's `<head>`. If it is missing, the sync adds it. Don't add `G-FE6CZGWX0J` (retired; the sync strips it).
 - Optional, for instant publishing: from your repo's Action, send a `repository_dispatch` of type `dashboard-updated` to `trishbailey/osint-gallery` with `{"slug": "<slug>"}`. That needs a token with access to this repo. Without it, the 15-minute schedule picks the update up.
 
 ### Adding a new dashboard (e.g. Water Security)
