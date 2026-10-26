@@ -1,10 +1,8 @@
-const BRI_URL=window.BRI_DASHBOARD_URL||"#belt-and-road-coming-soon";let BRI_SET=false;
-// Links go live only if the dashboard URL is real AND answers 200 at load time; otherwise "Coming soon".
-const briProbe=BRI_URL.startsWith("#")?Promise.resolve(false):fetch(BRI_URL,{method:"HEAD",cache:"no-store"}).then(r=>r.status===200).catch(()=>false);
-const briHref=id=>BRI_URL+(id&&BRI_SET?"#p="+encodeURIComponent(id):"");
-const briLink=(t,cls,id)=>BRI_SET?`<a class="${cls}" href="${briHref(id)}">${t}</a>`:`<span class="${cls} is-soon" aria-disabled="true">${t} <span class="soon-tag">Coming soon</span></span>`;
+const BRI_URL=window.BRI_DASHBOARD_URL||"../belt-and-road/";const BRI_SET=true;
+const briHref=id=>BRI_URL+(id?"#p="+encodeURIComponent(id):"#region=africa");
+const briLink=(t,cls,id)=>`<a class="${cls}" href="${briHref(id)}">${t}</a>`;
 const COLORS={gold:"#B8860B",uranium:"#2E7D32",cobalt:"#1F4E9A",copper:"#B5502A",coltan:"#6B2D8C",tin:"#5D6D7E",tungsten:"#34495E",lithium:"#C2185B","rare-earths":"#00838F",graphite:"#111",manganese:"#8E44AD",bauxite:"#A04000",oil:"#000",gas:"#E67E22",water:"#1565C0",arable:"#558B2F"};
-Promise.all([d3.json("data/ne_110m.geojson"),d3.json("data/brief.json"),d3.json("data/conflict_hex.geojson"),d3.json("data/media.json"),briProbe]).then(([geo,B,HX,MD,briOK])=>{BRI_SET=briOK;window._briLive=briOK;
+Promise.all([d3.json("data/ne_110m.geojson"),d3.json("data/brief.json"),d3.json("data/conflict_hex.geojson"),d3.json("data/media.json")]).then(([geo,B,HX,MD])=>{
  document.getElementById("dd").textContent=B.data_date;
  const S={};B.sources.forEach(s=>S[s.id]=s);
  const W=900,H=820,svg=d3.select("#svg");
