@@ -21,16 +21,24 @@ function evs(list,big){const b=[];list.forEach(e=>{const c=EC[e.t]||"#f5f7fa";L.
 function path(pts,c){L.polyline(pts,{renderer:cv,color:c,weight:3,opacity:.9,dashArray:"8 6"}).addTo(lay)}
 const CLS=GF.CL,K=S.classes||{},NC=Object.values(K).reduce((a,b)=>a+b,0);
 function lastPos(){const last={};M.events.forEach(e=>{if(!last[e.imo]||e.s>last[e.imo].s)last[e.imo]=e});const b=[];
- Object.values(last).forEach(e=>{const c=(GF.P[e.imo]||{}).cls||"other";L.circleMarker([e.lat,e.lon],{renderer:cv,radius:5,color:"#0b1526",weight:1,fillColor:CLS[c][1],fillOpacity:.95}).bindTooltip(`<b>${esc(title((GF.P[e.imo]||{}).name||e.imo))}</b><br>${CLS[c][0]}<br>Last recorded ${fmt(e.s)}`).on("click",()=>openP(e.imo)).addTo(lay);b.push([e.lat,e.lon])});return b}
+ Object.values(last).forEach(e=>{const c=(GF.P[e.imo]||{}).cls||"other";if(c==="other")return;L.circleMarker([e.lat,e.lon],{renderer:cv,radius:5,color:"#0b1526",weight:1,fillColor:CLS[c][1],fillOpacity:.95}).bindTooltip(`<b>${esc(title((GF.P[e.imo]||{}).name||e.imo))}</b><br>${CLS[c][0]}<br>Last recorded ${fmt(e.s)}`).on("click",()=>openP(e.imo)).addTo(lay);b.push([e.lat,e.lon])});return b}
+const B3=["CHN","IND","TUR"],B3C={CHN:"#e05a6a",IND:"#e8913a",TUR:"#4fa3e0"},B3F={CHN:"China",IND:"India",TUR:"Turkey"},B3P={CHN:[35,103],IND:[22,78.5],TUR:[39,34]},B3N=Object.fromEntries(S.dest);
+function big3(){L.geoJSON(GF.LAND,{filter:f=>Object.values(B3F).includes(f.properties.n),style:f=>{const c=B3.find(k=>B3F[k]===f.properties.n);return{color:"#0b1526",weight:1,fillColor:B3C[c],fillOpacity:.7}},interactive:false}).addTo(lay);
+ const fs=S.flows.filter(f=>B3.includes(f.to)),mx=Math.max(...fs.map(f=>f.n));
+ fs.forEach(f=>{const pts=curve(f.a,B3P[f.to]),w=2+9*f.n/mx;L.polyline(pts,{renderer:cv,color:"#0b1526",weight:w+3,opacity:.9}).addTo(lay);
+  L.polyline(pts,{renderer:cv,color:B3C[f.to],weight:w,opacity:1}).bindTooltip(`<b>${esc(f.from)} → ${esc(cn(f.to))}</b><br>${f.n} trips in 12 months`,{sticky:true}).addTo(lay)});
+ const seen={};fs.forEach(f=>{if(seen[f.from])return;seen[f.from]=1;L.circleMarker(f.a,{radius:6,color:"#0b1526",weight:2,fillColor:"#f5f7fa",fillOpacity:1}).bindTooltip(esc(f.from),{permanent:!GF.phone()&&!["Taman","Ust-Luga"].includes(f.from),direction:f.from==="Novorossiysk"?"right":"top",className:"pill"}).addTo(lay)});
+ B3.forEach(c=>L.marker(B3P[c],{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="b3l" style="border-color:${B3C[c]}"><b>${B3F[c]}</b><span>${B3N[c]||0} trips · ${Math.round(100*(B3N[c]||0)/S.voyages)}%</span></div>`}),interactive:false}).addTo(lay));
+ return [[8,26],[70,135]]}
 const C=S.cases,ch=C.chain,id=C.identity,nw=C.network,dk=C.dark;
 const loHrs=ch.ev.filter(e=>e.t==="loitering"&&e.hz).reduce((a,e)=>a+(e.hrs||0),0),loHz=(ch.ev.find(e=>e.t==="loitering"&&e.hz)||{}).hz;
 const flagsY=new Set(id.hist.filter(h=>h[2]>="2025-01-01").map(h=>h[1]));
 const CH=[
  {k:"route",t:"1. Load in Russia, unload in Asia",
   c:`Over the past year these tankers made ${S.voyages.toLocaleString()} trips from a Russian oil terminal to a foreign port. ${pct}% of them ended in China, India or Turkey. Pacific oil from Kozmino goes mostly to China. Baltic oil from Primorsk and Ust-Luga goes mostly to India.`,
-  d:()=>flows()},
+  key:B3.map(c=>[B3C[c],`${cn(c)}: ${B3N[c]} trips (${Math.round(100*B3N[c]/S.voyages)}%)`]),d:()=>big3()},
  {k:"swap",t:"2. Waiting where cargoes change hands",
-  c:`Tankers often spend days drifting in a few stretches of open water where ship-to-ship transfers cluster. ${esc(title(ch.name))} (IMO ${ch.imo}) loaded at ${esc(ch.load)} on ${fmt(ch.ld)}. It then loitered for about ${Math.round(loHrs/24)} days in the area ${esc(loHz?"off "+loHz.replace(/ \(.*/,""):"")}, and its next port call was in ${esc(cn(ch.dest))} on ${fmt(ch.da)}. Loitering is consistent with a transfer but does not prove one.`,
+  c:`Tankers often spend days drifting in a few stretches of open water where ship-to-ship transfers cluster. ${esc(title(ch.name))} (IMO ${ch.imo}) loaded at ${esc(ch.load)} on ${fmt(ch.ld)}. It then loitered for about ${loHrs<48?Math.round(loHrs)+" hours":Math.round(loHrs/24)+" days"} in the area ${esc(loHz?"off "+loHz.replace(/ \(.*/,""):"")}, and its next port call was in ${esc(cn(ch.dest))} on ${fmt(ch.da)}. Loitering is consistent with a transfer but does not prove one.`,
   d:()=>{const b=hotspots();return b.concat(evs(ch.ev,true))},ship:ch.imo},
  {k:"identity",t:"3. New name, same run",
   c:`${S.changed} of ${S.ships} tankers took a new name, flag or radio identity (MMSI) in the past 12 months. ${esc(title(id.name))} (IMO ${id.imo}) sailed under ${flagsY.size} different flags from January 2025: ${[...flagsY].join(", ")}. It became ${esc(title(id.name))} in ${fmt(id.hist[id.hist.length-1][2])}. It was carrying Kozmino oil to China before the change and kept doing so afterwards.`,
@@ -43,8 +51,8 @@ const CH=[
   c:`${S.gaps} times in 12 months, one of these tankers switched off or lost its transponder for 12 hours or more (${S.gapShips} ships). ${S.gapsJamWindow} of these gaps fall within the 90 days of GPS-interference data we have, and none happened where interference was reported that day. That points to switch-offs rather than jamming. ${esc(title(dk.name))} (IMO ${dk.imo}) went dark three times off West Africa between April and June 2026.`,
   d:()=>{evs(S.cases.allgaps.filter(e=>!dk.ev.includes(e)));return evs(dk.ev,true)},key:[["#e05a6a","transponder off"],["#4fa3e0","port call"]],ship:dk.imo},
  {k:"classes",t:"6. Five ways of working",
-  c:`Sorted by what they did over 12 months, ${K.core} tankers are regular Russia runners and ${K.hub} are transfer hub ships, whose trips mostly include loitering or meetings consistent with ship-to-ship transfers. ${K.dev} were recently renamed or reflagged and kept loading Russian oil, and ${K.taxi} mix Russian cargoes with other trade. Regular runners made ${(S.classVoy||{}).core} of the ${S.voyages} trips.`,x:`<div class="cbars">${Object.keys(CLS).filter(k=>k!=="other").sort((a,b)=>(K[b]||0)-(K[a]||0)).map(k=>`<div class="row" title="${CLS[k][2]}"><span>${CLS[k][0]}</span><i style="width:${(100*(K[k]||0)/Math.max(K.hub,K.core,K.dev,K.taxi)).toFixed(0)}%;background:${CLS[k][1]}"></i><b>${K[k]||0}</b></div>`).join("")}</div><p class="note">${K.other} more tankers had too few recorded trips to fit a pattern.</p>`,
-  key:Object.keys(CLS).map(k=>[CLS[k][1],CLS[k][0].toLowerCase()]),d:()=>lastPos()}];
+  c:`Sorted by what they did over 12 months, ${K.core} tankers are regular Russia runners and ${K.hub} are transfer hub ships, whose trips mostly include loitering or meetings consistent with ship-to-ship transfers. ${K.dev} were recently renamed or reflagged and kept loading Russian oil, and ${K.taxi} mix Russian cargoes with other trade. Regular runners made ${(S.classVoy||{}).core} of the ${S.voyages} trips.`,x:`<div class="cbars">${Object.keys(CLS).filter(k=>k!=="other").sort((a,b)=>(K[b]||0)-(K[a]||0)).map(k=>`<div class="row" title="${CLS[k][2]}"><span>${CLS[k][0]}</span><i style="width:${(100*(K[k]||0)/Math.max(K.hub,K.core,K.dev,K.taxi)).toFixed(0)}%;background:${CLS[k][1]}"></i><b>${K[k]||0}</b></div>`).join("")}</div><p class="note">Some tankers have too few recorded trips to classify and are left off this map.</p>`,
+  key:Object.keys(CLS).filter(k=>k!=="other").map(k=>[CLS[k][1],CLS[k][0]]),d:()=>lastPos()}];
 // headline findings
 const H=[[`${pct}%`,`of ${S.voyages.toLocaleString()} trips from Russian oil terminals ended in China, India or Turkey`,"route"],
  [S.changed.toLocaleString(),`of ${S.ships} tankers changed name, flag or MMSI in 12 months`,"identity"],

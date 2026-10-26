@@ -17,8 +17,8 @@ const layers={};for(const k in T)layers[k]=L.layerGroup().addTo(map);
 const cnt=t=>t==="sar"?M.sar.reduce((a,b)=>a+b.n,0):M.events.filter(e=>e.t===t).length;
 // legend
 const CL={hub:["Transfer hub ships","#e8913a","Most trips include loitering in transfer areas or meetings at sea, consistent with ship-to-ship transfers"],core:["Regular Russia runners","#4fa3e0","Load at Russian oil terminals in at least three of the last four quarters"],dev:["Recently renamed or reflagged","#d97cb0","New name, flag or MMSI in the last year, and loaded Russian oil at least twice since"],taxi:["Mixed-trade tankers","#5cc98a","Load in Russia now and then, and call at non-Russian ports in most quarters"],other:["Occasional or little data","#f2d16b","Too few recorded trips to fit a pattern"]};
-const clsOn=Object.fromEntries(Object.keys(CL).map(k=>[k,true]));
-{const cb=document.getElementById("clsf");cb.innerHTML=Object.entries(CL).map(([k,v])=>`<button class="hl wide" data-c="${k}" aria-pressed="true" title="${v[2]}"><span class="sw" style="background:${v[1]}"></span>${v[0]} <span class="muted">${Object.values(P).filter(p=>p.cls===k).length}</span></button>`).join("");
+const clsOn=Object.fromEntries(Object.keys(CL).map(k=>[k,k!=="other"]));
+{const cb=document.getElementById("clsf");cb.innerHTML=Object.entries(CL).map(([k,v])=>`<button class="hl wide" data-c="${k}" aria-pressed="${clsOn[k]}" title="${v[2]}"><span class="sw" style="background:${v[1]}"></span>${v[0]} <span class="muted">${Object.values(P).filter(p=>p.cls===k).length}</span></button>`).join("");
  cb.querySelectorAll("button").forEach(b=>b.onclick=()=>{const k=b.dataset.c;clsOn[k]=!clsOn[k];b.setAttribute("aria-pressed",clsOn[k]);draw()})}
 const lg=document.getElementById("legend");
 for(const k in T){if(!cnt(k)){on[k]=false;continue}const b=document.createElement("button");b.setAttribute("aria-pressed",on[k]);b.innerHTML=`<span class="sw" style="background:${T[k].c}"></span>${T[k].l}<span class="ct">${cnt(k).toLocaleString()}</span>`;b.onclick=()=>{on[k]=!on[k];b.setAttribute("aria-pressed",on[k]);draw()};lg.appendChild(b)}
@@ -112,5 +112,5 @@ clock.oninput=frame;
 function setOne(v){one=v;document.getElementById("aOne").classList.toggle("on",v);document.getElementById("aAll").classList.toggle("on",!v);document.getElementById("aOne").setAttribute("aria-pressed",v);document.getElementById("aAll").setAttribute("aria-pressed",!v);frame()}
 document.getElementById("aAll").onclick=()=>setOne(false);document.getElementById("aOne").onclick=()=>{if(!sel){alert("Pick a ship first: click a dot, a table row or use Find a ship.");return}setOne(true)};
 map.on("zoomend",()=>{if(phone())draw()});draw();frame();
-const RAWL=[...Object.values(layers),anim];window.GF={CL,map,cv,esc,fmt,title,M,P,phone,openP,hideRaw(){RAWL.forEach(l=>map.removeLayer(l));if(playing)pb.click()},showRaw(){RAWL.forEach(l=>l.addTo(map));draw()}};const h=location.hash.match(/p=(\d{7})/);if(h)openP(h[1]);
+const RAWL=[...Object.values(layers),anim];window.GF={LAND,CL,map,cv,esc,fmt,title,M,P,phone,openP,hideRaw(){RAWL.forEach(l=>map.removeLayer(l));if(playing)pb.click()},showRaw(){RAWL.forEach(l=>l.addTo(map));draw()}};const h=location.hash.match(/p=(\d{7})/);if(h)openP(h[1]);
 })();

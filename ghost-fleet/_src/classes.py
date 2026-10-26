@@ -38,3 +38,19 @@ cc=collections.Counter(CLS.values())
 S["classes"]={k:cc.get(k,0) for k in ("hub","core","dev","taxi","other")}
 S["classVoy"]={k:sum(len(vby.get(i,[])) for i,c in CLS.items() if c==k) for k in S["classes"]}
 print("CLASSES",S["classes"],S["classVoy"])
+# Story maps leave out 'other' (too little data) ships: rebuild flows and the all-gaps layer without them.
+fl2=collections.defaultdict(lambda:{"n":0,"lat":0,"lon":0})
+for v in voy:
+    if CLS.get(v["imo"])=="other": continue
+    f=fl2[(v["load"],v["dest"])]; f["n"]+=1; f["lat"]+=v["dp"][0]; f["lon"]+=v["dp"][1]; f["lp"]=v["lp"]
+S["flows"]=[{"from":k[0],"to":k[1],"n":f["n"],"a":f["lp"],"b":[round(f["lat"]/f["n"],2),round(f["lon"]/f["n"],2)]} for k,f in fl2.items() if f["n"]>=3]
+S["cases"]["allgaps"]=[x for x,e in zip(S["cases"]["allgaps"],gj) if CLS.get(e["imo"])!="other"]
+for c in ("chain","identity","dark"): print("case",c,CLS.get(S["cases"][c]["imo"]))
+if CLS.get(S["cases"]["chain"]["imo"])=="other":
+    alt=[v for v in chain if CLS.get(v["imo"])=="hub" and v["dest"]=="IND"] or [v for v in chain if CLS.get(v["imo"])!="other"]
+    cv=sorted(alt,key=lambda v:v["ld"])[-1]
+    S["cases"]["chain"]={"imo":cv["imo"],"name":nm(cv["imo"]),"load":cv["load"],"ld":cv["ld"],"dest":cv["dest"],"da":cv["da"],"ev":slimv(cv["ev"]),"line":vline(cv)}
+nwk=[v for v in nv if CLS.get(v["imo"])!="other"]
+S["cases"]["network"]["flows"]=[[v["lp"],v["dp"],nm(v["imo"])] for v in nwk]
+S["cases"]["network"]["ships"]=[s for s in S["cases"]["network"]["ships"] if CLS.get(s[0])!="other"]
+print("CASE2",S["cases"]["chain"]["name"],S["cases"]["chain"]["imo"],CLS[S["cases"]["chain"]["imo"]],[(e["t"],e.get("hz"),e.get("hrs")) for e in S["cases"]["chain"]["ev"]],"net",len(nwk),len(nv))
