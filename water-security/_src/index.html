@@ -91,6 +91,10 @@ sup.fn a:hover{color:var(--gold)}
 .lg:hover{border-color:var(--gold)}
 .lg .sw{box-shadow:inset 0 0 0 1px rgba(11,21,38,.5)}
 .side-note{font-size:13px;line-height:1.45;margin:8px 0 0;display:flex;gap:8px;align-items:flex-start}
+.arrow-key{display:none}
+.asw{flex:none;display:block}
+.side-note.arrow-note{align-items:center}
+.side-note.arrow-note span{white-space:nowrap;color:var(--text)}
 .band{width:54px;height:16px;margin-top:2px;border-radius:8px;flex:none;background:linear-gradient(90deg,#1c2c4b 0%,#143f3c 35%,#4ea89e 100%)}
 .chartrow{display:grid;grid-template-columns:220px minmax(0,1fr);gap:12px;align-items:start}
 .vkey{display:flex;flex-direction:column;gap:4px;font-size:13px}
@@ -152,6 +156,7 @@ details.places>summary{display:flex;align-items:center;min-height:44px;font-size
 .place-list{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
 .place-note{font-size:14px;line-height:1.45;margin:0 0 8px}
 svg.phone-map{overflow:hidden}
+.arrow-key{display:flex;align-items:center;gap:8px;margin:0 0 6px;font-size:14px;line-height:1.2;color:#e6e9ef;white-space:nowrap}
 }
 </style></head><body>
 <div id="sheet-back"></div>
@@ -387,7 +392,17 @@ function capHTML(key,bs){const c=CFG[key];if(!c)return '';const nmC=s=>s.replace
  const wr=Object.entries(cs).filter(([i,o])=>STW[o.s]&&STW[o.p]&&STO.indexOf(o.p)>STO.indexOf(o.s)).sort((a,b)=>STO.indexOf(b[1].p)-STO.indexOf(a[1].p)).map(([i,o])=>`${(isoN[i]||i).replace('United States of America','United States')}, ${STW[o.s]} to ${STW[o.p]}`);
  const cl=wr.length?`By 2050, business as usual: ${wr.join('; ')}.${FN(2)}`:`No stress category gets worse by 2050.${FN(2)}`;
  return `<p class="cap">${txt}</p><p class="cap clim">${cl}</p>`}
-function keyNotes(){return `<p class="side-note"><span class="band" aria-hidden="true"></span><span>Brighter band = more river water${FN(11)}</span></p><p class="side-note">Thicker arrow = more of that country's water from abroad${FN(9)}</p><p class="side-note"><span class="tri">▲</span> Large dam${FN(5)} <span class="tri hot">▲</span> Conflict record${FN(6)}</p><p class="side-note"><svg width="22" height="14" aria-hidden="true"><rect x="1" y="1" width="20" height="12" fill="none" stroke="${AQINK}" stroke-width="1.6" stroke-dasharray="3 2"/></svg> Shared aquifer${FN(4)}</p>${isPhone()?'<p class="side-note">Other places are listed under the map</p>':'<p class="side-note"><svg width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5" fill="none" stroke="#c8a24a" stroke-width="2"/></svg> Gold ring: name on hover</p>'}`}
+function arrowSwatch(){return '<svg class="asw" width="34" height="14" viewBox="0 0 34 14" aria-hidden="true"><path d="M1 7h20" stroke="#041018" stroke-width="7" stroke-linecap="round"/><path d="M16 1.5 32 7 16 12.5z" fill="#041018"/><path d="M2 7h18" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/><path d="M18 3.4 29 7 18 10.6z" fill="#fff"/></svg>'}
+function arrowSay(ids){const key=cfgKey(ids.map(Number));const C=CFG[key]||{rivers:[],mainDams:[]};const bs=B.filter(b=>ids.map(Number).includes(+b.id)&&!b.aq&&b.up&&b.down);if(!bs.length)return '';
+ if(bs.length>1)return 'Arrow: dam controls the flow';
+ const b=bs[0],rs=(C.rivers||[]).filter(r=>String(b.name).toLowerCase().includes(String(r[0]).toLowerCase()));
+ const kd=(C.mainDams||[]).map(id=>DAMS.find(d=>d.properties.GDW_ID==id)).find(d=>d&&rs.some(r=>damSay(d).toLowerCase().includes(String(r[0]).toLowerCase())));
+ if(!kd)return 'Arrow: headwater sets the flow';
+ const dam=shortDam(kd.properties.GDW_ID,damSay(kd)).replace(/ dam$/i,'');const who=String(b.down.c).replace('United States of America','the US');
+ const line=dam+' controls flow to '+who;return line.length<=34?line:dam+' controls the flow'}
+function arrowNote(text){return text?`<p class="side-note arrow-note">${arrowSwatch()}<span>${text}</span></p>`:''}
+function setArrowNotes(lines){const el=document.getElementById('arrow-note');if(el)el.innerHTML=(lines||[]).filter(Boolean).map(arrowNote).join('')}
+function keyNotes(){return `<div id="arrow-note"></div><p class="side-note"><span class="band" aria-hidden="true"></span><span>Brighter band = more river water${FN(11)}</span></p><p class="side-note">Thicker arrow = more of that country's water from abroad${FN(9)}</p><p class="side-note"><span class="tri">▲</span> Large dam${FN(5)} <span class="tri hot">▲</span> Conflict record${FN(6)}</p><p class="side-note"><svg width="22" height="14" aria-hidden="true"><rect x="1" y="1" width="20" height="12" fill="none" stroke="${AQINK}" stroke-width="1.6" stroke-dasharray="3 2"/></svg> Shared aquifer${FN(4)}</p>${isPhone()?'<p class="side-note">Other places are listed under the map</p>':'<p class="side-note"><svg width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5" fill="none" stroke="#c8a24a" stroke-width="2"/></svg> Gold ring: name on hover</p>'}`}
 function hydroSegs(ids){const use=ids.filter(id=>!(id===7&&ids.includes(6)));const seen=new Set();const out=[];
  use.forEach(id=>{(HY[id]||HY[String(id)]||[]).forEach(seg=>{const k=seg.join(',');if(seen.has(k))return;seen.add(k);let x=seg[1]/100,y=seg[2]/100;const pts=[[x,y]];for(let i=3;i<seg.length;i+=2){x+=seg[i]/100;y+=seg[i+1]/100;pts.push([x,y])}out.push({q:seg[0],pts})})});
  return out}
@@ -512,10 +527,10 @@ const st=t=>t.style('font-weight',700).style('font-size',sparse?'14px':'13px');
 const REG=[['Nile & North Africa',[[1,20,22]]],['Middle East',[[3,5,9]]],['South Asia',[[2,8]]],['Central Asia',[[6,7]]],['Southeast Asia',[[4,12]]],['Sub-Saharan Africa',[[14,15,13,19]]],['Americas & Europe',[[10],[18,21],[16,17,11]]]];
 const titles={'10':'Colorado / Rio Grande','18,21':'Paraná / La Plata and Guarani','16,17,11':'Danube, Rhine, Dnipro'};
 REG.forEach(([n,groups],i)=>{const sec=d3.select('#regions').append('div').attr('class','region').attr('id','reg'+i);sec.append('h3').text(n);const box=sec.append('div').attr('class','maps');
- groups.forEach(ids=>{const key=ids.join(',');const m=box.append('div').attr('class','mapbox');if(key==='1,20,22')m.attr('id','box-nile');if(key==='3,5,9')m.attr('id','box-mideast');if(groups.length>1)m.append('h3').text(titles[key]);const baseW=groups.length>1?(ids.length>2?1240:610):1240,baseH=groups.length>1?(ids.length>2?640:600):(i===0?980:720);const useW=isPhone()?contentW():baseW,useH=isPhone()?Math.max(240,Math.round(baseH*useW/baseW)):baseH;const svgM=drawMap(m,ids,useW,useH,{key,sparse:isPhone()});const capBox=m.append('div').html(capHTML(key,B.filter(b=>ids.includes(b.id))));if(isPhone()){const notes=(svgM&&svgM.property('damNotes'))||[];const have=capBox.text();const extra=notes.filter(n=>n&&!have.includes(String(n).split(',')[0]));if(extra.length)capBox.append('p').attr('class','cap').text(extra.join(' '))}});});
+ groups.forEach(ids=>{const key=ids.join(',');const m=box.append('div').attr('class','mapbox');if(key==='1,20,22')m.attr('id','box-nile');if(key==='3,5,9')m.attr('id','box-mideast');if(groups.length>1)m.append('h3').text(titles[key]);const baseW=groups.length>1?(ids.length>2?1240:610):1240,baseH=groups.length>1?(ids.length>2?640:600):(i===0?980:720);const useW=isPhone()?contentW():baseW,useH=isPhone()?Math.max(240,Math.round(baseH*useW/baseW)):baseH;const say=arrowSay(ids);if(say)m.append('p').attr('class','arrow-key').html(arrowSwatch()+'<span>'+say+'</span>');const svgM=drawMap(m,ids,useW,useH,{key,sparse:isPhone()});const capBox=m.append('div').html(capHTML(key,B.filter(b=>ids.includes(b.id))));if(isPhone()){const notes=(svgM&&svgM.property('damNotes'))||[];const have=capBox.text();const extra=notes.filter(n=>n&&!have.includes(String(n).split(',')[0]));if(extra.length)capBox.append('p').attr('class','cap').text(extra.join(' '))}});});
 function setRegion(i){clearTip();d3.selectAll('#side-regions .tab').classed('on',(_,j)=>j===i);d3.selectAll('.region').style('display',(_,j)=>j===i?null:'none');
  const ids=REG[i][1].flat();const box=d3.select('#side-basins').html('');
- B.filter(b=>ids.includes(b.id)).forEach(b=>box.append('button').attr('type','button').attr('class','chip').attr('data-id',b.id).attr('title','Open '+shown(b.name)).text(shown(b.name)).on('click',()=>show(b.id,true)))}
+ B.filter(b=>ids.includes(b.id)).forEach(b=>box.append('button').attr('type','button').attr('class','chip').attr('data-id',b.id).attr('title','Open '+shown(b.name)).text(shown(b.name)).on('click',()=>show(b.id,true)));setArrowNotes(REG[i][1].map(arrowSay))}
 d3.select('#side-regions').selectAll('button').data(REG).join('button').attr('type','button').attr('class',(_,i)=>'tab'+(i?'':' on')).attr('title',d=>'Show '+d[0]).text(d=>d[0]).style('background',(_,i)=>RC[i]).style('color',(_,i)=>i===2||i===6?'#1a1208':'#fff').on('click',(e,d)=>setRegion(REG.indexOf(d)));
 d3.select('#side-notes').html(keyNotes());
 const LAY=[['flow','River water',WATER],['cut','Cut-off',CUT],['threat','Threat',THR],['neither','Neither',NEI],['dam','Dams',NEI],['aq','Aquifers',AQINK]];
@@ -535,12 +550,12 @@ function axisBars(svg,rows,x0,bw){const x=d3.scaleLinear([0,100],[0,bw]);
   if(d.v!=null){svg.append('rect').attr('data-ink','bar').attr('x',x0).attr('y',y+4).attr('width',Math.max(0,x(d.v))).attr('height',16).attr('rx',2).attr('fill',depCol(d.v));
    svg.append('text').attr('x',x0+bw+8).attr('y',y+16).text(d.v+'%')}
   else svg.append('text').attr('x',x0+8).attr('y',y+16).text('no sourced figure').attr('fill','#e6e9ef')})}
-function show(id,scroll){clearTip();const ri=REG.findIndex(r=>r[1].flat().includes(+id));if(ri>=0)setRegion(ri);
+function show(id,scroll){clearTip();const ri=REG.findIndex(r=>r[1].flat().includes(+id));if(ri>=0)setRegion(ri);setArrowNotes([arrowSay([+id])]);
  const b=B.find(x=>x.id==id);d3.selectAll('#chips .chip').classed('on',d=>d.id==id);(()=>{let hit=false;d3.selectAll('#sumchips .chip').classed('on',function(){const on=!hit&&this.dataset.id==String(id);if(on)hit=true;return on})})();d3.selectAll('#side-basins button').classed('on',function(){return this.dataset.id==String(id)});const P=d3.select('#panel').html('');
  const Lf=P.append('div');Lf.append('h3').text(shown(b.name));
  if(isPhone()&&scroll)openSheet();
  const mw=isPhone()?Math.max(260,document.documentElement.clientWidth-32):440,mh=isPhone()?Math.max(220,Math.round(420*mw/440)):420;
- drawMap(Lf,[b.id],mw,mh,isPhone()?{sparse:true,sheet:true}:{});
+ const asay=arrowSay([b.id]);if(asay)Lf.append('p').attr('class','arrow-key').html(arrowSwatch()+'<span>'+asay+'</span>');drawMap(Lf,[b.id],mw,mh,isPhone()?{sparse:true,sheet:true}:{});
  const R=P.append('div');R.append('div').attr('class','kv').html(`<b>Headwater control:</b> ${nb(shown(b.hw))}<br><b>Dams and works:</b> ${nb(shown(b.dams))}<br><b>Upstream dam capacity:</b> ${b.upcap!=null?b.upcap+' km³ ('+b.up+')'+FN(1):nb()}<br><b>Storage vs annual flow:</b> ${nb(b.storage)}<br><b>Treaties:</b> ${b.tc||nb()}${b.status?' · '+b.status:''}${FN(3)}`);
  R.append('h3').text('Share from abroad');
  R.append('p').attr('class','unit').html('Percent of renewable water from abroad, largest first, from zero.'+FN(1));
