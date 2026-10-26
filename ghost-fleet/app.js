@@ -64,17 +64,6 @@ function draw(){dl();const a=new Date(t0+from*day).toISOString().slice(0,10),b=n
  stats(nv.size,ne)}
 function stats(nv,ne){const s=document.getElementById("stats");const lo=M.events.filter(e=>e.t==="loitering"&&P[e.imo]&&e.hz).length;
  s.innerHTML=[[Object.keys(P).length.toLocaleString(),"tankers followed"],[nv.toLocaleString(),"ships active in view"],[ne.toLocaleString(),"events in view"],[lo.toLocaleString(),"loitering events in known transfer areas, 90 days"]].map(x=>`<div class="stat"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("")}
-// ports chart
-const pc={};M.events.forEach(e=>{if(e.t==="port"&&e.port){const k=title(e.port)+(e.pf?` (${e.pf})`:"");pc[k]=(pc[k]||0)+1}});
-const top=Object.entries(pc).sort((a,b)=>b[1]-a[1]).slice(0,12),mx=top[0]?.[1]||1;
-document.getElementById("ports").innerHTML=top.map(([k,v])=>`<div class="row" title="${esc(k)}: ${v} port calls"><span>${esc(k)}</span><div class="bar" style="width:${v/mx*100}%"></div><span>${v}</span></div>`).join("")+`<p class="muted">Port calls by these ships, ${fmt(M.from)} – ${fmt(M.to)}. Country in brackets (ISO code).</p>`;
-// table
-const rows=Object.values(P).filter(p=>p.n90).map(p=>{const c={port:0,loitering:0,gap:0};M.events.forEach(e=>{if(e.imo===p.imo&&c[e.t]!=null)c[e.t]++});const last=[...p.history].sort((x,y)=>(x.to||"").localeCompare(y.to||"")).pop()||{};return{...p,c,flag:last.flag||""}}).sort((a,b)=>b.n90-a.n90);
-let sk="n90";function table(){const r=[...rows].sort((a,b)=>sk==="name"?a.name.localeCompare(b.name):(sk==="n90"?b.n90-a.n90:b.c[sk]-a.c[sk]));
- document.getElementById("vt").innerHTML=`<table><thead><tr><th data-k="name">Ship</th><th>IMO</th><th>Flag</th><th data-k="port">Port calls</th><th data-k="loitering">Loitering</th><th data-k="gap">AIS gaps</th><th data-k="n90">All events</th></tr></thead><tbody>${r.slice(0,60).map(p=>`<tr tabindex="0" data-i="${p.imo}"><td>${esc(p.name)}</td><td>${p.imo}</td><td>${esc(p.flag)}</td><td>${p.c.port}</td><td>${p.c.loitering}</td><td>${p.c.gap}</td><td>${p.n90}</td></tr>`).join("")}</tbody></table><p class="muted">Top 60 of ${rows.length} ships with activity. Use "Find a ship" for the rest.</p>`;
- document.querySelectorAll("#vt th[data-k]").forEach(th=>th.onclick=()=>{sk=th.dataset.k;table()});
- document.querySelectorAll("#vt tbody tr").forEach(tr=>{tr.onclick=()=>openP(tr.dataset.i);tr.onkeydown=e=>{if(e.key==="Enter")openP(tr.dataset.i)}})}
-table();
 // networks
 let netSel=null;
 document.getElementById("nets").innerHTML=M.nets.slice(0,12).map((n,i)=>{const ch=n.ships.map(s=>P[s]?.churn||[0,0,0,0]);const churn=ch.filter(c=>c[0]+c[1]+c[2]>=7).length;
