@@ -231,12 +231,14 @@
      "FTO"
     ]
    },
-   "summary": "Michoacán coalition formed against the CJNG.",
+   "summary": "Coalition of Michoacán groups (Cartel de Tepalcatepec of 'El Abuelo' Farías, Los Viagras, Familia Michoacana and Knights Templar cells, Blancos de Troya) formed in 2019–20 to fight CJNG; US FTO since Feb 2025, Treasury-sanctioned Aug 2025.",
    "says_vs_does": "",
    "leaders": [],
    "cites": [
+    "IC_UNIDOS",
+    "LAVOZ_CU",
     "FTO",
-    "IC_CJNG"
+    "TREAS_VIAGRAS"
    ]
   },
   {
@@ -705,9 +707,10 @@
    "source": "cjng",
    "target": "unidos",
    "kind": "rivalry",
-   "text": "War for Michoacán.",
+   "text": "War for Michoacán since 2019, centred on the Tierra Caliente.",
    "cites": [
-    "IC_CJNG"
+    "IC_UNIDOS",
+    "ACLED_CJNG_ES"
    ],
    "as_of": "2026-10-25"
   },
@@ -843,6 +846,28 @@
     "FINCEN_CMLN_ADV"
    ],
    "as_of": "2026-10-25"
+  },
+  {
+   "source": "unidos",
+   "target": "viagras",
+   "kind": "alliance",
+   "text": "Founding partners in the 2019–20 coalition against CJNG; the US Treasury reported in Aug 2025 that Los Viagras had since allied with CJNG.",
+   "cites": [
+    "IC_UNIDOS",
+    "LAVOZ_CU",
+    "TREAS_VIAGRAS"
+   ],
+   "as_of": "2026-10-26"
+  },
+  {
+   "source": "unidos",
+   "target": "lnfm",
+   "kind": "alliance",
+   "text": "La Voz de Michoacán (Jan 2020) lists La Nueva Familia Michoacana among the groups in the Cárteles Unidos pact.",
+   "cites": [
+    "LAVOZ_CU"
+   ],
+   "as_of": "2026-10-26"
   }
  ],
  "note": "Alliances are fluid and often reported by a single source. Alleged state links are allegations unless a court has decided them."

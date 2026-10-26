@@ -10,103 +10,109 @@
   {
    "id": "sinaloa",
    "name": "Sinaloa Cartel",
-   "color": "#dd8d8d",
+   "color": "#e38b82",
    "network_id": "sinaloa"
   },
   {
    "id": "cjng",
    "name": "CJNG",
-   "color": "#8da2e9",
+   "color": "#99a1d9",
    "network_id": "cjng"
   },
   {
    "id": "gulf",
    "name": "Gulf Cartel",
-   "color": "#bc8a24",
+   "color": "#b58f39",
    "network_id": "gulf"
   },
   {
    "id": "cdn",
    "name": "Cartel del Noreste",
-   "color": "#276d22",
+   "color": "#167118",
    "network_id": "cdn"
   },
   {
    "id": "lnfm",
    "name": "La Nueva Familia Michoacana",
-   "color": "#a33986",
+   "color": "#c12880",
    "network_id": "lnfm"
+  },
+  {
+   "id": "unidos",
+   "name": "Cárteles Unidos",
+   "color": "#8f512f",
+   "network_id": "unidos"
   },
   {
    "id": "juarez",
    "name": "Juárez Cartel / La Línea",
-   "color": "#50b88c",
+   "color": "#24b58a",
    "network_id": "juarez"
   },
   {
    "id": "clan",
    "name": "Clan del Golfo",
-   "color": "#bc91e9",
+   "color": "#3788c2",
    "network_id": "clan"
   },
   {
    "id": "eln",
    "name": "ELN",
-   "color": "#228e94",
+   "color": "#166c64",
    "network_id": "eln"
   },
   {
    "id": "exfarc",
    "name": "FARC dissidents",
-   "color": "#c02270",
+   "color": "#758a23",
    "network_id": null
   },
   {
    "id": "tda",
    "name": "Tren de Aragua",
-   "color": "#d3987e",
+   "color": "#a763c7",
    "network_id": "tda"
   },
   {
    "id": "choneros",
    "name": "Los Choneros",
-   "color": "#8c8c2b",
+   "color": "#c46b2a",
    "network_id": "choneros"
   },
   {
    "id": "lobos",
    "name": "Los Lobos",
-   "color": "#d36135",
+   "color": "#df73a5",
    "network_id": "lobos"
   },
   {
    "id": "pcc",
    "name": "PCC",
-   "color": "#7b983f",
+   "color": "#da7531",
    "network_id": "pcc"
   },
   {
    "id": "cv",
    "name": "Comando Vermelho",
-   "color": "#805720",
+   "color": "#be224e",
    "network_id": "cv"
   },
   {
    "id": "ms13",
    "name": "MS-13",
-   "color": "#9c4826",
+   "color": "#5550c1",
    "network_id": "ms13"
   },
   {
    "id": "b18",
    "name": "Barrio 18",
-   "color": "#236a74",
+   "color": "#2d7377",
    "network_id": "b18"
   },
   {
    "id": "haiti",
    "name": "Viv Ansanm / Gran Grif",
-   "color": "#7171d0",
+   "color": "#b94f67",
    "network_id": "viv_ansanm"
   }
  ],
@@ -1141,17 +1147,27 @@
       "DEA_MAP_SILLA",
       "DEA_MAP_RAZON"
      ]
+    },
+    {
+     "group": "unidos",
+     "level": "significant",
+     "cites": [
+      "IC_UNIDOS",
+      "LAVOZ_CU"
+     ]
     }
    ],
    "contested": {
     "groups": [
      "cjng",
-     "lnfm"
+     "lnfm",
+     "unidos"
     ],
-    "note": "CJNG and La Nueva Familia Michoacana both shown with heavy presence on DEA maps.",
+    "note": "CJNG and La Nueva Familia Michoacana both shown with heavy presence on DEA maps; Cárteles Unidos has fought CJNG in western Michoacán's Tierra Caliente since 2019–20.",
     "cites": [
      "DEA_MAP_SILLA",
-     "POLITICO_CJNG"
+     "POLITICO_CJNG",
+     "IC_UNIDOS"
     ]
    }
   },

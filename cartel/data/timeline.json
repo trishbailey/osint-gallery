@@ -193,11 +193,13 @@
   {
    "id": "unidos",
    "region": "Mexico",
-   "founded": 2020,
+   "founded": 2019,
    "circa": true,
    "parent": null,
    "ended": null,
    "cites": [
+    "ACLED_CJNG_ES",
+    "LAVOZ_CU",
     "IC_UNIDOS",
     "FTO"
    ]
@@ -215,11 +217,12 @@
    ],
    "link": {
     "kind": "alliance",
-    "year": 2020,
-    "label": "allied in Cárteles Unidos, 2020",
-    "text": "Alliance, not a split: Los Viagras (a former self-defence group) joined the Cartel del Abuelo in the Cárteles Unidos coalition against CJNG in 2020. By late 2024 the US Treasury reported Los Viagras had allied with CJNG.",
+    "year": 2019,
+    "label": "joined the Cárteles Unidos coalition, 2019–20",
+    "text": "Alliance, not a split: Los Viagras (a former self-defence group) joined Juan José Farías's Cartel de Tepalcatepec and other Michoacán groups in the Cárteles Unidos coalition against CJNG in 2019–20. In Aug 2025 the US Treasury reported Los Viagras had allied with CJNG.",
     "cites": [
      "IC_UNIDOS",
+     "LAVOZ_CU",
      "TREAS_VIAGRAS"
     ]
    }
@@ -785,7 +788,7 @@
    "group": "unidos",
    "year": 2014,
    "type": "alliance",
-   "text": "Knights Templar weakened by vigilante uprising and arrests; local groups later ally as Cárteles Unidos against CJNG.",
+   "text": "Knights Templar weakened by the vigilante uprising and arrests; several of the local armed groups later join Cárteles Unidos.",
    "cites": [
     "IC_TEMPLARIOS",
     "IC_CJNG"
@@ -1193,10 +1196,13 @@
   },
   {
    "group": "unidos",
-   "year": 2020,
+   "year": 2019,
    "type": "alliance",
-   "text": "Cartel del Abuelo and Los Viagras ally as Cárteles Unidos against CJNG.",
+   "text": "Coalition, not a split: after CJNG breaks with El Abuelo's Tepalcatepec group (Aug 2019), it allies with Los Viagras, Familia Michoacana and Knights Templar cells and Blancos de Troya as Cárteles Unidos against CJNG.",
    "cites": [
+    "CUARTOPODER_ABUELO",
+    "LAVOZ_CU",
+    "ACLED_CJNG_ES",
     "IC_UNIDOS"
    ]
   },
@@ -1234,6 +1240,15 @@
    "text": "Realigns with Los Choneros as Nueva Generación frays.",
    "cites": [
     "IC_CHONEKILLERS"
+   ]
+  },
+  {
+   "group": "unidos",
+   "year": 2026,
+   "type": "killed",
+   "text": "Faction leader Luis Enrique Barragán Chávez ('R5', Los Reyes) killed by Mexican forces; regional boss 'Kamoni' arrested in Tepalcatepec.",
+   "cites": [
+    "IC_UNIDOS"
    ]
   }
  ]

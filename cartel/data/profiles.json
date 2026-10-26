@@ -213,6 +213,69 @@
    }
   },
   {
+   "id": "unidos",
+   "name": "Cárteles Unidos",
+   "abbr": "CU = Cárteles Unidos (‘United Cartels’)",
+   "what": "A coalition of Michoacán criminal groups formed to keep the CJNG out of the state.",
+   "what_c": [
+    "IC_UNIDOS",
+    "ACLED_CJNG_ES"
+   ],
+   "founded": "2019–20, Michoacán (Mexico), as an alliance against CJNG, not a split from another cartel",
+   "founded_c": [
+    "ACLED_CJNG_ES",
+    "LAVOZ_CU",
+    "IC_UNIDOS"
+   ],
+   "biz": [
+    "unidos"
+   ],
+   "more": [
+    [
+     "CJNG broke with Juan José Farías Álvarez, ‘El Abuelo’, and his Tepalcatepec group in August 2019; in May 2020 Farías called on vigilante groups in four municipalities to unite against CJNG.",
+     [
+      "CUARTOPODER_ABUELO",
+      "IC_UNIDOS"
+     ]
+    ],
+    [
+     "Reporting describes a pact of several groups: Farías's Cartel de Tepalcatepec, Los Viagras, cells of La Familia Michoacana and the Knights Templar, and Blancos de Troya.",
+     [
+      "LAVOZ_CU",
+      "IC_UNIDOS"
+     ]
+    ],
+    [
+     "Its stronghold is western Michoacán's Tierra Caliente, around Tepalcatepec, Aguililla, Buenavista and Los Reyes; it has dug trenches and fought CJNG with explosive-laden drones.",
+     [
+      "IC_UNIDOS"
+     ]
+    ],
+    [
+     "The US designated it a Foreign Terrorist Organization on 20 Feb 2025; the Treasury sanctioned it, Farías and three other leaders on 14 Aug 2025.",
+     [
+      "FTO",
+      "TREAS_VIAGRAS"
+     ]
+    ],
+    [
+     "The coalition has shifted: the Treasury said in Aug 2025 that Los Viagras had allied with CJNG, and a Grupo Animal column dates that break to 2023.",
+     [
+      "TREAS_VIAGRAS",
+      "ANIMAL_VIAGRAS"
+     ]
+    ],
+    [
+     "In 2026 Mexican forces killed faction leader Luis Enrique Barragán Chávez (‘R5’) and arrested Edgar Valeriano Orozco Cabadas (‘Kamoni’).",
+     [
+      "IC_UNIDOS"
+     ]
+    ]
+   ],
+   "series_note": "No numeric membership estimate found (US NCTC says only ‘thousands’).",
+   "membership_series": []
+  },
+  {
    "id": "juarez",
    "name": "Juárez Cartel / La Línea",
    "abbr": null,
