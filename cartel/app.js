@@ -153,11 +153,11 @@ function moneyTile(m){
   $("moneymore").innerHTML=`<p><b>${esc(m.takeaway)}</b></p><p>${esc(m.summary)}</p><h3>Typologies flagged (overlapping)</h3>${m.typologies.map(t=>`<div>${esc(t.name)}: $${t.value}bn</div>`).join("")}${cite(["FINCEN_CMLN_FTA"])}<h3>Related</h3>${m.related.map(r=>`<div><b>${esc(r.name)}</b>${r.value?` ($${r.value}bn)`:""}: ${esc(r.text||"")}${cite(r.cites)}</div>`).join("")}<p class="note">${esc(m.notes)}</p>`;
 }
 function netTile(net,terr){
-  const el=$("netsvg"),W=Math.max(380,el.parentNode.clientWidth-28),H=380;const svg=d3.select(el).attr("width",W).attr("height",H).attr("viewBox",`0 0 ${W} ${H}`);
+  const el=$("netsvg"),W=Math.max(380,el.parentNode.clientWidth-28),H=520;const svg=d3.select(el).attr("width",W).attr("height",H).attr("viewBox",`0 0 ${W} ${H}`);
   const tc=Object.fromEntries(terr.groups.filter(g=>g.network_id).map(g=>[g.network_id,g.color]));
-  const COLS=[["Mexico",["chapitos","mayiza","sinaloa","juarez","cjng","unidos","viagras","gulf","cdn"],.03],["Central Am.",["ms13","b18","cmln"],.30],["Andes",["tda","soles","segmar","eln","choneros","lobos"],.53],["Brazil",["pcc","cv"],.80]];
+  const COLS=[["Mexico",["chapitos","mayiza","sinaloa","juarez","cjng","unidos","viagras","gulf","cdn"],.02,0],["Central America",["ms13","b18","cmln"],.52,0],["Andes",["tda","soles","segmar","eln","choneros","lobos"],.52,4],["Brazil",["pcc","cv"],.52,11]];
   const by=Object.fromEntries(net.groups.map(g=>[g.id,{...g}]));const nodes=[];
-  COLS.forEach(([lab,ids,fx])=>{ids.filter(i=>by[i]).forEach((id,i)=>{const d=by[id];d.x=W*fx+6;d.y=44+i*36;nodes.push(d)});svg.append("text").attr("class","nethd").attr("x",W*fx).attr("y",22).text(lab)});
+  COLS.forEach(([lab,ids,fx,row])=>{const y0=22+row*36;svg.append("text").attr("class","nethd").attr("x",W*fx).attr("y",y0).text(lab);ids.filter(i=>by[i]).forEach((id,i)=>{const d=by[id];d.x=W*fx+6;d.y=y0+22+i*34;nodes.push(d)})});
   const edges=net.edges.filter(e=>by[e.source]&&by[e.target]&&by[e.source].x!=null&&by[e.target].x!=null).map(e=>({...e,source:by[e.source],target:by[e.target]}));
   const ST={alliance:["#4caf50",3,null],rivalry:["#e0605c",2.5,"6 4"],service:["#9aa6b8",1.4,null],"alleged link":["#9aa6b8",1.4,"2 3"],faction:["#9aa6b8",1.4,null]};
   $("netlegend").innerHTML=`<span><svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke="#4caf50" stroke-width="3"/></svg> alliance</span> <span><svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke="#e0605c" stroke-width="2.5" stroke-dasharray="6 4"/></svg> ✕ rivalry / war</span> <span><svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke="#9aa6b8" stroke-width="1.4"/></svg> faction / business / service</span> <span><svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke="#9aa6b8" stroke-width="1.4" stroke-dasharray="2 3"/></svg> alleged link</span>`;
@@ -169,7 +169,7 @@ function netTile(net,terr){
   const n=svg.append("g").selectAll("g").data(nodes).join("g").attr("transform",d=>`translate(${d.x},${d.y})`).style("cursor","pointer").on("click",(e,d)=>drawer(groupHtml(d,net)))
    .on("mouseenter",(e,d)=>{eg.classed("dim",x=>x.source!==d&&x.target!==d);n.classed("dim",x=>x!==d&&!edges.some(k=>(k.source===d&&k.target===x)||(k.target===d&&k.source===x)))}).on("mouseleave",()=>{eg.classed("dim",false);n.classed("dim",false)});
   n.append("circle").attr("r",6).attr("fill",d=>tc[d.id]||"#9aa6b8").attr("stroke","#e6e9ef").attr("stroke-width",d=>d.fto?1.5:0);
-  n.append("text").attr("class","netl").attr("x",9).attr("y",4).attr("fill",d=>tc[d.id]||"#c3ccd9").text(d=>d.name.split(" (")[0].replace(/^Cartel (de |del )?/,"").replace(/^Chinese money laundering networks?/i,"Chinese money brokers").slice(0,20));
+  n.append("text").attr("class","netl").attr("x",9).attr("y",4).attr("fill",d=>tc[d.id]||"#c3ccd9").text(d=>d.name.split(" (")[0].replace(/^Cartel (de |del )?/,"").replace(/^Chinese money laundering networks?/i,"Chinese money brokers").slice(0,24));
 }
 function chinaTile(c){
   const ab={precursors:"PRE",ports:"PRT",money:"$",finance:"$",laundering:"$",infrastructure:"INF"};

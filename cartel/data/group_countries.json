@@ -1,0 +1,350 @@
+{
+ "as_of": "2026-10-25",
+ "note": "Countries with sourced presence per group. 'footprint' = mapped in territory.json; 'beyond_map' = sourced presence outside the basemap; 'reported' = sourced presence not yet mapped as a footprint. Home country first. Absence means no sourced entry, not no presence.",
+ "groups": {
+  "pcc": {
+   "home": "BRA",
+   "countries": [
+    {
+     "iso": "BRA",
+     "basis": "footprint",
+     "cites": [
+      "IC_PCC"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. São Paulo)"
+    },
+    {
+     "iso": "PRY",
+     "basis": "footprint",
+     "cites": [
+      "IC_PARAGUAY",
+      "IC_PCC"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Amambay)"
+    }
+   ]
+  },
+  "cv": {
+   "home": "BRA",
+   "countries": [
+    {
+     "iso": "BRA",
+     "basis": "footprint",
+     "cites": [
+      "IC_CV"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Amazonas)"
+    }
+   ]
+  },
+  "clan": {
+   "home": "COL",
+   "countries": [
+    {
+     "iso": "COL",
+     "basis": "footprint",
+     "cites": [
+      "IC_URABENOS"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Antioquia)"
+    }
+   ]
+  },
+  "exfarc": {
+   "home": "COL",
+   "countries": [
+    {
+     "iso": "COL",
+     "basis": "footprint",
+     "cites": [
+      "IC_EXFARC"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Caquetá)"
+    }
+   ]
+  },
+  "eln": {
+   "home": "COL",
+   "countries": [
+    {
+     "iso": "COL",
+     "basis": "footprint",
+     "cites": [
+      "IC_ELN"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Cauca)"
+    },
+    {
+     "iso": "VEN",
+     "basis": "footprint",
+     "cites": [
+      "IC_ELN"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Apure)"
+    }
+   ]
+  },
+  "lobos": {
+   "home": "ECU",
+   "countries": [
+    {
+     "iso": "ECU",
+     "basis": "footprint",
+     "cites": [
+      "IC_LOBOS"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. El Oro)"
+    }
+   ]
+  },
+  "choneros": {
+   "home": "ECU",
+   "countries": [
+    {
+     "iso": "ECU",
+     "basis": "footprint",
+     "cites": [
+      "IC_CHONEROS"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Guayas)"
+    }
+   ]
+  },
+  "ms13": {
+   "home": "SLV",
+   "countries": [
+    {
+     "iso": "SLV",
+     "basis": "footprint",
+     "cites": [
+      "IC_MS13"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. La Libertad)"
+    },
+    {
+     "iso": "GTM",
+     "basis": "footprint",
+     "cites": [
+      "IC_GUATEMALA",
+      "IC_MS13"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Guatemala)"
+    },
+    {
+     "iso": "HND",
+     "basis": "footprint",
+     "cites": [
+      "IC_HONDURAS",
+      "IC_MS13"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Francisco Morazán)"
+    },
+    {
+     "iso": "USA",
+     "basis": "beyond_map",
+     "cites": [
+      "IC_MS13"
+     ],
+     "note": "InSight Crime profile: founded in Los Angeles, US cliques"
+    }
+   ]
+  },
+  "b18": {
+   "home": "GTM",
+   "countries": [
+    {
+     "iso": "GTM",
+     "basis": "footprint",
+     "cites": [
+      "IC_B18",
+      "IC_GUATEMALA"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Guatemala)"
+    },
+    {
+     "iso": "HND",
+     "basis": "footprint",
+     "cites": [
+      "IC_B18",
+      "IC_HONDURAS"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Francisco Morazán)"
+    },
+    {
+     "iso": "SLV",
+     "basis": "footprint",
+     "cites": [
+      "IC_B18"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. La Libertad)"
+    },
+    {
+     "iso": "USA",
+     "basis": "beyond_map",
+     "cites": [
+      "IC_B18"
+     ],
+     "note": "InSight Crime profile: founded in Los Angeles, US cliques"
+    }
+   ]
+  },
+  "haiti": {
+   "home": "HTI",
+   "countries": [
+    {
+     "iso": "HTI",
+     "basis": "footprint",
+     "cites": [
+      "FTO",
+      "IC_HAITI"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. L'Artibonite)"
+    }
+   ]
+  },
+  "sinaloa": {
+   "home": "MEX",
+   "countries": [
+    {
+     "iso": "MEX",
+     "basis": "footprint",
+     "cites": [
+      "DEA_MAP_RAZON",
+      "DEA_MAP_UNIV"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Baja California)"
+    },
+    {
+     "iso": "USA",
+     "basis": "beyond_map",
+     "cites": [
+      "DEA25"
+     ],
+     "note": "DEA 2025 National Drug Threat Assessment: US distribution networks"
+    }
+   ]
+  },
+  "cjng": {
+   "home": "MEX",
+   "countries": [
+    {
+     "iso": "MEX",
+     "basis": "footprint",
+     "cites": [
+      "DEA_MAP_RAZON",
+      "POLITICO_CJNG"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Baja California)"
+    },
+    {
+     "iso": "USA",
+     "basis": "beyond_map",
+     "cites": [
+      "DEA25"
+     ],
+     "note": "DEA 2025 National Drug Threat Assessment: US distribution networks"
+    }
+   ]
+  },
+  "cdn": {
+   "home": "MEX",
+   "countries": [
+    {
+     "iso": "MEX",
+     "basis": "footprint",
+     "cites": [
+      "DEA_MAP_RAZON",
+      "DEA_MAP_SILLA"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Coahuila)"
+    }
+   ]
+  },
+  "juarez": {
+   "home": "MEX",
+   "countries": [
+    {
+     "iso": "MEX",
+     "basis": "footprint",
+     "cites": [
+      "ACLED_RIFT",
+      "IC_JUAREZ"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Chihuahua)"
+    }
+   ]
+  },
+  "gulf": {
+   "home": "MEX",
+   "countries": [
+    {
+     "iso": "MEX",
+     "basis": "footprint",
+     "cites": [
+      "DEA_MAP_SILLA"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Nuevo León)"
+    }
+   ]
+  },
+  "lnfm": {
+   "home": "MEX",
+   "countries": [
+    {
+     "iso": "MEX",
+     "basis": "footprint",
+     "cites": [
+      "DEA_MAP_RAZON",
+      "DEA_MAP_SILLA"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Michoacán)"
+    }
+   ]
+  },
+  "tda": {
+   "home": "VEN",
+   "countries": [
+    {
+     "iso": "VEN",
+     "basis": "footprint",
+     "cites": [
+      "IC_TDA"
+     ],
+     "note": "Mapped footprint in territory.json (e.g. Aragua)"
+    },
+    {
+     "iso": "CHL",
+     "basis": "reported",
+     "cites": [
+      "IC_TDA"
+     ],
+     "note": "InSight Crime profile: cells in Chile"
+    },
+    {
+     "iso": "COL",
+     "basis": "reported",
+     "cites": [
+      "IC_TDA"
+     ],
+     "note": "InSight Crime profile: cells in Colombia"
+    },
+    {
+     "iso": "PER",
+     "basis": "reported",
+     "cites": [
+      "IC_TDA"
+     ],
+     "note": "InSight Crime profile: cells in Peru"
+    },
+    {
+     "iso": "USA",
+     "basis": "beyond_map",
+     "cites": [
+      "IC_TDA"
+     ],
+     "note": "InSight Crime profile: expansion incl. US"
+    }
+   ]
+  }
+ }
+}

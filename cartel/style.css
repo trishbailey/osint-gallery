@@ -62,3 +62,10 @@ path.adm{cursor:pointer}path.adm:hover{stroke:#fff;stroke-width:2}
 .cav{border-left:3px solid #c8a24a;padding:3px 8px;margin:4px 0 6px;color:#dfe6f1}.mcov{width:100%;font-size:12px;border-collapse:collapse}.mcov td{padding:3px 4px;border-bottom:1px solid #24324f;vertical-align:top}
 .gcc{font-size:12px;color:#c3ccd9;margin:3px 0}.gcc .gch1{font-size:14px}.gcc .gcrest{display:none}.gc.open .gcc .gcrest{display:inline;margin-left:4px;color:#8fa3c4}
 .gcnote{margin:2px 0 6px;color:#dfe6f1}.gcnote:empty{display:none}
+
+/* sources & notes: small, muted, set apart */
+sup.fn{font-size:9px;line-height:0;vertical-align:super}sup.fn a{color:#8a94a6;text-decoration:none;font-weight:400}sup.fn a:hover{color:#c8a24a}
+.note,.bnotes,.fnrow,.cite,.rleg,.small.muted,.mcov+.small{font-size:12px!important;color:#8a94a6!important;font-weight:400}
+.note,.bnotes,.cite{margin-top:10px}
+.srcdet{margin-top:28px;font-size:12px;color:#8a94a6}.srcdet>summary{cursor:pointer;font-size:12.5px;color:#8a94a6;font-weight:600;list-style:none}.srcdet[open]>summary{margin-bottom:6px}
+.fnlist{font-size:12px;color:#8a94a6}.fnlist a{color:#8fa3c4}.fnlist li.fnhit{background:rgba(200,162,74,.18);outline:1px solid #c8a24a}

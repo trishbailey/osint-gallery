@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-25T23:50:41Z",
+ "as_of": "2026-10-26T01:10:06Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -28,12 +28,30 @@
  ],
  "posts": [
   {
+   "id": "2114506672659906571",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2114506672659906571",
+   "created_at": "2026-10-25T23:57:31.000Z",
+   "text": "Un exempleado del Supremo Tribunal de Justicia del Estado de Sinaloa (#STJES) fue #privadodelalibertad por un grupo armado con armas largas y cortas y equipo táctico en la colonia José María Morelos y Pavón, en #Culiacán. https://t.co/AzkXz9o1VR",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2732",
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "A former employee of the Sinaloa State Supreme Court of Justice (#STJES) was #deprivedofliberty by an armed group carrying long and short guns and tactical gear in the José María Morelos y Pavón neighbourhood, in #Culiacán."
+  },
+  {
    "id": "2114502265247879310",
    "handle": "proceso",
    "url": "https://x.com/proceso/status/2114502265247879310",
    "created_at": "2026-10-25T23:40:00.000Z",
    "text": "Fuerzas colombianas abaten a 10 miembros de la guerrilla del ELN en el suroeste del país El presidente Abelardo de la Espriella presentó en la red social X los resultados de la operación “Ónix”, la que calificó como “el golpe más duro” a esa estructura armada en los últimos ocho",
-   "lang": "und",
+   "lang": "es",
    "region_ids": [],
    "country": "MEX",
    "group_ids": [

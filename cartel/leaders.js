@@ -59,8 +59,8 @@ Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json
    memRows.push({k,g:v.label,e,lo:e.low,hi:e.high,atl:e.high==null,upto:false,lab:(e.high==null?"at least ":"")+fN(e.low)+(e.high&&e.high!==e.low?"–"+fN(e.high):""),note})}
   v.revenue.forEach(e=>{if(e.no_credible_estimate)noRev.push(v.label);else if(e.unit!=="annual_revenue_usd")revNotes.push(`${v.label}: pesos only (COP ${fN(e.low/1e9)}bn/yr, ${e.year}), not converted`);
    else if(/PARTIAL/.test(e.note))revNotes.push(`${v.label}: partial only (${fB(e.low)}/yr from illegal gold mining in one area, ${e.year})`);
-   else revRows.push({k,g:v.label,e,lo:e.low??e.high,hi:e.high,atl:e.high==null,upto:e.low==null,lab:(e.low==null?"up to ":e.high==null?"at least ":"")+fB(e.low??e.high)+` (${e.year})`,note:""})})});
- function bars(el,rows,fmt){rows.sort((a,b)=>(b.hi??b.lo)-(a.hi??a.lo));const W=440,rh=26,ml=150,mr=120,H=rows.length*rh+22;const mx=d3.max(rows,r=>Math.max(r.hi??r.lo,r.lo)*(r.atl?1.12:1));
+   else revRows.push({k,g:v.label,e,lo:e.low??e.high,hi:e.high,atl:e.high==null,upto:e.low==null,lab:(e.low==null?"up to ":e.high==null?"at least ":"")+fB(e.low??e.high),note:`${e.year} estimate`})})});
+ function bars(el,rows,fmt){rows.sort((a,b)=>(b.hi??b.lo)-(a.hi??a.lo));const W=440,rh=22,ml=150,mr=120,H=rows.length*rh+22;const mx=d3.max(rows,r=>Math.max(r.hi??r.lo,r.lo)*(r.atl?1.12:1));
   const x=d3.scaleLinear([0,mx],[ml,W-mr]).nice();const sv=d3.select(el).append("svg").attr("viewBox",`0 0 ${W} ${H}`).attr("class","rbars");
   sv.append("g").attr("transform",`translate(0,${H-20})`).call(d3.axisBottom(x).ticks(4).tickFormat(fmt)).attr("class","ax");
   rows.forEach((r,i)=>{const y=i*rh+2,c=GCOL[r.k]||"#8fa0bb",gg=sv.append("g");gg.append("title").text(`${r.lab}. ${r.e.note}`);
@@ -70,8 +70,8 @@ Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json
    else if(r.hi&&r.hi>r.lo){gg.append("rect").attr("x",solidEnd).attr("y",y+3).attr("height",12).attr("width",x(r.hi)-solidEnd).attr("fill",c).attr("fill-opacity",.4);end=x(r.hi)}
    else if(r.atl){gg.append("path").attr("d",`M${solidEnd},${y+3}h14l7,6l-7,6h-14z`).attr("fill",c).attr("fill-opacity",.35);end=solidEnd+22}
    gg.append("text").attr("x",end+4).attr("y",y+12).attr("class","bv").text(r.lab);
-   if(r.note)gg.append("text").attr("x",ml).attr("y",y+24).attr("class","bn").text(r.note)});
-  const fl=d3.select(el).append("div").attr("class","fnrow small");fl.html(rows.map((r,i)=>`<span class="ii" title="${esc(r.e.note)}">${esc(r.g.split(" ")[0])}${FN(SRC(r.e))}</span>`).join(" "))}
+   gg.append("text").attr("x",end+4+r.lab.length*6.2).attr("y",y+8).attr("class","bsup").text(i+1)});
+  const fl=d3.select(el).append("ol").attr("class","bnotes small");fl.html(rows.map(r=>`<li><b>${esc(r.g)}</b>: ${esc(r.lab)}${r.e.year&&!/estimate/.test(r.note)?` (${r.e.year})`:""}${r.note?"; "+esc(r.note):""}${FN(SRC(r.e))}</li>`).join(""))}
  const leg=`<div class="small muted rleg"><span class="lg1"></span> estimate <span class="lg2"></span> published range <span class="lg3">▶</span> &ldquo;at least&rdquo; (lower bound) <span class="lg4"></span> &ldquo;up to&rdquo; (upper bound)</div>`;
  bars("#szmem",memRows,v=>fN(v));
  t.querySelector("#szmem").insertAdjacentHTML("beforeend",leg+`<div class="small muted">No credible estimate: ${[...new Set(noMem)].map(esc).join(", ")||"none"}. Grey text under a bar = conflicting figure from another source.</div>`);
@@ -79,7 +79,7 @@ Promise.all([J("data/leaders.json"),J("data/capture.json"),J("data/networks.json
  t.querySelector("#szrev").insertAdjacentHTML("beforeend",leg+`<div class="small muted">No credible USD estimate: ${[...new Set(noRev)].map(esc).join(", ")}.</div><div class="small muted">${revNotes.map(esc).join(" · ")}.</div>`);
  // business heat-map
  const used=bz.lines.filter(x=>G.some(g=>(bz.groups[g.id]||{})[x.id]));
- t.querySelector("#bzgrid").innerHTML=`<table class="bz"><thead><tr><th></th>${used.map(x=>`<th title="${esc(x.label)}"><span>${BI[x.id]||""}</span><div class="vl">${esc(x.label)}</div></th>`).join("")}</tr></thead><tbody>${G.map(g=>`<tr><th>${esc(g.name)}</th>${used.map(x=>{const c=(bz.groups[g.id]||{})[x.id];return `<td>${c?`<span class="hm ${c.level}" title="${esc(x.label)}: ${c.level}">${c.level==="primary"?"●":c.level==="secondary"?"◐":"○"}</span>${FN({name:x.label,url:c.source_url})}`:""}</td>`}).join("")}</tr>`).join("")}</tbody></table><div class="small muted">● primary ◐ secondary ○ minor. Empty = no source found.</div>`;
+ t.querySelector("#bzgrid").innerHTML=`<table class="bz"><thead><tr><th></th>${used.map(x=>`<th title="${esc(x.label)}"><div class="vl"><span class="vli">${BI[x.id]||"·"}</span> ${esc(x.label)}</div></th>`).join("")}</tr></thead><tbody>${G.map(g=>`<tr><th>${esc(g.name)}</th>${used.map(x=>{const c=(bz.groups[g.id]||{})[x.id];return `<td>${c?`<span class="hm ${c.level}" title="${esc(x.label)}: ${c.level}">${c.level==="primary"?"●":c.level==="secondary"?"◐":"○"}</span>${FN({name:x.label,url:c.source_url})}`:""}</td>`}).join("")}</tr>`).join("")}</tbody></table><div class="small muted">● primary ◐ secondary ○ minor. Empty = no source found.</div>`;
  function setG(g,from){grid.parentNode.querySelectorAll(".ld").forEach(c=>{const m=!g||c.dataset.g.split(" ").includes(g);c.classList.toggle("hl",!!g&&m);c.classList.toggle("dim",!!g&&!m)});
   const n=g?grid.querySelectorAll(".ld.hl").length:0;
   t.querySelector("#ldnote").textContent=g?(from?`Highlighted from ${from}: `:"")+`${gname[g]||g}`+(n?"":" (not among the 14 tracked groups)"):"";}
