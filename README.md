@@ -65,13 +65,13 @@ The single source of truth is `dashboards.json`. Reserved subpaths hold a "Comin
 ### How an update reaches the live site
 
 1. The dashboard bot pushes to **its own repo's `main`** as usual. It does not touch this repo.
-2. Every 15 minutes, `.github/workflows/sync-dashboards.yml` in this repo runs `scripts/sync_dashboards.py`. For each `live` entry in `dashboards.json` it:
+2. Every 15 minutes (cron `7,22,37,52 * * * *`, off the busy :00/:15 marks), `.github/workflows/sync-dashboards.yml` in this repo runs `scripts/sync_dashboards.py`. For each `live` entry in `dashboards.json` it:
    - shallow-clones the repo's `main` branch,
    - runs the `build` command, if there is one,
    - copies the publish dir (`public/`) to a temp folder and rewrites root-relative links (`href="/x"`, `src="/x"`, `url(/x)`, `fetch("/x")`) to `/<slug>/x`. It also changes the old `*.onrender.com` URL in og:url, canonical and og:image to `https://beacon-tools.onrender.com/<slug>/`, and adds the second GA tag (`G-FE6CZGWX0J`) next to `G-Z61EKRP8QV`,
    - replaces `/<slug>/` **only if clone and build both succeeded**. If anything fails, the previous version stays live,
    - points that dashboard's card in `tools.json` at `/<slug>/`.
-3. If anything changed, the workflow commits it to `main` and Render auto-deploys `beacon-tools`. An update is normally live 15 to 25 minutes after the dashboard repo's push. GitHub's scheduled runs can occasionally be late.
+3. If anything changed, the workflow commits it to `main` and Render auto-deploys `beacon-tools`. An update is normally live 15 to 25 minutes after the dashboard repo's push. GitHub's scheduled runs are best-effort: they can be late or skipped under load, and a newly added schedule may take an hour or more to start firing.
 
 Each subpath has a `.source` file showing the repo commit that is live (e.g. `/cartel/.source`).
 
