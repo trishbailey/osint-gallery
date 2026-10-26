@@ -717,12 +717,13 @@
   {
    "source": "cjng",
    "target": "viagras",
-   "kind": "rivalry",
-   "text": "War for Michoacán's Tierra Caliente.",
+   "kind": "alliance",
+   "text": "Allied with CJNG (per US Treasury, Aug 2025); earlier rivals in the war for Michoacán's Tierra Caliente.",
    "cites": [
+    "TREAS_VIAGRAS",
     "IC_CJNG"
    ],
-   "as_of": "2026-10-25"
+   "as_of": "2026-10-26"
   },
   {
    "source": "cjng",
