@@ -115,16 +115,6 @@
       "previewDriveId": "",
       "status": "live",
       "newTab": true
-    },
-    {
-      "id": "axis-network",
-      "name": "Axis Channel Network",
-      "blurb": "Findings map of how messages, websites and fundraising details move between Iran-aligned groups’ public Telegram, Eitaa and X channels, 20 Sep – 20 Oct 2026.",
-      "icon": "/icons/axis-network.svg",
-      "enterUrl": "https://beacon-tools.onrender.com/axis-network/",
-      "previewDriveId": "",
-      "status": "live",
-      "newTab": true
     }
   ],
   "dashboards": [
@@ -150,6 +140,14 @@
       "blurb": "Follows aid, financing and funding flows to and around Ukraine, with sources for each figure.",
       "icon": "",
       "enterUrl": "https://ukraine-money-flows.onrender.com/",
+      "status": "live"
+    },
+    {
+      "id": "axis-network",
+      "name": "Axis Channel Network",
+      "blurb": "Findings map of how messages, websites and fundraising details move between Iran-aligned groups’ public Telegram, Eitaa and X channels, 20 Sep – 20 Oct 2026.",
+      "icon": "/icons/axis-network.svg",
+      "enterUrl": "https://beacon-tools.onrender.com/axis-network/",
       "status": "live"
     }
   ]
