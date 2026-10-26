@@ -96,3 +96,5 @@ body.story #map{height:min(62vh,620px)}
 .b3l{width:max-content;transform:translate(-50%,-50%);background:#0b1526f0;border:1.5px solid;border-radius:6px;padding:2px 7px;white-space:nowrap;color:var(--text);font-size:13px;line-height:1.25}.b3l b{font-size:15px;margin-right:4px}
 .cn3{width:max-content;transform:translate(-50%,-50%);color:#fff;font-size:13px;font-weight:300;letter-spacing:.06em;text-shadow:0 0 3px #0b1526,0 0 3px #0b1526;white-space:nowrap}
 .pl{width:max-content;transform:translate(-50%,-50%);background:#0b1526e6;border:1px solid #f5f7fa;border-radius:4px;padding:1px 5px;font-size:13px;color:#f5f7fa;white-space:nowrap}
+/* phone: fixed-height chapter strip (long chapters scroll inside) so the map sits right under the card and nothing jumps on swipe */
+@media(max-width:700px){body.story .chapters{height:min(36svh,320px);align-items:stretch}body.story .chap{overflow-y:auto;overscroll-behavior:contain;max-height:100%;box-sizing:border-box}body.story #story{margin-bottom:8px}body.story #map{height:calc(100svh - min(36svh,320px) - 120px);min-height:340px}}
