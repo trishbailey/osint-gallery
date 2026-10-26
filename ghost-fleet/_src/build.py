@@ -4,8 +4,9 @@ Outputs data/map.json, data/profiles.json, data/tracks.json."""
 import json,os,glob,csv,collections,datetime as dt
 H=os.path.dirname(os.path.abspath(__file__)); D=os.path.join(H,"..","data")
 V=json.load(open(os.path.join(D,"vessels.json"))); EV=json.load(open(os.path.join(D,"events.json")))
-end=dt.datetime.fromisoformat(V["end"]); cut=(end-dt.timedelta(days=90)).strftime("%Y-%m-%d")
-vs={v["imo"]:v for v in V["vessels"]}
+end=dt.datetime.fromisoformat(V["end"]); cut=(end-dt.timedelta(days=json.load(open(os.path.join(H,"config.json")))["days_recent"])).strftime("%Y-%m-%d")
+vs={v["imo"]:v for v in V["vessels"] if not v.get("types") or any("tanker" in t for t in v["types"])}
+EV=[e for e in EV if e.get("imo") is None or e["imo"] in vs]
 mmsi2imo={h["mmsi"]:v["imo"] for v in V["vessels"] for h in v["history"] if h.get("mmsi")}
 recent=[e for e in EV if e["s"]>=cut]
 # SAR: aggregate to 0.05 degree cells
@@ -31,11 +32,8 @@ for f in glob.glob(os.path.join(D,"positions","*.csv")):
             try: pts[imo].append((ts.replace(" ","T")[:16],round(float(r["lat"]),3),round(float(r.get("lon") or r.get("longitude")),3))); extra+=1
             except Exception: pass
 tracks={i:sorted(set(p)) for i,p in pts.items() if len(p)>=2}
-HOT={ # name, kind, lat, lon, radius km  (areas named in public reporting; see README)
- "Laconian Gulf (Greece)":("sts",36.6,22.8,60),"Kalamata, off southern Greece":("sts",36.9,22.0,40),"Ceuta and Alboran Sea":("sts",35.9,-5.2,60),
- "Gulf of Oman off Fujairah and Sohar":("sts",25.2,56.8,120),"Malaysia, east of Singapore (EOPL)":("sts",1.5,104.6,80),"Off Lomé, Togo":("sts",5.9,1.3,80),
- "Primorsk":("load",60.35,28.68,25),"Ust-Luga":("load",59.68,28.4,25),"Novorossiysk":("load",44.7,37.8,30),"Taman":("load",45.1,36.7,25),"Kozmino":("load",42.73,133.0,30),"Murmansk":("load",69.0,33.1,40),
- "Danish straits":("choke",55.5,11.2,120),"Gulf of Finland":("choke",59.9,26.0,150)}
+CFG=json.load(open(os.path.join(H,"config.json")))
+HOT={k:(v["kind"],v["lat"],v["lon"],v["km"]) for k,v in CFG["hotspots"].items()}
 import math
 def near(lat,lon):
     for n,(k,a,b,r) in HOT.items():
@@ -46,6 +44,51 @@ for e in EV:
         n,k=near(e["lat"],e["lon"])
         if n: e["hz"]=n
 mapj["hot"]=[{"n":n,"k":k,"lat":a,"lon":b,"r":r} for n,(k,a,b,r) in HOT.items()]
+INF=json.load(open(os.path.join(D,"infra.json")))
+segs=[]
+for k,lst in INF.items():
+    for f in lst:
+        c=f["c"]
+        for i in range(len(c)-1):
+            (x1,y1),(x2,y2)=c[i],c[i+1]
+            segs.append((min(x1,x2)-.05,max(x1,x2)+.05,min(y1,y2)-.05,max(y1,y2)+.05,x1,y1,x2,y2,k,f["n"]))
+def nearinf(lat,lon):
+    kx=111*math.cos(math.radians(lat))
+    for a,b,c_,d,x1,y1,x2,y2,k,n in segs:
+        if not(a<=lon<=b and c_<=lat<=d): continue
+        px,py=(lon-x1)*kx,(lat-y1)*111; dx,dy=(x2-x1)*kx,(y2-y1)*111
+        L=dx*dx+dy*dy; t=0 if L==0 else max(0,min(1,(px*dx+py*dy)/L))
+        if math.hypot(px-t*dx,py-t*dy)<=2: return ("undersea cable " if k=="cable" else "pipeline ")+n
+    return None
+for e in EV:
+    if e["t"] in ("loitering","gap"):
+        n=nearinf(e["lat"],e["lon"])
+        if n: e["inf"]=n
+RM={"owner":"Registered owner","commerce manager":"Commercial manager","security manager":"Safety (ISM) manager","P&I Club":"Insurer (P&I club)"}
+OW=json.load(open(os.path.join(D,"owners.json"))) if os.path.exists(os.path.join(D,"owners.json")) else {}
+OW={i:[{**x,"role":RM[x["role"]]} for x in L if x["role"] in RM] for i,L in OW.items()}
+JAM=json.load(open(os.path.join(D,"jam.json"))) if os.path.exists(os.path.join(D,"jam.json")) else None
+try: import h3
+except ImportError: h3=None
+def jammed(e):
+    if not (JAM and h3): return False
+    d=JAM["days"].get(e["s"][:10]); 
+    if not d: return False
+    return h3.latlng_to_cell(e["lat"],e["lon"],4) in {h for h,_ in d}
+for e in EV:
+    if e["t"]=="gap" and jammed(e): e["jam"]=1
+# networks: companies (owner/commercial/ISM) linked to 3+ listed ships
+co=collections.defaultdict(set); cinfo={}
+for i,L in OW.items():
+    for x in L:
+        if x["role"].startswith("Insurer"): continue
+        k=x["name"].strip().upper(); co[k].add(i); cinfo[k]={"name":x["name"],"country":x["country"]}
+nets=sorted([{"name":cinfo[k]["name"],"country":cinfo[k]["country"],"ships":sorted(v)} for k,v in co.items() if len(v)>=3],key=lambda n:-len(n["ships"]))[:40]
+addr=collections.defaultdict(set)
+for i,L in OW.items():
+    for x in L:
+        if x.get("address") and len(x["address"])>12: addr[x["address"].strip().upper()].add(x["name"].strip().upper())
+shared=[{"address":a.title(),"companies":sorted(c)} for a,c in addr.items() if len(c)>=3]
 # profiles
 def top(c,n=5): return [[k,v] for k,v in c.most_common(n)]
 prof={}
@@ -75,13 +118,26 @@ for imo,v in vs.items():
     if sts: notes.append("Loitered in areas where ship-to-ship oil transfers are often reported: "+", ".join(f"{k} ({v}×)" for k,v in sts.most_common(3))+".")
     ld=collections.Counter(e["hz"] for e in new if e["t"]=="port" and HOT.get(e.get("hz"),("",))[0]=="load")
     if ld: notes.append("Called at Russian oil-loading ports: "+", ".join(f"{k} ({v}×)" for k,v in ld.most_common(3))+".")
+    ci=collections.Counter(e["inf"] for e in new if e.get("inf"))
+    if ci: notes.append("Loitered or went silent within about 2 km of seabed infrastructure: "+", ".join(f"{k} ({v}×)" for k,v in ci.most_common(3))+".")
     gz=[e for e in new if e["t"]=="gap"]
     if gz: notes.append(f"Transponder went silent {len(gz)} time(s) in the last 90 days, for {round(sum(e.get('hrs',0) for e in gz))} hours in total.")
+    ow=OW.get(imo,[])
+    nown=len({x["name"].upper() for x in ow if x["role"]=="Registered owner"}); nman=len({x["name"].upper() for x in ow if "manager" in x["role"]})
+    if nown>=3 or nman>=4: notes.append(f"Ownership churn: {nown} registered owners and {nman} managers on record.")
+    ins=[e for e in new if e["t"]=="loitering" and e.get("hz") and HOT[e["hz"]][0]=="sts"]
+    if ins:
+        out_=sum(1 for e in ins if not e.get("eez")); notes.append(f"Of its loitering in transfer areas, {out_} event(s) were on the high seas and {len(ins)-out_} inside a coastal state's exclusive economic zone (EEZ).")
+    gj=[e for e in new if e["t"]=="gap"]
+    if gj:
+        nj=sum(1 for e in gj if e.get("jam"))
+        notes.append(f"{nj} of {len(gj)} recent transponder gaps began where aircraft reported GPS interference that day, which can explain lost signals; the other {len(gj)-nj} began in areas without reported interference, more consistent with a deliberate switch-off." )
     nn=len({h["name"] for h in v["history"] if h["name"]}); nf=len({h["flag"] for h in v["history"] if h["flag"]})
     if nn>=3 or nf>=3: notes.append(f"Identity churn: {nn} names and {nf} flags appear in its tracking history.")
     prof[imo]={"imo":imo,"name":(max(v["history"],key=lambda h:h["to"] or "")["name"] if v["history"] else None) or v["name"],"history":v["history"],"owners":v["owners"],
-      "base":base,"portsBefore":top(po),"portsRecent":top(pn),"notes":notes,"n90":len(new)}
+      "base":base,"portsBefore":top(po),"portsRecent":top(pn),"notes":notes,"companies":ow,"churn":[nn,nf,nown,nman],"n90":len(new)}
+mapj["nets"]=nets;mapj["shared"]=shared
 for n,o in (("map.json",mapj),("tracks.json",tracks),("profiles.json",prof)):
     json.dump(o,open(os.path.join(D,n),"w"),separators=(",",":"),ensure_ascii=False)
-print("events90",collections.Counter(e["t"] for e in vev),"sarcells",len(mapj["sar"]),"tracks",len(tracks),"csvpts",extra,
+print("near-infra",sum(1 for e in vev if e.get("inf")),"events90",collections.Counter(e["t"] for e in vev),"sarcells",len(mapj["sar"]),"tracks",len(tracks),"csvpts",extra,
       "pts/track median",sorted(len(t) for t in tracks.values())[len(tracks)//2] if tracks else 0)

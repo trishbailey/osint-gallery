@@ -11,6 +11,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
+      - run: pip install h3 shapely
+      - name: Reference layers, ownership, GPS interference (each keeps old file on failure)
+        run: |
+          python3 ghost-fleet/_src/layers.py || true
+          python3 ghost-fleet/_src/owners.py || true
+          python3 ghost-fleet/_src/jam.py || true
       - name: Fetch Global Fishing Watch events (keeps previous data on failure)
         env: {GFW_API_TOKEN: "${{ secrets.GFW_API_TOKEN }}"}
         run: python3 ghost-fleet/_src/fetch.py

@@ -16,3 +16,12 @@ Put CSVs in `ghost-fleet/data/positions/` with columns `imo` or `mmsi`, `timesta
 
 ## Hotspots
 Defined in `build.py` (HOT): transfer areas, Russian loading ports and Baltic chokepoints named consistently in public reporting.
+
+## Other scripts (run daily by the workflow, each keeps its previous output on failure)
+- `config.json`: windows, hotspots (transfer areas, loading ports, chokepoints) and radar boxes.
+- `layers.py`: Marine Regions EEZ boundaries (CC BY 4.0) -> data/eez.json; NGA World Port Index (public domain) -> data/wpi.json.
+- `owners.py`: owner / manager / ISM / P&I links from OpenSanctions `ua_war_sanctions` FtM -> data/owners.json.
+- `jam.py`: gpsjam.org daily H3-4 hexes (>=5 aircraft, >=2% bad; strong >10%) -> data/jam.json. Licence not stated by gpsjam.org; confirm before wider reuse.
+- Cables: TeleGeography (CC BY-NC-SA); pipelines: EMODnet Human Activities (CC BY 4.0) -> data/infra.json (static).
+- Only vessels GFW classes as tankers (or unclassified) are shown; other listed ship types are dropped in build.py.
+- Skipped: NASA FIRMS (needs MAP_KEY), EIA prices (needs key, no Urals series).

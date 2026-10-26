@@ -19,11 +19,14 @@ def req(path,body=None,tries=5):
 def resolve(v):
     q=urllib.parse.urlencode({"query":v["imo"],"datasets[0]":"public-global-vessel-identity:latest","limit":20})
     j=req("/vessels/search?"+q) or {}
-    ids,names,flags,mmsis,owners,reg=[],[],[],[],[],[]
+    ids,names,flags,mmsis,owners,reg=[],[],[],[],[],[]; types=set()
     for e in j.get("entries",[]):
         sr=[s for s in e.get("selfReportedInfo",[]) if s.get("imo")==v["imo"]]
         rg=[s for s in e.get("registryInfo",[]) if s.get("imo")==v["imo"]]
         if not sr and not rg: continue
+        for c in e.get("combinedSourcesInfo",[]):
+            for t in c.get("vesselClassSc",[])+c.get("shiptypes",[]): types.add(str(t.get("value") or t.get("name")).lower())
+        for r_ in rg: types.update(g.lower() for g in r_.get("geartypes",[]))
         for s in e.get("selfReportedInfo",[]):
             ids.append(s["id"])
             reg.append({"name":s.get("shipname"),"flag":s.get("flag"),"mmsi":s.get("ssvid"),
@@ -36,7 +39,7 @@ def resolve(v):
         if k in seen: continue
         seen.add(k); hist.append(h)
     oseen=set(); own=[o for o in owners if not ((o["name"],o["from"]) in oseen or oseen.add((o["name"],o["from"])))]
-    return {**{k:v[k] for k in ("imo","name","mmsi")},"gfwIds":sorted(set(ids)),"history":hist,"owners":own}
+    return {**{k:v[k] for k in ("imo","name","mmsi")},"gfwIds":sorted(set(ids)),"history":hist,"owners":own,"types":sorted(types)}
 DS={"port":"public-global-port-visits-events:latest","encounter":"public-global-encounters-events:latest",
     "loitering":"public-global-loitering-events:latest","gap":"public-global-gaps-events:latest"}
 def events(kind,ids,start,end):
@@ -51,6 +54,8 @@ def events(kind,ids,start,end):
 def slim(kind,e):
     p=e.get("position") or {}
     d={"t":kind,"s":e["start"][:16],"e":(e.get("end") or e["start"])[:16],"lat":round(p.get("lat",0),3),"lon":round(p.get("lon",0),3),"v":e["vessel"]["id"]}
+    rg=e.get("regions") or {}
+    d["eez"]=1 if rg.get("eez") else 0
     if kind=="port":
         a=(e.get("port_visit") or {}).get("intermediateAnchorage") or {}
         d["port"]=a.get("name");d["pf"]=a.get("flag")
@@ -65,8 +70,8 @@ def slim(kind,e):
     if kind=="loitering":
         d["hrs"]=round((e.get("loitering") or {}).get("totalTimeHours") or 0,1)
     return d
-SAR_BOXES={"Gulf of Finland":[22,59,30.5,60.8],"Danish straits":[9.5,54.3,13.5,58],"Gulf of Laconia":[22,36,23.8,36.9],
- "Kerch Strait and Taman":[35.5,44.6,38,45.6],"Strait of Gibraltar and Ceuta":[-6.5,35.5,-3.5,36.6],"Gulf of Oman":[55.5,24,58.8,26.5],"Malaysia EOPL (east of Singapore)":[104,1,105,2]}
+CFG=json.load(open(os.path.join(HERE,"config.json")))
+SAR_BOXES=CFG["sar_boxes"]
 def sar(start,end):
     out=[]
     for name,(a,b,c,d) in SAR_BOXES.items():
@@ -79,12 +84,12 @@ def sar(start,end):
                     out.append({"t":"sar","s":(r.get("entryTimestamp") or r["date"])[:16],"lat":round(r["lat"],3),"lon":round(r["lon"],3),"n":r.get("detections",1),"area":name})
     return out
 def main():
-    seed=json.load(open(os.path.join(HERE,"vessels_seed.json")))
+    seed=json.load(open(os.path.join(HERE,CFG["seed"])))
     with cf.ThreadPoolExecutor(8) as ex: vs=list(ex.map(resolve,seed))
     ok=[v for v in vs if v["gfwIds"]]
     print(f"resolved {len(ok)}/{len(seed)}")
     idmap={i:v["imo"] for v in ok for i in v["gfwIds"]}
-    allids=list(idmap); end=dt.date.today(); start=end-dt.timedelta(days=365)
+    allids=list(idmap); end=dt.date.today(); start=end-dt.timedelta(days=CFG["days_baseline"])
     batches=[allids[i:i+40] for i in range(0,len(allids),40)]
     evs=[]
     jobs=[(k,b) for k in DS for b in batches]
@@ -93,7 +98,7 @@ def main():
             evs+=[slim(k,e) for e in res]
     for e in evs: e["imo"]=idmap.get(e.pop("v"))
     evs=[e for e in evs if e["imo"]]
-    sar_start=end-dt.timedelta(days=90)
+    sar_start=end-dt.timedelta(days=CFG["days_recent"])
     evs+=sar(str(sar_start),str(end))
     evs.sort(key=lambda e:e["s"])
     if len(evs)<100: sys.exit("too few events; keeping previous data")

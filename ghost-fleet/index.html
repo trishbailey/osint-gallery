@@ -1,14 +1,22 @@
 <!doctype html><html lang="en"><head><script data-slash-fix>if(location.pathname==="/ghost-fleet")location.replace("/ghost-fleet/"+location.search+location.hash);</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Russia's Shadow Fleet Tracker | Beacon Intelligence Group</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-FE6CZGWX0J');gtag('config','G-Z61EKRP8QV');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Z61EKRP8QV');</script>
 <link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css?v=1"></head><body>
 <header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">SHADOW FLEET · v1</span></a>
 <nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#map">Map</a><a href="#vessels">Ships</a><a href="../ukraine-money-flows/">Ukraine Money Flows</a></nav></header>
 <div class="layout">
+<button id="ftoggle" aria-expanded="false" aria-controls="side">☰ Filters and layers</button>
 <aside id="side" aria-label="Map filters and key">
  <h2 class="sh" id="tprompt">Show on map</h2>
  <div class="legend" id="legend" role="group" aria-labelledby="tprompt"></div>
+ <h2 class="sh">Seabed infrastructure</h2>
+ <button class="hl wide" id="infra" aria-pressed="false"><span class="ln" style="background:#5cc98a"></span>Undersea cables <span class="ln" style="background:#f2d16b"></span>Pipelines (Europe)</button>
+ <h2 class="sh">Reference layers</h2>
+ <button class="hl wide" id="eezb" aria-pressed="false"><span class="ln" style="background:#6fc3c9"></span>Maritime boundaries (EEZ)</button>
+ <button class="hl wide" id="wpib" aria-pressed="false"><span class="sw sq" style="background:#d97cb0"></span>World ports</button>
+ <button class="hl wide" id="jamb" aria-pressed="false"><span class="sw sq" style="background:#b06ac9"></span>GPS interference <span class="sw sq" style="background:#d94f8a"></span>strong</button>
+ <div class="muted">GPS interference follows the Ship movements date.</div>
  <h2 class="sh"><label for="from">Dates shown</label></h2>
  <div class="dates"><input type="range" id="from" aria-label="Start date"><input type="range" id="to" aria-label="End date"><div id="datelbl" class="muted"></div></div>
  <h2 class="sh"><label for="q">Find a ship</label></h2>
@@ -23,12 +31,12 @@
 </aside>
 <main>
 <h1 id="title">Where Russia's shadow-fleet tankers go</h1>
-<p class="intro">Russia moves much of its seaborne oil on ageing tankers with opaque owners, frequent name and flag changes and patchy insurance, often called the shadow fleet. This page follows about 850 of these ships, using public ship-tracking data from Global Fishing Watch for the last 90 days: port calls, loitering at sea (a common sign of ship-to-ship oil transfers), switched-off AIS transponders, and radar satellite detections of ships that broadcast no identity. Use the left panel to choose layers, dates or one ship, press Play to watch the fleet move, and click any ship for its history.</p>
+<p class="intro">Russia moves much of its seaborne oil on ageing tankers with opaque owners, frequent name and flag changes and patchy insurance, often called the shadow fleet. This page follows about 660 of these tankers, using public ship-tracking data from Global Fishing Watch for the last 90 days: port calls, loitering at sea (a common sign of ship-to-ship oil transfers), switched-off AIS transponders, and radar satellite detections of ships that broadcast no identity. Use the left panel to choose layers, dates or one ship, press Play to watch the fleet move, and click any ship for its history.</p>
 <div class="stats" id="stats" aria-live="polite"></div>
 <div class="banner" role="note">Hover a dot for details; click a ship's dot or table row to open its profile.</div>
 <div id="map" role="region" aria-label="Map of shadow-fleet tanker activity"></div>
 <p class="note">Moving ships travel in straight lines between recorded positions (port calls, loitering and transponder-gap points), so a path may cross land. Radar detections cover selected chokepoints only.</p>
-<section id="explainer"><h2>The shadow fleet in brief</h2>
+<details id="explainer" class="grp" open><summary><h2>The shadow fleet in brief</h2></summary>
 <div class="cards">
 <details class="card" open><summary>Why it is called a shadow fleet</summary>
 <p>Most of these ships are old tankers, often 15 to 20 years or more, bought cheaply as mainstream owners retired them. Each one usually sits in its own shell company registered in places such as the Marshall Islands, Mauritius or the United Arab Emirates, so the real owner is hard to see.</p>
@@ -39,17 +47,21 @@
 <button class="hl" data-k="sts">Show transfer areas on the map</button></details>
 <details class="card"><summary>What it carries and what risks it brings</summary>
 <p>The fleet carries Russian crude oil and refined products to buyers outside the Western price-cap system, keeping export revenue flowing to Moscow despite Western restrictions.</p>
-<p>Its age and weak insurance raise the risk of a spill that no insurer would cover. A tanker lost power and drifted off Germany's Rügen island in January 2025 carrying about 100,000 tonnes of oil. In December 2024 a tanker leaving a Russian port dragged its anchor across the Gulf of Finland, and Finnish prosecutors charged its officers over damage to undersea power and data cables.</p></details>
+<p>Its age and weak insurance raise the risk of a spill that no insurer would cover. A tanker lost power and drifted off Germany's Rügen island in January 2025 carrying about 100,000 tonnes of oil. On 25 December 2024 the tanker Eagle S, which had loaded at a Russian port, dragged its anchor across the Gulf of Finland and cut the Estlink 2 power cable and four data cables. Finnish prosecutors charged its officers with negligence, not deliberate sabotage, and whether the damage was intended remains disputed. A Helsinki court dismissed the case in October 2025 for lack of Finnish jurisdiction. The Court of Appeal reversed that in August 2026 and sent the case back for trial, and that decision can still be appealed.</p>
+<button class="hl" data-x="infra">Show undersea cables and pipelines on the map</button></details>
 <details class="card"><summary>Where it goes</summary>
 <p>Western cargoes load at Primorsk and Ust-Luga on the Baltic, Novorossiysk on the Black Sea, and Murmansk in the Arctic. Pacific cargoes load at Kozmino near Nakhodka.</p>
 <p>Baltic ships pass through the Gulf of Finland and the Danish straits. Transfers cluster off southern Greece, near Ceuta at the Strait of Gibraltar, in the Gulf of Oman and east of Singapore off Malaysia. The main buyers are India, China and Turkey.</p>
 <button class="hl" data-k="load">Show loading ports on the map</button> <button class="hl" data-k="choke">Show Baltic routes on the map</button></details>
-</div></section>
-<section id="charts"><h2>Busiest ports for these ships, last 90 days</h2><div id="ports" class="bars"></div></section>
-<section id="vessels"><h2>Ships by activity, last 90 days</h2><p class="muted">Click a ship to open its profile.</p><div id="vt"></div></section>
+</div></details>
+<details id="charts" class="grp" open><summary><h2>Busiest ports for these ships, last 90 days</h2></summary><div id="ports" class="bars"></div></details>
+<details id="networks" class="grp" open><summary><h2>Company networks</h2></summary><p class="muted">Companies that own or manage three or more of these ships. Select a company to show its ships on the map.</p><div id="nets" class="cards"></div><div id="addr"></div></details>
+<details id="vessels" class="grp" open><summary><h2>Ships by activity, last 90 days</h2></summary><p class="muted">Click a ship to open its profile.</p><div id="vt"></div></details>
 <details class="sources"><summary>Sources and notes</summary><ol id="srcs">
 <li><a href="https://globalfishingwatch.org" target="_blank" rel="noopener">Powered by Global Fishing Watch.</a> Datasets: public-global-port-visits-events, public-global-loitering-events, public-global-gaps-events, public-global-encounters-events, public-global-sar-presence (v5.0), <span id="drange"></span>. Data accessed <span id="acc"></span> at https://globalfishingwatch.org/our-apis/. Events are model estimates from AIS and satellite radar; licence CC BY-NC 4.0.</li>
 <li>Ship list compiled from public UK and US government designations of tankers carrying Russian oil, via <a href="https://www.opensanctions.org" target="_blank" rel="noopener">OpenSanctions</a>.</li>
+<li>Undersea telecom cables: TeleGeography Submarine Cable Map (CC BY-NC-SA). European pipelines: EMODnet Human Activities (CC BY 4.0). Simplified to about 1 km.</li>
+<li>Maritime boundaries: Marine Regions, Flanders Marine Institute (VLIZ), CC BY 4.0. Ports: NGA World Port Index (Pub. 150), public domain. Company roles: Defence Intelligence of Ukraine War&amp;Sanctions data via OpenSanctions (CC BY-NC 4.0). GPS interference: gpsjam.org, from ADS-B Exchange aircraft reports.</li>
 <li>Basemap: <a href="https://www.naturalearthdata.com" target="_blank" rel="noopener">Natural Earth</a>. Map library: Leaflet.</li>
 </ol></details>
 </main></div>

@@ -39,3 +39,21 @@ tbody tr{cursor:pointer}tbody tr:hover,tbody tr:focus{background:var(--panel)}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 14px}.card summary{cursor:pointer;font-weight:600;color:var(--gold);min-height:32px}
 .card p{margin:8px 0}.hl{min-height:44px;background:var(--panel2);color:var(--gold);border:1px solid var(--gold);border-radius:6px;padding:6px 12px;cursor:pointer;font-size:14px;margin:4px 4px 0 0}.hl[aria-pressed=true]{background:var(--gold);color:var(--bg)}
+.hl.wide{width:100%;display:flex;align-items:center;gap:6px;flex-wrap:wrap;color:var(--text)}.ln{display:inline-block;width:18px;height:3px;border-radius:2px}
+#ftoggle{display:none}
+.clu{border-radius:50%;background:rgba(15,27,49,.9);border:3px solid;color:#e6e9ef;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+@media(max-width:700px){
+ #ftoggle{display:block;position:sticky;top:0;z-index:1500;width:100%;min-height:48px;background:var(--panel);color:var(--gold);border:0;border-bottom:1px solid var(--line);font-size:15px;font-weight:600}
+ aside{display:none}aside.open{display:block}
+ header nav{display:flex;flex-wrap:wrap;gap:6px}nav a{margin-left:0}
+ main{padding:12px}h1{font-size:21px}.intro{font-size:14px}
+ .stats{flex-wrap:nowrap;overflow-x:auto;gap:6px}.stat{min-width:110px;padding:5px 10px}.stat b{font-size:17px}.stat span{font-size:12px}
+ #map{height:55vh;min-height:340px}
+ .cards{grid-template-columns:1fr}.card:not([open]){padding:6px 12px}
+ .panel{top:auto;bottom:0;width:100%;height:78vh;border-left:0;border-top:2px solid var(--gold);border-radius:14px 14px 0 0}
+ #vt table th:nth-child(2),#vt table td:nth-child(2),#vt table th:nth-child(3),#vt table td:nth-child(3){display:none}
+}
+.grp>summary{cursor:pointer;list-style:none}.grp>summary h2{display:inline-block}.grp>summary::before{content:"▾ ";color:var(--gold)}.grp:not([open])>summary::before{content:"▸ "}
+.sw.sq{border-radius:2px;width:12px;height:12px;display:inline-block}.net .hl{width:100%;text-align:left;color:var(--text)}.chip[role=button]{cursor:pointer}
+.hl.wide[aria-pressed=true]{background:var(--panel2);border:2px solid var(--gold);color:var(--text)}
+@media(max-width:700px){.stat{min-width:auto}.stat b{display:inline;font-size:16px;margin-right:4px}.stat span{display:inline;white-space:nowrap}.banner{font-size:13px}}
