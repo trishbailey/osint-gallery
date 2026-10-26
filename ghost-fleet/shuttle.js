@@ -39,16 +39,24 @@ const lead=(x1,y1,x2,y2)=>`<line class="lead" x1="${x1}" y1="${y1}" x2="${x2}" y
 const lk=S.ports.find(p=>p.port==="LONGKOU")||S.ports[0];
 document.getElementById("shmap").innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Map of the tanker route from Kozmino in Russia to ports in Shandong, China">
 <g data-ci-ignore><rect width="${W}" height="${H}" fill="#0d1d36"/><g fill="#1b2d4d" stroke="#2c4470" stroke-width=".6">${land}</g></g>
-<path d="${rd}" fill="none" stroke="#c8a24a" stroke-width="2.4" stroke-linejoin="round" opacity=".95"><title>Kozmino to Shandong: ${S.kozChina} voyages in 12 months</title></path>
+<path d="${rd}" fill="none" id="shroute" stroke="#c8a24a" stroke-width="1.5" stroke-linejoin="round" opacity=".7"><title>Kozmino to Shandong: ${S.kozChina} voyages in 12 months</title></path>
 <path d="${rd}" fill="none" stroke="transparent" stroke-width="14" class="hit" data-tip="Kozmino → China: ${S.kozChina} loaded voyages in 12 months, median ${S.transitKozCHN} days at sea"/>
-<g transform="translate(${mid[0].toFixed(1)},${mid[1].toFixed(1)}) rotate(${ang.toFixed(0)})"><path d="M-7,-5 L5,0 L-7,5 Z" fill="#c8a24a"/></g>
+<g class="sarr" transform="translate(${mid[0].toFixed(1)},${mid[1].toFixed(1)}) rotate(${ang.toFixed(0)})"><path d="M-7,-5 L5,0 L-7,5 Z" fill="#c8a24a"/></g>
 ${pts}
 <circle class="sport" cx="${kz[0].toFixed(1)}" cy="${kz[1].toFixed(1)}" r="8" fill="#5cc98a" stroke="#0b1526" stroke-width="2" tabindex="0" data-tip="Kozmino, Russia: oil loading terminal on the Pacific coast"><title>Kozmino (loading port, Russia)</title></circle>
 ${lead(kz[0]-4,kz[1]+8,X(133.2),Y(39.9))}${lead(X(lk.lon)+10,Y(lk.lat),X(123.6),Y(36.4))}${lead(X(126.5),Y(33.6),X(126.3),Y(32.2))}
 </svg>
 <div class="callout" style="left:${(X(131.6)/W*100).toFixed(1)}%;top:${(Y(39.9)/H*100).toFixed(1)}%"><b>${S.coreKozPct}%</b> of the core ships' voyages load at Kozmino</div>
 <div class="callout" style="left:${(X(122.0)/W*100).toFixed(1)}%;top:${(Y(35.6)/H*100).toFixed(1)}%"><b>${shan}</b> of ${S.kozChina} Kozmino-to-China voyages end at Shandong ports</div>
-<div class="callout" style="left:${(X(123.6)/W*100).toFixed(1)}%;top:${(Y(31.6)/H*100).toFixed(1)}%">Oil loaded at Kozmino sails about ${Math.round(S.transitKozCHN)} days to Shandong</div>`;
+<div class="callout" style="left:${(X(123.6)/W*100).toFixed(1)}%;top:${(Y(31.6)/H*100).toFixed(1)}%">The line shows the sea route. Oil loaded at Kozmino sails about ${Math.round(S.transitKozCHN)} days to Shandong</div>`;
+// flowing chevrons along the route (shows the route, not ship positions)
+(()=>{const svg=document.querySelector("#shmap svg"),pth=svg.querySelector("#shroute");if(!pth||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ svg.querySelector(".sarr").style.display="none";const len=pth.getTotalLength(),g=document.createElementNS("http://www.w3.org/2000/svg","g");svg.insertBefore(g,svg.querySelector(".sport"));
+ let ch=[],sc=1,t0=null,vis=true;
+ function build(){sc=svg.getBoundingClientRect().width/W||1;const gap=200/sc;g.innerHTML="";ch=[];for(let d=0;d<len;d+=gap){const e=document.createElementNS("http://www.w3.org/2000/svg","path");e.setAttribute("d","M-4,-3.5 L2,0 L-4,3.5");e.setAttribute("fill","none");e.setAttribute("stroke","#c8a24a");e.setAttribute("stroke-width","1.6");e.setAttribute("stroke-linecap","round");e.setAttribute("opacity",".9");g.appendChild(e);ch.push([e,d])}}
+ build();addEventListener("resize",build);new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(svg);
+ function f(ts){if(t0===null)t0=ts;if(vis){const off=((ts-t0)/1000*16/sc)%(200/sc);ch.forEach(([e,d])=>{const L_=(d+off)%len,a=pth.getPointAtLength(L_),b=pth.getPointAtLength(Math.min(len,L_+1));e.setAttribute("transform",`translate(${a.x.toFixed(1)},${a.y.toFixed(1)}) rotate(${(Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI).toFixed(0)}) scale(${(1/Math.max(sc,.5)).toFixed(2)})`)})}requestAnimationFrame(f)}
+ requestAnimationFrame(f)})();
 // tooltips on hover or tap
 const tip=document.getElementById("shtip"),box=document.getElementById("shmap");
 box.addEventListener("pointermove",e=>{const t=e.target.closest("[data-tip]");if(!t){tip.hidden=true;return}const r=box.parentElement.getBoundingClientRect();tip.textContent=t.dataset.tip;tip.hidden=false;tip.style.left=Math.min(e.clientX-r.left+12,r.width-200)+"px";tip.style.top=(e.clientY-r.top+12)+"px"});
@@ -57,8 +65,9 @@ box.addEventListener("focusin",e=>{const t=e.target.closest("[data-tip]");if(t){
 // turnaround bars
 document.getElementById("shcyc").innerHTML=["CHN","IND","TUR"].map(k=>{const c=cy[k];return`<div class="srow" title="${esc(CN[k])}: median ${c.days} days between loads (${c.n} cycles)"><span class="sl">${flag(k)}${CN[k]}</span><span class="st"><i style="width:${(100*c.days/big).toFixed(1)}%;background:${CC[k]}"></i></span><b>${c.days} days</b></div>`}).join("");
 // concentration bar
-document.getElementById("shconc").innerHTML=`<div class="cbar" title="${S.core} of ${S.ships} ships"><span class="cl">Ships</span><span class="ct"><i style="width:${S.coreShipPct}%;background:#c8a24a"></i><i style="width:${100-S.coreShipPct}%;background:#2f6db5"></i></span><b>${S.coreShipPct}%</b></div>
-<div class="cbar" title="${S.coreVoy} of ${S.voyages} voyages"><span class="cl">Voyages</span><span class="ct"><i style="width:${S.coreVoyPct}%;background:#c8a24a"></i><i style="width:${100-S.coreVoyPct}%;background:#2f6db5"></i></span><b>${S.coreVoyPct}%</b></div>`;
+const dots=(n,k,lab,big,unit)=>{const C=40,r=Math.ceil(n/C),g=10;let c="";for(let i=0;i<n;i++)c+=`<circle cx="${(i%C)*g+5}" cy="${Math.floor(i/C)*g+5}" r="3.6" fill="${i<k?"#c8a24a":"#3f7fd0"}"/>`;
+ return`<div class="dg" title="${k} of ${n} ${unit}"><div class="dgh"><b>${big}%</b><span>of ${lab}: ${k} of ${n}</span></div><svg viewBox="0 0 ${C*g} ${r*g}" role="img" aria-label="${k} of ${n} ${unit} are core ships">${c}</svg></div>`};
+document.getElementById("shconc").innerHTML=dots(S.ships,S.core,"ships",S.coreShipPct,"ships")+dots(S.voyages,S.coreVoy,"voyages",S.coreVoyPct,"voyages");
 document.getElementById("shmore").innerHTML=`<p>None of the ${S.balticShips} ships that loaded at Primorsk or Ust-Luga on the Baltic made more than ${S.balticMax} voyages. The two buyers also draw on largely separate ships: of ${S.repeatIC} ships with two or more voyages to India or China, ${S.repeatOnePct}% served only one of them.</p>
 <p>The core ships mostly do not fly the Russian flag. The busiest fly ${fNow.map(f=>`<span class="nw">${flag(f[0])}${esc(CN[f[0]]||f[0])}</span>`).join(", ")} flags.</p>`;
 document.getElementById("shnote").textContent=`Voyages run from a call at a Russian loading terminal to the next foreign port call, ${S.window[0]} to ${S.window[1]}. Core ships made 5 or more voyages. Turnaround is the median time from one load to the next, for ships not flying the Russian flag at loading (China ${cy.CHN.n}, India ${cy.IND.n}, Turkey ${cy.TUR.n} cycles). Port visits the tracking misses make a cycle look longer. October 2025 and October 2026 are partial months.`;
