@@ -21,3 +21,8 @@ fetch("data/group_countries.json").then(r=>r.json()).then(GCN=>{
   note.innerHTML=`<b>Countries:</b> ${g.countries.map(c=>flag(c.iso)+" "+esc(NM[c.iso]||c.iso)).join(" · ")}`+(out.length?` — <b>Also active outside the map:</b> ${out.map(c=>esc(NM[c.iso]||c.iso)+ct(c.cites)).join(", ")}`:"")});
 }).catch(e=>console.warn("group_countries",e));
 })();
+/* Name the selected state in the map title (group + view). */
+(()=>{const h=document.querySelector(".maptile h2");if(!h)return;const base="Who is active where";
+ const upd=()=>{const g=document.querySelector("#grouplegend .chip.on");const v=document.querySelector(".viewbtns .chip.on");
+  h.textContent=`${base}: ${g&&g.dataset.g?g.textContent.trim():"all groups"}${v?" · "+v.textContent.trim():""}`};
+ document.addEventListener("click",e=>{if(e.target.closest("#grouplegend .chip,.viewbtns .chip"))setTimeout(upd,0)});setTimeout(upd,1500);setTimeout(upd,4000)})();

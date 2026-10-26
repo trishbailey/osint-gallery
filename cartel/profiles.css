@@ -4,21 +4,21 @@
 .pfcard{background:rgba(255,255,255,.03);border:1px solid #26385a;border-top:5px solid var(--c);border-radius:8px;padding:0 12px 10px;overflow:hidden}
 .pfcard.hl{box-shadow:0 0 0 2px var(--c)}
 .pfimg{margin:0 -12px 6px}.pfimg img{display:block;width:100%;height:120px;object-fit:cover}
-.pfimg figcaption{font-size:10.5px;color:#8593a8;padding:2px 12px}.pfimg figcaption a{color:#8593a8}
+.pfimg figcaption{font-size:13px;color:#8593a8;padding:2px 12px}.pfimg figcaption a{color:#8593a8}
 .pfcard h3{margin:8px 0 0;font-size:16px;color:var(--c)}
-.pfabbr{font-size:12.5px;color:#c9d2df}
+.pfabbr{font-size:13px;color:#c9d2df}
 .pfwhat{margin:6px 0;font-size:14px;line-height:1.35}
 .pffound{font-size:13px;margin-bottom:6px}
 .pfflags{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin-bottom:6px}
 .pfflag{font-size:22px;line-height:1;cursor:default;position:relative}
-.pfcn{display:none;position:absolute;bottom:110%;left:50%;transform:translateX(-50%);background:#0b1526;border:1px solid var(--c);font-size:12px;padding:2px 6px;border-radius:4px;white-space:nowrap;z-index:5}
+.pfcn{display:none;position:absolute;bottom:110%;left:50%;transform:translateX(-50%);background:#0b1526;border:1px solid var(--c);font-size:13px;padding:2px 6px;border-radius:4px;white-space:nowrap;z-index:5}
 .pfflag:hover .pfcn{display:block}
 .pflines{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px}
-.pfchip{font-size:12.5px;padding:2px 8px;border-radius:12px;background:color-mix(in srgb,var(--c) 22%,transparent);border:1px solid var(--c);white-space:nowrap}
-.pfmemh{font-size:12.5px;font-weight:600;margin-top:4px}
+.pfchip{font-size:13px;padding:2px 8px;border-radius:12px;background:color-mix(in srgb,var(--c) 22%,transparent);border:1px solid var(--c);white-space:nowrap}
+.pfmemh{font-size:13px;font-weight:600;margin-top:4px}
 .pfchart{width:100%;height:auto;display:block}
-.pfchart text{fill:#d7deea;font-size:11px}.pfchart text.v{font-weight:600}
+.pfchart text{fill:#d7deea;font-size:13px}.pfchart text.v{font-weight:600}
 .pfnochart{font-size:13px;color:#c9d2df;padding:8px 0;font-style:italic}
-.pfnote{font-size:11px;color:#8593a8;line-height:1.3}
+.pfnote{font-size:13px;color:#8593a8;line-height:1.3}
 .pfmore summary{cursor:pointer;color:var(--c);font-size:13px;margin-top:6px}
 .pfmore p{font-size:13px;line-height:1.4;margin:5px 0}

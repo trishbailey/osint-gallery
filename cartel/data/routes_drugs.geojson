@@ -2,7 +2,7 @@
  "type": "FeatureCollection",
  "channel": "drugs",
  "notes": {
-  "note": "Cocaine (solid), precursors (dotted), synthetics: fentanyl/meth (dashed). Lines are schematic corridors between places named in sources, drawn along sea lanes, not tracks. Use the World view to see Europe, West Africa and Asia endpoints; the Asia-Pacific legs wrap across the map edge.",
+  "note": "Covers cocaine, precursor chemicals and synthetics (fentanyl, meth). Lines are schematic corridors between places named in sources, drawn along sea lanes, not tracks. Use the World view to see Europe, West Africa and Asia endpoints.",
   "sources": [
    "DEA25",
    "UNODC_WDR25",
@@ -974,63 +974,59 @@
     "year": "2025"
    },
    "geometry": {
-    "type": "MultiLineString",
+    "type": "LineString",
     "coordinates": [
      [
-      [
-       72.85,
-       18.95
-      ],
-      [
-       72.3,
-       10.0
-      ],
-      [
-       80.0,
-       5.3
-      ],
-      [
-       94.0,
-       6.6
-      ],
-      [
-       101.6,
-       2.6
-      ]
+      72.85,
+      18.95
      ],
      [
-      [
-       104.4,
-       1.15
-      ],
-      [
-       110.0,
-       8.0
-      ],
-      [
-       121.0,
-       20.6
-      ],
-      [
-       160.0,
-       28.0
-      ],
-      [
-       -170.0,
-       25.0
-      ],
-      [
-       -145.0,
-       22.0
-      ],
-      [
-       -120.0,
-       18.5
-      ],
-      [
-       -104.32,
-       19.05
-      ]
+      72.3,
+      10.0
+     ],
+     [
+      80.0,
+      5.3
+     ],
+     [
+      94.0,
+      6.6
+     ],
+     [
+      101.6,
+      2.6
+     ],
+     [
+      104.4,
+      1.15
+     ],
+     [
+      110.0,
+      8.0
+     ],
+     [
+      121.0,
+      20.6
+     ],
+     [
+      160.0,
+      28.0
+     ],
+     [
+      -170.0,
+      25.0
+     ],
+     [
+      -145.0,
+      22.0
+     ],
+     [
+      -120.0,
+      18.5
+     ],
+     [
+      -104.32,
+      19.05
      ]
     ]
    }

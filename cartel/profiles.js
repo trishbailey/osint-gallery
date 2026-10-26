@@ -35,7 +35,7 @@ Promise.all([J("data/profiles.json"),J("data/group_countries.json"),J("data/grou
  const sec=document.createElement("section");sec.className="tile pftile";sec.id="profiles";
  sec.innerHTML=`<details open class="pfdet"><summary><h2>Group profiles</h2><span class="muted"> · who each group is, where it operates, what it does</span></summary><div class="pfgrid">${PR.profiles.map(card).join("")}</div><div class="muted small">As of ${esc(PR.as_of)}. Descriptive only. Flags: sourced presence (home country first); absence means no sourced entry. Crime chips: primary/secondary activities in cited sources.</div></details>`;
  const place=()=>{const wn=document.getElementById("whatsnew"),ld=document.getElementById("leaders");
-   if(wn){if(wn.previousElementSibling!==sec)wn.before(sec)}else if(ld){if(ld.nextElementSibling!==sec)ld.after(sec)}else if(!sec.isConnected){const mt=document.querySelector(".maptile");mt?mt.after(sec):document.body.appendChild(sec)}};
+   const lds=ld&&(ld.closest("section")||ld);if(lds){if(lds.previousElementSibling!==sec)lds.before(sec)}else if(wn){if(wn.previousElementSibling!==sec)wn.before(sec)}else if(!sec.isConnected){const mt=document.querySelector(".maptile");mt?mt.after(sec):document.body.appendChild(sec)}};
  place();let n=0;const iv=setInterval(()=>{place();if(++n>60)clearInterval(iv)},250);
  const lg=document.getElementById("grouplegend");if(lg)lg.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;const g=b.dataset.g;sec.querySelectorAll(".pfcard").forEach(c=>c.classList.toggle("hl",!!g&&c.dataset.g===g))});
 }).catch(e=>console.warn("profiles",e));

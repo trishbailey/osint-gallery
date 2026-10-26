@@ -7,18 +7,18 @@
 .wnhead{cursor:pointer}
 .wnhead h3{margin:4px 0 2px;font-size:14px;line-height:1.25}
 .wnchips{display:flex;flex-wrap:wrap;gap:4px}
-.wnchip{font-size:11px;padding:1px 7px;border-radius:10px;background:color-mix(in srgb,var(--c) 28%,transparent);border:1px solid var(--c);white-space:nowrap}
-.wnst{font-size:11px;padding:1px 6px;border-radius:10px;border:1px solid #56657f}
+.wnchip{font-size:13px;padding:1px 7px;border-radius:10px;background:color-mix(in srgb,var(--c) 28%,transparent);border:1px solid var(--c);white-space:nowrap}
+.wnst{font-size:13px;padding:1px 6px;border-radius:10px;border:1px solid #56657f}
 .wnst.escalating{color:#ff8a80}.wnst.easing{color:#8fd19e}
-.wnctx{margin:2px 0 6px;font-size:12px;line-height:1.35;color:#9aa6b8}
+.wnctx{margin:2px 0 6px;font-size:13px;line-height:1.35;color:#9aa6b8}
 .wndevs{list-style:none;margin:0;padding:0}
-.wndev{font-size:12.5px;line-height:1.38;padding:5px 4px;border-top:1px solid #1f2f4d;cursor:pointer;border-radius:4px}
+.wndev{font-size:13px;line-height:1.38;padding:5px 4px;border-top:1px solid #1f2f4d;cursor:pointer;border-radius:4px}
 .wndev:hover,.wndev.on{background:rgba(255,255,255,.06)}
-.wnd{font-weight:700;color:#cfd8e6;font-size:11.5px}
-.wnpl{color:#9aa6b8;font-size:11.5px}
+.wnd{font-weight:700;color:#cfd8e6;font-size:13px}
+.wnpl{color:#9aa6b8;font-size:13px}
 .wntx{display:block;margin-top:1px}
-.wnv{display:inline-block;min-width:15px;height:15px;line-height:15px;text-align:center;border-radius:8px;font-size:10px;font-weight:700;vertical-align:1px}
+.wnv{display:inline-block;min-width:15px;height:15px;line-height:15px;text-align:center;border-radius:8px;font-size:13px;font-weight:700;vertical-align:1px}
 .wnv.ok{background:#2e7d4f;color:#fff}.wnv.one{background:#3a4a66;color:#dfe6f0}.wnv.off{background:#8a6d1f;color:#fff}
-.wntile sup.fn a{color:#7f8ca3;font-size:9px;text-decoration:none}
+.wntile sup.fn a{color:#7f8ca3;font-size:13px;text-decoration:none}
 /* route overlay notes under the map (routes3.js) */
-.rnotes{font-size:11px;line-height:1.4;margin:6px 2px;color:#8b97ab}.rnotes>div{margin:2px 0}.rnotes svg,#layers label>svg{display:inline-block!important;vertical-align:middle;margin-right:4px}
+.rnotes{font-size:13px;line-height:1.4;margin:6px 2px;color:#8b97ab}.rnotes>div{margin:2px 0}.rnotes svg,#layers label>svg{display:inline-block!important;vertical-align:middle;margin-right:4px}

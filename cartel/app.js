@@ -36,12 +36,12 @@ function kpis(net,cross,money,events,terr){
    [s.fy2025_border_fentanyl_lb.toLocaleString()+" lb",`fentanyl seized at the US border, FY2025 (${s.change_vs_fy2024_pct}% vs FY2024)`,srcLink(s.cites)],
    ["$"+cm+"bn","suspicious activity linked to Chinese money laundering networks, 2020-24",srcLink(["FINCEN_CMLN_FTA"])],
    [terr.regions.length,"states and departments with a sourced group footprint",srcLink(["DEA_MAP_SILLA","ACLED_RIFT"])]];
-  $("kpis").innerHTML=K.map(k=>`<div class="kpi"><div class="v">${k[0]}</div><div class="l">${k[1]}</div><div class="s">${k[2]}</div></div>`).join("");
+  $("kpis").innerHTML=K.map(k=>`<div class="kpi"><div class="v">${k[0]}</div><div class="l">${k[1].replace(/\s*(\S+)$/,"")} <span class="nw">${k[1].match(/(\S+)$/)[1]}${k[2]}</span></div></div>`).join("");
 }
 function mapView(topo,adm,terr,routes,cross,china,GC){
   const svg=d3.select("#mapsvg"),W=svg.node().parentNode.clientWidth||1200,H=Math.round(Math.max(460,Math.min(W*0.62,window.innerHeight-250)));svg.attr("width",W).attr("height",H).style("height",H+"px");
-  const view=document.createElement("div");view.className="overlay viewbtns";view.innerHTML='<button class="chip on" data-v="mx">Mexico</button><button class="chip" data-v="all">All Latin America</button><button class="chip" data-v="sa">South America</button><button class="chip" data-v="world">World</button>';svg.node().parentNode.appendChild(view);
-  const proj=d3.geoConicEqualArea().parallels([-15,20]).rotate([78,0]).center([0,-2]).fitExtent([[10,10],[W-10,H-10]],{type:"MultiPoint",coordinates:[[-118,32.7],[-34.8,-7],[-70,-40],[-55,-34],[-81.3,-5]]});
+  const view=document.createElement("div");view.className="overlay viewbtns";view.innerHTML='<b>Map view: pick a region to zoom.</b><button class="chip on" data-v="mx">Mexico</button><button class="chip" data-v="all">All Latin America</button><button class="chip" data-v="sa">South America</button><button class="chip" data-v="world">World</button>';svg.node().parentNode.appendChild(view);
+  const proj=d3.geoConicEqualArea().parallels([-15,20]).rotate([135,0]).center([0,-2]).fitExtent([[10,10],[W-10,H-10]],{type:"MultiPoint",coordinates:[[-118,32.7],[-34.8,-7],[-70,-40],[-55,-34],[-81.3,-5]]});
   const path=d3.geoPath(proj),defs=svg.append("defs"),g=svg.append("g");
   adm.features.forEach(f=>{if(d3.geoArea(f)>2*Math.PI){const rv=p=>p.map(r=>r.slice().reverse());const g=f.geometry;g.coordinates=g.type==='Polygon'?rv(g.coordinates):g.coordinates.map(rv)}});
   const RB=Object.fromEntries(terr.regions.map(r=>[r.id,r]));
@@ -99,9 +99,8 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   window.MAPX={mk,path,layers}; // physical route layers (drugs, migrants, firearms) are drawn by routes3.js
   mk("cross","Border crossings and hubs","#ffffff",s=>{const n=s.selectAll("g").data(cross.features).join("g").attr("class","pt").attr("data-t",d=>`translate(${proj2(d.geometry.coordinates)})`).attr("transform",d=>`translate(${proj2(d.geometry.coordinates)})`).style("cursor","pointer").on("click",(e,d)=>rshow(d.properties));n.append("circle").attr("r",4).attr("fill","#fff").attr("stroke","#0b1526");n.append("title").text(d=>d.properties.name)});
   const CHI={precursors:["⚗","#c8a24a","Precursor chemicals"],ports:["⚓","#5b8fd1","Ports"],money:["$","#6aa684","Money laundering"],loans:["¥","#e07a5f","Loans / finance"]};
-  mk("china",`China-linked sites (${china.items.filter(i=>i.lonlat).length})`,"#c8a24a",s=>{const n=s.selectAll("g").data(china.items.filter(i=>i.lonlat)).join("g").attr("class","pt").attr("data-t",d=>`translate(${proj2(d.lonlat)})`).attr("transform",d=>`translate(${proj2(d.lonlat)})`).style("cursor","pointer").on("click",(e,d)=>drawer(`<h2>${esc(d.title)}</h2><span class="tag">${esc((CHI[d.category]||[0,0,d.category])[2])}</span><p>${esc(d.text)}</p>${d.says_vs_does?`<p class="says">Says vs does: ${esc(d.says_vs_does)}</p>`:""}${cite(d.cites)}`));
-    n.append("circle").attr("r",10).attr("fill",d=>(CHI[d.category]||[0,"#c8a24a"])[1]).attr("stroke","#0b1526").attr("stroke-width",1.5);n.append("text").attr("text-anchor","middle").attr("dy","0.35em").attr("fill","#0b1526").style("font-weight","800").style("font-size","12px").text(d=>(CHI[d.category]||["?"])[0]);n.append("text").attr("class","lbl").attr("x",13).attr("y",4).text(d=>d.title);
-    setTimeout(()=>{const lb=$("layers").querySelector('label[data-k="china"]');if(lb)lb.insertAdjacentHTML("beforeend",`<div class="chleg">${Object.values(CHI).map(([i,c,l])=>`<span><i style="background:${c}">${i}</i>${l}</span>`).join("")}</div>`)},0)});
+  mk("china",`China-linked sites (${china.items.filter(i=>i.lonlat).length})`,"#00bb77",s=>{const n=s.selectAll("g").data(china.items.filter(i=>i.lonlat)).join("g").attr("class","pt").attr("data-t",d=>`translate(${proj2(d.lonlat)})`).attr("transform",d=>`translate(${proj2(d.lonlat)})`).style("cursor","pointer").on("click",(e,d)=>drawer(`<h2>${esc(d.title)}</h2><span class="tag">${esc((CHI[d.category]||[0,0,d.category])[2])}</span><p>${esc(d.text)}</p>${d.says_vs_does?`<p class="says">Says vs does: ${esc(d.says_vs_does)}</p>`:""}${cite(d.cites)}`));
+    n.append("title").text(d=>`${(CHI[d.category]||[0,0,""])[2]}: ${d.name||d.title||""}`);n.append("circle").attr("r",10).attr("fill","#00bb77").attr("stroke","#0b1526").attr("stroke-width",1.5);n.append("text").attr("text-anchor","middle").attr("dy","0.35em").attr("fill","#0b1526").style("font-weight","800").style("font-size","13px").text(d=>(CHI[d.category]||["?"])[0]);n.append("text").attr("class","lbl").attr("x",13).attr("y",4).text(d=>d.title);});
   // choropleth modes (Mexico states)
   const byReg={},clave={};DM.mxs.states.forEach(x=>{byReg[x.region]=x;clave[x.clave]=x.region});
   const CH={homicide:{label:"Homicide victims per 100,000, last 12 months",val:id=>{const x=byReg[id];return x?homRate(x.clave):null},src:DM.vio},
@@ -121,13 +120,15 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   const rr=d3.scaleSqrt([0,d3.max(ap,a=>a.tot)],[0,26]);
   /* seizure overlay removed per Trish (data kept for charts) */ false&&mk("seiz","Drug seizures by border area (last 12 months)","#ff6b6b",s=>{const n=s.selectAll("g").data(ap).join("g").attr("class","pt").attr("data-t",d=>`translate(${proj(d.ll)})`).attr("transform",d=>`translate(${proj(d.ll)})`).style("cursor","pointer").on("click",(e,d)=>drawer(`<h2>${esc(d.name)} border area</h2><p class="muted">CBP areas: ${esc(d.ks.join(", "))}. ${esc(last12[0])} to ${esc(last12[11])}. Marker sits at the area's main crossing (approximate).</p>${DR.map(k=>`<div class="rg"><span class="dot" style="background:${DC[k]}"></span> <b>${esc(k)}</b>: ${Math.round(d.by[k]).toLocaleString()} lb</div>`).join("")}<div class="muted">Fentanyl, meth and cocaine combined, lb per month</div>${spark(DM.seiz.national.fentanyl.slice(-24).map(p=>({m:p.m,v:d3.sum(d.ks,k=>d3.sum(DR,dr=>(((DM.seiz.aor[k]||{})[dr]||[]).find(q=>q.m===p.m)||{lb:0}).lb))})),{unit:" lb"})}<p class="note">${esc(DM.seiz.note)}</p>${cite(DM.seiz.cites)}<div class="cite"><a href="${esc(DM.seiz.source_url)}" target="_blank" rel="noopener">CBP CSV</a></div>`));
     n.append("circle").attr("r",d=>rr(d.tot)).attr("fill","#ff6b6b").attr("fill-opacity",.45).attr("stroke","#ff6b6b").attr("stroke-width",1.5);n.append("text").attr("class","lbl").attr("x",d=>rr(d.tot)+4).attr("y",4).text(d=>`${d.name} ${d.tot>=1000?Math.round(d.tot/1000).toLocaleString()+"k":Math.round(d.tot)} lb`);n.append("title").text(d=>`${d.name}: ${Math.round(d.tot).toLocaleString()} lb fentanyl+meth+cocaine, last 12 months`)});
-  const PVC={official:"#ff99aa",journalist:"#00ffff"};
+  const PVC={official:"#ff5566",journalist:"#eebb44"};
   [["pvm","official","Killings of mayors"],["pvj","journalist","Killings of journalists"]].forEach(([k,kind,lbl])=>mk(k,`${lbl} (since Oct 2024)`,PVC[kind],s=>{const n=s.selectAll("g").data(DM.pv.events.filter(d=>d.kind===kind)).join("g").attr("class","pt").attr("data-t",d=>`translate(${proj(d.lonlat)})`).attr("transform",d=>`translate(${proj(d.lonlat)})`).style("cursor","pointer").on("click",(e,d)=>pvShow(d));
     n.append("circle").attr("r",6).attr("fill",PVC[kind]).attr("stroke","#0b1526").attr("stroke-width",2);n.append("title").text(d=>`${d.date} ${d.name} (${d.role}), ${d.place}`)}));
-  const CL=[["USA",-99,31.6],["MEXICO",-102.3,24.2],["Guat.",-90.3,15.7],["Belize",-88.7,17.3],["Hond.",-86.7,14.8],["El Salv.",-89.1,13.75],["Nic.",-85.1,12.8],["C. Rica",-84.1,9.9],["Panama",-80.2,8.4],["Cuba",-79,21.9],["Jam.",-77.3,18.15],["Haiti",-72.8,19.15],["D.R.",-70.4,18.8],["COLOMBIA",-73.3,3.6],["VENEZUELA",-66,7.2],["Guyana",-58.9,5],["Sur.",-55.9,4],["ECUADOR",-78.2,-1.3],["PERU",-75,-9.8],["BRAZIL",-52,-10],["BOLIVIA",-64.6,-17],["PARAGUAY",-58.3,-23.2],["CHILE",-69.6,-26.5],["ARGENTINA",-65,-35],["Uru.",-56,-32.8]];
+  const CL=[["USA",-99,31.6],["MEXICO",-102.3,24.2],["Guatemala",-90.3,15.7],["Belize",-88.7,17.3],["Honduras",-86.7,14.8],["El Salvador",-89.1,13.75],["Nicaragua",-85.1,12.8],["Costa Rica",-84.1,9.9],["Panama",-80.2,8.4],["Cuba",-79,21.9],["Jamaica",-77.3,18.15],["Haiti",-72.8,19.15],["Dominican Republic",-70.4,18.8],["COLOMBIA",-73.3,3.6],["VENEZUELA",-66,7.2],["Guyana",-58.9,5],["Suriname",-55.9,4],["ECUADOR",-78.2,-1.3],["PERU",-75,-9.8],["BRAZIL",-52,-10],["BOLIVIA",-64.6,-17],["PARAGUAY",-58.3,-23.2],["CHILE",-69.6,-26.5],["ARGENTINA",-65,-35],["Uruguay",-56,-32.8]];
   const clg=g.append("g").attr("class","ctl").style("pointer-events","none");
   const cl=clg.selectAll("g").data(CL).join("g").attr("class","pt").attr("data-t",d=>`translate(${proj([d[1],d[2]])})`).attr("transform",function(){return this.dataset.t});
-  cl.append("text").attr("text-anchor","middle").attr("dy","0.35em").attr("fill","#f3f6fb").attr("fill-opacity",.92).attr("stroke","#0b1526").attr("stroke-width",3).attr("stroke-opacity",.85).attr("paint-order","stroke").style("font-size","12px").style("font-weight","600").style("letter-spacing",".04em").text(d=>d[0]);
+  cl.append("text").attr("text-anchor","middle").attr("dy","0.35em").attr("fill","#f3f6fb").attr("fill-opacity",.92).attr("stroke","#0b1526").attr("stroke-width",3).attr("stroke-opacity",.85).attr("paint-order","stroke").style("font-size","13px").style("font-weight","600").style("letter-spacing",".04em").text(d=>d[0]);
+  cl.each(function(){const t=this.querySelector("text"),b=t.getBBox();d3.select(this).insert("rect","text").attr("x",b.x-5).attr("y",b.y-2).attr("width",b.width+10).attr("height",b.height+4).attr("rx",(b.height+4)/2).attr("fill","#0b1526").attr("fill-opacity",.82)});
+  window.__raiseLabels=()=>clg.raise();
   svg.call(zoom.transform,VIEWS.mx);
   const layerOn=(k,on)=>{const lab=[...$("layers").querySelectorAll("label")].find(l=>l.dataset.k===k);if(lab){lab.querySelector("input").checked=on;layers[k].style("display",on?null:"none")}};
   return {setF:id=>{setF(id);document.querySelector(".maptile").scrollIntoView({behavior:"smooth"})},setMode,layerOn,
@@ -156,16 +157,17 @@ function netTile(net,terr){
   const CEN={"Mexico":[.27,.36],"Central America":[.62,.17],"Facilitators":[.88,.17],"Venezuela & Colombia":[.62,.55],"Ecuador":[.30,.84],"Brazil":[.88,.62],"Haiti":[.88,.88]};
   const nodes=net.groups.map(g=>({...g,reg:REG[g.country]||"Facilitators"}));const by=Object.fromEntries(nodes.map(d=>[d.id,d]));
   const lab=d=>d.name.split(" (")[0].replace(/^Cartel (de |del )?/,"").replace(/^Chinese money laundering networks?/i,"Chinese money brokers").slice(0,34);
-  nodes.forEach(d=>{const c=CEN[d.reg];d.x=c[0]*W+(Math.random()-.5)*40;d.y=c[1]*H+(Math.random()-.5)*40;d.lw=lab(d).length*7.6+16});
+  let _s=20261025;const rnd=()=>(_s=(_s*1664525+1013904223)>>>0)/4294967296;
+  nodes.forEach(d=>{const c=CEN[d.reg];d.x=c[0]*W+(rnd()-.5)*40;d.y=c[1]*H+(rnd()-.5)*40;d.lw=lab(d).length*7.6+16});
   const edges=net.edges.filter(e=>by[e.source]&&by[e.target]).map(e=>({...e,source:by[e.source],target:by[e.target]}));
-  const sim=d3.forceSimulation(nodes).force("x",d3.forceX(d=>CEN[d.reg][0]*W).strength(.22)).force("y",d3.forceY(d=>CEN[d.reg][1]*H).strength(.22))
+  const sim=d3.forceSimulation(nodes).randomSource(rnd).force("x",d3.forceX(d=>CEN[d.reg][0]*W).strength(.22)).force("y",d3.forceY(d=>CEN[d.reg][1]*H).strength(.22))
    .force("ch",d3.forceManyBody().strength(-420)).force("link",d3.forceLink(edges).distance(110).strength(.04))
    .force("col",d3.forceCollide(d=>Math.max(34,d.lw/2+6)).iterations(4)).stop();
   for(let i=0;i<500;i++)sim.tick();
   nodes.forEach(d=>{d.x=Math.max(d.lw/2+8,Math.min(W-d.lw/2-8,d.x));d.y=Math.max(60,Math.min(H-24,d.y))});
-  const ST={alliance:["#3ddc84",3,null],rivalry:["#ff4d6d",3,"8 5"],service:["#c77dff",2.5,null],"alleged link":["#ffffff",2.5,"2 4"],faction:["#c77dff",2.5,null]};
+  const ST={alliance:["#3ddc84",3,null],rivalry:["#ff4d6d",3,"8 5"],service:["#a7f3c4",2.5,null],"alleged link":["#a7f3c4",2.5,"2 4"],faction:["#a7f3c4",2.5,null]};const KL={service:"business / service tie (lighter alliance line)",faction:"faction of the same group (lighter alliance line)","alleged link":"alleged link, unproven (lighter dotted line)"};
   const sw=(k)=>`<svg width="30" height="10"><line x1="0" y1="5" x2="30" y2="5" stroke="${ST[k][0]}" stroke-width="${ST[k][1]}" ${ST[k][2]?`stroke-dasharray="${ST[k][2]}"`:""}/></svg>`;
-  $("netlegend").style.cssText="display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:13px";$("netlegend").innerHTML=`<span>${sw("alliance")} <b style="color:#3ddc84">alliance</b> (solid)</span> <span>${sw("rivalry")} <b style="color:#ff4d6d">rivalry / war</b> (dashed)</span> <span>${sw("faction")} faction / business / service</span> <span>${sw("alleged link")} alleged link</span> <span class="muted">· node colour = map colour · hover a group to isolate its links · click for sourced note</span>`;
+  $("netlegend").style.cssText="display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:13px";$("netlegend").innerHTML=`<span>${sw("alliance")} <b style="color:#3ddc84">alliance</b></span> <span>${sw("rivalry")} <b style="color:#ff4d6d">rivalry / war</b></span> <span class="muted">lighter green = faction, business or alleged tie (hover a line for details)</span>`;
   // region cluster halos
   const rg=d3.groups(nodes,d=>d.reg);const hg=svg.append("g");
   rg.forEach(([r,ns])=>{const x0=d3.min(ns,d=>d.x-d.lw/2)-10,x1=d3.max(ns,d=>d.x+d.lw/2)+10,y0=d3.min(ns,d=>d.y)-50,y1=d3.max(ns,d=>d.y)+30;
@@ -177,12 +179,12 @@ function netTile(net,terr){
   eg.append("path").attr("d",pd).attr("fill","none").attr("stroke",d=>ST[d.kind][0]).attr("stroke-width",d=>ST[d.kind][1]).attr("stroke-dasharray",d=>ST[d.kind][2]).attr("opacity",.9);
   eg.append("path").attr("d",pd).attr("fill","none").attr("stroke","transparent").attr("stroke-width",12);
   eg.filter(d=>d.kind==="rivalry").append("text").attr("class","nx").attr("text-anchor","middle").attr("dy","0.35em").attr("transform",d=>{const [mx,my]=cp(d);return `translate(${(d.source.x+2*mx+d.target.x)/4},${(d.source.y+2*my+d.target.y)/4})`}).text("✕");
-  eg.append("title").text(d=>`${d.source.name} – ${d.target.name}: ${d.kind}. ${d.text}`);
+  eg.append("title").text(d=>`${d.source.name} – ${d.target.name}: ${KL[d.kind]||d.kind}. ${d.text}`);
   const nb=d=>new Set([d,...edges.filter(k=>k.source===d||k.target===d).flatMap(k=>[k.source,k.target])]);
   const n=svg.append("g").selectAll("g").data(nodes).join("g").attr("class","nn").attr("transform",d=>`translate(${d.x},${d.y})`).style("cursor","pointer").on("click",(e,d)=>drawer(groupHtml(d,net)))
    .on("mouseenter",(e,d)=>{const s=nb(d);eg.classed("dim",x=>x.source!==d&&x.target!==d).classed("hi",x=>x.source===d||x.target===d);n.classed("dim",x=>!s.has(x))}).on("mouseleave",()=>{eg.classed("dim",false).classed("hi",false);n.classed("dim",false)});
   n.append("circle").attr("r",9).attr("fill",d=>COL(d.id)).attr("stroke","#ffffff").attr("stroke-width",d=>d.fto?2.5:1);
-  n.append("text").attr("class","netl").attr("text-anchor","middle").attr("y",-14).text(lab);
+  n.append("text").attr("class","netl").attr("text-anchor","middle").attr("y",-14).attr("fill","#ffffff").attr("stroke","#0b1526").attr("stroke-width",4).attr("paint-order","stroke").attr("stroke-linejoin","round").style("font-size","13.5px").style("font-weight","700").style("fill","#ffffff").style("opacity",1).text(lab);
 }
 function chinaTile(c){
   const ab={precursors:"PRE",ports:"PRT",money:"$",finance:"$",laundering:"$",infrastructure:"INF"};
@@ -245,7 +247,7 @@ function violenceTile(M){const v=DM.vio,ms=[...new Set(Object.values(v.states).f
   const el=$("pvtime"),W=el.clientWidth||520,H=96,ev=DM.pv.events;const x=d3.scaleTime([new Date(ev[0].date+"T00:00"),new Date()],[14,W-14]);
   const svg=d3.select(el).append("svg").attr("width",W).attr("height",H);svg.append("g").attr("transform",`translate(0,${H-20})`).attr("class","axis").call(d3.axisBottom(x).ticks(d3.timeMonth.every(3)).tickFormat(d3.timeFormat("%b %Y")));
   const lane={official:26,journalist:52};svg.selectAll("text.ln").data([["official","Mayors"],["journalist","Journalists"]]).join("text").attr("class","ax").attr("x",2).attr("y",d=>lane[d[0]]-10).text(d=>d[1]);
-  svg.append("g").selectAll("circle.pvt").data(ev).join("circle").attr("class","pvt").attr("r",6).attr("transform",d=>`translate(${x(new Date(d.date+"T00:00"))},${lane[d.kind]})`).attr("fill",d=>d.kind==="official"?"#ff00ff":"#00ffff").attr("stroke","#0b1526").attr("stroke-width",1.5).style("cursor","pointer").on("click",(e,d)=>pvShow(d)).append("title").text(d=>`${d.date} ${d.name}, ${d.place}`);
+  svg.append("g").selectAll("circle.pvt").data(ev).join("circle").attr("class","pvt").attr("r",6).attr("transform",d=>`translate(${x(new Date(d.date+"T00:00"))},${lane[d.kind]})`).attr("fill",d=>d.kind==="official"?PVC.official:PVC.journalist).attr("stroke","#0b1526").attr("stroke-width",1.5).style("cursor","pointer").on("click",(e,d)=>pvShow(d)).append("title").text(d=>`${d.date} ${d.name}, ${d.place}`);
   $("pvnote").innerHTML=`${ev.filter(e=>e.kind==="official").length} sitting mayors and ${ev.filter(e=>e.kind==="journalist").length} journalists or media workers, ${esc(DM.pv.first)} to ${esc(DM.pv.last)}. Click a mark. Candidates and other officials are not yet included. ${cite(DM.pv.cites)}`}
 function borderTile(){const s=DM.seiz,C={fentanyl:"#ff6b6b",methamphetamine:"#f4d35e",cocaine:"#e6e9ef"};
   lineChart($("seizchart"),[{name:"Fentanyl",color:C.fentanyl,pts:s.national.fentanyl.map(p=>({m:p.m,v:p.lb}))}],{unit:" lb"});
