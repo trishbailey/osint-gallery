@@ -18,7 +18,7 @@
  <div id="types" role="group" aria-label="Account types shown"></div>
  <h2 class="sh">Spread map</h2><div class="legend" id="lg-kind"></div>
  <h2 class="sh">Top talking points</h2><div class="legend" id="lg-tp"></div>
- <h2 class="sh">Aggression map</h2><div class="legend" id="lg-tone"></div>
+ <h2 class="sh">Aggression map</h2><div class="seg" id="tmode" role="group" aria-label="Colour countries by"><button type="button" data-m="share" aria-pressed="true">By share</button><button type="button" data-m="count" aria-pressed="false">By count</button></div><div class="legend" id="lg-tone"></div>
  <h2 class="sh">Key areas</h2><ul id="tareas" class="tareas" aria-label="Key areas of aggressive posts"></ul>
 </aside>
 <main>
@@ -55,7 +55,7 @@
 
 
 <section id="tone" class="card"><h2 class="sh2">How aggressive or friendly, by country</h2>
-<p class="thead" id="tone-head"></p>
+<p class="thead" id="tone-head"></p><p class="win" id="tone-win"></p>
 <p class="sub" id="tone-sub"></p>
 <p class="sub tam">Select a key area to zoom the map to it.</p><ul id="tareas-m" class="tareas tam" aria-label="Key areas of aggressive posts"></ul>
 <button id="tzoom" class="btn" type="button" aria-pressed="false">Zoom to hot spots</button>
