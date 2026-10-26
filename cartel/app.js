@@ -2,8 +2,8 @@ const COL={precursors:"#c8a24a",cocaine:"#e6e9ef","fentanyl / methamphetamine":"
 const KCOL={rivalry:"#c0504d",alliance:"#6aa684",faction:"#c77dff","alleged link":"#c8a24a",service:"#5b8fd1"};
 const LV={dominant:.95,significant:.75,present:.35};
 const LVI={dominant:"●",significant:"◍",present:"○"},LVW={dominant:"Dominant",significant:"Significant",present:"Minor"};
-/* area fills: muted base (window.TERR_FILL) at Dominant; lower levels drop L* and chroma (mirrored in pipeline/palette_check.py FILL_LV) */
-const FILLLV={dominant:[0,1],significant:[6,.85],present:[12,.7]};
+/* area fills: mid-tone base (window.TERR_FILL) at Dominant; lower levels drop L* and chroma (mirrored in pipeline/palette_check.py FILL_LV) */
+const FILLLV={dominant:[0,1],significant:[5,.88],present:[10,.76]};
 const shadeG=(c,l)=>{const [dl,f]=FILLLV[l]||FILLLV.dominant,x=d3.lab(c);return d3.lab(x.l-dl,x.a*f,x.b*f).formatHex()};
 const swatches=c=>`<div class="lvramp"><span class="muted">less</span>${["present","significant","dominant"].map(l=>`<span class="sw" title="${LVW[l]}" style="background:${shadeG(c,l)}"></span>`).join("")}<span class="muted">more</span></div><div class="muted">${LVI.present} Minor · ${LVI.significant} Significant · ${LVI.dominant} Dominant</div>`;
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
