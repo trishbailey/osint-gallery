@@ -229,7 +229,8 @@ SNAP_JS = r"""() => { window.__ciN = window.__ciN || 0; window.__ciIds = window.
     const cs = getComputedStyle(e); const b = e.getBoundingClientRect();
     const shown = b.width > 0 && b.height > 0 && cs.display !== 'none' && cs.visibility !== 'hidden' && cs.opacity !== '0';
     const own = [...e.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent.trim()).join(' ');
-    out[id(e)] = [e.parentElement ? id(e.parentElement) : 0, e.tagName + (shown ? '+' : '-') + [...e.attributes].filter(a => a.name !== 'data-ci-btn').map(a => a.name + '=' + a.value).join(' ') + '|' + own];
+    if (!shown) { out[id(e)] = [e.parentElement ? id(e.parentElement) : 0, '-']; return; }  // hidden: only becoming visible counts
+    out[id(e)] = [e.parentElement ? id(e.parentElement) : 0, e.tagName + '+' + [...e.attributes].filter(a => a.name !== 'data-ci-btn').map(a => a.name + '=' + a.value).join(' ') + '|' + own];
   });
   return out; }"""
 
@@ -241,12 +242,14 @@ def _delta(a, b):
 
 RESET_RE = re.compile(r"^(reset\b.*|clear\b.*|back\b.*|↺|⟲)$", re.I)  # undo-type controls: no-ops on a fresh page
 
-def button_checks(pg, slug, url, limit=40):
+def button_checks(pg, slug, url, limit=150):
     """Click every visible button, each on a freshly loaded page; fail if the click changes
     nothing. Elements that change on their own (animations, timers) are measured first and
     ignored. Reset/clear controls are skipped: on a fresh page they rightly do nothing."""
     errs = []
     first = pg.evaluate(BUTTONS_JS)
+    if len(first) > limit:
+        errs.append(f"{slug} [desktop]: {len(first)} buttons, only the first {limit} were click-tested")
     for n, b0 in enumerate(first[:limit]):
         name = b0['t'] or '(no label)'
         if RESET_RE.match(name.strip()):
