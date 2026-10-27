@@ -189,22 +189,6 @@ body {
 .tile:nth-child(6n + 5) { --tile-accent: #b78a21; --surface-alt: #fff2cf; }
 .tile:nth-child(6n + 6) { --tile-accent: #408a75; --surface-alt: #e0f2e9; }
 
-.tile-media {
-  display: block;
-  margin: -4px 0 16px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #0d1a2e;
-  aspect-ratio: 680 / 574;
-}
-.tile-media video,
-.tile-media img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .icon-wrap {
   width: 48px;
   height: 48px;

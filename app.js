@@ -153,45 +153,6 @@
     return button;
   }
 
-  // Optional animated preview: tool.previewMedia = {webm, mp4, gif, poster, alt}.
-  // Only cards that set it get one; it links to the tool like Enter does.
-  function previewMediaNode(tool, enterOk) {
-    var m = tool.previewMedia;
-    if (!m || !enterOk || !(m.webm || m.mp4)) return null;
-    var link = document.createElement("a");
-    link.className = "tile-media";
-    link.href = tool.enterUrl;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.setAttribute("aria-label", "Open " + (tool.name || "tool"));
-    var v = document.createElement("video");
-    v.autoplay = true;
-    v.muted = true;
-    v.loop = true;
-    v.playsInline = true;
-    v.setAttribute("muted", "");
-    v.setAttribute("playsinline", "");
-    v.setAttribute("preload", "metadata");
-    v.setAttribute("aria-label", m.alt || "");
-    if (m.poster) v.poster = m.poster;
-    [["webm", "video/webm"], ["mp4", "video/mp4"]].forEach(function (s) {
-      if (!m[s[0]]) return;
-      var src = document.createElement("source");
-      src.src = m[s[0]];
-      src.type = s[1];
-      v.appendChild(src);
-    });
-    if (m.gif) {
-      var img = document.createElement("img");
-      img.src = m.gif;
-      img.alt = m.alt || "";
-      img.loading = "lazy";
-      v.appendChild(img);
-    }
-    link.appendChild(v);
-    return link;
-  }
-
   function renderTool(tool) {
     var enterOk = canEnter(tool);
     var article = document.createElement("article");
@@ -212,8 +173,6 @@
     var preview = previewControl(tool);
     if (preview) actions.appendChild(preview);
     foot.appendChild(actions);
-    var media = previewMediaNode(tool, enterOk);
-    if (media) article.appendChild(media);
     article.append(iconNode(tool), heading, blurb, status, foot);
     return article;
   }
