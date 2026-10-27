@@ -254,3 +254,4 @@ details summary{cursor:pointer;color:#82B1FF;font-weight:700;font-size:13px}
  .rlistph .rn{flex:none;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#FFE272;color:#0b1526;font-weight:700;font-size:13px}
  .rlistph .rt{flex:1}.rlistph .rf{display:flex;gap:3px}.rlistph .rf svg{width:20px;height:13.3px}.rlistph .rc{font-weight:700;color:#FFE272;min-width:18px;text-align:right}
 }
+@media(max-width:600px){.kp .kbg{fill:#0b1526;stroke:#FFE272;stroke-width:2.5}.kreg{fill:none;stroke:#FFE272;stroke-linejoin:round;pointer-events:none}}
