@@ -186,12 +186,12 @@ LAYOUT_JS = r"""() => {
    const tb = t.getBoundingClientRect(); const cx = tb.x + tb.width / 2, cy = tb.y + tb.height / 2;
    const svg = t.ownerSVGElement; if (!svg) return;
    for (const c of svg.querySelectorAll('circle')) { const b = c.getBoundingClientRect();
-     if (b.width >= 8 && b.width <= 60 && Math.abs(b.x + b.width / 2 - cx) < b.width / 3 && Math.abs(b.y + b.height / 2 - cy) < b.height / 3) { badges.push(txt); break; } }
+     if (b.width >= 8 && b.width <= 60 && Math.abs(b.x + b.width / 2 - cx) < b.width / 3 && Math.abs(b.y + b.height / 2 - cy) < b.height / 3) { badges.push([svg, txt]); break; } }
  });
  document.querySelectorAll('body *').forEach(e => {
    if (e.children.length || !vis(e)) return; const txt = e.textContent.trim(); if (!/^\d{1,3}$/.test(txt)) return;
    const cs = getComputedStyle(e); const b = e.getBoundingClientRect();
-   if (parseFloat(cs.borderTopLeftRadius) >= b.height / 2 - 1 && Math.abs(b.width - b.height) < 4 && b.width <= 60) badges.push(txt);
+   if (parseFloat(cs.borderTopLeftRadius) >= b.height / 2 - 1 && Math.abs(b.width - b.height) < 4 && b.width <= 60) badges.push([e.parentElement && e.parentElement.parentElement || e, txt]);
  });
  const narrow = [];
  document.querySelectorAll('p, li, figcaption, blockquote, .lede, .summary, dd').forEach(e => {
@@ -205,10 +205,12 @@ LAYOUT_JS = r"""() => {
    const avail = par.getBoundingClientRect().width - parseFloat(pcs.paddingLeft) - parseFloat(pcs.paddingRight);
    if (avail >= 500 && b.width < avail * 0.75) narrow.push({t: txt.slice(0, 50), w: Math.round(b.width), avail: Math.round(avail)});
  });
- // a key is exactly 1..N (N >= 3), each number once; count bubbles have repeats or larger values
- const nums = badges.map(Number).sort((a, b) => a - b);
- const isKey = nums.length >= 3 && nums.every((v, i) => v === i + 1);
- return {badges: isKey ? nums.map(String) : [], narrow};
+ // per graphic/list: a key is 1..N (N >= 3) each once, possibly beside count bubbles; counts alone don't form one
+ const groups = new Map(); badges.forEach(([g, t]) => { if (!groups.has(g)) groups.set(g, []); groups.get(g).push(Number(t)); });
+ const keys = [];
+ groups.forEach(nums => { const set = new Set(nums); let k = 0; while (set.has(k + 1) && nums.filter(v => v === k + 1).length === 1) k++;
+   if (k >= 3) for (let i = 1; i <= k; i++) keys.push(String(i)); });
+ return {badges: keys, narrow};
 }"""
 
 BUTTONS_JS = r"""() => [...document.querySelectorAll('button, [role=button], summary')]
@@ -218,7 +220,7 @@ BUTTONS_JS = r"""() => [...document.querySelectorAll('button, [role=button], sum
             return sib.length > 1 && sib.filter(k => k.getAttribute('aria-pressed') === 'true').length === 1; })())  // the one selected option of an exclusive group
       && b.getAttribute('aria-selected') !== 'true' && b.getAttribute('aria-current') !== 'true'
       && (b.hasAttribute('aria-pressed') || !/(^|[\s-])(active|on|sel|selected|current)(\s|$)/.test(b.getAttribute('class') || '')); })  // already-selected options legitimately do nothing
-  .map((b, i) => { b.setAttribute('data-ci-btn', i); return {i, real: b.tagName === 'BUTTON', toggle: b.hasAttribute('aria-pressed'), t: (b.innerText || b.getAttribute('aria-label') || '').trim().slice(0, 40)}; })"""
+  .map((b, i) => { b.setAttribute('data-ci-btn', i); return {i, real: b.tagName === 'BUTTON', toggle: b.hasAttribute('aria-pressed') || b.tagName === 'SUMMARY', t: (b.innerText || b.getAttribute('aria-label') || '').trim().slice(0, 40)}; })"""
 
 SNAP_JS = r"""() => { window.__ciN = window.__ciN || 0; window.__ciIds = window.__ciIds || new WeakMap();
   const id = e => { if (!window.__ciIds.has(e)) window.__ciIds.set(e, ++window.__ciN); return window.__ciIds.get(e); };
