@@ -2,10 +2,9 @@ const COL={precursors:"#c8a24a",cocaine:"#e6e9ef","fentanyl / methamphetamine":"
 const KCOL={rivalry:"#c0504d",alliance:"#6aa684",faction:"#c77dff","alleged link":"#c8a24a",service:"#5b8fd1"};
 const LV={dominant:.95,significant:.75,present:.35};
 const LVI={dominant:"●",significant:"◍",present:"○"},LVW={dominant:"Dominant",significant:"Significant",present:"Minor"};
-/* area fills: mid-tone base (window.TERR_FILL) at Dominant; lower levels drop L* and chroma (mirrored in pipeline/palette_check.py FILL_LV) */
-const FILLLV={dominant:[0,1],significant:[5,.88],present:[10,.76]};
-const shadeG=(c,l)=>{const [dl,f]=FILLLV[l]||FILLLV.dominant,x=d3.lab(c);return d3.lab(x.l-dl,x.a*f,x.b*f).formatHex()};
-const swatches=c=>`<div class="lvramp"><span class="muted">less</span>${["present","significant","dominant"].map(l=>`<span class="sw" title="${LVW[l]}" style="background:${shadeG(c,l)}"></span>`).join("")}<span class="muted">more</span></div><div class="muted">${LVI.present} Minor · ${LVI.significant} Significant · ${LVI.dominant} Dominant</div>`;
+/* area fills: one hue per group (window.TERR_FILL); presence level changes the fill OPACITY over the dark land, never the colour, so each group keeps one hue family (mirrored in pipeline/palette_check.py FILL_OP) */
+const FILLLV={dominant:1,significant:.82,present:.66};
+const swatches=c=>`<div class="lvramp"><span class="muted">less</span>${["present","significant","dominant"].map(l=>`<span class="sw" title="${LVW[l]}" style="background:${c};opacity:${FILLLV[l]}"></span>`).join("")}<span class="muted">more</span></div><div class="muted">${LVI.present} Minor · ${LVI.significant} Significant · ${LVI.dominant} Dominant</div>`;
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const $=id=>document.getElementById(id);
 let SRC={},DM={};const ARCS=["sinaloa-war","cjng","border-fentanyl","ecuador","venezuela-caribbean","colombia","money","mexico","andes","brazil"];
@@ -54,7 +53,7 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   view.querySelectorAll("button").forEach(b=>b.onclick=()=>{const z=b.dataset.z;if(z==="reset")svg.transition().duration(600).call(zoom.transform,VIEWS.mx);else svg.transition().duration(300).call(zoom.scaleBy,z==="in"?1.6:1/1.6)});
   const fitLL=ll=>{if(!ll||!ll.length)return;const q=ll.length>1?ll:[[ll[0][0]-3,ll[0][1]-3],[ll[0][0]+3,ll[0][1]+3]];let t=fitPts(q);if(t.k>8){const c=t.invert([W/2,H/2]);t=d3.zoomIdentity.translate(W/2,H/2).scale(8).translate(-c[0],-c[1])}svg.transition().duration(700).call(zoom.transform,t)};
   window.MAPZ={fitLL,view:v=>VIEWS[v]&&svg.transition().duration(700).call(zoom.transform,VIEWS[v])};
-  const wg=g.append("g").attr("class","worldbase");fetch("basemap/world110.topo.json").then(r=>r.json()).then(w=>wg.selectAll("path").data(topojson.feature(w,w.objects.countries).features).join("path").attr("d",path).attr("fill","#24395e").attr("stroke","#4a6a9a").attr("stroke-width",.6).attr("vector-effect","non-scaling-stroke")).catch(e=>console.warn("world basemap",e));
+  const wg=g.append("g").attr("class","worldbase");fetch("basemap/world110.topo.json").then(r=>r.json()).then(w=>wg.selectAll("path").data(topojson.feature(w,w.objects.countries).features).join("path").attr("d",path).attr("fill","#1e3354").attr("stroke","#4a6a9a").attr("stroke-width",.6).attr("vector-effect","non-scaling-stroke")).catch(e=>console.warn("world basemap",e));
   g.append("g").selectAll("path").data(topojson.feature(topo,topo.objects.countries).features).join("path").attr("d",path).attr("fill",d=>d.properties.iso==="USA"?"#16243f":"#1b2c4a");
   const pats={};
   const pattern=cols=>{const k=cols.join("-").replace(/#/g,"");if(pats[k])return pats[k];const w=6*cols.length;
@@ -63,14 +62,12 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   let filt=null,fset=null;
   const dotp={};const dots=c=>{const k=c.replace("#","");if(dotp[k])return dotp[k];const p=defs.append("pattern").attr("id","d"+k).attr("patternUnits","userSpaceOnUse").attr("width",7).attr("height",7);
     p.append("rect").attr("width",7).attr("height",7).attr("fill",c).attr("fill-opacity",.4);p.append("circle").attr("cx",3.5).attr("cy",3.5).attr("r",1.7).attr("fill",c);return dotp[k]=`url(#d${k})`};
-  const shade=shadeG;
-  const lvl=(c,l)=>({f:shade(c,l),o:1});
   /* texture for groups listed in window.TERR_PAT: base shade plus dark dots or a fine grid */
   const texp={};const tex=(c,kind)=>{const k=kind+c.replace("#","");if(texp[k])return texp[k];const p=defs.append("pattern").attr("id","t"+k).attr("patternUnits","userSpaceOnUse").attr("width",6).attr("height",6);
     p.append("rect").attr("width",6).attr("height",6).attr("fill",c);
     if(kind==="grid")p.append("path").attr("d","M0 .5H6M.5 0V6").attr("stroke","#0b1526").attr("stroke-opacity",.6).attr("stroke-width",1).attr("fill","none");
     else p.append("circle").attr("cx",3).attr("cy",3).attr("r",1.3).attr("fill","#0b1526").attr("fill-opacity",.6);return texp[k]=`url(#t${k})`};
-  const lvlG=(g,l)=>{const c=shade(FC(g),l),k=(window.TERR_PAT||{})[g];return{f:k?tex(c,k):c,o:1}};
+  const lvlG=(g,l)=>{const c=FC(g),k=(window.TERR_PAT||{})[g];return{f:k?tex(c,k):c,o:FILLLV[l]||1}};
   const style=d=>{const r=RB[d.properties.id];if(!r)return{f:"#1b2c4a",o:1};
     if(fset){const e=r.groups.filter(x=>fset.includes(x.group)).sort((a,b)=>LV[b.level]-LV[a.level]);if(!e.length)return{f:"#1b2c4a",o:1};if(e.length===1)return lvlG(e[0].group,e[0].level);return{f:pattern(e.slice(0,3).map(x=>FC(x.group))),o:1}}
     if(filt){const e=r.groups.find(x=>x.group===filt);return e?lvlG(filt,e.level):{f:"#1b2c4a",o:1}}
@@ -140,7 +137,7 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
 }
 function netTile(net,terr,topo){
   const el=$("netsvg");el.style.width="100%";const W=Math.max(900,el.parentNode.clientWidth-28),H=W<1000?820:780;const svg=d3.select(el).attr("width",W).attr("height",H).attr("viewBox",`0 0 ${W} ${H}`);svg.selectAll("*").remove();
-  const tc=Object.fromEntries(terr.groups.filter(g=>g.network_id).map(g=>[g.network_id,g.color]));const FB=window.CARTEL_FALL||{};const COL=id=>tc[id]||FB[id]||"#ff9f1c";
+  const ndefs=svg.append("defs");const COL=id=>window.cartelPaint(ndefs,window.cartelColor(id),window.cartelTex(id),"nt");  // hex + texture from palette.js, same as map and timeline
   const REG={MX:"Mexico",SV:"Central America",GT:"Central America",HN:"Central America",VE:"Venezuela & Colombia",CO:"Venezuela & Colombia",EC:"Ecuador",BR:"Brazil",HT:"Haiti"};
   const CEN={"Mexico":[.27,.36],"Central America":[.62,.17],"Facilitators":[.88,.17],"Venezuela & Colombia":[.62,.55],"Ecuador":[.30,.84],"Brazil":[.88,.62],"Haiti":[.88,.88]};
   const nodes=net.groups.map(g=>({...g,reg:REG[g.country]||"Facilitators"}));const by=Object.fromEntries(nodes.map(d=>[d.id,d]));
