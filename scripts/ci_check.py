@@ -191,7 +191,7 @@ LAYOUT_JS = r"""() => {
  document.querySelectorAll('body *').forEach(e => {
    if (e.children.length || !vis(e)) return; const txt = e.textContent.trim(); if (!/^\d{1,3}$/.test(txt)) return;
    const cs = getComputedStyle(e); const b = e.getBoundingClientRect();
-   if (parseFloat(cs.borderTopLeftRadius) >= b.height / 2 - 1 && Math.abs(b.width - b.height) < 4 && b.width <= 60) badges.push([e.closest('ol,ul,dl,table,svg,[class*=legend],[class*=list],section') || e.parentElement, txt]);
+   if (parseFloat(cs.borderTopLeftRadius) >= b.height / 2 - 1 && Math.abs(b.width - b.height) < 4 && b.width <= 60) badges.push([e.closest('ol,ul,dl,table,svg,section,main') || document.body, txt]);
  });
  const narrow = [];
  document.querySelectorAll('p, li, figcaption, blockquote, .lede, .summary, dd').forEach(e => {
@@ -230,14 +230,16 @@ SNAP_JS = r"""() => { window.__ciN = window.__ciN || 0; window.__ciIds = window.
     const shown = b.width > 0 && b.height > 0 && cs.display !== 'none' && cs.visibility !== 'hidden' && cs.opacity !== '0';
     const own = [...e.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent.trim()).join(' ');
     if (!shown) { out[id(e)] = [e.parentElement ? id(e.parentElement) : 0, '-']; return; }  // hidden: only becoming visible counts
-    out[id(e)] = [e.parentElement ? id(e.parentElement) : 0, e.tagName + '+' + [...e.attributes].filter(a => a.name !== 'data-ci-btn').map(a => a.name + '=' + a.value).join(' ') + '|' + own];
+    const r = [b.x, b.y, b.width, b.height].map(v => Math.round(v)).join(',');
+    const vis = [cs.color, cs.backgroundColor, cs.fill, cs.stroke, cs.opacity, cs.transform, e.getAttribute('d') || '', e.getAttribute('points') || '', e.getAttribute('src') || ''].join(';');
+    out[id(e)] = [e.parentElement ? id(e.parentElement) : 0, e.tagName + '+' + r + ';' + vis + '|' + own];  // what is on screen, not bare attributes
   });
   return out; }"""
 
 def _delta(a, b):
     """Element ids that changed, plus parents that gained or lost children."""
     ids = {k for k in a.keys() & b.keys() if a[k][1] != b[k][1]}
-    parents = {a[k][0] for k in a.keys() - b.keys()} | {b[k][0] for k in b.keys() - a.keys()}
+    parents = {a[k][0] for k in a.keys() - b.keys() if a[k][1] != '-'} | {b[k][0] for k in b.keys() - a.keys() if b[k][1] != '-'}
     return ids, parents
 
 RESET_RE = re.compile(r"^(reset\b.*|clear\b.*|back\b.*|↺|⟲)$", re.I)  # undo-type controls: no-ops on a fresh page
