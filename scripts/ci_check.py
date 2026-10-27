@@ -185,17 +185,19 @@ LAYOUT_JS = r"""() => {
    const txt = t.textContent.trim(); if (!/^\d{1,3}$/.test(txt) || !vis(t)) return;
    const tb = t.getBoundingClientRect(); const cx = tb.x + tb.width / 2, cy = tb.y + tb.height / 2;
    const svg = t.ownerSVGElement; if (!svg) return;
-   for (const c of svg.querySelectorAll('circle')) { const b = c.getBoundingClientRect();
+   for (const c of svg.querySelectorAll('circle, rect')) { const b = c.getBoundingClientRect();
+     if (c.tagName === 'rect' && !(parseFloat(c.getAttribute('rx') || c.getAttribute('ry') || 0) >= b.height / 4)) continue;  // rounded rects (pills) only
+     if (c.tagName === 'rect' && b.width > b.height * 2.2) continue;
      if (b.width >= 8 && b.width <= 60 && Math.abs(b.x + b.width / 2 - cx) < b.width / 3 && Math.abs(b.y + b.height / 2 - cy) < b.height / 3) { badges.push([svg, txt]); break; } }
  });
  document.querySelectorAll('body *').forEach(e => {
    if (e.children.length || !vis(e)) return; const txt = e.textContent.trim(); if (!/^\d{1,3}$/.test(txt)) return;
    const cs = getComputedStyle(e); const b = e.getBoundingClientRect();
-   if (parseFloat(cs.borderTopLeftRadius) >= b.height / 2 - 1 && Math.abs(b.width - b.height) < 4 && b.width <= 60) badges.push([e.closest('ol,ul,dl,table,svg,section,main') || document.body, txt]);
+   if (parseFloat(cs.borderTopLeftRadius) >= b.height / 2 - 1 && b.width >= b.height - 4 && b.width <= Math.max(b.height * 1.8, b.height + 4) && b.width <= 60) badges.push([e.closest('ol,ul,dl,table,svg,section,main') || document.body, txt]);
  });
  const narrow = [];
  document.querySelectorAll('p, li, figcaption, blockquote, .lede, .summary, dd').forEach(e => {
-   if (!vis(e) || e.closest('svg,nav,header,footer,table,button,[class*=card],#src,#sources,.sources,.src,.refs,.references,.footnotes,[id*=source]')) return;
+   if (!vis(e) || e.closest('svg,nav,header,footer,table,button,#src,#sources,.sources,.src,.refs,.references,.footnotes,[id*=source]')) return;
    const txt = e.textContent.trim(); if (txt.length < 160) return;
    const linkTxt = [...e.querySelectorAll('a')].reduce((n, a) => n + a.textContent.length, 0); if (linkTxt > txt.length * 0.4) return;  // source/link lists
    const lh = parseFloat(getComputedStyle(e).lineHeight) || 20; const b = e.getBoundingClientRect();
@@ -266,6 +268,7 @@ def button_checks(pg, slug, url, limit=150):
             if not loc.is_visible():
                 continue
             loc.scroll_into_view_if_needed(timeout=2000)
+            loc.hover(timeout=2000); pg.wait_for_timeout(400)  # hover effects belong in the baseline, not the click
             s0 = pg.evaluate(SNAP_JS); pg.wait_for_timeout(700); s1 = pg.evaluate(SNAP_JS)
             n_ids, n_par = _delta(s0, s1)
             loc.click(timeout=3000)
