@@ -76,9 +76,14 @@ AUDIT = r"""
       const g=segsOf(el);
       items.push({kind:el.classList.contains('glow')?'glow':'river', sw:(+el.getAttribute('stroke-width')||0)/2, segs:g.segs, pts:null});
     });
-    svg.querySelectorAll('g.lay-cut path, g.lay-threat path, g.lay-neither path').forEach(el=>{
+    svg.querySelectorAll('g.lay-lever path').forEach(el=>{
       const g=segsOf(el);
-      items.push({kind:'arrow', sw:(+el.getAttribute('stroke-width')||0)/2, segs:g.segs, pts:g.pts});
+      const open=el.classList.contains('lay-cut')||el.classList.contains('lay-threat')||el.classList.contains('lay-neither');
+      items.push({kind:'arrow', sw:(+el.getAttribute('stroke-width')||0)/2+(open?2:0), segs:g.segs, pts:open?null:g.pts});
+    });
+    svg.querySelectorAll('path.flow-reach').forEach(el=>{
+      const g=segsOf(el);
+      items.push({kind:'arrow', sw:7, segs:g.segs, pts:null});
     });
     svg.querySelectorAll('path[data-ink="dam"]').forEach(el=>{
       const g=segsOf(el);
@@ -117,7 +122,7 @@ AUDIT = r"""
   function visibleMaps(){
     return [...document.querySelectorAll('#regions svg.chart, #panel svg.chart')].filter(svg=>{
       const r=svg.getBoundingClientRect();
-      return r.width>20 && r.height>20 && svg.querySelector('path.core, path.glow, path[data-ink="dam"], g.lay-cut, g.lay-threat, g.lay-neither');
+      return r.width>20 && r.height>20 && svg.querySelector('path.core, path.glow, path[data-ink="dam"], g.lay-lever, path.flow-reach');
     });
   }
   const labelHits=[];
@@ -188,7 +193,7 @@ AUDIT = r"""
       fire(g,x,y,'hover',false);
       if(phone && g.classList.contains('lay-dam')) fire(g,x,y,'tap',true);
     });
-    svg.querySelectorAll('g.lay-cut, g.lay-threat, g.lay-neither').forEach(g=>{
+    svg.querySelectorAll('g.lay-lever').forEach(g=>{
       const path=g.querySelector('path[data-ink="arrow"]')||g.querySelector('path');
       if(!path) return;
       let len=0; try{ len=path.getTotalLength(); }catch(e){ len=0; }
@@ -228,7 +233,7 @@ AUDIT = r"""
 
 FIT_AUDIT = r"""
 () => {
-  const sel = 'path.basin,path.glow,path.core,g.lay-cut path,g.lay-threat path,g.lay-neither path,path[data-ink="dam"],circle[data-ink="arrow"],text';
+  const sel = 'path.basin,path.glow,path.core,g.lay-lever path,path.flow-reach,path[data-ink="dam"],circle[data-ink="arrow"],text';
   const fails = [];
   const maps = [...document.querySelectorAll('#regions svg.chart')].filter(svg => svg.getBoundingClientRect().width > 20);
   for (const svg of maps) {
