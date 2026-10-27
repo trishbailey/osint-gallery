@@ -246,7 +246,7 @@ def _delta(a, b):
 
 RESET_RE = re.compile(r"^(reset\b.*|clear\b.*|back\b.*|↺|⟲)$", re.I)  # undo-type controls: no-ops on a fresh page
 
-def button_checks(pg, slug, url, limit=150):
+def button_checks(pg, slug, url, limit=200):
     """Click every visible button, each on a freshly loaded page; fail if the click changes
     nothing. Elements that change on their own (animations, timers) are measured first and
     ignored. Reset/clear controls are skipped: on a fresh page they rightly do nothing."""
