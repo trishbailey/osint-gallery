@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-27T16:08:59Z",
+ "as_of": "2026-10-27T19:10:49Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,92 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2115156753826603385",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2115156753826603385",
+   "created_at": "2026-10-27T19:00:42.000Z",
+   "text": "➡️ Suspenden clases presenciales en 23 escuelas de Guasave por enfrentamientos armados en Bamoa y sus alrededores 🔴 🏫 Los planteles de distintos niveles educativos recurrieron a la modalidad a distancia luego del enfrentamiento entre fuerzas federales y civiles armados; https://…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "In-person classes are suspended at 23 schools in Guasave because of armed clashes in Bamoa and its surroundings. Schools at various levels switched to remote learning after the clash between federal forces and armed civilians;"
+  },
+  {
+   "id": "2115131938482647415",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115131938482647415",
+   "created_at": "2026-10-27T17:22:06.000Z",
+   "text": "Zapopan, refugio del crimen organizado: 12 objetivos prioritarios han sido detenidos en nueve meses https://t.co/SvJFAwGMLB",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Zapopan, a refuge for organised crime: 12 priority targets have been arrested in nine months"
+  },
+  {
+   "id": "2115130079114052002",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2115130079114052002",
+   "created_at": "2026-10-27T17:14:42.000Z",
+   "text": "Asesinan en Guayaquil al abogado Leonardo Toledo, quien defendió a Mayra Salazar en el caso Metástasis. https://t.co/HvNVAlKvZT https://t.co/UnI22D5Uda",
+   "lang": "und",
+   "region_ids": [
+    "ECU-1280"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Lawyer Leonardo Toledo, who defended Mayra Salazar in the Metástasis case, is murdered in Guayaquil."
+  },
+  {
+   "id": "2115114502135980358",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115114502135980358",
+   "created_at": "2026-10-27T16:12:48.000Z",
+   "text": "Los empaquetaban y vendían en Edomex: aseguran 6 toneladas de cigarros falsos que almacenaban en bodegas de la colonia Morelos https://t.co/RCwGFFAAqs",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2732",
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "They packaged and sold them in Edomex: 6 tonnes of counterfeit cigarettes stored in warehouses in the Morelos neighbourhood are seized"
+  },
+  {
+   "id": "2115114488118546623",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115114488118546623",
+   "created_at": "2026-10-27T16:12:45.000Z",
+   "text": "El Gobierno de Naucalpan reveló el cartel de forma escalonada a través de la cuenta del presidente municipal Isaac Montoya Márquez; la entrada es gratuita en el Parque Naucalli https://t.co/BEdxBwqpDE https://t.co/Ip1TEYlv9E",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "The Naucalpan government revealed the event poster in stages through the account of municipal president Isaac Montoya Márquez; entry to Parque Naucalli is free"
+  },
   {
    "id": "2115111281808269495",
    "handle": "parescolombia",
@@ -2728,23 +2814,6 @@
    "source_type": "local outlet",
    "label": null,
    "text_en": "➡️ Armed attack leaves a man and a woman dead in the Flor de Mayo neighbourhood of Villa Unión, Sinaloa, south of Mazatlán…"
-  },
-  {
-   "id": "2112600445315162426",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2112600445315162426",
-   "created_at": "2026-10-20T17:42:51.000Z",
-   "text": "➡️ Ataque a balazos en llantera de #Mazatlán deja un hombre muerto y dos trabajadores heridos 🚔🚨 Un hombre fue localizado sin vida y dos trabajadores resultaron heridos tras un ataque a balazos en una llantera de la colonia Luis Echeverría, en Mazatlán. Info 👉🏼🔗 https://t.co/y7v…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ Shooting at a #Mazatlán tyre shop leaves one man dead and two workers wounded, in the Luis Echeverría neighbourhood."
   }
  ]
 }

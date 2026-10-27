@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-27T16:08:59Z",
+ "as_of": "2026-10-27T19:10:50Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,152 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "efec9c0f94",
+   "status": "single_source",
+   "title": "➡️ Suspenden clases presenciales en 23 escuelas de Guasave por enfrentamientos armados en Bamoa y sus alrededores 🔴 🏫 Los planteles de distintos niveles educativos recurrieron a la modalidad a distanc",
+   "lang": "es",
+   "title_en": "In-person classes are suspended at 23 schools in Guasave because of armed clashes in Bamoa and its surroundings. Schools at various levels switched to remote learning",
+   "first_report": "2026-10-27T19:00:42Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2115156753826603385",
+     "time": "2026-10-27T19:00:42Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "911838102c",
+   "status": "single_source",
+   "title": "Zapopan, refugio del crimen organizado: 12 objetivos prioritarios han sido detenidos en nueve meses",
+   "lang": "es",
+   "title_en": "Zapopan, a refuge for organised crime: 12 priority targets have been arrested in nine months",
+   "first_report": "2026-10-27T17:22:06Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115131938482647415",
+     "time": "2026-10-27T17:22:06Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "4a6048638c",
+   "status": "single_source",
+   "title": "Asesinan en Guayaquil al abogado Leonardo Toledo, quien defendió a Mayra Salazar en el caso Metástasis.",
+   "lang": "es",
+   "title_en": "Lawyer Leonardo Toledo, who defended Mayra Salazar in the Metástasis case, is murdered in Guayaquil.",
+   "first_report": "2026-10-27T17:14:42Z",
+   "first_report_precision": "minute",
+   "first_source": "Primicias",
+   "region_ids": [
+    "ECU-1280"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "X @Primicias",
+     "url": "https://x.com/Primicias/status/2115130079114052002",
+     "time": "2026-10-27T17:14:42Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "165d869171",
+   "status": "single_source",
+   "title": "Los empaquetaban y vendían en Edomex: aseguran 6 toneladas de cigarros falsos que almacenaban en bodegas de la colonia Morelos",
+   "lang": "es",
+   "title_en": "They packaged and sold them in Edomex: 6 tonnes of counterfeit cigarettes stored in warehouses in the Morelos neighbourhood are seized",
+   "first_report": "2026-10-27T16:12:48Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2732",
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115114502135980358",
+     "time": "2026-10-27T16:12:48Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "da87b2066e",
+   "status": "single_source",
+   "title": "El Gobierno de Naucalpan reveló el cartel de forma escalonada a través de la cuenta del presidente municipal Isaac Montoya Márquez; la entrada es gratuita en el Parque Naucalli",
+   "lang": "es",
+   "title_en": "The Naucalpan government revealed the event poster in stages through the account of municipal president Isaac Montoya Márquez; entry to Parque Naucalli is free",
+   "first_report": "2026-10-27T16:12:45Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115114488118546623",
+     "time": "2026-10-27T16:12:45Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "8a5f259211",
    "status": "single_source",
@@ -51,7 +197,7 @@
    "status": "official_claim_only",
    "title": "En Durango, elementos de @SEMAR_mx, en coordinación con @SSPCMexico y @FGRMexico, localizaron e inhabilitaron dos laboratorios clandestinos utilizados para la producción de metanfetamina, en inmediaci",
    "lang": "es",
-   "title_en": "In Durango, @SEMAR_mx personnel, in coordination with @SSPCMexico and @FGRMexico, located and disabled two clandestine laboratories used to produce methamphetamine, near",
+   "title_en": "In Durango, @SEMAR_mx personnel, in coordination with @SSPCMexico and @FGRMexico, located and disabled two clandestine laboratories used to produce methamphetamine near the village of El Destierro. During the operations ",
    "first_report": "2026-10-27T15:50:35Z",
    "first_report_precision": "minute",
    "first_source": "Gabinete de Seguridad (Mexico)",
@@ -89,8 +235,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
-    "sinaloa"
+    "sinaloa",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -358,8 +504,8 @@
    "first_report_precision": "day",
    "first_source": "Diario Extra (Ecuador)",
    "region_ids": [
-    "MEX-2711",
     "MEX-2719",
+    "MEX-2711",
     "MEX-2706",
     "MEX-2718"
    ],
@@ -412,8 +558,8 @@
    "first_report_precision": "day",
    "first_source": "Milenio",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
@@ -514,8 +660,8 @@
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
    "region_ids": [
-    "MEX-2706",
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [
@@ -709,9 +855,9 @@
    "region_ids": [],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
+    "sinaloa",
     "mayiza",
-    "sinaloa"
+    "chapitos"
    ],
    "outlets": [
     "Excélsior"
@@ -738,8 +884,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "GTM-1951",
-    "MEX-2719"
+    "MEX-2719",
+    "GTM-1951"
    ],
    "country": "GTM",
    "group_ids": [
@@ -770,13 +916,13 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
-    "cmln",
-    "cjng"
+    "cjng",
+    "cmln"
    ],
    "outlets": [
     "Infobae"
@@ -803,13 +949,13 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2734",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2734"
    ],
    "country": "MEX",
    "group_ids": [
-    "gulf",
-    "cjng"
+    "cjng",
+    "gulf"
    ],
    "outlets": [
     "Infobae"
@@ -993,8 +1139,8 @@
    "first_report_precision": "day",
    "first_source": "Milenio",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2712"
+    "MEX-2712",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -1081,8 +1227,8 @@
    "first_report_precision": "day",
    "first_source": "Semana",
    "region_ids": [
-    "COL-1421",
-    "VEN-41"
+    "VEN-41",
+    "COL-1421"
    ],
    "country": "COL",
    "group_ids": [
@@ -1115,8 +1261,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "segmar",
-    "exfarc"
+    "exfarc",
+    "segmar"
    ],
    "outlets": [
     "El Tiempo"
@@ -1242,8 +1388,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "ARG-1312",
-    "PRY-609"
+    "PRY-609",
+    "ARG-1312"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -1364,8 +1510,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
-    "sinaloa"
+    "sinaloa",
+    "mayiza"
    ],
    "outlets": [
     "Infobae"
@@ -1884,8 +2030,8 @@
    "first_report_precision": "minute",
    "first_source": "Proceso",
    "region_ids": [
-    "MEX-2714",
-    "PRY-606"
+    "PRY-606",
+    "MEX-2714"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2080,10 +2226,10 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2734",
-    "MEX-2725",
-    "MEX-2718",
-    "MEX-2716"
+    "MEX-2713",
+    "MEX-2712",
+    "MEX-2719",
+    "MEX-2734"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2190,8 +2336,8 @@
    "first_report_precision": "day",
    "first_source": "El Tiempo",
    "region_ids": [
-    "COL-1314",
-    "COL-1404"
+    "COL-1404",
+    "COL-1314"
    ],
    "country": "COL",
    "group_ids": [
@@ -2602,8 +2748,8 @@
    "first_report_precision": "minute",
    "first_source": "Ríodoce",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2732"
+    "MEX-2732",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2662,8 +2808,8 @@
    "first_source": "Gabinete de Seguridad (Mexico)",
    "region_ids": [
     "MEX-2712",
-    "MEX-2711",
     "MEX-2721",
+    "MEX-2711",
     "MEX-2710"
    ],
    "country": "MEX",
@@ -2722,8 +2868,8 @@
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2712"
+    "MEX-2712",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
@@ -2856,122 +3002,6 @@
      "via": "X @GabSeguridadMX",
      "url": "https://x.com/GabSeguridadMX/status/2114439526571728941",
      "time": "2026-10-25T19:30:42Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "954c500d2f",
-   "status": "single_source",
-   "title": "Una #balacera en la colonia #MiguelHidalgo, en #Culiacán, movilizó a corporaciones de seguridad. En el lugar localizaron ocho casquillos y un inmueble con impactos de bala.",
-   "lang": "es",
-   "title_en": "A #shootout in the #MiguelHidalgo neighbourhood of #Culiacán mobilised security forces. Eight shell casings and a building with bullet impacts were found at the scene.",
-   "first_report": "2026-10-25T18:10:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2114419217839579592",
-     "time": "2026-10-25T18:10:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "71cbffeadc",
-   "status": "single_source",
-   "title": "Detienen a transportista en Eagle Pass, Texas, por presuntos vínculos con huachicol; Mejía Berdeja pide “operación enjambre” en Coahuila Julio Rodolfo González, empresario nigropetense detenido, quien",
-   "lang": "es",
-   "title_en": "Truck operator arrested in Eagle Pass, Texas, over alleged links to huachicol (fuel theft); Mejía Berdeja calls for an \"Operation Swarm\" in Coahuila. Julio Rodolfo González, a Piedras Negras businessman who also holds US",
-   "first_report": "2026-10-25T18:00:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Proceso",
-   "region_ids": [
-    "MEX-2708"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Proceso"
-   ],
-   "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2114416702280626307",
-     "time": "2026-10-25T18:00:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "b7d79f8aac",
-   "status": "single_source",
-   "title": "Suben a 10 los muertos por un bombardeo militar contra la guerrilla del ELN en Colombia, entre ellos dos cabecillas.",
-   "lang": "es",
-   "title_en": "Death toll rises to 10 from a military bombing of the ELN guerrilla in Colombia, including two commanders.",
-   "first_report": "2026-10-25T16:40:11Z",
-   "first_report_precision": "minute",
-   "first_source": "Primicias",
-   "region_ids": [],
-   "country": "COL",
-   "group_ids": [
-    "eln"
-   ],
-   "outlets": [
-    "Primicias"
-   ],
-   "sources": [
-    {
-     "outlet": "primicias",
-     "name": "Primicias",
-     "kind": "outlet",
-     "via": "X @Primicias",
-     "url": "https://x.com/Primicias/status/2114396616748577127",
-     "time": "2026-10-25T16:40:11Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "b2c7321f4d",
-   "status": "single_source",
-   "title": "Linchan a presuntos asesinos de mujer y nieta en Chiapas; uno fue decapitado (Video) Pobladores de Ostuacán irrumpieron por la fuerza en las instalaciones de seguridad municipal de donde sacaron a los",
-   "lang": "es",
-   "title_en": "Alleged killers of a woman and her granddaughter lynched in Chiapas; one was decapitated (video). Residents of Ostuacán forced their way into the municipal security facility and took out the two men, who were in police c",
-   "first_report": "2026-10-25T16:30:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Proceso",
-   "region_ids": [
-    "MEX-2735"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Proceso"
-   ],
-   "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2114394052963574089",
-     "time": "2026-10-25T16:30:00Z",
      "time_precision": "minute"
     }
    ]
