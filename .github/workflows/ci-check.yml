@@ -1,7 +1,7 @@
 name: ci-check
 # One check on every change: retired GA tag, github.io / old onrender links,
 # shared-file edits without Trish's OK, and colour / label-size / 390px phone checks
-# on the dashboards a change touches. Run manually with all=true for a full audit.
+# on the dashboards a change touches (every dashboard when the checks or shared files change). Run manually with all=true for a full audit.
 on:
   pull_request:
     types: [opened, synchronize, reopened, labeled, unlabeled]
