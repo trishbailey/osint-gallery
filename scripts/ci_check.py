@@ -191,7 +191,7 @@ LAYOUT_JS = r"""() => {
  document.querySelectorAll('body *').forEach(e => {
    if (e.children.length || !vis(e)) return; const txt = e.textContent.trim(); if (!/^\d{1,3}$/.test(txt)) return;
    const cs = getComputedStyle(e); const b = e.getBoundingClientRect();
-   if (parseFloat(cs.borderTopLeftRadius) >= b.height / 2 - 1 && Math.abs(b.width - b.height) < 4 && b.width <= 60) badges.push([e.parentElement && e.parentElement.parentElement || e, txt]);
+   if (parseFloat(cs.borderTopLeftRadius) >= b.height / 2 - 1 && Math.abs(b.width - b.height) < 4 && b.width <= 60) badges.push([e.closest('ol,ul,dl,table,svg,[class*=legend],[class*=list],section') || e.parentElement, txt]);
  });
  const narrow = [];
  document.querySelectorAll('p, li, figcaption, blockquote, .lede, .summary, dd').forEach(e => {
@@ -239,37 +239,40 @@ def _delta(a, b):
     parents = {a[k][0] for k in a.keys() - b.keys()} | {b[k][0] for k in b.keys() - a.keys()}
     return ids, parents
 
-def button_checks(pg, slug):
-    """Click every visible button; fail if the click changes nothing on the page.
-    Elements that change on their own (animations) are measured first and ignored."""
+RESET_RE = re.compile(r"^(reset\b.*|clear\b.*|back\b.*|↺|⟲)$", re.I)  # undo-type controls: no-ops on a fresh page
+
+def button_checks(pg, slug, url, limit=40):
+    """Click every visible button, each on a freshly loaded page; fail if the click changes
+    nothing. Elements that change on their own (animations, timers) are measured first and
+    ignored. Reset/clear controls are skipped: on a fresh page they rightly do nothing."""
     errs = []
-    btns = pg.evaluate(BUTTONS_JS)[:60]
-    for b in btns:
-        loc = pg.locator(f'[data-ci-btn="{b["i"]}"]')
-        name = b['t'] or '(no label)'
+    first = pg.evaluate(BUTTONS_JS)
+    for n, b0 in enumerate(first[:limit]):
+        name = b0['t'] or '(no label)'
+        if RESET_RE.match(name.strip()):
+            continue
         try:
+            if n:
+                pg.goto(url, wait_until="load", timeout=45000); pg.wait_for_timeout(2500)
+                btns = pg.evaluate(BUTTONS_JS)
+                if n >= len(btns) or btns[n]['t'] != b0['t']:
+                    continue
+            loc = pg.locator(f'[data-ci-btn="{n}"]')
             if not loc.is_visible():
                 continue
             loc.scroll_into_view_if_needed(timeout=2000)
             s0 = pg.evaluate(SNAP_JS); pg.wait_for_timeout(700); s1 = pg.evaluate(SNAP_JS)
-            n_ids, n_par = _delta(s0, s1)  # what changes on its own (animations, timers)
+            n_ids, n_par = _delta(s0, s1)
             loc.click(timeout=3000)
             pg.wait_for_timeout(700)
             s2 = pg.evaluate(SNAP_JS)
         except Exception as e:
-            if b.get("real"):  # a real <button> that is covered or broken; map markers (role=button) may sit under neighbours
+            if b0.get("real"):  # a real <button> that is covered or broken; map markers (role=button) may sit under neighbours
                 errs.append(f"{slug} [desktop]: button '{name}' could not be clicked ({type(e).__name__})")
             continue
         c_ids, c_par = _delta(s1, s2)
-        dead = not (c_ids - n_ids) and not (c_par - n_par)
-        if dead:
+        if not (c_ids - n_ids) and not (c_par - n_par):
             errs.append(f"{slug} [desktop]: button '{name}' shows nothing when clicked")
-        try:  # restore: toggles back, popups closed
-            if b.get("toggle"):
-                loc.click(timeout=2000); pg.wait_for_timeout(300)
-            pg.keyboard.press("Escape")
-        except Exception:
-            pass
     return errs
 
 def browser_checks(port, slugs):
@@ -301,7 +304,7 @@ def browser_checks(port, slugs):
                     ex = "; ".join(f"'{n['t']}' {n['w']}px of {n['avail']}px" for n in lay["narrow"][:3])
                     errs.append(f"{slug} [desktop]: {len(lay['narrow'])} text block(s) stop well short of the right edge, e.g. {ex}")
                 if name == "desktop":
-                    errs += button_checks(pg, slug)
+                    errs += button_checks(pg, slug, f"http://127.0.0.1:{port}/{slug}/")
                 pg.close()
                 for e in jserr:
                     errs.append(f"{slug} [{name}]: JS error: {e}")
