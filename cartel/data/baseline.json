@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-26",
+ "as_of": "2026-10-27",
  "arcs": {
   "andes": {
    "phase": "Record coca output and Ecuador's gang war.",
@@ -58,7 +58,26 @@
    "turning_points": [
     "2025-12-17 Clan del Golfo designated an FTO."
    ],
-   "recent_log": []
+   "recent_log": [
+    {
+     "date": "2026-10-27",
+     "text": "More than 300 US troops began counter-narcotics training at Tolemaida, and Colombia extradited Mocho Olmedo to the US.",
+     "links": [
+      {
+       "title": "Más de 300 militares estadounidenses llegan a Colombia para un entrenamiento contra el narcotráfico",
+       "url": "https://elpais.com/america-colombia/2026-10-27/mas-de-300-militares-estadounidenses-llegan-a-colombia-para-un-entrenamiento-contra-el-narcotrafico.html",
+       "source": "El Pais Mexico",
+       "date": "2026-10-27"
+      },
+      {
+       "title": "Colombia Extradites Mocho Olmedo to US After Peace Freeze",
+       "url": "https://www.extradition.co/mocho-olmedo-extradition/",
+       "source": "extradition.co",
+       "date": "2026-10-27"
+      }
+     ]
+    }
+   ]
   },
   "ecuador": {
    "phase": "Los Choneros and Los Lobos fight over Ecuador's cocaine export economy.",
@@ -98,7 +117,20 @@
     "2025-08-28 FinCEN CMLN advisory.",
     "2026-01-30 Panama voids CK Hutchison's port concessions."
    ],
-   "recent_log": []
+   "recent_log": [
+    {
+     "date": "2026-10-27",
+     "text": "The Santelices businessmen, linked by OFAC to the Mayiza, lost a first court challenge to the UIF account freeze.",
+     "links": [
+      {
+       "title": "Los Santelices, empresarios ligados a La Mayiza por EEUU, pierden primer round contra la UIF por bloqueo de cuentas - Infobae",
+       "url": "https://www.infobae.com/mexico/2026/10/27/los-santelices-empresarios-ligados-a-la-mayiza-por-eeuu-pierden-primer-round-contra-la-uif-por-bloqueo-de-cuentas/",
+       "source": "infobae.com",
+       "date": "2026-10-27"
+      }
+     ]
+    }
+   ]
   },
   "sinaloa-war": {
    "phase": "The Chapitos and the Mayiza have fought for control of the Sinaloa Cartel since September 2024.",
@@ -110,7 +142,26 @@
     "2024-07-25 El Mayo Zambada is flown to the US.",
     "2026-07-20 El Mayo sentenced to life."
    ],
-   "recent_log": []
+   "recent_log": [
+    {
+     "date": "2026-10-27",
+     "text": "Federal and state forces arrested El Isra, a Los Rusos operator for the Mayiza, in Mexicali.",
+     "links": [
+      {
+       "title": "Lo cercaron en un restaurante de Mexicali: cae “El Isra”, líder de Los Rusos y objetivo prioritario en Baja California - Infobae",
+       "url": "https://www.infobae.com/mexico/2026/10/26/lo-cercaron-en-un-restaurante-de-mexicali-cae-el-isra-lider-de-los-rusos-y-objetivo-prioritario-en-baja-california/",
+       "source": "infobae.com",
+       "date": "2026-10-27"
+      },
+      {
+       "title": "Detienen a El Isra, principal operador de Los Rusos, en BC- Grupo Milenio",
+       "url": "https://milenio.com/policia/detienen-a-el-isra-principal-operador-de-los-rusos-en-bc",
+       "source": "milenio.com",
+       "date": "2026-10-27"
+      }
+     ]
+    }
+   ]
   },
   "venezuela-caribbean": {
    "phase": "Maduro is in US custody, US boat strikes continue, and a trial is proposed for June 2027.",
