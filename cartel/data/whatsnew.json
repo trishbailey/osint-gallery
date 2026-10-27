@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-27T13:06Z",
+ "as_of": "2026-10-27T16:10Z",
  "note": "Strategic digest of the last ~7 days, grouped by ongoing trend: leadership, splits and alliances, territory and routes, policy and designations, violence patterns, money. Routine seizures and minor arrests are left out. X posts are used only as sources. Verification: Confirmed = 2+ independent reliable sources; Single source; Official claim only. Status is shown only when sourced counts support it.",
  "trends": [
   {
@@ -19,6 +19,38 @@
     "ELPAIS_SIN"
    ],
    "developments": [
+    {
+     "date": "2026-10-27",
+     "place": "Mazatlán prison",
+     "text": "The war has moved inside Mazatlán's prison: Infobae reports a brawl involving Los Chapitos left 12 dead there, and the prison's doctor has since disappeared, which puts the penal system itself among the contested ground.",
+     "verification": "Confirmed",
+     "regions": [
+      "MEX-2711"
+     ],
+     "groups": [
+      "sinaloa"
+     ],
+     "sources": [
+      {
+       "url": "https://x.com/infobaemexico/status/2115105696358265316",
+       "name": "infobaemexico (X @infobaemexico)",
+       "title": "Mazatlán prison remains engulfed in violence after a Los Chapitos brawl that left 12 dead: José Luis Vega, the…",
+       "date": "2026-10-27"
+      },
+      {
+       "url": "https://www.eluniversal.com.mx/estados/desaparece-doctor-del-centro-penitenciario-de-mazatlan-emiten-ficha-de-busqueda/",
+       "name": "El Universal",
+       "title": "Doctor at the Mazatlán prison goes missing; search notice issued",
+       "date": "2026-10-27"
+      },
+      {
+       "url": "https://www.jornada.com.mx/2026/10/27/estados/031n2est?partner=rss",
+       "name": "La Jornada (estados)",
+       "title": "Missing-person notice issued for a priest who disappeared in Culiacán",
+       "date": "2026-10-27"
+      }
+     ]
+    },
     {
      "date": "2026-10-24",
      "place": "Cucurpe, Sonora",
@@ -299,6 +331,48 @@
     }
    ],
    "developments": [
+    {
+     "date": "2026-10-27",
+     "place": "Cúcuta",
+     "text": "Violence has reached Cúcuta, Colombia's main crossing to Venezuela: former government secretary and mayoral hopeful Miguel Castellanos was shot dead on a road and an explosive attack near the border wounded three; no group has been publicly identified as responsible.",
+     "verification": "Confirmed",
+     "regions": [
+      "COL-1421"
+     ],
+     "groups": [],
+     "sources": [
+      {
+       "url": "https://eltiempo.com/colombia/otras-ciudades/nuevos-detalles-del-asesinato-de-miguel-castellanos-exsecretario-de-gobierno-y-aspirante-a-la-alcaldia-que-fue-asesinado-en-una-via-de-cucuta-3596537",
+       "name": "eltiempo.com",
+       "title": "Nuevos detalles del asesinato de Miguel Castellanos, exsecretario de Gobierno y aspirante a la Alcaldía que fu",
+       "date": "2026-10-27"
+      },
+      {
+       "url": "https://primicias.ec/internacional/asesinato-colombia-precandidato-alcaldia-cucuta-miguel-castellanos-135791",
+       "name": "primicias.ec",
+       "title": "Pre-candidate for mayor of Cúcuta, Miguel Castellanos, murdered in Colombia",
+       "date": "2026-10-27"
+      },
+      {
+       "url": "https://semana.com/nacion/cucuta/articulo/los-detalles-desconocidos-del-asesinato-de-miguel-castellanos-precandidato-a-la-alcaldia-de-cucuta/202659",
+       "name": "semana.com",
+       "title": "Los detalles desconocidos del asesinato de Miguel Castellanos, precandidato a la Alcaldía de Cúcuta - Semana",
+       "date": "2026-10-27"
+      },
+      {
+       "url": "https://semana.com/nacion/cucuta/articulo/atentado-con-explosivo-en-cucuta-cerca-de-la-frontera-entre-colombia-y-venezuela-hay-tres-heridos/202653",
+       "name": "semana.com",
+       "title": "Atentado con explosivo en Cúcuta, cerca a la frontera entre Colombia y Venezuela: tres heridos - Semana",
+       "date": "2026-10-27"
+      },
+      {
+       "url": "https://x.com/parescolombia/status/2115098759017251125",
+       "name": "parescolombia (X @parescolombia)",
+       "title": "#ParesReporta The murder of Cúcuta's former government secretary is the trigger for asserting that the main bo…",
+       "date": "2026-10-27"
+      }
+     ]
+    },
     {
      "date": "2026-10-24",
      "place": "Cauca",

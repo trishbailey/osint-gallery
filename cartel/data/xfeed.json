@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-27T13:05:52Z",
+ "as_of": "2026-10-27T16:08:59Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,111 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2115111281808269495",
+   "handle": "parescolombia",
+   "url": "https://x.com/parescolombia/status/2115111281808269495",
+   "created_at": "2026-10-27T16:00:01.000Z",
+   "text": "Cúcuta, entre el miedo y la desesperanza. El asesinato de Miguel Castellanos y la explosión de un carro bomba evidencian una crisis de seguridad que no da tregua. La ciudad necesita respuestas urgentes, no más violencia. Lea la nota en: https://t.co/wrf9erlbaK https://t.co/hsnp1…",
+   "lang": "und",
+   "region_ids": [
+    "COL-1421"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "Cúcuta, between fear and hopelessness. The murder of Miguel Castellanos and a car bomb explosion show a security crisis that gives no respite. The city needs urgent answers, not more violence. Read the story at the link."
+  },
+  {
+   "id": "2115108911518732402",
+   "handle": "GabSeguridadMX",
+   "url": "https://x.com/GabSeguridadMX/status/2115108911518732402",
+   "created_at": "2026-10-27T15:50:35.000Z",
+   "text": "En Durango, elementos de @SEMAR_mx, en coordinación con @SSPCMexico y @FGRMexico, localizaron e inhabilitaron dos laboratorios clandestinos utilizados para la producción de metanfetamina, en inmediaciones del poblado El Destierro. Durante las acciones se aseguraron https://t.co/…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2710"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "In Durango, @SEMAR_mx personnel, in coordination with @SSPCMexico and @FGRMexico, located and disabled two clandestine laboratories used to produce methamphetamine near the village of El Destierro. During the operations they seized…"
+  },
+  {
+   "id": "2115105696358265316",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115105696358265316",
+   "created_at": "2026-10-27T15:37:49.000Z",
+   "text": "Penal de Mazatlán sigue en medio de la violencia tras riña de Los Chapitos que dejó 12 muertos: desaparece José Luis Vega, doctor de la prisión https://t.co/vTCLind7Mn",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "chapitos"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Mazatlán prison remains engulfed in violence after a Los Chapitos brawl that left 12 dead: José Luis Vega, the prison doctor, goes missing"
+  },
+  {
+   "id": "2115098759017251125",
+   "handle": "parescolombia",
+   "url": "https://x.com/parescolombia/status/2115098759017251125",
+   "created_at": "2026-10-27T15:10:15.000Z",
+   "text": "#ParesReporta El asesinato del ex secretario de gobierno de Cúcuta es el disparador para afirmar que la principal ciudad de frontera vive una profunda crisis en todos los aspectos https://t.co/GYF73v8OOM https://t.co/BrxXwxbIRv",
+   "lang": "und",
+   "region_ids": [
+    "COL-1421"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "#ParesReporta The murder of Cúcuta's former government secretary is the trigger for asserting that the main border city is living through a deep crisis on every front."
+  },
+  {
+   "id": "2115085364352405709",
+   "handle": "SSPCMexico",
+   "url": "https://x.com/SSPCMexico/status/2115085364352405709",
+   "created_at": "2026-10-27T14:17:01.000Z",
+   "text": "En la #CDMX, elementos de @SEMAR_mx, #SSPC, @FGRMexico, en coordinación con autoridades locales, ejecutaron cuatro cateos en la alcaldía #Cuauhtémoc donde aseguraron 547 cajas de cigarros apócrifos, con un peso aproximado de seis toneladas. https://t.co/ayo15fFDCF https://t.co/j…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "In #CDMX, personnel from @SEMAR_mx, #SSPC and @FGRMexico, in coordination with local authorities, carried out four searches in the #Cuauhtémoc borough where they seized 547 boxes of counterfeit cigarettes weighing about six tonnes."
+  },
+  {
+   "id": "2115084918682222899",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2115084918682222899",
+   "created_at": "2026-10-27T14:15:15.000Z",
+   "text": "#PRIMICIASDesdeEEUU | Una amenaza de extorsión terminó de hundir el negocio que había abierto con su liquidación en Guayaquil. Hace tres años llegó a EE.UU. con USD 20.000 en deudas. https://t.co/2EwnLcGF0o https://t.co/KCFhEAPtNG",
+   "lang": "und",
+   "region_ids": [
+    "ECU-1280"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "#PRIMICIASDesdeEEUU | An extortion threat finished off the business they had opened with their severance pay in Guayaquil. Three years ago they arrived in the US with USD 20,000 in debt."
+  },
   {
    "id": "2115061877885567446",
    "handle": "GabSeguridadMX",
