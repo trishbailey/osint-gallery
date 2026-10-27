@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-27T19:10:49Z",
+ "as_of": "2026-10-27T22:02:45Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -28,12 +28,141 @@
  ],
  "posts": [
   {
+   "id": "2115194328725553552",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115194328725553552",
+   "created_at": "2026-10-27T21:30:01.000Z",
+   "text": "🚨 En Zapopan han caído operadores financieros del CJNG, integrantes de Los Beltrán Leyva, un exmarino ligado al huachicol fiscal y hasta un ciudadano estadounidense https://t.co/Zji4O8T2RW",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "🚨 In Zapopan, CJNG financial operators, members of Los Beltrán Leyva, a former marine linked to fiscal huachicol (fuel-tax smuggling) and even a US citizen have been arrested"
+  },
+  {
+   "id": "2115191808728633355",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2115191808728633355",
+   "created_at": "2026-10-27T21:20:00.000Z",
+   "text": "Detienen en Nueva York a Natalia Rezende, esposa de Cuauhtémoc Blanco La expresidenta del DIF Morelos fue interceptada, hace un par de semanas, en uno de los principales aeropuertos de la ciudad cona una fuerte suma de dinero en efectivo. https://t.co/6ItlLSbe5N",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2732"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Natalia Rezende, wife of Cuauhtémoc Blanco, detained in New York. The former president of DIF Morelos was intercepted a couple of weeks ago at one of the city's main airports with a large sum of cash."
+  },
+  {
+   "id": "2115187833023451450",
+   "handle": "InSightCrime",
+   "url": "https://x.com/InSightCrime/status/2115187833023451450",
+   "created_at": "2026-10-27T21:04:12.000Z",
+   "text": "🇸🇻 | Bukele’s crackdown weakened MS-13 and Barrio 18 and transformed security in El Salvador. But it also left an overwhelmed prison system and allegations of abuses. How did the country change, and at what cost? Read our analysis: https://t.co/Bt9Wy2bmKM https://t.co/szg1lClCkx",
+   "lang": "und",
+   "region_ids": [],
+   "country": "SLV",
+   "group_ids": [
+    "ms13",
+    "b18"
+   ],
+   "tier": "verified",
+   "source_type": "research outlet",
+   "label": null,
+   "text_en": "🇸🇻 | Bukele’s crackdown weakened MS-13 and Barrio 18 and transformed security in El Salvador. But it also left an overwhelmed prison system and allegations of abuses. How did the country change, and at what cost? Read our analysis."
+  },
+  {
+   "id": "2115181237035733351",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115181237035733351",
+   "created_at": "2026-10-27T20:37:59.000Z",
+   "text": "Trevilla Trejo se reúne con el gobernador de Nayarit para revisar avances en seguridad y tras recibir amenazas del CJNG https://t.co/70nlSx0LmH",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2721"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Trevilla Trejo meets the governor of Nayarit to review security progress, after receiving threats from the CJNG"
+  },
+  {
+   "id": "2115175450972488050",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115175450972488050",
+   "created_at": "2026-10-27T20:15:00.000Z",
+   "text": "⚠️ La desaparición del médico del penal de Mazatlán ocurrió apenas 2 semanas después de la riña en miembros de Los Chapitos https://t.co/fpL0VlmM2D",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "chapitos"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "⚠️ The disappearance of the Mazatlán prison doctor came just 2 weeks after the brawl among members of Los Chapitos"
+  },
+  {
+   "id": "2115167201741435176",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2115167201741435176",
+   "created_at": "2026-10-27T19:42:13.000Z",
+   "text": "➡️ Ataque armado en Real del Valle deja dos hombres sin vida en taller mecánico en Mazatlán 🚔🚨| Un ataque armado registrado durante la mañana de este martes 27 de octubre dejó como saldo dos hombres sin vida al interior de un taller mecánico ubicado sobre la avenida Santa https:…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "➡️ Armed attack in Real del Valle leaves two men dead in a mechanic's workshop in Mazatlán 🚔🚨| An armed attack on the morning of Tuesday, October 27 left two men dead inside a mechanic's workshop on Santa avenue"
+  },
+  {
+   "id": "2115165636611518693",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115165636611518693",
+   "created_at": "2026-10-27T19:36:00.000Z",
+   "text": "⚠️ Florida desmantela una red del Cartel de Sinaloa que traficó cocaína en Tampa Bay durante cinco años https://t.co/Uwo2qHTVRX https://t.co/paDsiKMM7R",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "⚠️ Florida dismantles a Sinaloa Cartel network that trafficked cocaine in Tampa Bay for five years"
+  },
+  {
    "id": "2115156753826603385",
    "handle": "noticieristas",
    "url": "https://x.com/noticieristas/status/2115156753826603385",
    "created_at": "2026-10-27T19:00:42.000Z",
    "text": "➡️ Suspenden clases presenciales en 23 escuelas de Guasave por enfrentamientos armados en Bamoa y sus alrededores 🔴 🏫 Los planteles de distintos niveles educativos recurrieron a la modalidad a distancia luego del enfrentamiento entre fuerzas federales y civiles armados; https://…",
-   "lang": "und",
+   "lang": "es",
    "region_ids": [
     "MEX-2711"
    ],
@@ -2780,40 +2909,6 @@
    "source_type": "local outlet",
    "label": null,
    "text_en": "➡️ Alleged femicide suspect in the killing of an elderly woman attacked at home in Guasave arrested in Sonora. Rosario Felipe \"N\", 34, was wanted in the case of Cecilia \"N\", 75, who was attacked…"
-  },
-  {
-   "id": "2112663281639002365",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2112663281639002365",
-   "created_at": "2026-10-20T21:52:32.000Z",
-   "text": "➡️ Ataque armado en La Foresta deja sin vida a un motociclista en Mazatlán. 🚨🚔| Un motociclista perdió la vida tras un ataque armado en el fraccionamiento La Foresta, en #Mazatlán; la víctima quedó tendida junto a su motocicleta sobre la avenida del Sol, cerca del cruce con la h…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ Armed attack in La Foresta kills a motorcyclist in #Mazatlán; the victim lay beside his motorcycle on Avenida del Sol…"
-  },
-  {
-   "id": "2112658629656510748",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2112658629656510748",
-   "created_at": "2026-10-20T21:34:03.000Z",
-   "text": "➡️ Ataque armado deja a un hombre y una mujer sin vida en la colonia Flor de Mayo en Villa Unión, Sinaloa. 🚨🚔| Un hombre y una mujer fueron localizados sin vida tras un ataque armado en la colonia Flor de Mayo, al sur de Mazatlán; las detonaciones ocurrieron sobre las calles htt…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ Armed attack leaves a man and a woman dead in the Flor de Mayo neighbourhood of Villa Unión, Sinaloa, south of Mazatlán…"
   }
  ]
 }
