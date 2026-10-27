@@ -600,7 +600,7 @@ function hydroGraph(idList,link){
  const grid=new Map();
  ends.forEach(p=>{const k=Math.floor(p[0]/join)+','+Math.floor(p[1]/join); if(!grid.has(k)) grid.set(k,[]); grid.get(k).push(p)});
  ends.forEach(p=>{const gx=Math.floor(p[0]/join), gy=Math.floor(p[1]/join); for(let dx=-1;dx<=1;dx++) for(let dy=-1;dy<=1;dy++) (grid.get((gx+dx)+','+(gy+dy))||[]).forEach(q=>{if(geoDist(p,q)<=join) addE(p,q)})});
- const nearest=p=>{let best=null,bd=1e9; pos.forEach((xy,k)=>{const d=geoDist(xy,p); if(d<bd){bd=d; best=k}}); return bd<=3.2?best:null};
+ const nearest=p=>{let best=null,bd=1e9; pos.forEach((xy,k)=>{const d=geoDist(xy,p); if(d<bd){bd=d; best=k}}); return bd<=4?best:null};
  function route(start,goal,tol){
   const h=[];
   const push=(d,k)=>{h.push([d,k]); let i=h.length-1; while(i){const j=(i-1)>>1; if(h[j][0]<=h[i][0]) break; const t=h[j]; h[j]=h[i]; h[i]=t; i=j}};
@@ -832,7 +832,9 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
   const sib=B.filter(b=>ids.includes(b.id)&&!bs.includes(b)&&!b.aq);return !sib.some(b=>b.geo.some(f=>d3.geoContains(f,coord)))};
  const keepL=new Set(C.lakes.map(l=>l[1]).filter(Boolean));
  g.append('g').selectAll('path').data(LAK.filter(d=>keepL.has(d.properties.name))).join('path').attr('d',p).attr('fill',GLOW).attr('fill-opacity',.55).attr('stroke',WATER).attr('stroke-width',.6).attr('pointer-events','none');
- const segs=hydroSegs(ids.map(Number)).sort((a,b)=>a.q-b.q);const qmin=d3.min(segs,d=>d.q)||1,qmax=d3.max(segs,d=>d.q)||1;
+ const groupIds=key?key.split(',').map(Number):ids.map(Number);
+ const hydroIds=hydroSegs(ids.map(Number)).length?ids.map(Number):groupIds;
+ const segs=hydroSegs(hydroIds).sort((a,b)=>a.q-b.q);const qmin=d3.min(segs,d=>d.q)||1,qmax=d3.max(segs,d=>d.q)||1;
  const tq=q=>qmax<=qmin?1:Math.max(0,Math.min(1,Math.log(q/qmin)/Math.log(qmax/qmin)));
  const rw=q=>opt.basin?(0.4+tq(q)*0.95):(0.8+tq(q)*3.2);
  const flow=g.append('g').attr('class','lay-flow').attr('pointer-events','none');
@@ -844,7 +846,7 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
  ab.forEach(b=>b.geo.forEach(f=>{const path=g.append('path').attr('data-bid',b.id).attr('class','aquifer lay-aq').attr('data-ink','aquifer').attr('d',p(f)).attr('fill',`url(#h${id})`).attr('stroke',AQINK).attr('stroke-width',1.5).attr('stroke-dasharray','6 4');
   path.append('title').text('Click for '+shown(b.name)+' details');
   path.on('click',()=>{if(!(zoomable&&ids.length===1&&+ids[0]===+b.id))show(b.id,true)}).on('mousemove',e=>tip(e,`<b>${shown(b.name)}</b><br>Shared aquifer`)).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement))}));
- const flows=reachFlows(ids,C,bs);
+ const flows=reachFlows(hydroIds,C,B.filter(b=>hydroIds.includes(+b.id)));
  const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const flowNotes=[];
  const AR=[];
@@ -873,12 +875,13 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
   if(AR.indexOf(b)<0) AR.push(b);
  }
  flows.forEach(f=>{
-  const hits=bs.filter(b=>!b.aq&&b.geo.some(ft=>d3.geoContains(ft,f.origin)));
+  const pool=B.filter(b=>!b.aq&&groupIds.includes(+b.id)&&b.geo.some(ft=>d3.geoContains(ft,f.origin)));
   const country=COUNTRIES.find(ft=>d3.geoContains(ft,f.origin));
-  const home=(hits.length<=1?hits[0]:(hits.find(b=>country&&b.up===country.properties.NAME)||hits[0]));
-  if(home) covered.add(home.id);
+  const home=(pool.length<=1?pool[0]:(pool.find(b=>country&&b.up===country.properties.NAME)||pool[0]));
+  if(!home||!bs.some(b=>b.id===home.id)) return;
+  covered.add(home.id);
   if(f.caption) flowNotes.push(f.caption);
-  if(home) drawRiverArrow(f.line, home);
+  drawRiverArrow(f.line, home);
  });
  bs.forEach(b=>{
   if(b.aq||!b.up||!b.down||covered.has(b.id)) return;
@@ -889,7 +892,6 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
   if(!along) return;
   const onBasin=along.filter(pt=>b.geo.some(ft=>d3.geoContains(ft,pt))).length;
   if(onBasin<Math.max(3,along.length*0.45)) return;
-  if(geoDist(along[along.length-1],ends[1])>2.2) return;
   drawRiverArrow(along, b);
  });
  svg.property('flowNotes',flowNotes);
@@ -934,7 +936,7 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
   const top=places.sort((a,b)=>a.pri-b.pri||a.title.localeCompare(b.title)).slice(0,8);
   if(top.length){const det=el.append('details').attr('class','places basin-extra');det.append('summary').attr('data-expect','note').text('Other places');const list=det.append('div').attr('class','place-list');const note=det.append('p').attr('class','place-note').style('display','none');list.selectAll('button').data(top).join('button').attr('type','button').attr('class','chip').attr('data-expect','place').text(d=>d.title).on('click',(e,d)=>{e.stopPropagation();clearTip();note.style('display','block').html(d.detail)})}
   lg.selectAll('line').attr('stroke','#9cc1f0');lg.raise();svg.node().__blk=blockers(svg);fixZoomInk();return}
-if(sparse){ag.raise();
+if(sparse){g.selectAll('.lay-lever').raise();
   const stP=t=>t.style('font-weight',700).style('font-size','14px');
   const nm=c=>c.replace('United States of America','United States').replace('Democratic Republic of the Congo','DR Congo').replace('Dem. Rep. Congo','DR Congo').replace('The former Yugoslav Republic of Macedonia','North Macedonia');
   const strict=coord=>bs.some(b=>b.geo.some(f=>d3.geoContains(f,coord)));
