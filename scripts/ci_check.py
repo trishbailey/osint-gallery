@@ -205,46 +205,58 @@ LAYOUT_JS = r"""() => {
    const avail = par.getBoundingClientRect().width - parseFloat(pcs.paddingLeft) - parseFloat(pcs.paddingRight);
    if (avail >= 500 && b.width < avail * 0.75) narrow.push({t: txt.slice(0, 50), w: Math.round(b.width), avail: Math.round(avail)});
  });
- const nums = new Set(badges.map(Number)); let k = 0; while (nums.has(k + 1)) k++;
- return {badges: k >= 3 ? [...Array(k).keys()].map(i => String(i + 1)) : [], narrow};
+ // a key is exactly 1..N (N >= 3), each number once; count bubbles have repeats or larger values
+ const nums = badges.map(Number).sort((a, b) => a - b);
+ const isKey = nums.length >= 3 && nums.every((v, i) => v === i + 1);
+ return {badges: isKey ? nums.map(String) : [], narrow};
 }"""
 
 BUTTONS_JS = r"""() => [...document.querySelectorAll('button, [role=button], summary')]
   .filter(b => { const r = b.getBoundingClientRect(); const cs = getComputedStyle(b);
     return r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && !b.disabled && !b.closest('[data-ci-ignore]')
-      && b.getAttribute('aria-pressed') !== 'true' && b.getAttribute('aria-selected') !== 'true' && b.getAttribute('aria-current') !== 'true'
-      && !/(^|[\s-])(active|on|sel|selected|current)(\s|$)/.test(b.getAttribute('class') || ''); })  // already-selected options legitimately do nothing
-  .map((b, i) => { b.setAttribute('data-ci-btn', i); return {i, t: (b.innerText || b.getAttribute('aria-label') || '').trim().slice(0, 40)}; })"""
+      && !(b.getAttribute('aria-pressed') === 'true' && [...(b.parentElement ? b.parentElement.children : [])].some(k => k !== b && k.getAttribute('aria-pressed') === 'false'))  // selected option of an exclusive group
+      && b.getAttribute('aria-selected') !== 'true' && b.getAttribute('aria-current') !== 'true'
+      && (b.hasAttribute('aria-pressed') || !/(^|[\s-])(active|on|sel|selected|current)(\s|$)/.test(b.getAttribute('class') || '')); })  // already-selected options legitimately do nothing
+  .map((b, i) => { b.setAttribute('data-ci-btn', i); return {i, real: b.tagName === 'BUTTON', toggle: b.hasAttribute('aria-pressed'), t: (b.innerText || b.getAttribute('aria-label') || '').trim().slice(0, 40)}; })"""
 
-STATE_JS = r"""() => { const h = s => { let x = 0; for (let i = 0; i < s.length; i++) x = (x * 31 + s.charCodeAt(i)) | 0; return x; };
-  let n = 0, txt = 0; document.querySelectorAll('body *').forEach(e => {
-  const b = e.getBoundingClientRect(); const cs = getComputedStyle(e);
-  if (b.width > 0 && b.height > 0 && cs.display !== 'none' && cs.visibility !== 'hidden' && cs.opacity !== '0') { n++; if (!e.children.length) txt += e.textContent.trim().length; } });
-  const attrs = [...document.querySelectorAll('[aria-pressed],[aria-expanded],[aria-selected],.active,.on,.selected,[open]')].map(e => e.outerHTML.slice(0, 80)).join();
-  return [n, txt, h(attrs), h(document.body.outerHTML), location.href, window.scrollY].join('|'); }"""
+SNAP_JS = r"""() => [...document.querySelectorAll('body *')].map(e => {
+  const cs = getComputedStyle(e); const b = e.getBoundingClientRect();
+  const shown = b.width > 0 && b.height > 0 && cs.display !== 'none' && cs.visibility !== 'hidden' && cs.opacity !== '0';
+  const own = [...e.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent.trim()).join(' ');
+  return e.tagName + (shown ? '+' : '-') + [...e.attributes].filter(a => a.name !== 'data-ci-btn').map(a => a.name + '=' + a.value).join(' ') + '|' + own; })"""
+
+def _changed(a, b):
+    if len(a) != len(b):
+        return None  # elements added or removed: a real change
+    return {i for i, (x, y) in enumerate(zip(a, b)) if x != y}
 
 def button_checks(pg, slug):
-    """Click every visible button; fail if a click changes nothing on screen."""
+    """Click every visible button; fail if the click changes nothing on the page.
+    Elements that change on their own (animations) are measured first and ignored."""
     errs = []
     btns = pg.evaluate(BUTTONS_JS)[:60]
     for b in btns:
         loc = pg.locator(f'[data-ci-btn="{b["i"]}"]')
+        name = b['t'] or '(no label)'
         try:
             if not loc.is_visible():
                 continue
             loc.scroll_into_view_if_needed(timeout=2000)
-            pg.mouse.move(0, 0); pg.wait_for_timeout(300)
-            before, shot0 = pg.evaluate(STATE_JS), pg.screenshot()
+            s0 = pg.evaluate(SNAP_JS); pg.wait_for_timeout(700); s1 = pg.evaluate(SNAP_JS)
+            noise = _changed(s0, s1)
             loc.click(timeout=3000)
             pg.wait_for_timeout(700)
-            # drop focus ring and hover styling so only a real response counts as a change
-            pg.evaluate("() => document.activeElement && document.activeElement.blur()"); pg.mouse.move(0, 0); pg.wait_for_timeout(200)
-            after, shot1 = pg.evaluate(STATE_JS), pg.screenshot()
-        except Exception:
+            s2 = pg.evaluate(SNAP_JS)
+        except Exception as e:
+            if b.get("real"):  # a real <button> that is covered or broken; map markers (role=button) may sit under neighbours
+                errs.append(f"{slug} [desktop]: button '{name}' could not be clicked ({type(e).__name__})")
             continue
-        if before == after and shot0 == shot1:
-            errs.append(f"{slug} [desktop]: button '{b['t'] or '(no label)'}' shows nothing when clicked")
-        try:
+        ch = _changed(s1, s2)
+        if ch is not None and noise is not None and not (ch - noise):
+            errs.append(f"{slug} [desktop]: button '{name}' shows nothing when clicked")
+        try:  # restore: toggles back, popups closed
+            if b.get("toggle"):
+                loc.click(timeout=2000); pg.wait_for_timeout(300)
             pg.keyboard.press("Escape")
         except Exception:
             pass

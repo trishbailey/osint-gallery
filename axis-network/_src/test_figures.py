@@ -25,8 +25,12 @@ if iq:
         tol = 60 if want >= 3600 else 1
         if abs(shown - want) > tol:
             errs.append(f"{label}: page says '{m.group(1)}' ({shown:.0f}s) but data.json median is {want}s")
-    if f"{iq['n']} times in the last 30 days" not in page:
-        errs.append(f"repost count {iq['n']} from data.json not on page")
+    counts = re.findall(r"reposted Houthi military statements (\d+) times", page)
+    if not counts:
+        errs.append("repost count sentence not found")
+    for c in counts:
+        if int(c) != iq["n"]:
+            errs.append(f"repost count on page {c} != data.json {iq['n']}")
     if iq.get("claim"):
         m = re.search(r"reposted the Oct 14 strike claim after (\d+) seconds", page)
         if not m or int(m.group(1)) != iq["claim"][1]:
