@@ -214,21 +214,28 @@ LAYOUT_JS = r"""() => {
 BUTTONS_JS = r"""() => [...document.querySelectorAll('button, [role=button], summary')]
   .filter(b => { const r = b.getBoundingClientRect(); const cs = getComputedStyle(b);
     return r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && !b.disabled && !b.closest('[data-ci-ignore]')
-      && !(b.getAttribute('aria-pressed') === 'true' && [...(b.parentElement ? b.parentElement.children : [])].some(k => k !== b && k.getAttribute('aria-pressed') === 'false'))  // selected option of an exclusive group
+      && !(b.getAttribute('aria-pressed') === 'true' && (() => { const sib = [...(b.parentElement ? b.parentElement.children : [])].filter(k => k.hasAttribute('aria-pressed'));
+            return sib.length > 1 && sib.filter(k => k.getAttribute('aria-pressed') === 'true').length === 1; })())  // the one selected option of an exclusive group
       && b.getAttribute('aria-selected') !== 'true' && b.getAttribute('aria-current') !== 'true'
       && (b.hasAttribute('aria-pressed') || !/(^|[\s-])(active|on|sel|selected|current)(\s|$)/.test(b.getAttribute('class') || '')); })  // already-selected options legitimately do nothing
   .map((b, i) => { b.setAttribute('data-ci-btn', i); return {i, real: b.tagName === 'BUTTON', toggle: b.hasAttribute('aria-pressed'), t: (b.innerText || b.getAttribute('aria-label') || '').trim().slice(0, 40)}; })"""
 
-SNAP_JS = r"""() => [...document.querySelectorAll('body *')].map(e => {
-  const cs = getComputedStyle(e); const b = e.getBoundingClientRect();
-  const shown = b.width > 0 && b.height > 0 && cs.display !== 'none' && cs.visibility !== 'hidden' && cs.opacity !== '0';
-  const own = [...e.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent.trim()).join(' ');
-  return e.tagName + (shown ? '+' : '-') + [...e.attributes].filter(a => a.name !== 'data-ci-btn').map(a => a.name + '=' + a.value).join(' ') + '|' + own; })"""
+SNAP_JS = r"""() => { window.__ciN = window.__ciN || 0; window.__ciIds = window.__ciIds || new WeakMap();
+  const id = e => { if (!window.__ciIds.has(e)) window.__ciIds.set(e, ++window.__ciN); return window.__ciIds.get(e); };
+  const out = {};
+  document.querySelectorAll('body *').forEach(e => {
+    const cs = getComputedStyle(e); const b = e.getBoundingClientRect();
+    const shown = b.width > 0 && b.height > 0 && cs.display !== 'none' && cs.visibility !== 'hidden' && cs.opacity !== '0';
+    const own = [...e.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent.trim()).join(' ');
+    out[id(e)] = [e.parentElement ? id(e.parentElement) : 0, e.tagName + (shown ? '+' : '-') + [...e.attributes].filter(a => a.name !== 'data-ci-btn').map(a => a.name + '=' + a.value).join(' ') + '|' + own];
+  });
+  return out; }"""
 
-def _changed(a, b):
-    if len(a) != len(b):
-        return None  # elements added or removed: a real change
-    return {i for i, (x, y) in enumerate(zip(a, b)) if x != y}
+def _delta(a, b):
+    """Element ids that changed, plus parents that gained or lost children."""
+    ids = {k for k in a.keys() & b.keys() if a[k][1] != b[k][1]}
+    parents = {a[k][0] for k in a.keys() - b.keys()} | {b[k][0] for k in b.keys() - a.keys()}
+    return ids, parents
 
 def button_checks(pg, slug):
     """Click every visible button; fail if the click changes nothing on the page.
@@ -243,7 +250,7 @@ def button_checks(pg, slug):
                 continue
             loc.scroll_into_view_if_needed(timeout=2000)
             s0 = pg.evaluate(SNAP_JS); pg.wait_for_timeout(700); s1 = pg.evaluate(SNAP_JS)
-            noise = _changed(s0, s1)
+            n_ids, n_par = _delta(s0, s1)  # what changes on its own (animations, timers)
             loc.click(timeout=3000)
             pg.wait_for_timeout(700)
             s2 = pg.evaluate(SNAP_JS)
@@ -251,8 +258,9 @@ def button_checks(pg, slug):
             if b.get("real"):  # a real <button> that is covered or broken; map markers (role=button) may sit under neighbours
                 errs.append(f"{slug} [desktop]: button '{name}' could not be clicked ({type(e).__name__})")
             continue
-        ch = _changed(s1, s2)
-        if ch is not None and noise is not None and not (ch - noise):
+        c_ids, c_par = _delta(s1, s2)
+        dead = not (c_ids - n_ids) and not (c_par - n_par)
+        if dead:
             errs.append(f"{slug} [desktop]: button '{name}' shows nothing when clicked")
         try:  # restore: toggles back, popups closed
             if b.get("toggle"):
