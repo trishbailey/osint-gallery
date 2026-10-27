@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-27T01:07:34Z",
+ "as_of": "2026-10-27T10:05:22Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,45 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "272ab5725a",
+   "status": "single_source",
+   "title": "➡️ Menor resulta lesionado por esquirlas de bala durante ataque a domicilio en Rincón de Urías en Mazatlán. 🚨🚔| Un menor de edad resultó lesionado por esquirlas de bala durante un ataque armado contra",
+   "lang": "es",
+   "title_en": "➡️ A minor is wounded by bullet fragments during an attack on a home in Rincón de Urías, Mazatlán. A minor was wounded by bullet fragments during an armed attack on a home on San Quintín street, in the Rincón de Urías su",
+   "first_report": "2026-10-26T21:36:44Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2114833634830000578",
+     "time": "2026-10-26T21:36:44Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2114902392453960152",
+     "time": "2026-10-27T02:09:58Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "08e0c23816",
    "status": "single_source",
@@ -234,7 +273,7 @@
    "status": "single_source",
    "title": "🇸🇻 | In one of the most extensive judicial processes under President Nayib Bukele’s state of emergency, El Salvador has indicted more than 560 suspected leaders of the Barrio 18 gang. What has Bukele’",
    "lang": "es",
-   "title_en": "🇸🇻 | In one of the most extensive judicial processes under President Nayib Bukele’s state of emergency, El Salvador has indicted more than 560 suspected leaders of the Barrio 18 gang. What has Bukele’",
+   "title_en": "🇸🇻 | In one of the most extensive judicial processes under President Nayib Bukele’s state of emergency, El Salvador has indicted more than 560 suspected leaders of the Barrio 18 gang. What has Bukele’s iron fist meant fo",
    "first_report": "2026-10-26T23:02:52Z",
    "first_report_precision": "minute",
    "first_source": "InSight Crime",
@@ -317,36 +356,6 @@
    ]
   },
   {
-   "id": "272ab5725a",
-   "status": "single_source",
-   "title": "➡️ Menor resulta lesionado por esquirlas de bala durante ataque a domicilio en Rincón de Urías en Mazatlán. 🚨🚔| Un menor de edad resultó lesionado por esquirlas de bala durante un ataque armado contra",
-   "lang": "es",
-   "title_en": "➡️ A minor is wounded by bullet fragments during an attack on a home in Rincón de Urías, Mazatlán. A minor was wounded by bullet fragments during an armed attack on a home on San Quintín street, in the Rincón de Urías su",
-   "first_report": "2026-10-26T21:36:44Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711",
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2114833634830000578",
-     "time": "2026-10-26T21:36:44Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
    "id": "43626e6224",
    "status": "single_source",
    "title": "Con 40 patrullas, policías detienen a 24 personas por patinar en San Pedro Garza García Los participantes de una rodada nocturna fueron esposados, permanecieron arrestados cerca de 10 horas y recibier",
@@ -356,8 +365,8 @@
    "first_report_precision": "minute",
    "first_source": "Proceso",
    "region_ids": [
-    "MEX-2714",
-    "PRY-606"
+    "PRY-606",
+    "MEX-2714"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -583,9 +592,9 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
+    "MEX-2719",
     "MEX-2725",
     "MEX-2718",
-    "MEX-2719",
     "MEX-2734"
    ],
    "country": "MEX",
@@ -695,8 +704,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "cv",
-    "pcc"
+    "pcc",
+    "cv"
    ],
    "outlets": [
     "BBC"
@@ -1064,8 +1073,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "cv",
-    "pcc"
+    "pcc",
+    "cv"
    ],
    "outlets": [
     "InSight Crime"
@@ -1384,8 +1393,8 @@
    "first_source": "Gabinete de Seguridad (Mexico)",
    "region_ids": [
     "MEX-2712",
-    "MEX-2721",
     "MEX-2711",
+    "MEX-2721",
     "MEX-2710"
    ],
    "country": "MEX",
@@ -1720,58 +1729,6 @@
    ]
   },
   {
-   "id": "fbf98cbf8a",
-   "status": "confirmed",
-   "title": "Abaten a “El Meny Carranza” y detienen a cuatro más tras enfrentamiento armado en San Antonio, Sonora",
-   "lang": "es",
-   "title_en": "\"El Meny Carranza\" killed and four others arrested after armed clash in San Antonio, Sonora",
-   "first_report": "2026-10-25T01:44:06Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2712"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa",
-    "chapitos"
-   ],
-   "outlets": [
-    "El Heraldo de México",
-    "Excélsior",
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2114171109075489255",
-     "time": "2026-10-25T01:44:06Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "excelsior",
-     "name": "Excélsior",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://excelsior.com.mx/nacional/abaten-meny-carranza-cucurpe-sonora-profugo-julio",
-     "time": "2026-10-25T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "heraldo",
-     "name": "El Heraldo de México",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://heraldodemexico.com.mx/nacional/2026/10/24/operativo-conjunto-en-sonora-abaten-el-meny-carranza-presunto-aliado-de-los-chapitos-detienen-personas-915470.html",
-     "time": "2026-10-25T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
    "id": "4fb2241935",
    "status": "single_source",
    "title": "Linchamiento en Chiapas por muertes de abuelita y nieta; esto sabemosGrupo Milenio",
@@ -1812,8 +1769,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "cv",
-    "pcc"
+    "pcc",
+    "cv"
    ],
    "outlets": [
     "El Observador"
@@ -1842,8 +1799,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "cv",
-    "pcc"
+    "pcc",
+    "cv"
    ],
    "outlets": [
     "El Observador"
@@ -1973,9 +1930,9 @@
    "first_report_precision": "day",
    "first_source": "El Universal",
    "region_ids": [
-    "MEX-2735",
     "MEX-2719",
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2735"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1992,6 +1949,48 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://eluniversal.com.mx/estados/cae-el-flaco-objetivo-prioritario-en-acala-chiapas-le-decomisan-droga-un-artefacto-explosivo-y-un-arma-de-fuego",
+     "time": "2026-10-25T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "20ed9fff76",
+   "status": "confirmed",
+   "title": "Abaten a El Meny Carranza en Cucurpe, Sonora; estaba prófugo desde julio | Excélsior",
+   "lang": "es",
+   "title_en": "El Meny Carranza killed in Cucurpe, Sonora; he had been a fugitive since July | Excélsior",
+   "first_report": "2026-10-25T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Excélsior",
+   "region_ids": [
+    "MEX-2712"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "chapitos",
+    "sinaloa"
+   ],
+   "outlets": [
+    "El Heraldo de México",
+    "Excélsior"
+   ],
+   "sources": [
+    {
+     "outlet": "excelsior",
+     "name": "Excélsior",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://excelsior.com.mx/nacional/abaten-meny-carranza-cucurpe-sonora-profugo-julio",
+     "time": "2026-10-25T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "heraldo",
+     "name": "El Heraldo de México",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://heraldodemexico.com.mx/nacional/2026/10/24/operativo-conjunto-en-sonora-abaten-el-meny-carranza-presunto-aliado-de-los-chapitos-detienen-personas-915470.html",
      "time": "2026-10-25T12:00:00Z",
      "time_precision": "day"
     }
@@ -2174,8 +2173,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
-    "mayiza"
+    "mayiza",
+    "sinaloa"
    ],
    "outlets": [
     "Milenio"
@@ -2456,8 +2455,8 @@
    "country": "COL",
    "group_ids": [
     "choneros",
-    "los_tiguerones",
-    "lobos"
+    "lobos",
+    "los_tiguerones"
    ],
    "outlets": [
     "Semana"
@@ -2573,13 +2572,13 @@
    "first_report_precision": "day",
    "first_source": "Eje Central",
    "region_ids": [
-    "MEX-2719",
-    "MEX-2720"
+    "MEX-2720",
+    "MEX-2719"
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "unidos"
+    "unidos",
+    "cjng"
    ],
    "outlets": [
     "Eje Central"
@@ -2608,10 +2607,10 @@
    "region_ids": [],
    "country": "COL",
    "group_ids": [
-    "tda",
+    "exfarc",
     "eln",
-    "clan",
-    "exfarc"
+    "tda",
+    "clan"
    ],
    "outlets": [
     "El Observador"
@@ -2755,8 +2754,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "ARG-1308",
-    "PAN-1340"
+    "PAN-1340",
+    "ARG-1308"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -2875,8 +2874,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2734",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2734"
    ],
    "country": "MEX",
    "group_ids": [
@@ -2967,8 +2966,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "tda",
-    "choneros"
+    "choneros",
+    "tda"
    ],
    "outlets": [
     "Infobae"
@@ -3100,93 +3099,6 @@
      "url": "https://zetatijuana.com/2026/10/matan-a-joven-en-una-fiesta-familiar-en-tijuana/?utm_source=rss&utm_medium=rss&utm_campaign=matan-a-joven-en-una-fiesta-familiar-en-tijuana",
      "time": "2026-10-25T12:00:00Z",
      "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "155d3ccd0d",
-   "status": "single_source",
-   "title": "Cuestionan gasto de mil 200 millones en Rodeo Saltillo ante falta de recursos para desaparecidos El Centro Fray Juan de Larios cuestionó que se privilegien proyectos de espectáculos mientras persisten",
-   "lang": "es",
-   "title_en": "1.2 billion pesos spent on Rodeo Saltillo questioned amid lack of resources for the disappeared. The Centro Fray Juan de Larios questioned favouring entertainment projects while search and human-identification work remai",
-   "first_report": "2026-10-25T05:30:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Proceso",
-   "region_ids": [
-    "MEX-2708"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Proceso"
-   ],
-   "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2114227957694669113",
-     "time": "2026-10-25T05:30:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "b05fd117c0",
-   "status": "single_source",
-   "title": "➡️ Asegura FGR Terraza Valentino’s en #Mazatlán por caso Carlos Emilio 🚨🚔| A más de un año del caso Carlos Emilio en Mazatlán, aseguran Terraza Valentino’s. La FGR colocó este sábado sellos en el inmu",
-   "lang": "es",
-   "title_en": "➡️ FGR seizes Terraza Valentino's in #Mazatlán over the Carlos Emilio case. More than a year after the Carlos Emilio case in Mazatlán, Terraza Valentino's was seized. On Saturday the FGR placed seals on the property as p",
-   "first_report": "2026-10-25T01:35:22Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2114168912266903940",
-     "time": "2026-10-25T01:35:22Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "ddb4c60ad5",
-   "status": "single_source",
-   "title": "En la cotizada urbanización Altamira, una edificación de dos pisos de lo que parecía iba ser una obra residencial, quedó inconclusa. Pertenecía al círculo de Alex Saab. En la fachada se ve ahora un ca",
-   "lang": "es",
-   "title_en": "In the upscale Altamira development, a two-storey building that appeared to be a residential project was left unfinished. It belonged to Alex Saab's circle. A faded DGCIM sign now hangs on the facade, but it remains ungu",
-   "first_report": "2026-10-25T01:30:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Armando.Info",
-   "region_ids": [
-    "MEX-2716"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Armando.Info"
-   ],
-   "sources": [
-    {
-     "outlet": "armando",
-     "name": "Armando.Info",
-     "kind": "outlet",
-     "via": "X @ArmandoInfo",
-     "url": "https://x.com/ArmandoInfo/status/2114167559859888216",
-     "time": "2026-10-25T01:30:00Z",
-     "time_precision": "minute"
     }
    ]
   }

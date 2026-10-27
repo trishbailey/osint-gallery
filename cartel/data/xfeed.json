@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-27T01:07:34Z",
+ "as_of": "2026-10-27T10:05:22Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,23 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2114902392453960152",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2114902392453960152",
+   "created_at": "2026-10-27T02:09:58.000Z",
+   "text": "➡️ Cámara de seguridad muestra cómo sujetos armados balean una vivienda en Rincón de Urías en Mazatlán 🚨🚔 Una cámara de seguridad captó el momento en que sujetos armados dispararon contra una vivienda en el fraccionamiento Rincón de Urías, en #Mazatlán. Durante el ataque, https:…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Security camera shows how armed men shoot at a house in Rincón de Urías in Mazatlán. A security camera captured the moment armed men fired at a house in the Rincón de Urías subdivision in #Mazatlán. During the attack, …"
+  },
   {
    "id": "2114885489916367120",
    "handle": "ZETATijuana",
