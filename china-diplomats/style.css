@@ -40,7 +40,7 @@ h1{font-size:30px;margin:4px 0 8px}
 .dbar{display:grid;grid-template-columns:1fr;gap:4px;padding:8px 0;border-top:1px solid var(--line);opacity:.15;transition:opacity .3s;cursor:pointer;min-height:44px}
 .dbar.on{opacity:1}.dl{display:flex;align-items:center;gap:8px;font-size:14px}.dt{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}.dt i{display:block;height:12px;border-radius:6px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:18px;scroll-margin-top:80px}
-.sh2{font-size:19px;margin:0 0 4px}.sub{color:var(--muted);font-size:14px;margin:0 0 10px;max-width:900px}
+.sh2{font-size:19px;margin:0 0 4px}.sub{color:var(--muted);font-size:14px;margin:0 0 10px;max-width:none}
 .ctl{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
 .btn,.seg button{min-height:44px;min-width:44px;padding:0 16px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;font-size:14px;cursor:pointer}
 .btn:hover,.seg button:hover{border-color:var(--gold)}
