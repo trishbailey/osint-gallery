@@ -16,6 +16,11 @@ Change checks (--changed-from BASE):
      styles.css/tools.json, brand/, icons/) or more than one dashboard folder changed in
      one PR fail unless the PR carries the 'trish-approved' label (SHARED_OK=1).
      Browser checks then run only on the dashboards whose folders changed.
+  7. No numbered-key circles/badges (numbers 1,2,3... centred in circles or round pills; count bubbles are fine).
+  8. Desktop: paragraph text (>=160 chars, 3+ lines) fills >= 75% of its container (source lists and side-by-side cards excluded) width.
+  9. Desktop: every visible button changes something on screen when clicked.
+  10. Each checked dashboard's _src/test_*.py (figures derived from data) must pass.
+Colour pairs are checked on every SVG unless all its colours share one hue (within 40 deg).
 Shapes inside an element marked data-ci-ignore (or flags/logos/icons) are skipped.
 Usage: python scripts/ci_check.py [--static-only] [--port 8765]
 """
@@ -165,6 +170,86 @@ def is_grey(rgb):
     L, a, b = srgb_to_lab(rgb)
     return math.hypot(a, b) < 6 and 22 <= L <= 92
 
+def hue_spread(cols):
+    """Smallest arc (degrees) containing every colour's Lab hue."""
+    hs = sorted(math.degrees(math.atan2(b, a)) % 360 for _, a, b in map(srgb_to_lab, cols))
+    gaps = [(hs[(i + 1) % len(hs)] - hs[i]) % 360 for i in range(len(hs))]
+    return 360 - max(gaps) if len(hs) > 1 else 0
+
+# Numbered circles, text stopping short, and buttons that show nothing.
+LAYOUT_JS = r"""() => {
+ const vis = e => { const b = e.getBoundingClientRect(); const cs = getComputedStyle(e);
+   return b.width > 0 && b.height > 0 && cs.display !== 'none' && cs.visibility !== 'hidden' && !e.closest('[data-ci-ignore]'); };
+ const badges = [];
+ document.querySelectorAll('svg text').forEach(t => {
+   const txt = t.textContent.trim(); if (!/^\d{1,3}$/.test(txt) || !vis(t)) return;
+   const tb = t.getBoundingClientRect(); const cx = tb.x + tb.width / 2, cy = tb.y + tb.height / 2;
+   const svg = t.ownerSVGElement; if (!svg) return;
+   for (const c of svg.querySelectorAll('circle')) { const b = c.getBoundingClientRect();
+     if (b.width >= 8 && b.width <= 60 && Math.abs(b.x + b.width / 2 - cx) < b.width / 3 && Math.abs(b.y + b.height / 2 - cy) < b.height / 3) { badges.push(txt); break; } }
+ });
+ document.querySelectorAll('body *').forEach(e => {
+   if (e.children.length || !vis(e)) return; const txt = e.textContent.trim(); if (!/^\d{1,3}$/.test(txt)) return;
+   const cs = getComputedStyle(e); const b = e.getBoundingClientRect();
+   if (parseFloat(cs.borderTopLeftRadius) >= b.height / 2 - 1 && Math.abs(b.width - b.height) < 4 && b.width <= 60) badges.push(txt);
+ });
+ const narrow = [];
+ document.querySelectorAll('p, li, figcaption, blockquote, .lede, .summary, dd').forEach(e => {
+   if (!vis(e) || e.closest('svg,nav,header,footer,table,button,[class*=card],#src,#sources,.sources,.src,.refs,.references,.footnotes,[id*=source]')) return;
+   const txt = e.textContent.trim(); if (txt.length < 160) return;
+   const linkTxt = [...e.querySelectorAll('a')].reduce((n, a) => n + a.textContent.length, 0); if (linkTxt > txt.length * 0.4) return;  // source/link lists
+   const lh = parseFloat(getComputedStyle(e).lineHeight) || 20; const b = e.getBoundingClientRect();
+   if (b.height < lh * 2.5) return;
+   const par = e.parentElement; const pcs = getComputedStyle(par);
+   if (/grid|flex/.test(pcs.display) && [...par.children].some(k => k !== e && vis(k) && Math.abs(k.getBoundingClientRect().top - b.top) < 40)) return;  // side-by-side columns/cards
+   const avail = par.getBoundingClientRect().width - parseFloat(pcs.paddingLeft) - parseFloat(pcs.paddingRight);
+   if (avail >= 500 && b.width < avail * 0.75) narrow.push({t: txt.slice(0, 50), w: Math.round(b.width), avail: Math.round(avail)});
+ });
+ const nums = new Set(badges.map(Number)); let k = 0; while (nums.has(k + 1)) k++;
+ return {badges: k >= 3 ? [...Array(k).keys()].map(i => String(i + 1)) : [], narrow};
+}"""
+
+BUTTONS_JS = r"""() => [...document.querySelectorAll('button, [role=button], summary')]
+  .filter(b => { const r = b.getBoundingClientRect(); const cs = getComputedStyle(b);
+    return r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && !b.disabled && !b.closest('[data-ci-ignore]')
+      && b.getAttribute('aria-pressed') !== 'true' && b.getAttribute('aria-selected') !== 'true' && b.getAttribute('aria-current') !== 'true'
+      && !/(^|[\s-])(active|on|sel|selected|current)(\s|$)/.test(b.getAttribute('class') || ''); })  // already-selected options legitimately do nothing
+  .map((b, i) => { b.setAttribute('data-ci-btn', i); return {i, t: (b.innerText || b.getAttribute('aria-label') || '').trim().slice(0, 40)}; })"""
+
+STATE_JS = r"""() => { const h = s => { let x = 0; for (let i = 0; i < s.length; i++) x = (x * 31 + s.charCodeAt(i)) | 0; return x; };
+  let n = 0, txt = 0; document.querySelectorAll('body *').forEach(e => {
+  const b = e.getBoundingClientRect(); const cs = getComputedStyle(e);
+  if (b.width > 0 && b.height > 0 && cs.display !== 'none' && cs.visibility !== 'hidden' && cs.opacity !== '0') { n++; if (!e.children.length) txt += e.textContent.trim().length; } });
+  const attrs = [...document.querySelectorAll('[aria-pressed],[aria-expanded],[aria-selected],.active,.on,.selected,[open]')].map(e => e.outerHTML.slice(0, 80)).join();
+  return [n, txt, h(attrs), h(document.body.outerHTML), location.href, window.scrollY].join('|'); }"""
+
+def button_checks(pg, slug):
+    """Click every visible button; fail if a click changes nothing on screen."""
+    errs = []
+    btns = pg.evaluate(BUTTONS_JS)[:60]
+    for b in btns:
+        loc = pg.locator(f'[data-ci-btn="{b["i"]}"]')
+        try:
+            if not loc.is_visible():
+                continue
+            loc.scroll_into_view_if_needed(timeout=2000)
+            pg.mouse.move(0, 0); pg.wait_for_timeout(300)
+            before, shot0 = pg.evaluate(STATE_JS), pg.screenshot()
+            loc.click(timeout=3000)
+            pg.wait_for_timeout(700)
+            # drop focus ring and hover styling so only a real response counts as a change
+            pg.evaluate("() => document.activeElement && document.activeElement.blur()"); pg.mouse.move(0, 0); pg.wait_for_timeout(200)
+            after, shot1 = pg.evaluate(STATE_JS), pg.screenshot()
+        except Exception:
+            continue
+        if before == after and shot0 == shot1:
+            errs.append(f"{slug} [desktop]: button '{b['t'] or '(no label)'}' shows nothing when clicked")
+        try:
+            pg.keyboard.press("Escape")
+        except Exception:
+            pass
+    return errs
+
 def browser_checks(port, slugs):
     from playwright.sync_api import sync_playwright
     errs, warns = [], []
@@ -179,6 +264,7 @@ def browser_checks(port, slugs):
                     pg.goto(f"http://127.0.0.1:{port}/{slug}/", wait_until="load", timeout=45000)
                     pg.wait_for_timeout(3500)
                     r = pg.evaluate(COLLECT_JS)
+                    lay = pg.evaluate(LAYOUT_JS)
                 except Exception as e:
                     errs.append(f"{slug} [{name}]: page failed to load ({str(e)[:120]})")
                     pg.close(); continue
@@ -187,6 +273,13 @@ def browser_checks(port, slugs):
                     pg.screenshot(path=os.path.join(ROOT, "ci-screens", f"{slug}-{name}.png"), full_page=False)
                 except Exception:
                     pass
+                if lay["badges"]:
+                    errs.append(f"{slug} [{name}]: numbered circles/badges {sorted(set(lay['badges']))[:6]} - label the thing itself, no number keys")
+                if name == "desktop" and lay["narrow"]:
+                    ex = "; ".join(f"'{n['t']}' {n['w']}px of {n['avail']}px" for n in lay["narrow"][:3])
+                    errs.append(f"{slug} [desktop]: {len(lay['narrow'])} text block(s) stop well short of the right edge, e.g. {ex}")
+                if name == "desktop":
+                    errs += button_checks(pg, slug)
                 pg.close()
                 for e in jserr:
                     errs.append(f"{slug} [{name}]: JS error: {e}")
@@ -205,8 +298,8 @@ def browser_checks(port, slugs):
                     if greys:
                         errs.append(f"{slug} svg '{s['id'][:30]}': grey data fill(s) {['#%02x%02x%02x' % g for g in greys[:4]]}")
                     chrom = [c for c in data if not is_grey(c)]
-                    if len(chrom) > 14:
-                        continue  # continuous ramp/choropleth: pairwise check not meaningful
+                    if len(chrom) > 2 and hue_spread(chrom) <= 40:
+                        continue  # single-hue intensity ramp (guide rule 1): pairwise check not meaningful
                     labs = {c: srgb_to_lab(c) for c in chrom}
                     close = []
                     for i in range(len(chrom)):
@@ -215,7 +308,7 @@ def browser_checks(port, slugs):
                             if d < 20:
                                 close.append(('#%02x%02x%02x' % chrom[i], '#%02x%02x%02x' % chrom[j], round(d, 1)))
                     if close:
-                        errs.append(f"{slug} svg '{s['id'][:30]}': look-alike colours (delta E < 20): {close[:3]}")
+                        errs.append(f"{slug} svg '{s['id'][:30]}': {len(close)} look-alike colour pair(s) (delta E < 20): {close[:6]}")
         br.close()
     return errs
 
@@ -253,6 +346,11 @@ def main():
             (print("NOTE (trish-approved):", msg) if ok else errs.append(msg + " - touch only your own folder, or get Trish's OK"))
         slugs = touched
         print("Dashboards to browser-check:", slugs or "none")
+    for slug in slugs:  # per-dashboard figure tests: every number must come from the data
+        for t in sorted(glob.glob(os.path.join(ROOT, slug, "_src", "test_*.py"))):
+            rc = subprocess.run([sys.executable, t], cwd=ROOT).returncode
+            if rc:
+                errs.append(f"{os.path.relpath(t, ROOT)} failed (figures on the page do not match the data)")
     if not a.static_only and slugs:
         handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=ROOT)
         http.server.ThreadingHTTPServer.allow_reuse_address = True
