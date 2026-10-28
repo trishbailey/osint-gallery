@@ -146,7 +146,8 @@ table{display:block;width:100%}table tr{display:block;border-bottom:1px solid va
 .rf-t{width:100%;text-align:left;background:none;border:0;color:var(--text);font:inherit;font-weight:700;padding:12px;font-size:16px;cursor:pointer}
 .rf-t::after{content:" +";color:#c8a24a}.rf-t[aria-expanded=true]::after{content:" −"}
 .rf-b{margin:0;padding:0 12px 12px 26px;font-size:14px;color:var(--text)}.rf-b li{margin:6px 0}.rf-from{display:block;color:var(--muted,#b9c2d0)}
-@media(max-width:800px){.rf-wide,.rf-fg,.rf-fg+.lg-note,.rf .lg-col .lg,.rf .lg-col .lg-h{display:none}.rf-list{display:block}.rf-prompt::after{content:""}}
+.rf-list{display:block;list-style:none;padding:0;margin:8px 0 0}.rf-txt{margin:10px 0 0;border:1px solid var(--line);border-radius:6px;background:var(--panel2)}.rf-txt summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--gold);padding:10px 12px}.rf-txt .rf-list{padding:0 8px 8px}
+.rf-wide{overflow-x:auto;max-width:100%}@media(max-width:800px){.rf .lg-wrap{display:flex;flex-direction:column}.rf .lg-g{order:-1;width:100%}.rf-info{font-size:14px}.rf .lg{flex-direction:column}.rf-fg{flex-direction:row;flex-wrap:wrap}.rf-fb{min-height:44px;padding:6px 10px}}
 /* phone: the filters bar only applies to the minerals list, so it leaves once the rare earths flow and operators reach the top */
 @media(max-width:800px){.cm-side.side-off:not(.open){visibility:hidden;pointer-events:none}}
 
