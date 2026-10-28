@@ -416,8 +416,6 @@ page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta na
 <div class="tw"><button class="btn" data-tw="30" aria-pressed="true">30 days</button><button class="btn" data-tw="7" aria-pressed="false">7 days</button></div></div>
 <div><div class="lbl" id="ttitle"></div><p class="prompt">Change in threat posts naming each target, per 10,000 Houthi posts. Tap a row for counts and example posts.</p><div id="thr"></div></div></div>
 <p class="cap">{tcap}</p>{tcase}{tlines}{tcave}</section>
-{WEEK}
-
 <section id="pay"><h2>Shared payment methods</h2><p class="prompt">Payment methods posted in the channels, by type</p>
 <p class="cap" style="margin:0 0 10px"><b>None of the {p["selectors"]} payment details is shared between two groups. {p["shared"]} are reposted by several channels of the same group, mostly the IRGC ({sum(1 for x in D["paylist"] if x["g"]=="irgc")} of {p["selectors"]}).</b></p>
 <div class="row"><div class="leg">{leg2}</div><div>{pb}</div></div><p class="cap">{cap2} Channels posting them: {pg}.</p>
@@ -434,6 +432,7 @@ page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta na
 <div id="fsel" hidden aria-live="polite"><div></div><button class="btn" id="fall" type="button">Show all</button></div>
 <div id="flow" style="width:100%;margin-top:6px"></div>
 <p class="cap">{cap1}</p></section>
+{WEEK}
 <details id="more"><summary>More: shared websites, method and sources</summary><div class="in"><p><b>Shared websites.</b> {infra}</p>
 <p><b>Method.</b> A message counts as copied when the same text appears in two or more channels; the first channel to post it is the origin. Same-group copies (for example between Houthi channels) are included in the top bar; the flow chart shows only copies between different groups. Flows under 10 messages are left out.</p>
 <div id="src"><b>Sources</b><ol>{''.join(f"<li>{html.escape(x)}</li>" for x in SRC)}{''.join(f"<li>{x}</li>" for x in tsrc)}</ol></div></div></details>
