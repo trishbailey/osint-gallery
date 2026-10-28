@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-28T01:11:36Z",
+ "as_of": "2026-10-28T10:10:30Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,307 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "42544225fa",
+   "status": "single_source",
+   "title": "➡️ Ataque armado en Real del Valle deja dos hombres sin vida en taller mecánico en Mazatlán 🚔🚨| Un ataque armado registrado durante la mañana de este martes 27 de octubre dejó como saldo dos hombres s",
+   "lang": "es",
+   "title_en": "➡️ Armed attack in Real del Valle leaves two men dead in a mechanic's workshop in Mazatlán 🚔🚨| An armed attack on the morning of Tuesday, October 27 left two men dead inside a mechanic's workshop on Santa avenue",
+   "first_report": "2026-10-27T19:42:13Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2115167201741435176",
+     "time": "2026-10-27T19:42:13Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2115315504034218421",
+     "time": "2026-10-28T05:31:31Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "a312587eec",
+   "status": "single_source",
+   "title": "Abaten a “Chuy González” en Guasave: DEA ofrecía 5 millones de dólares por el operador del Cártel de Sinaloa",
+   "lang": "es",
+   "title_en": "“Chuy González” killed in Guasave: the DEA was offering 5 million dollars for the Sinaloa Cartel operator",
+   "first_report": "2026-10-28T05:31:04Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115315389475303441",
+     "time": "2026-10-28T05:31:04Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "5ad57a5d2b",
+   "status": "single_source",
+   "title": "➡️ Ejecutan a menor de 13 años en Mazatlán; mujer resulta herida durante ataque armado 🚨🚔| Ejecutan a menor de 13 años, conocido como “El Tachi”, en la colonia Constitución, en #Mazatlán, luego de ser",
+   "lang": "es",
+   "title_en": "13-year-old boy known as “El Tachi” executed in Mazatlán; a woman wounded in the armed attack. He was killed in the Constitución neighbourhood of #Mazatlán after armed men chased him and another teenager.",
+   "first_report": "2026-10-28T05:24:48Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2115313814409298331",
+     "time": "2026-10-28T05:24:48Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "c53f463738",
+   "status": "single_source",
+   "title": "Tras el enfrentamiento del lunes, suscitado en Siete Ejidos, #Guasave, resultó abatido #JesúsGonzález Peñuelas, de 56 años de edad, quien era buscado por la Administración de Control de Drogas, conoci",
+   "lang": "es",
+   "title_en": "After Monday's clash in Siete Ejidos, #Guasave, #JesúsGonzález Peñuelas, 56, was killed; he was wanted by the Drug Enforcement Administration, known as the #DEA.",
+   "first_report": "2026-10-28T03:52:38Z",
+   "first_report_precision": "minute",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2115290618578751608",
+     "time": "2026-10-28T03:52:38Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "27d8819c78",
+   "status": "single_source",
+   "title": "🇪🇨 | Jorge Luis Zambrano, alias “Rasquiña,” built one of Ecuador’s most dynamic criminal groups from his cell, forging a network known as the Choneros Federation. Explore how he turned imprisonment in",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-28T03:02:09Z",
+   "first_report_precision": "minute",
+   "first_source": "InSight Crime",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "choneros"
+   ],
+   "outlets": [
+    "InSight Crime"
+   ],
+   "sources": [
+    {
+     "outlet": "insight",
+     "name": "InSight Crime",
+     "kind": "outlet",
+     "via": "X @InSightCrime",
+     "url": "https://x.com/InSightCrime/status/2115277915235455095",
+     "time": "2026-10-28T03:02:09Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "8e6a4cec4d",
+   "status": "single_source",
+   "title": "Ataque de #EstadosUnidos contra presunta #narcolancha deja cinco muertos en el #Pacífico.",
+   "lang": "es",
+   "title_en": "#UnitedStates strike on a suspected #narcoboat leaves five dead in the #Pacific.",
+   "first_report": "2026-10-28T02:22:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2115267809802375541",
+     "time": "2026-10-28T02:22:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "01be07212d",
+   "status": "single_source",
+   "title": "➡️ Jesús \"Chuy\" González, objetivo de la DEA sería uno de los dos fallecidos tras enfrentamiento en Guasave. 🚨🚔| Jesús González, conocido como “Chuy González ”, es señalado como uno de los dos hombres",
+   "lang": "es",
+   "title_en": "Jesús \"Chuy\" González, a DEA target, is reportedly one of the two men killed after a clash in Guasave. Jesús González, known as “Chuy González”, is named as one of the two men who reportedly died after a chase that began",
+   "first_report": "2026-10-28T02:15:46Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2115266242315501933",
+     "time": "2026-10-28T02:15:46Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "12fc69d638",
+   "status": "single_source",
+   "title": "🔴 Miriam (47) y su nieta (12) fueron víctimas de feminicidio en Ostuacán, Chiapas. Uno de los presuntos responsables murió linchado tras ser sacado de los separos; el otro está detenido.",
+   "lang": "es",
+   "title_en": "Miriam (47) and her granddaughter (12) were victims of femicide in Ostuacán, Chiapas. One of the alleged perpetrators died after being lynched when he was taken from the holding cells; the other is in custody.",
+   "first_report": "2026-10-28T01:30:18Z",
+   "first_report_precision": "minute",
+   "first_source": "Animal Político",
+   "region_ids": [
+    "MEX-2735"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Animal Político"
+   ],
+   "sources": [
+    {
+     "outlet": "animal",
+     "name": "Animal Político",
+     "kind": "outlet",
+     "via": "X @Pajaropolitico",
+     "url": "https://x.com/Pajaropolitico/status/2115254801134920061",
+     "time": "2026-10-28T01:30:18Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "4152047c07",
+   "status": "single_source",
+   "title": "🔺 El gobernador de Nayarit denunció que ha recibido intimidaciones por el crimen organizado tras la recuperación de cientos de hectáreas",
+   "lang": "es",
+   "title_en": "The governor of Nayarit said he has received intimidation from organised crime after the recovery of hundreds of hectares.",
+   "first_report": "2026-10-28T01:30:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2721"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115254725134180563",
+     "time": "2026-10-28T01:30:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "cef18d1405",
+   "status": "single_source",
+   "title": "La Secretaría de Seguridad Pública de Sinaloa (#SSP) dio #recomendaciones y advirtió que aplicará #sanciones administrativas para quienes cometan delitos o hagan apología del crimen organizado durante",
+   "lang": "es",
+   "title_en": "The Sinaloa Public Security Secretariat (#SSP) issued #recommendations and warned it will apply administrative #sanctions to anyone who commits crimes or glorifies organised crime during the #Halloween festivities.",
+   "first_report": "2026-10-28T01:18:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2115251703381667987",
+     "time": "2026-10-28T01:18:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "d5e990d497",
    "status": "single_source",
@@ -42,7 +343,7 @@
    "status": "confirmed",
    "title": "BALEAN CASA PRESUNTAMENTE LIGADA AL GOBERNADOR CON LICENCIA RUBÉN ROCHA MOYA EN CULIACÁN Medios locales señalan que la vivienda habría servido como casa de campaña para el funcionario sinaloense. Un g",
    "lang": "es",
-   "title_en": "GUNMEN SHOOT AT HOUSE ALLEGEDLY LINKED TO GOVERNOR ON LEAVE RUBÉN ROCHA MOYA IN CULIACÁN Local media say the house reportedly served as a campaign office for the Sinaloa official. A",
+   "title_en": "GUNMEN SHOOT AT HOUSE ALLEGEDLY LINKED TO GOVERNOR ON LEAVE RUBÉN ROCHA MOYA IN CULIACÁN Local media say the house reportedly served as a campaign office for the Sinaloa official. An armed group fired on a house in the C",
    "first_report": "2026-10-27T23:00:43Z",
    "first_report_precision": "minute",
    "first_source": "Infobae",
@@ -188,7 +489,7 @@
    "status": "single_source",
    "title": "LUZ MARÍA FAJARDO: LA MUJER A QUIEN EQUIPARON EN PODER CON EL CHAPO GUZMÁN, SU AMIGA Y A QUIEN LE MATARON A DOS HIJOS La mujer a quien las autoridades de EEUU compararon en poder con Joaquín Guzmán Lo",
    "lang": "es",
-   "title_en": "LUZ MARÍA FAJARDO: THE WOMAN WHOSE POWER WAS LIKENED TO EL CHAPO GUZMÁN'S, HIS FRIEND, AND WHOSE TWO SONS WERE KILLED The woman US authorities compared in power to Joaquín Guzmán Lo",
+   "title_en": "LUZ MARÍA FAJARDO: THE WOMAN WHOSE POWER WAS LIKENED TO EL CHAPO GUZMÁN'S, HIS FRIEND, AND WHOSE TWO SONS WERE KILLED The woman US authorities compared in power to Joaquín Guzmán Loera, leader of the Sinaloa Cartel, traf",
    "first_report": "2026-10-27T22:40:00Z",
    "first_report_precision": "minute",
    "first_source": "Infobae",
@@ -219,7 +520,7 @@
    "status": "single_source",
    "title": "Cae \"El Isra\", segundo al mando de “Los Rusos”; lo relacionan con privación de la libertad de \"El Gordo Gadaffi\", cantante de corridos De acuerdo con la Fiscalía de Sonora, al detenido se le relaciona",
    "lang": "es",
-   "title_en": "\"El Isra\", second in command of \"Los Rusos\", is arrested; he is linked to the abduction of \"El Gordo Gadaffi\", a corridos singer. According to the Sonora Prosecutor's Office, the detainee is linked",
+   "title_en": "\"El Isra\", second in command of \"Los Rusos\", is arrested; he is linked to the abduction of \"El Gordo Gadaffi\", a corridos singer. According to the Sonora Prosecutor's Office, the detainee is linked to the deprivation of ",
    "first_report": "2026-10-27T22:20:00Z",
    "first_report_precision": "minute",
    "first_source": "Proceso",
@@ -286,8 +587,8 @@
    "region_ids": [],
    "country": "SLV",
    "group_ids": [
-    "b18",
-    "ms13"
+    "ms13",
+    "b18"
    ],
    "outlets": [
     "InSight Crime"
@@ -372,35 +673,6 @@
      "via": "X @infobaemexico",
      "url": "https://x.com/infobaemexico/status/2115175450972488050",
      "time": "2026-10-27T20:15:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "42544225fa",
-   "status": "single_source",
-   "title": "➡️ Ataque armado en Real del Valle deja dos hombres sin vida en taller mecánico en Mazatlán 🚔🚨| Un ataque armado registrado durante la mañana de este martes 27 de octubre dejó como saldo dos hombres s",
-   "lang": "es",
-   "title_en": "➡️ Armed attack in Real del Valle leaves two men dead in a mechanic's workshop in Mazatlán 🚔🚨| An armed attack on the morning of Tuesday, October 27 left two men dead inside a mechanic's workshop on Santa avenue",
-   "first_report": "2026-10-27T19:42:13Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2115167201741435176",
-     "time": "2026-10-27T19:42:13Z",
      "time_precision": "minute"
     }
    ]
@@ -758,8 +1030,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "cv",
-    "pcc"
+    "pcc",
+    "cv"
    ],
    "outlets": [
     "BBC",
@@ -805,8 +1077,8 @@
    "first_report_precision": "day",
    "first_source": "El Financiero",
    "region_ids": [
-    "MEX-2719",
-    "MEX-2723"
+    "MEX-2723",
+    "MEX-2719"
    ],
    "country": "MEX",
    "group_ids": [
@@ -864,8 +1136,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "sinaloa"
+    "sinaloa",
+    "cjng"
    ],
    "outlets": [
     "Diario Extra (Ecuador)",
@@ -916,8 +1188,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "sinaloa"
+    "sinaloa",
+    "cjng"
    ],
    "outlets": [
     "Milenio"
@@ -1066,8 +1338,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "cv",
-    "pcc"
+    "pcc",
+    "cv"
    ],
    "outlets": [
     "AP"
@@ -1209,8 +1481,8 @@
    "country": "MEX",
    "group_ids": [
     "chapitos",
-    "mayiza",
-    "sinaloa"
+    "sinaloa",
+    "mayiza"
    ],
    "outlets": [
     "Excélsior"
@@ -1237,8 +1509,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2719",
-    "GTM-1951"
+    "GTM-1951",
+    "MEX-2719"
    ],
    "country": "GTM",
    "group_ids": [
@@ -1406,8 +1678,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "InSight Crime"
@@ -1580,8 +1852,8 @@
    "first_report_precision": "day",
    "first_source": "Semana",
    "region_ids": [
-    "COL-1421",
-    "VEN-41"
+    "VEN-41",
+    "COL-1421"
    ],
    "country": "COL",
    "group_ids": [
@@ -1614,8 +1886,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "segmar",
-    "exfarc"
+    "exfarc",
+    "segmar"
    ],
    "outlets": [
     "El Tiempo"
@@ -1800,8 +2072,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "GTM-1963",
-    "GTM-1951"
+    "GTM-1951",
+    "GTM-1963"
    ],
    "country": "GTM",
    "group_ids": [],
@@ -2579,10 +2851,10 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2727",
-    "MEX-2734",
-    "MEX-2719"
+    "MEX-2716",
+    "MEX-2712",
+    "MEX-2713",
+    "MEX-2725"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2602,12 +2874,12 @@
    ]
   },
   {
-   "id": "360e08e6ec",
+   "id": "a698849569",
    "status": "single_source",
-   "title": "Fue capturado en el restaurante Pampas ubicado a metros del Centro Cívico de Mexicali; es buscado por secuestro.",
+   "title": "Fue capturado en el restaurante Pampas ubicado a metros del Centro Cívico de Mexicali; es buscado por secuestro. Los detalles en:",
    "lang": "es",
    "title_en": "He was captured at the Pampas restaurant, located a short distance from the Mexicali Civic Center; he is wanted for kidnapping.",
-   "first_report": "2026-10-26T05:56:17Z",
+   "first_report": "2026-10-26T15:15:58Z",
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
    "region_ids": [
@@ -2621,24 +2893,6 @@
     "ZETA Tijuana"
    ],
    "sources": [
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "X @ZETATijuana",
-     "url": "https://x.com/ZETATijuana/status/2114596959600144491",
-     "time": "2026-10-26T05:56:17Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "X @ZETATijuana",
-     "url": "https://x.com/ZETATijuana/status/2114606097927393603",
-     "time": "2026-10-26T06:32:35Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "zeta",
      "name": "ZETA Tijuana",
@@ -2689,8 +2943,8 @@
    "first_report_precision": "day",
    "first_source": "El Tiempo",
    "region_ids": [
-    "COL-1404",
-    "COL-1314"
+    "COL-1314",
+    "COL-1404"
    ],
    "country": "COL",
    "group_ids": [
@@ -2812,8 +3066,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "cv",
-    "pcc"
+    "pcc",
+    "cv"
    ],
    "outlets": [
     "InSight Crime"
@@ -3013,93 +3267,6 @@
      "url": "https://www.infobae.com/guatemala/2026/10/26/policia-capturado-en-guatemala-el-crimen-organizado-en-las-entranas-del-caso-solorzano-foppa/",
      "time": "2026-10-26T12:00:00Z",
      "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "92fb5c0ad2",
-   "status": "single_source",
-   "title": "Nuclear weapons are again central to European security at a time when uncertainty about Washington grows. Our new report examines how European NATO allies can strengthen deterrence, bolster assurance ",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-10-26T09:35:11Z",
-   "first_report_precision": "minute",
-   "first_source": "Crisis Group",
-   "region_ids": [
-    "PRY-607"
-   ],
-   "country": "PRY",
-   "group_ids": [],
-   "outlets": [
-    "Crisis Group"
-   ],
-   "sources": [
-    {
-     "outlet": "crisisgroup",
-     "name": "Crisis Group",
-     "kind": "outlet",
-     "via": "X @CrisisGroup",
-     "url": "https://x.com/CrisisGroup/status/2114652049027514709",
-     "time": "2026-10-26T09:35:11Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "b27076b3a0",
-   "status": "single_source",
-   "title": "Identifican en fosa clandestina restos de Mauricio Vázquez, jornalero mixteco desaparecido hace 10 meses en Navolato",
-   "lang": "es",
-   "title_en": "Remains of Mauricio Vázquez, a Mixtec farmworker who disappeared 10 months ago in Navolato, identified in a clandestine grave",
-   "first_report": "2026-10-26T05:41:45Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2114593302724944303",
-     "time": "2026-10-26T05:41:45Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "c7d85098c1",
-   "status": "single_source",
-   "title": "Asesinan a balazos a un dirigente sindical en un restaurante de Tuxpan, Veracruz",
-   "lang": "es",
-   "title_en": "Union leader shot dead in a restaurant in Tuxpan, Veracruz",
-   "first_report": "2026-10-26T03:58:35Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2734"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2114567339530183125",
-     "time": "2026-10-26T03:58:35Z",
-     "time_precision": "minute"
     }
    ]
   }
