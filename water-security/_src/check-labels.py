@@ -54,15 +54,19 @@ AUDIT = r"""
     const m=/translate\(\s*([-0-9.eE+]+)[ ,]\s*([-0-9.eE+]+)\s*\)/.exec(tf);
     const tx=m?+m[1]:0, ty=m?+m[2]:0;
     const d=el.getAttribute('d')||'';
-    const nums=d.match(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi)||[];
     const pts=[];
-    for(let i=0;i+1<nums.length;i+=2){
-      const x=+nums[i]+tx, y=+nums[i+1]+ty;
-      if(isFinite(x)&&isFinite(y)) pts.push([x,y]);
-    }
     const segs=[];
-    for(let i=1;i<pts.length;i++) segs.push([pts[i-1][0],pts[i-1][1],pts[i][0],pts[i][1]]);
-    if(/[zZ]/.test(d) && pts.length>2) segs.push([pts[pts.length-1][0],pts[pts.length-1][1],pts[0][0],pts[0][1]]);
+    d.split(/(?=[Mm])/).forEach(chunk => {
+      const nums=chunk.match(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi)||[];
+      const sub=[];
+      for(let i=0;i+1<nums.length;i+=2){
+        const x=+nums[i]+tx, y=+nums[i+1]+ty;
+        if(isFinite(x)&&isFinite(y)) sub.push([x,y]);
+      }
+      for(let i=1;i<sub.length;i++) segs.push([sub[i-1][0],sub[i-1][1],sub[i][0],sub[i][1]]);
+      if(/[zZ]/.test(chunk) && sub.length>2) segs.push([sub[sub.length-1][0],sub[sub.length-1][1],sub[0][0],sub[0][1]]);
+      sub.forEach(pt => pts.push(pt));
+    });
     return {pts, segs};
   }
   function polyHas(pts,x,y){
