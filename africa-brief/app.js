@@ -269,7 +269,7 @@ const renderConflicts=()=>{const CF=B.conflicts,RN0=Object.fromEntries(B.regions
   const ins=sv.append("g").attr("transform","translate(4,118)");ins.append("rect").attr("width",54).attr("height",66).attr("rx",3).attr("class","insbg");
   const ip=d3.geoMercator().fitExtent([[3,3],[51,63]],afr),ia=d3.geoPath(ip);ins.append("path").attr("d",ia(afr)).attr("class","insaf");ins.append("path").attr("d",ia(fc)).attr("class","insc");});};
  /* ---------- news by storyline ---------- */
- const LN={en:"EN",fr:"FR",pt:"PT",ar:"AR",ru:"RU",sw:"SW",ha:"HA",so:"SO",am:"AM",ti:"TI",rw:"RW",rn:"RN",es:"ES"};
+ const LN={en:"English",fr:"French",pt:"Portuguese",ar:"Arabic",ru:"Russian",sw:"Swahili",ha:"Hausa",so:"Somali",am:"Amharic",ti:"Tigrinya",rw:"Kinyarwanda",rn:"Kirundi",es:"Spanish"};
  const isState=s=>/^(yes|de facto)/i.test(s||"");
  const fmt=ts=>new Date(ts*1000).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"America/New_York"});
  const RN=Object.fromEntries([...B.regions.map(r=>[r.id,r.name]),["continent","Continent-wide"]]);
