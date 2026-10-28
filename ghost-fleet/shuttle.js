@@ -20,9 +20,9 @@ const rs=S.rusSnap,full=S.rusMonths.filter(m=>m.m>S.window[0].slice(0,7)),first=
 const pc=m=>Math.round(100*m.rus/m.all),mn=m=>new Date(m.m+"-15").toLocaleString("en-GB",{month:"short",year:"numeric"});
 // headline
 document.getElementById("leadh").textContent=`${S.core} tankers made a third of the fleet's oil voyages, shuttling between Russia's Pacific port and China`;
-document.getElementById("leadp").innerHTML=`About ${S.coreShipPct}% of the ${S.ships} tracked tankers made ${S.coreVoyPct}% of all ${S.voyages} loaded voyages in the past year. ${S.coreKozPct}% of their voyages loaded at Kozmino and ${S.coreChinaPct}% went to China, mostly to Shandong province. On the China run a ship loads again about every ${Math.round(cy.CHN.days)} days, against about three months on the India and Turkey runs. This fits a dedicated shuttle pattern, though the data does not show who charters or owns the ships.`;
+document.getElementById("leadp").textContent=`The same ships keep loading at Kozmino and sailing to China, which fits a dedicated shuttle pattern.`;
 // chips
-document.getElementById("leadchips").innerHTML=[[S.core+" ships","made 5 or more loaded voyages each"],[S.coreVoyPct+"%","of all voyages, from "+S.coreShipPct+"% of ships"],[Math.round(cy.CHN.days)+" days","median time from one load to the next on the China run"]].map(c=>`<div class="lchip"><b>${esc(c[0])}</b><span>${esc(c[1])}</span></div>`).join("");
+document.getElementById("leadchips").innerHTML=[[S.core+" ships","with 5+ voyages each"],[S.coreVoyPct+"%","of voyages, from "+S.coreShipPct+"% of ships"],[Math.round(cy.CHN.days)+" days","between loads, China run"]].map(c=>`<div class="lchip"><b>${esc(c[0])}</b><span>${esc(c[1])}</span></div>`).join("");
 // map
 const W=760,H=520,lo0=116.5,lo1=137.5,la0=29.5,la1=45.5;
 const my=la=>Math.log(Math.tan(Math.PI/4+la*Math.PI/360)),X=lo=>(lo-lo0)/(lo1-lo0)*W,Y=la=>(my(la1)-my(la))/(my(la1)-my(la0))*H;
@@ -46,9 +46,9 @@ ${pts}
 <circle class="sport" cx="${kz[0].toFixed(1)}" cy="${kz[1].toFixed(1)}" r="8" fill="#5cc98a" stroke="#0b1526" stroke-width="2" tabindex="0" data-tip="Kozmino, Russia: oil loading terminal on the Pacific coast"><title>Kozmino (loading port, Russia)</title></circle>
 ${lead(kz[0]-4,kz[1]+8,X(133.2),Y(39.9))}${lead(X(lk.lon)+10,Y(lk.lat),X(123.6),Y(36.4))}${lead(X(126.5),Y(33.6),X(126.3),Y(32.2))}
 </svg>
-<div class="callout" style="left:${(X(131.6)/W*100).toFixed(1)}%;top:${(Y(39.9)/H*100).toFixed(1)}%"><b>${S.coreKozPct}%</b> of the core ships' voyages load at Kozmino</div>
-<div class="callout" style="left:${(X(122.0)/W*100).toFixed(1)}%;top:${(Y(35.6)/H*100).toFixed(1)}%"><b>${shan}</b> of ${S.kozChina} Kozmino-to-China voyages end at Shandong ports</div>
-<div class="callout" style="left:${(X(123.6)/W*100).toFixed(1)}%;top:${(Y(31.6)/H*100).toFixed(1)}%">The line shows the sea route. Oil loaded at Kozmino sails about ${Math.round(S.transitKozCHN)} days to Shandong</div>`;
+<div class="callout" style="left:${(X(131.6)/W*100).toFixed(1)}%;top:${(Y(39.9)/H*100).toFixed(1)}%"><b>${S.coreKozPct}%</b> of core-ship voyages load at Kozmino</div>
+<div class="callout" style="left:${(X(122.0)/W*100).toFixed(1)}%;top:${(Y(35.6)/H*100).toFixed(1)}%"><b>${shan}</b> of ${S.kozChina} China voyages end in Shandong</div>
+<div class="callout" style="left:${(X(123.6)/W*100).toFixed(1)}%;top:${(Y(31.6)/H*100).toFixed(1)}%">Sea route: about ${Math.round(S.transitKozCHN)} days to Shandong</div>`;
 // flowing chevrons along the route (shows the route, not ship positions)
 (()=>{const svg=document.querySelector("#shmap svg"),pth=svg.querySelector("#shroute");if(!pth||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
  svg.querySelector(".sarr").style.display="none";const len=pth.getTotalLength(),g=document.createElementNS("http://www.w3.org/2000/svg","g");svg.insertBefore(g,svg.querySelector(".sport"));
@@ -68,12 +68,12 @@ document.getElementById("shcyc").innerHTML=["CHN","IND","TUR"].map(k=>{const c=c
 const dots=(n,k,lab,big,unit)=>{const C=60,r=Math.ceil(n/C),g=7;let c="";for(let i=0;i<n;i++)c+=`<circle cx="${(i%C)*g+3.5}" cy="${Math.floor(i/C)*g+3.5}" r="2.7" fill="${i<k?"#c8a24a":"#3f7fd0"}"/>`;
  return`<div class="dg" title="${k} of ${n} ${unit}"><div class="dgh"><b>${big}%</b><span>of ${lab}: ${k} of ${n}</span></div><svg viewBox="0 0 ${C*g} ${r*g}" role="img" aria-label="${k} of ${n} ${unit} are core ships">${c}</svg></div>`};
 document.getElementById("shconc").innerHTML=dots(S.ships,S.core,"ships",S.coreShipPct,"ships")+dots(S.voyages,S.coreVoy,"voyages",S.coreVoyPct,"voyages");
-document.getElementById("shmore").innerHTML=`<p>None of the ${S.balticShips} ships that loaded at Primorsk or Ust-Luga on the Baltic made more than ${S.balticMax} voyages. The two buyers also draw on largely separate ships: of ${S.repeatIC} ships with two or more voyages to India or China, ${S.repeatOnePct}% served only one of them.</p>
-<p>The core ships mostly do not fly the Russian flag. The busiest fly ${fNow.map(f=>`<span class="nw">${flag(f[0])}${esc(CN[f[0]]||f[0])}</span>`).join(", ")} flags.</p>`;
-document.getElementById("shnote").textContent=`Voyages run from a call at a Russian loading terminal to the next foreign port call, ${S.window[0]} to ${S.window[1]}. Core ships made 5 or more voyages. Turnaround is the median time from one load to the next, for ships not flying the Russian flag at loading (China ${cy.CHN.n}, India ${cy.IND.n}, Turkey ${cy.TUR.n} cycles). Port visits the tracking misses make a cycle look longer. October 2025 and October 2026 are partial months.`;
+document.getElementById("shmore").innerHTML=`<p>Baltic loaders made at most ${S.balticMax} voyages each, and ${S.repeatOnePct}% of repeat India or China ships served only one of them.</p>
+<p>Core ships mostly fly ${fNow.map(f=>`<span class="nw">${flag(f[0])}${esc(CN[f[0]]||f[0])}</span>`).join(", ")} flags, not Russia's.</p>`;
+document.getElementById("shnote").textContent=`Core ships made 5+ voyages in 12 months; tracking gaps can make cycles look longer, and the data does not show who charters or owns the ships.`;
 // Russian flag
 document.getElementById("rush").innerHTML=`<span class="nw">${flag("RUS")}Russian-flagged</span> tankers in the fleet rose from ${rs[0][1]} to ${rs[rs.length-1][1]} in a year`;
-document.getElementById("rusp").textContent=`About half of the ${S.ships} tankers now fly Russia's own flag. Their share of calls at Russian loading terminals went from ${pc(first)}% in ${mn(first)} to ${pc(last)}% in ${mn(last)}. Calls by Russian-flagged ships held at about ${Math.round(full.reduce((a,m)=>a+m.rus,0)/full.length)} a month, so much of the rise comes from fewer calls by other ships, and some recent calls may not yet be reported.`;
+document.getElementById("rusp").textContent=`Russian-flagged ships' share of loading-terminal calls rose from ${pc(first)}% in ${mn(first)} to ${pc(last)}% in ${mn(last)}, much of it because other ships called less.`;
 document.getElementById("ruschips").innerHTML=rs.map((r,i)=>`<div class="lchip"><b>${r[1]}</b><span>${new Date(r[0]).toLocaleString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"})}</span></div>`).join('<span class="arr" aria-hidden="true">→</span>');
 document.getElementById("rusbars").innerHTML=full.map(m=>`<div class="mcol" title="${mn(m)}: ${m.rus} of ${m.all} loading calls by Russian-flagged ships (${pc(m)}%)${m===last?", partial month":""}"><span class="mv">${pc(m)}%</span><span class="mb"><i style="height:${pc(m)}%;background:#c0504d"></i><i style="height:${100-pc(m)}%;background:#c8a24a"></i></span><span class="ml">${new Date(m.m+"-15").toLocaleString("en-GB",{month:"short"})}</span></div>`).join("");
 })();
