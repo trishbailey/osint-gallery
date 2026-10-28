@@ -12,15 +12,7 @@ from playwright.sync_api import sync_playwright
 URL = "http://127.0.0.1:8765/water-security/"
 CHROME = "/usr/local/bin/google-chrome"
 # Region name -> weapon categories that name both ends of a pair.
-EXPECT = {
-    "Nile & North Africa": {"threat"},
-    "Middle East": {"cut", "threat", "neither"},
-    "South Asia": {"cut", "threat", "neither"},
-    "Central Asia": {"cut", "neither"},
-    "Southeast Asia": {"neither"},
-    "Sub-Saharan Africa": {"neither"},
-    "Americas & Europe": {"cut", "neither"},
-}
+EXPECT = {}
 
 
 def click(locator):

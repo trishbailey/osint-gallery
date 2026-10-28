@@ -10,6 +10,7 @@ the left and right padding differ by more than 15%.
 
 Fails if a basin-map dam label is more than 6 screen pixels from its marker,
 overlaps the marker, or has no label, at 1280 and 390, including zoomed views.
+Fails if a leader line on a dam label is longer than 60 screen pixels.
 """
 import sys
 from pathlib import Path
@@ -82,7 +83,7 @@ AUDIT = r"""
     });
     svg.querySelectorAll('g.lay-lever path').forEach(el=>{
       const g=segsOf(el);
-      const open=el.classList.contains('lay-cut')||el.classList.contains('lay-threat')||el.classList.contains('lay-neither');
+      const open=el.classList.contains('lay-cut')||el.classList.contains('lay-threat')||el.classList.contains('lay-neither')||el.classList.contains('flow-reach')||!el.getAttribute('class');
       items.push({kind:'arrow', sw:(+el.getAttribute('stroke-width')||0)/2+(open?2:0), segs:g.segs, pts:open?null:g.pts});
     });
     svg.querySelectorAll('path.flow-reach').forEach(el=>{
@@ -329,6 +330,28 @@ DAM_ZOOM = r"""
 }
 """
 
+# Screen length of dam-label leader lines. A line longer than 60px is a miss.
+LEADER = r"""
+() => {
+  const fails = [];
+  document.querySelectorAll('#regions svg.chart, #panel svg.chart').forEach(svg => {
+    const box = svg.getBoundingClientRect();
+    if (box.width < 20) return;
+    const vb = svg.viewBox && svg.viewBox.baseVal;
+    if (!vb || !vb.width || !vb.height) return;
+    const sx = box.width / vb.width, sy = box.height / vb.height;
+    svg.querySelectorAll('g.lab-dam line').forEach(line => {
+      const len = Math.hypot((+line.getAttribute('x2') - +line.getAttribute('x1')) * sx, (+line.getAttribute('y2') - +line.getAttribute('y1')) * sy);
+      if (len > 60) {
+        const text = line.parentNode.querySelector('text');
+        fails.push({kind: 'leader', len: +len.toFixed(1), name: text ? text.textContent.replace(/\s+/g, ' ').trim().slice(0, 40) : 'label'});
+      }
+    });
+  });
+  return fails;
+}
+"""
+
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
@@ -345,19 +368,27 @@ def main():
             page.goto(URL, wait_until="domcontentloaded", timeout=90000)
             page.wait_for_selector("#regions svg.chart text", timeout=60000)
             names = page.evaluate(
-                "()=>[...document.querySelectorAll('#side-regions button')].map(b=>b.textContent)"
+                "()=>[...document.querySelectorAll('#side-regions button')].filter(b=>b.dataset.role!=='basin').map(b=>b.textContent)"
             )
             width_hits = []
+            if not names:
+                names = ['World']
             for i, name in enumerate(names):
-                page.evaluate(
-                    "(i)=>document.querySelectorAll('#side-regions button')[i].click()", i
-                )
-                page.wait_for_timeout(180)
+                if name != 'World':
+                    page.evaluate(
+                        "(i)=>document.querySelectorAll('#side-regions button')[i].click()", i
+                    )
+                    page.wait_for_timeout(180)
                 page.evaluate(
                     """()=>{const svg=[...document.querySelectorAll('#regions svg.chart')].find(s=>s.getBoundingClientRect().width>20); if(svg) svg.scrollIntoView({block:'center'});}"""
                 )
                 page.wait_for_timeout(80)
                 data = audit(page)
+                for hit in page.evaluate(LEADER):
+                    hit = dict(hit)
+                    hit["width"] = width
+                    hit["tab"] = name
+                    width_hits.append(hit)
                 for hit in data["labelHits"] + data["tipHits"] + data["styleBad"]:
                     hit = dict(hit)
                     hit["width"] = width
@@ -394,7 +425,10 @@ def main():
 
             def shot(region_index, filename):
                 page.evaluate(
-                    "(i)=>document.querySelectorAll('#side-regions button')[i].click()",
+                    """(i) => {
+                      const b = document.querySelectorAll('#side-regions button')[i];
+                      if (b && b.dataset.role !== 'basin') b.click();
+                    }""",
                     region_index,
                 )
                 page.wait_for_timeout(200)
@@ -408,9 +442,7 @@ def main():
                 shots.append(str(path))
 
             if width in (1280, 1440):
-                shot(0, f"fit-{width}-nile.png")
-            if width == 1280:
-                shot(1, "fit-1280-middle-east.png")
+                shot(0, f"fit-{width}-world.png")
             page.close()
         browser.close()
     print("LABEL CHECK")
@@ -421,7 +453,7 @@ def main():
         for hit in failures[:40]:
             print(" ", hit)
         return 1
-    print("PASS no label overlaps a river, glow, arrow, or dam; shaded paths and labels stay inside the viewBox with even left/right padding; basin dam labels stay within 6px of their markers")
+    print("PASS no label overlaps a river, glow, arrow, or dam; shaded paths and labels stay inside the viewBox with even left/right padding; basin dam labels stay within 6px of their markers; dam leader lines stay within 60px")
     for s in shots:
         print(" screenshot", s)
     return 0
