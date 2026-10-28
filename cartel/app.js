@@ -42,7 +42,7 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   const BG=id=>{const c=FC(id),k=(window.TERR_PAT||{})[id],d="rgba(11,21,38,.6)";return k==="grid"?`linear-gradient(${d} 1px,transparent 1px) 0 0/6px 6px,linear-gradient(90deg,${d} 1px,transparent 1px) 0 0/6px 6px,${c}`:k?`radial-gradient(${d} 1.3px,transparent 1.7px) 0 0/6px 6px,${c}`:c};  // swatch background incl. texture
   const svg=d3.select("#mapsvg"),W=svg.node().parentNode.clientWidth||1200,H=Math.round(Math.max(460,Math.min(W*0.62,window.innerHeight-250)));svg.attr("width",W).attr("height",H).style("height",H+"px");
   const view=document.createElement("div");view.className="overlay zoombtns";view.innerHTML='<button class="zb" data-z="in" title="Zoom in" aria-label="Zoom in">+</button><button class="zb" data-z="out" title="Zoom out" aria-label="Zoom out">&minus;</button><button class="zb" data-z="reset" title="Reset view" aria-label="Reset view">&#8634;</button>';svg.node().parentNode.appendChild(view);
-  const proj=d3.geoConicEqualArea().parallels([-15,20]).rotate([135,0]).center([0,-2]).fitExtent([[10,10],[W-10,H-10]],{type:"MultiPoint",coordinates:[[-118,32.7],[-34.8,-7],[-70,-40],[-55,-34],[-81.3,-5]]});
+  const proj=d3.geoConicEqualArea().parallels([-10,40]).rotate([135,0]).center([0,-2]).fitExtent([[10,10],[W-10,H-10]],{type:"MultiPoint",coordinates:[[-118,32.7],[-34.8,-7],[-70,-40],[-55,-34],[-81.3,-5]]});
   const path=d3.geoPath(proj),defs=svg.append("defs"),g=svg.append("g");
   adm.features.forEach(f=>{if(d3.geoArea(f)>2*Math.PI){const rv=p=>p.map(r=>r.slice().reverse());const g=f.geometry;g.coordinates=g.type==='Polygon'?rv(g.coordinates):g.coordinates.map(rv)}});
   const RB=Object.fromEntries(terr.regions.map(r=>[r.id,r]));

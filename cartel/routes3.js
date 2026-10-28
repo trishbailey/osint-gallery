@@ -6,6 +6,21 @@ const L=[{k:"drug",f:"data/routes_drugs.geojson",label:"Drug and precursor route
  {k:"migr",f:"data/routes_migrants.geojson",label:"Human smuggling routes",short:"Human smuggling",color:"#88fc15",dash:{"northbound land":null,"rail (La Bestia)":"14 6","sea":"1 5","southbound (reverse) 2025":"9 4 1 4"}},
  {k:"guns",f:"data/routes_firearms.geojson",label:"Firearm routes (southbound)",short:"Firearms",color:"#33ebff",dash:{land:null,sea:"1 5",air:"9 5"}}];
 const FN=r=>(window.FN?window.FN(r):"");
+function showTrunk(d,l){if(typeof drawer!=="function")return;const rs=d.routes;
+ drawer(`<h2>Shared route: ${rs.length} routes converge</h2><span class="tag" style="border-color:${l.color}">${esc(l.label)}</span><p>Feeder routes join here and one shared line carries them on; the lines are merged for readability, each route below keeps its own origin, destination and sources.</p>${rs.map(f=>{const p=f.properties;return `<h3>${esc(p.from)} → ${esc(p.to)}</h3><span class="tag">${esc(p.subtype)}</span><span class="tag">${esc(p.year)}</span><p>${esc(p.description)}${FN(p.sources)}</p>`+(p.volume?`<p class="small">Sourced volume: ${(+p.volume).toLocaleString()}</p>`:"")+(p.control?`<p><b>Controlling group / fee:</b> ${esc(p.control)}${FN(p.control_sources)}</p>`:"")}).join("")}<p class="muted small">Schematic corridors between places named in the sources.</p>`)}
+/* Converge overlapping routes: every directed waypoint-to-waypoint edge that two or more routes share is drawn ONCE as a shared trunk piece;
+   each route keeps only its own unshared stretch (a feeder that stops at the junction). Origins, destinations and waypoints are untouched. */
+function merge(fs,P){const kk=c=>c[0].toFixed(2)+","+c[1].toFixed(2),eu={};
+ fs.forEach((f,i)=>{const c=f.geometry.coordinates;for(let j=0;j<c.length-1;j++){const k=kk(c[j])+">"+kk(c[j+1]);(eu[k]=eu[k]||new Set).add(i)}});
+ const out={};
+ fs.forEach((f,i)=>{const c=f.geometry.coordinates;let run=null;
+  const flush=()=>{if(!run)return;const key=run.sig+"|"+kk(run.pts[0])+"|"+kk(run.pts[run.pts.length-1]);
+   if(!out[key])out[key]={routes:run.sig.split(",").map(n=>fs[+n]),ll:run.pts,arrive:false};
+   if(run.last)out[key].arrive=true;run=null};
+  for(let j=0;j<c.length-1;j++){const sig=[...eu[kk(c[j])+">"+kk(c[j+1])]].sort((a,b)=>a-b).join(",");
+   if(!run||run.sig!==sig){flush();run={sig,pts:[c[j]]}}run.pts.push(c[j+1]);if(j===c.length-2)run.last=true}
+  flush()});
+ return Object.values(out).map(o=>({type:"Feature",geometry:{type:"LineString",coordinates:o.ll},properties:o.routes.length===1?o.routes[0].properties:{from:o.routes.map(f=>f.properties.from).join("; "),to:[...new Set(o.routes.map(f=>f.properties.to))].join("; "),subtype:o.routes[0].properties.subtype},routes:o.routes,n:o.routes.length,arrive:o.arrive,__pts:o.ll.map(P)}))}
 function show(p,l){if(typeof drawer!=="function")return;drawer(`<h2>${esc(p.from)} → ${esc(p.to)}</h2><span class="tag" style="border-color:${l.color}">${esc(l.label)}</span><span class="tag">${esc(p.subtype)}</span><span class="tag">${esc(p.year)}</span><p>${esc(p.description)}${FN(p.sources)}</p>${p.sector?`<p><b>US Border Patrol sector:</b> ${esc(p.sector)}<br><b>Apprehensions:</b> ${(+p.encounters).toLocaleString()} (${esc(p.encounters_year)}, whole sector; FY2025 border-wide total fell to 237,565)</p>`:p.volume?`<p class="small">Sourced volume: ${(+p.volume).toLocaleString()}</p>`:""}${p.control?`<p><b>Controlling group / fee:</b> ${esc(p.control)}${FN(p.control_sources)}</p>`:""}<p class="muted small">Schematic corridor between places named in the sources.</p>`)}
 function start(){const M=window.MAPX;if(!M||!window.__proj||!document.getElementById("layers")){return setTimeout(start,200)}
  const P=window.__proj,cv=d3.line().x(c=>P(c)[0]).y(c=>P(c)[1]).curve(d3.curveCatmullRom.alpha(.5)),rp=d=>d.geometry.type==="LineString"?cv(d.geometry.coordinates):d.geometry.type==="MultiLineString"?d.geometry.coordinates.map(cv).join(""):M.path(d);
@@ -15,24 +30,25 @@ function start(){const M=window.MAPX;if(!M||!window.__proj||!document.getElement
   eg.append("text").text(d=>d.n).attr("x",5).attr("y",4.5).attr("font-size",13).attr("fill","#ffffff").attr("stroke","#0b1526").attr("stroke-width",2.5).attr("paint-order","stroke")};
  const OFF={drug:[0,0],migr:[2.5,2.5],guns:[-2.5,-2.5]};
  const arrows=(s,color)=>{const ar=[],tmp=d3.select("body").append("svg").style("position","absolute").style("visibility","hidden").style("width",0).style("height",0),tp=tmp.append("path").node();
-  s.selectAll("path.ovl").each(function(){tp.setAttribute("d",this.getAttribute("d"));const L=tp.getTotalLength();if(!L)return;
+  s.selectAll("path.ovl").filter(d=>d.arrive!==false).each(function(){tp.setAttribute("d",this.getAttribute("d"));const L=tp.getTotalLength();if(!L)return;
    /* ONE arrowhead per route, at its arrival (destination) end; routes that converge on the same endpoint share one tip */
    const a=tp.getPointAtLength(Math.max(0,L-6)),b=tp.getPointAtLength(L);if(ar.some(q=>Math.hypot(q.x-b.x,q.y-b.y)<12))return;ar.push({x:b.x,y:b.y,r:Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI})});tmp.remove();
   s.append("g").style("pointer-events","none").selectAll("g").data(ar).join("g").attr("class","pt").attr("data-t",d=>`translate(${d.x},${d.y}) rotate(${d.r})`).attr("transform",function(){return `${this.dataset.t} scale(${1/(window.__zk||1)})`}).append("path").attr("d","M-11,-6.5L3.5,0L-11,6.5L-8,0Z").attr("fill",color).attr("stroke","#0b1526").attr("stroke-width",1.4).attr("stroke-linejoin","round")};
  Promise.all(L.map(l=>fetch(l.f).then(r=>r.json()))).then(gs=>{
   const notes=document.createElement("div");notes.id="routenotes";notes.className="rnotes muted small";
   gs.forEach((g,i)=>{const l=L[i],vs=g.features.map(f=>+f.properties.volume||0),mx=Math.max(...vs,1);
-   const sw=d=>Math.max(1.5,d.properties.volume?0.9+1.6*Math.sqrt(d.properties.volume/mx):1.1);
+   const sw=d=>d.n>1?Math.min(4,1.5+0.7*Math.log2(d.n)):Math.max(1.5,d.properties.volume?0.9+1.6*Math.sqrt(d.properties.volume/mx):1.1);
    /* De-overlap: where several routes in this layer pass through the same interior waypoint (shared sea lane / corridor), fan them out
       a few screen px perpendicular to travel so they run side by side instead of stacking. Origins and destinations (ports, crossings)
       are never moved, so every route still starts and ends at its sourced point. */
    const kk=c=>c[0].toFixed(2)+","+c[1].toFixed(2),users={};
-   g.features.forEach((f,fi)=>{if(f.geometry.type!=="LineString")return;const c=f.geometry.coordinates;c.slice(1,-1).forEach(v=>{(users[kk(v)]=users[kk(v)]||[]).includes(fi)||users[kk(v)].push(fi)})});
-   const GAP=3;g.features.forEach((f,fi)=>{if(f.geometry.type!=="LineString")return;const c=f.geometry.coordinates,q=c.map(P);
+   g.features.forEach((f,fi)=>{if(l.k==="drug"||f.geometry.type!=="LineString")return;const c=f.geometry.coordinates;c.slice(1,-1).forEach(v=>{(users[kk(v)]=users[kk(v)]||[]).includes(fi)||users[kk(v)].push(fi)})});
+   const GAP=3;g.features.forEach((f,fi)=>{if(l.k==="drug"||f.geometry.type!=="LineString")return;const c=f.geometry.coordinates,q=c.map(P);
     f.__pts=q.map((pt,j)=>{const u=j&&j<c.length-1?users[kk(c[j])]:null;if(!u||u.length<2)return pt;const a=q[j-1],b=q[j+1],dx=b[0]-a[0],dy=b[1]-a[1],n=Math.hypot(dx,dy)||1,o=(u.indexOf(fi)-(u.length-1)/2)*GAP;return [pt[0]-dy/n*o,pt[1]+dx/n*o]})});
+   const feats=l.k==="drug"?merge(g.features,P):g.features;
    const cvp=d3.line().curve(d3.curveCatmullRom.alpha(.5)),rp2=d=>d.__pts?cvp(d.__pts):rp(d);
-   M.mk(l.k,l.label,l.color,s=>{s.append("g").selectAll("path").data(g.features).join("path").attr("d",rp2).attr("fill","none").attr("stroke","#0b1526").attr("stroke-opacity",.85).attr("stroke-width",d=>sw(d)+1.5).attr("stroke-linecap","round").attr("vector-effect","non-scaling-stroke").style("pointer-events","none");
-    s.append("g").selectAll("path").data(g.features).join("path").attr("class","ovl rt-"+l.k).attr("d",rp2).attr("fill","none").attr("stroke",l.color).attr("stroke-width",sw).attr("stroke-linecap","round").attr("vector-effect","non-scaling-stroke").style("cursor","pointer").on("click",(e,d)=>show(d.properties,l)).append("title").text(d=>`${d.properties.from} → ${d.properties.to} (${d.properties.subtype})`);s.append("g").style("pointer-events","none").selectAll("path").data(g.features).join("path").attr("class","rtflow").attr("d",rp2).attr("fill","none").attr("stroke-width",d=>Math.max(.8,sw(d)*.55)).attr("vector-effect","non-scaling-stroke");s.attr("transform",`translate(${OFF[l.k]})`);arrows(s,l.color);ends(s,g.features,l.color)});
+   M.mk(l.k,l.label,l.color,s=>{s.append("g").selectAll("path").data(feats).join("path").attr("d",rp2).attr("fill","none").attr("stroke","#0b1526").attr("stroke-opacity",.85).attr("stroke-width",d=>sw(d)+1.5).attr("stroke-linecap","round").attr("vector-effect","non-scaling-stroke").style("pointer-events","none");
+    s.append("g").selectAll("path").data(feats).join("path").attr("class","ovl rt-"+l.k).attr("d",rp2).attr("fill","none").attr("stroke",l.color).attr("stroke-width",sw).attr("stroke-linecap","round").attr("vector-effect","non-scaling-stroke").style("cursor","pointer").on("click",(e,d)=>d.routes&&d.n>1?showTrunk(d,l):show(d.properties,l)).append("title").text(d=>d.n>1?`Shared route (${d.n}): ${d.routes.map(f=>f.properties.from+" → "+f.properties.to).join("; ")}`:`${d.properties.from} → ${d.properties.to} (${d.properties.subtype})`);s.append("g").style("pointer-events","none").selectAll("path").data(feats).join("path").attr("class","rtflow").attr("d",rp2).attr("fill","none").attr("stroke-width",d=>Math.max(.8,sw(d)*.55)).attr("vector-effect","non-scaling-stroke");s.attr("transform",`translate(${OFF[l.k]})`);arrows(s,l.color);ends(s,g.features,l.color)});
    if(M.layers&&M.layers[l.k])M.layers[l.k].lower();
    const box=document.getElementById("routebox")||document.getElementById("layers"),lab=document.querySelector(`#layers label[data-k="${l.k}"]`);
    if(lab){lab.innerHTML=`<input type="checkbox"> <svg width="22" height="8" style="vertical-align:middle"><line x1="1" y1="4" x2="21" y2="4" stroke="${l.color}" stroke-width="3" stroke-linecap="round"/></svg> <span>${esc(l.short)} (${g.features.length})</span>`;
