@@ -54,8 +54,9 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
  window._resCount=()=>resSel.nodes().filter(n=>n.style.display!=="none").length;
 /* tooltip (custom, 13px+, hover, focus and tap) */
 const tip=document.getElementById("tip");
-const obstacles=()=>{const o=[...document.querySelectorAll(".toplabels text,.pflags .prow,.pcapl,.kp,.rlistph .rf,.rlistph .rc")].map(e=>e.getBoundingClientRect());
+const obstacles=()=>{const o=[...document.querySelectorAll(".pflags .prow,.pcapl,.kp,.rlistph .rf,.rlistph .rc")].map(e=>e.getBoundingClientRect());
  document.querySelectorAll(".rlistph .rt").forEach(e=>{const g=document.createRange();g.selectNodeContents(e);o.push(g.getBoundingClientRect());});
+ document.querySelectorAll(".toplabels text").forEach(e=>{const r=e.getBoundingClientRect();o.push({left:r.left-6,right:r.right+6,top:r.top-4,bottom:r.bottom+4,width:r.width+12,height:r.height+8});});
  return o.filter(r=>r.width>1&&r.height>1);};
 const placeTip=e=>{const r=tip.getBoundingClientRect(),w=r.width,h=r.height,vw=innerWidth,vh=innerHeight,ob=obstacles(),px=e.clientX,py=e.clientY;
  const CD=[[14,14]];for(const rad of [26,40,56,76,100,130,165,205,250,300,360,420])for(let a=0;a<24;a++){const t=a*Math.PI/12;CD.push([Math.cos(t)*rad,Math.sin(t)*rad+8]);}
