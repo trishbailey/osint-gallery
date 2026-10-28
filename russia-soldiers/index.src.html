@@ -1,0 +1,124 @@
+<!doctype html><html lang="en"><head><script data-slash-fix>if(location.pathname==="/russia-soldiers")location.replace("/russia-soldiers/"+location.search+location.hash);</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z61EKRP8QV');
+</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Russia's Soldiers: where the war's troops come from</title>
+<meta name="description" content="Which Russian regions the named dead of the war in Ukraine came from, how Russia recruits, and what signing bonuses are worth in local wages.">
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="top"><h1>Russia's Soldiers</h1><p class="sub">Where the troops for the war in Ukraine come from. Data as of 28 Oct 2026. First draft.</p></header>
+<main>
+<section class="intro" aria-label="Introduction">
+<p class="lead">Russia has filled its army for the war in Ukraine from several pools of men: volunteers who sign contracts for large bonuses, men called up in the 2022 mobilisation, prisoners, and foreigners. This page asks one question of the dead we can count by name: do poor, remote and ethnic-minority regions pay more than the rest? The best public count is a named list of Russian military dead kept by Mediazona and BBC News Russian, built from relatives' posts, local media and official statements.[[mz_list]] It is a floor and not a total. The compilers say the list "is not exhaustive, as not every death is publicly reported", so every figure here undercounts.[[mz_list]]</p>
+</section>
+<section class="kpis" id="kpis" aria-label="Headline numbers">
+<div class="kpi"><b>{{named_total}}</b><span>named dead on the list at 23 Oct 2026[[mz_regions]]</span></div>
+<div class="kpi"><b>{{nat_rate}}</b><span>named dead per 100,000 residents, 85 regions[[pop]]</span></div>
+<div class="kpi"><b>{{tuva_rate}}</b><span>per 100,000 in Tuva, the highest. Moscow city is lowest at {{mow_rate}}</span></div>
+<div class="kpi"><b>{{fe_rate}}</b><span>per 100,000 in the Far East, against {{central_rate}} in the Central district</span></div>
+<div class="kpi"><b>300,000</b><span>men called up in the 2022 mobilisation, by the Defence Minister's count[[kremlin]]</span></div>
+<div class="kpi"><b>{{q1_contracts}}</b><span>new contracts with a federal bonus in Q1 2026[[kluge]]</span></div>
+</section>
+<aside class="notice" role="note"><b>The named list undercounts.</b> It holds {{named_total}} names, of which {{named_85}} can be tied to one of the 85 regions drawn here. The other {{outside_85}} come from the Donetsk and Luhansk areas, Baikonur, foreigners and unknown origin. The list leaves out losses of the Donetsk and Luhansk forces.[[mz_list]] Because reporting differs from place to place, a region's rate compares confirmed names, and not true losses.</aside>
+
+<details class="sec" id="map-sec" open><summary><h2>Where the named dead came from</h2></summary>
+<p class="prompt">Hover or tap a region for its numbers. Click a region to open its details. Scroll or pinch to zoom, drag to move.</p>
+<div class="mapgrid">
+<details class="side" id="mapside" open><summary class="optbtn">Map options</summary>
+<div class="sidebody">
+<h3 class="sideh">Show</h3>
+<div class="seg" role="group" aria-label="Metric">
+<button type="button" class="chipb" data-metric="deaths" aria-pressed="true">All named dead</button>
+<button type="button" class="chipb" data-metric="vol" aria-pressed="false">Volunteers</button>
+<button type="button" class="chipb" data-metric="mob" aria-pressed="false">Mobilised</button>
+<button type="button" class="chipb" data-metric="pri" aria-pressed="false">Prisoners</button>
+</div>
+<h3 class="sideh" id="legtitle">Named dead per 100,000</h3>
+<ul class="legend" id="legend"></ul>
+</div></details>
+<div class="mapcol"><div class="mapwrap" id="mapwrap"><svg id="map" role="img" aria-label="Map of Russia's regions shaded by named dead per 100,000 residents"></svg>
+<button type="button" class="btn mapbtn" id="reset">Reset view</button>
+<aside id="panel" class="panel" aria-label="Region details"><button type="button" class="btn closebtn" id="closepanel">Close</button><div id="panelbody"></div></aside></div></div>
+</div>
+<p class="cap" id="mapcap">Darker means more named dead per 100,000 residents. Names are counted by home region from Mediazona's regional pages,[[mz_regions]] and divided by the Rosstat estimate of residents on 1 Jan 2024.[[pop]] Borders are Natural Earth, simplified.[[ne]] Crimea and Sevastopol are drawn as Russian-administered and are not recognised as Russian by Ukraine or most states. Tuva has the highest rate ({{tuva_rate}}) and Chukotka the second ({{chu_rate}}). Moscow city ({{mow_rate}}) and Chechnya ({{che_rate}}) have the lowest.</p>
+</details>
+
+<details class="sec" id="rank-sec" open><summary><h2>Ranking: named dead per 100,000 residents</h2></summary>
+<p class="prompt">The bars start at zero and share the map's colours. Hover or tap a bar for the numbers.</p>
+<div class="barblock"><aside class="side2"><h3 class="sideh">Colour key</h3><ul class="legend" id="legend2"></ul></aside>
+<div class="barcol"><div id="rankbars" class="bars"></div><button type="button" class="btn" id="rankmore">Show all 85 regions</button></div></div>
+<p class="cap">The ten highest rates take {{top10_pop}}% of residents but {{top10_dead}}% of the named dead. {{top10_sibfe}} of them lie in Siberia and the Far East, and none in the Central district.</p>
+</details>
+
+<details class="sec" id="find-sec" open><summary><h2>Testing the story: poor, remote, minority</h2></summary>
+<p class="lead">The story says that poor, remote and ethnic-minority regions bear the cost. Each part is tested against the 85 regions. Pearson's r measures a straight-line link and runs from −1 to 1, where 0 is no link. Spearman's rho does the same for rankings and is less sensitive to a few extreme regions. These are descriptions of the data, and they do not show cause.</p>
+<ol class="finds" id="finds">
+<li><b>Remote: supported.</b> {{f1}}</li>
+<li><b>Poor: not supported by wages.</b> {{f2}}</li>
+<li><b>Minority: mixed.</b> {{f3}}</li>
+</ol>
+
+<div class="test" id="t-dist"><h3>1. Distance from Moscow</h3>
+<div class="barblock"><aside class="side2"><h3 class="sideh">Key</h3><ul class="legend" id="leg-s1"></ul></aside>
+<div class="chartcol"><div class="scat" id="sc-dist"></div><h4 class="mini">Named dead per 100,000 by federal district</h4><div class="bars" id="bars-fd"></div></div></div>
+<p class="cap">{{cap1}} Distance is measured in a straight line from the middle of Moscow city to the middle of each region's largest land area.</p></div>
+
+<div class="test" id="t-wage"><h3>2. Average monthly wage</h3>
+<div class="barblock"><aside class="side2"><h3 class="sideh">Key</h3><ul class="legend" id="leg-s2"></ul></aside>
+<div class="chartcol"><div class="scat" id="sc-wage"></div><h4 class="mini">Named dead per 100,000 by wage quarter (21 or 22 regions each)</h4><div class="bars" id="bars-q"></div></div></div>
+<p class="cap">{{cap2}} Wages are the 2025 average for organisations, from Rosstat.[[wage]] They are not adjusted for local prices.</p></div>
+
+<div class="test" id="t-eth"><h3>3. Ethnic Russian share of residents</h3>
+<div class="barblock"><aside class="side2"><h3 class="sideh">Key</h3><ul class="legend" id="leg-s3"></ul></aside>
+<div class="chartcol"><div class="scat" id="sc-eth"></div><h4 class="mini">Named dead per 100,000 by region type</h4><div class="bars" id="bars-g"></div></div></div>
+<p class="cap">{{cap3}} Shares are from the 2020 census as compiled by real-stats.ru.[[census]] That table lists only the largest peoples of each region. For Dagestan it shows no Russian row, so it is left out of the correlation. Counting Dagestan as 4.0% Russian, the highest share it could have, gives r = {{r_ru_dag}}. {{ols}}</p></div>
+</details>
+
+<details class="sec" id="bonus-sec" open><summary><h2>Signing bonuses against local wages</h2></summary>
+<p class="lead">A contract soldier gets a federal payment of 400,000 roubles, reported by Janis Kluge and shown on VoenSchet's regional cards,[[kluge]] plus a regional payment that each region sets. The regional amounts are read from VoenSchet's summary of regional acts.[[vs]] Each bar adds the two and divides by the region's 2025 average monthly wage,[[wage]] so it shows how many months of local pay the bonus equals. Municipal top-ups and special bonuses for drone troops or reserve units are left out. Where a region's act could not be read, it is missing.</p>
+<div class="barblock"><aside class="side2"><h3 class="sideh">Bar outline</h3><ul class="legend" id="legend3"></ul>
+<button type="button" class="chipb tog" id="firmonly" aria-pressed="false">Confirmed only</button></aside>
+<div class="barcol"><div id="bonusbars" class="bars"></div><button type="button" class="btn" id="bonusmore">Show all regions</button></div></div>
+<p class="cap">{{capb}}</p>
+</details>
+
+<details class="sec" id="pools-sec" open><summary><h2>The recruitment pools</h2></summary>
+<p class="lead">Four groups feed the army: contract soldiers who sign for money, men called up by decree in 2022, prisoners, and foreign recruits. Each bar starts at zero. A thin line marks a range where the sources give only a low and a high figure. These are different kinds of counts and do not add up to one total.</p>
+<div class="bars pools" id="poolbars">{{pool_rows}}</div>
+<h3 class="mini2">No credible estimate</h3>
+<ul class="plain" id="nocred">
+<li>The total number of contract soldiers who have signed since 2022: the official count for 2025 is 422,704 against about 364,000 federal bonuses, and no source covers every year since 2022.[[kluge]]</li>
+<li>The total number of foreigners: Ukraine's list of {{foreigners}} named foreigners is a floor and not an estimate of the total.[[unn]]</li>
+<li>The total number of prisoners: Wagner's {{wagner}} and the Defence Ministry's Storm Z units are counted separately, and the only all-in figure is a claim by Ukraine's intelligence service that could not be verified.[[ki]]</li>
+</ul>
+<h3 class="mini2">How the named dead joined</h3>
+<p class="prompt">Among the 85 regions, the Mediazona pages label each name by how the man joined.[[mz_regions]]</p>
+<div id="typebars" class="bars"></div>
+<p class="cap">{{captype}} A recruitment agency's internal target list, reported by The Insider, includes "residents of economically depressed regions".[[insider]] The same investigation found recruiters paid up to 1.25 million roubles per signed contract.[[insider]] Wagner recruited at least 48,366 prisoners in 2022 and 2023.[[ng_wagner]] The North Korean figure is for the Kursk campaign only.[[bbc_nk]]</p>
+</details>
+
+<details class="sec method" id="method-sec" open><summary><h2>Method and limits</h2></summary>
+<ul class="plain small">
+<li>Rates are named dead divided by the Rosstat population estimate of 1 Jan 2024. Both the list and the population move over time, and the list lags recent months.</li>
+<li>The map covers 85 regions. Names from Donetsk, Luhansk, Baikonur, foreigners and unknown origin have no regional population or wage and are left out of every rate.</li>
+<li>Wages are 2025 nominal averages and bonuses are October 2026 rates, so months of wages are slightly overstated where pay has risen since.</li>
+<li>Bonus status: "firm" means the regional card says the amount was confirmed. Other bars are outlined because the programme ends on 31 Oct 2026, the card data is more than 30 days old, or the amount comes from media reports. Sakha's card gives a range of 1.5 to 3 million rubles regionally and the upper end is charted. Karachay-Cherkessia is shown at the standard 2.1 million rubles, and the card gives 3.1 million for reservists.[[vs]]</li>
+<li>Regions left out of the bonus chart: {{excluded_list}}.</li>
+<li>Poverty rates by region were not available from Rosstat, so average wages stand in for income. Wages are not adjusted for local prices, so the wage test is only a rough one.</li>
+<li>Descriptions only. Nothing on this page is a forecast.</li>
+</ul>
+</details>
+
+<section class="sources"><details id="srcdet"><summary>Data Sources (click to open)</summary>
+<ol class="fnlist">
+{{sources_html}}
+</ol></details></section>
+</main>
+<div id="tip" class="tip" role="tooltip" hidden></div>
+<script src="vendor/d3.min.js"></script><script src="app.js"></script>
+</body></html>
