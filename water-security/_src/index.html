@@ -991,11 +991,50 @@ function arrowEnds(b,C){
 }
 function worldCfg(){const C={rivers:[],lakes:[],marks:[],start:{},mainDams:[]};Object.values(CFG).forEach(c=>{(c.rivers||[]).forEach(r=>{if(!C.rivers.some(x=>x[0]===r[0]))C.rivers.push(r)});(c.lakes||[]).forEach(l=>C.lakes.push(l));(c.marks||[]).forEach(m=>C.marks.push(m));Object.assign(C.start,c.start||{});(c.mainDams||[]).forEach(id=>{if(!C.mainDams.includes(id))C.mainDams.push(id)})});return C}
 const CITIES=[['Cairo',31.24,30.04],['Khartoum',32.56,15.50],['Addis Ababa',38.75,9.03],['Kampala',32.58,0.35],['Baghdad',44.37,33.34],['Damascus',36.28,33.51],['Ankara',32.86,39.93],['Tehran',51.39,35.69],['Amman',35.93,31.95],['Islamabad',73.05,33.69],['Delhi',77.21,28.61],['Lahore',74.36,31.52],['Dhaka',90.41,23.81],['Tashkent',69.28,41.30],['Dushanbe',68.77,38.56],['Bishkek',74.59,42.87],['Kabul',69.17,34.53],['Bangkok',100.50,13.76],['Phnom Penh',104.93,11.56],['Vientiane',102.63,17.98],['Kunming',102.83,25.04],['Bamako',-8.00,12.64],['Dakar',-17.47,14.72],['Niamey',2.11,13.51],['Lusaka',28.32,-15.42],['Harare',31.05,-17.83],['Denver',-104.99,39.74],['Mexico City',-99.13,19.43],['Brasília',-47.88,-15.79],['Asunción',-57.63,-25.26],['Vienna',16.37,48.21],['Budapest',19.04,47.50],['Kyiv',30.52,50.45]];
+function pinWorldNames(svg,lg,pr,rivers,w,h,fs){
+ const need=['Colorado','Mekong','Dnipro'];
+ const have=new Set();
+ svg.selectAll('.lab-layer text').each(function(){have.add((this.textContent||'').replace(/\s+/g,' ').trim())});
+ const blk=blockers(svg);
+ const boxes=[];
+ svg.selectAll('.lab-layer text').each(function(){const b=this.getBBox(); if(b.width>1) boxes.push({x:b.x-3,y:b.y-2,w:b.width+6,h:b.height+4})});
+ const ov=(a,b)=>a.x<b.x+b.w&&b.x<a.x+a.w&&a.y<b.y+b.h&&b.y<a.y+a.h;
+ need.forEach(name=>{
+  if(have.has(name)) return;
+  const river=(rivers||[]).find(r=>r[0]===name);
+  if(!river) return;
+  const anchor=pr(river[2]); if(!anchor||!isFinite(anchor[0])) return;
+  const ax=anchor[0], ay=anchor[1];
+  const sub=lg.append('g').attr('class','lab-flow').attr('data-pin','1');
+  const t=sub.append('text').attr('text-anchor','middle').text(name);
+  t.style('font-weight','600').style('font-style','italic').style('fill','#e6e9ef').style('font-size',fs);
+  const bb=t.node().getBBox(); const inkW=bb.width, inkH=bb.height;
+  let spot=null; const why={off:0,text:0,water:0};
+  for(const r of [18,30,44,58,72,90,110]){
+   for(let a=0;a<24;a++){
+    const ang=a*Math.PI/12, dx=r*Math.cos(ang), dy=r*Math.sin(ang);
+    const cx=ax+dx, cy=ay+dy;
+    const bx={x:cx-inkW/2-2,y:cy-inkH/2-2,w:inkW+4,h:inkH+4};
+    if(bx.x<4||bx.y<4||bx.x+bx.w>w-4||bx.y+bx.h>h-4){why.off++; continue}
+    if(boxes.some(b=>ov(b,bx))){why.text++; continue}
+    if(blk.hits(bx)){why.water++; continue}
+    spot={cx,cy,bx,len:Math.hypot(dx,dy)}; break;
+   }
+   if(spot) break;
+  }
+  if(!spot){sub.remove(); const miss=svg.property('pinMiss')||[]; miss.push({name,ax:+ax.toFixed(0),ay:+ay.toFixed(0),w,h,inkW:+inkW.toFixed(0),why}); svg.property('pinMiss',miss); return}
+  t.attr('x',spot.cx);
+  const y0=+t.attr('y')||0, b2=t.node().getBBox();
+  t.attr('y', y0+(spot.cy-(b2.y+b2.height/2)));
+  if(spot.len>12) sub.insert('line',':first-child').attr('x1',ax).attr('y1',ay).attr('x2',spot.cx).attr('y2',spot.cy).attr('stroke','#9cc1f0').attr('stroke-width',1);
+  boxes.push(spot.bx); have.add(name);
+ });
+}
 function tidyWorld(svg){
  const root=svg.node(); if(!root) return;
  const box=el=>{const b=el.getBBox(); return {x:b.x,y:b.y,w:b.width,h:b.height}};
  const hit=(a,b)=>a.w>1&&b.w>1&&a.x<b.x+b.w-0.4&&b.x<a.x+a.w-0.4&&a.y<b.y+b.h-0.4&&b.y<a.y+a.h-0.4;
- root.querySelectorAll('g.lab-flow').forEach(g=>{const line=g.querySelector('line'); if(!line) return; const len=Math.hypot(+line.getAttribute('x2')-+line.getAttribute('x1'),+line.getAttribute('y2')-+line.getAttribute('y1')); if(len>42) g.remove()});
+ root.querySelectorAll('g.lab-flow').forEach(g=>{if(g.getAttribute('data-pin'))return; const line=g.querySelector('line'); if(!line) return; const len=Math.hypot(+line.getAttribute('x2')-+line.getAttribute('x1'),+line.getAttribute('y2')-+line.getAttribute('y1')); if(len>42) g.remove()});
  const markers=[...root.querySelectorAll('path[data-ink="dam"]')].map(el=>{const b=box(el); const m=/translate\(\s*([-0-9.eE+]+)[ ,]\s*([-0-9.eE+]+)/.exec(el.getAttribute('transform')||''); if(m){b.x+=+m[1]; b.y+=+m[2]} return b});
  let guard=0;
  while(guard++<80){
@@ -1193,7 +1232,7 @@ if(sparse){g.selectAll('.lay-lever').raise();
   const stP=t=>t.style('font-weight',700).style('font-size','14px');
   const nm=c=>c.replace('United States of America','United States').replace('Democratic Republic of the Congo','DR Congo').replace('Dem. Rep. Congo','DR Congo').replace('The former Yugoslav Republic of Macedonia','North Macedonia');
   const strict=coord=>bs.some(b=>b.geo.some(f=>d3.geoContains(f,coord)));
-  labs.forEach(d=>{if(!P.add(lg,d.x,d.y,d.text,t=>{stP(t);t.style('fill',d.gerd?'#ff6b81':'#e6e9ef')},'lab-dam'))addPlace(d.text,`<b>${d.say||d.text}</b>`,1)});
+  labs.forEach(d=>{if(!P.add(lg,d.x,d.y,d.text,t=>{stP(t);t.style('fill','#e6e9ef')},'lab-dam'))addPlace(d.text,`<b>${d.say||d.text}</b>`,1)});
   const seen=[];
   const prefRe=/^(Nile|Euphrates|Indus|Mekong|Danube|Colorado|Paraná|Amu Darya|Syr Darya|Zambezi|Senegal|Niger|Dnipro|Rhine|Jordan|Helmand|Ganges|Brahmaputra|Salween|Okavango|Tigris|Uruguay)$/;
   const prefs=[];bs.filter(b=>!b.aq).forEach(b=>{const named=C.rivers.filter(r=>r[3]&&String(b.name).toLowerCase().includes(String(r[0]).toLowerCase()));const pref=named[0]||C.rivers.find(r=>r[3]&&prefRe.test(r[0])&&b.geo.some(f=>d3.geoContains(f,r[2])))||C.rivers.find(r=>r[3]&&b.geo.some(f=>d3.geoContains(f,r[2])));if(pref)prefs.push({b,pref})});const prefNames=new Set(prefs.map(p=>p.pref[0]));prefs.forEach(({b,pref})=>{const [n,_,c]=pref;let [x,y]=pr(c);if(!(x>=12&&y>=12&&x<=w-12&&y<=h-12)){const cc=d3.geoCentroid({type:'FeatureCollection',features:b.geo});[x,y]=pr(cc)}if(!P.add(lg,x,y,n,t=>{stP(t);t.style('fill','#e6e9ef').style('font-style','italic').style('font-weight',600)},'lab-flow')){const cc=pr(d3.geoCentroid({type:'FeatureCollection',features:b.geo}));if(!(Math.hypot(cc[0]-x,cc[1]-y)>30&&P.add(lg,cc[0],cc[1],n,t=>{stP(t);t.style('fill','#e6e9ef').style('font-style','italic').style('font-weight',600)},'lab-flow')))addPlace(n,`<b>${n}</b>`,2)}});C.rivers.filter(r=>r[3]&&!prefNames.has(r[0])&&bs.some(b=>!b.aq&&b.geo.some(f=>d3.geoContains(f,r[2])))).forEach(r=>addPlace(r[0],`<b>${r[0]}</b>`,3));
@@ -1207,10 +1246,10 @@ if(sparse){g.selectAll('.lay-lever').raise();
   const top=places.sort((a,b)=>a.pri-b.pri||a.title.localeCompare(b.title)).slice(0,8);
   if(opt.sheet&&damNotes.length)el.append('p').attr('class','cap').text([...new Set(damNotes)].join(' '));
   if(top.length){const det=el.append('details').attr('class','places');det.append('summary').attr('data-expect','note').text('Other places on this map');const list=det.append('div').attr('class','place-list');const note=det.append('p').attr('class','place-note').style('display','none');list.selectAll('button').data(top).join('button').attr('type','button').attr('class','chip').attr('data-expect','place').text(d=>d.title).on('click',(e,d)=>{e.stopPropagation();clearTip();note.style('display','block').html(d.detail)})}
-  svg.property('damNotes',[...new Set(damNotes)]);if(opt.world)tidyWorld(svg);lg.raise();svg.node().__blk=blockers(svg);fixZoomInk();if(opt.basin)paintContext(g,pr,bs,w,h);return}
+  svg.property('damNotes',[...new Set(damNotes)]);if(opt.world){tidyWorld(svg);pinWorldNames(svg,lg,pr,C.rivers,w,h,'14px')}lg.raise();svg.node().__blk=blockers(svg);fixZoomInk();if(opt.basin)paintContext(g,pr,bs,w,h);return}
 const st=t=>t.style('font-weight',700).style('font-size',(sparse||opt.basin?'14':'13')+'px');
  const nm=c=>c.replace('United States of America','United States').replace('Democratic Republic of the Congo','DR Congo').replace('Dem. Rep. Congo','DR Congo').replace('The former Yugoslav Republic of Macedonia','North Macedonia');
- labs.forEach(d=>P.add(lg,d.x,d.y,d.text,t=>{st(t);t.style('fill',d.gerd?'#ff6b81':'#e6e9ef')},'lab-dam'));
+ labs.forEach(d=>P.add(lg,d.x,d.y,d.text,t=>{st(t);t.style('fill','#e6e9ef')},'lab-dam'));
  const seen=[];
  if(!opt.world)AR.forEach(b=>[b.up,b.down.c].forEach(name=>{const q=ptOf(b,name);if(!q)return;const [x,y]=pr(q);if(seen.some(s=>s.n===name&&Math.hypot(s.x-x,s.y-y)<110))return;seen.push({n:name,x,y});if(sparse){cue(x,y,`<b>${nm(name)}</b>`);return}P.add(lg,x,y,nm(name),t=>{st(t);t.style('fill','#e6e9ef')},null,(cx,cy)=>inCountry(pr,name,cx,cy))}));
  const mains=C.rivers.filter(r=>r[3]&&inside(r[2]));
@@ -1226,7 +1265,7 @@ const st=t=>t.style('font-weight',700).style('font-size',(sparse||opt.basin?'14'
   const [x,y]=pr(pt.geometry.coordinates);if((at[n]||[]).some(([u,v])=>Math.hypot(u-x,v-y)<160))return;(at[n]=at[n]||[]).push([x,y]);
   const dep=b.dep.find(d=>d.c===n);const extra=dep?`<br>${dep.v}% of renewable water from abroad`:'';
   cue(x,y,`<b>${nm(n)}</b>${extra}`)}));
- if(opt.world)tidyWorld(svg);lg.raise();svg.selectAll('.cue').raise();svg.node().__blk=blockers(svg);fixZoomInk();if(opt.basin)paintContext(g,pr,bs,w,h);}
+ if(opt.world){tidyWorld(svg);pinWorldNames(svg,lg,pr,C.rivers,w,h,'13px')}lg.raise();svg.selectAll('.cue').raise();svg.node().__blk=blockers(svg);fixZoomInk();if(opt.basin)paintContext(g,pr,bs,w,h);}
 paint();
 if(opt.basin||!sparse){const pad=opt.basin?(w<520?36:88):Math.max(48,Math.round(Math.min(w,h)*0.06));const padX=pad,padTop=opt.basin?16:pad,padBot=opt.basin?72:pad;
  const sel=opt.basin?'path.basin,path.core,path.flow-reach,g.lay-lever path,path[data-ink="dam"]':'path.basin,path.glow,path.core,g.lay-lever path,path.flow-reach,path[data-ink="dam"],circle[data-ink="arrow"],text';
