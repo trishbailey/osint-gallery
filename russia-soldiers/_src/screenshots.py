@@ -42,12 +42,27 @@ with sync_playwright() as pw:
         page.click("#closepanel"); page.wait_for_timeout(400); assert not page.evaluate("document.querySelector('#panel').classList.contains('open')")
         if mobile and page.evaluate("!document.querySelector('#mapside').open"):
             page.click("#mapside > summary"); page.wait_for_timeout(200)
-        for m in ("vol", "mob", "pri", "deaths"):
+        for m in ("vol", "mob", "pri", "pov", "ru", "bonus", "deaths"):
             before = page.evaluate("[...document.querySelectorAll('#map path.reg')].map(p=>p.getAttribute('fill')).join()")
             page.click(f".chipb[data-metric={m}]"); page.wait_for_timeout(250)
             after = page.evaluate("[...document.querySelectorAll('#map path.reg')].map(p=>p.getAttribute('fill')).join()")
             print(tag, "metric", m, "fills changed" if before != after else "fills same"); 
             if m == "pri": shot(page, f"{tag}-05-map-prisoners.png", full=False)
+            if m == "pov": shot(page, f"{tag}-05b-map-poverty.png", full=False)
+            if m == "bonus": shot(page, f"{tag}-05c-map-bonus.png", full=False)
+        # section screenshots, nested toggles, sankey, photos, minimaps
+        for sid in ("undercount", "pov-sec", "eth-sec", "bonus-sec", "pools-sec"):
+            page.evaluate(f"document.querySelector('#{sid}').scrollIntoView()"); page.wait_for_timeout(250)
+            shot(page, f"{tag}-07-{sid}.png", full=False)
+        for mm in ("#mm-pov", "#mm-ru", "#mm-bonus"):
+            n = len(page.query_selector_all(mm + " path.reg")); print(tag, mm, "regions", n); assert n > 80, mm
+        nl = len(page.query_selector_all("#sankey path")); nr = len(page.query_selector_all("#sankey rect")); print(tag, "sankey links", nl, "nodes", nr); assert nl >= 25 and nr == 12
+        imgs = page.evaluate("[...document.querySelectorAll('.ph img')].map(i=>[i.complete&&i.naturalWidth>0,i.alt.length])"); print(tag, "photos", imgs); assert all(a and b > 20 for a, b in imgs) and len(imgs) == 2
+        for d in page.query_selector_all("details.how"):
+            d.scroll_into_view_if_needed(); before = d.evaluate("e=>e.open"); d.query_selector("summary").click(); page.wait_for_timeout(120)
+            assert d.evaluate("e=>e.open") != before, "toggle did nothing"
+            if not d.evaluate("e=>e.open"): d.query_selector("summary").click()
+        page.wait_for_timeout(300); shot(page, f"{tag}-08-with-toggles-open.png")
         # zoom
         page.mouse.move(bb["x"] + 20, bb["y"] + 20)
         # other buttons

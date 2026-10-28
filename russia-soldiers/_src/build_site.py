@@ -30,7 +30,6 @@ def values():
         q1_contracts="71,216", top10_pop=n1(S["top10_pop_share"]), top10_dead=n1(S["top10_death_share"]), top10_sibfe=["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten"][sibfe],
         foreigners="45,959", wagner="48,366",
         excluded_list="; ".join(f"{by[i]['en']} ({v[1]})" for i, v in EXCLUDED.items()).replace("; ", ", "),
-        r_ru_dag=sg(c["ru_dag4"]["pearson"][0]),
     )
     ratio = fd["Far East"]["rate"] / fd["Central"]["rate"]
     V["f1"] = (f"The farther a region lies from Moscow, the more of its residents appear on the named list. Across 85 regions the correlation between distance and named dead per 100,000 is r = {sg(c['dist']['pearson'][0])} "
@@ -62,6 +61,28 @@ def values():
     V["captype"] = (f"Finding: among the {n0(tot)} names in the 85 regions, {n0(tt['vol'])} are labelled volunteers, {n0(tt['pri'])} prisoners and {n0(tt['mob'])} mobilised men. The rest are labelled by arm of service or have no data. "
                     f"Volunteer and prisoner rates both rise with distance from Moscow (Spearman {sg(S['type_dist_spearman']['vol'][0])} and {sg(S['type_dist_spearman']['pri'][0])}).")
     V["capb"] = V["capb"].replace("Bonuses are a sign of how hard a region is pushed to recruit, and the data here do not show them reaching the people who die.", "A bigger bonus relative to pay does not go with more deaths in a region.")
+    # --- round 3: one-line verdicts (long explanations stay behind toggles) and new sections
+    pq = S["pov_quartiles"]; op = S["ols_dist_pov"]; od = S["ols_dist_only"]; pr = S["probate"]; pt = {x[0]: x for x in S["pov_top"]}
+    V["v_remote"] = f"Remote: supported. Far East {n0(fd['Far East']['rate'])} against {n0(fd['Central']['rate'])} in the Central district per 100,000; distance r = {sg(c['dist']['pearson'][0])}."
+    V["v_pov"] = (f"Poverty: weak link. Poorest quarter of regions {n0(pq[3]['rate'])} against {n0(pq[0]['rate'])} in the least poor, but r = {sg(c['pov']['pearson'][0])} (Spearman {sg(c['pov']['spearman'][0])}) "
+                  f"and poverty adds {n1((op['r2'] - od['r2']) * 100)} points to the {n1(od['r2'] * 100)}% that distance already explains.")
+    V["pov_how"] = (f"Poverty is the share of residents with income below the poverty line, Rosstat 2025. The link is positive but weak: Pearson r = {sg(c['pov']['pearson'][0])} (p = {c['pov']['pearson'][1]:.2f}), "
+                    f"Spearman {sg(c['pov']['spearman'][0])} (p = {c['pov']['spearman'][1]:.2f}), and it is no stronger without the two derived regions (r = {sg(c['pov_published']['pearson'][0])} across {c['pov_published']['n']}). "
+                    f"Poor regions are also remote (poverty against distance, Spearman {sg(c['pov_dist']['spearman'][0])}), and with distance in the model poverty\u2019s standardised weight falls to {n2(op['beta_pov'])} against {n2(op['beta_dist'])} for distance. "
+                    f"The poorest regions split: Ingushetia ({n1(pt['RU-IN'][2])}% poor) and Chechnya ({n1(pt['RU-CE'][2])}%) have {n0(pt['RU-IN'][3])} and {n0(pt['RU-CE'][3])} named dead per 100,000, among the lowest, "
+                    f"while Tuva ({n1(pt['RU-TY'][2])}%, {n0(pt['RU-TY'][3])}) and Buryatia ({n1(pt['RU-BU'][2])}%, {n0(pt['RU-BU'][3])}) are among the highest.")
+    V["v_wage"] = f"Wages: no clear pattern. Spearman {sg(c['wage']['spearman'][0])}; lowest-paid quarter {n0(q[0]['rate'])}, below the two middle quarters ({n0(q[1]['rate'])} and {n0(q[2]['rate'])})."
+    V["v_eth"] = (f"Minority: mixed. Republics {n0(g['republics']['rate'])} against {n0(g['non_republics']['rate'])} elsewhere, but Russian share alone is not linked (r = {sg(c['ru']['pearson'][0])}, p = {c['ru']['pearson'][1]:.2f}, 85 regions).")
+    V["v_bonus"] = f"Bonus: median {n1(S['bonus_median_months'])} months of local wages across {S['bonus_n']} regions; bigger bonuses go with lower death rates (Spearman {sg(S['bonus_corr_all']['spearman'][0])})."
+    V["v_type"] = f"Named dead by label: {n0(tt['vol'])} volunteers, {n0(tt['pri'])} prisoners, {n0(tt['mob'])} mobilised."
+    V["v_rank"] = f"The ten highest rates hold {n1(S['top10_pop_share'])}% of residents but {n1(S['top10_death_share'])}% of the named dead; none is in the Central district."
+    V["uc_line"] = f"The named list undercounts. A probate-registry estimate puts Russian military dead at {n0(pr['total'])} by the end of 2025, {n1(pr['mult'])} times the {n0(pr['named_at_date'])} names on the list when it was made."
+    V["r_dag_ru"] = n1(by["RU-DA"]["ru_share"])
+    V["r_ru_p"] = f"{c['ru']['pearson'][1]:.2f}"
+    V["ols_pov"] = (f"With distance, poverty and Russian share together on 85 regions, {n0(S['ols_pov']['r2']*100)}% of the variation is explained (standardised weights: distance {n2(S['ols_pov']['beta_dist'])}, "
+                    f"poverty {n2(S['ols_pov']['beta_pov'])}, Russian share {n2(S['ols_pov']['beta_ru'])}).")
+    V["pov_derived"] = " and ".join(S["pov_derived"])
+    V["probate_regular"] = n0(pr["regular"]); V["probate_late"] = n0(pr["late"])
     return V
 
 GROUPS = [("contracts", "Contract soldiers (volunteers)"), ("mobilised", "Mobilised men"), ("prisoners", "Prisoners"), ("foreigners", "Foreign recruits"), ("northkorea", "North Korean troops")]

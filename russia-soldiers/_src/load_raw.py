@@ -43,3 +43,43 @@ def load_census():
 
 def load_mz():
     return json.load(open(os.path.join(RAW, "mz_regions_200zona_2026-10-28.json"), encoding="utf-8"))
+
+POV_ALIAS_RATE = {"RU-MOW": "Москва", "RU-SEV": "Севастополь", "RU-SA": "Республика Саха", "RU-YAN": "Ямало-Ненецкий автономный округ"}
+POV_ALIAS_COUNT = {"RU-MOW": "г. Москва", "RU-SPE": "г. Санкт-Петербург", "RU-SEV": "г. Севастополь", "RU-KEM": "Кемеровская область-Кузбасс",
+                   "RU-KHM": "Ханты-Мансийский АО", "RU-YAN": "Ямало-Ненецкий АО", "RU-SA": "Республика Саха (Якутия)"}
+
+def _pipe(fn):
+    d = {}
+    for line in open(os.path.join(RAW, fn), encoding="utf-8"):
+        if line.startswith("#") or "|" not in line:
+            continue
+        a = [x.strip() for x in line.split("|")]
+        d[a[0]] = float(a[1])
+    return d
+
+def load_poverty():
+    """Returns (rates, counts): name -> value, from the two saved Rosstat tabulations."""
+    return _pipe("poverty_rate_2025_roschart.txt"), _pipe("poverty_count_2025_statbase.txt")
+
+def _find(d, names):
+    for n in names:
+        if n in d: return d[n]
+    return None
+
+def poverty_for(reg, rates, counts, pop_total):
+    """Published 2025 rate if present; else headcount / population (flagged 'derived')."""
+    iso = reg["iso"]
+    rn = [POV_ALIAS_RATE.get(iso)] if iso in POV_ALIAS_RATE else [reg["wage"], reg["mz"], reg["pop"], reg["ne"]]
+    r = _find(rates, [n for n in rn if n])
+    if r is not None: return r, "published"
+    cn = [POV_ALIAS_COUNT[iso]] if iso in POV_ALIAS_COUNT else [reg["wage"], reg["mz"], reg["pop"], reg["ne"]]
+    c = _find(counts, [n for n in cn if n])
+    if c is None: return None, "none"
+    return c / pop_total * 100, "derived"
+
+def load_dagestan_ru():
+    """Russian share of Dagestan's total population, census 2020/21: 102,243 Russians of 3,182,054 residents."""
+    t = open(os.path.join(RAW, "quotes", "census_dagestan.txt"), encoding="utf-8").read()
+    tot = int(re.search(r"^(\d[\d ]+\d) всё население", t, re.M).group(1).replace(" ", ""))
+    ru = int(re.search(r"^Русские \| (\d[\d ]+\d) \|", t, re.M).group(1).replace(" ", ""))
+    return ru / tot * 100, ru, tot

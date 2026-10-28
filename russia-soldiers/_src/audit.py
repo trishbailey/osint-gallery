@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.join(HERE, "..
 sys.path.insert(0, HERE)
 from regions_master import REGIONS as _R, KEYS
 REGIONS = [tuple(r[k] for k in KEYS) for r in _R]
-from bonus_inputs import B, EXCLUDED, FEDERAL
+from bonus_inputs import B, B2, EXCLUDED, FEDERAL
 from pools_inputs import P
 from sources import SOURCES
 FAIL = []; OK = [0]
@@ -39,6 +39,26 @@ with open(os.path.join(RAW, "census_ethnic_realstats.csv"), encoding="utf-8") as
     for r in csv.DictReader(f):
         if r["Перепись"] == "2020" and r["Народ"] == "Русские": cen[r["Регион"]] = float(r["Доля %"])
 
+def _pp(fn):
+    d = {}
+    for ln in open(os.path.join(RAW, fn), encoding="utf-8"):
+        if ln.startswith("#") or "|" not in ln: continue
+        k, v = [x.strip() for x in ln.split("|")[:2]]; d[k] = float(v)
+    return d
+PR, PC = _pp("poverty_rate_2025_roschart.txt"), _pp("poverty_count_2025_statbase.txt")
+_dt = open(os.path.join(RAW, "quotes", "census_dagestan.txt"), encoding="utf-8").read()
+DAG_TOT = int(re.search(r"(\d[\d ]*\d) всё население", _dt).group(1).replace(" ", "")); DAG_RU = int(re.search(r"Русские \| (\d[\d ]*\d) \|", _dt).group(1).replace(" ", ""))
+need("Dagestan census 102,243 of 3,182,054", (DAG_RU, DAG_TOT) == (102243, 3182054))
+AR = {"RU-MOW": "Москва", "RU-SEV": "Севастополь", "RU-SA": "Республика Саха", "RU-YAN": "Ямало-Ненецкий автономный округ"}
+AC = {"RU-MOW": "г. Москва", "RU-SPE": "г. Санкт-Петербург", "RU-SEV": "г. Севастополь", "RU-KEM": "Кемеровская область-Кузбасс", "RU-KHM": "Ханты-Мансийский АО",
+      "RU-YAN": "Ямало-Ненецкий АО", "RU-SA": "Республика Саха (Якутия)"}
+def povty(iso_, wn, mzn, pn, ne, p):
+    for n in ([AR[iso_]] if iso_ in AR else [wn, mzn, pn, ne]):
+        if n in PR: return PR[n], "published"
+    for n in ([AC[iso_]] if iso_ in AC else [wn, mzn, pn, ne]):
+        if n in PC: return PC[n] / p * 100, "derived"
+    return None, "none"
+
 def rank(v):
     o = sorted(range(len(v)), key=lambda i: v[i]); rk = [0.0] * len(v); i = 0
     while i < len(o):
@@ -61,8 +81,10 @@ for r in REGIONS:
     need(f"pop unique {iso}", len(pp) == 1)
     p = pp[0]["Все население"]; m = mzt[mzn]
     mine[iso] = dict(pop=p, deaths=m["total"], wage=wage[wn], vol=m["branches"].get("добровольцы", 0), mob=m["branches"].get("мобилизованные", 0),
-                     pri=m["branches"].get("заключенные", 0), ru=cen.get(cn), rural=pp[0]["Сельское население"], kind=kind)
+                     pri=m["branches"].get("заключенные", 0), ru=(DAG_RU / DAG_TOT * 100 if iso == "RU-DA" else cen.get(cn)), rural=pp[0]["Сельское население"], kind=kind)
     x = by[iso]
+    pv_, pk_ = povty(iso, wn, mzn, pn, ne, p); mine[iso]["pov"] = pv_
+    need(f"poverty found {iso}", pv_ is not None); chk(f"{iso} pov", x["pov"], pv_); chk(f"{iso} pov kind", x["pov_kind"], pk_)
     for k in ("pop", "deaths", "wage", "vol", "mob", "pri"): chk(f"{iso} {k}", x[k], mine[iso][k])
     chk(f"{iso} rate", x["deaths_rate"], m["total"] / p * 1e5)
     chk(f"{iso} rural", x["rural_share"], pp[0]["Сельское население"] / p * 100)
@@ -89,8 +111,47 @@ idx = [k for k, i in enumerate(iso) if mine[i]["ru"] is not None]
 chk("n ru", S["corr"]["ru"]["n"], len(idx))
 chk("ru pearson", S["corr"]["ru"]["pearson"][0], pear([mine[iso[k]]["ru"] for k in idx], [rate[k] for k in idx]))
 chk("ru spearman", S["corr"]["ru"]["spearman"][0], spear([mine[iso[k]]["ru"] for k in idx], [rate[k] for k in idx]))
-ru4 = [mine[i]["ru"] if mine[i]["ru"] is not None else 4.0 for i in iso]
-chk("ru dag4 pearson", S["corr"]["ru_dag4"]["pearson"][0], pear(ru4, rate))
+chk("Dagestan Russian share", by["RU-DA"]["ru_share"], DAG_RU / DAG_TOT * 100); need("all 85 have a Russian share", len(idx) == 85)
+pv = [mine[i]["pov"] for i in iso]
+chk("pov pearson", S["corr"]["pov"]["pearson"][0], pear(pv, rate)); chk("pov spearman", S["corr"]["pov"]["spearman"][0], spear(pv, rate))
+pk = [k for k, i in enumerate(iso) if by[i]["pov_kind"] == "published"]
+chk("pov published n", S["corr"]["pov_published"]["n"], len(pk)); need("only Nenets and Khanty-Mansi derived", [iso[k] for k in range(85) if k not in pk] == ["RU-NEN", "RU-KHM"] or sorted(iso[k] for k in range(85) if k not in pk) == ["RU-KHM", "RU-NEN"])
+chk("pov published pearson", S["corr"]["pov_published"]["pearson"][0], pear([pv[k] for k in pk], [rate[k] for k in pk]))
+chk("pov published spearman", S["corr"]["pov_published"]["spearman"][0], spear([pv[k] for k in pk], [rate[k] for k in pk]))
+chk("pov-dist spearman", S["corr"]["pov_dist"]["spearman"][0], spear(pv, dist))
+# cross-check: derived rate (headcount / population) agrees with the published rate wherever both exist
+for i in iso:
+    if by[i]["pov_kind"] != "published": continue
+    cn_ = AC.get(i); 
+    for r in REGIONS:
+        if r[0] == i:
+            for n in ([cn_] if cn_ else [r[4], r[2], r[6], r[3]]):
+                if n in PC: need(f"published poverty rate within 1 pp of headcount/population {i}", abs(PC[n] / mine[i]["pop"] * 100 - mine[i]["pov"]) < 1.0); break
+def pooled(sel): d = sum(mine[i]["deaths"] for i in sel); p = sum(mine[i]["pop"] for i in sel); return d, p, d / p * 1e5
+# poverty quartiles and OLS
+sp_ = sorted(iso, key=lambda i: mine[i]["pov"]); pq = [sp_[:21], sp_[21:42], sp_[42:63], sp_[63:]]
+for k, q in enumerate(pq): chk(f"pov q{k+1} rate", S["pov_quartiles"][k]["rate"], pooled(q)[2])
+def ols(cols, y):
+    # normal equations on standardised variables, own Gauss elimination
+    def z(v): m_ = sum(v) / len(v); s_ = math.sqrt(sum((a - m_) ** 2 for a in v) / len(v)); return [(a - m_) / s_ for a in v]
+    Z = [z(c) for c in cols]; yz = z(y); k = len(Z)
+    M = [[sum(a * b for a, b in zip(Z[i], Z[j])) for j in range(k)] + [sum(a * b for a, b in zip(Z[i], yz))] for i in range(k)]
+    for i in range(k):
+        piv = M[i][i]; M[i] = [v / piv for v in M[i]]
+        for j in range(k):
+            if j != i: f_ = M[j][i]; M[j] = [a - f_ * b for a, b in zip(M[j], M[i])]
+    beta = [M[i][k] for i in range(k)]
+    fit = [sum(beta[i] * Z[i][n] for i in range(k)) for n in range(len(yz))]
+    ssr = sum((a - b) ** 2 for a, b in zip(yz, fit)); return beta, 1 - ssr / sum(a * a for a in yz)
+bt, r2_ = ols([dist, pv], rate); chk("ols dist+pov beta dist", S["ols_dist_pov"]["beta_dist"], bt[0], 1e-5); chk("ols dist+pov beta pov", S["ols_dist_pov"]["beta_pov"], bt[1], 1e-5); chk("ols dist+pov r2", S["ols_dist_pov"]["r2"], r2_, 1e-5)
+bt, r2_ = ols([dist], rate); chk("ols dist only r2", S["ols_dist_only"]["r2"], r2_, 1e-5)
+rus = [mine[i]["ru"] for i in iso]
+bt, r2_ = ols([dist, w, rus], rate); chk("ols main r2", S["ols"]["r2"], r2_, 1e-5); chk("ols main beta dist", S["ols"]["beta_dist"], bt[0], 1e-5)
+bt, r2_ = ols([dist, pv, rus], rate); chk("ols pov r2", S["ols_pov"]["r2"], r2_, 1e-5)
+# probate estimate
+PRB = open(os.path.join(RAW, "quotes", "mz_probate.txt"), encoding="utf-8").read()
+for s_ in ("352,000", "217,808", "261,000", "90,000", "aged 18 to 59", "only Russian citizens"): need(f"probate page has {s_}", s_ in PRB)
+chk("probate multiplier", S["probate"]["mult"], 352000 / 217808); need("probate parts add up", S["probate"]["regular"] + S["probate"]["late"] == 351000 or abs(S["probate"]["regular"] + S["probate"]["late"] - 352000) < 2000)
 ex = [k for k, i in enumerate(iso) if i not in ("RU-MOW", "RU-SPE")]
 chk("wage ex cities spearman", S["corr"]["wage_ex_cities"]["spearman"][0], spear([w[k] for k in ex], [rate[k] for k in ex]))
 # p-values spot check (permutation-free: t approx)
@@ -104,7 +165,6 @@ def pval(r, n):
 chk("wage pearson p", S["corr"]["wage"]["pearson"][1], pval(pear(w, rate), 85), 1e-3)
 chk("ru pearson p", S["corr"]["ru"]["pearson"][1], pval(S["corr"]["ru"]["pearson"][0], len(idx)), 1e-3)
 # groups
-def pooled(sel): d = sum(mine[i]["deaths"] for i in sel); p = sum(mine[i]["pop"] for i in sel); return d, p, d / p * 1e5
 d, p, rt = pooled([i for i in iso if mine[i]["kind"] == "republic"]); chk("republics rate", S["groups"]["republics"]["rate"], rt); chk("republics n", S["groups"]["republics"]["n"], 21)
 chk("republic death share", S["groups"]["republics"]["share_deaths"], d / n85 * 100); chk("republic pop share", S["groups"]["republics"]["share_pop"], p / p85 * 100)
 chk("others rate", S["groups"]["non_republics"]["rate"], pooled([i for i in iso if mine[i]["kind"] != "republic"])[2])
@@ -118,8 +178,10 @@ with open(os.path.join(RAW, "rosstat_population_2024_nsedc.csv"), encoding="utf-
         if r[0].endswith("федеральный округ"): cur = r[0].split()[0]; fd[cur] = []
         else: fd.get(cur, []).append((r[0], r[1]))
 en_fd = {"Центральный": "Central", "Северо-Западный": "North-West", "Южный": "South", "Северо-Кавказский": "North Caucasus", "Приволжский": "Volga", "Уральский": "Urals", "Сибирский": "Siberia", "Дальневосточный": "Far East"}
+FDM = {}
 for ru_n, en_n in en_fd.items():
     members = [r[0] for r in REGIONS if any(k[0] == r[6] and (r[7] is None or k[1] == r[7]) for k in fd[ru_n])]
+    FDM[en_n] = members
     dd, pp, rr = pooled(members)
     chk(f"fd {en_n} n", S["fd"][en_n]["n"], len(members)); chk(f"fd {en_n} rate", S["fd"][en_n]["rate"], rr)
 need("district regions sum to 85", sum(S["fd"][k]["n"] for k in S["fd"]) == 85)
@@ -146,12 +208,18 @@ for key, nm in (("deaths", "deaths"), ("vol", "vol"), ("mob", "mob"), ("pri", "p
 # ---- bonus
 vs = norm(open(os.path.join(RAW, "voenschet_cards_snapshot_2026-10-28.txt"), encoding="utf-8").read())
 bon = {}
-for iso_, nm, base, status, frag in B:
-    need(f"bonus fragment in snapshot {iso_}", norm(frag) in vs)
-    need(f"bonus name in snapshot {iso_}", norm(nm) in vs)
+_q = {f: norm(open(os.path.join(RAW, "quotes", f + ".txt"), encoding="utf-8").read()) for f in ("gogov", "penza_bonus")}
+_src_of = {b[0]: b[5] for b in B2}
+for iso_, nm, base, status, frag in [b[:5] for b in B] + [b[:5] for b in B2]:
+    _t = _q[_src_of[iso_]] if iso_ in _src_of else vs
+    need(f"bonus fragment in its saved source {iso_}", norm(frag) in _t)
+    need(f"bonus name in its saved source {iso_}", norm(nm) in _t)
     # base amount appears in the fragment as digits
     digits = re.sub(r"[^\d]", "", frag.split("₽")[0].replace(",", "")); 
-    if iso_ in ("RU-BU", "RU-ORE", "RU-ULY", "RU-CE"):
+    if iso_ in _src_of:
+        nums = [int(re.sub(r"\D", "", x)) for x in re.findall(r"\d[\d \u00a0]{3,}\d", frag)]
+        need(f"bonus amount {iso_} in fragment {nums}", base in nums)
+    elif iso_ in ("RU-BU", "RU-ORE", "RU-ULY", "RU-CE"):
         m_ = re.search(r"(\d+)\s*тыс", frag) or re.search(r"(\d+,\d+)", frag); need(f"bonus amount {iso_} in fragment", m_ is not None and (float(m_.group(1).replace(",", ".")) * (1e3 if "тыс" in frag else 1e6) == base or iso_ == "RU-BU" and base == 1500000))
     elif "млн" in frag.split("₽")[0]:
         m_ = re.search(r"(\d+(?:,\d+)?)\s*млн", frag); need(f"bonus amount {iso_}", m_ is not None and abs(float(m_.group(1).replace(",", ".")) * 1e6 - base) < 1 or base == 3000000 and "3 млн" in frag or "≈3 млн" in frag)
@@ -162,15 +230,16 @@ for iso_, nm, base, status, frag in B:
     chk(f"bonus months {iso_}", by[iso_]["bonus"]["months"], months)
 need("bonus + excluded cover 85", set(bon) | set(EXCLUDED) == set(iso) and not set(bon) & set(EXCLUDED))
 chk("bonus n", S["bonus_n"], len(bon)); chk("bonus firm n", S["bonus_n_firm"], sum(1 for b in B if b[3] == "ok"))
+chk("bonus n total = B + B2", len(bon), len(B) + len(B2))
 vals = sorted(bon.values()); n = len(vals); med = vals[n // 2] if n % 2 else (vals[n // 2 - 1] + vals[n // 2]) / 2
 chk("bonus median", S["bonus_median_months"], med)
 bi = [i for i in iso if i in bon]
 chk("bonus months vs rate spearman", S["bonus_corr_all"]["spearman"][0], spear([bon[i] for i in bi], [rate[iso.index(i)] for i in bi]))
-fi = [b[0] for b in B if b[3] == "ok"]
+fi = [b[0] for b in list(B) + list(B2) if b[3] == "ok"]
 chk("firm spearman", S["bonus_corr_firm"]["spearman"][0], spear([bon[i] for i in fi], [rate[iso.index(i)] for i in fi]))
 need("federal bonus 400000 appears in snapshot", "400 000" in vs)
 # ---- pools: figures inside the quote text; quotes inside the saved source text
-QF = {"kluge": "kluge", "ng_bonus": "ng_bonus", "kremlin": "kremlin", "ng_wagner": "ng_wagner", "istories": "istories", "ki": "ki", "unn": "unn", "bbc_nk": "bbc_nk", "insider": "insider"}
+QF = {"kluge": "kluge", "ng_bonus": "ng_bonus", "kremlin": "kremlin", "ng_wagner": "ng_wagner", "istories": "istories", "ki": "ki", "unn": "unn", "bbc_nk": "bbc_nk", "insider": "insider", "mz_probate": "mz_probate", "meduza_foreign": "meduza_foreign", "yonhap_nis": "yonhap_nis"}
 for p_ in P:
     q = norm(p_["quote"]) + " " + norm(p_.get("quote2", ""))
     for fg in p_["figures"]: need(f"pool figure {fg!r} in quote of {p_['id']}", norm(fg) in q)
@@ -192,7 +261,7 @@ with open(os.path.join(ROOT, "data", "russia_soldiers_regions.csv"), encoding="u
 need("csv rows", len(rows) == 86)
 for r in rows[1:]:
     x = by[r[0]]; chk("csv deaths " + r[0], int(r[6]), x["deaths"]); chk("csv rate " + r[0], float(r[7]), x["deaths_rate"], 1e-3); chk("csv pop " + r[0], int(r[4]), x["pop"])
-    if r[20]: chk("csv months " + r[0], float(r[20]), x["bonus"]["months"], 1e-3)
+    if r[22]: chk("csv months " + r[0], float(r[22]), x["bonus"]["months"], 1e-3)
 # ---- built page numbers
 page = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
 text = re.sub(r"<[^>]+>", " ", page); text = text.replace("&nbsp;", " ")
@@ -209,6 +278,22 @@ has(f"{pooled([i for i in iso if mine[i]['kind']=='republic'])[2]:,.0f}", "repub
 has("71,216", "Q1 contracts"); has("45,959", "foreigners"); has("48,366", "Wagner"); has("300,000", "mobilised")
 mx = max(bon, key=bon.get); has(f"{bon[mx]:.1f}", "top bonus months " + mx)
 has(f"{med:.1f}", "median bonus months")
+
+# ---- round 3: sankey, photos, probate and Dagestan on the page
+sk = S["sankey"]
+for f_, d_ in sk.items():
+    mem = FDM[f_]
+    for k_ in ("vol", "pri", "mob"): chk(f"sankey {f_} {k_}", d_[k_], sum(mine[i][k_] for i in mem))
+    chk(f"sankey {f_} total", sum(d_.values()), sum(mine[i]["deaths"] for i in mem))
+chk("sankey grand total equals named in 85 regions", sum(sum(d_.values()) for d_ in sk.values()), n85)
+for fn_, key_ in (("recruitment-billboard-moscow-2024.jpg", "img_billboard"), ("mobilisation-summons-2022.jpg", "img_summons")):
+    need("photo exists " + fn_, os.path.getsize(os.path.join(ROOT, "img", fn_)) > 20000 and os.path.getsize(os.path.join(ROOT, "img", fn_)) < 150000)
+    need("photo has alt text " + fn_, re.search(r'src="img/' + re.escape(fn_) + r'"[^>]*alt="[^"]{40,}"', page) is not None)
+    need("photo credit in sources list " + key_, SOURCES[key_]["url"] in page and "public domain" in SOURCES[key_]["full"] and "commons.wikimedia.org" in SOURCES[key_]["url"])
+need("no photo credit text on the figure", "Retired electrician" not in re.sub(r'<details id="srcdet">.*', "", page, flags=re.S))
+for s_ in ("352,000", "217,808", "1.6 times", "3.2%", "102,243", "3,182,054"): has(s_, "round-3 figure")
+need("dagestan share matches census row", abs(by["RU-DA"]["ru_share"] - 102243 / 3182054 * 100) < 0.01)
+need("d3-sankey vendored with licence", os.path.exists(os.path.join(ROOT, "vendor", "d3-sankey.min.js")) and os.path.exists(os.path.join(ROOT, "vendor", "d3-sankey.LICENSE")))
 # every [N] citation resolves to a source entry, every source cited
 cites = J("data/cites.json"); nums = sorted(set(int(x) for x in re.findall(r'href="#src-(\d+)"', page)))
 ids = sorted(int(x) for x in re.findall(r'id="src-(\d+)"', page))

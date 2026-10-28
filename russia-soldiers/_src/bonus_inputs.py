@@ -83,14 +83,23 @@ B = [
 ]
 # regions on the map left out of the bonus chart, with the reason read from their VoenSchet card
 EXCLUDED = {
- "RU-KGD":("Калининградская область","base payment of 1 million roubles not confirmed by the act text"),
  "RU-CU":("Чувашская Республика","programme ran only to 30 Sep 2026 with no extension found"),
  "RU-KL":("Республика Калмыкия","card does not say whether the 3 million includes the federal payment"),
- "RU-NIZ":("Нижегородская область","regional and municipal payments are reported only as one sum"),
  "RU-IN":("Республика Ингушетия","amount depends on the unit and no figure is given"),
  "RU-OMS":("Омская область","decree ran only to 1 Oct 2026 and no new act was found"),
- "RU-PNZ":("Пензенская область","regional media report 1 million roubles but no act was found"),
- "RU-KIR":("Кировская область","regional amount not confirmed"),
  "RU-UD":("Удмуртская Республика","regional amount not confirmed"),
  "RU-SAM":("Самарская область","reported cut from 2.2 million to 400,000 roubles with no act found"),
 }
+
+# Added in round 3: regions that were excluded and now have a figure from a second source, kept apart because the
+# fragment is checked against a different saved page (data/raw/quotes/<file>.txt).
+# (iso, name, regional roubles, status, fragment, file)
+B2 = [
+("RU-KGD","Калининградская обл.",1400000,"stale","| Калининградская обл. | 1 800 000 | 1 400 000 | - |","gogov"),
+("RU-NIZ","Нижегородская обл.",1500000,"stale","| Нижегородская обл. | 1 900 000 | 1 500 000 |","gogov"),
+("RU-KIR","Кировская обл.",400000,"stale","| Кировская обл. | 800 000 | 400 000 | - |","gogov"),
+("RU-PNZ","Пензенской области",1000000,"unpublished","Региональная единовременная выплата сейчас достигла 1 000 000 рублей.","penza_bonus"),
+]
+# stale for the three GOGOV rows = the table was last updated on 21 Jan 2026, so the amount may since have changed.
+# unpublished for Penza = a regional news site reports the figure as confirmed by the regional government, no act text seen.
+BX = [b[:5] for b in B] + [b[:5] for b in B2]   # every region with a bonus figure, as (iso, name, base, status, fragment)

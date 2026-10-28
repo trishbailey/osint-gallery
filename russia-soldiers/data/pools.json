@@ -149,6 +149,85 @@
    "note": "Deaths: 2,300 by a BBC Korea analysis and 3,000 by Ukraine’s military intelligence."
   },
   {
+   "id": "foreign_named",
+   "pool": "foreigners",
+   "label": "Foreign nationals on the named dead list (excl. North Korea)",
+   "low": 1285,
+   "high": 1285,
+   "unit": "men",
+   "text": "1,285 of the named dead came from more than 40 countries other than North Korea (BBC and Mediazona, July 2026)",
+   "figures": [
+    "1,285"
+   ],
+   "src": "meduza_foreign",
+   "quote": "Another 1,285 of the dead came from more than 40 countries",
+   "note": "Named dead only, so a floor."
+  },
+  {
+   "id": "nato_foreign",
+   "pool": "foreigners",
+   "label": "Foreign fighters in the Russian army (NATO official, single source)",
+   "low": 24000,
+   "high": 24000,
+   "unit": "men",
+   "text": "roughly 24,000 foreign fighters from 44 countries, according to one NATO official quoted by BBC News Russian",
+   "figures": [
+    "24,000",
+    "44"
+   ],
+   "src": "meduza_foreign",
+   "quote": "roughly 24,000 foreign mercenaries from 44 countries are fighting in the Russian military",
+   "note": "Unverified claim from a single anonymous official, shown for scale only."
+  },
+  {
+   "id": "nk_named",
+   "pool": "northkorea",
+   "label": "North Korean soldiers on the named dead list",
+   "low": 2304,
+   "high": 2304,
+   "unit": "soldiers",
+   "text": "2,304 North Korean soldiers identified by the BBC Korean Service from a memorial in Pyongyang",
+   "figures": [
+    "2,304"
+   ],
+   "src": "meduza_foreign",
+   "quote": "Among the foreign dead are 2,304 soldiers from North Korea",
+   "note": "Identified from satellite images and photographs of a memorial, so a floor."
+  },
+  {
+   "id": "nk_nis",
+   "pool": "northkorea",
+   "label": "North Korean troops killed (South Korean intelligence)",
+   "low": 2000,
+   "high": 2000,
+   "unit": "soldiers",
+   "text": "South Korea’s intelligence service estimated around 2,000 North Korean troops had been killed by September 2025",
+   "figures": [
+    "2,000"
+   ],
+   "src": "yonhap_nis",
+   "quote": "estimated around 2,000 North Korean troops dispatched to Russia for combat in Ukraine were killed",
+   "note": "Intelligence estimate that cannot be checked independently."
+  },
+  {
+   "id": "probate",
+   "pool": "estimate",
+   "label": "Estimated Russian citizens killed to end-2025 (probate registry)",
+   "low": 352000,
+   "high": 352000,
+   "unit": "men",
+   "text": "352,000 male Russian citizens aged 18 to 59 killed from the start of the full-scale invasion to the end of 2025, against 217,808 verified names at the time of the estimate",
+   "figures": [
+    "352,000",
+    "18 to 59",
+    "217,808"
+   ],
+   "src": "mz_probate",
+   "quote": "it puts the number of male Russian citizens aged 18 to 59 killed in the war between the start of the full-scale invasion and the end of 2025 at 352,000",
+   "quote2": "now at 217,808 verified names",
+   "note": "Mediazona and Meduza estimate from the Probate Registry; Russian citizens only, no regional split."
+  },
+  {
    "id": "recruiter_fee",
    "pool": "recruiters",
    "label": "Fee paid to a private recruiter per signed contract",
