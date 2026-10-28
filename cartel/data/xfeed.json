@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-28T16:13:36Z",
+ "as_of": "2026-10-28T19:02:29Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -28,6 +28,109 @@
  ],
  "posts": [
   {
+   "id": "2115518971101286670",
+   "handle": "ArmandoInfo",
+   "url": "https://x.com/ArmandoInfo/status/2115518971101286670",
+   "created_at": "2026-10-28T19:00:01.000Z",
+   "text": "En la urbanización Altamira, una edificación de dos pisos de lo que parecía iba ser una obra residencial, quedó inconclusa. Pertenecía al círculo de Alex Saab. En la fachada se ve ahora un cartel descolorido del Dgcim👇🏻https://t.co/arZjBmsVKB https://t.co/j9jHliEXzO",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "regional outlet",
+   "label": null,
+   "text_en": "In the Altamira development, a two-storey building that appeared to be a residential project was left unfinished. It belonged to Alex Saab's circle. A faded DGCIM sign now hangs on the facade"
+  },
+  {
+   "id": "2115518968597246363",
+   "handle": "Pajaropolitico",
+   "url": "https://x.com/Pajaropolitico/status/2115518968597246363",
+   "created_at": "2026-10-28T19:00:01.000Z",
+   "text": "🚨 Marina abate a “Chuy Peñuelas”, presunto operador del Cártel de Guasave por quien EU ofrecía 5 mdd La Secretaría de Marina abatió a dos presuntos integrantes del Cártel de Guasave en la localidad Alfredo V. Bonfil, municipio de Sinaloa, tras repeler una agresión armada. https:…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Navy kills \"Chuy Peñuelas\", alleged Guasave Cartel operator for whom the US offered $5 million. The Navy killed two alleged Guasave Cartel members in the locality of Alfredo V. Bonfil, Sinaloa municipality, after repelling an armed attack."
+  },
+  {
+   "id": "2115515190083248348",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115515190083248348",
+   "created_at": "2026-10-28T18:45:00.000Z",
+   "text": "🔺 La CDMX prometió planes individualizados para cada caso de desaparecidos y mecanismos para supervisar la atención a las víctimas https://t.co/qOL27HIiS5",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Mexico City promised individualized plans for each disappearance case and mechanisms to oversee care for victims"
+  },
+  {
+   "id": "2115505965621510416",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115505965621510416",
+   "created_at": "2026-10-28T18:08:21.000Z",
+   "text": "Del cobro de piso al despojo de potreros: así controla el narco el negocio ganadero en Guerrero y Michoacán https://t.co/Cz6lnzh1yp",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2729",
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "From extortion fees to seizing pastures: how the narco controls the cattle business in Guerrero and Michoacán"
+  },
+  {
+   "id": "2115483038037446757",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115483038037446757",
+   "created_at": "2026-10-28T16:37:14.000Z",
+   "text": "El líder del Cártel de Guasave: quién es y qué vínculo tenía con “Chuy Peñuelas” https://t.co/UoHnmKHysv",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "The leader of the Guasave Cartel: who he is and what link he had to \"Chuy Peñuelas\""
+  },
+  {
+   "id": "2115477441141473285",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115477441141473285",
+   "created_at": "2026-10-28T16:15:00.000Z",
+   "text": "🚨 El “Chuy González” era identificado como operador de segundo nivel del Cártel de Guasave y EEUU ofrecía millones por él https://t.co/v2mvM6bYRR",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "\"Chuy González\" was identified as a second-tier operator of the Guasave Cartel and the US offered millions for him"
+  },
+  {
    "id": "2115476330443653325",
    "handle": "Primicias",
    "url": "https://x.com/Primicias/status/2115476330443653325",
@@ -50,7 +153,7 @@
    "url": "https://x.com/proceso/status/2115473678267973981",
    "created_at": "2026-10-28T16:00:03.000Z",
    "text": "Abaten en Sinaloa al “Chuy González”, segundo al mando del “Chapo Isidro”, buscado en EU Jesús González Peñuelas, por quien Estados Unidos ofrecía una recompensa de cinco millones de dólares, murió presuntamente durante un enfrentamiento con elementos de la Marina; el",
-   "lang": "es",
+   "lang": "und",
    "region_ids": [
     "MEX-2711"
    ],
@@ -67,7 +170,7 @@
    "url": "https://x.com/Riodoce_mx/status/2115470233989488852",
    "created_at": "2026-10-28T15:46:21.000Z",
    "text": "Omar García Harfuch, secretario de Seguridad y Protección Ciudadana, confirmó la muerte de #JesúsGonzálezPeñuelas, el #ChuyGonzález en un enfrentamiento con la Marina en el municipio de Sinaloa. https://t.co/WYvtp8xxAI https://t.co/WbC4tTua5R",
-   "lang": "es",
+   "lang": "und",
    "region_ids": [
     "MEX-2711"
    ],
@@ -3284,40 +3387,6 @@
    "source_type": "local outlet",
    "label": null,
    "text_en": "#Sheinbaum said the company linked to the seizure of 59 million litres of #fuel in #Guanajuato had its permits, although irregularities were found that she did not detail."
-  },
-  {
-   "id": "2112969666381631567",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2112969666381631567",
-   "created_at": "2026-10-21T18:10:00.000Z",
-   "text": "#RíodoceImpreso I La #agendalegislativa de #Sinaloa prioriza seguridad, derechos de las mujeres, salud e inclusión, pero excluye la búsqueda de #desaparecidos y la crisis de los #centrospenitenciarios. https://t.co/WamhuzhStF",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "#RíodocePrint | #Sinaloa's #legislativeagenda prioritises security, women's rights, health and inclusion, but leaves out the search for the #disappeared and the #prisons crisis."
-  },
-  {
-   "id": "2112959601926963574",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2112959601926963574",
-   "created_at": "2026-10-21T17:30:00.000Z",
-   "text": "La #ONU pidió a #México aceptar apoyo internacional para reforzar la búsqueda de #desaparecidos, las investigaciones y la identificación de cuerpos, ante el agravamiento de la crisis en el país. https://t.co/UQ2xTuKJKR",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "The #UN asked #Mexico to accept international support to strengthen the search for the #disappeared, investigations and identification of bodies, as the crisis in the country worsens."
   }
  ]
 }
