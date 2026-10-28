@@ -133,7 +133,11 @@ sup.fn a{color:var(--link);text-decoration:none;padding:0 1px}
 /* panel + tooltip */
 #panel{position:fixed;z-index:30;top:0;right:0;bottom:0;width:440px;max-width:100vw;background:var(--panel);border-left:1px solid var(--line);box-shadow:-8px 0 24px #0008;overflow:auto;padding:14px 16px 24px;transform:translateX(105%);transition:transform .2s;visibility:hidden}
 #panel.open{transform:none;visibility:visible}
-#panel .x{position:sticky;top:0;float:right;z-index:1}
+#panel .x{position:sticky;top:0;z-index:2;display:block;margin:0 0 -44px auto}
+#panel .chead{padding-right:80px}
+.rl,.est{margin:6px 0;padding-left:18px;font-size:14px}
+.rl li{margin:8px 0}
+.sub{margin:14px 0 4px;font-size:15px}
 #panel .card{border:0;border-top:4px solid var(--c);padding:10px 0 0;background:transparent}
 #panel .more{border:0}
 .tip{position:fixed;z-index:40;max-width:340px;pointer-events:none;background:#0b1526;border:1px solid var(--gold);border-radius:6px;padding:8px 10px;font-size:13px;line-height:1.4;box-shadow:0 4px 14px #000a}
@@ -150,7 +154,9 @@ sup.fn a{color:var(--link);text-decoration:none;padding:0 1px}
   .mapgrid>.side{order:2;margin-top:12px}
   .side .group.fam4{flex-direction:row;flex-wrap:wrap}
   .side .group.fam4 .fbtn{width:auto;flex:1 1 calc(50% - 6px)}
-  .kpis{grid-template-columns:repeat(2,1fr)}
+  .kpis{grid-template-columns:repeat(2,1fr);gap:8px}
+  .kpi{padding:8px 12px}
+  .kpi b{font-size:26px}
   .kpis .kpi:last-child{grid-column:1/-1}
   .mom{grid-template-columns:repeat(2,minmax(0,1fr))}
 }

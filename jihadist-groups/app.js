@@ -129,8 +129,8 @@ function Map_(){
     D.groups.forEach(function(g){if(S.hidden[g.family])return;if(g.state==="dormant"&&!S.dormant)return;items.push({k:"g:"+g.id,type:"g",d:g,lat:g.lat,lon:g.lon,r:11})});
     if(S.inc)D.incidents.forEach(function(x){if(S.hidden[x.family])return;items.push({k:"i:"+x.id,type:"i",d:x,lat:x.lat,lon:x.lon,r:13})});
     items.forEach(function(n){var p=t.apply(proj([n.lon,n.lat]));n.ax=p[0];n.ay=p[1];n.x=n.ax;n.y=n.ay});
+    items=items.filter(function(n){return n.ax>-6&&n.ax<W+6&&n.ay>-6&&n.ay<H+6});
     d3.forceSimulation(items).force("x",d3.forceX(function(n){return n.ax}).strength(.18)).force("y",d3.forceY(function(n){return n.ay}).strength(.18)).force("c",d3.forceCollide(function(n){return n.r}).iterations(2)).stop().tick(120);
-    items.forEach(function(n){n.x=Math.max(10,Math.min(W-10,n.x));n.y=Math.max(10,Math.min(H-10,n.y))});
     var ld=svg.select(".leaders").selectAll("line").data(items.filter(function(n){return Math.hypot(n.x-n.ax,n.y-n.ay)>4}),function(n){return n.k});
     ld.join("line").attr("x1",function(n){return n.ax}).attr("y1",function(n){return n.ay}).attr("x2",function(n){return n.x}).attr("y2",function(n){return n.y}).attr("stroke","#8fa3c4").attr("stroke-width",1).attr("stroke-dasharray","2 2");
     var m=svg.select(".mk").selectAll("g.marker").data(items,function(n){return n.k});
@@ -175,7 +175,7 @@ function Map_(){
       $("#regions").innerHTML=Object.keys(REGIONS).map(function(r){return '<button class="btn" type="button" data-region="'+r+'">'+r+"</button>"}).join("");
       $$("#regions button").forEach(function(b){b.addEventListener("click",function(){viewTo(REGIONS[b.dataset.region])})})},
     redraw:function(){if(W)draw()},
-    focus:function(lat,lon,key){pulse=key;var d=.8;viewTo([[lon-d,lat-d*.8],[lon+d,lat+d*.8]],6)},
+    focus:function(lat,lon,key){pulse=key;var d=.8;viewTo([[lon-d,lat-d*.8],[lon+d,lat+d*.8]],mobile()?3.5:5)},
     pulse:function(key){pulse=key;if(W)draw()}
   }
 }

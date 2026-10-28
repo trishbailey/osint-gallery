@@ -204,8 +204,8 @@ def inc_url(group, place_has):
 
 content = {}
 content["intro"] = (f"This page profiles {len(counted)} jihadist groups in four families: who leads each one, where it operates, how the groups link to each other, "
-    "and what happened in the last 30 days. Colour shows the family. Hover or tap any marker, node or card for the detail, and use the filters to isolate a family. "
-    "Superscript numbers open the numbered sources at the bottom. Contested facts carry a confidence level and a reason. Descriptive analysis only.")
+    "and what happened in the last 30 days. Hover or tap any marker, node or card for the detail. Superscript numbers open the sources at the bottom. "
+    "Contested facts carry a confidence level and a reason. Descriptive analysis only.")
 content["finding"] = (
     f"Africa is now the centre of gravity of the movement. Militant Islamist groups caused 23,872 deaths in Africa in the 12 months to mid-2026, 42% of them in the Sahel, "
     f"and {africa_n} of the {len(counted)} groups tracked here are based on the continent.")
