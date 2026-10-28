@@ -201,18 +201,14 @@ li .pchip{margin-right:6px;vertical-align:middle}
 .fs-svg{max-width:100%}
 
 /* Rare earths: what feeds into what (Sankey, same design as Critical Minerals) */
-.rf .lg-g{min-width:0}.rf .fgroup{display:flex;flex-direction:column;gap:5px}
-.rf-fb{min-height:34px;text-align:left;font:600 14px Arial,sans-serif;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:5px;padding:5px 10px;cursor:pointer}
-.rf-fb:hover,.rf-fb:focus-visible{border-color:var(--gold);outline:2px solid var(--gold)}.rf-fb[aria-pressed=true]{background:#357F7A;border-color:#357F7A;color:#fff}
-.rf .lg-h{font-size:14px;font-weight:700;color:var(--gold);margin:14px 0 6px;text-transform:uppercase;letter-spacing:.04em}.rf .lg-note{font-size:13px;color:var(--text);margin:10px 0 0}
-.rf .lg .sw{flex:none;width:14px;height:14px;border-radius:3px;display:inline-block;margin:0}
 .rf-svg{width:100%;height:auto;display:block}.rf-n{cursor:pointer}.rf-n:focus{outline:2px solid #c8a24a}
-.rf-l{transition:stroke-opacity .15s;cursor:pointer}.rf-hl .rf-l{stroke-opacity:.12}.rf-hl .rf-l.on{stroke-opacity:1}.rf-hl .rf-n rect{stroke-opacity:.35}.rf-hl .rf-n.on rect{stroke-opacity:1;stroke-width:3}
+.rf-l{transition:stroke-opacity .15s}.rf-hl .rf-l{stroke-opacity:.12}.rf-hl .rf-l.on{stroke-opacity:1}.rf-hl .rf-n rect{stroke-opacity:.35}.rf-hl .rf-n.on rect{stroke-opacity:1;stroke-width:3}
 .rf-prompt{color:#c8a24a;font-weight:700;font-size:14px;margin:0 0 8px}.rf-info{font-size:14px;min-height:1.2em;color:var(--text)}
-.rf-list{display:block;list-style:none;padding:0;margin:8px 0 0}.rf-item{border:1px solid var(--line);border-radius:6px;margin:6px 0;background:var(--panel2)}
-.rf-t{width:100%;text-align:left;background:none;border:0;color:var(--text);font:inherit;font-weight:700;padding:12px;font-size:16px;cursor:pointer}
-.rf-t::after{content:" +";color:#c8a24a}.rf-t[aria-expanded=true]::after{content:" \2212"}
-.rf-b{margin:0;padding:0 12px 12px 26px;font-size:14px;color:var(--text)}.rf-b li{margin:6px 0}.rf-from{display:block;color:var(--muted)}
-.rf-txt{margin:10px 0 0;border:1px solid var(--line);border-radius:6px;background:var(--panel2)}.rf-txt summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--gold);padding:10px 12px}.rf-txt .rf-list{padding:0 8px 8px}
-.rf-wide{overflow-x:auto;max-width:100%}.rf .plain.small{font-size:13px}
-@media(max-width:800px){.rf .lg-wrap{display:flex;flex-direction:column}.rf .lg-g{order:-1;width:100%}.rf .lg{flex-direction:column}.rf .fgroup{flex-direction:row;flex-wrap:wrap}.rf-fb{min-height:44px;padding:6px 10px}}
+.rf-list{margin:8px 0 0;padding:0 12px 10px}.rf-th{font-size:15px;color:var(--gold);margin:12px 0 4px}.rf-b{margin:0 0 6px;padding-left:20px;font-size:14px;color:var(--text);list-style:disc}.rf-b li{margin:6px 0;display:list-item}.rf-txt{margin:10px 0 0;border:1px solid var(--line);border-radius:6px;background:var(--panel2)}.rf-txt summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--gold);padding:10px 12px}
+.rf-wide{overflow-x:auto;max-width:100%}.rf-hit{cursor:pointer}.rf-prompt{margin:4px 0 10px}.rf-svg{max-width:760px}
+.rf .lg-note{font-size:13px;color:var(--text);margin:10px 0 0}.rf-l{cursor:pointer}.rf .plain.small{font-size:13px}
+
+/* numbered references and the single Data Sources dropdown */
+.ref{font-size:13px;line-height:0;margin-left:1px;white-space:nowrap}.ref a{font-weight:700;padding:2px 1px}
+.ds-box{margin-top:28px}.ds{list-style:none;padding:0;margin:8px 0}.ds li{font-size:14px;margin:8px 0;overflow-wrap:anywhere;scroll-margin-top:80px}.ds li:target{outline:2px solid var(--gold);outline-offset:3px}.dsn{color:var(--gold);font-weight:700}
+.ds-h{font-size:15px;color:var(--gold);margin:14px 0 6px}.ds-logos li{overflow-wrap:anywhere}
