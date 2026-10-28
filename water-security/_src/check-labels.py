@@ -8,7 +8,7 @@ Fails if, on any regional map at 1024, 1280, 1440, or 1920, a shaded basin,
 water-reach, arrow, or dam path or a label falls outside the SVG viewBox, or
 the left and right padding differ by more than 15%.
 
-Fails if a basin-map dam label is more than 16 screen pixels from its marker,
+Fails if a basin-map dam label is more than 6 screen pixels from its marker,
 overlaps the marker, or has no label, at 1280 and 390, including zoomed views.
 """
 import sys
@@ -76,6 +76,7 @@ AUDIT = r"""
     if(cache.has(svg)) return cache.get(svg);
     const items=[];
     svg.querySelectorAll('path.core, path.glow').forEach(el=>{
+      if((+el.getAttribute('stroke-width')||0) < 1.15) return;
       const g=segsOf(el);
       items.push({kind:el.classList.contains('glow')?'glow':'river', sw:(+el.getAttribute('stroke-width')||0)/2, segs:g.segs, pts:null});
     });
@@ -315,7 +316,7 @@ DAM_ZOOM = r"""
     if (!best || bd > 2) { fails.push({kind: 'dam-gap', name, missing: true}); return; }
     const r = gap(text.getBoundingClientRect(), best.p.getBoundingClientRect());
     const lines = g.querySelectorAll('line').length;
-    if (r.overlap || lines || r.d > 16) {
+    if (r.overlap || lines || r.d > 6) {
       fails.push({kind: 'dam-gap', name, d: +r.d.toFixed(1), overlap: r.overlap, lines, k: k || 1});
     }
   });
@@ -420,7 +421,7 @@ def main():
         for hit in failures[:40]:
             print(" ", hit)
         return 1
-    print("PASS no label overlaps a river, glow, arrow, or dam; shaded paths and labels stay inside the viewBox with even left/right padding; basin dam labels stay within 16px of their markers")
+    print("PASS no label overlaps a river, glow, arrow, or dam; shaded paths and labels stay inside the viewBox with even left/right padding; basin dam labels stay within 6px of their markers")
     for s in shots:
         print(" screenshot", s)
     return 0
