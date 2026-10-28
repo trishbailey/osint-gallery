@@ -20,18 +20,18 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 "Helvetica Neue",Arial,sans-serif}
 a{color:var(--link)}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-header{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:flex-end;padding:14px 24px 10px;border-bottom:1px solid var(--line)}
+header{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:space-between;align-items:flex-end;padding:8px 24px 4px;border-bottom:1px solid var(--line)}
 .brand{font-size:13px;letter-spacing:.18em;color:var(--muted);text-decoration:none}
 .brand .mark{color:var(--gold);font-weight:700}
 .brand-sub{display:block;font-size:13px;letter-spacing:.12em;color:var(--gold);margin-top:4px}
 nav{display:flex;flex-wrap:wrap;gap:8px 14px}
 nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;color:var(--text);text-decoration:none;font-size:15px}
 nav a:hover{color:var(--gold)}
-h1{margin:4px 0 0;font-size:26px;font-weight:600}
+h1{margin:2px 0 0;font-size:22px;font-weight:600}
 h2{font-size:20px;font-weight:600;margin:0 0 8px}
 h3{font-size:16px;margin:8px 0;color:var(--gold);font-weight:600}
-main{max-width:1620px;margin:0 auto;padding:8px 24px 28px}
-section{padding:18px 0;border-bottom:1px solid var(--line);scroll-margin-top:72px}
+main{max-width:1620px;margin:0 auto;padding:6px 24px 28px}
+section{padding:8px 0;border-bottom:1px solid var(--line);scroll-margin-top:12px}
 #levels{position:sticky;top:0;z-index:35;display:flex;gap:8px;margin:0 -24px 12px;padding:8px 24px;background:var(--bg)}
 #levels a{flex:1;display:flex;align-items:center;justify-content:center;min-height:44px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text);text-decoration:none;font-size:15px;font-weight:700}
 #levels a.on{background:var(--gold);color:#0b1526;border-color:var(--gold)}
@@ -68,7 +68,8 @@ ul.hist li{display:flex;gap:8px;align-items:flex-start;margin:6px 0;font-size:14
 .hist-empty{margin:2px 0 8px;font-size:14px}
 .hist-more{display:inline-flex;align-items:center;min-height:44px;padding:0;background:none;border:none;color:var(--link);font:15px/1.2 "Helvetica Neue",Arial,sans-serif;cursor:pointer;text-decoration:underline}
 .hist-more:hover{color:var(--gold)}
-.lead{font-size:15px;margin:8px 0 0;width:100%;max-width:none}
+.lead{font-size:15px;margin:0 0 4px;width:100%;max-width:none}
+#s-record p{width:100%;max-width:none}
 .banner{display:flex;align-items:center;min-height:44px;margin:10px 0;padding:8px 14px;background:#1c2c4b;border:1px solid var(--gold);border-radius:6px;font-size:15px;font-weight:700}
 .prompt{color:var(--gold);font-size:13px;margin:10px 0 4px}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
@@ -247,47 +248,16 @@ svg.phone-map{overflow:hidden}
     <a href="../#dashboards" title="Back to all dashboards">All dashboards</a>
     <a href="#s-maps" title="Go to the maps">Maps</a>
     <a href="#s-panel" title="Go to the basin panel">Basins</a>
+    <a href="#s-record" title="Go to the short findings">Record</a>
     <a href="#s-rank" title="Go to the dependency ranking">Dependency</a>
     <a href="#s-sankey" title="Go to the inflow diagram">Inflows</a>
     <a href="#sources" title="Open sources and notes">Sources</a>
   </nav>
 </header>
 <main>
-<nav id="levels" aria-label="Detail level">
-  <a href="#s-record" id="lv-lead" class="on" aria-current="step" title="What the record shows">Lead</a>
-  <a href="#s-maps" id="lv-regions" title="Level 1, regions">1 Regions</a>
-  <a href="#s-panel" id="lv-basins" title="Level 2, river basins">2 River basins</a>
-</nav>
-<section id="s-record">
-  <h2>What the record shows</h2>
-  <article>
-    <h3>The most water-dependent states have never had their water cut off. Cut-offs follow political ruptures.</h3>
-    <div id="find-a"></div>
-    <p class="find-key" id="find-a-key"></p>
-    <p class="lvl-note">Every cut-off came after a break: Partition, terror attacks, Taliban rule, the invasion of Ukraine.</p>
-    <details class="counter">
-      <summary data-expect="note">Counterpoint</summary>
-      <p>A very dependent state may be spared because cutting it would mean war.</p>
-    </details>
-  </article>
-  <article>
-    <h3>Every state water cut-off on record happened while a water treaty was in force.</h3>
-    <div id="find-b"></div>
-    <p class="find-key" id="find-b-key"></p>
-    <p class="lvl-note" id="find-b-note"></p>
-    <details class="counter">
-      <summary data-expect="note">Counterpoint</summary>
-      <p>Treaties exist where disputes exist, and may cap how much can be cut.</p>
-    </details>
-  </article>
-  <p class="caveat" id="find-caveat"></p>
-  <p class="find-flag" id="find-flag" hidden></p>
-</section>
-<p class="lead">Who is upstream, who depends, and where a dam is the lever. Gaps show as <span class="blank">no sourced figure</span>.</p>
-<div id="sumchips" class="phone-only" aria-label="Summary"></div>
+<p class="lead">Who is upstream, who depends, and where a dam is the lever.</p>
 <section id="s-maps">
-  <h2>Level 1 · Regions: the big picture</h2>
-  <p class="lvl-note">Each map is one group of shared rivers.</p>
+  <h2>1 · Regions</h2>
   <div class="stage">
     <aside id="side" aria-label="Map key">
       <button type="button" id="side-toggle" data-expect="key" aria-expanded="false" aria-controls="side-body">Map key &amp; filters</button>
@@ -307,11 +277,11 @@ svg.phone-map{overflow:hidden}
       <div id="regions"></div>
     </div>
   </div>
+  <div id="sumchips" class="phone-only" aria-label="Summary"></div>
 </section>
 <section id="s-panel">
   <div class="sheet-bar phone-only"><button type="button" id="sheet-close" class="sheet-close" data-expect="close">Close basin</button></div>
-  <h2>Level 2 · River basins: the detail</h2>
-  <p class="lvl-note">Dams, dependency, and the record for one basin.</p>
+  <h2>2 · River basins</h2>
   <div class="stage">
     <aside id="basin-side" aria-label="Basins">
       <p class="side-h">Basin</p>
@@ -320,29 +290,51 @@ svg.phone-map{overflow:hidden}
     <div class="stage-main" id="panel"></div>
   </div>
 </section>
+<section id="s-record">
+  <h2>From the record</h2>
+  <p id="find-line-a">The most water-dependent states have never had their water cut off. Cut-offs follow a political break.<sup class="fn"><a href="#src-1">1</a></sup><sup class="fn"><a href="#src-6">6</a></sup></p>
+  <p id="find-line-b">Every state cut-off on record happened while a water treaty was in force.<sup class="fn"><a href="#src-3">3</a></sup><sup class="fn"><a href="#src-6">6</a></sup></p>
+  <details id="record-more" class="more">
+    <summary data-expect="note">Charts and the small-sample note</summary>
+    <div id="find-a"></div>
+    <p class="find-key" id="find-a-key"></p>
+    <p class="lvl-note">Every cut-off came after a break: Partition, terror attacks, Taliban rule, the invasion of Ukraine.</p>
+    <details class="counter">
+      <summary data-expect="note">Why a dependent state may be spared</summary>
+      <p>A very dependent state may be spared because cutting it would mean war.</p>
+    </details>
+    <div id="find-b"></div>
+    <p class="find-key" id="find-b-key"></p>
+    <p class="lvl-note" id="find-b-note"></p>
+    <details class="counter">
+      <summary data-expect="note">What a treaty does not stop</summary>
+      <p>Treaties exist where disputes exist, and may cap how much can be cut.</p>
+    </details>
+    <p class="caveat" id="find-caveat"></p>
+  </details>
+  <p class="find-flag" id="find-flag" hidden></p>
+</section>
 <section id="s-rank">
-  <button type="button" class="fold-btn phone-only" data-expect="fold" aria-expanded="false" aria-controls="rank-body">Who depends</button>
-  <div class="fold-body" id="rank-body">
-  <h2>Who depends</h2>
-  <p class="unit">Share of renewable water from abroad, largest first.<sup class="fn"><a href="#src-1">1</a></sup></p>
+  <details class="more">
+    <summary data-expect="fold">Who depends</summary>
+  <p class="unit">Share from abroad, largest first.<sup class="fn"><a href="#src-1">1</a></sup></p>
   <div id="rank-list" class="phone-only"></div>
   <div class="chartrow desk-only">
     <div id="rank-key" class="vkey"></div>
     <div class="scroll" id="rank"></div>
   </div>
-  </div>
+  </details>
 </section>
 <section id="s-sankey">
-  <button type="button" class="fold-btn phone-only" data-expect="fold" aria-expanded="false" aria-controls="sankey-body">Inflows</button>
-  <div class="fold-body" id="sankey-body">
-  <h2>Inflows</h2>
-  <p class="unit">Width is that share, not a volume. States at 50% or above.<sup class="fn"><a href="#src-1">1</a></sup></p>
+  <details class="more">
+    <summary data-expect="fold">Inflows</summary>
+  <p class="unit">Width is the share from abroad. States at 50% or above.<sup class="fn"><a href="#src-1">1</a></sup></p>
   <div id="sankey-list" class="phone-only"></div>
   <div class="chartrow desk-only">
     <div id="sankey-key" class="vkey"></div>
     <div class="scroll"><svg id="sankey" class="chart" width="1240" height="640" role="img" aria-label="Inflows by basin and country"></svg></div>
   </div>
-  </div>
+  </details>
 </section>
 </main>
 <footer class="foot">
@@ -594,38 +586,38 @@ const CFG={
   rivers:[['Blue Nile',['Abay','El Bahr el Azraq'],[35.6,10.6],1],['White Nile',['El Bahr el Abyad','Bahr el Jebel','Albert Nile','Victoria Nile'],[32.3,11.0],1],['Nile',['Nile'],[31.0,25.5],1],['Atbara',['Atbara','Setit'],[35.4,16.6],0]],
   lakes:[['Lake Victoria','Lake Victoria',[33.0,-1.0]],['Lake Tana','Lake Tana',[37.3,12.0]],['Lake Nasser',null,[32.4,22.6]]],
   marks:[['Khartoum',[32.53,15.6]]],
-  cap:'Ethiopia holds the Blue Nile and the Grand Ethiopian Renaissance Dam (GERD), the lever on downstream flow'+FN(8)+'. Most dependent: {d:1}.'},
+  cap:'Ethiopia holds the Blue Nile.'+FN(8)+' Most dependent: {d:1}.'},
  '3,5,9':{start:{3:'dam:299',5:[35.68,33.38],9:[68.2,34.45]},mainDams:[299],
   rivers:[['Euphrates',['Euphrates','Firat','Al Furat'],[40.0,35.3],1],['Tigris',['Tigris','Dicle'],[43.6,34.6],1],['Jordan',['Jordan'],[35.55,32.4],1],['Helmand',['Helmand'],[64.2,31.4],1]],
   lakes:[['Dead Sea','Dead Sea',[35.5,31.5]]],marks:[],
-  cap:'Turkey, Lebanon and Afghanistan hold the headwaters. Most dependent: {d:3} on the Tigris-Euphrates; {d:5} on the Jordan; {d:9} on the Helmand.'},
+  cap:'Headwaters: Turkey, Lebanon, Afghanistan. Most dependent: {d:3}; {d:5}; {d:9}.'},
  '2,8':{start:{2:'dam:6947',8:[91.0,29.3]},mainDams:[6947],
   rivers:[['Indus',['Indus'],[70.6,29.0],1],['Chenab',['Chenab'],[73.6,31.6],0],['Jhelum',['Jhelum'],[73.2,33.4],0],['Ganges',['Ganges'],[84.5,25.3],1],['Brahmaputra',['Brahmaputra','Yarlung','Dihang'],[87.5,29.6],1]],
   lakes:[],marks:[],
-  cap:'India holds the upper Indus works and the Farakka Barrage; China holds the Brahmaputra headwaters. Most dependent: {d:2}; {d:8}.'},
+  cap:'India and China hold the upper rivers. Most dependent: {d:2}; {d:8}.'},
  '6,7':{start:{6:'dam:1537',7:'dam:287'},mainDams:[287,1537],
   rivers:[['Syr Darya',['Syr Darya'],[66.5,44.6],1],['Naryn',['Naryn'],[74.5,41.6],0],['Amu Darya',['Amu Darya'],[61.8,40.2],1],['Panj',['Panj'],[70.0,37.4],0]],
   lakes:[['Aral Sea','South Aral Sea',[59.6,45.2]]],marks:[],
-  cap:'Kyrgyzstan and Tajikistan time the mountain releases. Most dependent: {d:7}; {d:6}.'},
+  cap:'Kyrgyzstan and Tajikistan time the releases. Most dependent: {d:7}; {d:6}.'},
  '4,12':{start:{4:'dam:7209',12:[98.85,25.9]},mainDams:[7209],
   rivers:[['Mekong',['Mekong','Lancang'],[104.5,16.4],1],['Salween',['Salween','Nu'],[97.7,19.2],1]],
   lakes:[['Tonlé Sap','Tonlé Sap',[104.0,12.9]]],marks:[],
-  cap:'China holds both headwaters and the upper Mekong dams. Most dependent: {d:4}; {d:12}.'},
+  cap:'China holds the upper Mekong. Most dependent: {d:4}; {d:12}.'},
  '14,15,13,19':{start:{14:[-10.73,9.08],15:[-11.9,10.6],13:[16.1,-12.6],19:[24.3,-11.4]},mainDams:[366,63],
   rivers:[['Niger',['Niger'],[-2.0,15.6],1],['Senegal',['Sénégal','Bafing'],[-13.6,15.4],1],['Okavango',['Okavango','Cubango'],[19.5,-17.9],1],['Zambezi',['Zambezi'],[23.2,-15.6],1]],
   lakes:[['Lake Kariba',null,[27.9,-17.0]]],marks:[],
-  cap:'Guinea holds the Niger and Senegal; Angola the Okavango; Zambia the Zambezi. Most dependent: {d:14}; {d:15}; {d:13} on the Okavango and the Zambezi.'},
+  cap:'Guinea, Angola and Zambia hold the headwaters. Most dependent: {d:14}; {d:15}; {d:13}.'},
  '10':{start:{10:'dam:153'},mainDams:[153],
   rivers:[['Colorado',['Colorado'],[-112.3,36.3],1],['Rio Grande',['Rio Grande','Grande'],[-106.8,32.3],1],['Conchos',['Conchos'],[-105.6,28.6],0]],
   lakes:[['Lake Mead',null,[-114.4,36.3]],['Lake Powell',null,[-111.0,37.2]]],marks:[],
-  cap:'The United States holds the Colorado reservoirs. On the Rio Grande, Mexico owes deliveries north; most dependent: {d:10}'+FN(10)+'.'},
+  cap:'The United States holds the Colorado. Most dependent: {d:10}'+FN(10)+'.'},
  '18,21':{start:{18:[-51.0,-20.1]},mainDams:[30],
   rivers:[['Paraná',['Paraná','Paranaíba'],[-53.5,-22.6],1],['Uruguay',['Uruguay'],[-56.0,-29.2],1]],lakes:[],marks:[],
-  cap:'Brazil holds the upper Paraná and shares the Itaipu Dam with Paraguay. Most dependent: {d:18}.'},
+  cap:'Brazil shares the Itaipu Dam with Paraguay. Most dependent: {d:18}.'},
  '16,17,11':{start:{16:[8.5,47.95],17:[9.4,47.6],11:[33.5,55.9]},mainDams:[54],
   rivers:[['Danube',['Danube','Donau'],[18.9,46.2],1],['Rhine',['Rhine','Rhein','Rhin'],[7.6,49.6],1],['Dnipro',['Dnipro','Dnepre'],[30.6,50.6],1]],
   lakes:[['Lake Constance',null,[9.35,47.62]]],marks:[],
-  cap:'Germany, Switzerland and Russia hold the Danube, Rhine and Dnipro headwaters. Most dependent: {d:16}; {d:17}; {d:11}.'}
+  cap:'Germany, Switzerland and Russia hold the headwaters. Most dependent: {d:16}; {d:17}; {d:11}.'}
 };
 function cfgKey(ids){const sig=ids.slice().sort((a,b)=>a-b).join(',');
  return Object.keys(CFG).find(k=>k.split(',').map(Number).sort((a,b)=>a-b).join(',')===sig)||Object.keys(CFG).find(k=>ids.every(id=>k.split(',').map(Number).includes(id)))}
@@ -635,7 +627,7 @@ function capHTML(key,bs){const c=CFG[key];if(!c)return '';const nmC=s=>s.replace
  const cs={};bs.forEach(b=>Object.keys(b.stress||{}).forEach(i=>{cs[i]={s:b.stress[i],p:b.proj[i]}}));const isoN={};COUNTRIES.forEach(f=>isoN[f.properties.ADM0_A3]=f.properties.NAME);isoN.SSD='South Sudan';
  const wr=Object.entries(cs).filter(([i,o])=>STW[o.s]&&STW[o.p]&&STO.indexOf(o.p)>STO.indexOf(o.s)).sort((a,b)=>STO.indexOf(b[1].p)-STO.indexOf(a[1].p)).map(([i,o])=>`${(isoN[i]||i).replace('United States of America','United States')}, ${STW[o.s]} to ${STW[o.p]}`);
  const cl=wr.length?`By 2050, business as usual: ${wr.join('; ')}.${FN(2)}`:`No stress category gets worse by 2050.${FN(2)}`;
- return `<p class="cap">${txt}</p><p class="cap clim">${cl}</p>`}
+ return `<p class="cap">${txt}</p><details class="more"><summary data-expect="note">2050 outlook</summary><p class="cap clim">${cl}</p></details>`}
 function arrowSwatch(){return '<svg class="asw" width="34" height="14" viewBox="0 0 34 14" aria-hidden="true"><path d="M2 7h16" stroke="'+LEVER+'" stroke-width="2.2" stroke-linecap="round"/><path d="M16 3.2 30 7 16 10.8z" fill="'+LEVER+'"/></svg>'}
 function arrowSay(ids){const key=cfgKey(ids.map(Number));const C=CFG[key]||{rivers:[],mainDams:[]};const bs=B.filter(b=>ids.map(Number).includes(+b.id)&&!b.aq&&b.up&&b.down);if(!bs.length)return '';
  if(bs.length>1)return 'Arrow: dam controls the flow';
@@ -1179,15 +1171,15 @@ function show(id,scroll){clearTip();const ri=REG.findIndex(r=>r[1].flat().includ
  const d3host=Lf.append('div').attr('class','map-host d3-host');
  drawMap(d3host,[b.id],bw,bh,Object.assign({basin:true},isPhone()?{sparse:true,sheet:true}:{}));
  historyBlock(Lf,b);
- const R=P.append('div');R.append('div').attr('class','kv').html(`<b>Headwater control:</b> ${nb(shown(b.hw))}<br><b>Dams and works:</b> ${nb(shown(b.dams))}<br><b>Upstream dam capacity:</b> ${b.upcap!=null?b.upcap+' km³ ('+b.up+')'+FN(1):nb()}<br><b>Storage vs annual flow:</b> ${nb(b.storage)}<br><b>Treaties:</b> ${b.tc||nb()}${b.status?' · '+b.status:''}${FN(3)}`);
+ const box=P.append('details').attr('class','more full');box.append('summary').attr('data-expect','note').text('Figures and record');const R=box.append('div');R.append('div').attr('class','kv').html(`<b>Headwater control:</b> ${nb(shown(b.hw))}<br><b>Dams and works:</b> ${nb(shown(b.dams))}<br><b>Upstream dam capacity:</b> ${b.upcap!=null?b.upcap+' km³ ('+b.up+')'+FN(1):nb()}<br><b>Storage vs annual flow:</b> ${nb(b.storage)}<br><b>Treaties:</b> ${b.tc||nb()}${b.status?' · '+b.status:''}${FN(3)}`);
  R.append('h3').text('Share from abroad');
- R.append('p').attr('class','unit').html('Percent of renewable water from abroad, largest first, from zero.'+FN(1));
+ R.append('p').attr('class','unit').html('From abroad, largest first.'+FN(1));
  const dd=b.rip.map(r=>b.dep.find(d=>d.c===r)||{c:r,v:null}).sort((a,c)=>(c.v??-1)-(a.v??-1));
  if(isPhone())phoneBars(R,dd.map(d=>({label:d.c.replace('United States of America','United States'),v:d.v})));
  else{const bs=R.append('div').attr('class','chart-scroll').append('svg').attr('class','chart').attr('width',640).attr('height',36+dd.length*28).attr('role','img').attr('aria-label','Dependency bars for '+shown(b.name));
  axisBars(bs,dd.map(d=>({label:d.c,v:d.v})),210,280)}
- const ev=TL.filter(t=>t.b===b.name);if(ev.length){const F=P.append(isPhone()?'details':'div').attr('class',isPhone()?'full phone-fold':'full');
- if(isPhone())F.append('summary').attr('data-expect','history').html('Flashpoint timeline'+FN(6));else F.append('h3').html('Flashpoint timeline'+FN(6));
+ const ev=TL.filter(t=>t.b===b.name);if(ev.length){const F=box.append('div').attr('class','full');
+ F.append('h3').html('Flashpoint timeline'+FN(6));
  if(!isPhone()){
  const yr=d=>+String(d.d).match(/-?\d+/)[0]*(/BC/.test(d.d)?-1:1);const ts=F.append('svg').attr('class','chart').attr('width',1200).attr('height',72).attr('role','img').attr('aria-label','Flashpoint timeline');
  const ext=d3.extent(ev,yr);const xs=d3.scaleLinear([ext[0]-3,ext[1]+3],[24,1170]);
@@ -1302,7 +1294,7 @@ function drawFindings(){
  });
  const early=cuts.filter(t=>{const s=strips.find(s=>s.basin===t.b);return s&&yearOf(t.d)<s.year});
  const note=document.getElementById('find-b-note');
- if(early.length===1&&early[0].b==='Indus'&&/April 1948/.test(early[0].h))note.textContent='One state cut-off is earlier: India, April 1948, before the Indus Waters Treaty of 1960 and before the 4 May 1948 canal agreement.';
+ if(early.length===1&&early[0].b==='Indus'&&/April 1948/.test(early[0].h)){note.textContent='One state cut-off is earlier: India, April 1948, before the Indus Waters Treaty of 1960 and before the 4 May 1948 canal agreement.';const lineB=document.getElementById('find-line-b');if(lineB)lineB.innerHTML='Every state cut-off on record happened while a water treaty was in force, except India on the Indus in April 1948.'+FN(3)+FN(6);}
  else if(early.length)note.textContent='Earlier than the treaty on its river: '+early.map(t=>yearOf(t.d)+' · '+t.h).join(' ');
  else note.remove();
  const hostB=document.getElementById('find-b');
@@ -1342,10 +1334,10 @@ document.querySelectorAll('.fold-btn').forEach(btn=>btn.addEventListener('click'
 document.getElementById('sheet-close').addEventListener('click',e=>{e.stopPropagation();closeSheet()});
 document.getElementById('sheet-back').addEventListener('click',()=>{closeKey();closeSheet()});
 document.querySelectorAll('a[href="#s-panel"]').forEach(a=>a.addEventListener('click',e=>{holdLevel(2);if(!isPhone())return;e.preventDefault();openSheet()}));
-document.getElementById('lv-lead').addEventListener('click',e=>{holdLevel(0);if(!isPhone())return;e.preventDefault();closeSheet();document.getElementById('s-record').scrollIntoView({behavior:'smooth',block:'start'})});
-document.getElementById('lv-regions').addEventListener('click',e=>{holdLevel(1);if(!isPhone())return;e.preventDefault();closeSheet();document.getElementById('s-maps').scrollIntoView({behavior:'smooth',block:'start'})});
+document.querySelectorAll('a[href="#s-maps"]').forEach(a=>a.addEventListener('click',e=>{holdLevel(1);if(!isPhone())return;e.preventDefault();closeSheet();document.getElementById('s-maps').scrollIntoView({behavior:'smooth',block:'start'})}));
+document.querySelectorAll('a[href="#s-record"]').forEach(a=>a.addEventListener('click',e=>{holdLevel(0);if(!isPhone())return;e.preventDefault();closeSheet();document.getElementById('s-record').scrollIntoView({behavior:'smooth',block:'start'})}));
 document.addEventListener('scroll',syncLevel,{passive:true});
 syncLevel();
-['#s-rank','#s-sankey'].forEach(id=>{const a=document.querySelector('a[href="'+id+'"]');if(!a)return;a.addEventListener('click',()=>{if(!isPhone())return;const sec=document.querySelector(id);sec.classList.add('open');const b=sec.querySelector('.fold-btn');if(b)b.setAttribute('aria-expanded','true')})});
+['#s-rank','#s-sankey'].forEach(id=>{const a=document.querySelector('a[href="'+id+'"]');if(!a)return;a.addEventListener('click',()=>{const d=document.querySelector(id+' details');if(d)d.open=true})});
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#src-"]');if(!a)return;const d=document.getElementById('srcdet');if(d)d.open=true});
 </script></body></html>
