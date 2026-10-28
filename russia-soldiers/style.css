@@ -111,3 +111,4 @@ h2{font-size:1.2rem}
 .bl,.bv{font-size:13px}
 .side2 .legend{display:flex;flex-wrap:wrap;gap:4px 14px}
 }
+.note{margin:10px 0 0;font-size:.9rem;color:var(--muted)}

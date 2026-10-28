@@ -17,6 +17,9 @@ with sync_playwright() as pw:
         page.on("console", lambda m, t=tag: errs.append((t, m.text)) if m.type == "error" else None)
         page.goto(BASE); page.wait_for_selector("html[data-ready]", state="attached", timeout=15000); page.wait_for_timeout(600)
         shot(page, f"{tag}-01-top.png", full=False)
+        page.evaluate("document.querySelector('#remote-sec').scrollIntoView()"); page.wait_for_timeout(300)
+        shot(page, f"{tag}-01b-remote-evidence.png", full=False)
+        page.evaluate("window.scrollTo(0,0)")
         if mobile:
             for d in page.query_selector_all("details.sec"): d.evaluate("e=>e.open=true")
             page.evaluate("window.dispatchEvent(new Event('resize'))"); page.wait_for_timeout(500)

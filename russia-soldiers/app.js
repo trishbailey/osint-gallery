@@ -128,8 +128,10 @@ function scatter(sel,xf,xlab,xfmt,labels,filter){
   .attr('r',function(r){return r.kind==='republic'?6:5}).attr('fill',function(r){return r.kind==='republic'?'none':RAMP[2]})
   .attr('stroke',function(r){return r.kind==='republic'?RAMP[1]:'#0b1526'}).attr('stroke-width',function(r){return r.kind==='republic'?2.5:.8})
   .attr('data-tip',function(r){return '<b>'+esc(r.en)+'</b><br>'+esc(xlab)+': '+xfmt(xf(r))+'<br>'+fmt(r.deaths_rate,1)+' named dead per 100,000'+(r.kind==='republic'?'<br>Ethnic republic':'')});
- (labels||[]).forEach(function(iso){var r=byIso[iso];if(!r||xf(r)==null)return;var px=x(xf(r)),py=y(r.deaths_rate),right=px<w*0.6;
-  svg.append('text').attr('x',right?px+9:px-9).attr('y',py-8).attr('text-anchor',right?'start':'end').text(r.en.replace('Republic of ','').replace(' Republic','').replace(' (city)','').replace(' Autonomous Okrug',''))})
+ var placed=[];(labels||[]).forEach(function(iso){var r=byIso[iso];if(!r||xf(r)==null)return;var px=x(xf(r)),py=y(r.deaths_rate),right=px<w*0.6;
+  var nm=r.en.replace('Republic of ','').replace(' Republic','').replace(' (city)','').replace(' Autonomous Okrug','');if(nm==='Chechen')nm='Chechnya';var lw=nm.length*7.6,x0=right?px+9:px-9-lw,box=[x0,py-8-15,x0+lw,py-8+4];
+  if(placed.some(function(b){return box[0]<b[2]+4&&box[2]>b[0]-4&&box[1]<b[3]+2&&box[3]>b[1]-2}))return;placed.push(box);
+  svg.append('text').attr('x',right?px+9:px-9).attr('y',py-8).attr('text-anchor',right?'start':'end').text(nm)})
 }
 var LEG='<li><span class="dot"></span>Region</li><li><span class="ring"></span>Ethnic republic</li><li><span class="ln"></span>Straight-line fit</li>';
 function drawScatters(){
@@ -143,7 +145,7 @@ function init(res){
  R=res[0].regions;S=res[1];G=res[2];tipEl=$('#tip');
  R.forEach(function(r){byNe[r.ne]=r;byIso[r.iso]=r});
  // desktop: everything open; phone: only the map section open, map options behind one button
- var ph=phone();document.querySelectorAll('details.sec').forEach(function(d){d.open=!ph||d.id==='map-sec'});
+ var ph=phone();document.querySelectorAll('details.sec').forEach(function(d){d.open=!ph||d.id==='remote-sec'||d.id==='map-sec'});
  $('#mapside').open=!ph;
  $('#legend').innerHTML=legendHTML('deaths');$('#legend2').innerHTML=legendHTML('deaths');
  ['#leg-s1','#leg-s2','#leg-s3'].forEach(function(s){$(s).innerHTML=LEG});

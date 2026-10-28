@@ -11,20 +11,28 @@
 <title>Russia's Soldiers: where the war's troops come from</title>
 <meta name="description" content="Which Russian regions the named dead of the war in Ukraine came from, how Russia recruits, and what signing bonuses are worth in local wages.">
 <link rel="stylesheet" href="style.css"></head><body>
-<header class="top"><h1>Russia's Soldiers</h1><p class="sub">Where the troops for the war in Ukraine come from. Data as of 28 Oct 2026. First draft.</p></header>
+<header class="top"><h1>Russia's Soldiers</h1><p class="sub">Where Russia's troops for the war in Ukraine come from. Data as of 28 Oct 2026. First draft.</p></header>
 <main>
 <section class="intro" aria-label="Introduction">
-<p class="lead">Russia has filled its army for the war in Ukraine from several pools of men: volunteers who sign contracts for large bonuses, men called up in the 2022 mobilisation, prisoners, and foreigners. This page asks one question of the dead we can count by name: do poor, remote and ethnic-minority regions pay more than the rest? The best public count is a named list of Russian military dead kept by Mediazona and BBC News Russian, built from relatives' posts, local media and official <span class="nw">statements.<sup><a class="cite" href="#src-1">[1]</a></sup></span> It is a floor and not a total. The compilers say the list "is not exhaustive, as not every death is publicly reported", so every figure here <span class="nw">undercounts.<sup><a class="cite" href="#src-1">[1]</a></sup></span></p>
+<p class="lead">The Russians killed in the war in Ukraine come disproportionately from regions far from Moscow. This page counts the dead who can be named, by home region, and tests whether distance, low pay or ethnic-minority status explains the pattern. The count is a named list kept by Mediazona and BBC News Russian, built from relatives' posts, local media and official <span class="nw">statements.<sup><a class="cite" href="#src-1">[1]</a></sup></span> It is a floor and not a total: the compilers say it "is not exhaustive, as not every death is publicly <span class="nw">reported".<sup><a class="cite" href="#src-1">[1]</a></sup></span></p>
 </section>
 <section class="kpis" id="kpis" aria-label="Headline numbers">
+<div class="kpi"><b>389</b><span>per 100,000 in the Far East, against 108 in the Central district</span></div>
+<div class="kpi"><b>694.7</b><span>per 100,000 in Tuva, the highest. Moscow city is lowest at 34.4</span></div>
 <div class="kpi"><b>282,993</b><span>named dead on the list at 23 Oct <span class="nw">2026<sup><a class="cite" href="#src-2">[2]</a></sup></span></span></div>
 <div class="kpi"><b>189.8</b><span>named dead per 100,000 residents, 85 <span class="nw">regions<sup><a class="cite" href="#src-3">[3]</a></sup></span></span></div>
-<div class="kpi"><b>694.7</b><span>per 100,000 in Tuva, the highest. Moscow city is lowest at 34.4</span></div>
-<div class="kpi"><b>389</b><span>per 100,000 in the Far East, against 108 in the Central district</span></div>
 <div class="kpi"><b>300,000</b><span>men called up in the 2022 mobilisation, by the Defence Minister's <span class="nw">count<sup><a class="cite" href="#src-4">[4]</a></sup></span></span></div>
 <div class="kpi"><b>71,216</b><span>new contracts with a federal bonus in Q1 <span class="nw">2026<sup><a class="cite" href="#src-5">[5]</a></sup></span></span></div>
 </section>
 <aside class="notice" role="note"><b>The named list undercounts.</b> It holds 282,993 names, of which 277,353 can be tied to one of the 85 regions drawn here. The other 5,640 come from the Donetsk and Luhansk areas, Baikonur, foreigners and unknown origin. The list leaves out losses of the Donetsk and Luhansk <span class="nw">forces.<sup><a class="cite" href="#src-1">[1]</a></sup></span> Because reporting differs from place to place, a region's rate compares confirmed names, and not true losses.</aside>
+
+<details class="sec" id="remote-sec" open><summary><h2>Remote regions bear the cost</h2></summary>
+<p class="prompt">Far Eastern and Siberian regions lose the most per resident; the Central district and the North Caucasus lose the least. Hover or tap a bar or dot for the numbers.</p>
+<div class="barblock"><aside class="side2"><h3 class="sideh">Key</h3><ul class="legend" id="leg-s1"></ul></aside>
+<div class="chartcol"><h4 class="mini">Named dead per 100,000 by federal district</h4><div class="bars" id="bars-fd"></div><h4 class="mini">Each region: distance from Moscow against named dead per 100,000</h4><div class="scat" id="sc-dist"></div></div></div>
+<p class="cap"><b>Remote: supported.</b> The farther a region lies from Moscow, the more of its residents appear on the named list: across 85 regions the correlation between distance and named dead per 100,000 is r = 0.64 (Spearman 0.58). The Far East has 389 per 100,000 against 108 in the Central district, 3.6 times as many, and Siberia has 269. The North Caucasus (106) is as low as the Central district.</p>
+<p class="note">Distance is measured in a straight line from the middle of Moscow city to the middle of each region's largest land area. Pearson's r measures a straight-line link and runs from −1 to 1, where 0 is no link. Spearman's rho does the same for rankings and is less sensitive to a few extreme regions. These describe the data and do not show cause.</p>
+</details>
 
 <details class="sec" id="map-sec" open><summary><h2>Where the named dead came from</h2></summary>
 <p class="prompt">Hover or tap a region for its numbers. Click a region to open its details. Scroll or pinch to zoom, drag to move.</p>
@@ -55,28 +63,18 @@
 <p class="cap">The ten highest rates take 3.1% of residents but 8.0% of the named dead. Eight of them lie in Siberia and the Far East, and none in the Central district.</p>
 </details>
 
-<details class="sec" id="find-sec" open><summary><h2>Testing the story: poor, remote, minority</h2></summary>
-<p class="lead">The story says that poor, remote and ethnic-minority regions bear the cost. Each part is tested against the 85 regions. Pearson's r measures a straight-line link and runs from −1 to 1, where 0 is no link. Spearman's rho does the same for rankings and is less sensitive to a few extreme regions. These are descriptions of the data, and they do not show cause.</p>
-<ol class="finds" id="finds">
-<li><b>Remote: supported.</b> The farther a region lies from Moscow, the more of its residents appear on the named list. Across 85 regions the correlation between distance and named dead per 100,000 is r = 0.64 (Spearman 0.58), and the Far East has 389 per 100,000 against 108 in the Central district, 3.6 times as many.</li>
-<li><b>Poor: not supported by wages.</b> Wages do not explain it. Regions with higher average wages have slightly higher rates (Spearman 0.30, rising to 0.38 without Moscow and St Petersburg), and the lowest-paid quarter of regions has 181 per 100,000, below the two middle quarters (227 and 216).</li>
-<li><b>Minority: mixed.</b> Ethnic minorities are hit unevenly. Tuva, where ethnic Russians are 9.5% of residents, has the highest rate (695 per 100,000), and the republics of Buryatia and Altai rank fourth and fifth, while Chechnya (39) and Ingushetia (51) are among the lowest. The 11 regions with fewer than half Russian residents average 232 per 100,000 against 188 elsewhere, but the link with Russian share is weak (r = −0.13, p = 0.24).</li>
-</ol>
-
-<div class="test" id="t-dist"><h3>1. Distance from Moscow</h3>
-<div class="barblock"><aside class="side2"><h3 class="sideh">Key</h3><ul class="legend" id="leg-s1"></ul></aside>
-<div class="chartcol"><div class="scat" id="sc-dist"></div><h4 class="mini">Named dead per 100,000 by federal district</h4><div class="bars" id="bars-fd"></div></div></div>
-<p class="cap">Finding: distance is the strongest of the three. Each dot is a region. The Far East and Siberia sit highest (389 and 269 per 100,000), while the Central district (108) and the North Caucasus (106) sit lowest. Distance is measured in a straight line from the middle of Moscow city to the middle of each region's largest land area.</p></div>
-
-<div class="test" id="t-wage"><h3>2. Average monthly wage</h3>
+<details class="sec" id="wage-sec" open><summary><h2>Poverty is not the pattern</h2></summary>
+<p class="prompt">Average monthly wage is the proxy for poverty, since no regional poverty-rate table was available. Hover or tap a dot or bar for the numbers.</p>
 <div class="barblock"><aside class="side2"><h3 class="sideh">Key</h3><ul class="legend" id="leg-s2"></ul></aside>
 <div class="chartcol"><div class="scat" id="sc-wage"></div><h4 class="mini">Named dead per 100,000 by wage quarter (21 or 22 regions each)</h4><div class="bars" id="bars-q"></div></div></div>
-<p class="cap">Finding: the pattern runs the wrong way for a poverty story. The correlation between wage and rate is r = 0.29 (p = 0.006), and the highest rates include well-paid remote regions such as Chukotka and Magadan, while the lowest include Moscow city and St Petersburg. Wages are the 2025 average for organisations, from <span class="nw">Rosstat.<sup><a class="cite" href="#src-7">[7]</a></sup></span> They are not adjusted for local prices.</p></div>
+<p class="cap"><b>Poor: not supported by wages.</b> Wages do not explain it. Regions with higher average wages have slightly higher rates (Spearman 0.30, rising to 0.38 without Moscow and St Petersburg), and the lowest-paid quarter of regions has 181 per 100,000, below the two middle quarters (227 and 216). The highest rates include well-paid remote regions such as Chukotka and Magadan, while the lowest include Moscow city and St Petersburg. Wages are the 2025 average for organisations, from <span class="nw">Rosstat.<sup><a class="cite" href="#src-7">[7]</a></sup></span> They are not adjusted for local prices.</p>
+</details>
 
-<div class="test" id="t-eth"><h3>3. Ethnic Russian share of residents</h3>
+<details class="sec" id="eth-sec" open><summary><h2>Ethnic minorities: higher in the republics, but not everywhere</h2></summary>
+<p class="prompt">Republics are the 21 ethnic republics. A hollow ring marks a republic on the dots. Hover or tap for the numbers.</p>
 <div class="barblock"><aside class="side2"><h3 class="sideh">Key</h3><ul class="legend" id="leg-s3"></ul></aside>
 <div class="chartcol"><div class="scat" id="sc-eth"></div><h4 class="mini">Named dead per 100,000 by region type</h4><div class="bars" id="bars-g"></div></div></div>
-<p class="cap">Finding: ethnic minority republics account for 21.0% of the named dead and 16.8% of residents, a rate of 237 against 180 elsewhere. The gap is real but small beside the spread inside the group, from Tuva (695) to Chechnya (39). Shares are from the 2020 census as compiled by <span class="nw">real-stats.ru.<sup><a class="cite" href="#src-8">[8]</a></sup></span> That table lists only the largest peoples of each region. For Dagestan it shows no Russian row, so it is left out of the correlation. Counting Dagestan as 4.0% Russian, the highest share it could have, gives r = −0.08. Fitting distance, wage and Russian share together on 84 regions explains 42% of the variation in rates, and almost all of that comes from distance (standardised weights: distance 0.66, wage −0.03, Russian share −0.06).</p></div>
+<p class="cap"><b>Minority: mixed.</b> Ethnic minority republics have 237 named dead per 100,000 against 180 elsewhere, and hold 21.0% of the named dead with 16.8% of residents. The regions with fewer than half Russian residents average 232 against 188 elsewhere. But the pattern is uneven: Tuva (695, 9.5% Russian) is highest, while Chechnya (39) and Ingushetia (51) are among the lowest, and the link with Russian share is weak (r = −0.13, p = 0.24). Shares are from the 2020 census as compiled by <span class="nw">real-stats.ru.<sup><a class="cite" href="#src-8">[8]</a></sup></span> That table lists only the largest peoples of each region. For Dagestan it shows no Russian row, so it is left out of the correlation. Counting Dagestan as 4.0% Russian, the highest share it could have, gives r = −0.08. Fitting distance, wage and Russian share together on 84 regions explains 42% of the variation in rates, and almost all of that comes from distance (standardised weights: distance 0.66, wage −0.03, Russian share −0.06).</p>
 </details>
 
 <details class="sec" id="bonus-sec" open><summary><h2>Signing bonuses against local wages</h2></summary>

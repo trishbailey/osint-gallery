@@ -41,12 +41,15 @@ def values():
     V["f3"] = (f"Ethnic minorities are hit unevenly. Tuva, where ethnic Russians are {n1(tu['ru_share'])}% of residents, has the highest rate ({n0(tu['deaths_rate'])} per 100,000), and the republics of Buryatia and Altai rank fourth and fifth, "
                f"while Chechnya ({n0(by['RU-CE']['deaths_rate'])}) and Ingushetia ({n0(by['RU-IN']['deaths_rate'])}) are among the lowest. The {g['ru_lt50']['n']} regions with fewer than half Russian residents average {n0(g['ru_lt50']['rate'])} per 100,000 "
                f"against {n0(g['ru_ge50']['rate'])} elsewhere, but the link with Russian share is weak (r = {sg(c['ru']['pearson'][0])}, p = {c['ru']['pearson'][1]:.2f}).")
-    V["cap1"] = (f"Finding: distance is the strongest of the three. Each dot is a region. The Far East and Siberia sit highest ({n0(fd['Far East']['rate'])} and {n0(fd['Siberia']['rate'])} per 100,000), while the Central district ({n0(fd['Central']['rate'])}) "
-                 f"and the North Caucasus ({n0(fd['North Caucasus']['rate'])}) sit lowest.")
-    V["cap2"] = (f"Finding: the pattern runs the wrong way for a poverty story. The correlation between wage and rate is r = {sg(c['wage']['pearson'][0])} (p = {c['wage']['pearson'][1]:.3f}), and the highest rates include well-paid remote regions "
-                 f"such as Chukotka and Magadan, while the lowest include Moscow city and St Petersburg.")
-    V["cap3"] = (f"Finding: ethnic minority republics account for {n1(g['republics']['share_deaths'])}% of the named dead and {n1(g['republics']['share_pop'])}% of residents, a rate of {n0(g['republics']['rate'])} against {n0(g['non_republics']['rate'])} elsewhere. "
-                 f"The gap is real but small beside the spread inside the group, from Tuva ({n0(tu['deaths_rate'])}) to Chechnya ({n0(by['RU-CE']['deaths_rate'])}).")
+    V["cap1"] = (f"The farther a region lies from Moscow, the more of its residents appear on the named list: across 85 regions the correlation between distance and named dead per 100,000 is r = {sg(c['dist']['pearson'][0])} (Spearman {sg(c['dist']['spearman'][0])}). "
+                 f"The Far East has {n0(fd['Far East']['rate'])} per 100,000 against {n0(fd['Central']['rate'])} in the Central district, {n1(ratio)} times as many, and Siberia has {n0(fd['Siberia']['rate'])}. "
+                 f"The North Caucasus ({n0(fd['North Caucasus']['rate'])}) is as low as the Central district.")
+    V["cap2"] = (f"Wages do not explain it. Regions with higher average wages have slightly higher rates (Spearman {sg(c['wage']['spearman'][0])}, rising to {sg(c['wage_ex_cities']['spearman'][0])} without Moscow and St Petersburg), "
+                 f"and the lowest-paid quarter of regions has {n0(q[0]['rate'])} per 100,000, below the two middle quarters ({n0(q[1]['rate'])} and {n0(q[2]['rate'])}). "
+                 f"The highest rates include well-paid remote regions such as Chukotka and Magadan, while the lowest include Moscow city and St Petersburg.")
+    V["cap3"] = (f"Ethnic minority republics have {n0(g['republics']['rate'])} named dead per 100,000 against {n0(g['non_republics']['rate'])} elsewhere, and hold {n1(g['republics']['share_deaths'])}% of the named dead with {n1(g['republics']['share_pop'])}% of residents. "
+                 f"The regions with fewer than half Russian residents average {n0(g['ru_lt50']['rate'])} against {n0(g['ru_ge50']['rate'])} elsewhere. "
+                 f"But the pattern is uneven: Tuva ({n0(tu['deaths_rate'])}, {n1(tu['ru_share'])}% Russian) is highest, while Chechnya ({n0(by['RU-CE']['deaths_rate'])}) and Ingushetia ({n0(by['RU-IN']['deaths_rate'])}) are among the lowest, and the link with Russian share is weak (r = {sg(c['ru']['pearson'][0])}, p = {c['ru']['pearson'][1]:.2f}).")
     o = S["ols"]
     V["ols"] = (f"Fitting distance, wage and Russian share together on {o['n']} regions explains {n0(o['r2']*100)}% of the variation in rates, and almost all of that comes from distance "
                 f"(standardised weights: distance {n2(o['beta_dist'])}, wage {n2(o['beta_wage'])}, Russian share {n2(o['beta_ru'])}).")
