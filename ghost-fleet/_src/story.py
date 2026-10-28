@@ -56,7 +56,7 @@ S.update({"gaps":len(gj),"gapShips":len({e["imo"] for e in gj}),"gapsJamWindow":
 def vline(v): return [v["lp"]]+[[e["lat"],e["lon"]] for e in v["ev"][1:-1]]+[v["dp"]]
 S["cases"]={
  "chain":{"imo":cv["imo"],"name":nm(cv["imo"]),"load":cv["load"],"ld":cv["ld"],"dest":cv["dest"],"da":cv["da"],"ev":slimv(cv["ev"]),"line":vline(cv)},
- "identity":{"imo":"9248801","name":nm("9248801"),"hist":[[x.get("name"),x.get("flag"),(x.get("from") or "")[:10]] for x in hs("9248801")],
+ "identity":{"imo":"9248801","name":nm("9248801"),"hist":[[x.get("name"),x.get("flag"),(x.get("from") or "")[:10],x.get("mmsi"),(x.get("to") or "")[:10]] for x in hs("9248801")],
    "voy":[{"ld":v["ld"],"load":v["load"],"dest":v["dest"],"line":[v["lp"],v["dp"]]} for v in tw]},
  "network":{"name":net and net["name"],"ships":[[i,nm(i)] for i in (net["ships"] if net else []) if i in vs],
    "flows":[[v["lp"],v["dp"],nm(v["imo"])] for v in nv]},
