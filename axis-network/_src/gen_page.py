@@ -403,6 +403,50 @@ def _wcat(c):
 surge=''.join(wl[:1]).replace('<li>','<p class="wsurge">').replace('</li>','</p>') if T['flag'] else '<p class="wsurge"><b>New or surging:</b> no target met the rule this week.</p>'
 WEEK=(f'<section id="week"><h2>New this week: {rng(T["end"])}</h2>{surge}<p class="prompt">This week’s Houthi threat posts and claimed strikes by category, newest first. Reposts of the same text are folded into one entry; a post can appear in more than one category. Claims are the Houthis’ own. Tap a category to open it.</p>'
       +''.join(_wcat(c) for c in WK.get('cats',[]))+'</section>')
+# --- Hamas threats part (after the Houthi trend chart): calls to attack and blessings, not target lists. Data: data.json['hamas_threats'] ---
+HT=D.get('hamas_threats')
+def _md(s): return date.fromisoformat(s).strftime('%b %-d')
+def _hamas(HT):
+    if not HT: return ''
+    HC,PC,GC=G['hamas'][1],G['pij'][1],'#c8a24a'   # Hamas teal, PIJ orange, Hebron gold (the October surge)
+    def bars(rows,mx,unit):
+        o=[]
+        for lab,sub,n,col,tip in rows:
+            o.append(f'<div class="hb"><div class="hbl">{html.escape(lab)}{f"<span>{html.escape(sub)}</span>" if sub else ""}</div>'
+                     f'<div class="hbt"><i style="width:{100*n/mx:.1f}%;background:{col}" tabindex="0" data-tip="{html.escape(tip)}"></i></div><b>{n}</b></div>')
+        return ''.join(o)
+    tg=HT['targets']; mx=max(x['n'] for x in tg); surge=[x for x in tg if x.get('surge')][0]
+    rt=lambda r:f'{r:.2f}'.rstrip('0').rstrip('.')
+    trows=[(x['l'],f'October pace {rt(x["ratio"])}× May–Sep',x['n'],GC if x.get('surge') else HC,
+            f'<b>{x["l"]}</b><br>{x["n"]} distinct statements, {_md(HT["start"])} to {_md(HT["end"])}<br>October weekly pace {rt(x["ratio"])}× the May–September average') for x in tg]
+    pk=HT['pickup']; pmx=max(x['n'] for x in pk); PK={'hamas':HC,'hebron':GC,'pij':PC}
+    prows=[(x['l'],'',x['n'],PK[x['k']],f'<b>{x["l"]}</b><br>Carried by {x["n"]} non-Hamas, non-PIJ Axis channels within 48 hours') for x in pk]
+    calls=''.join(f'<div class="hmc"><b>{_md(c["d"])}</b><p>{html.escape(c["t"])}</p>{lk(c["u"])}</div>' for c in HT['calls'])
+    isr=HT['israel']
+    def _st(x):
+        pk_=f' · carried by {x["p"]} non-Hamas Axis channels' if x.get('p') else ''
+        return f'<div class="wki"><div class="wkm">{_md(x["d"])} · {html.escape(x["s"])}{pk_}</div><p class="wkx">{html.escape(x["t"])}</p>{lk(x["u"])}</div>'
+    sts=''.join(_st(x) for x in HT['statements'])
+    tsrc.append('Hamas threats: each dated statement in the key statements list links to the Telegram repost it comes from (Shehab, QudsN, Safa, Palinfo, Al-Masirah and other Axis channels). The six official Hamas channels were joined read-only on Oct 27 and return no posts to a US client, so no original wording was read.')
+    return (f'<div id="hamas" class="hms"><h3 class="trh">Hamas threats</h3>'
+      f'<p class="hmb">Hamas does not publish lists of places it will strike. Its threats are calls on young people to attack soldiers and settlers, and blessings of attacks after they happen. Hebron is the only target that rose after the Oct 23 attack there.</p>'
+      f'<div class="row"><div class="leg"><span><i style="background:{GC}"></i>Rising in October</span><span><i style="background:{HC}"></i>Other targets</span></div>'
+      f'<div><div class="lbl">Distinct Hamas, PIJ and Qassam threat statements by target, {_md(HT["start"])} to {_md(HT["end"])}</div>'
+      f'<p class="prompt">Hover or tap a bar for the October pace. Hebron runs about {surge["ratio"]:.1f}× its May–September weekly pace; the other targets are flat or falling.</p>{bars(trows,mx,"")}</div></div>'
+      f'<div class="lbl" style="margin-top:16px">Abu Obeida, the Qassam military spokesman, calls on people to attack</div><div class="hmcs">{calls}</div>'
+      f'<div class="row" style="margin-top:16px"><div class="leg"><span><i style="background:{HC}"></i>Hamas statement</span><span><i style="background:{GC}"></i>Hebron blessing</span><span><i style="background:{PC}"></i>PIJ claim</span></div>'
+      f'<div><div class="lbl">Non-Hamas Axis channels that carried the same text within 48 hours</div><p class="prompt">Blessings and attack claims travel across the Axis. Warnings about Al-Aqsa and the ceasefire get little pickup.</p>{bars(prows,pmx,"")}</div></div>'
+      f'<p class="cap">The mirror image: Israel’s {isr["speaker"]} threatened Hamas {isr["sep"]} times in September and {isr["oct"]} times in October, up from {isr["summer"]}.</p>'
+      f'<details class="mgrp"><summary><span>Key statements, newest first</span> <span class="mcnt">{len(HT["statements"])} statements</span></summary><div class="mgbody">{sts}</div></details>'
+      f'<p class="tnote">The wording comes from reposts by Shehab, QudsN, Safa, Palinfo and the Axis channels, because Hamas’s six official Telegram channels are blocked for US users; it is not checked against the originals. Quotation marks mark close renderings of the Arabic. Counts come from a rule-based Arabic classifier that merges near-duplicates within 72 hours, so they are approximate; the week of Oct 12 has no statements in the pull. Axis pickup counts non-Hamas, non-PIJ channels posting a near-identical text from 1 hour before to 48 hours after.</p></div>')
+HAMAS=_hamas(HT)
+CSS+='''
+.hms{margin:26px 0 0;padding-top:6px;border-top:1px solid var(--line)}.hmb{font-size:17px;font-weight:700;margin:2px 0 12px}
+.hb{display:grid;grid-template-columns:minmax(0,260px) 1fr 44px;gap:10px;align-items:center;margin:8px 0}.hbl{font-size:14px;font-weight:600}.hbl span{display:block;font-size:13px;font-weight:400;color:var(--muted)}
+.hbt{min-width:0}.hbt i{display:block;height:24px;min-width:3px;border-radius:4px;cursor:pointer}.hbt i:hover,.hbt i:focus{outline:2px solid var(--text);outline-offset:1px}.hb b{font-size:15px;text-align:right}
+.hmcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:8px 0 0}.hmc{background:var(--panel2);border:1px solid var(--line);border-top:3px solid #c8a24a;border-radius:8px;padding:10px 12px;font-size:14px;overflow-wrap:anywhere}.hmc b{color:var(--gold);font-size:15px}.hmc p{margin:4px 0 6px;line-height:1.4}
+@media(max-width:700px){.hb{grid-template-columns:1fr 36px;gap:2px 8px;margin:10px 0}.hbl{grid-column:1/-1}.hmb{font-size:16px}.hmcs{grid-template-columns:1fr}}
+'''
 page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Houthi threats turn to Saudi Arabia | Axis Channel Network</title><meta name="description" content="{DESC}"><meta property="og:title" content="Houthi threats turn to Saudi Arabia"><meta property="og:description" content="{DESC}"><meta property="og:image" content="https://beacon-tools.onrender.com/axis-network/og.png"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><link rel="icon" href="../favicon.svg"><style>{CSS}</style></head><body><main>
 <h1>Houthi threats turn to Saudi Arabia</h1>
@@ -412,6 +456,7 @@ page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta na
 <section id="threats"><h2>Houthi threat targets</h2><p class="thd">{thead}</p>
 <div class="row"><div class="leg tleg"><div class="lghint">Tap a target for the threats</div><div class="tlh">Target type</div><span>__IC_city__City</span><span>__IC_airport__Airport</span><span>__IC_energy__Oil / energy site</span><span>__IC_military__Military base</span><span>__IC_government__Government building</span><span><i style="background:rgba(255,143,184,.45);border:2px solid #ff8fb8;border-radius:3px"></i>Province, country or strait</span><div class="tlh">Last 30 days vs before</div><span><svg width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="#e5484d" fill-opacity=".14" stroke="#e5484d" stroke-width="2"/><path d="M6 12L10 6L14 12z" fill="#e5484d"/></svg>Named more often</span><span><svg width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="#4f7dff" fill-opacity=".14" stroke="#4f7dff" stroke-width="2" stroke-dasharray="4 3"/><path d="M6 8L10 14L14 8z" fill="#4f7dff"/></svg>Named less often</span><span class="tln">Ring size = threat posts. Zoom in for exact sites, names and smaller targets.</span></div><div><div id="tmapw"><div id="tmap" role="region" aria-label="Map of Houthi threat targets"></div></div><p class="cap">{MAPNOTE}</p></div></div>
 {TREND}
+{HAMAS}
 <div class="row"><div class="leg"><span><i style="background:#b24762"></i>Named more often</span><span><i style="background:#4379a8"></i>Named less often</span>
 <div class="tw"><button class="btn" data-tw="30" aria-pressed="true">30 days</button><button class="btn" data-tw="7" aria-pressed="false">7 days</button></div></div>
 <div><div class="lbl" id="ttitle"></div><p class="prompt">Change in threat posts naming each target, per 10,000 Houthi posts. Tap a row for counts and example posts.</p><div id="thr"></div></div></div>
