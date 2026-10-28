@@ -146,3 +146,15 @@ body.story #map{height:min(62vh,620px)}
 .tlk{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;margin-top:8px}.tlk i{display:inline-block;width:14px;height:14px;margin-right:5px;vertical-align:-2px;border-radius:3px}.tlk i.mk{border-radius:50%;box-sizing:border-box;border:2px solid var(--gold)}.tlk i.mk.vc{background:var(--gold)}.tlk i.tk{width:2px;height:14px;border-radius:0;background:var(--text);margin:0 9px 0 6px}
 .tlk i.ds{width:0;height:14px;border-radius:0;border-left:2px dashed var(--text);margin:0 9px 0 6px}
 @media(max-width:700px){body.story .chapters:has(.chap[data-ch="identity"].on){height:520px}}
+
+.wreg{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.wreg button{min-height:36px;padding:4px 10px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;font:inherit;font-size:13px;cursor:pointer}.wreg button span{color:var(--gold);font-weight:700;margin-left:4px}.wreg button[aria-pressed=true]{background:var(--gold);color:var(--bg);border-color:var(--gold)}.wreg button[aria-pressed=true] span{color:var(--bg)}
+@keyframes gapblink{0%,100%{opacity:1}50%{opacity:.08}}
+.gapblink path.gapdot{animation:gapblink 1.4s ease-in-out infinite}
+.gapblink path.gapdot.g1{animation-delay:-.23s}.gapblink path.gapdot.g2{animation-delay:-.47s}.gapblink path.gapdot.g3{animation-delay:-.7s}.gapblink path.gapdot.g4{animation-delay:-.93s}.gapblink path.gapdot.g5{animation-delay:-1.17s}
+@media(prefers-reduced-motion:reduce){.gapblink path.gapdot{animation:none;opacity:1}}
+.ctog{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.ctog button{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 10px;background:var(--panel2);color:var(--text);border:2px solid var(--c);border-radius:6px;font:inherit;font-size:13px;cursor:pointer}
+.ctog button i{width:16px;height:16px;border-radius:50%;box-sizing:border-box;border:2px solid var(--c);background:var(--c);flex:none;position:relative}
+.ctog button[aria-pressed=false]{opacity:.55;border-style:dashed;text-decoration:line-through}.ctog button[aria-pressed=false] i{background:transparent}
+.ctog button[aria-pressed=true] i::after{content:"";position:absolute;left:3px;top:0;width:4px;height:8px;border:solid var(--bg);border-width:0 2px 2px 0;transform:rotate(45deg)}
+#ctogbar{display:none}
+@media(max-width:700px){body.story #ctogbar:not([hidden]){display:block;margin:0 0 8px}#ctogbar .ctog{margin:0}}

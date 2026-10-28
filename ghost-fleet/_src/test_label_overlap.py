@@ -102,6 +102,12 @@ def main():
                 pg.evaluate("document.querySelectorAll('#modes button')[1].click()"); pg.wait_for_timeout(3500)
                 m = pg.evaluate(MAP_JS, PAD); checked += m["n"]
                 probs += [f"[{w}px] explore map: {x}" for x in m["out"]]
+                pg.evaluate("document.querySelectorAll('#modes button')[0].click()"); pg.wait_for_timeout(1500)
+                # chapters 2-6 carry no permanent labels at all: port and city names show on hover or tap only
+                for i, k in [(1, "swap"), (2, "identity"), (3, "network"), (4, "dark"), (5, "classes")]:
+                    pg.evaluate(f"document.querySelectorAll('.chap')[{i}].click()"); pg.wait_for_timeout(3500); checked += 1
+                    st = pg.evaluate("[document.querySelector('.chap.on').dataset.ch, document.querySelectorAll('#map .leaflet-tooltip').length, document.querySelectorAll('#map .b3l, #map .arwnote:not([style*=none])').length]")
+                    if st[0] == k and (st[1] or st[2]): probs.append(f"[{w}px] chapter '{k}' map shows {st[1]} permanent tooltip(s) and {st[2]} fixed label(s); names must show on hover or tap only")
             pg.close()
         br.close()
     srv.shutdown()

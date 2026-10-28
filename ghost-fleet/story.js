@@ -16,9 +16,11 @@ function flows(filter){const fs=S.flows.filter(f=>!filter||filter(f));const mx=M
   L.circleMarker(f.b,{renderer:cv,radius:4,color:"#0b1526",weight:1,fillColor:"#f5f7fa",fillOpacity:1}).bindTooltip(esc(cn(f.to))).addTo(lay);b.push(f.a,f.b)});
  const seen={};fs.forEach(f=>{if(seen[f.from])return;seen[f.from]=1;L.circleMarker(f.a,{radius:7,color:"#0b1526",weight:2,fillColor:LC[f.from]||"#f2d16b",fillOpacity:1}).bindTooltip(esc(f.from)+" (loading port)",{permanent:false,direction:f.from==="Ust-Luga"?"left":"right",className:"pill"}).addTo(lay)});
  return b}
-function hotspots(only){const hs=M.hot.filter(h=>h.k==="sts"&&(!only||only.includes(h.n)));const cnt=Object.fromEntries(S.sts);const b=[];
- hs.forEach(h=>{const n=cnt[h.n]||0;L.circle([h.lat,h.lon],{radius:h.r*1000*(1+Math.sqrt(n)/12),color:"#e8913a",weight:2,fillColor:"#e8913a",fillOpacity:.35}).bindTooltip(`<b>${esc(h.n)}</b><br>${n.toLocaleString()} loitering events in 12 months`,{sticky:true}).addTo(lay);b.push([h.lat,h.lon])});return b}
-function evs(list,big){const b=[];list.forEach(e=>{const c=EC[e.t]||"#f5f7fa";L.circleMarker([e.lat,e.lon],{renderer:cv,radius:big?7:5,color:"#0b1526",weight:1,fillColor:c,fillOpacity:.95}).bindTooltip(`${e.t==="port"?"Port call":e.t==="gap"?"Transponder off":"Loitering"}: ${fmt(e.s)}${e.port?"<br>"+esc(title(e.port)):""}${e.pf?" ("+esc(cn(e.pf))+")":""}${e.hrs?"<br>"+Math.round(e.hrs)+" hours":""}${e.hz?"<br>"+esc(e.hz):""}${e.inf?"<br>Near "+esc(e.inf):""}`).addTo(lay);b.push([e.lat,e.lon])});return b}
+function hotspots(only,fo=.35,rd){const hs=M.hot.filter(h=>h.k==="sts"&&(!only||only.includes(h.n)));const cnt=Object.fromEntries(S.sts);const b=[];
+ hs.forEach(h=>{const n=cnt[h.n]||0;L.circle([h.lat,h.lon],{radius:h.r*1000*(1+Math.sqrt(n)/12),color:"#e8913a",weight:2,fillColor:"#e8913a",fillOpacity:fo,renderer:rd}).bindTooltip(`<b>${esc(h.n)}</b><br>${n.toLocaleString()} loitering events in 12 months`,{sticky:true}).addTo(lay);b.push([h.lat,h.lon])});return b}
+const GR=L.svg({padding:.5});let gi=0;
+// blink=true draws the transponder-gap dots as SVG paths with a class so CSS can pulse their opacity (canvas dots cannot be animated by CSS)
+function evs(list,big,blink){const b=[];list.forEach(e=>{const c=EC[e.t]||"#f5f7fa",bl=blink&&e.t==="gap";L.circleMarker([e.lat,e.lon],{renderer:bl?GR:cv,className:bl?"gapdot g"+(gi++%6):"",radius:big?7:5,color:"#0b1526",weight:1,fillColor:c,fillOpacity:.95}).bindTooltip(`${e.t==="port"?"Port call":e.t==="gap"?"Transponder off":"Loitering"}: ${fmt(e.s)}${e.port?"<br>"+esc(title(e.port)):""}${e.pf?" ("+esc(cn(e.pf))+")":""}${e.hrs?"<br>"+Math.round(e.hrs)+" hours":""}${e.hz?"<br>"+esc(e.hz):""}${e.inf?"<br>Near "+esc(e.inf):""}`).addTo(lay);b.push([e.lat,e.lon])});return b}
 function path(pts,c){L.polyline(pts,{renderer:cv,color:c,weight:3,opacity:.9,dashArray:"8 6"}).addTo(lay)}
 const CLS=GF.CL,K=S.classes||{},NC=Object.values(K).reduce((a,b)=>a+b,0);
 function lastPos(){const last={};M.events.forEach(e=>{if(!last[e.imo]||e.s>last[e.imo].s)last[e.imo]=e});const b=[];
@@ -66,13 +68,45 @@ const IDX=`<div class="idl">${dgrid(S.ships,S.changed)}<div class="tl" role="gro
 <div class="tlv">${id.voy.filter(v=>v.load==="Kozmino").map(v=>`<b tabindex="0" class="${v.dest==="CHN"?"vc":"vo"}" style="left:${pp(v.ld)}%" data-tip="${dl(v.ld)}: loaded at Kozmino for ${esc(v.dest==="KOR"?"South Korea":cn(v.dest))} (${esc(fnm(flagAt(v.ld)))} flag)"></b>`).join("")}<em style="left:${pp(S.window[0])}%" data-tip="Voyage data starts ${dl(S.window[0])}"></em></div>
 <div class="tla">${[["2025-01-01","Jan 2025"],["2025-07-01","Jul"],["2026-01-01","Jan 2026"],["2026-07-01","Jul"]].map(a=>`<span style="left:${pp(a[0])}%">${a[1]}</span>`).join("")}</div><div class="tltip" hidden></div></div>
 <div class="tlk">${[...new Set(bands.map(b=>b.flag))].map(f=>`<span><i style="background:${fcol(f)}"></i>${esc(fnm(f))}</span>`).join("")}<span><i class="mk vc"></i>Kozmino to China</span><span><i class="mk vo"></i>Kozmino to South Korea</span><span><i class="tk"></i>Name or MMSI change</span><span><i class="ds"></i>Voyage data starts ${dl(S.window[0])}</span></div></div>`;
+// chapter 2: close-up of each waiting area on a self-hosted Natural Earth 10m coastline (data/waiting_10m.json, public domain)
+const WD=await fetch("data/waiting_10m.json").then(r=>r.json()).catch(()=>null);
+const WREGS=WD?S.sts.map(s=>WD.regions.find(r=>r.n===s[0])).filter(Boolean):[],WSH={"Malaysia, east of Singapore (EOPL)":"East of Singapore","Gulf of Oman off Fujairah and Sohar":"Gulf of Oman","Ceuta and Alboran Sea":"Ceuta and Alboran","Off Lomé, Togo":"Off Lomé"};
+let wreg=0,wtk=0;
+const WLAND={color:"#4d6a99",weight:.8,fillColor:"#2a4066",fillOpacity:1};
+function baseOn(){wtk++;const B=GF.BASE;if(B&&!map.hasLayer(B)){B.addTo(map);B.bringToBack()}map.setMaxBounds(null);map.options.maxBoundsViscosity=0;map.setMinZoom(GF.phone()?1:2)}
+function swapMap(){const R=WREGS[wreg];if(!R){const b=hotspots();return b.concat(evs(ch.ev,true))}
+ map.removeLayer(GF.BASE);const bb=R.bbox,inb=(la,lo)=>la>=bb[0]&&la<=bb[2]&&lo>=bb[1]&&lo<=bb[3];
+ L.geoJSON(WD.land,{renderer:cv,style:WLAND,onEachFeature:(f,l)=>l.bindTooltip(esc(f.properties.n),{sticky:true})}).addTo(lay);
+ hotspots(S.sts.map(x=>x[0]),0,cv);
+ // cities (gold rings) and ports (white dots): no permanent labels, the name shows on hover (desktop) or tap (phone)
+ WD.cities.filter(c=>inb(c[1],c[2])).forEach(c=>L.circleMarker([c[1],c[2]],{renderer:cv,radius:3.5,color:"#f2d16b",weight:1.5,fillColor:"#0b1526",fillOpacity:1}).bindTooltip(`<b>${esc(c[0])}</b><br>City`,{direction:"top",offset:[0,-4]}).addTo(lay));
+ (GF.WPI||[]).filter(p=>"LMS".includes(p[4])&&inb(p[2],p[3])).forEach(p=>L.circleMarker([p[2],p[3]],{renderer:cv,radius:3.5,color:"#0b1526",weight:1,fillColor:"#f5f7fa",fillOpacity:1}).bindTooltip(`<b>${esc(title(p[0]))}</b><br>Port, ${esc(p[1])}`,{direction:"top",offset:[0,-4]}).addTo(lay));
+ return evs(ch.ev,true)}
+function swapView(){map.options.zoomSnap=.25;map.invalidateSize();map.setMaxBounds(null);const R=WREGS[wreg];if(!R)return fit([]);
+ const bb=L.latLngBounds([R.bbox[0],R.bbox[1]],[R.bbox[2],R.bbox[3]]),tk=++wtk;map.options.maxBoundsViscosity=1;
+ map.once("moveend",()=>{if(tk!==wtk)return;map.setMinZoom(map.getBoundsZoom(bb,true));map.setMaxBounds(bb)});
+ map.flyToBounds(L.latLng(R.lat,R.lon).toBounds(R.rad*2000*1.9),{duration:.8,maxZoom:9})}
+const WX=WREGS.length?`<div class="wreg" role="group" aria-label="Waiting areas">${WREGS.map((r,i)=>`<button type="button" data-r="${i}" aria-pressed="${i===0}">${esc(WSH[r.n]||r.n)} <span>${((S.sts.find(s=>s[0]===r.n)||[0,0])[1]).toLocaleString()}</span></button>`).join("")}</div><p class="note">Orange rings: waiting areas, sized by loitering events in 12 months. White dots are ports and gold rings are cities; hover or tap a dot for its name. Pan and zoom within each area. ${esc(title(ch.name))}'s first and last stops are outside these close-ups.</p>`:"";
+// chapter 6: loaded voyages per behaviour class on sea lanes (data/classroutes.json: identical origin/destination pairs merged, 'other' ships left out)
+const CR=await fetch("data/classroutes.json").then(r=>r.json()).catch(()=>null);
+const CROW=["core","taxi","dev","hub"].filter(k=>CLS[k]),CON=Object.fromEntries(CROW.map(k=>[k,k==="core"]));let crg=null;
+const CT=document.createElement("div");CT.className="ctog";CT.setAttribute("role","group");CT.setAttribute("aria-label","Show sea routes by tanker group");
+CT.innerHTML=CR?CROW.map(k=>`<button type="button" data-k="${k}" aria-pressed="${k==="core"}" style="--c:${CLS[k][1]}" title="${esc(CLS[k][2])}"><i></i>${esc(CLS[k][0])}</button>`).join(""):"";
+function drawCR(){if(!CR||!crg)return;crg.clearLayers();const pn=(la,lo)=>{const k=Math.cos(la*Math.PI/180);let nm="",bd=1e9;(GF.WPI||[]).forEach(p=>{const d=(p[2]-la)**2+((p[3]-lo)*k)**2;if(d<bd){bd=d;nm=p[0]}});return nm?title(nm):"destination"};
+ // thicker groups first, thinner on top, so the colours of all four groups stay visible on a shared sea lane; dark casings first so they never wash out another group's line
+ const bw={core:3,taxi:2.2,dev:1.5,hub:.9},cx=Math.max(...CR.r.map(r=>r[2]),1),on=CROW.filter(k=>CON[k]),rows=k=>CR.r.filter(r=>r[0]===k).sort((a,b)=>b[2]-a[2]);
+ on.forEach(k=>rows(k).forEach(r=>L.polyline(CR.lines[r[1]],{renderer:cv,color:"#0b1526",weight:bw[k]+1.4+1.4*Math.sqrt(r[2]/cx),opacity:.45,interactive:false,lineJoin:"round"}).addTo(crg)));
+ on.forEach(k=>rows(k).forEach(r=>{const p=r[1].split("|"),w=bw[k]+1.4*Math.sqrt(r[2]/cx);L.polyline(CR.lines[r[1]],{renderer:cv,color:CLS[k][1],weight:w,opacity:1,lineJoin:"round",smoothFactor:1.2}).bindTooltip(`<b>${esc(p[0])} → ${esc(pn(+p[1],+p[2]))}</b><br>${esc(CLS[k][0])}: ${r[2]} loaded trip${r[2]>1?"s":""} in 12 months (aggregate sea route, not a ship track)`,{sticky:true}).addTo(crg)}))}
+function classMap(){if(!CR)return lastPos();const b=[];crg=L.layerGroup().addTo(lay);drawCR();
+ const seen={};S.flows.forEach(f=>{if(seen[f.from])return;seen[f.from]=1;L.circleMarker(f.a,{renderer:cv,radius:4,color:"#0b1526",weight:1.5,fillColor:"#f5f7fa",fillOpacity:1}).bindTooltip(esc(f.from)+" (Russian loading port)",{direction:"top",offset:[0,-4]}).addTo(lay)});
+ Object.values(CR.lines).forEach(l=>b.push(...l));return b}
 const CH=[
  {k:"route",t:"1. Load in Russia, unload in Asia",
   c:`${pct}% of ${S.voyages.toLocaleString()} trips from Russian oil terminals ended in China, India or Turkey.`,
   key:B3.map(c=>[B3C[c],`${cn(c)}: ${B3N[c]} trips (${Math.round(100*B3N[c]/S.voyages)}%)`]),d:()=>big3()},
  {k:"swap",t:"2. Waiting where cargoes change hands",
   c:`${esc(title(ch.name))} loitered about ${loHrs<48?Math.round(loHrs)+" hours":Math.round(loHrs/24)+" days"}${esc(loHz?" off "+loHz.replace(/ \(.*/,""):"")} after loading at ${esc(ch.load)}, which is consistent with a transfer but does not prove one.`,
-  d:()=>{const b=hotspots();return b.concat(evs(ch.ev,true))},ship:ch.imo},
+  x:WX,d:()=>swapMap(),view:()=>swapView(),ship:ch.imo},
  {k:"identity",t:"3. New name, same run",
   c:IDC,x:IDX,
   d:()=>{const b=[];id.voy.forEach((v,i)=>{L.polyline(curve(v.line[0],v.line[1]),{color:v.ld>=id.hist[id.hist.length-1][2]?"#d97cb0":"#5cc98a",weight:4,opacity:.9}).bindTooltip(`${fmt(v.ld)}: ${esc(v.load)} → ${esc(cn(v.dest))}`,{sticky:true}).addTo(lay);b.push(...v.line)});return b},
@@ -82,10 +116,10 @@ const CH=[
   d:()=>{const b=[];nw.flows.forEach(f=>{L.polyline(curve(f[0],f[1]),{renderer:cv,color:"#b58cf0",weight:2.5,opacity:.7}).bindTooltip(esc(title(f[2])),{sticky:true}).addTo(lay);b.push(f[0],f[1])});return b},chips:nw.ships},
  {k:"dark",t:"5. Going dark",
   c:`${S.gaps} transponder gaps of 12+ hours in 12 months; of ${S.gapsJamWindow} inside our 90 days of GPS-interference data, ${S.gapsJam?S.gapsJam:"none"} fell where interference was reported, which points to switch-offs, not jamming.`,
-  d:()=>{evs(S.cases.allgaps.filter(e=>!dk.ev.includes(e)));return evs(dk.ev,true)},key:[["#e05a6a","transponder off"],["#4fa3e0","port call"]],ship:dk.imo},
+  d:()=>{gi=0;evs(S.cases.allgaps.filter(e=>!dk.ev.includes(e)),false,true);return evs(dk.ev,true,true)},key:[["#e05a6a","transponder off"],["#4fa3e0","port call"]],ship:dk.imo},
  {k:"classes",t:"6. Five ways of working",
-  c:`Tankers sorted by what they did in 12 months; regular runners made ${(S.classVoy||{}).core} of the ${S.voyages} trips.`,x:`<div class="cbars">${Object.keys(CLS).filter(k=>k!=="other").sort((a,b)=>(K[b]||0)-(K[a]||0)).map(k=>`<div class="row" title="${CLS[k][2]}"><span>${CLS[k][0]}</span><i style="width:${(100*(K[k]||0)/Math.max(K.hub,K.core,K.dev,K.taxi)).toFixed(0)}%;background:${CLS[k][1]}"></i><b>${K[k]||0}</b></div>`).join("")}</div><p class="note">Tankers with too few trips are left off the map.</p>`,
-  key:Object.keys(CLS).filter(k=>k!=="other").map(k=>[CLS[k][1],CLS[k][0]]),d:()=>lastPos()}];
+  c:`Tankers sorted by what they did in 12 months; regular runners made ${(S.classVoy||{}).core} of the ${S.voyages} trips.`,x:`${CR?'<div class="ctslot"></div><p class="note">Each line is a group\'s loaded trips from a Russian terminal to a buyer port along sea lanes. Thicker, brighter lines carry more trips. Tap a group to hide or show it.</p>':""}<div class="cbars">${Object.keys(CLS).filter(k=>k!=="other").sort((a,b)=>(K[b]||0)-(K[a]||0)).map(k=>`<div class="row" title="${CLS[k][2]}"><span>${CLS[k][0]}</span><i style="width:${(100*(K[k]||0)/Math.max(K.hub,K.core,K.dev,K.taxi)).toFixed(0)}%;background:${CLS[k][1]}"></i><b>${K[k]||0}</b></div>`).join("")}</div><p class="note">Tankers with too few trips are left off the map.</p>`,
+  d:()=>classMap()}];
 const box=document.getElementById("story"),cards=document.getElementById("chapters");
 cards.innerHTML=CH.map((c,i)=>`<article class="chap" data-i="${i}" data-ch="${c.k}" tabindex="0"><h3>${c.t}</h3><p>${c.c}</p>${c.x||""}${c.key?`<div class="key">${c.key.map(k=>`<span><i style="background:${k[0]}"></i>${k[1]}</span>`).join("")}</div>`:""}${c.ship?`<button class="lnk" data-p="${c.ship}">Open ship profile</button>`:""}${c.chips?`<div>${c.chips.map(s=>`<span class="chip" role="button" tabindex="0" data-p="${s[0]}">${esc(title(s[1]))}</span>`).join("")}</div>`:""}</article>`).join("");
 (()=>{const tl=cards.querySelector(".tl"),tp=tl&&tl.querySelector(".tltip");if(!tl)return;
@@ -94,6 +128,13 @@ cards.innerHTML=CH.map((c,i)=>`<article class="chap" data-i="${i}" data-ch="${c.
  tl.addEventListener("pointerleave",()=>tp.hidden=true);
  tl.addEventListener("focusin",e=>{const t=e.target.closest("[data-tip]");if(t)show(t)});
  tl.addEventListener("click",e=>{e.stopPropagation();const t=e.target.closest("[data-tip]");if(t)show(t);else tp.hidden=true})})();
+// group toggles live in the chapter-6 card on desktop and become a wrapping chip row above the map on phones
+const ctRow=document.createElement("div");ctRow.id="ctogbar";ctRow.hidden=true;document.querySelector(".sw2").insertBefore(ctRow,document.getElementById("map"));
+function ctPlace(){const slot=cards.querySelector(".ctslot");if(!CR||!slot)return;if(GF.phone()){ctRow.appendChild(CT)}else{slot.appendChild(CT);ctRow.hidden=true}}
+function ctShow(){ctRow.hidden=!(CR&&GF.phone()&&cur===5&&mode==="story")}
+ctPlace();matchMedia("(max-width:700px)").addEventListener("change",()=>{ctPlace();ctShow()});
+CT.querySelectorAll("button").forEach(b=>b.onclick=e=>{e.stopPropagation();CON[b.dataset.k]=!CON[b.dataset.k];b.setAttribute("aria-pressed",CON[b.dataset.k]);if(cur===5&&mode==="story")drawCR();else go(5)});
+cards.querySelectorAll(".wreg button").forEach(b=>b.onclick=e=>{e.stopPropagation();wreg=+b.dataset.r;cards.querySelectorAll(".wreg button").forEach(k=>k.setAttribute("aria-pressed",k===b));go(1)});
 cards.querySelectorAll("[data-p]").forEach(b=>b.onclick=e=>{e.stopPropagation();openP(b.dataset.p)});
 let cur=0,mode="story";
 // chapter 1: red chevrons flowing along the aggregate sea routes, source port -> buyer. Canvas overlay, runs only while visible.
@@ -112,8 +153,11 @@ const RED="#e8423f",ARW=(()=>{const c=document.createElement("canvas");c.classNa
  return{set(rs,mx){R=rs;nt.style.display=rs?"block":"none";M=mx||1;proj();if(!R){x.clearRect(0,0,c.width,c.height);return}draw(performance.now());kick()},running:()=>!!raf,pts:()=>P.map(o=>o.p.map(q=>[q.x,q.y]))}})();
 GF.ARW=ARW;
 function fit(b){map.options.zoomSnap=.25;if(GF.phone())map.setMinZoom(1);map.invalidateSize();if(b&&b.length)map.flyToBounds(L.latLngBounds(b).pad(.15),{duration:.8,maxZoom:6})}
-function go(i){cur=Math.max(0,Math.min(CH.length-1,i));lay.clearLayers();ARW.set(null);hideRaw();fit(CH[cur].d());
- cards.querySelectorAll(".chap").forEach((c,j)=>c.classList.toggle("on",j===cur));document.getElementById("cpos").textContent=`${cur+1} / ${CH.length}`;
+// red gap dots blink only while chapter 5 is showing and the map is on screen (CSS opacity only; static under prefers-reduced-motion)
+let mapVis=true;const blinkSet=()=>map.getContainer().classList.toggle("gapblink",mode==="story"&&CH[cur].k==="dark"&&mapVis&&!document.hidden);
+new IntersectionObserver(e=>{mapVis=e[0].isIntersecting;blinkSet()}).observe(map.getContainer());document.addEventListener("visibilitychange",blinkSet);
+function go(i){cur=Math.max(0,Math.min(CH.length-1,i));lay.clearLayers();ARW.set(null);hideRaw();baseOn();{const b=CH[cur].d();CH[cur].view?CH[cur].view():fit(b)}
+ blinkSet();ctShow();cards.querySelectorAll(".chap").forEach((c,j)=>c.classList.toggle("on",j===cur));document.getElementById("cpos").textContent=`${cur+1} / ${CH.length}`;
  const el=cards.children[cur];if(GF.phone())cards.scrollTo({left:el.offsetLeft-cards.offsetLeft,behavior:"smooth"})}
 function step(i){go(i);if(!GF.phone())cards.children[cur].scrollIntoView({behavior:"smooth",block:"center"})}
 document.getElementById("prev").onclick=()=>step(cur-1);document.getElementById("next").onclick=()=>step(cur+1);
@@ -121,7 +165,7 @@ const io=new IntersectionObserver(es=>{if(GF.phone()||mode!=="story")return;es.f
 cards.querySelectorAll(".chap").forEach((c,i)=>c.onclick=()=>go(i));
 let st;cards.addEventListener("scroll",()=>{if(!GF.phone())return;clearTimeout(st);st=setTimeout(()=>{const i=Math.round(cards.scrollLeft/cards.children[0].offsetWidth);if(i!==cur)go(i)},150)});
 const raw=document.getElementById("rawt");
-function explore(){lay.clearLayers();ARW.set(null);if(raw.checked){showRaw();return}hideRaw();const b=flows();hotspots();fit(b)}
+function explore(){blinkSet();ctShow();lay.clearLayers();ARW.set(null);baseOn();if(raw.checked){showRaw();return}hideRaw();const b=flows();hotspots();fit(b)}
 function setMode(m){mode=m;document.body.classList.toggle("story",m==="story");document.body.classList.toggle("explore",m!=="story");
  document.querySelectorAll("#modes button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===m));setTimeout(()=>map.invalidateSize(),0);m==="story"?go(cur):explore()}
 document.querySelectorAll("#modes button").forEach(b=>b.onclick=()=>setMode(b.dataset.m));
