@@ -158,3 +158,5 @@ body.story #map{height:min(62vh,620px)}
 .ctog button[aria-pressed=true] i::after{content:"";position:absolute;left:3px;top:0;width:4px;height:8px;border:solid var(--bg);border-width:0 2px 2px 0;transform:rotate(45deg)}
 #ctogbar{display:none}
 @media(max-width:700px){body.story #ctogbar:not([hidden]){display:block;margin:0 0 8px}#ctogbar .ctog{margin:0}}
+
+.sources{margin:18px auto 24px;max-width:1100px;padding:8px 14px;background:var(--panel);border:1px solid var(--line);border-radius:8px}.sources summary{cursor:pointer;font-weight:600;color:var(--gold);min-height:32px;line-height:32px}.sources[open]{border-color:var(--gold)}.sources ol{margin:6px 0 4px;padding-left:26px;font-size:14px;color:var(--text)}.sources li{margin:4px 0}.sources a{color:var(--gold)}a.sref{color:var(--gold);text-decoration:none;font-weight:600}

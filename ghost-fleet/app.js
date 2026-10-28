@@ -7,8 +7,7 @@ const fmt=d=>new Date(d).toLocaleDateString("en-GB",{day:"numeric",month:"short"
 const title=s=>String(s||"").toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
 const day=864e5,t0=Date.parse(M.from),t1=Date.parse(M.to),nd=Math.round((t1-t0)/day);
 
-const map=L.map("map",{worldCopyJump:true,preferCanvas:true,minZoom:2,attributionControl:true}).setView([45,30],3);
-map.attributionControl.setPrefix('<a href="https://globalfishingwatch.org" target="_blank" rel="noopener">Powered by Global Fishing Watch.</a> Basemap: Natural Earth');
+const map=L.map("map",{worldCopyJump:true,preferCanvas:true,minZoom:2,attributionControl:false}).setView([45,30],3);
 const BASE=L.geoJSON(LAND,{style:{color:"#4d6a99",weight:.7,fillColor:"#2a4066",fillOpacity:1},onEachFeature:(f,l)=>l.bindTooltip(esc(f.properties.n),{sticky:true})}).addTo(map);
 const cv=L.canvas({padding:.5});
 const on={port:true,loitering:true,gap:true,encounter:true,sar:false};
@@ -113,3 +112,6 @@ document.getElementById("aAll").onclick=()=>setOne(false);document.getElementByI
 map.on("zoomend",()=>{if(phone())draw()});draw();frame();
 const RAWL=[...Object.values(layers),anim];window.GF={LAND,BASE,CL,map,cv,esc,fmt,title,M,P,phone,openP,hideRaw(){RAWL.forEach(l=>map.removeLayer(l));if(playing)pb.click()},showRaw(){RAWL.forEach(l=>l.addTo(map));draw()}};const h=location.hash.match(/p=(\d{7})/);if(h)openP(h[1]);
 })();
+
+// [n] source links jump to the numbered entry in the Data Sources dropdown and open it
+document.addEventListener("click",e=>{const l=e.target.closest("a.sref");if(!l)return;const d=document.getElementById("sources");d.open=true;});
