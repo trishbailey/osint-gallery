@@ -20,6 +20,11 @@ Change checks (--changed-from BASE):
   8. Desktop: paragraph text (>=160 chars, 3+ lines) fills >= 75% of its container (source lists and side-by-side cards excluded) width.
   9. Desktop: every visible button changes something on screen when clicked.
   10. Each checked dashboard's _src/test_*.py (figures derived from data) must pass.
+Grey exception (defunct markers only): a grey fill is allowed solely on a shape that sits inside a
+<g> (or is itself) marked data-status="defunct" AND carries a name (aria-label or a child <title>).
+The marker may not be the <svg> root, other values (is-defunct, defunct-ish, ...) do nothing, only greys
+are exempt (any other colour on the marker is checked as usual), and at most half of an SVG's data
+shapes may be exempt. Every other grey still fails.
 Colour pairs are checked on every SVG unless all its colours share one hue (within 40 deg).
 Shapes inside an element marked data-ci-ignore (or flags/logos/icons) are skipped.
 Usage: python scripts/ci_check.py [--static-only] [--port 8765]
@@ -136,7 +141,12 @@ COLLECT_JS = r"""() => {
  out.overflow = Math.max(document.documentElement.scrollWidth, document.body ? document.body.scrollWidth : 0) - window.innerWidth;
  const svgs = [...document.querySelectorAll('svg')].filter(s => {const b = s.getBoundingClientRect(); return b.width > 120 && b.height > 80;});
  svgs.forEach((s, i) => {
-   const cols = {};
+   const cols = {}, dcols = {}, badDefunct = [];
+   const seenBad = new Set();
+   // Opt-in for dissolved/defunct items: data-status="defunct" (exact value) on the shape or a group inside
+   // this svg (never the svg root), and the marker must be named (aria-label or direct child <title>).
+   const named = m => (m.getAttribute('aria-label') || '').trim() !== '' ||
+     [...m.children].some(c => c.tagName.toLowerCase() === 'title' && c.textContent.trim() !== '');
    s.querySelectorAll('rect,circle,path,polygon,ellipse').forEach(e => {
      const cs = getComputedStyle(e); if (cs.display === 'none' || cs.visibility === 'hidden') return;
      if (e.closest('defs,clipPath,mask,pattern')) return;
@@ -146,9 +156,16 @@ COLLECT_JS = r"""() => {
      const f = cs.fill; const m = f && f.match(/rgba?\(([^)]+)\)/); if (!m) return;
      const v = m[1].split(',').map(Number); const a = (v.length > 3 ? v[3] : 1) * parseFloat(cs.fillOpacity || 1) * parseFloat(cs.opacity || 1);
      if (a < 0.05) return;
-     const k = v.slice(0, 3).join(','); cols[k] = (cols[k] || 0) + 1;
+     const k = v.slice(0, 3).join(',');
+     const mk = e.closest('[data-status="defunct"]');
+     let target = cols;
+     if (mk) {
+       if (mk !== s && s.contains(mk) && named(mk)) target = dcols;
+       else if (!seenBad.has(mk)) { seenBad.add(mk); badDefunct.push(mk === s ? 'svg root' : (mk.id || mk.tagName.toLowerCase())); }
+     }
+     target[k] = (target[k] || 0) + 1;
    });
-   out.svgs.push({i, id: s.id || s.getAttribute('class') || ('svg' + i), cols});
+   out.svgs.push({i, id: s.id || s.getAttribute('class') || ('svg' + i), cols, dcols, badDefunct});
  });
  document.querySelectorAll('svg text').forEach(t => {
    const b = t.getBoundingClientRect(); const cs = getComputedStyle(t);
@@ -169,6 +186,19 @@ def is_background(rgb):
 def is_grey(rgb):
     L, a, b = srgb_to_lab(rgb)
     return math.hypot(a, b) < 6 and 22 <= L <= 92
+
+def defunct_split(cols, dcols):
+    """Merge the shape colours found under valid data-status="defunct" markers back into the
+    checked colours, except greys: those are exempt. Returns (colours to check, exempt shape count)."""
+    live = dict(cols)
+    exempt = 0
+    for k, n in dcols.items():
+        rgb = tuple(map(int, k.split(",")))
+        if is_grey(rgb):
+            exempt += n
+        else:
+            live[k] = live.get(k, 0) + n
+    return live, exempt
 
 def hue_spread(cols):
     """Smallest arc (degrees) containing every colour's Lab hue."""
@@ -325,6 +355,13 @@ def browser_checks(port, slugs):
                 if name != "desktop":
                     continue
                 for s in r["svgs"]:
+                    live, exempt = defunct_split(s["cols"], s["dcols"])
+                    s["cols"] = live
+                    for b in s["badDefunct"]:
+                        errs.append(f"{slug} svg '{s['id'][:30]}': data-status=\"defunct\" on {b} is not valid (must sit on a shape or <g> inside the svg, not the svg root, and carry an aria-label or <title>), so its greys are not exempt")
+                    n_all = sum(live.values()) + sum(s["dcols"].values())
+                    if exempt > n_all / 2:
+                        errs.append(f"{slug} svg '{s['id'][:30]}': {exempt} of {n_all} shapes use the defunct grey exemption (limit: half of the svg); grey is only for dissolved/defunct items")
                     cols = [tuple(map(int, k.split(","))) for k in s["cols"]]
                     data = [c for c in cols if not is_background(c)]
                     greys = [c for c in data if is_grey(c)]
