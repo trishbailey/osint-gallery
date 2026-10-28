@@ -14,7 +14,7 @@ function curve(a,b,bend=.18){const pts=[];const mx=(a[0]+b[0])/2,my=(a[1]+b[1])/
 function flows(filter){const fs=S.flows.filter(f=>!filter||filter(f));const mx=Math.max(...fs.map(f=>f.n));const b=[];
  fs.forEach(f=>{const c=LC[f.from]||"#f2d16b";L.polyline(curve(f.a,f.b),{renderer:cv,color:c,weight:1.5+7*f.n/mx,opacity:.8}).bindTooltip(`<b>${esc(f.from)} → ${esc(cn(f.to))}</b><br>${f.n} voyages in 12 months`,{sticky:true}).addTo(lay);
   L.circleMarker(f.b,{renderer:cv,radius:4,color:"#0b1526",weight:1,fillColor:"#f5f7fa",fillOpacity:1}).bindTooltip(esc(cn(f.to))).addTo(lay);b.push(f.a,f.b)});
- const seen={};fs.forEach(f=>{if(seen[f.from])return;seen[f.from]=1;L.circleMarker(f.a,{radius:7,color:"#0b1526",weight:2,fillColor:LC[f.from]||"#f2d16b",fillOpacity:1}).bindTooltip(esc(f.from)+" (loading port)",{permanent:!GF.phone(),direction:f.from==="Ust-Luga"?"left":"right",className:"pill"}).addTo(lay)});
+ const seen={};fs.forEach(f=>{if(seen[f.from])return;seen[f.from]=1;L.circleMarker(f.a,{radius:7,color:"#0b1526",weight:2,fillColor:LC[f.from]||"#f2d16b",fillOpacity:1}).bindTooltip(esc(f.from)+" (loading port)",{permanent:false,direction:f.from==="Ust-Luga"?"left":"right",className:"pill"}).addTo(lay)});
  return b}
 function hotspots(only){const hs=M.hot.filter(h=>h.k==="sts"&&(!only||only.includes(h.n)));const cnt=Object.fromEntries(S.sts);const b=[];
  hs.forEach(h=>{const n=cnt[h.n]||0;L.circle([h.lat,h.lon],{radius:h.r*1000*(1+Math.sqrt(n)/12),color:"#e8913a",weight:2,fillColor:"#e8913a",fillOpacity:.35}).bindTooltip(`<b>${esc(h.n)}</b><br>${n.toLocaleString()} loitering events in 12 months`,{sticky:true}).addTo(lay);b.push([h.lat,h.lon])});return b}
@@ -38,7 +38,7 @@ function big3(){L.geoJSON(GF.LAND,{filter:f=>Object.values(B3F).includes(f.prope
  Object.values(AE).forEach(e=>{const k=Math.cos(e[0]*Math.PI/180);let nm="",bd=1e9;(GF.WPI||[]).forEach(p=>{const d=(p[2]-e[0])**2+((p[3]-e[1])*k)**2;if(d<bd){bd=d;nm=p[0]}});const tx=esc(nm?title(nm):"Destination")+" (arrival port)";
   L.circleMarker(e,{renderer:PR,radius:4,color:"#0b1526",weight:1.5,fillColor:"#f5f7fa",fillOpacity:1,interactive:false}).addTo(lay);L.circleMarker(e,{renderer:PR,radius:12,stroke:false,fillColor:"#fff",fillOpacity:.01}).bindTooltip(tx,{direction:"top"}).on("click",ev=>{L.DomEvent.stop(ev);if(GF.TT)map.closeTooltip(GF.TT);GF.TT=L.tooltip({direction:"top",offset:[0,-8]}).setLatLng(e).setContent(tx);map.openTooltip(GF.TT);map.once("click movestart",()=>GF.TT&&map.closeTooltip(GF.TT))}).addTo(lay)});
  // country names: small and light; counts in sea callouts joined by leader lines
- const CNP={CHN:[37.5,93],IND:[23.5,77],TUR:[38.6,32.2]},BA=GF.phone()?{CHN:[14,146],IND:[-10,77],TUR:[40,-39]}:{CHN:[22,138],IND:[0,79],TUR:[40,-29]};GF.BA=BA;
+ const CNP={CHN:[37.5,93],IND:[23.5,77],TUR:[38.6,32.2]},BA=GF.phone()?{CHN:[10,152],IND:[-18,76],TUR:[26,-42]}:{CHN:[16,140],IND:[-4,76],TUR:[38,-32]};GF.BA=BA;
  B3.forEach(c=>{
   L.polyline([B3P[c],BA[c]],{color:B3C[c],weight:1.5,opacity:1,interactive:false}).addTo(lay);
   L.marker(BA[c],{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="b3l" style="border-color:${B3C[c]}"><b style="color:${B3C[c]}">${B3N[c]||0}</b><span>${GF.phone()?"":"trips · "}${Math.round(100*(B3N[c]||0)/S.voyages)}%</span></div>`}),interactive:false}).addTo(lay)});

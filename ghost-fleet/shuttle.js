@@ -35,8 +35,14 @@ const pmax=Math.max(...S.ports.map(p=>p.n));
 const inb=p=>p.lon>lo0&&p.lon<lo1&&p.lat>la0&&p.lat<la1;
 const pts=S.ports.filter(inb).map(p=>`<circle class="sport" cx="${X(p.lon).toFixed(1)}" cy="${Y(p.lat).toFixed(1)}" r="${(3+9*Math.sqrt(p.n/pmax)).toFixed(1)}" fill="#9b7be8" stroke="#0b1526" stroke-width="1.5" tabindex="0" data-tip="${esc(/^CHN-/.test(p.port)?"Unnamed port":p.port.charAt(0)+p.port.slice(1).toLowerCase())}, China: ${p.n} voyages from Kozmino"><title>${esc(p.port)}: ${p.n} voyages from Kozmino</title></circle>`).join("");
 const kz=[X(133.0),Y(42.75)];
-const lead=(x1,y1,x2,y2)=>`<line class="lead" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#c8a24a" stroke-width="1" stroke-dasharray="3 3"/>`;
-const lk=S.ports.find(p=>p.port==="LONGKOU")||S.ports[0];
+const lead=(x1,y1,x2,y2)=>`<line class="lead" x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="#c8a24a" stroke-width="1"/>`;
+// Callouts sit in open sea: clear of the route line and its leader lines, off the land, off the port dots (checked by _src/test_label_overlap.py).
+// Each callout is centred on its anchor (lon, lat) and joined by a thin leader to the thing it describes.
+const dj=S.ports.find(p=>p.port==="DONGJIAKOU")||S.ports[1]||S.ports[0];
+const CO=[{lon:134.3,lat:40.4,tx:[X(133.0),Y(42.75)+8],html:`<b>${S.coreKozPct}%</b> of core-ship voyages load at Kozmino`},
+ {lon:125.5,lat:31.4,tx:[X(dj.lon)+4,Y(dj.lat)+4],html:`<b>${shan}</b> of ${S.kozChina} China voyages end in Shandong`},
+ {lon:133.0,lat:37.4,tx:"route",html:`Sea route: about ${Math.round(S.transitKozCHN)} days to Shandong`}];
+const pt=(lo,la)=>[X(lo),Y(la)];
 document.getElementById("shmap").innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Map of the tanker route from Kozmino in Russia to ports in Shandong, China">
 <g data-ci-ignore><rect width="${W}" height="${H}" fill="#0d1d36"/><g fill="#1b2d4d" stroke="#2c4470" stroke-width=".6">${land}</g></g>
 <path d="${rd}" fill="none" id="shroute" stroke="#c8a24a" stroke-width="1.5" stroke-linejoin="round" opacity=".7"><title>Kozmino to Shandong: ${S.kozChina} voyages in 12 months</title></path>
@@ -44,11 +50,9 @@ document.getElementById("shmap").innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserv
 <g class="sarr" transform="translate(${mid[0].toFixed(1)},${mid[1].toFixed(1)}) rotate(${ang.toFixed(0)})"><path d="M-7,-5 L5,0 L-7,5 Z" fill="#c8a24a"/></g>
 ${pts}
 <circle class="sport" cx="${kz[0].toFixed(1)}" cy="${kz[1].toFixed(1)}" r="8" fill="#5cc98a" stroke="#0b1526" stroke-width="2" tabindex="0" data-tip="Kozmino, Russia: oil loading terminal on the Pacific coast"><title>Kozmino (loading port, Russia)</title></circle>
-${lead(kz[0]-4,kz[1]+8,X(133.2),Y(39.9))}${lead(X(lk.lon)+10,Y(lk.lat),X(123.6),Y(36.4))}${lead(X(126.5),Y(33.6),X(126.3),Y(32.2))}
+${CO.map((c,i)=>{const a=pt(c.lon,c.lat),t=c.tx==="route"?mid:c.tx;return lead(t[0],t[1],a[0],a[1])}).join("")}
 </svg>
-<div class="callout" style="left:${(X(131.6)/W*100).toFixed(1)}%;top:${(Y(39.9)/H*100).toFixed(1)}%"><b>${S.coreKozPct}%</b> of core-ship voyages load at Kozmino</div>
-<div class="callout" style="left:${(X(122.0)/W*100).toFixed(1)}%;top:${(Y(35.6)/H*100).toFixed(1)}%"><b>${shan}</b> of ${S.kozChina} China voyages end in Shandong</div>
-<div class="callout" style="left:${(X(123.6)/W*100).toFixed(1)}%;top:${(Y(31.6)/H*100).toFixed(1)}%">Sea route: about ${Math.round(S.transitKozCHN)} days to Shandong</div>`;
+${CO.map(c=>`<div class="callout" style="left:${(X(c.lon)/W*100).toFixed(1)}%;top:${(Y(c.lat)/H*100).toFixed(1)}%">${c.html}</div>`).join("")}`;
 // flowing chevrons along the route (shows the route, not ship positions)
 (()=>{const svg=document.querySelector("#shmap svg"),pth=svg.querySelector("#shroute");if(!pth||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
  svg.querySelector(".sarr").style.display="none";const len=pth.getTotalLength(),g=document.createElementNS("http://www.w3.org/2000/svg","g");svg.insertBefore(g,svg.querySelector(".sport"));

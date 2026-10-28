@@ -107,7 +107,7 @@ body.story #map{height:min(62vh,620px)}
 .figt{font-size:14px;font-weight:600;color:var(--gold);margin:0 0 8px;text-transform:none}
 .shmap{position:relative;width:100%}.shmap svg{display:block;width:100%;height:auto;border-radius:6px}
 .shmap .sport{cursor:pointer}.shmap .sport:hover,.shmap .sport:focus{stroke:#e6e9ef;outline:none}
-.callout{position:absolute;max-width:30%;background:#0b1526f2;border:1px solid var(--gold);border-radius:6px;padding:4px 8px;font-size:13px;line-height:1.3;color:var(--text)}.callout b{color:var(--gold);font-size:15px}
+.callout{position:absolute;transform:translate(-50%,-50%);width:max-content;max-width:21%;background:#0b1526f2;border:1px solid var(--gold);border-radius:6px;padding:4px 8px;font-size:13px;line-height:1.3;color:var(--text)}.callout b{color:var(--gold);font-size:15px}
 .shtip{position:absolute;z-index:5;max-width:220px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:4px 8px;font-size:13px;pointer-events:none}
 .shside{display:flex;flex-direction:column;gap:12px}.shbox{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
 .srow{display:grid;grid-template-columns:110px 1fr 70px;gap:8px;align-items:center;margin:8px 0;font-size:14px}.srow b{text-align:right}
@@ -122,7 +122,7 @@ body.story #map{height:min(62vh,620px)}
 .mv,.ml{font-size:13px;color:var(--muted);white-space:nowrap}.mv{color:var(--text)}
 .skey{display:flex;flex-direction:column;gap:4px;font-size:13px}.skey span{display:flex;align-items:center;gap:8px}.skey .kl{width:20px;height:3px;background:#c8a24a;flex:none}.skey .kd{width:12px;height:12px;border-radius:50%;flex:none}
 @media(max-width:900px){.shgrid,.rusgrid{grid-template-columns:1fr}}
-@media(max-width:700px){.leadh{font-size:20px}.callout{position:static;max-width:none;margin:6px 0 0}.shmap line.lead{display:none}
+@media(max-width:700px){.leadh{font-size:20px}.callout{position:static;transform:none;width:auto;max-width:none;margin:6px 0 0}.shmap line.lead{display:none}
  .srow{grid-template-columns:96px 1fr 62px}.lchip{min-width:0;flex:1 1 100px}.lchip b{font-size:18px}.mv{font-size:13px;writing-mode:horizontal-tb}.rbars{gap:2px}
  .rbars .mcol:nth-child(even) .mv,.rbars .mcol:nth-child(even) .ml{visibility:hidden}}
 .rbars{overflow:hidden}.mcol{overflow:hidden}.lead .lchips,.lead .shbox,.lead .shfig{min-width:0;max-width:100%}
