@@ -54,7 +54,7 @@ Promise.all([J("data/ne_110m.geojson"),J("data/brief.json"),J("data/conflict_hex
  window._resCount=()=>resSel.nodes().filter(n=>n.style.display!=="none").length;
 /* tooltip (custom, 13px+, hover, focus and tap) */
 const tip=document.getElementById("tip");
-const obstacles=()=>{const o=[...document.querySelectorAll(".toplabels rect,.pflags .prow,.pcapl,.kp,.rlistph .rf,.rlistph .rc")].map(e=>e.getBoundingClientRect());
+const obstacles=()=>{const o=[...document.querySelectorAll(".toplabels text,.pflags .prow,.pcapl,.kp,.rlistph .rf,.rlistph .rc")].map(e=>e.getBoundingClientRect());
  document.querySelectorAll(".rlistph .rt").forEach(e=>{const g=document.createRange();g.selectNodeContents(e);o.push(g.getBoundingClientRect());});
  return o.filter(r=>r.width>1&&r.height>1);};
 const placeTip=e=>{const r=tip.getBoundingClientRect(),w=r.width,h=r.height,vw=innerWidth,vh=innerHeight,ob=obstacles(),px=e.clientX,py=e.clientY;
@@ -85,7 +85,7 @@ const gHL=Z.append("g").attr("class","hlc"),gPL=Z.append("g").attr("class","plin
 let pinned=false,zk=1;
 const drawLines=pairs=>{gPL.selectAll("*").remove();const seen=new Set();pairs.forEach(([p,iso])=>{if(!CAPS[p]||!CAPS[p].ll||!anchor[iso])return;const a=cl(proj(CAPS[p].ll)),b=anchor[iso],ended=powItems(p,iso).every(x=>x.ended);
   gPL.append("line").attr("class","pline"+(ended?" ended":"")).attr("x1",a[0]).attr("y1",a[1]).attr("x2",b[0]).attr("y2",b[1]);
-  if(!seen.has(p)){seen.add(p);gPL.append("circle").attr("class","pcap").attr("cx",a[0]).attr("cy",a[1]).attr("r",5/zk);const g=gPL.append("g").attr("class","pcapl");const t=g.append("text").attr("x",a[0]).attr("y",a[1]-10/zk).attr("text-anchor","middle").style("font-size",(14/zk)+"px").text(CAPS[p].cap+(proj(CAPS[p].ll)[0]>W||proj(CAPS[p].ll)[1]<0?" (off map)":""));const bb=t.node().getBBox();g.insert("rect","text").attr("x",bb.x-5/zk).attr("y",bb.y-2/zk).attr("width",bb.width+10/zk).attr("height",bb.height+4/zk).attr("rx",(bb.height+4/zk)/2);}});
+  if(!seen.has(p)){seen.add(p);gPL.append("circle").attr("class","pcap").attr("cx",a[0]).attr("cy",a[1]).attr("r",5/zk);const g=gPL.append("g").attr("class","pcapl");const t=g.append("text").attr("x",a[0]).attr("y",a[1]-10/zk).attr("text-anchor","middle").style("font-size",(14/zk)+"px").style("stroke-width",(4/zk)+"px").text(CAPS[p].cap+(proj(CAPS[p].ll)[0]>W||proj(CAPS[p].ll)[1]<0?" (off map)":""));}});
   window._lines=gPL.selectAll("line").size();};
 const clearLines=()=>{if(pinned)return;gPL.selectAll("*").remove();window._lines=0;};
 window._lines=0;
@@ -125,30 +125,14 @@ const gTop=Z.append("g").attr("class","toplabels");
 {const placed=rows.map(r=>({x0:r.x-r.w/2-4,x1:r.x+r.w/2+4,y0:r.y-r.h/2-4,y1:r.y+r.h/2+4}));
  const hitR=b=>placed.some(o=>b.x0<o.x1&&b.x1>o.x0&&b.y0<o.y1&&b.y1>o.y0);
  const CAND=[[0,0]];for(const r of [14,24,34,46,60,76,94,114,136,160])for(let a=0;a<24;a++){const t=a*Math.PI/12;CAND.push([Math.cos(t)*r*1.9,Math.sin(t)*r]);}
- B.regions.forEach(r=>{const [x,y]=proj(r.label);const g=gTop.append("g");const rc=g.append("rect");const t=g.append("text").attr("class","rlabel").attr("fill","#FFE272").attr("text-anchor","middle").text(r.name);
+ B.regions.forEach(r=>{const [x,y]=proj(r.label);const g=gTop.append("g");const t=g.append("text").attr("class","rlabel").attr("fill","#FFE272").attr("text-anchor","middle").text(r.name);
   t.attr("x",0).attr("y",0);const b0=t.node().getBBox();let best=null,bestOv=1e9;
   for(const [dx,dy] of CAND){const cx=x+dx,cy=y+dy,bb={x0:cx-b0.width/2-7,x1:cx+b0.width/2+7,y0:cy+b0.y-4,y1:cy+b0.y+b0.height+4};
    if(bb.x0<3||bb.x1>W-3||bb.y0<3||bb.y1>H-3)continue;
    if(!hitR(bb)){best={cx,cy,bb};break;}
    const ov=placed.reduce((a,o)=>a+Math.max(0,Math.min(bb.x1,o.x1)-Math.max(bb.x0,o.x0))*Math.max(0,Math.min(bb.y1,o.y1)-Math.max(bb.y0,o.y0)),0);if(ov<bestOv){bestOv=ov;best={cx,cy,bb};}}
-  t.attr("x",best.cx).attr("y",best.cy);const b=t.node().getBBox();rc.attr("x",b.x-5).attr("y",b.y-2).attr("width",b.width+10).attr("height",b.height+4).attr("rx",(b.height+4)/2);
+  t.attr("x",best.cx).attr("y",best.cy);const b=t.node().getBBox();
   placed.push({x0:b.x-9,x1:b.x+b.width+9,y0:b.y-6,y1:b.y+b.height+6});});}
-/* country labels: full names on dark pills, placed around flag rows */
-const gCL=Z.append("g").attr("class","clabels"),CLN=f=>{const p=f.properties;return p.ADM0_A3==="SOL"?"Somaliland":p.ADM0_A3==="COG"?"Republic of the Congo":(p.ADMIN||p.NAME);};
-const clData=afr.features.map(f=>({iso:f.properties.ADM0_A3,n:CLN(f),c:path.centroid(f),a:path.area(f)})).filter(d=>isFinite(d.c[0])).sort((a,b)=>(byIso.has(b.iso)-byIso.has(a.iso))||b.a-a.a);
-const placeC=k=>{gCL.selectAll("*").remove();const s=1/k,fs=13*s,ob=[];
- rows.forEach(r=>ob.push({x0:r.x-r.w/2*s-3*s,x1:r.x+r.w/2*s+3*s,y0:r.y-9*s,y1:r.y+9*s}));
- gTop.selectAll("rect").each(function(){const b=this.getBBox();ob.push({x0:b.x-2*s,x1:b.x+b.width+2*s,y0:b.y-2*s,y1:b.y+b.height+2*s});});
- const hit=b=>ob.some(o=>b.x0<o.x1&&b.x1>o.x0&&b.y0<o.y1&&b.y1>o.y0),hidden=[];
- const C=[[0,0]];for(const r of [16,24,34,46,60,76])for(let a=0;a<16;a++){const t=a*Math.PI/8;C.push([Math.cos(t)*r*1.6,Math.sin(t)*r]);}
- clData.forEach(d=>{const g=gCL.append("g").attr("class","cl"),ln=g.append("line").attr("class","clead"),rc=g.append("rect"),t=g.append("text").attr("class","clabel").attr("text-anchor","middle").style("font-size",fs+"px").text(d.n);
-  let ok=null;for(const [dx,dy] of C){const x=d.c[0]+dx*s,y=d.c[1]+dy*s;t.attr("x",x).attr("y",y+4.5*s);const b=t.node().getBBox(),bb={x0:b.x-5*s,x1:b.x+b.width+5*s,y0:b.y-2*s,y1:b.y+b.height+2*s};
-   if(k===1&&(bb.x0<2||bb.x1>W-2||bb.y0<2||bb.y1>H-2))continue;if(!hit(bb)){ok={bb,x,y,dx,dy};break;}}
-  if(!ok){g.remove();hidden.push(d.n);return;}ob.push(ok.bb);
-  rc.attr("x",ok.bb.x0).attr("y",ok.bb.y0).attr("width",ok.bb.x1-ok.bb.x0).attr("height",ok.bb.y1-ok.bb.y0).attr("rx",(ok.bb.y1-ok.bb.y0)/2);
-  if(Math.hypot(ok.dx,ok.dy)>20){ln.attr("x1",d.c[0]).attr("y1",d.c[1]).attr("x2",ok.x).attr("y2",ok.y).style("stroke-width",s);g.insert("circle","line").attr("cx",d.c[0]).attr("cy",d.c[1]).attr("r",2*s).attr("class","cdot");}else ln.remove();});
- window._hiddenLabels=hidden;};
-/* placeC(1); kept for later use: country labels now show on hover only */
 gP.raise();gPL.raise();
 /* legend (short) */
 const LS=d3.select("#legsvg"),lg=LS.append("g").attr("class","legend").attr("transform","translate(10,22)");let ly=0;
@@ -177,7 +161,7 @@ document.getElementById("L-pow").onchange=e=>{gP.style("display",e.target.checke
 document.getElementById("L-res").onchange=e=>{gR.style("display",e.target.checked?null:"none");syncL&&syncL();};
 document.getElementById("L-allres").onchange=e=>{if(e.target.checked&&!document.getElementById("L-res").checked){document.getElementById("L-res").checked=true;document.getElementById("L-res").onchange({target:{checked:true}});}applyR();};
  /* zoom to region */
- const zoom=d3.zoom().scaleExtent([1,6]).on("zoom",e=>{const k=e.transform.k;zk=k;Z.attr("transform",e.transform);resSel.attr("transform",d=>`translate(${proj(d.lonlat)}) scale(${1/k})`);gP.selectAll(".prow").attr("transform",d=>`translate(${d.x},${d.y}) scale(${1/k})`);gPL.selectAll("*").remove();gCL.selectAll("*").remove();gTop.selectAll("text").style("font-size",(14/e.transform.k)+"px");gTop.selectAll("rect").each(function(){const t=this.nextSibling,b=t.getBBox();d3.select(this).attr("x",b.x-5/e.transform.k).attr("y",b.y-2/e.transform.k).attr("width",b.width+10/e.transform.k).attr("height",b.height+4/e.transform.k).attr("rx",(b.height+4/e.transform.k)/2);});});
+ const zoom=d3.zoom().scaleExtent([1,6]).on("zoom",e=>{const k=e.transform.k;zk=k;Z.attr("transform",e.transform);resSel.attr("transform",d=>`translate(${proj(d.lonlat)}) scale(${1/k})`);gP.selectAll(".prow").attr("transform",d=>`translate(${d.x},${d.y}) scale(${1/k})`);gPL.selectAll("*").remove();gTop.selectAll("text").style("font-size",(14/e.transform.k)+"px").style("stroke-width",(4/e.transform.k)+"px");});
  svg.call(zoom).on("wheel.zoom",null).on("dblclick.zoom",null);
  const rb=document.getElementById("reset");rb.onclick=()=>{svg.transition().duration(600).call(zoom.transform,d3.zoomIdentity);rb.classList.remove("show");};
  function openRegion(r,f){const fc={type:"FeatureCollection",features:afr.features.filter(x=>r.countries.includes(x.properties.ADM0_A3))};
@@ -366,7 +350,7 @@ const goldChart=()=>{const R=B.goldroutes,SK=R.sankey,el=document.getElementById
  nd.append("rect").attr("x",d=>d.x0).attr("y",d=>d.y0).attr("width",d=>d.x1-d.x0).attr("height",d=>Math.max(2,d.y1-d.y0)).attr("rx",4).attr("fill",d=>OC[d.name]||(d.name.startsWith("UAE")?"#00FFE5":"#F5F7FF"));
  const nOn=d=>op(null,l=>l.source===d||l.target===d||(d===U&&l.k==="re")?.95:.15);
  nd.on("mouseenter",(e,d)=>nOn(d)).on("focus",(e,d)=>nOn(d)).on("mouseleave",rst).on("blur",rst);
- const pill=(x,y,txt,anc,cls)=>{const g=sv.append("g").attr("class","skp "+(cls||""));const t=g.append("text").attr("x",x).attr("y",y).attr("text-anchor",anc).text(txt);const b=t.node().getBBox();g.insert("rect","text").attr("x",b.x-6).attr("y",b.y-2).attr("width",b.width+12).attr("height",b.height+4).attr("rx",(b.height+4)/2);return g;};
+ const pill=(x,y,txt,anc,cls)=>{const g=sv.append("g").attr("class","skp "+(cls||""));const t=g.append("text").attr("x",x).attr("y",y).attr("text-anchor",anc).text(txt);const b=t.node().getBBox();g.insert("rect","text").attr("class","skhit").attr("x",b.x-4).attr("y",b.y-2).attr("width",b.width+8).attr("height",b.height+4);return g;};
  ALL.forEach(d=>{const v=Math.round(d.value*10)/10,ym=(d.y0+d.y1)/2+5;
   if(OR.includes(d.name))pill(d.x0-8,ym,`${d.name} ${v} t`,"end");
   else if(d===U)pill(d.x1+8,d.y0-8,`${lab(d.name)} ${v} t in`,"start","skhub");
