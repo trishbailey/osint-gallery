@@ -136,7 +136,7 @@ COLLECT_JS = r"""() => {
  out.overflow = Math.max(document.documentElement.scrollWidth, document.body ? document.body.scrollWidth : 0) - window.innerWidth;
  const svgs = [...document.querySelectorAll('svg')].filter(s => {const b = s.getBoundingClientRect(); return b.width > 120 && b.height > 80;});
  svgs.forEach((s, i) => {
-   const cols = {};
+   const cols = {}, ramps = {};
    s.querySelectorAll('rect,circle,path,polygon,ellipse').forEach(e => {
      const cs = getComputedStyle(e); if (cs.display === 'none' || cs.visibility === 'hidden') return;
      if (e.closest('defs,clipPath,mask,pattern')) return;
@@ -147,8 +147,10 @@ COLLECT_JS = r"""() => {
      const v = m[1].split(',').map(Number); const a = (v.length > 3 ? v[3] : 1) * parseFloat(cs.fillOpacity || 1) * parseFloat(cs.opacity || 1);
      if (a < 0.05) return;
      const k = v.slice(0, 3).join(','); cols[k] = (cols[k] || 0) + 1;
+     // data-ramp="<group>" (on the mark or an ancestor) declares the fill as one shade in that group's own tint ramp
+     const rp = e.closest('[data-ramp]'); if (rp) { (ramps[k] = ramps[k] || []); const g = rp.getAttribute('data-ramp'); if (!ramps[k].includes(g)) ramps[k].push(g); }
    });
-   out.svgs.push({i, id: s.id || s.getAttribute('class') || ('svg' + i), cols});
+   out.svgs.push({i, id: s.id || s.getAttribute('class') || ('svg' + i), cols, ramps});
  });
  document.querySelectorAll('svg text').forEach(t => {
    const b = t.getBoundingClientRect(); const cs = getComputedStyle(t);
@@ -337,6 +339,10 @@ def browser_checks(port, slugs):
                     close = []
                     for i in range(len(chrom)):
                         for j in range(i + 1, len(chrom)):
+                            ri = s.get("ramps", {}).get(",".join(map(str, chrom[i])), [])
+                            rj = s.get("ramps", {}).get(",".join(map(str, chrom[j])), [])
+                            if set(ri) & set(rj):
+                                continue  # two shades of one group's tint ramp (data-ramp="<group>"): intensity levels, not look-alike categories
                             d = ciede2000(labs[chrom[i]], labs[chrom[j]])
                             if d < 20:
                                 close.append(('#%02x%02x%02x' % chrom[i], '#%02x%02x%02x' % chrom[j], round(d, 1)))
