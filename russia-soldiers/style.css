@@ -143,3 +143,19 @@ h2{font-size:1.2rem}
 .ph img{height:auto;width:100%}
 .ph{flex:1 1 100%}
 }
+.trk{border-top:1px solid var(--line);margin:0}
+.trk>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;min-height:44px}
+.trk>summary::-webkit-details-marker{display:none}
+.trk>summary::before{content:"\25B8";color:var(--gold)}
+.trk[open]>summary::before{content:"\25BE"}
+.trk h3{margin:0;font-size:1.1rem}
+.cnt{display:inline-block;margin-left:6px;font-size:.9rem;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:0 8px}
+.trklist{list-style:none;margin:0 0 8px;padding:0}
+.trklist>li{display:grid;grid-template-columns:64px 1fr;gap:2px 12px;padding:8px 0;border-bottom:1px dotted var(--line)}
+.trklist>li:last-child{border-bottom:0}
+.td{color:var(--muted);font-size:.95rem;white-space:nowrap}
+.tl{line-height:1.45}
+.by{color:var(--r2);font-size:.95rem;margin-left:4px}
+.trklist .how{grid-column:2;margin:0;border-top:0}
+.trklist .how>summary{min-height:32px;font-size:.92rem}
+@media (max-width:600px){.trklist>li{grid-template-columns:1fr}.trklist .how{grid-column:1}}

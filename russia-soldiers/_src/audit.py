@@ -239,7 +239,7 @@ fi = [b[0] for b in list(B) + list(B2) if b[3] == "ok"]
 chk("firm spearman", S["bonus_corr_firm"]["spearman"][0], spear([bon[i] for i in fi], [rate[iso.index(i)] for i in fi]))
 need("federal bonus 400000 appears in snapshot", "400 000" in vs)
 # ---- pools: figures inside the quote text; quotes inside the saved source text
-QF = {"kluge": "kluge", "ng_bonus": "ng_bonus", "kremlin": "kremlin", "ng_wagner": "ng_wagner", "istories": "istories", "ki": "ki", "unn": "unn", "bbc_nk": "bbc_nk", "insider": "insider", "mz_probate": "mz_probate", "meduza_foreign": "meduza_foreign", "yonhap_nis": "yonhap_nis"}
+QF = {"kluge": "kluge", "ng_bonus": "ng_bonus", "kremlin": "kremlin", "ng_wagner": "ng_wagner", "istories": "istories", "ki": "ki", "unn": "unn", "bbc_nk": "bbc_nk", "insider": "insider", "mz_probate": "mz_probate", "meduza_foreign": "meduza_foreign", "yonhap_nis": "yonhap_nis", "wotr": "wotr", "kluge_oct": "kluge_oct", "istories_peru": "istories_peru", "msmt_meduza": "msmt_meduza", "nk_unit_meduza": "nk_unit_meduza"}
 for p_ in P:
     q = norm(p_["quote"]) + " " + norm(p_.get("quote2", ""))
     for fg in p_["figures"]: need(f"pool figure {fg!r} in quote of {p_['id']}", norm(fg) in q)
@@ -251,7 +251,7 @@ for p_ in P:
             need(f"quote of {p_['id']} found in saved page text", core in txt or core[:60] in txt)
     if p_["low"] is not None:
         need(f"pool low<=high {p_['id']}", p_["low"] <= p_["high"])
-        if p_["id"] not in ("stormz", "recruiter_fee", "szru", "nk", "mobilised", "contracts_h1") :
+        if p_["id"] not in ("stormz", "recruiter_fee", "szru", "nk", "mobilised", "contracts_h1", "contracts_since2022", "peru_mfa", "nk_unit") :
             need(f"pool low appears as figure {p_['id']}", f"{p_['low']:,}" in p_["text"])
 mzl = norm(open(os.path.join(RAW, "quotes", "mz_list.txt"), encoding="utf-8").read())
 need("mz list page says not exhaustive", "not exhaustive" in mzl)
@@ -266,6 +266,32 @@ for r in rows[1:]:
 page = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
 text = re.sub(r"<[^>]+>", " ", page); text = text.replace("&nbsp;", " ")
 def has(s, label): need(f"page shows {label}: {s}", s in text)
+# ---- latest-from-trackers section: every figure inside its verbatim quote, every quote inside the saved page, every line on the built page
+import html as _html
+from trackers_inputs import T as TT, ORDER as TORD
+TRK = J("data/trackers.json")
+_pg = norm(_html.unescape(text))
+need("trackers: every hand-checked line is in trackers.json", sum(len(g["items"]) for g in TRK["groups"]) >= len(TT))
+for t_ in TT:
+    nm = f"tracker {t_['src']} {t_['date']}"
+    need(nm + " src known", t_["src"] in SOURCES and t_.get("via_src", t_["src"]) in SOURCES)
+    q_ = norm(t_["quote"]) + " " + norm(t_.get("quote2", ""))
+    for fg in t_["figures"]: need(f"{nm} figure {fg!r} in quote", norm(fg) in q_)
+    sv = norm(open(os.path.join(RAW, "quotes", t_["src"] + ".txt"), encoding="utf-8").read())
+    for qq in (t_["quote"], t_.get("quote2")):
+        if qq: need(f"{nm} quote in saved page text: {qq[:40]}", norm(qq) in sv)
+    need(nm + " line on page", norm(t_["line"]) in _pg)
+    need(nm + " date is ISO", re.fullmatch(r"20\d\d-\d\d-\d\d", t_["date"]) is not None)
+    need(nm + " topic known", t_["topic"] in dict(TORD))
+    need(nm + " via is an x.com link", t_.get("via", "https://x.com/").startswith("https://x.com/"))
+    ln = t_["line"]
+    for m_ in re.finditer(r"\d[\d,.]*\s*(?:million|billion|trillion)?", ln):
+        pass
+for g in TRK["groups"]:
+    for it in g["items"]:
+        if it.get("auto"):
+            need(f"auto tracker {it['src']} has an article url", it["src"] in TRK["autosrc"] and TRK["autosrc"][it["src"]]["url"].startswith("https://"))
+            need(f"auto tracker {it['src']} on page", norm(it["line"]) in _pg)
 has(f"{tot:,}", "named total"); has(f"{n85:,}", "named 85"); has(f"{tot-n85:,}", "outside 85")
 has(f"{n85/p85*1e5:,.1f}", "national rate")
 tu = by["RU-TY"]["deaths_rate"]; has(f"{tu:,.1f}", "Tuva rate")

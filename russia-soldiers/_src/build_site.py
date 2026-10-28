@@ -85,7 +85,7 @@ def values():
     V["probate_regular"] = n0(pr["regular"]); V["probate_late"] = n0(pr["late"])
     return V
 
-GROUPS = [("contracts", "Contract soldiers (volunteers)"), ("mobilised", "Mobilised men"), ("prisoners", "Prisoners"), ("foreigners", "Foreign recruits"), ("northkorea", "North Korean troops")]
+GROUPS = [("contracts", "Contract soldiers (volunteers)"), ("mobilised", "Mobilised men"), ("prisoners", "Prisoners"), ("foreigners", "Foreign recruits"), ("northkorea", "North Korea: troops and workers")]
 def pool_rows():
     items = [p for p in D("pools.json")["items"] if p["low"] and p["unit"] != "roubles"]
     mx = max(p["high"] for p in items)
@@ -106,6 +106,9 @@ def build():
     src = open(os.path.join(ROOT, "index.src.html"), encoding="utf-8").read()
     for k, v in V.items(): src = src.replace("{{" + k + "}}", html.escape(str(v), quote=False))
     src = src.replace("{{pool_rows}}", pool_rows())
+    import build_trackers
+    TR = build_trackers.build(); SOURCES.update(TR["autosrc"])
+    src = src.replace("{{trackers_html}}", build_trackers.render(TR)).replace("{{trackers_generated}}", html.escape(TR["generated"] or "not yet run"))
     order = []
     def cite(m):
         k = m.group(2)
