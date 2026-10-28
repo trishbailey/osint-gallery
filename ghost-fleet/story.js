@@ -40,7 +40,7 @@ function big3(){L.geoJSON(GF.LAND,{filter:f=>Object.values(B3F).includes(f.prope
  Object.values(AE).forEach(e=>{const k=Math.cos(e[0]*Math.PI/180);let nm="",bd=1e9;(GF.WPI||[]).forEach(p=>{const d=(p[2]-e[0])**2+((p[3]-e[1])*k)**2;if(d<bd){bd=d;nm=p[0]}});const tx=esc(nm?title(nm):"Destination")+" (arrival port)";
   L.circleMarker(e,{renderer:PR,radius:4,color:"#0b1526",weight:1.5,fillColor:"#f5f7fa",fillOpacity:1,interactive:false}).addTo(lay);L.circleMarker(e,{renderer:PR,radius:12,stroke:false,fillColor:"#fff",fillOpacity:.01}).bindTooltip(tx,{direction:"top"}).on("click",ev=>{L.DomEvent.stop(ev);if(GF.TT)map.closeTooltip(GF.TT);GF.TT=L.tooltip({direction:"top",offset:[0,-8]}).setLatLng(e).setContent(tx);map.openTooltip(GF.TT);map.once("click movestart",()=>GF.TT&&map.closeTooltip(GF.TT))}).addTo(lay)});
  // country names: small and light; counts in sea callouts joined by leader lines
- const CNP={CHN:[37.5,93],IND:[23.5,77],TUR:[38.6,32.2]},BA=GF.phone()?{CHN:[10,152],IND:[-18,76],TUR:[26,-42]}:{CHN:[16,140],IND:[-4,76],TUR:[38,-32]};GF.BA=BA;
+ const CNP={CHN:[37.5,93],IND:[23.5,77],TUR:[38.6,32.2]},BA=GF.phone()?{CHN:[14,158],IND:[-18,76],TUR:[23,-44]}:{CHN:[19,144],IND:[-4,76],TUR:[38,-32]};GF.BA=BA;
  B3.forEach(c=>{
   L.polyline([B3P[c],BA[c]],{color:B3C[c],weight:1.5,opacity:1,interactive:false}).addTo(lay);
   L.marker(BA[c],{icon:L.divIcon({className:"",iconSize:[0,0],html:`<div class="b3l" style="border-color:${B3C[c]}"><b style="color:${B3C[c]}">${B3N[c]||0}</b><span>${GF.phone()?"":"trips · "}${Math.round(100*(B3N[c]||0)/S.voyages)}%</span></div>`}),interactive:false}).addTo(lay)});

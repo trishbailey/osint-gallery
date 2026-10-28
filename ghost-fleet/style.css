@@ -95,7 +95,7 @@ body.story #map{height:min(62vh,620px)}
 
 .arw{position:absolute;left:0;top:0;pointer-events:none;transition:opacity .15s}
 
-@media(max-width:600px){.b3l{padding:1px 5px}.b3l b{font-size:14px;margin-right:3px}}
+@media(max-width:600px){.b3l{padding:1px 5px;text-align:center}.b3l b,.b3l span{display:block;margin:0}.b3l b{font-size:14px}}
 .arwnote{display:none;position:absolute;left:56px;top:10px;right:10px;z-index:800;pointer-events:none;font-size:13px;line-height:1.3;color:var(--text);background:#0b1526e6;border-left:3px solid #e8423f;padding:4px 8px;border-radius:4px;max-width:420px}
 /* Lead finding: Pacific shuttle */
 .lead{margin:6px 0 18px}.leadh{font-size:23px;line-height:1.3;margin:6px 0 8px;color:var(--text)}.leadh2{font-size:19px;margin:22px 0 6px}
