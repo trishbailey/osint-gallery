@@ -378,6 +378,10 @@ def main():
             msg = f"more than one dashboard folder changed: {touched}"
             (print("NOTE (trish-approved):", msg) if ok else errs.append(msg + " - touch only your own folder, or get Trish's OK"))
         slugs = touched
+        # a change to the checks or shared site files can break any page: re-check every dashboard
+        if any(f.split("/")[0] in SHARED_TOP or f in SHARED_ROOT_FILES for f in files):
+            slugs = all_slugs
+            print("Checks or shared files changed: browser-checking every dashboard")
         print("Dashboards to browser-check:", slugs or "none")
     for slug in slugs:  # per-dashboard figure tests: every number must come from the data
         for t in sorted(glob.glob(os.path.join(ROOT, slug, "_src", "test_*.py"))):
