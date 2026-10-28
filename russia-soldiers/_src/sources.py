@@ -52,7 +52,7 @@ SOURCES = {
    full="All-Russia Population Census 2020 (counted 1 Oct 2021), Rosstat Volume 5 Table 1 on national composition, Dagestan row, as tabulated by genetik.pro and repeated on ru.wikipedia (Population of Dagestan): 102,243 Russians among 3,182,054 residents. The Russian share of all residents is computed from those two figures. The rosstat.gov.ru site could not be reached from this server, so the official workbook was not opened directly."),
  "d3sankey": dict(short="d3-sankey 0.12.3", url="https://github.com/d3/d3-sankey",
    full="Mike Bostock, d3-sankey 0.12.3, BSD 3-Clause licence, vendored locally."),
- "img_billboard": dict(short="Photo: recruitment billboard, Moscow, Aug 2024", url="https://commons.wikimedia.org/wiki/File:Moscow,_war_recruitment_ads_Aug_2024_(pixellated_art).jpg",
+ "img_billboard": dict(short="Photo: recruitment billboard, Moscow, Aug 2024", url="https://commons.wikimedia.org/wiki/File:Moscow,_war_recruitment_ads_Aug_2024_%28pixellated_art%29.jpg",
    full="Photograph \u201cMoscow, war recruitment ads Aug 2024 (pixellated art)\u201d by Retired electrician, 6 Aug 2024, Wikimedia Commons, public domain. Resized to 640 pixels wide."),
  "img_summons": dict(short="Photo: mobilisation summons, 2022", url="https://commons.wikimedia.org/wiki/File:Military_summon_2022_Russia.jpg",
    full="Scan \u201cMilitary summon 2022 Russia\u201d, a 2022 mobilisation summons of the Solntsevo military commissariat, Moscow, with names redacted, credited on Wikimedia Commons to the Russian Ministry of Defence, public domain. Resized to 520 pixels wide."),
