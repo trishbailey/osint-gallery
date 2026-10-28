@@ -116,8 +116,8 @@ details.more[open]>summary:before{content:"\25BE"}
 details.more>summary:hover{color:var(--gold)}
 footer.foot{padding:18px 24px 28px;border-top:1px solid var(--line)}
 footer.foot .brand{font-size:13px}
-sup.fn{font-size:13px;line-height:0;font-weight:700;margin-left:1px}
-sup.fn a{color:var(--link);text-decoration:none;padding:0 1px}
+sup.fn{font-size:13px;line-height:0;font-weight:700;margin-left:3px}
+sup.fn a{color:var(--link);text-decoration:underline;text-underline-offset:2px;padding:0 1px}
 sup.fn a:hover{color:var(--gold)}
 .srcdet{margin-top:14px}
 .srcdet>summary{display:flex;align-items:center;min-height:44px;cursor:pointer;color:var(--muted);font-size:13px;font-weight:700}
@@ -302,10 +302,8 @@ svg.phone-map{overflow:hidden}
 </section>
 <section id="s-record">
   <h2>From the record</h2>
-  <p id="find-line-a">The most water-dependent states have never had their water cut off. Cut-offs follow a political break.<sup class="fn"><a href="#src-1">1</a></sup><sup class="fn"><a href="#src-6">6</a></sup></p>
-  <p class="lvl-note">The small numbers 1 and 6 are sources: 1 is the share of a country's water that comes from abroad, and 6 is the record of cut-offs.</p>
-  <p id="find-line-b">Every state cut-off on record happened while a water treaty was in force.<sup class="fn"><a href="#src-3">3</a></sup><sup class="fn"><a href="#src-6">6</a></sup></p>
-  <p class="lvl-note">The small numbers 3 and 6 are sources: 3 is the list of water treaties, and 6 is the record of cut-offs.</p>
+  <p id="find-line-a">The most water-dependent states have never had their water cut off. Cut-offs follow a political break.<sup class="fn"><a href="#src-1">1</a>, <a href="#src-6">6</a></sup></p>
+  <p id="find-line-b">Every state cut-off on record happened while a water treaty was in force.<sup class="fn"><a href="#src-3">3</a>, <a href="#src-6">6</a></sup></p>
   <details id="record-more" class="more">
     <summary data-expect="note">The charts behind these lines</summary>
     <div id="find-a"></div>
@@ -416,7 +414,7 @@ const NOCOL='#a33a88';
 const WATER='#4ea89e',GLOW='#143f3c',LINE='#6d8f8a',AQINK='#d15ca8',SEL='#5a6ad4';
 const RC=['#d660e1','#3192d8','#4ab635','#6060e1','#9b3b83','#9b583b','#db9476'];
 const CASE='#041018';
-const FN=n=>`<sup class="fn">${String(n).split(',').map(i=>`<a href="#src-${i}">${i}</a>`).join(',')}</sup>`;
+const FN=n=>`<sup class="fn">${String(n).split(',').map(i=>`<a href="#src-${i}">${i}</a>`).join(', ')}</sup>`;
 B.forEach(b=>{b.max=b.dep.length?d3.max(b.dep,d=>d.v):null;b.down=b.dep.filter(d=>d.c!==b.up).sort((a,c)=>c.v-a.v)[0];
  b.geo=(TF[b.id]||[]).flatMap(n=>BAS.concat(AQ).filter(f=>f.properties.Basin_Name===n));
  b.flag=TL.some(t=>t.b===b.name&&(t.k==='cut'||t.k==='threat'));b.lev=TL.some(t=>t.b===b.name&&t.k==='cut')?'cut':TL.some(t=>t.b===b.name&&(t.k==='threat'||t.k==='dam'))?'threat':'none';b.aq=b.type==='aquifer';
@@ -1306,7 +1304,7 @@ function drawFindings(){
  });
  const early=cuts.filter(t=>{const s=strips.find(s=>s.basin===t.b);return s&&yearOf(t.d)<s.year});
  const note=document.getElementById('find-b-note');
- if(early.length===1&&early[0].b==='Indus'&&/April 1948/.test(early[0].h)){note.textContent='One state cut-off is earlier: India, April 1948, before the Indus Waters Treaty of 1960 and before the 4 May 1948 canal agreement.';const lineB=document.getElementById('find-line-b');if(lineB)lineB.innerHTML='Every state cut-off on record happened while a water treaty was in force, except India on the Indus in April 1948.'+FN(3)+FN(6);}
+ if(early.length===1&&early[0].b==='Indus'&&/April 1948/.test(early[0].h)){note.textContent='One state cut-off is earlier: India, April 1948, before the Indus Waters Treaty of 1960 and before the 4 May 1948 canal agreement.';const lineB=document.getElementById('find-line-b');if(lineB)lineB.innerHTML='Every state cut-off on record happened while a water treaty was in force, except India on the Indus in April 1948.'+FN('3,6');}
  else if(early.length)note.textContent='Earlier than the treaty on its river: '+early.map(t=>yearOf(t.d)+' · '+t.h).join(' ');
  else note.remove();
  const hostB=document.getElementById('find-b');
