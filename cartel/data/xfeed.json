@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-27T22:02:45Z",
+ "as_of": "2026-10-28T01:11:36Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,161 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2115247462621249999",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115247462621249999",
+   "created_at": "2026-10-28T01:01:09.000Z",
+   "text": "Cumplimentan orden de aprehensión contra \"El Toro\", miembro de La Familia Michoacana acusado de extorsión https://t.co/MswJYNp5YL",
+   "lang": "es",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "lnfm"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Arrest warrant executed against \"El Toro\", a member of La Familia Michoacana accused of extortion"
+  },
+  {
+   "id": "2115246897178738776",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2115246897178738776",
+   "created_at": "2026-10-28T00:58:54.000Z",
+   "text": "🚨🚔| Atacan a balazos un domicilio en la colonia Gustavo Díaz Ordaz; un grupo armado disparó con armas largas y cortas durante la tarde de este martes. https://t.co/hM5z6EeP54",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "🚨🚔| A home in the Gustavo Díaz Ordaz neighbourhood is shot at; an armed group fired long and short guns on Tuesday afternoon."
+  },
+  {
+   "id": "2115245806118916439",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115245806118916439",
+   "created_at": "2026-10-28T00:54:34.000Z",
+   "text": "Un domicilio de la colonia Gustavo Díaz Ordaz, en #Culiacán, fue tiroteado por un grupo armado con disparos de arma larga y corta desde un vehículo en movimiento; en el lugar no se reportaron personas lesionadas. https://t.co/qiqIMWi6F6",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "A home in the Gustavo Díaz Ordaz neighbourhood of #Culiacán was shot at by an armed group with long and short guns from a moving vehicle; no one was reported injured."
+  },
+  {
+   "id": "2115239624205312239",
+   "handle": "ArmandoInfo",
+   "url": "https://x.com/ArmandoInfo/status/2115239624205312239",
+   "created_at": "2026-10-28T00:30:00.000Z",
+   "text": "Pero la suerte de Saab la enfrentaron primero sus socios. Álvaro Pulido Vargas estaba detenido en Caracas desde abril de 2023 por el caso Pdvsa-Cripto, mientras que Carlos Lizcano también quedó bajo arresto en febrero pasado tras la captura del propio https://t.co/u0hZOU8Q06",
+   "lang": "es",
+   "region_ids": [
+    "VEN-43"
+   ],
+   "country": "VEN",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "regional outlet",
+   "label": null,
+   "text_en": "But Saab's partners met their fate first. Álvaro Pulido Vargas had been held in Caracas since April 2023 over the PDVSA-Crypto case, while Carlos Lizcano was also arrested last February after the capture of"
+  },
+  {
+   "id": "2115236055179833561",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115236055179833561",
+   "created_at": "2026-10-28T00:15:49.000Z",
+   "text": "Reportes aseguran que la expresidenta del DIF Morelos habría sido interceptada en un aeropuerto de Nueva York por llevar una fuerte suma de efectivo sin declarar, Cuauhtémoc Blanco niega la versión https://t.co/nFiupPSkLd https://t.co/M0uduqR0xe",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2732"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Reports say the former head of DIF Morelos was allegedly stopped at a New York airport carrying a large undeclared sum of cash; Cuauhtémoc Blanco denies the account"
+  },
+  {
+   "id": "2115229102114287619",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2115229102114287619",
+   "created_at": "2026-10-27T23:48:11.000Z",
+   "text": "Las lluvias asociadas a El Niño dejan cuatro fallecidos y miles de viviendas dañadas en ocho semanas. En Guayas, equipos de rescate buscan a posibles desaparecidos en el río Yaguachi. https://t.co/4UXLlMmbUy https://t.co/NGHYHETWw8",
+   "lang": "es",
+   "region_ids": [
+    "ECU-1280"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Rains linked to El Niño have left four dead and thousands of homes damaged in eight weeks. In Guayas, rescue teams are searching for possible missing people in the Yaguachi river."
+  },
+  {
+   "id": "2115217154949984678",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115217154949984678",
+   "created_at": "2026-10-27T23:00:43.000Z",
+   "text": "BALEAN CASA PRESUNTAMENTE LIGADA AL GOBERNADOR CON LICENCIA RUBÉN ROCHA MOYA EN CULIACÁN Medios locales señalan que la vivienda habría servido como casa de campaña para el funcionario sinaloense. Un grupo armado atacó a balazos una vivienda de la colonia Chapultepec, en https://…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "GUNMEN SHOOT AT HOUSE ALLEGEDLY LINKED TO GOVERNOR ON LEAVE RUBÉN ROCHA MOYA IN CULIACÁN Local media say the house reportedly served as a campaign office for the Sinaloa official. An armed group fired on a house in the Chapultepec neighbourhood, in"
+  },
+  {
+   "id": "2115211941606244622",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115211941606244622",
+   "created_at": "2026-10-27T22:40:00.000Z",
+   "text": "LUZ MARÍA FAJARDO: LA MUJER A QUIEN EQUIPARON EN PODER CON EL CHAPO GUZMÁN, SU AMIGA Y A QUIEN LE MATARON A DOS HIJOS La mujer a quien las autoridades de EEUU compararon en poder con Joaquín Guzmán Loera, líder del Cártel de Sinaloa, traficaba coca desde Colombia. En la https://…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "LUZ MARÍA FAJARDO: THE WOMAN WHOSE POWER WAS LIKENED TO EL CHAPO GUZMÁN'S, HIS FRIEND, AND WHOSE TWO SONS WERE KILLED The woman US authorities compared in power to Joaquín Guzmán Loera, leader of the Sinaloa Cartel, trafficked cocaine from Colombia. In the"
+  },
+  {
+   "id": "2115206908688941285",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2115206908688941285",
+   "created_at": "2026-10-27T22:20:00.000Z",
+   "text": "Cae \"El Isra\", segundo al mando de “Los Rusos”; lo relacionan con privación de la libertad de \"El Gordo Gadaffi\", cantante de corridos De acuerdo con la Fiscalía de Sonora, al detenido se le relaciona con la privación de la libertad de Mirna Janeth \"N\" y del cantante, quienes",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2712"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "\"El Isra\", second in command of \"Los Rusos\", is arrested; he is linked to the abduction of \"El Gordo Gadaffi\", a corridos singer. According to the Sonora Prosecutor's Office, the detainee is linked to the deprivation of liberty of Mirna Janeth \"N\" and of the singer, who"
+  },
   {
    "id": "2115194328725553552",
    "handle": "infobaemexico",
@@ -2857,58 +3012,6 @@
    "source_type": "local outlet",
    "label": null,
    "text_en": "El Nenuco, 29, is charged with aggravated homicide, criminal association and crimes against members of the state's police institutions, and is also under investigation for human smuggling."
-  },
-  {
-   "id": "2112710285710778512",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2112710285710778512",
-   "created_at": "2026-10-21T00:59:19.000Z",
-   "text": "Ataque a balazos deja sin vida a un motociclista en Mazatlán La Emisión 6PM de “Los Noticieristas” con Luis Alberto Díaz y todo su equipo. https://t.co/AdT7sdhz08",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "Shooting kills a motorcyclist in Mazatlán (6PM edition of \"Los Noticieristas\" with Luis Alberto Díaz and team)"
-  },
-  {
-   "id": "2112699292963967075",
-   "handle": "ZETATijuana",
-   "url": "https://x.com/ZETATijuana/status/2112699292963967075",
-   "created_at": "2026-10-21T00:15:38.000Z",
-   "text": "La fiscal Ma. Elena Andrade, informó que el presunto padrastro del niño de dos años se encuentra detenido y podría ser investigado por omisión de cuidados. La madre continúa sin ser localizada, mientras el pequeño permanece en estado crítico. https://t.co/1XFHc7k0T1",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "Prosecutor Ma. Elena Andrade said the alleged stepfather of the two-year-old boy is in custody and may be investigated for neglect. The mother has still not been located, while the child remains in critical condition."
-  },
-  {
-   "id": "2112687940346224644",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2112687940346224644",
-   "created_at": "2026-10-20T23:30:31.000Z",
-   "text": "➡️ Detienen en Sonora a presunto feminicida de adulta mayor atacada en su domicilio en Guasave. 🚨🚔| Detienen en Sonora a presunto feminicida de una adulta mayor en Guasave. Rosario Felipe “N”, de 34 años, era buscado por el caso de Cecilia “N”, de 75 años, quien fue atacada http…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711",
-    "MEX-2712"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ Alleged femicide suspect in the killing of an elderly woman attacked at home in Guasave arrested in Sonora. Rosario Felipe \"N\", 34, was wanted in the case of Cecilia \"N\", 75, who was attacked…"
   }
  ]
 }
