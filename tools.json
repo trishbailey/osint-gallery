@@ -189,6 +189,13 @@
       "icon": "/icons/africa-brief.svg",
       "enterUrl": "https://beacon-tools.onrender.com/africa-brief/",
       "status": "live"
+    },
+    {
+      "id": "jihadist-groups",
+      "name": "Jihadist Groups",
+      "blurb": "Who's who of 45 jihadist groups in four families: a map, who leads each group, links between groups, the last 30 days of major incidents and the momentum of each group.",
+      "enterUrl": "https://beacon-tools.onrender.com/jihadist-groups/",
+      "status": "live"
     }
   ]
 }
