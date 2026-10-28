@@ -589,7 +589,7 @@ function placer(svg,w,h,inset){const boxes=[];const blk=blockers(svg);svg.node()
   let bb=t.node().getBBox();const W=bb.width+14,H=Math.max(20,bb.height+10);
   if(cls==='lab-dam'&&svg.property('tightDams')){sub.attr('data-ax',x).attr('data-ay',y);if(seatDam(sub,1,blk,boxes,w,h))return true;sub.remove();return false}
   if(cls==='lab-dam'){sub.attr('data-ax',x).attr('data-ay',y);if(seatKey(svg,sub,x,y,blk,boxes,w,h))return true;sub.remove();return false}
-  const C=[[0,0]];const radii=svg.property('nearLabels')?[12,22,34,48,64]:[12,22,34,48,64,82,104,130,160,196,236,280,330];for(const r of radii){for(let a=0;a<24;a++)C.push([r*Math.cos(a*Math.PI/12),r*Math.sin(a*Math.PI/12)])}
+  const C=[[0,0]];const radii=svg.property('nearLabels')?[12,24,40]:[12,22,34,48,64,82,104,130,160,196,236,280,330];for(const r of radii){for(let a=0;a<24;a++)C.push([r*Math.cos(a*Math.PI/12),r*Math.sin(a*Math.PI/12)])}
   const edges=[];let edge=inset==null?2:inset;if(W>w-2*edge)edge=Math.max(8,Math.floor((w-W)/2)-1);if(H>h-2*edge)edge=Math.max(8,Math.min(edge,Math.floor((h-H)/2)-1));edges.push(Math.max(2,edge));if(edges[0]>8)edges.push(8);
   const commit=(dx,dy)=>{const cx=x+dx,cy=y+dy;const bx={x:cx-W/2,y:cy-H/2,w:W,h:H};boxes.push(bx);if(Math.hypot(dx,dy)>14)sub.insert('line',':first-child').attr('x1',x).attr('y1',y).attr('x2',cx).attr('y2',cy).attr('stroke','#9aa6b8').attr('stroke-width',1);t.selectAll('tspan').attr('x',cx);bb=t.node().getBBox();t.attr('y',cy-(bb.y+bb.height/2))};
   let best=null;const f=frameOf();
@@ -597,7 +597,7 @@ function placer(svg,w,h,inset){const boxes=[];const blk=blockers(svg);svg.node()
   if(!best){sub.remove();return false}commit(best.dx,best.dy);return true}}}
 function placePhone(svg,w,h){const boxes=[];const blk=blockers(svg);svg.node().__blk=blk;const ov=(a,b)=>a.x<b.x+b.w&&b.x<a.x+a.w&&a.y<b.y+b.h&&b.y<a.y+a.h;
  return {block(x,y,r){boxes.push({x:x-r-3,y:y-r-3,w:2*r+6,h:2*r+6})},
-  add(g,x,y,text,style,cls,land){const label=String(text||'').replace(/\n/g,' ').trim();if(!label)return false;const sub=g.append('g').attr('class',cls||null);const t=sub.append('text').attr('text-anchor','middle').text(label);if(style)style(t);t.attr('stroke','none').attr('stroke-width',0);const bb=t.node().getBBox();const W=bb.width+12,H=Math.max(18,bb.height+8);if(cls==='lab-dam'){sub.attr('data-ax',x).attr('data-ay',y);if(seatKey(svg,sub,x,y,blk,boxes,w,h))return true;sub.remove();return false}if(!(bb.width>0)||W>w-8){sub.remove();return false}const tries=[[0,0]];const radii=svg.property('nearLabels')?[16,28,42,58]:[16,28,42,58,76,96,120,146];for(const r of radii){for(let a=0;a<16;a++)tries.push([+(r*Math.cos(a*Math.PI/8)).toFixed(1),+(r*Math.sin(a*Math.PI/8)).toFixed(1)])}
+  add(g,x,y,text,style,cls,land){const label=String(text||'').replace(/\n/g,' ').trim();if(!label)return false;const sub=g.append('g').attr('class',cls||null);const t=sub.append('text').attr('text-anchor','middle').text(label);if(style)style(t);t.attr('stroke','none').attr('stroke-width',0);const bb=t.node().getBBox();const W=bb.width+12,H=Math.max(18,bb.height+8);if(cls==='lab-dam'){sub.attr('data-ax',x).attr('data-ay',y);if(seatKey(svg,sub,x,y,blk,boxes,w,h))return true;sub.remove();return false}if(!(bb.width>0)||W>w-8){sub.remove();return false}const tries=[[0,0]];const radii=svg.property('nearLabels')?[14,28,42]:[16,28,42,58,76,96,120,146];for(const r of radii){for(let a=0;a<16;a++)tries.push([+(r*Math.cos(a*Math.PI/8)).toFixed(1),+(r*Math.sin(a*Math.PI/8)).toFixed(1)])}
    const put=(dx,dy,needLand)=>{let cx=x+dx,cy=y+dy;cx=Math.max(4+W/2,Math.min(w-4-W/2,cx));cy=Math.max(4+H/2,Math.min(h-4-H/2,cy));const bx={x:cx-W/2,y:cy-H/2,w:W,h:H};if(bx.x<2||bx.y<2||bx.x+W>w-2||bx.y+H>h-2)return false;if(boxes.some(b=>ov(b,bx)))return false;if(blk.hits(bx))return false;if(needLand&&land&&!land(cx,cy))return false;boxes.push(bx);t.attr('x',cx).attr('y',cy-(bb.y+bb.height/2));return true};
    for(const needLand of (land?[true,false]:[false])){for(const [dx,dy] of tries){if(put(dx,dy,needLand))return true}}sub.remove();return false}}}
 const DAMSAY={
@@ -681,22 +681,22 @@ const CFG={
   rivers:[['Syr Darya',['Syr Darya'],[66.5,44.6],1],['Naryn',['Naryn'],[74.5,41.6],0],['Amu Darya',['Amu Darya'],[61.8,40.2],1],['Panj',['Panj'],[70.0,37.4],0]],
   lakes:[['Aral Sea','South Aral Sea',[59.6,45.2]]],marks:[],
   cap:'Kyrgyzstan and Tajikistan time the releases. Most dependent: {d:7}; {d:6}.'},
- '4,12':{start:{4:'dam:7209',12:[98.85,25.9]},mainDams:[7209],
+ '4,12':{start:{4:'dam:7209',12:[98.85,25.9]},mainDams:[],
   rivers:[['Mekong',['Mekong','Lancang'],[104.5,16.4],1],['Salween',['Salween','Nu'],[97.7,19.2],1]],
   lakes:[['Tonlé Sap','Tonlé Sap',[104.0,12.9]]],marks:[],
   cap:'China holds the upper Mekong. Most dependent: {d:4}; {d:12}.'},
- '14,15,13,19':{start:{14:[-10.73,9.08],15:[-11.9,10.6],13:[16.1,-12.6],19:[24.3,-11.4]},mainDams:[366,63],
+ '14,15,13,19':{start:{14:[-10.73,9.08],15:[-11.9,10.6],13:[16.1,-12.6],19:[24.3,-11.4]},mainDams:[],
   rivers:[['Niger',['Niger'],[-2.0,15.6],1],['Senegal',['Sénégal','Bafing'],[-13.6,15.4],1],['Okavango',['Okavango','Cubango'],[19.5,-17.9],1],['Zambezi',['Zambezi'],[23.2,-15.6],1]],
   lakes:[['Lake Kariba',null,[27.9,-17.0]]],marks:[],
   cap:'Guinea, Angola and Zambia hold the headwaters. Most dependent: {d:14}; {d:15}; {d:13}.'},
- '10':{start:{10:'dam:153'},mainDams:[153],
+ '10':{start:{10:'dam:153'},mainDams:[],
   rivers:[['Colorado',['Colorado'],[-112.3,36.3],1],['Rio Grande',['Rio Grande','Grande'],[-106.8,32.3],1],['Conchos',['Conchos'],[-105.6,28.6],0]],
   lakes:[['Lake Mead',null,[-114.4,36.3]],['Lake Powell',null,[-111.0,37.2]]],marks:[],
   cap:'The United States holds the Colorado. Most dependent: {d:10}'+FN(10)+'.'},
- '18,21':{start:{18:[-51.0,-20.1]},mainDams:[30],
+ '18,21':{start:{18:[-51.0,-20.1]},mainDams:[],
   rivers:[['Paraná',['Paraná','Paranaíba'],[-53.5,-22.6],1],['Uruguay',['Uruguay'],[-56.0,-29.2],1]],lakes:[],marks:[],
   cap:'Brazil shares the Itaipu Dam with Paraguay. Most dependent: {d:18}.'},
- '16,17,11':{start:{16:[8.5,47.95],17:[9.4,47.6],11:[33.5,55.9]},mainDams:[54],
+ '16,17,11':{start:{16:[8.5,47.95],17:[9.4,47.6],11:[33.5,55.9]},mainDams:[],
   rivers:[['Danube',['Danube','Donau'],[18.9,46.2],1],['Rhine',['Rhine','Rhein','Rhin'],[7.6,49.6],1],['Dnipro',['Dnipro','Dnepre'],[30.6,50.6],1]],
   lakes:[['Lake Constance',null,[9.35,47.62]]],marks:[],
   cap:'Germany, Switzerland and Russia hold the headwaters. Most dependent: {d:16}; {d:17}; {d:11}.'}
@@ -720,7 +720,7 @@ function arrowSay(ids){const key=cfgKey(ids.map(Number));const C=CFG[key]||{rive
  const line=dam+' controls flow to '+who;return line.length<=34?line:dam+' controls the flow'}
 function arrowNote(text){return text?`<p class="side-note arrow-note">${arrowSwatch()}<span>${text}</span></p>`:''}
 function setArrowNotes(lines){const el=document.getElementById('arrow-note');if(el)el.innerHTML=(lines||[]).filter(Boolean).map(arrowNote).join('')}
-function keyNotes(){return `<div id="arrow-note"></div><p class="side-note"><span class="band" aria-hidden="true"></span><span>Brighter band = more river water${FN(11)}</span></p><p class="side-note">Arrow follows the river from the dam${FN(9)}</p><p class="side-note"><span class="tri">▲</span> Can cut off a downstream country${FN(5)}</p><p class="side-note"><span class="dot" aria-hidden="true"></span> Other dam</p><p class="side-note"><svg width="22" height="14" aria-hidden="true"><rect x="1" y="1" width="20" height="12" fill="none" stroke="${AQINK}" stroke-width="1.6" stroke-dasharray="3 2"/></svg> Shared aquifer${FN(4)}</p>${isPhone()?'<p class="side-note">Other places are listed under the map</p>':'<p class="side-note"><svg width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5" fill="none" stroke="#c8a24a" stroke-width="2"/></svg> Gold ring: name on hover</p>'}`}
+function keyNotes(){return `<div id="arrow-note"></div><p class="side-note"><span class="band" aria-hidden="true"></span><span>Brighter band = more river water${FN(11)}</span></p><p class="side-note">Arrow follows the river from the dam${FN(9)}</p><p class="side-note"><span class="tri">▲</span> Can cut off a downstream country${FN(5)}</p><p class="side-note"><span class="dot" aria-hidden="true"></span> Other dam</p><p class="side-note"><svg width="22" height="14" aria-hidden="true"><rect x="1" y="1" width="20" height="12" fill="none" stroke="${AQINK}" stroke-width="1.6" stroke-dasharray="3 2"/></svg> Shared aquifer${FN(4)}</p>${isPhone()?'<p class="side-note">Other places are listed under the map</p>':''}'}`}
 function hydroSegs(ids){const use=ids.filter(id=>!(id===7&&ids.includes(6)));const seen=new Set();const out=[];
  use.forEach(id=>{(HY[id]||HY[String(id)]||[]).forEach(seg=>{const k=seg.join(',');if(seen.has(k))return;seen.add(k);let x=seg[1]/100,y=seg[2]/100;const pts=[[x,y]];for(let i=3;i<seg.length;i+=2){x+=seg[i]/100;y+=seg[i+1]/100;pts.push([x,y])}out.push({q:seg[0],pts})})});
  return out}
@@ -991,6 +991,28 @@ function arrowEnds(b,C){
 }
 function worldCfg(){const C={rivers:[],lakes:[],marks:[],start:{},mainDams:[]};Object.values(CFG).forEach(c=>{(c.rivers||[]).forEach(r=>{if(!C.rivers.some(x=>x[0]===r[0]))C.rivers.push(r)});(c.lakes||[]).forEach(l=>C.lakes.push(l));(c.marks||[]).forEach(m=>C.marks.push(m));Object.assign(C.start,c.start||{});(c.mainDams||[]).forEach(id=>{if(!C.mainDams.includes(id))C.mainDams.push(id)})});return C}
 const CITIES=[['Cairo',31.24,30.04],['Khartoum',32.56,15.50],['Addis Ababa',38.75,9.03],['Kampala',32.58,0.35],['Baghdad',44.37,33.34],['Damascus',36.28,33.51],['Ankara',32.86,39.93],['Tehran',51.39,35.69],['Amman',35.93,31.95],['Islamabad',73.05,33.69],['Delhi',77.21,28.61],['Lahore',74.36,31.52],['Dhaka',90.41,23.81],['Tashkent',69.28,41.30],['Dushanbe',68.77,38.56],['Bishkek',74.59,42.87],['Kabul',69.17,34.53],['Bangkok',100.50,13.76],['Phnom Penh',104.93,11.56],['Vientiane',102.63,17.98],['Kunming',102.83,25.04],['Bamako',-8.00,12.64],['Dakar',-17.47,14.72],['Niamey',2.11,13.51],['Lusaka',28.32,-15.42],['Harare',31.05,-17.83],['Denver',-104.99,39.74],['Mexico City',-99.13,19.43],['Brasília',-47.88,-15.79],['Asunción',-57.63,-25.26],['Vienna',16.37,48.21],['Budapest',19.04,47.50],['Kyiv',30.52,50.45]];
+function tidyWorld(svg){
+ const root=svg.node(); if(!root) return;
+ const box=el=>{const b=el.getBBox(); return {x:b.x,y:b.y,w:b.width,h:b.height}};
+ const hit=(a,b)=>a.w>1&&b.w>1&&a.x<b.x+b.w-0.4&&b.x<a.x+a.w-0.4&&a.y<b.y+b.h-0.4&&b.y<a.y+a.h-0.4;
+ root.querySelectorAll('g.lab-flow').forEach(g=>{const line=g.querySelector('line'); if(!line) return; const len=Math.hypot(+line.getAttribute('x2')-+line.getAttribute('x1'),+line.getAttribute('y2')-+line.getAttribute('y1')); if(len>42) g.remove()});
+ const markers=[...root.querySelectorAll('path[data-ink="dam"]')].map(el=>{const b=box(el); const m=/translate\(\s*([-0-9.eE+]+)[ ,]\s*([-0-9.eE+]+)/.exec(el.getAttribute('transform')||''); if(m){b.x+=+m[1]; b.y+=+m[2]} return b});
+ let guard=0;
+ while(guard++<80){
+  const texts=[...root.querySelectorAll('.lab-layer text')].filter(t=>{try{return t.getBBox().width>1}catch(e){return false}});
+  let removed=false;
+  for(const t of texts){
+   if(t.closest('g.lab-dam')) continue;
+   const tb=box(t);
+   const bad=markers.some(m=>hit(tb,m))||texts.some(o=>o!==t&&hit(tb,box(o)));
+   if(!bad) continue;
+   const g=t.closest('g');
+   if(g&&g.parentNode&&!g.classList.contains('lab-layer')) g.remove(); else t.remove();
+   removed=true; break;
+  }
+  if(!removed) break;
+ }
+}
 function paintContext(g,pr,bs,w,h){
  const nm=s=>String(s||'').replace('United States of America','United States').replace('Democratic Republic of the Congo','DR Congo').replace('The former Yugoslav Republic of Macedonia','North Macedonia');
  const inFrame=(xy)=>xy&&xy[0]>28&&xy[1]>22&&xy[0]<w-28&&xy[1]<h-22;
@@ -1016,7 +1038,21 @@ function paintContext(g,pr,bs,w,h){
  land.forEach(d=>{if(nLand>=8||have.has(d.name))return;const hw=Math.max(22,d.name.length*4.2);const p=nudge(d.x,d.y,hw);if(!p)return;if(p[0]-hw<8||p[0]+hw>w-8||p[1]<18||p[1]>h-14)return;boxes.push({x:p[0]-hw,y:p[1]-10,w:hw*2,h:18});have.add(d.name);nLand++;lg.append('text').attr('x',p[0]).attr('y',p[1]).attr('text-anchor','middle').style('fill','#8eb4d4').style('font-size','13px').style('font-weight','600').text(d.name)});
  const centre=d3.geoCentroid({type:'FeatureCollection',features:bs.flatMap(b=>b.geo)});
  const mid=pr(centre);const picked=CITIES.map(c=>({name:c[0],xy:pr([c[1],c[2]])})).filter(c=>inFrame(c.xy)).sort((a,b)=>Math.hypot(a.xy[0]-mid[0],a.xy[1]-mid[1])-Math.hypot(b.xy[0]-mid[0],b.xy[1]-mid[1])).slice(0,5);
- picked.forEach(c=>{if(have.has(c.name))return;const hw=Math.max(22,c.name.length*4.2);const p=nudge(c.xy[0],c.xy[1]-12,hw);if(!p)return;if(p[0]-hw<8||p[0]+hw>w-8||p[1]<18||p[1]>h-14)return;boxes.push({x:p[0]-hw,y:p[1]-10,w:hw*2,h:18});have.add(c.name);lg.append('circle').attr('cx',c.xy[0]).attr('cy',c.xy[1]).attr('r',3.2).attr('fill','#7ea3c9').attr('stroke','#16324f').attr('stroke-width',1);lg.append('text').attr('x',p[0]).attr('y',p[1]).attr('text-anchor','middle').style('fill','#c5daf0').style('font-size','13px').style('font-weight','600').text(c.name)});
+ const dotHitsText=(cx,cy,pad)=>{return g.selectAll('text').nodes().some(t=>{let b;try{b=t.getBBox()}catch(e){return false}if(!(b.width>1))return false;const nx=Math.max(b.x,Math.min(cx,b.x+b.width)), ny=Math.max(b.y,Math.min(cy,b.y+b.height));return Math.hypot(cx-nx,cy-ny)<pad})};
+ picked.forEach(c=>{if(have.has(c.name)||dotHitsText(c.xy[0],c.xy[1],5))return;const hw=Math.max(22,c.name.length*4.2);let p=nudge(c.xy[0],c.xy[1]-18,hw);if(!p)return;if(p[0]-hw<8||p[0]+hw>w-8||p[1]<18||p[1]>h-14)return;const text=lg.append('text').attr('x',p[0]).attr('y',p[1]).attr('text-anchor','middle').style('fill','#c5daf0').style('font-size','13px').style('font-weight','600').text(c.name);let y=+text.attr('y');for(let step=0;step<8&&dotHitsText(c.xy[0],c.xy[1],5);step++){y-=6;text.attr('y',y)}const wetBox=()=>{const b=text.node().getBBox();return [[b.x,b.y],[b.x+b.width,b.y],[b.x+b.width/2,b.y+b.height/2],[b.x,b.y+b.height],[b.x+b.width,b.y+b.height]].some(pt=>wet(pt[0],pt[1]))};if(dotHitsText(c.xy[0],c.xy[1],5)||y<16||wetBox()){text.remove();return}boxes.push({x:p[0]-hw,y:y-10,w:hw*2,h:18});have.add(c.name);lg.append('circle').attr('cx',c.xy[0]).attr('cy',c.xy[1]).attr('r',3.2).attr('fill','#7ea3c9').attr('stroke','#16324f').attr('stroke-width',1)});
+ let guard=0;
+ while(guard++<24){
+  const all=[...g.selectAll('text').nodes()].filter(t=>{try{return t.getBBox().width>1}catch(e){return false}}).reverse();
+  const box=t=>{const b=t.getBBox(); return {x:b.x,y:b.y,w:b.width,h:b.height}};
+  const hit=(a,b)=>a.x<b.x+b.w-0.4&&b.x<a.x+a.w-0.4&&a.y<b.y+b.h-0.4&&b.y<a.y+a.h-0.4;
+  let removed=false;
+  for(const t of all){
+   if(!t.isConnected||!t.closest('.lab-context')) continue;
+   const mine=box(t);
+   if(all.some(o=>o!==t&&o.isConnected&&hit(mine,box(o)))){t.remove();removed=true;break}
+  }
+  if(!removed) break;
+ }
 }
 function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));const feats=bs.flatMap(b=>b.geo);
  const sparse=!!opt.sparse;const zoomable=!opt.key;let fitFeats=(bs.some(b=>!b.aq)?bs.filter(b=>!b.aq):bs).flatMap(b=>b.geo);
@@ -1117,17 +1153,17 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
  const damBelongs=say=>{const s=String(say||'').toLowerCase();const owners=bs.filter(b=>!b.aq);const named=owners.filter(b=>C.rivers.some(r=>String(b.name).toLowerCase().includes(String(r[0]).toLowerCase())));const pool=named.length?named:owners;return pool.some(b=>{const rs=C.rivers.filter(r=>String(b.name).toLowerCase().includes(String(r[0]).toLowerCase()));if(!rs.length)return true;return rs.some(r=>s.includes(String(r[0]).toLowerCase()))})};
  const labs=[];const damNotes=[];const places=[];const damPts=[];
  const addPlace=(title,detail,pri)=>{title=String(title||'').replace(/\s+/g,' ').trim();if(!title||places.some(q=>q.title===title))return;places.push({title,detail,pri})};
- const cue=(x,y,html,r)=>{if(!(x>=8&&y>=8&&x<=w-8&&y<=h-8))return;const gg=layer.append('g').attr('class','cue').style('cursor','pointer');
+ const cue=(x,y,html,r)=>{if(opt.world)return;if(!(x>=8&&y>=8&&x<=w-8&&y<=h-8))return;const gg=layer.append('g').attr('class','cue').style('cursor','pointer');
   gg.append('circle').attr('cx',x).attr('cy',y).attr('r',(r||6)+1.5).attr('fill','none').attr('stroke',CASE).attr('stroke-width',4);
   gg.append('circle').attr('cx',x).attr('cy',y).attr('r',r||6).attr('fill','none').attr('stroke','#c8a24a').attr('stroke-width',2);
   gg.append('circle').attr('cx',x).attr('cy',y).attr('r',sparse?26:Math.max(14,(r||6)+8)).attr('fill','transparent');
   gg.on('mousemove',e=>{if(!pinned)tip(e,html)}).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement)).on('click',e=>{if(!isPhone())return;e.stopPropagation();tip(e,html);pinned=true});P.block(x,y,(r||6)+6);return gg};
  dm.forEach(d=>{let coord=d.geometry.coordinates;const gid=d.properties.GDW_ID;if(DAMFIX[gid])coord=DAMFIX[gid];const main=(C.mainDams||[]).includes(gid);if(main)coord=snapDam(coord,hydroIds);const [x,y]=pr(coord);const hot=!!CONTESTED[gid];
   const say=damSay(d);const cap=(+d.properties.CAP_MCM/1000).toFixed(1);const yr=d.properties.YEAR_DAM>0?' · opened '+d.properties.YEAR_DAM:'';
-  if(opt.basin&&!main){const gg=layer.append('g').attr('class','cue lay-dam lay-minor').style('display','none');gg.append('circle').attr('class','minor-dot').attr('cx',x).attr('cy',y).attr('r',2.6).attr('fill',DOT).attr('stroke','none');gg.append('circle').attr('cx',x).attr('cy',y).attr('r',12).attr('fill','transparent');gg.on('mousemove',e=>{if(!pinned)tip(e,`<b>${say}</b><br>${cap} km³ storage${yr}`)}).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement)).on('click',e=>{if(!isPhone())return;e.stopPropagation();tip(e,`<b>${say}</b><br>${cap} km³ storage${yr}`);pinned=true});if(DAMSAY[gid])addPlace(shortDam(gid,say),`<b>${say}</b><br>${cap} km³ storage${yr}`,3);return}if(!opt.basin&&!main){const gg=layer.append('g').attr('class','lay-dam lay-minor').style('pointer-events','none');gg.append('circle').attr('class','minor-dot').attr('cx',x).attr('cy',y).attr('r',sparse?2.2:3.1).attr('fill',DOT).attr('stroke','none');return}if(sparse&&!opt.basin&&!damBelongs(say)){if(DAMSAY[gid]&&!opt.sheet)addPlace(shortDam(gid,say),`<b>${say}</b><br>${cap} km³ storage${yr}`,1);return}damPts.push([x,y]);
+  if(opt.basin&&!main){const gg=layer.append('g').attr('class','cue lay-dam lay-minor').style('display','none');gg.append('circle').attr('class','minor-dot').attr('cx',x).attr('cy',y).attr('r',2.6).attr('fill',DOT).attr('stroke','none');gg.append('circle').attr('cx',x).attr('cy',y).attr('r',12).attr('fill','transparent');gg.on('mousemove',e=>{if(!pinned)tip(e,`<b>${say}</b><br>${cap} km³ storage${yr}`)}).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement)).on('click',e=>{if(!isPhone())return;e.stopPropagation();tip(e,`<b>${say}</b><br>${cap} km³ storage${yr}`);pinned=true});if(DAMSAY[gid])addPlace(shortDam(gid,say),`<b>${say}</b><br>${cap} km³ storage${yr}`,3);return}if(!opt.basin&&!main){if(opt.world)return;const gg=layer.append('g').attr('class','lay-dam lay-minor').style('pointer-events','none');gg.append('circle').attr('class','minor-dot').attr('cx',x).attr('cy',y).attr('r',sparse?2.2:3.1).attr('fill',DOT).attr('stroke','none');return}if(sparse&&!opt.basin&&!damBelongs(say)){if(DAMSAY[gid]&&!opt.sheet)addPlace(shortDam(gid,say),`<b>${say}</b><br>${cap} km³ storage${yr}`,1);return}damPts.push([x,y]);
   const gg=layer.append('g').attr('class','cue lay-dam').style('cursor','pointer');
   gg.append('path').attr('data-ink','dam').attr('d',d3.symbol(d3.symbolTriangle,180)()).attr('transform',`translate(${x},${y})`).attr('fill',AMBER).attr('stroke',CASE).attr('stroke-width',1.6);
-  if(!sparse&&!opt.basin){gg.append('circle').attr('cx',x).attr('cy',y).attr('r',main?11:8).attr('fill','none').attr('stroke',CASE).attr('stroke-width',4);
+  if(!sparse&&!opt.basin&&!opt.world){gg.append('circle').attr('cx',x).attr('cy',y).attr('r',main?11:8).attr('fill','none').attr('stroke',CASE).attr('stroke-width',4);
    gg.append('circle').attr('cx',x).attr('cy',y).attr('r',main?9:6.5).attr('fill','none').attr('stroke','#c8a24a').attr('stroke-width',2)}
   gg.append('circle').attr('cx',x).attr('cy',y).attr('r',sparse?22:16).attr('fill','transparent');
   gg.on('mousemove',e=>{if(!pinned)tip(e,`<b>${say}</b><br>${cap} km³ storage${yr}`)}).on('mouseleave',e=>untip(e.target&&e.target.ownerSVGElement)).on('click',e=>{if(!isPhone())return;e.stopPropagation();tip(e,`<b>${say}</b><br>${cap} km³ storage${yr}`);pinned=true});
@@ -1161,7 +1197,7 @@ if(sparse){g.selectAll('.lay-lever').raise();
   const seen=[];
   const prefRe=/^(Nile|Euphrates|Indus|Mekong|Danube|Colorado|Paraná|Amu Darya|Syr Darya|Zambezi|Senegal|Niger|Dnipro|Rhine|Jordan|Helmand|Ganges|Brahmaputra|Salween|Okavango|Tigris|Uruguay)$/;
   const prefs=[];bs.filter(b=>!b.aq).forEach(b=>{const named=C.rivers.filter(r=>r[3]&&String(b.name).toLowerCase().includes(String(r[0]).toLowerCase()));const pref=named[0]||C.rivers.find(r=>r[3]&&prefRe.test(r[0])&&b.geo.some(f=>d3.geoContains(f,r[2])))||C.rivers.find(r=>r[3]&&b.geo.some(f=>d3.geoContains(f,r[2])));if(pref)prefs.push({b,pref})});const prefNames=new Set(prefs.map(p=>p.pref[0]));prefs.forEach(({b,pref})=>{const [n,_,c]=pref;let [x,y]=pr(c);if(!(x>=12&&y>=12&&x<=w-12&&y<=h-12)){const cc=d3.geoCentroid({type:'FeatureCollection',features:b.geo});[x,y]=pr(cc)}if(!P.add(lg,x,y,n,t=>{stP(t);t.style('fill','#e6e9ef').style('font-style','italic').style('font-weight',600)},'lab-flow')){const cc=pr(d3.geoCentroid({type:'FeatureCollection',features:b.geo}));if(!(Math.hypot(cc[0]-x,cc[1]-y)>30&&P.add(lg,cc[0],cc[1],n,t=>{stP(t);t.style('fill','#e6e9ef').style('font-style','italic').style('font-weight',600)},'lab-flow')))addPlace(n,`<b>${n}</b>`,2)}});C.rivers.filter(r=>r[3]&&!prefNames.has(r[0])&&bs.some(b=>!b.aq&&b.geo.some(f=>d3.geoContains(f,r[2])))).forEach(r=>addPlace(r[0],`<b>${r[0]}</b>`,3));
-  AR.forEach(b=>[b.up,b.down.c].forEach(name=>{const q=ptOf(b,name);if(!q||!strict(q))return;const [x,y]=pr(q);if(seen.some(s=>s.n===name&&Math.hypot(s.x-x,s.y-y)<70))return;seen.push({n:name,x,y});if(!P.add(lg,x,y,nm(name),t=>{stP(t);t.style('fill','#e6e9ef')},null,(cx,cy)=>inCountry(pr,name,cx,cy)))addPlace(nm(name),`<b>${nm(name)}</b>`,2)}));
+  if(!opt.world)AR.forEach(b=>[b.up,b.down.c].forEach(name=>{const q=ptOf(b,name);if(!q||!strict(q))return;const [x,y]=pr(q);if(seen.some(s=>s.n===name&&Math.hypot(s.x-x,s.y-y)<70))return;seen.push({n:name,x,y});if(!P.add(lg,x,y,nm(name),t=>{stP(t);t.style('fill','#e6e9ef')},null,(cx,cy)=>inCountry(pr,name,cx,cy)))addPlace(nm(name),`<b>${nm(name)}</b>`,2)}));
   C.rivers.filter(r=>!r[3]&&strict(r[2])).forEach(([n])=>addPlace(n,`<b>${n}</b>`,3));
   C.lakes.filter(l=>strict(l[2])).forEach(([n])=>addPlace(n,`<b>${n}</b>`,3));
   C.marks.filter(m=>strict(m[1])).forEach(([n])=>addPlace(n,`<b>${n}</b>`,3));
@@ -1171,12 +1207,12 @@ if(sparse){g.selectAll('.lay-lever').raise();
   const top=places.sort((a,b)=>a.pri-b.pri||a.title.localeCompare(b.title)).slice(0,8);
   if(opt.sheet&&damNotes.length)el.append('p').attr('class','cap').text([...new Set(damNotes)].join(' '));
   if(top.length){const det=el.append('details').attr('class','places');det.append('summary').attr('data-expect','note').text('Other places on this map');const list=det.append('div').attr('class','place-list');const note=det.append('p').attr('class','place-note').style('display','none');list.selectAll('button').data(top).join('button').attr('type','button').attr('class','chip').attr('data-expect','place').text(d=>d.title).on('click',(e,d)=>{e.stopPropagation();clearTip();note.style('display','block').html(d.detail)})}
-  svg.property('damNotes',[...new Set(damNotes)]);lg.raise();svg.node().__blk=blockers(svg);fixZoomInk();if(opt.basin)paintContext(g,pr,bs,w,h);return}
+  svg.property('damNotes',[...new Set(damNotes)]);if(opt.world)tidyWorld(svg);lg.raise();svg.node().__blk=blockers(svg);fixZoomInk();if(opt.basin)paintContext(g,pr,bs,w,h);return}
 const st=t=>t.style('font-weight',700).style('font-size',(sparse||opt.basin?'14':'13')+'px');
  const nm=c=>c.replace('United States of America','United States').replace('Democratic Republic of the Congo','DR Congo').replace('Dem. Rep. Congo','DR Congo').replace('The former Yugoslav Republic of Macedonia','North Macedonia');
  labs.forEach(d=>P.add(lg,d.x,d.y,d.text,t=>{st(t);t.style('fill',d.gerd?'#ff6b81':'#e6e9ef')},'lab-dam'));
  const seen=[];
- AR.forEach(b=>[b.up,b.down.c].forEach(name=>{const q=ptOf(b,name);if(!q)return;const [x,y]=pr(q);if(seen.some(s=>s.n===name&&Math.hypot(s.x-x,s.y-y)<110))return;seen.push({n:name,x,y});if(sparse){cue(x,y,`<b>${nm(name)}</b>`);return}P.add(lg,x,y,nm(name),t=>{st(t);t.style('fill','#e6e9ef')},null,(cx,cy)=>inCountry(pr,name,cx,cy))}));
+ if(!opt.world)AR.forEach(b=>[b.up,b.down.c].forEach(name=>{const q=ptOf(b,name);if(!q)return;const [x,y]=pr(q);if(seen.some(s=>s.n===name&&Math.hypot(s.x-x,s.y-y)<110))return;seen.push({n:name,x,y});if(sparse){cue(x,y,`<b>${nm(name)}</b>`);return}P.add(lg,x,y,nm(name),t=>{st(t);t.style('fill','#e6e9ef')},null,(cx,cy)=>inCountry(pr,name,cx,cy))}));
  const mains=C.rivers.filter(r=>r[3]&&inside(r[2]));
  const keepR=sparse?(mains.find(r=>/^(Nile|Euphrates|Indus|Mekong|Danube|Colorado|Paraná|Amu Darya|Syr Darya|Zambezi|Senegal|Niger|Dnipro|Rhine|Jordan|Helmand|Ganges|Brahmaputra|Salween|Okavango|Tigris|Uruguay)$/.test(r[0]))||mains[0]):null;
  mains.forEach(r=>{const [n,_,c]=r;const [x,y]=pr(c);if(sparse&&keepR&&r!==keepR){cue(x,y,`<b>${n}</b>`);return}P.add(lg,x,y,n,t=>{st(t);t.style('fill','#e6e9ef').style('font-style','italic').style('font-weight',600)},'lab-flow')});
@@ -1190,7 +1226,7 @@ const st=t=>t.style('font-weight',700).style('font-size',(sparse||opt.basin?'14'
   const [x,y]=pr(pt.geometry.coordinates);if((at[n]||[]).some(([u,v])=>Math.hypot(u-x,v-y)<160))return;(at[n]=at[n]||[]).push([x,y]);
   const dep=b.dep.find(d=>d.c===n);const extra=dep?`<br>${dep.v}% of renewable water from abroad`:'';
   cue(x,y,`<b>${nm(n)}</b>${extra}`)}));
- lg.raise();svg.selectAll('.cue').raise();svg.node().__blk=blockers(svg);fixZoomInk();if(opt.basin)paintContext(g,pr,bs,w,h);}
+ if(opt.world)tidyWorld(svg);lg.raise();svg.selectAll('.cue').raise();svg.node().__blk=blockers(svg);fixZoomInk();if(opt.basin)paintContext(g,pr,bs,w,h);}
 paint();
 if(opt.basin||!sparse){const pad=opt.basin?(w<520?36:88):Math.max(48,Math.round(Math.min(w,h)*0.06));const padX=pad,padTop=opt.basin?16:pad,padBot=opt.basin?72:pad;
  const sel=opt.basin?'path.basin,path.core,path.flow-reach,g.lay-lever path,path[data-ink="dam"]':'path.basin,path.glow,path.core,g.lay-lever path,path.flow-reach,path[data-ink="dam"],circle[data-ink="arrow"],text';
