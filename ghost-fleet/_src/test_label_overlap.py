@@ -71,6 +71,15 @@ MAP_JS = """(pad)=>{
  });
  return {n:boxes.length,out}}"""
 
+def settle(pg):
+    # wait until the map has stopped moving: a slow runner would otherwise be measured mid-pan
+    prev = None
+    for _ in range(40):
+        cur = pg.evaluate("JSON.stringify([...document.querySelectorAll('#map .leaflet-map-pane,#map .leaflet-marker-icon,#map .leaflet-tooltip')].map(e=>{const r=e.getBoundingClientRect();return [Math.round(r.x),Math.round(r.y)]}))")
+        if cur == prev: break
+        prev = cur; pg.wait_for_timeout(500)
+    pg.wait_for_timeout(800)
+
 def serve():
     h = functools.partial(http.server.SimpleHTTPRequestHandler, directory=ROOT)
     h.log_message = lambda *a: None
@@ -84,30 +93,35 @@ def main():
     probs = []; checked = 0
     with sync_playwright() as p:
         br = p.chromium.launch(args=["--no-sandbox"])
-        for w, h in [(1440, 900), (1280, 900), (1024, 800), (800, 800), (720, 800), (390, 844)]:
+        # run with the local font and with a wider fallback font: the CI runner has different system fonts
+        sizes = [(1440, 900), (1280, 900), (1024, 800), (800, 800), (720, 800), (390, 844)]
+        for (w, h), font in [(sz, f) for sz in sizes for f in (None, "DejaVu Sans", "Liberation Sans")]:
             pg = br.new_page(viewport={"width": w, "height": h})
+            if font:
+                pg.add_init_script("document.addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='body,button,input,select{font-family:\"%s\",sans-serif!important}';document.head.appendChild(s)})" % font)
+            tag = f"{w}px" + (f" {font}" if font else "")
             pg.goto(url, wait_until="load", timeout=60000)
             pg.wait_for_selector("#shmap svg", timeout=30000)
             pg.wait_for_selector(".chap", timeout=30000)
             pg.wait_for_timeout(2500)
             r = pg.evaluate(SHUTTLE_JS, PAD); checked += 3
-            probs += [f"[{w}px] shuttle map: {x}" for x in r]
+            probs += [f"[{tag}] shuttle map: {x}" for x in r]
             if pg.evaluate("document.documentElement.scrollWidth") > w + 2:
-                probs.append(f"[{w}px] page is wider than the screen")
+                probs.append(f"[{tag}] page is wider than the screen")
             if w in (1280, 390) and "--quick" not in sys.argv:
-                pg.evaluate("document.querySelectorAll('.chap')[0].click()"); pg.wait_for_timeout(3500)
+                pg.evaluate("document.querySelectorAll('.chap')[0].click()"); pg.wait_for_timeout(3500); settle(pg)
                 m = pg.evaluate(MAP_JS, PAD); checked += m["n"]
-                probs += [f"[{w}px] chapter 1 map: {x}" for x in m["out"]]
-                if m["n"] < 3: probs.append(f"[{w}px] chapter 1: expected the three count labels, found {m['n']}")
-                pg.evaluate("document.querySelectorAll('#modes button')[1].click()"); pg.wait_for_timeout(3500)
+                probs += [f"[{tag}] chapter 1 map: {x}" for x in m["out"]]
+                if m["n"] < 3: probs.append(f"[{tag}] chapter 1: expected the three count labels, found {m['n']}")
+                pg.evaluate("document.querySelectorAll('#modes button')[1].click()"); pg.wait_for_timeout(3500); settle(pg)
                 m = pg.evaluate(MAP_JS, PAD); checked += m["n"]
-                probs += [f"[{w}px] explore map: {x}" for x in m["out"]]
+                probs += [f"[{tag}] explore map: {x}" for x in m["out"]]
                 pg.evaluate("document.querySelectorAll('#modes button')[0].click()"); pg.wait_for_timeout(1500)
                 # chapters 2-6 carry no permanent labels at all: port and city names show on hover or tap only
                 for i, k in [(1, "swap"), (2, "identity"), (3, "network"), (4, "dark"), (5, "classes")]:
                     pg.evaluate(f"document.querySelectorAll('.chap')[{i}].click()"); pg.wait_for_timeout(3500); checked += 1
                     st = pg.evaluate("[document.querySelector('.chap.on').dataset.ch, document.querySelectorAll('#map .leaflet-tooltip').length, document.querySelectorAll('#map .b3l, #map .arwnote:not([style*=none])').length]")
-                    if st[0] == k and (st[1] or st[2]): probs.append(f"[{w}px] chapter '{k}' map shows {st[1]} permanent tooltip(s) and {st[2]} fixed label(s); names must show on hover or tap only")
+                    if st[0] == k and (st[1] or st[2]): probs.append(f"[{tag}] chapter '{k}' map shows {st[1]} permanent tooltip(s) and {st[2]} fixed label(s); names must show on hover or tap only")
             pg.close()
         br.close()
     srv.shutdown()

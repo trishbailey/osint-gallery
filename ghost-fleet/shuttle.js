@@ -41,7 +41,7 @@ const lead=(x1,y1,x2,y2)=>`<line class="lead" x1="${x1.toFixed(1)}" y1="${y1.toF
 const dj=S.ports.find(p=>p.port==="DONGJIAKOU")||S.ports[1]||S.ports[0];
 const CO=[{lon:134.3,lat:40.4,tx:[X(133.0),Y(42.75)+8],html:`<b>${S.coreKozPct}%</b> of core-ship voyages load at Kozmino`},
  {lon:125.5,lat:31.4,tx:[X(dj.lon)+4,Y(dj.lat)+4],html:`<b>${shan}</b> of ${S.kozChina} China voyages end in Shandong`},
- {lon:133.0,lat:37.4,tx:"route",html:`Sea route: about ${Math.round(S.transitKozCHN)} days to Shandong`}];
+ {lon:132.9,lat:37.2,tx:"route",html:`About ${Math.round(S.transitKozCHN)} days at sea`}];
 const pt=(lo,la)=>[X(lo),Y(la)];
 document.getElementById("shmap").innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Map of the tanker route from Kozmino in Russia to ports in Shandong, China">
 <g data-ci-ignore><rect width="${W}" height="${H}" fill="#0d1d36"/><g fill="#1b2d4d" stroke="#2c4470" stroke-width=".6">${land}</g></g>
