@@ -18,7 +18,7 @@ want = {"look-alike colour": False, "numbered circles": False, "stop well short"
 for e in bad:
     for k in want:
         if k in e: want[k] = True
-want2 = {"numbered circles": False, "stop well short": False, "shows nothing": False}
+want2 = {"numbered circles": False, "stop well short": False, "shows nothing": False, "from their marker": False, "never spelled out": False}
 for e in bad2:
     for k in want2:
         if k in e: want2[k] = True
