@@ -62,6 +62,11 @@ details.history>summary{display:flex;align-items:center;min-height:44px;padding:
 details.history>summary::-webkit-details-marker{display:none}
 details.history>summary:before{content:"\25B8";color:var(--gold);margin-right:8px}
 details.history[open]>summary:before{content:"\25BE"}
+details.places{margin:8px 0}
+details.places>summary{display:flex;align-items:center;min-height:44px;cursor:pointer;color:var(--text);font-size:15px;font-weight:600;list-style:none}
+details.places>summary::-webkit-details-marker{display:none}
+details.places>summary:before{content:"\25B8";color:var(--gold);margin-right:8px}
+details.places[open]>summary:before{content:"\25BE"}
 ul.hist{list-style:none;padding:0;margin:2px 0 8px}
 ul.hist li{display:flex;gap:8px;align-items:flex-start;margin:6px 0;font-size:14px;line-height:1.45}
 .hist-dot{width:10px;height:10px;border-radius:50%;flex:none;margin-top:5px;box-shadow:inset 0 0 0 1px rgba(230,233,239,.35)}
@@ -103,12 +108,16 @@ path.basin:hover,path.aquifer:hover{stroke:var(--gold);stroke-width:3px}
 .tt{position:fixed;z-index:50;pointer-events:none;background:#0b1526;color:var(--text);border:1px solid var(--gold);padding:8px 10px;font-size:13px;line-height:1.35;border-radius:4px;display:none;max-width:380px}
 ul.events{font-size:15px;list-style:none;padding:0;margin:8px 0}
 ul.events li{margin:6px 0}
-details.more summary{display:flex;align-items:center;min-height:44px;cursor:pointer;color:var(--text);font-size:15px}
-details.more summary:hover{color:var(--gold)}
+details:not([open]) > :not(summary){display:none !important}
+details.more>summary{display:flex;align-items:center;min-height:44px;cursor:pointer;color:var(--text);font-size:15px;list-style:none}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary:before{content:"\25B8";color:var(--gold);margin-right:8px}
+details.more[open]>summary:before{content:"\25BE"}
+details.more>summary:hover{color:var(--gold)}
 footer.foot{padding:18px 24px 28px;border-top:1px solid var(--line)}
 footer.foot .brand{font-size:13px}
-sup.fn{font-size:13px;line-height:0;font-weight:700;margin-left:1px}
-sup.fn a{color:var(--link);text-decoration:none;padding:0 1px}
+sup.fn{font-size:13px;line-height:0;font-weight:700;margin-left:3px}
+sup.fn a{color:var(--link);text-decoration:underline;text-underline-offset:2px;padding:0 1px}
 sup.fn a:hover{color:var(--gold)}
 .srcdet{margin-top:14px}
 .srcdet>summary{display:flex;align-items:center;min-height:44px;cursor:pointer;color:var(--muted);font-size:13px;font-weight:700}
@@ -227,7 +236,6 @@ details.phone-fold > summary{display:flex;align-items:center;min-height:44px;fon
 footer.foot{padding:12px}
 .tt{max-width:calc(100vw - 16px);z-index:80}
 .banner{white-space:normal}
-details.places{margin:8px 0}
 details.places>summary{display:flex;align-items:center;min-height:44px;font-size:16px;font-weight:600;cursor:pointer;color:var(--text)}
 .place-list{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
 .place-note{font-size:14px;line-height:1.45;margin:0 0 8px}
@@ -258,6 +266,7 @@ svg.phone-map{overflow:hidden}
 <p class="lead">Who is upstream, who depends, and where a dam is the lever.</p>
 <section id="s-maps">
   <h2>1 · Regions</h2>
+  <p class="lvl-note">Each map is one group of rivers that countries share. Brighter shading is river water, strongest where that water reaches and fading across dry land, and the cyan arrow moves from a key dam downstream to the people who depend on it. A red stroke means the water was cut off, a dashed stroke means a cut-off was threatened, clicking a region on the left changes the map, and clicking a basin opens it.</p>
   <div class="stage">
     <aside id="side" aria-label="Map key">
       <button type="button" id="side-toggle" data-expect="key" aria-expanded="false" aria-controls="side-body">Map key &amp; filters</button>
@@ -282,6 +291,7 @@ svg.phone-map{overflow:hidden}
 <section id="s-panel">
   <div class="sheet-bar phone-only"><button type="button" id="sheet-close" class="sheet-close" data-expect="close">Close basin</button></div>
   <h2>2 · River basins</h2>
+  <p class="lvl-note">This map is one river, the dams on it, and the countries that share it. Brighter shading is river water, strongest where that water reaches and fading across dry land, and the cyan arrow moves from a key dam downstream to the people who depend on it. A red stroke means the water was cut off, a dashed stroke means a cut-off was threatened, and clicking a name on the left opens that basin.</p>
   <div class="stage">
     <aside id="basin-side" aria-label="Basins">
       <p class="side-h">Basin</p>
@@ -292,10 +302,10 @@ svg.phone-map{overflow:hidden}
 </section>
 <section id="s-record">
   <h2>From the record</h2>
-  <p id="find-line-a">The most water-dependent states have never had their water cut off. Cut-offs follow a political break.<sup class="fn"><a href="#src-1">1</a></sup><sup class="fn"><a href="#src-6">6</a></sup></p>
-  <p id="find-line-b">Every state cut-off on record happened while a water treaty was in force.<sup class="fn"><a href="#src-3">3</a></sup><sup class="fn"><a href="#src-6">6</a></sup></p>
+  <p id="find-line-a">The most water-dependent states have never had their water cut off. Cut-offs follow a political break.<sup class="fn"><a href="#src-1">1</a>, <a href="#src-6">6</a></sup></p>
+  <p id="find-line-b">Every state cut-off on record happened while a water treaty was in force.<sup class="fn"><a href="#src-3">3</a>, <a href="#src-6">6</a></sup></p>
   <details id="record-more" class="more">
-    <summary data-expect="note">Charts and the small-sample note</summary>
+    <summary data-expect="note">The charts behind these lines</summary>
     <div id="find-a"></div>
     <p class="find-key" id="find-a-key"></p>
     <p class="lvl-note">Every cut-off came after a break: Partition, terror attacks, Taliban rule, the invasion of Ukraine.</p>
@@ -316,7 +326,7 @@ svg.phone-map{overflow:hidden}
 </section>
 <section id="s-rank">
   <details class="more">
-    <summary data-expect="fold">Who depends</summary>
+    <summary data-expect="fold">Who depends on water from abroad</summary>
   <p class="unit">Share from abroad, largest first.<sup class="fn"><a href="#src-1">1</a></sup></p>
   <div id="rank-list" class="phone-only"></div>
   <div class="chartrow desk-only">
@@ -327,7 +337,7 @@ svg.phone-map{overflow:hidden}
 </section>
 <section id="s-sankey">
   <details class="more">
-    <summary data-expect="fold">Inflows</summary>
+    <summary data-expect="fold">Where the water comes from</summary>
   <p class="unit">Width is the share from abroad. States at 50% or above.<sup class="fn"><a href="#src-1">1</a></sup></p>
   <div id="sankey-list" class="phone-only"></div>
   <div class="chartrow desk-only">
@@ -404,7 +414,7 @@ const NOCOL='#a33a88';
 const WATER='#4ea89e',GLOW='#143f3c',LINE='#6d8f8a',AQINK='#d15ca8',SEL='#5a6ad4';
 const RC=['#d660e1','#3192d8','#4ab635','#6060e1','#9b3b83','#9b583b','#db9476'];
 const CASE='#041018';
-const FN=n=>`<sup class="fn">${String(n).split(',').map(i=>`<a href="#src-${i}">${i}</a>`).join(',')}</sup>`;
+const FN=n=>`<sup class="fn">${String(n).split(',').map(i=>`<a href="#src-${i}">${i}</a>`).join(', ')}</sup>`;
 B.forEach(b=>{b.max=b.dep.length?d3.max(b.dep,d=>d.v):null;b.down=b.dep.filter(d=>d.c!==b.up).sort((a,c)=>c.v-a.v)[0];
  b.geo=(TF[b.id]||[]).flatMap(n=>BAS.concat(AQ).filter(f=>f.properties.Basin_Name===n));
  b.flag=TL.some(t=>t.b===b.name&&(t.k==='cut'||t.k==='threat'));b.lev=TL.some(t=>t.b===b.name&&t.k==='cut')?'cut':TL.some(t=>t.b===b.name&&(t.k==='threat'||t.k==='dam'))?'threat':'none';b.aq=b.type==='aquifer';
@@ -627,7 +637,7 @@ function capHTML(key,bs){const c=CFG[key];if(!c)return '';const nmC=s=>s.replace
  const cs={};bs.forEach(b=>Object.keys(b.stress||{}).forEach(i=>{cs[i]={s:b.stress[i],p:b.proj[i]}}));const isoN={};COUNTRIES.forEach(f=>isoN[f.properties.ADM0_A3]=f.properties.NAME);isoN.SSD='South Sudan';
  const wr=Object.entries(cs).filter(([i,o])=>STW[o.s]&&STW[o.p]&&STO.indexOf(o.p)>STO.indexOf(o.s)).sort((a,b)=>STO.indexOf(b[1].p)-STO.indexOf(a[1].p)).map(([i,o])=>`${(isoN[i]||i).replace('United States of America','United States')}, ${STW[o.s]} to ${STW[o.p]}`);
  const cl=wr.length?`By 2050, business as usual: ${wr.join('; ')}.${FN(2)}`:`No stress category gets worse by 2050.${FN(2)}`;
- return `<p class="cap">${txt}</p><details class="more"><summary data-expect="note">2050 outlook</summary><p class="cap clim">${cl}</p></details>`}
+ return `<p class="cap">${txt}</p><details class="more"><summary data-expect="note">Water stress by 2050</summary><p class="cap clim">${cl}</p></details>`}
 function arrowSwatch(){return '<svg class="asw" width="34" height="14" viewBox="0 0 34 14" aria-hidden="true"><path d="M2 7h16" stroke="'+LEVER+'" stroke-width="2.2" stroke-linecap="round"/><path d="M16 3.2 30 7 16 10.8z" fill="'+LEVER+'"/></svg>'}
 function arrowSay(ids){const key=cfgKey(ids.map(Number));const C=CFG[key]||{rivers:[],mainDams:[]};const bs=B.filter(b=>ids.map(Number).includes(+b.id)&&!b.aq&&b.up&&b.down);if(!bs.length)return '';
  if(bs.length>1)return 'Arrow: dam controls the flow';
@@ -1044,7 +1054,7 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
   ab.forEach(b=>{const [x,y]=pr(d3.geoCentroid({type:'FeatureCollection',features:b.geo}));const name=shown(b.name);if(!P.add(lg,x,y,short(name),t=>stB(t),'lab-aq'))addPlace(short(name),`<b>${name}</b><br>Shared aquifer`,5)});
   if(opt.sheet&&damNotes.length)el.append('p').attr('class','cap basin-extra').text([...new Set(damNotes)].join(' '));
   const top=places.sort((a,b)=>a.pri-b.pri||a.title.localeCompare(b.title)).slice(0,8);
-  if(top.length){const det=el.append('details').attr('class','places basin-extra');det.append('summary').attr('data-expect','note').text('Other places');const list=det.append('div').attr('class','place-list');const note=det.append('p').attr('class','place-note').style('display','none');list.selectAll('button').data(top).join('button').attr('type','button').attr('class','chip').attr('data-expect','place').text(d=>d.title).on('click',(e,d)=>{e.stopPropagation();clearTip();note.style('display','block').html(d.detail)})}
+  if(top.length){const det=el.append('details').attr('class','places basin-extra');det.append('summary').attr('data-expect','note').text('Other places on this map');const list=det.append('div').attr('class','place-list');const note=det.append('p').attr('class','place-note').style('display','none');list.selectAll('button').data(top).join('button').attr('type','button').attr('class','chip').attr('data-expect','place').text(d=>d.title).on('click',(e,d)=>{e.stopPropagation();clearTip();note.style('display','block').html(d.detail)})}
   lg.selectAll('line').attr('stroke','#9cc1f0');lg.raise();svg.node().__blk=blockers(svg);fixZoomInk();return}
 if(sparse){g.selectAll('.lay-lever').raise();
   const stP=t=>t.style('font-weight',700).style('font-size','14px');
@@ -1063,7 +1073,7 @@ if(sparse){g.selectAll('.lay-lever').raise();
   ab.forEach(b=>addPlace(short(shown(b.name)),`<b>${shown(b.name)}</b><br>Shared aquifer`,5));
   const top=places.sort((a,b)=>a.pri-b.pri||a.title.localeCompare(b.title)).slice(0,8);
   if(opt.sheet&&damNotes.length)el.append('p').attr('class','cap').text([...new Set(damNotes)].join(' '));
-  if(top.length){const det=el.append('details').attr('class','places');det.append('summary').attr('data-expect','note').text('Other places');const list=det.append('div').attr('class','place-list');const note=det.append('p').attr('class','place-note').style('display','none');list.selectAll('button').data(top).join('button').attr('type','button').attr('class','chip').attr('data-expect','place').text(d=>d.title).on('click',(e,d)=>{e.stopPropagation();clearTip();note.style('display','block').html(d.detail)})}
+  if(top.length){const det=el.append('details').attr('class','places');det.append('summary').attr('data-expect','note').text('Other places on this map');const list=det.append('div').attr('class','place-list');const note=det.append('p').attr('class','place-note').style('display','none');list.selectAll('button').data(top).join('button').attr('type','button').attr('class','chip').attr('data-expect','place').text(d=>d.title).on('click',(e,d)=>{e.stopPropagation();clearTip();note.style('display','block').html(d.detail)})}
   svg.property('damNotes',[...new Set(damNotes)]);lg.raise();svg.node().__blk=blockers(svg);fixZoomInk();return}
 const st=t=>t.style('font-weight',700).style('font-size',(sparse||opt.basin?'14':'13')+'px');
  const nm=c=>c.replace('United States of America','United States').replace('Democratic Republic of the Congo','DR Congo').replace('Dem. Rep. Congo','DR Congo').replace('The former Yugoslav Republic of Macedonia','North Macedonia');
@@ -1145,7 +1155,7 @@ function histItems(b){const items=[],seen=new Set();const add=it=>{const k=it.k+
  String(b.treaties||'').split(';').forEach(part=>{const m=/^\s*(?:(\d{4})-\d{2}-\d{2}|00\/00\/(\d{4}))\s+([\s\S]+)/.exec(part);if(!m)return;const y=+(m[1]||m[2]);let text=m[3].replace(/\s*\[TFDDID[^\]]*\]/gi,'').replace(/\s+/g,' ').trim();text=text.replace(/^Agreement between the government of /i,'Agreement between ').replace(/the government of /gi,'').replace(/\s+\([^)]*$/,'').replace(/\s+[a-z]{1,4}$/,'').trim();if(text.length>150)text=text.slice(0,150).replace(/\s+\S*$/,'').trim();let prev='';while(text&&text!==prev){prev=text;text=text.replace(/[,:;]\s*$/,'').replace(/\s+(on|the|of|and|in|for|a|an|to)$/i,'').trim()}if(text)add({y,show:String(y),text,k:'treaty',href:'#src-3',rank:rank.treaty,fn:'3'})});
  if(b.geo&&b.geo.length)DAMS.forEach(d=>{const id=d.properties.GDW_ID;if(!DAMSAY[id])return;const y=+d.properties.YEAR_DAM;if(!(y>0))return;if(!b.geo.some(f=>d3.geoContains(f,d.geometry.coordinates)))return;add({y,show:String(y),text:d.properties.DAM_NAME+' opened',k:'open',href:'#src-5',rank:rank.open,fn:'5'})});
  return items}
-function historyBlock(parent,b){const items=histItems(b);if(!items.length)return;const det=parent.append('details').attr('class','history');det.append('summary').attr('data-expect','history').text('History');
+function historyBlock(parent,b){const items=histItems(b);if(!items.length)return;const det=parent.append('details').attr('class','history');det.append('summary').attr('data-expect','history').text('History of this basin');
  const col={cut:CUT,threat:THR,dam:'#c46ad4',other:'#e6e9ef',treaty:'#9cc1f0',open:DAMSW};
  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
  const ul=det.append('ul').attr('class','hist');
@@ -1171,7 +1181,7 @@ function show(id,scroll){clearTip();const ri=REG.findIndex(r=>r[1].flat().includ
  const d3host=Lf.append('div').attr('class','map-host d3-host');
  drawMap(d3host,[b.id],bw,bh,Object.assign({basin:true},isPhone()?{sparse:true,sheet:true}:{}));
  historyBlock(Lf,b);
- const box=P.append('details').attr('class','more full');box.append('summary').attr('data-expect','note').text('Figures and record');const R=box.append('div');R.append('div').attr('class','kv').html(`<b>Headwater control:</b> ${nb(shown(b.hw))}<br><b>Dams and works:</b> ${nb(shown(b.dams))}<br><b>Upstream dam capacity:</b> ${b.upcap!=null?b.upcap+' km³ ('+b.up+')'+FN(1):nb()}<br><b>Storage vs annual flow:</b> ${nb(b.storage)}<br><b>Treaties:</b> ${b.tc||nb()}${b.status?' · '+b.status:''}${FN(3)}`);
+ const box=P.append('details').attr('class','more full');box.append('summary').attr('data-expect','note').text('Dams, treaties, and the timeline');const R=box.append('div');R.append('div').attr('class','kv').html(`<b>Headwater control:</b> ${nb(shown(b.hw))}<br><b>Dams and works:</b> ${nb(shown(b.dams))}<br><b>Upstream dam capacity:</b> ${b.upcap!=null?b.upcap+' km³ ('+b.up+')'+FN(1):nb()}<br><b>Storage vs annual flow:</b> ${nb(b.storage)}<br><b>Treaties:</b> ${b.tc||nb()}${b.status?' · '+b.status:''}${FN(3)}`);
  R.append('h3').text('Share from abroad');
  R.append('p').attr('class','unit').html('From abroad, largest first.'+FN(1));
  const dd=b.rip.map(r=>b.dep.find(d=>d.c===r)||{c:r,v:null}).sort((a,c)=>(c.v??-1)-(a.v??-1));
@@ -1189,7 +1199,7 @@ function show(id,scroll){clearTip();const ri=REG.findIndex(r=>r[1].flat().includ
  F.append('div').attr('class','key').html(Object.keys(KC).map(k=>`<span class="k"><i class="sw" style="background:${KC[k]}"></i>${KL[k]}</span>`).join(''));
  const key=ev.filter(d=>d.k!=='other'),rest=ev.filter(d=>d.k==='other');const li=(ul,d)=>ul.append('li').html(`<i class="sw" style="background:${KC[d.k]}"></i> <b>${d.d}</b> <a href="${d.u}" target="_blank" rel="noopener">${d.h}</a>`);
  const ul=F.append('ul').attr('class','events');key.slice(-6).forEach(d=>li(ul,d));
- const more=key.slice(0,-6).concat(rest);if(more.length){const det=F.append('details').attr('class','more');det.append('summary').attr('data-expect','more').attr('title','Show the rest of the chronology').text('Show '+more.length+' more entries');const u2=det.append('ul').attr('class','events');more.forEach(d=>li(u2,d))}}
+ const more=key.slice(0,-6).concat(rest);if(more.length){const det=F.append('details').attr('class','more');det.append('summary').attr('data-expect','more').attr('title','Show the rest of the chronology').text('Rest of this timeline ('+more.length+' more)');const u2=det.append('ul').attr('class','events');more.forEach(d=>li(u2,d))}}
  markBasin(id);if(scroll){holdLevel(2);if(isPhone()){if(!document.getElementById('s-panel').classList.contains('sheet'))openSheet()}else document.getElementById('s-panel').scrollIntoView({behavior:'smooth',block:'start'})}const sideBox=document.getElementById('basin-side');const onChip=sideBox&&sideBox.querySelector('button.on');if(onChip){const top=onChip.getBoundingClientRect().top-sideBox.getBoundingClientRect().top+sideBox.scrollTop;sideBox.scrollTop=Math.max(0,top-8)}}
 show(1);
 const PAIRS=[[1,'Ethiopia','Egypt','Grand Ethiopian Renaissance Dam (GERD)'],[1,'Ethiopia','Sudan','Grand Ethiopian Renaissance Dam (GERD), Tekeze Dam'],[8,'India','Bangladesh','Farakka Barrage'],[8,'China','Bangladesh','Brahmaputra dams'],[2,'India','Pakistan','Baglihar Dam and other Indus dams'],[3,'Turkey','Syria','Atatürk Dam and Ilisu Dam'],[3,'Turkey','Iraq','Atatürk Dam and Ilisu Dam'],[3,'Syria','Iraq','Tabqa Dam and Tishreen Dam'],[9,'Afghanistan','Iran','Kajaki Dam and Kamal Khan Dam'],[6,'Tajikistan','Turkmenistan','Nurek Dam and Rogun Dam'],[6,'Afghanistan','Turkmenistan','Qosh Tepa Canal'],[7,'Kyrgyzstan','Uzbekistan','Toktogul Dam'],[4,'China','Cambodia','Lancang cascade'],[4,'Laos','Cambodia','Xayaburi Dam and Don Sahong Dam'],[4,'China','Vietnam','Lancang cascade'],[11,'Russia','Ukraine',''],[13,'Angola','Namibia',''],[14,'Guinea','Niger',''],[15,'Mali','Mauritania','Manantali Dam'],[16,'Slovakia','Hungary','Gabčíkovo Dam'],[17,'Switzerland','Netherlands',''],[18,'Brazil','Paraguay','Itaipu Dam'],[18,'Brazil','Argentina','Itaipu Dam'],[19,'Zambia','Mozambique','Kariba Dam'],[10,'United States of America','Mexico','Hoover Dam and Glen Canyon Dam'],[5,'Israel','Jordan','National Water Carrier']];
@@ -1294,7 +1304,7 @@ function drawFindings(){
  });
  const early=cuts.filter(t=>{const s=strips.find(s=>s.basin===t.b);return s&&yearOf(t.d)<s.year});
  const note=document.getElementById('find-b-note');
- if(early.length===1&&early[0].b==='Indus'&&/April 1948/.test(early[0].h)){note.textContent='One state cut-off is earlier: India, April 1948, before the Indus Waters Treaty of 1960 and before the 4 May 1948 canal agreement.';const lineB=document.getElementById('find-line-b');if(lineB)lineB.innerHTML='Every state cut-off on record happened while a water treaty was in force, except India on the Indus in April 1948.'+FN(3)+FN(6);}
+ if(early.length===1&&early[0].b==='Indus'&&/April 1948/.test(early[0].h)){note.textContent='One state cut-off is earlier: India, April 1948, before the Indus Waters Treaty of 1960 and before the 4 May 1948 canal agreement.';const lineB=document.getElementById('find-line-b');if(lineB)lineB.innerHTML='Every state cut-off on record happened while a water treaty was in force, except India on the Indus in April 1948.'+FN('3,6');}
  else if(early.length)note.textContent='Earlier than the treaty on its river: '+early.map(t=>yearOf(t.d)+' · '+t.h).join(' ');
  else note.remove();
  const hostB=document.getElementById('find-b');
