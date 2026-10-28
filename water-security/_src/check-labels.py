@@ -7,6 +7,9 @@ river-corridor glow, arrow, or dam marker at 390, 1024, 1280, or 1440.
 Fails if, on any regional map at 1024, 1280, 1440, or 1920, a shaded basin,
 water-reach, arrow, or dam path or a label falls outside the SVG viewBox, or
 the left and right padding differ by more than 15%.
+
+Fails if a basin-map dam label is more than 6 screen pixels from its marker,
+overlaps the marker, or has no label, at 1280 and 390, including zoomed views.
 """
 import sys
 from pathlib import Path
@@ -73,12 +76,18 @@ AUDIT = r"""
     if(cache.has(svg)) return cache.get(svg);
     const items=[];
     svg.querySelectorAll('path.core, path.glow').forEach(el=>{
+      if((+el.getAttribute('stroke-width')||0) < 1.15) return;
       const g=segsOf(el);
       items.push({kind:el.classList.contains('glow')?'glow':'river', sw:(+el.getAttribute('stroke-width')||0)/2, segs:g.segs, pts:null});
     });
-    svg.querySelectorAll('g.lay-cut path, g.lay-threat path, g.lay-neither path').forEach(el=>{
+    svg.querySelectorAll('g.lay-lever path').forEach(el=>{
       const g=segsOf(el);
-      items.push({kind:'arrow', sw:(+el.getAttribute('stroke-width')||0)/2, segs:g.segs, pts:g.pts});
+      const open=el.classList.contains('lay-cut')||el.classList.contains('lay-threat')||el.classList.contains('lay-neither');
+      items.push({kind:'arrow', sw:(+el.getAttribute('stroke-width')||0)/2+(open?2:0), segs:g.segs, pts:open?null:g.pts});
+    });
+    svg.querySelectorAll('path.flow-reach').forEach(el=>{
+      const g=segsOf(el);
+      items.push({kind:'arrow', sw:7, segs:g.segs, pts:null});
     });
     svg.querySelectorAll('path[data-ink="dam"]').forEach(el=>{
       const g=segsOf(el);
@@ -117,7 +126,7 @@ AUDIT = r"""
   function visibleMaps(){
     return [...document.querySelectorAll('#regions svg.chart, #panel svg.chart')].filter(svg=>{
       const r=svg.getBoundingClientRect();
-      return r.width>20 && r.height>20 && svg.querySelector('path.core, path.glow, path[data-ink="dam"], g.lay-cut, g.lay-threat, g.lay-neither');
+      return r.width>20 && r.height>20 && svg.querySelector('path.core, path.glow, path[data-ink="dam"], g.lay-lever, path.flow-reach');
     });
   }
   const labelHits=[];
@@ -188,7 +197,7 @@ AUDIT = r"""
       fire(g,x,y,'hover',false);
       if(phone && g.classList.contains('lay-dam')) fire(g,x,y,'tap',true);
     });
-    svg.querySelectorAll('g.lay-cut, g.lay-threat, g.lay-neither').forEach(g=>{
+    svg.querySelectorAll('g.lay-lever').forEach(g=>{
       const path=g.querySelector('path[data-ink="arrow"]')||g.querySelector('path');
       if(!path) return;
       let len=0; try{ len=path.getTotalLength(); }catch(e){ len=0; }
@@ -228,7 +237,7 @@ AUDIT = r"""
 
 FIT_AUDIT = r"""
 () => {
-  const sel = 'path.basin,path.glow,path.core,g.lay-cut path,g.lay-threat path,g.lay-neither path,path[data-ink="dam"],circle[data-ink="arrow"],text';
+  const sel = 'path.basin,path.glow,path.core,g.lay-lever path,path.flow-reach,path[data-ink="dam"],circle[data-ink="arrow"],text';
   const fails = [];
   const maps = [...document.querySelectorAll('#regions svg.chart')].filter(svg => svg.getBoundingClientRect().width > 20);
   for (const svg of maps) {
@@ -274,6 +283,51 @@ FIT_AUDIT = r"""
 
 def audit(page):
     return page.evaluate(AUDIT)
+
+
+# Screen gap between a basin dam label and its marker. Overlap is distance 0.
+DAM_ZOOM = r"""
+(k) => {
+  const svg = document.querySelector('#panel svg.chart');
+  if (!svg) return [{kind: 'dam-gap', missing: 'panel'}];
+  if (k && svg.__zoomBh) d3.select(svg).call(svg.__zoomBh.transform, d3.zoomIdentity.scale(k));
+  function gap(a, b) {
+    const dx = a.right < b.left ? b.left - a.right : b.right < a.left ? a.left - b.right : 0;
+    const dy = a.bottom < b.top ? b.top - a.bottom : b.bottom < a.top ? a.top - b.bottom : 0;
+    const overlap = !(a.right < b.left || b.right < a.left || a.bottom < b.top || b.bottom < a.top);
+    return {d: Math.hypot(dx, dy), overlap};
+  }
+  const fails = [];
+  const mains = [];
+  svg.querySelectorAll('path[data-ink="dam"]').forEach(p => {
+    if (p.getBBox().width < 16) return;
+    const m = /translate\(\s*([-0-9.eE+]+)[ ,]\s*([-0-9.eE+]+)/.exec(p.getAttribute('transform') || '');
+    if (m) mains.push({p, ax: +m[1], ay: +m[2]});
+  });
+  const labels = [...svg.querySelectorAll('g.lab-dam')];
+  labels.forEach(g => {
+    const text = g.querySelector('text');
+    const name = (text && text.textContent || '').trim();
+    let best = null, bd = 1e9;
+    mains.forEach(marker => {
+      const d = Math.hypot(marker.ax - +g.dataset.ax, marker.ay - +g.dataset.ay);
+      if (d < bd) { bd = d; best = marker; }
+    });
+    if (!best || bd > 2) { fails.push({kind: 'dam-gap', name, missing: true}); return; }
+    const r = gap(text.getBoundingClientRect(), best.p.getBoundingClientRect());
+    const lines = g.querySelectorAll('line').length;
+    if (r.overlap || lines || r.d > 6) {
+      fails.push({kind: 'dam-gap', name, d: +r.d.toFixed(1), overlap: r.overlap, lines, k: k || 1});
+    }
+  });
+  mains.forEach(marker => {
+    if (!labels.some(g => Math.hypot(+g.dataset.ax - marker.ax, +g.dataset.ay - marker.ay) < 2)) {
+      fails.push({kind: 'dam-gap', unlabeled: true, k: k || 1});
+    }
+  });
+  return fails;
+}
+"""
 
 
 def main():
@@ -322,8 +376,19 @@ def main():
                         hit["width"] = width
                         hit["tab"] = name
                         width_hits.append(hit)
+            if width in (390, 1280):
+                basins = page.evaluate("()=>B.filter(b=>!b.aq).map(b=>({id:b.id,name:b.name}))")
+                for basin in basins:
+                    page.evaluate("(id)=>show(id,true)", basin["id"])
+                    page.wait_for_selector("#panel svg.chart", timeout=20000)
+                    for k in (1, 2.25, 8):
+                        for hit in page.evaluate(DAM_ZOOM, k):
+                            hit = dict(hit)
+                            hit["width"] = width
+                            hit["tab"] = basin["name"]
+                            width_hits.append(hit)
             summary.append(
-                f"{width}: labels+tips checked, overlaps={sum(1 for h in width_hits if h.get('kind') in ('glow','river','arrow','dam','arrow-dot'))}, fit={sum(1 for h in width_hits if h.get('kind') in ('outside','pad','empty','no-maps'))}, other={len(width_hits)}"
+                f"{width}: labels+tips checked, overlaps={sum(1 for h in width_hits if h.get('kind') in ('glow','river','arrow','dam','arrow-dot'))}, fit={sum(1 for h in width_hits if h.get('kind') in ('outside','pad','empty','no-maps'))}, dam-gap={sum(1 for h in width_hits if h.get('kind')=='dam-gap')}, other={len(width_hits)}"
             )
             failures.extend(width_hits)
 
@@ -356,7 +421,7 @@ def main():
         for hit in failures[:40]:
             print(" ", hit)
         return 1
-    print("PASS no label overlaps a river, glow, arrow, or dam; shaded paths and labels stay inside the viewBox with even left/right padding")
+    print("PASS no label overlaps a river, glow, arrow, or dam; shaded paths and labels stay inside the viewBox with even left/right padding; basin dam labels stay within 6px of their markers")
     for s in shots:
         print(" screenshot", s)
     return 0

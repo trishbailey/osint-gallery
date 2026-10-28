@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-27T13:05:52Z",
+ "as_of": "2026-10-28T10:10:30Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,652 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2115315504034218421",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2115315504034218421",
+   "created_at": "2026-10-28T05:31:31.000Z",
+   "text": "➡️ Ataque a balazos en #Mazatlán deja un joven de 23 años ejecutado y otro herido 🚨🚔| Un joven perdió la vida y otro más resultó herido durante un ataque a balazos registrado la noche de este martes en la colonia Ramón F. Iturbe, en el puerto de Mazatlán Info 📲 https://t.co/9JNK…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Shooting in #Mazatlán leaves a 23-year-old man killed and another wounded. A young man died and another was wounded in a shooting on Tuesday night in the Ramón F. Iturbe neighbourhood of the port of Mazatlán."
+  },
+  {
+   "id": "2115315389475303441",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115315389475303441",
+   "created_at": "2026-10-28T05:31:04.000Z",
+   "text": "Abaten a “Chuy González” en Guasave: DEA ofrecía 5 millones de dólares por el operador del Cártel de Sinaloa https://t.co/mklReL8uYJ",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "“Chuy González” killed in Guasave: the DEA was offering 5 million dollars for the Sinaloa Cartel operator"
+  },
+  {
+   "id": "2115313814409298331",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2115313814409298331",
+   "created_at": "2026-10-28T05:24:48.000Z",
+   "text": "➡️ Ejecutan a menor de 13 años en Mazatlán; mujer resulta herida durante ataque armado 🚨🚔| Ejecutan a menor de 13 años, conocido como “El Tachi”, en la colonia Constitución, en #Mazatlán, luego de ser perseguido junto con otro adolescente por sujetos armados. 🔺Durante el https:/…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "13-year-old boy known as “El Tachi” executed in Mazatlán; a woman wounded in the armed attack. He was killed in the Constitución neighbourhood of #Mazatlán after armed men chased him and another teenager."
+  },
+  {
+   "id": "2115290618578751608",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115290618578751608",
+   "created_at": "2026-10-28T03:52:38.000Z",
+   "text": "Tras el enfrentamiento del lunes, suscitado en Siete Ejidos, #Guasave, resultó abatido #JesúsGonzález Peñuelas, de 56 años de edad, quien era buscado por la Administración de Control de Drogas, conocida como #DEA, por sus siglas en inglés. https://t.co/do0lcQsLYf",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "After Monday's clash in Siete Ejidos, #Guasave, #JesúsGonzález Peñuelas, 56, was killed; he was wanted by the Drug Enforcement Administration, known as the #DEA."
+  },
+  {
+   "id": "2115277915235455095",
+   "handle": "InSightCrime",
+   "url": "https://x.com/InSightCrime/status/2115277915235455095",
+   "created_at": "2026-10-28T03:02:09.000Z",
+   "text": "🇪🇨 | Jorge Luis Zambrano, alias “Rasquiña,” built one of Ecuador’s most dynamic criminal groups from his cell, forging a network known as the Choneros Federation. Explore how he turned imprisonment into a recruitment opportunity: https://t.co/qA6ZtwhAwt https://t.co/IOM7bXN6qm",
+   "lang": "en",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "choneros"
+   ],
+   "tier": "verified",
+   "source_type": "research outlet",
+   "label": null
+  },
+  {
+   "id": "2115267809802375541",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115267809802375541",
+   "created_at": "2026-10-28T02:22:00.000Z",
+   "text": "Ataque de #EstadosUnidos contra presunta #narcolancha deja cinco muertos en el #Pacífico. https://t.co/USPtyIP2sY https://t.co/l69AvteQXB",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "#UnitedStates strike on a suspected #narcoboat leaves five dead in the #Pacific."
+  },
+  {
+   "id": "2115266242315501933",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2115266242315501933",
+   "created_at": "2026-10-28T02:15:46.000Z",
+   "text": "➡️ Jesús \"Chuy\" González, objetivo de la DEA sería uno de los dos fallecidos tras enfrentamiento en Guasave. 🚨🚔| Jesús González, conocido como “Chuy González ”, es señalado como uno de los dos hombres que habrían muerto tras la persecución iniciada en Estación Bamoa y que se htt…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Jesús \"Chuy\" González, a DEA target, is reportedly one of the two men killed after a clash in Guasave. Jesús González, known as “Chuy González”, is named as one of the two men who reportedly died after a chase that began in Estación Bamoa."
+  },
+  {
+   "id": "2115254801134920061",
+   "handle": "Pajaropolitico",
+   "url": "https://x.com/Pajaropolitico/status/2115254801134920061",
+   "created_at": "2026-10-28T01:30:18.000Z",
+   "text": "🔴 Miriam (47) y su nieta (12) fueron víctimas de feminicidio en Ostuacán, Chiapas. Uno de los presuntos responsables murió linchado tras ser sacado de los separos; el otro está detenido. https://t.co/aJftrUbYGz",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2735"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Miriam (47) and her granddaughter (12) were victims of femicide in Ostuacán, Chiapas. One of the alleged perpetrators died after being lynched when he was taken from the holding cells; the other is in custody."
+  },
+  {
+   "id": "2115254725134180563",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115254725134180563",
+   "created_at": "2026-10-28T01:30:00.000Z",
+   "text": "🔺 El gobernador de Nayarit denunció que ha recibido intimidaciones por el crimen organizado tras la recuperación de cientos de hectáreas https://t.co/SdblUSg9b9",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2721"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "The governor of Nayarit said he has received intimidation from organised crime after the recovery of hundreds of hectares."
+  },
+  {
+   "id": "2115251703381667987",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115251703381667987",
+   "created_at": "2026-10-28T01:18:00.000Z",
+   "text": "La Secretaría de Seguridad Pública de Sinaloa (#SSP) dio #recomendaciones y advirtió que aplicará #sanciones administrativas para quienes cometan delitos o hagan apología del crimen organizado durante los festejos de #Halloween. https://t.co/Pn6TSDRoQ1",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The Sinaloa Public Security Secretariat (#SSP) issued #recommendations and warned it will apply administrative #sanctions to anyone who commits crimes or glorifies organised crime during the #Halloween festivities."
+  },
+  {
+   "id": "2115247462621249999",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115247462621249999",
+   "created_at": "2026-10-28T01:01:09.000Z",
+   "text": "Cumplimentan orden de aprehensión contra \"El Toro\", miembro de La Familia Michoacana acusado de extorsión https://t.co/MswJYNp5YL",
+   "lang": "und",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "lnfm"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Arrest warrant executed against \"El Toro\", a member of La Familia Michoacana accused of extortion"
+  },
+  {
+   "id": "2115246897178738776",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2115246897178738776",
+   "created_at": "2026-10-28T00:58:54.000Z",
+   "text": "🚨🚔| Atacan a balazos un domicilio en la colonia Gustavo Díaz Ordaz; un grupo armado disparó con armas largas y cortas durante la tarde de este martes. https://t.co/hM5z6EeP54",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "🚨🚔| A home in the Gustavo Díaz Ordaz neighbourhood is shot at; an armed group fired long and short guns on Tuesday afternoon."
+  },
+  {
+   "id": "2115245806118916439",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115245806118916439",
+   "created_at": "2026-10-28T00:54:34.000Z",
+   "text": "Un domicilio de la colonia Gustavo Díaz Ordaz, en #Culiacán, fue tiroteado por un grupo armado con disparos de arma larga y corta desde un vehículo en movimiento; en el lugar no se reportaron personas lesionadas. https://t.co/qiqIMWi6F6",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "A home in the Gustavo Díaz Ordaz neighbourhood of #Culiacán was shot at by an armed group with long and short guns from a moving vehicle; no one was reported injured."
+  },
+  {
+   "id": "2115239624205312239",
+   "handle": "ArmandoInfo",
+   "url": "https://x.com/ArmandoInfo/status/2115239624205312239",
+   "created_at": "2026-10-28T00:30:00.000Z",
+   "text": "Pero la suerte de Saab la enfrentaron primero sus socios. Álvaro Pulido Vargas estaba detenido en Caracas desde abril de 2023 por el caso Pdvsa-Cripto, mientras que Carlos Lizcano también quedó bajo arresto en febrero pasado tras la captura del propio https://t.co/u0hZOU8Q06",
+   "lang": "es",
+   "region_ids": [
+    "VEN-43"
+   ],
+   "country": "VEN",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "regional outlet",
+   "label": null,
+   "text_en": "But Saab's partners met their fate first. Álvaro Pulido Vargas had been held in Caracas since April 2023 over the PDVSA-Crypto case, while Carlos Lizcano was also arrested last February after the capture of"
+  },
+  {
+   "id": "2115236055179833561",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115236055179833561",
+   "created_at": "2026-10-28T00:15:49.000Z",
+   "text": "Reportes aseguran que la expresidenta del DIF Morelos habría sido interceptada en un aeropuerto de Nueva York por llevar una fuerte suma de efectivo sin declarar, Cuauhtémoc Blanco niega la versión https://t.co/nFiupPSkLd https://t.co/M0uduqR0xe",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2732"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Reports say the former head of DIF Morelos was allegedly stopped at a New York airport carrying a large undeclared sum of cash; Cuauhtémoc Blanco denies the account"
+  },
+  {
+   "id": "2115229102114287619",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2115229102114287619",
+   "created_at": "2026-10-27T23:48:11.000Z",
+   "text": "Las lluvias asociadas a El Niño dejan cuatro fallecidos y miles de viviendas dañadas en ocho semanas. En Guayas, equipos de rescate buscan a posibles desaparecidos en el río Yaguachi. https://t.co/4UXLlMmbUy https://t.co/NGHYHETWw8",
+   "lang": "es",
+   "region_ids": [
+    "ECU-1280"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Rains linked to El Niño have left four dead and thousands of homes damaged in eight weeks. In Guayas, rescue teams are searching for possible missing people in the Yaguachi river."
+  },
+  {
+   "id": "2115217154949984678",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115217154949984678",
+   "created_at": "2026-10-27T23:00:43.000Z",
+   "text": "BALEAN CASA PRESUNTAMENTE LIGADA AL GOBERNADOR CON LICENCIA RUBÉN ROCHA MOYA EN CULIACÁN Medios locales señalan que la vivienda habría servido como casa de campaña para el funcionario sinaloense. Un grupo armado atacó a balazos una vivienda de la colonia Chapultepec, en https://…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "GUNMEN SHOOT AT HOUSE ALLEGEDLY LINKED TO GOVERNOR ON LEAVE RUBÉN ROCHA MOYA IN CULIACÁN Local media say the house reportedly served as a campaign office for the Sinaloa official. An armed group fired on a house in the Chapultepec neighbourhood, in"
+  },
+  {
+   "id": "2115211941606244622",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115211941606244622",
+   "created_at": "2026-10-27T22:40:00.000Z",
+   "text": "LUZ MARÍA FAJARDO: LA MUJER A QUIEN EQUIPARON EN PODER CON EL CHAPO GUZMÁN, SU AMIGA Y A QUIEN LE MATARON A DOS HIJOS La mujer a quien las autoridades de EEUU compararon en poder con Joaquín Guzmán Loera, líder del Cártel de Sinaloa, traficaba coca desde Colombia. En la https://…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "LUZ MARÍA FAJARDO: THE WOMAN WHOSE POWER WAS LIKENED TO EL CHAPO GUZMÁN'S, HIS FRIEND, AND WHOSE TWO SONS WERE KILLED The woman US authorities compared in power to Joaquín Guzmán Loera, leader of the Sinaloa Cartel, trafficked cocaine from Colombia. In the"
+  },
+  {
+   "id": "2115206908688941285",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2115206908688941285",
+   "created_at": "2026-10-27T22:20:00.000Z",
+   "text": "Cae \"El Isra\", segundo al mando de “Los Rusos”; lo relacionan con privación de la libertad de \"El Gordo Gadaffi\", cantante de corridos De acuerdo con la Fiscalía de Sonora, al detenido se le relaciona con la privación de la libertad de Mirna Janeth \"N\" y del cantante, quienes",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2712"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "\"El Isra\", second in command of \"Los Rusos\", is arrested; he is linked to the abduction of \"El Gordo Gadaffi\", a corridos singer. According to the Sonora Prosecutor's Office, the detainee is linked to the deprivation of liberty of Mirna Janeth \"N\" and of the singer, who"
+  },
+  {
+   "id": "2115194328725553552",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115194328725553552",
+   "created_at": "2026-10-27T21:30:01.000Z",
+   "text": "🚨 En Zapopan han caído operadores financieros del CJNG, integrantes de Los Beltrán Leyva, un exmarino ligado al huachicol fiscal y hasta un ciudadano estadounidense https://t.co/Zji4O8T2RW",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "🚨 In Zapopan, CJNG financial operators, members of Los Beltrán Leyva, a former marine linked to fiscal huachicol (fuel-tax smuggling) and even a US citizen have been arrested"
+  },
+  {
+   "id": "2115191808728633355",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2115191808728633355",
+   "created_at": "2026-10-27T21:20:00.000Z",
+   "text": "Detienen en Nueva York a Natalia Rezende, esposa de Cuauhtémoc Blanco La expresidenta del DIF Morelos fue interceptada, hace un par de semanas, en uno de los principales aeropuertos de la ciudad cona una fuerte suma de dinero en efectivo. https://t.co/6ItlLSbe5N",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2732"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Natalia Rezende, wife of Cuauhtémoc Blanco, detained in New York. The former president of DIF Morelos was intercepted a couple of weeks ago at one of the city's main airports with a large sum of cash."
+  },
+  {
+   "id": "2115187833023451450",
+   "handle": "InSightCrime",
+   "url": "https://x.com/InSightCrime/status/2115187833023451450",
+   "created_at": "2026-10-27T21:04:12.000Z",
+   "text": "🇸🇻 | Bukele’s crackdown weakened MS-13 and Barrio 18 and transformed security in El Salvador. But it also left an overwhelmed prison system and allegations of abuses. How did the country change, and at what cost? Read our analysis: https://t.co/Bt9Wy2bmKM https://t.co/szg1lClCkx",
+   "lang": "und",
+   "region_ids": [],
+   "country": "SLV",
+   "group_ids": [
+    "ms13",
+    "b18"
+   ],
+   "tier": "verified",
+   "source_type": "research outlet",
+   "label": null,
+   "text_en": "🇸🇻 | Bukele’s crackdown weakened MS-13 and Barrio 18 and transformed security in El Salvador. But it also left an overwhelmed prison system and allegations of abuses. How did the country change, and at what cost? Read our analysis."
+  },
+  {
+   "id": "2115181237035733351",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115181237035733351",
+   "created_at": "2026-10-27T20:37:59.000Z",
+   "text": "Trevilla Trejo se reúne con el gobernador de Nayarit para revisar avances en seguridad y tras recibir amenazas del CJNG https://t.co/70nlSx0LmH",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2721"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Trevilla Trejo meets the governor of Nayarit to review security progress, after receiving threats from the CJNG"
+  },
+  {
+   "id": "2115175450972488050",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115175450972488050",
+   "created_at": "2026-10-27T20:15:00.000Z",
+   "text": "⚠️ La desaparición del médico del penal de Mazatlán ocurrió apenas 2 semanas después de la riña en miembros de Los Chapitos https://t.co/fpL0VlmM2D",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "chapitos"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "⚠️ The disappearance of the Mazatlán prison doctor came just 2 weeks after the brawl among members of Los Chapitos"
+  },
+  {
+   "id": "2115167201741435176",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2115167201741435176",
+   "created_at": "2026-10-27T19:42:13.000Z",
+   "text": "➡️ Ataque armado en Real del Valle deja dos hombres sin vida en taller mecánico en Mazatlán 🚔🚨| Un ataque armado registrado durante la mañana de este martes 27 de octubre dejó como saldo dos hombres sin vida al interior de un taller mecánico ubicado sobre la avenida Santa https:…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "➡️ Armed attack in Real del Valle leaves two men dead in a mechanic's workshop in Mazatlán 🚔🚨| An armed attack on the morning of Tuesday, October 27 left two men dead inside a mechanic's workshop on Santa avenue"
+  },
+  {
+   "id": "2115165636611518693",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115165636611518693",
+   "created_at": "2026-10-27T19:36:00.000Z",
+   "text": "⚠️ Florida desmantela una red del Cartel de Sinaloa que traficó cocaína en Tampa Bay durante cinco años https://t.co/Uwo2qHTVRX https://t.co/paDsiKMM7R",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "⚠️ Florida dismantles a Sinaloa Cartel network that trafficked cocaine in Tampa Bay for five years"
+  },
+  {
+   "id": "2115156753826603385",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2115156753826603385",
+   "created_at": "2026-10-27T19:00:42.000Z",
+   "text": "➡️ Suspenden clases presenciales en 23 escuelas de Guasave por enfrentamientos armados en Bamoa y sus alrededores 🔴 🏫 Los planteles de distintos niveles educativos recurrieron a la modalidad a distancia luego del enfrentamiento entre fuerzas federales y civiles armados; https://…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "In-person classes are suspended at 23 schools in Guasave because of armed clashes in Bamoa and its surroundings. Schools at various levels switched to remote learning after the clash between federal forces and armed civilians;"
+  },
+  {
+   "id": "2115131938482647415",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115131938482647415",
+   "created_at": "2026-10-27T17:22:06.000Z",
+   "text": "Zapopan, refugio del crimen organizado: 12 objetivos prioritarios han sido detenidos en nueve meses https://t.co/SvJFAwGMLB",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Zapopan, a refuge for organised crime: 12 priority targets have been arrested in nine months"
+  },
+  {
+   "id": "2115130079114052002",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2115130079114052002",
+   "created_at": "2026-10-27T17:14:42.000Z",
+   "text": "Asesinan en Guayaquil al abogado Leonardo Toledo, quien defendió a Mayra Salazar en el caso Metástasis. https://t.co/HvNVAlKvZT https://t.co/UnI22D5Uda",
+   "lang": "und",
+   "region_ids": [
+    "ECU-1280"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Lawyer Leonardo Toledo, who defended Mayra Salazar in the Metástasis case, is murdered in Guayaquil."
+  },
+  {
+   "id": "2115114502135980358",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115114502135980358",
+   "created_at": "2026-10-27T16:12:48.000Z",
+   "text": "Los empaquetaban y vendían en Edomex: aseguran 6 toneladas de cigarros falsos que almacenaban en bodegas de la colonia Morelos https://t.co/RCwGFFAAqs",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2732",
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "They packaged and sold them in Edomex: 6 tonnes of counterfeit cigarettes stored in warehouses in the Morelos neighbourhood are seized"
+  },
+  {
+   "id": "2115114488118546623",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115114488118546623",
+   "created_at": "2026-10-27T16:12:45.000Z",
+   "text": "El Gobierno de Naucalpan reveló el cartel de forma escalonada a través de la cuenta del presidente municipal Isaac Montoya Márquez; la entrada es gratuita en el Parque Naucalli https://t.co/BEdxBwqpDE https://t.co/Ip1TEYlv9E",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "The Naucalpan government revealed the event poster in stages through the account of municipal president Isaac Montoya Márquez; entry to Parque Naucalli is free"
+  },
+  {
+   "id": "2115111281808269495",
+   "handle": "parescolombia",
+   "url": "https://x.com/parescolombia/status/2115111281808269495",
+   "created_at": "2026-10-27T16:00:01.000Z",
+   "text": "Cúcuta, entre el miedo y la desesperanza. El asesinato de Miguel Castellanos y la explosión de un carro bomba evidencian una crisis de seguridad que no da tregua. La ciudad necesita respuestas urgentes, no más violencia. Lea la nota en: https://t.co/wrf9erlbaK https://t.co/hsnp1…",
+   "lang": "und",
+   "region_ids": [
+    "COL-1421"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "Cúcuta, between fear and hopelessness. The murder of Miguel Castellanos and a car bomb explosion show a security crisis that gives no respite. The city needs urgent answers, not more violence. Read the story at the link."
+  },
+  {
+   "id": "2115108911518732402",
+   "handle": "GabSeguridadMX",
+   "url": "https://x.com/GabSeguridadMX/status/2115108911518732402",
+   "created_at": "2026-10-27T15:50:35.000Z",
+   "text": "En Durango, elementos de @SEMAR_mx, en coordinación con @SSPCMexico y @FGRMexico, localizaron e inhabilitaron dos laboratorios clandestinos utilizados para la producción de metanfetamina, en inmediaciones del poblado El Destierro. Durante las acciones se aseguraron https://t.co/…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2710"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "In Durango, @SEMAR_mx personnel, in coordination with @SSPCMexico and @FGRMexico, located and disabled two clandestine laboratories used to produce methamphetamine near the village of El Destierro. During the operations they seized…"
+  },
+  {
+   "id": "2115105696358265316",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115105696358265316",
+   "created_at": "2026-10-27T15:37:49.000Z",
+   "text": "Penal de Mazatlán sigue en medio de la violencia tras riña de Los Chapitos que dejó 12 muertos: desaparece José Luis Vega, doctor de la prisión https://t.co/vTCLind7Mn",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "chapitos"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Mazatlán prison remains engulfed in violence after a Los Chapitos brawl that left 12 dead: José Luis Vega, the prison doctor, goes missing"
+  },
+  {
+   "id": "2115098759017251125",
+   "handle": "parescolombia",
+   "url": "https://x.com/parescolombia/status/2115098759017251125",
+   "created_at": "2026-10-27T15:10:15.000Z",
+   "text": "#ParesReporta El asesinato del ex secretario de gobierno de Cúcuta es el disparador para afirmar que la principal ciudad de frontera vive una profunda crisis en todos los aspectos https://t.co/GYF73v8OOM https://t.co/BrxXwxbIRv",
+   "lang": "und",
+   "region_ids": [
+    "COL-1421"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "#ParesReporta The murder of Cúcuta's former government secretary is the trigger for asserting that the main border city is living through a deep crisis on every front."
+  },
+  {
+   "id": "2115085364352405709",
+   "handle": "SSPCMexico",
+   "url": "https://x.com/SSPCMexico/status/2115085364352405709",
+   "created_at": "2026-10-27T14:17:01.000Z",
+   "text": "En la #CDMX, elementos de @SEMAR_mx, #SSPC, @FGRMexico, en coordinación con autoridades locales, ejecutaron cuatro cateos en la alcaldía #Cuauhtémoc donde aseguraron 547 cajas de cigarros apócrifos, con un peso aproximado de seis toneladas. https://t.co/ayo15fFDCF https://t.co/j…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "In #CDMX, personnel from @SEMAR_mx, #SSPC and @FGRMexico, in coordination with local authorities, carried out four searches in the #Cuauhtémoc borough where they seized 547 boxes of counterfeit cigarettes weighing about six tonnes."
+  },
+  {
+   "id": "2115084918682222899",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2115084918682222899",
+   "created_at": "2026-10-27T14:15:15.000Z",
+   "text": "#PRIMICIASDesdeEEUU | Una amenaza de extorsión terminó de hundir el negocio que había abierto con su liquidación en Guayaquil. Hace tres años llegó a EE.UU. con USD 20.000 en deudas. https://t.co/2EwnLcGF0o https://t.co/KCFhEAPtNG",
+   "lang": "und",
+   "region_ids": [
+    "ECU-1280"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "#PRIMICIASDesdeEEUU | An extortion threat finished off the business they had opened with their severance pay in Guayaquil. Three years ago they arrived in the US with USD 20,000 in debt."
+  },
   {
    "id": "2115061877885567446",
    "handle": "GabSeguridadMX",
@@ -2417,229 +3063,6 @@
    "source_type": "local outlet",
    "label": null,
    "text_en": "➡️ Two men arrested after shooting at a house in Pradera Dorada IV, Mazatlán. The Army arrested two men for allegedly shooting at the front of a home in Pradera Dorada IV, #Mazatlán, and seized a firearm…"
-  },
-  {
-   "id": "2112762472180637896",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2112762472180637896",
-   "created_at": "2026-10-21T04:26:41.000Z",
-   "text": "🟣| ¡Apartan las calles cada vez que hay béisbol! Ciudadanos denuncian que desde horas antes de los juegos, acaparan espacios de estacionamiento en el bulevar Francisco Zarco (blv. Zapata), frente a la antigua agencia Nissan. Aseguran que es la misma situación en cada partido. ht…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "🟣 They block the streets every time there's baseball! Residents complain that hours before games, parking spaces on Francisco Zarco boulevard (Zapata blvd.), opposite the old Nissan dealership, are taken over."
-  },
-  {
-   "id": "2112757335714312428",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2112757335714312428",
-   "created_at": "2026-10-21T04:06:16.000Z",
-   "text": "Rito “N”, fue #detenido en Hermosillo, #Sonora, después de 39 años de permanecer prófugo de la justicia por homicidio ocurrido en 1987, en #Sinaloa. https://t.co/C0OnC2VWhY",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711",
-    "MEX-2712"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "Rito \"N\" was #arrested in Hermosillo, #Sonora, after 39 years as a fugitive for a 1987 homicide in #Sinaloa."
-  },
-  {
-   "id": "2112751253021204490",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2112751253021204490",
-   "created_at": "2026-10-21T03:42:06.000Z",
-   "text": "Mientras el funcionario #mexicano exponía el #rechazo del gobierno a la decisión adoptada por el #CED desde abril pasado, #familiares ubicados en la parte posterior de la sala se levantaron y mostraron carteles con los rostros de sus seres queridos desaparecidos.",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "While the #Mexican official set out the government's #rejection of the decision adopted by the #CED last April, #relatives at the back of the room stood and held up posters with the faces of their disappeared loved ones."
-  },
-  {
-   "id": "2112737624221782391",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2112737624221782391",
-   "created_at": "2026-10-21T02:47:57.000Z",
-   "text": "➡️ Padres de familia piden ayuda por plaga de iguanas que pone en riesgo a niños de un preescolar en Angostura 🟣| Madres de familia en Angostura denuncian mordeduras, golpes con la cola y constantes acercamientos de los reptiles a los menores 🦎; aseguran que han solicitado la ht…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ Parents ask for help over an iguana infestation endangering children at a preschool in Angostura; mothers report bites, tail strikes and repeated approaches by the reptiles…"
-  },
-  {
-   "id": "2112735883208319389",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2112735883208319389",
-   "created_at": "2026-10-21T02:41:01.000Z",
-   "text": "Una vivienda de una planta con fachada de color negro y portón blanco fue tiroteada con ráfagas de arma larga por un grupo armado sin que se reportaran personas lesionadas en Prados del Sol, sector Capistrano, en #Culiacán. https://t.co/D0gfJ1O5V5",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "A one-storey house with a black facade and white gate was raked with long-gun fire by an armed group, with no injuries reported, in Prados del Sol, Capistrano sector, #Culiacán."
-  },
-  {
-   "id": "2112730911808827550",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2112730911808827550",
-   "created_at": "2026-10-21T02:21:16.000Z",
-   "text": "Una vivienda de una planta con fachada de color negro y portón blanco fue tiroteada con ráfagas de arma larga por un grupo armado sin que se reportaran personas lesionadas en Valle Real, sector Capistrano, en #Culiacán. https://t.co/QuVGnDaKcX",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "A one-storey house with a black facade and white gate was raked with long-gun fire by an armed group, with no injuries reported, in Valle Real, Capistrano sector, #Culiacán."
-  },
-  {
-   "id": "2112723796335452248",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2112723796335452248",
-   "created_at": "2026-10-21T01:53:00.000Z",
-   "text": "El Nenuco de 29 años de edad es acusado de homicidio calificado, asociación delictuosa y delitos cometidos contra integrantes de las instituciones policiales del Estado, además de ser investigado por tráfico de personas. https://t.co/UzlSqXaSAF",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "El Nenuco, 29, is charged with aggravated homicide, criminal association and crimes against members of the state's police institutions, and is also under investigation for human smuggling."
-  },
-  {
-   "id": "2112710285710778512",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2112710285710778512",
-   "created_at": "2026-10-21T00:59:19.000Z",
-   "text": "Ataque a balazos deja sin vida a un motociclista en Mazatlán La Emisión 6PM de “Los Noticieristas” con Luis Alberto Díaz y todo su equipo. https://t.co/AdT7sdhz08",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "Shooting kills a motorcyclist in Mazatlán (6PM edition of \"Los Noticieristas\" with Luis Alberto Díaz and team)"
-  },
-  {
-   "id": "2112699292963967075",
-   "handle": "ZETATijuana",
-   "url": "https://x.com/ZETATijuana/status/2112699292963967075",
-   "created_at": "2026-10-21T00:15:38.000Z",
-   "text": "La fiscal Ma. Elena Andrade, informó que el presunto padrastro del niño de dos años se encuentra detenido y podría ser investigado por omisión de cuidados. La madre continúa sin ser localizada, mientras el pequeño permanece en estado crítico. https://t.co/1XFHc7k0T1",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "Prosecutor Ma. Elena Andrade said the alleged stepfather of the two-year-old boy is in custody and may be investigated for neglect. The mother has still not been located, while the child remains in critical condition."
-  },
-  {
-   "id": "2112687940346224644",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2112687940346224644",
-   "created_at": "2026-10-20T23:30:31.000Z",
-   "text": "➡️ Detienen en Sonora a presunto feminicida de adulta mayor atacada en su domicilio en Guasave. 🚨🚔| Detienen en Sonora a presunto feminicida de una adulta mayor en Guasave. Rosario Felipe “N”, de 34 años, era buscado por el caso de Cecilia “N”, de 75 años, quien fue atacada http…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711",
-    "MEX-2712"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ Alleged femicide suspect in the killing of an elderly woman attacked at home in Guasave arrested in Sonora. Rosario Felipe \"N\", 34, was wanted in the case of Cecilia \"N\", 75, who was attacked…"
-  },
-  {
-   "id": "2112663281639002365",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2112663281639002365",
-   "created_at": "2026-10-20T21:52:32.000Z",
-   "text": "➡️ Ataque armado en La Foresta deja sin vida a un motociclista en Mazatlán. 🚨🚔| Un motociclista perdió la vida tras un ataque armado en el fraccionamiento La Foresta, en #Mazatlán; la víctima quedó tendida junto a su motocicleta sobre la avenida del Sol, cerca del cruce con la h…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ Armed attack in La Foresta kills a motorcyclist in #Mazatlán; the victim lay beside his motorcycle on Avenida del Sol…"
-  },
-  {
-   "id": "2112658629656510748",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2112658629656510748",
-   "created_at": "2026-10-20T21:34:03.000Z",
-   "text": "➡️ Ataque armado deja a un hombre y una mujer sin vida en la colonia Flor de Mayo en Villa Unión, Sinaloa. 🚨🚔| Un hombre y una mujer fueron localizados sin vida tras un ataque armado en la colonia Flor de Mayo, al sur de Mazatlán; las detonaciones ocurrieron sobre las calles htt…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ Armed attack leaves a man and a woman dead in the Flor de Mayo neighbourhood of Villa Unión, Sinaloa, south of Mazatlán…"
-  },
-  {
-   "id": "2112600445315162426",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2112600445315162426",
-   "created_at": "2026-10-20T17:42:51.000Z",
-   "text": "➡️ Ataque a balazos en llantera de #Mazatlán deja un hombre muerto y dos trabajadores heridos 🚔🚨 Un hombre fue localizado sin vida y dos trabajadores resultaron heridos tras un ataque a balazos en una llantera de la colonia Luis Echeverría, en Mazatlán. Info 👉🏼🔗 https://t.co/y7v…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ Shooting at a #Mazatlán tyre shop leaves one man dead and two workers wounded, in the Luis Echeverría neighbourhood."
   }
  ]
 }

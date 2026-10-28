@@ -173,7 +173,7 @@ document.getElementById("L-allres").onchange=e=>{if(e.target.checked&&!document.
  function openRegion(r,f){const fc={type:"FeatureCollection",features:afr.features.filter(x=>r.countries.includes(x.properties.ADM0_A3))};
   const [[x0,y0],[x1,y1]]=path.bounds(fc),k=Math.min(4,0.8/Math.max((x1-x0)/W,(y1-y0)/H));
   if(!PH()){svg.transition().duration(700).call(zoom.transform,d3.zoomIdentity.translate(W/2,H/2).scale(k).translate(-(x0+x1)/2,-(y0+y1)/2));rb.classList.add("show");}
-  showR(r,f);const d=document.getElementById("r-"+r.id);if(d)d.open=true;setNews(r.id);}
+  showR(r,f);window._hiReg&&window._hiReg(r);const d=document.getElementById("r-"+r.id);if(d)d.open=true;setNews(r.id);}
  window._openRegion=id=>openRegion(B.regions.find(r=>r.id===id));
 /* ---------- armed groups: affiliation only ---------- */
 const G=B.groups||{},GA=B.galign||{};
@@ -269,7 +269,7 @@ const renderConflicts=()=>{const CF=B.conflicts,RN0=Object.fromEntries(B.regions
   const ins=sv.append("g").attr("transform","translate(4,118)");ins.append("rect").attr("width",54).attr("height",66).attr("rx",3).attr("class","insbg");
   const ip=d3.geoMercator().fitExtent([[3,3],[51,63]],afr),ia=d3.geoPath(ip);ins.append("path").attr("d",ia(afr)).attr("class","insaf");ins.append("path").attr("d",ia(fc)).attr("class","insc");});};
  /* ---------- news by storyline ---------- */
- const LN={en:"EN",fr:"FR",pt:"PT",ar:"AR",ru:"RU",sw:"SW",ha:"HA",so:"SO",am:"AM",ti:"TI",rw:"RW",rn:"RN",es:"ES"};
+ const LN={en:"English",fr:"French",pt:"Portuguese",ar:"Arabic",ru:"Russian",sw:"Swahili",ha:"Hausa",so:"Somali",am:"Amharic",ti:"Tigrinya",rw:"Kinyarwanda",rn:"Kirundi",es:"Spanish"};
  const isState=s=>/^(yes|de facto)/i.test(s||"");
  const fmt=ts=>new Date(ts*1000).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"America/New_York"});
  const RN=Object.fromEntries([...B.regions.map(r=>[r.id,r.name]),["continent","Continent-wide"]]);
@@ -422,14 +422,14 @@ const renderMinerals=()=>{const CN=["DRC","Rwanda","South Africa","Ghana","Niger
   renderSources();
  /* ---------- phone layout (max 600px): chips, region clusters, bottom sheets, collapsible sections ---------- */
  {const scrim=document.createElement("div");scrim.id="scrim";document.body.appendChild(scrim);
-  const closeSheets=()=>{document.querySelectorAll(".sheet-open").forEach(x=>x.classList.remove("sheet-open"));document.body.classList.remove("sheet-on");};
+  const closeSheets=()=>{document.querySelectorAll(".sheet-open").forEach(x=>x.classList.remove("sheet-open"));document.body.classList.remove("sheet-on");window._clrReg&&window._clrReg();};
   const addX=el=>{if(el.querySelector(":scope>.shx"))return;const b=document.createElement("button");b.className="shx";b.type="button";b.textContent="Close";b.setAttribute("aria-label","Close details");b.onclick=closeSheets;el.prepend(b);};
   const openSheet=el=>{if(!PH())return;closeSheets();addX(el);el.classList.add("sheet-open");document.body.classList.add("sheet-on");el.scrollTop=0;el.querySelector(".shx").focus({preventScroll:true});};
   scrim.onclick=closeSheets;document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheets();});
   const pEl=document.getElementById("panel");window._onPanel=()=>{if(PH())openSheet(pEl);};
   const side=document.querySelector(".mapside"),fb=document.createElement("button");fb.id="fbtn";fb.type="button";fb.className="fbtn";fb.innerHTML="Filters and legend";fb.setAttribute("aria-haspopup","dialog");
   document.querySelector(".mapgrid").before(fb);fb.onclick=()=>openSheet(side);
-  const pr=document.querySelector("#map>.prompt");if(PH()&&pr)pr.textContent="Numbers mark conflict regions, listed under the map with the foreign powers involved. Tap a number, a list row or a country for details.";
+  const pr=document.querySelector("#map>.prompt");if(PH()&&pr)pr.textContent="Gold flag markers sit on each conflict region. Tap a marker, a region in the list under the map, or a country for details. The chosen region is outlined.";
   window._sheet={open:id=>openSheet(document.querySelector(id)),close:closeSheets};
   /* country tap on phone: details in the sheet */
   window._ctrySheet=(iso,name)=>{if(!PH())return;const ps=byIso.has(iso)?[...new Set(byIso.get(iso).map(x=>x.p))]:[];
@@ -441,11 +441,13 @@ const renderMinerals=()=>{const CN=["DRC","Rwanda","South Africa","Ghana","Niger
    /* small numbered markers; nudge apart so none overlap */
    const R=12*bs;for(let it=0;it<60;it++)for(const a of nodes)for(const b of nodes){if(a===b)continue;const dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||1,m=2*R+3*bs;if(d<m){const k=(m-d)/2/d;a.x-=dx*k;a.y-=dy*k;b.x+=dx*k;b.y+=dy*k;}}
    const go=n=>openRegion(n.r);
-   nodes.forEach(n=>{const g=gK.append("g").attr("class","kp").attr("transform",`translate(${n.x},${n.y}) scale(${bs})`).attr("tabindex",0).attr("role","button").attr("aria-label",`${n.i}. ${n.r.name}: ${n.ps.length} foreign powers. Open details`);
-    g.append("circle").attr("class","khit").attr("r",22);g.append("circle").attr("class","kbg").attr("r",12);g.append("text").attr("class","kn").attr("y",5).attr("text-anchor","middle").text(n.i);
+   window._hiReg=r=>{gK.selectAll(".kreg").remove();if(!r||!PH())return;const fc={type:"FeatureCollection",features:afr.features.filter(x=>r.countries.includes(x.properties.ADM0_A3))};gK.insert("path",":first-child").attr("class","kreg").attr("d",path(fc)).style("stroke-width",2.5*bs);};
+   window._clrReg=()=>gK.selectAll(".kreg").remove();
+   nodes.forEach(n=>{const g=gK.append("g").attr("class","kp").attr("transform",`translate(${n.x},${n.y}) scale(${bs})`).attr("tabindex",0).attr("role","button").attr("aria-label",`${n.r.name}: ${n.ps.length} foreign powers. Open details`);
+    g.append("circle").attr("class","khit").attr("r",22);g.append("circle").attr("class","kbg").attr("r",15);if(n.ps.length)g.append("use").attr("href","#"+CAPS[n.ps[0]].f).attr("x",-9).attr("y",-6).attr("width",18).attr("height",12);
     g.on("click",e=>{e.stopPropagation();go(n);}).on("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go(n);}});});
    const l=document.createElement("ol");l.id="rlistph";l.className="rlistph";l.setAttribute("aria-label","Conflict regions on the map");
-   l.innerHTML=nodes.map(n=>`<li><button type="button" data-r="${n.r.id}"><span class="rn">${n.i}</span><span class="rt">${esc(n.r.name)}</span><span class="rf">${n.ps.slice(0,3).map(p=>`<svg viewBox="0 0 20 13.3" aria-hidden="true"><use href="#${CAPS[p].f}" width="20" height="13.3"/></svg>`).join("")}</span><span class="rc">${n.ps.length} ${n.ps.length===1?"power":"powers"}</span></button></li>`).join("");
+   l.innerHTML=nodes.map(n=>`<li><button type="button" data-r="${n.r.id}"><span class="rt">${esc(n.r.name)}</span><span class="rf">${n.ps.slice(0,3).map(p=>`<svg viewBox="0 0 20 13.3" aria-hidden="true"><use href="#${CAPS[p].f}" width="20" height="13.3"/></svg>`).join("")}</span><span class="rc">${n.ps.length} ${n.ps.length===1?"power":"powers"}</span></button></li>`).join("");
    document.querySelector(".mapwrap").after(l);l.querySelectorAll("button").forEach(b=>b.onclick=()=>openRegion(B.regions.find(r=>r.id===b.dataset.r)));
    window._clusters=nodes.map(n=>({id:n.r.id,n:n.ps.length}));};
   drawK();document.getElementById("L-pow").addEventListener("change",e=>gK.style("display",e.target.checked?null:"none"));let rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(drawK,200);});

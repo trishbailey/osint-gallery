@@ -13,7 +13,7 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
 input[type=range]{width:100%;accent-color:var(--gold)}#q,select{width:100%;min-height:44px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:6px 10px;font-size:14px}
 .seg{display:flex;gap:6px}.seg button{justify-content:center}.seg button.on,#play[aria-pressed=true]{border-color:var(--gold);color:var(--gold)}
 .muted{color:var(--muted);font-size:13px}main{padding:16px 22px;min-width:0}
-h1{margin:4px 0 8px;font-size:26px}h2{font-size:18px;margin:26px 0 8px}.intro{max-width:900px;margin:0 0 12px}
+h1{margin:4px 0 8px;font-size:26px}h2{font-size:18px;margin:26px 0 8px}.intro{margin:0 0 12px}
 .stats{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 14px;min-width:140px}
 .stat b{display:block;font-size:22px;color:var(--gold)}.stat span{font-size:13px;color:var(--muted)}
 .banner{background:var(--panel2);border-left:3px solid var(--gold);padding:6px 12px;font-size:14px;margin:8px 0}
@@ -99,7 +99,7 @@ body.story #map{height:min(62vh,620px)}
 .arwnote{display:none;position:absolute;left:56px;top:10px;right:10px;z-index:800;pointer-events:none;font-size:13px;line-height:1.3;color:var(--text);background:#0b1526e6;border-left:3px solid #e8423f;padding:4px 8px;border-radius:4px;max-width:420px}
 /* Lead finding: Pacific shuttle */
 .lead{margin:6px 0 18px}.leadh{font-size:23px;line-height:1.3;margin:6px 0 8px;color:var(--text)}.leadh2{font-size:19px;margin:22px 0 6px}
-.leadp{max-width:900px;margin:0 0 10px;font-size:15px}
+.leadp{margin:0 0 10px;font-size:15px}
 .lchips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px;align-items:center}.lchip{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:8px;padding:8px 12px;min-width:150px;flex:1 1 150px;max-width:300px}
 .lchip b{display:block;font-size:22px;color:var(--gold)}.lchip span{font-size:13px;color:var(--muted)}.arr{color:var(--gold);font-size:20px}
 .shgrid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:12px}
@@ -129,3 +129,20 @@ body.story #map{height:min(62vh,620px)}
 @media(max-width:700px){.rchips .lchip{min-width:0;flex:1 1 0;padding:6px 8px}.rchips .lchip b{font-size:17px}.arr{font-size:16px}.mv,.ml{font-size:13px;letter-spacing:-.02em}.srow{grid-template-columns:minmax(0,96px) minmax(0,1fr) auto}.cbar{grid-template-columns:70px minmax(0,1fr) auto}}
 
 .dg{margin:8px 0}.dgh{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}.dgh b{font-size:22px;color:var(--gold)}.dgh span{font-size:13px;color:var(--muted)}.dg svg{display:block;width:100%;max-width:440px;height:auto}
+/* open-state cue for the 'in brief' cards: the heading brightens and the card outline turns gold when opened */
+.card[open]>summary{color:#f2d16b}.card[open]{border-color:var(--gold)}
+/* chips that open a ship record */
+.chip[role=button]:hover,.chip[role=button]:focus-visible{border-color:var(--gold);outline:none}
+
+/* chapter 3: identity timeline */
+.idl{margin:8px 0 4px}.tl{position:relative;margin:14px 2px 6px;font-size:13px}
+.tln,.tlb,.tlv,.tla{position:relative;height:24px}.tln{height:26px}.tla{height:20px}.tlb{height:22px;border-radius:4px}
+.tln span{position:absolute;top:0;height:26px;border-top:2px solid var(--text);box-sizing:border-box;padding-top:2px;white-space:nowrap;display:flex;line-height:1.2}.tln span:last-child{justify-content:flex-end}
+.tlb i{position:absolute;top:0;height:22px;min-width:3px;display:block}.tlb u{position:absolute;top:-4px;height:28px;width:14px;margin-left:-7px;cursor:pointer;text-decoration:none}.tlb u:after{content:"";position:absolute;left:6px;top:0;height:100%;width:2px;background:var(--text)}
+.tlv b{position:absolute;top:5px;width:14px;height:14px;margin-left:-7px;border-radius:50%;box-sizing:border-box;border:2px solid var(--gold);cursor:pointer}.tlv b.vc{background:var(--gold)}.tlv b.vo{background:transparent}
+.tlv em{position:absolute;top:0;height:24px;border-left:2px dashed var(--text);margin-left:-1px}
+.tla span{position:absolute;top:2px;transform:translateX(-50%);white-space:nowrap}.tla span:first-child{transform:none}
+.tltip{position:absolute;top:-4px;z-index:5;max-width:100%;width:max-content;background:#0b1526f2;border:1px solid var(--gold);border-radius:6px;padding:4px 8px;line-height:1.3;pointer-events:none}.tltip[hidden]{display:none}
+.tlk{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;margin-top:8px}.tlk i{display:inline-block;width:14px;height:14px;margin-right:5px;vertical-align:-2px;border-radius:3px}.tlk i.mk{border-radius:50%;box-sizing:border-box;border:2px solid var(--gold)}.tlk i.mk.vc{background:var(--gold)}.tlk i.tk{width:2px;height:14px;border-radius:0;background:var(--text);margin:0 9px 0 6px}
+.tlk i.ds{width:0;height:14px;border-radius:0;border-left:2px dashed var(--text);margin:0 9px 0 6px}
+@media(max-width:700px){body.story .chapters:has(.chap[data-ch="identity"].on){height:520px}}

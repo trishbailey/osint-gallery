@@ -1,10 +1,11 @@
 """Recompute every number on the Axis page from the latest collection (no hard-coded figures).
 Window = 30 days ending at the latest post date in the data; 'new this week' = last 7 days vs the 3 weeks before.
 Reads aggregate CSVs from the IRGC bot working folder on the box (W). Holds no keys or session data.
-Usage: python build_data.py [W]   -> writes ../data.json"""
+Usage: python build_data.py [W]   -> writes ../data.json (W also from env AXIS_WORK; AXIS_TABS, AXIS_POSTS, AXIS_OUT override paths)"""
 import pandas as pd, json, sys, os
-W=sys.argv[1] if len(sys.argv)>1 else '/home/box/agent-data/agents/39ef6fec-7081-4cce-b3bf-015c6d31f16f/irgc_work/'
-OUT=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','data.json')
+W=os.path.join(sys.argv[1] if len(sys.argv)>1 else os.environ.get('AXIS_WORK','/workspace/axis_inputs/W'),'')  # trailing slash required
+TABS=os.environ.get('AXIS_TABS','/workspace/axis_inputs/codebook/tabs.pkl')
+OUT=os.environ.get('AXIS_OUT') or os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','data.json')
 GROUPS=['houthi','irgc','hezbollah','hamas','iraqi','aligned','pij']
 C=pd.read_csv(W+'v3/merged/coordination_copies_v4.csv'); C['date']=pd.to_datetime(C.date,utc=True)
 nodes=pd.read_csv(W+'v3/merged/nodes.csv',low_memory=False); cr=nodes[(nodes.crawled==True)&(nodes.posts>0)&nodes.group.isin(GROUPS)]
@@ -49,7 +50,7 @@ for r in s.itertuples():
      m=int(E.weight.sum()),f=str(E.first_seen.min()),l=str(E.last_seen.max())))
 d['paylist']=sorted(pl,key=lambda x:(-len(x['ch']),-x['m']))
 # themes (AI-coded codebook tables; recomputed when the codebook run is refreshed)
-t=pd.read_pickle('/workspace/codebook/tabs.pkl'); th=t['th']
+t=pd.read_pickle(TABS); th=t['th']
 TH={'Yemen–Saudi war':['YEMEN_SAUDI_WAR'],'Palestine':['PALESTINE'],'Iran–Israel–US standoff':['IRAN_STANDOFF_AND_DIPLOMACY','ISRAELI_STRIKES_OUTSIDE_PALESTINE'],'Martyrs and faith':['MARTYRS_FAITH_MOBILISATION'],'Home and world news':['DOMESTIC_GOVERNANCE_SECURITY','WORLD_AND_OTHER']}
 d['themes']=dict(cats=list(TH),coded=int(t['n'].sum()),by_group={g.lower():[round(float(sum(th.loc[k,g] for k in ks)),1) for ks in TH.values()] for g in ['HOUTHI','IRGC','HEZBOLLAH','HAMAS','IRAQI','ALIGNED','PIJ']},n={k.lower():int(v) for k,v in t['n'].items()})
 # shared web infrastructure (More section)
@@ -68,5 +69,7 @@ if os.path.exists(_CS):
 else: d['coord']=dict(d['collection'])
 if os.path.exists(POSTS):
     _P=pd.read_pickle(POSTS); d['collection']=dict(channels=int(_P.channel.nunique()),posts=int(len(_P)),start=str(_P.date.min().date()),end=str(_P.date.max().date()))
+# Hamas threats block (curated from the Threats tabs of the Hamas sheet; see hamas_threats.json, not recomputed here)
+d['hamas_threats']=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'hamas_threats.json'),encoding='utf-8'))
 json.dump(d,open(OUT,'w'),ensure_ascii=False,indent=1); print(json.dumps({k:d[k] for k in ['data_through','window_start','collection','xcopies30','origin30','allorigin30','week']},indent=0))
 print(d['pay'])

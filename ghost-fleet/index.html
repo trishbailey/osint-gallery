@@ -3,7 +3,7 @@
 <title>Russia's Shadow Fleet Tracker | Beacon Intelligence Group</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Z61EKRP8QV');</script>
-<link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css?v=7"></head><body>
+<link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css?v=9"></head><body>
 <header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">SHADOW FLEET · v1</span></a>
 <nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#map">Map</a><a href="../ukraine-money-flows/">Ukraine Money Flows</a></nav></header>
 <div class="layout">
@@ -51,37 +51,34 @@
 <section class="rusf" aria-labelledby="rush"><h2 id="rush" class="leadh2"></h2><p id="rusp" class="leadp"></p>
 <div class="rusgrid"><div id="ruschips" class="lchips rchips"></div>
 <div class="shbox"><h3 class="figt">Share of Russian loading-terminal calls by month</h3><div class="ckey"><span><i style="background:#c0504d"></i>Russian-flagged ships</span><span><i style="background:#c8a24a"></i>Other flags</span></div><div id="rusbars" class="rbars"></div></div></div>
-<p class="note">Flag on the day of each call, from tracking identity records. The last month is partial.</p></section>
+<p class="note">Flag on the day of each call; the last month is partial.</p></section>
 </section>
-<p class="intro">Russia moves much of its seaborne oil on ageing tankers with opaque owners, frequent name and flag changes and patchy insurance, often called the shadow fleet. This page follows about 720 of these tankers using public ship-tracking data from Global Fishing Watch, and shows how the fleet keeps oil moving: where it loads, where it waits, how ships change identity, who runs them and when they go dark. Step through the story below, or switch to Explore to use the map yourself.</p>
+<p class="intro">Russia moves much of its seaborne oil on ageing tankers with opaque owners and changing names and flags, often called the shadow fleet.</p>
 <div id="modes" class="seg modes" role="group" aria-label="View"><button data-m="story" aria-pressed="true">The story</button><button data-m="explore" aria-pressed="false">Explore the map</button></div>
-<div class="exonly banner"><label><input type="checkbox" id="rawt"> Show every event, filters and ship animation</label> <span class="muted">Default view: trips from Russian loading ports (line width = number of trips) and transfer areas (circle size = loitering). Lines link start and end points only; they are not the routes sailed.</span></div>
+<div class="exonly banner"><label><input type="checkbox" id="rawt"> Show every event, filters and ship animation</label> <span class="muted">Line width = trips from Russian ports; circle size = loitering. Lines join end points, not sailed routes.</span></div>
 <div class="rawonly stats" id="stats" aria-live="polite"></div>
 <div class="sw2"><div id="story" class="stonly"><div class="snav"><button id="prev" aria-label="Previous chapter">‹</button><span id="cpos"></span><button id="next" aria-label="Next chapter">›</button></div><div id="chapters" class="chapters"></div></div>
 <div id="map" role="region" aria-label="Map of shadow-fleet tanker activity"></div></div>
 
-<p class="note rawonly">Moving ships travel in straight lines between recorded positions (port calls, loitering and transponder-gap points), so a path may cross land. Radar detections cover selected chokepoints only.</p>
+<p class="note rawonly">Ship paths join recorded positions in straight lines and may cross land; radar covers selected chokepoints only.</p>
 <details id="explainer" class="grp" open><summary><h2>The shadow fleet in brief</h2></summary>
 <div class="cards">
 <details class="card" open><summary>Why it is called a shadow fleet</summary>
-<p>Most of these ships are old tankers, often 15 to 20 years or more, bought cheaply as mainstream owners retired them. Each one usually sits in its own shell company registered in places such as the Marshall Islands, Mauritius or the United Arab Emirates, so the real owner is hard to see.</p>
-<p>The ships change names and flags often. When a registry drops a tanker, it moves to another flag of convenience, and some have sailed under flags from registries that had already removed them. Many switch off or falsify their AIS transponders (the radio beacons ships use to report their position), and many lack insurance from the established Western clubs.</p></details>
+<p>Old tankers held by shell companies change names and flags often, sometimes switch off their AIS position beacons, and lack Western insurance.</p></details>
 <details class="card"><summary>How it operates</summary>
-<p>Cargo is often moved between tankers at sea in ship-to-ship transfers, which blur where oil came from. Ships wait or drift for long periods in open water before and after these transfers, which shows up in tracking data as loitering.</p>
-<p>Transponders tend to go silent near loading terminals and transfer areas, so a ship can load or swap cargo without a visible record. Paperwork such as cargo origin and insurance certificates is then reissued to present the oil as legitimate.</p>
+<p>Oil changes hands in ship-to-ship transfers at sea, and ships go quiet near terminals, so where it came from is hard to trace.</p>
 <button class="hl" data-k="sts">Show transfer areas on the map</button></details>
 <details class="card"><summary>What it carries and what risks it brings</summary>
-<p>The fleet carries Russian crude oil and refined products to buyers outside the Western price-cap system, keeping export revenue flowing to Moscow despite Western restrictions.</p>
-<p>Its age and weak insurance raise the risk of a spill that no insurer would cover. A tanker lost power and drifted off Germany's Rügen island in January 2025 carrying about 100,000 tonnes of oil. On 25 December 2024 the tanker Eagle S, which had loaded at a Russian port, dragged its anchor across the Gulf of Finland and cut the Estlink 2 power cable and four data cables. Finnish prosecutors charged its officers with negligence, not deliberate sabotage, and whether the damage was intended remains disputed. A Helsinki court dismissed the case in October 2025 for lack of Finnish jurisdiction. The Court of Appeal reversed that in August 2026 and sent the case back for trial, and that decision can still be appealed.</p>
+<p>It carries Russian crude and fuel to buyers outside the Western price cap, and its age and weak insurance risk spills no insurer would cover.</p>
+<p>The Eagle S, which had loaded at a Russian port, cut the Estlink 2 power cable in December 2024; officers are charged with negligence, not sabotage, and an appeal court sent the case back for trial.</p>
 <button class="hl" data-x="infra">Show undersea cables and pipelines on the map</button></details>
 <details class="card"><summary>Where it goes</summary>
-<p>Western cargoes load at Primorsk and Ust-Luga on the Baltic, Novorossiysk on the Black Sea, and Murmansk in the Arctic. Pacific cargoes load at Kozmino near Nakhodka.</p>
-<p>Baltic ships pass through the Gulf of Finland and the Danish straits. Transfers cluster off southern Greece, near Ceuta at the Strait of Gibraltar, in the Gulf of Oman and east of Singapore off Malaysia. The main buyers are India, China and Turkey.</p>
+<p>Oil loads at Baltic, Black Sea, Arctic and Pacific ports and goes mainly to India, China and Turkey, often after transfers off Greece, Ceuta, Oman and Malaysia.</p>
 <button class="hl" data-k="load">Show loading ports on the map</button> <button class="hl" data-k="choke">Show Baltic routes on the map</button></details>
 </div></details>
-<details id="networks" class="grp" open><summary><h2>Company networks</h2></summary><p class="muted">Companies that own or manage three or more of these ships. Select a company to show its ships on the map.</p><div id="nets" class="cards"></div><div id="addr"></div></details>
+<details id="networks" class="grp" open><summary><h2>Company networks</h2></summary><p class="muted">Companies managing three or more of these ships; select one to show them on the map.</p><div id="nets" class="cards"></div><div id="addr"></div></details>
 <p class="credits note">Data credits: Powered by Global Fishing Watch (CC BY-NC 4.0) · Digitraffic, Fintraffic (CC BY 4.0) · Kystverket (NLOD) · OpenSanctions (CC BY-NC 4.0) · UN Comtrade · TeleGeography (CC BY-NC-SA) · EMODnet (CC BY 4.0) · Marine Regions, VLIZ (CC BY 4.0) · gpsjam.org · NGA World Port Index · Natural Earth.</p>
 </main></div>
 <div id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="ptitle" hidden><button id="pclose" aria-label="Close profile">✕</button><div id="pbody"></div></div>
-<script src="vendor/leaflet.js"></script><script src="app.js?v=3"></script><script src="story.js?v=4"></script><script src="shuttle.js?v=3"></script>
+<script src="vendor/leaflet.js"></script><script src="app.js?v=5"></script><script src="story.js?v=5"></script><script src="shuttle.js?v=4"></script>
 </body></html>

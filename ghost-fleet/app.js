@@ -68,12 +68,22 @@ function stats(nv,ne){const s=document.getElementById("stats");const lo=M.events
 let netSel=null;
 document.getElementById("nets").innerHTML=M.nets.slice(0,12).map((n,i)=>{const ch=n.ships.map(s=>P[s]?.churn||[0,0,0,0]);const churn=ch.filter(c=>c[0]+c[1]+c[2]>=7).length;
  return `<div class="card net"><button class="hl" data-n="${i}" aria-pressed="false">${esc(n.name)}${n.country?" · "+esc(n.country):""} — ${n.ships.length} ships</button><div>${n.ships.slice(0,8).map(s=>`<span class="chip" role="button" tabindex="0" data-i="${s}">${esc(P[s]?.name||s)}</span>`).join("")}${n.ships.length>8?`<span class="muted"> +${n.ships.length-8} more</span>`:""}</div>${churn?`<div class="muted">${churn} of these ships show heavy name, flag or owner churn.</div>`:""}</div>`}).join("");
-document.querySelectorAll("#nets .chip").forEach(c=>c.onclick=()=>openP(c.dataset.i));
+document.querySelectorAll("#nets .chip").forEach(c=>{c.onclick=()=>openP(c.dataset.i);c.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openP(c.dataset.i)}}});
 document.querySelectorAll("#nets button[data-n]").forEach(b=>b.onclick=()=>{const i=+b.dataset.n;netSel=netSel===i?null:i;document.querySelectorAll("#nets button[data-n]").forEach(x=>x.setAttribute("aria-pressed",+x.dataset.n===netSel));draw();if(netSel!=null)document.getElementById("map").scrollIntoView({behavior:"smooth"})});
 if(M.shared.length)document.getElementById("addr").innerHTML=`<h3 class="sh">Addresses shared by three or more companies</h3>`+M.shared.slice(0,10).map(s=>`<div class="card"><b>${esc(s.address)}</b><div class="muted">${s.companies.map(esc).join(", ")}</div></div>`).join("");
 // panel
 const panel=document.getElementById("panel");document.getElementById("pclose").onclick=()=>{panel.hidden=true;sel=null;draw();history.replaceState(null,"",location.pathname)};
-function openP(imo){const p=P[imo];if(!p)return;sel=imo;history.replaceState(null,"","#p="+imo);
+let LINK=null;const loadLink=()=>LINK||(LINK=Promise.all(["data/vessels.json","data/owners.json"].map(u=>fetch(u).then(r=>r.json()))).then(([v,o])=>({V:Object.fromEntries(v.vessels.map(x=>[x.imo,x])),O:o})));
+// ships linked to a company but outside the tracked-tanker set have no activity profile: show their identity and company records instead of doing nothing
+async function openLinked(imo){sel=null;history.replaceState(null,"","#p="+imo);draw();
+ document.getElementById("pbody").innerHTML=`<h2 id="ptitle">IMO ${esc(imo)}</h2><div class="muted">Loading the ship record…</div>`;panel.hidden=false;
+ let d={V:{},O:{}};try{d=await loadLink()}catch(e){}
+ if(sel!==null)return;const v=d.V[imo],o=d.O[imo]||[];
+ document.getElementById("pbody").innerHTML=`<h2 id="ptitle">${esc(v?v.name:"IMO "+imo)}</h2><div class="muted">IMO ${esc(imo)}</div>
+ <h3>Why there is no activity profile</h3><p>This ship is linked to a company network on this page but is not one of the tracked tankers, so there are no port-call, loitering, transponder-gap or meeting records for it here.</p>
+ ${v&&v.history&&v.history.length?`<h3>Identity history (names, flags, MMSI numbers)</h3><ul>${v.history.map(h=>`<li>${esc(h.name)} · ${esc(h.flag||"no flag")} · MMSI ${esc(h.mmsi||"not recorded")} <span class="muted">${h.from||"?"} to ${h.to||"?"}</span></li>`).join("")}</ul>`:""}
+ ${o.length?`<h3>Companies behind the ship</h3><ul>${o.map(c=>`<li><b>${esc(String(c.role||"").replace(/^./,x=>x.toUpperCase()))}</b>: ${esc(c.name)}${c.country?" · "+esc(c.country):""} <span class="muted">${c.from?("from "+c.from):""}${c.to?(" to "+c.to):""}</span></li>`).join("")}</ul>`:'<p class="muted">No company records on file.</p>'}`}
+function openP(imo){const p=P[imo];if(!p){openLinked(imo);return}sel=imo;history.replaceState(null,"","#p="+imo);
  const B=p.base,lab={port:"Port calls",loitering:"Loitering",gap:"AIS gaps",encounter:"Meetings"};
  document.getElementById("pbody").innerHTML=`<h2 id="ptitle">${esc(p.name)}</h2><div class="muted">IMO ${p.imo}</div>${p.cls?`<div class="clsb"><span class="sw" style="background:${CL[p.cls][1]}"></span><b>${CL[p.cls][0]}</b><div class="muted">${CL[p.cls][2]}.</div></div>`:""}
  <h3>What stands out</h3>${p.notes.map(n=>`<div class="flag">${esc(n)}</div>`).join("")}

@@ -123,6 +123,11 @@ svg [data-tip]:focus-visible rect,svg rect[data-tip]:focus-visible{stroke:#c8a24
 .sw-legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:10px 0 0;font-size:14px;color:#e6e9ef}.sw{display:inline-flex;align-items:center;gap:7px}.sw i{display:inline-block;width:14px;height:14px;border-radius:3px}
 .tt-info{min-height:44px;min-width:44px;background:transparent;border:1px solid #24365a;border-radius:6px;color:#e6e9ef;font:14px Arial,sans-serif;padding:0 12px;cursor:pointer;margin-top:8px}
 .tt-info:hover,.tt-info:focus-visible{border-color:#c8a24a;outline:none}
+.tt-info[aria-expanded="true"]{border-color:#c8a24a;background:#12203a}
+.tt-wrap{display:block;position:relative}
+.tt-pop{display:block;margin-top:8px;background:#0f1b31;color:#e6e9ef;border:1px solid #c8a24a;border-radius:6px;padding:10px 12px;font:14px/1.45 Arial,sans-serif;box-shadow:0 6px 20px #000a}
+.tt-pop[hidden]{display:none}
+@media(min-width:821px){.lg-side .tt-pop{position:absolute;z-index:55;left:calc(100% + 31px);bottom:0;margin:0;width:min(420px,calc(100vw - 340px))}}
 
 /* left sidebar legends */
 .lg-row{display:grid;grid-template-columns:200px minmax(0,1fr);gap:18px;align-items:start}
