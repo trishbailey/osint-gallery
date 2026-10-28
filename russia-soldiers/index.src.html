@@ -22,10 +22,16 @@
 <div class="kpi"><b>300,000</b><span>men called up in the 2022 mobilisation, by the Defence Minister's count[[kremlin]]</span></div>
 <div class="kpi"><b>{{q1_contracts}}</b><span>new contracts with a federal bonus in Q1 2026[[kluge]]</span></div>
 </section>
-<aside class="notice" id="undercount" role="note"><b>{{uc_line}}</b>[[mz_probate]]
-<div class="bars ucbars" id="ucbars"></div>
-<details class="how"><summary>What the list and the estimate leave out</summary>
-<p>The list holds {{named_total}} names, of which {{named_85}} can be tied to one of the 85 regions drawn here. The other {{outside_85}} come from the Donetsk and Luhansk areas, Baikonur, foreigners and unknown origin, and the list leaves out losses of the Donetsk and Luhansk forces.[[mz_list]] The estimate comes from the Probate Registry: {{probate_regular}} deaths found from excess inheritance cases plus about {{probate_late}} from late registrations, as of mid-2025 and likely to rise. It covers Russian citizens only, men aged 18 to 59, and has no regional split, so regional rates here use confirmed names and not true losses.[[mz_probate]]</p></details></aside>
+<details class="sec" id="flow-sec" open><summary><h2>Where the soldiers came from</h2></summary>
+<div class="barblock flowblock"><aside class="side2" id="flowkey" aria-label="Key to the flow map"></aside>
+<div class="chartcol"><div class="mapwrap flowwrap"><div id="flowmap"></div></div>
+<p class="note">Arrow width shows <b>named dead</b>, the people on the named list, not soldiers sent. Russian districts: how each man joined, Mediazona regional pages, 23 Oct 2026.[[mz_regions]] Foreign countries: BBC News Russian with Mediazona, 10 Jul 2026.[[bbc_foreign]] Arrows end at a schematic front bracket. The North Korean soldiers died in Russia’s Kursk region, not in Ukraine.[[bbc_nk]]</p></div></div>
+<p class="cap"><b>{{v_flow}}</b></p>
+<details class="how"><summary>What the arrows show and what is left out</summary>
+<p>Each strand starts in the largest source region of its federal district and counts the whole district: named dead labelled volunteers or contract soldiers, mobilised men, or prisoners (the label on each person’s Mediazona entry). Foreign strands start at the country’s capital. Width runs from 4 px to 10 px in proportion to the count. Hover a strand for its figure, or a region for its own counts.</p>
+<p>{{flow_skipped}}</p>
+<p>Totals differ slightly between BBC pieces (3,586 and 3,589 foreign dead, and the five countries add to 3,607 because Georgia includes Abkhazia and South Ossetia); the page uses 3,589 = 2,304 North Korean + 1,285 verified by BBC News Russian.[[bbc_foreign]] Basemap: Natural Earth.[[ne_admin0]] On a phone, pinch with two fingers or use the zoom buttons.</p></details>
+</details>
 
 <details class="sec" id="remote-sec" open><summary><h2>Remote regions bear the cost</h2></summary>
 <div class="barblock"><aside class="side2"><h3 class="sideh">Key</h3><ul class="legend" id="leg-s1"></ul></aside>
@@ -35,6 +41,11 @@
 <p>{{cap1}}</p>
 <p>Distance is measured in a straight line from the middle of Moscow city to the middle of each region's largest land area. Pearson's r measures a straight-line link and runs from −1 to 1, where 0 is no link. Spearman's rho does the same for rankings and is less sensitive to a few extreme regions. These describe the data and do not show cause.</p></details>
 </details>
+
+<aside class="notice" id="undercount" role="note"><b>{{uc_line}}</b>[[mz_probate]]
+<div class="bars ucbars" id="ucbars"></div>
+<details class="how"><summary>What the list and the estimate leave out</summary>
+<p>The list holds {{named_total}} names, of which {{named_85}} can be tied to one of the 85 regions drawn here. The other {{outside_85}} come from the Donetsk and Luhansk areas, Baikonur, foreigners and unknown origin, and the list leaves out losses of the Donetsk and Luhansk forces.[[mz_list]] The estimate comes from the Probate Registry: {{probate_regular}} deaths found from excess inheritance cases plus about {{probate_late}} from late registrations, as of mid-2025 and likely to rise. It covers Russian citizens only, men aged 18 to 59, and has no regional split, so regional rates here use confirmed names and not true losses.[[mz_probate]]</p></details></aside>
 
 <details class="sec" id="map-sec" open><summary><h2>Where the named dead came from</h2></summary>
 <div class="mapgrid">
@@ -128,6 +139,18 @@
 <div id="typebars" class="bars"></div></details>
 </details>
 
+<details class="sec" id="nk-sec"><summary><h2>North Korea and Russia: what flows each way</h2></summary>
+<div class="barblock nkblock"><aside class="side2" id="nkkey" aria-label="Key to the North Korea graphics"></aside>
+<div class="chartcol"><h4 class="mini">Flows between the two countries (hover a row for its source)</h4><div id="nkrel" class="nkrel"></div>
+<h4 class="mini">Routes on the map</h4><div class="mapwrap"><div id="nkmap"></div></div></div></div>
+<p class="cap"><b>{{v_nk}}</b></p>
+<h4 class="mini">Timeline</h4>
+{{nk_timeline}}
+<details class="how"><summary>Every figure, with its detail and source</summary>
+{{nk_cards}}
+<p class="note">Line widths on the map are equal because the units differ (people, containers, missiles). Figures in the labels are the sourced ones. The 8 to 11 million shells figure is an estimate; the BBC and Ukraine’s military intelligence say no North Koreans have fought on Ukrainian soil.[[bbc_nk]]</p></details>
+</details>
+
 <details class="sec" id="trk-sec" open><summary><h2>Latest from trackers</h2></summary>
 <p class="rnote">Strategic updates from eight tracker accounts on X, each read at its article on 28 Oct 2026; outlets are credited and numbered. Script refresh: {{trackers_generated}}.</p>
 {{trackers_html}}
@@ -151,4 +174,6 @@
 </main>
 <div id="tip" class="tip" role="tooltip" hidden></div>
 <script src="vendor/d3.min.js"></script><script src="vendor/d3-sankey.min.js"></script><script src="app.js"></script>
+<script src="flows.js"></script>
+<script src="nk.js"></script>
 </body></html>

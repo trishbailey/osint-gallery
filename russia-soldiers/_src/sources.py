@@ -80,3 +80,16 @@ SOURCES = {
  "istories_nk": dict(short="iStories and Open Source Centre, 16 Mar 2026", url="https://istories.media/stories/2026/03/16/kak-severnaya-koreya-postavlyala-snaryadi-rossii/",
    full="iStories with Open Source Centre, \u201c\u041a\u0430\u043a \u0421\u0435\u0432\u0435\u0440\u043d\u0430\u044f \u041a\u043e\u0440\u0435\u044f \u043f\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u043b\u0430 \u0441\u043d\u0430\u0440\u044f\u0434\u044b \u0420\u043e\u0441\u0441\u0438\u0438\u201d (How North Korea supplied shells to Russia; in Russian), 16 Mar 2026, by Egor Feoktistov. The 8 to 11 million figure is an Open Source Centre estimate from ship movements and satellite images; it counts munitions, not people."),
 }
+
+SOURCES.update({
+ "bbc_foreign": dict(short="BBC News Russian, foreign fighters, 10 Jul 2026", url="https://bbcrussian.substack.com/p/foreigners-in-russias-war",
+   full="Olga Ivshina, BBC News Russian, \u201cFrom Uganda to America: The foreigners dying in Russia\u2019s war\u201d, 10 Jul 2026 (English version 20 Jul 2026), with data collected jointly with Mediazona: 3,589 foreign nationals killed on Russia\u2019s side, 2,304 of them North Korean (named by BBC News Korean) and 1,285 verified by BBC News Russian. Per-country counts are read from the article\u2019s graphic \u201cTop 5 countries\u201d (data as of 10 Jul 2026); the article text gives no country totals. Other sources differ slightly (BBC Mundo gives 3,586; the five-country table adds to 3,607 with Georgia including Abkhazia and South Ossetia)."),
+ "bbc_shoigu": dict(short="BBC News, 18 Jun 2025", url="https://www.bbc.com/news/articles/cev0jrgx17ro",
+   full="Koh Ewe, BBC News, \u201cN Korea to send thousands to help rebuild Russia\u2019s Kursk\u201d, 18 Jun 2025."),
+ "bbc_treaty": dict(short="BBC News, 19 Jun 2024", url="https://www.bbc.com/news/articles/ceddqkqzd5wo",
+   full="Tessa Wong, BBC News, \u201cPutin and Kim pledge mutual help against \u2018aggression\u2019\u201d, 19 Jun 2024 (Wikipedia gives the signing as 18 Jun; the BBC and the Kremlin say 19 Jun)."),
+ "istories_nk_en": dict(short="iStories and Open Source Centre (English), 16 Mar 2026", url="https://istories.media/en/stories/2026/03/16/how-north-korea-armed-russia/",
+   full="Egor Feoktistov, iStories with the Open Source Centre, \u201cInside the Pipeline: How North Korea Armed Russia\u201d, 16 Mar 2026: ship tracking, port records and satellite imagery for the sea route Rajin, Dunai and Vostochny, then rail to depots such as Tikhoretsk."),
+ "ne_admin0": dict(short="Natural Earth admin-0 countries, 1:50m", url="https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/",
+   full="Natural Earth, 1:50m admin-0 countries (public domain), simplified for the flow maps. Boundaries are drawn as Natural Earth shows them and carry no political endorsement."),
+})

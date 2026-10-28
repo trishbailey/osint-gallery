@@ -77,6 +77,19 @@ def values():
     V["v_type"] = f"Named dead by label: {n0(tt['vol'])} volunteers, {n0(tt['pri'])} prisoners, {n0(tt['mob'])} mobilised."
     V["v_rank"] = f"The ten highest rates hold {n1(S['top10_pop_share'])}% of residents but {n1(S['top10_death_share'])}% of the named dead; none is in the Central district."
     V["uc_line"] = f"The named list undercounts. A probate-registry estimate puts Russian military dead at {n0(pr['total'])} by the end of 2025, {n1(pr['mult'])} times the {n0(pr['named_at_date'])} names on the list when it was made."
+    import build_flows; build_flows.build()
+    FL = D("flows.json")
+    tv = sum(d["vol"] for d in FL["districts"]); tm = sum(d["mob"] for d in FL["districts"]); tp = sum(d["pri"] for d in FL["districts"])
+    assert all(d["vol"] > d["mob"] and d["vol"] > d["pri"] for d in FL["districts"])
+    big = max(FL["districts"], key=lambda d: d["vol"] + d["mob"] + d["pri"])
+    nkc = [c for c in FL["foreign"] if c["id"] == "PRK"][0]["n"]
+    V["v_flow"] = (f"Volunteers and contract soldiers are the largest group in every district: {n0(tv)} named dead against {n0(tp)} prisoners and {n0(tm)} mobilised men. "
+                   f"The {big['fd']} district sends the most ({n0(big['vol'] + big['mob'] + big['pri'])}), and {n0(nkc)} of the 3,589 named foreign dead were North Korean.")
+    V["flow_skipped"] = FL["skipped"]
+    import nk_inputs as NKI
+    cnt = {s_: sum(1 for r in NKI.ROWS if r["status"] == s_) for s_ in NKI.STATUS}
+    V["v_nk"] = ("Documented: the treaty, the troops\u2019 presence and the sea route for 29,488 containers of munitions. "
+                 "Contested: how many North Koreans have died (2,304 named by the BBC against 3,000 claimed by Ukraine) and the missile unit.")
     V["r_dag_ru"] = n1(by["RU-DA"]["ru_share"])
     V["r_ru_p"] = f"{c['ru']['pearson'][1]:.2f}"
     V["ols_pov"] = (f"With distance, poverty and Russian share together on 85 regions, {n0(S['ols_pov']['r2']*100)}% of the variation is explained (standardised weights: distance {n2(S['ols_pov']['beta_dist'])}, "
@@ -106,6 +119,9 @@ def build():
     src = open(os.path.join(ROOT, "index.src.html"), encoding="utf-8").read()
     for k, v in V.items(): src = src.replace("{{" + k + "}}", html.escape(str(v), quote=False))
     src = src.replace("{{pool_rows}}", pool_rows())
+    import build_flows
+    build_flows.build(); NKR = build_flows.render()
+    src = src.replace("{{nk_cards}}", NKR["cards"]).replace("{{nk_timeline}}", NKR["timeline"])
     import build_trackers
     TR = build_trackers.build(); SOURCES.update(TR["autosrc"])
     src = src.replace("{{trackers_html}}", build_trackers.render(TR)).replace("{{trackers_generated}}", html.escape(TR["generated"] or "not yet run"))

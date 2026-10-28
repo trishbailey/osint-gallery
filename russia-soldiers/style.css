@@ -159,3 +159,23 @@ h2{font-size:1.2rem}
 .trklist .how{grid-column:2;margin:0;border-top:0}
 .trklist .how>summary{min-height:32px;font-size:.92rem}
 @media (max-width:600px){.trklist>li{grid-template-columns:1fr}.trklist .how{grid-column:1}}
+
+/* flow map and North Korea section */
+.flowwrap{background:var(--bg)}#flowmap,#nkmap{width:100%;min-height:200px}#flowmap svg,#nkmap svg{display:block;touch-action:pan-y;cursor:grab}
+.cn{fill:#0f1c36;stroke:#2b4470;stroke-width:.6px}.rg{fill:#1b3258;stroke:#2b4470;stroke-width:.5px;cursor:default}.rg.hl{stroke:var(--gold);stroke-width:2px}
+.cname{font-size:13px;fill:#7b8aa3;pointer-events:none}.dlab{font-size:13px;fill:var(--text);paint-order:stroke;stroke:var(--bg);stroke-width:3px;pointer-events:none}
+.dot0{fill:var(--bg);stroke:var(--text);stroke-width:2px;cursor:pointer}
+.st{cursor:pointer;transition:opacity .15s}.st.dim{opacity:.18}.stp{fill:none;stroke-linecap:butt;opacity:.9}.st:hover .stp,.st:focus .stp{opacity:1}.st:focus{outline:none}.st:focus .stp{stroke-width:inherit;filter:brightness(1.25)}
+.bracket{fill:none;stroke:var(--text);stroke-width:3px}.flab{font-size:14px;font-weight:600;fill:var(--text);paint-order:stroke;stroke:var(--bg);stroke-width:3px}.fsub{font-size:13px;fill:var(--muted);paint-order:stroke;stroke:var(--bg);stroke-width:3px}
+.fchip{justify-content:flex-start;text-align:left;gap:10px;height:auto;padding:6px 10px;line-height:1.25}.fchip .sw{width:18px;height:18px;border-radius:4px;flex:none}.fchip small{display:block;font-size:13px;color:var(--muted)}.fchip[aria-pressed="false"]{opacity:.55}
+.fchip[aria-pressed="true"]{background:var(--panel2);border-color:var(--gold)}
+.flowblock .legend svg,.nkblock .legend svg{flex:none}.flowblock .seg+.sideh,.flowblock .sideh{margin-top:14px}
+.mlp{fill:none}.ml{cursor:pointer}.ml:focus{outline:none}.ml:focus .mlp{filter:brightness(1.3)}
+.nodet{font-size:14px;font-weight:600;fill:var(--text)}.nkh{font-size:14px;font-weight:600;fill:var(--gold)}.nkt{font-size:13px;fill:var(--text)}.nks{font-size:13px;fill:var(--muted)}.nks-contested{fill:#ff9ed8}.nks-documented{fill:var(--text);font-weight:600}
+.nkr{cursor:pointer}.nkr:hover rect{fill:rgba(255,255,255,.06)}.nkr:focus{outline:none}.nkr:focus rect{fill:rgba(255,255,255,.1)}
+.nkgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.nkhead{font-weight:600;color:var(--gold);margin:10px 0 2px}.nkl-list{list-style:none;margin:0;padding:0}
+.nkc{display:grid;grid-template-columns:auto 1fr auto;gap:2px 10px;align-items:baseline;padding:8px 0;border-bottom:1px dotted var(--line)}.nkf{font-weight:700;white-space:nowrap}.nkc .how{grid-column:1/-1;margin:0;border-top:0}.nkc .how>summary{min-height:32px;font-size:.92rem}
+.st{display:inline-block}.st-documented,.st-reported,.st-contested{font-size:13px;border:1px solid var(--line);border-radius:10px;padding:0 8px;white-space:nowrap}.st-documented{border-color:var(--text)}.st-reported{border-style:dashed}.st-contested{border-style:dotted;border-color:#ff9ed8}
+.tline{list-style:none;margin:6px 0 8px;padding:0 0 0 14px;border-left:2px solid var(--line)}.tli{display:grid;grid-template-columns:104px 1fr auto;gap:2px 12px;padding:5px 0;align-items:baseline}.tld{color:var(--muted);font-size:.95rem;white-space:nowrap}
+.tgs{font-weight:700}
+@media (max-width:700px){.flowblock .side2{order:2}.nkgrid{grid-template-columns:1fr}.tli{grid-template-columns:1fr}.flowblock .seg{flex-direction:row}.fchip{flex:1 1 44%}}

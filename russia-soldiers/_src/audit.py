@@ -325,6 +325,66 @@ cites = J("data/cites.json"); nums = sorted(set(int(x) for x in re.findall(r'hre
 ids = sorted(int(x) for x in re.findall(r'id="src-(\d+)"', page))
 need("citations resolve", set(nums) <= set(ids)); need("every source cited", set(ids) <= set(nums))
 need("single data sources dropdown", page.count('id="srcdet"') == 1)
+
+# ---- round 4: flow map and North Korea section
+import nk_inputs as NKI
+FL = J("data/flows.json"); NKJ = J("data/nk.json")
+for d_ in FL["districts"]:
+    mem = FDM[d_["fd"]]
+    for k_ in ("vol", "mob", "pri"): chk(f"flow {d_['fd']} {k_}", d_[k_], sum(mine[i][k_] for i in mem))
+    need(f"flow anchor {d_['fd']} is the district's largest source", d_["anchor_en"] == max(mem, key=lambda i: mine[i]["deaths"]) or by[max(mem, key=lambda i: mine[i]["deaths"])]["en"] == d_["anchor_en"])
+need("flow map has 8 districts and 5 foreign countries", len(FL["districts"]) == 8 and len(FL["foreign"]) == 5)
+bf = norm(open(os.path.join(RAW, "quotes", "bbc_foreign.txt"), encoding="utf-8").read())
+for c_ in FL["foreign"]:
+    need(f"foreign {c_['name']} count {c_['n']} is in the quote {c_['quote']!r}", f"{c_['n']:,}" in c_["quote"] and norm(c_["quote"]) in bf)
+need("foreign total 3,589 = 2,304 + 1,285 as stated by the BBC", "3,589" in bf and "1,285" in bf and "2,304" in bf and 2304 + 1285 == 3589)
+need("the BBC graphic gives the five-country sum 3,029 used in the legend", sum(c_["n"] for c_ in FL["foreign"]) == 3029)
+for s_ in (f"{sum(d_['vol'] for d_ in FL['districts']):,}", f"{sum(d_['mob'] for d_ in FL['districts']):,}", f"{sum(d_['pri'] for d_ in FL['districts']):,}", "3,589", "2,304"): has(s_, "flow verdict figure")
+need("volunteers are the largest group in every district", all(d_["vol"] > d_["mob"] and d_["vol"] > d_["pri"] for d_ in FL["districts"]))
+for k_ in ("bbc_foreign", "ne_admin0", "mz_regions", "bbc_nk"): need("flow source cited " + k_, k_ in cites)
+need("front-bracket and measure statements on the page", all(x_ in _pg for x_ in ("arrow width shows named dead", "schematic front bracket", "not in ukraine")))
+need("natural earth basemap present and public-domain credited", os.path.getsize(os.path.join(ROOT, "vendor", "ne_neighbours.geojson")) > 20000 and "public domain" in SOURCES["ne_admin0"]["full"])
+need("flows and nk scripts are loaded", 'src="flows.js"' in page and 'src="nk.js"' in page)
+need("flow section comes first, remoteness charts directly after it", page.index('id="flow-sec"') < page.index('id="remote-sec"') < page.index('id="undercount"') < page.index('id="map-sec"') and page.index('id="kpis"') < page.index('id="flow-sec"'))
+need("no other section sits between the flow map and the remoteness charts", not re.search(r'id="flow-sec".*?<details class="sec"(?![^>]*id="remote-sec")', page, re.S) or re.search(r'id="flow-sec".*?<details class="sec"[^>]*id="remote-sec"', page, re.S) is not None)
+_pgn = norm(_html.unescape(text))
+need("NK rows: 13 rows, 4 to Russia kinds and 4 to North Korea", len(NKI.ROWS) == 13 and sum(1 for r_ in NKI.ROWS if r_["dir"] == "to_nk") == 4)
+tok = lambda s_: re.findall(r"\$?\d[\d,]*", s_)
+for r_ in NKI.ROWS:
+    nm = "nk row " + r_["id"]
+    need(nm + " status valid", r_["status"] in NKI.STATUS)
+    allq = ""; figs = set()
+    for e_ in r_["ev"] + r_.get("extra", []):
+        need(f"{nm} src known {e_['src']}", e_["src"] in SOURCES)
+        sv_ = norm(open(os.path.join(RAW, "quotes", e_["src"] + ".txt"), encoding="utf-8").read())
+        need(f"{nm} quote in saved page: {e_['quote'][:40]}", norm(e_["quote"]) in sv_)
+        for fg in e_["figures"]: need(f"{nm} figure {fg!r} in its quote", norm(fg) in norm(e_["quote"]))
+        allq += " " + norm(e_["quote"]); figs |= {int(re.sub(r"\D", "", x)) for fg in e_["figures"] for x in tok(fg) if re.sub(r"\D", "", x)}
+    for lab_ in (r_["short"], r_["fig"]):
+        for tk in tok(lab_):
+            n_ = int(re.sub(r"\D", "", tk))
+            need(f"{nm} label number {tk} is in a quote or is a sum of two quoted figures", norm(tk) in allq or any(a + b == n_ for a in figs for b in figs) or n_ in figs)
+    need(nm + " line and figure on page", norm(r_["fig"] + " " + r_["line"]) in _pgn)
+    need(nm + " status shown on page", r_["status"] in text)
+need("builders 6,000 is 5,000 + 1,000 as announced", 5000 + 1000 == 6000)
+for t_ in NKI.TL:
+    nm = "nk timeline " + t_["date"]
+    need(nm + " status valid", t_["status"] in NKI.STATUS)
+    sv_ = norm(open(os.path.join(RAW, "quotes", t_["src"] + ".txt"), encoding="utf-8").read())
+    need(nm + " quote in saved page", norm(t_["quote"]) in sv_)
+    for fg in t_["figures"]: need(f"{nm} figure {fg!r} in quote", norm(fg) in norm(t_["quote"]))
+    for tk in tok(t_["text"]): need(f"{nm} text number {tk} in quote", norm(tk) in norm(t_["quote"]) or tk in ("2,000",) and "2,000" in norm(t_["quote"]))
+    need(nm + " text on page", norm(t_["text"]) in _pgn)
+    need(nm + " date format", re.fullmatch(r"20\d\d(-\d\d){0,2}", t_["date"]) is not None)
+need("timeline is in date order", [t_["date"] for t_ in NKI.TL] == sorted(t_["date"] for t_ in NKI.TL))
+PLN = {"pyongyang": "pyongyang", "rajin": "rajin", "dunai": "dunay", "tikhoretsk": "tikhoretsk", "kursk": "kursk", "alabuga": "alabuga", "voronezh": "voronezh"}
+for k_, p_ in NKI.PLACES.items():
+    sv_ = norm(open(os.path.join(RAW, "quotes", p_["src"] + ".txt"), encoding="utf-8").read())
+    need(f"place {k_} is named in its source {p_['src']}", PLN[k_] in sv_)
+    need(f"place {k_} lies in a plausible box", 30 < p_["ll"][0] < 135 and 38 < p_["ll"][1] < 57)
+for l_ in NKI.LINES: need(f"map line {l_['id']} uses a known row and places", l_["row"] in {r_["id"] for r_ in NKI.ROWS} and l_["frm"] in NKI.PLACES and l_["to"] in NKI.PLACES)
+for s_ in ("Documented: the treaty", "2,304 named by the BBC against 3,000 claimed by Ukraine"): has(s_, "NK verdict")
+need("NK verdict numbers are in the rows", any("29,488" in r_["fig"] for r_ in NKI.ROWS) and any("2,304" in r_["fig"] for r_ in NKI.ROWS))
 need("GA tag once", page.count("G-Z61EKRP8QV") >= 1 and page.count("googletagmanager.com/gtag/js?id=G-Z61EKRP8QV") == 1)
 need("no github.io/onrender/.cn/gdelt", not re.search(r"github\.io|onrender\.com|gdelt|\.cn[/\"' ]", page + open(os.path.join(ROOT, "app.js")).read(), re.I))
 need("no unresolved tokens", "{{" not in page and "[[" not in page)

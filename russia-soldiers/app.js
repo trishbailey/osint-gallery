@@ -198,7 +198,7 @@ function init(res){
  R=res[0].regions;S=res[1];G=res[2];tipEl=$('#tip');
  R.forEach(function(r){byNe[r.ne]=r;byIso[r.iso]=r});
  // desktop: everything open; phone: only the map section open, map options behind one button
- var ph=phone();document.querySelectorAll('details.sec').forEach(function(d){d.open=!ph||d.id==='remote-sec'||d.id==='map-sec'});
+ var ph=phone();document.querySelectorAll('details.sec').forEach(function(d){d.open=d.id==='nk-sec'?false:(!ph||d.id==='flow-sec'||d.id==='remote-sec'||d.id==='map-sec')});
  $('#mapside').open=!ph;
  $('#legend').innerHTML=legendHTML('deaths');$('#legend2').innerHTML=legendHTML('deaths');
  ['#leg-s1','#leg-s2','#leg-s2b','#leg-s3'].forEach(function(s){$(s).innerHTML=LEG});

@@ -50,9 +50,55 @@ with sync_playwright() as pw:
             if m == "pri": shot(page, f"{tag}-05-map-prisoners.png", full=False)
             if m == "pov": shot(page, f"{tag}-05b-map-poverty.png", full=False)
             if m == "bonus": shot(page, f"{tag}-05c-map-bonus.png", full=False)
+        # round 4: flow map (first graphic) and North Korea section
+        sig = lambda sel: page.evaluate(f"[...document.querySelectorAll('{sel} path')].map(p=>p.getAttribute('d')||'').join('|').length+':'+[...document.querySelectorAll('{sel} path')].map(p=>(p.getAttribute('d')||'').slice(0,40)).join('').length")
+        page.evaluate("document.querySelector('#flow-sec').scrollIntoView()"); page.wait_for_timeout(400)
+        assert page.evaluate("document.querySelector('#flow-sec').getBoundingClientRect().top < document.querySelector('#remote-sec').getBoundingClientRect().top")
+        ns = len(page.query_selector_all("#flowmap g.st")); nr = len(page.query_selector_all("#flowmap path.rg")); print(tag, "flow strands", ns, "regions", nr); assert ns >= 25 and nr > 80
+        wid = page.evaluate("[...document.querySelectorAll('#flowmap g.st path.stp')].map(p=>parseFloat(getComputedStyle(p).strokeWidth))"); print(tag, "strand widths", min(wid), max(wid)); assert min(wid) >= 4 and max(wid) <= 10.01
+        shot(page, f"{tag}-09-flow-map.png", full=False)
+        FIND2 = """g=>{const e=g.querySelector('path.stp');const L=e.getTotalLength();for(let i=1;i<40;i++){const q=e.getPointAtLength(L*i/40);const m=e.getScreenCTM();const x=m.a*q.x+m.c*q.y+m.e,y=m.b*q.x+m.d*q.y+m.f;if(x<0||y<0||x>innerWidth||y>innerHeight)continue;const t=document.elementFromPoint(x,y);if(t&&t.closest('[data-tip]')===g)return [x,y]}return null}"""
+        got_tip = False
+        for st in page.query_selector_all("#flowmap g.st")[:12]:
+            pt = st.evaluate(FIND2)
+            if pt:
+                page.mouse.move(*pt); page.mouse.click(*pt) if mobile else None; page.wait_for_timeout(120)
+                if page.is_visible("#tip") and "named dead" in page.inner_text("#tip"): got_tip = True; print(tag, "strand tooltip:", page.inner_text("#tip").replace("\n", " | ")[:150]); break
+        assert got_tip, "no strand tooltip"
+        shot(page, f"{tag}-09b-flow-strand-hover.png", full=False)
+        for k in ("pri", "for", "mob", "vol"):
+            before = page.evaluate("document.querySelectorAll('#flowmap g.st').length")
+            page.click(f".fchip[data-k={k}]"); page.wait_for_timeout(200)
+            after = page.evaluate("document.querySelectorAll('#flowmap g.st').length"); print(tag, "flow chip", k, before, "->", after); assert before != after, k
+            if k == "mob": shot(page, f"{tag}-09c-flow-no-prisoners-foreign.png", full=False)
+        for k in ("pri", "for", "mob", "vol"):
+            page.click(f".fchip[data-k={k}]"); page.wait_for_timeout(150)
+        page.click(f".fchip[data-k=pri]"); page.click(f".fchip[data-k=pri]"); page.wait_for_timeout(150)
+        for bid in ("#fz-in", "#fz-out", "#fz-reset"):
+            before = sig("#flowmap"); page.click(bid); page.wait_for_timeout(450); after = sig("#flowmap"); print(tag, bid, "view changed" if before != after else "view same")
+        page.evaluate("document.querySelector('#nk-sec').open=true"); page.evaluate("window.dispatchEvent(new Event('resize'))"); page.wait_for_timeout(600)
+        page.evaluate("document.querySelector('#nk-sec').scrollIntoView()"); page.wait_for_timeout(300)
+        rows = len(page.query_selector_all("#nkrel g.nkr")); print(tag, "nk rows", rows); assert rows == 13
+        assert len(page.query_selector_all("#nkmap path.reg, #nkmap path.rg")) > 20, "nk map regions"
+        shot(page, f"{tag}-10-nk-section.png", full=False)
+        for g in page.query_selector_all("#nkrel g.nkr")[:13:4]:
+            g.scroll_into_view_if_needed(); bb2 = g.bounding_box(); page.mouse.move(bb2["x"] + bb2["width"] / 2, bb2["y"] + bb2["height"] / 2)
+            if mobile: page.mouse.click(bb2["x"] + bb2["width"] / 2, bb2["y"] + bb2["height"] / 2)
+            page.wait_for_timeout(120); tp = page.inner_text("#tip") if page.is_visible("#tip") else ""
+            print(tag, "nk row tooltip:", tp.replace("\n", " | ")[:120]); assert any(w in tp for w in ("documented", "reported", "contested")), "nk tooltip"
+        page.evaluate("document.querySelector('#nkmap').scrollIntoView({block:'center'})"); page.wait_for_timeout(300)
+        shot(page, f"{tag}-10b-nk-map.png", full=False)
+        for bid in ("#nz-in", "#nz-out", "#nz-kr", "#nz-ru", "#nz-reset"):
+            before = sig("#nkmap"); page.click(bid); page.wait_for_timeout(500); after = sig("#nkmap"); print(tag, bid, "view changed" if before != after else "view same")
+            if bid == "#nz-kr": shot(page, f"{tag}-10c-nk-korean-end.png", full=False)
+        for d in page.query_selector_all("#nk-sec details.how"):
+            d.scroll_into_view_if_needed(); b0 = d.evaluate("e=>e.open"); d.query_selector("summary").click(); page.wait_for_timeout(120); assert d.evaluate("e=>e.open") != b0
+        page.evaluate("document.querySelector('#nk-sec .tline').scrollIntoView({block:'center'})"); page.wait_for_timeout(200)
+        shot(page, f"{tag}-10d-nk-timeline.png", full=False)
+        assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1"), "horizontal overflow"
         # section screenshots, nested toggles, sankey, photos, minimaps
-        for sid in ("undercount", "pov-sec", "eth-sec", "bonus-sec", "pools-sec", "trk-sec"):
-            page.evaluate("document.querySelector('#trk-sec').open=true")
+        for sid in ("flow-sec", "undercount", "pov-sec", "eth-sec", "bonus-sec", "pools-sec", "nk-sec", "trk-sec"):
+            page.evaluate("document.querySelector('#trk-sec').open=true;document.querySelector('#nk-sec').open=true")
             page.evaluate(f"document.querySelector('#{sid}').scrollIntoView()"); page.wait_for_timeout(250)
             shot(page, f"{tag}-07-{sid}.png", full=False)
         for mm in ("#mm-pov", "#mm-ru", "#mm-bonus"):
