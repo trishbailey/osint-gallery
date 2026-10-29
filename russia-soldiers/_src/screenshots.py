@@ -67,6 +67,17 @@ with sync_playwright() as pw:
                 if page.is_visible("#tip") and "recruited" in page.inner_text("#tip"): got_tip = True; print(tag, "arrow tooltip:", page.inner_text("#tip").replace("\n", " | ")[:150]); break
         assert got_tip, "no arrow tooltip"
         shot(page, f"{tag}-09b-flow-strand-hover.png", full=False)
+        # time series: 9 line dots + 2 estimate markers + 3 more = 14 hit areas; hover one; Play must change the chart and end on Replay
+        page.evaluate("document.querySelector('#flowts').scrollIntoView({block:'center'})"); page.wait_for_timeout(300)
+        nts = len(page.query_selector_all("#tschart .tshit")); print(tag, "time-series hit areas", nts); assert nts == 14, nts
+        ntb = page.evaluate("[...document.querySelectorAll('#flowts button')].map(b=>b.textContent)"); assert ntb == ["Play"], ntb
+        shot(page, f"{tag}-09c-flow-timeseries.png", full=False)
+        before = page.evaluate("document.querySelector('#tsclipr').getAttribute('width')")
+        page.click("#tsplay"); page.wait_for_timeout(1500)
+        mid_w = page.evaluate("document.querySelector('#tsclipr').getAttribute('width')"); assert float(mid_w) < float(before), (mid_w, before)
+        shot(page, f"{tag}-09c2-flow-timeseries-playing.png", full=False)
+        page.wait_for_function("document.querySelector('#tsplay').textContent==='Replay'", timeout=12000)
+        assert float(page.evaluate("document.querySelector('#tsclipr').getAttribute('width')")) >= float(before) - 0.5
         nb = len(page.query_selector_all("#flowbars .brow")); print(tag, "named-dead bars", nb); assert nb == 4
         vals = page.evaluate("[...document.querySelectorAll('#flowbars .bv')].map(e=>parseInt(e.textContent.replace(/,/g,'')))"); assert vals == sorted(vals, reverse=True), vals
         page.evaluate("document.querySelector('#flowbars').scrollIntoView({block:'center'})"); page.wait_for_timeout(200)
