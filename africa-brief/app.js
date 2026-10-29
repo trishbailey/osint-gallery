@@ -174,7 +174,6 @@ document.getElementById("L-allres").onchange=e=>{if(e.target.checked&&!document.
 const G=B.groups||{},GA=B.galign||{};
 const aff=g=>GA[g]?`<span class="aff">${esc(GA[g])}</span>`:"";
 const gTip=g=>{const x=G[g];if(!x)return "";const par=x.parent&&G[x.parent]?` · part of ${G[x.parent].name}${G[G[x.parent].parent]?" → "+G[G[x.parent].parent].name:""}`:"";return `${x.full}${par}. Founded ${x.founded}. Area: ${x.area} [${fnNums(x.cites)}]`;};
- showR(B.regions.find(r=>r.id==="great-lakes"));
  /* ---------- region sections ---------- */
  const PL=B.places||{},UCM=UC?UC.months:[];
  const mname=m=>new Date(m+"-15T12:00:00Z").toLocaleDateString("en-GB",{month:"short",year:"numeric",timeZone:"UTC"});

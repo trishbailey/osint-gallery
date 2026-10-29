@@ -141,7 +141,7 @@ COLLECT_JS = r"""() => {
  out.overflow = Math.max(document.documentElement.scrollWidth, document.body ? document.body.scrollWidth : 0) - window.innerWidth;
  const svgs = [...document.querySelectorAll('svg')].filter(s => {const b = s.getBoundingClientRect(); return b.width > 120 && b.height > 80;});
  svgs.forEach((s, i) => {
-   const cols = {}, dcols = {}, badDefunct = [];
+   const cols = {}, dcols = {}, ramps = {}, badDefunct = [];
    const seenBad = new Set();
    // Opt-in for dissolved/defunct items: data-status="defunct" (exact value) on the shape or a group inside
    // this svg (never the svg root), and the marker must be named (aria-label or direct child <title>).
@@ -164,8 +164,10 @@ COLLECT_JS = r"""() => {
        else if (!seenBad.has(mk)) { seenBad.add(mk); badDefunct.push(mk === s ? 'svg root' : (mk.id || mk.tagName.toLowerCase())); }
      }
      target[k] = (target[k] || 0) + 1;
+     // data-ramp="<group>" (on the mark or an ancestor) declares the fill as one shade in that group's own tint ramp
+     const rp = e.closest('[data-ramp]'); if (rp) { (ramps[k] = ramps[k] || []); const g = rp.getAttribute('data-ramp'); if (!ramps[k].includes(g)) ramps[k].push(g); }
    });
-   out.svgs.push({i, id: s.id || s.getAttribute('class') || ('svg' + i), cols, dcols, badDefunct});
+   out.svgs.push({i, id: s.id || s.getAttribute('class') || ('svg' + i), cols, dcols, ramps, badDefunct});
  });
  document.querySelectorAll('svg text').forEach(t => {
    const b = t.getBoundingClientRect(); const cs = getComputedStyle(t);
@@ -374,6 +376,10 @@ def browser_checks(port, slugs):
                     close = []
                     for i in range(len(chrom)):
                         for j in range(i + 1, len(chrom)):
+                            ri = s.get("ramps", {}).get(",".join(map(str, chrom[i])), [])
+                            rj = s.get("ramps", {}).get(",".join(map(str, chrom[j])), [])
+                            if set(ri) & set(rj):
+                                continue  # two shades of one group's tint ramp (data-ramp="<group>"): intensity levels, not look-alike categories
                             d = ciede2000(labs[chrom[i]], labs[chrom[j]])
                             if d < 20:
                                 close.append(('#%02x%02x%02x' % chrom[i], '#%02x%02x%02x' % chrom[j], round(d, 1)))
