@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-28T22:01:22Z",
+ "as_of": "2026-10-29T01:09:21Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,98 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2115608696940122621",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115608696940122621",
+   "created_at": "2026-10-29T00:56:34.000Z",
+   "text": "EEUU presenta cargos contra 24 integrantes de una red vinculada al Cártel de Sinaloa, con operación en Tennessee https://t.co/ErOVNg0j29",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "US files charges against 24 members of a network linked to the Sinaloa Cartel operating in Tennessee"
+  },
+  {
+   "id": "2115607278833344958",
+   "handle": "SSPCMexico",
+   "url": "https://x.com/SSPCMexico/status/2115607278833344958",
+   "created_at": "2026-10-29T00:50:56.000Z",
+   "text": "En #Oaxaca, personal de @SEMAR_mx, en coordinación con #SSPC y @FGRMexico, detuvo a Carlos “N”, alias “El Semáforo”, junto con Ana Gabriela “N”, integrantes de un grupo delictivo vinculado con secuestros y homicidios. En esta acción se aseguraron armas, granadas, sustancias http…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2723"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "In #Oaxaca, @SEMAR_mx personnel, in coordination with #SSPC and @FGRMexico, arrested Carlos “N”, alias “El Semáforo”, along with Ana Gabriela “N”, members of a criminal group linked to kidnappings and homicides. Weapons, grenades and substances were seized in the operation…"
+  },
+  {
+   "id": "2115592107377189343",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2115592107377189343",
+   "created_at": "2026-10-28T23:50:38.000Z",
+   "text": "El fallo informático que activó la señal roja se originó por un tren detenido en la vía. https://t.co/ghVUxO8q9M",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The computer fault that triggered the red signal was caused by a train stopped on the track."
+  },
+  {
+   "id": "2115588422194868722",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115588422194868722",
+   "created_at": "2026-10-28T23:36:00.000Z",
+   "text": "De acuerdo con las autoridades de #EU, los hombres son señalados por presuntamente formar parte de una organización de narcotráfico relacionada con el CDS, dedicada a distribuir fentanilo y cocaína en el centro de #Tennessee. La red también habría #lavado millones de dólares",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "According to #US authorities, the men are accused of allegedly belonging to a drug-trafficking organisation linked to the CDS, dedicated to distributing fentanyl and cocaine in central #Tennessee. The network also allegedly #laundered millions of dollars"
+  },
+  {
+   "id": "2115586565246165444",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115586565246165444",
+   "created_at": "2026-10-28T23:28:37.000Z",
+   "text": "Golpe a la red de armas de Los Chapitos: el Pokémon y tres más se quedan presos en Guasave tras ser vinculados a proceso https://t.co/NOKqHMH2lN",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "chapitos"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Blow to Los Chapitos' weapons network: \"el Pokémon\" and three others remain jailed in Guasave after being ordered to stand trial"
+  },
   {
    "id": "2115557971774382191",
    "handle": "_elfaro_",
@@ -3456,59 +3548,6 @@
    "source_type": "local outlet",
    "label": null,
    "text_en": "➡️ Three men ordered to stand trial for the murder of Escuinapa's Civil Protection coordinator, Jesús Francisco López Bribiesca…"
-  },
-  {
-   "id": "2113060608748748886",
-   "handle": "ZETATijuana",
-   "url": "https://x.com/ZETATijuana/status/2113060608748748886",
-   "created_at": "2026-10-22T00:11:22.000Z",
-   "text": "La organización operaba bajo la fachada de un club de motociclistas para traficar cocaína y armas de fuego https://t.co/qtsKUHQeoK",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "The organisation operated under the cover of a motorcycle club to traffic cocaine and firearms"
-  },
-  {
-   "id": "2113037870977958242",
-   "handle": "Primicias",
-   "url": "https://x.com/Primicias/status/2113037870977958242",
-   "created_at": "2026-10-21T22:41:01.000Z",
-   "text": "Otras 17 personas que formaban parte de la banda de alias 'Gordo Arturo', cabecilla de Los Lobos y Objetivo de Alto Valor, y que protagonizaron el robo de una joyería de un centro comercial en Quito, fueron sentenciados a 10 años en calidad de colaboradores. https://t.co/2wt66XU…",
-   "lang": "es",
-   "region_ids": [
-    "ECU-1287"
-   ],
-   "country": "ECU",
-   "group_ids": [
-    "lobos"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Another 17 members of the gang of alias 'Gordo Arturo', a Los Lobos leader and High-Value Target, who carried out the robbery of a jewellery shop in a Quito mall, were sentenced to 10 years as collaborators."
-  },
-  {
-   "id": "2113030819497333067",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2113030819497333067",
-   "created_at": "2026-10-21T22:13:00.000Z",
-   "text": "La Unidad Especializada Antisecuestros (#UEA) de la Región Sur, ejecutó una orden de aprehensión contra #JacobAlonso por su probable responsabilidad en el delito de secuestro agravado, cometido en el municipio de #Mazatlán. https://t.co/ujgebYTYKt",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "The Southern Region Specialised Anti-Kidnapping Unit (#UEA) executed an arrest warrant against #JacobAlonso for his probable role in aggravated kidnapping in #Mazatlán municipality."
   }
  ]
 }
