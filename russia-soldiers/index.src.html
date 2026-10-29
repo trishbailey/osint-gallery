@@ -1,0 +1,187 @@
+<!doctype html><html lang="en"><head><script data-slash-fix>if(location.pathname==="/russia-soldiers")location.replace("/russia-soldiers/"+location.search+location.hash);</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z61EKRP8QV');
+</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Russia's Soldiers: where the war's troops come from</title>
+<meta name="description" content="Which Russian regions the named dead of the war in Ukraine came from, how Russia recruits, and what signing bonuses are worth in local wages.">
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="top"><h1>Russia's Soldiers</h1><p class="sub">Where Russia's troops for the war in Ukraine come from. Data as of 28 Oct 2026. First draft.</p></header>
+<main>
+<p class="lead">Named war dead per 100,000 residents, by home region, tested against distance, poverty, ethnicity and signing bonuses.[[mz_list]]</p>
+<section class="kpis" id="kpis" aria-label="Headline numbers">
+<div class="kpi"><b>{{fe_rate}}</b><span>per 100,000 in the Far East, against {{central_rate}} in the Central district</span></div>
+<div class="kpi"><b>{{tuva_rate}}</b><span>per 100,000 in Tuva, the highest. Moscow city is lowest at {{mow_rate}}</span></div>
+<div class="kpi"><b>{{named_total}}</b><span>named dead on the list at 23 Oct 2026[[mz_regions]]</span></div>
+<div class="kpi"><b>{{nat_rate}}</b><span>named dead per 100,000 residents, 85 regions[[pop]]</span></div>
+<div class="kpi"><b>300,000</b><span>men called up in the 2022 mobilisation, by the Defence Minister's count[[kremlin]]</span></div>
+<div class="kpi"><b>{{q1_contracts}}</b><span>new contracts with a federal bonus in Q1 2026[[kluge]]</span></div>
+</section>
+<details class="sec" id="flow-sec" open><summary><h2>Where the soldiers came from</h2></summary>
+<div class="barblock flowblock"><aside class="side2" id="flowkey" aria-label="Key to the flow map"></aside>
+<div class="chartcol"><div class="mapwrap flowwrap"><div id="flowmap"></div></div>
+<p class="note">Arrow width shows <b>people recruited</b>, not named dead. Contract soldiers and volunteers: official statements for 2023 to the first half of 2026 add up to the high end;[[ria_shoigu24]][[tass_med25]][[interfax_med26]][[ng_bonus]] the low end is an outside estimate.[[wotr]] Mobilised: 300,000 by the Kremlin’s count[[kremlin]] to at least 527,703 by Mediazona’s estimate.[[dw_mz527]] Prisoners: Wagner and Storm Z counts added together,[[ng_wagner]][[istories]] up to Ukraine’s unverified claim.[[ki]] Foreign: North Korean troops[[bbc_nk]] and Central Asian recruits counted by Ukraine.[[occrp_foreign]] Arrows start at a schematic hub and end at a schematic front bracket. The North Korean soldiers died in Russia’s Kursk region, not in Ukraine.[[bbc_nk]]</p></div></div>
+<p class="cap"><b>{{v_flow}}</b></p>
+<h4 class="mini">Recruits over time, by how they joined</h4>
+<div class="tsblock" id="flowts" aria-label="Time series of recruits by type"></div>
+<p class="cap"><b>{{v_ts}}</b></p>
+<p class="note">Each dot is a published total for the period it covers, shown by the bar under it, so a half-year or nine-month dot is not a full year. Contract and volunteer dots are official claims;[[ria_shoigu24]][[tass_med25]][[interfax_med26]][[ng_bonus]] hollow markers are iStories estimates from budget data.[[isw_istories23]][[istories_407]] Mobilised: one wave, with a pale band from the Kremlin’s count to Mediazona’s estimate.[[kremlin]][[dw_mz527]] Prisoners: Wagner, then Storm Z with a range.[[meduza_wagner]][[istories]] Foreigners are the contract signers counted by Ukraine’s Coordination Headquarters, as reported by LIGA.net.[[liga_foreign]] {{ts_gaps}} Press Play to redraw the lines from left to right.</p>
+<h4 class="mini">Named dead by how they joined, cumulative totals</h4>
+<div class="bars" id="flowbars"></div>
+<p class="note">One bar per recruit type, linear from zero, sorted largest first; not stacked by year. Russian types are counted by each man’s home region (85 regions, Mediazona regional pages, 23 Oct 2026);[[mz_regions]] foreign dead come from BBC News Russian with Mediazona, 10 Jul 2026.[[bbc_foreign]] The named list is not exhaustive.[[mz_list]] Hover a bar for its source.</p>
+<details class="how"><summary>What the arrows show and what is left out</summary>
+<p>The three Russian arrows start at one schematic hub because no outlet publishes recruitment counts by region or district for any type. The regional figures that exist cover 11 to 37 regions, appear only in charts, or count one recruiter’s subset, so none is used and nothing is split by region. Hover a region for its named dead instead.</p>
+<p>Official figures moved: Shoigu said about 490,000 for 2023 in December 2023 and almost 540,000 in February 2024.[[ria_shoigu24]] Independent estimates from federal budget data are lower: 354,400 for 2023[[isw_istories23]] and 374,200 to 407,200 for 2024.[[istories_407]] Putin said 318,000 were mobilised, volunteers included.[[meduza_318]]</p>
+<p>Not drawn, because they have no single place on this map: {{flow_notdrawn}}[[liga_foreign]][[occrp_foreign]] {{flow_skipped}}</p>
+<p>The BBC pieces differ slightly on foreign named dead (3,586 and 3,589); the bars use 3,589 = 2,304 North Korean + 1,285 verified by BBC News Russian.[[bbc_foreign]] Basemap: Natural Earth.[[ne_admin0]] On a phone, pinch with two fingers or use the zoom buttons.</p></details>
+</details>
+
+<details class="sec" id="remote-sec" open><summary><h2>Remote regions bear the cost</h2></summary>
+<div class="barblock"><aside class="side2"><h3 class="sideh">Key</h3><ul class="legend" id="leg-s1"></ul></aside>
+<div class="chartcol"><h4 class="mini">Named dead per 100,000 by federal district</h4><div class="bars" id="bars-fd"></div><h4 class="mini">Each region: distance from Moscow against named dead per 100,000</h4><div class="scat" id="sc-dist"></div></div></div>
+<p class="cap"><b>{{v_remote}}</b></p>
+<details class="how"><summary>How to read this</summary>
+<p>{{cap1}}</p>
+<p>Distance is measured in a straight line from the middle of Moscow city to the middle of each region's largest land area. Pearson's r measures a straight-line link and runs from −1 to 1, where 0 is no link. Spearman's rho does the same for rankings and is less sensitive to a few extreme regions. These describe the data and do not show cause.</p></details>
+</details>
+
+<aside class="notice" id="undercount" role="note"><b>{{uc_line}}</b>[[mz_probate]]
+<div class="bars ucbars" id="ucbars"></div>
+<details class="how"><summary>What the list and the estimate leave out</summary>
+<p>The list holds {{named_total}} names, of which {{named_85}} can be tied to one of the 85 regions drawn here. The other {{outside_85}} come from the Donetsk and Luhansk areas, Baikonur, foreigners and unknown origin, and the list leaves out losses of the Donetsk and Luhansk forces.[[mz_list]] The estimate comes from the Probate Registry: {{probate_regular}} deaths found from excess inheritance cases plus about {{probate_late}} from late registrations, as of mid-2025 and likely to rise. It covers Russian citizens only, men aged 18 to 59, and has no regional split, so regional rates here use confirmed names and not true losses.[[mz_probate]]</p></details></aside>
+
+<details class="sec" id="map-sec" open><summary><h2>Where the named dead came from</h2></summary>
+<div class="mapgrid">
+<details class="side" id="mapside" open><summary class="optbtn">Map options</summary>
+<div class="sidebody">
+<h3 class="sideh">Show</h3>
+<div class="seg" role="group" aria-label="Metric">
+<button type="button" class="chipb" data-metric="deaths" aria-pressed="true">All named dead</button>
+<button type="button" class="chipb" data-metric="vol" aria-pressed="false">Volunteers</button>
+<button type="button" class="chipb" data-metric="mob" aria-pressed="false">Mobilised</button>
+<button type="button" class="chipb" data-metric="pri" aria-pressed="false">Prisoners</button>
+<button type="button" class="chipb" data-metric="pov" aria-pressed="false">Poverty rate</button>
+<button type="button" class="chipb" data-metric="ru" aria-pressed="false">Russian share</button>
+<button type="button" class="chipb" data-metric="bonus" aria-pressed="false">Bonus in months</button>
+</div>
+<h3 class="sideh" id="legtitle">Named dead per 100,000</h3>
+<ul class="legend" id="legend"></ul>
+</div></details>
+<div class="mapcol"><div class="mapwrap" id="mapwrap"><svg id="map" role="img" aria-label="Map of Russia's regions shaded by named dead per 100,000 residents"></svg>
+<button type="button" class="btn mapbtn" id="reset">Reset view</button>
+<aside id="panel" class="panel" aria-label="Region details"><button type="button" class="btn closebtn" id="closepanel">Close</button><div id="panelbody"></div></aside></div></div>
+</div>
+<p class="cap" id="mapcap">Tuva {{tuva_rate}}, Chukotka {{chu_rate}}; Moscow city {{mow_rate}}, Chechnya {{che_rate}}.</p>
+<details class="how"><summary>How the map is made</summary>
+<p>Names are counted by home region from Mediazona's regional pages,[[mz_regions]] and divided by the Rosstat estimate of residents on 1 Jan 2024.[[pop]] Borders are Natural Earth, simplified.[[ne]] Crimea and Sevastopol are drawn as Russian-administered and are not recognised as Russian by Ukraine or most states. Scroll or pinch to zoom, drag to move, tap a region for its details. Regions with no figure are dark blue.</p></details>
+</details>
+
+<details class="sec" id="rank-sec" open><summary><h2>Ranking: named dead per 100,000 residents</h2></summary>
+<div class="barblock"><aside class="side2"><h3 class="sideh">Colour key</h3><ul class="legend" id="legend2"></ul></aside>
+<div class="barcol"><div id="rankbars" class="bars"></div><button type="button" class="btn" id="rankmore">Show all 85 regions</button></div></div>
+<p class="cap"><b>{{v_rank}}</b></p>
+</details>
+
+<details class="sec" id="pov-sec" open><summary><h2>Poverty: a weak link</h2></summary>
+<div class="barblock"><aside class="side2"><h3 class="sideh">Key</h3><ul class="legend" id="leg-s2"></ul><h3 class="sideh">Map key</h3><ul class="legend" id="leg-mm-pov"></ul></aside>
+<div class="chartcol"><div class="pair"><div><h4 class="mini">Share of residents below the poverty line, 2025</h4><div class="minimap" id="mm-pov"></div></div>
+<div><h4 class="mini">Poverty rate against named dead per 100,000</h4><div class="scat" id="sc-pov"></div></div></div>
+<h4 class="mini">Named dead per 100,000 by poverty quarter (21 or 22 regions each)</h4><div class="bars" id="bars-pq"></div></div></div>
+<p class="cap"><b>{{v_pov}}</b></p>
+<details class="how"><summary>How this was tested, and the wage check</summary>
+<p>{{pov_how}}[[pov]] {{ols_pov}}</p>
+<p>The poverty rate is income-based and Rosstat changed its method in 2021 and revised earlier years in 2024, so it is a rough guide to deprivation. The Nenets and Khanty-Mansi areas have no published rate, so theirs is the published headcount divided by population ({{pov_derived}}).[[povn]]</p>
+<h4 class="mini">Second test: average monthly wage, 2025</h4>
+<div class="barblock"><aside class="side2"><h3 class="sideh">Key</h3><ul class="legend" id="leg-s2b"></ul></aside>
+<div class="chartcol"><div class="scat" id="sc-wage"></div><h4 class="mini">Named dead per 100,000 by wage quarter (21 or 22 regions each)</h4><div class="bars" id="bars-q"></div></div></div>
+<p class="cap"><b>{{v_wage}}</b></p>
+<p>{{cap2}} Wages are the 2025 average for organisations, from Rosstat,[[wage]] not adjusted for local prices.</p></details>
+</details>
+
+<details class="sec" id="eth-sec" open><summary><h2>Ethnic minorities: higher in the republics, but not everywhere</h2></summary>
+<div class="barblock"><aside class="side2"><h3 class="sideh">Key</h3><ul class="legend" id="leg-s3"></ul><h3 class="sideh">Map key</h3><ul class="legend" id="leg-mm-ru"></ul></aside>
+<div class="chartcol"><div class="pair"><div><h4 class="mini">Ethnic Russians as a share of residents, 2020 census</h4><div class="minimap" id="mm-ru"></div></div>
+<div><h4 class="mini">Russian share against named dead per 100,000</h4><div class="scat" id="sc-eth"></div></div></div>
+<h4 class="mini">Named dead per 100,000 by region type</h4><div class="bars" id="bars-g"></div></div></div>
+<p class="cap"><b>{{v_eth}}</b></p>
+<details class="how"><summary>How this was tested</summary>
+<p>{{cap3}}</p>
+<p>Shares are from the 2020 census as compiled by real-stats.ru,[[census]] which lists only the largest peoples of each region and has no Russian row for Dagestan. Dagestan is filled from Rosstat's national-composition table: 102,243 Russians among 3,182,054 residents, {{r_dag_ru}}%,[[census_dag]] so all 85 regions are in the test. {{ols}}</p></details>
+</details>
+
+<details class="sec" id="bonus-sec" open><summary><h2>Signing bonuses against local wages</h2></summary>
+<div class="barblock"><aside class="side2"><h3 class="sideh">Bar outline</h3><ul class="legend" id="legend3"></ul><button type="button" class="chipb tog" id="firmonly" aria-pressed="false">Confirmed only</button><h3 class="sideh">Map key</h3><ul class="legend" id="leg-mm-bonus"></ul></aside>
+<div class="chartcol"><div class="pair"><div><h4 class="mini">Bonus in months of local average wage</h4><div class="minimap" id="mm-bonus"></div></div>
+<div class="barcol"><div id="bonusbars" class="bars"></div><button type="button" class="btn" id="bonusmore">Show all regions</button></div></div></div></div>
+<p class="cap"><b>{{v_bonus}}</b></p>
+<details class="how"><summary>How the bonus is counted</summary>
+<p>A contract soldier gets a federal payment of 400,000 roubles, reported by Janis Kluge and shown on VoenSchet's regional cards,[[kluge]] plus a regional payment that each region sets, read from VoenSchet's summary of regional acts.[[vs]] Each bar adds the two and divides by the region's 2025 average monthly wage,[[wage]] so it shows months of local pay. Municipal top-ups and special bonuses for drone troops or reserve units are left out. Kaliningrad, Nizhny Novgorod and Kirov come from a January 2026 aggregator table and may be out of date;[[gogov]] Penza's 1,000,000 regional roubles come from a news report.[[penza_bonus]] Where no amount could be confirmed, the region is left out (listed under Method).</p>
+<p>{{capb}}</p></details>
+</details>
+
+<details class="sec" id="pools-sec" open><summary><h2>The recruitment pools</h2></summary>
+<div class="photos">
+<figure class="ph"><img src="img/recruitment-billboard-moscow-2024.jpg" width="640" height="640" loading="lazy" alt="A street billboard in Moscow in August 2024 offering contract service with payments from 5,200,000 roubles for the first year, a phone number and a QR code, with the soldiers in the picture pixelated"><figcaption>Moscow, Aug 2024: "from 5,200,000 roubles for the first year".[[img_billboard]]</figcaption></figure>
+<figure class="ph"><img src="img/mobilisation-summons-2022.jpg" width="520" height="673" loading="lazy" alt="A 2022 mobilisation summons from a Moscow military commissariat ordering a man to report for military training, with his name and address blacked out"><figcaption>A 2022 mobilisation summons, names redacted.[[img_summons]]</figcaption></figure>
+</div>
+<p class="rnote">Each bar starts at zero; a thin line marks a range. These are different kinds of counts and do not add up.</p>
+<div class="bars pools" id="poolbars">{{pool_rows}}</div>
+<details class="how"><summary>Where no credible total exists</summary>
+<ul class="plain">
+<li>Contract soldiers since 2022: the official count for 2025 is 422,704 against about 364,000 federal bonuses,[[kluge]] and the only all-years figure, roughly 1.3 million, is an estimate with no stated method.[[wotr]]</li>
+<li>Foreigners: Ukraine's list of {{foreigners}} named foreigners is a floor and not a total;[[unn]] the NATO figure of about 24,000 comes from one unnamed official.[[meduza_foreign]]</li>
+<li>Prisoners: Wagner's {{wagner}} and the Defence Ministry's Storm Z units are counted separately, and the only all-in figure is an unverified claim by Ukraine's intelligence service.[[ki]]</li>
+<li>North Korea: figures for troops sent, killed and named differ by source and cannot be reconciled;[[meduza_foreign]][[yonhap_nis]] the 25,000 North Korean workers in drone production are workers, not troops.[[msmt_meduza]]</li>
+<li>A recruitment agency's internal target list includes "residents of economically depressed regions", and recruiters were paid up to 1.25 million roubles per signed contract.[[insider]]</li>
+</ul></details>
+<h3 class="mini2">How the named dead joined, and where from</h3>
+<div class="sk" id="sankey"></div>
+<p class="cap"><b>{{v_type}}</b></p>
+<details class="how"><summary>How to read this, and totals as bars</summary>
+<p>Each band is the number of named dead with that label from that federal district. The Mediazona regional pages label each name by how the man joined;[[mz_regions]] names without such a label, mostly labelled by arm of service, are shown as "Other labels or no data". {{captype}} Drawn with d3-sankey.[[d3sankey]]</p>
+<div id="typebars" class="bars"></div></details>
+</details>
+
+<details class="sec" id="nk-sec"><summary><h2>North Korea and Russia: what flows each way</h2></summary>
+<div class="barblock nkblock"><aside class="side2" id="nkkey" aria-label="Key to the North Korea graphics"></aside>
+<div class="chartcol"><h4 class="mini">Flows between the two countries (hover a row for its source)</h4><div id="nkrel" class="nkrel"></div>
+<h4 class="mini">Routes on the map</h4><div class="mapwrap"><div id="nkmap"></div></div></div></div>
+<p class="cap"><b>{{v_nk}}</b></p>
+<h4 class="mini">Timeline</h4>
+{{nk_timeline}}
+<details class="how"><summary>Every figure, with its detail and source</summary>
+{{nk_cards}}
+<p class="note">Line widths on the map are equal because the units differ (people, containers, missiles). Figures in the labels are the sourced ones. The 8 to 11 million shells figure is an estimate; the BBC and Ukraine’s military intelligence say no North Koreans have fought on Ukrainian soil.[[bbc_nk]]</p></details>
+</details>
+
+<details class="sec" id="trk-sec" open><summary><h2>Latest from trackers</h2></summary>
+<p class="rnote">Strategic updates from eight tracker accounts on X, each read at its article on 28 Oct 2026; outlets are credited and numbered. Script refresh: {{trackers_generated}}.</p>
+{{trackers_html}}
+</details>
+
+<details class="sec method" id="method-sec" open><summary><h2>Method and limits</h2></summary>
+<ul class="plain small">
+<li>Rates are named dead divided by the Rosstat population estimate of 1 Jan 2024. Both the list and the population move over time, and the list lags recent months. The 23 Oct 2026 total of {{named_total}} is the sum of Mediazona's regional pages; a Meduza article of 10 Jul 2026 quoted a main-list figure of 233,033 and the two were not reconciled.[[meduza_foreign]]</li>
+<li>The map covers 85 regions. Names from Donetsk, Luhansk, Baikonur, foreigners and unknown origin have no regional population or wage and are left out of every rate.</li>
+<li>Poverty rates are Rosstat 2025 figures for 83 regions and derived for two. Wages are 2025 nominal averages and bonuses are October 2026 rates, so months of wages are slightly overstated where pay has risen since.</li>
+<li>Bonus status: "firm" means the regional card says the amount was confirmed. Other bars are outlined because the programme ends on 31 Oct 2026, the card data is more than 30 days old, the amount is from an older table, or it comes from media reports. Sakha's card gives a range of 1.5 to 3 million rubles regionally and the upper end is charted. Karachay-Cherkessia is shown at the standard 2.1 million rubles, and the card gives 3.1 million for reservists.[[vs]]</li>
+<li>Regions left out of the bonus chart: {{excluded_list}}.</li>
+<li>Descriptions only. Nothing on this page is a forecast.</li>
+</ul>
+</details>
+
+<section class="sources"><details id="srcdet"><summary>Data Sources (click to open)</summary>
+<ol class="fnlist">
+{{sources_html}}
+</ol></details></section>
+</main>
+<div id="tip" class="tip" role="tooltip" hidden></div>
+<script src="vendor/d3.min.js"></script><script src="vendor/d3-sankey.min.js"></script><script src="app.js"></script>
+<script src="flows.js"></script>
+<script src="nk.js"></script>
+</body></html>

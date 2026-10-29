@@ -1,0 +1,318 @@
+{
+ "measure": "people recruited",
+ "types": {
+  "vol": {
+   "name": "Volunteers and contract soldiers",
+   "color": "#e43d3c"
+  },
+  "mob": {
+   "name": "Mobilised",
+   "color": "#2ec4b6"
+  },
+  "pri": {
+   "name": "Prisoners, incl. Wagner and Storm-Z",
+   "color": "#e8c547"
+  },
+  "for": {
+   "name": "Foreign nationals, incl. North Korea",
+   "color": "#4f9dff"
+  }
+ },
+ "arrows": [
+  {
+   "id": "vol",
+   "kind": "vol",
+   "name": "Volunteers and contract soldiers",
+   "ll": [
+    55.0,
+    56.2
+   ],
+   "hub": true,
+   "low": 1300000,
+   "high": 1684704,
+   "label": "1.3M to 1.68M",
+   "tip": "<b>Volunteers and contract soldiers</b><br>1,300,000 to 1,684,704 people recruited, 2023 to first half of 2026 (no 2022 figure is counted in the high value)<br>Solid width shows the low value, 1,300,000; the pale band reaches 1,684,704<br>Low: roughly 1.3 million contract soldiers since 2022 (War on the Rocks, 14 Jul 2026; an estimate with no method given)<br>High: sum of 2023 contracts, almost 540,000 (Shoigu, 20 Feb 2024); 2024 contracts, about 450,000 (Medvedev, 24 Jan 2025); 2024 volunteer formations, over 40,000 (Medvedev, 24 Jan 2025); 2025 contracts, 422,704 (Medvedev, 16 Jan 2026); 2025 volunteers, 32,000 (Medvedev, 16 Jan 2026); first half of 2026, around 200,000 (Medvedev, reported 30 Jul 2026) = 1,684,704<br>Also: iStories budget-based estimate for 2023: 354,400<br>Also: iStories budget-based estimate for 2024: 374,200 to 407,200<br>Official claims add to the high end; independent budget-based estimates are 10 to 34% lower than the official figure for the same year (2023: 354,400 against 540,000; 2024: 374,200 to 407,200 against about 450,000).<br>Named dead, secondary measure: 96,613 volunteers and contract soldiers (Mediazona regional pages, 23 Oct 2026)<br>Drawn from a schematic hub: no regional recruitment counts are published"
+  },
+  {
+   "id": "mob",
+   "kind": "mob",
+   "name": "Mobilised men",
+   "ll": [
+    55.0,
+    56.2
+   ],
+   "hub": true,
+   "low": 300000,
+   "high": 527703,
+   "label": "300k to 528k",
+   "tip": "<b>Mobilised men</b><br>300,000 to 527,703 people recruited, September to October 2022 (one wave; no later call-up is counted)<br>Solid width shows the low value, 300,000; the pale band reaches 527,703<br>Low: 300,000 called up in the partial mobilisation (Defence Minister to the President, 28 Oct 2022)<br>High: at least 527,703 (Mediazona estimate from accelerated marriages, 2 Mar 2023)<br>Also: Putin, 4 Nov 2022: 318,000 drafted, volunteers included<br>Mediazona calls its figure a minimum; the Kremlin has not accepted it.<br>Named dead, secondary measure: 20,690 mobilised men (Mediazona regional pages, 23 Oct 2026)<br>Drawn from a schematic hub: no regional recruitment counts are published"
+  },
+  {
+   "id": "pri",
+   "kind": "pri",
+   "name": "Prisoners, incl. Wagner and Storm Z",
+   "ll": [
+    55.0,
+    56.2
+   ],
+   "hub": true,
+   "low": 76566,
+   "high": 180000,
+   "label": "77k to 180k",
+   "tip": "<b>Prisoners, incl. Wagner and Storm Z</b><br>76,566 to 180,000 people recruited, 2022 to 2025<br>Solid width shows the low value, 76,566; the pale band reaches 180,000<br>Low: Wagner, 2022 to 2023: at least 48,366 (BBC News Russian and Mediazona, Jun 2024); Storm Z, to Feb 2025: about 28,200 to 29,000 (iStories estimate)<br>High: up to 180,000 by Nov 2024 (Ukraine's Foreign Intelligence Service; unverified)<br>The low value adds two separate counts; the high value is a claim by one side and could not be checked.<br>Named dead, secondary measure: 27,379 prisoners (Mediazona regional pages, 23 Oct 2026)<br>Drawn from a schematic hub: no regional recruitment counts are published"
+  },
+  {
+   "id": "ca",
+   "kind": "for",
+   "name": "Central Asia (five states)",
+   "ll": [
+    66.9,
+    41.3
+   ],
+   "hub": false,
+   "low": 11157,
+   "high": 11157,
+   "label": "11,157",
+   "tip": "<b>Central Asia (five states)</b><br>11,157 people recruited, to late 2025 (OCCRP report)<br>Width shows 11,157<br>Low: Central Asia, five states: 11,157 recruits (Ukraine's Coordination Headquarters, via OCCRP)<br>Also: at least 1,399 of them killed (same source)<br>Ukrainian figures that OCCRP could not check independently."
+  },
+  {
+   "id": "prk",
+   "kind": "for",
+   "name": "North Korea",
+   "ll": [
+    125.75,
+    39.02
+   ],
+   "hub": false,
+   "low": 11000,
+   "high": 14000,
+   "label": "11k to 14k",
+   "tip": "<b>North Korea</b><br>11,000 to 14,000 people recruited, Kursk campaign, 2024 to 2025 (soldiers, not contract signers)<br>Solid width shows the low value, 11,000; the pale band reaches 14,000<br>Low: between 11,000 and 14,000 fought in the Kursk campaign (BBC, 14 Sep 2026)<br>High: North Korea: 11,000 to 14,000 in the Kursk campaign (BBC, 14 Sep 2026)<br>Estimate of the troops committed; the South Korean agency NIS and the BBC give a range.<br>Named dead, secondary measure: 2,304 (BBC News Russian with Mediazona, 10 Jul 2026)"
+  }
+ ],
+ "hub": {
+  "ll": [
+   55.0,
+   56.2
+  ],
+  "name": "Russia, all regions (schematic)"
+ },
+ "front": {
+  "ll": [
+   37.6,
+   48.4
+  ],
+  "name": "Front in Ukraine (east and south)"
+ },
+ "kursk": {
+  "ll": [
+   36.19,
+   51.73
+  ],
+  "name": "Kursk region"
+ },
+ "wmin": 4,
+ "wspan": 6,
+ "vmax": 1684704,
+ "samples": [
+  {
+   "v": 11157,
+   "w": 4.49
+  },
+  {
+   "v": 76566,
+   "w": 5.28
+  },
+  {
+   "v": 300000,
+   "w": 6.53
+  },
+  {
+   "v": 1300000,
+   "w": 9.27
+  }
+ ],
+ "bars": [
+  {
+   "kind": "vol",
+   "name": "Volunteers and contract soldiers",
+   "n": 96613,
+   "tip": "<b>Volunteers and contract soldiers</b><br>96,613 named dead, cumulative<br>Home regions in Russia (85 regions), Mediazona regional pages, 23 Oct 2026"
+  },
+  {
+   "kind": "pri",
+   "name": "Prisoners, incl. Wagner and Storm-Z",
+   "n": 27379,
+   "tip": "<b>Prisoners, incl. Wagner and Storm-Z</b><br>27,379 named dead, cumulative<br>Home regions in Russia (85 regions), Mediazona regional pages, 23 Oct 2026"
+  },
+  {
+   "kind": "mob",
+   "name": "Mobilised",
+   "n": 20690,
+   "tip": "<b>Mobilised</b><br>20,690 named dead, cumulative<br>Home regions in Russia (85 regions), Mediazona regional pages, 23 Oct 2026"
+  },
+  {
+   "kind": "for",
+   "name": "Foreign nationals, incl. North Korea",
+   "n": 3589,
+   "tip": "<b>Foreign nationals, incl. North Korea</b><br>3,589 named dead, cumulative: 2,304 North Korean + 1,285 verified from other countries<br>BBC News Russian with Mediazona, 10 Jul 2026"
+  }
+ ],
+ "ts": {
+  "series": [
+   {
+    "kind": "vol",
+    "name": "Volunteers and contract soldiers",
+    "color": "#e43d3c",
+    "points": [
+     {
+      "id": "vol23",
+      "t0": "2023-01-01",
+      "t1": "2023-12-31",
+      "low": 540000,
+      "high": 540000,
+      "tip": "<b>Volunteers and contract soldiers</b><br>Jan 2023 to Dec 2023: 540,000 recruits<br>Contracts signed in 2023, official claim<br>2023 contracts, almost 540,000 (Shoigu, 20 Feb 2024) [RIA Novosti, 20 Feb 2024]<br>Height is the total for the period, not a rate; the width of the bar under the dot is the period covered."
+     },
+     {
+      "id": "vol24",
+      "t0": "2024-01-01",
+      "t1": "2024-12-31",
+      "low": 490000,
+      "high": 490000,
+      "tip": "<b>Volunteers and contract soldiers</b><br>Jan 2024 to Dec 2024: 490,000 recruits<br>Contracts plus volunteer formations in 2024, official claim<br>2024 contracts, about 450,000 (Medvedev, 24 Jan 2025) [TASS, 24 Jan 2025]<br>2024 volunteer formations, over 40,000 (Medvedev, 24 Jan 2025) [TASS, 24 Jan 2025]<br>Sum: 490,000<br>Height is the total for the period, not a rate; the width of the bar under the dot is the period covered."
+     },
+     {
+      "id": "vol25",
+      "t0": "2025-01-01",
+      "t1": "2025-12-31",
+      "low": 454704,
+      "high": 454704,
+      "tip": "<b>Volunteers and contract soldiers</b><br>Jan 2025 to Dec 2025: 454,704 recruits<br>Contracts plus volunteers in 2025, official claim<br>2025 contracts, 422,704 (Medvedev, 16 Jan 2026) [Interfax, 16 Jan 2026]<br>2025 volunteers, 32,000 (Medvedev, 16 Jan 2026) [Interfax, 16 Jan 2026]<br>Sum: 454,704<br>Height is the total for the period, not a rate; the width of the bar under the dot is the period covered."
+     },
+     {
+      "id": "vol26",
+      "t0": "2026-01-01",
+      "t1": "2026-06-30",
+      "low": 200000,
+      "high": 200000,
+      "tip": "<b>Volunteers and contract soldiers</b><br>Jan 2026 to Jun 2026: 200,000 recruits<br>Contracts in the first half of 2026 only, official claim<br>first half of 2026, around 200,000 (Medvedev, reported 30 Jul 2026) [Novaya Gazeta Europe, 30 Jul 2026]<br>Half a year only: not comparable with a full year.<br>Height is the total for the period, not a rate; the width of the bar under the dot is the period covered."
+     }
+    ],
+    "est": [
+     {
+      "id": "est23",
+      "t0": "2023-01-01",
+      "t1": "2023-12-31",
+      "low": 354400,
+      "high": 354400,
+      "tip": "<b>Volunteers and contract soldiers (outside estimate)</b><br>Jan 2023 to Dec 2023: 354,400 recruits<br>Contracts signed in 2023, iStories estimate from federal budget data<br>iStories budget-based estimate for 2023: 354,400 [ISW, 5 Jun 2025, on iStories estimates]"
+     },
+     {
+      "id": "est24",
+      "t0": "2024-01-01",
+      "t1": "2024-12-31",
+      "low": 374200,
+      "high": 407200,
+      "tip": "<b>Volunteers and contract soldiers (outside estimate)</b><br>Jan 2024 to Dec 2024: 374,200 to 407,200 recruits<br>Contracts signed in 2024, iStories estimate from federal budget data (a range)<br>iStories budget-based estimate for 2024: 374,200 to 407,200 [iStories, 30 May 2025]"
+     }
+    ]
+   },
+   {
+    "kind": "mob",
+    "name": "Mobilised",
+    "color": "#2ec4b6",
+    "points": [
+     {
+      "id": "mob22",
+      "t0": "2022-09-01",
+      "t1": "2022-10-31",
+      "low": 300000,
+      "high": 527703,
+      "tip": "<b>Mobilised</b><br>Sep 2022 to Oct 2022: 300,000 to 527,703 recruits<br>Called up in the September to October 2022 mobilisation (Kremlin count to Mediazona estimate)<br>300,000 called up in the partial mobilisation (Defence Minister to the President, 28 Oct 2022) [Kremlin, 28 Oct 2022]<br>at least 527,703 (Mediazona estimate from accelerated marriages, 2 Mar 2023) [DW on Mediazona, 2 Mar 2023]<br>One wave. No later call-up is counted.<br>Height is the total for the period, not a rate; the width of the bar under the dot is the period covered."
+     }
+    ],
+    "est": []
+   },
+   {
+    "kind": "pri",
+    "name": "Prisoners, incl. Wagner and Storm-Z",
+    "color": "#e8c547",
+    "points": [
+     {
+      "id": "pri22",
+      "t0": "2022-07-01",
+      "t1": "2023-02-07",
+      "low": 48366,
+      "high": 48366,
+      "tip": "<b>Prisoners, incl. Wagner and Storm-Z</b><br>Jul 2022 to Feb 2023: 48,366 recruits<br>Prisoners recruited by Wagner (at least)<br>Wagner recruited at least 48,366 prisoners, from 1 Jul 2022 to 7 Feb 2023 (Mediazona and BBC News Russian, via Meduza, 10 Jun 2024) [Novaya Gazeta Europe, 10 Jun 2024]<br>Height is the total for the period, not a rate; the width of the bar under the dot is the period covered."
+     },
+     {
+      "id": "pri23",
+      "t0": "2023-02-01",
+      "t1": "2023-09-30",
+      "low": 28200,
+      "high": 29000,
+      "tip": "<b>Prisoners, incl. Wagner and Storm-Z</b><br>Feb 2023 to Sep 2023: 28,200 to 29,000 recruits<br>Prisoners recruited into Storm Z by the Defence Ministry (iStories token analysis)<br>Storm Z: lower bound about 28,2 thousand (iStories, 6 Feb 2025) [iStories, 6 Feb 2025]<br>Storm Z: upper bound 29 thousand (iStories, 6 Feb 2025) [iStories, 6 Feb 2025]<br>Leaves out the first wave, from late February to April 2023, so it may be higher.<br>Height is the total for the period, not a rate; the width of the bar under the dot is the period covered."
+     }
+    ],
+    "est": []
+   },
+   {
+    "kind": "for",
+    "name": "Foreign nationals, incl. North Korea",
+    "color": "#4f9dff",
+    "points": [
+     {
+      "id": "for22",
+      "t0": "2022-01-01",
+      "t1": "2022-12-31",
+      "low": 94,
+      "high": 94,
+      "tip": "<b>Foreign nationals, incl. North Korea</b><br>Jan 2022 to Dec 2022: 94 recruits<br>Foreigners who signed contracts, as counted by Ukraine<br>foreign contract signers in 2022: 94 [LIGA.net, 19 Oct 2026]<br>Height is the total for the period, not a rate; the width of the bar under the dot is the period covered."
+     },
+     {
+      "id": "for23",
+      "t0": "2023-01-01",
+      "t1": "2023-12-31",
+      "low": 4067,
+      "high": 4067,
+      "tip": "<b>Foreign nationals, incl. North Korea</b><br>Jan 2023 to Dec 2023: 4,067 recruits<br>Foreigners who signed contracts, as counted by Ukraine<br>foreign contract signers in 2023: 4,067 [LIGA.net, 19 Oct 2026]<br>Height is the total for the period, not a rate; the width of the bar under the dot is the period covered."
+     },
+     {
+      "id": "for24",
+      "t0": "2024-01-01",
+      "t1": "2024-12-31",
+      "low": 8877,
+      "high": 8877,
+      "tip": "<b>Foreign nationals, incl. North Korea</b><br>Jan 2024 to Dec 2024: 8,877 recruits<br>Foreigners who signed contracts, as counted by Ukraine<br>foreign contract signers in 2024: 8,877 [LIGA.net, 19 Oct 2026]<br>Height is the total for the period, not a rate; the width of the bar under the dot is the period covered."
+     },
+     {
+      "id": "for25",
+      "t0": "2025-01-01",
+      "t1": "2025-12-31",
+      "low": 16085,
+      "high": 16085,
+      "tip": "<b>Foreign nationals, incl. North Korea</b><br>Jan 2025 to Dec 2025: 16,085 recruits<br>Foreigners who signed contracts, as counted by Ukraine<br>foreign contract signers in 2025: 16,085 [LIGA.net, 19 Oct 2026]<br>Height is the total for the period, not a rate; the width of the bar under the dot is the period covered."
+     },
+     {
+      "id": "for26",
+      "t0": "2026-01-01",
+      "t1": "2026-09-30",
+      "low": 16168,
+      "high": 16168,
+      "tip": "<b>Foreign nationals, incl. North Korea</b><br>Jan 2026 to Sep 2026: 16,168 recruits<br>Foreigners who signed contracts in the first nine months of 2026, as counted by Ukraine<br>foreign contract signers, January to September 2026: 16,168 [LIGA.net, 19 Oct 2026]<br>Nine months only.<br>Height is the total for the period, not a rate; the width of the bar under the dot is the period covered."
+     }
+    ],
+    "est": []
+   }
+  ],
+  "domain": [
+   "2022-01-01",
+   "2026-10-28"
+  ],
+  "gaps": "No dated figure was found for: contract signers in 2022; mobilised men after 2022; prisoners after September 2023; foreigners before 2022. These are gaps, not zeros."
+ },
+ "not_drawn": "All foreign contract signers named by Ukraine, to 1 Oct 2026: 45,959 from 151 countries. January to September 2026: Colombia 1,449, Burundi 699, Zimbabwe 530, Peru 503. Sri Lanka 751 (to late 2025).",
+ "skipped": "Not drawn: any split of the national totals by region or district, because no outlet publishes recruitment counts by region for any type (the regional figures that exist cover 11 to 37 regions, are charts only, or count a recruiter's subset). Foreign countries without a single place on this map are listed above. North Korean soldiers are the only foreign group shown by troops committed rather than contracts signed.",
+ "named_dead_date": "23 Oct 2026"
+}
