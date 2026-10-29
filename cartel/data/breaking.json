@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-29T19:03:08Z",
+ "as_of": "2026-10-29T22:09:17Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -9,80 +9,30 @@
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
   {
-   "id": "d34d89a82a",
-   "status": "confirmed",
-   "title": "La detención de la secretaria de Bienestar de Uruapan por probable encubrimiento se suma a las investigaciones por el homicidio; la presidenta Claudia Sheinbaum informó que dará un informe de resultad",
+   "id": "2c01c92a76",
+   "status": "single_source",
+   "title": "La captura incluyó a un segundo detenido, puesto a disposición de la delegación de la FGR en Chihuahua",
    "lang": "es",
-   "title_en": "The arrest of the Uruapan Welfare secretary for probable cover-up adds to the homicide investigations; President Claudia Sheinbaum said she will give a report on results and pending items of the federal strategy",
-   "first_report": "2026-10-29T16:17:05Z",
+   "title_en": "The capture included a second detainee, handed over to the Attorney General's Office (FGR) in Chihuahua",
+   "first_report": "2026-10-29T22:05:49Z",
    "first_report_precision": "minute",
-   "first_source": "Infobae",
+   "first_source": "ZETA Tijuana",
    "region_ids": [
-    "MEX-2720"
+    "MEX-2709"
    ],
    "country": "MEX",
    "group_ids": [],
    "outlets": [
-    "Infobae",
-    "Proceso"
+    "ZETA Tijuana"
    ],
    "sources": [
     {
-     "outlet": "infobae",
-     "name": "Infobae",
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
      "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115840354364555499",
-     "time": "2026-10-29T16:17:05Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2115881401081823397",
-     "time": "2026-10-29T19:00:11Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "a0968d9dfe",
-   "status": "official_claim_only",
-   "title": "En Michoacán, elementos de @SEMAR_mx, en coordinación con @SSPCMexico, @FGRMexico, @FiscaliaMich y @SSeguridad_Mich, ejecutaron tres órdenes de cateo y detuvieron a tres integrantes de una célula deli",
-   "lang": "es",
-   "title_en": "In Michoacán, SEMAR personnel, coordinating with SSPC, FGR, the Michoacán Prosecutor's Office and the state Security Secretariat, carried out three search warrants and arrested three members of a criminal cell",
-   "first_report": "2026-10-29T18:18:52Z",
-   "first_report_precision": "minute",
-   "first_source": "Gabinete de Seguridad (Mexico)",
-   "region_ids": [
-    "MEX-2720",
-    "MEX-2730"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Gabinete de Seguridad (Mexico)",
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "gabsec",
-     "name": "Gabinete de Seguridad (Mexico)",
-     "kind": "official",
-     "via": "X @GabSeguridadMX",
-     "url": "https://x.com/GabSeguridadMX/status/2115871001842172254",
-     "time": "2026-10-29T18:18:52Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2115879822689755386",
-     "time": "2026-10-29T18:53:55Z",
+     "via": "X @ZETATijuana",
+     "url": "https://x.com/ZETATijuana/status/2115928114488308159",
+     "time": "2026-10-29T22:05:49Z",
      "time_precision": "minute"
     }
    ]
@@ -329,6 +279,24 @@
      "time_precision": "minute"
     },
     {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115608696940122621",
+     "time": "2026-10-29T00:56:34Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/10/29/eeuu-presenta-cargos-contra-24-integrantes-de-una-red-vinculada-al-cartel-de-sinaloa-con-operacion-en-tennessee",
+     "time": "2026-10-29T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
      "outlet": "jornada",
      "name": "La Jornada",
      "kind": "outlet",
@@ -362,6 +330,335 @@
      "via": "X @infobaemexico",
      "url": "https://x.com/infobaemexico/status/2115875054969880588",
      "time": "2026-10-29T18:34:58Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115910212271976636",
+     "time": "2026-10-29T20:54:40Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "385db6a273",
+   "status": "single_source",
+   "title": "Tras retirarle su apoyo al alcalde de Naranjal, ADN dijo que la lucha del movimiento oficialista contra \"el crimen organizado es frontal y sin excepciones\". La autoridad de este cantón de Guayas asegu",
+   "lang": "es",
+   "title_en": "After withdrawing its support from the mayor of Naranjal, ADN said the ruling movement's fight against \"organised crime is head-on and without exceptions\". The official of this Guayas canton says",
+   "first_report": "2026-10-29T20:50:27Z",
+   "first_report_precision": "minute",
+   "first_source": "Primicias",
+   "region_ids": [
+    "ECU-1280"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "X @Primicias",
+     "url": "https://x.com/Primicias/status/2115909149305262245",
+     "time": "2026-10-29T20:50:27Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "c35d2d8a35",
+   "status": "single_source",
+   "title": "La #ONU alertó sobre los riesgos para #defensores indígenas, mujeres buscadoras y #activistas en zonas controladas por el crimen organizado en #México.",
+   "lang": "es",
+   "title_en": "The UN warned of the risks to Indigenous defenders, women searchers and activists in areas controlled by organised crime in Mexico.",
+   "first_report": "2026-10-29T20:50:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2115909034523979927",
+     "time": "2026-10-29T20:50:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "d34d89a82a",
+   "status": "confirmed",
+   "title": "La detención de la secretaria de Bienestar de Uruapan por probable encubrimiento se suma a las investigaciones por el homicidio; la presidenta Claudia Sheinbaum informó que dará un informe de resultad",
+   "lang": "es",
+   "title_en": "The arrest of the Uruapan Welfare secretary for probable cover-up adds to the homicide investigations; President Claudia Sheinbaum said she will give a report on results and pending items of the federal strategy against ",
+   "first_report": "2026-10-29T16:17:05Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae",
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115840354364555499",
+     "time": "2026-10-29T16:17:05Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2115881401081823397",
+     "time": "2026-10-29T19:00:11Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115907776715325566",
+     "time": "2026-10-29T20:45:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "0b7206ba07",
+   "status": "official_claim_only",
+   "title": "En #Ojinaga, #Chihuahua, elementos de @Defensamx1 y @GN_MEXICO_ detienen a Sergio “N”, alias \"El Señor de la A\", identificado como líder regional de una organización delictiva. Cuenta con una orden de",
+   "lang": "es",
+   "title_en": "In Ojinaga, Chihuahua, Defence and National Guard personnel arrested Sergio \"N\", alias \"El Señor de la A\", identified as a regional leader of a criminal organisation. He has an order",
+   "first_report": "2026-10-29T20:20:07Z",
+   "first_report_precision": "minute",
+   "first_source": "SSPC (Mexico)",
+   "region_ids": [
+    "MEX-2709"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2115901514870849872",
+     "time": "2026-10-29T20:20:07Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "acfc93a83e",
+   "status": "single_source",
+   "title": "El Sindicato de Telefonistas exige la restitución de 185 empleados despedidos; aseguran que con la huelga indefinida no habrá personal que de atención o reparaciones en caso que los servicios fallen e",
+   "lang": "es",
+   "title_en": "The Telephone Workers' Union demands the reinstatement of 185 dismissed employees; they say that with the indefinite strike there will be no staff to provide service or repairs if services fail",
+   "first_report": "2026-10-29T20:15:58Z",
+   "first_report_precision": "minute",
+   "first_source": "ZETA Tijuana",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "ZETA Tijuana"
+   ],
+   "sources": [
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "X @ZETATijuana",
+     "url": "https://x.com/ZETATijuana/status/2115900472464736519",
+     "time": "2026-10-29T20:15:58Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "d915834e0a",
+   "status": "single_source",
+   "title": "➡️ Ataque armado en restaurante de Mazatlán deja un fallecido y un herido grave. 🚨🚔 Un hombre fue privado de la vida y otro resultó gravemente herido tras un ataque a balazos dentro de un restaurante ",
+   "lang": "es",
+   "title_en": "Armed attack at a Mazatlán restaurant leaves one dead and one seriously wounded. A man was killed and another seriously wounded in a shooting inside a restaurant",
+   "first_report": "2026-10-29T19:58:50Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2115896159785169007",
+     "time": "2026-10-29T19:58:50Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "46e0b6136c",
+   "status": "single_source",
+   "title": "El #regidor de Indaparapeo, #Michoacán, Adán Rodríguez Ávalos, fue #asesinado a balazos junto con su esposa cuando viajaban en una camioneta. Su hijo resultó herido en el ataque.",
+   "lang": "es",
+   "title_en": "Indaparapeo, Michoacán, councilman Adán Rodríguez Ávalos was shot dead along with his wife while travelling in a pickup truck. Their son was wounded in the attack.",
+   "first_report": "2026-10-29T19:10:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2115883868792275088",
+     "time": "2026-10-29T19:10:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "d859db8aec",
+   "status": "single_source",
+   "title": "🚨 Rosa Alejandra Vargas es madre de un escolta del exedil y tía de dos de los presuntos responsables de filtrar datos al CJNG",
+   "lang": "es",
+   "title_en": "Rosa Alejandra Vargas is the mother of one of the former mayor's bodyguards and the aunt of two of the alleged people responsible for leaking information to the CJNG",
+   "first_report": "2026-10-29T19:07:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115883113989427448",
+     "time": "2026-10-29T19:07:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "96c472643b",
+   "status": "single_source",
+   "title": "La fiesta de 15 años de la hija de un narcotraficante confeso volvió a poner bajo el reflector a Zacapa y destapó los vínculos familiares de la alcaldesa con Los Lorenzana, un clan señalado por EEUU d",
+   "lang": "es",
+   "title_en": "The quinceañera party for the daughter of a confessed drug trafficker put Zacapa back in the spotlight and exposed the mayor's family ties to Los Lorenzana, a clan accused by the US",
+   "first_report": "2026-10-29T19:05:45Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "GTM-1963"
+   ],
+   "country": "GTM",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115882801526428103",
+     "time": "2026-10-29T19:05:45Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "a0968d9dfe",
+   "status": "official_claim_only",
+   "title": "En Michoacán, elementos de @SEMAR_mx, en coordinación con @SSPCMexico, @FGRMexico, @FiscaliaMich y @SSeguridad_Mich, ejecutaron tres órdenes de cateo y detuvieron a tres integrantes de una célula deli",
+   "lang": "es",
+   "title_en": "In Michoacán, SEMAR personnel, coordinating with SSPC, FGR, the Michoacán Prosecutor's Office and the state Security Secretariat, carried out three search warrants and arrested three members of a violence-generating crim",
+   "first_report": "2026-10-29T18:18:52Z",
+   "first_report_precision": "minute",
+   "first_source": "Gabinete de Seguridad (Mexico)",
+   "region_ids": [
+    "MEX-2720",
+    "MEX-2730"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Gabinete de Seguridad (Mexico)",
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "gabsec",
+     "name": "Gabinete de Seguridad (Mexico)",
+     "kind": "official",
+     "via": "X @GabSeguridadMX",
+     "url": "https://x.com/GabSeguridadMX/status/2115871001842172254",
+     "time": "2026-10-29T18:18:52Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2115879822689755386",
+     "time": "2026-10-29T18:53:55Z",
      "time_precision": "minute"
     }
    ]
@@ -554,19 +851,19 @@
    ]
   },
   {
-   "id": "08dac91705",
+   "id": "342c2846f5",
    "status": "confirmed",
-   "title": "Trevilla Trejo se reúne con el gobernador de Nayarit para revisar avances en seguridad y tras recibir amenazas del CJNG",
+   "title": "Trevilla Trejo se reúne con el gobernador de Nayarit para revisar avances en seguridad y tras recibir amenazas del CJNG - Infobae",
    "lang": "es",
    "title_en": "Trevilla Trejo meets the governor of Nayarit to review security progress, after receiving threats from the CJNG",
-   "first_report": "2026-10-27T20:37:59Z",
-   "first_report_precision": "minute",
+   "first_report": "2026-10-28T12:00:00Z",
+   "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
     "MEX-2719",
     "MEX-2721",
     "MEX-2723",
-    "COL-1412"
+    "MEX-2727"
    ],
    "country": "MEX",
    "group_ids": [
@@ -579,15 +876,6 @@
     "Milenio"
    ],
    "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115181237035733351",
-     "time": "2026-10-27T20:37:59Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "infobae",
      "name": "Infobae",
@@ -684,133 +972,6 @@
    ]
   },
   {
-   "id": "e4ec734e5b",
-   "status": "confirmed",
-   "title": "⚠️ Florida desmantela una red del Cartel de Sinaloa que traficó cocaína en Tampa Bay durante cinco años",
-   "lang": "es",
-   "title_en": "⚠️ Florida dismantles a Sinaloa Cartel network that trafficked cocaine in Tampa Bay for five years",
-   "first_report": "2026-10-27T19:36:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa",
-    "chapitos",
-    "mayiza"
-   ],
-   "outlets": [
-    "El Universal",
-    "Infobae",
-    "La Jornada",
-    "Milenio",
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115165636611518693",
-     "time": "2026-10-27T19:36:00Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "eluniversal",
-     "name": "El Universal",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://eluniversal.com.mx/mundo/arrestan-en-florida-a-10-presuntos-integrantes-del-cartel-de-sinaloa-por-narcotrafico-cae-el-canelo-jefe-de-celula",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/como-operaban-integrantes-cartel-de-sinaloa-detenidos-florida-eu",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115533623482835024",
-     "time": "2026-10-28T19:58:15Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115608696940122621",
-     "time": "2026-10-29T00:56:34Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2115624409159610633",
-     "time": "2026-10-29T01:59:00Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://infobae.com/mexico/2026/10/29/eeuu-presenta-cargos-contra-24-integrantes-de-una-red-vinculada-al-cartel-de-sinaloa-con-operacion-en-tennessee",
-     "time": "2026-10-29T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/al-menos-13-personas-murieron-en-sinaloa-13-octubre",
-     "time": "2026-10-29T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/vinculan-a-proceso-a-cuatro-presuntos-integrantes-de-los-chapitos",
-     "time": "2026-10-29T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/politica/sheinbaum-reconoce-aumento-homicidios-sinaloa-semanas",
-     "time": "2026-10-29T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "jornada",
-     "name": "La Jornada",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.jornada.com.mx/2026/10/29/estados/034n1est?partner=rss",
-     "time": "2026-10-29T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
    "id": "5a765d4b9e",
    "status": "confirmed",
    "title": "Alcalde de Vinces fue detenido durante operativo por presunto lavado de activos.",
@@ -880,6 +1041,106 @@
    ]
   },
   {
+   "id": "670ad3a586",
+   "status": "confirmed",
+   "title": "Arrestan en Florida a 10 presuntos integrantes del Cártel de Sinaloa por narcotráfico; cae el \"Canelo\", jefe de célula | El Universal",
+   "lang": "es",
+   "title_en": "10 alleged Sinaloa Cartel members arrested in Florida for drug trafficking; \"Canelo\", a cell boss, falls | El Universal",
+   "first_report": "2026-10-28T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "chapitos",
+    "mayiza"
+   ],
+   "outlets": [
+    "El Universal",
+    "Infobae",
+    "La Jornada",
+    "Milenio",
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eluniversal.com.mx/mundo/arrestan-en-florida-a-10-presuntos-integrantes-del-cartel-de-sinaloa-por-narcotrafico-cae-el-canelo-jefe-de-celula",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/como-operaban-integrantes-cartel-de-sinaloa-detenidos-florida-eu",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115533623482835024",
+     "time": "2026-10-28T19:58:15Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2115624409159610633",
+     "time": "2026-10-29T01:59:00Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/al-menos-13-personas-murieron-en-sinaloa-13-octubre",
+     "time": "2026-10-29T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/vinculan-a-proceso-a-cuatro-presuntos-integrantes-de-los-chapitos",
+     "time": "2026-10-29T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/politica/sheinbaum-reconoce-aumento-homicidios-sinaloa-semanas",
+     "time": "2026-10-29T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.jornada.com.mx/2026/10/29/estados/034n1est?partner=rss",
+     "time": "2026-10-29T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
    "id": "0747aced6c",
    "status": "single_source",
    "title": "Oaxaca: Hallan cadáveres de hermanos reportados como desaparecidos- Grupo Milenio",
@@ -934,8 +1195,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
-    "sinaloa"
+    "sinaloa",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -971,8 +1232,8 @@
    "first_report_precision": "minute",
    "first_source": "Proceso",
    "region_ids": [
-    "MEX-2719",
-    "COL-1412"
+    "COL-1412",
+    "MEX-2719"
    ],
    "country": "COL",
    "group_ids": [
@@ -1034,8 +1295,8 @@
    "first_source": "Ríodoce",
    "region_ids": [
     "MEX-2719",
-    "MEX-2723",
-    "ARG-1273"
+    "ARG-1273",
+    "MEX-2723"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1145,8 +1406,8 @@
    "first_report_precision": "day",
    "first_source": "Clarín",
    "region_ids": [
-    "COL-1425",
-    "PAN-1338"
+    "PAN-1338",
+    "COL-1425"
    ],
    "country": "COL",
    "group_ids": [
@@ -1211,9 +1472,9 @@
    ],
    "country": "MEX",
    "group_ids": [
+    "sinaloa",
     "mayiza",
-    "chapitos",
-    "sinaloa"
+    "chapitos"
    ],
    "outlets": [
     "MVS Noticias"
@@ -1682,8 +1943,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "tda",
-    "eln"
+    "eln",
+    "tda"
    ],
    "outlets": [
     "Semana"
@@ -2364,8 +2625,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2720",
-    "MEX-2729"
+    "MEX-2729",
+    "MEX-2720"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2789,8 +3050,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
     "sinaloa",
+    "chapitos",
     "mayiza"
    ],
    "outlets": [
@@ -2869,8 +3130,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "ECU-1279",
-    "ECU-1289"
+    "ECU-1289",
+    "ECU-1279"
    ],
    "country": "ECU",
    "group_ids": [
@@ -2930,8 +3191,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2719",
-    "GTM-1951"
+    "GTM-1951",
+    "MEX-2719"
    ],
    "country": "GTM",
    "group_ids": [
@@ -3000,8 +3261,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "sinaloa"
+    "sinaloa",
+    "cjng"
    ],
    "outlets": [
     "Infobae"
@@ -3154,9 +3415,9 @@
    "first_report_precision": "day",
    "first_source": "El Universal",
    "region_ids": [
-    "MEX-2716",
+    "MEX-2714",
     "NIC-658",
-    "MEX-2714"
+    "MEX-2716"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -3278,8 +3539,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
-    "sinaloa"
+    "sinaloa",
+    "mayiza"
    ],
    "outlets": [
     "Infobae"
@@ -3413,12 +3674,12 @@
    ]
   },
   {
-   "id": "42544225fa",
+   "id": "5ad57a5d2b",
    "status": "single_source",
-   "title": "➡️ Ataque armado en Real del Valle deja dos hombres sin vida en taller mecánico en Mazatlán 🚔🚨| Un ataque armado registrado durante la mañana de este martes 27 de octubre dejó como saldo dos hombres s",
+   "title": "➡️ Ejecutan a menor de 13 años en Mazatlán; mujer resulta herida durante ataque armado 🚨🚔| Ejecutan a menor de 13 años, conocido como “El Tachi”, en la colonia Constitución, en #Mazatlán, luego de ser",
    "lang": "es",
-   "title_en": "➡️ Armed attack in Real del Valle leaves two men dead in a mechanic's workshop in Mazatlán 🚔🚨| An armed attack on the morning of Tuesday, October 27 left two men dead inside a mechanic's workshop on Santa avenue",
-   "first_report": "2026-10-27T19:42:13Z",
+   "title_en": "13-year-old boy known as “El Tachi” executed in Mazatlán; a woman wounded in the armed attack. He was killed in the Constitución neighbourhood of #Mazatlán after armed men chased him and another teenager.",
+   "first_report": "2026-10-28T05:24:48Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
    "region_ids": [
@@ -3435,8 +3696,8 @@
      "name": "Los Noticieristas",
      "kind": "outlet",
      "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2115167201741435176",
-     "time": "2026-10-27T19:42:13Z",
+     "url": "https://x.com/noticieristas/status/2115313814409298331",
+     "time": "2026-10-28T05:24:48Z",
      "time_precision": "minute"
     },
     {
@@ -3477,35 +3738,6 @@
      "via": "X @infobaemexico",
      "url": "https://x.com/infobaemexico/status/2115315389475303441",
      "time": "2026-10-28T05:31:04Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "5ad57a5d2b",
-   "status": "single_source",
-   "title": "➡️ Ejecutan a menor de 13 años en Mazatlán; mujer resulta herida durante ataque armado 🚨🚔| Ejecutan a menor de 13 años, conocido como “El Tachi”, en la colonia Constitución, en #Mazatlán, luego de ser",
-   "lang": "es",
-   "title_en": "13-year-old boy known as “El Tachi” executed in Mazatlán; a woman wounded in the armed attack. He was killed in the Constitución neighbourhood of #Mazatlán after armed men chased him and another teenager.",
-   "first_report": "2026-10-28T05:24:48Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2115313814409298331",
-     "time": "2026-10-28T05:24:48Z",
      "time_precision": "minute"
     }
    ]
@@ -3743,33 +3975,23 @@
    ]
   },
   {
-   "id": "0764e7ff9d",
-   "status": "confirmed",
-   "title": "Detienen en Nueva York a Natalia Rezende, esposa de Cuauhtémoc Blanco La expresidenta del DIF Morelos fue interceptada, hace un par de semanas, en uno de los principales aeropuertos de la ciudad cona ",
+   "id": "9f01bb07c2",
+   "status": "single_source",
+   "title": "Reportes aseguran que la expresidenta del DIF Morelos habría sido interceptada en un aeropuerto de Nueva York por llevar una fuerte suma de efectivo sin declarar, Cuauhtémoc Blanco niega la versión",
    "lang": "es",
-   "title_en": "Natalia Rezende, wife of Cuauhtémoc Blanco, detained in New York. The former president of DIF Morelos was intercepted a couple of weeks ago at one of the city's main airports with a large sum of cash.",
-   "first_report": "2026-10-27T21:20:00Z",
+   "title_en": "Reports say the former head of DIF Morelos was allegedly stopped at a New York airport carrying a large undeclared sum of cash; Cuauhtémoc Blanco denies the account",
+   "first_report": "2026-10-28T00:15:49Z",
    "first_report_precision": "minute",
-   "first_source": "Proceso",
+   "first_source": "Infobae",
    "region_ids": [
     "MEX-2732"
    ],
    "country": "MEX",
    "group_ids": [],
    "outlets": [
-    "Infobae",
-    "Proceso"
+    "Infobae"
    ],
    "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2115191808728633355",
-     "time": "2026-10-27T21:20:00Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "infobae",
      "name": "Infobae",
@@ -3835,99 +4057,6 @@
      "via": "X @proceso",
      "url": "https://x.com/proceso/status/2115206908688941285",
      "time": "2026-10-27T22:20:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "6b736f55a2",
-   "status": "single_source",
-   "title": "🚨 En Zapopan han caído operadores financieros del CJNG, integrantes de Los Beltrán Leyva, un exmarino ligado al huachicol fiscal y hasta un ciudadano estadounidense",
-   "lang": "es",
-   "title_en": "🚨 In Zapopan, CJNG financial operators, members of Los Beltrán Leyva, a former marine linked to fiscal huachicol (fuel-tax smuggling) and even a US citizen have been arrested",
-   "first_report": "2026-10-27T21:30:01Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115194328725553552",
-     "time": "2026-10-27T21:30:01Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "fe5ea51c82",
-   "status": "single_source",
-   "title": "🇸🇻 | Bukele’s crackdown weakened MS-13 and Barrio 18 and transformed security in El Salvador. But it also left an overwhelmed prison system and allegations of abuses. How did the country change, and a",
-   "lang": "es",
-   "title_en": "🇸🇻 | Bukele’s crackdown weakened MS-13 and Barrio 18 and transformed security in El Salvador. But it also left an overwhelmed prison system and allegations of abuses. How did the country change, and at what cost? Read ou",
-   "first_report": "2026-10-27T21:04:12Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [],
-   "country": "SLV",
-   "group_ids": [
-    "b18",
-    "ms13"
-   ],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2115187833023451450",
-     "time": "2026-10-27T21:04:12Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "3f2cb5a920",
-   "status": "single_source",
-   "title": "⚠️ La desaparición del médico del penal de Mazatlán ocurrió apenas 2 semanas después de la riña en miembros de Los Chapitos",
-   "lang": "es",
-   "title_en": "⚠️ The disappearance of the Mazatlán prison doctor came just 2 weeks after the brawl among members of Los Chapitos",
-   "first_report": "2026-10-27T20:15:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "chapitos",
-    "sinaloa"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115175450972488050",
-     "time": "2026-10-27T20:15:00Z",
      "time_precision": "minute"
     }
    ]

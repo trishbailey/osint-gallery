@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-29T19:03:08Z",
+ "as_of": "2026-10-29T22:09:17Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -28,12 +28,199 @@
  ],
  "posts": [
   {
+   "id": "2115928114488308159",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2115928114488308159",
+   "created_at": "2026-10-29T22:05:49.000Z",
+   "text": "La captura incluyó a un segundo detenido, puesto a disposición de la delegación de la FGR en Chihuahua https://t.co/ByKDvDOTIO",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2709"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The capture included a second detainee, handed over to the Attorney General's Office (FGR) in Chihuahua"
+  },
+  {
+   "id": "2115910212271976636",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115910212271976636",
+   "created_at": "2026-10-29T20:54:40.000Z",
+   "text": "DEA se atribuye participación en abatimiento del ‘Chuy González’, operador del Cártel de Guasave https://t.co/GSzI86lu2k",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "DEA claims a role in the killing of 'Chuy González', an operator of the Guasave Cartel"
+  },
+  {
+   "id": "2115909149305262245",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2115909149305262245",
+   "created_at": "2026-10-29T20:50:27.000Z",
+   "text": "Tras retirarle su apoyo al alcalde de Naranjal, ADN dijo que la lucha del movimiento oficialista contra \"el crimen organizado es frontal y sin excepciones\". La autoridad de este cantón de Guayas asegura que existe una \"campaña sucia\" en su contra. https://t.co/0AaGTELOb9 https:/…",
+   "lang": "und",
+   "region_ids": [
+    "ECU-1280"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "After withdrawing its support from the mayor of Naranjal, ADN said the ruling movement's fight against \"organised crime is head-on and without exceptions\". The official of this Guayas canton says there is a \"smear campaign\" against him."
+  },
+  {
+   "id": "2115909034523979927",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115909034523979927",
+   "created_at": "2026-10-29T20:50:00.000Z",
+   "text": "La #ONU alertó sobre los riesgos para #defensores indígenas, mujeres buscadoras y #activistas en zonas controladas por el crimen organizado en #México. https://t.co/erNAjH3ImM",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The UN warned of the risks to Indigenous defenders, women searchers and activists in areas controlled by organised crime in Mexico."
+  },
+  {
+   "id": "2115907776715325566",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115907776715325566",
+   "created_at": "2026-10-29T20:45:00.000Z",
+   "text": "⚠️ La detención de la secretaria de Bienestar de Uruapan por probable encubrimiento se suma a las investigaciones por el homicidio de #CarlosManzo https://t.co/N3X463lh1J",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "The arrest of Uruapan's welfare secretary for alleged cover-up adds to the investigations into the killing of Carlos Manzo"
+  },
+  {
+   "id": "2115901514870849872",
+   "handle": "SSPCMexico",
+   "url": "https://x.com/SSPCMexico/status/2115901514870849872",
+   "created_at": "2026-10-29T20:20:07.000Z",
+   "text": "En #Ojinaga, #Chihuahua, elementos de @Defensamx1 y @GN_MEXICO_ detienen a Sergio “N”, alias \"El Señor de la A\", identificado como líder regional de una organización delictiva. Cuenta con una orden de detención provisional con fines de extradición a #EstadosUnidos por delitos ht…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2709"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "In Ojinaga, Chihuahua, Defence and National Guard personnel arrested Sergio \"N\", alias \"El Señor de la A\", identified as a regional leader of a criminal organisation. He has a provisional arrest warrant for extradition to the United States for crimes…"
+  },
+  {
+   "id": "2115900472464736519",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2115900472464736519",
+   "created_at": "2026-10-29T20:15:58.000Z",
+   "text": "El Sindicato de Telefonistas exige la restitución de 185 empleados despedidos; aseguran que con la huelga indefinida no habrá personal que de atención o reparaciones en caso que los servicios fallen en Baja California. Los detalles en https://t.co/ssxXjcTMlP https://t.co/jAV8e8c…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The Telephone Workers' Union demands the reinstatement of 185 dismissed employees; they say that with the indefinite strike there will be no staff to provide service or repairs if services fail in Baja California."
+  },
+  {
+   "id": "2115896159785169007",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2115896159785169007",
+   "created_at": "2026-10-29T19:58:50.000Z",
+   "text": "➡️ Ataque armado en restaurante de Mazatlán deja un fallecido y un herido grave. 🚨🚔 Un hombre fue privado de la vida y otro resultó gravemente herido tras un ataque a balazos dentro de un restaurante de la avenida Paseo del Pacífico, en #Mazatlán. https://t.co/jcNShTyXU9",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Armed attack at a Mazatlán restaurant leaves one dead and one seriously wounded. A man was killed and another seriously wounded in a shooting inside a restaurant on Paseo del Pacífico avenue in Mazatlán."
+  },
+  {
+   "id": "2115883868792275088",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115883868792275088",
+   "created_at": "2026-10-29T19:10:00.000Z",
+   "text": "El #regidor de Indaparapeo, #Michoacán, Adán Rodríguez Ávalos, fue #asesinado a balazos junto con su esposa cuando viajaban en una camioneta. Su hijo resultó herido en el ataque. https://t.co/V0LrJ85vvf",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Indaparapeo, Michoacán, councilman Adán Rodríguez Ávalos was shot dead along with his wife while travelling in a pickup truck. Their son was wounded in the attack."
+  },
+  {
+   "id": "2115883113989427448",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115883113989427448",
+   "created_at": "2026-10-29T19:07:00.000Z",
+   "text": "🚨 Rosa Alejandra Vargas es madre de un escolta del exedil y tía de dos de los presuntos responsables de filtrar datos al CJNG https://t.co/YY6ptidt85",
+   "lang": "es",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Rosa Alejandra Vargas is the mother of one of the former mayor's bodyguards and the aunt of two of the alleged people responsible for leaking information to the CJNG"
+  },
+  {
+   "id": "2115882801526428103",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115882801526428103",
+   "created_at": "2026-10-29T19:05:45.000Z",
+   "text": "La fiesta de 15 años de la hija de un narcotraficante confeso volvió a poner bajo el reflector a Zacapa y destapó los vínculos familiares de la alcaldesa con Los Lorenzana, un clan señalado por EEUU de traficar cocaína hacia México para el Cártel de ... https://t.co/q4ZQ4m0Q4u h…",
+   "lang": "es",
+   "region_ids": [
+    "GTM-1963"
+   ],
+   "country": "GTM",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "The quinceañera party for the daughter of a confessed drug trafficker put Zacapa back in the spotlight and exposed the mayor's family ties to Los Lorenzana, a clan accused by the US of trafficking cocaine to Mexico for the Cartel of ..."
+  },
+  {
    "id": "2115881401081823397",
    "handle": "proceso",
    "url": "https://x.com/proceso/status/2115881401081823397",
    "created_at": "2026-10-29T19:00:11.000Z",
    "text": "Detienen a secretaria de Bienestar de Uruapan por encubrimiento en caso Carlos Manzo La Fiscalía de Michoacán no precisó qué acciones u omisiones se le atribuyen a la funcionaria ni a quién habría favorecido. https://t.co/MMM7gjuBGc",
-   "lang": "und",
+   "lang": "es",
    "region_ids": [
     "MEX-2720"
    ],
@@ -50,7 +237,7 @@
    "url": "https://x.com/SSPCMexico/status/2115879822689755386",
    "created_at": "2026-10-29T18:53:55.000Z",
    "text": "En #Michoacán, elementos de @SEMAR_mx, #SSPC y @FGRMexico, en coordinación con autoridades estatales, detuvieron a tres personas en Coahuayana de Hidalgo, quienes contaban con órdenes de aprehensión por diferentes delitos y son señaladas como generadoras de violencia en ese http…",
-   "lang": "es",
+   "lang": "und",
    "region_ids": [
     "MEX-2730",
     "MEX-2720"
@@ -68,7 +255,7 @@
    "url": "https://x.com/infobaemexico/status/2115875054969880588",
    "created_at": "2026-10-29T18:34:58.000Z",
    "text": "Cae “El Bocho” en Mexicali: es señalado como operador de drogas del Cártel de Sinaloa, detenido con fentanilo y un arma https://t.co/nCi8j5HzRd",
-   "lang": "und",
+   "lang": "es",
    "region_ids": [
     "MEX-2706",
     "MEX-2711"
@@ -3880,96 +4067,6 @@
    "source_type": "local outlet",
    "label": null,
    "text_en": "➡️ \"It was an attack on the driver, it was not a school bus\": Eligio López on the shooting at a bus in Escuinapa…"
-  },
-  {
-   "id": "2113378611923419347",
-   "handle": "ArmandoInfo",
-   "url": "https://x.com/ArmandoInfo/status/2113378611923419347",
-   "created_at": "2026-10-22T21:15:00.000Z",
-   "text": "Pero la suerte de Saab la enfrentaron primero sus socios. Álvaro Pulido Vargas estaba detenido en Caracas desde abril de 2023 por el caso Pdvsa-Cripto, mientras que Carlos Lizcano también quedó bajo arresto en febrero pasado tras la captura del propio https://t.co/xcvK1BSyUQ",
-   "lang": "es",
-   "region_ids": [
-    "VEN-43"
-   ],
-   "country": "VEN",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "regional outlet",
-   "label": null,
-   "text_en": "But Saab's partners met their fate first. Álvaro Pulido Vargas had been held in Caracas since April 2023 over the PDVSA-Crypto case, while Carlos Lizcano was also arrested last February after the capture of"
-  },
-  {
-   "id": "2113374617867862521",
-   "handle": "Primicias",
-   "url": "https://x.com/Primicias/status/2113374617867862521",
-   "created_at": "2026-10-22T20:59:08.000Z",
-   "text": "El policía en servicio activo capturado en Manabí sería parte de la banda G200, ligado a Los Lobos, y habría pedido USD 300.000 para liberar a la empresaria. https://t.co/CvuglFSJrT https://t.co/4fZD5HF9d0",
-   "lang": "es",
-   "region_ids": [
-    "ECU-1282"
-   ],
-   "country": "ECU",
-   "group_ids": [
-    "lobos"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "The serving police officer captured in Manabí allegedly belongs to the G200 gang, linked to Los Lobos, and reportedly demanded USD 300,000 to free the businesswoman."
-  },
-  {
-   "id": "2113367364792111508",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2113367364792111508",
-   "created_at": "2026-10-22T20:30:18.000Z",
-   "text": "➡️ Eran 4 detenidos; esto fue lo asegurado a ‘El Coco Ranas’ durante su captura en #Culiacán, Sinaloa 🚨 Con fusiles, granadas, presunto fentanilo y cocaína, fue detenido ‘El Coco Ranas’ junto con otros tres hombres en #Culiacán. Durante el operativo también aseguraron cientos ht…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ Four arrested; this is what was seized from 'El Coco Ranas' at his capture in #Culiacán, Sinaloa. With rifles, grenades, suspected fentanyl and cocaine, 'El Coco Ranas' was arrested with three other men in #Culiacán; hundreds of… were also seized"
-  },
-  {
-   "id": "2113352548702961788",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2113352548702961788",
-   "created_at": "2026-10-22T19:31:26.000Z",
-   "text": "#Argentina 🇦🇷 | El gobierno de Argentina, encabezado por el presidente Javier Milei, incorporó al Cártel de Sinaloa y a la Nueva Familia Michoacana, a su lista de entidades consideradas terroristas https://t.co/x4vRkiDBNO",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa",
-    "lnfm"
-   ],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "#Argentina 🇦🇷 | Argentina's government, led by President Javier Milei, added the Sinaloa Cartel and La Nueva Familia Michoacana to its list of entities considered terrorist"
-  },
-  {
-   "id": "2113352189020393537",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2113352189020393537",
-   "created_at": "2026-10-22T19:30:00.000Z",
-   "text": "El #CocoRanas’, de 25 años, fue detenido por la Policía Estatal en el fraccionamiento Lomas del Sol, al norte de #Culiacán, y puesto a disposición de la #FGR por delitos federales. https://t.co/CFNr1arNhf",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "'#CocoRanas', 25, was arrested by the State Police in the Lomas del Sol subdivision, north of #Culiacán, and handed to the #FGR for federal crimes."
   }
  ]
 }
