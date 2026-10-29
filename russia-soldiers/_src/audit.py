@@ -184,6 +184,8 @@ for ru_n, en_n in en_fd.items():
     FDM[en_n] = members
     dd, pp, rr = pooled(members)
     chk(f"fd {en_n} n", S["fd"][en_n]["n"], len(members)); chk(f"fd {en_n} rate", S["fd"][en_n]["rate"], rr)
+for en_n_, mem_ in FDM.items(): chk(f"fd {en_n_} resident-weighted distance", S["fd"][en_n_]["dist_km"], sum(by[i]["dist_km"] * mine[i]["pop"] for i in mem_) / sum(mine[i]["pop"] for i in mem_))
+need("sankey districts ordered by distance from Moscow: Central nearest, Far East farthest", min(S["fd"], key=lambda k: S["fd"][k]["dist_km"]) == "Central" and max(S["fd"], key=lambda k: S["fd"][k]["dist_km"]) == "Far East")
 need("district regions sum to 85", sum(S["fd"][k]["n"] for k in S["fd"]) == 85)
 # wage quartiles
 srt = sorted(iso, key=lambda i: mine[i]["wage"]); qs = [srt[:21], srt[21:42], srt[42:63], srt[63:]]

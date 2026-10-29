@@ -148,6 +148,7 @@ h2{font-size:1.2rem}
 .sk{width:100%}
 .sk svg{display:block;width:100%}
 .sk text{font-size:13px;fill:var(--text)}
+.sk .rnote{margin:0 0 6px}
 .sk path{cursor:pointer}
 @media (max-width:700px){
 .pair{grid-template-columns:1fr}
