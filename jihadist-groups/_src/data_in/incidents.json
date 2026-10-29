@@ -1,5 +1,5 @@
 {
- "window": "2026-09-28 to 2026-10-28",
+ "window": "2026-09-29 to 2026-10-29",
  "incidents": [
   {
    "group": "kataib-hezbollah",
@@ -28,6 +28,19 @@
    ],
    "confidence": "medium",
    "note": "Reuters says 'suspected Islamists'; AP says 15 dead."
+  },
+  {
+   "group": "jmm",
+   "date": "2026-10-02",
+   "date_precision": "range (2 to 8 Oct)",
+   "place": "Rask and Iranshahr area, Sistan and Baluchestan, Iran",
+   "lat": 26.9,
+   "lon": 61.9,
+   "confidence": "medium",
+   "description": "The Baluch coalition claims five attacks on Iranian security forces in seven days, including a mine and gunfire attack on a Guards vehicle at Rudmahi that killed five.",
+   "note": "Claims by the coalition; Iranian figures for losses are lower.",
+   "url": "https://www.longwarjournal.org/archives/2026/10/insurgent-attacks-surge-in-southeastern-iran.php",
+   "urls_extra": []
   },
   {
    "group": "iskp",
@@ -102,6 +115,19 @@
    ],
    "confidence": "low",
    "note": "Single graded aggregator that relays party claims; not independently confirmed."
+  },
+  {
+   "group": "lakurawa",
+   "date": "2026-10-07",
+   "date_precision": "day",
+   "place": "Maiyama, Kebbi State, Nigeria",
+   "lat": 12.083,
+   "lon": 4.367,
+   "description": "Suspected Lakurawa fighters on more than 100 motorcycles attack a forward operating base at Maiyama, which troops repel; a day later they kill two soldiers and a Chinese worker on the Sokoto-Badagry highway project.",
+   "url": "https://punchng.com/lakurawa-attack-kills-two-soldiers-chinese-in-kebbi/",
+   "urls_extra": [],
+   "confidence": "medium",
+   "note": "Police and the military attribute it to suspected Lakurawa fighters; no claim reported."
   },
   {
    "group": "jnim",
@@ -259,6 +285,21 @@
    "note": "Tolls differ widely across sources; al-Shabaab claims 321."
   },
   {
+   "group": "is-syria",
+   "date": "2026-10-26",
+   "date_precision": "day",
+   "place": "Daraa and Suwayda countryside, southern Syria",
+   "lat": 33.13,
+   "lon": 36.4,
+   "description": "Jordan strikes what it calls Islamic State hideouts in southern Syria after the 23 October Karak church shooting that killed nine; Jordan says more than 20 militants died, Syria says seven civilians died and denies coordinating.",
+   "url": "https://www.al-monitor.com/originals/2026/10/jordan-says-it-killed-more-20-islamic-state-militants-airstrikes-syria",
+   "urls_extra": [
+    "https://www.aljazeera.com/news/2026/10/27/why-jordan-has-struck-syria-what-we-know"
+   ],
+   "confidence": "low",
+   "note": "Contested: Jordan links the church attackers to Islamic State in Syria, but Jordanian officials also say the three arrested Jordanians acted alone, and no group claim is confirmed by Reuters."
+  },
+  {
    "group": "is-somalia",
    "date": "2026-10-27",
    "date_precision": "day (27–28 Oct)",
@@ -289,17 +330,19 @@
    "note": "Coordinates are approximate for the Nabatieh area. Reports of Hezbollah rebuilding drone capability come from Lebanese sources cited by Times of Israel."
   },
   {
-   "group": "jmm",
-   "date": "2026-10-02",
-   "date_precision": "range (2 to 8 Oct)",
-   "place": "Rask and Iranshahr area, Sistan and Baluchestan, Iran",
-   "lat": 26.9,
-   "lon": 61.9,
-   "confidence": "medium",
-   "description": "The Baluch coalition claims five attacks on Iranian security forces in seven days, including a mine and gunfire attack on a Guards vehicle at Rudmahi that killed five.",
-   "note": "Claims by the coalition; Iranian figures for losses are lower.",
-   "url": "https://www.longwarjournal.org/archives/2026/10/insurgent-attacks-surge-in-southeastern-iran.php",
-   "urls_extra": []
+   "group": "houthis",
+   "date": "2026-10-28",
+   "date_precision": "day",
+   "place": "Aden International Airport, Yemen",
+   "lat": 12.83,
+   "lon": 45.03,
+   "description": "The Houthis strike Aden airport with two ballistic missiles after an evacuation warning; civilians are injured and air traffic halts. Yemen's army calls it the sixth Houthi strike on the airport in days.",
+   "url": "https://www.al-monitor.com/originals/2026/10/houthis-strike-yemens-aden-airport-after-evacuation-warning",
+   "urls_extra": [
+    "https://www.arabnews.com/middle-east/houthis-strike-aden-airport-with-two-ballistic-missiles-3008708"
+   ],
+   "confidence": "high",
+   "note": null
   }
  ],
  "note": "Groups with no incident listed: no strategic-scale event was verified in the window with a usable source."

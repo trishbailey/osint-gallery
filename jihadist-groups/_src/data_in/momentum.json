@@ -95,10 +95,11 @@
  {
   "id": "is-syria",
   "trend": "rising",
-  "reason": "Jail and camp escapes in early 2026 and up to 3,000 fighters; the UN notes 20–40 attacks a month and a raid on a cell on 22 Oct.",
+  "reason": "Jail and camp escapes in early 2026 and up to 3,000 fighters; the UN notes 20–40 attacks a month, Syria raided a cell on 22 Oct and Jordan struck alleged hideouts on 26 Oct.",
   "sources": [
    "https://docs.un.org/en/S/2026/651",
-   "https://www.aljazeera.com/news/2026/10/22/two-syrian-security-officers-killed-in-raid-on-isil-cell-near-damascus"
+   "https://www.aljazeera.com/news/2026/10/22/two-syrian-security-officers-killed-in-raid-on-isil-cell-near-damascus",
+   "https://www.al-monitor.com/originals/2026/10/jordan-says-it-killed-more-20-islamic-state-militants-airstrikes-syria"
   ],
   "confidence": "low"
  },
@@ -152,9 +153,10 @@
  {
   "id": "lakurawa",
   "trend": "rising",
-  "reason": "Recruits joined ISSP and activity spread to Kebbi and Zamfara.",
+  "reason": "Recruits joined ISSP, activity spread to Kebbi and Zamfara, and on 7 Oct a force on 100+ motorcycles attacked a Kebbi army base.",
   "sources": [
-   "https://docs.un.org/en/S/2026/651"
+   "https://docs.un.org/en/S/2026/651",
+   "https://punchng.com/lakurawa-attack-kills-two-soldiers-chinese-in-kebbi/"
   ],
   "confidence": "low"
  },
@@ -228,9 +230,10 @@
  {
   "id": "houthis",
   "trend": "rising",
-  "reason": "A Houthi missile killed 12 at Riyadh airport on 10 Oct and Reuters describes a Red Sea offensive; government forces report ground gains near Bab el-Mandeb, which the Houthis deny.",
+  "reason": "A Houthi missile killed 12 at Riyadh airport on 10 Oct and missiles hit Aden airport on 28 Oct, the sixth strike there in days; government forces report ground gains near Bab el-Mandeb, which the Houthis deny.",
   "sources": [
    "https://apnews.com/article/saudi-yemen-houthi-riyadh-airport-f0e0e6105f33400e37bb20bb9a8130af",
+   "https://www.al-monitor.com/originals/2026/10/houthis-strike-yemens-aden-airport-after-evacuation-warning",
    "https://apnews.com/article/yemen-houthis-iran-saudi-arabia-red-sea-taiz-e87beb84a0d146e4f0546b50508f7e32"
   ],
   "confidence": "low"
