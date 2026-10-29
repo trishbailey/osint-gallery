@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-29T01:09:21Z",
+ "as_of": "2026-10-29T13:07:21Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,321 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2115772638899429738",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115772638899429738",
+   "created_at": "2026-10-29T11:48:00.000Z",
+   "text": "Detienen en Tecate a exmilitar ruso buscado por Interpol: portaba granada y documentos falsos https://t.co/KnHEhfH52r",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2706",
+    "NIC-655"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Former Russian soldier wanted by Interpol arrested in Tecate: he was carrying a grenade and false documents"
+  },
+  {
+   "id": "2115766896368705714",
+   "handle": "CrisisGroup",
+   "url": "https://x.com/CrisisGroup/status/2115766896368705714",
+   "created_at": "2026-10-29T11:25:11.000Z",
+   "text": "After decades of conflict, achieving durable peace in Indian- administered Kashmir and preventing a resumption of war with Pakistan will require bold moves that look beyond counter-insurgency and central government diktat. Our new report explains how this can be done.",
+   "lang": "und",
+   "region_ids": [
+    "PRY-607"
+   ],
+   "country": "PRY",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "After decades of conflict, achieving durable peace in Indian- administered Kashmir and preventing a resumption of war with Pakistan will require bold moves that look beyond counter-insurgency and central government diktat. Our new report explains how this can be done."
+  },
+  {
+   "id": "2115762922731253945",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115762922731253945",
+   "created_at": "2026-10-29T11:09:24.000Z",
+   "text": "Carlos César Cruz Muñoz fue detenido el 28 de octubre en Tuxtepec, Oaxaca https://t.co/X4OSXtB26I https://t.co/kXoX7rRZ3U",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2723"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Carlos César Cruz Muñoz was arrested on October 28 in Tuxtepec, Oaxaca"
+  },
+  {
+   "id": "2115674072919003384",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2115674072919003384",
+   "created_at": "2026-10-29T05:16:20.000Z",
+   "text": "En lo que va del año, la pugna entre las mafias de Jalisco y Sinaloa en el Pueblo Mágico suma 153 asesinatos y más de 150 desaparecidos. Los detalles en: https://t.co/RtZ29zBG0b https://t.co/Hok6fRXWIW",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2719",
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "So far this year, the fight between the Jalisco and Sinaloa mafias in the Pueblo Mágico has left 153 murdered and more than 150 missing. Details at:"
+  },
+  {
+   "id": "2115664926010216870",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2115664926010216870",
+   "created_at": "2026-10-29T04:40:00.000Z",
+   "text": "Asesinan en Chiapas a defensor de derechos humanos y representante de familias desplazadas Reynaldo Pérez Pérez estaba incorporado desde 2023 al Mecanismo Federal de Protección para Personas Defensoras de Derechos Humanos y Periodistas. https://t.co/9rvVHpihGm",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2735"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Human rights defender and representative of displaced families killed in Chiapas. Reynaldo Pérez Pérez had been enrolled since 2023 in the Federal Protection Mechanism for Human Rights Defenders and Journalists."
+  },
+  {
+   "id": "2115658129287356796",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115658129287356796",
+   "created_at": "2026-10-29T04:12:59.000Z",
+   "text": "CJNG en Colombia: detienen a “La Patrona” y “La Pau”, pareja de mexicanos señalados como enlaces con el Clan del Golfo https://t.co/3OgOZC1amE",
+   "lang": "und",
+   "region_ids": [],
+   "country": "COL",
+   "group_ids": [
+    "cjng",
+    "clan"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "CJNG in Colombia: \"La Patrona\" and \"La Pau\" arrested, a Mexican couple identified as links to the Clan del Golfo"
+  },
+  {
+   "id": "2115654845994618971",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115654845994618971",
+   "created_at": "2026-10-29T03:59:56.000Z",
+   "text": "Un mexicano vinculado al CJNG se declaró culpable de transportar cocaína hacia Nueva Jersey https://t.co/U2595LA4SG",
+   "lang": "und",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "A Mexican man linked to the CJNG pleaded guilty to transporting cocaine to New Jersey"
+  },
+  {
+   "id": "2115649859902726357",
+   "handle": "ioangrillo",
+   "url": "https://x.com/ioangrillo/status/2115649859902726357",
+   "created_at": "2026-10-29T03:40:08.000Z",
+   "text": "Cuauhtémoc Cárdenas, giant of Mexican politics, dies at 92. Son of President Lázaro Cárdenas, who nationalized oil, Cuauhtémoc was governor, senator, head of Mexico City and presidential candidate (maybe a winner who got robbed) and party founder, who helped shift political power",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "journalist",
+   "label": null,
+   "text_en": "Cuauhtémoc Cárdenas, giant of Mexican politics, dies at 92. Son of President Lázaro Cárdenas, who nationalized oil, Cuauhtémoc was governor, senator, head of Mexico City and presidential candidate (maybe a winner who got robbed) and party founder, who helped shift political power"
+  },
+  {
+   "id": "2115642363284541716",
+   "handle": "SSPCMexico",
+   "url": "https://x.com/SSPCMexico/status/2115642363284541716",
+   "created_at": "2026-10-29T03:10:20.000Z",
+   "text": "El aroma del copal perfuma el altar y guía a nuestros seres queridos de regreso a casa. Cada #DíaDeMuertos los recibimos con amor y mantenemos viva su memoria a través de nuestras tradiciones. https://t.co/4swmgGJgrW",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2712"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "The scent of copal perfumes the altar and guides our loved ones back home. Every #DíaDeMuertos we welcome them with love and keep their memory alive through our traditions."
+  },
+  {
+   "id": "2115641019823968363",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115641019823968363",
+   "created_at": "2026-10-29T03:05:00.000Z",
+   "text": "La #Marina detuvo a Carlos César Cruz Muñoz, el '#Semáforo’, presunto jefe regional del #CJNG y posible sucesor del '#Tanque’, capturado el pasado 5 de octubre en Zapopan, Jalisco. https://t.co/5KGg8IR3in",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The #Marina arrested Carlos César Cruz Muñoz, '#Semáforo', alleged CJNG regional boss and possible successor to '#Tanque', who was captured on October 5 in Zapopan, Jalisco."
+  },
+  {
+   "id": "2115640132459979189",
+   "handle": "InSightCrime",
+   "url": "https://x.com/InSightCrime/status/2115640132459979189",
+   "created_at": "2026-10-29T03:01:28.000Z",
+   "text": "🇧🇷 | In 2026, trafficking of weight loss medications like Ozempic and Mounjaro has surged in Brazil. How are these medications diverted in Paraguay and smuggled into São Paulo? https://t.co/P3FPMtSS7r",
+   "lang": "en",
+   "region_ids": [
+    "BRA-1311"
+   ],
+   "country": "BRA",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "research outlet",
+   "label": null
+  },
+  {
+   "id": "2115639778091634746",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2115639778091634746",
+   "created_at": "2026-10-29T03:00:04.000Z",
+   "text": "Capturan en Colombia a \"La Patrona\" y \"Pau\", mexicanos del CJNG Sophia Mourra Lozano, “La Patrona”, y Adolfo Paulin González, “Pau”, integrantes del Cártel de Jalisco Nueva Generación, fueron detenidos en Barranquilla; se les acusa de ser “los dos enlaces principales” entre el",
+   "lang": "und",
+   "region_ids": [
+    "COL-1412",
+    "MEX-2719"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "\"La Patrona\" and \"Pau\", Mexicans in the CJNG, captured in Colombia. Sophia Mourra Lozano, \"La Patrona\", and Adolfo Paulin González, \"Pau\", members of the Cártel de Jalisco Nueva Generación, were arrested in Barranquilla; they are accused of being \"the two main links\" between the"
+  },
+  {
+   "id": "2115626551970550007",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115626551970550007",
+   "created_at": "2026-10-29T02:07:31.000Z",
+   "text": "Asesinan a Reynaldo Pérez, defensor de derechos humanos en Chiapas: la ONU había alertado sobre amenazas https://t.co/88ToZJyUUB",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2735"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Human rights defender Reynaldo Pérez killed in Chiapas; the UN had warned about threats against him"
+  },
+  {
+   "id": "2115624663254790516",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115624663254790516",
+   "created_at": "2026-10-29T02:00:00.000Z",
+   "text": "🚨 \"El Semáforo\" es identificado como un líder de segundo nivel en el CJNG https://t.co/tvFCXYrnSc",
+   "lang": "und",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "🚨 \"El Semáforo\" is identified as a second-tier leader in the CJNG"
+  },
+  {
+   "id": "2115624409159610633",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115624409159610633",
+   "created_at": "2026-10-29T01:59:00.000Z",
+   "text": "Nueve hombres de nacionalidad #mexicana fueron #detenidos en San Bernardino, #California, acusados de pertenecer al cártel de Sinaloa y dedicarse al #robo de carga de #trenes, de acuerdo con el Departamento del Sheriff del Condado. https://t.co/vR9iO3uzzU",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Nine #Mexican men were #arrested in San Bernardino, #California, accused of belonging to the Sinaloa cartel and of #robbing cargo from #trains, according to the County Sheriff's Department."
+  },
+  {
+   "id": "2115619627531145370",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2115619627531145370",
+   "created_at": "2026-10-29T01:40:00.000Z",
+   "text": "Dos hermanos son asesinados en calles del Centro Histórico de la CDMX Un franelero y un comerciante, ambos identificados como hermanos, fueron víctimas de un ataque directo con arma de fuego en las calles República de Perú y Argentina. https://t.co/lDfKstCSOm",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Two brothers killed on streets of Mexico City's Historic Center. A parking attendant and a street vendor, both identified as brothers, were victims of a direct gun attack on República de Perú and Argentina streets."
+  },
+  {
+   "id": "2115613336436174993",
+   "handle": "ArmandoInfo",
+   "url": "https://x.com/ArmandoInfo/status/2115613336436174993",
+   "created_at": "2026-10-29T01:15:00.000Z",
+   "text": "El Sebin se apoderó de una quinta residencial en las colinas del sur de Caracas para convertirla en una “casa segura”. Pero luego le dio uso como escondite de desaparecidos y centro de torturas📍https://t.co/rte4CMeKqG https://t.co/QpohtXBr8d",
+   "lang": "und",
+   "region_ids": [
+    "VEN-43"
+   ],
+   "country": "VEN",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "regional outlet",
+   "label": null,
+   "text_en": "SEBIN (Venezuela's intelligence service) seized a residential villa in the hills of southern Caracas to turn it into a \"safe house\". But it then used it as a hiding place for the disappeared and as a torture centre."
+  },
+  {
+   "id": "2115612833035551075",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115612833035551075",
+   "created_at": "2026-10-29T01:13:00.000Z",
+   "text": "La #FGE informó que #Andrick “N” fue #sentenciado a 16 años y 8 meses de prisión tras ser declarado penalmente responsable del delito de homicidio calificado en grado de tentativa. https://t.co/dC02u1lpo2",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The #FGE reported that #Andrick \"N\" was #sentenced to 16 years and 8 months in prison after being found criminally responsible for attempted aggravated homicide."
+  },
   {
    "id": "2115608696940122621",
    "handle": "infobaemexico",
@@ -61,7 +376,7 @@
    "tier": "verified",
    "source_type": "official",
    "label": "Official statement",
-   "text_en": "In #Oaxaca, @SEMAR_mx personnel, in coordination with #SSPC and @FGRMexico, arrested Carlos “N”, alias “El Semáforo”, along with Ana Gabriela “N”, members of a criminal group linked to kidnappings and homicides. Weapons, grenades and substances were seized in the operation…"
+   "text_en": "In #Oaxaca, personnel from @SEMAR_mx, in coordination with #SSPC and @FGRMexico, arrested Carlos \"N\", alias \"El Semáforo\", along with Ana Gabriela \"N\", members of a criminal group linked to kidnappings and homicides. Weapons, grenades and substances were seized in the operation…"
   },
   {
    "id": "2115592107377189343",
@@ -69,7 +384,7 @@
    "url": "https://x.com/ZETATijuana/status/2115592107377189343",
    "created_at": "2026-10-28T23:50:38.000Z",
    "text": "El fallo informático que activó la señal roja se originó por un tren detenido en la vía. https://t.co/ghVUxO8q9M",
-   "lang": "und",
+   "lang": "es",
    "region_ids": [
     "MEX-2706"
    ],
@@ -78,7 +393,7 @@
    "tier": "verified",
    "source_type": "local outlet",
    "label": null,
-   "text_en": "The computer fault that triggered the red signal was caused by a train stopped on the track."
+   "text_en": "The computer failure that triggered the red signal was caused by a train stopped on the track."
   },
   {
    "id": "2115588422194868722",
@@ -86,7 +401,7 @@
    "url": "https://x.com/Riodoce_mx/status/2115588422194868722",
    "created_at": "2026-10-28T23:36:00.000Z",
    "text": "De acuerdo con las autoridades de #EU, los hombres son señalados por presuntamente formar parte de una organización de narcotráfico relacionada con el CDS, dedicada a distribuir fentanilo y cocaína en el centro de #Tennessee. La red también habría #lavado millones de dólares",
-   "lang": "und",
+   "lang": "es",
    "region_ids": [
     "MEX-2711"
    ],
@@ -97,7 +412,7 @@
    "tier": "verified",
    "source_type": "local outlet",
    "label": null,
-   "text_en": "According to #US authorities, the men are accused of allegedly belonging to a drug-trafficking organisation linked to the CDS, dedicated to distributing fentanyl and cocaine in central #Tennessee. The network also allegedly #laundered millions of dollars"
+   "text_en": "According to US authorities, the men are allegedly part of a drug trafficking organization tied to the CDS that distributed fentanyl and cocaine in central Tennessee. The network also allegedly laundered millions of dollars"
   },
   {
    "id": "2115586565246165444",
@@ -117,7 +432,7 @@
    "tier": "verified",
    "source_type": "national outlet",
    "label": null,
-   "text_en": "Blow to Los Chapitos' weapons network: \"el Pokémon\" and three others remain jailed in Guasave after being ordered to stand trial"
+   "text_en": "Blow to Los Chapitos' weapons network: El Pokémon and three others stay jailed in Guasave after being ordered to stand trial"
   },
   {
    "id": "2115557971774382191",
@@ -125,7 +440,7 @@
    "url": "https://x.com/_elfaro_/status/2115557971774382191",
    "created_at": "2026-10-28T21:35:00.000Z",
    "text": "A lo largo de las últimas dos décadas, Juan Francisco Solórzano Foppa ocupó cargos públicos en los que se suele hacer enemigos. En sus años de fiscal, investigó a la Rueda —o cúpula— de la pandilla Barrio 18 en Guatemala y logró condenas contra dirigentes incluyendo a su máximo…",
-   "lang": "es",
+   "lang": "und",
    "region_ids": [
     "GTM-1951"
    ],

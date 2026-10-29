@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-28T19:03Z",
+ "as_of": "2026-10-29T13:08Z",
  "note": "Strategic digest of the last ~7 days, grouped by ongoing trend: leadership, splits and alliances, territory and routes, policy and designations, violence patterns, money. Routine seizures and minor arrests are left out. X posts are used only as sources. Verification: Confirmed = 2+ independent reliable sources; Single source; Official claim only. Status is shown only when sourced counts support it.",
  "trends": [
   {
@@ -188,6 +188,7 @@
    "regions": [
     "MEX-2718",
     "MEX-2720",
+    "MEX-2723",
     "MEX-2734"
    ],
    "view": "mx",
@@ -196,6 +197,65 @@
     "IC_CJNG"
    ],
    "developments": [
+    {
+     "date": "2026-10-28",
+     "place": "Oaxaca",
+     "text": "Navy, federal security and prosecutors' forces arrested Carlos César Cruz Muñoz, 'El Semáforo', whom Riodoce and Infobae describe as a second-tier CJNG regional boss and possible successor to 'El Tanque', taken on 5 October; that is two consecutive heads of the same regional command removed in about three weeks.",
+     "verification": "Confirmed",
+     "regions": [
+      "MEX-2723"
+     ],
+     "groups": [
+      "cjng"
+     ],
+     "sources": [
+      {
+       "url": "https://x.com/SSPCMexico/status/2115607278833344958",
+       "name": "SSPCMexico (X @SSPCMexico)",
+       "title": "In #Oaxaca, personnel from @SEMAR_mx, in coordination with #SSPC and @FGRMexico, arrested Carlos \"N\", alias \"E…",
+       "date": "2026-10-29"
+      },
+      {
+       "url": "https://x.com/Riodoce_mx/status/2115641019823968363",
+       "name": "Riodoce_mx (X @Riodoce_mx)",
+       "title": "The #Marina arrested Carlos César Cruz Muñoz, '#Semáforo', alleged CJNG regional boss and possible successor t…",
+       "date": "2026-10-29"
+      },
+      {
+       "url": "https://x.com/infobaemexico/status/2115624663254790516",
+       "name": "infobaemexico (X @infobaemexico)",
+       "title": "🚨 \"El Semáforo\" is identified as a second-tier leader in the CJNG",
+       "date": "2026-10-29"
+      }
+     ]
+    },
+    {
+     "date": "2026-10-28",
+     "place": "Barranquilla, Colombia",
+     "text": "Colombian authorities arrested two Mexican nationals, Sophia Mourra Lozano ('La Patrona') and Adolfo Paulin González ('Pau'), described as CJNG's main links to the Clan del Golfo, which places a CJNG liaison cell on Colombia's Caribbean coast at the cocaine supply end of its business.",
+     "verification": "Confirmed",
+     "regions": [
+      "COL-1412"
+     ],
+     "groups": [
+      "cjng",
+      "clan"
+     ],
+     "sources": [
+      {
+       "url": "https://x.com/infobaemexico/status/2115658129287356796",
+       "name": "infobaemexico (X @infobaemexico)",
+       "title": "CJNG in Colombia: \"La Patrona\" and \"La Pau\" arrested, a Mexican couple identified as links to the Clan del Gol…",
+       "date": "2026-10-29"
+      },
+      {
+       "url": "https://x.com/proceso/status/2115639778091634746",
+       "name": "proceso (X @proceso)",
+       "title": "\"La Patrona\" and \"Pau\", Mexicans in the CJNG, captured in Colombia. Sophia Mourra Lozano, \"La Patrona\", and Ad…",
+       "date": "2026-10-29"
+      }
+     ]
+    },
     {
      "date": "2026-10-22",
      "place": "Veracruz",
