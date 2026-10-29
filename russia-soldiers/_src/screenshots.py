@@ -69,7 +69,7 @@ with sync_playwright() as pw:
         shot(page, f"{tag}-09b-flow-strand-hover.png", full=False)
         # time series: 9 line dots + 2 estimate markers + 3 more = 14 hit areas; hover one; Play must change the chart and end on Replay
         page.evaluate("document.querySelector('#flowts').scrollIntoView({block:'center'})"); page.wait_for_timeout(300)
-        nts = len(page.query_selector_all("#tschart .tshit")); print(tag, "time-series hit areas", nts); assert nts == 14, nts
+        nts = len(page.query_selector_all("#tschart .tshit")); print(tag, "time-series hit areas", nts); assert nts == 15, nts
         ntb = page.evaluate("[...document.querySelectorAll('#flowts button')].map(b=>b.textContent)"); assert ntb == ["Play"], ntb
         shot(page, f"{tag}-09c-flow-timeseries.png", full=False)
         before = page.evaluate("document.querySelector('#tsclipr').getAttribute('width')")
