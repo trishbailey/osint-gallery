@@ -106,5 +106,7 @@ TS = [
 ]
 # the high value of mob22 is the Mediazona estimate; its parts are the two arrow parts
 TS[6]["parts"] = [_ar["mob"]["low_parts"][0], _ar["mob"]["high_parts"][0]]
+# Series whose points come from different recruiters and different periods: drawn as separate dots, never joined by a line.
+TS_NOJOIN = {"pri": "Wagner (Jul 2022 to Feb 2023) and Storm Z (Feb to Sep 2023) are separate counts by different recruiters"}
 TS_DOMAIN = ("2022-01-01", "2026-10-28")
 TS_NOTE_GAPS = ("No dated figure was found for: contract signers in 2022; mobilised men after 2022; prisoners after September 2023; foreigners before 2022. These are gaps, not zeros.")

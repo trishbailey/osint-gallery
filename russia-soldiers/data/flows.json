@@ -164,6 +164,7 @@
     "kind": "vol",
     "name": "Volunteers and contract soldiers",
     "color": "#e43d3c",
+    "nojoin": false,
     "points": [
      {
       "id": "vol23",
@@ -221,6 +222,7 @@
     "kind": "mob",
     "name": "Mobilised",
     "color": "#2ec4b6",
+    "nojoin": false,
     "points": [
      {
       "id": "mob22",
@@ -237,6 +239,7 @@
     "kind": "pri",
     "name": "Prisoners, incl. Wagner and Storm-Z",
     "color": "#e8c547",
+    "nojoin": true,
     "points": [
      {
       "id": "pri22",
@@ -261,6 +264,7 @@
     "kind": "for",
     "name": "Foreign nationals, incl. North Korea",
     "color": "#4f9dff",
+    "nojoin": false,
     "points": [
      {
       "id": "for22",

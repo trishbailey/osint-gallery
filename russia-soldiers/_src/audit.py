@@ -443,7 +443,7 @@ for p_ in RI.TS:
         need(nm + f" period text {txt_!r} is in the saved source {src_}", norm(txt_) in sv_)
     a_, z_ = _dt.date.fromisoformat(p_["t0"]), _dt.date.fromisoformat(p_["t1"])
     need(nm + " period dates valid and inside the chart domain", a_ <= z_ and _dt.date.fromisoformat(RI.TS_DOMAIN[0]) <= a_ and z_ <= _dt.date.fromisoformat(RI.TS_DOMAIN[1]))
-    need(nm + " value is positive and inside the log axis (60 to 1,500,000)", 60 <= p_["low"] <= p_["high"] <= 1.5e6)
+    need(nm + " value is positive and inside its linear panel (0 to 600,000 for contract and mobilised, 0 to 60,000 for prisoners and foreign)", 0 < p_["low"] <= p_["high"] <= (6e5 if p_["type"] in ("vol", "mob") else 6e4))
     fp_ = _flat[p_["id"]]; need(nm + " flows.json value equals the input", (fp_["low"], fp_["high"], fp_["t0"], fp_["t1"]) == (p_["low"], p_["high"], p_["t0"], p_["t1"]))
     need(nm + " hover carries the value, a source name with its date and the period note", (f"{p_['low']:,}" in fp_["tip"]) and all(SOURCES[q_["src"]]["short"] in fp_["tip"] for q_ in p_["parts"]) and (p_["est"] or "not a rate" in fp_["tip"]))
 for k_, s_ in TSF.items():
@@ -453,7 +453,8 @@ need("ts gaps are stated and no zero point exists", "gaps, not zeros" in FL["ts"
 _t = {p_["id"]: p_ for p_ in RI.TS}
 need("ts 2024 official = 450,000 + 40,000", _t["vol24"]["low"] == 490000 and _t["vol25"]["low"] == 422704 + 32000)
 _js = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read()
-need("flows.js time series uses a log axis and breaks the line at gaps", "d3.scaleLog" in _js and "gapOK" in _js and "runs.push" in _js)
+need("flows.js time series uses linear axes (no log scale) and breaks the line at gaps and at partial periods", "d3.scaleLog" not in _js and "d3.scaleLinear().domain([0,pn.max])" in _js and "runs.push" in _js and "!full(p)" in _js and "s.nojoin" in _js)
+need("prisoner points (Wagner, then Storm Z) are never joined by a line", TSF["pri"].get("nojoin") is True and len(TSF["pri"]["points"]) == 2)
 need("flows.js time series never plots a missing period as zero", not re.search(r"\|\|\s*0\b", _js[_js.index("function series"):_js.index("function bars")]))
 need("flows.js time series has one Play button, no autoplay", _js.count('id="tsplay"') == 1 and "tsplay').click" not in _js and "autoplay" not in _js.lower())
 need("flows.js the animation starts only from the click handler", _js.index("btn.addEventListener('click'") < _js.index("d3.timer("))
