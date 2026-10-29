@@ -428,7 +428,7 @@ need("NK verdict numbers are in the rows", any("29,488" in r_["fig"] for r_ in N
 # ---- time series (recruits in a dated period, by type)
 import datetime as _dt
 TSF = {s_["kind"]: s_ for s_ in FL["ts"]["series"]}
-need("time series has the four types", set(TSF) == {"vol", "mob", "pri", "for"} and len(RI.TS) == 14)
+need("time series has the four types", set(TSF) == {"vol", "mob", "pri", "for"} and len(RI.TS) == 15)
 _ids = [p_["id"] for p_ in RI.TS]; need("time series point ids unique", len(_ids) == len(set(_ids)))
 _flat = {p_["id"]: p_ for s_ in FL["ts"]["series"] for p_ in s_["points"] + s_["est"]}
 need("flows.json time series carries every input point", set(_flat) == set(_ids))
@@ -448,7 +448,8 @@ for p_ in RI.TS:
     need(nm + " hover carries the value, a source name with its date and the period note", (f"{p_['low']:,}" in fp_["tip"]) and all(SOURCES[q_["src"]]["short"] in fp_["tip"] for q_ in p_["parts"]) and (p_["est"] or "not a rate" in fp_["tip"]))
 for k_, s_ in TSF.items():
     pts = s_["points"]; need(f"ts {k_} line points are in date order with no real overlap", all(_dt.date.fromisoformat(b_["t0"]) >= _dt.date.fromisoformat(a_["t1"]) - _dt.timedelta(days=31) for a_, b_ in zip(pts, pts[1:])))
-need("ts mobilised has one dated wave only", len(TSF["mob"]["points"]) == 1)
+need("ts mobilised is one wave (Sep to Oct 2022) reported on two dates, the later estimate higher than the Kremlin count, drawn rising", [p_["id"] for p_ in TSF["mob"]["points"]] == ["mob_k", "mob_m"] and all(p_["low"] == p_["high"] and p_["t0"] == p_["t1"] for p_ in TSF["mob"]["points"]) and TSF["mob"]["points"][0]["low"] < TSF["mob"]["points"][1]["low"] and not TSF["mob"].get("nojoin"))
+need("ts no point is stored as a vertical stack: no two points of one series share a date", all(len({p_["t0"] for p_ in s_["points"]}) == len(s_["points"]) for s_ in TSF.values()))
 need("ts gaps are stated and no zero point exists", "gaps, not zeros" in FL["ts"]["gaps"] and all(p_["low"] > 0 for p_ in RI.TS))
 _t = {p_["id"]: p_ for p_ in RI.TS}
 need("ts 2024 official = 450,000 + 40,000", _t["vol24"]["low"] == 490000 and _t["vol25"]["low"] == 422704 + 32000)

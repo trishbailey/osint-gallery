@@ -118,7 +118,7 @@ function series(){
  var D=function(s){return new Date(s+'T00:00:00')},d0=D(F.ts.domain[0]),d1=D(F.ts.domain[1]);
  var x=d3.scaleTime().domain([d0,d1]).range([m.l,w-m.r]);
  var mid=function(p){return new Date((D(p.t0).getTime()+D(p.t1).getTime())/2)};
- var full=function(p){return D(p.t1)-D(p.t0)>=330*864e5};
+ var full=function(p){return D(p.t1)-D(p.t0)>=330*864e5||p.t0===p.t1};
  var h2='<div class="tsctl"><button type="button" class="chipb" id="tsplay">Play</button><ul class="legend tslegend">';
  F.ts.series.forEach(function(s){h2+='<li><span class="sw" style="background:'+s.color+'"></span>'+esc(LBL[s.kind])+'</li>'});
  h2+='<li><svg width="18" height="16" aria-hidden="true"><circle cx="9" cy="8" r="5.5" fill="#0b1526" stroke="#e43d3c" stroke-width="3"/></svg>Outside estimate</li></ul></div><div id="tschart"></div>';
@@ -140,27 +140,27 @@ function series(){
   var g=c.append('g').attr('clip-path','url(#'+id+')');
   var line=d3.line().curve(d3.curveMonotoneX).x(function(p){return x(mid(p))}).y(function(p){return y(p.low)});
   F.ts.series.filter(function(s){return pn.kinds.indexOf(s.kind)>=0}).forEach(function(s){
-   var runs=[],cur2=[];s.points.forEach(function(p,i){var brk=i&&(s.nojoin||!full(p)||!full(s.points[i-1])||D(p.t0)-D(s.points[i-1].t1)>32*864e5);if(brk){runs.push(cur2);cur2=[]}cur2.push(p)});if(cur2.length)runs.push(cur2);
+   var runs=[],cur2=[];s.points.forEach(function(p,i){var pv=s.points[i-1],dated=i&&p.t0===p.t1&&pv.t0===pv.t1,brk=i&&!dated&&(s.nojoin||!full(p)||!full(pv)||D(p.t0)-D(pv.t1)>32*864e5);if(brk){runs.push(cur2);cur2=[]}cur2.push(p)});if(cur2.length)runs.push(cur2);
    /* period bars: the time each figure covers */
    g.append('g').selectAll('line').data(s.points).enter().append('line').attr('x1',function(p){return x(D(p.t0))}).attr('x2',function(p){return x(D(p.t1))}).attr('y1',function(p){return y(p.low)}).attr('y2',function(p){return y(p.low)})
     .attr('stroke',s.color).attr('stroke-width',4).attr('opacity',.55).attr('stroke-linecap','butt');
-   /* range bands where a source gives a range */
-   g.append('g').selectAll('line').data(s.points.filter(function(p){return p.high>p.low})).enter().append('line').attr('x1',function(p){return x(mid(p))}).attr('x2',function(p){return x(mid(p))}).attr('y1',function(p){return y(p.low)}).attr('y2',function(p){return y(p.high)})
-    .attr('stroke',s.color).attr('stroke-width',10).attr('opacity',.35);
-   runs.forEach(function(r){if(r.length>1)g.append('path').attr('d',line(r)).attr('fill','none').attr('stroke',s.color).attr('stroke-width',4).attr('stroke-linejoin','round')});
-   g.append('g').selectAll('circle').data(s.points).enter().append('circle').attr('cx',function(p){return x(mid(p))}).attr('cy',function(p){return y(p.low)}).attr('r',6).attr('fill',s.color).attr('stroke','#0b1526').attr('stroke-width',1.5).style('pointer-events','none');
+   /* a range is a capsule from its low to its high (both ends labelled), never a dot with a line above it */
+   var rng=function(q){var yl=y(q.low),yh=y(q.high),hh=Math.max(14,yl-yh),cy=(yl+yh)/2;return {y:cy-hh/2,h:hh}};
+   g.append('g').selectAll('rect').data(s.points.filter(function(p){return p.high>p.low})).enter().append('rect').attr('x',function(p){return x(mid(p))-7}).attr('width',14).attr('y',function(p){return rng(p).y}).attr('height',function(p){return rng(p).h}).attr('rx',7).attr('fill',s.color).attr('stroke','#0b1526').attr('stroke-width',1.5).style('pointer-events','none');
+   runs.forEach(function(r){if(r.length>1)g.append('path').attr('d',line(r)).attr('fill','none').attr('stroke',s.color).attr('stroke-width',4).attr('stroke-linejoin','round').attr('stroke-dasharray',r[0].t0===r[0].t1?'7 6':null)});
+   g.append('g').selectAll('circle').data(s.points.filter(function(p){return !(p.high>p.low)})).enter().append('circle').attr('cx',function(p){return x(mid(p))}).attr('cy',function(p){return y(p.low)}).attr('r',6).attr('fill',s.color).attr('stroke','#0b1526').attr('stroke-width',1.5).style('pointer-events','none');
    /* hollow markers: outside estimates, nudged right so they do not sit on the official dot */
    var ex=function(p){return x(mid(p))+(P?14:20)};
-   g.append('g').selectAll('line').data(s.est.filter(function(p){return p.high>p.low})).enter().append('line').attr('x1',ex).attr('x2',ex).attr('y1',function(p){return y(p.low)}).attr('y2',function(p){return y(p.high)}).attr('stroke',s.color).attr('stroke-width',6).attr('opacity',.5);
-   g.append('g').selectAll('circle').data(s.est).enter().append('circle').attr('cx',ex).attr('cy',function(p){return y(p.low)}).attr('r',5.5).attr('fill','#0b1526').attr('stroke',s.color).attr('stroke-width',3).style('pointer-events','none');
+   g.append('g').selectAll('rect').data(s.est.filter(function(p){return p.high>p.low})).enter().append('rect').attr('x',function(p){return ex(p)-7}).attr('width',14).attr('y',function(p){return rng(p).y}).attr('height',function(p){return rng(p).h}).attr('rx',7).attr('fill','#0b1526').attr('stroke',s.color).attr('stroke-width',3).style('pointer-events','none');
+   g.append('g').selectAll('circle').data(s.est.filter(function(p){return !(p.high>p.low)})).enter().append('circle').attr('cx',ex).attr('cy',function(p){return y(p.low)}).attr('r',5.5).attr('fill','#0b1526').attr('stroke',s.color).attr('stroke-width',3).style('pointer-events','none');
    /* hit areas */
-   g.append('g').selectAll('circle').data(s.points).enter().append('circle').attr('class','tshit').attr('cx',function(p){return x(mid(p))}).attr('cy',function(p){return y(p.low)}).attr('r',P?12:11).attr('fill','transparent').attr('tabindex',0).attr('data-tip',function(p){return p.tip});
-   g.append('g').selectAll('circle').data(s.est).enter().append('circle').attr('class','tshit').attr('cx',ex).attr('cy',function(p){return y(p.low)}).attr('r',9).attr('fill','transparent').attr('tabindex',0).attr('data-tip',function(p){return p.tip});
+   g.append('g').selectAll('circle').data(s.points).enter().append('circle').attr('class','tshit').attr('cx',function(p){return x(mid(p))}).attr('cy',function(p){return y((p.low+p.high)/2)}).attr('r',P?12:11).attr('fill','transparent').attr('tabindex',0).attr('data-tip',function(p){return p.tip});
+   g.append('g').selectAll('circle').data(s.est).enter().append('circle').attr('class','tshit').attr('cx',ex).attr('cy',function(p){return y((p.low+p.high)/2)}).attr('r',9).attr('fill','transparent').attr('tabindex',0).attr('data-tip',function(p){return p.tip});
    /* value labels: every sourced value, each above its own dot (the mobilised range sits under its dot on a phone, clear of the 540k label) */
-   var below=P&&s.kind==='mob';
+   var below=function(p){return s.kind==='mob'&&p===s.points[0]},left=function(p){return s.kind==='mob'&&p!==s.points[0]};
    g.append('g').selectAll('text').data(s.points).enter().append('text').attr('class','tslab')
-    .attr('x',function(p){return x(mid(p))+(below?-8:0)}).attr('y',function(p){return below?y(p.low)+22:y(p.high>p.low?p.high:p.low)-(p.high>p.low?10:12)})
-    .attr('text-anchor',function(p){var px=x(mid(p));return below?'start':px<m.l+20?'start':px>w-24?'end':'middle'}).text(function(p){return p.high>p.low?shortN(p.low)+' to '+shortN(p.high):shortN(p.low)});
+    .attr('x',function(p){return x(mid(p))+(below(p)?-8:left(p)?-11:0)}).attr('y',function(p){return left(p)?y(p.low)+5:below(p)?y(p.low)+22:y(p.high>p.low?p.high:p.low)-(p.high>p.low?14:12)})
+    .attr('text-anchor',function(p){var px=x(mid(p));return left(p)?'end':below(p)?'start':px<m.l+20?'start':px>w-24?'end':'middle'}).text(function(p){return p.high>p.low?shortN(p.low)+' to '+shortN(p.high):shortN(p.low)});
   });
   var cu=c.append('g').attr('class','tscur').style('display','none');
   cu.append('line').attr('y1',m.t).attr('y2',h-m.b).attr('stroke','#c8a24a').attr('stroke-width',2);
