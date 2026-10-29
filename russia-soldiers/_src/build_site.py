@@ -83,6 +83,11 @@ def values():
     assert A["vol"]["low"] > A["mob"]["high"] > A["pri"]["low"] and BR["pri"] > BR["mob"] and FL["bars"][0]["kind"] == "vol"
     V["v_flow"] = (f"Contract soldiers and volunteers are by far the biggest inflow: {n0(A['vol']['low'])} to {n0(A['vol']['high'])} recruited, against {n0(A['mob']['low'])} to {n0(A['mob']['high'])} mobilised and "
                    f"{n0(A['pri']['low'])} to {n0(A['pri']['high'])} prisoners. Prisoners still outnumber mobilised men among the named dead ({n0(BR['pri'])} against {n0(BR['mob'])}).")
+    TSP = {s_["kind"]: {p_["id"]: p_ for p_ in s_["points"]} for s_ in FL["ts"]["series"]}
+    assert TSP["vol"]["vol23"]["low"] > TSP["vol"]["vol25"]["low"] and TSP["for"]["for25"]["low"] > TSP["for"]["for23"]["low"]
+    V["v_ts"] = (f"Official contract and volunteer figures fell from {n0(TSP['vol']['vol23']['low'])} in 2023 to {n0(TSP['vol']['vol25']['low'])} in 2025, while foreign contract signers counted by Ukraine rose from "
+                 f"{n0(TSP['for']['for23']['low'])} to {n0(TSP['for']['for25']['low'])}.")
+    V["ts_gaps"] = FL["ts"]["gaps"]
     V["flow_skipped"] = FL["skipped"]; V["flow_notdrawn"] = FL["not_drawn"]
     import nk_inputs as NKI
     cnt = {s_: sum(1 for r in NKI.ROWS if r["status"] == s_) for s_ in NKI.STATUS}

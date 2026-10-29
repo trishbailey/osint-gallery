@@ -425,6 +425,41 @@ for k_, p_ in NKI.PLACES.items():
 for l_ in NKI.LINES: need(f"map line {l_['id']} uses a known row and places", l_["row"] in {r_["id"] for r_ in NKI.ROWS} and l_["frm"] in NKI.PLACES and l_["to"] in NKI.PLACES)
 for s_ in ("Documented: the treaty", "2,304 named by the BBC against 3,000 claimed by Ukraine"): has(s_, "NK verdict")
 need("NK verdict numbers are in the rows", any("29,488" in r_["fig"] for r_ in NKI.ROWS) and any("2,304" in r_["fig"] for r_ in NKI.ROWS))
+# ---- time series (recruits in a dated period, by type)
+import datetime as _dt
+TSF = {s_["kind"]: s_ for s_ in FL["ts"]["series"]}
+need("time series has the four types", set(TSF) == {"vol", "mob", "pri", "for"} and len(RI.TS) == 14)
+_ids = [p_["id"] for p_ in RI.TS]; need("time series point ids unique", len(_ids) == len(set(_ids)))
+_flat = {p_["id"]: p_ for s_ in FL["ts"]["series"] for p_ in s_["points"] + s_["est"]}
+need("flows.json time series carries every input point", set(_flat) == set(_ids))
+for p_ in RI.TS:
+    nm = "ts " + p_["id"]
+    for i_, q_ in enumerate(p_["parts"]): check_part(f"{nm} part{i_}", q_)
+    vals = [q_["value"] for q_ in p_["parts"]]; figs = [figval(f_) for q_ in p_["parts"] for f_ in q_["figures"]]
+    if p_["low"] == p_["high"]: need(nm + " exact value is the sum of its parts", sum(vals) == p_["low"] and len(vals) >= 1)
+    else: need(nm + " range ends are figures of its parts", p_["low"] in vals + figs and p_["high"] in vals + figs and p_["low"] < p_["high"])
+    for src_, txt_ in p_["pq"]:
+        sv_ = norm(open(os.path.join(RAW, "quotes", src_ + ".txt"), encoding="utf-8").read())
+        need(nm + f" period text {txt_!r} is in the saved source {src_}", norm(txt_) in sv_)
+    a_, z_ = _dt.date.fromisoformat(p_["t0"]), _dt.date.fromisoformat(p_["t1"])
+    need(nm + " period dates valid and inside the chart domain", a_ <= z_ and _dt.date.fromisoformat(RI.TS_DOMAIN[0]) <= a_ and z_ <= _dt.date.fromisoformat(RI.TS_DOMAIN[1]))
+    need(nm + " value is positive and inside the log axis (60 to 1,500,000)", 60 <= p_["low"] <= p_["high"] <= 1.5e6)
+    fp_ = _flat[p_["id"]]; need(nm + " flows.json value equals the input", (fp_["low"], fp_["high"], fp_["t0"], fp_["t1"]) == (p_["low"], p_["high"], p_["t0"], p_["t1"]))
+    need(nm + " hover carries the value, a source name with its date and the period note", (f"{p_['low']:,}" in fp_["tip"]) and all(SOURCES[q_["src"]]["short"] in fp_["tip"] for q_ in p_["parts"]) and (p_["est"] or "not a rate" in fp_["tip"]))
+for k_, s_ in TSF.items():
+    pts = s_["points"]; need(f"ts {k_} line points are in date order with no real overlap", all(_dt.date.fromisoformat(b_["t0"]) >= _dt.date.fromisoformat(a_["t1"]) - _dt.timedelta(days=31) for a_, b_ in zip(pts, pts[1:])))
+need("ts mobilised has one dated wave only", len(TSF["mob"]["points"]) == 1)
+need("ts gaps are stated and no zero point exists", "gaps, not zeros" in FL["ts"]["gaps"] and all(p_["low"] > 0 for p_ in RI.TS))
+_t = {p_["id"]: p_ for p_ in RI.TS}
+need("ts 2024 official = 450,000 + 40,000", _t["vol24"]["low"] == 490000 and _t["vol25"]["low"] == 422704 + 32000)
+_js = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read()
+need("flows.js time series uses a log axis and breaks the line at gaps", "d3.scaleLog" in _js and "gapOK" in _js and "runs.push" in _js)
+need("flows.js time series never plots a missing period as zero", not re.search(r"\|\|\s*0\b", _js[_js.index("function series"):_js.index("function bars")]))
+need("flows.js time series has one Play button, no autoplay", _js.count('id="tsplay"') == 1 and "tsplay').click" not in _js and "autoplay" not in _js.lower())
+need("flows.js the animation starts only from the click handler", _js.index("btn.addEventListener('click'") < _js.index("d3.timer("))
+for s_ in ("Recruits over time, by how they joined", "Press Play", FL_V["v_ts"] if "FL_V" in globals() else "Official contract and volunteer figures fell from 540,000 in 2023 to 454,704 in 2025", "foreign contract signers counted by Ukraine rose from 4,067 to 16,085", "gaps, not zeros"): has(s_, "time series text")
+need("ts section sits after the flow map and before the named-dead bars", page.index('id="flowmap"') < page.index('id="flowts"') < page.index('id="flowbars"'))
+need("meduza_wagner is cited on the page", "meduza_wagner" in cites)
 need("GA tag once", page.count("G-Z61EKRP8QV") >= 1 and page.count("googletagmanager.com/gtag/js?id=G-Z61EKRP8QV") == 1)
 need("no github.io/onrender/.cn/gdelt", not re.search(r"github\.io|onrender\.com|gdelt|\.cn[/\"' ]", page + open(os.path.join(ROOT, "app.js")).read(), re.I))
 need("no unresolved tokens", "{{" not in page and "[[" not in page)

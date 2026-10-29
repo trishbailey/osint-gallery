@@ -180,3 +180,7 @@ h2{font-size:1.2rem}
 .tline{list-style:none;margin:6px 0 8px;padding:0 0 0 14px;border-left:2px solid var(--line)}.tli{display:grid;grid-template-columns:104px 1fr auto;gap:2px 12px;padding:5px 0;align-items:baseline}.tld{color:var(--muted);font-size:.95rem;white-space:nowrap}
 .tgs{font-weight:700}
 @media (max-width:700px){.flowblock .side2{order:2}.nkgrid{grid-template-columns:1fr}.tli{grid-template-columns:1fr}.flowblock .seg{flex-direction:row}.fchip{flex:1 1 44%}}
+
+.tsblock{margin:6px 0 4px}.tsctl{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin:0 0 6px}.tslegend{display:flex;flex-wrap:wrap;gap:4px 16px;list-style:none;padding:0;margin:0}.tslegend li{display:flex;align-items:center;gap:6px}
+#tschart svg{display:block;width:100%}.tslab{font-weight:600;fill:#e9eef7}.tscd{font-weight:600;fill:#e9eef7}.tshit:focus-visible{stroke:var(--gold);stroke-width:2px}
+#tschart svg text{fill:#e9eef7}#tschart svg text.muted{fill:var(--muted)}

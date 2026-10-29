@@ -108,6 +108,8 @@ SOURCES.update({
    full="OCCRP, Ukrainian data on foreign recruits from Ukraine\u2019s Coordination Headquarters for the Treatment of Prisoners of War: 24,000 recruits from 44 countries, Central Asia the largest group. The figures are Ukrainian claims that the report could not check independently."),
  "liga_foreign": dict(short="LIGA.net, 19 Oct 2026", url="https://news.liga.net/en/war/news/russia-may-exceed-its-target-for-recruiting-foreigners-as-early-as-november-coordination-headquarters",
    full="LIGA.net, 19 Oct 2026, on figures from the \u201cI Want to Live\u201d project of Ukraine\u2019s Coordination Headquarters: 45,959 foreigners from 151 countries signed contracts, with counts by year and for four countries in 2026."),
+ "meduza_wagner": dict(short="Meduza, 10 Jun 2024", url="https://meduza.io/feature/2024/06/10/v-bitve-za-bahmut-pogib-kazhdyy-tretiy-zaklyuchennyy-zaverbovannyy-chvk-vagnera-rodstvennikam-ubityh-vyplatili-108-milliardov-rubley",
+   full="Meduza (in Russian), 10 Jun 2024, reporting the Mediazona and BBC News Russian investigation: Wagner recruited at least 48,366 prisoners; first recruitment 1 Jul 2022, last known 7 Feb 2023."),
  "ne_admin0": dict(short="Natural Earth admin-0 countries, 1:50m", url="https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/",
    full="Natural Earth, 1:50m admin-0 countries (public domain), simplified for the flow maps. Boundaries are drawn as Natural Earth shows them and carry no political endorsement."),
 })
