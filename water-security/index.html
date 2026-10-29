@@ -1246,7 +1246,7 @@ if(sparse){g.selectAll('.lay-lever').raise();
   const top=places.sort((a,b)=>a.pri-b.pri||a.title.localeCompare(b.title)).slice(0,8);
   if(opt.sheet&&damNotes.length)el.append('p').attr('class','cap').text([...new Set(damNotes)].join(' '));
   if(top.length){const det=el.append('details').attr('class','places');det.append('summary').attr('data-expect','note').text('Other places on this map');const list=det.append('div').attr('class','place-list');const note=det.append('p').attr('class','place-note').style('display','none');list.selectAll('button').data(top).join('button').attr('type','button').attr('class','chip').attr('data-expect','place').text(d=>d.title).on('click',(e,d)=>{e.stopPropagation();clearTip();note.style('display','block').html(d.detail)})}
-  svg.property('damNotes',[...new Set(damNotes)]);if(opt.world){tidyWorld(svg);pinWorldNames(svg,lg,pr,C.rivers,w,h,'14px')}lg.raise();svg.node().__blk=blockers(svg);fixZoomInk();if(opt.basin)paintContext(g,pr,bs,w,h);return}
+  svg.property('damNotes',[...new Set(damNotes)]);if(opt.world){tidyWorld(svg);pinWorldNames(svg,lg,pr,C.rivers,w,h,'14px');wireWorldBasins(svg)}lg.raise();svg.node().__blk=blockers(svg);fixZoomInk();if(opt.basin)paintContext(g,pr,bs,w,h);return}
 const st=t=>t.style('font-weight',700).style('font-size',(sparse||opt.basin?'14':'13')+'px');
  const nm=c=>c.replace('United States of America','United States').replace('Democratic Republic of the Congo','DR Congo').replace('Dem. Rep. Congo','DR Congo').replace('The former Yugoslav Republic of Macedonia','North Macedonia');
  labs.forEach(d=>P.add(lg,d.x,d.y,d.text,t=>{st(t);t.style('fill','#e6e9ef')},'lab-dam'));
@@ -1265,7 +1265,7 @@ const st=t=>t.style('font-weight',700).style('font-size',(sparse||opt.basin?'14'
   const [x,y]=pr(pt.geometry.coordinates);if((at[n]||[]).some(([u,v])=>Math.hypot(u-x,v-y)<160))return;(at[n]=at[n]||[]).push([x,y]);
   const dep=b.dep.find(d=>d.c===n);const extra=dep?`<br>${dep.v}% of renewable water from abroad`:'';
   cue(x,y,`<b>${nm(n)}</b>${extra}`)}));
- if(opt.world){tidyWorld(svg);pinWorldNames(svg,lg,pr,C.rivers,w,h,'13px')}lg.raise();svg.selectAll('.cue').raise();svg.node().__blk=blockers(svg);fixZoomInk();if(opt.basin)paintContext(g,pr,bs,w,h);}
+ if(opt.world){tidyWorld(svg);pinWorldNames(svg,lg,pr,C.rivers,w,h,'13px');wireWorldBasins(svg)}lg.raise();svg.selectAll('.cue').raise();svg.node().__blk=blockers(svg);fixZoomInk();if(opt.basin)paintContext(g,pr,bs,w,h);}
 paint();
 if(opt.basin||!sparse){const pad=opt.basin?(w<520?36:88):Math.max(48,Math.round(Math.min(w,h)*0.06));const padX=pad,padTop=opt.basin?16:pad,padBot=opt.basin?72:pad;
  const sel=opt.basin?'path.basin,path.core,path.flow-reach,g.lay-lever path,path[data-ink="dam"]':'path.basin,path.glow,path.core,g.lay-lever path,path.flow-reach,path[data-ink="dam"],circle[data-ink="arrow"],text';
@@ -1339,6 +1339,70 @@ function historyBlock(parent,b){const items=histItems(b);if(!items.length)return
  draw(picked);
  if(all.length>5){const btn=det.append('button').attr('type','button').attr('class','hist-more').attr('data-expect','more').text('Show all ('+all.length+')');btn.on('click',()=>{draw(all);btn.remove()})}}
 function basinPx(b,mw){const feats=(b.geo&&b.geo.length)?b.geo:[];let aspect=1;if(feats.length){const pr0=d3.geoMercator();pr0.fitExtent([[0,0],[1000,1000]],{type:'FeatureCollection',features:feats});const bb=d3.geoPath(pr0).bounds({type:'FeatureCollection',features:feats});aspect=Math.max(0.34,(bb[1][0]-bb[0][0])/Math.max(1,bb[1][1]-bb[0][1]))}const padTop=16,padBot=72,padX=isPhone()?36:88;if(isPhone()){const inner=Math.max(80,mw-2*padX);const h=Math.round(Math.min(640,Math.max(240,inner/aspect+padTop+padBot)));return [mw,h]}let h=620,w=Math.round((h-padTop-padBot)*aspect+2*padX);if(w>mw){w=mw;h=Math.round(Math.min(620,Math.max(560,(w-2*padX)/aspect+padTop+padBot)))}return [Math.max(300,Math.min(mw,w)),h]}
+function basinIdForLabel(name){
+ const n=String(name||'').replace(/\s+/g,' ').trim().toLowerCase();
+ if(!n) return null;
+ const rows=B.filter(b=>!b.aq);
+ const exact=rows.find(b=>String(b.name).toLowerCase()===n);
+ if(exact) return +exact.id;
+ const incl=rows.filter(b=>String(b.name).toLowerCase().includes(n));
+ if(incl.length) return +incl.slice().sort((a,b)=>String(a.name).length-String(b.name).length)[0].id;
+ const alias={'paraná':18,'parana':18,'dnipro':11,'dnieper':11,'mekong':4,'lancang':4,'white nile':1,'blue nile':1,'euphrates':3,'tigris':3,'ganges':8,'brahmaputra':8,'rio grande':10,'amu darya':6,'syr darya':7};
+ return alias[n]||null;
+}
+function wireWorldBasins(svg){
+ const root=svg.node(); if(!root) return;
+ root.querySelectorAll('g.basin-hits').forEach(n=>n.remove());
+ const hits=document.createElementNS(root.namespaceURI,'g');
+ hits.setAttribute('class','basin-hits');
+ root.querySelectorAll('path.basin').forEach(src=>{
+  const c=src.cloneNode(false);
+  c.setAttribute('class','basin-hit');
+  c.setAttribute('fill','transparent');
+  c.setAttribute('stroke','none');
+  c.setAttribute('pointer-events','all');
+  c.style.cursor='pointer';
+  const id=+src.getAttribute('data-bid');
+  c.addEventListener('click',ev=>{ev.preventDefault();ev.stopPropagation();show(id,true)});
+  hits.appendChild(c);
+ });
+ root.appendChild(hits);
+ const defs=root.querySelector('defs');
+ if(defs) defs.querySelectorAll('clipPath[id^="bhclip"]').forEach(n=>n.remove());
+ const byD=new Map();
+ [...hits.children].forEach(p=>{const d=p.getAttribute('d')||''; if(!byD.has(d)) byD.set(d,[]); byD.get(d).push(p)});
+ let clipN=0;
+ byD.forEach(group=>{
+  if(group.length<2) return;
+  group.forEach((p,i)=>{
+   const b=p.getBBox();
+   const slice=b.width/group.length;
+   const cp=document.createElementNS(root.namespaceURI,'clipPath');
+   const cid='bhclip'+(clipN++);
+   cp.setAttribute('id',cid);
+   cp.setAttribute('clipPathUnits','userSpaceOnUse');
+   const r=document.createElementNS(root.namespaceURI,'rect');
+   r.setAttribute('x',String(b.x+i*slice));
+   r.setAttribute('y',String(b.y-2));
+   r.setAttribute('width',String(slice+0.5));
+   r.setAttribute('height',String(b.height+4));
+   cp.appendChild(r);
+   (defs||root).appendChild(cp);
+   p.setAttribute('clip-path','url(#'+cid+')');
+  });
+ });
+ root.querySelectorAll('g.lab-flow').forEach(g=>{
+  const name=(g.textContent||'').replace(/\s+/g,' ').trim();
+  const id=basinIdForLabel(name);
+  if(!id) return;
+  g.setAttribute('data-bid',String(id));
+  g.style.pointerEvents='auto';
+  g.style.cursor='pointer';
+  g.addEventListener('click',ev=>{ev.preventDefault();ev.stopPropagation();show(id,true)});
+ });
+ const layer=root.querySelector('.lab-layer');
+ if(layer) root.appendChild(layer);
+}
 function show(id,scroll){clearTip();const ri=REG.findIndex(r=>r[1].flat().includes(+id));if(ri>=0)setRegion(ri);setArrowNotes([arrowSay([+id])]);
  const b=B.find(x=>x.id==id);d3.selectAll('#chips .chip').classed('on',d=>d.id==id);(()=>{let hit=false;d3.selectAll('#sumchips .chip').classed('on',function(){const on=!hit&&this.dataset.id==String(id);if(on)hit=true;return on})})();const P=d3.select('#panel').html('');P.append('button').attr('type','button').attr('class','back-region full').attr('data-expect','back').text('Back to region').on('click',()=>{clearTip();holdLevel(1);if(isPhone())closeSheet();const el=document.getElementById(ri>=0?'reg'+ri:'s-maps');if(el)el.scrollIntoView({behavior:'smooth',block:'start'})});
  const Lf=P.append('div');Lf.append('h3').text(shown(b.name));
@@ -1371,7 +1435,7 @@ function show(id,scroll){clearTip();const ri=REG.findIndex(r=>r[1].flat().includ
  const key=ev.filter(d=>d.k!=='other'),rest=ev.filter(d=>d.k==='other');const li=(ul,d)=>ul.append('li').html(`<i class="sw" style="background:${KC[d.k]}"></i> <b>${d.d}</b> <a href="${d.u}" target="_blank" rel="noopener">${d.h}</a>`);
  const ul=F.append('ul').attr('class','events');key.slice(-6).forEach(d=>li(ul,d));
  const more=key.slice(0,-6).concat(rest);if(more.length){const det=F.append('details').attr('class','more');det.append('summary').attr('data-expect','more').attr('title','Show the rest of the chronology').text('Rest of this timeline ('+more.length+' more)');const u2=det.append('ul').attr('class','events');more.forEach(d=>li(u2,d))}}
- markBasin(id);if(scroll){holdLevel(2);if(isPhone()){if(!document.getElementById('s-panel').classList.contains('sheet'))openSheet()}else document.getElementById('s-panel').scrollIntoView({behavior:'smooth',block:'start'})}const sideBox=document.getElementById('basin-side');const onChip=sideBox&&sideBox.querySelector('button.on');if(onChip){const top=onChip.getBoundingClientRect().top-sideBox.getBoundingClientRect().top+sideBox.scrollTop;sideBox.scrollTop=Math.max(0,top-8)}}
+ markBasin(id);if(scroll){holdLevel(2);if(isPhone()){if(!document.getElementById('s-panel').classList.contains('sheet'))openSheet()}else {const root=document.documentElement,prev=root.style.scrollBehavior;root.style.scrollBehavior='auto';const panel=document.getElementById('s-panel');try{panel.scrollIntoView({behavior:'instant',block:'start'})}catch(e){panel.scrollIntoView({block:'start'})}root.style.scrollBehavior=prev}}const sideBox=document.getElementById('basin-side');const onChip=sideBox&&sideBox.querySelector('button.on');if(onChip){const top=onChip.getBoundingClientRect().top-sideBox.getBoundingClientRect().top+sideBox.scrollTop;sideBox.scrollTop=Math.max(0,top-8)}}
 show(basinOrder().filter(b=>!b.aq)[0].id);
 const PAIRS=[[1,'Ethiopia','Egypt','Grand Ethiopian Renaissance Dam (GERD)'],[1,'Ethiopia','Sudan','Grand Ethiopian Renaissance Dam (GERD), Tekeze Dam'],[8,'India','Bangladesh','Farakka Barrage'],[8,'China','Bangladesh','Brahmaputra dams'],[2,'India','Pakistan','Baglihar Dam and other Indus dams'],[3,'Turkey','Syria','Atatürk Dam and Ilisu Dam'],[3,'Turkey','Iraq','Atatürk Dam and Ilisu Dam'],[3,'Syria','Iraq','Tabqa Dam and Tishreen Dam'],[9,'Afghanistan','Iran','Kajaki Dam and Kamal Khan Dam'],[6,'Tajikistan','Turkmenistan','Nurek Dam and Rogun Dam'],[6,'Afghanistan','Turkmenistan','Qosh Tepa Canal'],[7,'Kyrgyzstan','Uzbekistan','Toktogul Dam'],[4,'China','Cambodia','Lancang cascade'],[4,'Laos','Cambodia','Xayaburi Dam and Don Sahong Dam'],[4,'China','Vietnam','Lancang cascade'],[11,'Russia','Ukraine',''],[13,'Angola','Namibia',''],[14,'Guinea','Niger',''],[15,'Mali','Mauritania','Manantali Dam'],[16,'Slovakia','Hungary','Gabčíkovo Dam'],[17,'Switzerland','Netherlands',''],[18,'Brazil','Paraguay','Itaipu Dam'],[18,'Brazil','Argentina','Itaipu Dam'],[19,'Zambia','Mozambique','Kariba Dam'],[10,'United States of America','Mexico','Hoover Dam and Glen Canyon Dam'],[5,'Israel','Jordan','National Water Carrier']];
 const rows=PAIRS.map(([id,u,d,lv])=>{const b=B.find(x=>x.id==id);const dv=b.dep.find(x=>x.c===d);return{b,u,d,lv,v:dv?dv.v:null,y:dv?dv.y:null}}).sort((a,c)=>(c.v??-1)-(a.v??-1));
