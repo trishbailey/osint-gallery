@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-29T13:08:28Z",
+ "as_of": "2026-10-29T16:02:05Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,118 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "aaaf2bc983",
+   "status": "single_source",
+   "title": "Fernando “N”, alias “Delta 2” o “Güero Dani”, fue detenido en Yauhquemehcan durante un operativo coordinado entre autoridades federales y estatales; es señalado por su posible relación con delitos de ",
+   "lang": "es",
+   "title_en": "Fernando \"N\", alias \"Delta 2\" or \"Güero Dani\", was arrested in Yauhquemehcan during an operation coordinated between federal and state authorities; he is pointed to for his possible link to high-impact crimes",
+   "first_report": "2026-10-29T15:20:50Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2726"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115826198206984289",
+     "time": "2026-10-29T15:20:50Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "882168b36e",
+   "status": "confirmed",
+   "title": "Capturan en Colombia a \"La Patrona\" y \"Pau\", mexicanos del CJNG Sophia Mourra Lozano, “La Patrona”, y Adolfo Paulin González, “Pau”, integrantes del Cártel de Jalisco Nueva Generación, fueron detenido",
+   "lang": "es",
+   "title_en": "\"La Patrona\" and \"Pau\", Mexicans in the CJNG, captured in Colombia. Sophia Mourra Lozano, \"La Patrona\", and Adolfo Paulin González, \"Pau\", members of the Cártel de Jalisco Nueva Generación, were arrested in Barranquilla;",
+   "first_report": "2026-10-29T03:00:04Z",
+   "first_report_precision": "minute",
+   "first_source": "Proceso",
+   "region_ids": [
+    "MEX-2719",
+    "COL-1412"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "cjng",
+    "clan"
+   ],
+   "outlets": [
+    "Infobae",
+    "Los Noticieristas",
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2115639778091634746",
+     "time": "2026-10-29T03:00:04Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115658129287356796",
+     "time": "2026-10-29T04:12:59Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2115818039048655242",
+     "time": "2026-10-29T14:48:25Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "8c60719c8d",
+   "status": "single_source",
+   "title": "NOUVEAU RAPPORT | Centrafrique : contenir les effets de la guerre au Soudan La guerre au Soudan alimente l’activité criminelle des groupes armés dans le nord-est de la Centrafrique, frontalier du Darf",
+   "lang": "es",
+   "title_en": "NEW REPORT | Central African Republic: containing the effects of the war in Sudan. The war in Sudan is fuelling criminal activity by armed groups in the northeast of the Central African Republic, bordering Darfur, while ",
+   "first_report": "2026-10-29T14:25:37Z",
+   "first_report_precision": "minute",
+   "first_source": "Crisis Group",
+   "region_ids": [
+    "HTI-1387",
+    "HTI-1386"
+   ],
+   "country": "HTI",
+   "group_ids": [],
+   "outlets": [
+    "Crisis Group"
+   ],
+   "sources": [
+    {
+     "outlet": "crisisgroup",
+     "name": "Crisis Group",
+     "kind": "outlet",
+     "via": "X @CrisisGroup",
+     "url": "https://x.com/CrisisGroup/status/2115812302226104335",
+     "time": "2026-10-29T14:25:37Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "9e4c0763da",
    "status": "single_source",
@@ -106,8 +218,8 @@
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -161,49 +273,6 @@
      "via": "X @proceso",
      "url": "https://x.com/proceso/status/2115664926010216870",
      "time": "2026-10-29T04:40:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "882168b36e",
-   "status": "confirmed",
-   "title": "Capturan en Colombia a \"La Patrona\" y \"Pau\", mexicanos del CJNG Sophia Mourra Lozano, “La Patrona”, y Adolfo Paulin González, “Pau”, integrantes del Cártel de Jalisco Nueva Generación, fueron detenido",
-   "lang": "es",
-   "title_en": "\"La Patrona\" and \"Pau\", Mexicans in the CJNG, captured in Colombia. Sophia Mourra Lozano, \"La Patrona\", and Adolfo Paulin González, \"Pau\", members of the Cártel de Jalisco Nueva Generación, were arrested in Barranquilla;",
-   "first_report": "2026-10-29T03:00:04Z",
-   "first_report_precision": "minute",
-   "first_source": "Proceso",
-   "region_ids": [
-    "MEX-2719",
-    "COL-1412"
-   ],
-   "country": "COL",
-   "group_ids": [
-    "cjng",
-    "clan"
-   ],
-   "outlets": [
-    "Infobae",
-    "Proceso"
-   ],
-   "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2115639778091634746",
-     "time": "2026-10-29T03:00:04Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115658129287356796",
-     "time": "2026-10-29T04:12:59Z",
      "time_precision": "minute"
     }
    ]
@@ -1120,8 +1189,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2729",
-    "MEX-2720"
+    "MEX-2720",
+    "MEX-2729"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -1462,8 +1531,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "sinaloa"
+    "sinaloa",
+    "cjng"
    ],
    "outlets": [
     "Infobae"
@@ -1660,8 +1729,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "El Tiempo"
@@ -1802,8 +1871,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "ECU-1289",
-    "ECU-1279"
+    "ECU-1279",
+    "ECU-1289"
    ],
    "country": "ECU",
    "group_ids": [
@@ -1950,9 +2019,9 @@
    "first_report_precision": "day",
    "first_source": "El Universal",
    "region_ids": [
-    "NIC-658",
     "MEX-2716",
-    "MEX-2714"
+    "MEX-2714",
+    "NIC-658"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2013,8 +2082,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "Infobae"
@@ -2617,8 +2686,8 @@
    "region_ids": [],
    "country": "SLV",
    "group_ids": [
-    "b18",
-    "ms13"
+    "ms13",
+    "b18"
    ],
    "outlets": [
     "InSight Crime"
@@ -2636,12 +2705,12 @@
    ]
   },
   {
-   "id": "c599c67330",
+   "id": "3f2cb5a920",
    "status": "single_source",
-   "title": "Penal de Mazatlán sigue en medio de la violencia tras riña de Los Chapitos que dejó 12 muertos: desaparece José Luis Vega, doctor de la prisión",
+   "title": "⚠️ La desaparición del médico del penal de Mazatlán ocurrió apenas 2 semanas después de la riña en miembros de Los Chapitos",
    "lang": "es",
-   "title_en": "Mazatlán prison remains engulfed in violence after a Los Chapitos brawl that left 12 dead: José Luis Vega, the prison doctor, goes missing",
-   "first_report": "2026-10-27T15:37:49Z",
+   "title_en": "⚠️ The disappearance of the Mazatlán prison doctor came just 2 weeks after the brawl among members of Los Chapitos",
+   "first_report": "2026-10-27T20:15:00Z",
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
@@ -2656,15 +2725,6 @@
     "Infobae"
    ],
    "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115105696358265316",
-     "time": "2026-10-27T15:37:49Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "infobae",
      "name": "Infobae",
@@ -2715,8 +2775,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2731",
-    "MEX-2732"
+    "MEX-2732",
+    "MEX-2731"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2760,131 +2820,6 @@
      "via": "X @infobaemexico",
      "url": "https://x.com/infobaemexico/status/2115114488118546623",
      "time": "2026-10-27T16:12:45Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "8a5f259211",
-   "status": "single_source",
-   "title": "#ParesReporta El asesinato del ex secretario de gobierno de Cúcuta es el disparador para afirmar que la principal ciudad de frontera vive una profunda crisis en todos los aspectos",
-   "lang": "es",
-   "title_en": "#ParesReporta The murder of Cúcuta's former government secretary is the trigger for asserting that the main border city is living through a deep crisis on every front.",
-   "first_report": "2026-10-27T15:10:15Z",
-   "first_report_precision": "minute",
-   "first_source": "Fundación Paz & Reconciliación",
-   "region_ids": [
-    "COL-1421"
-   ],
-   "country": "COL",
-   "group_ids": [],
-   "outlets": [
-    "Fundación Paz & Reconciliación"
-   ],
-   "sources": [
-    {
-     "outlet": "pares",
-     "name": "Fundación Paz & Reconciliación",
-     "kind": "outlet",
-     "via": "X @parescolombia",
-     "url": "https://x.com/parescolombia/status/2115098759017251125",
-     "time": "2026-10-27T15:10:15Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "pares",
-     "name": "Fundación Paz & Reconciliación",
-     "kind": "outlet",
-     "via": "X @parescolombia",
-     "url": "https://x.com/parescolombia/status/2115111281808269495",
-     "time": "2026-10-27T16:00:01Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "8ac6109de6",
-   "status": "official_claim_only",
-   "title": "En Durango, elementos de @SEMAR_mx, en coordinación con @SSPCMexico y @FGRMexico, localizaron e inhabilitaron dos laboratorios clandestinos utilizados para la producción de metanfetamina, en inmediaci",
-   "lang": "es",
-   "title_en": "In Durango, @SEMAR_mx personnel, in coordination with @SSPCMexico and @FGRMexico, located and disabled two clandestine laboratories used to produce methamphetamine near the village of El Destierro. During the operations ",
-   "first_report": "2026-10-27T15:50:35Z",
-   "first_report_precision": "minute",
-   "first_source": "Gabinete de Seguridad (Mexico)",
-   "region_ids": [
-    "MEX-2710"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Gabinete de Seguridad (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "gabsec",
-     "name": "Gabinete de Seguridad (Mexico)",
-     "kind": "official",
-     "via": "X @GabSeguridadMX",
-     "url": "https://x.com/GabSeguridadMX/status/2115108911518732402",
-     "time": "2026-10-27T15:50:35Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "e25511ef04",
-   "status": "official_claim_only",
-   "title": "En la #CDMX, elementos de @SEMAR_mx, #SSPC, @FGRMexico, en coordinación con autoridades locales, ejecutaron cuatro cateos en la alcaldía #Cuauhtémoc donde aseguraron 547 cajas de cigarros apócrifos, c",
-   "lang": "es",
-   "title_en": "In #CDMX, personnel from @SEMAR_mx, #SSPC and @FGRMexico, in coordination with local authorities, carried out four searches in the #Cuauhtémoc borough where they seized 547 boxes of counterfeit cigarettes weighing about ",
-   "first_report": "2026-10-27T14:17:01Z",
-   "first_report_precision": "minute",
-   "first_source": "SSPC (Mexico)",
-   "region_ids": [
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2115085364352405709",
-     "time": "2026-10-27T14:17:01Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "33769e4b85",
-   "status": "single_source",
-   "title": "#PRIMICIASDesdeEEUU | Una amenaza de extorsión terminó de hundir el negocio que había abierto con su liquidación en Guayaquil. Hace tres años llegó a EE.UU. con USD 20.000 en deudas.",
-   "lang": "es",
-   "title_en": "#PRIMICIASDesdeEEUU | An extortion threat finished off the business they had opened with their severance pay in Guayaquil. Three years ago they arrived in the US with USD 20,000 in debt.",
-   "first_report": "2026-10-27T14:15:15Z",
-   "first_report_precision": "minute",
-   "first_source": "Primicias",
-   "region_ids": [
-    "ECU-1280"
-   ],
-   "country": "ECU",
-   "group_ids": [],
-   "outlets": [
-    "Primicias"
-   ],
-   "sources": [
-    {
-     "outlet": "primicias",
-     "name": "Primicias",
-     "kind": "outlet",
-     "via": "X @Primicias",
-     "url": "https://x.com/Primicias/status/2115084918682222899",
-     "time": "2026-10-27T14:15:15Z",
      "time_precision": "minute"
     }
    ]

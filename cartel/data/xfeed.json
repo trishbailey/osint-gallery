@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-29T13:07:21Z",
+ "as_of": "2026-10-29T16:02:05Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,60 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2115826198206984289",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115826198206984289",
+   "created_at": "2026-10-29T15:20:50.000Z",
+   "text": "Fernando “N”, alias “Delta 2” o “Güero Dani”, fue detenido en Yauhquemehcan durante un operativo coordinado entre autoridades federales y estatales; es señalado por su posible relación con delitos de alto impacto en la región de Apizaco https://t.co/wtaS2Ygml4 https://t.co/4dAza…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2726"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Fernando \"N\", alias \"Delta 2\" or \"Güero Dani\", was arrested in Yauhquemehcan during an operation coordinated between federal and state authorities; he is pointed to for his possible link to high-impact crimes in the Apizaco region"
+  },
+  {
+   "id": "2115818039048655242",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2115818039048655242",
+   "created_at": "2026-10-29T14:48:25.000Z",
+   "text": "🔴 Fue capturado Carlos César, apodado ‘El Semáforo’, ‘Semo’ o ‘Señor de las Luces’, identificado por las autoridades como jefe regional del Cártel Jalisco Nueva Generación (CJNG) y presunto sucesor de ‘El Tanque’, detenido en Zapopan a inicios de este mes. Detalles 👉🏼🔗 https://t…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Carlos César, nicknamed 'El Semáforo', 'Semo' or 'Señor de las Luces', identified by authorities as a regional boss of the Cártel Jalisco Nueva Generación (CJNG) and alleged successor to 'El Tanque', who was arrested in Zapopan earlier this month, has been captured."
+  },
+  {
+   "id": "2115812302226104335",
+   "handle": "CrisisGroup",
+   "url": "https://x.com/CrisisGroup/status/2115812302226104335",
+   "created_at": "2026-10-29T14:25:37.000Z",
+   "text": "NOUVEAU RAPPORT | Centrafrique : contenir les effets de la guerre au Soudan La guerre au Soudan alimente l’activité criminelle des groupes armés dans le nord-est de la Centrafrique, frontalier du Darfour, alors que les partenariats extérieurs de Bangui mettent à mal sa",
+   "lang": "und",
+   "region_ids": [
+    "HTI-1387",
+    "HTI-1386"
+   ],
+   "country": "HTI",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "NEW REPORT | Central African Republic: containing the effects of the war in Sudan. The war in Sudan is fuelling criminal activity by armed groups in the northeast of the Central African Republic, bordering Darfur, while Bangui's external partnerships are undermining its"
+  },
   {
    "id": "2115772638899429738",
    "handle": "infobaemexico",
@@ -3812,57 +3866,6 @@
    "source_type": "local outlet",
    "label": null,
    "text_en": "▶️ Escuinapa, Sinaloa attack was aimed at the bus driver, who suffered a minor injury, the SSPE confirms…"
-  },
-  {
-   "id": "2113265693701357691",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2113265693701357691",
-   "created_at": "2026-10-22T13:46:18.000Z",
-   "text": "➡️ Balean a comerciante en su camioneta en la colonia Palos Prietos de Mazatlán 🚨 Un vendedor de hot dogs resultó herido tras un ataque a balazos cuando circulaba por la colonia Palos Prietos, cerca del Malecón de #Mazatlán. 🚑 Fue trasladado a un hospital. 🚔 Detalles 👉🏼🔗 https:/…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ Vendor shot in his pickup in the Palos Prietos neighbourhood of Mazatlán. A hot-dog seller was wounded in a shooting while driving through Palos Prietos, near the #Mazatlán boardwalk, and taken to hospital."
-  },
-  {
-   "id": "2113223852562190425",
-   "handle": "ArmandoInfo",
-   "url": "https://x.com/ArmandoInfo/status/2113223852562190425",
-   "created_at": "2026-10-22T11:00:02.000Z",
-   "text": "En la cotizada urbanización Altamira, una edificación de dos pisos de lo que parecía iba ser una obra residencial, quedó inconclusa. Pertenecía al círculo de Alex Saab. En la fachada se ve ahora un cartel descolorido de la Dgcim, pero permanece sin custodia policial👇🏻 https://t.…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2716"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "regional outlet",
-   "label": null,
-   "text_en": "In the upscale Altamira development, a two-storey building that appeared to be a residential project was left unfinished. It belonged to Alex Saab's circle. A faded DGCIM sign now hangs on the facade, but it remains without police guard"
-  },
-  {
-   "id": "2113112960960721402",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2113112960960721402",
-   "created_at": "2026-10-22T03:39:24.000Z",
-   "text": "➡️ Vinculan a proceso a tres hombres por asesinato del coordinador de Protección Civil de Escuinapa. 🚨🚔| Vinculan a proceso a tres hombres por su probable responsabilidad en el homicidio de Jesús Francisco López Bribiesca, coordinador de Protección Civil de #Escuinapa, quien htt…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ Three men ordered to stand trial for the murder of Escuinapa's Civil Protection coordinator, Jesús Francisco López Bribiesca…"
   }
  ]
 }
