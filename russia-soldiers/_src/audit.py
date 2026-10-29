@@ -316,6 +316,11 @@ for fn_, key_ in (("recruitment-billboard-moscow-2024.jpg", "img_billboard"), ("
     need("photo exists " + fn_, os.path.getsize(os.path.join(ROOT, "img", fn_)) > 20000 and os.path.getsize(os.path.join(ROOT, "img", fn_)) < 150000)
     need("photo has alt text " + fn_, re.search(r'src="img/' + re.escape(fn_) + r'"[^>]*alt="[^"]{40,}"', page) is not None)
     need("photo credit in sources list " + key_, SOURCES[key_]["url"] in page and "public domain" in SOURCES[key_]["full"] and "commons.wikimedia.org" in SOURCES[key_]["url"])
+for fn_, key_, lic_ in (("recruitment-office-zelenograd-2026.jpg", "img_zelenograd", "CC0"), ("mobilised-training-ryazan-2022.jpg", "img_ryazan", "CC BY 4.0"), ("wagner-graves-chervishevskoye-2023.jpg", "img_wagner", "CC BY-SA 4.0"), ("graves-kazan-2023.jpg", "img_kazan", "CC BY-SA 4.0"), ("putin-kim-vostochny-2023.jpg", "img_vostochny", "CC BY 4.0"), ("putin-kim-pyongyang-2024.jpg", "img_pyongyang", "CC BY 4.0")):
+    sz_ = os.path.getsize(os.path.join(ROOT, "img", fn_))
+    need("photo exists " + fn_, 20000 < sz_ < 150000)
+    need("photo has alt text " + fn_, re.search(r'src="img/' + re.escape(fn_) + r'"[^>]*alt="[^"]{40,}"', page) is not None)
+    need("photo credit and licence in sources list " + key_, SOURCES[key_]["url"] in page and lic_ in SOURCES[key_]["full"] and "commons.wikimedia.org" in SOURCES[key_]["url"])
 need("no photo credit text on the figure", "Retired electrician" not in re.sub(r'<details id="srcdet">.*', "", page, flags=re.S))
 for s_ in ("352,000", "217,808", "1.6 times", "3.2%", "102,243", "3,182,054"): has(s_, "round-3 figure")
 need("dagestan share matches census row", abs(by["RU-DA"]["ru_share"] - 102243 / 3182054 * 100) < 0.01)
