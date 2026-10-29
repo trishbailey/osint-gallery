@@ -117,6 +117,18 @@
     "note": "v1. Lives directly in this repo under /jihadist-groups/ (_src/ builds data.json). Data refreshed through a PR; not touched by the sync."
   },
   {
+    "slug": "russia-soldiers",
+    "repo": "trishbailey/osint-gallery",
+    "private": false,
+    "build": "",
+    "publish": "",
+    "oldUrl": "",
+    "status": "in-repo",
+    "cardId": "russia-soldiers",
+    "version": "1",
+    "note": "v1 draft. Lives directly in this repo under /russia-soldiers/ (_src/ builds index.html and data/). Not touched by the sync."
+  },
+  {
       "slug": "middle-east",
       "repo": "",
       "private": true,
