@@ -59,7 +59,7 @@ function draw(){
   front.selectAll('*').remove();
   var T=[fpt[0]+ux*(tot/2+5),fpt[1]+uy*(tot/2+5)],Bo=[fpt[0]-ux*(tot/2+5),fpt[1]-uy*(tot/2+5)];
   front.append('path').attr('class','bracket').attr('d','M'+[T[0]-ex*5,T[1]-ey*5]+'L'+T+'L'+Bo+'L'+[Bo[0]-ex*5,Bo[1]-ey*5]);
-  front.append('text').attr('class','flab').attr('x',T[0]-12).attr('y',T[1]-6).attr('text-anchor','end').text(ph()?'Front (schematic)':'Front in Ukraine (schematic)');
+  front.append('text').attr('class','flab').attr('x',T[0]-12).attr('y',T[1]-6).attr('text-anchor','end').text(ph()?'Front':'Front in Ukraine (schematic)');
   var hb=S.filter(function(s){return s.hub}).map(function(s){return s.A}).sort(function(p,q){return p[1]-q[1]});
   if(hb.length>1)front.append('path').attr('class','bracket hubbar').attr('d','M'+hb.map(function(p){return p.join(',')}).join('L'));
   /* origin markers: one hub for the three Russian arrows, one dot per foreign arrow; each carries the arrow's tooltip */
@@ -87,13 +87,13 @@ function pick(k){on[k]=!on[k];var b=document.querySelector('.fchip[data-k="'+k+'
 function legend(){
  var by={};F.arrows.forEach(function(a){by[a.id]=a});
  var sub={vol:fmt(by.vol.low)+' to '+fmt(by.vol.high),mob:fmt(by.mob.low)+' to '+fmt(by.mob.high),pri:fmt(by.pri.low)+' to '+fmt(by.pri.high),'for':'North Korea '+fmt(by.prk.low)+' to '+fmt(by.prk.high)+'; Central Asia '+fmt(by.ca.low)};
- var h='<h3 class="sideh">Colour: how they joined</h3><div class="seg">';
+ var h='<div class="fk-col"><h3 class="sideh">Colour: how they joined</h3><div class="seg">';
  ['vol','mob','pri','for'].forEach(function(k){h+='<button type="button" class="chipb fchip" data-k="'+k+'" aria-pressed="true"><span class="sw" style="background:'+F.types[k].color+'"></span><span class="fl">'+esc(F.types[k].name)+'<small>'+sub[k]+' recruited</small></span></button>'});
- h+='</div><h3 class="sideh">Width: people recruited</h3><ul class="legend">';
+ h+='</div></div><div class="fk-rest"><h3 class="sideh">Width: people recruited</h3><ul class="legend">';
  F.samples.forEach(function(x){h+='<li><svg width="46" height="12" aria-hidden="true"><line x1="2" x2="44" y1="6" y2="6" stroke="#e6e9ef" stroke-width="'+x.w+'" stroke-linecap="butt"/></svg>'+fmt(x.v)+'</li>'});
  h+='<li><svg width="46" height="12" aria-hidden="true"><line x1="2" x2="44" y1="6" y2="6" stroke="#e6e9ef" stroke-width="10" stroke-linecap="butt" opacity=".3"/></svg>pale band: up to the high figure</li>';
  h+='</ul><p class="note">Width is the number of people recruited on a square-root scale: 4 px at zero, 10 px at '+fmt(F.vmax)+'. A straight scale would make the foreign arrows 4 px thin. The solid width shows the low published figure.</p>';
- h+='<div class="seg"><button type="button" class="chipb" id="fz-in">Zoom in</button><button type="button" class="chipb" id="fz-out">Zoom out</button><button type="button" class="chipb" id="fz-reset">Reset view</button></div>';
+ h+='<div class="seg"><button type="button" class="chipb" id="fz-in">Zoom in</button><button type="button" class="chipb" id="fz-out">Zoom out</button><button type="button" class="chipb" id="fz-reset">Reset view</button></div></div>';
  $('#flowkey').innerHTML=h;
  document.querySelectorAll('.fchip').forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.k)})});
  var z=function(f){return function(){svg.transition().duration(250).call(zoomB.scaleBy,f)}};
@@ -101,69 +101,82 @@ function legend(){
  $('#fz-reset').addEventListener('click',function(){cur.t=T0;svg.transition().duration(300).call(zoomB.transform,T0)});
 }
 
-/* Time series: recruits in a dated period, one line per type. Log scale (94 to 540,000 cannot share a straight axis). Only sourced periods are drawn;
-   a missing period is a gap in the line, never a zero. Starts fully drawn; Play replays it left to right. */
+/* Time series: people recruited in a dated period, one dot per sourced period. Two LINEAR panels, because the types differ by a factor of 30:
+   top panel 0 to 600,000 (contract soldiers and volunteers, mobilised), bottom panel 0 to 60,000 (prisoners, foreign nationals). No log scale.
+   A missing period is a gap, never a zero. A line joins only full-year points of one series; half-year and nine-month points, and series built from
+   different recruiters (prisoners: Wagner, then Storm Z), are drawn as separate dots with the bar of the period each covers, never a falling line.
+   Starts fully drawn; Play replays it left to right. */
 var tsTimer=null;
 function shortN(v){return v>=1e5?Math.round(v/1000)+'k':v>=1e4?(Math.round(v/100)/10).toString().replace(/\.0$/,'')+'k':fmt(v)}
+var PANELS=[
+ {kinds:['vol','mob'],max:6e5,ticks:[0,1e5,2e5,3e5,4e5,5e5,6e5],tp:[0,2e5,4e5,6e5],title:'Contract soldiers and volunteers, mobilised: people recruited in the period (0 to 600,000)',tpt:'Contract, volunteers, mobilised (0 to 600,000)'},
+ {kinds:['pri','for'],max:6e4,ticks:[0,1e4,2e4,3e4,4e4,5e4,6e4],tp:[0,2e4,4e4,6e4],title:'Prisoners, foreign nationals: people recruited in the period (0 to 60,000, a different scale from the panel above)',tpt:'Prisoners, foreign (0 to 60,000)'}
+];
 function series(){
- var el=$('#flowts');if(!el||!F.ts)return;var w=el.clientWidth;if(!w)return;var P=ph(),h=P?330:390,m={l:P?58:84,r:P?14:22,t:20,b:38};
+ var el=$('#flowts');if(!el||!F.ts)return;var w=el.clientWidth;if(!w)return;var P=ph(),ph1=P?250:300,m={l:P?54:78,r:P?14:22,t:P?50:34,b:P?32:36};
  if(tsTimer){tsTimer.stop();tsTimer=null}
  var D=function(s){return new Date(s+'T00:00:00')},d0=D(F.ts.domain[0]),d1=D(F.ts.domain[1]);
  var x=d3.scaleTime().domain([d0,d1]).range([m.l,w-m.r]);
- var y=d3.scaleLog().domain([60,1.5e6]).range([h-m.b,m.t]);
  var mid=function(p){return new Date((D(p.t0).getTime()+D(p.t1).getTime())/2)};
+ var full=function(p){return D(p.t1)-D(p.t0)>=330*864e5||p.t0===p.t1};
  var h2='<div class="tsctl"><button type="button" class="chipb" id="tsplay">Play</button><ul class="legend tslegend">';
  F.ts.series.forEach(function(s){h2+='<li><span class="sw" style="background:'+s.color+'"></span>'+esc(LBL[s.kind])+'</li>'});
  h2+='<li><svg width="18" height="16" aria-hidden="true"><circle cx="9" cy="8" r="5.5" fill="#0b1526" stroke="#e43d3c" stroke-width="3"/></svg>Outside estimate</li></ul></div><div id="tschart"></div>';
  el.innerHTML=h2;
- var c=d3.select('#tschart').append('svg').attr('width',w).attr('height',h).attr('role','img')
-  .attr('aria-label','Line chart of recruits per period by recruit type, 2022 to 2026, on a log scale. Only periods with a published figure are drawn; gaps are not zeros.');
- var tk=[100,1000,10000,100000,1000000];
- c.append('g').selectAll('line').data(tk).enter().append('line').attr('x1',m.l).attr('x2',w-m.r).attr('y1',y).attr('y2',y).attr('stroke','#24365a');
- c.append('g').selectAll('text').data(tk).enter().append('text').attr('x',m.l-8).attr('y',function(v){return y(v)+4}).attr('text-anchor','end').attr('class','muted').text(function(v){return P?(v>=1e6?'1M':v>=1e3?(v/1000)+'k':v):fmt(v)});
- var yrs=[2022,2023,2024,2025,2026];
- c.append('g').selectAll('text').data(yrs).enter().append('text').attr('x',function(v){return x(new Date(v+'-01-01T00:00:00'))+4}).attr('y',h-m.b+22).attr('class','muted').text(function(v){return v});
- c.append('g').selectAll('line').data(yrs).enter().append('line').attr('x1',function(v){return x(new Date(v+'-01-01T00:00:00'))}).attr('x2',function(v){return x(new Date(v+'-01-01T00:00:00'))}).attr('y1',m.t).attr('y2',h-m.b+6).attr('stroke','#24365a');
- c.append('text').attr('x',m.l).attr('y',13).text(P?'Recruits per period (log scale)':'Recruits in the period, log scale: each line is ten times the one below');
- var id='tsclip';c.append('clipPath').attr('id',id).append('rect').attr('id','tsclipr').attr('x',0).attr('y',0).attr('width',w).attr('height',h);
- var g=c.append('g').attr('clip-path','url(#'+id+')');
- var line=d3.line().curve(d3.curveMonotoneX).x(function(p){return x(mid(p))}).y(function(p){return y(p.low)});
- var gapOK=function(a,b){return D(b.t0)-D(a.t1)<=32*864e5};
- F.ts.series.forEach(function(s){
-  var runs=[],cur2=[];s.points.forEach(function(p,i){if(i&&!gapOK(s.points[i-1],p)){runs.push(cur2);cur2=[]}cur2.push(p)});if(cur2.length)runs.push(cur2);
-  /* period bars: the time each figure covers */
-  g.append('g').selectAll('line').data(s.points).enter().append('line').attr('x1',function(p){return x(D(p.t0))}).attr('x2',function(p){return x(D(p.t1))}).attr('y1',function(p){return y(p.low)}).attr('y2',function(p){return y(p.low)})
-   .attr('stroke',s.color).attr('stroke-width',4).attr('opacity',.45).attr('stroke-linecap','butt');
-  /* range bands where a source gives a range */
-  g.append('g').selectAll('line').data(s.points.filter(function(p){return p.high>p.low})).enter().append('line').attr('x1',function(p){return x(mid(p))}).attr('x2',function(p){return x(mid(p))}).attr('y1',function(p){return y(p.low)}).attr('y2',function(p){return y(p.high)})
-   .attr('stroke',s.color).attr('stroke-width',10).attr('opacity',.3);
-  runs.forEach(function(r){if(r.length>1)g.append('path').attr('d',line(r)).attr('fill','none').attr('stroke',s.color).attr('stroke-width',4).attr('stroke-linejoin','round')});
-  g.append('g').selectAll('circle').data(s.points).enter().append('circle').attr('cx',function(p){return x(mid(p))}).attr('cy',function(p){return y(p.low)}).attr('r',6).attr('fill',s.color).attr('stroke','#0b1526').attr('stroke-width',1.5).style('pointer-events','none');
-  /* hollow markers: outside estimates, nudged right so they do not sit on the official dot */
-  var ex=function(p){return x(mid(p))+(P?14:20)};
-  g.append('g').selectAll('line').data(s.est.filter(function(p){return p.high>p.low})).enter().append('line').attr('x1',ex).attr('x2',ex).attr('y1',function(p){return y(p.low)}).attr('y2',function(p){return y(p.high)}).attr('stroke',s.color).attr('stroke-width',6).attr('opacity',.5);
-  g.append('g').selectAll('circle').data(s.est).enter().append('circle').attr('cx',ex).attr('cy',function(p){return y(p.low)}).attr('r',5.5).attr('fill','#0b1526').attr('stroke',s.color).attr('stroke-width',3).style('pointer-events','none');
-  /* hit areas */
-  g.append('g').selectAll('circle').data(s.points).enter().append('circle').attr('class','tshit').attr('cx',function(p){return x(mid(p))}).attr('cy',function(p){return y(p.low)}).attr('r',P?10:11).attr('fill','transparent').attr('tabindex',0).attr('data-tip',function(p){return p.tip});
-  g.append('g').selectAll('circle').data(s.est).enter().append('circle').attr('class','tshit').attr('cx',ex).attr('cy',function(p){return y(p.low)}).attr('r',8).attr('fill','transparent').attr('tabindex',0).attr('data-tip',function(p){return p.tip});
-  /* value labels: all on desktop; first and last of each type on a phone */
-  g.append('g').selectAll('text').data(s.points.filter(function(p,i){return P?(i===s.points.length-1&&s.kind!=='mob'):true})).enter().append('text').attr('class','tslab')
-   .attr('x',function(p){return x(mid(p))}).attr('y',function(p){return y(p.high>p.low?p.high:p.low)-(p.high>p.low?10:12)})
-   .attr('text-anchor',function(p){var px=x(mid(p));return px<m.l+50?'start':px>w-60?'end':'middle'}).text(function(p){return p.high>p.low?shortN(p.low)+' to '+shortN(p.high):shortN(p.low)});
+ var yrs=[2022,2023,2024,2025,2026],clips=[],curs=[];
+ PANELS.forEach(function(pn,pi){
+  var h=ph1,last=pi===PANELS.length-1;
+  var y=d3.scaleLinear().domain([0,pn.max]).range([h-m.b,m.t]);
+  var tk=P?pn.tp:pn.ticks;
+  var c=d3.select('#tschart').append('svg').attr('width',w).attr('height',h).attr('role','img').style('margin-top',pi?'10px':'0')
+   .attr('aria-label','Line chart on a linear scale, '+pn.title+'. Only periods with a published figure are drawn; gaps are not zeros.');
+  c.append('g').selectAll('line').data(tk).enter().append('line').attr('x1',m.l).attr('x2',w-m.r).attr('y1',y).attr('y2',y).attr('stroke','#24365a');
+  c.append('g').selectAll('text').data(tk).enter().append('text').attr('x',m.l-8).attr('y',function(v){return y(v)+4}).attr('text-anchor','end').attr('class','muted').text(function(v){return v===0?'0':P?(v>=1e6?'1M':(v/1000)+'k'):fmt(v)});
+  c.append('g').selectAll('text').data(yrs).enter().append('text').attr('x',function(v){return x(new Date(v+'-01-01T00:00:00'))+4}).attr('y',h-m.b+22).attr('class','muted').text(function(v){return v});
+  c.append('g').selectAll('line').data(yrs).enter().append('line').attr('x1',function(v){return x(new Date(v+'-01-01T00:00:00'))}).attr('x2',function(v){return x(new Date(v+'-01-01T00:00:00'))}).attr('y1',m.t).attr('y2',h-m.b+6).attr('stroke','#24365a');
+  if(P){c.append('text').attr('x',4).attr('y',14).attr('class','tstitle').text(pn.tpt);c.append('text').attr('x',4).attr('y',31).attr('class','tssub').text('People recruited in the period')}
+  else c.append('text').attr('x',m.l).attr('y',16).attr('class','tstitle').text(pn.title);
+  var id='tsclip'+pi;c.append('clipPath').attr('id',id).append('rect').attr('class','tsclipr').attr('id',pi===0?'tsclipr':null).attr('x',0).attr('y',0).attr('width',w).attr('height',h);clips.push(c.select('.tsclipr'));
+  var g=c.append('g').attr('clip-path','url(#'+id+')');
+  var line=d3.line().curve(d3.curveMonotoneX).x(function(p){return x(mid(p))}).y(function(p){return y(p.low)});
+  F.ts.series.filter(function(s){return pn.kinds.indexOf(s.kind)>=0}).forEach(function(s){
+   var runs=[],cur2=[];s.points.forEach(function(p,i){var pv=s.points[i-1],dated=i&&p.t0===p.t1&&pv.t0===pv.t1,brk=i&&!dated&&(s.nojoin||!full(p)||!full(pv)||D(p.t0)-D(pv.t1)>32*864e5);if(brk){runs.push(cur2);cur2=[]}cur2.push(p)});if(cur2.length)runs.push(cur2);
+   /* period bars: the time each figure covers */
+   g.append('g').selectAll('line').data(s.points).enter().append('line').attr('x1',function(p){return x(D(p.t0))}).attr('x2',function(p){return x(D(p.t1))}).attr('y1',function(p){return y(p.low)}).attr('y2',function(p){return y(p.low)})
+    .attr('stroke',s.color).attr('stroke-width',4).attr('opacity',.55).attr('stroke-linecap','butt');
+   /* a range is a capsule from its low to its high (both ends labelled), never a dot with a line above it */
+   var rng=function(q){var yl=y(q.low),yh=y(q.high),hh=Math.max(14,yl-yh),cy=(yl+yh)/2;return {y:cy-hh/2,h:hh}};
+   g.append('g').selectAll('rect').data(s.points.filter(function(p){return p.high>p.low})).enter().append('rect').attr('x',function(p){return x(mid(p))-7}).attr('width',14).attr('y',function(p){return rng(p).y}).attr('height',function(p){return rng(p).h}).attr('rx',7).attr('fill',s.color).attr('stroke','#0b1526').attr('stroke-width',1.5).style('pointer-events','none');
+   runs.forEach(function(r){if(r.length>1)g.append('path').attr('d',line(r)).attr('fill','none').attr('stroke',s.color).attr('stroke-width',4).attr('stroke-linejoin','round').attr('stroke-dasharray',r[0].t0===r[0].t1?'7 6':null)});
+   g.append('g').selectAll('circle').data(s.points.filter(function(p){return !(p.high>p.low)})).enter().append('circle').attr('cx',function(p){return x(mid(p))}).attr('cy',function(p){return y(p.low)}).attr('r',6).attr('fill',s.color).attr('stroke','#0b1526').attr('stroke-width',1.5).style('pointer-events','none');
+   /* hollow markers: outside estimates, nudged right so they do not sit on the official dot */
+   var ex=function(p){return x(mid(p))+(P?14:20)};
+   g.append('g').selectAll('rect').data(s.est.filter(function(p){return p.high>p.low})).enter().append('rect').attr('x',function(p){return ex(p)-7}).attr('width',14).attr('y',function(p){return rng(p).y}).attr('height',function(p){return rng(p).h}).attr('rx',7).attr('fill','#0b1526').attr('stroke',s.color).attr('stroke-width',3).style('pointer-events','none');
+   g.append('g').selectAll('circle').data(s.est.filter(function(p){return !(p.high>p.low)})).enter().append('circle').attr('cx',ex).attr('cy',function(p){return y(p.low)}).attr('r',5.5).attr('fill','#0b1526').attr('stroke',s.color).attr('stroke-width',3).style('pointer-events','none');
+   /* hit areas */
+   g.append('g').selectAll('circle').data(s.points).enter().append('circle').attr('class','tshit').attr('cx',function(p){return x(mid(p))}).attr('cy',function(p){return y((p.low+p.high)/2)}).attr('r',P?12:11).attr('fill','transparent').attr('tabindex',0).attr('data-tip',function(p){return p.tip});
+   g.append('g').selectAll('circle').data(s.est).enter().append('circle').attr('class','tshit').attr('cx',ex).attr('cy',function(p){return y((p.low+p.high)/2)}).attr('r',9).attr('fill','transparent').attr('tabindex',0).attr('data-tip',function(p){return p.tip});
+   /* value labels: every sourced value, each above its own dot (the mobilised range sits under its dot on a phone, clear of the 540k label) */
+   var below=function(p){return s.kind==='mob'&&p===s.points[0]},left=function(p){return s.kind==='mob'&&p!==s.points[0]};
+   g.append('g').selectAll('text').data(s.points).enter().append('text').attr('class','tslab')
+    .attr('x',function(p){return x(mid(p))+(below(p)?-8:left(p)?-11:0)}).attr('y',function(p){return left(p)?y(p.low)+5:below(p)?y(p.low)+22:y(p.high>p.low?p.high:p.low)-(p.high>p.low?14:12)})
+    .attr('text-anchor',function(p){var px=x(mid(p));return left(p)?'end':below(p)?'start':px<m.l+20?'start':px>w-24?'end':'middle'}).text(function(p){return p.high>p.low?shortN(p.low)+' to '+shortN(p.high):shortN(p.low)});
+  });
+  var cu=c.append('g').attr('class','tscur').style('display','none');
+  cu.append('line').attr('y1',m.t).attr('y2',h-m.b).attr('stroke','#c8a24a').attr('stroke-width',2);
+  if(pi===0)cu.append('text').attr('class','tscd').attr('y',m.t+14).attr('x',6);
+  curs.push(cu);
  });
- var cur=c.append('g').attr('class','tscur').style('display','none');
- cur.append('line').attr('y1',m.t).attr('y2',h-m.b).attr('stroke','#c8a24a').attr('stroke-width',2);
- cur.append('text').attr('class','tscd').attr('y',m.t+14).attr('x',6);
  var btn=$('#tsplay');
  var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
- var setW=function(px){d3.select('#tsclipr').attr('width',Math.max(0,px))};
+ var setW=function(px){clips.forEach(function(k){k.attr('width',Math.max(0,px))})};
  btn.addEventListener('click',function(){
   if(tsTimer)tsTimer.stop();
-  var x0=x.range()[0],x1=x.range()[1],T=6500;btn.textContent='Playing';btn.disabled=true;cur.style('display',null);setW(x0);
+  var x0=x.range()[0],x1=x.range()[1],T=6500;btn.textContent='Playing';btn.disabled=true;curs.forEach(function(k){k.style('display',null)});setW(x0);
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduce)T=1;
   tsTimer=d3.timer(function(el2){var f=Math.min(1,el2/T),px=x0+(x1-x0)*f,dt=x.invert(px);setW(px);
-   cur.select('line').attr('x1',px).attr('x2',px);cur.select('text').attr('x',px>w-90?px-84:px+6).text(MON[dt.getMonth()]+' '+dt.getFullYear());
-   if(f>=1){tsTimer.stop();tsTimer=null;setW(w);cur.style('display','none');btn.textContent='Replay';btn.disabled=false}});
+   curs.forEach(function(k){k.select('line').attr('x1',px).attr('x2',px)});curs[0].select('text').attr('x',px>w-90?px-84:px+6).text(MON[dt.getMonth()]+' '+dt.getFullYear());
+   if(f>=1){tsTimer.stop();tsTimer=null;setW(w);curs.forEach(function(k){k.style('display','none')});btn.textContent='Replay';btn.disabled=false}});
  });
 }
 function bars(){

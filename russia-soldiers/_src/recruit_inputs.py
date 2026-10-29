@@ -91,8 +91,12 @@ TS = [
  tp("vol26", "vol", "2026-01-01", "2026-06-30", [VOL_HIGH[5]], [("ng_bonus", "first half of 2026")], what="contracts in the first half of 2026 only, official claim", note="Half a year only: not comparable with a full year."),
  tp("est23", "vol", "2023-01-01", "2023-12-31", [VOL_CONTEXT[0]], [("isw_istories23", "in 2023")], what="contracts signed in 2023, iStories estimate from federal budget data", est=True),
  tp("est24", "vol", "2024-01-01", "2024-12-31", [VOL_CONTEXT[1]], [("istories_407", "in 2024")], low=374200, high=407200, what="contracts signed in 2024, iStories estimate from federal budget data (a range)", est=True),
- tp("mob22", "mob", "2022-09-01", "2022-10-31", [], [("dw_mz527", "сентябре-октябре 2022")], low=300000, high=527703, what="called up in the September to October 2022 mobilisation (Kremlin count to Mediazona estimate)",
-    note="One wave. No later call-up is counted."),
+ tp("mob_k", "mob", "2022-10-28", "2022-10-28", [pool("mobilised", 300000, "300,000 called up in the partial mobilisation, counted to the day it was declared complete (Defence Minister to the President, 28 Oct 2022)", "2022-10-28", "300,000")], [("kremlin", "October 28, 2022")],
+    what="men called up in the Sep to Oct 2022 mobilisation, the Kremlin's count on the day the call-up was declared complete",
+    note="One call-up wave, Sep to Oct 2022. This dot and the next count the same men."),
+ tp("mob_m", "mob", "2023-03-02", "2023-03-02", [_ar["mob"]["high_parts"][0]], [("dw_mz527", "в четверг, 2 марта")],
+    what="men called up in the same Sep to Oct 2022 mobilisation, Mediazona's later estimate from accelerated marriages (a minimum)",
+    note="A later, independent estimate of the same call-up. The rise from the dot before is a higher count of the same wave, not more men called up."),
  tp("pri22", "pri", "2022-07-01", "2023-02-07", [pool("wagner", 48366, "Wagner recruited at least 48,366 prisoners, from 1 Jul 2022 to 7 Feb 2023 (Mediazona and BBC News Russian, via Meduza, 10 Jun 2024)", "2024-06-10", "48,366")],
     [("meduza_wagner", "Первая вербовка состоялась 1 июля 2022 года"), ("meduza_wagner", "7 февраля 2023 года")], what="prisoners recruited by Wagner (at least)"),
  tp("pri23", "pri", "2023-02-01", "2023-09-30", [pool("stormz", 28200, "Storm Z: lower bound about 28,2 thousand (iStories, 6 Feb 2025)", "2025-02-06", "28,2 тыс"), pool("stormz", 29000, "Storm Z: upper bound 29 thousand (iStories, 6 Feb 2025)", "2025-02-06", "29 тыс")], [("istories", "в феврале 2023 года"), ("istories", "Уже к сентябрю набор в «Шторм Z» закончился")], low=28200, high=29000, what="prisoners recruited into Storm Z by the Defence Ministry (iStories token analysis)",
@@ -104,7 +108,7 @@ TS = [
  tp("for26", "for", "2026-01-01", "2026-09-30", [_liga("16,168", 16168, "foreign contract signers, January to September 2026: 16,168")], [("liga_foreign", "first nine months of 2026")], what="foreigners who signed contracts in the first nine months of 2026, as counted by Ukraine",
     note="Nine months only."),
 ]
-# the high value of mob22 is the Mediazona estimate; its parts are the two arrow parts
-TS[6]["parts"] = [_ar["mob"]["low_parts"][0], _ar["mob"]["high_parts"][0]]
+# Series whose points come from different recruiters and different periods: drawn as separate dots, never joined by a line.
+TS_NOJOIN = {"pri": "Wagner (Jul 2022 to Feb 2023) and Storm Z (Feb to Sep 2023) are separate counts by different recruiters"}
 TS_DOMAIN = ("2022-01-01", "2026-10-28")
-TS_NOTE_GAPS = ("No dated figure was found for: contract signers in 2022; mobilised men after 2022; prisoners after September 2023; foreigners before 2022. These are gaps, not zeros.")
+TS_NOTE_GAPS = ("No dated figure was found for: contract signers in 2022; any later call-up of mobilised men; prisoners after September 2023; foreigners before 2022. These are gaps, not zeros.")
