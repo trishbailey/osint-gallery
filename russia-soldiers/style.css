@@ -165,6 +165,7 @@ h2{font-size:1.2rem}
 .cn{fill:#0f1c36;stroke:#2b4470;stroke-width:.6px}.rg{fill:#1b3258;stroke:#2b4470;stroke-width:.5px;cursor:default}.rg.hl{stroke:var(--gold);stroke-width:2px}
 .cname{font-size:13px;fill:#7b8aa3;pointer-events:none}.dlab{font-size:13px;fill:var(--text);paint-order:stroke;stroke:var(--bg);stroke-width:3px;pointer-events:none}
 .dot0{fill:var(--bg);stroke:var(--text);stroke-width:2px;cursor:pointer}
+.hubbar{stroke-width:2px}.stg{fill:none;stroke-linecap:butt;opacity:.3}.vlab{font-weight:600}
 .st{cursor:pointer;transition:opacity .15s}.st.dim{opacity:.18}.stp{fill:none;stroke-linecap:butt;opacity:.9}.st:hover .stp,.st:focus .stp{opacity:1}.st:focus{outline:none}.st:focus .stp{stroke-width:inherit;filter:brightness(1.25)}
 .bracket{fill:none;stroke:var(--text);stroke-width:3px}.flab{font-size:14px;font-weight:600;fill:var(--text);paint-order:stroke;stroke:var(--bg);stroke-width:3px}.fsub{font-size:13px;fill:var(--muted);paint-order:stroke;stroke:var(--bg);stroke-width:3px}
 .fchip{justify-content:flex-start;text-align:left;gap:10px;height:auto;padding:6px 10px;line-height:1.25}.fchip .sw{width:18px;height:18px;border-radius:4px;flex:none}.fchip small{display:block;font-size:13px;color:var(--muted)}.fchip[aria-pressed="false"]{opacity:.55}

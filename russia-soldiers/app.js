@@ -149,8 +149,12 @@ function drawSankey(){
  var dtot={};g.nodes.forEach(function(n){dtot[n.id]=n.value});
  svg.append('g').selectAll('path').data(g.links).enter().append('path').attr('d',d3.sankeyLinkHorizontal()).attr('fill','none')
   .attr('stroke',function(d){return d.source.col}).attr('stroke-opacity',.7).attr('stroke-width',function(d){return Math.max(1,d.width)})
+ ;
+ var vis=svg.selectAll('path[stroke-width]');
+ /* hover layer: wide transparent bands, thinnest on top, so a narrow link under wider ones can still be reached */
+ var lk=svg.append('g').selectAll('path').data(g.links.slice().sort(function(p,q){return q.width-p.width})).enter().append('path').attr('class','lkhit').attr('d',d3.sankeyLinkHorizontal()).attr('fill','none').attr('stroke','transparent').attr('stroke-width',function(d){return Math.max(16,d.width)})
   .attr('data-tip',function(d){return '<b>'+esc(d.source.name)+' from '+esc(d.target.name)+'</b><br>'+fmt(d.value)+' named dead<br>'+fmt(d.value/d.target.value*100,1)+'% of the named dead from this district, '+fmt(d.value/d.source.value*100,1)+'% of this label'})
-  .on('mouseenter',function(){d3.select(this).attr('stroke-opacity',1)}).on('mouseleave',function(){d3.select(this).attr('stroke-opacity',.7)});
+  .on('mouseenter',function(e,d){vis.attr('stroke-opacity',function(l){return l===d?1:.7})}).on('mouseleave',function(){vis.attr('stroke-opacity',.7)});
  var nd=svg.append('g').selectAll('g').data(g.nodes).enter().append('g');
  nd.append('rect').attr('x',function(d){return d.x0}).attr('y',function(d){return d.y0}).attr('width',function(d){return d.x1-d.x0}).attr('height',function(d){return Math.max(2,d.y1-d.y0)}).attr('fill',function(d){return d.col})
   .attr('data-tip',function(d){return '<b>'+esc(d.name)+'</b><br>'+fmt(d.value)+' named dead'+(d.type?' ('+fmt(d.value/S.named_85*100,1)+'% of the 85 regions)':' ('+fmt(d.value/S.named_85*100,1)+'% of the 85 regions)')});
@@ -179,7 +183,12 @@ function scatter(sel,xf,xlab,xfmt,labels,filter){
  svg.append('g').selectAll('circle').data(d).enter().append('circle').attr('cx',function(r){return x(xf(r))}).attr('cy',function(r){return y(r.deaths_rate)})
   .attr('r',function(r){return r.kind==='republic'?6:5}).attr('fill',function(r){return r.kind==='republic'?'none':RAMP[2]})
   .attr('stroke',function(r){return r.kind==='republic'?RAMP[1]:'#0b1526'}).attr('stroke-width',function(r){return r.kind==='republic'?2.5:.8})
-  .attr('data-tip',function(r){return '<b>'+esc(r.en)+'</b><br>'+esc(xlab)+': '+xfmt(xf(r))+'<br>'+fmt(r.deaths_rate,1)+' named dead per 100,000'+(r.kind==='republic'?'<br>Ethnic republic':'')});
+  .style('pointer-events','none');
+ /* hover layer: each region owns the cell of plot area nearest to its dot, so dots hidden under neighbours are still reachable */
+ var cells=d3.Delaunay.from(d,function(r){return x(xf(r))},function(r){return y(r.deaths_rate)}).voronoi([m.l-6,m.t-6,w-m.r+6,h-m.b+6]);
+ svg.append('g').selectAll('path').data(d).enter().append('path').attr('class','vcell').attr('d',function(r,i){return cells.renderCell(i)}).attr('fill','transparent').attr('stroke','none')
+  .attr('data-tip',function(r){return '<b>'+esc(r.en)+'</b><br>'+esc(xlab)+': '+xfmt(xf(r))+'<br>'+fmt(r.deaths_rate,1)+' named dead per 100,000'+(r.kind==='republic'?'<br>Ethnic republic':'')})
+  .attr('aria-label',function(r){return r.en+': '+xfmt(xf(r))+', '+fmt(r.deaths_rate,1)+' named dead per 100,000'});
  var placed=[];(labels||[]).forEach(function(iso){var r=byIso[iso];if(!r||xf(r)==null)return;var px=x(xf(r)),py=y(r.deaths_rate),right=px<w*0.6;
   var nm=r.en.replace('Republic of ','').replace(' Republic','').replace(' (city)','').replace(' Autonomous Okrug','');if(nm==='Chechen')nm='Chechnya';var lw=nm.length*7.6,x0=right?px+9:px-9-lw,box=[x0,py-8-15,x0+lw,py-8+4];
   if(placed.some(function(b){return box[0]<b[2]+4&&box[2]>b[0]-4&&box[1]<b[3]+2&&box[3]>b[1]-2}))return;placed.push(box);

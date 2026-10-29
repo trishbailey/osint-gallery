@@ -79,13 +79,11 @@ def values():
     V["uc_line"] = f"The named list undercounts. A probate-registry estimate puts Russian military dead at {n0(pr['total'])} by the end of 2025, {n1(pr['mult'])} times the {n0(pr['named_at_date'])} names on the list when it was made."
     import build_flows; build_flows.build()
     FL = D("flows.json")
-    tv = sum(d["vol"] for d in FL["districts"]); tm = sum(d["mob"] for d in FL["districts"]); tp = sum(d["pri"] for d in FL["districts"])
-    assert all(d["vol"] > d["mob"] and d["vol"] > d["pri"] for d in FL["districts"])
-    big = max(FL["districts"], key=lambda d: d["vol"] + d["mob"] + d["pri"])
-    nkc = [c for c in FL["foreign"] if c["id"] == "PRK"][0]["n"]
-    V["v_flow"] = (f"Volunteers and contract soldiers are the largest group in every district: {n0(tv)} named dead against {n0(tp)} prisoners and {n0(tm)} mobilised men. "
-                   f"The {big['fd']} district sends the most ({n0(big['vol'] + big['mob'] + big['pri'])}), and {n0(nkc)} of the 3,589 named foreign dead were North Korean.")
-    V["flow_skipped"] = FL["skipped"]
+    A = {x["id"]: x for x in FL["arrows"]}; BR = {x["kind"]: x["n"] for x in FL["bars"]}
+    assert A["vol"]["low"] > A["mob"]["high"] > A["pri"]["low"] and BR["pri"] > BR["mob"] and FL["bars"][0]["kind"] == "vol"
+    V["v_flow"] = (f"Contract soldiers and volunteers are by far the biggest inflow: {n0(A['vol']['low'])} to {n0(A['vol']['high'])} recruited, against {n0(A['mob']['low'])} to {n0(A['mob']['high'])} mobilised and "
+                   f"{n0(A['pri']['low'])} to {n0(A['pri']['high'])} prisoners. Prisoners still outnumber mobilised men among the named dead ({n0(BR['pri'])} against {n0(BR['mob'])}).")
+    V["flow_skipped"] = FL["skipped"]; V["flow_notdrawn"] = FL["not_drawn"]
     import nk_inputs as NKI
     cnt = {s_: sum(1 for r in NKI.ROWS if r["status"] == s_) for s_ in NKI.STATUS}
     V["v_nk"] = ("Documented: the treaty, the troops\u2019 presence and the sea route for 29,488 containers of munitions. "

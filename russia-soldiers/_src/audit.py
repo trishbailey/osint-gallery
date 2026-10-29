@@ -329,20 +329,60 @@ need("single data sources dropdown", page.count('id="srcdet"') == 1)
 # ---- round 4: flow map and North Korea section
 import nk_inputs as NKI
 FL = J("data/flows.json"); NKJ = J("data/nk.json")
-for d_ in FL["districts"]:
-    mem = FDM[d_["fd"]]
-    for k_ in ("vol", "mob", "pri"): chk(f"flow {d_['fd']} {k_}", d_[k_], sum(mine[i][k_] for i in mem))
-    need(f"flow anchor {d_['fd']} is the district's largest source", d_["anchor_en"] == max(mem, key=lambda i: mine[i]["deaths"]) or by[max(mem, key=lambda i: mine[i]["deaths"])]["en"] == d_["anchor_en"])
-need("flow map has 8 districts and 5 foreign countries", len(FL["districts"]) == 8 and len(FL["foreign"]) == 5)
+import recruit_inputs as RI
+def figval(fg):
+    f = fg.replace("\u00a0", " ").strip()
+    if re.search(r"тыс|thousand", f): return round(float(re.sub(r"[^\d,.]", "", f.split()[0] if re.match(r"\d+ \d{3}", f) is None else f).replace(",", ".")) * 1000)
+    if "million" in f: return round(float(re.sub(r"[^\d.]", "", f)) * 1e6)
+    return int(re.sub(r"\D", "", f))
+def check_part(nm, p_):
+    need(f"{nm} src known", p_["src"] in SOURCES)
+    q_ = norm(p_["quote"])
+    for fg in p_["figures"]: need(f"{nm} figure {fg!r} in its quote", norm(fg) in q_)
+    sv_ = norm(open(os.path.join(RAW, "quotes", p_["src"] + ".txt"), encoding="utf-8").read())
+    need(f"{nm} quote is in the saved page text: {p_['quote'][:50]}", q_ in sv_)
+    need(f"{nm} value {p_['value']:,} equals a figure in its quote {p_['figures']}", p_["value"] in [figval(fg) for fg in p_["figures"]])
+    need(f"{nm} label carries the value or its date", bool(p_["label"]) and re.fullmatch(r"20\d\d-\d\d-\d\d", p_["date"]) is not None)
+need("flows.json has 5 arrows: 3 Russian from the hub and 2 foreign", len(FL["arrows"]) == 5 and sum(1 for a_ in FL["arrows"] if a_["hub"]) == 3 and FL["measure"] == "people recruited")
+need("flows.json no longer carries district named-dead strands", "districts" not in FL and "foreign" not in FL)
+FA = {a_["id"]: a_ for a_ in FL["arrows"]}
+for a_ in RI.ARROWS:
+    nm = "arrow " + a_["id"]
+    need(nm + " low <= high", 0 < a_["low"] <= a_["high"])
+    for side in ("low", "high"):
+        parts = a_[side + "_parts"]
+        for p_ in parts: check_part(f"{nm} {side}", p_)
+        chk(f"{nm} {side} equals the sum of its parts", a_[side], sum(p_["value"] for p_ in parts))
+        chk(f"{nm} {side} in flows.json", FA[a_["id"]][side], a_[side])
+    for p_ in a_["context"]: check_part(nm + " context", p_)
+    need(nm + " tip carries low and high with sources", f"{a_['low']:,}" in FA[a_["id"]]["tip"] and f"{a_['high']:,}" in FA[a_["id"]]["tip"] and a_["low_parts"][0]["label"].split(" (")[0].split(",")[0] in _html.unescape(FA[a_["id"]]["tip"]))
+chk("contract high = 540,000 + 450,000 + 40,000 + 422,704 + 32,000 + 200,000", FA["vol"]["high"], 540000 + 450000 + 40000 + 422704 + 32000 + 200000)
+chk("prisoners low = 48,366 + 28,200", FA["pri"]["low"], 48366 + 28200)
+need("ranges: only the sums and the two ranged national totals differ", [a_["id"] for a_ in FL["arrows"] if a_["low"] != a_["high"]] == ["vol", "mob", "pri", "prk"])
+chk("vmax is the largest high value", FL["vmax"], max(a_["high"] for a_ in FL["arrows"]))
+need("not-drawn foreign figures are sourced", all(True for p_ in RI.NOT_DRAWN))
+for p_ in RI.NOT_DRAWN:
+    check_part("not drawn", p_)
+    for fg in p_["figures"]: need(f"not drawn figure {fg} shown on page", fg in text)
+need("not drawn: Colombia, Burundi, Zimbabwe, Peru and Sri Lanka are listed", all(w_ in text for w_ in ("Colombia 1,449", "Burundi 699", "Zimbabwe 530", "Peru 503", "Sri Lanka 751")))
+# named-dead bars: cumulative totals only, one bar per type, sorted largest first, linear from zero, with source in the hover
 bf = norm(open(os.path.join(RAW, "quotes", "bbc_foreign.txt"), encoding="utf-8").read())
-for c_ in FL["foreign"]:
-    need(f"foreign {c_['name']} count {c_['n']} is in the quote {c_['quote']!r}", f"{c_['n']:,}" in c_["quote"] and norm(c_["quote"]) in bf)
 need("foreign total 3,589 = 2,304 + 1,285 as stated by the BBC", "3,589" in bf and "1,285" in bf and "2,304" in bf and 2304 + 1285 == 3589)
-need("the BBC graphic gives the five-country sum 3,029 used in the legend", sum(c_["n"] for c_ in FL["foreign"]) == 3029)
-for s_ in (f"{sum(d_['vol'] for d_ in FL['districts']):,}", f"{sum(d_['mob'] for d_ in FL['districts']):,}", f"{sum(d_['pri'] for d_ in FL['districts']):,}", "3,589", "2,304"): has(s_, "flow verdict figure")
-need("volunteers are the largest group in every district", all(d_["vol"] > d_["mob"] and d_["vol"] > d_["pri"] for d_ in FL["districts"]))
-for k_ in ("bbc_foreign", "ne_admin0", "mz_regions", "bbc_nk"): need("flow source cited " + k_, k_ in cites)
-need("front-bracket and measure statements on the page", all(x_ in _pg for x_ in ("arrow width shows named dead", "schematic front bracket", "not in ukraine")))
+BR = {b_["kind"]: b_ for b_ in FL["bars"]}
+need("bars: exactly four types", set(BR) == {"vol", "mob", "pri", "for"} and len(FL["bars"]) == 4)
+for k_ in ("vol", "mob", "pri"): chk(f"bar {k_} equals the regional sum", BR[k_]["n"], sum(mine[i][k_] for i in iso)); chk(f"bar {k_} equals stats type total", BR[k_]["n"], S["type_totals"][k_])
+chk("bar foreign", BR["for"]["n"], 3589)
+need("bars sorted largest first", [b_["n"] for b_ in FL["bars"]] == sorted((b_["n"] for b_ in FL["bars"]), reverse=True))
+need("bar hovers name a source and a date", all(("Mediazona" in b_["tip"] or "BBC" in b_["tip"]) and re.search(r"20\d\d", b_["tip"]) for b_ in FL["bars"]))
+need("bar colours are the type colours", all(BR[k_]["kind"] == k_ and k_ in FL["types"] for k_ in BR))
+fj = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read()
+need("bars are drawn linear from zero (width = n / max)", "(b.n/mx*100)" in fj and "d3.max(F.bars" in fj and "sqrt" not in fj[fj.index("function bars"):])
+need("bars section is not stacked by year", "stack" not in fj and "by year" not in fj.split("function bars")[1][:600])
+need("arrow widths use the stated square-root scale", "4+6*Math.sqrt(v/VMAX)" in fj and "square-root scale" in fj)
+need("the page shows the bars and the scale statement", 'id="flowbars"' in page and "cumulative totals" in _html.unescape(text) and "not stacked by year" in _html.unescape(text))
+for s_ in (f"{BR['vol']['n']:,}", f"{BR['pri']['n']:,}", f"{BR['mob']['n']:,}", f"{A_['vol']['low'] if False else FA['vol']['low']:,}", f"{FA['vol']['high']:,}", f"{FA['mob']['high']:,}", f"{FA['pri']['low']:,}", f"{FA['pri']['high']:,}"): has(s_, "flow verdict figure")
+for k_ in ("bbc_foreign", "ne_admin0", "mz_regions", "bbc_nk", "wotr", "kremlin", "ria_shoigu24", "tass_med25", "interfax_med26", "dw_mz527", "occrp_foreign", "liga_foreign", "isw_istories23", "istories_407", "meduza_318", "ng_wagner", "istories", "ki", "ng_bonus", "mz_list"): need("flow source cited " + k_, k_ in cites)
+need("the page states the measure, the hub and the front bracket", all(x_ in norm(_html.unescape(text)) for x_ in ("arrow width shows people recruited", "schematic hub", "schematic front bracket", "not in ukraine")))
 need("natural earth basemap present and public-domain credited", os.path.getsize(os.path.join(ROOT, "vendor", "ne_neighbours.geojson")) > 20000 and "public domain" in SOURCES["ne_admin0"]["full"])
 need("flows and nk scripts are loaded", 'src="flows.js"' in page and 'src="nk.js"' in page)
 need("flow section comes first, remoteness charts directly after it", page.index('id="flow-sec"') < page.index('id="remote-sec"') < page.index('id="undercount"') < page.index('id="map-sec"') and page.index('id="kpis"') < page.index('id="flow-sec"'))

@@ -1,6 +1,5 @@
 {
- "measure": "named dead",
- "date": "23 Oct 2026",
+ "measure": "people recruited",
  "types": {
   "vol": {
    "name": "Volunteers and contract soldiers",
@@ -19,251 +18,85 @@
    "color": "#4f9dff"
   }
  },
- "districts": [
+ "arrows": [
   {
-   "fd": "Central",
-   "anchor": "Moskovskaya",
-   "anchor_en": "Moscow Oblast",
-   "regions": 18,
-   "vol": 14382,
-   "mob": 3900,
-   "pri": 4326,
-   "isos": [
-    "RU-BEL",
-    "RU-BRY",
-    "RU-VLA",
-    "RU-VOR",
-    "RU-IVA",
-    "RU-KLU",
-    "RU-KOS",
-    "RU-KRS",
-    "RU-LIP",
-    "RU-MOS",
-    "RU-ORL",
-    "RU-RYA",
-    "RU-SMO",
-    "RU-TAM",
-    "RU-TVE",
-    "RU-TUL",
-    "RU-YAR",
-    "RU-MOW"
+   "id": "vol",
+   "kind": "vol",
+   "name": "Volunteers and contract soldiers",
+   "ll": [
+    55.0,
+    56.2
    ],
-   "anchor_deaths": 7260
+   "hub": true,
+   "low": 1300000,
+   "high": 1684704,
+   "label": "1.3M to 1.68M",
+   "tip": "<b>Volunteers and contract soldiers</b><br>1,300,000 to 1,684,704 people recruited, 2023 to first half of 2026 (no 2022 figure is counted in the high value)<br>Solid width shows the low value, 1,300,000; the pale band reaches 1,684,704<br>Low: roughly 1.3 million contract soldiers since 2022 (War on the Rocks, 14 Jul 2026; an estimate with no method given)<br>High: sum of 2023 contracts, almost 540,000 (Shoigu, 20 Feb 2024); 2024 contracts, about 450,000 (Medvedev, 24 Jan 2025); 2024 volunteer formations, over 40,000 (Medvedev, 24 Jan 2025); 2025 contracts, 422,704 (Medvedev, 16 Jan 2026); 2025 volunteers, 32,000 (Medvedev, 16 Jan 2026); first half of 2026, around 200,000 (Medvedev, reported 30 Jul 2026) = 1,684,704<br>Also: iStories budget-based estimate for 2023: 354,400<br>Also: iStories budget-based estimate for 2024: 374,200 to 407,200<br>Official claims add to the high end; independent budget-based estimates are 10 to 34% lower than the official figure for the same year (2023: 354,400 against 540,000; 2024: 374,200 to 407,200 against about 450,000).<br>Named dead, secondary measure: 96,613 volunteers and contract soldiers (Mediazona regional pages, 23 Oct 2026)<br>Drawn from a schematic hub: no regional recruitment counts are published"
   },
   {
-   "fd": "North-West",
-   "anchor": "City of St. Petersburg",
-   "anchor_en": "Saint Petersburg",
-   "regions": 11,
-   "vol": 6902,
-   "mob": 1671,
-   "pri": 2217,
-   "isos": [
-    "RU-KR",
-    "RU-KO",
-    "RU-ARK",
-    "RU-NEN",
-    "RU-VLG",
-    "RU-KGD",
-    "RU-LEN",
-    "RU-MUR",
-    "RU-NGR",
-    "RU-PSK",
-    "RU-SPE"
+   "id": "mob",
+   "kind": "mob",
+   "name": "Mobilised men",
+   "ll": [
+    55.0,
+    56.2
    ],
-   "anchor_deaths": 2842
+   "hub": true,
+   "low": 300000,
+   "high": 527703,
+   "label": "300k to 528k",
+   "tip": "<b>Mobilised men</b><br>300,000 to 527,703 people recruited, September to October 2022 (one wave; no later call-up is counted)<br>Solid width shows the low value, 300,000; the pale band reaches 527,703<br>Low: 300,000 called up in the partial mobilisation (Defence Minister to the President, 28 Oct 2022)<br>High: at least 527,703 (Mediazona estimate from accelerated marriages, 2 Mar 2023)<br>Also: Putin, 4 Nov 2022: 318,000 drafted, volunteers included<br>Mediazona calls its figure a minimum; the Kremlin has not accepted it.<br>Named dead, secondary measure: 20,690 mobilised men (Mediazona regional pages, 23 Oct 2026)<br>Drawn from a schematic hub: no regional recruitment counts are published"
   },
   {
-   "fd": "South",
-   "anchor": "Krasnodar",
-   "anchor_en": "Krasnodar Krai",
-   "regions": 8,
-   "vol": 9359,
-   "mob": 1993,
-   "pri": 3054,
-   "isos": [
-    "RU-AD",
-    "RU-KL",
-    "RU-CR",
-    "RU-KDA",
-    "RU-AST",
-    "RU-VGG",
-    "RU-ROS",
-    "RU-SEV"
+   "id": "pri",
+   "kind": "pri",
+   "name": "Prisoners, incl. Wagner and Storm Z",
+   "ll": [
+    55.0,
+    56.2
    ],
-   "anchor_deaths": 8408
+   "hub": true,
+   "low": 76566,
+   "high": 180000,
+   "label": "77k to 180k",
+   "tip": "<b>Prisoners, incl. Wagner and Storm Z</b><br>76,566 to 180,000 people recruited, 2022 to 2025<br>Solid width shows the low value, 76,566; the pale band reaches 180,000<br>Low: Wagner, 2022 to 2023: at least 48,366 (BBC News Russian and Mediazona, Jun 2024); Storm Z, to Feb 2025: about 28,200 to 29,000 (iStories estimate)<br>High: up to 180,000 by Nov 2024 (Ukraine's Foreign Intelligence Service; unverified)<br>The low value adds two separate counts; the high value is a claim by one side and could not be checked.<br>Named dead, secondary measure: 27,379 prisoners (Mediazona regional pages, 23 Oct 2026)<br>Drawn from a schematic hub: no regional recruitment counts are published"
   },
   {
-   "fd": "North Caucasus",
-   "anchor": "Stavropol'",
-   "anchor_en": "Stavropol Krai",
-   "regions": 7,
-   "vol": 3176,
-   "mob": 548,
-   "pri": 834,
-   "isos": [
-    "RU-DA",
-    "RU-IN",
-    "RU-KB",
-    "RU-KC",
-    "RU-SE",
-    "RU-CE",
-    "RU-STA"
+   "id": "ca",
+   "kind": "for",
+   "name": "Central Asia (five states)",
+   "ll": [
+    66.9,
+    41.3
    ],
-   "anchor_deaths": 4326
+   "hub": false,
+   "low": 11157,
+   "high": 11157,
+   "label": "11,157",
+   "tip": "<b>Central Asia (five states)</b><br>11,157 people recruited, to late 2025 (OCCRP report)<br>Width shows 11,157<br>Low: Central Asia, five states: 11,157 recruits (Ukraine's Coordination Headquarters, via OCCRP)<br>Also: at least 1,399 of them killed (same source)<br>Ukrainian figures that OCCRP could not check independently."
   },
   {
-   "fd": "Volga",
-   "anchor": "Bashkortostan",
-   "anchor_en": "Republic of Bashkortostan",
-   "regions": 14,
-   "vol": 27370,
-   "mob": 5280,
-   "pri": 6344,
-   "isos": [
-    "RU-BA",
-    "RU-ME",
-    "RU-MO",
-    "RU-TA",
-    "RU-UD",
-    "RU-CU",
-    "RU-PER",
-    "RU-KIR",
-    "RU-NIZ",
-    "RU-ORE",
-    "RU-PNZ",
-    "RU-SAM",
-    "RU-SAR",
-    "RU-ULY"
-   ],
-   "anchor_deaths": 11905
-  },
-  {
-   "fd": "Urals",
-   "anchor": "Sverdlovsk",
-   "anchor_en": "Sverdlovsk Oblast",
-   "regions": 6,
-   "vol": 9803,
-   "mob": 1910,
-   "pri": 3190,
-   "isos": [
-    "RU-KGN",
-    "RU-SVE",
-    "RU-TYU",
-    "RU-KHM",
-    "RU-YAN",
-    "RU-CHE"
-   ],
-   "anchor_deaths": 9284
-  },
-  {
-   "fd": "Siberia",
-   "anchor": "Irkutsk",
-   "anchor_en": "Irkutsk Oblast",
-   "regions": 10,
-   "vol": 15809,
-   "mob": 2897,
-   "pri": 4431,
-   "isos": [
-    "RU-AL",
-    "RU-TY",
-    "RU-KK",
-    "RU-ALT",
-    "RU-KYA",
-    "RU-IRK",
-    "RU-KEM",
-    "RU-NVS",
-    "RU-OMS",
-    "RU-TOM"
-   ],
-   "anchor_deaths": 7127
-  },
-  {
-   "fd": "Far East",
-   "anchor": "Chita",
-   "anchor_en": "Zabaykalsky Krai",
-   "regions": 11,
-   "vol": 9812,
-   "mob": 2491,
-   "pri": 2983,
-   "isos": [
-    "RU-BU",
-    "RU-SA",
-    "RU-ZAB",
-    "RU-KAM",
-    "RU-PRI",
-    "RU-KHA",
-    "RU-AMU",
-    "RU-MAG",
-    "RU-SAK",
-    "RU-YEV",
-    "RU-CHU"
-   ],
-   "anchor_deaths": 5947
-  }
- ],
- "foreign": [
-  {
-   "id": "PRK",
+   "id": "prk",
+   "kind": "for",
    "name": "North Korea",
    "ll": [
     125.75,
     39.02
    ],
-   "n": 2304,
-   "quote": "North Korea 2,304",
-   "dest": "kursk",
-   "note": "Identified by BBC News Korean from a memorial in Pyongyang; they were killed in Russia's Kursk region, and the BBC reports none fought on Ukrainian soil"
-  },
-  {
-   "id": "UZB",
-   "name": "Uzbekistan",
-   "ll": [
-    69.24,
-    41.3
-   ],
-   "n": 229,
-   "quote": "Uzbekistan 229",
-   "dest": "front",
-   "note": "More than half of the Uzbek and Tajik dead went to the front from Russian prisons"
-  },
-  {
-   "id": "TJK",
-   "name": "Tajikistan",
-   "ll": [
-    68.78,
-    38.56
-   ],
-   "n": 199,
-   "quote": "Tajikistan 199",
-   "dest": "front",
-   "note": "More than half of the Uzbek and Tajik dead went to the front from Russian prisons"
-  },
-  {
-   "id": "GEO",
-   "name": "Georgia",
-   "ll": [
-    44.8,
-    41.72
-   ],
-   "n": 189,
-   "quote": "Georgia 189",
-   "dest": "front",
-   "note": "Includes the breakaway regions of Abkhazia and South Ossetia"
-  },
-  {
-   "id": "AZE",
-   "name": "Azerbaijan",
-   "ll": [
-    49.87,
-    40.41
-   ],
-   "n": 108,
-   "quote": "Azerbaijan 108",
-   "dest": "front",
-   "note": ""
+   "hub": false,
+   "low": 11000,
+   "high": 14000,
+   "label": "11k to 14k",
+   "tip": "<b>North Korea</b><br>11,000 to 14,000 people recruited, Kursk campaign, 2024 to 2025 (soldiers, not contract signers)<br>Solid width shows the low value, 11,000; the pale band reaches 14,000<br>Low: between 11,000 and 14,000 fought in the Kursk campaign (BBC, 14 Sep 2026)<br>High: North Korea: 11,000 to 14,000 in the Kursk campaign (BBC, 14 Sep 2026)<br>Estimate of the troops committed; the South Korean agency NIS and the BBC give a range.<br>Named dead, secondary measure: 2,304 (BBC News Russian with Mediazona, 10 Jul 2026)"
   }
  ],
+ "hub": {
+  "ll": [
+   55.0,
+   56.2
+  ],
+  "name": "Russia, all regions (schematic)"
+ },
  "front": {
   "ll": [
    37.6,
@@ -278,6 +111,54 @@
   ],
   "name": "Kursk region"
  },
- "skipped": "Other foreign countries (Nepal, Cuba, India, Serbia and 30 more) are not drawn: the BBC article gives their combined total (1,285 verified by BBC News Russian, with the five countries above counted inside the 3,589) but no per-country counts in its text, and counts found elsewhere were not checked against the BBC data. Mobilised men and prisoners are drawn only where the Mediazona regional page gives a count. 'Other' labels (arm of service, no data) are not drawn.",
- "foreign_date": "10 Jul 2026"
+ "wmin": 4,
+ "wspan": 6,
+ "vmax": 1684704,
+ "samples": [
+  {
+   "v": 11157,
+   "w": 4.49
+  },
+  {
+   "v": 76566,
+   "w": 5.28
+  },
+  {
+   "v": 300000,
+   "w": 6.53
+  },
+  {
+   "v": 1300000,
+   "w": 9.27
+  }
+ ],
+ "bars": [
+  {
+   "kind": "vol",
+   "name": "Volunteers and contract soldiers",
+   "n": 96613,
+   "tip": "<b>Volunteers and contract soldiers</b><br>96,613 named dead, cumulative<br>Home regions in Russia (85 regions), Mediazona regional pages, 23 Oct 2026"
+  },
+  {
+   "kind": "pri",
+   "name": "Prisoners, incl. Wagner and Storm-Z",
+   "n": 27379,
+   "tip": "<b>Prisoners, incl. Wagner and Storm-Z</b><br>27,379 named dead, cumulative<br>Home regions in Russia (85 regions), Mediazona regional pages, 23 Oct 2026"
+  },
+  {
+   "kind": "mob",
+   "name": "Mobilised",
+   "n": 20690,
+   "tip": "<b>Mobilised</b><br>20,690 named dead, cumulative<br>Home regions in Russia (85 regions), Mediazona regional pages, 23 Oct 2026"
+  },
+  {
+   "kind": "for",
+   "name": "Foreign nationals, incl. North Korea",
+   "n": 3589,
+   "tip": "<b>Foreign nationals, incl. North Korea</b><br>3,589 named dead, cumulative: 2,304 North Korean + 1,285 verified from other countries<br>BBC News Russian with Mediazona, 10 Jul 2026"
+  }
+ ],
+ "not_drawn": "All foreign contract signers named by Ukraine, to 1 Oct 2026: 45,959 from 151 countries. January to September 2026: Colombia 1,449, Burundi 699, Zimbabwe 530, Peru 503. Sri Lanka 751 (to late 2025).",
+ "skipped": "Not drawn: any split of the national totals by region or district, because no outlet publishes recruitment counts by region for any type (the regional figures that exist cover 11 to 37 regions, are charts only, or count a recruiter's subset). Foreign countries without a single place on this map are listed above. North Korean soldiers are the only foreign group shown by troops committed rather than contracts signed.",
+ "named_dead_date": "23 Oct 2026"
 }

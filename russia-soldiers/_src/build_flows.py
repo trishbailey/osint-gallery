@@ -1,22 +1,52 @@
-"""Builds data/flows.json (flow map) and data/nk.json (North Korea section) and renders the North Korea relationship graphic and timeline.
+"""Builds data/flows.json (flow map: arrow width = people recruited; bars = named dead by recruit type) and data/nk.json (North Korea section) and renders the North Korea relationship graphic and timeline.
 District figures are sums of data/regions.json (Mediazona regional pages); foreign figures and North Korea rows come from the audited inputs."""
-import json, os, html, re
-from flow_inputs import TYPES, FOREIGN, FRONT, KURSK, SKIPPED
+import json, os, html, re, math
+from flow_inputs import TYPES, FRONT, KURSK, SKIPPED
+from recruit_inputs import ARROWS, HUB, WMIN, WSPAN, VMAX, LEGEND_SAMPLES, NOT_DRAWN, BAR_FOREIGN, NAMED_DEAD_DATE
 import nk_inputs as NK
 from sources import SOURCES
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 FDS = ["Central", "North-West", "South", "North Caucasus", "Volga", "Urals", "Siberia", "Far East"]
 
+def short(n):
+    if n >= 1e6: return (f"{n/1e6:.2f}").rstrip("0").rstrip(".") + "M"
+    if n >= 1e4: return f"{round(n/1000)}k"
+    return f"{n:,}"
+def rng(a, b, short_=False):
+    f = short if short_ else (lambda x: f"{x:,}")
+    return f"{a:,}" if a == b else f"{f(a)} to {f(b)}"
+def wid(v): return WMIN + WSPAN * math.sqrt(v / VMAX)
+def eh(s): return html.escape(s, quote=False)
+
 def build():
     R = json.load(open(os.path.join(ROOT, "data", "regions.json"), encoding="utf-8"))["regions"]
-    dist = []
-    for fd in FDS:
-        mem = [r for r in R if r["fd"] == fd]
-        a = max(mem, key=lambda r: r["deaths"])
-        dist.append(dict(fd=fd, anchor=a["ne"], anchor_en=a["en"], regions=len(mem), vol=sum(r["vol"] for r in mem), mob=sum(r["mob"] for r in mem), pri=sum(r["pri"] for r in mem),
-                         isos=[r["iso"] for r in mem], anchor_deaths=a["deaths"]))
-    out = dict(measure="named dead", date="23 Oct 2026", types={k: dict(name=v[0], color=v[1]) for k, v in TYPES.items()}, districts=dist,
-               foreign=FOREIGN, front=FRONT, kursk=KURSK, skipped=SKIPPED, foreign_date="10 Jul 2026")
+    dead = {k: sum(r[k] for r in R) for k in ("vol", "mob", "pri")}
+    dead_txt = {"vol": "volunteers and contract soldiers", "mob": "mobilised men", "pri": "prisoners"}
+    arrows = []
+    for a in ARROWS:
+        t = [f"<b>{eh(a['name'])}</b>", f"{rng(a['low'], a['high'])} people recruited, {eh(a['period'])}"]
+        if a["low"] != a["high"]:
+            t.append(f"Solid width shows the low value, {a['low']:,}; the pale band reaches {a['high']:,}")
+        else:
+            t.append(f"Width shows {a['low']:,}")
+        t.append("Low: " + eh("; ".join(p["label"] for p in a["low_parts"])))
+        if a["low"] != a["high"]:
+            n = len(a["high_parts"])
+            t.append("High: " + ("sum of " if n > 1 else "") + eh("; ".join(p["label"] for p in a["high_parts"])) + (f" = {a['high']:,}" if n > 1 else ""))
+        for p in a["context"]: t.append("Also: " + eh(p["label"]))
+        t.append(eh(a["status"]))
+        if a["dead_key"]: t.append(f"Named dead, secondary measure: {dead[a['dead_key']]:,} {dead_txt[a['dead_key']]} (Mediazona regional pages, {NAMED_DEAD_DATE})")
+        if a["id"] == "prk": t.append("Named dead, secondary measure: 2,304 (BBC News Russian with Mediazona, 10 Jul 2026)")
+        if not a["hub"] is False: t.append("Drawn from a schematic hub: no regional recruitment counts are published")
+        arrows.append(dict(id=a["id"], kind=a["type"], name=a["name"], ll=a["ll"] or HUB["ll"], hub=a["hub"], low=a["low"], high=a["high"], label=rng(a["low"], a["high"], True), tip="<br>".join(t)))
+    bars = []
+    for k, nm in (("vol", TYPES["vol"][0]), ("mob", TYPES["mob"][0]), ("pri", TYPES["pri"][0])):
+        bars.append(dict(kind=k, name=nm, n=dead[k], tip=f"<b>{eh(nm)}</b><br>{dead[k]:,} named dead, cumulative<br>Home regions in Russia (85 regions), Mediazona regional pages, {NAMED_DEAD_DATE}"))
+    bars.append(dict(kind="for", name=TYPES["for"][0], n=BAR_FOREIGN["n"], tip="<b>Foreign nationals, incl. North Korea</b><br>3,589 named dead, cumulative: 2,304 North Korean + 1,285 verified from other countries<br>BBC News Russian with Mediazona, 10 Jul 2026"))
+    bars.sort(key=lambda b: -b["n"])
+    nd = " ".join(f"{p['label']}." for p in NOT_DRAWN)
+    out = dict(measure="people recruited", types={k: dict(name=v[0], color=v[1]) for k, v in TYPES.items()}, arrows=arrows, hub=HUB, front=FRONT, kursk=KURSK,
+               wmin=WMIN, wspan=WSPAN, vmax=VMAX, samples=[dict(v=v, w=round(wid(v), 2)) for v in LEGEND_SAMPLES], bars=bars, not_drawn=nd, skipped=SKIPPED, named_dead_date=NAMED_DEAD_DATE)
     json.dump(out, open(os.path.join(ROOT, "data", "flows.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     nk = dict(rows=NK.ROWS, timeline=NK.TL, places=NK.PLACES, lines=NK.LINES, kinds={k: dict(name=v[0], color=v[1]) for k, v in NK.KINDS.items()}, status=NK.STATUS)
     json.dump(nk, open(os.path.join(ROOT, "data", "nk.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
@@ -56,4 +86,4 @@ def render():
                 timeline=f'<ol class="tline">{"".join(tl)}</ol>')
 
 if __name__ == "__main__":
-    o, n = build(); print(len(o["districts"]), "districts", len(n["rows"]), "rows")
+    o, n = build(); print(len(o["arrows"]), "arrows", len(n["rows"]), "rows")
