@@ -354,9 +354,14 @@ def browser_checks(port, slugs):
 SHARED_TOP = {"scripts", ".github", "brand", "icons"}
 SHARED_ROOT_FILES = {"render.yaml", "README.md", "index.html", "app.js", "styles.css", "tools.json", "favicon.svg"}
 
-def changed_files(base):
+def changed_files(base, head="HEAD", cwd=None):
+    """Files the branch itself changed: diff from the merge base of BASE and HEAD to HEAD
+    (git's three-dot form, written out). Commits that landed on BASE after the branch left it,
+    or that a stale BASE sha predates, are never counted as the branch's changes."""
+    cwd = cwd or ROOT
     try:
-        out = subprocess.check_output(["git", "diff", "--name-only", f"{base}...HEAD"], cwd=ROOT, text=True)
+        mb = subprocess.check_output(["git", "merge-base", base, head], cwd=cwd, text=True).strip()
+        out = subprocess.check_output(["git", "diff", "--name-only", mb, head], cwd=cwd, text=True)
         return [x for x in out.splitlines() if x]
     except Exception:
         return []
@@ -367,12 +372,13 @@ def main():
     ap.add_argument("--port", type=int, default=8765)
     ap.add_argument("--slugs", default="", help="comma list; default = every */index.html")
     ap.add_argument("--changed-from", default="", help="git base ref; check only changed dashboards")
+    ap.add_argument("--changed-head", default="HEAD", help="git ref of the branch tip (a PR's head sha); changes are measured from merge-base(base, head)")
     a = ap.parse_args()
     errs = static_checks()
     all_slugs = sorted(os.path.basename(os.path.dirname(p)) for p in glob.glob(os.path.join(ROOT, "*", "index.html")))
     slugs = [s for s in a.slugs.split(",") if s] or all_slugs
     if a.changed_from:
-        files = changed_files(a.changed_from)
+        files = changed_files(a.changed_from, a.changed_head)
         print("Changed files:", len(files))
         shared = [f for f in files if f.split("/")[0] in SHARED_TOP or f in SHARED_ROOT_FILES]
         touched = sorted({f.split("/")[0] for f in files if "/" in f and f.split("/")[0] in all_slugs})

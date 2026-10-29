@@ -39,12 +39,16 @@ jobs:
         env:
           SHARED_OK: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'trish-approved') && '1' || '0' }}
           EVENT: ${{ github.event_name }}
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           BEFORE_SHA: ${{ github.event.before }}
           ALL: ${{ inputs.all }}
         run: |
           if [ "$EVENT" = "pull_request" ]; then
-            python scripts/ci_check.py --changed-from "$BASE_SHA"
+            # measure from the merge base of the branch tip and the CURRENT base branch, so a branch that is
+            # merely behind main (or a base sha that predates newer main commits) is not blamed for main's changes
+            git fetch --quiet origin "$BASE_REF"
+            python scripts/ci_check.py --changed-from "origin/$BASE_REF" --changed-head "$HEAD_SHA"
           elif [ "$EVENT" = "push" ] && [ -n "$BEFORE_SHA" ] && [ "$BEFORE_SHA" != "0000000000000000000000000000000000000000" ]; then
             # direct pushes (e.g. the sync bot) are already merged; shared-file edits are reported, page checks gate
             SHARED_OK=1 python scripts/ci_check.py --changed-from "$BEFORE_SHA"
