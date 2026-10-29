@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-28T19:02:29Z",
+ "as_of": "2026-10-28T22:01:22Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,66 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "0b1a4f0cf3",
+   "status": "single_source",
+   "title": "A lo largo de las últimas dos décadas, Juan Francisco Solórzano Foppa ocupó cargos públicos en los que se suele hacer enemigos. En sus años de fiscal, investigó a la Rueda —o cúpula— de la pandilla Ba",
+   "lang": "es",
+   "title_en": "Over the past two decades, Juan Francisco Solórzano Foppa held public posts in which one tends to make enemies. In his years as a prosecutor, he investigated the Rueda (the leadership) of the Ba",
+   "first_report": "2026-10-28T21:35:00Z",
+   "first_report_precision": "minute",
+   "first_source": "El Faro",
+   "region_ids": [
+    "GTM-1951"
+   ],
+   "country": "GTM",
+   "group_ids": [
+    "b18"
+   ],
+   "outlets": [
+    "El Faro"
+   ],
+   "sources": [
+    {
+     "outlet": "elfaro",
+     "name": "El Faro",
+     "kind": "outlet",
+     "via": "X @_elfaro_",
+     "url": "https://x.com/_elfaro_/status/2115557971774382191",
+     "time": "2026-10-28T21:35:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "0f064c2026",
+   "status": "single_source",
+   "title": "#ParesReporta Cúcuta, la capital, ha sufrido durante décadas la violencia que azota a municipios del departamento. Análisis",
+   "lang": "es",
+   "title_en": "#ParesReporta Cúcuta, the capital, has suffered for decades from the violence that plagues the department's municipalities. Analysis",
+   "first_report": "2026-10-28T21:05:09Z",
+   "first_report_precision": "minute",
+   "first_source": "Fundación Paz & Reconciliación",
+   "region_ids": [
+    "COL-1421"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "outlets": [
+    "Fundación Paz & Reconciliación"
+   ],
+   "sources": [
+    {
+     "outlet": "pares",
+     "name": "Fundación Paz & Reconciliación",
+     "kind": "outlet",
+     "via": "X @parescolombia",
+     "url": "https://x.com/parescolombia/status/2115550462607012069",
+     "time": "2026-10-28T21:05:09Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "43e468d1f4",
    "status": "confirmed",
@@ -210,6 +270,173 @@
      "url": "https://x.com/Pajaropolitico/status/2115518968597246363",
      "time": "2026-10-28T19:00:01Z",
      "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115548311646028040",
+     "time": "2026-10-28T20:56:37Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115549651080188036",
+     "time": "2026-10-28T21:01:56Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "4e1ab32f19",
+   "status": "official_claim_only",
+   "title": "En Yucatán, elementos de @SEMAR_mx, @SSPCMexico y @FGRMexico, a través de la Agencia de Investigación Criminal, en coordinación con el @INAMI_mx, detuvieron en Mérida a Richard “N”, de nacionalidad es",
+   "lang": "es",
+   "title_en": "In Yucatán, personnel from @SEMAR_mx, @SSPCMexico and @FGRMexico, through the Criminal Investigation Agency, in coordination with @INAMI_mx, detained Richard “N”, a national of",
+   "first_report": "2026-10-28T20:03:03Z",
+   "first_report_precision": "minute",
+   "first_source": "Gabinete de Seguridad (Mexico)",
+   "region_ids": [
+    "MEX-2737"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Gabinete de Seguridad (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "gabsec",
+     "name": "Gabinete de Seguridad (Mexico)",
+     "kind": "official",
+     "via": "X @GabSeguridadMX",
+     "url": "https://x.com/GabSeguridadMX/status/2115534833367552034",
+     "time": "2026-10-28T20:03:03Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "e4ec734e5b",
+   "status": "confirmed",
+   "title": "⚠️ Florida desmantela una red del Cartel de Sinaloa que traficó cocaína en Tampa Bay durante cinco años",
+   "lang": "es",
+   "title_en": "⚠️ Florida dismantles a Sinaloa Cartel network that trafficked cocaine in Tampa Bay for five years",
+   "first_report": "2026-10-27T19:36:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "chapitos",
+    "mayiza"
+   ],
+   "outlets": [
+    "El Universal",
+    "Infobae",
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115165636611518693",
+     "time": "2026-10-27T19:36:00Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eluniversal.com.mx/mundo/arrestan-en-florida-a-10-presuntos-integrantes-del-cartel-de-sinaloa-por-narcotrafico-cae-el-canelo-jefe-de-celula",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/como-operaban-integrantes-cartel-de-sinaloa-detenidos-florida-eu",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115533623482835024",
+     "time": "2026-10-28T19:58:15Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "6292752106",
+   "status": "single_source",
+   "title": "Conductor de app secuestró a jovencita de 16 años, mandó su ubicación en tiempo real a su mamá y pudieron rescatarla en Tijuana",
+   "lang": "es",
+   "title_en": "A ride-app driver kidnapped a 16-year-old girl; she sent her real-time location to her mother and she was rescued in Tijuana",
+   "first_report": "2026-10-28T19:30:50Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115526723567567098",
+     "time": "2026-10-28T19:30:50Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "e42da213f0",
+   "status": "single_source",
+   "title": "From Honduras and Costa Rica to Ecuador and Panama, governments are embracing massive prisons as part of their response to organized crime. Our analysis maps where these projects stand—and what they r",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-28T19:06:07Z",
+   "first_report_precision": "minute",
+   "first_source": "InSight Crime",
+   "region_ids": [
+    "PAN-1340"
+   ],
+   "country": "PAN",
+   "group_ids": [],
+   "outlets": [
+    "InSight Crime"
+   ],
+   "sources": [
+    {
+     "outlet": "insight",
+     "name": "InSight Crime",
+     "kind": "outlet",
+     "via": "X @InSightCrime",
+     "url": "https://x.com/InSightCrime/status/2115520503750254634",
+     "time": "2026-10-28T19:06:07Z",
+     "time_precision": "minute"
     }
    ]
   },
@@ -281,8 +508,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2729",
-    "MEX-2720"
+    "MEX-2720",
+    "MEX-2729"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -562,12 +789,12 @@
    ]
   },
   {
-   "id": "03bf95bcfb",
+   "id": "8564a3ebc2",
    "status": "confirmed",
-   "title": "➡️ Reportan enfrentamiento entre civiles armados, Marina y Policía Estatal; despliegan operativo en Siete Ejidos, Guasave. 🚨🚔| Un fuerte operativo por tierra y aire se registró en la zona de Siete Eji",
+   "title": "➡️ Aseguran, al parecer, un Jeep durante operativo en Siete Ejidos, Guasave; se desconoce qué hay en su interior 🚨🚔| Aseguran presuntamente un Jeep durante operativo de seguridad en Siete Ejidos, Guas",
    "lang": "es",
-   "title_en": "➡️ A clash is reported between armed civilians, the Navy and State Police; an operation is deployed in Siete Ejidos, Guasave. A large land and air operation took place in the Siete Ejidos area, #Guasave, after an alleged",
-   "first_report": "2026-10-26T21:58:50Z",
+   "title_en": "➡️ A Jeep is apparently seized during an operation in Siete Ejidos, Guasave; what is inside is unknown 🚨🚔| A Jeep is reportedly seized during a security operation in Siete Ejidos, Guasave. The deployment continues after ",
+   "first_report": "2026-10-26T23:43:33Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
    "region_ids": [
@@ -580,15 +807,6 @@
     "Ríodoce"
    ],
    "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2114839194082107646",
-     "time": "2026-10-26T21:58:50Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "noticieristas",
      "name": "Los Noticieristas",
@@ -630,8 +848,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "cv",
-    "pcc"
+    "pcc",
+    "cv"
    ],
    "outlets": [
     "BBC",
@@ -861,8 +1079,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "sinaloa"
+    "sinaloa",
+    "cjng"
    ],
    "outlets": [
     "Infobae"
@@ -883,59 +1101,6 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://infobae.com/mexico/2026/10/27/zapopan-refugio-del-crimen-organizado-12-objetivos-prioritarios-han-sido-detenidos-en-nueve-meses",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "e4ec734e5b",
-   "status": "confirmed",
-   "title": "⚠️ Florida desmantela una red del Cartel de Sinaloa que traficó cocaína en Tampa Bay durante cinco años",
-   "lang": "es",
-   "title_en": "⚠️ Florida dismantles a Sinaloa Cartel network that trafficked cocaine in Tampa Bay for five years",
-   "first_report": "2026-10-27T19:36:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa",
-    "chapitos",
-    "mayiza"
-   ],
-   "outlets": [
-    "El Universal",
-    "Infobae",
-    "Milenio"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115165636611518693",
-     "time": "2026-10-27T19:36:00Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "eluniversal",
-     "name": "El Universal",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://eluniversal.com.mx/mundo/arrestan-en-florida-a-10-presuntos-integrantes-del-cartel-de-sinaloa-por-narcotrafico-cae-el-canelo-jefe-de-celula",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/como-operaban-integrantes-cartel-de-sinaloa-detenidos-florida-eu",
      "time": "2026-10-28T12:00:00Z",
      "time_precision": "day"
     }
@@ -1053,8 +1218,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "El Tiempo"
@@ -1115,8 +1280,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
     "sinaloa",
+    "chapitos",
     "mayiza"
    ],
    "outlets": [
@@ -1285,8 +1450,8 @@
    "first_report_precision": "day",
    "first_source": "El Universal",
    "region_ids": [
-    "MEX-2716",
     "MEX-2714",
+    "MEX-2716",
     "NIC-658"
    ],
    "country": "MEX",
@@ -1348,8 +1513,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "Infobae"
@@ -1984,8 +2149,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
-    "sinaloa"
+    "sinaloa",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -2050,8 +2215,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2732",
-    "MEX-2731"
+    "MEX-2731",
+    "MEX-2732"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2264,75 +2429,6 @@
    ]
   },
   {
-   "id": "60995d3022",
-   "status": "confirmed",
-   "title": "#México 🟣⛓️ | Israel Leonel ‘N’, alias ‘Isra’, presunto operador de ‘Los Rusos’, célula delictiva ligada al Cártel de Sinaloa, fue capturado informó el Gabinete de Seguridad Detalles ➡️🔗",
-   "lang": "es",
-   "title_en": "#Mexico | Israel Leonel 'N', alias 'Isra', an alleged operator of 'Los Rusos', a criminal cell linked to the Sinaloa Cartel, has been captured, the Security Cabinet reported. Details ➡️",
-   "first_report": "2026-10-26T20:06:08Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2706",
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "Los Noticieristas",
-    "Milenio"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2114810833616458109",
-     "time": "2026-10-26T20:06:08Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/detienen-a-el-isra-principal-operador-de-los-rusos-en-bc",
-     "time": "2026-10-27T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/narcotrafico/isra-rusos-presunta-venganza-agentes-fesc",
-     "time": "2026-10-27T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/narcotrafico/los-rusos-el-historial-delictivo-de-el-isra-en-mexicali",
-     "time": "2026-10-27T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/quien-es-el-isra-operador-de-los-rusos-detenido-en-mexicali-perfil",
-     "time": "2026-10-27T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
    "id": "cbd19b7e93",
    "status": "single_source",
    "title": "Cae en Bolivia un presunto jefe de sicarios del PCC sospechoso de 40 asesinatos en Brasil | AP News",
@@ -2344,8 +2440,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "cv",
-    "pcc"
+    "pcc",
+    "cv"
    ],
    "outlets": [
     "AP"
@@ -2434,9 +2530,9 @@
    "region_ids": [],
    "country": "MEX",
    "group_ids": [
+    "sinaloa",
     "chapitos",
-    "mayiza",
-    "sinaloa"
+    "mayiza"
    ],
    "outlets": [
     "Excélsior"
@@ -2500,8 +2596,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cmln",
-    "cjng"
+    "cjng",
+    "cmln"
    ],
    "outlets": [
     "Infobae"
@@ -2533,8 +2629,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "gulf",
-    "cjng"
+    "cjng",
+    "gulf"
    ],
    "outlets": [
     "Infobae"
@@ -2632,8 +2728,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "InSight Crime"
@@ -2703,6 +2799,65 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://milenio.com/estados/reportan-detencion-salvador-hernandez-lider-auma-y-funcionario-uabjo",
+     "time": "2026-10-27T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "6ec0a995cd",
+   "status": "single_source",
+   "title": "Detienen a El Isra, principal operador de Los Rusos, en BC- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-27T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2706",
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/detienen-a-el-isra-principal-operador-de-los-rusos-en-bc",
+     "time": "2026-10-27T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/narcotrafico/isra-rusos-presunta-venganza-agentes-fesc",
+     "time": "2026-10-27T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/narcotrafico/los-rusos-el-historial-delictivo-de-el-isra-en-mexicali",
+     "time": "2026-10-27T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/quien-es-el-isra-operador-de-los-rusos-detenido-en-mexicali-perfil",
      "time": "2026-10-27T12:00:00Z",
      "time_precision": "day"
     }
@@ -2974,8 +3129,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "sinaloa"
+    "sinaloa",
+    "cjng"
    ],
    "outlets": [
     "Diario Extra (Ecuador)"
@@ -3185,8 +3340,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
-    "sinaloa"
+    "sinaloa",
+    "mayiza"
    ],
    "outlets": [
     "Infobae"
@@ -3320,17 +3475,16 @@
    ]
   },
   {
-   "id": "272ab5725a",
+   "id": "724ab457e7",
    "status": "single_source",
-   "title": "➡️ Menor resulta lesionado por esquirlas de bala durante ataque a domicilio en Rincón de Urías en Mazatlán. 🚨🚔| Un menor de edad resultó lesionado por esquirlas de bala durante un ataque armado contra",
+   "title": "➡️ Cámara de seguridad muestra cómo sujetos armados balean una vivienda en Rincón de Urías en Mazatlán 🚨🚔 Una cámara de seguridad captó el momento en que sujetos armados dispararon contra una vivienda",
    "lang": "es",
-   "title_en": "➡️ A minor is wounded by bullet fragments during an attack on a home in Rincón de Urías, Mazatlán. A minor was wounded by bullet fragments during an armed attack on a home on San Quintín street, in the Rincón de Urías su",
-   "first_report": "2026-10-26T21:36:44Z",
+   "title_en": "Security camera shows how armed men shoot at a house in Rincón de Urías in Mazatlán. A security camera captured the moment armed men fired at a house in the Rincón de Urías subdivision in #Mazatlán. During the attack, …",
+   "first_report": "2026-10-27T02:09:58Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2706"
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -3338,15 +3492,6 @@
     "Los Noticieristas"
    ],
    "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2114833634830000578",
-     "time": "2026-10-26T21:36:44Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "noticieristas",
      "name": "Los Noticieristas",
@@ -3615,154 +3760,6 @@
      "via": "X @Riodoce_mx",
      "url": "https://x.com/Riodoce_mx/status/2114840139469836642",
      "time": "2026-10-26T22:02:35Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "43626e6224",
-   "status": "single_source",
-   "title": "Con 40 patrullas, policías detienen a 24 personas por patinar en San Pedro Garza García Los participantes de una rodada nocturna fueron esposados, permanecieron arrestados cerca de 10 horas y recibier",
-   "lang": "es",
-   "title_en": "With 40 patrol cars, police detain 24 people for skating in San Pedro Garza García. Participants in a night-time ride were handcuffed, held for about 10 hours and fined up to 20,000 pesos. Eleven collectives reported all",
-   "first_report": "2026-10-26T21:00:01Z",
-   "first_report_precision": "minute",
-   "first_source": "Proceso",
-   "region_ids": [
-    "MEX-2714",
-    "PRY-606"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Proceso"
-   ],
-   "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2114824393822031992",
-     "time": "2026-10-26T21:00:01Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "8f166f5993",
-   "status": "single_source",
-   "title": "Diputada de Morena propone reformar ley para enviar fichas de búsqueda de niñas y niños desaparecidos directamente a celulares en la Ciudad de México",
-   "lang": "es",
-   "title_en": "A Morena deputy proposes reforming the law so that search notices for missing girls and boys are sent directly to mobile phones in Mexico City",
-   "first_report": "2026-10-26T20:43:08Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2114820144715227432",
-     "time": "2026-10-26T20:43:08Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "6f2d1b4809",
-   "status": "single_source",
-   "title": "😯😯 EPN habló para la docuserie “Operación Cisne Negro” sobre la fuga en 2015 del exlíder del Cártel de Sinaloa y su posterior captura seis meses después",
-   "lang": "es",
-   "title_en": "EPN (former president Enrique Peña Nieto) spoke for the docuseries 'Operación Cisne Negro' about the 2015 escape of the former Sinaloa Cartel leader and his recapture six months later",
-   "first_report": "2026-10-26T20:30:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2114816837951107471",
-     "time": "2026-10-26T20:30:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "7b7072bfe4",
-   "status": "single_source",
-   "title": "Restos de un ataque con #dronesucranianos alcanzaron el tren donde viajaba el #mexicano #CésarMontes y la plantilla del Lokomotiv de Moscú en #Rusia; hubo civiles heridos, pero el equipo resultó ileso",
-   "lang": "es",
-   "title_en": "Debris from a #Ukrainian drone attack hit the train carrying #Mexican #CésarMontes and the Lokomotiv Moscow squad in #Russia; civilians were injured, but the team was unharmed.",
-   "first_report": "2026-10-26T19:50:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2114806771705614646",
-     "time": "2026-10-26T19:50:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "39c68bbf5b",
-   "status": "official_claim_only",
-   "title": "En #Culiacán, #Sinaloa, personal naval y de la #SSPC localiza y neutraliza un laboratorio para la producción de drogas y aseguran 100 kilos de metanfetamina.",
-   "lang": "es",
-   "title_en": "In #Culiacán, #Sinaloa, naval and #SSPC personnel locate and dismantle a drug production laboratory and seize 100 kilos of methamphetamine.",
-   "first_report": "2026-10-26T19:33:18Z",
-   "first_report_precision": "minute",
-   "first_source": "SSPC (Mexico)",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2114802571718144463",
-     "time": "2026-10-26T19:33:18Z",
      "time_precision": "minute"
     }
    ]
