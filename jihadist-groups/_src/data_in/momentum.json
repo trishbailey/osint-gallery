@@ -1,0 +1,468 @@
+[
+ {
+  "id": "al-qaeda-core",
+  "trend": "declining",
+  "reason": "The UN says its senior leadership is marginalised and it faces 'declining relevance'; its de facto leader may be endangered by the Iran war.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "aqap",
+  "trend": "rising",
+  "reason": "It gained weapons and freedom of movement after the early-2026 security vacuum in southern Yemen and its finances improved; UN says its threat increased.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "aqim",
+  "trend": "steady",
+  "reason": "Degraded at 200–300 fighters but remains JNIM's ideological and logistics backbone.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "jnim",
+  "trend": "rising",
+  "reason": "It has 7,000–8,000 members, ran a coordinated offensive in Mali, claims 130+ attacks in Burkina Faso and keeps a fuel blockade on Bamako; Kidal returned to Mali on 6 Oct.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://africacenter.org/spotlight/en-2026b-mig-10yr/",
+   "https://thesoufancenter.org/intelbrief-2026-october-28/"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "al-shabaab",
+  "trend": "steady",
+  "reason": "UN says it shifted to fewer, more targeted attacks after the 2025 surge and lost finance chiefs; the 26 Oct Jameeca ambush shows continued capacity.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://apnews.com/article/somalia-alshabab-military-f962f8d432b9513c6a93246b2981a2cb"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "aqis",
+  "trend": "rising",
+  "reason": "UN says it evolved from a fragmented group into a regional entity; the Nov 2025 Red Fort attack was attributed to it.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "imp",
+  "trend": "rising",
+  "reason": "Linked to a 9 May 2026 attack in Bannu that killed 21.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "tip",
+  "trend": "steady",
+  "reason": "The largest foreign-fighter group in Syria and integrated into the army; one Member State sees the Afghan branch as small and not growing.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "hurras-al-din",
+  "trend": "declining",
+  "reason": "Self-dissolved; 50–70 members joined government forces, though a clandestine network of up to 1,000 persists.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "is-core",
+  "trend": "declining",
+  "reason": "The UN calls it 'at a lower ebb' after losing its deputy leader and provinces chief in May 2026.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "is-syria",
+  "trend": "rising",
+  "reason": "Jail and camp escapes in early 2026 and up to 3,000 fighters; the UN notes 20–40 attacks a month and a raid on a cell on 22 Oct.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://www.aljazeera.com/news/2026/10/22/two-syrian-security-officers-killed-in-raid-on-isil-cell-near-damascus"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "is-iraq",
+  "trend": "declining",
+  "reason": "The UN says it is 'at its weakest' and cannot mount significant attacks.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "iskp",
+  "trend": "steady",
+  "reason": "Set back by Taliban and Pakistani operations but rebuilding for infrequent mass-casualty attacks.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "ispp",
+  "trend": "insufficient evidence",
+  "reason": "Claimed a 6 Feb mosque bombing (32 killed) and a May killing, but the UN says ISKP likely carried out the bombing.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "iswap",
+  "trend": "rising",
+  "reason": "Most active Islamic State affiliate: 174+ attacks Jan–May 2026, more drones, and the 13 Oct Mairari base attack; leadership is unclear.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://www.vanguardngr.com/2026/10/boko-haram-attack-kills-soldiers-civilians-in-borno/"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "issp",
+  "trend": "rising",
+  "reason": "About 2,000 members; Niamey airport attack in January, expansion into north-west Nigeria, and the 18 Oct massacre near Ménaka; fights JNIM.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://apnews.com/article/mali-attack-menaka-deaths-sahel-tuareg-issp-b65482e0b8f3b814e2465ab61c41ee1f"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "lakurawa",
+  "trend": "rising",
+  "reason": "Recruits joined ISSP and activity spread to Kebbi and Zamfara.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "iscap-adf",
+  "trend": "rising",
+  "reason": "More than 80 attacks and 400 deaths Jan–May, expansion north into Haut-Uélé; mine-site attack on 15–16 Oct.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://actualite.cd/2026/10/16/mambasa-10-morts-dans-une-nouvelle-attaque-attribuee-aux-adf-dans-des-carres-miniers"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "is-mozambique",
+  "trend": "rising",
+  "reason": "UN says strength rose to 400–500 despite multinational operations; a weaker source describes the group as weakened.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://somaliatoday.com/security/islamic-state-regroups-in-somalia-as-us-focus-turns-to-iran-2026-03-27/"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "is-somalia",
+  "trend": "steady",
+  "reason": "UN says it is constrained to 150–250 fighters; the Puntland offensive hit it hard on 27–28 Oct, while Somali experts say it has grown.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://allsanaag.com/scores-killed-in-somalia-in-clash-between-security-forces-islamic-state/"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "is-libya",
+  "trend": "declining",
+  "reason": "About 100 fighters in small cells; Libyan intelligence arrested 15+ suspects.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "is-yemen",
+  "trend": "steady",
+  "reason": "Weak, about 150 fighters, but benefits from the security vacuum.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "jund-al-khilafah",
+  "trend": "declining",
+  "reason": "About a dozen isolated fighters; a four-member cell was broken up in January.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "hezbollah",
+  "trend": "steady",
+  "reason": "Reported to be rebuilding drones and command structures with Iranian funds while Israeli strikes continue and Qassem rejects disarmament.",
+  "sources": [
+   "https://www.timesofisrael.com/hezbollah-rearming-for-possible-renewed-conflict-with-israel-lebanese-sources-say/",
+   "https://www.aa.com.tr/en/middle-east/israel-carries-out-strikes-in-southern-lebanon-in-fresh-ceasefire-violations/4101864"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "houthis",
+  "trend": "rising",
+  "reason": "A Houthi missile killed 12 at Riyadh airport on 10 Oct and Reuters describes a Red Sea offensive; government forces report ground gains near Bab el-Mandeb, which the Houthis deny.",
+  "sources": [
+   "https://apnews.com/article/saudi-yemen-houthi-riyadh-airport-f0e0e6105f33400e37bb20bb9a8130af",
+   "https://apnews.com/article/yemen-houthis-iran-saudi-arabia-red-sea-taiz-e87beb84a0d146e4f0546b50508f7e32"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "hamas",
+  "trend": "steady",
+  "reason": "New leader since 20 Jul; the ceasefire holds in name only, Israel says Hamas is rebuilding, and Hamas links disarmament to Israeli withdrawal.",
+  "sources": [
+   "https://www.bbc.com/news/articles/cmx2qlz7qrd4o",
+   "https://www.timesofisrael.com/report-israel-tells-us-hamas-doesnt-plan-to-disarm-and-is-rebuilding-its-forces/"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "pij",
+  "trend": "steady",
+  "reason": "Still led by al-Nakhalah and in talks with Hamas in Cairo on 7 Oct.",
+  "sources": [
+   "https://english.palinfo.com/news/2026/10/07/371562/"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "kataib-hezbollah",
+  "trend": "steady",
+  "reason": "Rejects disarmament after US troops left Iraq; a new deadline of 30 Jun 2027 was set.",
+  "sources": [
+   "https://www.rudaw.net/english/categories/iraq/1079537"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "nujaba",
+  "trend": "steady",
+  "reason": "Rejects disarmament alongside KH.",
+  "sources": [
+   "https://www.rudaw.net/english/categories/iraq/1079537"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "aah",
+  "trend": "declining",
+  "reason": "Announced disarmament in 2026 (Washington Institute).",
+  "sources": [
+   "https://www.washingtoninstitute.org/policy-analysis/iraqs-militia-balancing-act-gets-trickier-amid-deadlines-and-saudi-attacks"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "kss",
+  "trend": "steady",
+  "reason": "More resistant to disarmament than AAH.",
+  "sources": [
+   "https://www.washingtoninstitute.org/policy-analysis/iraqs-militia-balancing-act-gets-trickier-amid-deadlines-and-saudi-attacks"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "badr",
+  "trend": "steady",
+  "reason": "Led by al-Amiri, who is central to disarmament talks; more resistant than AAH.",
+  "sources": [
+   "https://www.washingtoninstitute.org/policy-analysis/iraqs-militia-balancing-act-gets-trickier-amid-deadlines-and-saudi-attacks"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "taliban",
+  "trend": "steady",
+  "reason": "Governs Afghanistan; faces ISKP and cross-border clashes with Pakistan.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "ttp",
+  "trend": "rising",
+  "reason": "Escalated attacks on Pakistan; new divisions announced Dec 2025; Kurram clash on 10 Oct.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://www.dawn.com/news/2036382"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "let",
+  "trend": "insufficient evidence",
+  "reason": "No credible 2026 operational reporting found beyond Indian-press claims of leadership change.",
+  "sources": [
+   "https://theprint.in/defence/decades-long-terror-trail-of-lashkar-jaish-the-bullseye-of-indias-operation-sindoor/2618704/"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "jem",
+  "trend": "insufficient evidence",
+  "reason": "As LeT.",
+  "sources": [
+   "https://theprint.in/defence/decades-long-terror-trail-of-lashkar-jaish-the-bullseye-of-indias-operation-sindoor/2618704/"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "hts",
+  "trend": "steady",
+  "reason": "Now the core of Syria's government.",
+  "sources": [
+   "https://news.un.org/en/story/2025/11/1166303"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "jas",
+  "trend": "rising",
+  "reason": "UN reports a surge in capability, a 416-person abduction at Ngoshe and clashes with ISWAP; leader Bakura Doro consolidated control.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "ji",
+  "trend": "declining",
+  "reason": "Dissolved on 30 Jun 2024.",
+  "sources": [
+   "https://www.reuters.com/world/asia-pacific/southeast-asian-militant-group-jemaah-islamiyah-be-disbanded-say-its-senior-2024-07-04/"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "jad",
+  "trend": "declining",
+  "reason": "UN says Southeast Asian Islamic State-linked capacity declined; only small cells and arrests are reported.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://en.antaranews.com/news/414867/indonesia-arrest-eight-isis-linked-suspects-in-central-sulawesi"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "mit",
+  "trend": "declining",
+  "reason": "Declared eradicated in 2022.",
+  "sources": [
+   "https://www.liputan6.com/news/read/5168858/kapolri-tahun-2022-kami-nyatakan-kelompok-mit-berhasil-diberantas"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "asg",
+  "trend": "declining",
+  "reason": "Fewer than 100 remnants; Sulu and Basilan declared ASG-free.",
+  "sources": [
+   "https://www.ecoi.net/en/document/2144918.html"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "biff",
+  "trend": "declining",
+  "reason": "Leader killed 5 Jul 2026.",
+  "sources": [
+   "https://mindanews.com/top-stories/2026/07/leader-of-biff-bungos-group-killed-in-maguindanao-del-norte/"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "di-maute",
+  "trend": "declining",
+  "reason": "Leader and nine members killed 17 Apr 2026.",
+  "sources": [
+   "https://mb.com.ph/2026/04/17/army-police-neutralize-10-dawlah-islamiyah-maute-group-members-in-lanao-sur"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "jmm",
+  "trend": "rising",
+  "reason": "Four Baluch groups merged in December 2025, and the coalition claimed five attacks in seven days in October 2026.",
+  "sources": [
+   "https://www.longwarjournal.org/archives/2026/10/insurgent-attacks-surge-in-southeastern-iran.php"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "hgb",
+  "trend": "rising",
+  "reason": "The alliance it leads claimed the 18 September 2026 Kohat attack and a 21 February 2026 Bannu bombing.",
+  "sources": [
+   "https://www.satp.org/south-asia-intelligence-review-Volume-25-No-16",
+   "https://wenewsenglish.com/afghanistan-based-terror-network-behind-bannu-suicide-attack/"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "ansaru",
+  "trend": "declining",
+  "reason": "Its emir and deputy are in prison with life sentences since 20 July 2026.",
+  "sources": [
+   "https://www.channelstv.com/2026/07/20/court-jails-two-ansaru-commanders-for-life-over-terrorism/"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "trf",
+  "trend": "insufficient evidence",
+  "reason": "It claimed two killings in July 2026, which is too few events to show a direction.",
+  "sources": [
+   "https://indianexpress.com/article/india/manhunt-in-valley-as-terror-attack-claims-2-trf-link-being-probed-10814018/"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "ghuraba",
+  "trend": "insufficient evidence",
+  "reason": "The UN reports only that a few dozen members remain.",
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "is-sinai",
+  "trend": "declining",
+  "reason": "It has claimed no attack since 2023 and Egypt describes the area as free of attacks.",
+  "sources": [
+   "https://www.dni.gov/nctc/terrorist_groups/isis_sinai.html",
+   "https://www.ecoi.net/en/document/2145054.html"
+  ],
+  "confidence": "medium"
+ }
+]

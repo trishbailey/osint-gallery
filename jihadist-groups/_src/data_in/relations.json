@@ -1,0 +1,686 @@
+{
+ "external_nodes": [
+  {
+   "id": "iran",
+   "name": "Iran (state; IRGC Quds Force, Islamic Revolutionary Guard Corps)",
+   "kind": "state sponsor"
+  },
+  {
+   "id": "fla",
+   "name": "Front de libération de l'Azawad (Azawad Liberation Front; Tuareg, not an Islamist group)",
+   "kind": "non-Islamist partner"
+  },
+  {
+   "id": "syria-gov",
+   "name": "Syrian government",
+   "kind": "state"
+  },
+  {
+   "id": "yemen-saudi",
+   "name": "Yemeni government and Saudi-led coalition",
+   "kind": "state"
+  }
+ ],
+ "relations": [
+  {
+   "source": "jnim",
+   "target": "issp",
+   "type": "rivalry/fighting",
+   "description": "The two groups fight each other around Tessit and Oudalan; ISSP claims it killed more than 400 JNIM fighters, which is unverified.",
+   "basis": "documented",
+   "url": "https://thesoufancenter.org/intelbrief-2026-october-28/",
+   "confidence": "medium",
+   "note": "UN para 24 also records ISGS claims of nearly 100 JNIM dead between Feb and Apr 2026."
+  },
+  {
+   "source": "jnim",
+   "target": "fla",
+   "type": "cooperation",
+   "description": "JNIM and the Tuareg FLA planned and ran the 25 April 2026 offensive in Mali together.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "jnim",
+   "target": "aqim",
+   "type": "funding or arms",
+   "description": "Most of a roughly $50 million 2025 ransom went to JNIM katibas (battalions); a share went to AQIM.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN Monitoring Team, from Member State information."
+  },
+  {
+   "source": "aqim",
+   "target": "jnim",
+   "type": "cooperation",
+   "description": "AQIM is JNIM's ideological backbone and logistics enabler; its leader attends JNIM leadership meetings.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "aqim",
+   "target": "aqap",
+   "type": "funding or arms",
+   "description": "AQIM likely sent part of the ransom money to the al-Qaeda core and AQAP.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "low",
+   "note": null
+  },
+  {
+   "source": "al-shabaab",
+   "target": "aqap",
+   "type": "funding or arms",
+   "description": "Al-Shabaab money helped improve AQAP's finances; fighters travelled to Yemen to coordinate with AQAP.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "aqap",
+   "target": "houthis",
+   "type": "cooperation",
+   "description": "AQAP and the Houthis have a field partnership since January 2026: shared intelligence, weapons, and AQAP fighters in Houthi areas.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "Member State reporting; both sides are enemies of the Yemeni government."
+  },
+  {
+   "source": "al-shabaab",
+   "target": "houthis",
+   "type": "cooperation",
+   "description": "Between 150 and 400 al-Shabaab fighters reportedly trained with the Houthis.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "taliban",
+   "target": "ttp",
+   "type": "funding or arms",
+   "description": "The Taliban authorities support the TTP, according to the UN; the Taliban deny harbouring terrorist groups and moved about 2,000 TTP members inland.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "Contested: the Taliban publicly deny it."
+  },
+  {
+   "source": "al-qaeda-core",
+   "target": "ttp",
+   "type": "cooperation",
+   "description": "Al-Qaeda's media arm publicly backed the TTP for the first time on 28 April 2026 and provides guidance and training.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "Public statement is documented; the training claim is reported."
+  },
+  {
+   "source": "aqis",
+   "target": "imp",
+   "type": "split from / affiliate of",
+   "description": "AQIS formed the backbone of Ittihad-ul-Mujahideen Pakistan.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "aqis",
+   "target": "taliban",
+   "type": "cooperation",
+   "description": "AQIS leaders live in Kabul with Taliban-issued ID cards, which suggests close cooperation.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "low",
+   "note": null
+  },
+  {
+   "source": "iskp",
+   "target": "taliban",
+   "type": "rivalry/fighting",
+   "description": "The Taliban run operations against ISKP in the north and in Kabul; ISKP claims attacks on Taliban officials.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "iskp",
+   "target": "ispp",
+   "type": "split from / affiliate of",
+   "description": "ISPP claimed the Islamabad mosque bombing but the UN says ISKP likely carried it out.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "iswap",
+   "target": "jas",
+   "type": "rivalry/fighting",
+   "description": "ISWAP and Boko Haram fought in the Sambisa Forest, the Mandara Mountains and Abadam in January 2026 over territory and resources.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "issp",
+   "target": "iswap",
+   "type": "cooperation",
+   "description": "ISWAP helped prepare the 29 January 2026 attack on Niamey airport carried out by ISSP; the two are described as closely tied.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "lakurawa",
+   "target": "issp",
+   "type": "split from / affiliate of",
+   "description": "ISSP recruited hundreds of people linked to Lakurawa and expanded into Kebbi and Zamfara.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "Whether Lakurawa is a separate group is not settled."
+  },
+  {
+   "source": "jas",
+   "target": "iswap",
+   "type": "split from / affiliate of",
+   "description": "Boko Haram (JAS) and ISWAP are rival splinters of the original Boko Haram.",
+   "basis": "documented",
+   "url": "https://www.crisisgroup.org/brf/africa/west-africa/nigeria/b196-jas-vs-iswap-war-boko-haram-splinters",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "iscap-adf",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "ADF is the Islamic State's Central Africa Province; its logistics chief Meddie Nkalubo is a key link to the Islamic State core.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "iscap-adf",
+   "target": "is-mozambique",
+   "type": "cooperation",
+   "description": "ADF and Islamic State Mozambique share movement, training and financing links.",
+   "basis": "reported",
+   "url": "https://acleddata.com/qa/qa-islamic-states-pivot-africa",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "is-somalia",
+   "target": "is-mozambique",
+   "type": "funding or arms",
+   "description": "A 2026 report says Islamic State Somalia supports Islamic State Mozambique; the UN says the Somalia group is unable to support other affiliates.",
+   "basis": "reported",
+   "url": "https://somaliatoday.com/security/islamic-state-regroups-in-somalia-as-us-focus-turns-to-iran-2026-03-27/",
+   "confidence": "low",
+   "note": "Contested: UN para 44 contradicts."
+  },
+  {
+   "source": "hurras-al-din",
+   "target": "syria-gov",
+   "type": "rivalry/fighting",
+   "description": "Hardcore Hurras al-Din elements are hostile to President al-Sharaa's government.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "is-syria",
+   "target": "syria-gov",
+   "type": "rivalry/fighting",
+   "description": "Syrian security forces raid Islamic State cells; two officers and five Islamic State members died in Rankous on 22 October 2026.",
+   "basis": "documented",
+   "url": "https://www.aljazeera.com/news/2026/10/22/two-syrian-security-officers-killed-in-raid-on-isil-cell-near-damascus",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "is-core",
+   "target": "al-qaeda-core",
+   "type": "rivalry/fighting",
+   "description": "The Islamic State accused al-Qaeda of selling out to Iran and urged al-Qaeda fighters to defect.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "tip",
+   "target": "syria-gov",
+   "type": "split from / affiliate of",
+   "description": "The Turkistan Islamic Party is integrated into the Syrian Army's 84th Division.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "tip",
+   "target": "al-qaeda-core",
+   "type": "cooperation",
+   "description": "The Turkistan Islamic Party reportedly trains at an al-Qaeda camp at Barg-e Matal, Nuristan.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "low",
+   "note": "One Member State."
+  },
+  {
+   "source": "iran",
+   "target": "hezbollah",
+   "type": "funding or arms",
+   "description": "Hezbollah is rebuilding with funds from Iran, according to sources cited by Reuters/Straits Times.",
+   "basis": "reported",
+   "url": "https://www.straitstimes.com/world/middle-east/hezbollah-readies-for-new-regional-war-with-funds-from-iran-sources-say",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "iran",
+   "target": "houthis",
+   "type": "funding or arms",
+   "description": "The Houthis are described as Iran's allies in Yemen.",
+   "basis": "reported",
+   "url": "https://www.reuters.com/world/middle-east/why-havent-houthis-irans-allies-yemen-stepped-into-war-2026-10-04/",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "iran",
+   "target": "hamas",
+   "type": "cooperation",
+   "description": "Hamas elected an Iran-aligned leader, Khalil al-Hayya, in July 2026.",
+   "basis": "reported",
+   "url": "https://www.bloomberg.com/news/articles/2026-07-20/hamas-picks-iran-aligned-khalil-al-hayya-as-its-top-leader",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "iri",
+   "target": "kataib-hezbollah",
+   "type": "split from / affiliate of",
+   "description": "Kata'ib Hezbollah belongs to the Islamic Resistance in Iraq, which says it keeps its weapons.",
+   "basis": "reported",
+   "url": "https://www.rudaw.net/english/categories/iraq/1079537",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "iri",
+   "target": "nujaba",
+   "type": "split from / affiliate of",
+   "description": "Harakat Hezbollah al-Nujaba belongs to the Islamic Resistance in Iraq.",
+   "basis": "reported",
+   "url": "https://www.rudaw.net/english/categories/iraq/1079537",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "iran",
+   "target": "iri",
+   "type": "funding or arms",
+   "description": "Iraqi factions are described as Iran-backed.",
+   "basis": "reported",
+   "url": "https://www.rudaw.net/english/categories/iraq/1079537",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "hamas",
+   "target": "pij",
+   "type": "cooperation",
+   "description": "Hamas and Palestinian Islamic Jihad delegations met in Cairo on 7 October 2026 on Gaza and the West Bank.",
+   "basis": "documented",
+   "url": "https://english.palinfo.com/news/2026/10/07/371562/",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "houthis",
+   "target": "yemen-saudi",
+   "type": "rivalry/fighting",
+   "description": "The Houthis hit Riyadh airport on 10 October 2026; Saudi-backed Yemeni forces report retaking ground near the Bab el-Mandeb strait, which the Houthis deny.",
+   "basis": "documented",
+   "url": "https://apnews.com/article/saudi-yemen-houthi-riyadh-airport-f0e0e6105f33400e37bb20bb9a8130af",
+   "confidence": "high",
+   "note": "The territorial claim is contested."
+  },
+  {
+   "source": "let",
+   "target": "jem",
+   "type": "cooperation",
+   "description": "Pakistan's ISI is reported to have put military officers in charge of coordinating LeT, JeM and Hizbul Mujahideen operations.",
+   "basis": "reported",
+   "url": "https://ianslive.in/brigadier-colonel-take-charge-of-let-hm-jem-as-isi-pushes-operational-synergy--20260812115030",
+   "confidence": "low",
+   "note": "Single Indian news-agency report."
+  },
+  {
+   "source": "jad",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "JAD members are Islamic State supporters; Indonesian police arrested eight suspected members in May 2026.",
+   "basis": "documented",
+   "url": "https://en.antaranews.com/news/414867/indonesia-arrest-eight-isis-linked-suspects-in-central-sulawesi",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "mit",
+   "target": "jad",
+   "type": "cooperation",
+   "description": "A sleeper-cell network tied to MIT was linked to JAD in the May 2026 arrests.",
+   "basis": "reported",
+   "url": "https://www.channelnewsasia.com/asia/indonesia-densus-88-militants-isis-sulawesi-6106156",
+   "confidence": "low",
+   "note": null
+  },
+  {
+   "source": "di-maute",
+   "target": "dawlah-islamiyah",
+   "type": "split from / affiliate of",
+   "description": "The Maute group is a faction of Dawlah Islamiyah.",
+   "basis": "reported",
+   "url": "https://mb.com.ph/2026/04/17/army-police-neutralize-10-dawlah-islamiyah-maute-group-members-in-lanao-sur",
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "source": "biff",
+   "target": "dawlah-islamiyah",
+   "type": "cooperation",
+   "description": "BIFF-Bungos is Islamic State-aligned and operates alongside Dawlah Islamiyah in the Bangsamoro region.",
+   "basis": "reported",
+   "url": "https://mindanews.com/top-stories/2026/07/leader-of-biff-bungos-group-killed-in-maguindanao-del-norte/",
+   "confidence": "low",
+   "note": null
+  },
+  {
+   "source": "dawlah-islamiyah",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "Dawlah Islamiyah factions are Islamic State-aligned.",
+   "basis": "reported",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN para 104 on Islamic State in Southeast Asia (ISIL-SEA) and affiliated networks."
+  },
+  {
+   "source": "iskp",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of the Islamic State; listed as an Islamic State branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "iswap",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of the Islamic State; listed as an Islamic State branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "issp",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of the Islamic State; listed as an Islamic State branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "iscap-adf",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of the Islamic State; listed as an Islamic State branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "is-mozambique",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of the Islamic State; listed as an Islamic State branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "is-somalia",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of the Islamic State; listed as an Islamic State branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "is-libya",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of the Islamic State; listed as an Islamic State branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "is-yemen",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of the Islamic State; listed as an Islamic State branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "jund-al-khilafah",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of the Islamic State; listed as an Islamic State branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "is-iraq",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of the Islamic State; listed as an Islamic State branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "is-syria",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of the Islamic State; listed as an Islamic State branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "aqap",
+   "target": "al-qaeda-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of al-Qaeda; listed as an al-Qaeda branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "aqim",
+   "target": "al-qaeda-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of al-Qaeda; listed as an al-Qaeda branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "al-shabaab",
+   "target": "al-qaeda-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of al-Qaeda; listed as an al-Qaeda branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "aqis",
+   "target": "al-qaeda-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of al-Qaeda; listed as an al-Qaeda branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "hurras-al-din",
+   "target": "al-qaeda-core",
+   "type": "split from / affiliate of",
+   "description": "Affiliate of al-Qaeda; listed as an al-Qaeda branch by the UN Monitoring Team.",
+   "basis": "documented",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "jnim",
+   "target": "aqim",
+   "type": "split from / affiliate of",
+   "description": "JNIM was formed in 2017 from al-Qaeda-linked groups including AQIM's Sahara emirate; it operates as the al-Qaeda affiliate in the Sahel.",
+   "basis": "documented",
+   "url": "https://www.odni.gov/nctc/terrorist_groups/jnim.html",
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "source": "jmm",
+   "target": "iran",
+   "type": "rivalry/fighting",
+   "basis": "documented",
+   "confidence": "medium",
+   "url": "https://www.longwarjournal.org/archives/2026/10/insurgent-attacks-surge-in-southeastern-iran.php",
+   "description": "The coalition claimed five attacks on Iranian security forces in seven days in early October 2026.",
+   "note": "Claims by the group; Iranian figures differ."
+  },
+  {
+   "source": "hgb",
+   "target": "imp",
+   "type": "cooperation",
+   "basis": "reported",
+   "confidence": "medium",
+   "url": "https://www.satp.org/south-asia-intelligence-review-Volume-25-No-16",
+   "description": "The South Asia Terrorism Portal and the New York Times say the Hafiz Gul Bahadur group leads the alliance; the UN says al-Qaeda in the Indian Subcontinent formed its backbone.",
+   "note": "Contested leadership of the alliance."
+  },
+  {
+   "source": "hgb",
+   "target": "ttp",
+   "type": "cooperation",
+   "basis": "reported",
+   "confidence": "medium",
+   "url": "https://wenewsenglish.com/afghanistan-based-terror-network-behind-bannu-suicide-attack/",
+   "description": "Pakistani officials describe the group as a close ally of the Pakistani Taliban and say both plan attacks from Afghanistan.",
+   "note": "Pakistani official account."
+  },
+  {
+   "source": "ansaru",
+   "target": "jnim",
+   "type": "cooperation",
+   "basis": "reported",
+   "confidence": "medium",
+   "url": "https://www.vanguardngr.com/2026/07/two-al-qaeda-linked-terrorists-bag-life-sentences-after-pleading-guilty/",
+   "description": "Nigerian prosecutors say Ansaru's leaders were trained by JNIM in Mali.",
+   "note": "Prosecution account in a guilty plea."
+  },
+  {
+   "source": "ansaru",
+   "target": "al-qaeda-core",
+   "type": "split from / affiliate of",
+   "basis": "reported",
+   "confidence": "medium",
+   "url": "https://www.channelstv.com/2026/07/20/court-jails-two-ansaru-commanders-for-life-over-terrorism/",
+   "description": "Nigerian officials call Ansaru an al-Qaeda affiliate.",
+   "note": null
+  },
+  {
+   "source": "trf",
+   "target": "let",
+   "type": "split from / affiliate of",
+   "basis": "reported",
+   "confidence": "medium",
+   "url": "https://satp.org/terrorist-profile/india-jammukashmir/the-resistance-front-trf",
+   "description": "The South Asia Terrorism Portal describes the front as a Lashkar-e-Taiba proxy.",
+   "note": "India's National Investigation Agency makes the same link."
+  },
+  {
+   "source": "ghuraba",
+   "target": "syria-gov",
+   "type": "rivalry/fighting",
+   "basis": "documented",
+   "confidence": "medium",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "description": "The few dozen members remain hostile to the Syrian government.",
+   "note": null
+  },
+  {
+   "source": "ghuraba",
+   "target": "al-qaeda-core",
+   "type": "split from / affiliate of",
+   "basis": "reported",
+   "confidence": "medium",
+   "url": "https://docs.un.org/en/S/2026/651",
+   "description": "The UN describes the battalion as al-Qaeda-aligned.",
+   "note": null
+  },
+  {
+   "source": "is-sinai",
+   "target": "is-core",
+   "type": "split from / affiliate of",
+   "basis": "documented",
+   "confidence": "high",
+   "url": "https://www.dni.gov/nctc/terrorist_groups/isis_sinai.html",
+   "description": "The US National Counterterrorism Center lists it as an Islamic State branch.",
+   "note": null
+  }
+ ]
+}
