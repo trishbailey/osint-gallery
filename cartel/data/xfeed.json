@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-29T16:02:05Z",
+ "as_of": "2026-10-29T19:03:08Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,183 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2115881401081823397",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2115881401081823397",
+   "created_at": "2026-10-29T19:00:11.000Z",
+   "text": "Detienen a secretaria de Bienestar de Uruapan por encubrimiento en caso Carlos Manzo La Fiscalía de Michoacán no precisó qué acciones u omisiones se le atribuyen a la funcionaria ni a quién habría favorecido. https://t.co/MMM7gjuBGc",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Uruapan Welfare secretary arrested for cover-up in the Carlos Manzo case. The Michoacán Prosecutor's Office did not specify what actions or omissions are attributed to the official or whom she allegedly favoured."
+  },
+  {
+   "id": "2115879822689755386",
+   "handle": "SSPCMexico",
+   "url": "https://x.com/SSPCMexico/status/2115879822689755386",
+   "created_at": "2026-10-29T18:53:55.000Z",
+   "text": "En #Michoacán, elementos de @SEMAR_mx, #SSPC y @FGRMexico, en coordinación con autoridades estatales, detuvieron a tres personas en Coahuayana de Hidalgo, quienes contaban con órdenes de aprehensión por diferentes delitos y son señaladas como generadoras de violencia en ese http…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2730",
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "In Michoacán, SEMAR, SSPC and FGR personnel, coordinating with state authorities, arrested three people in Coahuayana de Hidalgo who had arrest warrants for various crimes and are identified as violence generators in that…"
+  },
+  {
+   "id": "2115875054969880588",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115875054969880588",
+   "created_at": "2026-10-29T18:34:58.000Z",
+   "text": "Cae “El Bocho” en Mexicali: es señalado como operador de drogas del Cártel de Sinaloa, detenido con fentanilo y un arma https://t.co/nCi8j5HzRd",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2706",
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "\"El Bocho\" caught in Mexicali: identified as a Sinaloa Cartel drug operator, arrested with fentanyl and a weapon"
+  },
+  {
+   "id": "2115873804954009984",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115873804954009984",
+   "created_at": "2026-10-29T18:30:00.000Z",
+   "text": "El #Ejército aseguró en #Sinaloa mil 490 litros y 400 kilos de químicos para fabricar #metanfetamina, además de 15 kilos de un precursor para elaborar #fentanilo. https://t.co/ZObq5qWlCB",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The Army seized in Sinaloa 1,490 litres and 400 kilos of chemicals for making methamphetamine, plus 15 kilos of a fentanyl precursor."
+  },
+  {
+   "id": "2115871001842172254",
+   "handle": "GabSeguridadMX",
+   "url": "https://x.com/GabSeguridadMX/status/2115871001842172254",
+   "created_at": "2026-10-29T18:18:52.000Z",
+   "text": "En Michoacán, elementos de @SEMAR_mx, en coordinación con @SSPCMexico, @FGRMexico, @FiscaliaMich y @SSeguridad_Mich, ejecutaron tres órdenes de cateo y detuvieron a tres integrantes de una célula delictiva generadora de violencia, quienes cuentan con órdenes de aprehensión y htt…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "In Michoacán, SEMAR personnel, coordinating with SSPC, FGR, the Michoacán Prosecutor's Office and the state Security Secretariat, carried out three search warrants and arrested three members of a violence-generating criminal cell who have arrest warrants and…"
+  },
+  {
+   "id": "2115860448021225550",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115860448021225550",
+   "created_at": "2026-10-29T17:36:56.000Z",
+   "text": "⚠️ Fue detenido con una granada de fragmentación y documentos apócrifos que lo acreditaban como agente de la #CIA https://t.co/DuTLh0SGC6",
+   "lang": "und",
+   "region_ids": [
+    "NIC-655"
+   ],
+   "country": "NIC",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "He was arrested with a fragmentation grenade and forged documents identifying him as a CIA agent"
+  },
+  {
+   "id": "2115853635804401806",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2115853635804401806",
+   "created_at": "2026-10-29T17:09:52.000Z",
+   "text": "El ataque ocurrió un día después de que la Guardia Civil de Michoacán asumió el control de la seguridad en Uruapan https://t.co/9h5xG0joix",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The attack came a day after Michoacán's Civil Guard took over security in Uruapan"
+  },
+  {
+   "id": "2115851653161091213",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2115851653161091213",
+   "created_at": "2026-10-29T17:01:59.000Z",
+   "text": "Ecuador envió a Estados Unidos a Daniel Salcedo, a Ronald Herrera, un testigo clave del caso Villavicencio, y a alias 'Churrón', cabecilla de Los Choneros. Estos son los perfiles de los extraditados. https://t.co/HYXKMNz40z https://t.co/qWJU8R8p2s",
+   "lang": "es",
+   "region_ids": [
+    "COL-1425",
+    "PAN-1338"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "choneros"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Ecuador sent Daniel Salcedo, Ronald Herrera (a key witness in the Villavicencio case) and alias 'Churrón', a Los Choneros leader, to the United States. These are the profiles of the extradited."
+  },
+  {
+   "id": "2115840354364555499",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115840354364555499",
+   "created_at": "2026-10-29T16:17:05.000Z",
+   "text": "La detención de la secretaria de Bienestar de Uruapan por probable encubrimiento se suma a las investigaciones por el homicidio; la presidenta Claudia Sheinbaum informó que dará un informe de resultados y pendientes de la estrategia federal contra la ... https://t.co/EBDbB9C4rm…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "The arrest of the Uruapan Welfare secretary for probable cover-up adds to the homicide investigations; President Claudia Sheinbaum said she will give a report on results and pending items of the federal strategy against the ..."
+  },
+  {
+   "id": "2115838709819940942",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115838709819940942",
+   "created_at": "2026-10-29T16:10:33.000Z",
+   "text": "Asesinan a elemento de la Agencia Ministerial de Investigación Criminal en Sonora durante ataque armado a las instalaciones https://t.co/Jk6XzGdJkS",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2712"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Officer of the Criminal Investigation Ministerial Agency killed in Sonora during armed attack on its facilities"
+  },
   {
    "id": "2115826198206984289",
    "handle": "infobaemexico",
@@ -3793,79 +3970,6 @@
    "source_type": "local outlet",
    "label": null,
    "text_en": "'#CocoRanas', 25, was arrested by the State Police in the Lomas del Sol subdivision, north of #Culiacán, and handed to the #FGR for federal crimes."
-  },
-  {
-   "id": "2113342121222778960",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2113342121222778960",
-   "created_at": "2026-10-22T18:50:00.000Z",
-   "text": "El Gobierno de #Argentina, encabezado por el presidente Javier Milei, declaró organizaciones terroristas al #Cártel de #Sinaloa y La Nueva Familia Michoacana, de México; a las guerrillas colombianas FARC-EP y Ejército de Liberación Nacional (ELN), así como al grupo criminal",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "lnfm",
-    "eln"
-   ],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "The Government of #Argentina, led by President Javier Milei, declared Mexico's #Sinaloa #Cartel and La Nueva Familia Michoacana, the Colombian guerrillas FARC-EP and National Liberation Army (ELN), and the criminal group … terrorist organisations"
-  },
-  {
-   "id": "2113315791483388170",
-   "handle": "ZETATijuana",
-   "url": "https://x.com/ZETATijuana/status/2113315791483388170",
-   "created_at": "2026-10-22T17:05:22.000Z",
-   "text": "Jueza federal desechó de plano la demanda de derechos fundamentales tramitada por Iván Cazarín Molina, uno de los exlíderes del CJNG. Por otra parte, presenta otra moción de amparo contra el auto de vinculación https://t.co/LvUprCTbVL",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "A federal judge dismissed outright the fundamental-rights suit filed by Iván Cazarín Molina, one of the former CJNG leaders. He has filed another amparo motion against the order to stand trial"
-  },
-  {
-   "id": "2113314445334392834",
-   "handle": "ArmandoInfo",
-   "url": "https://x.com/ArmandoInfo/status/2113314445334392834",
-   "created_at": "2026-10-22T17:00:01.000Z",
-   "text": "Pero la suerte de Saab la enfrentaron primero sus socios. Álvaro Pulido Vargas estaba detenido en Caracas desde abril de 2023 por el caso Pdvsa-Cripto, mientras que Carlos Lizcano también quedó bajo arresto en febrero pasado tras la captura del propio https://t.co/Kto8m4RbR2",
-   "lang": "es",
-   "region_ids": [
-    "VEN-43"
-   ],
-   "country": "VEN",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "regional outlet",
-   "label": null,
-   "text_en": "But Saab's partners met their fate first. Álvaro Pulido Vargas had been held in Caracas since April 2023 over the PDVSA-Crypto case, while Carlos Lizcano was also arrested last February after the capture of"
-  },
-  {
-   "id": "2113313297046917378",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2113313297046917378",
-   "created_at": "2026-10-22T16:55:28.000Z",
-   "text": "▶️ Ataque en #Escuinapa, Sinalao iba dirigido contra el chofer del autobús; sufrió lesión leve confirma la SSPE 🚨 El ataque a balazos contra un camión urbano en #Escuinapa iba dirigido contra el chofer, quien resultó con una lesión leve, confirmó la Secretaría de Seguridad https…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "▶️ Escuinapa, Sinaloa attack was aimed at the bus driver, who suffered a minor injury, the SSPE confirms…"
   }
  ]
 }
