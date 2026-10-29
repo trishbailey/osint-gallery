@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
 """Write ../index.html. The page is a static shell; app.js fills it from data.json."""
-import pathlib
+import pathlib, json, collections
 OUT = pathlib.Path(__file__).resolve().parent.parent / "index.html"
+_D = json.load(open(OUT.parent / "data.json"))
+_AFRICA = ("Sahel", "Lake Chad Basin and Nigeria", "Horn of Africa", "Central and southern Africa")
+_TC = collections.Counter(x["theatre"] for x in _D["incidents"])
+_N = sum(_TC.values()); _NA = sum(_TC[t] for t in _AFRICA)
+_TOP = [t for t, c in _TC.items() if c == max(_TC.values())]
+INC_SUMMARY = (f"{_NA} of the {_N} major incidents in the last 30 days fall in Africa. "
+    + (f"The {_TOP[0]} theatre has the most." if len(_TOP) == 1 else f"The {' and '.join(_TOP)} theatres have the most."))
 
 HTML = '''<!doctype html><html lang="en"><head><script data-slash-fix>if(location.pathname==="/jihadist-groups")location.replace("/jihadist-groups/"+location.search+location.hash);</script>
 <!-- Google tag (gtag.js) -->
@@ -30,7 +37,7 @@ HTML = '''<!doctype html><html lang="en"><head><script data-slash-fix>if(locatio
 <h3>Family</h3><div class="group fam4" id="famBtns"></div>
 <h3>Show</h3><div class="group">
 <button class="fbtn" type="button" id="dormBtn" aria-pressed="true"></button>
-<button class="fbtn" type="button" id="incBtn" aria-pressed="false" style="--c:#e6e9ef"><span class="sw sq" style="transform:rotate(45deg) scale(.8);--c:#e6e9ef"></span>Last 30 days incidents<span class="ct">21</span></button></div>
+<button class="fbtn" type="button" id="incBtn" aria-pressed="false" style="--c:#e6e9ef"><span class="sw sq" style="transform:rotate(45deg) scale(.8);--c:#e6e9ef"></span>Last 30 days incidents<span class="ct">__INC_N__</span></button></div>
 <div class="hidephone"><h3>Key</h3><div class="keyrow"><span class="sw" style="--c:#8fa3c4"></span>Group</div><div class="keyrow"><span class="sw ring"></span>Now governing</div><div class="keyrow"><span class="sw dia" style="--c:#8fa3c4"></span>Incident, in its family colour</div></div>
 </aside>
 <div>
@@ -60,7 +67,7 @@ HTML = '''<!doctype html><html lang="en"><head><script data-slash-fix>if(locatio
 <div id="families"></div></section>
 
 <section class="tile" id="incidents"><h2>Last 30 days</h2>
-<p>Most of the major incidents in the last 30 days fall in Africa, and the Sahel alone has the most. Turn on the incident layer on the map to see where each one happened.</p>
+<p>__INC_SUMMARY__ Turn on the incident layer on the map to see where each one happened.</p>
 <div id="stories"></div><p class="muted" id="storynote"></p></section>
 
 <section class="tile" id="momentum"><h2>Momentum</h2>
@@ -80,5 +87,5 @@ HTML = '''<!doctype html><html lang="en"><head><script data-slash-fix>if(locatio
 <div id="tip" class="tip" role="tooltip" hidden></div>
 <script src="vendor/d3.min.js"></script><script src="app.js"></script></body></html>
 '''
-OUT.write_text(HTML)
+OUT.write_text(HTML.replace("__INC_SUMMARY__", INC_SUMMARY).replace("__INC_N__", str(_N)))
 print("wrote", OUT)

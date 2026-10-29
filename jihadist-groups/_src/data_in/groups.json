@@ -1193,13 +1193,39 @@
    "note": "Runoff against Khaled Meshaal, reportedly 35–34 in the Shura Council."
   },
   "leadership_change_last_24_months": "20 Jul 2026: al-Hayya elected head of the political bureau, succeeding Yahya Sinwar.",
-  "strength": null,
+  "strength": {
+   "range": "25,000–30,000 fighters (N12); 30,000–40,000 operatives (Haaretz)",
+   "source": "https://fimed.tr/en/post?id=34211&slug=israels-channel-12-hamas-has-2500030000-fighters-after-nearly-3-years-of-war",
+   "confidence": "low",
+   "note": "Two Israeli estimates disagree.",
+   "attribution": "N12, Israel's Channel 12, citing Israeli assessments (25,000–30,000); Haaretz via the Times of Israel, citing military and Shin Bet intelligence (30,000–40,000)",
+   "estimates": [
+    {
+     "range": "25,000–30,000 fighters",
+     "source_name": "N12 (Israel's Channel 12), citing Israeli assessments, 28 Sep 2026",
+     "url": "https://fimed.tr/en/post?id=34211&slug=israels-channel-12-hamas-has-2500030000-fighters-after-nearly-3-years-of-war"
+    },
+    {
+     "range": "30,000–40,000 operatives",
+     "source_name": "Haaretz, citing Israeli military and Shin Bet intelligence, via the Times of Israel, 22 Oct 2026",
+     "url": "https://www.timesofisrael.com/report-israel-tells-us-hamas-doesnt-plan-to-disarm-and-is-rebuilding-its-forces/"
+    }
+   ]
+  },
   "sources": [
    "https://www.bbc.com/news/articles/cx25nzkyj50o",
    "https://www.thenationalnews.com/news/mena/2026/07/23/new-hamas-leader-elected-by-narrowest-of-margins-with-gazas-backing/",
-   "https://www.bbc.com/news/articles/cmx2qlz7qrd4o"
+   "https://www.bbc.com/news/articles/cmx2qlz7qrd4o",
+   "https://fimed.tr/en/post?id=34211&slug=israels-channel-12-hamas-has-2500030000-fighters-after-nearly-3-years-of-war",
+   "https://www.timesofisrael.com/report-israel-tells-us-hamas-doesnt-plan-to-disarm-and-is-rebuilding-its-forces/"
   ],
-  "contested_fields": [],
+  "contested_fields": [
+   {
+    "field": "strength",
+    "confidence": "low",
+    "reason": "Two Israeli estimates differ (25,000–30,000 per N12; 30,000–40,000 per Haaretz via the Times of Israel), and no independent estimate exists."
+   }
+  ],
   "notes": "Sunni group; counted in the Iran-backed axis because it describes itself and is described as an axis member. Placement is a decision for Trish.",
   "family_id": "iran-axis",
   "state": "active",
