@@ -92,7 +92,7 @@ function legend(){
  h+='</div></div><div class="fk-rest"><h3 class="sideh">Width: people recruited</h3><ul class="legend">';
  F.samples.forEach(function(x){h+='<li><svg width="46" height="12" aria-hidden="true"><line x1="2" x2="44" y1="6" y2="6" stroke="#e6e9ef" stroke-width="'+x.w+'" stroke-linecap="butt"/></svg>'+fmt(x.v)+'</li>'});
  h+='<li><svg width="46" height="12" aria-hidden="true"><line x1="2" x2="44" y1="6" y2="6" stroke="#e6e9ef" stroke-width="10" stroke-linecap="butt" opacity=".3"/></svg>pale band: up to the high figure</li>';
- h+='</ul><p class="note">Width is the number of people recruited on a square-root scale: 4 px at zero, 10 px at '+fmt(F.vmax)+'. A straight scale would make the foreign arrows 4 px thin. The solid width shows the low published figure.</p>';
+ h+='</ul><p class="note">Square-root scale, so small flows stay visible. Solid width is the low published figure.</p>';
  h+='<div class="seg"><button type="button" class="chipb" id="fz-in">Zoom in</button><button type="button" class="chipb" id="fz-out">Zoom out</button><button type="button" class="chipb" id="fz-reset">Reset view</button></div></div>';
  $('#flowkey').innerHTML=h;
  document.querySelectorAll('.fchip').forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.k)})});
