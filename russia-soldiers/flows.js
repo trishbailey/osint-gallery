@@ -136,7 +136,7 @@ function series(){
   c.append('g').selectAll('line').data(yrs).enter().append('line').attr('x1',function(v){return x(new Date(v+'-01-01T00:00:00'))}).attr('x2',function(v){return x(new Date(v+'-01-01T00:00:00'))}).attr('y1',m.t).attr('y2',h-m.b+6).attr('stroke','#24365a');
   if(P){c.append('text').attr('x',4).attr('y',14).attr('class','tstitle').text(pn.tpt);c.append('text').attr('x',4).attr('y',31).attr('class','tssub').text('People recruited in the period')}
   else c.append('text').attr('x',m.l).attr('y',16).attr('class','tstitle').text(pn.title);
-  var id='tsclip'+pi;c.append('clipPath').attr('id',id).append('rect').attr('class','tsclipr').attr('x',0).attr('y',0).attr('width',w).attr('height',h);clips.push(c.select('.tsclipr'));
+  var id='tsclip'+pi;c.append('clipPath').attr('id',id).append('rect').attr('class','tsclipr').attr('id',pi===0?'tsclipr':null).attr('x',0).attr('y',0).attr('width',w).attr('height',h);clips.push(c.select('.tsclipr'));
   var g=c.append('g').attr('clip-path','url(#'+id+')');
   var line=d3.line().curve(d3.curveMonotoneX).x(function(p){return x(mid(p))}).y(function(p){return y(p.low)});
   F.ts.series.filter(function(s){return pn.kinds.indexOf(s.kind)>=0}).forEach(function(s){
