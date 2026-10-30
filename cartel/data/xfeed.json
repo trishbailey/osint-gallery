@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-30T19:01:06Z",
+ "as_of": "2026-10-30T22:03:34Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,127 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2116281490598445404",
+   "handle": "parescolombia",
+   "url": "https://x.com/parescolombia/status/2116281490598445404",
+   "created_at": "2026-10-30T21:30:00.000Z",
+   "text": "#DENUNCIA🚨 I ¿Qué pasa con las desapariciones en Buenaventura? La familia de Dilan merece conocer la verdad. Como su caso, hay muchos más: familias que viven en zozobra sin saber qué pasó con sus seres queridos. https://t.co/VI1RRWnUex",
+   "lang": "es",
+   "region_ids": [
+    "COL-1408"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "#COMPLAINT🚨 | What is happening with the disappearances in Buenaventura? Dilan's family deserves to know the truth. Like his case, there are many more: families living in anguish without knowing what happened to their loved ones."
+  },
+  {
+   "id": "2116273945498255806",
+   "handle": "parescolombia",
+   "url": "https://x.com/parescolombia/status/2116273945498255806",
+   "created_at": "2026-10-30T21:00:01.000Z",
+   "text": "#ParesReporta La riqueza del Catatumbo ha sido una de las razones por las que los violentos se han cebado históricamente contra esta región https://t.co/xSBzHM2qRS https://t.co/HpxLDAtGES",
+   "lang": "es",
+   "region_ids": [
+    "COL-1421"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "#ParesReporta The wealth of Catatumbo has been one of the reasons violent groups have historically preyed on this region"
+  },
+  {
+   "id": "2116263179978523051",
+   "handle": "parescolombia",
+   "url": "https://x.com/parescolombia/status/2116263179978523051",
+   "created_at": "2026-10-30T20:17:15.000Z",
+   "text": "#ParesPaz ¿Es cierto que se viene una militarización fuerte en Bogotá? ¿Son más especulaciones? Todo el análisis acá https://t.co/rfBMn1z7ft https://t.co/1PpmVXN240",
+   "lang": "es",
+   "region_ids": [
+    "COL-1399"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "#ParesPaz Is it true that a heavy militarization is coming to Bogotá? Or is it more speculation? The full analysis here"
+  },
+  {
+   "id": "2116261851897970858",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2116261851897970858",
+   "created_at": "2026-10-30T20:11:58.000Z",
+   "text": "Francisco Manuel Bermúdez Cagua, alias 'Churrón', fue extraditado a Estados Unidos el 29 de octubre de 2026. Él es considerado uno de los cabecillas del grupo criminal Los Choneros. https://t.co/XSxKwgoH7p https://t.co/OiKzm1M5Vr",
+   "lang": "und",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "choneros"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Francisco Manuel Bermúdez Cagua, alias 'Churrón', was extradited to the United States on October 29, 2026. He is considered one of the leaders of the criminal group Los Choneros."
+  },
+  {
+   "id": "2116258651455488003",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2116258651455488003",
+   "created_at": "2026-10-30T19:59:15.000Z",
+   "text": "Atacan a balazos a motociclista y detienen a los presuntos agresores en Culiacán A la 1 con Omar de la Rocha y todo su equipo en \"Los Noticieristas\". https://t.co/m0zPddgQPS",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Motorcyclist shot at and the alleged attackers detained in Culiacán. At 1 o'clock with Omar de la Rocha and his whole team on \"Los Noticieristas\"."
+  },
+  {
+   "id": "2116258461000544636",
+   "handle": "GabSeguridadMX",
+   "url": "https://x.com/GabSeguridadMX/status/2116258461000544636",
+   "created_at": "2026-10-30T19:58:29.000Z",
+   "text": "En Matamoros, Tamaulipas, Fuerzas Especiales de @Defensamx1 y @GN_MEXICO_ detuvieron a dos personas, entre ellas Axel Alfredo “N”, alias “Axel”, identificado como segundo al mando de la facción “Ciclones” del Cártel del Golfo, grupo delictivo vinculado con homicidios, secuestros…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "In Matamoros, Tamaulipas, Special Forces of @Defensamx1 and @GN_MEXICO_ detained two people, among them Axel Alfredo \"N\", alias \"Axel\", identified as second-in-command of the \"Ciclones\" faction of the Gulf Cartel, a criminal group linked to homicides, kidnappings…"
+  },
+  {
+   "id": "2116255324461990134",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2116255324461990134",
+   "created_at": "2026-10-30T19:46:02.000Z",
+   "text": "El occiso presentaba rastros de golpes. El hallazgo tuvo lugar con el antecedente del homicidio de un joven, el 21 de agosto, en la clínica Jireh https://t.co/s2hHKuek66",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The deceased showed signs of beating. The discovery came after the homicide of a young man on August 21 at the Jireh clinic"
+  },
   {
    "id": "2116238611381113273",
    "handle": "noticieristas",
@@ -3936,73 +4057,6 @@
    "source_type": "official",
    "label": "Official statement",
    "text_en": "At the Lázaro Cárdenas customs office, Michoacán, @AduanasMx staff, in coordination with @SEMAR_mx and @SSPCMexico, seized 14,250 perfume containers with intellectual-property irregularities. The products were in a container and were…"
-  },
-  {
-   "id": "2113750441699791112",
-   "handle": "ioangrillo",
-   "url": "https://x.com/ioangrillo/status/2113750441699791112",
-   "created_at": "2026-10-23T21:52:31.000Z",
-   "text": "Una persona que sobrevivió a un secuestro describe un brutal campo un cártel, con más de 100 rehenes, en las montañas de Guerrero. -Víctimas son reclutadas a la fuerza para ser enviadas al frente -Algunas en estado de desnutrición extrema. Leer:↓ https://t.co/JoMfB2iB9k",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2729"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "journalist",
-   "label": null,
-   "text_en": "A kidnapping survivor describes a brutal cartel camp holding more than 100 hostages in the mountains of Guerrero. Victims are forcibly recruited to be sent to the front; some are extremely malnourished."
-  },
-  {
-   "id": "2113746316920594582",
-   "handle": "_elfaro_",
-   "url": "https://x.com/_elfaro_/status/2113746316920594582",
-   "created_at": "2026-10-23T21:36:08.000Z",
-   "text": "Juan Francisco Solórzano Foppa, uno de los más reconocidos exfiscales antimafias de Guatemala, fue asesinado el 17 de octubre. Mientras cientos de personas lo velaban en la capital, las interrogantes sobre su muerte, así como sobre quienes llevan la investigación criminal, se ht…",
-   "lang": "es",
-   "region_ids": [
-    "GTM-1951"
-   ],
-   "country": "GTM",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "regional outlet",
-   "label": null,
-   "text_en": "Juan Francisco Solórzano Foppa, one of Guatemala's best-known former anti-mafia prosecutors, was murdered on 17 October. While hundreds held a wake for him in the capital, questions about his death and about who is leading the criminal investigation…"
-  },
-  {
-   "id": "2113738708683722837",
-   "handle": "InSightCrime",
-   "url": "https://x.com/InSightCrime/status/2113738708683722837",
-   "created_at": "2026-10-23T21:05:54.000Z",
-   "text": "From Honduras and Costa Rica to Ecuador and Panama, governments are embracing massive prisons as part of their response to organized crime. Our analysis maps where these projects stand—and what they reveal about regional security strategies. https://t.co/3YMHB3sUCJ https://t.co/…",
-   "lang": "en",
-   "region_ids": [
-    "PAN-1340"
-   ],
-   "country": "PAN",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "research outlet",
-   "label": null
-  },
-  {
-   "id": "2113732190983029204",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2113732190983029204",
-   "created_at": "2026-10-23T20:40:00.000Z",
-   "text": "Detienen por narcotráfico a director de Seguridad Pública de Emiliano Zapata, Tabasco En Emiliano Zapata y Paraíso, municipios gobernados por MC en Tabasco, las investigaciones de las autoridades han alcanzado a funcionarios municipales o a operadores identificados como cercanos",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2725"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Public security director of Emiliano Zapata, Tabasco, arrested for drug trafficking. In Emiliano Zapata and Paraíso, MC-governed municipalities in Tabasco, investigations have reached municipal officials or operators identified as close"
   }
  ]
 }

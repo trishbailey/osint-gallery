@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-30T19:01:06Z",
+ "as_of": "2026-10-30T22:03:34Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -9,11 +9,236 @@
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
   {
+   "id": "f0b8b3ba1f",
+   "status": "single_source",
+   "title": "#DENUNCIA🚨 I ¿Qué pasa con las desapariciones en Buenaventura? La familia de Dilan merece conocer la verdad. Como su caso, hay muchos más: familias que viven en zozobra sin saber qué pasó con sus sere",
+   "lang": "es",
+   "title_en": "#COMPLAINT🚨 | What is happening with the disappearances in Buenaventura? Dilan's family deserves to know the truth. Like his case, there are many more: families living in anguish without knowing what happened to their lo",
+   "first_report": "2026-10-30T21:30:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Fundación Paz & Reconciliación",
+   "region_ids": [
+    "COL-1408"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "outlets": [
+    "Fundación Paz & Reconciliación"
+   ],
+   "sources": [
+    {
+     "outlet": "pares",
+     "name": "Fundación Paz & Reconciliación",
+     "kind": "outlet",
+     "via": "X @parescolombia",
+     "url": "https://x.com/parescolombia/status/2116281490598445404",
+     "time": "2026-10-30T21:30:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "c308996f5e",
+   "status": "single_source",
+   "title": "#ParesReporta La riqueza del Catatumbo ha sido una de las razones por las que los violentos se han cebado históricamente contra esta región",
+   "lang": "es",
+   "title_en": "#ParesReporta The wealth of Catatumbo has been one of the reasons violent groups have historically preyed on this region",
+   "first_report": "2026-10-30T21:00:01Z",
+   "first_report_precision": "minute",
+   "first_source": "Fundación Paz & Reconciliación",
+   "region_ids": [
+    "COL-1421"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "outlets": [
+    "Fundación Paz & Reconciliación"
+   ],
+   "sources": [
+    {
+     "outlet": "pares",
+     "name": "Fundación Paz & Reconciliación",
+     "kind": "outlet",
+     "via": "X @parescolombia",
+     "url": "https://x.com/parescolombia/status/2116273945498255806",
+     "time": "2026-10-30T21:00:01Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "268e2113d4",
+   "status": "single_source",
+   "title": "#ParesPaz ¿Es cierto que se viene una militarización fuerte en Bogotá? ¿Son más especulaciones? Todo el análisis acá",
+   "lang": "es",
+   "title_en": "#ParesPaz Is it true that a heavy militarization is coming to Bogotá? Or is it more speculation? The full analysis here",
+   "first_report": "2026-10-30T20:17:15Z",
+   "first_report_precision": "minute",
+   "first_source": "Fundación Paz & Reconciliación",
+   "region_ids": [
+    "COL-1399"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "outlets": [
+    "Fundación Paz & Reconciliación"
+   ],
+   "sources": [
+    {
+     "outlet": "pares",
+     "name": "Fundación Paz & Reconciliación",
+     "kind": "outlet",
+     "via": "X @parescolombia",
+     "url": "https://x.com/parescolombia/status/2116263179978523051",
+     "time": "2026-10-30T20:17:15Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "711097210c",
+   "status": "single_source",
+   "title": "Francisco Manuel Bermúdez Cagua, alias 'Churrón', fue extraditado a Estados Unidos el 29 de octubre de 2026. Él es considerado uno de los cabecillas del grupo criminal Los Choneros.",
+   "lang": "es",
+   "title_en": "Francisco Manuel Bermúdez Cagua, alias 'Churrón', was extradited to the United States on October 29, 2026. He is considered one of the leaders of the criminal group Los Choneros.",
+   "first_report": "2026-10-30T20:11:58Z",
+   "first_report_precision": "minute",
+   "first_source": "Primicias",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "choneros"
+   ],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "X @Primicias",
+     "url": "https://x.com/Primicias/status/2116261851897970858",
+     "time": "2026-10-30T20:11:58Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "d8706e2633",
+   "status": "single_source",
+   "title": "Atacan a balazos a motociclista y detienen a los presuntos agresores en Culiacán A la 1 con Omar de la Rocha y todo su equipo en \"Los Noticieristas\".",
+   "lang": "es",
+   "title_en": "Motorcyclist shot at and the alleged attackers detained in Culiacán. At 1 o'clock with Omar de la Rocha and his whole team on \"Los Noticieristas\".",
+   "first_report": "2026-10-30T19:59:15Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2116258651455488003",
+     "time": "2026-10-30T19:59:15Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "b987e85bcc",
+   "status": "confirmed",
+   "title": "En Tamaulipas, 6 muertos en narcobloqueos luego de la captura del capo Axel",
+   "lang": "es",
+   "title_en": "In Tamaulipas, 6 dead in narco-roadblocks after the capture of kingpin Axel",
+   "first_report": "2026-10-30T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "La Jornada",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "outlets": [
+    "Gabinete de Seguridad (Mexico)",
+    "La Jornada",
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.jornada.com.mx/2026/10/30/estados/031n1est?partner=rss",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2116190262590411124",
+     "time": "2026-10-30T15:27:30Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "gabsec",
+     "name": "Gabinete de Seguridad (Mexico)",
+     "kind": "official",
+     "via": "X @GabSeguridadMX",
+     "url": "https://x.com/GabSeguridadMX/status/2116258461000544636",
+     "time": "2026-10-30T19:58:29Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "dd7d73f293",
+   "status": "single_source",
+   "title": "El occiso presentaba rastros de golpes. El hallazgo tuvo lugar con el antecedente del homicidio de un joven, el 21 de agosto, en la clínica Jireh",
+   "lang": "es",
+   "title_en": "The deceased showed signs of beating. The discovery came after the homicide of a young man on August 21 at the Jireh clinic",
+   "first_report": "2026-10-30T19:46:02Z",
+   "first_report_precision": "minute",
+   "first_source": "ZETA Tijuana",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "ZETA Tijuana"
+   ],
+   "sources": [
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "X @ZETATijuana",
+     "url": "https://x.com/ZETATijuana/status/2116255324461990134",
+     "time": "2026-10-30T19:46:02Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
    "id": "35510f0e21",
    "status": "single_source",
    "title": "➡️ La Catrina Buscadora, representación con la que los alumnos de la UAdeO #Guasave, reconocen el dolor de las desapariciones forzadas 🔹 La representación presentada por estudiantes de la UAdeO fue re",
    "lang": "es",
-   "title_en": "La Catrina Buscadora, a representation with which UAdeO #Guasave students recognise the pain of enforced disappearances. The representation presented by UAdeO students was re",
+   "title_en": "La Catrina Buscadora, a representation with which UAdeO #Guasave students recognise the pain of enforced disappearances. The representation presented by UAdeO students was recognised by members of Rastreadoras de Guasave",
    "first_report": "2026-10-30T18:39:37Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
@@ -71,7 +296,7 @@
    "status": "single_source",
    "title": "🚨🚔| No han sido identificadas las cabezas humanas encontradas en hechos ocurridos en #Mazatlán y #Culiacán, respectivamente, informó la titular de la Fiscalía General del Estado (FGE), Claudia Zulema ",
    "lang": "es",
-   "title_en": "The human heads found in incidents in #Mazatlán and #Culiacán, respectively, have not been identified, said the head of the State Attorney General's Office (FGE), Claudia Zulema",
+   "title_en": "The human heads found in incidents in #Mazatlán and #Culiacán, respectively, have not been identified, said the head of the State Attorney General's Office (FGE), Claudia Zulema Sánchez Kondo. The prosecutor specified th",
    "first_report": "2026-10-30T17:32:08Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
@@ -100,13 +325,13 @@
    "status": "single_source",
    "title": "🔴 Detienen a presunto responsable de envenenar perros en Parque España y la Condesa. Policías de la CDMX detuvieron a un hombre de 58 años en el cruce de Atlixco y Juan Escutia, señalado por colocar c",
    "lang": "es",
-   "title_en": "Alleged culprit arrested for poisoning dogs in Parque España and La Condesa. Mexico City police detained a 58-year-old man at the corner of Atlixco and Juan Escutia, accused of placing",
+   "title_en": "Alleged culprit arrested for poisoning dogs in Parque España and La Condesa. Mexico City police detained a 58-year-old man at the corner of Atlixco and Juan Escutia, accused of placing poisoned bait in Parque España and ",
    "first_report": "2026-10-30T17:30:00Z",
    "first_report_precision": "minute",
    "first_source": "Animal Político",
    "region_ids": [
-    "MEX-2727",
-    "MEX-2724"
+    "MEX-2724",
+    "MEX-2727"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -188,7 +413,7 @@
    "status": "single_source",
    "title": "Hallan fosa con cadáver frente a Unidad Deportiva de SF; presumen que hay otro Los restos fueron hallados luego de varias horas de trabajo entre cateo y exhumación, en un domicilio de la colonia Los A",
    "lang": "es",
-   "title_en": "Grave with a body found opposite the SF Sports Unit; another is presumed. The remains were found after several hours of search and exhumation work at a home in the Los A",
+   "title_en": "Grave with a body found opposite the SF Sports Unit; another is presumed. The remains were found after several hours of search and exhumation work at a home in the Los Arcos neighbourhood.",
    "first_report": "2026-10-30T17:06:15Z",
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
@@ -217,7 +442,7 @@
    "status": "single_source",
    "title": "🇪🇨 | Ecuador’s most prominent criminal groups, the Choneros and the Lobos, have been in a bloody feud since the death of Choneros leader Jorge Luis Zambrano, alias “Rasquiña.” His murder sparked a pow",
    "lang": "es",
-   "title_en": "Ecuador’s most prominent criminal groups, the Choneros and the Lobos, have been in a bloody feud since the death of Choneros leader Jorge Luis Zambrano, alias “Rasquiña.” His murder sparked a pow",
+   "title_en": "Ecuador’s most prominent criminal groups, the Choneros and the Lobos, have been in a bloody feud since the death of Choneros leader Jorge Luis Zambrano, alias “Rasquiña.” His murder sparked a power struggle that now exte",
    "first_report": "2026-10-30T17:00:29Z",
    "first_report_precision": "minute",
    "first_source": "InSight Crime",
@@ -295,47 +520,6 @@
      "via": "X @Pajaropolitico",
      "url": "https://x.com/Pajaropolitico/status/2116190896429420975",
      "time": "2026-10-30T15:30:01Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "b987e85bcc",
-   "status": "confirmed",
-   "title": "En Tamaulipas, 6 muertos en narcobloqueos luego de la captura del capo Axel",
-   "lang": "es",
-   "title_en": "In Tamaulipas, 6 dead in narco-roadblocks after the capture of kingpin Axel",
-   "first_report": "2026-10-30T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "La Jornada",
-   "region_ids": [
-    "MEX-2716"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "gulf"
-   ],
-   "outlets": [
-    "La Jornada",
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "jornada",
-     "name": "La Jornada",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.jornada.com.mx/2026/10/30/estados/031n1est?partner=rss",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2116190262590411124",
-     "time": "2026-10-30T15:27:30Z",
      "time_precision": "minute"
     }
    ]
@@ -640,8 +824,8 @@
    "region_ids": [
     "MEX-2719",
     "MEX-2723",
-    "MEX-2727",
-    "MEX-2734"
+    "MEX-2734",
+    "MEX-2727"
    ],
    "country": "MEX",
    "group_ids": [
@@ -825,8 +1009,8 @@
    "first_report_precision": "day",
    "first_source": "Clarín",
    "region_ids": [
-    "PAN-1338",
-    "COL-1425"
+    "COL-1425",
+    "PAN-1338"
    ],
    "country": "COL",
    "group_ids": [
@@ -986,8 +1170,8 @@
    "first_report_precision": "day",
    "first_source": "El Universal",
    "region_ids": [
-    "PAN-1338",
-    "COL-1425"
+    "COL-1425",
+    "PAN-1338"
    ],
    "country": "COL",
    "group_ids": [
@@ -1271,8 +1455,8 @@
    "country": null,
    "group_ids": [
     "clan",
-    "eln",
-    "exfarc"
+    "exfarc",
+    "eln"
    ],
    "outlets": [
     "El Tiempo",
@@ -1360,10 +1544,10 @@
    ],
    "country": "MEX",
    "group_ids": [
+    "gulf",
     "juarez",
-    "cjng",
     "sinaloa",
-    "gulf"
+    "unidos"
    ],
    "outlets": [
     "Infobae"
@@ -1828,8 +2012,8 @@
    "first_report_precision": "minute",
    "first_source": "Gabinete de Seguridad (Mexico)",
    "region_ids": [
-    "MEX-2709",
-    "MEX-2716"
+    "MEX-2716",
+    "MEX-2709"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2431,8 +2615,8 @@
    "first_report_precision": "minute",
    "first_source": "Crisis Group",
    "region_ids": [
-    "HTI-1386",
-    "HTI-1387"
+    "HTI-1387",
+    "HTI-1386"
    ],
    "country": "HTI",
    "group_ids": [],
@@ -2565,8 +2749,8 @@
    "first_source": "Ríodoce",
    "region_ids": [
     "MEX-2719",
-    "COL-1412",
     "ARG-1273",
+    "COL-1412",
     "MEX-2723"
    ],
    "country": "MEX",
@@ -2680,8 +2864,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
     "mayiza",
+    "sinaloa",
     "chapitos"
    ],
    "outlets": [
@@ -2913,9 +3097,9 @@
    "first_report_precision": "day",
    "first_source": "El Universal",
    "region_ids": [
-    "MEX-2711",
     "MEX-2719",
-    "ARG-1308"
+    "ARG-1308",
+    "MEX-2711"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -3150,8 +3334,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "NIC-655",
-    "MEX-2706"
+    "MEX-2706",
+    "NIC-655"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -3238,8 +3422,8 @@
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -3385,14 +3569,14 @@
    ]
   },
   {
-   "id": "b5059f9721",
-   "status": "confirmed",
-   "title": "Nueve mexicanos son detenidos en California acusados de robar cargas de trenes: los ligan con el Cártel de Sinaloa",
+   "id": "6d38a07511",
+   "status": "single_source",
+   "title": "Nueve hombres de nacionalidad #mexicana fueron #detenidos en San Bernardino, #California, acusados de pertenecer al cártel de Sinaloa y dedicarse al #robo de carga de #trenes, de acuerdo con el Depart",
    "lang": "es",
-   "title_en": "Nine Mexicans are arrested in California accused of stealing train cargo; they are linked to the Sinaloa Cartel",
-   "first_report": "2026-10-28T19:58:15Z",
+   "title_en": "Nine #Mexican men were #arrested in San Bernardino, #California, accused of belonging to the Sinaloa cartel and of #robbing cargo from #trains, according to the County Sheriff's Department.",
+   "first_report": "2026-10-29T01:59:00Z",
    "first_report_precision": "minute",
-   "first_source": "Infobae",
+   "first_source": "Ríodoce",
    "region_ids": [
     "MEX-2711"
    ],
@@ -3401,19 +3585,9 @@
     "sinaloa"
    ],
    "outlets": [
-    "Infobae",
     "Ríodoce"
    ],
    "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115533623482835024",
-     "time": "2026-10-28T19:58:15Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "riodoce",
      "name": "Ríodoce",
@@ -3597,191 +3771,6 @@
      "via": "X @Riodoce_mx",
      "url": "https://x.com/Riodoce_mx/status/2115588422194868722",
      "time": "2026-10-28T23:36:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "0b1a4f0cf3",
-   "status": "single_source",
-   "title": "A lo largo de las últimas dos décadas, Juan Francisco Solórzano Foppa ocupó cargos públicos en los que se suele hacer enemigos. En sus años de fiscal, investigó a la Rueda —o cúpula— de la pandilla Ba",
-   "lang": "es",
-   "title_en": "Over the past two decades, Juan Francisco Solórzano Foppa held public posts in which one tends to make enemies. In his years as a prosecutor, he investigated the Rueda (the leadership) of the Barrio 18 gang in Guatemala ",
-   "first_report": "2026-10-28T21:35:00Z",
-   "first_report_precision": "minute",
-   "first_source": "El Faro",
-   "region_ids": [
-    "GTM-1951"
-   ],
-   "country": "GTM",
-   "group_ids": [
-    "b18"
-   ],
-   "outlets": [
-    "El Faro"
-   ],
-   "sources": [
-    {
-     "outlet": "elfaro",
-     "name": "El Faro",
-     "kind": "outlet",
-     "via": "X @_elfaro_",
-     "url": "https://x.com/_elfaro_/status/2115557971774382191",
-     "time": "2026-10-28T21:35:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "0f064c2026",
-   "status": "single_source",
-   "title": "#ParesReporta Cúcuta, la capital, ha sufrido durante décadas la violencia que azota a municipios del departamento. Análisis",
-   "lang": "es",
-   "title_en": "#ParesReporta Cúcuta, the capital, has suffered for decades from the violence that plagues the department's municipalities. Analysis",
-   "first_report": "2026-10-28T21:05:09Z",
-   "first_report_precision": "minute",
-   "first_source": "Fundación Paz & Reconciliación",
-   "region_ids": [
-    "COL-1421"
-   ],
-   "country": "COL",
-   "group_ids": [],
-   "outlets": [
-    "Fundación Paz & Reconciliación"
-   ],
-   "sources": [
-    {
-     "outlet": "pares",
-     "name": "Fundación Paz & Reconciliación",
-     "kind": "outlet",
-     "via": "X @parescolombia",
-     "url": "https://x.com/parescolombia/status/2115550462607012069",
-     "time": "2026-10-28T21:05:09Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "37bb32cc5a",
-   "status": "single_source",
-   "title": "Omar García Harfuch viaja a Sinaloa para revisar resultados de la estrategia de seguridad y fortalecer acciones contra el narco",
-   "lang": "es",
-   "title_en": "Omar García Harfuch travels to Sinaloa to review the results of the security strategy and strengthen actions against drug trafficking",
-   "first_report": "2026-10-28T20:56:37Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115548311646028040",
-     "time": "2026-10-28T20:56:37Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115549651080188036",
-     "time": "2026-10-28T21:01:56Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "4e1ab32f19",
-   "status": "official_claim_only",
-   "title": "En Yucatán, elementos de @SEMAR_mx, @SSPCMexico y @FGRMexico, a través de la Agencia de Investigación Criminal, en coordinación con el @INAMI_mx, detuvieron en Mérida a Richard “N”, de nacionalidad es",
-   "lang": "es",
-   "title_en": "In Yucatán, personnel from @SEMAR_mx, @SSPCMexico and @FGRMexico, through the Criminal Investigation Agency, in coordination with @INAMI_mx, detained in Mérida Richard “N”, a US national considered a priority target by t",
-   "first_report": "2026-10-28T20:03:03Z",
-   "first_report_precision": "minute",
-   "first_source": "Gabinete de Seguridad (Mexico)",
-   "region_ids": [
-    "MEX-2737"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Gabinete de Seguridad (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "gabsec",
-     "name": "Gabinete de Seguridad (Mexico)",
-     "kind": "official",
-     "via": "X @GabSeguridadMX",
-     "url": "https://x.com/GabSeguridadMX/status/2115534833367552034",
-     "time": "2026-10-28T20:03:03Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "6292752106",
-   "status": "single_source",
-   "title": "Conductor de app secuestró a jovencita de 16 años, mandó su ubicación en tiempo real a su mamá y pudieron rescatarla en Tijuana",
-   "lang": "es",
-   "title_en": "A ride-app driver kidnapped a 16-year-old girl; she sent her real-time location to her mother and she was rescued in Tijuana",
-   "first_report": "2026-10-28T19:30:50Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115526723567567098",
-     "time": "2026-10-28T19:30:50Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "e42da213f0",
-   "status": "single_source",
-   "title": "From Honduras and Costa Rica to Ecuador and Panama, governments are embracing massive prisons as part of their response to organized crime. Our analysis maps where these projects stand—and what they r",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-10-28T19:06:07Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [
-    "PAN-1340"
-   ],
-   "country": "PAN",
-   "group_ids": [],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2115520503750254634",
-     "time": "2026-10-28T19:06:07Z",
      "time_precision": "minute"
     }
    ]
