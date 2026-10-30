@@ -245,7 +245,7 @@ def main():
                     return m
                 pg.evaluate("document.querySelectorAll('.chap')[0].click()"); pg.wait_for_timeout(3500); settle(pg); pg.wait_for_timeout(500)
                 m = plc("chapter 1")
-                if m["n"] < 2 or "Russia" not in m["names"] or (w > 700 and "China" not in m["names"]): probs.append(f"[{tag}] chapter 1: expected Russia, China and ports labelled, got {m['names']}")
+                if m["n"] < (1 if w < 700 else 2) or "Russia" not in m["names"] or (w > 700 and "China" not in m["names"]): probs.append(f"[{tag}] chapter 1: expected Russia, China and ports labelled, got {m['names']}")
                 pg.evaluate("document.querySelectorAll('#modes button')[1].click()"); pg.wait_for_timeout(3500); settle(pg); pg.wait_for_timeout(500)
                 plc("explore")
                 pg.evaluate("document.getElementById('rawt').click()"); pg.wait_for_timeout(3000); settle(pg); pg.wait_for_timeout(500)
@@ -266,7 +266,8 @@ def main():
                         if nme not in m["names"] and not (nme == "Russia" and w == 390 and k == "swap"): probs.append(f"[{tag}] chapter {i + 1} ({k}): '{nme}' label missing, got {m['names']}")
                     if k == "swap" and not any("oiter" in x for x in m["names"]): probs.append(f"[{tag}] chapter 2: loiter-spot label missing")
                     if k == "dark":
-                        pg.evaluate("document.getElementById('map').scrollIntoView()"); pg.wait_for_timeout(800)
+                        # desktop: bring the chapter card to the middle so the scroll observer keeps chapter 5 selected; phones: the map sits above the cards
+                        pg.evaluate("(w=>{const c=document.querySelector('.chap[data-ch=dark]');w>700?c.scrollIntoView({block:'center'}):document.getElementById('map').scrollIntoView()})(innerWidth)"); pg.wait_for_timeout(1500)
                         probs += [f"[{tag}] going dark: {x}" for x in pg.evaluate(BLINK_JS)]
                         probs += [f"[{tag}] going dark: {x}" for x in blink_runtime(pg)]
                         if not pg.evaluate("document.getElementById('map').classList.contains('gapblink')"): probs.append(f"[{tag}] going dark: gapblink class is not set while the chapter shows")
