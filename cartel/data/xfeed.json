@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-29T22:09:17Z",
+ "as_of": "2026-10-30T01:04:50Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -28,12 +28,179 @@
  ],
  "posts": [
   {
+   "id": "2115957856688357489",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115957856688357489",
+   "created_at": "2026-10-30T00:04:00.000Z",
+   "text": "La captura de Axel Alfredo Cárdenas, presunto integrante de un grupo criminal, desató #bloqueos con #vehículos de carga en #Matamoros, Río Bravo y la carretera Victoria-Matamoros, en Tamaulipas. https://t.co/iCcvISApnN https://t.co/1AoW9khSgP",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The capture of Axel Alfredo Cárdenas, an alleged member of a criminal group, set off #roadblocks with cargo #vehicles in #Matamoros, Río Bravo and on the Victoria-Matamoros highway in Tamaulipas."
+  },
+  {
+   "id": "2115955043073712580",
+   "handle": "GabSeguridadMX",
+   "url": "https://x.com/GabSeguridadMX/status/2115955043073712580",
+   "created_at": "2026-10-29T23:52:49.000Z",
+   "text": "En tres acciones de inspección en aduanas de Ciudad Juárez, Chihuahua, y Nuevo Laredo y Reynosa, Tamaulipas, personal de @AduanasMx y @GN_MEXICO_, en coordinación con @SSPCMexico y @FGRMexico, detuvo a tres personas y aseguró tres armas de fuego y 698 cartuchos. Con apoyo de htt…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2709",
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "In three inspection actions at customs in Ciudad Juárez, Chihuahua, and Nuevo Laredo and Reynosa, Tamaulipas, personnel from @AduanasMx and @GN_MEXICO_, coordinating with @SSPCMexico and @FGRMexico, arrested three people and seized three firearms and 698 cartridges. With support from…"
+  },
+  {
+   "id": "2115951817095835808",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115951817095835808",
+   "created_at": "2026-10-29T23:40:00.000Z",
+   "text": "LOS LORENZANA, EL CLAN NARCO DE GUATEMALA QUE CONSTRUYÓ UNA ALIANZA DE DÉCADAS CON EL CÁRTEL DE SINALOA La fiesta de 15 años de la hija de un narcotraficante confeso volvió a poner bajo el reflector a Zacapa y destapó los vínculos familiares de la alcaldesa con Los Lorenzana, un…",
+   "lang": "es",
+   "region_ids": [
+    "GTM-1951",
+    "GTM-1963",
+    "MEX-2711"
+   ],
+   "country": "GTM",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "LOS LORENZANA, THE GUATEMALAN NARCO CLAN THAT BUILT A DECADES-LONG ALLIANCE WITH THE SINALOA CARTEL. The 15th-birthday party of the daughter of a confessed drug trafficker put Zacapa back in the spotlight and exposed the mayor's family ties to Los Lorenzana, a…"
+  },
+  {
+   "id": "2115949519187718529",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2115949519187718529",
+   "created_at": "2026-10-29T23:30:52.000Z",
+   "text": "La célula controlaba rutas marítimas para el trasiego de cocaína entre Faro de Bucerías y Huahua, en Aquila https://t.co/NJlyUF7R6M",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The cell controlled maritime routes for moving cocaine between Faro de Bucerías and Huahua, in Aquila."
+  },
+  {
+   "id": "2115941754549440541",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2115941754549440541",
+   "created_at": "2026-10-29T23:00:01.000Z",
+   "text": "Titular de SATES, ligado a Rocha Moya, deja gabinete de Sinaloa José Carlos Cárdenas Mellado aparece en un informe del Centro Nacional de Inteligencia y servicios de vigilancia militar como uno de los presuntos vínculos del gobierno de Rocha Moya con Los Chapitos, junto a José",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "chapitos"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Head of SATES, linked to Rocha Moya, leaves Sinaloa's cabinet. José Carlos Cárdenas Mellado appears in a report by the National Intelligence Center and military surveillance services as one of the alleged links between Rocha Moya's government and Los Chapitos, along with José"
+  },
+  {
+   "id": "2115940665523921301",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115940665523921301",
+   "created_at": "2026-10-29T22:55:41.000Z",
+   "text": "🔴 #AHORA | Cae en Matamoros Axel Alfredo, “El Titán”: operador del Cártel del Golfo y familiar de Osiel Cárdenas Guillén https://t.co/bOKynfJTKR https://t.co/qJH68WcAAR",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "🔴 #NOW | Axel Alfredo, “El Titán”, a Gulf Cartel operator and relative of Osiel Cárdenas Guillén, is captured in Matamoros"
+  },
+  {
+   "id": "2115939988747751440",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115939988747751440",
+   "created_at": "2026-10-29T22:53:00.000Z",
+   "text": "En Ojinaga, #Chihuahua, #detienen a Sergio N, alias “El Señor de la A”, identificado como jefe de plaza de “La Línea”, grupo criminal vinculado al Nuevo Cártel de Juárez. Tras la captura, un avión de la Fuerza Aérea Mexicana trasladó a Sergio “N” a la Ciudad de México . https://…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2709",
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "juarez"
+   ],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "In Ojinaga, #Chihuahua, Sergio N, alias “El Señor de la A”, identified as the local boss (jefe de plaza) of “La Línea”, a criminal group linked to the Nuevo Cártel de Juárez, was #arrested. After the capture, a Mexican Air Force plane flew Sergio “N” to Mexico City."
+  },
+  {
+   "id": "2115938103894413449",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2115938103894413449",
+   "created_at": "2026-10-29T22:45:30.000Z",
+   "text": "#LoLeíste Un hombre de nacionalidad rusa fue detenido en el municipio de Tecate, portando una granada y con identificaciones falsas que lo acreditaban como presunto agente de la Interpol. https://t.co/Sa5WiuSHvq",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2706",
+    "NIC-655"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "#YouReadIt A Russian national was arrested in the municipality of Tecate carrying a grenade and fake IDs identifying him as a supposed Interpol agent."
+  },
+  {
+   "id": "2115938086190223716",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2115938086190223716",
+   "created_at": "2026-10-29T22:45:26.000Z",
+   "text": "Se enfocarían en patrullajes preventivos orientados en delitos de alto impacto, identificación de miembros de organizaciones delictivas, combate a la extorsión, cobro de piso y homicidios https://t.co/dAIu2rqOlX",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "They would focus on preventive patrols aimed at high-impact crimes, identifying members of criminal organizations, combating extortion, protection-fee collection (cobro de piso) and homicides."
+  },
+  {
    "id": "2115928114488308159",
    "handle": "ZETATijuana",
    "url": "https://x.com/ZETATijuana/status/2115928114488308159",
    "created_at": "2026-10-29T22:05:49.000Z",
    "text": "La captura incluyó a un segundo detenido, puesto a disposición de la delegación de la FGR en Chihuahua https://t.co/ByKDvDOTIO",
-   "lang": "es",
+   "lang": "und",
    "region_ids": [
     "MEX-2709"
    ],
@@ -3863,210 +4030,6 @@
    "source_type": "local outlet",
    "label": null,
    "text_en": "🚨🚔 Jesús Abraham \"N\" ordered to stand trial as the alleged perpetrator of a homicide at a car repair shop in the La Lima area of Culiacán. The Sinaloa Attorney General's Office said he faces aggravated homicide charges."
-  },
-  {
-   "id": "2113432692654067918",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2113432692654067918",
-   "created_at": "2026-10-23T00:49:54.000Z",
-   "text": "Restan poder al narco en Sinaloa: autoridades desmantelan un narcolaboratorio en Culiacán https://t.co/64yrHV04Hz",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Weakening the narco in Sinaloa: authorities dismantle a drug lab in Culiacán"
-  },
-  {
-   "id": "2113429697639964864",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2113429697639964864",
-   "created_at": "2026-10-23T00:38:00.000Z",
-   "text": "La Fiscalía General de la República (#FGR) obtuvo #sentencia de 8 años de cárcel contra Diego, detenido en #Imala. Mientras que dieron más 3 años de cárcel para Jesús y Francisco, detenidos en #Guasave. https://t.co/OxNYQ900Bg",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "The Attorney General's Office (#FGR) obtained an 8-year prison #sentence against Diego, arrested in #Imala, while Jesús and Francisco, arrested in #Guasave, received more than 3 years."
-  },
-  {
-   "id": "2113426330452688973",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2113426330452688973",
-   "created_at": "2026-10-23T00:24:37.000Z",
-   "text": "➡️ Ejecutan a balazos a un joven en su domicilio en la colonia Felicidad, en Mazatlán. 🚨 Ejecutan a balazos a un joven dentro de su domicilio en la colonia Felicidad, en #Mazatlán. El ataque ocurrió sobre la calle Artículo 27 Constitucional, esquina con Confianza, lo que https:/…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ Young man shot dead at his home in the Felicidad neighbourhood of #Mazatlán. The attack took place on Artículo 27 Constitucional street at the corner of Confianza…"
-  },
-  {
-   "id": "2113425167909368022",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2113425167909368022",
-   "created_at": "2026-10-23T00:20:00.000Z",
-   "text": "Fiscalía de Tabasco acusará formalmente a Hernán Bermúdez por desaparición forzada Además del caso por desaparición forzada, el exsecretario de Seguridad de Tabasco enfrenta procesos penales en ese estado por presuntos delitos de asociación delictuosa, secuestro exprés y",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2725"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Tabasco prosecutors to formally charge Hernán Bermúdez with enforced disappearance. Besides the enforced-disappearance case, the former Tabasco security secretary faces criminal proceedings in that state for alleged criminal association, express kidnapping and"
-  },
-  {
-   "id": "2113418632805929307",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2113418632805929307",
-   "created_at": "2026-10-22T23:54:02.000Z",
-   "text": "EEUU presenta acusación formal contra “El Tanque” del CJNG por narcotráfico y posesión de armas https://t.co/QzgpEs1mOr",
-   "lang": "es",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "US files formal indictment against CJNG's \"El Tanque\" for drug trafficking and weapons possession"
-  },
-  {
-   "id": "2113418627785379952",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2113418627785379952",
-   "created_at": "2026-10-22T23:54:00.000Z",
-   "text": "Alito Moreno condena el ataque armado en Escuinapa y responsabiliza al gobierno de Morena https://t.co/9NTsHisUB1",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Alito Moreno condemns the armed attack in Escuinapa and blames the Morena government"
-  },
-  {
-   "id": "2113416526493581653",
-   "handle": "ZETATijuana",
-   "url": "https://x.com/ZETATijuana/status/2113416526493581653",
-   "created_at": "2026-10-22T23:45:39.000Z",
-   "text": "Por reducción del polígono de pesca en el Alto Golfo, pescadores de San Felipe se sienten engañados y aseguran que nuevas restricciones son peores; anuncio lo hizo la gobernadora. La entrevista completa en: https://t.co/rcgBYuDDVv https://t.co/vxQNFBp3ZM",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "After the fishing zone in the Upper Gulf was reduced, San Felipe fishermen feel deceived and say the new restrictions are worse; the governor made the announcement."
-  },
-  {
-   "id": "2113412689791721592",
-   "handle": "Pajaropolitico",
-   "url": "https://x.com/Pajaropolitico/status/2113412689791721592",
-   "created_at": "2026-10-22T23:30:25.000Z",
-   "text": "📊🚔 La SSC reportó en el Congreso de la CDMX una baja de 19 % en delitos de alto impacto y 41 % en feminicidios, así como caídas en robo y homicidio. https://t.co/rOdjJy2mjv https://t.co/8KDQeQ6u2z",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "📊🚔 The SSC reported to the CDMX Congress a 19% drop in high-impact crimes and 41% in femicides, as well as declines in robbery and homicide."
-  },
-  {
-   "id": "2113405047996330251",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2113405047996330251",
-   "created_at": "2026-10-22T23:00:03.000Z",
-   "text": "⚠️ El líder de los #HellsAngels fue detenido en una exclusiva zona residencial de Cancún, donde le aseguraron droga, armas y vehículos https://t.co/0LhHZp7Hg1",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2736"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "⚠️ The leader of the #HellsAngels was arrested in an exclusive residential area of Cancún, where drugs, weapons and vehicles were seized"
-  },
-  {
-   "id": "2113397487423631431",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2113397487423631431",
-   "created_at": "2026-10-22T22:30:00.000Z",
-   "text": "#México acumula 169 #periodistas #asesinados de 2006 a la fecha, de los cuales 168 casos permanecen impunes, al no haberse identificado o detenido a los autores intelectuales ni esclarecido los móviles de los crímenes, informó Reporteros Sin Fronteras (#RSF).",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "#Mexico has had 169 #journalists #murdered from 2006 to date, 168 of them unpunished, with the masterminds neither identified nor arrested and the motives unexplained, Reporters Without Borders (#RSF) said."
-  },
-  {
-   "id": "2113396511396532409",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2113396511396532409",
-   "created_at": "2026-10-22T22:26:07.000Z",
-   "text": "Ataque armado contra camión de estudiantes en Escuinapa: despliegan operativo federal para detener a los agresores https://t.co/skAVFOVS01",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Armed attack on student bus in Escuinapa: federal operation deployed to arrest the attackers"
-  },
-  {
-   "id": "2113393650247852164",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2113393650247852164",
-   "created_at": "2026-10-22T22:14:45.000Z",
-   "text": "➡️ “Fue un ataque contra el chofer, no era un transporte escolar”: Eligio López sobre agresión a balazos contra camión en Escuinapa 🟣🚔| “Fue un ataque contra el chofer, no era un transporte escolar”, afirmó Eligio López Portillo sobre la agresión a balazos contra un camión en ht…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ \"It was an attack on the driver, it was not a school bus\": Eligio López on the shooting at a bus in Escuinapa…"
   }
  ]
 }

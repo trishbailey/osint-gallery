@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-29T22:09:17Z",
+ "as_of": "2026-10-30T01:04:51Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,291 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "994c58a734",
+   "status": "confirmed",
+   "title": "🔴 #AHORA | Cae en Matamoros Axel Alfredo, “El Titán”: operador del Cártel del Golfo y familiar de Osiel Cárdenas Guillén",
+   "lang": "es",
+   "title_en": "🔴 #NOW | Axel Alfredo, “El Titán”, a Gulf Cartel operator and relative of Osiel Cárdenas Guillén, is captured in Matamoros",
+   "first_report": "2026-10-29T22:55:41Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "outlets": [
+    "Infobae",
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115940665523921301",
+     "time": "2026-10-29T22:55:41Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2115957856688357489",
+     "time": "2026-10-30T00:04:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "b263806a9b",
+   "status": "official_claim_only",
+   "title": "En tres acciones de inspección en aduanas de Ciudad Juárez, Chihuahua, y Nuevo Laredo y Reynosa, Tamaulipas, personal de @AduanasMx y @GN_MEXICO_, en coordinación con @SSPCMexico y @FGRMexico, detuvo ",
+   "lang": "es",
+   "title_en": "In three inspection actions at customs in Ciudad Juárez, Chihuahua, and Nuevo Laredo and Reynosa, Tamaulipas, personnel from @AduanasMx and @GN_MEXICO_, coordinating with @SSPCMexico and @FGRMexico, arrested",
+   "first_report": "2026-10-29T23:52:49Z",
+   "first_report_precision": "minute",
+   "first_source": "Gabinete de Seguridad (Mexico)",
+   "region_ids": [
+    "MEX-2716",
+    "MEX-2709"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Gabinete de Seguridad (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "gabsec",
+     "name": "Gabinete de Seguridad (Mexico)",
+     "kind": "official",
+     "via": "X @GabSeguridadMX",
+     "url": "https://x.com/GabSeguridadMX/status/2115955043073712580",
+     "time": "2026-10-29T23:52:49Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "96c472643b",
+   "status": "single_source",
+   "title": "La fiesta de 15 años de la hija de un narcotraficante confeso volvió a poner bajo el reflector a Zacapa y destapó los vínculos familiares de la alcaldesa con Los Lorenzana, un clan señalado por EEUU d",
+   "lang": "es",
+   "title_en": "The quinceañera party for the daughter of a confessed drug trafficker put Zacapa back in the spotlight and exposed the mayor's family ties to Los Lorenzana, a clan accused by the US of trafficking cocaine to Mexico for t",
+   "first_report": "2026-10-29T19:05:45Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "GTM-1963",
+    "MEX-2711",
+    "GTM-1951"
+   ],
+   "country": "GTM",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115882801526428103",
+     "time": "2026-10-29T19:05:45Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115951817095835808",
+     "time": "2026-10-29T23:40:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "cbced733e1",
+   "status": "single_source",
+   "title": "La célula controlaba rutas marítimas para el trasiego de cocaína entre Faro de Bucerías y Huahua, en Aquila",
+   "lang": "es",
+   "title_en": "The cell controlled maritime routes for moving cocaine between Faro de Bucerías and Huahua, in Aquila.",
+   "first_report": "2026-10-29T23:30:52Z",
+   "first_report_precision": "minute",
+   "first_source": "ZETA Tijuana",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "ZETA Tijuana"
+   ],
+   "sources": [
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "X @ZETATijuana",
+     "url": "https://x.com/ZETATijuana/status/2115949519187718529",
+     "time": "2026-10-29T23:30:52Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "b6af3d2d7b",
+   "status": "single_source",
+   "title": "Titular de SATES, ligado a Rocha Moya, deja gabinete de Sinaloa José Carlos Cárdenas Mellado aparece en un informe del Centro Nacional de Inteligencia y servicios de vigilancia militar como uno de los",
+   "lang": "es",
+   "title_en": "Head of SATES, linked to Rocha Moya, leaves Sinaloa's cabinet. José Carlos Cárdenas Mellado appears in a report by the National Intelligence Center and military surveillance services as one of the",
+   "first_report": "2026-10-29T23:00:01Z",
+   "first_report_precision": "minute",
+   "first_source": "Proceso",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "chapitos"
+   ],
+   "outlets": [
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2115941754549440541",
+     "time": "2026-10-29T23:00:01Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "0b7206ba07",
+   "status": "confirmed",
+   "title": "En Ojinaga, #Chihuahua, #detienen a Sergio N, alias “El Señor de la A”, identificado como jefe de plaza de “La Línea”, grupo criminal vinculado al Nuevo Cártel de Juárez. Tras la captura, un avión de ",
+   "lang": "es",
+   "title_en": "In Ojinaga, #Chihuahua, Sergio N, alias “El Señor de la A”, identified as the local boss (jefe de plaza) of “La Línea”, a criminal group linked to the Nuevo Cártel de Juárez, was #arrested. After the capture, a plane of",
+   "first_report": "2026-10-29T20:20:07Z",
+   "first_report_precision": "minute",
+   "first_source": "SSPC (Mexico)",
+   "region_ids": [
+    "MEX-2709",
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "juarez"
+   ],
+   "outlets": [
+    "Ríodoce",
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2115901514870849872",
+     "time": "2026-10-29T20:20:07Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2115939988747751440",
+     "time": "2026-10-29T22:53:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "9df06768c4",
+   "status": "confirmed",
+   "title": "⚠️ Fue detenido con una granada de fragmentación y documentos apócrifos que lo acreditaban como agente de la #CIA",
+   "lang": "es",
+   "title_en": "He was arrested with a fragmentation grenade and forged documents identifying him as a CIA agent",
+   "first_report": "2026-10-29T17:36:56Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "NIC-655",
+    "MEX-2706"
+   ],
+   "country": "NIC",
+   "group_ids": [],
+   "outlets": [
+    "Infobae",
+    "ZETA Tijuana"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115860448021225550",
+     "time": "2026-10-29T17:36:56Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "X @ZETATijuana",
+     "url": "https://x.com/ZETATijuana/status/2115938103894413449",
+     "time": "2026-10-29T22:45:30Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "a68aa2209d",
+   "status": "single_source",
+   "title": "Se enfocarían en patrullajes preventivos orientados en delitos de alto impacto, identificación de miembros de organizaciones delictivas, combate a la extorsión, cobro de piso y homicidios",
+   "lang": "es",
+   "title_en": "They would focus on preventive patrols aimed at high-impact crimes, identifying members of criminal organizations, combating extortion, protection-fee collection (cobro de piso) and homicides.",
+   "first_report": "2026-10-29T22:45:26Z",
+   "first_report_precision": "minute",
+   "first_source": "ZETA Tijuana",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "ZETA Tijuana"
+   ],
+   "sources": [
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "X @ZETATijuana",
+     "url": "https://x.com/ZETATijuana/status/2115938086190223716",
+     "time": "2026-10-29T22:45:26Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "2c01c92a76",
    "status": "single_source",
@@ -38,146 +323,36 @@
    ]
   },
   {
-   "id": "43e468d1f4",
+   "id": "01be07212d",
    "status": "confirmed",
-   "title": "LUZ MARÍA FAJARDO: LA MUJER A QUIEN EQUIPARON EN PODER CON EL CHAPO GUZMÁN, SU AMIGA Y A QUIEN LE MATARON A DOS HIJOS La mujer a quien las autoridades de EEUU compararon en poder con Joaquín Guzmán Lo",
+   "title": "➡️ Jesús \"Chuy\" González, objetivo de la DEA sería uno de los dos fallecidos tras enfrentamiento en Guasave. 🚨🚔| Jesús González, conocido como “Chuy González ”, es señalado como uno de los dos hombres",
    "lang": "es",
-   "title_en": "LUZ MARÍA FAJARDO: THE WOMAN WHOSE POWER WAS LIKENED TO EL CHAPO GUZMÁN'S, HIS FRIEND, AND WHOSE TWO SONS WERE KILLED The woman US authorities compared in power to Joaquín Guzmán Loera, leader of the Sinaloa Cartel, traf",
-   "first_report": "2026-10-27T22:40:00Z",
+   "title_en": "Jesús \"Chuy\" González, a DEA target, is reportedly one of the two men killed after a clash in Guasave. Jesús González, known as “Chuy González”, is named as one of the two men who reportedly died after a chase that began",
+   "first_report": "2026-10-28T02:15:46Z",
    "first_report_precision": "minute",
-   "first_source": "Infobae",
+   "first_source": "Los Noticieristas",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2706"
+    "MEX-2711"
    ],
    "country": "MEX",
-   "group_ids": [
-    "sinaloa",
-    "mayiza",
-    "chapitos",
-    "cjng"
-   ],
+   "group_ids": [],
    "outlets": [
     "Animal Político",
-    "El Imparcial",
-    "El Universal",
     "Infobae",
     "La Jornada",
     "Los Noticieristas",
     "Milenio",
-    "Proceso",
-    "Ríodoce",
-    "TV Azteca Noticias",
-    "ZETA Tijuana"
+    "Proceso"
    ],
    "sources": [
     {
-     "outlet": "infobae",
-     "name": "Infobae",
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
      "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115211941606244622",
-     "time": "2026-10-27T22:40:00Z",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2115266242315501933",
+     "time": "2026-10-28T02:15:46Z",
      "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://infobae.com/mexico/2026/10/28/chuy-gonzalez-quien-era-las-acusaciones-de-eeuu-y-los-corridos-que-retratan-al-capo-del-cartel-de-sinaloa-abatido-en-guasave",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://infobae.com/mexico/2026/10/28/san-judas-tadeo-el-santo-que-tambien-celebran-los-narcos-el-28-de-octubre-la-devocion-de-el-mencho-y-el-cartel-de-sinaloa",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/quien-era-el-chuy-gonzalez-traficante-de-drogas-abatido-en-guasave",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://riodoce.mx/2026/10/27/chuy-gonzalez-fue-abatido-en-el-enfrentamiento-con-fuerzas-federales-en-siete-ejidos-guasave",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "tvazteca",
-     "name": "TV Azteca Noticias",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://tvazteca.com/aztecanoticias/quien-era-jesus-chuy-gonzalez-penuelas-la-dea-ofrecia-5-millones-dolares-por-el",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "elimparcial",
-     "name": "El Imparcial",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.elimparcial.com/mexico/2026/10/28/omar-garcia-harfuch-informa-que-la-marina-abatio-en-sinaloa-a-un-presunto-segundo-operador-de-el-chapo-isidro-por-quien-estados-unidos-ofrecia-una-recompensa-de-5-millones-de-dolares/",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "eluniversal",
-     "name": "El Universal",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.eluniversal.com.mx/estados/elementos-federales-abaten-en-sinaloa-a-chuy-gonzalez-buscado-por-la-dea-ofrecian-5-millones-de-dolares-por-el/",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "eluniversal",
-     "name": "El Universal",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.eluniversal.com.mx/nacion/asi-fue-la-caida-de-chuy-gonzalez-segundo-al-mando-de-el-chapo-isidro-es-ligado-al-cartel-de-guasave/",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/10/28/abaten-a-chuy-gonzalez-en-guasave-dea-ofrecia-5-millones-de-dolares-por-el-operador-del-cartel-de-sinaloa/",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/10/28/en-tres-camionetas-y-armados-asi-detecto-la-marina-a-chuy-gonzalez-operador-del-cartel-de-guasave-y-uno-de-los-mas-buscados-por-el-fbi/",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://zetatijuana.com/2026/10/semar-mato-a-chuy-penuelas-operador-del-cartel-de-guasave-confirma-harfuch/?utm_source=rss&utm_medium=rss&utm_campaign=semar-mato-a-chuy-penuelas-operador-del-cartel-de-guasave-confirma-harfuch",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
     },
     {
      "outlet": "noticieristas",
@@ -204,24 +379,6 @@
      "via": "X @infobaemexico",
      "url": "https://x.com/infobaemexico/status/2115438068178022417",
      "time": "2026-10-28T13:38:33Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2115469522870362424",
-     "time": "2026-10-28T15:43:32Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2115470233989488852",
-     "time": "2026-10-28T15:46:21Z",
      "time_precision": "minute"
     },
     {
@@ -261,42 +418,6 @@
      "time_precision": "minute"
     },
     {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115548311646028040",
-     "time": "2026-10-28T20:56:37Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115549651080188036",
-     "time": "2026-10-28T21:01:56Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115608696940122621",
-     "time": "2026-10-29T00:56:34Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://infobae.com/mexico/2026/10/29/eeuu-presenta-cargos-contra-24-integrantes-de-una-red-vinculada-al-cartel-de-sinaloa-con-operacion-en-tennessee",
-     "time": "2026-10-29T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
      "outlet": "jornada",
      "name": "La Jornada",
      "kind": "outlet",
@@ -328,15 +449,6 @@
      "name": "Infobae",
      "kind": "outlet",
      "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115875054969880588",
-     "time": "2026-10-29T18:34:58Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
      "url": "https://x.com/infobaemexico/status/2115910212271976636",
      "time": "2026-10-29T20:54:40Z",
      "time_precision": "minute"
@@ -348,7 +460,7 @@
    "status": "single_source",
    "title": "Tras retirarle su apoyo al alcalde de Naranjal, ADN dijo que la lucha del movimiento oficialista contra \"el crimen organizado es frontal y sin excepciones\". La autoridad de este cantón de Guayas asegu",
    "lang": "es",
-   "title_en": "After withdrawing its support from the mayor of Naranjal, ADN said the ruling movement's fight against \"organised crime is head-on and without exceptions\". The official of this Guayas canton says",
+   "title_en": "After withdrawing its support from the mayor of Naranjal, ADN said the ruling movement's fight against \"organised crime is head-on and without exceptions\". The official of this Guayas canton says there is a \"smear campai",
    "first_report": "2026-10-29T20:50:27Z",
    "first_report_precision": "minute",
    "first_source": "Primicias",
@@ -450,40 +562,11 @@
    ]
   },
   {
-   "id": "0b7206ba07",
-   "status": "official_claim_only",
-   "title": "En #Ojinaga, #Chihuahua, elementos de @Defensamx1 y @GN_MEXICO_ detienen a Sergio “N”, alias \"El Señor de la A\", identificado como líder regional de una organización delictiva. Cuenta con una orden de",
-   "lang": "es",
-   "title_en": "In Ojinaga, Chihuahua, Defence and National Guard personnel arrested Sergio \"N\", alias \"El Señor de la A\", identified as a regional leader of a criminal organisation. He has an order",
-   "first_report": "2026-10-29T20:20:07Z",
-   "first_report_precision": "minute",
-   "first_source": "SSPC (Mexico)",
-   "region_ids": [
-    "MEX-2709"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2115901514870849872",
-     "time": "2026-10-29T20:20:07Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
    "id": "acfc93a83e",
    "status": "single_source",
    "title": "El Sindicato de Telefonistas exige la restitución de 185 empleados despedidos; aseguran que con la huelga indefinida no habrá personal que de atención o reparaciones en caso que los servicios fallen e",
    "lang": "es",
-   "title_en": "The Telephone Workers' Union demands the reinstatement of 185 dismissed employees; they say that with the indefinite strike there will be no staff to provide service or repairs if services fail",
+   "title_en": "The Telephone Workers' Union demands the reinstatement of 185 dismissed employees; they say that with the indefinite strike there will be no staff to provide service or repairs if services fail in Baja California.",
    "first_report": "2026-10-29T20:15:58Z",
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
@@ -512,7 +595,7 @@
    "status": "single_source",
    "title": "➡️ Ataque armado en restaurante de Mazatlán deja un fallecido y un herido grave. 🚨🚔 Un hombre fue privado de la vida y otro resultó gravemente herido tras un ataque a balazos dentro de un restaurante ",
    "lang": "es",
-   "title_en": "Armed attack at a Mazatlán restaurant leaves one dead and one seriously wounded. A man was killed and another seriously wounded in a shooting inside a restaurant",
+   "title_en": "Armed attack at a Mazatlán restaurant leaves one dead and one seriously wounded. A man was killed and another seriously wounded in a shooting inside a restaurant on Paseo del Pacífico avenue in Mazatlán.",
    "first_report": "2026-10-29T19:58:50Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
@@ -595,35 +678,6 @@
    ]
   },
   {
-   "id": "96c472643b",
-   "status": "single_source",
-   "title": "La fiesta de 15 años de la hija de un narcotraficante confeso volvió a poner bajo el reflector a Zacapa y destapó los vínculos familiares de la alcaldesa con Los Lorenzana, un clan señalado por EEUU d",
-   "lang": "es",
-   "title_en": "The quinceañera party for the daughter of a confessed drug trafficker put Zacapa back in the spotlight and exposed the mayor's family ties to Los Lorenzana, a clan accused by the US",
-   "first_report": "2026-10-29T19:05:45Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "GTM-1963"
-   ],
-   "country": "GTM",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115882801526428103",
-     "time": "2026-10-29T19:05:45Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
    "id": "a0968d9dfe",
    "status": "official_claim_only",
    "title": "En Michoacán, elementos de @SEMAR_mx, en coordinación con @SSPCMexico, @FGRMexico, @FiscaliaMich y @SSeguridad_Mich, ejecutaron tres órdenes de cateo y detuvieron a tres integrantes de una célula deli",
@@ -664,6 +718,200 @@
    ]
   },
   {
+   "id": "a312587eec",
+   "status": "confirmed",
+   "title": "Abaten a “Chuy González” en Guasave: DEA ofrecía 5 millones de dólares por el operador del Cártel de Sinaloa",
+   "lang": "es",
+   "title_en": "“Chuy González” killed in Guasave: the DEA was offering 5 million dollars for the Sinaloa Cartel operator",
+   "first_report": "2026-10-28T05:31:04Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "mayiza",
+    "chapitos",
+    "cjng"
+   ],
+   "outlets": [
+    "El Imparcial",
+    "El Universal",
+    "Infobae",
+    "Milenio",
+    "Ríodoce",
+    "TV Azteca Noticias",
+    "ZETA Tijuana"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115315389475303441",
+     "time": "2026-10-28T05:31:04Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/10/28/chuy-gonzalez-quien-era-las-acusaciones-de-eeuu-y-los-corridos-que-retratan-al-capo-del-cartel-de-sinaloa-abatido-en-guasave",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/10/28/san-judas-tadeo-el-santo-que-tambien-celebran-los-narcos-el-28-de-octubre-la-devocion-de-el-mencho-y-el-cartel-de-sinaloa",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/quien-era-el-chuy-gonzalez-traficante-de-drogas-abatido-en-guasave",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "tvazteca",
+     "name": "TV Azteca Noticias",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://tvazteca.com/aztecanoticias/quien-era-jesus-chuy-gonzalez-penuelas-la-dea-ofrecia-5-millones-dolares-por-el",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "elimparcial",
+     "name": "El Imparcial",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.elimparcial.com/mexico/2026/10/28/omar-garcia-harfuch-informa-que-la-marina-abatio-en-sinaloa-a-un-presunto-segundo-operador-de-el-chapo-isidro-por-quien-estados-unidos-ofrecia-una-recompensa-de-5-millones-de-dolares/",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/estados/elementos-federales-abaten-en-sinaloa-a-chuy-gonzalez-buscado-por-la-dea-ofrecian-5-millones-de-dolares-por-el/",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/nacion/asi-fue-la-caida-de-chuy-gonzalez-segundo-al-mando-de-el-chapo-isidro-es-ligado-al-cartel-de-guasave/",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/10/28/abaten-a-chuy-gonzalez-en-guasave-dea-ofrecia-5-millones-de-dolares-por-el-operador-del-cartel-de-sinaloa/",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/10/28/en-tres-camionetas-y-armados-asi-detecto-la-marina-a-chuy-gonzalez-operador-del-cartel-de-guasave-y-uno-de-los-mas-buscados-por-el-fbi/",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://zetatijuana.com/2026/10/semar-mato-a-chuy-penuelas-operador-del-cartel-de-guasave-confirma-harfuch/?utm_source=rss&utm_medium=rss&utm_campaign=semar-mato-a-chuy-penuelas-operador-del-cartel-de-guasave-confirma-harfuch",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2115469522870362424",
+     "time": "2026-10-28T15:43:32Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2115470233989488852",
+     "time": "2026-10-28T15:46:21Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115548311646028040",
+     "time": "2026-10-28T20:56:37Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115549651080188036",
+     "time": "2026-10-28T21:01:56Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115608696940122621",
+     "time": "2026-10-29T00:56:34Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/10/29/eeuu-presenta-cargos-contra-24-integrantes-de-una-red-vinculada-al-cartel-de-sinaloa-con-operacion-en-tennessee",
+     "time": "2026-10-29T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115875054969880588",
+     "time": "2026-10-29T18:34:58Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
    "id": "8c137f197b",
    "status": "single_source",
    "title": "El #Ejército aseguró en #Sinaloa mil 490 litros y 400 kilos de químicos para fabricar #metanfetamina, además de 15 kilos de un precursor para elaborar #fentanilo.",
@@ -688,35 +936,6 @@
      "via": "X @Riodoce_mx",
      "url": "https://x.com/Riodoce_mx/status/2115873804954009984",
      "time": "2026-10-29T18:30:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "9df06768c4",
-   "status": "single_source",
-   "title": "⚠️ Fue detenido con una granada de fragmentación y documentos apócrifos que lo acreditaban como agente de la #CIA",
-   "lang": "es",
-   "title_en": "He was arrested with a fragmentation grenade and forged documents identifying him as a CIA agent",
-   "first_report": "2026-10-29T17:36:56Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "NIC-655"
-   ],
-   "country": "NIC",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115860448021225550",
-     "time": "2026-10-29T17:36:56Z",
      "time_precision": "minute"
     }
    ]
@@ -861,9 +1080,9 @@
    "first_source": "Infobae",
    "region_ids": [
     "MEX-2719",
-    "MEX-2721",
-    "MEX-2723",
-    "MEX-2727"
+    "MEX-2727",
+    "MEX-2734",
+    "MEX-2723"
    ],
    "country": "MEX",
    "group_ids": [
@@ -985,8 +1204,8 @@
    ],
    "country": "ECU",
    "group_ids": [
-    "choneros",
-    "lobos"
+    "lobos",
+    "choneros"
    ],
    "outlets": [
     "Infobae",
@@ -1411,8 +1630,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "choneros",
-    "lobos"
+    "lobos",
+    "choneros"
    ],
    "outlets": [
     "Clarín"
@@ -1503,8 +1722,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "choneros",
-    "lobos"
+    "lobos",
+    "choneros"
    ],
    "outlets": [
     "Primicias"
@@ -1734,9 +1953,9 @@
    "first_report_precision": "day",
    "first_source": "El Universal",
    "region_ids": [
-    "MEX-2711",
     "ARG-1308",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2711"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -1971,8 +2190,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2706",
-    "NIC-655"
+    "NIC-655",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2059,8 +2278,8 @@
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2703,6 +2922,15 @@
      "time_precision": "minute"
     },
     {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://riodoce.mx/2026/10/27/chuy-gonzalez-fue-abatido-en-el-enfrentamiento-con-fuerzas-federales-en-siete-ejidos-guasave",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
      "outlet": "noticieristas",
      "name": "Los Noticieristas",
      "kind": "outlet",
@@ -2859,65 +3087,6 @@
    ]
   },
   {
-   "id": "5ae9d1f139",
-   "status": "confirmed",
-   "title": "BALEAN CASA PRESUNTAMENTE LIGADA AL GOBERNADOR CON LICENCIA RUBÉN ROCHA MOYA EN CULIACÁN Medios locales señalan que la vivienda habría servido como casa de campaña para el funcionario sinaloense. Un g",
-   "lang": "es",
-   "title_en": "GUNMEN SHOOT AT HOUSE ALLEGEDLY LINKED TO GOVERNOR ON LEAVE RUBÉN ROCHA MOYA IN CULIACÁN Local media say the house reportedly served as a campaign office for the Sinaloa official. An armed group fired on a house in the C",
-   "first_report": "2026-10-27T23:00:43Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae",
-    "Los Noticieristas",
-    "Milenio",
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115217154949984678",
-     "time": "2026-10-27T23:00:43Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2115245806118916439",
-     "time": "2026-10-28T00:54:34Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2115246897178738776",
-     "time": "2026-10-28T00:58:54Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/estados/culiacan-balean-inmueble-habria-casa-campana-rocha-moya",
-     "time": "2026-10-28T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
    "id": "d5203ea162",
    "status": "single_source",
    "title": "Relação entre Trump e Lula pode azedar mais por causa de saída de Flávio do Brasil? - BBC News Brasil",
@@ -2988,8 +3157,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "choneros",
-    "lobos"
+    "lobos",
+    "choneros"
    ],
    "outlets": [
     "El Tiempo"
@@ -3191,8 +3360,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "GTM-1951",
-    "MEX-2719"
+    "MEX-2719",
+    "GTM-1951"
    ],
    "country": "GTM",
    "group_ids": [
@@ -3223,13 +3392,13 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2734",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2734"
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "gulf"
+    "gulf",
+    "cjng"
    ],
    "outlets": [
     "Infobae"
@@ -3256,8 +3425,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
@@ -3291,8 +3460,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "choneros",
-    "lobos"
+    "lobos",
+    "choneros"
    ],
    "outlets": [
     "InSight Crime"
@@ -3304,6 +3473,35 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://insightcrime.org/es/noticias/federacion-criminal-guerras-entre-bandas-legado-rasquina-ecuador",
+     "time": "2026-10-28T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "8368a3813e",
+   "status": "single_source",
+   "title": "Culiacán: Balean inmueble habría sido casa campaña de Rocha Moya- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-28T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/estados/culiacan-balean-inmueble-habria-casa-campana-rocha-moya",
      "time": "2026-10-28T12:00:00Z",
      "time_precision": "day"
     }
@@ -3415,9 +3613,9 @@
    "first_report_precision": "day",
    "first_source": "El Universal",
    "region_ids": [
-    "MEX-2714",
+    "MEX-2716",
     "NIC-658",
-    "MEX-2716"
+    "MEX-2714"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -3478,8 +3676,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "choneros",
-    "lobos"
+    "lobos",
+    "choneros"
    ],
    "outlets": [
     "Infobae"
@@ -3712,37 +3910,6 @@
    ]
   },
   {
-   "id": "a312587eec",
-   "status": "single_source",
-   "title": "Abaten a “Chuy González” en Guasave: DEA ofrecía 5 millones de dólares por el operador del Cártel de Sinaloa",
-   "lang": "es",
-   "title_en": "“Chuy González” killed in Guasave: the DEA was offering 5 million dollars for the Sinaloa Cartel operator",
-   "first_report": "2026-10-28T05:31:04Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115315389475303441",
-     "time": "2026-10-28T05:31:04Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
    "id": "27d8819c78",
    "status": "single_source",
    "title": "🇪🇨 | Jorge Luis Zambrano, alias “Rasquiña,” built one of Ecuador’s most dynamic criminal groups from his cell, forging a network known as the Choneros Federation. Explore how he turned imprisonment in",
@@ -3796,35 +3963,6 @@
      "via": "X @Riodoce_mx",
      "url": "https://x.com/Riodoce_mx/status/2115267809802375541",
      "time": "2026-10-28T02:22:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "01be07212d",
-   "status": "single_source",
-   "title": "➡️ Jesús \"Chuy\" González, objetivo de la DEA sería uno de los dos fallecidos tras enfrentamiento en Guasave. 🚨🚔| Jesús González, conocido como “Chuy González ”, es señalado como uno de los dos hombres",
-   "lang": "es",
-   "title_en": "Jesús \"Chuy\" González, a DEA target, is reportedly one of the two men killed after a clash in Guasave. Jesús González, known as “Chuy González”, is named as one of the two men who reportedly died after a chase that began",
-   "first_report": "2026-10-28T02:15:46Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2115266242315501933",
-     "time": "2026-10-28T02:15:46Z",
      "time_precision": "minute"
     }
    ]
@@ -3912,151 +4050,6 @@
      "via": "X @Riodoce_mx",
      "url": "https://x.com/Riodoce_mx/status/2115251703381667987",
      "time": "2026-10-28T01:18:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "d5e990d497",
-   "status": "single_source",
-   "title": "Cumplimentan orden de aprehensión contra \"El Toro\", miembro de La Familia Michoacana acusado de extorsión",
-   "lang": "es",
-   "title_en": "Arrest warrant executed against \"El Toro\", a member of La Familia Michoacana accused of extortion",
-   "first_report": "2026-10-28T01:01:09Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "lnfm"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115247462621249999",
-     "time": "2026-10-28T01:01:09Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "7dbfa4bb5d",
-   "status": "single_source",
-   "title": "Pero la suerte de Saab la enfrentaron primero sus socios. Álvaro Pulido Vargas estaba detenido en Caracas desde abril de 2023 por el caso Pdvsa-Cripto, mientras que Carlos Lizcano también quedó bajo a",
-   "lang": "es",
-   "title_en": "But Saab's partners met their fate first. Álvaro Pulido Vargas had been held in Caracas since April 2023 over the PDVSA-Crypto case, while Carlos Lizcano was also arrested last February after the capture of",
-   "first_report": "2026-10-28T00:30:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Armando.Info",
-   "region_ids": [
-    "VEN-43"
-   ],
-   "country": "VEN",
-   "group_ids": [],
-   "outlets": [
-    "Armando.Info"
-   ],
-   "sources": [
-    {
-     "outlet": "armando",
-     "name": "Armando.Info",
-     "kind": "outlet",
-     "via": "X @ArmandoInfo",
-     "url": "https://x.com/ArmandoInfo/status/2115239624205312239",
-     "time": "2026-10-28T00:30:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "9f01bb07c2",
-   "status": "single_source",
-   "title": "Reportes aseguran que la expresidenta del DIF Morelos habría sido interceptada en un aeropuerto de Nueva York por llevar una fuerte suma de efectivo sin declarar, Cuauhtémoc Blanco niega la versión",
-   "lang": "es",
-   "title_en": "Reports say the former head of DIF Morelos was allegedly stopped at a New York airport carrying a large undeclared sum of cash; Cuauhtémoc Blanco denies the account",
-   "first_report": "2026-10-28T00:15:49Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2732"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115236055179833561",
-     "time": "2026-10-28T00:15:49Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "b03e0cc48d",
-   "status": "single_source",
-   "title": "Las lluvias asociadas a El Niño dejan cuatro fallecidos y miles de viviendas dañadas en ocho semanas. En Guayas, equipos de rescate buscan a posibles desaparecidos en el río Yaguachi.",
-   "lang": "es",
-   "title_en": "Rains linked to El Niño have left four dead and thousands of homes damaged in eight weeks. In Guayas, rescue teams are searching for possible missing people in the Yaguachi river.",
-   "first_report": "2026-10-27T23:48:11Z",
-   "first_report_precision": "minute",
-   "first_source": "Primicias",
-   "region_ids": [
-    "ECU-1280"
-   ],
-   "country": "ECU",
-   "group_ids": [],
-   "outlets": [
-    "Primicias"
-   ],
-   "sources": [
-    {
-     "outlet": "primicias",
-     "name": "Primicias",
-     "kind": "outlet",
-     "via": "X @Primicias",
-     "url": "https://x.com/Primicias/status/2115229102114287619",
-     "time": "2026-10-27T23:48:11Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "0b676a79ae",
-   "status": "single_source",
-   "title": "Cae \"El Isra\", segundo al mando de “Los Rusos”; lo relacionan con privación de la libertad de \"El Gordo Gadaffi\", cantante de corridos De acuerdo con la Fiscalía de Sonora, al detenido se le relaciona",
-   "lang": "es",
-   "title_en": "\"El Isra\", second in command of \"Los Rusos\", is arrested; he is linked to the abduction of \"El Gordo Gadaffi\", a corridos singer. According to the Sonora Prosecutor's Office, the detainee is linked to the deprivation of ",
-   "first_report": "2026-10-27T22:20:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Proceso",
-   "region_ids": [
-    "MEX-2712"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Proceso"
-   ],
-   "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2115206908688941285",
-     "time": "2026-10-27T22:20:00Z",
      "time_precision": "minute"
     }
    ]
