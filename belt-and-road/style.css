@@ -55,8 +55,6 @@ h1{font-size:34px;margin:6px 0 14px}h2{font-size:24px;margin:28px 0 10px}@media(
 #panel.open{transform:none;visibility:visible}
 #panel h2{margin:8px 0 10px;font-size:24px}#panel dt{font-weight:700;color:var(--gold);margin-top:12px;font-size:13px;letter-spacing:.8px;text-transform:uppercase}#panel dd{margin:0}
 .close{min-height:44px;padding:8px 14px;font:600 15px Arial,sans-serif;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:4px;cursor:pointer;float:right}
-sup{font-size:13px;margin-left:3px}sup a{padding:0 1px}
-.srcs{margin-top:18px;font-size:13px;color:var(--muted)}.srcs summary{cursor:pointer;min-height:44px;display:flex;align-items:center}.srcs a{color:var(--muted);text-decoration:underline}
 .small{font-size:13px;margin-top:24px}
 
 /* v1.0 layout: left sidebar with simplified, clickable legends and filters */
@@ -157,3 +155,17 @@ details.grp .cards{padding:0 10px 10px}
 }
 .intro .mb{display:none}
 @media (max-width:430px){body.mob .intro .mb{display:inline}body.mob .intro .dk{display:none}header nav{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:4px}header nav a{white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}}
+
+/* v1.3: numbered source links [1] [2] (plain bracketed text, no badges) and one Data Sources dropdown at the bottom */
+a.sn{display:inline-flex;align-items:center;min-height:44px;padding:0 8px 0 0;color:#c8a24a;font-size:15px;font-weight:700;text-decoration:underline;white-space:nowrap}
+.srcl{display:flex;flex-wrap:wrap;gap:0 6px}
+#datasrc{margin-top:28px;border-top:1px solid #24365a;padding-top:8px;color:#e6e9ef;font-size:14px;line-height:1.45}
+#datasrc>summary{list-style:none;cursor:pointer;display:flex;align-items:center;min-height:44px}#datasrc>summary h2{margin:0}
+#datasrc>summary::-webkit-details-marker{display:none}#datasrc>summary::after{content:" \25BE";color:#c8a24a;margin-left:8px}
+#datasrc h3{font-size:16px;color:#c8a24a;margin:16px 0 6px}#datasrc h4{font:700 15px Arial,sans-serif;color:#c8a24a;margin:16px 0 4px}
+#datasrc a{color:#c8a24a;text-decoration:underline;overflow-wrap:anywhere}
+#datasrc ul{padding-left:18px;margin:4px 0}#datasrc li{margin:4px 0;overflow-wrap:anywhere}
+#dslist ul{list-style:none;padding:0}#dslist li{padding:6px 0;border-bottom:1px solid #24365a}
+#dslist .dn{display:block;font-weight:700}#dslist .dl{display:flex;flex-wrap:wrap;gap:0 14px}
+#dslist a.sn{min-height:44px;font-size:14px;white-space:normal;overflow-wrap:anywhere}
+.dsnote{margin:4px 0 0}

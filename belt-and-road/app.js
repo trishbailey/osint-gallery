@@ -1,4 +1,4 @@
-// Belt and Road v1.2. Cross-link to the Africa Brief.
+// Belt and Road v1.3. Cross-link to the Africa Brief.
 const MOB=window.matchMedia("(max-width:430px)").matches; // real phone layout
 const AFRICA_BRIEF_URL="../africa-brief/";
 // Five display groups (legend <= 5). Marker palette min CIEDE2000 pair dE checked by _src/palette_check.py and _src/check_page.py.
@@ -13,10 +13,15 @@ const REG={all:"All regions",africa:"Africa","south-asia":"South Asia","southeas
 const AGG=new Set(["bri-loans","bri-loans-top"]);
 const BEIJING=[116.4,39.9];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const srcLinks=us=>us.map((u,i)=>`<a class="sn" href="${esc(u)}" target="_blank" rel="noopener" aria-label="Source ${i+1}: ${esc(host(u))} (opens in a new tab)">[${i+1}]</a>`).join(" ");
 const host=u=>{try{return new URL(u).hostname.replace(/^www\./,"")}catch(_){return u}};
 const symSvg=(g,sz=16)=>`<svg width="${sz}" height="${sz}" viewBox="-9 -9 18 18" aria-hidden="true"><path d="${d3.symbol(SYM[g],110)()}" fill="${COL[g]}" stroke="#0b1526" stroke-width="1"/></svg>`;
 Promise.all([d3.json("data/bri.json"),d3.json("data/ne_110m.geojson")]).then(([D,W])=>{
  document.getElementById("dd").textContent=D.data_date;
+ const dsl=document.getElementById("dslist"),dsd=document.getElementById("datasrc");
+ dsd.addEventListener("toggle",()=>{if(!dsd.open||dsl.dataset.done)return;dsl.dataset.done=1;
+  const byR={};D.entries.forEach(e=>(byR[e.region]=byR[e.region]||[]).push(e));
+  dsl.innerHTML=Object.keys(REG).filter(r=>byR[r]).map(r=>`<h4>${esc(REG[r])}</h4><ul>`+byR[r].map(e=>`<li><span class="dn">${esc(e.name)}</span> <span class="dl">${(e.sources||[]).map((u,i)=>`<a class="sn" href="${esc(u)}" target="_blank" rel="noopener">[${i+1}]&nbsp;${esc(host(u))}</a>`).join(" ")||"No public source link."}</span></li>`).join("")+`</ul>`).join("")});
  const GL=D.glossary||{},ISO=D.iso||{};
  const FULL={UAE:"United Arab Emirates","DR Congo":"Democratic Republic of the Congo","Angola (top)":"Angola"};
  const flag=(c,cls="fl")=>ISO[c]?`<img class="${cls}" src="vendor/flags/${ISO[c]}.svg" alt="" title="${esc(FULL[c]||c)}" width="20" height="15">`:"";
@@ -81,18 +86,16 @@ Promise.all([d3.json("data/bri.json"),d3.json("data/ne_110m.geojson")]).then(([D
  const sum=e=>{let t=e.value.split(/; |\. /)[0];if(t.length>110)t=t.slice(0,t.lastIndexOf(" ",105))+" …";return t};
  const card=e=>`<button type="button" class="pcard" data-id="${esc(e.id)}" data-c="${esc(e.country.split(" / ")[0])}" aria-label="Open details: ${esc(e.name)}"><span class="pn">${symSvg(e.g,16)}<b>${gl(e.name,new Set())}</b></span><span class="sum">${gl(sum(e),new Set())}</span><span class="cc">${flags(e.country)}<span>${esc(e.country)}</span><span class="pill ${e.confidence}">${e.confidence} confidence</span></span></button>`;
  function openPanel(e){cur=e;g.selectAll(".mk").classed("sel",d=>d===e);const seen=new Set();
-  const notes=e.sources.map((u,i)=>`<a href="#n-${i+1}" class="fn" data-n="${i+1}" aria-label="Source ${i+1}">${i+1}</a>`).join(",");
+  const notes=srcLinks(e.sources);
   const val=gl(e.value,seen),lw=val.lastIndexOf(" ");
   const link=location.origin+location.pathname+"#p="+e.id;
   const PL=t=>{for(const c of e.country.split(" / ")){if(c.length<3)continue;let done=false;const re=new RegExp("(^|[^A-Za-z])("+c.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")(?![A-Za-z])");t=t.split(/(<[^>]*>)/).map(x=>{if(done||x.startsWith("<")||!re.test(x))return x;done=true;return x.replace(re,(_,p,w)=>`${p}<a href="#" class="place" data-c="${esc(c)}">${w}</a>`)}).join("")}return t};
   document.getElementById("pbody").innerHTML=`<p class="ct">${symSvg(e.g,14)} ${esc(TLAB[e.g])} · ${REG[e.region]}</p><h2 id="ptitle">${gl(e.name,seen)}</h2><p class="cc">${flags(e.country)}${flag("China")} ${e.country.split(" / ").map(c=>`<a href="#" class="place" data-c="${esc(c)}" title="Show ${esc(FULL[c]||c)} on the map">${esc(FULL[c]||c)}</a>`).join(" / ")}</p><span class="pill ${e.confidence}">${e.confidence} confidence</span>
-  <dl><dt>Scale</dt><dd>${val.slice(0,lw+1)}<span class="nw">${val.slice(lw+1)}<sup>${notes}</sup></span></dd><dt>Lender or builder</dt><dd>${PL(gl(e.backer,seen))}</dd><dt>What China gets</dt><dd>${PL(gl(e.china_gets,seen))}</dd>
+  <dl><dt>Scale</dt><dd>${val.slice(0,lw+1)}<span class="nw">${val.slice(lw+1)}</span></dd><dt>Lender or builder</dt><dd>${PL(gl(e.backer,seen))}</dd><dt>What China gets</dt><dd>${PL(gl(e.china_gets,seen))}</dd>
   <dt>Host country's case</dt><dd>${PL(gl(e.host_case,seen))}</dd>${e.confidence_reason?`<dt>Why this confidence</dt><dd>${gl(e.confidence_reason,seen)}</dd>`:""}
-  <dt>Map</dt><dd><button type="button" class="showmap" id="showmap">Show on map</button></dd><dt>Link to this project</dt><dd><a href="#p=${esc(e.id)}">${esc(link)}</a></dd></dl>
-  ${e.region==="africa"?`<p><a class="xlink" href="${AFRICA_BRIEF_URL}">Read the Africa Brief &rarr;</a></p>`:""}
-  <details class="srcs" id="srcs"><summary>Sources (${e.sources.length})</summary><ol>${e.sources.map((u,i)=>`<li id="n-${i+1}"><a href="${esc(u)}" target="_blank" rel="noopener">${esc(host(u))}</a></li>`).join("")}</ol></details>`;
+  <dt>Sources</dt><dd class="srcl">${notes||"No public source link."}</dd><dt>Map</dt><dd><button type="button" class="showmap" id="showmap">Show on map</button></dd><dt>Link to this project</dt><dd><a href="#p=${esc(e.id)}">${esc(link)}</a></dd></dl>
+  ${e.region==="africa"?`<p><a class="xlink" href="${AFRICA_BRIEF_URL}">Read the Africa Brief &rarr;</a></p>`:""}`;
   document.getElementById("showmap").onclick=()=>{closePanel();if(AGG.has(e.id))return;cur=e;zoomTo([e.lon,e.lat],5);document.querySelector(".mapbox").scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>{renderMarks();showLine(e)},750)};
-  document.querySelectorAll("#pbody .fn").forEach(a=>a.addEventListener("click",ev=>{ev.preventDefault();const s=document.getElementById("srcs");s.open=true;document.getElementById("n-"+a.dataset.n).scrollIntoView({block:"nearest"})}));
   const p=document.getElementById("panel");lastFocus=lastFocus||document.activeElement;p.classList.add("open");p.setAttribute("aria-hidden","false");document.getElementById("scrim").hidden=false;document.getElementById("close").focus()}
  function closePanel(){const p=document.getElementById("panel");if(!p.classList.contains("open"))return;p.classList.remove("open");p.setAttribute("aria-hidden","true");document.getElementById("scrim").hidden=true;cur=null;g.selectAll(".mk").classed("sel",false);
   history.replaceState(null,"","#region="+region);if(lastFocus&&lastFocus.focus)lastFocus.focus();lastFocus=null}
