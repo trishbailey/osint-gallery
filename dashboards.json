@@ -76,9 +76,9 @@
       "oldUrl": "",
       "status": "in-repo",
       "cardId": "belt-and-road",
-      "version": "1.3",
+      "version": "1.4",
       "entries": 136,
-      "note": "v1.3, 136 entries; numbered [n] source links in details panels and one Data Sources dropdown. Lives directly in this repo under /belt-and-road/ with its own workflow; not touched by the sync."
+      "note": "v1.4, 136 entries; removed the hover arrows to China from map tooltips, space after expanded RMB, phone details header no longer hidden by the Close bar. v1.3: numbered [n] source links in details panels and one Data Sources dropdown. Lives directly in this repo under /belt-and-road/ with its own workflow; not touched by the sync."
     },
     {
    "slug": "ghost-fleet",
