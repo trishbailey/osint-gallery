@@ -33,7 +33,6 @@ jobs:
         env:
           DEPLOY_KEY_WORLD_BRIEF: ${{ secrets.DEPLOY_KEY_WORLD_BRIEF }}
           DEPLOY_KEY_CRITICAL_MINERALS: ${{ secrets.DEPLOY_KEY_CRITICAL_MINERALS }}
-          DEPLOY_KEY_UKRAINE_MONEY_FLOWS: ${{ secrets.DEPLOY_KEY_UKRAINE_MONEY_FLOWS }}
         run: python3 scripts/sync_dashboards.py ${{ github.event.inputs.slugs }} ${{ github.event.client_payload.slug }}
       - name: Commit if changed
         run: |
