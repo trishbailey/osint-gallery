@@ -1,12 +1,12 @@
 /* Cartel colour system (Trish 2026-10-27: every colour clearly distinct, no greys, no two shades of one hue family).
-   13 plain hue families, one per map group that needs its own: the 7 Mexican groups first, then Clan del Golfo, ELN, FARC dissidents, PCC, Los Lobos and MS-13.
+   14 plain hue families, one per map group that needs its own: the 7 Mexican groups first, then Clan del Golfo, ELN, FARC dissidents, PCC, Los Lobos, MS-13 and Comando Vermelho (periwinkle #b2ade1).
    Small, distant groups reuse the hex of a plain group in another country and carry a texture (dots/grid/stripes) instead of a new hue.
-   Pairwise CIEDE2000 between the 13 plain colours >= 23, >= 25 from every route line colour. Checked by pipeline/palette_check.py. */
-window.TERR_FILL={b18:"#0c9d8b",cdn:"#8c9e4b",choneros:"#f14510",cjng:"#1b5dac",clan:"#189cde",cv:"#de296a",eln:"#0c9d8b",exfarc:"#6f5f10",gulf:"#e4921d",haiti:"#de296a",juarez:"#126736",lnfm:"#e356ed",lobos:"#de296a",ms13:"#831dce",pcc:"#f14510",sinaloa:"#f99ea2",tda:"#831dce",unidos:"#844332"};
+   Pairwise CIEDE2000 between the 14 plain colours >= 23, >= 25 from every route line colour. Checked by pipeline/palette_check.py. */
+window.TERR_FILL={b18:"#0c9d8b",cdn:"#8c9e4b",choneros:"#f14510",cjng:"#265499",clan:"#289ddc",cv:"#b2ade1",eln:"#0c9d8b",exfarc:"#6f5f10",gulf:"#e4921d",haiti:"#e4175e",juarez:"#126736",lnfm:"#e743f5",lobos:"#e4175e",ms13:"#831dce",pcc:"#f14510",sinaloa:"#f6a696",tda:"#831dce",unidos:"#844332"};
 /* map groups that share a hex with a distant plain group carry a texture; no two share both hex and texture (Mexican groups always plain) */
-window.TERR_PAT={b18:"dots",choneros:"dots",cv:"dots",haiti:"grid",tda:"dots"};
+window.TERR_PAT={b18:"dots",choneros:"dots",haiti:"grid",tda:"dots"};
 /* Groups that only appear in the network graph and the timeline: they take the hex of the plain group they descend from, plus a texture that is unique within that hex. */
-window.CARTEL_FALL={guadalajara:"#f99ea2",tijuana:"#126736",chapitos:"#f99ea2",mayiza:"#f99ea2",zetas:"#e4921d",familia:"#e356ed",viagras:"#844332",soles:"#831dce",auc:"#189cde",farc:"#6f5f10",segmar:"#6f5f10",chone_killers:"#f14510",los_tiguerones:"#f14510",gran_grif:"#de296a",cmln:"#0c9d8b"};
+window.CARTEL_FALL={guadalajara:"#f6a696",tijuana:"#126736",chapitos:"#f6a696",mayiza:"#f6a696",zetas:"#e4921d",familia:"#e743f5",viagras:"#844332",soles:"#831dce",auc:"#289ddc",farc:"#6f5f10",segmar:"#6f5f10",chone_killers:"#f14510",los_tiguerones:"#f14510",gran_grif:"#e4175e",cmln:"#0c9d8b"};
 window.CARTEL_TEX={guadalajara:"dots",tijuana:"dots",chapitos:"stripes",mayiza:"grid",zetas:"dots",familia:"dots",viagras:"dots",soles:"stripes",auc:"dots",farc:"dots",segmar:"stripes",chone_killers:"stripes",los_tiguerones:"grid",gran_grif:"stripes",cmln:"grid"};
 window.CARTEL_ALIAS={viv_ansanm:"haiti"};
 /* id -> hex / texture for the network graph, timeline and legends (map groups use TERR_FILL and TERR_PAT; viv_ansanm is the haiti map group) */

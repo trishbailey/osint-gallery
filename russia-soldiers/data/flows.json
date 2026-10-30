@@ -164,6 +164,7 @@
     "kind": "vol",
     "name": "Volunteers and contract soldiers",
     "color": "#e43d3c",
+    "nojoin": false,
     "points": [
      {
       "id": "vol23",
@@ -221,14 +222,23 @@
     "kind": "mob",
     "name": "Mobilised",
     "color": "#2ec4b6",
+    "nojoin": false,
     "points": [
      {
-      "id": "mob22",
-      "t0": "2022-09-01",
-      "t1": "2022-10-31",
+      "id": "mob_k",
+      "t0": "2022-10-28",
+      "t1": "2022-10-28",
       "low": 300000,
+      "high": 300000,
+      "tip": "<b>Mobilised</b><br>28 Oct 2022: 300,000 recruits<br>Men called up in the Sep to Oct 2022 mobilisation, the Kremlin's count on the day the call-up was declared complete<br>300,000 called up in the partial mobilisation, counted to the day it was declared complete (Defence Minister to the President, 28 Oct 2022) [Kremlin, 28 Oct 2022]<br>One call-up wave, Sep to Oct 2022. This dot and the next count the same men.<br>Height is the total reported on this date, not a rate; this is a report of one earlier call-up wave, so there is no period bar."
+     },
+     {
+      "id": "mob_m",
+      "t0": "2023-03-02",
+      "t1": "2023-03-02",
+      "low": 527703,
       "high": 527703,
-      "tip": "<b>Mobilised</b><br>Sep 2022 to Oct 2022: 300,000 to 527,703 recruits<br>Called up in the September to October 2022 mobilisation (Kremlin count to Mediazona estimate)<br>300,000 called up in the partial mobilisation (Defence Minister to the President, 28 Oct 2022) [Kremlin, 28 Oct 2022]<br>at least 527,703 (Mediazona estimate from accelerated marriages, 2 Mar 2023) [DW on Mediazona, 2 Mar 2023]<br>One wave. No later call-up is counted.<br>Height is the total for the period, not a rate; the width of the bar under the dot is the period covered."
+      "tip": "<b>Mobilised</b><br>2 Mar 2023: 527,703 recruits<br>Men called up in the same Sep to Oct 2022 mobilisation, Mediazona's later estimate from accelerated marriages (a minimum)<br>at least 527,703 (Mediazona estimate from accelerated marriages, 2 Mar 2023) [DW on Mediazona, 2 Mar 2023]<br>A later, independent estimate of the same call-up. The rise from the dot before is a higher count of the same wave, not more men called up.<br>Height is the total reported on this date, not a rate; this is a report of one earlier call-up wave, so there is no period bar."
      }
     ],
     "est": []
@@ -237,6 +247,7 @@
     "kind": "pri",
     "name": "Prisoners, incl. Wagner and Storm-Z",
     "color": "#e8c547",
+    "nojoin": true,
     "points": [
      {
       "id": "pri22",
@@ -261,6 +272,7 @@
     "kind": "for",
     "name": "Foreign nationals, incl. North Korea",
     "color": "#4f9dff",
+    "nojoin": false,
     "points": [
      {
       "id": "for22",
@@ -310,7 +322,7 @@
    "2022-01-01",
    "2026-10-28"
   ],
-  "gaps": "No dated figure was found for: contract signers in 2022; mobilised men after 2022; prisoners after September 2023; foreigners before 2022. These are gaps, not zeros."
+  "gaps": "No dated figure was found for: contract signers in 2022; any later call-up of mobilised men; prisoners after September 2023; foreigners before 2022. These are gaps, not zeros."
  },
  "not_drawn": "All foreign contract signers named by Ukraine, to 1 Oct 2026: 45,959 from 151 countries. January to September 2026: Colombia 1,449, Burundi 699, Zimbabwe 530, Peru 503. Sri Lanka 751 (to late 2025).",
  "skipped": "Not drawn: any split of the national totals by region or district, because no outlet publishes recruitment counts by region for any type (the regional figures that exist cover 11 to 37 regions, are charts only, or count a recruiter's subset). Foreign countries without a single place on this map are listed above. North Korean soldiers are the only foreign group shown by troops committed rather than contracts signed.",

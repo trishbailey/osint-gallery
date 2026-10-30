@@ -138,12 +138,12 @@ table{display:block;width:100%}table tr{display:block;border-bottom:1px solid va
 .op-where{display:flex;flex-wrap:wrap;gap:4px 12px}.op-place{white-space:nowrap}.op-f{margin:8px 0 0;font-size:14px}
 @media(max-width:640px){.op-grid{grid-template-columns:1fr}}
 /* rare earths flow */
-.rf-svg{width:100%;height:auto;display:block}.rf-n{cursor:pointer}.rf-n:focus{outline:2px solid #c8a24a}
+.rf-svg{width:100%;height:auto;display:block}.rf-n{cursor:pointer}.rf-n:focus{outline:none}.rf-n:focus-visible rect{stroke:#c8a24a;stroke-width:4;stroke-opacity:1}
 .rf-l{transition:stroke-opacity .15s}.rf-hl .rf-l{stroke-opacity:.12}.rf-hl .rf-l.on{stroke-opacity:1}.rf-hl .rf-n rect{stroke-opacity:.35}.rf-hl .rf-n.on rect{stroke-opacity:1;stroke-width:3}
 .rf-prompt{color:#c8a24a;font-weight:700;font-size:14px;margin:0 0 8px}.rf-info{font-size:14px;min-height:1.2em;color:var(--text)}
 .rf-list{margin:8px 0 0;padding:0 12px 10px}.rf-th{font-size:15px;color:var(--gold);margin:12px 0 4px}.rf-b{margin:0 0 6px;padding-left:20px;font-size:14px;color:var(--text);list-style:disc}.rf-b li{margin:6px 0;display:list-item}.rf-txt{margin:10px 0 0;border:1px solid var(--line);border-radius:6px;background:var(--panel2)}.rf-txt summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--gold);padding:10px 12px}
-.rf-wide{overflow-x:auto;max-width:100%}.rf-hit{cursor:pointer}.rf-prompt{margin:4px 0 10px}.rf-svg{max-width:620px}.rf{margin:14px 0 6px;border-top:1px solid var(--line);padding-top:10px}.rf-h{font-size:16px;color:var(--gold);margin:0 0 6px}
-@media(max-width:640px){.rf-svg{min-width:500px;max-width:none}}
+.rf-wide{overflow-x:auto;max-width:100%}.rf-hit{cursor:pointer}.rf-prompt{margin:4px 0 10px}.rf-svg{max-width:none}.rf{margin:14px 0 6px;border-top:1px solid var(--line);padding-top:10px}.rf-h{font-size:16px;color:var(--gold);margin:0 0 6px}
+.rf-svg{min-width:504px}
 /* phone: the filters bar only applies to the minerals list, so it leaves once the operators section reaches the top */
 @media(max-width:800px){.cm-side.side-off:not(.open){visibility:hidden;pointer-events:none}}
 
@@ -205,3 +205,6 @@ table{display:block;width:100%}table tr{display:block;border-bottom:1px solid va
 .eu-b{padding:6px 8px}.eu-cn{font-size:14px}
 .eu-node{flex:0 0 28px;margin-left:12px;padding:0;gap:0;border-radius:8px}.eu-nt,.eu-nl,.eu-nc,.eu-nh{display:none}
 }
+
+/* phone: the rare earths chart scrolls sideways; fade the edge that has more content so nothing reads as a clipped box */
+@media(max-width:640px){.svg-scroll.fade-r{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 36px),transparent)}.svg-scroll.fade-l{-webkit-mask-image:linear-gradient(to left,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(to left,#000 calc(100% - 36px),transparent)}.svg-scroll.fade-l.fade-r{-webkit-mask-image:linear-gradient(to right,transparent,#000 36px,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(to right,transparent,#000 36px,#000 calc(100% - 36px),transparent)}}

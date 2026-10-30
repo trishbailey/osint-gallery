@@ -69,7 +69,7 @@ with sync_playwright() as pw:
         shot(page, f"{tag}-09b-flow-strand-hover.png", full=False)
         # time series: 9 line dots + 2 estimate markers + 3 more = 14 hit areas; hover one; Play must change the chart and end on Replay
         page.evaluate("document.querySelector('#flowts').scrollIntoView({block:'center'})"); page.wait_for_timeout(300)
-        nts = len(page.query_selector_all("#tschart .tshit")); print(tag, "time-series hit areas", nts); assert nts == 14, nts
+        nts = len(page.query_selector_all("#tschart .tshit")); print(tag, "time-series hit areas", nts); assert nts == 15, nts
         ntb = page.evaluate("[...document.querySelectorAll('#flowts button')].map(b=>b.textContent)"); assert ntb == ["Play"], ntb
         shot(page, f"{tag}-09c-flow-timeseries.png", full=False)
         before = page.evaluate("document.querySelector('#tsclipr').getAttribute('width')")
@@ -124,7 +124,7 @@ with sync_playwright() as pw:
         for mm in ("#mm-pov", "#mm-ru", "#mm-bonus"):
             n = len(page.query_selector_all(mm + " path.reg")); print(tag, mm, "regions", n); assert n > 80, mm
         nl = len(page.query_selector_all("#sankey path")); nr = len(page.query_selector_all("#sankey rect")); print(tag, "sankey links", nl, "nodes", nr); assert nl >= 25 and nr == 12
-        imgs = page.evaluate("[...document.querySelectorAll('.ph img')].map(i=>[i.complete&&i.naturalWidth>0,i.alt.length])"); print(tag, "photos", imgs); assert all(a and b > 20 for a, b in imgs) and len(imgs) == 2
+        imgs = page.evaluate("[...document.querySelectorAll('.ph img')].map(i=>[i.complete&&i.naturalWidth>0,i.alt.length])"); print(tag, "photos", imgs); assert all(a and b > 20 for a, b in imgs) and len(imgs) == 8
         for d in page.query_selector_all("details.how"):
             d.evaluate("e=>{let p=e.parentElement.closest('details');while(p){p.open=true;p=p.parentElement.closest('details')}}")
             d.scroll_into_view_if_needed(); before = d.evaluate("e=>e.open"); d.query_selector("summary").click(); page.wait_for_timeout(120)

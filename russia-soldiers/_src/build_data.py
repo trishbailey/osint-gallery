@@ -124,6 +124,7 @@ def main():
     S["fd"] = {}
     for f in FD_EN.values():
         S["fd"][f] = pooled([x for x in rows if x["fd"] == f])
+        mem_ = [x for x in rows if x["fd"] == f]; S["fd"][f]["dist_km"] = sum(x["dist_km"] * x["pop"] for x in mem_) / sum(x["pop"] for x in mem_)
     # wage quartiles by region count (sorted by wage)
     srt = sorted(rows, key=lambda x: x["wage"])
     qs = [srt[0:21], srt[21:42], srt[42:63], srt[63:85]]

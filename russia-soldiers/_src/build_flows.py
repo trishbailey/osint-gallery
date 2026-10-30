@@ -2,7 +2,7 @@
 District figures are sums of data/regions.json (Mediazona regional pages); foreign figures and North Korea rows come from the audited inputs."""
 import json, os, html, re, math
 from flow_inputs import TYPES, FRONT, KURSK, SKIPPED
-from recruit_inputs import TS, TS_DOMAIN, TS_NOTE_GAPS, ARROWS, HUB, WMIN, WSPAN, VMAX, LEGEND_SAMPLES, NOT_DRAWN, BAR_FOREIGN, NAMED_DEAD_DATE
+from recruit_inputs import TS_NOJOIN, TS, TS_DOMAIN, TS_NOTE_GAPS, ARROWS, HUB, WMIN, WSPAN, VMAX, LEGEND_SAMPLES, NOT_DRAWN, BAR_FOREIGN, NAMED_DEAD_DATE
 import nk_inputs as NK
 from sources import SOURCES
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -21,6 +21,7 @@ def eh(s): return html.escape(s, quote=False)
 def day(d): return fmt_date(d)
 def span(p):
     a, z = p["t0"], p["t1"]
+    if a == z: return day(a)
     return day(a[:7]) + " to " + day(z[:7]) if a[:4] != z[:4] or a[5:7] != z[5:7] else day(a[:7])
 def ts_build():
     out = []
@@ -32,9 +33,9 @@ def ts_build():
             for q in p["parts"]: t.append(f"{eh(q['label'])} [{eh(SOURCES[q['src']]['short'])}]")
             if len(p["parts"]) > 1 and p["low"] == p["high"]: t.append(f"Sum: {p['low']:,}")
             if p["note"]: t.append(eh(p["note"]))
-            if not p["est"]: t.append("Height is the total for the period, not a rate; the width of the bar under the dot is the period covered.")
+            if not p["est"]: t.append("Height is the total reported on this date, not a rate; this is a report of one earlier call-up wave, so there is no period bar." if p["t0"] == p["t1"] else "Height is the total for the period, not a rate; the width of the bar under the dot is the period covered.")
             return dict(id=p["id"], t0=p["t0"], t1=p["t1"], low=p["low"], high=p["high"], tip="<br>".join(t))
-        out.append(dict(kind=k, name=nm, color=col, points=[one(p) for p in pts], est=[one(p) for p in est]))
+        out.append(dict(kind=k, name=nm, color=col, nojoin=k in TS_NOJOIN, points=[one(p) for p in pts], est=[one(p) for p in est]))
     return dict(series=out, domain=list(TS_DOMAIN), gaps=TS_NOTE_GAPS)
 
 def build():

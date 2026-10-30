@@ -136,14 +136,14 @@ function drawUc(){var p=S.probate,mx=p.total;
 /* sankey: label of joining -> federal district */
 var SK={vol:['Volunteers','#e43d3c'],pri:['Prisoners','#e8c547'],mob:['Mobilised','#2ec4b6'],other:['Other labels or no data','#8f7bff']},SKD='#ff9ed8';
 function drawSankey(){
- var el=$('#sankey');if(!el||!d3.sankey)return;var w=el.clientWidth;if(!w)return;var ph=phone(),h=ph?470:400;
- var mL=ph?96:150,mR=ph?112:130;el.innerHTML='';
- var fds=Object.keys(S.sankey),types=['vol','pri','mob','other'],nodes=[],links=[];
- types.forEach(function(t){nodes.push({id:'t:'+t,name:SK[t][0],col:SK[t][1],type:t})});
- fds.forEach(function(f){nodes.push({id:'d:'+f,name:f,col:SKD,fd:f})});
+ var el=$('#sankey');if(!el||!d3.sankey)return;var w=el.clientWidth;if(!w)return;var ph=phone(),h=ph?780:640;
+ var mL=ph?94:160,mR=ph?112:190;el.innerHTML='';
+ var fds=Object.keys(S.sankey).sort(function(a,b){return S.fd[a].dist_km-S.fd[b].dist_km}),types=['vol','pri','mob','other'],nodes=[],links=[];
+ types.forEach(function(t,i){nodes.push({id:'t:'+t,name:SK[t][0],col:SK[t][1],type:t,ord:i})});
+ fds.forEach(function(f,i){nodes.push({id:'d:'+f,name:f,col:SKD,fd:f,ord:i})});
  var ix={};nodes.forEach(function(n,i){ix[n.id]=i});
  fds.forEach(function(f){types.forEach(function(t){var v=S.sankey[f][t];if(v>0)links.push({source:ix['t:'+t],target:ix['d:'+f],value:v,type:t,fd:f})})});
- var sk=d3.sankey().nodeWidth(16).nodePadding(ph?12:14).nodeAlign(d3.sankeyLeft).extent([[mL,6],[w-mR,h-6]]);
+ var sk=d3.sankey().nodeWidth(ph?12:16).nodePadding(ph?20:26).nodeSort(function(a,b){return a.ord-b.ord}).nodeAlign(d3.sankeyLeft).extent([[mL,6],[w-mR,h-6]]);
  var g=sk({nodes:nodes.map(function(d){return Object.assign({},d)}),links:links.map(function(d){return Object.assign({},d)})});
  var svg=d3.select(el).append('svg').attr('width',w).attr('height',h).attr('role','img').attr('aria-label','Flow from how the named dead joined to the federal district they came from');
  var dtot={};g.nodes.forEach(function(n){dtot[n.id]=n.value});
@@ -158,8 +158,12 @@ function drawSankey(){
  var nd=svg.append('g').selectAll('g').data(g.nodes).enter().append('g');
  nd.append('rect').attr('x',function(d){return d.x0}).attr('y',function(d){return d.y0}).attr('width',function(d){return d.x1-d.x0}).attr('height',function(d){return Math.max(2,d.y1-d.y0)}).attr('fill',function(d){return d.col})
   .attr('data-tip',function(d){return '<b>'+esc(d.name)+'</b><br>'+fmt(d.value)+' named dead'+(d.type?' ('+fmt(d.value/S.named_85*100,1)+'% of the 85 regions)':' ('+fmt(d.value/S.named_85*100,1)+'% of the 85 regions)')});
- nd.append('text').attr('x',function(d){return d.type?d.x0-6:d.x1+6}).attr('y',function(d){return (d.y0+d.y1)/2}).attr('dy','0.35em').attr('text-anchor',function(d){return d.type?'end':'start'})
-  .text(function(d){return ph&&d.name==='Other labels or no data'?'Other labels':d.name})}
+ nd.append('text').attr('x',function(d){return d.type?d.x0-6:d.x1+6}).attr('y',function(d){return (d.y0+d.y1)/2}).attr('text-anchor',function(d){return d.type?'end':'start'})
+  .each(function(d){var t=d3.select(this),x=t.attr('x');
+   var l1=ph&&d.name==='Other labels or no data'?'Other labels':d.name;
+   var l2=d.type?fmt(d.value):fmt(S.fd[d.fd].rate,0)+' per 100,000';
+   t.append('tspan').attr('x',x).attr('dy','-0.1em').style('font-weight',700).text(l1);
+   t.append('tspan').attr('x',x).attr('dy','1.25em').text(l2)})}
 
 /* scatter */
 function scatter(sel,xf,xlab,xfmt,labels,filter){
@@ -207,7 +211,7 @@ function init(res){
  R=res[0].regions;S=res[1];G=res[2];tipEl=$('#tip');
  R.forEach(function(r){byNe[r.ne]=r;byIso[r.iso]=r});
  // desktop: everything open; phone: only the map section open, map options behind one button
- var ph=phone();document.querySelectorAll('details.sec').forEach(function(d){d.open=d.id==='nk-sec'?false:(!ph||d.id==='flow-sec'||d.id==='remote-sec'||d.id==='map-sec')});
+ var ph=phone();document.querySelectorAll('details.sec').forEach(function(d){d.open=d.id==='nk-sec'?false:(!ph||d.id==='flow-sec'||d.id==='remote-sec'||d.id==='map-sec'||d.id==='join-sec')});
  $('#mapside').open=!ph;
  $('#legend').innerHTML=legendHTML('deaths');$('#legend2').innerHTML=legendHTML('deaths');
  ['#leg-s1','#leg-s2','#leg-s2b','#leg-s3'].forEach(function(s){$(s).innerHTML=LEG});
