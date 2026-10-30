@@ -33,18 +33,18 @@ if round(100 * bars["Sahel"] / tot) != 42: errs.append("Sahel share is not 42%")
 if abs(bars["Somalia"] - round(.28 * tot, -2)) > 100: errs.append("Somalia bar is not 28% of the total")
 if not re.search(r"\b23,872\b", D["content"]["finding"]): errs.append("finding total missing")
 
-# 2. palette: family colours are non-grey and pass the CI delta E check against each other.
+# 2. palette: family colours are non-grey; all colours, dissolved included, pass the CI delta E >= 20 pair check.
 # The dissolved colour is the one grey: the shared check allows it only on elements marked data-status="defunct" (app.js sets it).
 fam = [f["color"] for f in D["families"]]
 for c in fam:
     rgb = hexrgb(c)
     if ci.is_grey(rgb): errs.append(f"{c} is grey")
     if ci.is_background(rgb): errs.append(f"{c} reads as background")
-for a, b in itertools.combinations(fam, 2):
+for a, b in itertools.combinations(fam + [D["dissolved_color"]], 2):
     de = ci.ciede2000(ci.srgb_to_lab(hexrgb(a)), ci.srgb_to_lab(hexrgb(b)))
     if de < 20: errs.append(f"delta E {a} vs {b} = {de:.1f} < 20")
 dis = D["dissolved_color"]
-if dis != "#9aa6b8": errs.append(f"dissolved colour is {dis}, expected grey #9aa6b8")
+if dis != "#a4a4a7": errs.append(f"dissolved colour is {dis}, expected grey #a4a4a7")
 if dis in fam: errs.append("dissolved colour matches a family colour")
 if ci.is_background(hexrgb(dis)): errs.append(f"{dis} reads as background")
 # graph link colours and land colour must also be distinct from the node colours
