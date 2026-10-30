@@ -2,9 +2,14 @@ const COL={precursors:"#c8a24a",cocaine:"#e6e9ef","fentanyl / methamphetamine":"
 const KCOL={rivalry:"#c0504d",alliance:"#6aa684",faction:"#c77dff","alleged link":"#c8a24a",service:"#5b8fd1"};
 const LV={dominant:.95,significant:.75,present:.35};
 const LVI={dominant:"●",significant:"◍",present:"○"},LVW={dominant:"Dominant",significant:"Significant",present:"Minor"};
-/* area fills: one hue per group (window.TERR_FILL); presence level changes the fill OPACITY over the dark land, never the colour, so each group keeps one hue family (mirrored in pipeline/palette_check.py FILL_OP) */
-const FILLLV={dominant:1,significant:.82,present:.66};
-const swatches=c=>`<div class="lvramp"><span class="muted">less</span>${["present","significant","dominant"].map(l=>`<span class="sw" title="${LVW[l]}" style="background:${c};opacity:${FILLLV[l]}"></span>`).join("")}<span class="muted">more</span></div><div class="muted">${LVI.present} Minor · ${LVI.significant} Significant · ${LVI.dominant} Dominant</div>`;
+/* area fills: one hue per group (window.TERR_FILL). Presence level = intensity WITHIN that hue: lighter = less, stronger = more (Trish 2026-10-28).
+   Minor is the palest tint (hue mixed with white), Significant a lighter tint, Dominant the full, intense hue. Never darker than the group hue, so every level stays bright on the dark land.
+   PALE mirrors pipeline/palette_check.py FILL_PALE. */
+const PALE={dominant:0,significant:.18,present:.4};
+const tint=(c,l)=>{const w=PALE[l]||0;return w?d3.rgb(d3.interpolateRgb(c,"#ffffff")(w)).formatHex():c};
+/* generic Presence key: neutral bright red ramp, pale pink = less, intense red = more (applies as pale-to-full shades inside each group's own colour on the map) */
+const REDRAMP={present:"#ffc2c2",significant:"#ff7878",dominant:"#ff1f1f"};
+const swatches=(c,generic)=>`<div class="lvramp"><span class="muted">less</span>${["present","significant","dominant"].map(l=>`<span class="sw" title="${LVW[l]}" style="background:${generic?REDRAMP[l]:tint(c,l)}"></span>`).join("")}<span class="muted">more</span></div><div class="muted">${LVI.present} Minor · ${LVI.significant} Significant · ${LVI.dominant} Dominant${generic?" · paler to fuller shades of each group's own colour":""}</div>`;
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const $=id=>document.getElementById(id);
 let SRC={},DM={};const ARCS=["sinaloa-war","cjng","border-fentanyl","ecuador","venezuela-caribbean","colombia","money","mexico","andes","brazil"];
@@ -67,7 +72,7 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
     p.append("rect").attr("width",6).attr("height",6).attr("fill",c);
     if(kind==="grid")p.append("path").attr("d","M0 .5H6M.5 0V6").attr("stroke","#0b1526").attr("stroke-opacity",.6).attr("stroke-width",1).attr("fill","none");
     else p.append("circle").attr("cx",3).attr("cy",3).attr("r",1.3).attr("fill","#0b1526").attr("fill-opacity",.6);return texp[k]=`url(#t${k})`};
-  const lvlG=(g,l)=>{const c=FC(g),k=(window.TERR_PAT||{})[g];return{f:k?tex(c,k):c,o:FILLLV[l]||1}};
+  const lvlG=(g,l)=>{const c=FC(g),k=(window.TERR_PAT||{})[g];const t=tint(c,l);return{f:k?tex(t,k):t,o:1,r:g}};
   const style=d=>{const r=RB[d.properties.id];if(!r)return{f:"#1b2c4a",o:1};
     if(fset){const e=r.groups.filter(x=>fset.includes(x.group)).sort((a,b)=>LV[b.level]-LV[a.level]);if(!e.length)return{f:"#1b2c4a",o:1};if(e.length===1)return lvlG(e[0].group,e[0].level);return{f:pattern(e.slice(0,3).map(x=>FC(x.group))),o:1}}
     if(filt){const e=r.groups.find(x=>x.group===filt);return e?lvlG(filt,e.level):{f:"#1b2c4a",o:1}}
@@ -80,7 +85,7 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   const ad=g.append("g").selectAll("path").data(adm.features).join("path").attr("class","adm").attr("d",path).attr("stroke","none").attr("vector-effect","non-scaling-stroke").attr("stroke-width",1.5).style("cursor",d=>RB[d.properties.id]?"pointer":"default")
     .on("click",(e,d)=>regionShow(d)).on("mouseover",function(){d3.select(this).attr("stroke","#fff").raise()}).on("mouseout",function(){d3.select(this).attr("stroke",this.dataset.s||"none")});
   ad.append("title").text(d=>{const r=RB[d.properties.id];return (d.properties.name||"")+(r?": "+r.groups.map(x=>GC[x.group].name).join(", "):"")});
-  const paint=()=>ad.each(function(d){const s=style(d);this.dataset.s=s.s||"";d3.select(this).attr("fill",s.f).attr("fill-opacity",s.o).attr("stroke",s.s||"none")});paint();
+  const paint=()=>ad.each(function(d){const s=style(d);this.dataset.s=s.s||"";d3.select(this).attr("fill",s.f).attr("fill-opacity",s.o).attr("stroke",s.s||"none").attr("data-ramp",s.r||null)});paint();
   g.append("path").datum(topojson.mesh(topo,topo.objects.admin1,(a,b)=>a!==b&&a.properties.iso===b.properties.iso&&a.properties.iso!=="USA")).attr("d",path).attr("fill","none").attr("stroke","#0b1526").attr("stroke-width",.6).attr("vector-effect","non-scaling-stroke").style("pointer-events","none");
   g.append("path").datum(topojson.mesh(topo,topo.objects.countries)).attr("d",path).attr("fill","none").attr("stroke","#8fa3c4").attr("stroke-width",1).attr("vector-effect","non-scaling-stroke").style("pointer-events","none");
   function regionShow(d){const r=RB[d.properties.id],mx=stateStats(d.properties.id);if(!r){drawer(`<h2>${esc(d.properties.name||"")}</h2>${mx}<p class="muted">No sourced group footprint is mapped here. That reflects data coverage, not an absence of organized crime.</p>`);return}
@@ -92,7 +97,7 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
   const setF=id=>{filt=id||null;fset=null;L.querySelectorAll(".chip").forEach(b=>b.classList.toggle("on",b.dataset.g===(id||"")));paint();key()};
   L.querySelectorAll(".chip").forEach(b=>b.onclick=()=>setF(b.dataset.g));
   const key=()=>$("keybox").innerHTML=fset?`<b>Storyline groups</b>`+fset.map(x=>`<span class="ki"><span class="dot" style="background:${BG(x)}"></span> ${esc(GC[x].name)}</span>`).join(""):filt?`<b>${esc(GC[filt].name)}</b>`+swatches(FC(filt))
-    :`<b>Presence</b>${swatches(FC("cjng"))}<span class="ki"><span class="sw hatch"></span> ▧ Contested / shared (wide stripes)</span><span class="ki"><span class="sw" style="background:#1b2c4a;border:1px solid #3a5583"></span> No sourced footprint</span>`;key();
+    :`<b>Presence</b>${swatches(null,true)}<span class="ki"><span class="sw hatch"></span> ▧ Contested / shared (wide stripes)</span><span class="ki"><span class="sw" style="background:#1b2c4a;border:1px solid #3a5583"></span> No sourced footprint</span>`;key();
   $("mapnotes").innerHTML=`<p>${esc(terr.note)}</p><h3>Where footprint data is thin</h3><ul>${terr.thin.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`;
   // overlays
   const proj2=c=>proj(c);
@@ -136,33 +141,48 @@ function mapView(topo,adm,terr,routes,cross,china,GC){
       Object.keys(layers).forEach(k=>layerOn(k,(sl.layers||[]).includes(k)));svg.transition().duration(800).call(zoom.transform,fitBox(...sl.view));document.querySelector(".maptile").scrollIntoView({behavior:"smooth"})}};
 }
 function netTile(net,terr,topo){
-  const el=$("netsvg");el.style.width="100%";const W=Math.max(900,el.parentNode.clientWidth-28),H=W<1000?820:780;const svg=d3.select(el).attr("width",W).attr("height",H).attr("viewBox",`0 0 ${W} ${H}`);svg.selectAll("*").remove();
+  const el=$("netsvg");el.style.width="100%";const W=Math.max(900,el.parentNode.clientWidth-28);const svg=d3.select(el).attr("width",W);svg.selectAll("*").remove();
   const ndefs=svg.append("defs");const COL=id=>window.cartelPaint(ndefs,window.cartelColor(id),window.cartelTex(id),"nt");  // hex + texture from palette.js, same as map and timeline
-  const REG={MX:"Mexico",SV:"Central America",GT:"Central America",HN:"Central America",VE:"Venezuela & Colombia",CO:"Venezuela & Colombia",EC:"Ecuador",BR:"Brazil",HT:"Haiti"};
-  const CEN={"Mexico":[.27,.36],"Central America":[.62,.17],"Facilitators":[.88,.17],"Venezuela & Colombia":[.62,.55],"Ecuador":[.30,.84],"Brazil":[.88,.62],"Haiti":[.88,.88]};
-  const nodes=net.groups.map(g=>({...g,reg:REG[g.country]||"Facilitators"}));const by=Object.fromEntries(nodes.map(d=>[d.id,d]));
-  const lab=d=>d.name.split(" (")[0].replace(/^Cartel (de |del )?/,"").replace(/^Chinese money laundering networks?/i,"Chinese money brokers").slice(0,34);
-  let _s=20261025;const rnd=()=>(_s=(_s*1664525+1013904223)>>>0)/4294967296;
-  nodes.forEach(d=>{const c=CEN[d.reg];d.x=c[0]*W+(rnd()-.5)*40;d.y=c[1]*H+(rnd()-.5)*40;d.lw=lab(d).length*7.6+16});
+  /* Real geography (Trish 2026-10-28): same conic equal-area projection as the main map (true proportions), neighbouring countries, coastlines and borders; every group sits at its real location */
+  const PR=d3.geoConicEqualArea().parallels([-10,40]).rotate([135,0]).center([0,-2]);
+  const FITG={type:"MultiPoint",coordinates:[[-116,41],[-100,42],[-36,-7],[-70,-22],[-46,-25],[-82,-4],[-72,22],[-60,12]]};
+  PR.fitWidth(W-100,FITG);const bb=d3.geoPath(PR).bounds(FITG),tr0=PR.translate();PR.translate([tr0[0]+50,tr0[1]+62]);
+  const H=Math.round(bb[1][1]-bb[0][1])+62+56;svg.attr("height",H).attr("viewBox",`0 0 ${W} ${H}`);
+  const SHORT={cmln:"Chinese money brokers",pcc:"Primeiro Comando da Capital"};
+  const lab=d=>SHORT[d.id]||d.name.split(" (")[0];
+  const wrap=t=>{const L=[];let c="";t.split(" ").forEach(w=>{if(c&&(c+" "+w).length>18){L.push(c);c=w}else c=c?c+" "+w:w});if(c)L.push(c);return L};
+  const nodes=net.groups.map(g=>({...g}));const by=Object.fromEntries(nodes.map(d=>[d.id,d]));
+  nodes.forEach(d=>{d.lines=wrap(lab(d));d.lw=Math.max(...d.lines.map(x=>x.length))*8+18;d.hh=d.lines.length*16+20;const q=PR(d.lonlat);d.ax=q[0];d.ay=q[1];d.x=q[0];d.y=q[1]});
+  const cy=d=>d.y-(d.lines.length*16-4)/2;  // box centre (label above the dot)
+  for(let it=0;it<1500;it++){
+    const pull=it<1000?.03*(1-it/1000):0;nodes.forEach(d=>{d.x+=(d.ax-d.x)*pull;d.y+=(d.ay-d.y)*pull});
+    for(let pass=0;pass<3;pass++){for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const a=nodes[i],b=nodes[j],dx=b.x-a.x,dy=cy(b)-cy(a);
+      const ox=(a.lw+b.lw)/2+10-Math.abs(dx),oy=(a.hh+b.hh)/2+6-Math.abs(dy);
+      if(ox>0&&oy>0){if(ox<oy){const m=ox/2*(dx>=0?1:-1);a.x-=m;b.x+=m}else{const m=oy/2*(dy>=0?1:-1);a.y-=m;b.y+=m}}}
+      nodes.forEach(d=>{d.x=Math.max(d.lw/2+6,Math.min(W-d.lw/2-6,d.x));d.y=Math.max(d.lines.length*16+14,Math.min(H-18,d.y))})}}
   const edges=net.edges.filter(e=>by[e.source]&&by[e.target]).map(e=>({...e,source:by[e.source],target:by[e.target]}));
-  const sim=d3.forceSimulation(nodes).randomSource(rnd).force("x",d3.forceX(d=>CEN[d.reg][0]*W).strength(.22)).force("y",d3.forceY(d=>CEN[d.reg][1]*H).strength(.22))
-   .force("ch",d3.forceManyBody().strength(-420)).force("link",d3.forceLink(edges).distance(110).strength(.04))
-   .force("col",d3.forceCollide(d=>Math.max(34,d.lw/2+6)).iterations(4)).stop();
-  for(let i=0;i<500;i++)sim.tick();
-  nodes.forEach(d=>{d.x=Math.max(d.lw/2+8,Math.min(W-d.lw/2-8,d.x));d.y=Math.max(60,Math.min(H-24,d.y))});
   const ST={alliance:["#3ddc84",3,null],rivalry:["#ff4d6d",3,"8 5"],service:["#ffee00",2.5,null],"alleged link":["#ffee00",2.5,"2 4"],faction:["#ffee00",2.5,null]};const KL={service:"business / service tie (yellow line)",faction:"faction of the same group (yellow line)","alleged link":"alleged link, unproven (yellow dotted line)"};
   const sw=(k)=>`<svg width="30" height="10"><line x1="0" y1="5" x2="30" y2="5" stroke="${ST[k][0]}" stroke-width="${ST[k][1]}" ${ST[k][2]?`stroke-dasharray="${ST[k][2]}"`:""}/></svg>`;
-  $("netlegend").style.cssText="display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:13px";$("netlegend").innerHTML=`<span>${sw("alliance")} <b style="color:#3ddc84">alliance</b></span> <span>${sw("rivalry")} <b style="color:#ff4d6d">rivalry / war</b></span> <span class="muted">yellow = faction, business or alleged tie (hover a line for details)</span>`;
-  // region cluster halos
+  $("netlegend").style.cssText="display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:13px";$("netlegend").innerHTML=`<span>${sw("alliance")} <b style="color:#3ddc84">alliance</b></span> <span>${sw("rivalry")} <b style="color:#ff4d6d">rivalry / war</b></span> <span class="muted">yellow = faction, business or alleged tie (hover a line for details)</span> <span class="muted">◦ ring = the group's real base · each dot sits next to it</span>`;
+  // geographic backdrop: world110 for neighbouring countries and coastlines, latam topo for the detailed borders; names on hover, key countries labelled
+  const CNAME={ARG:"Argentina",URY:"Uruguay",CHL:"Chile",BOL:"Bolivia",PER:"Peru",FRA:"French Guiana",SUR:"Suriname",GUY:"Guyana",CRI:"Costa Rica",NIC:"Nicaragua",BRA:"Brazil",HTI:"Haiti",DOM:"Dominican Republic",SLV:"El Salvador",GTM:"Guatemala",CUB:"Cuba",HND:"Honduras",ECU:"Ecuador",COL:"Colombia",PRY:"Paraguay",USA:"United States",MEX:"Mexico",BLZ:"Belize",PAN:"Panama",VEN:"Venezuela",BHS:"Bahamas",TTO:"Trinidad and Tobago",PRI:"Puerto Rico",JAM:"Jamaica"};
+  const pa=d3.geoPath(PR),hg=svg.append("g").attr("class","netctry"),wbg=hg.append("g").attr("class","networld"),cg=hg.append("g").attr("class","netlatam");
+  const GISO=new Set(nodes.flatMap(d=>({MX:["MEX"],VE:["VEN"],CO:["COL"],EC:["ECU"],BR:["BRA"],SV:["SLV"],GT:["GTM"],HT:["HTI"],"US/MX/CN":["USA","MEX"]})[d.country]||[]));
   const CF=topo?topojson.feature(topo,topo.objects.countries).features:[];
-  const RISO={"Mexico":["MEX"],"Central America":["GTM","BLZ","SLV","HND","NIC","CRI","PAN"],"Venezuela & Colombia":["VEN","COL"],"Ecuador":["ECU"],"Brazil":["BRA"],"Haiti":["HTI"],"Facilitators":["USA"]};
-  const CNAME={MEX:"Mexico",GTM:"Guatemala",BLZ:"Belize",SLV:"El Salvador",HND:"Honduras",NIC:"Nicaragua",CRI:"Costa Rica",PAN:"Panama",VEN:"Venezuela",COL:"Colombia",ECU:"Ecuador",BRA:"Brazil",HTI:"Haiti",USA:"United States"};
-  const rg=d3.groups(nodes,d=>d.reg);const hg=svg.append("g");
-  rg.forEach(([r,ns])=>{const x0=d3.min(ns,d=>d.x-d.lw/2)-10,x1=d3.max(ns,d=>d.x+d.lw/2)+10,y0=d3.min(ns,d=>d.y)-50,y1=d3.max(ns,d=>d.y)+30;
-    const isos=RISO[r]||[],fs=CF.filter(f=>isos.includes(f.properties.iso));
-    if(fs.length){const fc={type:"FeatureCollection",features:fs},pr=d3.geoMercator().fitExtent([[x0+4,y0+22],[x1-4,y1-4]],fc),pa=d3.geoPath(pr);
-      hg.append("g").attr("class","netctry").selectAll("path").data(fs).join("path").attr("d",pa).append("title").text(f=>CNAME[f.properties.iso]||f.properties.iso)}
-    hg.append("text").attr("class","nethd").attr("x",x0+10).attr("y",y0+15).text(r)});
+  fetch("basemap/world110.topo.json").then(r=>r.json()).then(w=>{const fs=topojson.feature(w,w.objects.countries).features.filter(f=>{const c=d3.geoCentroid(f);return c[0]>-135&&c[0]<-15&&c[1]>-60&&c[1]<75});wbg.selectAll("path").data(fs).join("path").attr("d",pa)}).catch(e=>console.warn("network basemap",e));
+  const hov=svg.append("text").attr("class","netcn").attr("pointer-events","none").style("display","none");
+  cg.selectAll("path").data(CF.filter(f=>f.properties.iso!=="FRA")).join("path").attr("d",pa).classed("has",f=>GISO.has(f.properties.iso))
+   .on("mousemove",(e,f)=>{const q=d3.pointer(e,svg.node());hov.style("display",null).attr("x",Math.min(W-90,q[0]+12)).attr("y",q[1]-10).text(CNAME[f.properties.iso]||f.properties.iso)}).on("mouseleave",()=>hov.style("display","none"))
+   .append("title").text(f=>CNAME[f.properties.iso]||f.properties.iso);
+  // key country names (13px+, placed where no group label sits)
+  const box=d=>[d.x-d.lw/2,d.y-d.lines.length*16-8,d.x+d.lw/2,d.y+12];
+  const KEY=[["United States",[[-98,39],[-110,39],[-86,37]]],["Mexico",[[-102,22.5],[-104,27],[-99,20]]],["Cuba",[[-79,22.2]]],["Colombia",[[-74,3.5],[-73,1]]],["Venezuela",[[-65.5,7.5],[-64,8]]],["Ecuador",[[-78.5,-1.5],[-78,-3]]],["Peru",[[-75,-9],[-74,-7]]],["Brazil",[[-54,-8],[-52,-12],[-57,-14]]],["Bolivia",[[-64.5,-17]]],["Argentina",[[-64,-34]]]];
+  const kl=svg.append("g").attr("class","netkeys").attr("pointer-events","none");
+  KEY.forEach(([nm,cands])=>{const w=nm.length*8.2+8;for(const c of cands){const q=PR(c);if(q[0]-w/2<4||q[0]+w/2>W-4)continue;const r=[q[0]-w/2,q[1]-14,q[0]+w/2,q[1]+6];if(!nodes.some(d=>{const b=box(d);return r[0]<b[2]+6&&r[2]>b[0]-6&&r[1]<b[3]+4&&r[3]>b[1]-4})){kl.append("text").attr("class","netcn").attr("text-anchor","middle").attr("x",q[0]).attr("y",q[1]).text(nm);break}}});
+  // true-location rings and leader lines for dots that had to move apart
+  const lk=svg.append("g").attr("pointer-events","none");
+  nodes.forEach(d=>{lk.append("circle").attr("cx",d.ax).attr("cy",d.ay).attr("r",3.5).attr("fill","none").attr("stroke","#ffffff").attr("stroke-width",1.2).attr("opacity",.85);
+    if(Math.hypot(d.x-d.ax,d.y-d.ay)>14)lk.append("line").attr("x1",d.ax).attr("y1",d.ay).attr("x2",d.x).attr("y2",d.y).attr("stroke","#c3cfe2").attr("stroke-width",1).attr("stroke-opacity",.6)});
   const cp=d=>{const dx=d.target.x-d.source.x,dy=d.target.y-d.source.y;return [(d.source.x+d.target.x)/2-dy*.15,(d.source.y+d.target.y)/2+dx*.15]};
   const eg=svg.append("g").selectAll("g").data(edges).join("g").attr("class","ne").style("cursor","pointer").on("click",(e,d)=>drawer(`<h2>${esc(d.source.name)} and ${esc(d.target.name)}</h2><span class="tag">${esc(d.kind)}</span><p>${esc(d.text)}</p>${cite(d.cites)}`));
   const pd=d=>{const [mx,my]=cp(d);return `M${d.source.x},${d.source.y}Q${mx},${my} ${d.target.x},${d.target.y}`};
@@ -174,7 +194,7 @@ function netTile(net,terr,topo){
   const n=svg.append("g").selectAll("g").data(nodes).join("g").attr("class","nn").attr("transform",d=>`translate(${d.x},${d.y})`).style("cursor","pointer").on("click",(e,d)=>drawer(groupHtml(d,net)))
    .on("mouseenter",(e,d)=>{const s=nb(d);eg.classed("dim",x=>x.source!==d&&x.target!==d).classed("hi",x=>x.source===d||x.target===d);n.classed("dim",x=>!s.has(x))}).on("mouseleave",()=>{eg.classed("dim",false).classed("hi",false);n.classed("dim",false)});
   n.append("circle").attr("r",9).attr("fill",d=>COL(d.id)).attr("stroke","#ffffff").attr("stroke-width",d=>d.fto?2.5:1);
-  n.append("text").attr("class","netl").attr("text-anchor","middle").attr("y",-14).attr("fill","#ffffff").attr("stroke","#0b1526").attr("stroke-width",4).attr("paint-order","stroke").attr("stroke-linejoin","round").style("font-size","13.5px").style("font-weight","700").style("fill","#ffffff").style("opacity",1).text(lab);
+  n.append("text").attr("class","netl").attr("text-anchor","middle").attr("y",d=>-14-16*(d.lines.length-1)).attr("fill","#ffffff").attr("stroke","#0b1526").attr("stroke-width",4).attr("paint-order","stroke").attr("stroke-linejoin","round").style("font-size","13.5px").style("font-weight","700").style("fill","#ffffff").style("opacity",1).selectAll("tspan").data(d=>d.lines).join("tspan").attr("x",0).attr("dy",(t,i)=>i?16:0).text(t=>t);
 }
 function chinaTile(c){
   const ab={precursors:"PRE",ports:"PRT",money:"$",finance:"$",laundering:"$",infrastructure:"INF"};

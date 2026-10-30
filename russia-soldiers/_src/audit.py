@@ -184,6 +184,8 @@ for ru_n, en_n in en_fd.items():
     FDM[en_n] = members
     dd, pp, rr = pooled(members)
     chk(f"fd {en_n} n", S["fd"][en_n]["n"], len(members)); chk(f"fd {en_n} rate", S["fd"][en_n]["rate"], rr)
+for en_n_, mem_ in FDM.items(): chk(f"fd {en_n_} resident-weighted distance", S["fd"][en_n_]["dist_km"], sum(by[i]["dist_km"] * mine[i]["pop"] for i in mem_) / sum(mine[i]["pop"] for i in mem_))
+need("sankey districts ordered by distance from Moscow: Central nearest, Far East farthest", min(S["fd"], key=lambda k: S["fd"][k]["dist_km"]) == "Central" and max(S["fd"], key=lambda k: S["fd"][k]["dist_km"]) == "Far East")
 need("district regions sum to 85", sum(S["fd"][k]["n"] for k in S["fd"]) == 85)
 # wage quartiles
 srt = sorted(iso, key=lambda i: mine[i]["wage"]); qs = [srt[:21], srt[21:42], srt[42:63], srt[63:]]
@@ -316,6 +318,11 @@ for fn_, key_ in (("recruitment-billboard-moscow-2024.jpg", "img_billboard"), ("
     need("photo exists " + fn_, os.path.getsize(os.path.join(ROOT, "img", fn_)) > 20000 and os.path.getsize(os.path.join(ROOT, "img", fn_)) < 150000)
     need("photo has alt text " + fn_, re.search(r'src="img/' + re.escape(fn_) + r'"[^>]*alt="[^"]{40,}"', page) is not None)
     need("photo credit in sources list " + key_, SOURCES[key_]["url"] in page and "public domain" in SOURCES[key_]["full"] and "commons.wikimedia.org" in SOURCES[key_]["url"])
+for fn_, key_, lic_ in (("recruitment-office-zelenograd-2026.jpg", "img_zelenograd", "CC0"), ("mobilised-training-ryazan-2022.jpg", "img_ryazan", "CC BY 4.0"), ("wagner-graves-chervishevskoye-2023.jpg", "img_wagner", "CC BY-SA 4.0"), ("graves-kazan-2023.jpg", "img_kazan", "CC BY-SA 4.0"), ("putin-kim-vostochny-2023.jpg", "img_vostochny", "CC BY 4.0"), ("putin-kim-pyongyang-2024.jpg", "img_pyongyang", "CC BY 4.0")):
+    sz_ = os.path.getsize(os.path.join(ROOT, "img", fn_))
+    need("photo exists " + fn_, 20000 < sz_ < 150000)
+    need("photo has alt text " + fn_, re.search(r'src="img/' + re.escape(fn_) + r'"[^>]*alt="[^"]{40,}"', page) is not None)
+    need("photo credit and licence in sources list " + key_, SOURCES[key_]["url"] in page and lic_ in SOURCES[key_]["full"] and "commons.wikimedia.org" in SOURCES[key_]["url"])
 need("no photo credit text on the figure", "Retired electrician" not in re.sub(r'<details id="srcdet">.*', "", page, flags=re.S))
 for s_ in ("352,000", "217,808", "1.6 times", "3.2%", "102,243", "3,182,054"): has(s_, "round-3 figure")
 need("dagestan share matches census row", abs(by["RU-DA"]["ru_share"] - 102243 / 3182054 * 100) < 0.01)
@@ -428,7 +435,7 @@ need("NK verdict numbers are in the rows", any("29,488" in r_["fig"] for r_ in N
 # ---- time series (recruits in a dated period, by type)
 import datetime as _dt
 TSF = {s_["kind"]: s_ for s_ in FL["ts"]["series"]}
-need("time series has the four types", set(TSF) == {"vol", "mob", "pri", "for"} and len(RI.TS) == 14)
+need("time series has the four types", set(TSF) == {"vol", "mob", "pri", "for"} and len(RI.TS) == 15)
 _ids = [p_["id"] for p_ in RI.TS]; need("time series point ids unique", len(_ids) == len(set(_ids)))
 _flat = {p_["id"]: p_ for s_ in FL["ts"]["series"] for p_ in s_["points"] + s_["est"]}
 need("flows.json time series carries every input point", set(_flat) == set(_ids))
@@ -443,17 +450,19 @@ for p_ in RI.TS:
         need(nm + f" period text {txt_!r} is in the saved source {src_}", norm(txt_) in sv_)
     a_, z_ = _dt.date.fromisoformat(p_["t0"]), _dt.date.fromisoformat(p_["t1"])
     need(nm + " period dates valid and inside the chart domain", a_ <= z_ and _dt.date.fromisoformat(RI.TS_DOMAIN[0]) <= a_ and z_ <= _dt.date.fromisoformat(RI.TS_DOMAIN[1]))
-    need(nm + " value is positive and inside the log axis (60 to 1,500,000)", 60 <= p_["low"] <= p_["high"] <= 1.5e6)
+    need(nm + " value is positive and inside its linear panel (0 to 600,000 for contract and mobilised, 0 to 60,000 for prisoners and foreign)", 0 < p_["low"] <= p_["high"] <= (6e5 if p_["type"] in ("vol", "mob") else 6e4))
     fp_ = _flat[p_["id"]]; need(nm + " flows.json value equals the input", (fp_["low"], fp_["high"], fp_["t0"], fp_["t1"]) == (p_["low"], p_["high"], p_["t0"], p_["t1"]))
     need(nm + " hover carries the value, a source name with its date and the period note", (f"{p_['low']:,}" in fp_["tip"]) and all(SOURCES[q_["src"]]["short"] in fp_["tip"] for q_ in p_["parts"]) and (p_["est"] or "not a rate" in fp_["tip"]))
 for k_, s_ in TSF.items():
     pts = s_["points"]; need(f"ts {k_} line points are in date order with no real overlap", all(_dt.date.fromisoformat(b_["t0"]) >= _dt.date.fromisoformat(a_["t1"]) - _dt.timedelta(days=31) for a_, b_ in zip(pts, pts[1:])))
-need("ts mobilised has one dated wave only", len(TSF["mob"]["points"]) == 1)
+need("ts mobilised is one wave (Sep to Oct 2022) reported on two dates, the later estimate higher than the Kremlin count, drawn rising", [p_["id"] for p_ in TSF["mob"]["points"]] == ["mob_k", "mob_m"] and all(p_["low"] == p_["high"] and p_["t0"] == p_["t1"] for p_ in TSF["mob"]["points"]) and TSF["mob"]["points"][0]["low"] < TSF["mob"]["points"][1]["low"] and not TSF["mob"].get("nojoin"))
+need("ts no point is stored as a vertical stack: no two points of one series share a date", all(len({p_["t0"] for p_ in s_["points"]}) == len(s_["points"]) for s_ in TSF.values()))
 need("ts gaps are stated and no zero point exists", "gaps, not zeros" in FL["ts"]["gaps"] and all(p_["low"] > 0 for p_ in RI.TS))
 _t = {p_["id"]: p_ for p_ in RI.TS}
 need("ts 2024 official = 450,000 + 40,000", _t["vol24"]["low"] == 490000 and _t["vol25"]["low"] == 422704 + 32000)
 _js = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read()
-need("flows.js time series uses a log axis and breaks the line at gaps", "d3.scaleLog" in _js and "gapOK" in _js and "runs.push" in _js)
+need("flows.js time series uses linear axes (no log scale) and breaks the line at gaps and at partial periods", "d3.scaleLog" not in _js and "d3.scaleLinear().domain([0,pn.max])" in _js and "runs.push" in _js and "!full(p)" in _js and "s.nojoin" in _js)
+need("prisoner points (Wagner, then Storm Z) are never joined by a line", TSF["pri"].get("nojoin") is True and len(TSF["pri"]["points"]) == 2)
 need("flows.js time series never plots a missing period as zero", not re.search(r"\|\|\s*0\b", _js[_js.index("function series"):_js.index("function bars")]))
 need("flows.js time series has one Play button, no autoplay", _js.count('id="tsplay"') == 1 and "tsplay').click" not in _js and "autoplay" not in _js.lower())
 need("flows.js the animation starts only from the click handler", _js.index("btn.addEventListener('click'") < _js.index("d3.timer("))
