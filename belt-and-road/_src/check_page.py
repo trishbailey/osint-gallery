@@ -25,9 +25,9 @@ with sync_playwright() as p:
         if r["bad"] or (md and md[0]<20) or small or agg or (r["n"] and r["minPx"]<12.95): bad=1
         if pre: pg.screenshot(path=f"{pre}-{hsh.split('=')[1]}.png")
     pg.goto(base+"#region=central-america-caribbean");pg.wait_for_function("window._ready");pg.wait_for_timeout(1200)
-    n0=pg.eval_on_selector_all("#map .lines path","e=>e.length");bb=pg.locator("#map .mk").last.bounding_box();pg.mouse.move(bb["x"]+bb["width"]/2,bb["y"]+bb["height"]/2);pg.wait_for_timeout(200);n1=pg.eval_on_selector_all("#map .lines path","e=>e.length");tipv=pg.is_visible(".tip")
-    print("lines before hover",n0,"after",n1,"tooltip",tipv)
-    if n0 or not n1 or not tipv: bad=1
+    n0=pg.eval_on_selector_all("#map path[marker-end], #map .lines path","e=>e.length");bb=pg.locator("#map .mk").last.bounding_box();pg.mouse.move(bb["x"]+bb["width"]/2,bb["y"]+bb["height"]/2);pg.wait_for_timeout(200);n1=pg.eval_on_selector_all("#map path[marker-end], #map .lines path","e=>e.length");tipv=pg.is_visible(".tip")
+    print("arrow lines before hover",n0,"after",n1,"tooltip",tipv)
+    if n0 or n1 or not tipv: bad=1
     # v1.1: locator inset, place highlight from a card, what's new, no bare acronym left in the build
     lb=pg.evaluate("()=>{const r=document.querySelector('#loc .lbox');return r?+r.getAttribute('width'):0}")
     pg.hover("#pcards .pcard");pg.wait_for_timeout(200);hl=pg.eval_on_selector_all("#map .land.hl","e=>e.length")
@@ -79,9 +79,12 @@ with sync_playwright() as p:
     msl=m.evaluate("()=>({o:document.documentElement.scrollWidth>document.documentElement.clientWidth,n:document.querySelectorAll('#pbody .srcl a').length,w:Math.max(...[...document.querySelectorAll('#pbody .srcl a')].map(a=>a.getBoundingClientRect().right))})")
     print("mobile details source links",msl)
     if msl["o"] or not msl["n"] or msl["w"]>390: bad=1
-    m.click("#showmap");m.wait_for_timeout(1500);ln=m.eval_on_selector_all("#map .lines path","e=>e.length");pc=not m.evaluate("()=>document.getElementById('panel').classList.contains('open')")
-    print("details width",pw,"sections",hasq,"| show on map closes",pc,"line drawn",ln)
-    if pw<385 or not hasq or not pc or not ln: bad=1
+    hd=m.evaluate("()=>[document.getElementById('close').getBoundingClientRect().bottom,document.querySelector('#pbody .ct').getBoundingClientRect().top,/\\)\\d/.test(document.getElementById('pbody').innerText)]")
+    print("mobile details header clear of Close bar",hd)
+    if hd[1]<hd[0] or hd[2]: bad=1
+    m.click("#showmap");m.wait_for_timeout(1500);ln=m.eval_on_selector_all("#map path[marker-end], #map .lines path","e=>e.length");pc=not m.evaluate("()=>document.getElementById('panel').classList.contains('open')")
+    print("details width",pw,"sections",hasq,"| show on map closes",pc,"arrow lines",ln)
+    if pw<385 or not hasq or not pc or ln: bad=1
     m.goto(base+"#p=bri-panama-ports");m.wait_for_timeout(1500);dp=m.evaluate("()=>document.getElementById('panel').classList.contains('open')")
     m.goto(base+"#region=pacific");m.wait_for_timeout(1200);dr=m.inner_text("#title")
     print("mobile deep links: #p= opens",dp,"| #region=",dr,"| errors",errs)
