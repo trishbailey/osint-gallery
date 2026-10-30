@@ -9,7 +9,7 @@ Prepared 28 Oct 2026 (America/New_York). Incident window: 28 Sep to 28 Oct 2026.
 2. Family renamed "Iran-backed axis", Hamas and PIJ kept inside it.
 3. JAD, Maute and BIFF moved into the Islamic State network.
 4. Mozambique and Somalia strength shown as two estimates, each with its source.
-5. Dissolved or dormant groups use one non-grey colour (DISSOLVED_COLOR = #d9a441), set in one variable in `_src/build_data.py`; switch to #9aa6b8 for grey if the shared check changes.
+5. Dissolved or dormant groups use grey (DISSOLVED_COLOR = #9aa6b8), set in one variable in `_src/build_data.py`, and every element drawn in it carries data-status="defunct" as the shared check requires.
 6. Iran and the Azawad Liberation Front shown as outside nodes on the link graph.
 
 ## Main finding

@@ -13,8 +13,8 @@ WINDOW = ("2026-09-30", "2026-10-30")
 
 # ---- colours: ONE place. The page reads these from data.json. ------------------------------
 FAMILY_COLORS = {"al-qaeda": "#3d9be9", "islamic-state": "#e8575a", "iran-axis": "#2fc48d", "independent": "#b78cf2"}
-# Marker colour for dissolved or dormant groups. One variable: switch to grey ("#9aa6b8") later if the shared colour check allows it.
-DISSOLVED_COLOR = "#d9a441"
+# Marker colour for dissolved or dormant groups: grey, allowed by the shared colour check only on elements marked data-status="defunct".
+DISSOLVED_COLOR = "#9aa6b8"
 
 FAMILIES = [
     {"id": "al-qaeda", "name": "al-Qaeda network", "blurb": "Al-Qaeda's core and the regional groups that follow it."},

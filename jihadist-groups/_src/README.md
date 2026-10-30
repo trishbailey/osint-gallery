@@ -24,7 +24,7 @@ The page is static. `index.html` is a shell, `app.js` draws everything from `../
 ## Colours
 
 Family colours and the dissolved or dormant colour are set once in `build_data.py` and read by the page from `data.json`.
-`DISSOLVED_COLOR` is amber (`#d9a441`) because the shared colour check forbids grey data fills. To switch dissolved markers to grey once the shared check allows it, change that one variable to `#9aa6b8`, rebuild, and update the `is_grey` assertion in `test_figures.py`.
+`DISSOLVED_COLOR` is grey (`#9aa6b8`) so dissolved markers read as inactive. The shared colour check (`scripts/ci_check.py`) allows grey only on elements marked `data-status="defunct"`, so `app.js` sets that attribute on every map marker, graph node, legend row, status chip and recent-change card for a dormant group (JI, East Indonesia Mujahideen, Abu Sayyaf, Hurras al-Din, IS Sinai). Every other colour must stay non-grey; `test_figures.py` asserts both.
 
 ## Daily refresh (run by hand or by a scheduled agent, always through a PR)
 
