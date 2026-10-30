@@ -44,7 +44,8 @@ var vb=svg.viewBox.baseVal;svg.setAttribute('viewBox',vb.x+' '+vb.y+' '+(W+4)+' 
 [].forEach.call(svg.querySelectorAll('.rf-n'),function(n){var c=col[n.dataset.c],r=n.querySelector('rect');r.setAttribute('x',c[0]);r.setAttribute('width',c[1]);[].forEach.call(n.querySelectorAll('tspan'),function(t){t.setAttribute('x',c[0]+7)})});
 [].forEach.call(svg.querySelectorAll('[data-hc]'),function(t){t.setAttribute('x',col[t.dataset.hc][0])});
 [].forEach.call(svg.querySelectorAll('.rf-l,.rf-hit'),function(p){var x0=col[p.dataset.ca][0]+col[p.dataset.ca][1],x1=col[p.dataset.cb][0],xm=(x0+x1)/2;p.setAttribute('d','M'+x0+','+p.dataset.y0+' C'+xm+','+p.dataset.y0+' '+xm+','+p.dataset.y1+' '+x1+','+p.dataset.y1)})}
-if(window.ResizeObserver)new ResizeObserver(relayout).observe(wrap);addEventListener('resize',relayout);relayout();
+function fade(){var sc=svg.closest('.svg-scroll');if(!sc)return;var m=sc.scrollWidth-sc.clientWidth-1;sc.classList.toggle('fade-r',m>0&&sc.scrollLeft<m);sc.classList.toggle('fade-l',m>0&&sc.scrollLeft>1)}
+document.addEventListener('scroll',function(ev){if(ev.target.classList&&ev.target.classList.contains('svg-scroll'))fade()},true);if(window.ResizeObserver)new ResizeObserver(function(){relayout();fade()}).observe(wrap);addEventListener('load',function(){setTimeout(fade,100)});document.addEventListener('click',function(){setTimeout(fade,120)});addEventListener('resize',function(){relayout();fade()});relayout();fade();
 var L=[].slice.call(svg.querySelectorAll('.rf-l')),H=[].slice.call(svg.querySelectorAll('.rf-hit')),N=[].slice.call(svg.querySelectorAll('.rf-n')),info=document.querySelector('.rf-info'),cur=null;
 function trace(n){var on={},nodes={};nodes[n]=1;var into=L.filter(function(l){return l.dataset.b===n}),out=L.filter(function(l){return l.dataset.a===n});
 into.forEach(function(l){on[l.dataset.i]=1;nodes[l.dataset.a]=1;L.forEach(function(k){if(k.dataset.b===l.dataset.a){on[k.dataset.i]=1;nodes[k.dataset.a]=1}})});
