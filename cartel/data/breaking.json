@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-30T13:14:16Z",
+ "as_of": "2026-10-30T16:01:52Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,124 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "cb180428a6",
+   "status": "single_source",
+   "title": "🪦 Contra la fosa común: las cruces que le devuelven el nombre a quienes murieron en la calle. En la Ciudad de México, morir en la calle casi siempre equivale a desaparecer en el anonimato de la fosa c",
+   "lang": "es",
+   "title_en": "🪦 Against the common grave: the crosses that give back the names of those who died on the street. In Mexico City, dying on the street almost always means disappearing into the anonymity of the common grave",
+   "first_report": "2026-10-30T15:30:01Z",
+   "first_report_precision": "minute",
+   "first_source": "Animal Político",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Animal Político"
+   ],
+   "sources": [
+    {
+     "outlet": "animal",
+     "name": "Animal Político",
+     "kind": "outlet",
+     "via": "X @Pajaropolitico",
+     "url": "https://x.com/Pajaropolitico/status/2116190896429420975",
+     "time": "2026-10-30T15:30:01Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "25933e6888",
+   "status": "single_source",
+   "title": "🟣 Una ola de ‘narcobloqueos’ y balaceras se desató este jueves en Matamoros, Tamaulipas, luego de un operativo federal en el que fue detenido Axel Alfredo Cárdenas, alias ‘Axel’, presunto segundo al m",
+   "lang": "es",
+   "title_en": "🟣 A wave of 'narcoblockades' and shootouts broke out this Thursday in Matamoros, Tamaulipas, after a federal operation in which Axel Alfredo Cárdenas, alias 'Axel', alleged second-in-command of 'Los Ciclones', a faction ",
+   "first_report": "2026-10-30T15:27:30Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2116190262590411124",
+     "time": "2026-10-30T15:27:30Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "89a7c75746",
+   "status": "single_source",
+   "title": "El Sindicato de Telefonistas exige la restitución de 185 empleados despedidos; aseguran que con la huelga indefinida no habrá personal que de atención o reparaciones en caso que los servicios fallen e",
+   "lang": "es",
+   "title_en": "The Telephone Workers' Union demands the reinstatement of 185 dismissed employees; they say that with the indefinite strike there will be no staff to provide service or repairs if services fail",
+   "first_report": "2026-10-30T15:16:02Z",
+   "first_report_precision": "minute",
+   "first_source": "ZETA Tijuana",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "ZETA Tijuana"
+   ],
+   "sources": [
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "X @ZETATijuana",
+     "url": "https://x.com/ZETATijuana/status/2116187376334582244",
+     "time": "2026-10-30T15:16:02Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "d7a6de5e94",
+   "status": "single_source",
+   "title": "Una mujer fue secuestrada en un local de Manta, Manabí, y en el ataque los delincuentes dispararon contra varias personas, e hirieron a una niña que luego falleció en el hospital.",
+   "lang": "es",
+   "title_en": "A woman was kidnapped from a business in Manta, Manabí, and during the attack the criminals fired on several people, wounding a girl who later died in hospital.",
+   "first_report": "2026-10-30T13:20:08Z",
+   "first_report_precision": "minute",
+   "first_source": "Primicias",
+   "region_ids": [
+    "ECU-1282"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "X @Primicias",
+     "url": "https://x.com/Primicias/status/2116158212940365826",
+     "time": "2026-10-30T13:20:08Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "6d919a369c",
    "status": "single_source",
@@ -545,14 +663,14 @@
    ]
   },
   {
-   "id": "3492b71dfc",
+   "id": "c7f50cbfbb",
    "status": "confirmed",
-   "title": "🚨🚔| Harfuch confirma abatimiento de Jesús González Peñuelas, alias “Chuy Peñuelas”, señalado como uno de los operadores del Cartel de Guasave y por quien el gobierno de Estados Unidos ofrecía una reco",
+   "title": "🚨 El “Chuy González” era identificado como operador de segundo nivel del Cártel de Guasave y EEUU ofrecía millones por él",
    "lang": "es",
-   "title_en": "Harfuch confirms the killing of Jesús González Peñuelas, alias “Chuy Peñuelas”, identified as one of the operators of the Guasave Cartel and for whom the United States government was offering a 5 million dollar reward. T",
-   "first_report": "2026-10-28T13:28:51Z",
+   "title_en": "\"Chuy González\" was identified as a second-tier operator of the Guasave Cartel and the US offered millions for him",
+   "first_report": "2026-10-28T16:15:00Z",
    "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
+   "first_source": "Infobae",
    "region_ids": [
     "MEX-2711"
    ],
@@ -562,47 +680,9 @@
     "Animal Político",
     "Infobae",
     "La Jornada",
-    "Los Noticieristas",
-    "Milenio",
-    "Proceso"
+    "Milenio"
    ],
    "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2115435627411833254",
-     "time": "2026-10-28T13:28:51Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2115436801401782361",
-     "time": "2026-10-28T13:33:31Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115438068178022417",
-     "time": "2026-10-28T13:38:33Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2115473678267973981",
-     "time": "2026-10-28T16:00:03Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "infobae",
      "name": "Infobae",
@@ -892,8 +972,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2706"
+    "MEX-2706",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1084,8 +1164,8 @@
    "region_ids": [
     "MEX-2719",
     "MEX-2723",
-    "MEX-2734",
-    "MEX-2727"
+    "MEX-2727",
+    "MEX-2734"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1173,8 +1253,8 @@
    "first_report_precision": "minute",
    "first_source": "Crisis Group",
    "region_ids": [
-    "HTI-1387",
-    "HTI-1386"
+    "HTI-1386",
+    "HTI-1387"
    ],
    "country": "HTI",
    "group_ids": [],
@@ -1194,12 +1274,12 @@
    ]
   },
   {
-   "id": "e18cb4cea4",
+   "id": "0505a1857b",
    "status": "confirmed",
-   "title": "Alfonso Montalván Cerezo, alcalde de Vinces, fue detenido durante un operativo por presunto lavado de activos ejecutado por la Fiscalía General del Estado este 28 de octubre de 2026.",
+   "title": "El Alcalde de Vinces fue detenido por presunto lavado de activos y señalado por las autoridades como supuesto cabecilla de una red que habría movido USD 3,22 millones. En sus redes sociales, publicó u",
    "lang": "es",
-   "title_en": "Alfonso Montalván Cerezo, mayor of Vinces, was arrested during an operation over alleged money laundering carried out by the State Attorney General's Office on October 28, 2026.",
-   "first_report": "2026-10-28T13:17:21Z",
+   "title_en": "The Mayor of Vinces was arrested for alleged money laundering and identified by the authorities as the alleged ringleader of a network that allegedly moved USD 3.22 million. On his social media he posted a message promis",
+   "first_report": "2026-10-28T16:10:35Z",
    "first_report_precision": "minute",
    "first_source": "Primicias",
    "region_ids": [
@@ -1207,23 +1287,14 @@
    ],
    "country": "ECU",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "Infobae",
     "Primicias"
    ],
    "sources": [
-    {
-     "outlet": "primicias",
-     "name": "Primicias",
-     "kind": "outlet",
-     "via": "X @Primicias",
-     "url": "https://x.com/Primicias/status/2115432733895774277",
-     "time": "2026-10-28T13:17:21Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "primicias",
      "name": "Primicias",
@@ -1407,9 +1478,9 @@
    "first_source": "Ríodoce",
    "region_ids": [
     "MEX-2719",
-    "ARG-1273",
+    "MEX-2723",
     "COL-1412",
-    "MEX-2723"
+    "ARG-1273"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1529,13 +1600,13 @@
    "first_report_precision": "day",
    "first_source": "Clarín",
    "region_ids": [
-    "PAN-1338",
-    "COL-1425"
+    "COL-1425",
+    "PAN-1338"
    ],
    "country": "COL",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "Clarín"
@@ -1687,8 +1758,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "Primicias"
@@ -2127,8 +2198,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "eln",
-    "tda"
+    "tda",
+    "eln"
    ],
    "outlets": [
     "Semana"
@@ -2155,8 +2226,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "NIC-655",
-    "MEX-2706"
+    "MEX-2706",
+    "NIC-655"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2667,42 +2738,23 @@
    ]
   },
   {
-   "id": "0a3333f9ca",
-   "status": "confirmed",
-   "title": "Omar García Harfuch, secretario de Seguridad y Protección Ciudadana, confirmó la muerte de #JesúsGonzálezPeñuelas, el #ChuyGonzález en un enfrentamiento con la Marina en el municipio de Sinaloa.",
+   "id": "37bb32cc5a",
+   "status": "single_source",
+   "title": "Omar García Harfuch viaja a Sinaloa para revisar resultados de la estrategia de seguridad y fortalecer acciones contra el narco",
    "lang": "es",
-   "title_en": "Omar García Harfuch, Secretary of Security and Citizen Protection, confirmed the death of #JesúsGonzálezPeñuelas, #ChuyGonzález, in a clash with the Navy in the municipality of Sinaloa.",
-   "first_report": "2026-10-28T15:43:32Z",
+   "title_en": "Omar García Harfuch travels to Sinaloa to review the results of the security strategy and strengthen actions against drug trafficking",
+   "first_report": "2026-10-28T20:56:37Z",
    "first_report_precision": "minute",
-   "first_source": "Ríodoce",
+   "first_source": "Infobae",
    "region_ids": [
     "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [],
    "outlets": [
-    "Infobae",
-    "Ríodoce"
+    "Infobae"
    ],
    "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2115469522870362424",
-     "time": "2026-10-28T15:43:32Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2115470233989488852",
-     "time": "2026-10-28T15:46:21Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "infobae",
      "name": "Infobae",
@@ -2894,122 +2946,6 @@
      "via": "X @infobaemexico",
      "url": "https://x.com/infobaemexico/status/2115505965621510416",
      "time": "2026-10-28T18:08:21Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "cf13fb3849",
-   "status": "single_source",
-   "title": "🌎Ecuador’s El Encuentro and Paraguay’s Minga Guazú are among the few megaprisons already operating outside El Salvador. Argentina, Panama, and other countries are pursuing similar projects. Explore th",
-   "lang": "es",
-   "title_en": "Ecuador’s El Encuentro and Paraguay’s Minga Guazú are among the few megaprisons already operating outside El Salvador. Argentina, Panama, and other countries are pursuing similar projects. Explore the region’s growing pr",
-   "first_report": "2026-10-28T15:09:14Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [
-    "PAN-1340"
-   ],
-   "country": "PAN",
-   "group_ids": [],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2115460892364054662",
-     "time": "2026-10-28T15:09:14Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "e1168f9edf",
-   "status": "single_source",
-   "title": "➡️ Difunden la Marina video de persecución y enfrentamiento donde fue abatido “Chuy” González Peñuelas, presunto operador del Chapo Isidro. 🪖🚨 La Secretaría de Marina compartió imágenes oficiales del ",
-   "lang": "es",
-   "title_en": "The Navy released video of the chase and clash in which “Chuy” González Peñuelas, alleged operator for Chapo Isidro, was killed. The Navy shared official images of the operation on Monday, October 26, in the locality of ",
-   "first_report": "2026-10-28T14:55:59Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2115457555740729358",
-     "time": "2026-10-28T14:55:59Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "2d8de1ced4",
-   "status": "single_source",
-   "title": "Gobierno de la CDMX destinará 460 millones de pesos a la búsqueda de desaparecidos: qué cambiará para las familias",
-   "lang": "es",
-   "title_en": "Mexico City government to allocate 460 million pesos to the search for the disappeared: what will change for families",
-   "first_report": "2026-10-28T14:54:13Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115457113598152876",
-     "time": "2026-10-28T14:54:13Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "800e21c977",
-   "status": "single_source",
-   "title": "Detienen en Nueva York a Natalia Rezende, esposa de Cuauhtémoc Blanco La expresidenta del DIF Morelos fue interceptada, hace un par de semanas, en uno de los principales aeropuertos de la ciudad con u",
-   "lang": "es",
-   "title_en": "Natalia Rezende, wife of Cuauhtémoc Blanco, detained in New York. The former president of DIF Morelos was intercepted a couple of weeks ago at one of the city's main airports with",
-   "first_report": "2026-10-28T13:45:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Proceso",
-   "region_ids": [
-    "MEX-2732"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Proceso"
-   ],
-   "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2115439692791402604",
-     "time": "2026-10-28T13:45:00Z",
      "time_precision": "minute"
     }
    ]

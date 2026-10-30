@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-30T13:14:16Z",
+ "as_of": "2026-10-30T16:01:52Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -28,12 +28,82 @@
  ],
  "posts": [
   {
+   "id": "2116190896429420975",
+   "handle": "Pajaropolitico",
+   "url": "https://x.com/Pajaropolitico/status/2116190896429420975",
+   "created_at": "2026-10-30T15:30:01.000Z",
+   "text": "🪦 Contra la fosa común: las cruces que le devuelven el nombre a quienes murieron en la calle. En la Ciudad de México, morir en la calle casi siempre equivale a desaparecer en el anonimato de la fosa común. El sistema asume abandono sin buscar redes de apoyo. Frente a esta https:…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "🪦 Against the common grave: the crosses that give back the names of those who died on the street. In Mexico City, dying on the street almost always means disappearing into the anonymity of the common grave. The system assumes abandonment without looking for support networks. In response to this"
+  },
+  {
+   "id": "2116190262590411124",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2116190262590411124",
+   "created_at": "2026-10-30T15:27:30.000Z",
+   "text": "🟣 Una ola de ‘narcobloqueos’ y balaceras se desató este jueves en Matamoros, Tamaulipas, luego de un operativo federal en el que fue detenido Axel Alfredo Cárdenas, alias ‘Axel’, presunto segundo al mando de ‘Los Ciclones’ facción del Cártel del Golfo Detalles 👉🏼🔗 https://t.co/m…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "🟣 A wave of 'narcoblockades' and shootouts broke out this Thursday in Matamoros, Tamaulipas, after a federal operation in which Axel Alfredo Cárdenas, alias 'Axel', alleged second-in-command of 'Los Ciclones', a faction of the Gulf Cartel, was arrested. Details 👉🏼"
+  },
+  {
+   "id": "2116187376334582244",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2116187376334582244",
+   "created_at": "2026-10-30T15:16:02.000Z",
+   "text": "El Sindicato de Telefonistas exige la restitución de 185 empleados despedidos; aseguran que con la huelga indefinida no habrá personal que de atención o reparaciones en caso que los servicios fallen en Baja California. Los detalles en https://t.co/ssxXjcTMlP https://t.co/8CXZmU8…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The Telephone Workers' Union demands the reinstatement of 185 dismissed employees; they say that with the indefinite strike there will be no staff to provide service or repairs if services fail"
+  },
+  {
+   "id": "2116158212940365826",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2116158212940365826",
+   "created_at": "2026-10-30T13:20:08.000Z",
+   "text": "Una mujer fue secuestrada en un local de Manta, Manabí, y en el ataque los delincuentes dispararon contra varias personas, e hirieron a una niña que luego falleció en el hospital. https://t.co/xKa7hp48j7 https://t.co/RsBI230ath",
+   "lang": "es",
+   "region_ids": [
+    "ECU-1282"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "A woman was kidnapped from a business in Manta, Manabí, and during the attack the criminals fired on several people, wounding a girl who later died in hospital."
+  },
+  {
    "id": "2116152683950477762",
    "handle": "noticieristas",
    "url": "https://x.com/noticieristas/status/2116152683950477762",
    "created_at": "2026-10-30T12:58:10.000Z",
    "text": "Localizan con vida a los dos jóvenes del Edomex desaparecidos en Angostura La Primera Emisión de “Los Noticieristas” con Luis Alberto Díaz y todo su equipo. https://t.co/gtLo0xgFXy",
-   "lang": "und",
+   "lang": "es",
    "region_ids": [
     "MEX-2731"
    ],
@@ -3882,93 +3952,6 @@
    "source_type": "national outlet",
    "label": null,
    "text_en": "Three men arrested over car-bomb explosion in Coahuayana, Michoacán. According to investigators, David \"N\", identified as \"leader of a cell\" of the CJNG, is the \"alleged perpetrator of the attack\" carried out in front of the Community Police facilities"
-  },
-  {
-   "id": "2113659979274019098",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2113659979274019098",
-   "created_at": "2026-10-23T15:53:03.000Z",
-   "text": "Detienen a exalcaldesa de Chenalhó por presunto fraude millonario en venta de casa en Chiapas https://t.co/UOUggobGPj",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2735"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Former mayor of Chenalhó arrested for alleged multimillion fraud in a house sale in Chiapas"
-  },
-  {
-   "id": "2113652271800094904",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2113652271800094904",
-   "created_at": "2026-10-23T15:22:26.000Z",
-   "text": "“Maru Campos acusó a Ariadna Montiel de nexos con el narco”: Sheinbaum pide a FGR informar sobre su reunión con gobernadora de Chihuahua https://t.co/ZyMnkGxcIV",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2709"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "\"Maru Campos accused Ariadna Montiel of narco ties\": Sheinbaum asks FGR to report on her meeting with the Chihuahua governor"
-  },
-  {
-   "id": "2113652260546683366",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2113652260546683366",
-   "created_at": "2026-10-23T15:22:23.000Z",
-   "text": "EN VIVO| Seguridad, narcotráfico y crimen en México hoy 23 de octubre: cae el “Mando 20″ del CJNG por coche bomba que mató a seis en Michoacán https://t.co/4Q8v6qryTz",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "LIVE | Security, drug trafficking and crime in Mexico today, 23 October: CJNG's \"Mando 20\" falls over car bomb that killed six in Michoacán"
-  },
-  {
-   "id": "2113646632101368099",
-   "handle": "Pajaropolitico",
-   "url": "https://x.com/Pajaropolitico/status/2113646632101368099",
-   "created_at": "2026-10-23T15:00:01.000Z",
-   "text": "🚨 \"Del amarre a la extorsión\": alertan en CDMX por fraudes esotéricos a través de redes sociales. Falsos hechiceros y supuestos guías espirituales: en CDMX se han registrado 1,260 casos de fraudes esotéricos desde 2021. El delito escaló de 17 casos en 2021 a más de 300 en 2026,…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "🚨 \"From love spells to extortion\": warning in CDMX over esoteric fraud on social media. Fake sorcerers and supposed spiritual guides: CDMX has recorded 1,260 cases of esoteric fraud since 2021. The crime rose from 17 cases in 2021 to more than 300 in 2026,…"
-  },
-  {
-   "id": "2113620203028512963",
-   "handle": "ArmandoInfo",
-   "url": "https://x.com/ArmandoInfo/status/2113620203028512963",
-   "created_at": "2026-10-23T13:15:00.000Z",
-   "text": "En la urbanización Altamira, una edificación de dos pisos de lo que parecía iba ser una obra residencial, quedó inconclusa. Pertenecía al círculo de Alex Saab. En la fachada se ve ahora un cartel descolorido del Dgcim👇🏻https://t.co/arZjBmttA9 https://t.co/xu4miNnUfO",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2716"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "regional outlet",
-   "label": null,
-   "text_en": "In the Altamira development, a two-storey building that appeared to be a residential project was left unfinished. It belonged to Alex Saab's circle. A faded DGCIM sign now hangs on the facade"
   }
  ]
 }
