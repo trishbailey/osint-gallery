@@ -1,5 +1,5 @@
 {
- "window": "2026-09-29 to 2026-10-29",
+ "window": "2026-09-30 to 2026-10-30",
  "incidents": [
   {
    "group": "kataib-hezbollah",
@@ -257,6 +257,21 @@
    "note": null
   },
   {
+   "group": "houthis",
+   "date": "2026-10-25",
+   "date_precision": "day",
+   "place": "Jabal Sabr, above Taiz, Yemen",
+   "lat": 13.53,
+   "lon": 44.03,
+   "description": "Houthi forces advance on Jabal Sabr, the mountain overlooking Taiz, after besieging the city and cutting its main road to Aden; the UN says 800,000 people are trapped.",
+   "url": "https://www.dawn.com/news/2039711/houthis-advance-on-strategic-mountain-near-taiz",
+   "urls_extra": [
+    "https://www.aljazeera.com/news/2026/10/29/fighting-rages-near-yemens-taiz-as-un-urges-humanitarian-access"
+   ],
+   "confidence": "medium",
+   "note": null
+  },
+  {
    "group": "jnim",
    "date": "2026-10-26",
    "date_precision": "day",
@@ -343,6 +358,32 @@
    ],
    "confidence": "high",
    "note": null
+  },
+  {
+   "group": "iswap",
+   "date": "2026-10-28",
+   "date_precision": "day",
+   "place": "Kerenoa, north of Marte, Borno State, Nigeria",
+   "lat": 12.45,
+   "lon": 13.78,
+   "description": "Nigerian air strikes kill 15 fighters, including Islamic State West Africa commanders Abu Musanna and Hassan Abu Huraira, the military says.",
+   "url": "https://saharareporters.com/2026/10/29/nigerian-air-strikes-kill-two-iswap-commanders-13-other-terrorists-borno-military",
+   "urls_extra": [],
+   "confidence": "low",
+   "note": "Single source: Nigerian military statement, not independently verified."
+  },
+  {
+   "group": "jnim",
+   "date": "2026-10-29",
+   "date_precision": "day",
+   "place": "Bilanga, Gnagna Province, Burkina Faso (also Namssiguia, Bam Province)",
+   "lat": 12.55,
+   "lon": -0.03,
+   "description": "JNIM claims the capture of army posts at Bilanga and Namssiguia on the same day.",
+   "url": "https://trackingterrorism.org/chatter/jnim-bilanga-gnagna-fada-ngourma-area-burkina-faso-trac/",
+   "urls_extra": [],
+   "confidence": "low",
+   "note": "Group claim reported by the trackingterrorism.org tracker; not independently verified."
   }
  ],
  "note": "Groups with no incident listed: no strategic-scale event was verified in the window with a usable source."
