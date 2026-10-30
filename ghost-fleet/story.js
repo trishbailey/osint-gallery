@@ -82,6 +82,11 @@ function swapMap(){const R=WREGS[wreg];if(!R){const b=hotspots();return b.concat
  WD.cities.filter(c=>inb(c[1],c[2])).forEach(c=>L.circleMarker([c[1],c[2]],{renderer:cv,radius:3.5,color:"#f2d16b",weight:1.5,fillColor:"#0b1526",fillOpacity:1}).bindTooltip(`<b>${esc(c[0])}</b><br>City`,{direction:"top",offset:[0,-4]}).addTo(lay));
  (GF.WPI||[]).filter(p=>"LMS".includes(p[4])&&inb(p[2],p[3])).forEach(p=>L.circleMarker([p[2],p[3]],{renderer:cv,radius:3.5,color:"#0b1526",weight:1,fillColor:"#f5f7fa",fillOpacity:1}).bindTooltip(`<b>${esc(title(p[0]))}</b><br>Port, ${esc(p[1])}`,{direction:"top",offset:[0,-4]}).addTo(lay));
  return evs(ch.ev,true)}
+const WLB={"Malaysia, east of Singapore (EOPL)":[["Malaysia","Indonesia"],["Singapore"]],"Gulf of Oman off Fujairah and Sohar":[["Iran","Oman","United Arab Emirates","Pakistan"],["Fujairah","Sohar","Muscat"]],"Ceuta and Alboran Sea":[["Spain","Morocco","Algeria"],["Algeciras","Ceuta","Tangier"]],"Off Lomé, Togo":[["Togo","Ghana","Benin","Nigeria"],["Lomé","Tema","Lagos"]]};
+// Noctis map: nations, the major port city, and a plain label on the loiter spot
+function swapLb(){const R=WREGS[wreg];if(!R)return LB(GF.LAND,[RU,"China","India"],["Kozmino"]);const w=WLB[R.n]||[[],[]],bb=R.bbox;
+ const lo=ch.ev.filter(e=>e.t==="loitering"&&e.lat>=bb[0]&&e.lat<=bb[2]&&e.lon>=bb[1]&&e.lon<=bb[3]).map(e=>({t:GF.phone()?"Loiter spot":title(ch.name)+" loiter spot",lat:e.lat,lon:e.lon}));
+ return LB({features:WD.land},w[0],w[1],lo)}
 function swapView(){map.options.zoomSnap=.25;map.invalidateSize();map.setMaxBounds(null);const R=WREGS[wreg];if(!R)return fit([]);
  const bb=L.latLngBounds([R.bbox[0],R.bbox[1]],[R.bbox[2],R.bbox[3]]),tk=++wtk;map.options.maxBoundsViscosity=1;
  map.once("moveend",()=>{if(tk!==wtk)return;map.setMinZoom(map.getBoundsZoom(bb,true));map.setMaxBounds(bb)});
@@ -96,30 +101,31 @@ function drawCR(){if(!CR||!crg)return;crg.clearLayers();const pn=(la,lo)=>{const
  // thicker groups first, thinner on top, so the colours of all four groups stay visible on a shared sea lane; dark casings first so they never wash out another group's line
  const bw={core:3,taxi:2.2,dev:1.5,hub:.9},cx=Math.max(...CR.r.map(r=>r[2]),1),on=CROW.filter(k=>CON[k]),rows=k=>CR.r.filter(r=>r[0]===k).sort((a,b)=>b[2]-a[2]);
  on.forEach(k=>rows(k).forEach(r=>L.polyline(CR.lines[r[1]],{renderer:cv,color:"#0b1526",weight:bw[k]+1.4+1.4*Math.sqrt(r[2]/cx),opacity:.45,interactive:false,lineJoin:"round"}).addTo(crg)));
- on.forEach(k=>rows(k).forEach(r=>{const p=r[1].split("|"),w=bw[k]+1.4*Math.sqrt(r[2]/cx);L.polyline(CR.lines[r[1]],{renderer:cv,color:CLS[k][1],weight:w,opacity:1,lineJoin:"round",smoothFactor:1.2}).bindTooltip(`<b>${esc(p[0])} → ${esc(pn(+p[1],+p[2]))}</b><br>${esc(CLS[k][0])}: ${r[2]} loaded trip${r[2]>1?"s":""} in 12 months (aggregate sea route, not a ship track)`,{sticky:true}).addTo(crg)}))}
+ on.forEach(k=>rows(k).forEach(r=>{const p=r[1].split("|"),w=bw[k]+1.4*Math.sqrt(r[2]/cx);L.polyline(CR.lines[r[1]],{renderer:cv,color:CLS[k][1],weight:w,opacity:1,lineJoin:"round",smoothFactor:1.2}).bindTooltip(`<b>${esc(p[0])} → ${esc(pn(+p[1],+p[2]))}</b><br>${esc(CLS[k][0])}: ${r[2]} loaded trip${r[2]>1?"s":""} in 12 months (aggregate sea route, not a ship track)`,{sticky:true}).addTo(crg)}));lbSoon()}
 function classMap(){if(!CR)return lastPos();const b=[];crg=L.layerGroup().addTo(lay);drawCR();
  const seen={};S.flows.forEach(f=>{if(seen[f.from])return;seen[f.from]=1;L.circleMarker(f.a,{renderer:cv,radius:4,color:"#0b1526",weight:1.5,fillColor:"#f5f7fa",fillOpacity:1}).bindTooltip(esc(f.from)+" (Russian loading port)",{direction:"top",offset:[0,-4]}).addTo(lay)});
  Object.values(CR.lines).forEach(l=>b.push(...l));return b}
 const CH=[
  {k:"route",t:"1. Load in Russia, unload in Asia",
   c:`${pct}% of ${S.voyages.toLocaleString()} trips from Russian oil terminals ended in China, India or Turkey.`,
-  key:B3.map(c=>[B3C[c],`${cn(c)}: ${B3N[c]} trips (${Math.round(100*B3N[c]/S.voyages)}%)`]),d:()=>big3()},
+  key:B3.map(c=>[B3C[c],`${cn(c)}: ${B3N[c]} trips (${Math.round(100*B3N[c]/S.voyages)}%)`]),d:()=>big3(),lb:()=>LB(GF.LAND,[RU,"China","India","Turkey"],["Kozmino","Novorossiysk","Primorsk","Ust-Luga"])},
  {k:"swap",t:"2. Waiting where cargoes change hands",
   c:`${esc(title(ch.name))} loitered about ${loHrs<48?Math.round(loHrs)+" hours":Math.round(loHrs/24)+" days"}${esc(loHz?" off "+loHz.replace(/ \(.*/,""):"")} after loading at ${esc(ch.load)}, which is consistent with a transfer but does not prove one.`,
-  x:WX,d:()=>swapMap(),view:()=>swapView(),ship:ch.imo},
+  x:WX,d:()=>swapMap(),view:()=>swapView(),lb:()=>swapLb(),ship:ch.imo},
  {k:"identity",t:"3. New name, same run",
   c:IDC,x:IDX,
   d:()=>{const b=[];id.voy.forEach((v,i)=>{L.polyline(curve(v.line[0],v.line[1]),{color:v.ld>=id.hist[id.hist.length-1][2]?"#d97cb0":"#5cc98a",weight:4,opacity:.9}).bindTooltip(`${fmt(v.ld)}: ${esc(v.load)} → ${esc(cn(v.dest))}`,{sticky:true}).addTo(lay);b.push(...v.line)});return b},
-  key:[["#5cc98a","before the name change"],["#d97cb0","after"]],ship:id.imo},
+  key:[["#5cc98a","before the name change"],["#d97cb0","after"]],lb:()=>LB(GF.LAND,[RU,"China","Republic of Korea"],["Kozmino","Busan","Ningbo"]),ship:id.imo},
  {k:"network",t:"4. One company, many ships",
   c:`${esc(nw.name)} is linked to ${nw.ships.length} of these tankers, which made ${nw.flows.length} trips from Russian terminals in 12 months.`,
-  d:()=>{const b=[];nw.flows.forEach(f=>{L.polyline(curve(f[0],f[1]),{renderer:cv,color:"#b58cf0",weight:2.5,opacity:.7}).bindTooltip(esc(title(f[2])),{sticky:true}).addTo(lay);b.push(f[0],f[1])});return b},chips:nw.ships},
+  hub:true,d:()=>{hubDraw();return[]},
+  dMap:()=>{const b=[];nw.flows.forEach(f=>{L.polyline(curve(f[0],f[1]),{renderer:cv,color:"#b58cf0",weight:2.5,opacity:.7}).bindTooltip(esc(title(f[2])),{sticky:true}).addTo(lay);b.push(f[0],f[1])});return b},chips:nw.ships},
  {k:"dark",t:"5. Going dark",
   c:`${S.gaps} transponder gaps of 12+ hours in 12 months; of ${S.gapsJamWindow} inside our 90 days of GPS-interference data, ${S.gapsJam?S.gapsJam:"none"} fell where interference was reported, which points to switch-offs, not jamming.`,
-  d:()=>{gi=0;evs(S.cases.allgaps.filter(e=>!dk.ev.includes(e)),false,true);return evs(dk.ev,true,true)},key:[["#e05a6a","transponder off"],["#4fa3e0","port call"]],ship:dk.imo},
+  d:()=>{gi=0;evs(S.cases.allgaps.filter(e=>!dk.ev.includes(e)),false,true);return evs(dk.ev,true,true)},key:[["#e05a6a","transponder off"],["#4fa3e0","port call"]],lb:()=>LB(GF.LAND,[RU,"Morocco","Mauritania","Western Sahara"],["Saint Petersburg","Ust-Luga","Casablanca","Dakhla"]),ship:dk.imo},
  {k:"classes",t:"6. Five ways of working",
   c:`Tankers sorted by what they did in 12 months; regular runners made ${(S.classVoy||{}).core} of the ${S.voyages} trips.`,x:`${CR?'<div class="ctslot"></div><p class="note">Each line is a group\'s loaded trips from a Russian terminal to a buyer port along sea lanes. Thicker, brighter lines carry more trips. Tap a group to hide or show it.</p>':""}<div class="cbars">${Object.keys(CLS).filter(k=>k!=="other").sort((a,b)=>(K[b]||0)-(K[a]||0)).map(k=>`<div class="row" title="${CLS[k][2]}"><span>${CLS[k][0]}</span><i style="width:${(100*(K[k]||0)/Math.max(K.hub,K.core,K.dev,K.taxi)).toFixed(0)}%;background:${CLS[k][1]}"></i><b>${K[k]||0}</b></div>`).join("")}</div><p class="note">Tankers with too few trips are left off the map.</p>`,
-  d:()=>classMap()}];
+  d:()=>classMap(),lb:()=>LB(GF.LAND,[RU,"China","India","Turkey"],["Kozmino","Novorossiysk","Primorsk"])}];
 const box=document.getElementById("story"),cards=document.getElementById("chapters");
 cards.innerHTML=CH.map((c,i)=>`<article class="chap" data-i="${i}" data-ch="${c.k}" tabindex="0"><h3>${c.t}</h3><p>${c.c}</p>${c.x||""}${c.key?`<div class="key">${c.key.map(k=>`<span><i style="background:${k[0]}"></i>${k[1]}</span>`).join("")}</div>`:""}${c.ship?`<button class="lnk" data-p="${c.ship}">Open ship profile</button>`:""}${c.chips?`<div>${c.chips.map(s=>`<span class="chip" role="button" tabindex="0" data-p="${s[0]}">${esc(title(s[1]))}</span>`).join("")}</div>`:""}</article>`).join("");
 (()=>{const tl=cards.querySelector(".tl"),tp=tl&&tl.querySelector(".tltip");if(!tl)return;
@@ -137,6 +143,76 @@ CT.querySelectorAll("button").forEach(b=>b.onclick=e=>{e.stopPropagation();CON[b
 cards.querySelectorAll(".wreg button").forEach(b=>b.onclick=e=>{e.stopPropagation();wreg=+b.dataset.r;cards.querySelectorAll(".wreg button").forEach(k=>k.setAttribute("aria-pressed",k===b));go(1)});
 cards.querySelectorAll("[data-p]").forEach(b=>b.onclick=e=>{e.stopPropagation();openP(b.dataset.p)});
 let cur=0,mode="story";
+// ---- place-name labels: nations and major port cities only. Plain light text, no box; laid out by labels.js so none sits on a route, dot, callout, other label or foreign land.
+const NATN={"Russian Federation":"Russia","Dem. Rep. Korea":"North Korea","Republic of Korea":"South Korea","United Arab Emirates":"UAE"};
+const RU="Russian Federation",CITY={"Kozmino":[42.74,132.95,RU],"Novorossiysk":[44.72,37.77,RU],"Primorsk":[60.36,28.61,RU],"Ust-Luga":[59.68,28.40,RU],"Saint Petersburg":[59.93,30.25,RU],"Murmansk":[68.97,33.08,RU],
+ "Qingdao":[36.07,120.38,"China"],"Ningbo":[29.87,121.55,"China"],"Busan":[35.10,129.04,"Republic of Korea"],"Singapore":[1.29,103.85,"Singapore"],
+ "Fujairah":[25.12,56.34,"United Arab Emirates"],"Sohar":[24.36,56.75,"Oman"],"Muscat":[23.61,58.59,"Oman"],"Algeciras":[36.13,-5.45,"Spain"],"Ceuta":[35.89,-5.32,"Spain"],"Tangier":[35.78,-5.80,"Morocco"],
+ "Lomé":[6.13,1.22,"Togo"],"Tema":[5.64,0.0,"Ghana"],"Lagos":[6.45,3.40,"Nigeria"],"Casablanca":[33.60,-7.62,"Morocco"],"Dakhla":[23.70,-15.93,"Western Sahara"]};
+const LB=(land,nat,city,extra)=>({land,nat,city,extra});
+const LBP=map.createPane("plcp");LBP.style.zIndex=640;LBP.style.pointerEvents="none";
+const LBSVG=document.createElementNS("http://www.w3.org/2000/svg","svg");LBSVG.setAttribute("width","1");LBSVG.setAttribute("height","1");LBSVG.style.cssText="position:absolute;left:0;top:0;overflow:visible";LBP.appendChild(LBSVG);
+let LBS=null,lbMoving=false,lbT=0;
+const lbOn=()=>!document.body.classList.contains("hubon");
+function lbClear(){LBP.querySelectorAll(".plc").forEach(e=>e.remove());LBSVG.innerHTML=""}
+function labels(spec){LBS=spec;lbClear();lbSoon()}
+function lbSoon(){clearTimeout(lbT);lbT=setTimeout(lbDraw,40)}
+const lbFlat=a=>a.flatMap?a.flatMap(x=>Array.isArray(x)?lbFlat(x):[x]):a;
+function lbObst(ctx,pad){ctx.lineJoin=ctx.lineCap="round";const cb=map.getContainer().getBoundingClientRect();
+ map.eachLayer(l=>{if(l instanceof L.Polygon||l.options&&l.options.opacity===0)return;
+  if(l instanceof L.Polyline){const q=lbFlat(l.getLatLngs()).filter(x=>x&&x.lat!==undefined).map(x=>map.latLngToContainerPoint(x));if(q.length<2)return;
+   ctx.lineWidth=(l.options.weight||2)+2*pad;ctx.beginPath();q.forEach((c,i)=>i?ctx.lineTo(c.x,c.y):ctx.moveTo(c.x,c.y));ctx.stroke()}
+  else if(l instanceof L.CircleMarker){const o=l.options;if(o.stroke===false&&(o.fillOpacity||0)<.05)return;const c=map.latLngToContainerPoint(l.getLatLng()),r=l._radius||o.radius||4;
+   ctx.beginPath();if(r>40){ctx.lineWidth=(o.weight||1)+2*pad;ctx.arc(c.x,c.y,r,0,7);ctx.stroke()}else{ctx.arc(c.x,c.y,r+(o.weight||0)/2+pad,0,7);ctx.fill()}}});
+ map.getContainer().querySelectorAll(".b3l,.arwnote,.leaflet-control").forEach(e=>{const r=e.getBoundingClientRect();if(r.width&&getComputedStyle(e).display!=="none")ctx.fillRect(r.left-cb.left-pad,r.top-cb.top-pad,r.width+2*pad,r.height+2*pad)})}
+function lbLand(ctx,fill){const bb=map.getBounds().pad(.15),n=bb.getNorth(),so=bb.getSouth(),e=bb.getEast(),w=bb.getWest();
+ (LBS.land.features||[]).forEach(f=>{const g=f.geometry;if(!g)return;const polys=g.type==="Polygon"?[g.coordinates]:g.type==="MultiPolygon"?g.coordinates:[];ctx.fillStyle=fill(f.properties.n);
+  polys.forEach(p=>{if(!p[0].some(q=>q[0]>w&&q[0]<e&&q[1]>so&&q[1]<n)&&!(p[0].some(q=>q[0]<w)&&p[0].some(q=>q[0]>e)&&p[0].some(q=>q[1]<n)&&p[0].some(q=>q[1]>so)))return;
+   ctx.beginPath();p.forEach(r=>{r.forEach((q,i)=>{const c=map.latLngToContainerPoint([q[1],q[0]]);i?ctx.lineTo(c.x,c.y):ctx.moveTo(c.x,c.y)});ctx.closePath()});ctx.fill("evenodd")})})}
+function lbDraw(){if(!LBS||lbMoving||!lbOn()||!window.GFL)return;lbClear();const sz=map.getSize(),items=[];
+ const mkEl=(kind,txt,key)=>{const el=document.createElement("div");el.className="plc "+kind;el.dataset.kind=kind;if(key)el.dataset.cn=key;el.textContent=txt;LBP.appendChild(el);return el};
+ const add=(kind,txt,ll,key)=>{const c=ll?map.latLngToContainerPoint(ll):{x:sz.x/2,y:sz.y/2};const el=mkEl(kind,txt,key);items.push({kind,key,ax:c.x,ay:c.y,w:el.offsetWidth,h:el.offsetHeight,el})};
+ (LBS.nat||[]).forEach(k=>add("nation",NATN[k]||k,null,k));
+ (LBS.city||[]).forEach(n=>{const c=CITY[n];if(c)add("city",n==="Saint Petersburg"?"St Petersburg":n,[c[0],c[1]],c[2])});
+ (LBS.extra||[]).forEach(x=>add("city",x.t,[x.lat,x.lon],null));
+ GFL.layout({w:sz.x,h:sz.y,pad:5,land:lbLand,obst:lbObst,items});
+ items.forEach(it=>{if(!it.at){it.el.remove();return}const a=it.at,p=map.containerPointToLayerPoint(L.point(a.l,a.t));it.el.style.left=p.x+"px";it.el.style.top=p.y+"px";
+  const q=map.containerPointToLayerPoint(L.point(it.ax,it.ay));
+  if(a.lead){const m=map.containerPointToLayerPoint(L.point(a.lead[0],a.lead[1])),e=map.containerPointToLayerPoint(L.point(a.lead[2],a.lead[3]));
+   LBSVG.insertAdjacentHTML("beforeend",`<line class="plead" x1="${m.x.toFixed(1)}" y1="${m.y.toFixed(1)}" x2="${e.x.toFixed(1)}" y2="${e.y.toFixed(1)}"/>`);
+   if(a.dot)LBSVG.insertAdjacentHTML("beforeend",`<circle class="pdot" cx="${q.x.toFixed(1)}" cy="${q.y.toFixed(1)}" r="2.5"/>`)}});
+ LBP.style.opacity=1}
+map.on("movestart zoomstart",()=>{lbMoving=true;LBP.style.opacity=0});map.on("moveend zoomend resize",()=>{lbMoving=false;lbSoon()});
+// chapter 4: hub-and-spoke graphic (replaces the old line map, whose lines crossed land; the old map code stays below as CH[3].dMap and is not called)
+const HUBC="#b58cf0",HUB=document.createElement("div");HUB.id="hub";HUB.setAttribute("role","group");HUB.setAttribute("aria-label",`${nw.name} and its ${nw.ships.length} tankers`);map.getContainer().insertAdjacentElement("afterend",HUB);
+function hubDraw(){const W=HUB.clientWidth,H=HUB.clientHeight;if(!W||!H)return;
+ const cnt={};nw.flows.forEach(f=>{cnt[f[2]]=(cnt[f[2]]||0)+1});const tot=nw.flows.length;
+ const ships=nw.ships.map(s=>({imo:s[0],name:title(s[1]),n:cnt[s[1]]||0})).sort((a,b)=>b.n-a.n),mx=Math.max(...ships.map(s=>s.n),1);
+ // alternate big and small around the ring so neighbours differ
+ const order=[];ships.forEach((s,i)=>{order[i%2?ships.length-1-((i-1)/2|0):(i/2|0)]=s});
+ const nb=W<500?46:30,vt=46,vb=H-nb-38,cx=W/2,cy=(vt+vb)/2,R0=W<500?44:50,rr=s=>6+11*Math.sqrt(s.n/mx),fs=14;
+ const cv2=document.createElement("canvas").getContext("2d");cv2.font=`600 ${fs}px system-ui,sans-serif`;
+ const lw=Math.max(...ships.map(s=>cv2.measureText(s.name).width*1.1));
+ const rx=Math.max(R0+40,Math.min(W/2-lw-34,W*.34)),ry=Math.min((vb-vt)/2,300);
+ const nodes=order.map((s,i)=>{const th=-Math.PI/2+i*2*Math.PI/order.length,x=cx+rx*Math.cos(th),y=cy+ry*Math.sin(th),r=rr(s),w=cv2.measureText(s.name).width*1.1,c=Math.cos(th);
+  let tx,ty,an;if(Math.abs(c)<.35){tx=x;an="middle";ty=Math.sin(th)<0?y-r-8:y+r+fs+2}else if(c>0){tx=x+r+6;an="start";ty=y+5}else{tx=x-r-6;an="end";ty=y+5}
+  // keep the name inside the box; if clamping would put it on the node, lift it above the node instead
+  const l0=an==="middle"?tx-w/2:an==="start"?tx:tx-w;let l=Math.max(6,Math.min(W-6-w,l0));if(l!==l0){const sh=l-l0;tx+=sh;if(Math.abs(c)>=.35&&Math.abs(l-(x-r))<w){tx=Math.max(6+w/2,Math.min(W-6-w/2,x));an="middle";ty=y-r-8}}
+  return{...s,x,y,r,tx,ty,an}});
+ HUB.innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${esc(nw.name)} linked to ${ships.length} tankers that made ${tot} trips from Russian terminals">
+ ${nodes.map(n=>`<line x1="${cx}" y1="${cy}" x2="${n.x.toFixed(1)}" y2="${n.y.toFixed(1)}" stroke="${HUBC}" stroke-width="1.2" opacity=".75"/>`).join("")}
+ <circle cx="${cx}" cy="${cy}" r="${R0}" fill="${GOLD}" stroke="#0b1526" stroke-width="2"/>
+ <text x="${cx}" y="${cy-16}" text-anchor="middle" font-size="14" font-weight="700" fill="#0b1526"><tspan x="${cx}">Citrine</tspan><tspan x="${cx}" dy="17">Marine</tspan><tspan x="${cx}" dy="17" font-weight="600">${tot} trips</tspan></text>
+ ${nodes.map(n=>`<g class="hn" tabindex="0" role="button" data-tip="${esc(n.name)} · IMO ${esc(n.imo)} · ${n.n} trip${n.n===1?"":"s"} from Russian terminals"><circle cx="${n.x.toFixed(1)}" cy="${n.y.toFixed(1)}" r="${(n.r+10).toFixed(1)}" fill="transparent"/><circle class="hd" cx="${n.x.toFixed(1)}" cy="${n.y.toFixed(1)}" r="${n.r.toFixed(1)}" fill="${HUBC}" stroke="#0b1526" stroke-width="1.5"/><text x="${n.tx.toFixed(1)}" y="${n.ty.toFixed(1)}" text-anchor="${n.an}" font-size="${fs}" font-weight="600" fill="#f5f7fa" class="hl2">${esc(n.name)}</text></g>`).join("")}
+ </svg><div class="hubtip" hidden></div><p class="hubnote">Dot size = trips from Russian terminals. Hover or tap a ship for its IMO number and trip count.</p>`;
+ const tp=HUB.querySelector(".hubtip");
+ const show=(g,x,y)=>{tp.textContent=g.dataset.tip;tp.hidden=false;const w=tp.offsetWidth;tp.style.left=Math.max(6,Math.min(W-w-6,x))+"px";tp.style.top=Math.max(6,y)+"px"};
+ HUB.querySelectorAll(".hn").forEach(g=>{const c=g.querySelector(".hd"),px=+c.getAttribute("cx"),py=+c.getAttribute("cy"),r=+c.getAttribute("r");
+  g.onpointerenter=e=>{if(e.pointerType!=="touch")show(g,px+r+10,py-34)};g.onpointerleave=e=>{if(e.pointerType!=="touch")tp.hidden=true};
+  g.onfocus=()=>show(g,px+r+10,py-34);g.onblur=()=>tp.hidden=true;
+  g.onclick=e=>{e.stopPropagation();show(g,px+r+10,py-34)}});
+ HUB.onclick=()=>tp.hidden=true}
+new ResizeObserver(()=>{if(!lbOn())hubDraw()}).observe(HUB);
 // chapter 1: red chevrons flowing along the aggregate sea routes, source port -> buyer. Canvas overlay, runs only while visible.
 const RED="#e8423f",ARW=(()=>{const c=document.createElement("canvas");c.className="arw";map.createPane("arwp").style.zIndex=450;map.getPane("arwp").appendChild(c);const nt=document.createElement("div");nt.className="arwnote";nt.textContent="Red arrows: trips from Russian oil ports to each buyer, along common sea lanes";map.getContainer().appendChild(nt);const x=c.getContext("2d");
  const rm=matchMedia("(prefers-reduced-motion: reduce)");let R=null,M=1,P=[],vis=true,raf=0,t0=performance.now();
@@ -156,7 +232,8 @@ function fit(b){map.options.zoomSnap=.25;if(GF.phone())map.setMinZoom(1);map.inv
 // red gap dots blink only while chapter 5 is showing and the map is on screen (CSS opacity only; static under prefers-reduced-motion)
 let mapVis=true;const blinkSet=()=>map.getContainer().classList.toggle("gapblink",mode==="story"&&CH[cur].k==="dark"&&mapVis&&!document.hidden);
 new IntersectionObserver(e=>{mapVis=e[0].isIntersecting;blinkSet()}).observe(map.getContainer());document.addEventListener("visibilitychange",blinkSet);
-function go(i){cur=Math.max(0,Math.min(CH.length-1,i));lay.clearLayers();ARW.set(null);hideRaw();baseOn();{const b=CH[cur].d();CH[cur].view?CH[cur].view():fit(b)}
+function go(i){cur=Math.max(0,Math.min(CH.length-1,i));const hubOn=!!CH[cur].hub;document.body.classList.toggle("hubon",hubOn);lay.clearLayers();ARW.set(null);hideRaw();labels(null);
+ if(hubOn){HUB.innerHTML="";hubDraw()}else{baseOn();labels(CH[cur].lb?CH[cur].lb():null);{const b=CH[cur].d();CH[cur].view?CH[cur].view():fit(b)}}
  blinkSet();ctShow();cards.querySelectorAll(".chap").forEach((c,j)=>c.classList.toggle("on",j===cur));document.getElementById("cpos").textContent=`${cur+1} / ${CH.length}`;
  const el=cards.children[cur];if(GF.phone())cards.scrollTo({left:el.offsetLeft-cards.offsetLeft,behavior:"smooth"})}
 function step(i){go(i);if(!GF.phone())cards.children[cur].scrollIntoView({behavior:"smooth",block:"center"})}
@@ -165,7 +242,7 @@ const io=new IntersectionObserver(es=>{if(GF.phone()||mode!=="story")return;es.f
 cards.querySelectorAll(".chap").forEach((c,i)=>c.onclick=()=>go(i));
 let st;cards.addEventListener("scroll",()=>{if(!GF.phone())return;clearTimeout(st);st=setTimeout(()=>{const i=Math.round(cards.scrollLeft/cards.children[0].offsetWidth);if(i!==cur)go(i)},150)});
 const raw=document.getElementById("rawt");
-function explore(){blinkSet();ctShow();lay.clearLayers();ARW.set(null);baseOn();if(raw.checked){showRaw();return}hideRaw();const b=flows();hotspots();fit(b)}
+function explore(){document.body.classList.remove("hubon");blinkSet();ctShow();lay.clearLayers();ARW.set(null);baseOn();labels(LB(GF.LAND,["Russian Federation","China","India","Turkey","Brazil","Egypt"],["Kozmino","Novorossiysk","Primorsk"]));if(raw.checked){showRaw();return}hideRaw();const b=flows();hotspots();fit(b)}
 function setMode(m){mode=m;document.body.classList.toggle("story",m==="story");document.body.classList.toggle("explore",m!=="story");
  document.querySelectorAll("#modes button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===m));setTimeout(()=>map.invalidateSize(),0);m==="story"?go(cur):explore()}
 document.querySelectorAll("#modes button").forEach(b=>b.onclick=()=>setMode(b.dataset.m));

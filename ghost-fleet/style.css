@@ -148,9 +148,10 @@ body.story #map{height:min(62vh,620px)}
 @media(max-width:700px){body.story .chapters:has(.chap[data-ch="identity"].on){height:520px}}
 
 .wreg{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.wreg button{min-height:36px;padding:4px 10px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;font:inherit;font-size:13px;cursor:pointer}.wreg button span{color:var(--gold);font-weight:700;margin-left:4px}.wreg button[aria-pressed=true]{background:var(--gold);color:var(--bg);border-color:var(--gold)}.wreg button[aria-pressed=true] span{color:var(--bg)}
-@keyframes gapblink{0%,100%{opacity:1}50%{opacity:.08}}
-.gapblink path.gapdot{animation:gapblink 1.4s ease-in-out infinite}
-.gapblink path.gapdot.g1{animation-delay:-.23s}.gapblink path.gapdot.g2{animation-delay:-.47s}.gapblink path.gapdot.g3{animation-delay:-.7s}.gapblink path.gapdot.g4{animation-delay:-.93s}.gapblink path.gapdot.g5{animation-delay:-1.17s}
+/* transponder off: each red dot is fully on for 1.2 s, then fully off for 0.8 s (2 s cycle); the stagger is slight so they still read as one fleet going dark */
+@keyframes gapblink{0%,59.9%{opacity:1}60%,99.9%{opacity:0}100%{opacity:1}}
+.gapblink path.gapdot{animation:gapblink 2s step-end infinite}
+.gapblink path.gapdot.g1{animation-delay:-.1s}.gapblink path.gapdot.g2{animation-delay:-.2s}.gapblink path.gapdot.g3{animation-delay:-.3s}.gapblink path.gapdot.g4{animation-delay:-.4s}.gapblink path.gapdot.g5{animation-delay:-.5s}
 @media(prefers-reduced-motion:reduce){.gapblink path.gapdot{animation:none;opacity:1}}
 .ctog{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.ctog button{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 10px;background:var(--panel2);color:var(--text);border:2px solid var(--c);border-radius:6px;font:inherit;font-size:13px;cursor:pointer}
 .ctog button i{width:16px;height:16px;border-radius:50%;box-sizing:border-box;border:2px solid var(--c);background:var(--c);flex:none;position:relative}
@@ -160,3 +161,20 @@ body.story #map{height:min(62vh,620px)}
 @media(max-width:700px){body.story #ctogbar:not([hidden]){display:block;margin:0 0 8px}#ctogbar .ctog{margin:0}}
 
 .sources{margin:18px auto 24px;max-width:1100px;padding:8px 14px;background:var(--panel);border:1px solid var(--line);border-radius:8px}.sources summary{cursor:pointer;font-weight:600;color:var(--gold);min-height:32px;line-height:32px}.sources[open]{border-color:var(--gold)}.sources ol{margin:6px 0 4px;padding-left:26px;font-size:14px;color:var(--text)}.sources li{margin:4px 0}.sources a{color:var(--gold)}a.sref{color:var(--gold);text-decoration:none;font-weight:600}
+
+/* place-name labels: plain light text, no box; thin sea-colour halo only */
+.plc{position:absolute;left:0;top:0;width:max-content;white-space:nowrap;pointer-events:none;font-size:13px;line-height:16px;font-weight:500;letter-spacing:.02em;color:rgba(255,255,255,.62);text-shadow:0 0 2px #0d1d36,0 0 3px #0d1d36}
+.plc.city{color:rgba(255,255,255,.65)}
+.plsv .plead,.plead{stroke:rgba(255,255,255,.5);stroke-width:1;fill:none}.pdot{fill:rgba(255,255,255,.65)}
+.shmap .plc{z-index:3}
+.shmap .plsv{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+/* chapter 4 hub-and-spoke graphic stands in for the map */
+#hub{display:none;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:8px;background:#0d1d36}
+body.hubon #map{display:none}body.hubon #hub{display:block}
+#hub svg{display:block}#hub .hn{cursor:pointer}#hub .hn:focus{outline:none}#hub .hn:hover .hd,#hub .hn:focus .hd{stroke:#f5f7fa;stroke-width:2.5}
+#hub .hl2{paint-order:stroke;stroke:#0d1d36;stroke-width:3px;stroke-linejoin:round}
+.hubtip{position:absolute;z-index:3;max-width:calc(100% - 12px);background:#0b1526f2;border:1px solid var(--gold);border-radius:6px;padding:4px 8px;font-size:13px;line-height:1.3;color:var(--text);pointer-events:none}.hubtip[hidden]{display:none}
+.hubnote{position:absolute;left:10px;right:10px;bottom:6px;margin:0;font-size:13px;line-height:1.3;color:var(--muted)}
+#hub{height:62vh;min-height:420px}
+@media(max-width:700px){#hub{height:55vh;min-height:340px}body.story #hub{height:52vh}body.story #hub{height:calc(100svh - min(36svh,320px) - 120px);min-height:340px}}
+@media(min-width:701px){body.story #hub{position:sticky;top:10px;height:calc(100vh - 20px);margin:0}}
