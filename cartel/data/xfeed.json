@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-30T01:04:50Z",
+ "as_of": "2026-10-30T10:02:11Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,126 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2116007181929902258",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2116007181929902258",
+   "created_at": "2026-10-30T03:20:00.000Z",
+   "text": "Bloqueos y balaceras en Matamoros dejan una niña sin vida; su madre y rescatista resultan heridos La jornada de violencia afectó diferentes sectores de Matamoros, luego de un operativo de autoridades federales en el que fue detenido un presunto objetivo prioritario.",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Blockades and shootouts in Matamoros leave a girl dead; her mother and a rescuer are wounded. The day of violence affected different parts of Matamoros, after an operation by federal authorities in which an alleged priority target was detained."
+  },
+  {
+   "id": "2116002152720302204",
+   "handle": "Pajaropolitico",
+   "url": "https://x.com/Pajaropolitico/status/2116002152720302204",
+   "created_at": "2026-10-30T03:00:01.000Z",
+   "text": "#HoyEnAnimal 29 de octubre: México despide a Cuauhtémoc Cárdenas, Sheinbaum propone que Talleres Gráficos produzca más material electoral y detienen a una funcionaria de Uruapan por presunto encubrimiento en el caso Carlos Manzo. @gonzalovdeicaza te cuenta. #CuauhtémocCárdenas h…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "#HoyEnAnimal October 29: Mexico bids farewell to Cuauhtémoc Cárdenas, Sheinbaum proposes that Talleres Gráficos produce more electoral material, and a Uruapan official is detained for alleged cover-up in the Carlos Manzo case. @gonzalovdeicaza tells you more. #CuauhtémocCárdenas…"
+  },
+  {
+   "id": "2115996827229016177",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2115996827229016177",
+   "created_at": "2026-10-30T02:38:51.000Z",
+   "text": "➡️ Localizan con vida a turistas del Estado de México que habían desaparecido en Capomos, Angostura #ÚltimaHora 🚨🚔| Localizan con vida a turistas del Estado de México, Noé García Vargas y José Luis Amador Rosas, reportados desaparecidos el pasado 21 de octubre en Capomos, https:…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Tourists from the State of Mexico who had disappeared in Capomos, Angostura, are found alive #BreakingNews | Tourists from the State of Mexico, Noé García Vargas and José Luis Amador Rosas, reported missing on October 21 in Capomos,…"
+  },
+  {
+   "id": "2115996806119121407",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2115996806119121407",
+   "created_at": "2026-10-30T02:38:46.000Z",
+   "text": "El detenido, identificado como Axel Alfredo Cárdenas Rodríguez, resultó ser hijo de “El Contador” y sobrino nieto de Osiel Cárdenas Guillén, fundador del Cártel del Golfo y de Los Zetas https://t.co/ZSsjOyRSy1 https://t.co/bJrZHzvHB9",
+   "lang": "und",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "gulf",
+    "cdn"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "The detainee, identified as Axel Alfredo Cárdenas Rodríguez, turned out to be the son of \"El Contador\" and the great-nephew of Osiel Cárdenas Guillén, founder of the Gulf Cartel and Los Zetas."
+  },
+  {
+   "id": "2115994792165351472",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2115994792165351472",
+   "created_at": "2026-10-30T02:30:46.000Z",
+   "text": "La acusación es la séptima en el caso del túnel, donde se decomisó más de una tonelada de cocaína https://t.co/yHtZSpFkjE",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The indictment is the seventh in the tunnel case, in which more than a tonne of cocaine was seized"
+  },
+  {
+   "id": "2115975417014169762",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2115975417014169762",
+   "created_at": "2026-10-30T01:13:46.000Z",
+   "text": "La extradición de ocho procesados a Estados Unidos da pistas sobre una estrategia que apunta a una red transnacional que unía a la cúpula de Los Choneros, a proveedores de cocaína de las FARC, a lavadores de criptomonedas y a nexos estatales en Ecuador. https://t.co/SYZrVKJ7wI h…",
+   "lang": "es",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "choneros"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "The extradition of eight defendants to the United States offers clues to a strategy aimed at a transnational network linking the Los Choneros leadership, FARC cocaine suppliers, cryptocurrency launderers and state ties in Ecuador.…"
+  },
+  {
+   "id": "2115974465980961268",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2115974465980961268",
+   "created_at": "2026-10-30T01:10:00.000Z",
+   "text": "#Patricio fue detenido en la carretera México 15, #Escuinapa-#Mazatlán, en el entronque del Libramiento a Chilillos, #Rosario con un arma de fuego tipo fusil, 107 cartuchos, cuatro cargadores, siete casquillos y 80 bolsitas con seis gramos 500 miligramos de clorhidrato de",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "#Patricio was detained on the México 15 highway, #Escuinapa-#Mazatlán, at the junction with the Chilillos bypass, #Rosario, with a rifle-type firearm, 107 cartridges, four magazines, seven shell casings and 80 small bags with six grams 500 milligrams of hydrochloride of"
+  },
   {
    "id": "2115957856688357489",
    "handle": "Riodoce_mx",
@@ -3849,187 +3969,6 @@
    "source_type": "regional outlet",
    "label": null,
    "text_en": "In the Altamira development, a two-storey building that appeared to be a residential project was left unfinished. It belonged to Alex Saab's circle. A faded DGCIM sign now hangs on the facade"
-  },
-  {
-   "id": "2113508214939460033",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2113508214939460033",
-   "created_at": "2026-10-23T05:50:00.000Z",
-   "text": "En una entrevista con Latinus, la gobernadora de Chihuahua reveló que durante la reunión privada con la presidenta acusó a la dirigente nacional de Morena, Ariadna Montiel, de estar vinculada con el crimen organizado. https://t.co/XV68BrfZbF",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2709"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "In an interview with Latinus, the Chihuahua governor revealed that during her private meeting with the president she accused Morena's national leader, Ariadna Montiel, of being linked to organised crime."
-  },
-  {
-   "id": "2113490598913069079",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2113490598913069079",
-   "created_at": "2026-10-23T04:40:00.000Z",
-   "text": "EU lanza acusación contra “El Tanque”, operador regional del CJNG Ante la posibilidad de una extradición, “El Tanque” promovió un amparo ante un juzgado federal para intentar que la justicia mexicana lo protegiera; pero la solicitud fue desechada. https://t.co/tkS9tTnc3h",
-   "lang": "es",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "US indicts \"El Tanque\", regional CJNG operator. Facing possible extradition, \"El Tanque\" sought an amparo (injunction) from a federal court to be protected by Mexican courts, but the request was dismissed."
-  },
-  {
-   "id": "2113480553957646670",
-   "handle": "Pajaropolitico",
-   "url": "https://x.com/Pajaropolitico/status/2113480553957646670",
-   "created_at": "2026-10-23T04:00:05.000Z",
-   "text": "🚨 Un gran jurado federal de Columbia acusó formalmente a Iván Cazarín Molina, “El Tanque”, presunto operador regional del CJNG en Veracruz, por narcotráfico y armas. Enfrenta de 40 años de cárcel a dos cadenas perpetuas. https://t.co/Z20gRlWXuX",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2734"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "🚨 A federal grand jury in Columbia formally indicted Iván Cazarín Molina, \"El Tanque\", alleged regional CJNG operator in Veracruz, on drug-trafficking and weapons charges. He faces from 40 years in prison to two life sentences."
-  },
-  {
-   "id": "2113475499368575472",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2113475499368575472",
-   "created_at": "2026-10-23T03:40:00.000Z",
-   "text": "Oposición en CDMX pone en el banquillo la estrategia contra despojo y extorsión Pablo Vázquez omite en su comparecencia en el Congreso el balance de la lucha contra la crisis de invasiones. https://t.co/8x3HrJiCkN",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "CDMX opposition puts the strategy against dispossession and extortion in the dock. Pablo Vázquez left out of his appearance before Congress any assessment of the fight against the land-invasion crisis."
-  },
-  {
-   "id": "2113465437132644815",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2113465437132644815",
-   "created_at": "2026-10-23T03:00:01.000Z",
-   "text": "Orlando, alias “El Coco Ranas”, es identificado como líder de la célula delictiva “Los Ranas”, afín a la facción “Los Chapitos” del Cártel del Pacífico, y señalado como generador de violencia en la zona norte de #Culiacán, confirmó el #GabinetedeSeguridad.",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa",
-    "chapitos"
-   ],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "Orlando, alias \"El Coco Ranas\", is identified as leader of the criminal cell \"Los Ranas\", aligned with the \"Los Chapitos\" faction of the Pacific Cartel, and named as a violence generator in northern #Culiacán, the #SecurityCabinet confirmed."
-  },
-  {
-   "id": "2113457885846143297",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2113457885846143297",
-   "created_at": "2026-10-23T02:30:00.000Z",
-   "text": "Atacan a balazos un autobús con estudiantes de secundaria en Escuinapa, Sinaloa (Video) El ataque no iba dirigido a los adolescentes entre 12 y 17 años que iban en la unidad, sino al chofer, según las autoridades. https://t.co/bd4Mpuk745",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Bus carrying secondary-school students shot at in Escuinapa, Sinaloa (video). Authorities say the attack was aimed not at the 12- to 17-year-olds on board but at the driver."
-  },
-  {
-   "id": "2113453412666786297",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2113453412666786297",
-   "created_at": "2026-10-23T02:12:14.000Z",
-   "text": "🚔🚨| Destaca Gabinete de Seguridad de México la captura de Orlando “N”, alias “El Coco Ranas”, y tres personas más tras operativo en #Culiacán. 🔺 Al detenido se le identifica como líder de la célula delictiva “Los Ranas”, afín a la facción de “Los Chapitos” de Cártel del https://…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa",
-    "chapitos"
-   ],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "🚔🚨 Mexico's Security Cabinet highlights the capture of Orlando \"N\", alias \"El Coco Ranas\", and three others after an operation in #Culiacán. The detainee is identified as leader of the criminal cell \"Los Ranas\", aligned with the \"Los Chapitos\" faction of the Cartel…"
-  },
-  {
-   "id": "2113447247278920169",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2113447247278920169",
-   "created_at": "2026-10-23T01:47:44.000Z",
-   "text": "Trasladan a \"El Nenuco\", operador del Cártel de Sinaloa, a Baja California: debe responder por el asesinato de un agente en 2023 https://t.co/WjqOi32xVH",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2706",
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "\"El Nenuco\", Sinaloa Cartel operator, transferred to Baja California to answer for the 2023 murder of an officer"
-  },
-  {
-   "id": "2113446659715637377",
-   "handle": "ZETATijuana",
-   "url": "https://x.com/ZETATijuana/status/2113446659715637377",
-   "created_at": "2026-10-23T01:45:24.000Z",
-   "text": "La Zona Centro de Ensenada y de Tijuana, así como el fraccionamiento Natura en este último municipio, se encuentran entre las colonias con más llamadas de extorsión telefónica de Baja California. Lee más: https://t.co/QyOXpa8l7A https://t.co/5N9CXT4dJg",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "Downtown Ensenada and Tijuana, and the Natura subdivision in Tijuana, are among the neighbourhoods with the most telephone-extortion calls in Baja California."
-  },
-  {
-   "id": "2113437650669711693",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2113437650669711693",
-   "created_at": "2026-10-23T01:09:36.000Z",
-   "text": "🚨🚔| Vinculan a proceso a Jesús Abraham “N”, señalado como presunto responsable de un homicidio en un taller automotriz del sector La Lima, en Culiacán. La Fiscalía de Sinaloa informó que enfrenta cargos por homicidio calificado con ventaja. https://t.co/AkcADQ35iC",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "🚨🚔 Jesús Abraham \"N\" ordered to stand trial as the alleged perpetrator of a homicide at a car repair shop in the La Lima area of Culiacán. The Sinaloa Attorney General's Office said he faces aggravated homicide charges."
   }
  ]
 }
