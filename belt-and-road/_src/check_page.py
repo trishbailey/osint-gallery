@@ -39,15 +39,20 @@ with sync_playwright() as p:
     if subprocess.run([sys.executable,__file__.rsplit('/',1)[0]+'/build.py','--check'],capture_output=True).returncode: print("bare acronym gate FAILED");bad=1
     pg.goto(base+"#p=bri-luganville-wharf");pg.wait_for_function("window._ready");pg.wait_for_timeout(1200)
     op=pg.evaluate("()=>document.getElementById('panel').classList.contains('open')");t=pg.inner_text("#ptitle")
-    pg.click("#pbody sup a");pg.wait_for_timeout(300);srcopen=pg.evaluate("()=>document.getElementById('srcs').open")
+    srcopen=pg.evaluate("()=>{const a=[...document.querySelectorAll('#pbody .srcl a')];return a.length>0&&!document.querySelector('#pbody sup,#pbody details.srcs')&&a.every((x,i)=>x.textContent==='['+(i+1)+']'&&/^https?:/.test(x.href)&&x.target==='_blank'&&getComputedStyle(x).borderRadius==='0px')}")
     if pre: pg.screenshot(path=f"{pre}-panel.png")
     pl=pg.eval_on_selector_all("#pbody a.place","e=>e.length");pg.click("#pbody a.place");pg.wait_for_timeout(300);plh=pg.eval_on_selector_all("#map .land.hl","e=>e.length")
     print("panel place links",pl,"click highlights",plh)
     if not pl or not plh: bad=1
     pg.keyboard.press("Escape");pg.wait_for_timeout(400);cl=not pg.evaluate("()=>document.getElementById('panel').classList.contains('open')")
     gt=pg.evaluate("()=>[...document.scripts].map(s=>s.src||s.textContent).join(' ').match(/G-[A-Z0-9]+/g)")
-    print("panel open",op,t,"| sources expand",srcopen,"| esc closes",cl,"| GA",sorted(set(gt)),"| errors",errs)
+    print("panel open",op,t,"| numbered source links",srcopen,"| esc closes",cl,"| GA",sorted(set(gt)),"| errors",errs)
     if not(op and srcopen and cl) or errs: bad=1
+    # v1.3 Data Sources: one collapsed dropdown at the very bottom, per-project numbered lists, credits
+    ds=pg.evaluate("()=>{const d=document.getElementById('datasrc');const all=document.querySelectorAll('details#datasrc').length;const c=!d.open;const last=document.querySelector('main').lastElementChild===d;d.open=true;return new Promise(r=>setTimeout(()=>r({all,c,last,links:document.querySelectorAll('#dslist a.sn').length,items:document.querySelectorAll('#dslist li').length,txt:d.innerText}),300))}")
+    print("data sources: count",ds["all"],"collapsed",ds["c"],"last in main",ds["last"],"links",ds["links"],"items",ds["items"])
+    if ds["all"]!=1 or not ds["c"] or not ds["last"] or ds["links"]<136 or ds["items"]<130 or "Natural Earth" not in ds["txt"] or "flag-icons" not in ds["txt"]: bad=1
+    pg.evaluate("document.getElementById('datasrc').open=false")
     # v1.2 phone layout (390px): clustering, collapsed groups, filter bottom sheet, full-screen details, deep links
     m=b.new_page(viewport={"width":390,"height":844},device_scale_factor=2,is_mobile=True,has_touch=True);m.on("pageerror",lambda e:errs.append("mobile: "+str(e)))
     m.goto(base+"#region=all");m.wait_for_function("window._ready");m.wait_for_timeout(1200)
@@ -69,8 +74,11 @@ with sync_playwright() as p:
     if op1!=1 or not so or not inside or not (0<c1<c0) or not sc or not (0<c2<c0): bad=1
     if not m.eval_on_selector_all("details.grp[open]","e=>e.length"): m.click("details.grp summary");m.wait_for_timeout(200)
     m.click("details.grp[open] .pcard");m.wait_for_timeout(800);pw=m.evaluate("()=>{const p=document.getElementById('panel');return p.classList.contains('open')?p.getBoundingClientRect().width:0}")
-    hasq=m.evaluate("()=>/What China gets/i.test(document.getElementById('pbody').innerText)&&/Host country/i.test(document.getElementById('pbody').innerText)&&!!document.getElementById('srcs')")
+    hasq=m.evaluate("()=>/What China gets/i.test(document.getElementById('pbody').innerText)&&/Host country/i.test(document.getElementById('pbody').innerText)&&document.querySelectorAll('#pbody .srcl a.sn').length>0")
     if pre: m.screenshot(path=f"{pre}-m-details.png")
+    msl=m.evaluate("()=>({o:document.documentElement.scrollWidth>document.documentElement.clientWidth,n:document.querySelectorAll('#pbody .srcl a').length,w:Math.max(...[...document.querySelectorAll('#pbody .srcl a')].map(a=>a.getBoundingClientRect().right))})")
+    print("mobile details source links",msl)
+    if msl["o"] or not msl["n"] or msl["w"]>390: bad=1
     m.click("#showmap");m.wait_for_timeout(1500);ln=m.eval_on_selector_all("#map .lines path","e=>e.length");pc=not m.evaluate("()=>document.getElementById('panel').classList.contains('open')")
     print("details width",pw,"sections",hasq,"| show on map closes",pc,"line drawn",ln)
     if pw<385 or not hasq or not pc or not ln: bad=1
