@@ -86,11 +86,10 @@ def values():
     import recruit_inputs as RIY
     YV = {(y_["type"], y_["year"]): y_ for y_ in RIY.YEARLY}
     assert YV[("vol", 2023)]["value"] > YV[("vol", 2025)]["value"] and YV[("for", 2025)]["value"] > YV[("for", 2023)]["value"]
-    V["stream_label"] = RIY.STREAM_LABEL
-    V["stream_note_main"] = (f"Linear scale: the bar at the left is {n0(FL['stream']['main_bar'])} people recruited in a year, and each layer\u2019s thickness is its figure for that year. "
-                             "Hover or tap a year for exact values and sources. 2026 is part-year: contract soldiers cover January to June, foreigners January to September.")
-    V["stream_note_niche"] = (f"Its own, finer scale: the bar at the left is {n0(FL['stream']['niche_bar'])} people, against {n0(FL['stream']['main_bar'])} on the main chart, so thickness here is not comparable with the main chart. "
-                              "~ marks a yearly share of one total.")
+    V["ridge_label"] = RIY.RIDGE_LABEL
+    V["ridge_note"] = ("Each row has its own scale: every row is linear from zero to the maximum printed beside its name, so heights are not comparable between rows. "
+                       "A filled curve joins only consecutive years that both have a sourced value. A glowing dot is a single year with no neighbour to join, and part-year points (2026) are never joined. "
+                       "Solid is the official claim or the single published figure; the dashed curve and lighter band are an independent estimate. Hover or tap a year for exact values and sources.")
     V["flow_skipped"] = FL["skipped"]; V["flow_notdrawn"] = FL["not_drawn"]
     import nk_inputs as NKI
     cnt = {s_: sum(1 for r in NKI.ROWS if r["status"] == s_) for s_ in NKI.STATUS}
@@ -130,16 +129,16 @@ def values():
         cites = "".join(f"[[{q_['src']}]]" for q_ in dict((q_["src"], q_) for q_ in y_["parts"]).values())
         cites += "".join(f"[[{a_}]]" for a_ in dict.fromkeys(a_ for a_, _ in y_["pq"]) if a_ not in cites)
         return f"{yr} {'~' if y_['alloc'] else ''}{n0(y_['value'])}{cites}"
-    names = {t_: nm_ for t_, nm_, _, _ in RIY.STREAM_LAYERS}
+    names = {t_: nm_ for t_, nm_, _, _ in RIY.RIDGE_ROWS}
     items = []
-    for t_, nm_, _, _ in RIY.STREAM_LAYERS:
+    for t_, nm_, _, _ in RIY.RIDGE_ROWS:
         ctx = " ".join(f"{yr}: {c_}." for yr in RIY.YEARS for c_ in YV[(t_, yr)]["ctx"])
         cx_ = {"vol": "[[isw_istories23]][[istories_407]]", "mob": "[[dw_mz527]]", "for": "[[occrp_foreign]]", "nk": "[[yonhap_nis]]", "pri": ""}[t_]
         items.append(f"<li><b>{nm_}:</b> " + "; ".join(cell(t_, yr) for yr in RIY.YEARS) + f". {ctx}{cx_}</li>")
-    V["stream_table"] = "<ul class=\"yrlist\">" + "".join(items) + "</ul>"
-    V["stream_how"] = ("Every layer is one estimate per calendar year, taken from the source numbered next to it; the sources differ, so the layers are stacked estimates, not an official total, and the stack\u2019s height is not a headcount. "
-                       "The scale is linear from zero. A year with no source is a gap: the layer has no height, the strip under the chart shows a hatched \u201cno data\u201d cell, and nothing is interpolated or carried over from another year. "
-                       "Contract soldiers and volunteers are official claims, so they may be inflated; independent budget-data estimates are lower and are listed beside them. 2026 is part-year. "
+    V["ridge_table"] = "<ul class=\"yrlist\">" + "".join(items) + "</ul>"
+    V["ridge_how"] = ("Every row is one estimate per calendar year, taken from the source numbered next to it; the sources differ, so the rows are separate estimates that do not add up to an official total. "
+                       "Each row has its own linear scale from zero. A year with no source is a gap: it is left empty and marked \u201cno data\u201d, and nothing is interpolated or carried over from another year. "
+                       "Contract soldiers and volunteers are official claims, so they may be inflated; independent budget-data estimates are lower and are drawn as a dashed curve with a lighter band (a range for 2024). Mediazona\u2019s later estimate of the 2022 mobilisation is a hollow ring. 2026 is part-year, so it is shown as a dot and not joined. "
                        "<b>Allocation method.</b> Wagner\u2019s total of at least 48,366 prisoners covers 1 July 2022 to 7 February 2023, 222 days.[[ng_wagner]][[meduza_wagner]] "
                        f"At an even pace, 184 days fall in 2022 ({n0(YV[('pri', 2022)]['value'])}) and 38 in 2023 ({n0(YV[('pri', 2023)]['value'] - 28200)}), which is an allocation, not a count; Wagner\u2019s real pace was uneven. "
                        "Storm Z\u2019s 28,200 (iStories\u2019 lower bound; the range runs to 29,000)[[istories]] is all placed in 2023 and leaves out the first wave. The prisoners layer for 2023 is the sum. "

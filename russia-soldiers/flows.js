@@ -96,53 +96,84 @@ function legend(){
  document.querySelectorAll('.fchip').forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.k)})});
 }
 
-/* Recruits per year as a STREAMGRAPH, same recipe as the first chart on the China diplomats page: d3.stack with the wiggle offset and inside-out
-   order, basis curve, 0.9 fill, dark outline, a bottom year axis and no y axis. Because a streamgraph has no y axis, each chart draws a scale bar
-   (LINEAR, from zero) and a strip under it that prints every yearly value. A year with no source is a gap: the layer has zero height, the strip cell is
-   hatched "no data", and the hover says why. Nothing is interpolated or carried over. The main chart is true to scale; the companion chart shows
-   only the three small groups on its own, finer scale. */
+/* Recruits per year as a RIDGELINE of small multiples: one filled-curve row per recruit type, a shared year axis, and EACH ROW ON ITS OWN LINEAR SCALE
+   from zero. A smooth filled curve (curveMonotoneX) joins only consecutive years that both have a sourced value; a lone year is a glowing dot with
+   its label; part-year points (2026) are never joined; a year with no source is left empty with a faint "no data". Official or single published
+   figures are the solid line and fill; an independent estimate is a dashed curve with a lighter band (a hollow ring when it is one year). The curves
+   draw in once as the chart scrolls into view (no Play button). Hover or tap a year column for exact values and sources. */
 function shortN(v){return v>=1e5?Math.round(v/1000)+'k':v>=1e4?(Math.round(v/100)/10).toString().replace(/\.0$/,'')+'k':fmt(v)}
-function series(){stream('#streamMain','main');stream('#streamNiche','niche')}
-function stream(sel,which){
- var el=$(sel);if(!el||!F.stream)return;var S=F.stream,w=el.clientWidth;if(!w)return;
- var L=S.layers.filter(function(l){return which==='main'||l.niche}),n=S.years.length,N=w<520,lw=N?90:130,rr=8,top=8,axh=26,rowh=N?38:32;
- var plotH=which==='main'?(N?210:290):(N?170:210),H=top+plotH+axh+L.length*rowh+4,cw=(w-lw-rr)/n;
- var cx=function(i){return lw+cw*(i+.5)};
- var rows=S.years.map(function(y,i){var o={i:i};L.forEach(function(l){o[l.id]=l.vals[i]==null?0:l.vals[i]});return o});
- var stk=d3.stack().keys(L.map(function(l){return l.id})).offset(d3.stackOffsetWiggle).order(d3.stackOrderInsideOut)(rows);
- var lo=d3.min(stk,function(s){return d3.min(s,function(d){return d[0]})}),hi=d3.max(stk,function(s){return d3.max(s,function(d){return d[1]})});
- var y=d3.scaleLinear().domain([lo,hi]).range([top+plotH,top]),x=d3.scaleLinear().domain([0,n-1]).range([cx(0),cx(n-1)]);
- var col={};L.forEach(function(l){col[l.id]=l.color});
+var RIDGE_PLAYED=false,RIDGE_IO=null;
+function series(){ridge('#ridge')}
+function ridge(sel){
+ var el=$(sel);if(!el||!F.ridge)return;var S=F.ridge,w=el.clientWidth;if(!w)return;
+ var n=S.years.length,N=w<520,padX=N?36:46,topR=N?58:42,rowH=N?136:124,axh=28,H=S.rows.length*rowH+axh+4,cw=(w-2*padX)/(n-1);
+ var cx=function(i){return padX+cw*i};
  el.innerHTML='';var leg=document.createElement('ul');leg.className='tslegend';
- if(which==='main'){L.forEach(function(l){var li=document.createElement('li');li.innerHTML='<svg width="14" height="14" aria-hidden="true"><rect width="14" height="14" rx="3" fill="'+l.color+'"/></svg>'+esc(l.name);leg.appendChild(li)});
-  var g=document.createElement('li');g.innerHTML='<svg width="14" height="14" aria-hidden="true"><rect x=".5" y=".5" width="13" height="13" rx="3" fill="url(#hatch'+which+')" stroke="#8fa0bf" stroke-dasharray="3 2"/></svg>no data: nothing is drawn';leg.appendChild(g);
-  var a=document.createElement('li');a.innerHTML='<b>~</b> an allocation of one total across two years';leg.appendChild(a);el.appendChild(leg)}
+ [['<svg viewBox="0 0 26 14" aria-hidden="true"><path d="M1 12 C8 12 10 3 25 3 L25 13 L1 13Z" fill="#8fa0bf" fill-opacity=".35"/><path d="M1 12 C8 12 10 3 25 3" fill="none" stroke="#cfd8ea" stroke-width="2"/></svg>','Filled curve: consecutive years with sourced values'],
+  ['<svg viewBox="0 0 26 14" aria-hidden="true"><circle cx="13" cy="7" r="6" fill="#cfd8ea" opacity=".3"/><circle cx="13" cy="7" r="3.5" fill="#cfd8ea"/></svg>','Glowing dot: one year, not joined'],
+  ['<svg viewBox="0 0 26 14" aria-hidden="true"><path d="M1 11 C8 11 10 6 25 6" fill="none" stroke="#cfd8ea" stroke-width="2" stroke-dasharray="4 3"/></svg>','Dashed curve and band: independent estimate'],
+  ['<span class="nodk" aria-hidden="true">no data</span>','Faint text: no source for that year']
+ ].forEach(function(a){var li=document.createElement('li');li.innerHTML=a[0]+a[1];leg.appendChild(li)});el.appendChild(leg);
  var svg=d3.select(el).append('svg').attr('viewBox','0 0 '+w+' '+H).attr('width','100%').attr('role','img')
-  .attr('aria-label',(which==='main'?'Streamgraph of recruits per year by type, true scale. ':'Streamgraph of the three smaller groups per year, on a finer scale. ')+'Hover or tap a year for exact values.');
- svg.append('defs').append('pattern').attr('id','hatch'+which).attr('width',6).attr('height',6).attr('patternUnits','userSpaceOnUse').attr('patternTransform','rotate(45)')
-  .append('line').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',6).attr('stroke','#8fa0bf').attr('stroke-width',2).attr('opacity',.55);
- var area=d3.area().curve(d3.curveBasis).x(function(d,i){return x(i)}).y0(function(d){return y(d[0])}).y1(function(d){return y(d[1])});
- svg.append('g').selectAll('path').data(stk).enter().append('path').attr('class','stl').attr('d',area).attr('fill',function(s){return col[s.key]}).attr('fill-opacity',.9).attr('stroke','#0b1526').attr('stroke-width',.6);
- var bar=which==='main'?S.main_bar:S.niche_bar,bl=bar*plotH/(hi-lo),g=svg.append('g').attr('class','sbar');
- g.append('line').attr('x1',8).attr('x2',8).attr('y1',top).attr('y2',top+bl).attr('stroke','#e9eef7').attr('stroke-width',2);
- g.append('line').attr('x1',4).attr('x2',12).attr('y1',top).attr('y2',top).attr('stroke','#e9eef7').attr('stroke-width',2);g.append('line').attr('x1',4).attr('x2',12).attr('y1',top+bl).attr('y2',top+bl).attr('stroke','#e9eef7').attr('stroke-width',2);
- g.append('text').attr('x',17).attr('y',top+Math.max(14,bl/2-2)).text(fmt(bar));g.append('text').attr('x',17).attr('y',top+Math.max(14,bl/2-2)+15).attr('class','muted').text('people');
- var ay=top+plotH+axh-9;svg.append('g').selectAll('text').data(S.years).enter().append('text').attr('x',function(d,i){return cx(i)}).attr('y',ay).attr('text-anchor','middle').attr('class','tick').text(function(d){return d});
- svg.append('line').attr('x1',lw).attr('x2',w-rr).attr('y1',top+plotH+4).attr('y2',top+plotH+4).attr('stroke','#2a3b5e');
- var sy=top+plotH+axh;
- L.forEach(function(l,r){var yy=sy+r*rowh;
-  svg.append('rect').attr('x',2).attr('y',yy+9).attr('width',12).attr('height',12).attr('rx',3).attr('fill',l.color);
-  svg.append('text').attr('x',20).attr('y',yy+20).attr('class','tslab').text(l.short);
-  S.years.forEach(function(yr,i){var v=l.vals[i],gx=lw+cw*i+2,gw=cw-4;
-   if(v==null){svg.append('rect').attr('x',gx).attr('y',yy+3).attr('width',gw).attr('height',rowh-6).attr('rx',4).attr('fill','url(#hatch'+which+')').attr('stroke','#8fa0bf').attr('stroke-dasharray','3 2');
-    var nt=svg.append('text').attr('x',gx+gw/2).attr('text-anchor','middle').attr('class','muted nod');
-    if(N){nt.attr('y',yy+rowh/2-1).text('no');nt.append('tspan').attr('x',gx+gw/2).attr('dy',14).text('data')}else nt.attr('y',yy+rowh/2+4).text('no data')}
-   else{svg.append('rect').attr('x',gx).attr('y',yy+3).attr('width',gw).attr('height',rowh-6).attr('rx',4).attr('fill',l.color).attr('fill-opacity',.22).attr('stroke',l.color);
-    svg.append('text').attr('x',gx+gw/2).attr('y',yy+rowh/2+4).attr('text-anchor','middle').attr('class','cellv').text((l.alloc&&l.alloc[i]?'~':'')+shortN(v))}})});
- var cur=svg.append('line').attr('class','scur').attr('y1',top).attr('y2',H).attr('stroke','#e9eef7').attr('stroke-width',1).attr('stroke-dasharray','3 3').style('display','none');
- svg.append('g').selectAll('rect').data(S.years).enter().append('rect').attr('class','tshit').attr('x',function(d,i){return lw+cw*i}).attr('y',0).attr('width',cw).attr('height',H).attr('fill','transparent')
-  .attr('tabindex',0).attr('data-tip',function(d,i){return S.tips[which][i]}).attr('aria-label',function(d,i){return S.tips[which][i].replace(/<[^>]+>/g,' ')})
+  .attr('aria-label','Recruits per year by type, one row per type, each row on its own scale. Hover or tap a year for exact values and sources.');
+ var defs=svg.append('defs');
+ var glow=defs.append('filter').attr('id','rglow').attr('x','-100%').attr('y','-100%').attr('width','300%').attr('height','300%');
+ glow.append('feGaussianBlur').attr('stdDeviation',4).attr('result','b');var mg=glow.append('feMerge');mg.append('feMergeNode').attr('in','b');mg.append('feMergeNode').attr('in','SourceGraphic');
+ svg.append('g').selectAll('line').data(S.years).enter().append('line').attr('x1',function(d,i){return cx(i)}).attr('x2',function(d,i){return cx(i)}).attr('y1',2).attr('y2',H-axh).attr('stroke','#22335a').attr('stroke-dasharray','2 4');
+ var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches,anim=[],fades=[];
+ S.rows.forEach(function(r,ri){
+  var y0=ri*rowH,base=y0+rowH-8,tp=y0+topR,mx=d3.max(r.vals.concat(r.indep.map(function(q){return q.high})).filter(function(v){return v!=null}));
+  var y=d3.scaleLinear().domain([0,mx]).nice().range([base,tp]),dm=y.domain()[1],id='rg'+ri;
+  var g=svg.append('g').attr('class','ridgerow');
+  var gr=defs.append('linearGradient').attr('id',id+'g').attr('x1',0).attr('x2',0).attr('y1',0).attr('y2',1);
+  gr.append('stop').attr('offset','0%').attr('stop-color',r.color).attr('stop-opacity',.62);gr.append('stop').attr('offset','100%').attr('stop-color',r.color).attr('stop-opacity',.04);
+  var cp=defs.append('clipPath').attr('id',id+'c').append('rect').attr('x',0).attr('y',y0).attr('height',rowH).attr('width',0);
+  g.append('line').attr('x1',padX-14).attr('x2',w-padX+14).attr('y1',base).attr('y2',base).attr('stroke','#2a3b5e');
+  g.append('text').attr('x',2).attr('y',y0+16).attr('class','rtitle').text(r.title);
+  var sc=N?g.append('text').attr('class','rscale').attr('x',2).attr('y',y0+32).text('scale: 0 to '+shortN(dm)):g.select('.rtitle').append('tspan').attr('class','rscale').attr('dx',10).text('scale: 0 to '+shortN(dm));
+  var run=[],runs=[];r.vals.forEach(function(v,i){if(v!=null&&!r.part[i])run.push(i);else{if(run.length)runs.push(run);run=[]}});if(run.length)runs.push(run);
+  var ca=g.append('g').attr('clip-path','url(#'+id+'c)');
+  // independent estimate: lighter band between low and high, dashed curve through the low values (only between consecutive years)
+  var ii=r.indep.filter(function(q){return !r.part[q.year-S.years[0]]}),iruns=[],ir=[];
+  ii.forEach(function(q,k){if(ir.length&&q.year===ir[ir.length-1].year+1)ir.push(q);else{if(ir.length)iruns.push(ir);ir=[q]}});if(ir.length)iruns.push(ir);
+  iruns.forEach(function(q){if(q.length<2)return;
+   ca.append('path').attr('d',d3.area().curve(d3.curveMonotoneX).x(function(d){return cx(d.year-S.years[0])}).y0(function(d){return y(d.low)}).y1(function(d){return y(d.high)})(q)).attr('fill',r.color).attr('fill-opacity',.22);
+   ca.append('path').attr('d',d3.line().curve(d3.curveMonotoneX).x(function(d){return cx(d.year-S.years[0])}).y(function(d){return y(d.low)})(q)).attr('fill','none').attr('stroke','#cfd8ea').attr('stroke-width',2).attr('stroke-dasharray','6 4').attr('opacity',.9)});
+  runs.forEach(function(rn){if(rn.length<2)return;var pts=rn.map(function(i){return [i,r.vals[i]]});
+   ca.append('path').attr('d',d3.area().curve(d3.curveMonotoneX).x(function(d){return cx(d[0])}).y0(base).y1(function(d){return y(d[1])})(pts)).attr('fill','url(#'+id+'g)');
+   ca.append('path').attr('d',d3.line().curve(d3.curveMonotoneX).x(function(d){return cx(d[0])}).y(function(d){return y(d[1])})(pts)).attr('fill','none').attr('stroke',r.color).attr('stroke-width',2.6).attr('stroke-linejoin','round')});
+  anim.push({cp:cp,d:ri*160});
+  var dots=g.append('g').attr('class','ridgedots');fades.push({g:dots,d:ri*160+700});
+  var lone=function(i){return !(runs.some(function(rn){return rn.length>1&&rn.indexOf(i)>=0}))};
+  r.vals.forEach(function(v,i){
+   if(v==null){dots.append('text').attr('x',cx(i)).attr('y',y0+topR+(base-tp)/2+4).attr('text-anchor','middle').attr('class','nod').text('no data');return}
+   var q=r.indep.filter(function(z){return z.year===S.years[i]})[0],up=!(q&&q.low>v),py=y(v);
+   if(r.part[i]){dots.append('circle').attr('cx',cx(i)).attr('cy',py).attr('r',5).attr('fill','#0b1526').attr('stroke',r.color).attr('stroke-width',2).attr('stroke-dasharray','3 2')}
+   else if(lone(i)){dots.append('circle').attr('cx',cx(i)).attr('cy',py).attr('r',8).attr('fill',r.color).attr('opacity',.55).attr('filter','url(#rglow)');dots.append('circle').attr('cx',cx(i)).attr('cy',py).attr('r',4.5).attr('fill',r.color).attr('stroke','#fff').attr('stroke-width',1.5)}
+   else dots.append('circle').attr('cx',cx(i)).attr('cy',py).attr('r',4).attr('fill',r.color).attr('stroke','#0b1526').attr('stroke-width',1.5);
+   dots.append('text').attr('x',cx(i)).attr('y',up?py-12:py+20).attr('text-anchor','middle').attr('class','rlab').text((r.alloc[i]?'~':'')+shortN(v));
+   if(r.part[i])dots.append('text').attr('x',cx(i)).attr('y',py+(up?20:34)).attr('text-anchor','middle').attr('class','rlab sub').text(r.part[i]);
+  });
+  r.indep.forEach(function(q){var i=q.year-S.years[0],single=q.low===q.high,pv=r.vals[i],above=pv!=null&&q.low>pv,py=y(single?q.low:(above?q.high:q.low));
+   if(single&&iruns.every(function(z){return z.indexOf(q)<0||z.length<2})){dots.append('circle').attr('cx',cx(i)).attr('cy',py).attr('r',5.5).attr('fill','#0b1526').attr('stroke','#cfd8ea').attr('stroke-width',2).attr('stroke-dasharray','3 2')}
+   else if(!single)dots.append('circle').attr('cx',cx(i)).attr('cy',y(q.low)).attr('r',3.2).attr('fill','#cfd8ea');
+   if(single&&iruns.some(function(z){return z.indexOf(q)>=0&&z.length>1}))dots.append('circle').attr('cx',cx(i)).attr('cy',py).attr('r',3.2).attr('fill','#cfd8ea');
+   dots.append('text').attr('x',cx(i)).attr('y',above?py-10:py+20).attr('text-anchor','middle').attr('class','rlab ind').text(single?shortN(q.low):shortN(q.low)+' to '+shortN(q.high))});
+ });
+ var ay=H-axh+18;svg.append('g').selectAll('text').data(S.years).enter().append('text').attr('x',function(d,i){return cx(i)}).attr('y',ay).attr('text-anchor','middle').attr('class','tick').text(function(d){return d});
+ var cur=svg.append('line').attr('class','scur').attr('y1',2).attr('y2',H-axh).attr('stroke','#e9eef7').attr('stroke-width',1).attr('stroke-dasharray','3 3').style('display','none');
+ svg.append('g').selectAll('rect').data(S.years).enter().append('rect').attr('class','tshit').attr('x',function(d,i){return cx(i)-cw/2}).attr('y',0).attr('width',cw).attr('height',H).attr('fill','transparent')
+  .attr('tabindex',0).attr('data-tip',function(d,i){return S.tips[i]}).attr('aria-label',function(d,i){return S.tips[i].replace(/<[^>]+>/g,' ')})
   .on('mouseenter focus',function(d,i){cur.attr('x1',cx(i)).attr('x2',cx(i)).style('display',null)}).on('mouseleave blur',function(){cur.style('display','none')});
+ var show=function(){anim.forEach(function(a){a.cp.attr('width',w)});fades.forEach(function(f){f.g.style('opacity',1)})};
+ var play=function(){RIDGE_PLAYED=true;
+  anim.forEach(function(a){a.cp.transition().delay(a.d).duration(1500).ease(d3.easeCubicOut).attr('width',w)});
+  fades.forEach(function(f){f.g.transition().delay(f.d).duration(700).style('opacity',1)})};
+ if(RIDGE_PLAYED||reduce){show();return}
+ fades.forEach(function(f){f.g.style('opacity',0)});
+ if(!('IntersectionObserver' in window)){play();return}
+ if(RIDGE_IO)RIDGE_IO.disconnect();
+ RIDGE_IO=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){RIDGE_IO.disconnect();RIDGE_IO=null;play()}},{threshold:.2});RIDGE_IO.observe(el);
 }
 function bars(){
  var el=$('#flowbars');if(!el)return;var mx=d3.max(F.bars,function(b){return b.n});

@@ -67,18 +67,17 @@ with sync_playwright() as pw:
                 if page.is_visible("#tip") and "recruited" in page.inner_text("#tip"): got_tip = True; print(tag, "arrow tooltip:", page.inner_text("#tip").replace("\n", " | ")[:150]); break
         assert got_tip, "no arrow tooltip"
         shot(page, f"{tag}-09b-flow-strand-hover.png", full=False)
-        # yearly streamgraphs: main + companion, 5 hover columns each, hatched no-data cells, tooltip shows exact values, no horizontal overflow, stacked on phone
-        page.evaluate("document.querySelector('#streamMain').scrollIntoView({block:'center'})"); page.wait_for_timeout(300)
-        for sid_ in ("#streamMain", "#streamNiche"):
-            assert len(page.query_selector_all(sid_ + " .tshit")) == 5 and len(page.query_selector_all(sid_ + " path.stl")) in (5, 3), sid_
-        assert len(page.query_selector_all("#streamMain svg[role=img] rect[fill^='url(#hatch']")) == 12 and len(page.query_selector_all("#streamNiche svg[role=img] rect[fill^='url(#hatch']")) == 7
-        bm_, bn_ = page.evaluate("[...document.querySelectorAll('#streamMain,#streamNiche')].map(e=>e.getBoundingClientRect().toJSON())")
-        if mobile: assert bn_["y"] > bm_["y"] + bm_["height"] - 2, "streamgraphs must stack on phone"
-        else: assert abs(bn_["y"] - bm_["y"]) < 40, "streamgraphs sit side by side on desktop"
-        box_ = page.query_selector("#streamMain .tshit:nth-of-type(3)").bounding_box() if False else page.evaluate("(()=>{const r=document.querySelectorAll('#streamMain .tshit')[2].getBoundingClientRect();return [r.x+r.width/2,r.y+60]})()")
+        # yearly ridgeline: 5 rows, 5 hover columns, draws in on scroll (no Play button), curves only between consecutive sourced years, hover shows exact values
+        page.evaluate("document.querySelector('#ridge').scrollIntoView({block:'center'})"); page.wait_for_timeout(3800)
+        assert len(page.query_selector_all("#ridge .ridgerow")) == 5 and len(page.query_selector_all("#ridge .tshit")) == 5
+        assert page.evaluate("[...document.querySelectorAll('#ridge button')].length") == 0, "ridge has no Play button"
+        assert page.evaluate("document.querySelectorAll('#ridge .ridgerow')[0].querySelectorAll('path[fill^=\"url(\"]').length") == 1 and page.evaluate("document.querySelectorAll('#ridge .ridgerow')[4].querySelectorAll('path[fill^=\"url(\"]').length") == 0
+        assert page.evaluate("[...document.querySelectorAll('#ridge .nod')].length") == 12, "twelve empty years say no data"
+        assert page.evaluate("document.querySelector('#ridge svg').getBoundingClientRect().width <= document.documentElement.clientWidth + 1")
+        box_ = page.evaluate("(()=>{const r=document.querySelectorAll('#ridge .tshit')[2].getBoundingClientRect();return [r.x+r.width/2,r.y+40]})()")
         page.mouse.move(*box_); page.mouse.click(*box_) if mobile else None; page.wait_for_timeout(150)
-        tp_ = page.inner_text("#tip"); assert "490,000" in tp_ and "11,000" in tp_ and "no data" in tp_, tp_[:200]
-        shot(page, f"{tag}-09c-streamgraph-hover.png", full=False)
+        tp_ = page.inner_text("#tip"); assert "490,000" in tp_ and "11,000" in tp_ and "no data" in tp_ and "own scale" in tp_, tp_[:200]
+        shot(page, f"{tag}-09c-ridge-hover.png", full=False)
         nb = len(page.query_selector_all("#flowbars .brow")); print(tag, "named-dead bars", nb); assert nb == 4
         vals = page.evaluate("[...document.querySelectorAll('#flowbars .bv')].map(e=>parseInt(e.textContent.replace(/,/g,'')))"); assert vals == sorted(vals, reverse=True), vals
         page.evaluate("document.querySelector('#flowbars').scrollIntoView({block:'center'})"); page.wait_for_timeout(200)

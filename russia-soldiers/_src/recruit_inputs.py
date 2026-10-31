@@ -72,7 +72,7 @@ NOT_DRAWN = [
 BAR_FOREIGN = dict(n=3589, parts=(2304, 1285), quote="3,589")
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
-# YEARLY grid for the streamgraphs: one sourced estimate per recruit type per calendar year. A year with no source is a GAP (None): the stream has
+# YEARLY grid for the ridgeline (one row per type): one sourced estimate per recruit type per calendar year. A year with no source is a GAP (None): the stream has
 # zero height there, the strip under it is hatched "no data", and the hover says so. Nothing is invented, interpolated or carried over.
 # value = the published figure for that year (sum of its parts), or an ALLOCATION where one source covers months that straddle two years:
 #   Wagner: at least 48,366 prisoners from 1 Jul 2022 to 7 Feb 2023 (222 days). Split by days at an even pace: 184 days in 2022, 38 days in 2023.
@@ -111,7 +111,16 @@ YEARLY += [gap("nk", 2022, "No source gives a figure for this year."), gap("nk",
            yp("nk", 2024, 11000, [NK11], "Oct to Dec 2024", "an estimated 11,000 North Korean troops in Russia (Western officials, January 2025, via BBC)", ctx=["Later totals are cumulative: about 13,000 sent since Oct 2024 (South Korea's NIS, Sep 2025)"]),
            gap("nk", 2025, "No yearly figure: later estimates are cumulative (about 13,000 sent since Oct 2024, NIS; 11,000 to 14,000 in the Kursk campaign, BBC)."),
            gap("nk", 2026, "No yearly figure.")]
-STREAM_LAYERS = [("vol", "Contract and volunteers", "#e43d3c", "Contract"), ("mob", "Mobilised", "#2ec4b6", "Mobilised"), ("pri", "Prisoners (Wagner, Storm Z)", "#e8c547", "Prisoners"),
+RIDGE_ROWS = [("vol", "Contract and volunteers", "#e43d3c", "Contract"), ("mob", "Mobilised", "#2ec4b6", "Mobilised"), ("pri", "Prisoners (Wagner, Storm Z)", "#e8c547", "Prisoners"),
                  ("for", "Foreign nationals (incl. Central Asia)", "#4f9dff", "Foreign"), ("nk", "North Korea (troops)", "#b07cf0", "N. Korea")]
-STREAM_NICHE = ["pri", "for", "nk"]
-STREAM_LABEL = "Yearly estimates from different sources; layers are stacked estimates, not an official total."
+RIDGE_LABEL = "Yearly estimates from different sources; rows are separate estimates, not an official total."
+
+# Part-year points are never joined to the full years before them by a curve (a drop or rise would be an artefact of the shorter period).
+PART_YEAR = {("vol", 2026): "Jan to Jun", ("for", 2026): "Jan to Sep"}
+# Independent estimates, drawn beside the official or published line (dashed curve plus a lighter band between low and high).
+INDEP = [
+ dict(type="vol", year=2023, low=354400, high=354400, parts=[VOL_CONTEXT[0]], what="independent estimate from budget data (iStories)"),
+ dict(type="vol", year=2024, low=374200, high=407200, parts=[VOL_CONTEXT[1]], what="independent estimate from budget data (iStories): 374,200 to 407,200"),
+ dict(type="mob", year=2022, low=527703, high=527703, parts=[part("dw_mz527", "оценила число призванных в сентябре-октябре 2022 года россиян в 527 703 человека", ["527 703"], 527703, "at least 527,703 (Mediazona estimate from accelerated marriages, 2 Mar 2023)", "2023-03-02")], what="independent estimate (Mediazona)"),
+]
+RIDGE_TITLES = {"vol": "Contract and volunteers", "mob": "Mobilised", "pri": "Prisoners (Wagner, Storm Z)", "for": "Foreign (incl. Central Asia)", "nk": "North Korea (troops)"}

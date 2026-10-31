@@ -448,18 +448,18 @@ for k_, p_ in NKI.PLACES.items():
 for l_ in NKI.LINES: need(f"map line {l_['id']} uses a known row and places", l_["row"] in {r_["id"] for r_ in NKI.ROWS} and l_["frm"] in NKI.PLACES and l_["to"] in NKI.PLACES)
 for s_ in ("Documented: the treaty", "2,304 named by the BBC against 3,000 claimed by Ukraine"): has(s_, "NK verdict")
 need("NK verdict numbers are in the rows", any("29,488" in r_["fig"] for r_ in NKI.ROWS) and any("2,304" in r_["fig"] for r_ in NKI.ROWS))
-# ---- yearly streamgraphs (one estimate per type per year; gaps are explicit)
+# ---- yearly ridgeline (one estimate per type per year; gaps are explicit)
 import datetime as _dt
-ST = FL["stream"]
-need("stream: five types on a yearly grid 2022 to 2026", RI.YEARS == [2022, 2023, 2024, 2025, 2026] and [l_["id"] for l_ in ST["layers"]] == ["vol", "mob", "pri", "for", "nk"] and ST["years"] == RI.YEARS and len(RI.YEARLY) == 25)
-need("stream: exactly one entry per type per year", len({(y_["type"], y_["year"]) for y_ in RI.YEARLY}) == 25)
+ST = FL["ridge"]
+need("ridge: five types on a yearly grid 2022 to 2026", RI.YEARS == [2022, 2023, 2024, 2025, 2026] and [l_["id"] for l_ in ST["rows"]] == ["vol", "mob", "pri", "for", "nk"] and ST["years"] == RI.YEARS and len(RI.YEARLY) == 25)
+need("ridge: exactly one entry per type per year", len({(y_["type"], y_["year"]) for y_ in RI.YEARLY}) == 25)
 _wd = (_dt.date(2023, 2, 7) - _dt.date(2022, 7, 1)).days + 1
-need("stream: Wagner 1 Jul 2022 to 7 Feb 2023 is 222 days, 184 in 2022 and 38 in 2023", _wd == 222 == RI.WAG_DAYS["total"] and (_dt.date(2022, 12, 31) - _dt.date(2022, 7, 1)).days + 1 == 184 == RI.WAG_DAYS["y2022"] and (_dt.date(2023, 2, 7) - _dt.date(2023, 1, 1)).days + 1 == 38 == RI.WAG_DAYS["y2023"])
+need("ridge: Wagner 1 Jul 2022 to 7 Feb 2023 is 222 days, 184 in 2022 and 38 in 2023", _wd == 222 == RI.WAG_DAYS["total"] and (_dt.date(2022, 12, 31) - _dt.date(2022, 7, 1)).days + 1 == 184 == RI.WAG_DAYS["y2022"] and (_dt.date(2023, 2, 7) - _dt.date(2023, 1, 1)).days + 1 == 38 == RI.WAG_DAYS["y2023"])
 _w22 = round(48366 * 184 / 222); _w23 = 48366 - _w22
 for y_ in RI.YEARLY:
-    nm = f"stream {y_['type']} {y_['year']}"; li_ = next(l_ for l_ in ST["layers"] if l_["id"] == y_["type"]); v_ = li_["vals"][RI.YEARS.index(y_["year"])]
+    nm = f"ridge {y_['type']} {y_['year']}"; li_ = next(l_ for l_ in ST["rows"] if l_["id"] == y_["type"]); v_ = li_["vals"][RI.YEARS.index(y_["year"])]
     need(nm + " flows.json value equals the input (a gap stays null, never zero)", v_ == y_["value"] and (v_ is None or v_ > 0))
-    tip_ = ST["tips"]["main"][RI.YEARS.index(y_["year"])]
+    tip_ = ST["tips"][RI.YEARS.index(y_["year"])]
     if y_["value"] is None:
         need(nm + " is a gap: no parts, a reason is stated and the hover says no data", not y_["parts"] and len(y_["note"]) > 10 and "no data" in tip_ and y_["note"] in _html.unescape(tip_.replace("<br>", " ")).replace("&#x27;", "'"))
         continue
@@ -471,20 +471,29 @@ for y_ in RI.YEARLY:
     vals_ = [q_["value"] for q_ in y_["parts"]]
     if y_["type"] == "pri": need(nm + " is the Wagner share by days plus Storm Z", y_["value"] == (_w22 if y_["year"] == 2022 else _w23 + 28200) and y_["alloc"] is not None and sum(vals_) >= y_["value"])
     else: need(nm + " is the sum of its sourced parts", y_["value"] == sum(vals_) or (y_["type"] == "mob" and y_["value"] == 300000))
-need("stream: Wagner allocation adds back to the sourced total 48,366", _w22 + _w23 == 48366 and [y_["value"] for y_ in RI.YEARLY if y_["type"] == "pri" and y_["year"] == 2022] == [_w22])
-need("stream: official claims 2024 = 450,000 + 40,000 and 2025 = 422,704 + 32,000", [y_["value"] for y_ in RI.YEARLY if y_["type"] == "vol"][1:] == [540000, 490000, 454704, 200000])
-need("stream: foreign yearly counts are the LIGA figures 94, 4,067, 8,877, 16,085, 16,168", [y_["value"] for y_ in RI.YEARLY if y_["type"] == "for"] == [94, 4067, 8877, 16085, 16168])
-need("stream: North Korea has one yearly figure (2024, 11,000), cumulative figures are not split", [(y_["year"], y_["value"]) for y_ in RI.YEARLY if y_["type"] == "nk" and y_["value"]] == [(2024, 11000)])
-need("stream: companion chart holds only prisoners, foreign and North Korea", [l_["id"] for l_ in ST["layers"] if l_["niche"]] == ["pri", "for", "nk"] == RI.STREAM_NICHE and len(ST["tips"]["niche"]) == 5 and ST["main_bar"] == 100000 and ST["niche_bar"] == 10000)
-_js = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read(); _sj = _js[_js.index("function stream("):_js.index("function bars")]
-need("flows.js streamgraph: China recipe (stack, wiggle offset, inside-out order, basis curve, 0.9 fill, dark outline), linear scale, no log", "d3.stackOffsetWiggle" in _sj and "d3.stackOrderInsideOut" in _sj and "d3.curveBasis" in _sj and "'fill-opacity',.9" in _sj and "'#0b1526'" in _sj and "d3.scaleLinear().domain([lo,hi])" in _js and "d3.scaleLog" not in _js)
-need("flows.js streamgraph: a missing year is drawn as zero height plus a hatched no-data cell, never interpolated", "v==null" in _sj and "url(#hatch" in _sj and "'no data'" in _sj and "l.vals[i]==null?0:" in _sj)
-need("flows.js streamgraph: scale bar, year axis, no y axis, per-year hover with exact values", "class','sbar'" in _sj and "axisLeft" not in _js and "data-tip" in _sj and "S.tips[which]" in _sj)
-need("old filled charts and Play buttons are gone", "tsplay" not in _js and "CHARTS" not in _js and 'id="prists"' not in page and 'id="forts"' not in page and 'id="flowts"' not in page)
-need("stream: the chart label is the exact one-line text on the page", RI.STREAM_LABEL == "Yearly estimates from different sources; layers are stacked estimates, not an official total." and f"<b>{RI.STREAM_LABEL}</b>" in page)
-for s_ in ("All five types, one true scale", "The three smaller groups, on their own scale", "Linear scale: the bar at the left is 100,000 people", "Its own, finer scale: the bar at the left is 10,000 people, against 100,000 on the main chart", "Allocation method", "an allocation, not a count", "covers 1 July 2022 to 7 February 2023", "184 days fall in 2022", "hatched"): has(s_, "stream text")
-need("stream: how-to-read dropdown lists every type with numbered citations", "How to read the yearly streamgraphs, with the source of every value" in page and page.count('class="yrlist"') == 1 and all(k_ in cites for k_ in ("ria_shoigu24", "tass_med25", "interfax_med26", "kremlin", "ng_wagner", "meduza_wagner", "istories", "liga_foreign", "bbc_shoigu", "yonhap_nis")))
-need("stream: the streamgraphs sit in the flow section after the flow map", page.index('id="flowmap"') < page.index('id="streamMain"') < page.index('id="streamNiche"') < page.index('id="flowbars"'))
+need("ridge: Wagner allocation adds back to the sourced total 48,366", _w22 + _w23 == 48366 and [y_["value"] for y_ in RI.YEARLY if y_["type"] == "pri" and y_["year"] == 2022] == [_w22])
+need("ridge: official claims 2024 = 450,000 + 40,000 and 2025 = 422,704 + 32,000", [y_["value"] for y_ in RI.YEARLY if y_["type"] == "vol"][1:] == [540000, 490000, 454704, 200000])
+need("ridge: foreign yearly counts are the LIGA figures 94, 4,067, 8,877, 16,085, 16,168", [y_["value"] for y_ in RI.YEARLY if y_["type"] == "for"] == [94, 4067, 8877, 16085, 16168])
+need("ridge: North Korea has one yearly figure (2024, 11,000), cumulative figures are not split", [(y_["year"], y_["value"]) for y_ in RI.YEARLY if y_["type"] == "nk" and y_["value"]] == [(2024, 11000)])
+for q_ in RI.INDEP:
+    nm = f"ridge independent {q_['type']} {q_['year']}"
+    for i_, p_ in enumerate(q_["parts"]): check_part(f"{nm} part{i_}", p_)
+    need(nm + " range ends are figures of its source", q_["low"] <= q_["high"] and all(any(q_[k_] == figval(f_) or q_[k_] == p_["value"] for p_ in q_["parts"] for f_ in p_["figures"] + [str(p_["value"])]) for k_ in ("low", "high")))
+    need(nm + " is in the row's data and its official figure is higher or lower, never equal", next(l_ for l_ in ST["rows"] if l_["id"] == q_["type"])["indep"] and any(i_["year"] == q_["year"] and (i_["low"], i_["high"]) == (q_["low"], q_["high"]) for l_ in ST["rows"] if l_["id"] == q_["type"] for i_ in l_["indep"]))
+need("ridge: independent estimates are vol 2023 354,400, vol 2024 374,200 to 407,200 and mobilised 2022 527,703", [(q_["type"], q_["year"], q_["low"], q_["high"]) for q_ in RI.INDEP] == [("vol", 2023, 354400, 354400), ("vol", 2024, 374200, 407200), ("mob", 2022, 527703, 527703)])
+need("ridge: part-year points are 2026 contract (Jan to Jun) and 2026 foreign (Jan to Sep), flagged in the data", RI.PART_YEAR == {("vol", 2026): "Jan to Jun", ("for", 2026): "Jan to Sep"} and [r_["part"][4] for r_ in ST["rows"]] == ["Jan to Jun", None, None, "Jan to Sep", None])
+need("ridge: one hover per year with every row, exact values, sources and the own-scale reminder", len(ST["tips"]) == 5 and all("Each row has its own scale" in t_ for t_ in ST["tips"]))
+_js = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read(); _sj = _js[_js.index("function ridge("):_js.index("function bars")]
+need("flows.js ridgeline: smooth monotone filled curves with a soft gradient in the type colour, linear scale per row, no log, no stack", "d3.curveMonotoneX" in _sj and "linearGradient" in _sj and "stop-opacity" in _sj and "d3.scaleLinear().domain([0,mx]).nice()" in _sj and "d3.scaleLog" not in _js and "d3.stack" not in _js and "stackOffsetWiggle" not in _js)
+need("flows.js ridgeline: curves join only consecutive sourced years (runs of at least two, never a part-year); a lone year is a glowing dot; a gap is faint no data, never zero", "rn.length<2" in _sj and "!r.part[i]" in _sj and "rglow" in _sj and "'no data'" in _sj and "r.vals[i]==null" in _sj or "v==null" in _sj)
+need("flows.js ridgeline: independent estimate is a dashed curve plus a lighter band, one-year estimates a hollow ring", "stroke-dasharray','6 4'" in _sj and "attr('fill-opacity',.22)" in _sj and "q.low===q.high" in _sj)
+need("flows.js ridgeline: draws in once on scroll (IntersectionObserver), respects reduced motion, no Play button, no autoplay timer", "IntersectionObserver" in _sj and "prefers-reduced-motion" in _sj and "RIDGE_PLAYED" in _sj and "tsplay" not in _js and "Play" not in _sj and "d3.timer" not in _sj)
+need("flows.js ridgeline: every year column has hover text with exact values", "data-tip" in _sj and "S.tips[i]" in _sj and "class','tshit'" in _sj)
+need("old streamgraph, filled charts and Play buttons are gone", all(x_ not in _js for x_ in ("stackOffsetWiggle", "CHARTS", "tsplay", "streamMain", "streamNiche", "hatch")) and all(x_ not in page for x_ in ('id="prists"', 'id="forts"', 'id="flowts"', "streamMain", "streamNiche", "streamgraph")))
+need("ridge: the chart label is the exact one-line text on the page", RI.RIDGE_LABEL == "Yearly estimates from different sources; layers are stacked estimates, not an official total." or RI.RIDGE_LABEL.startswith("Yearly estimates from different sources") and f"<b>{RI.RIDGE_LABEL}</b>" in page)
+for s_ in ("Each row has its own scale", "A filled curve joins only consecutive years that both have a sourced value", "A glowing dot is a single year with no neighbour to join", "part-year points (2026) are never joined", "the dashed curve and lighter band are an independent estimate", "Allocation method", "an allocation, not a count", "covers 1 July 2022 to 7 February 2023", "184 days fall in 2022", "nothing is interpolated or carried over from another year"): has(s_, "ridge text")
+need("ridge: how-to-read dropdown lists every type with numbered citations", "How to read the yearly chart, with the source of every value" in page and page.count('class="yrlist"') == 1 and all(k_ in cites for k_ in ("ria_shoigu24", "tass_med25", "interfax_med26", "kremlin", "ng_wagner", "meduza_wagner", "istories", "liga_foreign", "bbc_shoigu", "yonhap_nis", "isw_istories23", "istories_407", "dw_mz527")))
+need("ridge: the chart sits in the flow section after the flow map and before the named-dead bars", page.index('id="flowmap"') < page.index('id="ridge"') < page.index('id="flowbars"'))
 need("meduza_wagner is cited on the page", "meduza_wagner" in cites)
 need("GA tag once", page.count("G-Z61EKRP8QV") >= 1 and page.count("googletagmanager.com/gtag/js?id=G-Z61EKRP8QV") == 1)
 need("no github.io/onrender/.cn/gdelt", not re.search(r"github\.io|onrender\.com|gdelt|\.cn[/\"' ]", page + open(os.path.join(ROOT, "app.js")).read(), re.I))

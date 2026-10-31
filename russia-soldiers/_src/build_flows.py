@@ -2,7 +2,7 @@
 District figures are sums of data/regions.json (Mediazona regional pages); foreign figures and North Korea rows come from the audited inputs."""
 import json, os, html, re, math
 from flow_inputs import TYPES, FRONT, KURSK, SKIPPED
-from recruit_inputs import YEARS, YEARLY, STREAM_LAYERS, STREAM_NICHE, STREAM_LABEL, ARROWS, HUB, WMIN, WMAX, WMAX_PH, VMAX, NOT_DRAWN, BAR_FOREIGN, NAMED_DEAD_DATE
+from recruit_inputs import YEARS, YEARLY, RIDGE_ROWS, RIDGE_LABEL, PART_YEAR, INDEP, RIDGE_TITLES, ARROWS, HUB, WMIN, WMAX, WMAX_PH, VMAX, NOT_DRAWN, BAR_FOREIGN, NAMED_DEAD_DATE
 import nk_inputs as NK
 from sources import SOURCES
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -23,14 +23,16 @@ def span(p):
     a, z = p["t0"], p["t1"]
     if a == z: return day(a)
     return day(a[:7]) + " to " + day(z[:7]) if a[:4] != z[:4] or a[5:7] != z[5:7] else day(a[:7])
-def stream_build():
-    """Yearly streamgraph data: for each layer and year a value (None = gap) and, for each year, the hover for the main and the companion chart."""
+def ridge_build():
+    """Ridgeline data: one row per type; per year a value (None = gap), whether it is an allocation or a part year, any independent estimate, and the hover for each year."""
     Y = {(y["type"], y["year"]): y for y in YEARLY}
-    layers = []
-    for k, nm, col, sh in STREAM_LAYERS:
-        layers.append(dict(id=k, name=nm, short=sh, color=col, niche=k in STREAM_NICHE, vals=[Y[(k, yr)]["value"] for yr in YEARS], alloc=[bool(Y[(k, yr)]["alloc"]) for yr in YEARS]))
+    rows = []
+    for k, nm, col, sh in RIDGE_ROWS:
+        ind = [dict(year=i["year"], low=i["low"], high=i["high"]) for i in INDEP if i["type"] == k]
+        rows.append(dict(id=k, name=nm, title=RIDGE_TITLES[k], short=sh, color=col, vals=[Y[(k, yr)]["value"] for yr in YEARS], alloc=[bool(Y[(k, yr)]["alloc"]) for yr in YEARS],
+                         part=[PART_YEAR.get((k, yr)) for yr in YEARS], indep=ind))
     def line(k, yr):
-        y = Y[(k, yr)]; nm = next(l[1] for l in STREAM_LAYERS if l[0] == k)
+        y = Y[(k, yr)]; nm = next(l[1] for l in RIDGE_ROWS if l[0] == k)
         if y["value"] is None: return f"<b>{eh(nm)}: no data</b><br>{eh(y['note'])} Nothing is drawn."
         t = [f"<b>{eh(nm)}: {y['value']:,}</b> ({eh(y['period'])})", eh(y["what"][0].upper() + y["what"][1:])]
         t += ["Also: " + eh(c) for c in y["ctx"]]
@@ -40,12 +42,11 @@ def stream_build():
         if y["alloc"]: t.append("Allocated by days: " + f"{y['alloc']['share']} of {y['alloc']['of']} days")
         if y["note"]: t.append(eh(y["note"]))
         return "<br>".join(t)
-    tips = {"main": [], "niche": []}
+    tips = []
     for yr in YEARS:
-        lab = f"<b>{yr}{' (part year, see each layer)' if yr == 2026 else ''}</b>"
-        tips["main"].append(lab + "<br>" + "<br>".join(line(k, yr) for k, *_ in STREAM_LAYERS) + "<br><i>Estimates from different sources, not an official total.</i>")
-        tips["niche"].append(lab + "<br>" + "<br>".join(line(k, yr) for k in STREAM_NICHE) + "<br><i>Estimates from different sources, not an official total.</i>")
-    return dict(years=YEARS, layers=layers, tips=tips, label=STREAM_LABEL, main_bar=100000, niche_bar=10000)
+        lab = f"<b>{yr}{' (part year, see each row)' if yr == 2026 else ''}</b>"
+        tips.append(lab + "<br>" + "<br>".join(line(k, yr) for k, *_ in RIDGE_ROWS) + "<br><i>Estimates from different sources, not an official total. Each row has its own scale.</i>")
+    return dict(years=YEARS, rows=rows, tips=tips, label=RIDGE_LABEL)
 
 def build():
     R = json.load(open(os.path.join(ROOT, "data", "regions.json"), encoding="utf-8"))["regions"]
@@ -75,7 +76,7 @@ def build():
     bars.sort(key=lambda b: -b["n"])
     nd = " ".join(f"{p['label']}." for p in NOT_DRAWN)
     out = dict(measure="people recruited", types={k: dict(name=v[0], color=v[1]) for k, v in TYPES.items()}, arrows=arrows, hub=HUB, front=FRONT, kursk=KURSK,
-               wmin=WMIN, wmax=WMAX, wmax_ph=WMAX_PH, vmax=VMAX, clamp_below=round(WMIN / WMAX * VMAX), bars=bars, stream=stream_build(), not_drawn=nd, skipped=SKIPPED, named_dead_date=NAMED_DEAD_DATE)
+               wmin=WMIN, wmax=WMAX, wmax_ph=WMAX_PH, vmax=VMAX, clamp_below=round(WMIN / WMAX * VMAX), bars=bars, ridge=ridge_build(), not_drawn=nd, skipped=SKIPPED, named_dead_date=NAMED_DEAD_DATE)
     json.dump(out, open(os.path.join(ROOT, "data", "flows.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     nk = dict(rows=NK.ROWS, timeline=NK.TL, places=NK.PLACES, lines=NK.LINES, kinds={k: dict(name=v[0], color=v[1]) for k, v in NK.KINDS.items()}, status=NK.STATUS)
     json.dump(nk, open(os.path.join(ROOT, "data", "nk.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)

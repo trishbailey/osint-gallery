@@ -142,7 +142,7 @@
    "tip": "<b>Foreign nationals, incl. North Korea</b><br>3,589 named dead, cumulative: 2,304 North Korean + 1,285 verified from other countries<br>BBC News Russian with Mediazona, 10 Jul 2026"
   }
  ],
- "stream": {
+ "ridge": {
   "years": [
    2022,
    2023,
@@ -150,13 +150,13 @@
    2025,
    2026
   ],
-  "layers": [
+  "rows": [
    {
     "id": "vol",
     "name": "Contract and volunteers",
+    "title": "Contract and volunteers",
     "short": "Contract",
     "color": "#e43d3c",
-    "niche": false,
     "vals": [
      null,
      540000,
@@ -170,14 +170,33 @@
      false,
      false,
      false
+    ],
+    "part": [
+     null,
+     null,
+     null,
+     null,
+     "Jan to Jun"
+    ],
+    "indep": [
+     {
+      "year": 2023,
+      "low": 354400,
+      "high": 354400
+     },
+     {
+      "year": 2024,
+      "low": 374200,
+      "high": 407200
+     }
     ]
    },
    {
     "id": "mob",
     "name": "Mobilised",
+    "title": "Mobilised",
     "short": "Mobilised",
     "color": "#2ec4b6",
-    "niche": false,
     "vals": [
      300000,
      null,
@@ -191,14 +210,28 @@
      false,
      false,
      false
+    ],
+    "part": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "indep": [
+     {
+      "year": 2022,
+      "low": 527703,
+      "high": 527703
+     }
     ]
    },
    {
     "id": "pri",
     "name": "Prisoners (Wagner, Storm Z)",
+    "title": "Prisoners (Wagner, Storm Z)",
     "short": "Prisoners",
     "color": "#e8c547",
-    "niche": true,
     "vals": [
      40087,
      36479,
@@ -212,14 +245,22 @@
      false,
      false,
      false
-    ]
+    ],
+    "part": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "indep": []
    },
    {
     "id": "for",
     "name": "Foreign nationals (incl. Central Asia)",
+    "title": "Foreign (incl. Central Asia)",
     "short": "Foreign",
     "color": "#4f9dff",
-    "niche": true,
     "vals": [
      94,
      4067,
@@ -233,14 +274,22 @@
      false,
      false,
      false
-    ]
+    ],
+    "part": [
+     null,
+     null,
+     null,
+     null,
+     "Jan to Sep"
+    ],
+    "indep": []
    },
    {
     "id": "nk",
     "name": "North Korea (troops)",
+    "title": "North Korea (troops)",
     "short": "N. Korea",
     "color": "#b07cf0",
-    "niche": true,
     "vals": [
      null,
      null,
@@ -254,28 +303,25 @@
      false,
      false,
      false
-    ]
+    ],
+    "part": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "indep": []
    }
   ],
-  "tips": {
-   "main": [
-    "<b>2022</b><br><b>Contract and volunteers: no data</b><br>No source gives contract signers for 2022. Nothing is drawn.<br><b>Mobilised: 300,000</b> (Sep to Oct 2022)<br>The partial mobilisation: 300,000 called up (Defence Minister to the President, 28 Oct 2022)<br>Also: Mediazona later estimated at least 527,703 for the same call-up<br>Source: Kremlin, 28 Oct 2022<br>One call-up wave.<br><b>Prisoners (Wagner, Storm Z): 40,087</b> (1 Jul to 31 Dec 2022 (184 of 222 days))<br>Wagner: at least 48,366 over 1 Jul 2022 to 7 Feb 2023; 40,087 of it allocated to 2022 by days<br>Source: Novaya Gazeta Europe, 10 Jun 2024; Meduza, 10 Jun 2024 (dates)<br>Allocated by days: 184 of 222 days<br>An allocation at an even pace, not a count: the source gives one total for the whole period.<br><b>Foreign nationals (incl. Central Asia): 94</b> (Jan to Dec 2022)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (94)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><i>Estimates from different sources, not an official total.</i>",
-    "<b>2023</b><br><b>Contract and volunteers: 540,000</b> (Jan to Dec 2023)<br>Official claim: almost 540,000 contracts (Shoigu, 20 Feb 2024)<br>Also: independent estimate from budget data: 354,400 (iStories)<br>Source: RIA Novosti, 20 Feb 2024<br><b>Mobilised: no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><b>Prisoners (Wagner, Storm Z): 36,479</b> (1 Jan to 7 Feb 2023 Wagner (38 of 222 days), plus Storm Z from Feb 2023)<br>Wagner 8,279 (allocated to 2023 by days) plus Storm Z 28,200 (iStories, lower bound of 28,200 to 29,000)<br>Source: Novaya Gazeta Europe, 10 Jun 2024; iStories, 6 Feb 2025; Meduza, 10 Jun 2024 (dates); iStories, 6 Feb 2025 (dates)<br>Allocated by days: 38 of 222 days<br>Storm Z leaves out the first wave from late February to April 2023, so it may be higher.<br><b>Foreign nationals (incl. Central Asia): 4,067</b> (Jan to Dec 2023)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (4,067)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><i>Estimates from different sources, not an official total.</i>",
-    "<b>2024</b><br><b>Contract and volunteers: 490,000</b> (Jan to Dec 2024)<br>Official claim: about 450,000 contracts plus over 40,000 volunteer-formation recruits (Medvedev, 24 Jan 2025)<br>Also: independent estimate from budget data: 374,200 to 407,200 (iStories)<br>Source: TASS, 24 Jan 2025<br><b>Mobilised: no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><b>Prisoners (Wagner, Storm Z): no data</b><br>No yearly count exists. The 140,000 to 180,000 convict figure is a cumulative claim by Ukraine. Nothing is drawn.<br><b>Foreign nationals (incl. Central Asia): 8,877</b> (Jan to Dec 2024)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (8,877)<br>Also: Central Asia: 11,157 to late 2025 in total, with no yearly split (inside this count)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): 11,000</b> (Oct to Dec 2024)<br>An estimated 11,000 North Korean troops in Russia (Western officials, January 2025, via BBC)<br>Also: Later totals are cumulative: about 13,000 sent since Oct 2024 (South Korea's NIS, Sep 2025)<br>Source: BBC News, 18 Jun 2025<br><i>Estimates from different sources, not an official total.</i>",
-    "<b>2025</b><br><b>Contract and volunteers: 454,704</b> (Jan to Dec 2025)<br>Official claim: 422,704 contracts plus 32,000 volunteers (Medvedev, 16 Jan 2026)<br>Source: Interfax, 16 Jan 2026<br><b>Mobilised: no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><b>Prisoners (Wagner, Storm Z): no data</b><br>No yearly count exists. Nothing is drawn.<br><b>Foreign nationals (incl. Central Asia): 16,085</b> (Jan to Dec 2025)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (16,085)<br>Also: Central Asia: 11,157 to late 2025 in total, with no yearly split (inside this count)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): no data</b><br>No yearly figure: later estimates are cumulative (about 13,000 sent since Oct 2024, NIS; 11,000 to 14,000 in the Kursk campaign, BBC). Nothing is drawn.<br><i>Estimates from different sources, not an official total.</i>",
-    "<b>2026 (part year, see each layer)</b><br><b>Contract and volunteers: 200,000</b> (Jan to Jun 2026 only)<br>Official claim: around 200,000 in the first half (Medvedev, reported 30 Jul 2026)<br>Source: Novaya Gazeta Europe, 30 Jul 2026<br>Half a year only: not comparable with a full year.<br><b>Mobilised: no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><b>Prisoners (Wagner, Storm Z): no data</b><br>No yearly count exists. Nothing is drawn.<br><b>Foreign nationals (incl. Central Asia): 16,168</b> (Jan to Sep 2026 only)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (16,168)<br>Source: LIGA.net, 19 Oct 2026<br>Nine months only.<br><b>North Korea (troops): no data</b><br>No yearly figure. Nothing is drawn.<br><i>Estimates from different sources, not an official total.</i>"
-   ],
-   "niche": [
-    "<b>2022</b><br><b>Prisoners (Wagner, Storm Z): 40,087</b> (1 Jul to 31 Dec 2022 (184 of 222 days))<br>Wagner: at least 48,366 over 1 Jul 2022 to 7 Feb 2023; 40,087 of it allocated to 2022 by days<br>Source: Novaya Gazeta Europe, 10 Jun 2024; Meduza, 10 Jun 2024 (dates)<br>Allocated by days: 184 of 222 days<br>An allocation at an even pace, not a count: the source gives one total for the whole period.<br><b>Foreign nationals (incl. Central Asia): 94</b> (Jan to Dec 2022)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (94)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><i>Estimates from different sources, not an official total.</i>",
-    "<b>2023</b><br><b>Prisoners (Wagner, Storm Z): 36,479</b> (1 Jan to 7 Feb 2023 Wagner (38 of 222 days), plus Storm Z from Feb 2023)<br>Wagner 8,279 (allocated to 2023 by days) plus Storm Z 28,200 (iStories, lower bound of 28,200 to 29,000)<br>Source: Novaya Gazeta Europe, 10 Jun 2024; iStories, 6 Feb 2025; Meduza, 10 Jun 2024 (dates); iStories, 6 Feb 2025 (dates)<br>Allocated by days: 38 of 222 days<br>Storm Z leaves out the first wave from late February to April 2023, so it may be higher.<br><b>Foreign nationals (incl. Central Asia): 4,067</b> (Jan to Dec 2023)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (4,067)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><i>Estimates from different sources, not an official total.</i>",
-    "<b>2024</b><br><b>Prisoners (Wagner, Storm Z): no data</b><br>No yearly count exists. The 140,000 to 180,000 convict figure is a cumulative claim by Ukraine. Nothing is drawn.<br><b>Foreign nationals (incl. Central Asia): 8,877</b> (Jan to Dec 2024)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (8,877)<br>Also: Central Asia: 11,157 to late 2025 in total, with no yearly split (inside this count)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): 11,000</b> (Oct to Dec 2024)<br>An estimated 11,000 North Korean troops in Russia (Western officials, January 2025, via BBC)<br>Also: Later totals are cumulative: about 13,000 sent since Oct 2024 (South Korea's NIS, Sep 2025)<br>Source: BBC News, 18 Jun 2025<br><i>Estimates from different sources, not an official total.</i>",
-    "<b>2025</b><br><b>Prisoners (Wagner, Storm Z): no data</b><br>No yearly count exists. Nothing is drawn.<br><b>Foreign nationals (incl. Central Asia): 16,085</b> (Jan to Dec 2025)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (16,085)<br>Also: Central Asia: 11,157 to late 2025 in total, with no yearly split (inside this count)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): no data</b><br>No yearly figure: later estimates are cumulative (about 13,000 sent since Oct 2024, NIS; 11,000 to 14,000 in the Kursk campaign, BBC). Nothing is drawn.<br><i>Estimates from different sources, not an official total.</i>",
-    "<b>2026 (part year, see each layer)</b><br><b>Prisoners (Wagner, Storm Z): no data</b><br>No yearly count exists. Nothing is drawn.<br><b>Foreign nationals (incl. Central Asia): 16,168</b> (Jan to Sep 2026 only)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (16,168)<br>Source: LIGA.net, 19 Oct 2026<br>Nine months only.<br><b>North Korea (troops): no data</b><br>No yearly figure. Nothing is drawn.<br><i>Estimates from different sources, not an official total.</i>"
-   ]
-  },
-  "label": "Yearly estimates from different sources; layers are stacked estimates, not an official total.",
-  "main_bar": 100000,
-  "niche_bar": 10000
+  "tips": [
+   "<b>2022</b><br><b>Contract and volunteers: no data</b><br>No source gives contract signers for 2022. Nothing is drawn.<br><b>Mobilised: 300,000</b> (Sep to Oct 2022)<br>The partial mobilisation: 300,000 called up (Defence Minister to the President, 28 Oct 2022)<br>Also: Mediazona later estimated at least 527,703 for the same call-up<br>Source: Kremlin, 28 Oct 2022<br>One call-up wave.<br><b>Prisoners (Wagner, Storm Z): 40,087</b> (1 Jul to 31 Dec 2022 (184 of 222 days))<br>Wagner: at least 48,366 over 1 Jul 2022 to 7 Feb 2023; 40,087 of it allocated to 2022 by days<br>Source: Novaya Gazeta Europe, 10 Jun 2024; Meduza, 10 Jun 2024 (dates)<br>Allocated by days: 184 of 222 days<br>An allocation at an even pace, not a count: the source gives one total for the whole period.<br><b>Foreign nationals (incl. Central Asia): 94</b> (Jan to Dec 2022)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (94)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><i>Estimates from different sources, not an official total. Each row has its own scale.</i>",
+   "<b>2023</b><br><b>Contract and volunteers: 540,000</b> (Jan to Dec 2023)<br>Official claim: almost 540,000 contracts (Shoigu, 20 Feb 2024)<br>Also: independent estimate from budget data: 354,400 (iStories)<br>Source: RIA Novosti, 20 Feb 2024<br><b>Mobilised: no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><b>Prisoners (Wagner, Storm Z): 36,479</b> (1 Jan to 7 Feb 2023 Wagner (38 of 222 days), plus Storm Z from Feb 2023)<br>Wagner 8,279 (allocated to 2023 by days) plus Storm Z 28,200 (iStories, lower bound of 28,200 to 29,000)<br>Source: Novaya Gazeta Europe, 10 Jun 2024; iStories, 6 Feb 2025; Meduza, 10 Jun 2024 (dates); iStories, 6 Feb 2025 (dates)<br>Allocated by days: 38 of 222 days<br>Storm Z leaves out the first wave from late February to April 2023, so it may be higher.<br><b>Foreign nationals (incl. Central Asia): 4,067</b> (Jan to Dec 2023)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (4,067)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><i>Estimates from different sources, not an official total. Each row has its own scale.</i>",
+   "<b>2024</b><br><b>Contract and volunteers: 490,000</b> (Jan to Dec 2024)<br>Official claim: about 450,000 contracts plus over 40,000 volunteer-formation recruits (Medvedev, 24 Jan 2025)<br>Also: independent estimate from budget data: 374,200 to 407,200 (iStories)<br>Source: TASS, 24 Jan 2025<br><b>Mobilised: no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><b>Prisoners (Wagner, Storm Z): no data</b><br>No yearly count exists. The 140,000 to 180,000 convict figure is a cumulative claim by Ukraine. Nothing is drawn.<br><b>Foreign nationals (incl. Central Asia): 8,877</b> (Jan to Dec 2024)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (8,877)<br>Also: Central Asia: 11,157 to late 2025 in total, with no yearly split (inside this count)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): 11,000</b> (Oct to Dec 2024)<br>An estimated 11,000 North Korean troops in Russia (Western officials, January 2025, via BBC)<br>Also: Later totals are cumulative: about 13,000 sent since Oct 2024 (South Korea's NIS, Sep 2025)<br>Source: BBC News, 18 Jun 2025<br><i>Estimates from different sources, not an official total. Each row has its own scale.</i>",
+   "<b>2025</b><br><b>Contract and volunteers: 454,704</b> (Jan to Dec 2025)<br>Official claim: 422,704 contracts plus 32,000 volunteers (Medvedev, 16 Jan 2026)<br>Source: Interfax, 16 Jan 2026<br><b>Mobilised: no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><b>Prisoners (Wagner, Storm Z): no data</b><br>No yearly count exists. Nothing is drawn.<br><b>Foreign nationals (incl. Central Asia): 16,085</b> (Jan to Dec 2025)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (16,085)<br>Also: Central Asia: 11,157 to late 2025 in total, with no yearly split (inside this count)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): no data</b><br>No yearly figure: later estimates are cumulative (about 13,000 sent since Oct 2024, NIS; 11,000 to 14,000 in the Kursk campaign, BBC). Nothing is drawn.<br><i>Estimates from different sources, not an official total. Each row has its own scale.</i>",
+   "<b>2026 (part year, see each row)</b><br><b>Contract and volunteers: 200,000</b> (Jan to Jun 2026 only)<br>Official claim: around 200,000 in the first half (Medvedev, reported 30 Jul 2026)<br>Source: Novaya Gazeta Europe, 30 Jul 2026<br>Half a year only: not comparable with a full year.<br><b>Mobilised: no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><b>Prisoners (Wagner, Storm Z): no data</b><br>No yearly count exists. Nothing is drawn.<br><b>Foreign nationals (incl. Central Asia): 16,168</b> (Jan to Sep 2026 only)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (16,168)<br>Source: LIGA.net, 19 Oct 2026<br>Nine months only.<br><b>North Korea (troops): no data</b><br>No yearly figure. Nothing is drawn.<br><i>Estimates from different sources, not an official total. Each row has its own scale.</i>"
+  ],
+  "label": "Yearly estimates from different sources; rows are separate estimates, not an official total."
  },
  "not_drawn": "All foreign contract signers named by Ukraine, to 1 Oct 2026: 45,959 from 151 countries. January to September 2026: Colombia 1,449, Burundi 699, Zimbabwe 530, Peru 503. Sri Lanka 751 (to late 2025).",
  "skipped": "Not drawn: any split of the national totals by region or district, because no outlet publishes recruitment counts by region for any type (the regional figures that exist cover 11 to 37 regions, are charts only, or count a recruiter's subset). Foreign countries without a single place on this map are listed above. North Korean soldiers are the only foreign group shown by troops committed rather than contracts signed.",
