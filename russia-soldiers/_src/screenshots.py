@@ -151,6 +151,7 @@ with sync_playwright() as pw:
           for(let i=1;i<50;i++)for(let j=1;j<50;j++){const x=b.x+b.width*i/50,y=b.y+b.height*j/50;if(x<0||y<0||x>innerWidth||y>innerHeight||!ok(x,y))continue;let r=0;for(;r<8;r++){if(![[r,0],[-r,0],[0,r],[0,-r],[r,r],[-r,-r],[r,-r],[-r,r]].every(d=>ok(x+d[0],y+d[1])))break}if(r>bs){bs=r;best=[x,y]}}return best}"""
         step = max(1, len(tips) // 150)
         for t in tips[::step] + [x for x in tips if x.evaluate("e=>e.classList.contains('reg')")][::3]:
+            if not t.is_visible(): continue  # e.g. a map dot outside the current view or a chip-hidden arrow: nothing to hover
             t.scroll_into_view_if_needed(); page.wait_for_timeout(70); pt = t.evaluate(FIND)
             if pt is None and t.evaluate("e=>!!e.closest('#flowmap')"):
                 # flow map elements outside the zoomed phone view: zoom out to the whole map, as a visitor would, then look again
