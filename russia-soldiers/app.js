@@ -4,16 +4,16 @@ var RAMP=['#fdedeb','#fea498','#e43d3c','#8a0114'];
 var $=function(s,r){return (r||document).querySelector(s)};
 var fmt=function(x,d){d=d||0;return x.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d})};
 var NAVY='#12203a';
-var METRICS={deaths:{name:'All named dead',legend:'Named dead per 100,000',unit:'named dead per 100,000',sfx:''},
- vol:{name:'Volunteers',legend:'Volunteers among the named dead, per 100,000',unit:'named volunteers per 100,000',sfx:''},
- mob:{name:'Mobilised',legend:'Mobilised men among the named dead, per 100,000',unit:'named mobilised men per 100,000',sfx:''},
- pri:{name:'Prisoners',legend:'Prisoners among the named dead, per 100,000',unit:'named prisoners per 100,000',sfx:''},
+var METRICS={deaths:{name:'All named dead',what:'named dead',legend:'Named dead per 100,000',unit:'named dead per 100,000',sfx:''},
+ vol:{name:'Volunteers',what:'named dead who joined as volunteers',legend:'Named dead who joined as volunteers, by home region, per 100,000 residents',unit:'named dead who joined as volunteers, by home region, per 100,000 residents',sfx:''},
+ mob:{name:'Mobilised',what:'named dead who were mobilised',legend:'Named dead who were mobilised, by home region, per 100,000 residents',unit:'named dead who were mobilised, by home region, per 100,000 residents',sfx:''},
+ pri:{name:'Prisoners',what:'named dead recruited from prison',legend:'Named dead recruited from prison, by home region, per 100,000 residents',unit:'named dead recruited from prison, by home region, per 100,000 residents',sfx:''},
  pov:{name:'Poverty rate',legend:'Residents below the poverty line, 2025, %',unit:'of residents below the poverty line (2025)',sfx:'%'},
  ru:{name:'Russian share',legend:'Ethnic Russians, share of residents, 2020 census, %',unit:'of residents ethnic Russian (2020 census)',sfx:'%'},
  bonus:{name:'Bonus in months',legend:'Signing bonus in months of local average wage',unit:'months of local average wage',sfx:''}};
 function valOf(r,m){return m==='pov'?r.pov:m==='ru'?r.ru_share:m==='bonus'?(r.bonus&&r.bonus.months!=null?r.bonus.months:null):r[m+'_rate']}
 var STATUS={range:'The card gives a regional range of 1.5 to 3 million roubles. The upper end is charted.',ok:'Firm: the regional card says the amount is confirmed.',ends_oct31:'The programme runs only to 31 Oct 2026.',stale:'The card data (or, for Kaliningrad, Nizhny Novgorod and Kirov, a Jan 2026 aggregator table) is more than 30 days old, or the programme is marked expired.',unpublished:'The amount comes from media reports or an unpublished act.'};
-var R,S,G,byNe={},byIso={},metric='deaths',selected=null,tipEl,rankAll=false,bonusAll=false,firmOnly=false;
+var R,S,G,byNe={},byIso={},metric='deaths',selected=null,tipEl,bonusAll=false,firmOnly=false;
 var phone=function(){return window.matchMedia('(max-width:700px)').matches};
 
 function cls(v,m){var b=S.breaks[m];return v<b[0]?0:v<b[1]?1:v<b[2]?2:3}
@@ -41,7 +41,7 @@ function regionTip(r,m){var v=valOf(r,m);
  if(m==='pov')return '<b>'+esc(r.en)+'</b><br>'+fmt(v,1)+'% '+METRICS[m].unit+(r.pov_kind==='derived'?'<br>Derived from the poor headcount and population':'');
  if(m==='ru')return '<b>'+esc(r.en)+'</b><br>'+fmt(v,1)+'% '+METRICS[m].unit;
  if(m==='bonus'){var b=r.bonus;return v==null?'<b>'+esc(r.en)+'</b><br>No signing-bonus figure: '+esc(b.excluded):'<b>'+esc(r.en)+'</b><br>'+fmt(v,1)+' '+METRICS[m].unit+'<br>'+fmt(b.total)+' roubles in total'}
- var c=r[m];return '<b>'+esc(r.en)+'</b><br>'+fmt(v,1)+' '+METRICS[m].unit+'<br>'+fmt(c)+' named '+(m==='deaths'?'dead':METRICS[m].name.toLowerCase())+' among '+fmt(r.pop)+' residents'}
+ var c=r[m];return '<b>'+esc(r.en)+'</b><br>'+fmt(v,1)+' '+METRICS[m].unit+'<br>'+fmt(c)+' '+METRICS[m].what+' among '+fmt(r.pop)+' residents'+(m==='deaths'?'<br>Rank '+rank(r,'deaths_rate')+' of 85 by named dead per 100,000':'')}
 /* map */
 var proj,pathGen,zoom,gMap,svgMap;
 function drawMap(){
@@ -81,11 +81,6 @@ function closePanel(){$('#panel').classList.remove('open');selected=null;if(gMap
 /* bar helpers */
 function barRow(label,val,max,col,valtxt,tip,dash){
  return '<div class="brow" tabindex="0" data-tip="'+esc(tip)+'"><span class="bl">'+esc(label)+'</span><span class="bt"><span class="bf'+(dash?' dash':'')+'" style="width:'+(val/max*100).toFixed(2)+'%;background:'+col+'"></span></span><span class="bv">'+valtxt+'</span></div>'}
-function drawRank(){
- var a=R.slice().sort(function(x,y){return y.deaths_rate-x.deaths_rate});if(!rankAll)a=a.slice(0,15);
- var max=R.reduce(function(m,r){return Math.max(m,r.deaths_rate)},0);
- $('#rankbars').innerHTML=a.map(function(r){return barRow(r.en,r.deaths_rate,max,RAMP[cls(r.deaths_rate,'deaths')],fmt(r.deaths_rate,1),regionTip(r,'deaths'))}).join('');
- $('#rankmore').textContent=rankAll?'Show top 15 only':'Show all 85 regions'}
 function drawGroupBars(){
  var fd=Object.keys(S.fd).map(function(k){return [k,S.fd[k]]}).sort(function(a,b){return b[1].rate-a[1].rate});
  var mx=fd[0][1].rate;
@@ -213,17 +208,16 @@ function init(res){
  // desktop: everything open; phone: only the map section open, map options behind one button
  var ph=phone();document.querySelectorAll('details.sec').forEach(function(d){d.open=d.id==='nk-sec'?false:(!ph||d.id==='flow-sec'||d.id==='remote-sec'||d.id==='map-sec'||d.id==='join-sec')});
  $('#mapside').open=!ph;
- $('#legend').innerHTML=legendHTML('deaths');$('#legend2').innerHTML=legendHTML('deaths');
+ $('#legend').innerHTML=legendHTML('deaths');
  ['#leg-s1','#leg-s2','#leg-s2b','#leg-s3'].forEach(function(s){$(s).innerHTML=LEG});
  $('#legend3').innerHTML='<li><span class="sw" style="background:var(--r3)"></span>Firm amount</li><li><span class="sw dash"></span>Ends 31 Oct 2026, card over 30 days old, a range, or a media report</li>';
  document.querySelectorAll('.chipb[data-metric]').forEach(function(b){b.addEventListener('click',function(){
   metric=b.dataset.metric;document.querySelectorAll('.chipb[data-metric]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});recolor()})});
  $('#reset').addEventListener('click',function(){if(svgMap)svgMap.transition().duration(350).call(zoom.transform,d3.zoomIdentity)});
  $('#closepanel').addEventListener('click',closePanel);
- $('#rankmore').addEventListener('click',function(){rankAll=!rankAll;drawRank()});
  $('#bonusmore').addEventListener('click',function(){bonusAll=!bonusAll;drawBonus()});
  $('#firmonly').addEventListener('click',function(){firmOnly=!firmOnly;this.setAttribute('aria-pressed',firmOnly?'true':'false');drawBonus()});
- bindTips();drawAll();drawRank();drawGroupBars();drawBonus();drawTypeBars();drawUc();
+ bindTips();drawAll();drawGroupBars();drawBonus();drawTypeBars();drawUc();
  document.querySelectorAll('details').forEach(function(d){d.addEventListener('toggle',function(){if(d.open)drawAll()})});
  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(drawAll,150)});
  document.documentElement.setAttribute('data-ready','1');

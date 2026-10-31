@@ -55,7 +55,12 @@
 
 <aside class="notice" id="undercount" role="note"><b>{{uc_line}}</b>[[mz_probate]]
 <div class="bars ucbars" id="ucbars"></div>
-<div class="photos one"><figure class="ph t-all"><img src="img/graves-kazan-2023.jpg" width="800" height="600" loading="lazy" alt="Fresh graves under snow with flags and wreaths at Kurgan cemetery in Kazan, Tatarstan, October 2023"><figcaption>Fresh graves, Kurgan cemetery, Kazan, Oct 2023.[[img_kazan]]</figcaption></figure></div>
+<div class="photos ucph">
+<figure class="ph t-all"><img src="img/graves-kazan-2023.jpg" width="800" height="600" loading="lazy" alt="Fresh graves under snow with flags and wreaths at Kurgan cemetery in Kazan, Tatarstan, October 2023"><figcaption>Fresh graves, Kazan, Oct 2023.[[img_kazan]]</figcaption></figure>
+<figure class="ph t-all"><img src="img/graves-flags-kazan-2023.jpg" width="800" height="600" loading="lazy" alt="Rows of graves with Russian and unit flags in the snow at Kurgan cemetery, Kazan, October 2023"><figcaption>Flags over graves, Kazan, Oct 2023.[[img_kazan2]]</figcaption></figure>
+<figure class="ph t-all"><img src="img/new-graves-chervishevskoye-2023.jpg" width="800" height="450" loading="lazy" alt="Newly dug burial ground with fresh wreaths at Chervishevskoye cemetery near Tyumen, April 2023"><figcaption>New burial ground, Tyumen, Apr 2023.[[img_nova]]</figcaption></figure>
+<figure class="ph t-all"><img src="img/wagner-flags-chervishevskoye-2023.jpg" width="800" height="450" loading="lazy" alt="Crosses, wreaths and flags, including a Wagner flag, in the Wagner section of Chervishevskoye cemetery near Tyumen, April 2023"><figcaption>Wagner section, Tyumen, Apr 2023.[[img_wagner2]]</figcaption></figure>
+</div>
 <details class="how"><summary>What the list and the estimate leave out</summary>
 <p>The list holds {{named_total}} names, of which {{named_85}} can be tied to one of the 85 regions drawn here. The other {{outside_85}} come from the Donetsk and Luhansk areas, Baikonur, foreigners and unknown origin, and the list leaves out losses of the Donetsk and Luhansk forces.[[mz_list]] The estimate comes from the Probate Registry: {{probate_regular}} deaths found from excess inheritance cases plus about {{probate_late}} from late registrations, as of mid-2025 and likely to rise. It covers Russian citizens only, men aged 18 to 59, and has no regional split, so regional rates here use confirmed names and not true losses.[[mz_probate]]</p></details></aside>
 
@@ -81,14 +86,9 @@
 <aside id="panel" class="panel" aria-label="Region details"><button type="button" class="btn closebtn" id="closepanel">Close</button><div id="panelbody"></div></aside></div></div>
 </div>
 <p class="cap" id="mapcap">Tuva {{tuva_rate}}, Chukotka {{chu_rate}}; Moscow city {{mow_rate}}, Chechnya {{che_rate}}.</p>
+<p class="cap"><b>{{v_rank}}</b> Hover or tap a region for its rank among the 85.</p>
 <details class="how"><summary>How the map is made</summary>
-<p>Names are counted by home region from Mediazona's regional pages,[[mz_regions]] and divided by the Rosstat estimate of residents on 1 Jan 2024.[[pop]] Borders are Natural Earth, simplified.[[ne]] Crimea and Sevastopol are drawn as Russian-administered and are not recognised as Russian by Ukraine or most states. Scroll or pinch to zoom, drag to move, tap a region for its details. Regions with no figure are dark blue.</p></details>
-</details>
-
-<details class="sec" id="rank-sec" open><summary><h2>Ranking: named dead per 100,000 residents</h2></summary>
-<div class="barblock"><aside class="side2"><h3 class="sideh">Colour key</h3><ul class="legend" id="legend2"></ul></aside>
-<div class="barcol"><div id="rankbars" class="bars"></div><button type="button" class="btn" id="rankmore">Show all 85 regions</button></div></div>
-<p class="cap"><b>{{v_rank}}</b></p>
+<p>Names are counted by home region from Mediazona's regional pages,[[mz_regions]] and divided by the Rosstat estimate of residents on 1 Jan 2024.[[pop]] Borders are Natural Earth, simplified.[[ne]] Crimea and Sevastopol are drawn as Russian-administered and are not recognised as Russian by Ukraine or most states. Scroll or pinch to zoom, drag to move, tap a region for its details. Regions with no figure are dark blue. Every layer counts men by home region, where they lived, not where a prison, unit or cemetery stands: Mediazona uses the residence in an obituary, then the registration address, then the birthplace, and the burial place only as a last resort.[[mz_geo]] The Prisoners layer is named dead recruited from prison.</p></details>
 </details>
 
 <details class="sec" id="pov-sec" open><summary><h2>Poverty: a weak link</h2></summary>
