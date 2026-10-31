@@ -29,7 +29,7 @@ function bindTip(sel,fn){sel.on("mouseenter mousemove",function(e,d){showTip(fn(
 function snippet(g){var l=g.leader;return l.named?l.name:l.name}
 function cardHTML(g,full){
   var c=col(g),st=g.state;
-  var chip='<span class="st'+(st==="governing"?" gov":st==="dormant"?" dis":"")+'" style="--c:'+c+';--dis:'+D.dissolved_color+'">'+esc(FAM[g.family].name)+" · "+esc(g.state_label)+"</span>";
+  var chip='<span class="st'+(st==="governing"?" gov":st==="dormant"?" dis":"")+'"'+(st==="dormant"?' data-status="defunct"':"")+' style="--c:'+c+';--dis:'+D.dissolved_color+'">'+esc(FAM[g.family].name)+" · "+esc(g.state_label)+"</span>";
   var img=g.img?'<img src="'+esc(g.img.file)+'" width="72" height="72" alt="'+esc(g.label+" ("+g.img.kind+")")+'">':"";
   var since=g.leader.since?' <span class="muted">since '+esc(g.leader.since)+"</span>":"";
   var kv='<dt>Leader</dt><dd>'+g.leader_html+since+"</dd>";
@@ -67,7 +67,7 @@ function renderStatic(){
   $$("#bars .bar").forEach(function(el){var b=C.bars[+el.dataset.i];var f=function(e){showTip("<b>"+esc(b.name)+": "+esc(b.text)+"</b>"+esc(b.note),e)};el.addEventListener("mousemove",f);el.addEventListener("mouseenter",f);el.addEventListener("mouseleave",hideTip);el.addEventListener("focus",function(){focusTip("<b>"+esc(b.name)+": "+esc(b.text)+"</b>"+esc(b.note),el)});el.addEventListener("blur",hideTip);el.addEventListener("click",function(e){f(e)})});
   // changes strip
   var ch=D.groups.filter(function(g){return g.change&&g.change.top}).sort(function(a,b){return a.change.date<b.change.date?1:-1});
-  $("#changes").innerHTML=ch.map(function(g){return '<div class="chg" style="--c:'+col(g)+'"><b>'+esc(fmt(g.change.date))+" · "+esc(g.change.kind)+"</b><a href=\"#p="+g.id+'" style="color:inherit"><strong>'+esc(g.label)+"</strong></a><p>"+g.change.html+"</p></div>"}).join("");
+  $("#changes").innerHTML=ch.map(function(g){return '<div class="chg"'+(g.state==="dormant"?' data-status="defunct"':"")+' style="--c:'+col(g)+'"><b>'+esc(fmt(g.change.date))+" · "+esc(g.change.kind)+"</b><a href=\"#p="+g.id+'" style="color:inherit"><strong>'+esc(g.label)+"</strong></a><p>"+g.change.html+"</p></div>"}).join("");
   // family sections
   $("#families").innerHTML=D.families.map(function(f,i){var gs=D.groups.filter(function(g){return g.family===f.id});var counted=gs.filter(function(g){return g.counted}).length;gs.sort(function(a,b){return (b.counted-a.counted)});
     return '<details class="fam" id="fam-'+f.id+'" style="--c:'+f.color+'"'+(i===0?" open":"")+'><summary><span class="sw"></span>'+esc(f.name)+'<span class="ct">'+counted+" groups"+(gs.length>counted?", "+(gs.length-counted)+" dissolved":"")+"</span></summary><p class=\"muted\">"+esc(f.blurb)+'</p><div class="cards">'+gs.map(function(g){return cardHTML(g,false)}).join("")+"</div></details>"}).join("");
@@ -91,9 +91,9 @@ function renderStatic(){
   // sidebar controls
   $("#famBtns").innerHTML=D.families.map(function(f){return '<button class="fbtn" type="button" aria-pressed="true" data-fam="'+f.id+'" style="--c:'+f.color+'"><span class="sw"></span>'+esc(f.name)+'<span class="ct">'+f.count+"</span></button>"}).join("");
   var nd=D.groups.filter(function(g){return g.state==="dormant"}).length;
-  $("#dormBtn").innerHTML='<span class="sw" style="--c:'+D.dissolved_color+'"></span>Dissolved or dormant<span class="ct">'+nd+"</span>";
+  $("#dormBtn").innerHTML='<span class="sw" data-status="defunct" style="--c:'+D.dissolved_color+'"></span>Dissolved or dormant<span class="ct">'+nd+"</span>";
   $("#typeBtns").innerHTML=Object.keys(TYPE).map(function(t){var n=REL.filter(function(r){return r.type===t}).length;return '<button class="fbtn" type="button" aria-pressed="'+(S.types[t]?"true":"false")+'" data-type="'+esc(t)+'" style="--c:'+TYPE[t].c+'"><span class="ln'+(TYPE[t].dash?" dash":"")+'"></span>'+esc(TYPE[t].name)+'<span class="ct">'+n+"</span></button>"}).join("");
-  $("#gkeyfam").innerHTML=D.families.map(function(f){return '<div class="keyrow" style="--c:'+f.color+'"><span class="sw"></span>'+esc(f.name)+"</div>"}).join("")+'<div class="keyrow" style="--c:'+D.dissolved_color+'"><span class="sw"></span>Dissolved or dormant</div>';
+  $("#gkeyfam").innerHTML=D.families.map(function(f){return '<div class="keyrow" style="--c:'+f.color+'"><span class="sw"></span>'+esc(f.name)+"</div>"}).join("")+'<div class="keyrow" data-status="defunct" style="--c:'+D.dissolved_color+'"><span class="sw"></span>Dissolved or dormant</div>';
 }
 
 /* ------------ map ------------- */
@@ -138,7 +138,7 @@ function Map_(){
     en.append("circle").attr("class","hit").attr("r",15).attr("fill","#000").attr("fill-opacity",0);
     en.each(function(n){var el=d3.select(this);
       if(n.type==="g"){var gg=n.d;if(gg.state==="governing")el.append("circle").attr("r",13).attr("fill","none").attr("stroke","#c8a24a").attr("stroke-width",3);
-        el.append("circle").attr("class","dot").attr("r",8).attr("fill",col(gg)).attr("stroke","#0b1526").attr("stroke-width",1.5);
+        if(gg.state==="dormant")el.attr("data-status","defunct");el.append("circle").attr("class","dot").attr("r",8).attr("fill",col(gg)).attr("stroke","#0b1526").attr("stroke-width",1.5);
         el.attr("aria-label",gg.label+", "+FAM[gg.family].name+", "+gg.state_label)}
       else{el.append("path").attr("class","dot").attr("d",d3.symbol().type(d3.symbolDiamond).size(300)()).attr("fill",FAM[n.d.family].color).attr("stroke","#fff").attr("stroke-width",1.6);
         el.attr("aria-label","Incident "+fmt(n.d.date)+", "+n.d.place)}});
@@ -213,7 +213,7 @@ function Graph_(){
     sel.link=svg.append("g").selectAll("g").data(links).join("g").attr("class","lk");
     sel.link.append("path").attr("class","vis").attr("fill","none").attr("stroke",function(l){return TYPE[l.r.type].c}).attr("stroke-width",2.4).attr("stroke-dasharray",function(l){return TYPE[l.r.type].dash?TYPE[l.r.type].dash:(l.r.basis==="reported"?"7 5":null)}).attr("marker-end",function(l){var i=Object.keys(TYPE).indexOf(l.r.type);return TYPE[l.r.type].dir?"url(#ar"+i+")":null});
     sel.link.append("path").attr("class","hit").attr("fill","none").attr("stroke","#000").attr("stroke-opacity",0).attr("stroke-width",14).style("cursor","pointer");
-    sel.node=svg.append("g").selectAll("g.nd").data(nodes).join("g").attr("class","nd marker").attr("tabindex",0).attr("role","button").attr("aria-label",function(n){return n.label+", open details"});
+    sel.node=svg.append("g").selectAll("g.nd").data(nodes).join("g").attr("class","nd marker").attr("tabindex",0).attr("role","button").attr("aria-label",function(n){return n.label+", open details"}).attr("data-status",function(n){return n.g&&n.g.state==="dormant"?"defunct":null});
     sel.node.append("circle").attr("class","dot").attr("r",function(n){return n.r}).attr("fill",function(n){return n.ext?"#0a1222":col(n.g)}).attr("stroke",function(n){return n.ext?"#e6e9ef":"#0b1526"}).attr("stroke-width",function(n){return n.ext?2.5:1.5});
     sel.node.filter(function(n){return n.g&&n.g.state==="governing"}).insert("circle",".dot").attr("r",function(n){return n.r+4}).attr("fill","none").attr("stroke","#c8a24a").attr("stroke-width",3);
     sel.node.append("text").attr("class","lbl").attr("text-anchor","middle").attr("y",function(n){return n.r+15}).text(function(n){return n.label});
