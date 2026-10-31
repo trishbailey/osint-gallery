@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-30T22:03:34Z",
+ "as_of": "2026-10-31T01:10:17Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,108 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2116316368865767895",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2116316368865767895",
+   "created_at": "2026-10-30T23:48:36.000Z",
+   "text": "➡️ Ataque armado en Villa Galaxia deja un hombre muerto y un menor herido en Mazatlán. 🚨🚔| Un hombre perdió la vida y un menor resultó herido durante un ataque armado en el Parque de las Estrellas, en el fraccionamiento Villa Galaxia, en #Mazatlán. 🔺 Sujetos armados https://t.co…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Armed attack in Villa Galaxia leaves one man dead and a minor wounded in Mazatlán. A man was killed and a minor was wounded during an armed attack at Parque de las Estrellas, in the Villa Galaxia subdivision of #Mazatlán. Armed men"
+  },
+  {
+   "id": "2116312005862687122",
+   "handle": "InSightCrime",
+   "url": "https://x.com/InSightCrime/status/2116312005862687122",
+   "created_at": "2026-10-30T23:31:16.000Z",
+   "text": "Costa Rica is a key freight route connecting the ports of Panama with the rest of Central America. But transport costs are rising as trucks travelling these routes are falling prey to violent and sophisticated cargo theft gangs. https://t.co/QIwT3B5k7N https://t.co/SZ2Zjw3RZj",
+   "lang": "en",
+   "region_ids": [
+    "PAN-1340",
+    "PRY-607"
+   ],
+   "country": "PAN",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "research outlet",
+   "label": null
+  },
+  {
+   "id": "2116309171402658066",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2116309171402658066",
+   "created_at": "2026-10-30T23:20:00.000Z",
+   "text": "Detienen a Irineo Molina, exalcalde de Tuxtepec, Oaxaca, por desvío de 23 mdp A unos días de unirse a MC tras renunciar a Morena al no obtener la reelección, el exdiputado federal fue aprehendido por uso ilícito de atribuciones y facultades en agravio del patrimonio municipal.",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2723"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Irineo Molina, former mayor of Tuxtepec, Oaxaca, arrested over the diversion of 23 million pesos. Days after joining MC, having quit Morena when he did not win re-election, the former federal deputy was arrested for unlawful use of powers and authority to the detriment of municipal assets."
+  },
+  {
+   "id": "2116306654669025551",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2116306654669025551",
+   "created_at": "2026-10-30T23:10:00.000Z",
+   "text": "La Fiscalía General de la República (#FGR) obtuvo sentencia condenatoria contra nueve detenidos en un enfrentamiento entre grupos antagónicos en las inmediaciones del poblado de El Guasimal, la Sindicatura de Imala, #Culiacán. https://t.co/dPnfcIEhM0",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The Attorney General's Office (#FGR) obtained a conviction against nine people detained in a clash between rival groups near the village of El Guasimal, in the Imala district of #Culiacán."
+  },
+  {
+   "id": "2116304191563899060",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2116304191563899060",
+   "created_at": "2026-10-30T23:00:12.000Z",
+   "text": "➡️ Ataque armado en Real del Valle, Mazatlán; sujetos disparan contra una vivienda y arrojan un arma afuera de un negocio de comida. 🚨🚔| Sujetos armados dispararon en repetidas ocasiones contra una vivienda en el fraccionamiento Real del Valle, en #Mazatlán. Tras el ataque, http…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Armed attack in Real del Valle, Mazatlán; gunmen fire on a house and throw a weapon outside a food business. Armed men fired repeatedly at a house in the Real del Valle subdivision in #Mazatlán. After the attack,"
+  },
+  {
+   "id": "2116292864141300151",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2116292864141300151",
+   "created_at": "2026-10-30T22:15:12.000Z",
+   "text": "El Concejo Municipal de Vinces aprobó una licencia sin remuneración de hasta 60 días para el alcalde Alfonso Montalván, detenido en el marco de una investigación por presunto lavado de activos. https://t.co/IYPd4RSxMJ https://t.co/ddccHXcQig",
+   "lang": "und",
+   "region_ids": [
+    "ECU-1281"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "The Vinces Municipal Council approved unpaid leave of up to 60 days for Mayor Alfonso Montalván, who was detained as part of an investigation into alleged money laundering."
+  },
   {
    "id": "2116281490598445404",
    "handle": "parescolombia",
@@ -3897,166 +3999,6 @@
    "source_type": "national outlet",
    "label": null,
    "text_en": "The ruling party called the Chihuahua governor's accusations \"reckless\", \"frivolous\" and \"without evidence\" after she said in an interview that Ariadna Montiel has ties to organised crime."
-  },
-  {
-   "id": "2113796363641368921",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2113796363641368921",
-   "created_at": "2026-10-24T00:55:00.000Z",
-   "text": "Al detenido se le acusa de los hechos registrados la noche del 29 de septiembre de 2026 en la colonia 5 de Febrero, en #Culiacán donde una persona perdió la vida y otras resultaron lesionadas, quienes sobrevivieron tras recibir atención médica oportuna. https://t.co/SnXraTnnNn",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "The detainee is accused over events on the night of 29 September 2026 in the 5 de Febrero neighbourhood of #Culiacán, where one person died and others were injured, who survived after timely medical care."
-  },
-  {
-   "id": "2113790102203723966",
-   "handle": "Pajaropolitico",
-   "url": "https://x.com/Pajaropolitico/status/2113790102203723966",
-   "created_at": "2026-10-24T00:30:07.000Z",
-   "text": "🚨🔎 Tres presuntos integrantes del CJNG fueron detenidos en Colima por el atentado con coche bomba en Coahuayana, Michoacán, que dejó 6 muertos. Entre ellos está David “N”, alias “Mando 20”. https://t.co/a1HsuCwRhU",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2718",
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "🚨🔎 Three alleged CJNG members arrested in Colima over the car-bomb attack in Coahuayana, Michoacán, that left 6 dead. Among them is David \"N\", alias \"Mando 20\"."
-  },
-  {
-   "id": "2113783721589383328",
-   "handle": "SSPCMexico",
-   "url": "https://x.com/SSPCMexico/status/2113783721589383328",
-   "created_at": "2026-10-24T00:04:46.000Z",
-   "text": "Como resultado de trabajos de investigación e inteligencia para combatir el tráfico y la fabricación ilegal de armas, en #Puebla y #CDMX, autoridades federales ejecutaron cinco órdenes de cateo en las que detuvieron a cuatro personas y aseguraron armamento, cartuchos y dosis de…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2727",
-    "MEX-2724"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "official",
-   "label": "Official statement",
-   "text_en": "As a result of investigative and intelligence work against illegal arms trafficking and manufacturing, in #Puebla and #CDMX federal authorities executed five search warrants, arrested four people and seized weapons, cartridges and doses of…"
-  },
-  {
-   "id": "2113772456129212530",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2113772456129212530",
-   "created_at": "2026-10-23T23:20:00.000Z",
-   "text": "El director de Seguridad Pública de Emiliano Zapata, Tabasco, Cleofas Juárez Lara, fue detenido durante un operativo de fuerzas federales y estatales por su presunta vinculación con la #delincuenciaorganizada, informó la Fiscalía de #Tabasco. https://t.co/DG69btINJF",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2725"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "The public security director of Emiliano Zapata, Tabasco, Cleofas Juárez Lara, was arrested during an operation by federal and state forces over his alleged links to #organisedcrime, the #Tabasco Attorney General's Office reported."
-  },
-  {
-   "id": "2113772344946942071",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2113772344946942071",
-   "created_at": "2026-10-23T23:19:33.000Z",
-   "text": "Donde de manera extraoficial se dice que hay #personasdetenidas y, hasta el momento, la #SSE no ha proporcionado información sobre la identidad del detenido ni los motivos de la captura. https://t.co/n48C0iE4in",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "Where it is unofficially said there are #detainees; so far the #SSE has not provided information on the detainee's identity or the reasons for the arrest."
-  },
-  {
-   "id": "2113760059188564402",
-   "handle": "InSightCrime",
-   "url": "https://x.com/InSightCrime/status/2113760059188564402",
-   "created_at": "2026-10-23T22:30:44.000Z",
-   "text": "🇧🇴 | The department of Santa Cruz, in Bolivia, is experiencing a wave of violence linked to organized crime and the increased flow of cocaine through the country. Santa Cruz is part of a strategic corridor leading to international markets. Read more: https://t.co/Ks20DTaQdX http…",
-   "lang": "en",
-   "region_ids": [
-    "ARG-1271",
-    "BOL-1940"
-   ],
-   "country": "ARG",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "research outlet",
-   "label": null
-  },
-  {
-   "id": "2113759876283548090",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2113759876283548090",
-   "created_at": "2026-10-23T22:30:00.000Z",
-   "text": "🚨El \"Mando 20\" fue detenido en Colima tras un año de trabajos de inteligencia https://t.co/CMrA4E9DfL",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2718"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "🚨 \"Mando 20\" arrested in Colima after a year of intelligence work"
-  },
-  {
-   "id": "2113759875297898729",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2113759875297898729",
-   "created_at": "2026-10-23T22:30:00.000Z",
-   "text": "Autoridades federales detuvieron en Tecomán, #Colima, a David “N”, '#Mando20', señalado como presunto líder de una célula del #CJNG y probable responsable del atentado con #cochebomba que dejó seis personas muertas en Coahuayana, Michoacán, en diciembre de 2025.",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2718",
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "Federal authorities arrested in Tecomán, #Colima, David \"N\", '#Mando20', identified as the alleged leader of a #CJNG cell and probable perpetrator of the #carbomb attack that killed six people in Coahuayana, Michoacán, in December 2025."
-  },
-  {
-   "id": "2113758222423081320",
-   "handle": "GabSeguridadMX",
-   "url": "https://x.com/GabSeguridadMX/status/2113758222423081320",
-   "created_at": "2026-10-23T22:23:26.000Z",
-   "text": "En la Aduana de Lázaro Cárdenas, Michoacán, personal de @AduanasMx, en coordinación con @SEMAR_mx y @SSPCMexico, aseguró 14,250 envases de perfume que presentaban irregularidades en materia de propiedad intelectual. Los productos se encontraban en un contenedor y fueron https://…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "official",
-   "label": "Official statement",
-   "text_en": "At the Lázaro Cárdenas customs office, Michoacán, @AduanasMx staff, in coordination with @SEMAR_mx and @SSPCMexico, seized 14,250 perfume containers with intellectual-property irregularities. The products were in a container and were…"
   }
  ]
 }
