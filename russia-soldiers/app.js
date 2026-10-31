@@ -56,6 +56,13 @@ function drawMap(){
   .attr('data-tip',function(f){var r=byNe[f.properties.name];return r?regionTip(r,metric):''})
   .attr('fill',function(f){return fillOf(byNe[f.properties.name],metric)})
   .on('click',function(e,f){var r=byNe[f.properties.name];if(r)selectRegion(r)});
+ /* Invisible hit target for a region whose bounding-box centre lies outside its own shape (a coast or a bay: Yamalo-Nenets, Arkhangelsk). A click or tap at that centre,
+    where automated and assistive pointers aim, selects the region like a click on its land does. Transparent, so nothing changes visually. */
+ var gPin=gMap.append('g').attr('class','regpins').attr('aria-hidden','true');
+ gMap.selectAll('path.reg').each(function(f){var b=this.getBBox(),pt=svgMap.node().createSVGPoint();pt.x=b.x+b.width/2;pt.y=b.y+b.height/2;
+  if(this.isPointInFill(pt))return;var own=this,hit=false;gMap.selectAll('path.reg').each(function(){if(this!==own&&this.isPointInFill(pt))hit=true});if(hit)return; /* centre lies in another region: that region owns the click */
+  gPin.append('circle').datum(f).attr('class','regpin').attr('cx',pt.x).attr('cy',pt.y).attr('r',6).attr('fill','#000').attr('fill-opacity',0)
+   .attr('data-tip',function(){var r=byNe[f.properties.name];return r?regionTip(r,metric):''}).on('click',function(e,d){var r=byNe[d.properties.name];if(r)selectRegion(r)})});
  zoom=d3.zoom().scaleExtent([1,14]).translateExtent([[0,0],[w,h]]).on('zoom',function(e){gMap.attr('transform',e.transform)});
  svgMap.call(zoom);
  if(selected)markSel();
@@ -63,6 +70,7 @@ function drawMap(){
 function recolor(){
  gMap.selectAll('path').attr('fill',function(f){return fillOf(byNe[f.properties.name],metric)})
   .attr('data-tip',function(f){var r=byNe[f.properties.name];return r?regionTip(r,metric):''});
+ gMap.selectAll('circle.regpin').attr('data-tip',function(f){var r=byNe[f.properties.name];return r?regionTip(r,metric):''});
  $('#legend').innerHTML=legendHTML(metric);$('#legtitle').textContent=METRICS[metric].legend;
   $('#map').setAttribute('aria-label','Map of Russia\'s regions shaded by '+METRICS[metric].legend);
 }

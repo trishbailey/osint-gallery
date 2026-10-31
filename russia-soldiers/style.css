@@ -51,7 +51,7 @@ sup a{text-decoration:none;font-weight:600}
 .ln{display:inline-block;width:20px;height:0;border-top:2px solid var(--gold);flex:none}
 .mapwrap{position:relative;overflow:hidden;background:var(--bg);border:1px solid var(--line);border-radius:10px}
 #map{display:block;width:100%;height:560px;touch-action:none;cursor:grab}
-#map path.reg{stroke:var(--bg);stroke-width:.8px;vector-effect:non-scaling-stroke;cursor:pointer}
+#map circle.regpin{cursor:pointer}#map path.reg{stroke:var(--bg);stroke-width:.8px;vector-effect:non-scaling-stroke;cursor:pointer}
 #map path.reg:hover{stroke:var(--gold);stroke-width:2.2px}
 #map path.reg.sel{stroke:var(--gold);stroke-width:3px}
 .mapbtn{position:absolute;left:10px;bottom:10px;background:var(--panel)}

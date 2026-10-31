@@ -522,6 +522,8 @@ need("colonies.js is loaded and the vendored CSV sits in data/", 'src="colonies.
 need("prisoners section holds the colony map, the prisoner chart, the finding and three prisoner photos", page.index('id="pris-sec"') < page.index('id="colmap"') < page.index('Prisoners outnumber mobilised men among the named dead') < page.index('id="nk-sec"') and len(re.findall(r"<img", re.search(r'id="pris-sec".*?id="nk-sec"', page, re.S).group(0))) == 3)
 need("prisoners outnumber mobilised men among the named dead, 27,379 against 20,690", S["type_totals"]["pri"] == 27379 and S["type_totals"]["mob"] == 20690)
 need("foreign section carries Central Asia 11,157 recruited and at least 1,399 killed, matching the flow data", all(x_ in text for x_ in ("11,157", "1,399")) and [a_["low"] for a_ in FL["arrows"] if a_["id"] == "ca"] == [11157] and "at least 1,399 of them killed" in [a_ for a_ in FL["arrows"] if a_["id"] == "ca"][0]["tip"])
+_ap = open(os.path.join(ROOT, "app.js"), encoding="utf-8").read()
+need("regional map: a transparent hit target sits at the bounding-box centre of any region whose centre falls outside its shape, and selects that region", "isPointInFill" in _ap and "regpin" in _ap and "attr('fill-opacity',0)" in _ap and "selectRegion(r)" in _ap[_ap.index("regpin"):_ap.index("regpin") + 1400] and "circle.regpin{cursor:pointer}" in open(os.path.join(ROOT, "style.css"), encoding="utf-8").read())
 need("no unresolved tokens", "{{" not in page and "[[" not in page)
 print(f"audit: {OK[0]} checks passed, {len(FAIL)} failed")
 for f_ in FAIL[:60]: print("  FAIL", f_)
