@@ -34,7 +34,7 @@ function bindTips(){
  document.addEventListener('mousemove',function(e){var t=e.target.closest&&e.target.closest('[data-tip]');if(t)showTip(t.getAttribute('data-tip'),e.clientX,e.clientY);else hideTip()});
  document.addEventListener('focusin',function(e){var t=e.target.closest&&e.target.closest('[data-tip]');if(t){var b=t.getBoundingClientRect();showTip(t.getAttribute('data-tip'),b.left+20,b.bottom-10)}});
  document.addEventListener('focusout',hideTip);
- document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-tip]');if(t&&t.classList&&t.classList.contains('reg')){hideTip();return}if(t)showTip(t.getAttribute('data-tip'),e.clientX,e.clientY);else hideTip()});
+ document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-tip]');if(t&&t.classList&&t.classList.contains('reg')&&t.closest('#map')){hideTip();return}if(t)showTip(t.getAttribute('data-tip'),e.clientX,e.clientY);else hideTip()});
  window.addEventListener('scroll',hideTip,{passive:true});
 }
 function regionTip(r,m){var v=valOf(r,m);

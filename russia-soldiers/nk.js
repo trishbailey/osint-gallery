@@ -83,11 +83,13 @@ function key(){
  [['documented','Documented',null],['reported','Reported','16 7'],['contested','Contested','2 8']].forEach(function(x){
   h+='<li data-tip="'+esc(N.status[x[0]])+'" tabindex="0"><svg width="46" height="12" aria-hidden="true"><line x1="2" x2="44" y1="6" y2="6" stroke="#e6e9ef" stroke-width="5" '+(x[2]?'stroke-linecap="round" stroke-dasharray="'+x[2]+'"':'')+'/></svg>'+x[1]+'</li>'});
  h+='</ul><p class="note">Hover a line for its source. Documented: records, imagery or both governments confirm it. Reported: one credible outlet or agency. Contested: sources disagree, or only one side of the war claims it.</p>';
- h+='<div class="seg"><button type="button" class="chipb" id="nz-in">Zoom in</button><button type="button" class="chipb" id="nz-out">Zoom out</button><button type="button" class="chipb" id="nz-ru">Russian end</button><button type="button" class="chipb" id="nz-kr">Korean end</button><button type="button" class="chipb" id="nz-reset">Reset view</button></div>';
+ h+='<div class="seg"><button type="button" class="chipb" id="nz-in">Zoom in</button><button type="button" class="chipb" id="nz-out">Zoom out</button><button type="button" class="chipb" id="nz-ru">Russian end</button><button type="button" class="chipb" id="nz-kr">Korean end</button><button type="button" class="chipb" id="nz-reset">Reset view</button></div><p class="note" id="nzview" aria-live="polite">Showing the opening view.</p>';
  $('#nkkey').innerHTML=h;
- var z=function(f){return function(){svgM.transition().duration(250).call(zm.scaleBy,f)}};
+ var say=function(t){$('#nzview').textContent='View: '+t+'.'};
+ var z=function(f){return function(){say(f>1?'zoomed in':'zoomed out');svgM.transition().duration(250).call(zm.scaleBy,f)}};
  $('#nz-in').addEventListener('click',z(1.7));$('#nz-out').addEventListener('click',z(1/1.7));
- var go=function(v){return function(){cur.t=VIEWS[v];svgM.transition().duration(300).call(zm.transform,VIEWS[v])}};
+ var LBL={ru:'Russian end',kr:'Korean end',all:'whole route'};
+ var go=function(v){return function(){say(LBL[v]);cur.t=VIEWS[v];svgM.transition().duration(300).call(zm.transform,VIEWS[v])}};
  $('#nz-ru').addEventListener('click',go('ru'));$('#nz-kr').addEventListener('click',go('kr'));$('#nz-reset').addEventListener('click',go('all'));
 }
 function all(){rel();mapDraw()}
