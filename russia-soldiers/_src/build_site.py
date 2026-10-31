@@ -82,12 +82,14 @@ def values():
     A = {x["id"]: x for x in FL["arrows"]}; BR = {x["kind"]: x["n"] for x in FL["bars"]}
     assert A["vol"]["low"] > A["mob"]["high"] > A["pri"]["low"] and BR["pri"] > BR["mob"] and FL["bars"][0]["kind"] == "vol"
     V["v_flow"] = (f"Contract soldiers and volunteers are by far the biggest inflow: {n0(A['vol']['low'])} to {n0(A['vol']['high'])} recruited, against {n0(A['mob']['low'])} to {n0(A['mob']['high'])} mobilised and "
-                   f"{n0(A['pri']['low'])} to {n0(A['pri']['high'])} prisoners. Prisoners still outnumber mobilised men among the named dead ({n0(BR['pri'])} against {n0(BR['mob'])}).")
-    TSP = {s_["kind"]: {p_["id"]: p_ for p_ in s_["points"]} for s_ in FL["ts"]["series"]}
-    assert TSP["vol"]["vol23"]["low"] > TSP["vol"]["vol25"]["low"] and TSP["for"]["for25"]["low"] > TSP["for"]["for23"]["low"]
-    V["v_ts"] = (f"Official contract and volunteer figures fell from {n0(TSP['vol']['vol23']['low'])} in 2023 to {n0(TSP['vol']['vol25']['low'])} in 2025, while foreign contract signers counted by Ukraine rose from "
-                 f"{n0(TSP['for']['for23']['low'])} to {n0(TSP['for']['for25']['low'])}.")
-    V["ts_gaps"] = FL["ts"]["gaps"]
+                   f"{n0(A['pri']['low'])} to {n0(A['pri']['high'])} prisoners.")
+    import recruit_inputs as RIY
+    YV = {(y_["type"], y_["year"]): y_ for y_ in RIY.YEARLY}
+    assert YV[("vol", 2023)]["value"] > YV[("vol", 2025)]["value"] and YV[("for", 2025)]["value"] > YV[("for", 2023)]["value"]
+    V["ridge_label"] = RIY.RIDGE_LABEL
+    V["ridge_note"] = ("Each row has its own scale: every row is linear from zero to the maximum printed beside its name, so heights are not comparable between rows. "
+                       "A filled curve joins only consecutive years that both have a sourced value. A glowing dot is a single year with no neighbour to join, and part-year points (2026) are never joined. "
+                       "Solid is the official claim or the single published figure; the dashed curve and lighter band are an independent estimate. Hover or tap a year for exact values and sources.")
     V["flow_skipped"] = FL["skipped"]; V["flow_notdrawn"] = FL["not_drawn"]
     import nk_inputs as NKI
     cnt = {s_: sum(1 for r in NKI.ROWS if r["status"] == s_) for s_ in NKI.STATUS}
@@ -99,21 +101,64 @@ def values():
                     f"poverty {n2(S['ols_pov']['beta_pov'])}, Russian share {n2(S['ols_pov']['beta_ru'])}).")
     V["pov_derived"] = " and ".join(S["pov_derived"])
     V["probate_regular"] = n0(pr["regular"]); V["probate_late"] = n0(pr["late"])
+    # --- restructure: recruit types first
+    import build_colonies
+    CO = build_colonies.build()
+    assert CO["total_recruits"] == 48366 and V["wagner"].replace(",", "") == "48366"
+    ud = CO["undrawn"]
+    V["pri_named"], V["mob_named"] = n0(tt["pri"]), n0(tt["mob"])
+    assert tt["pri"] > tt["mob"]
+    V["vol_range"] = f"{A['vol']['low']/1e6:.1f} to {A['vol']['high']/1e6:.1f} million"
+    V["undrawn_n"], V["undrawn_rec"] = n0(ud["n"]), n0(ud["recruits"])
+    V["v_pris"] = (f"Wagner recruited at least {n0(CO['total_recruits'])} prisoners from {CO['rows']} colonies between 1 Jul 2022 and 7 Feb 2023. "
+                   f"{CO['drawn']} of the colonies, holding {n0(CO['drawn_recruits'])} of the recruits, can be placed on the map.")
+    V["col_note"] = (f"Circle area is the minimum recruited, Wagner period Jul 2022 to Feb 2023 only; the true count is at least this. "
+                     f"{n0(ud['n'])} colonies with {n0(ud['recruits'])} recruits are not drawn. Hover or tap a circle; Ctrl and scroll or pinch to zoom.")
+    V["col_how"] = (f"Each Wagner dog tag carried the number of the prison colony the man came from, and the numbers ran in the order the colonies were visited, so the highest number found among a colony\u2019s dead is the fewest men it supplied. "
+                    f"Mediazona and BBC News Russian found {CO['rows']} such numbers, from K1 to K617 with 116 missing, and matched 341 of them to named colonies; locations are as plotted on Mediazona\u2019s map. "
+                    f"{n0(ud['n'] - 1)} colonies could not be named, and one more, IK24 Ukhta, is not drawn because Mediazona\u2019s English and Russian labels name different colonies (Ukhta in Komi, and Fornosovo near St Petersburg); "
+                    f"together they hold {n0(ud['recruits'])} of the {n0(CO['total_recruits'])} recruits. \u201cKilled\u201d comes from Wagner\u2019s payment records, which cover deaths from January 2022 to August 2023, and is not a loss rate for the recruits.")
+    V["v_type_pris"] = f"Prisoners outnumber mobilised men among the named dead: {n0(tt['pri'])} against {n0(tt['mob'])}.[[mz_regions]]"
+    V["v_for"] = (f"Foreign contract signers counted by Ukraine rose from {n0(YV[('for', 2023)]['value'])} in 2023 to {n0(YV[('for', 2025)]['value'])} in 2025;[[liga_foreign]] "
+                  f"{n0(A['ca']['low'])} recruits are from Central Asia.[[occrp_foreign]]")
+    V["ca_n"] = n0(A["ca"]["low"]); V["ca_killed"] = "1,399"
+    V["ts_gaps_for"] = "No dated figure was found for foreigners before 2022. That is a gap, not a zero."
+    def cell(t, yr):
+        y_ = YV[(t, yr)]
+        if y_["value"] is None: return f"{yr} no data"
+        cites = "".join(f"[[{q_['src']}]]" for q_ in dict((q_["src"], q_) for q_ in y_["parts"]).values())
+        cites += "".join(f"[[{a_}]]" for a_ in dict.fromkeys(a_ for a_, _ in y_["pq"]) if a_ not in cites)
+        return f"{yr} {'~' if y_['alloc'] else ''}{n0(y_['value'])}{cites}"
+    names = {t_: nm_ for t_, nm_, _, _ in RIY.RIDGE_ROWS}
+    items = []
+    for t_, nm_, _, _ in RIY.RIDGE_ROWS:
+        ctx = " ".join(f"{yr}: {c_}." for yr in RIY.YEARS for c_ in YV[(t_, yr)]["ctx"])
+        cx_ = {"vol": "[[isw_istories23]][[istories_407]]", "mob": "[[dw_mz527]]", "for": "[[occrp_foreign]]", "nk": "[[yonhap_nis]]", "pri": ""}[t_]
+        items.append(f"<li><b>{nm_}:</b> " + "; ".join(cell(t_, yr) for yr in RIY.YEARS) + f". {ctx}{cx_}</li>")
+    V["ridge_table"] = "<ul class=\"yrlist\">" + "".join(items) + "</ul>"
+    V["ridge_how"] = ("Every row is one estimate per calendar year, taken from the source numbered next to it; the sources differ, so the rows are separate estimates that do not add up to an official total. "
+                       "Each row has its own linear scale from zero. A year with no source is a gap: it is left empty and marked \u201cno data\u201d, and nothing is interpolated or carried over from another year. "
+                       "Contract soldiers and volunteers are official claims, so they may be inflated; independent budget-data estimates are lower and are drawn as a dashed curve with a lighter band (a range for 2024). Mediazona\u2019s later estimate of the 2022 mobilisation is a hollow ring. 2026 is part-year, so it is shown as a dot and not joined. "
+                       "<b>Allocation method.</b> Wagner\u2019s total of at least 48,366 prisoners covers 1 July 2022 to 7 February 2023, 222 days.[[ng_wagner]][[meduza_wagner]] "
+                       f"At an even pace, 184 days fall in 2022 ({n0(YV[('pri', 2022)]['value'])}) and 38 in 2023 ({n0(YV[('pri', 2023)]['value'] - 28200)}), which is an allocation, not a count; Wagner\u2019s real pace was uneven. "
+                       "Storm Z\u2019s 28,200 (iStories\u2019 lower bound; the range runs to 29,000)[[istories]] is all placed in 2023 and leaves out the first wave. The prisoners layer for 2023 is the sum. "
+                       "North Korea: the only yearly figure is the 11,000 troops that Western officials estimated in January 2025;[[bbc_shoigu]] later figures are cumulative and are not split by year, so 2025 and 2026 are gaps. "
+                       "Foreign nationals are Ukraine\u2019s yearly counts of contract signers[[liga_foreign]] and include Central Asians, whose total is not split by year.[[occrp_foreign]]")
     return V
 
 GROUPS = [("contracts", "Contract soldiers (volunteers)"), ("mobilised", "Mobilised men"), ("prisoners", "Prisoners"), ("foreigners", "Foreign recruits"), ("northkorea", "North Korea: troops and workers")]
-def pool_rows():
+def pool_rows(groups):
     items = [p for p in D("pools.json")["items"] if p["low"] and p["unit"] != "roubles"]
     mx = max(p["high"] for p in items)
     out = []
-    for gk, gl in GROUPS:
+    for gk, gl in [g for g in GROUPS if g[0] in groups]:
         out.append(f'<h4 class="grp">{gl}</h4>')
         for p in [p for p in items if p["pool"] == gk]:
             lo, hi = p["low"], p["high"]
             val = f"{lo:,}" if lo == hi else f"{lo:,} to {hi:,}"
             tip = html.escape(f"{p['label']}: {val} {p['unit']}. {p['note']}", quote=True)
             rng = f'<span class="bw" style="left:{lo/mx*100:.2f}%;width:{(hi-lo)/mx*100:.2f}%"></span>' if hi != lo else ""
-            out.append(f'<div class="brow" tabindex="0" data-tip="{tip}"><span class="bl">{html.escape(p["label"], quote=False)}</span><span class="bt"><span class="bf" style="width:{lo/mx*100:.2f}%"></span>{rng}</span><span class="bv">{val}</span></div>'
+            out.append(f'<div class="brow" data-g="{gk}" tabindex="0" data-tip="{tip}"><span class="bl">{html.escape(p["label"], quote=False)}</span><span class="bt"><span class="bf" style="width:{lo/mx*100:.2f}%"></span>{rng}</span><span class="bv">{val}</span></div>'
                        f'<p class="rnote">{html.escape(p["text"][0].upper() + p["text"][1:], quote=False)}.[[{p["src"]}]]</p>')
     return "\n".join(out)
 
@@ -121,7 +166,8 @@ def build():
     V = values()
     src = open(os.path.join(ROOT, "index.src.html"), encoding="utf-8").read()
     for k, v in V.items(): src = src.replace("{{" + k + "}}", html.escape(str(v), quote=False))
-    src = src.replace("{{pool_rows}}", pool_rows())
+    for k_, g_ in (("pri", ("prisoners",)), ("for", ("foreigners",)), ("con", ("contracts", "mobilised"))):
+        src = src.replace("{{pool_rows_" + k_ + "}}", pool_rows(g_))
     import build_flows
     build_flows.build(); NKR = build_flows.render()
     src = src.replace("{{nk_cards}}", NKR["cards"]).replace("{{nk_timeline}}", NKR["timeline"])

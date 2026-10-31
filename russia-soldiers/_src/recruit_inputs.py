@@ -58,10 +58,10 @@ ARROWS = [
       status="Estimate of the troops committed; the South Korean agency NIS and the BBC give a range.", dead_key=None),
 ]
 HUB = dict(ll=[55.0, 56.2], name="Russia, all regions (schematic)")
-# the width scale: w = WMIN + WSPAN * sqrt(v / VMAX); VMAX is the largest high value
-WMIN, WSPAN = 4, 6
+# the width scale is LINEAR: w = max(WMIN, WMAX * v / VMAX), so width is proportional to people recruited. VMAX is the largest high value (drawn at WMAX px).
+# Anything under WMIN / WMAX * VMAX would be thinner than WMIN px, so it is drawn at WMIN px (clamped) and the key says so. WMAX_PH is the phone maximum.
+WMIN, WMAX, WMAX_PH = 3, 56, 34
 VMAX = max(a["high"] for a in ARROWS)
-LEGEND_SAMPLES = [11157, 76566, 300000, 1300000]
 # foreign counts that are not drawn (no single origin on the map or out of its frame), with their sources
 NOT_DRAWN = [
  part("liga_foreign", "45,959 foreigners from 151 countries and unrecognized territories have fought or are currently fighting as contract soldiers in the Russian army", ["45,959", "151"], 45959, "All foreign contract signers named by Ukraine, to 1 Oct 2026: 45,959 from 151 countries", "2026-10-19"),
@@ -72,43 +72,55 @@ NOT_DRAWN = [
 BAR_FOREIGN = dict(n=3589, parts=(2304, 1285), quote="3,589")
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
-# Time series: recruits in a dated period, by type. Only periods that a source states are drawn. A period with no source is a gap (never zero).
-# Each point: t0..t1 = the period the source covers; low/high = the sum of its parts (equal when the figure is exact); pq = (source, text) proving
-# the period inside the saved source; est = True marks an independent estimate drawn as hollow markers instead of the line.
-def tp(pid, typ, t0, t1, parts, pq, low=None, high=None, what="", est=False, note=""):
-    lo = sum(p["value"] for p in parts) if low is None else low
-    hi = lo if high is None else high
-    return dict(id=pid, type=typ, t0=t0, t1=t1, low=lo, high=hi, parts=parts, pq=pq, what=what, est=est, note=note)
-
-_LIGA_Q = "2022 – 94 contracts; → 2023 – 4,067; → 2024 – 8,877; → 2025 – 16,085; → for the first nine months of 2026 – 16,168"
-def _liga(fig, val, lab):
-    return part("liga_foreign", _LIGA_Q, [fig], val, lab, "2026-10-19")
-_ar = {a["id"]: a for a in ARROWS}
-TS = [
- tp("vol23", "vol", "2023-01-01", "2023-12-31", [VOL_HIGH[0]], [("ria_shoigu24", "в 2023 году")], what="contracts signed in 2023, official claim"),
- tp("vol24", "vol", "2024-01-01", "2024-12-31", [VOL_HIGH[1], VOL_HIGH[2]], [("tass_med25", "in 2024")], what="contracts plus volunteer formations in 2024, official claim"),
- tp("vol25", "vol", "2025-01-01", "2025-12-31", [VOL_HIGH[3], VOL_HIGH[4]], [("interfax_med26", "В 2025 году")], what="contracts plus volunteers in 2025, official claim"),
- tp("vol26", "vol", "2026-01-01", "2026-06-30", [VOL_HIGH[5]], [("ng_bonus", "first half of 2026")], what="contracts in the first half of 2026 only, official claim", note="Half a year only: not comparable with a full year."),
- tp("est23", "vol", "2023-01-01", "2023-12-31", [VOL_CONTEXT[0]], [("isw_istories23", "in 2023")], what="contracts signed in 2023, iStories estimate from federal budget data", est=True),
- tp("est24", "vol", "2024-01-01", "2024-12-31", [VOL_CONTEXT[1]], [("istories_407", "in 2024")], low=374200, high=407200, what="contracts signed in 2024, iStories estimate from federal budget data (a range)", est=True),
- tp("mob_k", "mob", "2022-10-28", "2022-10-28", [pool("mobilised", 300000, "300,000 called up in the partial mobilisation, counted to the day it was declared complete (Defence Minister to the President, 28 Oct 2022)", "2022-10-28", "300,000")], [("kremlin", "October 28, 2022")],
-    what="men called up in the Sep to Oct 2022 mobilisation, the Kremlin's count on the day the call-up was declared complete",
-    note="One call-up wave, Sep to Oct 2022. This dot and the next count the same men."),
- tp("mob_m", "mob", "2023-03-02", "2023-03-02", [_ar["mob"]["high_parts"][0]], [("dw_mz527", "в четверг, 2 марта")],
-    what="men called up in the same Sep to Oct 2022 mobilisation, Mediazona's later estimate from accelerated marriages (a minimum)",
-    note="A later, independent estimate of the same call-up. The rise from the dot before is a higher count of the same wave, not more men called up."),
- tp("pri22", "pri", "2022-07-01", "2023-02-07", [pool("wagner", 48366, "Wagner recruited at least 48,366 prisoners, from 1 Jul 2022 to 7 Feb 2023 (Mediazona and BBC News Russian, via Meduza, 10 Jun 2024)", "2024-06-10", "48,366")],
-    [("meduza_wagner", "Первая вербовка состоялась 1 июля 2022 года"), ("meduza_wagner", "7 февраля 2023 года")], what="prisoners recruited by Wagner (at least)"),
- tp("pri23", "pri", "2023-02-01", "2023-09-30", [pool("stormz", 28200, "Storm Z: lower bound about 28,2 thousand (iStories, 6 Feb 2025)", "2025-02-06", "28,2 тыс"), pool("stormz", 29000, "Storm Z: upper bound 29 thousand (iStories, 6 Feb 2025)", "2025-02-06", "29 тыс")], [("istories", "в феврале 2023 года"), ("istories", "Уже к сентябрю набор в «Шторм Z» закончился")], low=28200, high=29000, what="prisoners recruited into Storm Z by the Defence Ministry (iStories token analysis)",
-    note="Leaves out the first wave, from late February to April 2023, so it may be higher."),
- tp("for22", "for", "2022-01-01", "2022-12-31", [_liga("94", 94, "foreign contract signers in 2022: 94")], [("liga_foreign", "2022 – 94 contracts")], what="foreigners who signed contracts, as counted by Ukraine"),
- tp("for23", "for", "2023-01-01", "2023-12-31", [_liga("4,067", 4067, "foreign contract signers in 2023: 4,067")], [("liga_foreign", "→ 2023 – 4,067")], what="foreigners who signed contracts, as counted by Ukraine"),
- tp("for24", "for", "2024-01-01", "2024-12-31", [_liga("8,877", 8877, "foreign contract signers in 2024: 8,877")], [("liga_foreign", "→ 2024 – 8,877")], what="foreigners who signed contracts, as counted by Ukraine"),
- tp("for25", "for", "2025-01-01", "2025-12-31", [_liga("16,085", 16085, "foreign contract signers in 2025: 16,085")], [("liga_foreign", "→ 2025 – 16,085")], what="foreigners who signed contracts, as counted by Ukraine"),
- tp("for26", "for", "2026-01-01", "2026-09-30", [_liga("16,168", 16168, "foreign contract signers, January to September 2026: 16,168")], [("liga_foreign", "first nine months of 2026")], what="foreigners who signed contracts in the first nine months of 2026, as counted by Ukraine",
-    note="Nine months only."),
+# YEARLY grid for the ridgeline (one row per type): one sourced estimate per recruit type per calendar year. A year with no source is a GAP (None): the stream has
+# zero height there, the strip under it is hatched "no data", and the hover says so. Nothing is invented, interpolated or carried over.
+# value = the published figure for that year (sum of its parts), or an ALLOCATION where one source covers months that straddle two years:
+#   Wagner: at least 48,366 prisoners from 1 Jul 2022 to 7 Feb 2023 (222 days). Split by days at an even pace: 184 days in 2022, 38 days in 2023.
+YEARS = [2022, 2023, 2024, 2025, 2026]
+WAG_DAYS = dict(total=222, y2022=184, y2023=38)
+assert WAG_DAYS["y2022"] + WAG_DAYS["y2023"] == WAG_DAYS["total"]
+_wag = pool("wagner", 48366, "Wagner recruited at least 48,366 prisoners in 2022 and 2023 (Novaya Gazeta Europe, 10 Jun 2024); dates 1 Jul 2022 to 7 Feb 2023 (Meduza, 10 Jun 2024)", "2024-06-10", "48,366")
+_wag22 = round(48366 * WAG_DAYS["y2022"] / WAG_DAYS["total"]); _wag23 = 48366 - _wag22
+_stz = pool("stormz", 28200, "Storm Z, from Feb 2023: lower bound about 28,2 thousand (iStories, 6 Feb 2025)", "2025-02-06", "28,2 тыс")
+NK11 = part("bbc_shoigu", "Western officials had in January told the BBC that at least 1,000 of an estimated 11,000 North Korean troops in Russia had been killed in just three months.", ["11,000"], 11000,
+            "an estimated 11,000 North Korean troops in Russia (Western officials, January 2025, via BBC, 18 Jun 2025)", "2025-06-18")
+_MOB = pool("mobilised", 300000, "300,000 called up in the partial mobilisation (Defence Minister to the President, 28 Oct 2022)", "2022-10-28", "300,000")
+def yp(typ, year, value, parts, period, what, ctx=(), alloc=None, note="", pq=()):
+    return dict(type=typ, year=year, value=value, parts=parts, period=period, what=what, ctx=list(ctx), alloc=alloc, note=note, pq=list(pq))
+def gap(typ, year, note): return dict(type=typ, year=year, value=None, parts=[], period="", what="", ctx=[], alloc=None, note=note, pq=[])
+YEARLY = [
+ gap("vol", 2022, "No source gives contract signers for 2022."),
+ yp("vol", 2023, 540000, [VOL_HIGH[0]], "Jan to Dec 2023", "official claim: almost 540,000 contracts (Shoigu, 20 Feb 2024)", ctx=["independent estimate from budget data: 354,400 (iStories)"]),
+ yp("vol", 2024, 490000, [VOL_HIGH[1], VOL_HIGH[2]], "Jan to Dec 2024", "official claim: about 450,000 contracts plus over 40,000 volunteer-formation recruits (Medvedev, 24 Jan 2025)", ctx=["independent estimate from budget data: 374,200 to 407,200 (iStories)"]),
+ yp("vol", 2025, 454704, [VOL_HIGH[3], VOL_HIGH[4]], "Jan to Dec 2025", "official claim: 422,704 contracts plus 32,000 volunteers (Medvedev, 16 Jan 2026)"),
+ yp("vol", 2026, 200000, [VOL_HIGH[5]], "Jan to Jun 2026 only", "official claim: around 200,000 in the first half (Medvedev, reported 30 Jul 2026)", note="Half a year only: not comparable with a full year."),
+ yp("mob", 2022, 300000, [_MOB], "Sep to Oct 2022", "the partial mobilisation: 300,000 called up (Defence Minister to the President, 28 Oct 2022)", ctx=["Mediazona later estimated at least 527,703 for the same call-up"], note="One call-up wave."),
+ gap("mob", 2023, "No source gives a figure for this year."), gap("mob", 2024, "No source gives a figure for this year."), gap("mob", 2025, "No source gives a figure for this year."), gap("mob", 2026, "No source gives a figure for this year."),
+ yp("pri", 2022, _wag22, [_wag], "1 Jul to 31 Dec 2022 (184 of 222 days)", f"Wagner: at least 48,366 over 1 Jul 2022 to 7 Feb 2023; {_wag22:,} of it allocated to 2022 by days", alloc=dict(share=WAG_DAYS["y2022"], of=WAG_DAYS["total"]),
+    note="An allocation at an even pace, not a count: the source gives one total for the whole period.", pq=[("meduza_wagner", "Первая вербовка состоялась 1 июля 2022 года"), ("meduza_wagner", "7 февраля 2023 года")]),
+ yp("pri", 2023, _wag23 + 28200, [_wag, _stz], "1 Jan to 7 Feb 2023 Wagner (38 of 222 days), plus Storm Z from Feb 2023",
+    f"Wagner {_wag23:,} (allocated to 2023 by days) plus Storm Z 28,200 (iStories, lower bound of 28,200 to 29,000)", alloc=dict(share=WAG_DAYS["y2023"], of=WAG_DAYS["total"]),
+    note="Storm Z leaves out the first wave from late February to April 2023, so it may be higher.", pq=[("meduza_wagner", "Первая вербовка состоялась 1 июля 2022 года"), ("meduza_wagner", "7 февраля 2023 года"), ("istories", "в феврале 2023 года"), ("istories", "Уже к сентябрю набор в «Шторм Z» закончился")]),
+ gap("pri", 2024, "No yearly count exists. The 140,000 to 180,000 convict figure is a cumulative claim by Ukraine."), gap("pri", 2025, "No yearly count exists."), gap("pri", 2026, "No yearly count exists."),
 ]
-# Series whose points come from different recruiters and different periods: drawn as separate dots, never joined by a line.
-TS_NOJOIN = {"pri": "Wagner (Jul 2022 to Feb 2023) and Storm Z (Feb to Sep 2023) are separate counts by different recruiters"}
-TS_DOMAIN = ("2022-01-01", "2026-10-28")
-TS_NOTE_GAPS = ("No dated figure was found for: contract signers in 2022; any later call-up of mobilised men; prisoners after September 2023; foreigners before 2022. These are gaps, not zeros.")
+_LQ = "2022 – 94 contracts; → 2023 – 4,067; → 2024 – 8,877; → 2025 – 16,085; → for the first nine months of 2026 – 16,168"
+for yr, fig, v, per in ((2022, "94", 94, "Jan to Dec 2022"), (2023, "4,067", 4067, "Jan to Dec 2023"), (2024, "8,877", 8877, "Jan to Dec 2024"), (2025, "16,085", 16085, "Jan to Dec 2025"), (2026, "16,168", 16168, "Jan to Sep 2026 only")):
+    YEARLY.append(yp("for", yr, v, [part("liga_foreign", _LQ, [fig], v, f"foreign contract signers counted by Ukraine in {yr}: {fig}", "2026-10-19")], per, f"foreign nationals who signed Russian contracts, as counted by Ukraine ({v:,})",
+                     ctx=["Central Asia: 11,157 to late 2025 in total, with no yearly split (inside this count)"] if yr in (2024, 2025) else [], note="Nine months only." if yr == 2026 else ""))
+YEARLY += [gap("nk", 2022, "No source gives a figure for this year."), gap("nk", 2023, "No source gives a figure for this year."),
+           yp("nk", 2024, 11000, [NK11], "Oct to Dec 2024", "an estimated 11,000 North Korean troops in Russia (Western officials, January 2025, via BBC)", ctx=["Later totals are cumulative: about 13,000 sent since Oct 2024 (South Korea's NIS, Sep 2025)"]),
+           gap("nk", 2025, "No yearly figure: later estimates are cumulative (about 13,000 sent since Oct 2024, NIS; 11,000 to 14,000 in the Kursk campaign, BBC)."),
+           gap("nk", 2026, "No yearly figure.")]
+RIDGE_ROWS = [("vol", "Contract and volunteers", "#e43d3c", "Contract"), ("mob", "Mobilised", "#2ec4b6", "Mobilised"), ("pri", "Prisoners (Wagner, Storm Z)", "#e8c547", "Prisoners"),
+                 ("for", "Foreign nationals (incl. Central Asia)", "#4f9dff", "Foreign"), ("nk", "North Korea (troops)", "#b07cf0", "N. Korea")]
+RIDGE_LABEL = "Yearly estimates from different sources; rows are separate estimates, not an official total."
+
+# Part-year points are never joined to the full years before them by a curve (a drop or rise would be an artefact of the shorter period).
+PART_YEAR = {("vol", 2026): "Jan to Jun", ("for", 2026): "Jan to Sep"}
+# Independent estimates, drawn beside the official or published line (dashed curve plus a lighter band between low and high).
+INDEP = [
+ dict(type="vol", year=2023, low=354400, high=354400, parts=[VOL_CONTEXT[0]], what="independent estimate from budget data (iStories)"),
+ dict(type="vol", year=2024, low=374200, high=407200, parts=[VOL_CONTEXT[1]], what="independent estimate from budget data (iStories): 374,200 to 407,200"),
+ dict(type="mob", year=2022, low=527703, high=527703, parts=[part("dw_mz527", "оценила число призванных в сентябре-октябре 2022 года россиян в 527 703 человека", ["527 703"], 527703, "at least 527,703 (Mediazona estimate from accelerated marriages, 2 Mar 2023)", "2023-03-02")], what="independent estimate (Mediazona)"),
+]
+RIDGE_TITLES = {"vol": "Contract and volunteers", "mob": "Mobilised", "pri": "Prisoners (Wagner, Storm Z)", "for": "Foreign (incl. Central Asia)", "nk": "North Korea (troops)"}
