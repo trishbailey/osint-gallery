@@ -216,3 +216,12 @@ circle.col:hover,circle.col:focus-visible{stroke:var(--gold);stroke-width:2px}
 .pph{grid-template-columns:repeat(3,minmax(0,1fr))}.cph{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
 @media (max-width:700px){.coltop{grid-template-columns:1fr}.coltop li{grid-template-columns:56px 1fr;}.coltop .ct-k{grid-column:2}.colblock .side2{order:2}.colblock .chartcol{order:1}}
 .brow[data-g=contracts] .bf{background:#e43d3c}.brow[data-g=mobilised] .bf{background:#2ec4b6}.brow[data-g=prisoners] .bf{background:#e8c547}.brow[data-g=foreigners] .bf{background:#4f9dff}
+/* yearly streamgraphs */
+.streamgrid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:8px 20px;align-items:start;margin:6px 0}
+.streamgrid .tschart{min-width:0}.streamgrid .mini{margin:6px 0 4px}
+.tschart .cellv{font-weight:600;font-size:13px}.tschart .nod,.tschart .tslab{font-size:13px}.tschart svg .tick{font-size:13px;fill:#9fb0cf}
+.sbar text{font-size:13px}.sech{margin:14px 0 2px;color:var(--gold);font-size:1.15rem}
+.tslegend{display:flex;flex-wrap:wrap;gap:4px 16px;list-style:none;padding:0;margin:0 0 6px}.tslegend li{display:flex;align-items:center;gap:6px;font-size:.95rem}
+.yrlist{margin:6px 0;padding-left:18px}.yrlist li{margin:4px 0}
+@media (max-width:700px){.streamgrid{grid-template-columns:minmax(0,1fr)}}
+.tschart .tslegend svg{display:inline-block;width:14px;height:14px;flex:none}.tschart .tslegend li{line-height:1.25}

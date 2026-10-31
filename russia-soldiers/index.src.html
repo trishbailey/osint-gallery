@@ -27,6 +27,12 @@
 <div class="chartcol"><div class="mapwrap flowwrap"><div id="flowmap"></div></div>
 <p class="note">Arrow width is in proportion to <b>people recruited</b> (not named dead): solid is the low figure, the pale band reaches the high figure. Arrows under about 90,000 are drawn at the 3 px minimum. Tap an arrow for its range and source.</p></div></div>
 <p class="cap"><b>{{v_flow}}</b></p>
+<h3 class="sech">Recruits per year, by type</h3>
+<p class="cap"><b>{{stream_label}}</b></p>
+<div class="streamgrid"><div class="tschart"><h4 class="mini">All five types, one true scale</h4><div id="streamMain"></div><p class="note">{{stream_note_main}}</p></div>
+<div class="tschart"><h4 class="mini">The three smaller groups, on their own scale</h4><div id="streamNiche"></div><p class="note">{{stream_note_niche}}</p></div></div>
+<details class="how"><summary>How to read the yearly streamgraphs, with the source of every value</summary>
+<p>{{stream_how}}</p>{{stream_table}}</details>
 <details class="how"><summary>How to read these charts, and what is left out</summary>
 <p>Arrow width shows <b>people recruited</b>, not named dead. Contract soldiers and volunteers: official statements for 2023 to the first half of 2026 add up to the high end;[[ria_shoigu24]][[tass_med25]][[interfax_med26]][[ng_bonus]] the low end is an outside estimate.[[wotr]] Mobilised: 300,000 by the Kremlin’s count[[kremlin]] to at least 527,703 by Mediazona’s estimate.[[dw_mz527]] Prisoners: Wagner and Storm Z counts added together,[[ng_wagner]][[istories]] up to Ukraine’s unverified claim.[[ki]] Foreign: North Korean troops[[bbc_nk]] and Central Asian recruits counted by Ukraine.[[occrp_foreign]] Arrows start at a schematic hub and end at a schematic front bracket. The North Korean soldiers died in Russia’s Kursk region, not in Ukraine.[[bbc_nk]]</p>
 <p>The three Russian arrows start at one schematic hub because no outlet publishes recruitment counts by region or district for any type. The regional figures that exist cover 11 to 37 regions, appear only in charts, or count one recruiter’s subset, so none is used and nothing is split by region. Hover a region for its named dead instead.</p>
@@ -45,9 +51,6 @@
 <p class="note">{{col_note}}</p></div></div>
 <h4 class="mini">The ten colonies with the most recruits</h4>
 <ol class="coltop" id="coltop"></ol>
-<h4 class="mini">Prisoners recruited, Wagner then Storm Z</h4>
-<div class="tsblock" id="prists" aria-label="Prisoners recruited, by period"></div>
-<p class="cap"><b>{{v_pts}}</b></p>
 <p class="cap"><b>{{v_type_pris}}</b></p>
 <div class="photos pph">
 <figure class="ph t-pri"><img src="img/wagner-graves-chervishevskoye-2023.jpg" width="800" height="450" loading="lazy" alt="Rows of fresh graves covered in wreaths and flags, including black Wagner flags and Russian tricolours, in the Wagner section of Chervishevskoye cemetery in Tyumen region, April 2023"><figcaption>Prisoners: Wagner section, Chervishevskoye cemetery, Apr 2023.[[img_wagner]]</figcaption></figure>
@@ -78,9 +81,6 @@
 
 <details class="sec" id="for-sec" open><summary><h2>Foreign recruits</h2></summary>
 <p class="cap"><b>{{v_for}}</b></p>
-<h4 class="mini">Foreign nationals recruited, by year (Ukraine's count)</h4>
-<div class="tsblock" id="forts" aria-label="Foreign recruits, by year"></div>
-<p class="note">Each block is one published year or part-year and starts at zero; nothing is drawn where no figure exists.</p>
 <div class="bars pools" id="poolbars-for">{{pool_rows_for}}</div>
 <div class="gaps"><div class="gap g-for"><span class="gt">Foreigners</span><div class="gn"><b>{{foreigners}}</b><i>foreign contract signers named by Ukraine</i></div><div class="gn"><b>{{ca_n}}</b><i>from Central Asia, to late 2025</i></div><div class="gn"><b>{{ca_killed}}</b><i>of them killed, at least</i></div><p>The named count is a floor, not a total. The Central Asia figures are Ukrainian and OCCRP could not check them independently.[[unn]][[meduza_foreign]][[occrp_foreign]]</p></div></div>
 <details class="how"><summary>How the foreign figures are counted</summary>
@@ -88,10 +88,6 @@
 </details>
 
 <details class="sec" id="con-sec" open><summary><h2>Contract soldiers and money</h2></summary>
-<p class="cap"><b>{{v_ts}}</b></p>
-<h4 class="mini">Recruits over time: contract soldiers and volunteers, and mobilised men</h4>
-<div class="tsblock" id="flowts" aria-label="Contract soldiers, volunteers and mobilised men recruited, by period"></div>
-<p class="note">{{ts_note}}</p>
 <div class="photos cph">
 <figure class="ph t-vol"><img src="img/recruitment-billboard-moscow-2024.jpg" width="640" height="640" loading="lazy" alt="A street billboard in Moscow in August 2024 offering contract service with payments from 5,200,000 roubles for the first year, a phone number and a QR code, with the soldiers in the picture pixelated"><figcaption>Contract: Moscow billboard, Aug 2024, “from 5,200,000 roubles for the first year”.[[img_billboard]]</figcaption></figure>
 <figure class="ph t-vol"><img src="img/recruitment-office-zelenograd-2026.jpg" width="800" height="533" loading="lazy" alt="A blue, red and white military recruitment office building in Zelenograd, Moscow, in April 2026, with bare trees in front"><figcaption>Contract: military recruitment office, Zelenograd, Apr 2026.[[img_zelenograd]]</figcaption></figure>
@@ -109,8 +105,6 @@
 <details class="how"><summary>How the bonus is counted</summary>
 <p>A contract soldier gets a federal payment of 400,000 roubles, reported by Janis Kluge and shown on VoenSchet's regional cards,[[kluge]] plus a regional payment that each region sets, read from VoenSchet's summary of regional acts.[[vs]] Each bar adds the two and divides by the region's 2025 average monthly wage,[[wage]] so it shows months of local pay. Municipal top-ups and special bonuses for drone troops or reserve units are left out. Kaliningrad, Nizhny Novgorod and Kirov come from a January 2026 aggregator table and may be out of date;[[gogov]] Penza's 1,000,000 regional roubles come from a news report.[[penza_bonus]] Where no amount could be confirmed, the region is left out (listed under Method).</p>
 <p>{{capb}}</p></details>
-<details class="how"><summary>How to read the recruit chart</summary>
-<p>{{ts_how}}</p></details>
 </details>
 
 <details class="sec" id="dead-sec" open><summary><h2>Who pays the price: where the named dead came from</h2></summary>

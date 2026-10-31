@@ -448,42 +448,43 @@ for k_, p_ in NKI.PLACES.items():
 for l_ in NKI.LINES: need(f"map line {l_['id']} uses a known row and places", l_["row"] in {r_["id"] for r_ in NKI.ROWS} and l_["frm"] in NKI.PLACES and l_["to"] in NKI.PLACES)
 for s_ in ("Documented: the treaty", "2,304 named by the BBC against 3,000 claimed by Ukraine"): has(s_, "NK verdict")
 need("NK verdict numbers are in the rows", any("29,488" in r_["fig"] for r_ in NKI.ROWS) and any("2,304" in r_["fig"] for r_ in NKI.ROWS))
-# ---- time series (recruits in a dated period, by type)
+# ---- yearly streamgraphs (one estimate per type per year; gaps are explicit)
 import datetime as _dt
-TSF = {s_["kind"]: s_ for s_ in FL["ts"]["series"]}
-need("time series has the four types", set(TSF) == {"vol", "mob", "pri", "for"} and len(RI.TS) == 15)
-_ids = [p_["id"] for p_ in RI.TS]; need("time series point ids unique", len(_ids) == len(set(_ids)))
-_flat = {p_["id"]: p_ for s_ in FL["ts"]["series"] for p_ in s_["points"] + s_["est"]}
-need("flows.json time series carries every input point", set(_flat) == set(_ids))
-for p_ in RI.TS:
-    nm = "ts " + p_["id"]
-    for i_, q_ in enumerate(p_["parts"]): check_part(f"{nm} part{i_}", q_)
-    vals = [q_["value"] for q_ in p_["parts"]]; figs = [figval(f_) for q_ in p_["parts"] for f_ in q_["figures"]]
-    if p_["low"] == p_["high"]: need(nm + " exact value is the sum of its parts", sum(vals) == p_["low"] and len(vals) >= 1)
-    else: need(nm + " range ends are figures of its parts", p_["low"] in vals + figs and p_["high"] in vals + figs and p_["low"] < p_["high"])
-    for src_, txt_ in p_["pq"]:
+ST = FL["stream"]
+need("stream: five types on a yearly grid 2022 to 2026", RI.YEARS == [2022, 2023, 2024, 2025, 2026] and [l_["id"] for l_ in ST["layers"]] == ["vol", "mob", "pri", "for", "nk"] and ST["years"] == RI.YEARS and len(RI.YEARLY) == 25)
+need("stream: exactly one entry per type per year", len({(y_["type"], y_["year"]) for y_ in RI.YEARLY}) == 25)
+_wd = (_dt.date(2023, 2, 7) - _dt.date(2022, 7, 1)).days + 1
+need("stream: Wagner 1 Jul 2022 to 7 Feb 2023 is 222 days, 184 in 2022 and 38 in 2023", _wd == 222 == RI.WAG_DAYS["total"] and (_dt.date(2022, 12, 31) - _dt.date(2022, 7, 1)).days + 1 == 184 == RI.WAG_DAYS["y2022"] and (_dt.date(2023, 2, 7) - _dt.date(2023, 1, 1)).days + 1 == 38 == RI.WAG_DAYS["y2023"])
+_w22 = round(48366 * 184 / 222); _w23 = 48366 - _w22
+for y_ in RI.YEARLY:
+    nm = f"stream {y_['type']} {y_['year']}"; li_ = next(l_ for l_ in ST["layers"] if l_["id"] == y_["type"]); v_ = li_["vals"][RI.YEARS.index(y_["year"])]
+    need(nm + " flows.json value equals the input (a gap stays null, never zero)", v_ == y_["value"] and (v_ is None or v_ > 0))
+    tip_ = ST["tips"]["main"][RI.YEARS.index(y_["year"])]
+    if y_["value"] is None:
+        need(nm + " is a gap: no parts, a reason is stated and the hover says no data", not y_["parts"] and len(y_["note"]) > 10 and "no data" in tip_ and y_["note"] in _html.unescape(tip_.replace("<br>", " ")).replace("&#x27;", "'"))
+        continue
+    for i_, q_ in enumerate(y_["parts"]): check_part(f"{nm} part{i_}", q_)
+    need(nm + " hover carries the exact value and a source name", f"{y_['value']:,}" in tip_ and all(SOURCES[q_["src"]]["short"] in tip_ for q_ in y_["parts"]))
+    for src_, txt_ in y_["pq"]:
         sv_ = norm(open(os.path.join(RAW, "quotes", src_ + ".txt"), encoding="utf-8").read())
         need(nm + f" period text {txt_!r} is in the saved source {src_}", norm(txt_) in sv_)
-    a_, z_ = _dt.date.fromisoformat(p_["t0"]), _dt.date.fromisoformat(p_["t1"])
-    need(nm + " period dates valid and inside the chart domain", a_ <= z_ and _dt.date.fromisoformat(RI.TS_DOMAIN[0]) <= a_ and z_ <= _dt.date.fromisoformat(RI.TS_DOMAIN[1]))
-    need(nm + " value is positive and inside its linear panel (0 to 600,000 for contract and mobilised, 0 to 60,000 for prisoners and foreign)", 0 < p_["low"] <= p_["high"] <= (6e5 if p_["type"] in ("vol", "mob") else 6e4))
-    fp_ = _flat[p_["id"]]; need(nm + " flows.json value equals the input", (fp_["low"], fp_["high"], fp_["t0"], fp_["t1"]) == (p_["low"], p_["high"], p_["t0"], p_["t1"]))
-    need(nm + " hover carries the value, a source name with its date and the period note", (f"{p_['low']:,}" in fp_["tip"]) and all(SOURCES[q_["src"]]["short"] in fp_["tip"] for q_ in p_["parts"]) and (p_["est"] or "not a rate" in fp_["tip"]))
-for k_, s_ in TSF.items():
-    pts = s_["points"]; need(f"ts {k_} line points are in date order with no real overlap", all(_dt.date.fromisoformat(b_["t0"]) >= _dt.date.fromisoformat(a_["t1"]) - _dt.timedelta(days=31) for a_, b_ in zip(pts, pts[1:])))
-need("ts mobilised is one wave (Sep to Oct 2022) reported on two dates, the later estimate higher than the Kremlin count, drawn rising", [p_["id"] for p_ in TSF["mob"]["points"]] == ["mob_k", "mob_m"] and all(p_["low"] == p_["high"] and p_["t0"] == p_["t1"] for p_ in TSF["mob"]["points"]) and TSF["mob"]["points"][0]["low"] < TSF["mob"]["points"][1]["low"] and not TSF["mob"].get("nojoin"))
-need("ts no point is stored as a vertical stack: no two points of one series share a date", all(len({p_["t0"] for p_ in s_["points"]}) == len(s_["points"]) for s_ in TSF.values()))
-need("ts gaps are stated and no zero point exists", "gaps, not zeros" in FL["ts"]["gaps"] and all(p_["low"] > 0 for p_ in RI.TS))
-_t = {p_["id"]: p_ for p_ in RI.TS}
-need("ts 2024 official = 450,000 + 40,000", _t["vol24"]["low"] == 490000 and _t["vol25"]["low"] == 422704 + 32000)
-_js = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read()
-need("flows.js time series uses linear axes (no log scale) and breaks the line at gaps and at partial periods", "d3.scaleLog" not in _js and "d3.scaleLinear().domain([0,C.max])" in _js and "runs.push" in _js and "!full(p)" in _js and "s.nojoin" in _js)
-need("prisoner points (Wagner, then Storm Z) are never joined by a line", TSF["pri"].get("nojoin") is True and len(TSF["pri"]["points"]) == 2)
-need("flows.js time series never plots a missing period as zero", not re.search(r"\|\|\s*0\b", _js[_js.index("function series"):_js.index("function bars")]))
-need("flows.js time series has one Play button, no autoplay", _js.count("id=\"tsplay'+C.sfx") == 1 and "tsplay').click" not in _js and "autoplay" not in _js.lower())
-need("flows.js the animation starts only from the click handler", _js.index("btn.addEventListener('click'") < _js.index("d3.timer("))
-for s_ in ("Recruits over time: contract soldiers and volunteers, and mobilised men", "Press Play", FL_V["v_ts"] if "FL_V" in globals() else "Official contract and volunteer figures fell from 540,000 in 2023 to 454,704 in 2025", "counted by Ukraine rose from 4,067 in 2023 to 16,085", "gaps, not zeros"): has(s_, "time series text")
-need("recruit charts sit in their sections: prisoners, foreign, contract; all after the flow map and before the named-dead bars", page.index('id="flowmap"') < page.index('id="prists"') < page.index('id="forts"') < page.index('id="flowts"') < page.index('id="flowbars"'))
+    vals_ = [q_["value"] for q_ in y_["parts"]]
+    if y_["type"] == "pri": need(nm + " is the Wagner share by days plus Storm Z", y_["value"] == (_w22 if y_["year"] == 2022 else _w23 + 28200) and y_["alloc"] is not None and sum(vals_) >= y_["value"])
+    else: need(nm + " is the sum of its sourced parts", y_["value"] == sum(vals_) or (y_["type"] == "mob" and y_["value"] == 300000))
+need("stream: Wagner allocation adds back to the sourced total 48,366", _w22 + _w23 == 48366 and [y_["value"] for y_ in RI.YEARLY if y_["type"] == "pri" and y_["year"] == 2022] == [_w22])
+need("stream: official claims 2024 = 450,000 + 40,000 and 2025 = 422,704 + 32,000", [y_["value"] for y_ in RI.YEARLY if y_["type"] == "vol"][1:] == [540000, 490000, 454704, 200000])
+need("stream: foreign yearly counts are the LIGA figures 94, 4,067, 8,877, 16,085, 16,168", [y_["value"] for y_ in RI.YEARLY if y_["type"] == "for"] == [94, 4067, 8877, 16085, 16168])
+need("stream: North Korea has one yearly figure (2024, 11,000), cumulative figures are not split", [(y_["year"], y_["value"]) for y_ in RI.YEARLY if y_["type"] == "nk" and y_["value"]] == [(2024, 11000)])
+need("stream: companion chart holds only prisoners, foreign and North Korea", [l_["id"] for l_ in ST["layers"] if l_["niche"]] == ["pri", "for", "nk"] == RI.STREAM_NICHE and len(ST["tips"]["niche"]) == 5 and ST["main_bar"] == 100000 and ST["niche_bar"] == 10000)
+_js = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read(); _sj = _js[_js.index("function stream("):_js.index("function bars")]
+need("flows.js streamgraph: China recipe (stack, wiggle offset, inside-out order, basis curve, 0.9 fill, dark outline), linear scale, no log", "d3.stackOffsetWiggle" in _sj and "d3.stackOrderInsideOut" in _sj and "d3.curveBasis" in _sj and "'fill-opacity',.9" in _sj and "'#0b1526'" in _sj and "d3.scaleLinear().domain([lo,hi])" in _js and "d3.scaleLog" not in _js)
+need("flows.js streamgraph: a missing year is drawn as zero height plus a hatched no-data cell, never interpolated", "v==null" in _sj and "url(#hatch" in _sj and "'no data'" in _sj and "l.vals[i]==null?0:" in _sj)
+need("flows.js streamgraph: scale bar, year axis, no y axis, per-year hover with exact values", "class','sbar'" in _sj and "axisLeft" not in _js and "data-tip" in _sj and "S.tips[which]" in _sj)
+need("old filled charts and Play buttons are gone", "tsplay" not in _js and "CHARTS" not in _js and 'id="prists"' not in page and 'id="forts"' not in page and 'id="flowts"' not in page)
+need("stream: the chart label is the exact one-line text on the page", RI.STREAM_LABEL == "Yearly estimates from different sources; layers are stacked estimates, not an official total." and f"<b>{RI.STREAM_LABEL}</b>" in page)
+for s_ in ("All five types, one true scale", "The three smaller groups, on their own scale", "Linear scale: the bar at the left is 100,000 people", "Its own, finer scale: the bar at the left is 10,000 people, against 100,000 on the main chart", "Allocation method", "an allocation, not a count", "covers 1 July 2022 to 7 February 2023", "184 days fall in 2022", "hatched"): has(s_, "stream text")
+need("stream: how-to-read dropdown lists every type with numbered citations", "How to read the yearly streamgraphs, with the source of every value" in page and page.count('class="yrlist"') == 1 and all(k_ in cites for k_ in ("ria_shoigu24", "tass_med25", "interfax_med26", "kremlin", "ng_wagner", "meduza_wagner", "istories", "liga_foreign", "bbc_shoigu", "yonhap_nis")))
+need("stream: the streamgraphs sit in the flow section after the flow map", page.index('id="flowmap"') < page.index('id="streamMain"') < page.index('id="streamNiche"') < page.index('id="flowbars"'))
 need("meduza_wagner is cited on the page", "meduza_wagner" in cites)
 need("GA tag once", page.count("G-Z61EKRP8QV") >= 1 and page.count("googletagmanager.com/gtag/js?id=G-Z61EKRP8QV") == 1)
 need("no github.io/onrender/.cn/gdelt", not re.search(r"github\.io|onrender\.com|gdelt|\.cn[/\"' ]", page + open(os.path.join(ROOT, "app.js")).read(), re.I))
@@ -509,13 +510,9 @@ for s_ in ("minimum, Wagner period Jul 2022 to Feb 2023 only" if False else "Wag
 need("a top-10 list is built from the data, largest first", "slice(0,10)" in _cj and "y.n-x.n" in _cj and 'id="coltop"' in page)
 need("Mediazona colony data credited in Data Sources with licence, BBC partner and article URL", "CC BY-SA 4.0" in SOURCES["mz_wagner"]["full"] and SOURCES["mz_wagner"]["url"] in page and "bbc.com/russian/articles/cv22vjwj10eo" in SOURCES["mz_wagner"]["full"] and "mz_wagner" in cites)
 need("colonies.js is loaded and the vendored CSV sits in data/", 'src="colonies.js"' in page and os.path.exists(os.path.join(ROOT, "data", "prison-recruitment-wagner-all-colonies.csv")))
-need("prisoners section holds the colony map, the prisoner chart, the finding and three prisoner photos", page.index('id="pris-sec"') < page.index('id="colmap"') < page.index('id="prists"') < page.index('Prisoners outnumber mobilised men among the named dead') < page.index('id="nk-sec"') and len(re.findall(r"<img", re.search(r'id="pris-sec".*?id="nk-sec"', page, re.S).group(0))) == 3)
+need("prisoners section holds the colony map, the prisoner chart, the finding and three prisoner photos", page.index('id="pris-sec"') < page.index('id="colmap"') < page.index('Prisoners outnumber mobilised men among the named dead') < page.index('id="nk-sec"') and len(re.findall(r"<img", re.search(r'id="pris-sec".*?id="nk-sec"', page, re.S).group(0))) == 3)
 need("prisoners outnumber mobilised men among the named dead, 27,379 against 20,690", S["type_totals"]["pri"] == 27379 and S["type_totals"]["mob"] == 20690)
 need("foreign section carries Central Asia 11,157 recruited and at least 1,399 killed, matching the flow data", all(x_ in text for x_ in ("11,157", "1,399")) and [a_["low"] for a_ in FL["arrows"] if a_["id"] == "ca"] == [11157] and "at least 1,399 of them killed" in [a_ for a_ in FL["arrows"] if a_["id"] == "ca"][0]["tip"])
-# ---- filled time series (overlapping, not stacked)
-need("filled charts: semi-transparent fills down to a zero baseline, overlapping not stacked, linear scale, one-line explanation on the page", "fill-opacity" in _js and "d3.stack" not in _js and "d3.scaleLog" not in _js and "y0(base)" in _js and "Fills overlap instead of stacking" in _html.unescape(text))
-need("filled charts: three instances (contract and mobilised, prisoners, foreign), each with its own Play button", [c_ for c_ in re.findall(r"el:'(#[a-z]+)'", _js)] == ["#flowts", "#prists", "#forts"])
-need("filled charts: Wagner and Storm Z are drawn as separate blocks, never joined; ranges as a lighter band; no zero fill for gaps", TSF["pri"].get("nojoin") is True and "fill-opacity',.26" in _js and "stroke-dasharray','4 3'" in _js)
 need("no unresolved tokens", "{{" not in page and "[[" not in page)
 print(f"audit: {OK[0]} checks passed, {len(FAIL)} failed")
 for f_ in FAIL[:60]: print("  FAIL", f_)

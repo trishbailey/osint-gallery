@@ -83,10 +83,14 @@ def values():
     assert A["vol"]["low"] > A["mob"]["high"] > A["pri"]["low"] and BR["pri"] > BR["mob"] and FL["bars"][0]["kind"] == "vol"
     V["v_flow"] = (f"Contract soldiers and volunteers are by far the biggest inflow: {n0(A['vol']['low'])} to {n0(A['vol']['high'])} recruited, against {n0(A['mob']['low'])} to {n0(A['mob']['high'])} mobilised and "
                    f"{n0(A['pri']['low'])} to {n0(A['pri']['high'])} prisoners.")
-    TSP = {s_["kind"]: {p_["id"]: p_ for p_ in s_["points"]} for s_ in FL["ts"]["series"]}
-    assert TSP["vol"]["vol23"]["low"] > TSP["vol"]["vol25"]["low"] and TSP["for"]["for25"]["low"] > TSP["for"]["for23"]["low"]
-    V["v_ts"] = f"Official contract and volunteer figures fell from {n0(TSP['vol']['vol23']['low'])} in 2023 to {n0(TSP['vol']['vol25']['low'])} in 2025; mobilisation has not been repeated."
-    V["ts_gaps"] = FL["ts"]["gaps"]
+    import recruit_inputs as RIY
+    YV = {(y_["type"], y_["year"]): y_ for y_ in RIY.YEARLY}
+    assert YV[("vol", 2023)]["value"] > YV[("vol", 2025)]["value"] and YV[("for", 2025)]["value"] > YV[("for", 2023)]["value"]
+    V["stream_label"] = RIY.STREAM_LABEL
+    V["stream_note_main"] = (f"Linear scale: the bar at the left is {n0(FL['stream']['main_bar'])} people recruited in a year, and each layer\u2019s thickness is its figure for that year. "
+                             "Hover or tap a year for exact values and sources. 2026 is part-year: contract soldiers cover January to June, foreigners January to September.")
+    V["stream_note_niche"] = (f"Its own, finer scale: the bar at the left is {n0(FL['stream']['niche_bar'])} people, against {n0(FL['stream']['main_bar'])} on the main chart, so thickness here is not comparable with the main chart. "
+                              "~ marks a yearly share of one total.")
     V["flow_skipped"] = FL["skipped"]; V["flow_notdrawn"] = FL["not_drawn"]
     import nk_inputs as NKI
     cnt = {s_: sum(1 for r in NKI.ROWS if r["status"] == s_) for s_ in NKI.STATUS}
@@ -116,19 +120,31 @@ def values():
                     f"{n0(ud['n'] - 1)} colonies could not be named, and one more, IK24 Ukhta, is not drawn because Mediazona\u2019s English and Russian labels name different colonies (Ukhta in Komi, and Fornosovo near St Petersburg); "
                     f"together they hold {n0(ud['recruits'])} of the {n0(CO['total_recruits'])} recruits. \u201cKilled\u201d comes from Wagner\u2019s payment records, which cover deaths from January 2022 to August 2023, and is not a loss rate for the recruits.")
     V["v_type_pris"] = f"Prisoners outnumber mobilised men among the named dead: {n0(tt['pri'])} against {n0(tt['mob'])}.[[mz_regions]]"
-    V["v_pts"] = (f"Wagner took at least {n0(TSP['pri']['pri22']['low'])} prisoners by 7 Feb 2023; the Defence Ministry\u2019s Storm Z units took {n0(TSP['pri']['pri23']['low'])} to {n0(TSP['pri']['pri23']['high'])} more by Sep 2023 (iStories estimate).[[istories]] "
-                  f"No count exists for later months.")
-    V["v_for"] = (f"Foreign contract signers counted by Ukraine rose from {n0(TSP['for']['for23']['low'])} in 2023 to {n0(TSP['for']['for25']['low'])} in 2025;[[liga_foreign]] "
+    V["v_for"] = (f"Foreign contract signers counted by Ukraine rose from {n0(YV[('for', 2023)]['value'])} in 2023 to {n0(YV[('for', 2025)]['value'])} in 2025;[[liga_foreign]] "
                   f"{n0(A['ca']['low'])} recruits are from Central Asia.[[occrp_foreign]]")
     V["ca_n"] = n0(A["ca"]["low"]); V["ca_killed"] = "1,399"
-    V["ts_note"] = ("Each filled block is a published total for the period it covers, drawn down to zero; a lighter band reaches a range\u2019s high figure and a ring is an outside estimate. "
-                    "Fills overlap instead of stacking, because the types are separate counts that a stack would add into a false total. Gaps stay empty.")
-    V["ts_gaps_con"] = "No dated figure was found for contract signers in 2022 or for any later call-up of mobilised men. These are gaps, not zeros."
     V["ts_gaps_for"] = "No dated figure was found for foreigners before 2022. That is a gap, not a zero."
-    V["ts_how"] = ("The scale is linear from zero. Each block is one published total for the period it covers, so a half-year block is not a full year and is not joined to the years before it. "
-                   "Contract and volunteer figures are official claims;[[ria_shoigu24]][[tass_med25]][[interfax_med26]][[ng_bonus]] hollow markers are iStories estimates from budget data.[[isw_istories23]][[istories_407]] "
-                   "Mobilised: one call-up wave in September and October 2022, shown as two reports of the same men, the Kremlin\u2019s count on 28 Oct 2022[[kremlin]] and Mediazona\u2019s later estimate on 2 Mar 2023;[[dw_mz527]] the rise is a higher count of that wave, not more men called up. "
-                   + V["ts_gaps_con"] + " Press Play to redraw the chart from left to right.")
+    def cell(t, yr):
+        y_ = YV[(t, yr)]
+        if y_["value"] is None: return f"{yr} no data"
+        cites = "".join(f"[[{q_['src']}]]" for q_ in dict((q_["src"], q_) for q_ in y_["parts"]).values())
+        cites += "".join(f"[[{a_}]]" for a_ in dict.fromkeys(a_ for a_, _ in y_["pq"]) if a_ not in cites)
+        return f"{yr} {'~' if y_['alloc'] else ''}{n0(y_['value'])}{cites}"
+    names = {t_: nm_ for t_, nm_, _, _ in RIY.STREAM_LAYERS}
+    items = []
+    for t_, nm_, _, _ in RIY.STREAM_LAYERS:
+        ctx = " ".join(f"{yr}: {c_}." for yr in RIY.YEARS for c_ in YV[(t_, yr)]["ctx"])
+        cx_ = {"vol": "[[isw_istories23]][[istories_407]]", "mob": "[[dw_mz527]]", "for": "[[occrp_foreign]]", "nk": "[[yonhap_nis]]", "pri": ""}[t_]
+        items.append(f"<li><b>{nm_}:</b> " + "; ".join(cell(t_, yr) for yr in RIY.YEARS) + f". {ctx}{cx_}</li>")
+    V["stream_table"] = "<ul class=\"yrlist\">" + "".join(items) + "</ul>"
+    V["stream_how"] = ("Every layer is one estimate per calendar year, taken from the source numbered next to it; the sources differ, so the layers are stacked estimates, not an official total, and the stack\u2019s height is not a headcount. "
+                       "The scale is linear from zero. A year with no source is a gap: the layer has no height, the strip under the chart shows a hatched \u201cno data\u201d cell, and nothing is interpolated or carried over from another year. "
+                       "Contract soldiers and volunteers are official claims, so they may be inflated; independent budget-data estimates are lower and are listed beside them. 2026 is part-year. "
+                       "<b>Allocation method.</b> Wagner\u2019s total of at least 48,366 prisoners covers 1 July 2022 to 7 February 2023, 222 days.[[ng_wagner]][[meduza_wagner]] "
+                       f"At an even pace, 184 days fall in 2022 ({n0(YV[('pri', 2022)]['value'])}) and 38 in 2023 ({n0(YV[('pri', 2023)]['value'] - 28200)}), which is an allocation, not a count; Wagner\u2019s real pace was uneven. "
+                       "Storm Z\u2019s 28,200 (iStories\u2019 lower bound; the range runs to 29,000)[[istories]] is all placed in 2023 and leaves out the first wave. The prisoners layer for 2023 is the sum. "
+                       "North Korea: the only yearly figure is the 11,000 troops that Western officials estimated in January 2025;[[bbc_shoigu]] later figures are cumulative and are not split by year, so 2025 and 2026 are gaps. "
+                       "Foreign nationals are Ukraine\u2019s yearly counts of contract signers[[liga_foreign]] and include Central Asians, whose total is not split by year.[[occrp_foreign]]")
     return V
 
 GROUPS = [("contracts", "Contract soldiers (volunteers)"), ("mobilised", "Mobilised men"), ("prisoners", "Prisoners"), ("foreigners", "Foreign recruits"), ("northkorea", "North Korea: troops and workers")]

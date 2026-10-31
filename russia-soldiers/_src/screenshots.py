@@ -67,17 +67,18 @@ with sync_playwright() as pw:
                 if page.is_visible("#tip") and "recruited" in page.inner_text("#tip"): got_tip = True; print(tag, "arrow tooltip:", page.inner_text("#tip").replace("\n", " | ")[:150]); break
         assert got_tip, "no arrow tooltip"
         shot(page, f"{tag}-09b-flow-strand-hover.png", full=False)
-        # time series: 9 line dots + 2 estimate markers + 3 more = 14 hit areas; hover one; Play must change the chart and end on Replay
-        page.evaluate("document.querySelector('#flowts').scrollIntoView({block:'center'})"); page.wait_for_timeout(300)
-        nts = len(page.query_selector_all(".tschart .tshit")); print(tag, "time-series hit areas", nts); assert nts == 15, nts
-        ntb = page.evaluate("[...document.querySelectorAll('#flowts button')].map(b=>b.textContent)"); assert ntb == ["Play"], ntb
-        shot(page, f"{tag}-09c-flow-timeseries.png", full=False)
-        before = page.evaluate("document.querySelector('#tsclipr').getAttribute('width')")
-        page.click("#tsplay"); page.wait_for_timeout(1500)
-        mid_w = page.evaluate("document.querySelector('#tsclipr').getAttribute('width')"); assert float(mid_w) < float(before), (mid_w, before)
-        shot(page, f"{tag}-09c2-flow-timeseries-playing.png", full=False)
-        page.wait_for_function("document.querySelector('#tsplay').textContent==='Replay'", timeout=12000)
-        assert float(page.evaluate("document.querySelector('#tsclipr').getAttribute('width')")) >= float(before) - 0.5
+        # yearly streamgraphs: main + companion, 5 hover columns each, hatched no-data cells, tooltip shows exact values, no horizontal overflow, stacked on phone
+        page.evaluate("document.querySelector('#streamMain').scrollIntoView({block:'center'})"); page.wait_for_timeout(300)
+        for sid_ in ("#streamMain", "#streamNiche"):
+            assert len(page.query_selector_all(sid_ + " .tshit")) == 5 and len(page.query_selector_all(sid_ + " path.stl")) in (5, 3), sid_
+        assert len(page.query_selector_all("#streamMain svg[role=img] rect[fill^='url(#hatch']")) == 12 and len(page.query_selector_all("#streamNiche svg[role=img] rect[fill^='url(#hatch']")) == 7
+        bm_, bn_ = page.evaluate("[...document.querySelectorAll('#streamMain,#streamNiche')].map(e=>e.getBoundingClientRect().toJSON())")
+        if mobile: assert bn_["y"] > bm_["y"] + bm_["height"] - 2, "streamgraphs must stack on phone"
+        else: assert abs(bn_["y"] - bm_["y"]) < 40, "streamgraphs sit side by side on desktop"
+        box_ = page.query_selector("#streamMain .tshit:nth-of-type(3)").bounding_box() if False else page.evaluate("(()=>{const r=document.querySelectorAll('#streamMain .tshit')[2].getBoundingClientRect();return [r.x+r.width/2,r.y+60]})()")
+        page.mouse.move(*box_); page.mouse.click(*box_) if mobile else None; page.wait_for_timeout(150)
+        tp_ = page.inner_text("#tip"); assert "490,000" in tp_ and "11,000" in tp_ and "no data" in tp_, tp_[:200]
+        shot(page, f"{tag}-09c-streamgraph-hover.png", full=False)
         nb = len(page.query_selector_all("#flowbars .brow")); print(tag, "named-dead bars", nb); assert nb == 4
         vals = page.evaluate("[...document.querySelectorAll('#flowbars .bv')].map(e=>parseInt(e.textContent.replace(/,/g,'')))"); assert vals == sorted(vals, reverse=True), vals
         page.evaluate("document.querySelector('#flowbars').scrollIntoView({block:'center'})"); page.wait_for_timeout(200)
