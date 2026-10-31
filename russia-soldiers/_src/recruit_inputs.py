@@ -58,10 +58,10 @@ ARROWS = [
       status="Estimate of the troops committed; the South Korean agency NIS and the BBC give a range.", dead_key=None),
 ]
 HUB = dict(ll=[55.0, 56.2], name="Russia, all regions (schematic)")
-# the width scale: w = WMIN + WSPAN * sqrt(v / VMAX); VMAX is the largest high value
-WMIN, WSPAN = 4, 6
+# the width scale is LINEAR: w = max(WMIN, WMAX * v / VMAX), so width is proportional to people recruited. VMAX is the largest high value (drawn at WMAX px).
+# Anything under WMIN / WMAX * VMAX would be thinner than WMIN px, so it is drawn at WMIN px (clamped) and the key says so. WMAX_PH is the phone maximum.
+WMIN, WMAX, WMAX_PH = 3, 56, 34
 VMAX = max(a["high"] for a in ARROWS)
-LEGEND_SAMPLES = [11157, 76566, 300000, 1300000]
 # foreign counts that are not drawn (no single origin on the map or out of its frame), with their sources
 NOT_DRAWN = [
  part("liga_foreign", "45,959 foreigners from 151 countries and unrecognized territories have fought or are currently fighting as contract soldiers in the Russian army", ["45,959", "151"], 45959, "All foreign contract signers named by Ukraine, to 1 Oct 2026: 45,959 from 151 countries", "2026-10-19"),

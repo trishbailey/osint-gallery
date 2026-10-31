@@ -1,4 +1,4 @@
-/* Flow map: where the soldiers came from. Width = people recruited (square-root scale, 4 to 10 px); a pale band shows the range up to the higher published figure. Named dead is a secondary measure (hover and the bars below). */
+/* Flow map: where the soldiers came from. Width = people recruited (LINEAR scale: 56 px at the largest high figure, 34 px on phones, never under 3 px); a pale band shows the range up to the higher published figure. Named dead is a secondary measure (hover and the bars below). */
 (function(){
 'use strict';
 var $=function(s){return document.querySelector(s)};
@@ -7,7 +7,7 @@ var fmt=function(n){return Number(n).toLocaleString('en-US')};
 var ph=function(){return window.matchMedia('(max-width:700px)').matches};
 var F,R,G,byNe={},feat={},on={vol:true,mob:true,pri:true,'for':true},T0=null,svg,zoomB,cur,VMAX=1;
 var IDX={vol:0,mob:1,pri:2,ca:1,prk:1},LBL={vol:'Contract and volunteers',mob:'Mobilised',pri:'Prisoners','for':'Foreign nationals',ca:'Central Asia',prk:'North Korea'};
-var wOf=function(v){return 4+6*Math.sqrt(v/VMAX)};
+var wOf=function(v){return Math.max(F.wmin,(ph()?F.wmax_ph:F.wmax)*v/VMAX)};
 var pathGeo;
 
 function strands(){return F.arrows.filter(function(a){return on[a.kind]}).map(function(a){return {id:a.id,kind:a.kind,ll:a.ll,hub:a.hub,idx:IDX[a.id],lo:a.low,hi:a.high,label:a.label,tip:a.tip,name:a.name}})}
@@ -40,6 +40,7 @@ function draw(){
   var fpt=proj(F.front.ll),ux=0,uy=-1,ex=1,ey=0;
   S.forEach(function(s){var p=proj(s.ll),rx=p[0]-fpt[0],ry=p[1]-fpt[1];s.p=p;s.w=wOf(s.lo);s.wh=wOf(s.hi);var de=rx*ex+ry*ey,dn=rx*ux+ry*uy;s.sd=de<4?-1:1;s.ang=Math.atan2(-dn,de)});
   S.sort(function(a,b){return a.ang-b.ang||a.idx-b.idx});
+  var hs=S.filter(function(s){return s.hub}).sort(function(a,b){return a.idx-b.idx}),ht=0;hs.forEach(function(s){ht+=s.wh+6});var hp0=ht/2;hs.forEach(function(s){s.off=hp0-(s.wh+6)/2;hp0-=s.wh+6});
   var tot=0;S.forEach(function(s){s.sp=s.wh*1.2+4.5;tot+=s.sp});var pos=tot/2;
   S.forEach(function(s){s.lp=[fpt[0]+ux*(pos-s.sp/2),fpt[1]+uy*(pos-s.sp/2)];pos-=s.sp});
   var sel=strandG.selectAll('g.st').data(S,function(s){return s.id});sel.exit().remove();
@@ -47,9 +48,9 @@ function draw(){
   var all=strandG.selectAll('g.st').data(S,function(s){return s.id});
   all.attr('data-tip',function(s){return s.tip}).attr('aria-label',function(s){return s.tip.replace(/<br>/g,'. ').replace(/<[^>]+>/g,'')});
   all.each(function(s){
-   var sd=s.sd,hl=Math.max(11,s.wh*1.5),hw=s.wh*0.62+2.2,L=[s.lp[0]+sd*ex*7,s.lp[1]+sd*ey*7],B=[L[0]+sd*ex*hl,L[1]+sd*ey*hl],A=s.p.slice(),dx=B[0]-A[0],dy=B[1]-A[1],dist=Math.hypot(dx,dy);
+   var sd=s.sd,hl=Math.max(11,Math.min(s.wh*0.8,ph()?22:34)),hw=s.wh*0.62+2.2,L=[s.lp[0]+sd*ex*7,s.lp[1]+sd*ey*7],B=[L[0]+sd*ex*hl,L[1]+sd*ey*hl],A=s.p.slice(),dx=B[0]-A[0],dy=B[1]-A[1],dist=Math.hypot(dx,dy);
    var d2=Math.min(0.5*dist,170),P2=[B[0]+sd*ex*d2,B[1]+sd*ey*d2];
-   var nx=-dy/dist,ny=dx/dist,off=(1-s.idx)*21*(s.hub?1:0);A=[A[0]+nx*off,A[1]+ny*off];s.A=A;
+   var nx=-dy/dist,ny=dx/dist,off=s.hub?s.off:0;A=[A[0]+nx*off,A[1]+ny*off];s.A=A;
    var P1=[A[0]+(P2[0]-A[0])*0.38,A[1]+(P2[1]-A[1])*0.38];
    var col=F.types[s.kind].color,g=d3.select(this),dd='M'+A+'C'+P1+' '+P2+' '+B;
    g.select('path.stp').attr('d',dd).attr('stroke',col).attr('stroke-width',s.w);
@@ -70,7 +71,7 @@ function draw(){
   dotG.selectAll('circle').attr('cx',function(o){return proj(o.ll)[0]}).attr('cy',function(o){return proj(o.ll)[1]}).attr('data-tip',function(o){return o.tip});
   lblG.selectAll('*').remove();
   var hp=proj(hubLL);
-  if(S.some(function(s){return s.hub}))lblG.append('text').attr('class','dlab').attr('x',hp[0]).attr('y',hp[1]-47).attr('text-anchor','middle').text(ph()?'Russia':'Russia, all regions');
+  if(S.some(function(s){return s.hub}))lblG.append('text').attr('class','dlab').attr('x',hp[0]-4).attr('y',Math.min.apply(null,S.filter(function(s){return s.hub}).map(function(s){return s.A[1]-s.wh/2}))-10).attr('text-anchor','start').text(ph()?'Russia':'Russia, all regions');
   S.forEach(function(s){
    var t=lblG.append('text').attr('class','dlab vlab').text((ph()?'':LBL[s.id]+' ')+s.label);
    if(s.hub){t.attr('x',s.A[0]+(ph()?9:12)).attr('y',s.A[1]+5).attr('text-anchor','start')}
@@ -81,6 +82,7 @@ function draw(){
   .on('zoom',function(e){cur.t=e.transform;render(e.transform)});
  svg.call(zoomB).on('dblclick.zoom',null);
  svg.call(zoomB.transform,cur.t);
+ svg.node().addEventListener('zoomreset',function(){cur.t=T0;svg.call(zoomB.transform,T0)});/* used by the page checks to look at the whole map */
  el.setAttribute('data-ready','1');
 }
 function pick(k){on[k]=!on[k];var b=document.querySelector('.fchip[data-k="'+k+'"]');b.setAttribute('aria-pressed',on[k]?'true':'false');draw()}
@@ -89,16 +91,9 @@ function legend(){
  var sub={vol:fmt(by.vol.low)+' to '+fmt(by.vol.high),mob:fmt(by.mob.low)+' to '+fmt(by.mob.high),pri:fmt(by.pri.low)+' to '+fmt(by.pri.high),'for':'North Korea '+fmt(by.prk.low)+' to '+fmt(by.prk.high)+'; Central Asia '+fmt(by.ca.low)};
  var h='<div class="fk-col"><h3 class="sideh">Colour: how they joined</h3><div class="seg">';
  ['vol','mob','pri','for'].forEach(function(k){h+='<button type="button" class="chipb fchip" data-k="'+k+'" aria-pressed="true"><span class="sw" style="background:'+F.types[k].color+'"></span><span class="fl">'+esc(F.types[k].name)+'<small>'+sub[k]+' recruited</small></span></button>'});
- h+='</div></div><div class="fk-rest"><h3 class="sideh">Width: people recruited</h3><ul class="legend">';
- F.samples.forEach(function(x){h+='<li><svg width="46" height="12" aria-hidden="true"><line x1="2" x2="44" y1="6" y2="6" stroke="#e6e9ef" stroke-width="'+x.w+'" stroke-linecap="butt"/></svg>'+fmt(x.v)+'</li>'});
- h+='<li><svg width="46" height="12" aria-hidden="true"><line x1="2" x2="44" y1="6" y2="6" stroke="#e6e9ef" stroke-width="10" stroke-linecap="butt" opacity=".3"/></svg>pale band: up to the high figure</li>';
- h+='</ul><p class="note">Square-root scale, so small flows stay visible. Solid width is the low published figure.</p>';
- h+='<div class="seg"><button type="button" class="chipb" id="fz-in">Zoom in</button><button type="button" class="chipb" id="fz-out">Zoom out</button><button type="button" class="chipb" id="fz-reset">Reset view</button></div></div>';
+ h+='</div></div>';
  $('#flowkey').innerHTML=h;
  document.querySelectorAll('.fchip').forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.k)})});
- var z=function(f){return function(){svg.transition().duration(250).call(zoomB.scaleBy,f)}};
- $('#fz-in').addEventListener('click',z(1.6));$('#fz-out').addEventListener('click',z(1/1.6));
- $('#fz-reset').addEventListener('click',function(){cur.t=T0;svg.transition().duration(300).call(zoomB.transform,T0)});
 }
 
 /* Time series: people recruited in a dated period, one dot per sourced period. Two LINEAR panels, because the types differ by a factor of 30:

@@ -2,7 +2,7 @@
 District figures are sums of data/regions.json (Mediazona regional pages); foreign figures and North Korea rows come from the audited inputs."""
 import json, os, html, re, math
 from flow_inputs import TYPES, FRONT, KURSK, SKIPPED
-from recruit_inputs import TS_NOJOIN, TS, TS_DOMAIN, TS_NOTE_GAPS, ARROWS, HUB, WMIN, WSPAN, VMAX, LEGEND_SAMPLES, NOT_DRAWN, BAR_FOREIGN, NAMED_DEAD_DATE
+from recruit_inputs import TS_NOJOIN, TS, TS_DOMAIN, TS_NOTE_GAPS, ARROWS, HUB, WMIN, WMAX, WMAX_PH, VMAX, NOT_DRAWN, BAR_FOREIGN, NAMED_DEAD_DATE
 import nk_inputs as NK
 from sources import SOURCES
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -15,7 +15,7 @@ def short(n):
 def rng(a, b, short_=False):
     f = short if short_ else (lambda x: f"{x:,}")
     return f"{a:,}" if a == b else f"{f(a)} to {f(b)}"
-def wid(v): return WMIN + WSPAN * math.sqrt(v / VMAX)
+def wid(v): return max(WMIN, WMAX * v / VMAX)
 def eh(s): return html.escape(s, quote=False)
 
 def day(d): return fmt_date(d)
@@ -66,7 +66,7 @@ def build():
     bars.sort(key=lambda b: -b["n"])
     nd = " ".join(f"{p['label']}." for p in NOT_DRAWN)
     out = dict(measure="people recruited", types={k: dict(name=v[0], color=v[1]) for k, v in TYPES.items()}, arrows=arrows, hub=HUB, front=FRONT, kursk=KURSK,
-               wmin=WMIN, wspan=WSPAN, vmax=VMAX, samples=[dict(v=v, w=round(wid(v), 2)) for v in LEGEND_SAMPLES], bars=bars, ts=ts_build(), not_drawn=nd, skipped=SKIPPED, named_dead_date=NAMED_DEAD_DATE)
+               wmin=WMIN, wmax=WMAX, wmax_ph=WMAX_PH, vmax=VMAX, clamp_below=round(WMIN / WMAX * VMAX), bars=bars, ts=ts_build(), not_drawn=nd, skipped=SKIPPED, named_dead_date=NAMED_DEAD_DATE)
     json.dump(out, open(os.path.join(ROOT, "data", "flows.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     nk = dict(rows=NK.ROWS, timeline=NK.TL, places=NK.PLACES, lines=NK.LINES, kinds={k: dict(name=v[0], color=v[1]) for k, v in NK.KINDS.items()}, status=NK.STATUS)
     json.dump(nk, open(os.path.join(ROOT, "data", "nk.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)

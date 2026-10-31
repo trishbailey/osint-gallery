@@ -56,7 +56,7 @@ with sync_playwright() as pw:
         page.evaluate("document.querySelector('#flow-sec').scrollIntoView()"); page.wait_for_timeout(400)
         assert page.evaluate("document.querySelector('#flow-sec').getBoundingClientRect().top < document.querySelector('#remote-sec').getBoundingClientRect().top")
         ns = len(page.query_selector_all("#flowmap g.st")); nr = len(page.query_selector_all("#flowmap path.rg")); print(tag, "flow arrows", ns, "regions", nr); assert ns == 5 and nr > 80
-        wid = page.evaluate("[...document.querySelectorAll('#flowmap g.st path.stp')].map(p=>parseFloat(getComputedStyle(p).strokeWidth))"); print(tag, "strand widths", min(wid), max(wid)); assert min(wid) >= 4 and max(wid) <= 10.01
+        wid = page.evaluate("[...document.querySelectorAll('#flowmap g.st path.stp')].map(p=>parseFloat(getComputedStyle(p).strokeWidth))"); print(tag, "strand widths", min(wid), max(wid)); assert min(wid) >= 3 - 0.01 and max(wid) <= (34 if mobile else 56) + 0.01 and max(wid) / min(wid) > 5
         shot(page, f"{tag}-09-flow-map.png", full=False)
         FIND2 = """g=>{const e=g.querySelector('path.stp');const L=e.getTotalLength();for(let i=1;i<40;i++){const q=e.getPointAtLength(L*i/40);const m=e.getScreenCTM();const x=m.a*q.x+m.c*q.y+m.e,y=m.b*q.x+m.d*q.y+m.f;if(x<0||y<0||x>innerWidth||y>innerHeight)continue;const t=document.elementFromPoint(x,y);if(t&&t.closest('[data-tip]')===g)return [x,y]}return null}"""
         got_tip = False
@@ -94,8 +94,7 @@ with sync_playwright() as pw:
         for k in ("pri", "for", "mob", "vol"):
             page.click(f".fchip[data-k={k}]"); page.wait_for_timeout(150)
         page.click(f".fchip[data-k=pri]"); page.click(f".fchip[data-k=pri]"); page.wait_for_timeout(150)
-        for bid in ("#fz-in", "#fz-out", "#fz-reset"):
-            before = sig("#flowmap"); page.click(bid); page.wait_for_timeout(450); after = sig("#flowmap"); print(tag, bid, "view changed" if before != after else "view same")
+        assert page.query_selector("#fz-in") is None, "zoom buttons should be gone"
         page.evaluate("document.querySelector('#nk-sec').open=true"); page.evaluate("window.dispatchEvent(new Event('resize'))"); page.wait_for_timeout(600)
         page.evaluate("document.querySelector('#nk-sec').scrollIntoView()"); page.wait_for_timeout(300)
         rows = len(page.query_selector_all("#nkrel g.nkr")); print(tag, "nk rows", rows); assert rows == 13
@@ -156,7 +155,7 @@ with sync_playwright() as pw:
             if pt is None and t.evaluate("e=>!!e.closest('#flowmap')"):
                 # flow map elements outside the zoomed phone view: zoom out to the whole map, as a visitor would, then look again
                 page.evaluate("document.querySelector('#flowmap').scrollIntoView({block:'center'})")
-                for _ in range(3): page.click("#fz-out"); page.wait_for_timeout(300)
+                page.evaluate("document.querySelector('#flowmap svg').dispatchEvent(new Event('zoomreset'))")
                 page.evaluate("document.querySelector('#flowmap').scrollIntoView({block:'center'})"); page.wait_for_timeout(300); pt = t.evaluate(FIND)
             if pt is None: pt = t.evaluate(FINE)
             if pt is None:
