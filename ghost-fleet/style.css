@@ -95,7 +95,7 @@ body.story #map{height:min(62vh,620px)}
 
 .arw{position:absolute;left:0;top:0;pointer-events:none;transition:opacity .15s}
 
-@media(max-width:600px){.b3l{padding:1px 5px}.b3l b{font-size:14px;margin-right:3px}}
+@media(max-width:600px){.b3l{padding:1px 5px;text-align:center}.b3l b,.b3l span{display:block;margin:0}.b3l b{font-size:14px}}
 .arwnote{display:none;position:absolute;left:56px;top:10px;right:10px;z-index:800;pointer-events:none;font-size:13px;line-height:1.3;color:var(--text);background:#0b1526e6;border-left:3px solid #e8423f;padding:4px 8px;border-radius:4px;max-width:420px}
 /* Lead finding: Pacific shuttle */
 .lead{margin:6px 0 18px}.leadh{font-size:23px;line-height:1.3;margin:6px 0 8px;color:var(--text)}.leadh2{font-size:19px;margin:22px 0 6px}
@@ -107,7 +107,7 @@ body.story #map{height:min(62vh,620px)}
 .figt{font-size:14px;font-weight:600;color:var(--gold);margin:0 0 8px;text-transform:none}
 .shmap{position:relative;width:100%}.shmap svg{display:block;width:100%;height:auto;border-radius:6px}
 .shmap .sport{cursor:pointer}.shmap .sport:hover,.shmap .sport:focus{stroke:#e6e9ef;outline:none}
-.callout{position:absolute;max-width:30%;background:#0b1526f2;border:1px solid var(--gold);border-radius:6px;padding:4px 8px;font-size:13px;line-height:1.3;color:var(--text)}.callout b{color:var(--gold);font-size:15px}
+.callout{position:absolute;transform:translate(-50%,-50%);width:max-content;max-width:21%;background:#0b1526f2;border:1px solid var(--gold);border-radius:6px;padding:4px 8px;font-size:13px;line-height:1.3;color:var(--text)}.callout b{color:var(--gold);font-size:15px}
 .shtip{position:absolute;z-index:5;max-width:220px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:4px 8px;font-size:13px;pointer-events:none}
 .shside{display:flex;flex-direction:column;gap:12px}.shbox{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
 .srow{display:grid;grid-template-columns:110px 1fr 70px;gap:8px;align-items:center;margin:8px 0;font-size:14px}.srow b{text-align:right}
@@ -122,7 +122,7 @@ body.story #map{height:min(62vh,620px)}
 .mv,.ml{font-size:13px;color:var(--muted);white-space:nowrap}.mv{color:var(--text)}
 .skey{display:flex;flex-direction:column;gap:4px;font-size:13px}.skey span{display:flex;align-items:center;gap:8px}.skey .kl{width:20px;height:3px;background:#c8a24a;flex:none}.skey .kd{width:12px;height:12px;border-radius:50%;flex:none}
 @media(max-width:900px){.shgrid,.rusgrid{grid-template-columns:1fr}}
-@media(max-width:700px){.leadh{font-size:20px}.callout{position:static;max-width:none;margin:6px 0 0}.shmap line.lead{display:none}
+@media(max-width:700px){.leadh{font-size:20px}.callout{position:static;transform:none;width:auto;max-width:none;margin:6px 0 0}.shmap line.lead{display:none}
  .srow{grid-template-columns:96px 1fr 62px}.lchip{min-width:0;flex:1 1 100px}.lchip b{font-size:18px}.mv{font-size:13px;writing-mode:horizontal-tb}.rbars{gap:2px}
  .rbars .mcol:nth-child(even) .mv,.rbars .mcol:nth-child(even) .ml{visibility:hidden}}
 .rbars{overflow:hidden}.mcol{overflow:hidden}.lead .lchips,.lead .shbox,.lead .shfig{min-width:0;max-width:100%}
@@ -146,3 +146,35 @@ body.story #map{height:min(62vh,620px)}
 .tlk{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;margin-top:8px}.tlk i{display:inline-block;width:14px;height:14px;margin-right:5px;vertical-align:-2px;border-radius:3px}.tlk i.mk{border-radius:50%;box-sizing:border-box;border:2px solid var(--gold)}.tlk i.mk.vc{background:var(--gold)}.tlk i.tk{width:2px;height:14px;border-radius:0;background:var(--text);margin:0 9px 0 6px}
 .tlk i.ds{width:0;height:14px;border-radius:0;border-left:2px dashed var(--text);margin:0 9px 0 6px}
 @media(max-width:700px){body.story .chapters:has(.chap[data-ch="identity"].on){height:520px}}
+
+.wreg{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.wreg button{min-height:36px;padding:4px 10px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;font:inherit;font-size:13px;cursor:pointer}.wreg button span{color:var(--gold);font-weight:700;margin-left:4px}.wreg button[aria-pressed=true]{background:var(--gold);color:var(--bg);border-color:var(--gold)}.wreg button[aria-pressed=true] span{color:var(--bg)}
+/* transponder off: each red dot is fully on for 1.2 s, then fully off for 0.8 s (2 s cycle); the stagger is slight so they still read as one fleet going dark */
+@keyframes gapblink{0%,59.9%{opacity:1}60%,99.9%{opacity:0}100%{opacity:1}}
+.gapblink path.gapdot{animation:gapblink 2s step-end infinite}
+.gapblink path.gapdot.g1{animation-delay:-.1s}.gapblink path.gapdot.g2{animation-delay:-.2s}.gapblink path.gapdot.g3{animation-delay:-.3s}.gapblink path.gapdot.g4{animation-delay:-.4s}.gapblink path.gapdot.g5{animation-delay:-.5s}
+@media(prefers-reduced-motion:reduce){.gapblink path.gapdot{animation:none;opacity:1}}
+.ctog{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.ctog button{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 10px;background:var(--panel2);color:var(--text);border:2px solid var(--c);border-radius:6px;font:inherit;font-size:13px;cursor:pointer}
+.ctog button i{width:16px;height:16px;border-radius:50%;box-sizing:border-box;border:2px solid var(--c);background:var(--c);flex:none;position:relative}
+.ctog button[aria-pressed=false]{opacity:.55;border-style:dashed;text-decoration:line-through}.ctog button[aria-pressed=false] i{background:transparent}
+.ctog button[aria-pressed=true] i::after{content:"";position:absolute;left:3px;top:0;width:4px;height:8px;border:solid var(--bg);border-width:0 2px 2px 0;transform:rotate(45deg)}
+#ctogbar{display:none}
+@media(max-width:700px){body.story #ctogbar:not([hidden]){display:block;margin:0 0 8px}#ctogbar .ctog{margin:0}}
+
+.sources{margin:18px auto 24px;max-width:1100px;padding:8px 14px;background:var(--panel);border:1px solid var(--line);border-radius:8px}.sources summary{cursor:pointer;font-weight:600;color:var(--gold);min-height:32px;line-height:32px}.sources[open]{border-color:var(--gold)}.sources ol{margin:6px 0 4px;padding-left:26px;font-size:14px;color:var(--text)}.sources li{margin:4px 0}.sources a{color:var(--gold)}a.sref{color:var(--gold);text-decoration:none;font-weight:600}
+
+/* place-name labels: plain light text, no box; thin sea-colour halo only */
+.plc{position:absolute;left:0;top:0;width:max-content;white-space:nowrap;pointer-events:none;font-size:13px;line-height:16px;font-weight:500;letter-spacing:.02em;color:rgba(255,255,255,.62);text-shadow:0 0 2px #0d1d36,0 0 3px #0d1d36}
+.plc.city{color:rgba(255,255,255,.65)}
+.plsv .plead,.plead{stroke:rgba(255,255,255,.5);stroke-width:1;fill:none}.pdot{fill:rgba(255,255,255,.65)}
+.shmap .plc{z-index:3}
+.shmap .plsv{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+/* chapter 4 hub-and-spoke graphic stands in for the map */
+#hub{display:none;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:8px;background:#0d1d36}
+body.hubon #map{display:none}body.hubon #hub{display:block}
+#hub svg{display:block}#hub .hn{cursor:pointer}#hub .hn:focus{outline:none}#hub .hn:hover .hd,#hub .hn:focus .hd{stroke:#f5f7fa;stroke-width:2.5}
+#hub .hl2{paint-order:stroke;stroke:#0d1d36;stroke-width:3px;stroke-linejoin:round}
+.hubtip{position:absolute;z-index:3;max-width:calc(100% - 12px);background:#0b1526f2;border:1px solid var(--gold);border-radius:6px;padding:4px 8px;font-size:13px;line-height:1.3;color:var(--text);pointer-events:none}.hubtip[hidden]{display:none}
+.hubnote{position:absolute;left:10px;right:10px;bottom:6px;margin:0;font-size:13px;line-height:1.3;color:var(--muted)}
+#hub{height:62vh;min-height:420px}
+@media(max-width:700px){#hub{height:55vh;min-height:340px}body.story #hub{height:52vh}body.story #hub{height:calc(100svh - min(36svh,320px) - 120px);min-height:340px}}
+@media(min-width:701px){body.story #hub{position:sticky;top:10px;height:calc(100vh - 20px);margin:0}}

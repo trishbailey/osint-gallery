@@ -69,7 +69,5 @@ if os.path.exists(_CS):
 else: d['coord']=dict(d['collection'])
 if os.path.exists(POSTS):
     _P=pd.read_pickle(POSTS); d['collection']=dict(channels=int(_P.channel.nunique()),posts=int(len(_P)),start=str(_P.date.min().date()),end=str(_P.date.max().date()))
-# Hamas threats block (curated from the Threats tabs of the Hamas sheet; see hamas_threats.json, not recomputed here)
-d['hamas_threats']=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'hamas_threats.json'),encoding='utf-8'))
 json.dump(d,open(OUT,'w'),ensure_ascii=False,indent=1); print(json.dumps({k:d[k] for k in ['data_through','window_start','collection','xcopies30','origin30','allorigin30','week']},indent=0))
 print(d['pay'])

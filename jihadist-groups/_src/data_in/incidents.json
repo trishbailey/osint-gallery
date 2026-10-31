@@ -1,0 +1,390 @@
+{
+ "window": "2026-09-30 to 2026-10-30",
+ "incidents": [
+  {
+   "group": "kataib-hezbollah",
+   "date": "2026-10-01",
+   "date_precision": "day",
+   "place": "Baghdad, Iraq",
+   "lat": 33.306,
+   "lon": 44.387,
+   "description": "US troops leave Iraq; Kata'ib Hezbollah says it has agreed no disarmament deal and 'the resistance has won this round'.",
+   "url": "https://www.thenationalnews.com/news/mena/2026/10/01/resistance-has-won-this-round-kataib-hezbollah-denies-disarmament-deal-after-us-troops-leave-iraq/",
+   "urls_extra": [],
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "group": "jas",
+   "date": "2026-10-02",
+   "date_precision": "day",
+   "place": "Marte, Borno State, Nigeria",
+   "lat": 12.403,
+   "lon": 13.833,
+   "description": "Suspected Boko Haram fighters kill 15 or more farmers and firewood gatherers; three are missing.",
+   "url": "https://www.reuters.com/world/africa/suspected-islamists-kill-nigerian-villagers-collecting-firewood-2026-10-02/",
+   "urls_extra": [
+    "https://apnews.com/article/nigeria-attack-boko-haram-farmers-ee6915e38c397636738569fb1da232b3"
+   ],
+   "confidence": "medium",
+   "note": "Reuters says 'suspected Islamists'; AP says 15 dead."
+  },
+  {
+   "group": "jmm",
+   "date": "2026-10-02",
+   "date_precision": "range (2 to 8 Oct)",
+   "place": "Rask and Iranshahr area, Sistan and Baluchestan, Iran",
+   "lat": 26.9,
+   "lon": 61.9,
+   "confidence": "medium",
+   "description": "The Baluch coalition claims five attacks on Iranian security forces in seven days, including a mine and gunfire attack on a Guards vehicle at Rudmahi that killed five.",
+   "note": "Claims by the coalition; Iranian figures for losses are lower.",
+   "url": "https://www.longwarjournal.org/archives/2026/10/insurgent-attacks-surge-in-southeastern-iran.php",
+   "urls_extra": []
+  },
+  {
+   "group": "iskp",
+   "date": "2026-10-04",
+   "date_precision": "day",
+   "place": "Fayzabad, Badakhshan, Afghanistan",
+   "lat": 37.216,
+   "lon": 70.613,
+   "description": "A motorcycle bomb targets a Taliban intelligence official; ISKP claims it and the National Resistance Front also claims it.",
+   "url": "https://margallanews.com/story/badakhshan-faizabad-intelligence-attack-competing-nrf-iskp-claims-2026-10-04",
+   "urls_extra": [
+    "https://khyberchronicles.pk/who-struck-the-taliban-in-badakhshan-iskp-and-nrf-both-claim-explosive-attack-on-intelligence-official/"
+   ],
+   "confidence": "low",
+   "note": "Contested: two competing claims; neither authenticated; Afghan authorities have not confirmed."
+  },
+  {
+   "group": "houthis",
+   "date": "2026-10-05",
+   "date_precision": "day",
+   "place": "Mokha and Bab el-Mandeb area, Yemen",
+   "lat": 13.318,
+   "lon": 43.25,
+   "description": "Saudi-backed Yemeni forces say they retook areas around the Bab el-Mandeb strait; the Houthis deny losing ground.",
+   "url": "https://apnews.com/article/yemen-houthis-iran-saudi-arabia-red-sea-taiz-e87beb84a0d146e4f0546b50508f7e32",
+   "urls_extra": [
+    "https://english.alarabiya.net/News/middle-east/2026/10/05/yemeni-government-forces-retake-strategic-red-sea-port-of-mokha"
+   ],
+   "confidence": "low",
+   "note": "Contested: government claim versus Houthi denial."
+  },
+  {
+   "group": "jnim",
+   "date": "2026-10-06",
+   "date_precision": "day",
+   "place": "Kidal, Mali",
+   "lat": 18.441,
+   "lon": 1.407,
+   "description": "Mali's army, backed by Africa Corps (Russian state-run force), retakes Kidal after JNIM and FLA forces withdraw; the Soufan Center calls the gain politically important but strategically limited.",
+   "url": "https://thesoufancenter.org/intelbrief-2026-october-28/",
+   "urls_extra": [],
+   "confidence": "medium",
+   "note": "Kidal coordinates are the town centre."
+  },
+  {
+   "group": "is-mozambique",
+   "date": "2026-10-06",
+   "date_precision": "day",
+   "place": "Ngangolo, Nangade District, Mozambique",
+   "lat": -11.145,
+   "lon": 39.778,
+   "description": "Islamic State Mozambique fighters attack Christians at Ngangolo; on 10 October two Christians are beheaded near Muangaza, Mocímboa da Praia.",
+   "url": "https://reliefweb.int/report/mozambique/mozambique-conflict-monitor-update-october-2026",
+   "urls_extra": [
+    "https://trackingterrorism.org/chatter/is-m-militants-led-an-armed-assault-on-christians-in-ngangolo/",
+    "https://trackingterrorism.org/chatter/is-m-captured-and-beheaded-two-christians-near-muangaza/"
+   ],
+   "confidence": "low",
+   "note": "Source for the two named incidents is a weak tracker (trackingterrorism.org); the ReliefWeb monitor confirms a wave of violence in September–October only."
+  },
+  {
+   "group": "jnim",
+   "date": "2026-10-07",
+   "date_precision": "day",
+   "place": "Tougouri, Burkina Faso (also Gomboro, Diabiga)",
+   "lat": 13.313,
+   "lon": -0.526,
+   "description": "JNIM reportedly seizes army bases and posts at Tougouri, Gomboro and Diabiga.",
+   "url": "https://sahel.darkwater-research.com/01-Situation-Report",
+   "urls_extra": [
+    "https://ghanapeacejournal.com/sahel-diaries-no-28/"
+   ],
+   "confidence": "low",
+   "note": "Single graded aggregator that relays party claims; not independently confirmed."
+  },
+  {
+   "group": "lakurawa",
+   "date": "2026-10-07",
+   "date_precision": "day",
+   "place": "Maiyama, Kebbi State, Nigeria",
+   "lat": 12.083,
+   "lon": 4.367,
+   "description": "Suspected Lakurawa fighters on more than 100 motorcycles attack a forward operating base at Maiyama, which troops repel; a day later they kill two soldiers and a Chinese worker on the Sokoto-Badagry highway project.",
+   "url": "https://punchng.com/lakurawa-attack-kills-two-soldiers-chinese-in-kebbi/",
+   "urls_extra": [],
+   "confidence": "medium",
+   "note": "Police and the military attribute it to suspected Lakurawa fighters; no claim reported."
+  },
+  {
+   "group": "jnim",
+   "date": "2026-10-08",
+   "date_precision": "month (fighting ongoing since September)",
+   "place": "Tessit and Oudalan, Mali/Burkina Faso border",
+   "lat": 15.226,
+   "lon": 0.292,
+   "description": "JNIM and the Islamic State Sahel Province fight near Tessit and Oudalan; ISSP claims 400+ JNIM dead, unverified.",
+   "url": "https://sahel.darkwater-research.com/Key-Events/JNIM-ISSP-Oudalan-clashes-(Oct-2026)",
+   "urls_extra": [
+    "https://thesoufancenter.org/intelbrief-2026-october-28/"
+   ],
+   "confidence": "low",
+   "note": "Exact date not established; toll unverified."
+  },
+  {
+   "group": "houthis",
+   "date": "2026-10-10",
+   "date_precision": "day",
+   "place": "King Khalid International Airport, Riyadh, Saudi Arabia",
+   "lat": 24.958,
+   "lon": 46.699,
+   "description": "A Houthi missile hits the domestic terminal; 12 killed and about 300 wounded; the Houthis claim it.",
+   "url": "https://apnews.com/article/saudi-yemen-houthi-riyadh-airport-f0e0e6105f33400e37bb20bb9a8130af",
+   "urls_extra": [
+    "https://www.npr.org/2026/10/10/g-s1-147682/attack-on-riyadh-airport-killed-12-people-and-wounded-over-300-more-saudi-authorities-say"
+   ],
+   "confidence": "high",
+   "note": "A follow-up strike the next day reportedly killed one more person (NPR). Airport coordinates assigned by the researcher."
+  },
+  {
+   "group": "ttp",
+   "date": "2026-10-10",
+   "date_precision": "day",
+   "place": "Kurram District, Khyber Pakhtunkhwa, Pakistan",
+   "lat": 33.689,
+   "lon": 70.386,
+   "description": "Pakistan says TTP-linked fighters tried to cross from Afghanistan, Afghan Taliban posts opened fire, and 12 militants and Afghan personnel died; one Pakistani soldier killed.",
+   "url": "https://www.dawn.com/news/2036382",
+   "urls_extra": [],
+   "confidence": "medium",
+   "note": "Pakistani military account; Afghan authorities had not responded."
+  },
+  {
+   "group": "iswap",
+   "date": "2026-10-13",
+   "date_precision": "day",
+   "place": "Mairari, Guzamala, Borno State, Nigeria",
+   "lat": 12.682,
+   "lon": 13.441,
+   "description": "Suspected ISWAP fighters storm a military base; 15 soldiers and five civilian militia members reported killed, vehicles burned, troops withdraw toward Monguno.",
+   "url": "https://www.vanguardngr.com/2026/10/boko-haram-attack-kills-soldiers-civilians-in-borno/",
+   "urls_extra": [
+    "https://www.africanews.com/2026/10/18/nigerias-army-chief-of-staff-visits-troops-in-borno-after-deaths-of-15-soliders/",
+    "https://www.nta.ng/news/nigeria/iswap-fighters-kill-15-soldiers-and-5-militia-members-in-borno-military-base-attack"
+   ],
+   "confidence": "medium",
+   "note": "First reports gave 'more than 10 soldiers and four civilians'."
+  },
+  {
+   "group": "iscap-adf",
+   "date": "2026-10-16",
+   "date_precision": "day (15–16 Oct)",
+   "place": "Bakaheku mining sites, Mambasa territory, Ituri, DR Congo",
+   "lat": 1.535,
+   "lon": 28.758,
+   "description": "An attack attributed to the ADF on three mining sites kills 10 people.",
+   "url": "https://actualite.cd/2026/10/16/mambasa-10-morts-dans-une-nouvelle-attaque-attribuee-aux-adf-dans-des-carres-miniers",
+   "urls_extra": [],
+   "confidence": "medium",
+   "note": "Attribution is by local reporters."
+  },
+  {
+   "group": "dawlah-islamiyah",
+   "date": "2026-10-16",
+   "date_precision": "day",
+   "place": "Sultan Mastura, Maguindanao del Norte, Philippines",
+   "lat": 7.298,
+   "lon": 124.285,
+   "description": "Police and soldiers kill a Dawlah Islamiyah sub-leader and three followers serving arrest warrants.",
+   "url": "https://www.gmanetwork.com/news/topstories/regions/1006197/dawlah-islamiya-sub-leader-3-others-killed-in-maguindanao-del-norte/story/",
+   "urls_extra": [],
+   "confidence": "medium",
+   "note": "Faction not named in the report."
+  },
+  {
+   "group": "issp",
+   "date": "2026-10-18",
+   "date_precision": "day",
+   "place": "Tagadayat, near Ménaka, Mali",
+   "lat": 16.652,
+   "lon": 2.826,
+   "description": "Islamic State Sahel Province fighters attack civilian camps; at least 48 are killed (Mali's army later reports 54 bodies).",
+   "url": "https://apnews.com/article/mali-attack-menaka-deaths-sahel-tuareg-issp-b65482e0b8f3b814e2465ab61c41ee1f",
+   "urls_extra": [
+    "https://www.bbc.com/afrique/articles/cmy560g10p25o",
+    "https://newsaf.cgtn.com/news/2026-10-25/Mali-military-reports-54-dead-after-attacks-in-northeast-1RwP87uK6Zi/p.html"
+   ],
+   "confidence": "high",
+   "note": "Coordinates are the nearest town, about 50 km away."
+  },
+  {
+   "group": "issp",
+   "date": "2026-10-21",
+   "date_precision": "day",
+   "place": "Sebha to Benghazi, Libya",
+   "lat": 32.12,
+   "lon": 20.081,
+   "description": "Two Western hostages (one Swiss, one Austrian) held in Niger for 18 and 21 months are freed and flown to Benghazi.",
+   "url": "https://www.bbc.co.uk/news/articles/cq62y0v7434yo",
+   "urls_extra": [],
+   "confidence": "medium",
+   "note": "Holder reported as Islamic State Sahel Province; the release terms are not public."
+  },
+  {
+   "group": "is-syria",
+   "date": "2026-10-22",
+   "date_precision": "day",
+   "place": "Rankous, Damascus countryside, Syria",
+   "lat": 33.769,
+   "lon": 36.39,
+   "description": "Syrian forces raid a suspected Islamic State cell; two officers and five cell members killed, six arrested.",
+   "url": "https://www.aljazeera.com/news/2026/10/22/two-syrian-security-officers-killed-in-raid-on-isil-cell-near-damascus",
+   "urls_extra": [],
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "group": "houthis",
+   "date": "2026-10-25",
+   "date_precision": "day",
+   "place": "Jabal Sabr, above Taiz, Yemen",
+   "lat": 13.53,
+   "lon": 44.03,
+   "description": "Houthi forces advance on Jabal Sabr, the mountain overlooking Taiz, after besieging the city and cutting its main road to Aden; the UN says 800,000 people are trapped.",
+   "url": "https://www.dawn.com/news/2039711/houthis-advance-on-strategic-mountain-near-taiz",
+   "urls_extra": [
+    "https://www.aljazeera.com/news/2026/10/29/fighting-rages-near-yemens-taiz-as-un-urges-humanitarian-access"
+   ],
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "group": "jnim",
+   "date": "2026-10-26",
+   "date_precision": "day",
+   "place": "Bamako, Mali",
+   "lat": 12.613,
+   "lon": -7.985,
+   "description": "A military-escorted convoy of 1,107 fuel tankers reaches Bamako, the fourth convoy in October; JNIM's fuel blockade of the capital runs since April 2026.",
+   "url": "https://beninwebtv.com/en/mali-a-convoy-of-1107-tank-trucks-arrives-in-bamako/",
+   "urls_extra": [
+    "https://africasupplychain.net/en/mali-1-107-camions-citernes-arrivent-a-bamako-sous-escorte-militaire/"
+   ],
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "group": "al-shabaab",
+   "date": "2026-10-26",
+   "date_precision": "day",
+   "place": "Jameeca, Buurhakaba District, Somalia",
+   "lat": 2.795,
+   "lon": 44.078,
+   "description": "Al-Shabaab ambushes Somali troops; at least 20 soldiers killed per a survivor, dozens per other reports; the army claims about 75 militants killed.",
+   "url": "https://apnews.com/article/somalia-alshabab-military-f962f8d432b9513c6a93246b2981a2cb",
+   "urls_extra": [],
+   "confidence": "medium",
+   "note": "Tolls differ widely across sources; al-Shabaab claims 321."
+  },
+  {
+   "group": "is-syria",
+   "date": "2026-10-26",
+   "date_precision": "day",
+   "place": "Daraa and Suwayda countryside, southern Syria",
+   "lat": 33.13,
+   "lon": 36.4,
+   "description": "Jordan strikes what it calls Islamic State hideouts in southern Syria after the 23 October Karak church shooting that killed nine; Jordan says more than 20 militants died, Syria says seven civilians died and denies coordinating.",
+   "url": "https://www.al-monitor.com/originals/2026/10/jordan-says-it-killed-more-20-islamic-state-militants-airstrikes-syria",
+   "urls_extra": [
+    "https://www.aljazeera.com/news/2026/10/27/why-jordan-has-struck-syria-what-we-know"
+   ],
+   "confidence": "low",
+   "note": "Contested: Jordan links the church attackers to Islamic State in Syria, but Jordanian officials also say the three arrested Jordanians acted alone, and no group claim is confirmed by Reuters."
+  },
+  {
+   "group": "is-somalia",
+   "date": "2026-10-27",
+   "date_precision": "day (27–28 Oct)",
+   "place": "Dharin and Qurac, Cal Miskaad mountains, Bari, Somalia",
+   "lat": 11.2,
+   "lon": 50.3,
+   "description": "Puntland forces fight Islamic State in the heaviest clash of their offensive; Puntland says 57 foreign fighters and 15 soldiers died; the UAE flies a supporting drone strike.",
+   "url": "https://allsanaag.com/scores-killed-in-somalia-in-clash-between-security-forces-islamic-state/",
+   "urls_extra": [
+    "https://somaliatoday.com/security/uae-launches-first-somalia-drone-strike-in-nearly-a-year-2026-10-21/"
+   ],
+   "confidence": "low",
+   "note": "Toll is a Puntland claim that VOA could not verify; coordinates are an approximate mountain area."
+  },
+  {
+   "group": "hezbollah",
+   "date": "2026-10-28",
+   "date_precision": "day",
+   "place": "Southern Lebanon (near Shoukin, Mayfadoun and Qantara)",
+   "lat": 33.37,
+   "lon": 35.45,
+   "description": "Israeli drone and air strikes continue in southern Lebanon despite the June ceasefire framework; Hezbollah leader Qassem rejects disarmament.",
+   "url": "https://www.aa.com.tr/en/middle-east/israel-carries-out-strikes-in-southern-lebanon-in-fresh-ceasefire-violations/4101864",
+   "urls_extra": [
+    "https://www.timesofisrael.com/hezbollah-rearming-for-possible-renewed-conflict-with-israel-lebanese-sources-say/"
+   ],
+   "confidence": "medium",
+   "note": "Coordinates are approximate for the Nabatieh area. Reports of Hezbollah rebuilding drone capability come from Lebanese sources cited by Times of Israel."
+  },
+  {
+   "group": "houthis",
+   "date": "2026-10-28",
+   "date_precision": "day",
+   "place": "Aden International Airport, Yemen",
+   "lat": 12.83,
+   "lon": 45.03,
+   "description": "The Houthis strike Aden airport with two ballistic missiles after an evacuation warning; civilians are injured and air traffic halts. Yemen's army calls it the sixth Houthi strike on the airport in days.",
+   "url": "https://www.al-monitor.com/originals/2026/10/houthis-strike-yemens-aden-airport-after-evacuation-warning",
+   "urls_extra": [
+    "https://www.arabnews.com/middle-east/houthis-strike-aden-airport-with-two-ballistic-missiles-3008708"
+   ],
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "group": "iswap",
+   "date": "2026-10-28",
+   "date_precision": "day",
+   "place": "Kerenoa, north of Marte, Borno State, Nigeria",
+   "lat": 12.45,
+   "lon": 13.78,
+   "description": "Nigerian air strikes kill 15 fighters, including Islamic State West Africa commanders Abu Musanna and Hassan Abu Huraira, the military says.",
+   "url": "https://saharareporters.com/2026/10/29/nigerian-air-strikes-kill-two-iswap-commanders-13-other-terrorists-borno-military",
+   "urls_extra": [],
+   "confidence": "low",
+   "note": "Single source: Nigerian military statement, not independently verified."
+  },
+  {
+   "group": "jnim",
+   "date": "2026-10-29",
+   "date_precision": "day",
+   "place": "Bilanga, Gnagna Province, Burkina Faso (also Namssiguia, Bam Province)",
+   "lat": 12.55,
+   "lon": -0.03,
+   "description": "JNIM claims the capture of army posts at Bilanga and Namssiguia on the same day.",
+   "url": "https://trackingterrorism.org/chatter/jnim-bilanga-gnagna-fada-ngourma-area-burkina-faso-trac/",
+   "urls_extra": [],
+   "confidence": "low",
+   "note": "Group claim reported by the trackingterrorism.org tracker; not independently verified."
+  }
+ ],
+ "note": "Groups with no incident listed: no strategic-scale event was verified in the window with a usable source."
+}

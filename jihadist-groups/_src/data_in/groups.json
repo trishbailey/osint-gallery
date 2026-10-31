@@ -1,0 +1,2290 @@
+[
+ {
+  "id": "al-qaeda-core",
+  "name": "al-Qaeda (core leadership)",
+  "aliases": [
+   "AQ",
+   "al-Qaeda General Command"
+  ],
+  "family": "al-Qaeda network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Afghanistan",
+   "Iran (reported)"
+  ],
+  "areas": "Afghanistan–Pakistan border region; leadership reported in Iran",
+  "base_lat": 34.5,
+  "base_lon": 69.2,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Sayf al-Adl (de facto leader)",
+   "since": "not formally announced in sources reviewed",
+   "since_confidence": "low",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "The UN Monitoring Team calls him the de facto leader and reports he was in Iran (one Member State disputes any al-Qaeda presence there)."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://ctc.westpoint.edu/the-global-state-of-al-qaida-24-years-after-9-11/"
+  ],
+  "contested_fields": [
+   {
+    "field": "leader",
+    "confidence": "medium",
+    "reason": "No formal succession announcement was found; UN describes him as 'de facto'. Location in Iran is disputed by one Member State."
+   }
+  ],
+  "notes": "UN report (para 11): if al-Qaeda fails to mark 25 years since 11 September 2001, it may be seen as further evidence of declining relevance. An al-Qaeda training camp at Barg-e Matal, Nuristan, is reported by one Member State.",
+  "family_id": "al-qaeda",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "aqap",
+  "name": "al-Qaeda in the Arabian Peninsula",
+  "aliases": [
+   "AQAP"
+  ],
+  "family": "al-Qaeda network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Yemen"
+  ],
+  "areas": "Abyan, Ma'rib, Bayda, Shabwa, Wadi Hadramawt",
+  "base_lat": 14.5,
+  "base_lon": 46.5,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Saad bin Atef al-Awlaki",
+   "since": "Mar 2024",
+   "since_confidence": "high",
+   "source": "https://en.wikipedia.org/wiki/Sa%27ad_bin_Atef_al-Awlaki",
+   "confidence": "medium",
+   "note": "Appointed after Khalid al-Batarfi's death; UN report para 76 names him as leader."
+  },
+  "leadership_change_last_24_months": "No leadership change in the last 24 months (change was March 2024, 31 months ago).",
+  "strength": {
+   "range": "about 2,000 fighters",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN Monitoring Team para 74 (strength 'unchanged'); Member State estimate.",
+   "attribution": "UN Monitoring Team, 38th report"
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://acleddata.com/report/al-qaedas-new-normal-yemen-strategic-continuity-despite-leadership-change",
+   "https://ctc.westpoint.edu/the-global-state-of-al-qaida-24-years-after-9-11/"
+  ],
+  "contested_fields": [],
+  "notes": null,
+  "family_id": "al-qaeda",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "aqim",
+  "name": "al-Qaeda in the Islamic Maghreb",
+  "aliases": [
+   "AQIM"
+  ],
+  "family": "al-Qaeda network",
+  "kind": "group",
+  "status": "active (degraded)",
+  "in_main": true,
+  "countries": [
+   "Algeria",
+   "Mali",
+   "Burkina Faso",
+   "Libya (south-west)"
+  ],
+  "areas": "Northern Mali, northern Burkina Faso, remote Algeria",
+  "base_lat": 19.0,
+  "base_lon": 1.5,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Abu Ubaydah Yusuf al-Anabi (Yazid Mubarak)",
+   "since": "Nov 2020",
+   "since_confidence": "high",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": "UN para 50 places him moving between northern Mali and northern Burkina Faso and attending JNIM leadership meetings."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "200–300 fighters",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN para 50.",
+   "attribution": "UN Monitoring Team, 38th report"
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://sahel.darkwater-research.com/Armed-Groups/Jihadist---al-Qaeda-network/AQIM",
+   "https://apnews.com/article/africa-north-africa-senegal-mali-e4aed884da8a41d2a2e604c5a61cab16"
+  ],
+  "contested_fields": [],
+  "notes": "UN: the 'ideological backbone and logistical enabler' for JNIM.",
+  "family_id": "al-qaeda",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "jnim",
+  "name": "Jama'at Nusrat al-Islam wal-Muslimin (Group for the Support of Islam and Muslims)",
+  "aliases": [
+   "JNIM",
+   "Jama'a Nusrat ul-Islam wa al-Muslimin"
+  ],
+  "family": "al-Qaeda network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Mali",
+   "Burkina Faso",
+   "Niger",
+   "Benin",
+   "Nigeria (border)"
+  ],
+  "areas": "Central and northern Mali, northern and eastern Burkina Faso; Bamako fuel blockade",
+  "base_lat": 14.5,
+  "base_lon": -3.0,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Iyad Ag Ghali",
+   "since": "2 Mar 2017 (founding)",
+   "since_confidence": "high",
+   "source": "https://www.odni.gov/nctc/terrorist_groups/jnim.html",
+   "confidence": "high",
+   "note": "US National Counterterrorism Center still lists him as emir (May 2026); UN para 50 has him in leadership meetings."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "7,000–8,000 members, about half in Mali",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN para 12; Member State estimate.",
+   "attribution": "UN Monitoring Team, 38th report"
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://africacenter.org/spotlight/en-2026b-mig-10yr/",
+   "https://www.crisisgroup.org/sites/default/files/2026-04/321-jnim-expansion-sahel.pdf"
+  ],
+  "contested_fields": [],
+  "notes": "Africa Center: JNIM caused 76% of Sahel militant-Islamist deaths in the 12 months to mid-2026. UN para 13–15: 25 April 2026 offensive with the Tuareg FLA; Mali's defence minister killed at Kati.",
+  "family_id": "al-qaeda",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "al-shabaab",
+  "name": "Harakat al-Shabaab al-Mujahideen (The Youth Movement)",
+  "aliases": [
+   "al-Shabaab",
+   "al-Shabab",
+   "Harakat al-Shabaab al-Mujahideen"
+  ],
+  "family": "al-Qaeda network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Somalia",
+   "Kenya (border)",
+   "Yemen (links)"
+  ],
+  "areas": "Southern and central Somalia: Bay, Hiraan, Middle and Lower Juba, Lower Shabelle, Galmudug",
+  "base_lat": 2.5,
+  "base_lon": 44.0,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Ahmed Diriye (Abu Ubaidah)",
+   "since": "Sep 2014",
+   "since_confidence": "high",
+   "source": "https://main.un.org/securitycouncil/en/sanctions/751/materials/summaries/individual/ahmed-diriye",
+   "confidence": "high",
+   "note": "UN para 46: active and believed to be in southern Somalia."
+  },
+  "leadership_change_last_24_months": "No change in the leader; UN para 46: financial chief Abdullahi Wadaad killed Jan 2026 and his named replacement Abu Usaama killed Feb 2026.",
+  "strength": null,
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://www.dni.gov/nctc/terrorist_groups/al_shabaab.html"
+  ],
+  "contested_fields": [],
+  "notes": "UN para 47: Mogadishu monthly revenue fell from $12–15 million to $5–9 million.",
+  "family_id": "al-qaeda",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "aqis",
+  "name": "al-Qaeda in the Indian Subcontinent",
+  "aliases": [
+   "AQIS"
+  ],
+  "family": "al-Qaeda network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Afghanistan",
+   "Pakistan",
+   "India",
+   "Bangladesh"
+  ],
+  "areas": "Cells across South Asia; leadership reported in Kabul",
+  "base_lat": 34.5,
+  "base_lon": 69.2,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Leader not verified in sources reviewed this round."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "contested_fields": [],
+  "notes": "UN para 101–102: the November 2025 Red Fort attack in Delhi was officially attributed to AQIS; leadership reported in Kabul with Taliban-issued ID papers.",
+  "family_id": "al-qaeda",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "imp",
+  "name": "Ittihad-ul-Mujahideen Pakistan (Union of Mujahideen Pakistan)",
+  "aliases": [
+   "IMP"
+  ],
+  "family": "al-Qaeda network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Pakistan"
+  ],
+  "areas": "Khyber Pakhtunkhwa (Bannu)",
+  "base_lat": 32.99,
+  "base_lon": 70.6,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Waqas, alias Kalim Ullah",
+   "since": "not known",
+   "since_confidence": "low",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "low",
+   "note": "UN para 102 'reported to be' the leader."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "contested_fields": [
+   {
+    "field": "leader",
+    "confidence": "low",
+    "reason": "Single Member State report."
+   }
+  ],
+  "notes": "UN para 102: AQIS formed its backbone; 9 May suicide and vehicle-bomb attack at a security post in Bannu killed 21.",
+  "family_id": "al-qaeda",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "tip",
+  "name": "Turkistan Islamic Party (also East Turkistan Islamic Movement)",
+  "aliases": [
+   "TIP",
+   "ETIM",
+   "ETIM/TIP"
+  ],
+  "family": "al-Qaeda network",
+  "kind": "group",
+  "status": "active (integrated into Syrian army in Syria)",
+  "in_main": true,
+  "countries": [
+   "Syria",
+   "Afghanistan"
+  ],
+  "areas": "Idlib (Syria); Badakhshan and Kunduz (Afghanistan)",
+  "base_lat": 35.93,
+  "base_lon": 36.63,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Abdul Haq (overall); Abdulaziz Dawood 'Zahid' (Syria branch)",
+   "since": "not known",
+   "since_confidence": "low",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": null
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "about 3,500 fighters in Syria",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "low",
+   "note": "UN para 66, one Member State; largest foreign-fighter group in Syria. Another Member State assesses the group as small, not growing and constrained by the Taliban (para 103).",
+   "attribution": "UN Monitoring Team, 38th report"
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "contested_fields": [
+   {
+    "field": "strength",
+    "confidence": "low",
+    "reason": "Single Member State figure; para 103 gives a contrary assessment for Afghanistan."
+   }
+  ],
+  "notes": "UN para 66: integrated into the Syrian Army's 84th Division.",
+  "family_id": "al-qaeda",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "hurras-al-din",
+  "name": "Hurras al-Din (Guardians of the Religion)",
+  "aliases": [
+   "HAD"
+  ],
+  "family": "al-Qaeda network",
+  "kind": "group",
+  "status": "dissolved (self-declared); clandestine network persists",
+  "in_main": false,
+  "countries": [
+   "Syria"
+  ],
+  "areas": "Idlib, Aleppo, Homs, outskirts of Damascus",
+  "base_lat": 35.9,
+  "base_lon": 36.6,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Dissolution announced Jan 2025; no current leader named in sources reviewed."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "up to 1,000 fighters (clandestine)",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "low",
+   "note": "UN para 64.",
+   "attribution": "UN Monitoring Team, 38th report"
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "contested_fields": [
+   {
+    "field": "status",
+    "confidence": "medium",
+    "reason": "Self-declared dissolution but UN says a decentralised structure persists; 50–70 members joined Syrian forces."
+   }
+  ],
+  "notes": "UN para 64: hardcore elements remain broadly hostile to President al-Sharaa.",
+  "family_id": "al-qaeda",
+  "state": "dormant",
+  "counted": false
+ },
+ {
+  "id": "is-core",
+  "name": "Islamic State (central leadership)",
+  "aliases": [
+   "IS",
+   "ISIS",
+   "ISIL",
+   "Da'esh",
+   "Islamic State in Iraq and the Levant"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active (degraded)",
+  "in_main": true,
+  "countries": [
+   "Syria",
+   "Iraq"
+  ],
+  "areas": "Syrian desert (Badia), Deir ez-Zor; leadership dispersed",
+  "base_lat": 34.9,
+  "base_lon": 40.5,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Abu Hafs al-Hashimi al-Qurashi (caliph)",
+   "since": "3 Aug 2023",
+   "since_confidence": "high",
+   "source": "https://www.reuters.com/world/middle-east/islamic-state-confirms-death-its-leader-names-his-replacement-2023-08-03/",
+   "confidence": "medium",
+   "note": "His real identity is unknown."
+  },
+  "leadership_change_last_24_months": "16 May 2026: deputy leader and head of the General Directorate of Provinces Abu Bakr al-Mainuki killed in a joint Nigeria–US operation in Metele, Borno (UN para 27). He had replaced Abu Khadija, who died about a year earlier (UN para 7).",
+  "strength": null,
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://www.reuters.com/world/middle-east/islamic-state-confirms-death-its-leader-names-his-replacement-2023-08-03/"
+  ],
+  "contested_fields": [
+   {
+    "field": "leader identity",
+    "confidence": "low",
+    "reason": "Real identity and location are not established in public sources."
+   }
+  ],
+  "notes": "UN para 6: 'at a lower ebb'; spokesperson Abu Hudhayfa al-Ansari said the past two years were 'drenched in blood'.",
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "is-syria",
+  "name": "Islamic State in Syria",
+  "aliases": [
+   "IS-Syria",
+   "Daesh in Syria"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Syria"
+  ],
+  "areas": "Deir ez-Zor, the Badia desert, Damascus countryside",
+  "base_lat": 35.3,
+  "base_lon": 40.1,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Local leader not named in sources reviewed."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "up to 3,000 fighters (all of IS, predominantly in Syria)",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "low",
+   "note": "UN para 56; the UN says the figure may be understated.",
+   "attribution": "UN Monitoring Team, 38th report"
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://www.aljazeera.com/news/2026/10/22/two-syrian-security-officers-killed-in-raid-on-isil-cell-near-damascus"
+  ],
+  "contested_fields": [
+   {
+    "field": "strength",
+    "confidence": "low",
+    "reason": "UN figure covers IS fighters overall, not only the Syria branch, and may be understated."
+   }
+  ],
+  "notes": "UN para 62: an estimated 20–40 attacks a month. At least 150 IS fighters escaped Shaddadah prison in January 2026 (para 57).",
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "is-iraq",
+  "name": "Islamic State in Iraq",
+  "aliases": [
+   "IS-Iraq",
+   "Bilad al-Rafidayn office"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active (at its weakest)",
+  "in_main": true,
+  "countries": [
+   "Iraq"
+  ],
+  "areas": "Western governorates (Anbar), desert areas",
+  "base_lat": 33.4,
+  "base_lon": 42.0,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Ahmad Zaydan Khalaf al-Ithawi (Abu al-Hareth)",
+   "since": "not known",
+   "since_confidence": "low",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN para 69."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "low hundreds of fighters",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN para 68.",
+   "attribution": "UN Monitoring Team, 38th report"
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "contested_fields": [],
+  "notes": null,
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "iskp",
+  "name": "Islamic State – Khorasan Province",
+  "aliases": [
+   "ISKP",
+   "ISIS-K",
+   "ISIL-K"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Afghanistan",
+   "Pakistan",
+   "Central Asia"
+  ],
+  "areas": "Northern Afghanistan, Kabul suburbs, Khyber Pakhtunkhwa",
+  "base_lat": 35.5,
+  "base_lon": 69.8,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Sanaullah Ghafari (Shahab al-Muhajir)",
+   "since": "Jun 2020",
+   "since_confidence": "medium",
+   "source": "https://www.dni.gov/nctc/terrorist_groups/isis_khorasan.html",
+   "confidence": "medium",
+   "note": null
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://www.dni.gov/nctc/terrorist_groups/isis_khorasan.html"
+  ],
+  "contested_fields": [],
+  "notes": "UN para 93: 'greatest threat' to the Taliban authorities; attacks fell in Afghanistan and rose in Pakistan; Kabul restaurant bombing 19 Jan 2026 killed 12.",
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "ispp",
+  "name": "Islamic State in Pakistan (Pakistan Province)",
+  "aliases": [
+   "ISPP",
+   "ISIL in Pakistan"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Pakistan"
+  ],
+  "areas": "Islamabad, Khyber Pakhtunkhwa",
+  "base_lat": 34.0,
+  "base_lon": 71.5,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Leader not named in sources reviewed."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "contested_fields": [
+   {
+    "field": "separate identity",
+    "confidence": "medium",
+    "reason": "UN para 95: claimed the 6 Feb 2026 Islamabad mosque bombing (32 killed) but 'likely' carried out by ISKP."
+   }
+  ],
+  "notes": "Also claimed the 5 May 2026 killing of a cleric in Khyber Pakhtunkhwa.",
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "iswap",
+  "name": "Islamic State West Africa Province",
+  "aliases": [
+   "ISWAP",
+   "ISIS-WA"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Nigeria",
+   "Niger",
+   "Chad",
+   "Cameroon"
+  ],
+  "areas": "Lake Chad basin, Borno State",
+  "base_lat": 13.0,
+  "base_lon": 13.6,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Abu Musa al-Mangawi Ba Shuwa (reported)",
+   "since": "not known",
+   "since_confidence": "low",
+   "source": "https://www.bbc.com/hausa/articles/c62vd6610llo",
+   "confidence": "low",
+   "note": "Named by Nigerian military information; earlier leaders reported killed or purged."
+  },
+  "leadership_change_last_24_months": "16 May 2026: al-Mainuki, an IS global figure tied to ISWAP, killed in Borno (UN para 27–28).",
+  "strength": null,
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://africacenter.org/spotlight/en-2026b-mig-10yr/",
+   "https://www.africanews.com/2026/10/18/nigerias-army-chief-of-staff-visits-troops-in-borno-after-deaths-of-15-soliders/"
+  ],
+  "contested_fields": [
+   {
+    "field": "leader",
+    "confidence": "low",
+    "reason": "Leadership is unclear in open sources; BBC Hausa relays Nigerian military information."
+   }
+  ],
+  "notes": "UN para 29: most active IS affiliate, more than 174 attacks January–May 2026; about 35 commercial drones acquired by mid-February.",
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "issp",
+  "name": "Islamic State Sahel Province (formerly Islamic State in the Greater Sahara)",
+  "aliases": [
+   "ISSP",
+   "ISGS",
+   "IS-Sahel"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Mali",
+   "Niger",
+   "Burkina Faso",
+   "Nigeria"
+  ],
+  "areas": "Ménaka and Gao (Mali), Tillabéri (Niger), Oudalan (Burkina Faso)",
+  "base_lat": 14.8,
+  "base_lon": 1.8,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Abu al-Bara al-Sahrawi",
+   "since": "after Adnan Abu Walid al-Sahrawi's 2021 death",
+   "since_confidence": "medium",
+   "source": "https://sahel.darkwater-research.com/Armed-Groups/Jihadist---Islamic-State-network/ISSP",
+   "confidence": "medium",
+   "note": null
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "about 2,000 members",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN para 21.",
+   "attribution": "UN Monitoring Team, 38th report"
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://africacenter.org/spotlight/en-2026b-mig-10yr/",
+   "https://thesoufancenter.org/intelbrief-2026-october-28/"
+  ],
+  "contested_fields": [
+   {
+    "field": "leader",
+    "confidence": "medium",
+    "reason": "Taken from an aggregator profile and Reuters/BBC reports on the killing of a predecessor; not re-confirmed in the UN report text."
+   }
+  ],
+  "notes": "UN para 22: 29 Jan 2026 attack on Niamey airport; Niger accounts for 75% of its claimed attacks.",
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "lakurawa",
+  "name": "Lakurawa (Islamic State-linked group in north-west Nigeria)",
+  "aliases": [
+   "Lakurawa"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Nigeria",
+   "Niger"
+  ],
+  "areas": "Sokoto, Kebbi, Zamfara States",
+  "base_lat": 12.5,
+  "base_lon": 4.8,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Leader not named in sources reviewed."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://africacenter.org/spotlight/en-2026b-mig-10yr/"
+  ],
+  "contested_fields": [
+   {
+    "field": "identity",
+    "confidence": "medium",
+    "reason": "UN para 26 says ISSP recruited hundreds of individuals linked to Lakurawa; whether Lakurawa is a separate group or now part of ISSP is not settled."
+   }
+  ],
+  "notes": null,
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "iscap-adf",
+  "name": "Islamic State Central Africa Province / Allied Democratic Forces",
+  "aliases": [
+   "ISCAP",
+   "ADF",
+   "Madina at Tauheed Wau Mujahedeen"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Democratic Republic of the Congo",
+   "Uganda"
+  ],
+  "areas": "Ituri, North Kivu, expanding into Tshopo and Haut-Uélé",
+  "base_lat": 1.54,
+  "base_lon": 28.76,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Musa Baluku",
+   "since": "not known",
+   "since_confidence": "low",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "high",
+   "note": "UN para 33: relocated to Dimba camp in Haut-Uélé."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "1,500–2,000 members, about 600 adult male fighters",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN para 33.",
+   "attribution": "UN Monitoring Team, 38th report"
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://actualite.cd/2026/10/16/mambasa-10-morts-dans-une-nouvelle-attaque-attribuee-aux-adf-dans-des-carres-miniers"
+  ],
+  "contested_fields": [],
+  "notes": "UN para 35: more than 80 attacks and over 400 deaths January–May 2026.",
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "is-mozambique",
+  "name": "Islamic State Mozambique (Ahl al-Sunna wal-Jama'a, ASWJ)",
+  "aliases": [
+   "ISM",
+   "ASWJ",
+   "Ahlu Sunna Wa-Jamo",
+   "al-Shabaab (local name)"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Mozambique"
+  ],
+  "areas": "Cabo Delgado: Mocímboa da Praia, Macomia, Muidumbe, Nangade",
+  "base_lat": -11.5,
+  "base_lon": 40.0,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Sheikh Hassan Ulanga",
+   "since": "not known",
+   "since_confidence": "low",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN para 40: no significant change in leadership."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "400–500 fighters (UN); 250–300 (Africa Center)",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "low",
+   "note": "Two credible sources disagree.",
+   "attribution": "UN Monitoring Team, 38th report (400–500); Africa Center for Strategic Studies (250–300)",
+   "estimates": [
+    {
+     "range": "400–500 fighters",
+     "source_name": "UN Monitoring Team, 38th report",
+     "url": "https://docs.un.org/en/S/2026/651"
+    },
+    {
+     "range": "250–300 fighters",
+     "source_name": "Africa Center for Strategic Studies",
+     "url": "https://africacenter.org/spotlight/en-2026b-mig-10yr/"
+    }
+   ]
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://africacenter.org/spotlight/en-2026b-mig-10yr/",
+   "https://reliefweb.int/report/mozambique/mozambique-conflict-monitor-update-october-2026"
+  ],
+  "contested_fields": [
+   {
+    "field": "strength",
+    "confidence": "low",
+    "reason": "UN says 400–500 and rising; Africa Center says 250–300."
+   }
+  ],
+  "notes": null,
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "is-somalia",
+  "name": "Islamic State in Somalia",
+  "aliases": [
+   "IS-Somalia",
+   "ISS"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active (under heavy pressure)",
+  "in_main": true,
+  "countries": [
+   "Somalia"
+  ],
+  "areas": "Cal Miskaad mountains, Bari region, Puntland",
+  "base_lat": 11.2,
+  "base_lon": 50.3,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Abdul Qadir Mumin",
+   "since": "not known",
+   "since_confidence": "low",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN para 41: assessed alive."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "150–250 fighters (UN); 500–600 (Somali security experts)",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "low",
+   "note": "Two sources disagree.",
+   "attribution": "UN Monitoring Team (150–250); Somali security and intelligence experts via VOA (500–600)",
+   "estimates": [
+    {
+     "range": "150–250 fighters",
+     "source_name": "UN Monitoring Team, 38th report",
+     "url": "https://docs.un.org/en/S/2026/651"
+    },
+    {
+     "range": "500–600 fighters",
+     "source_name": "Somali security and intelligence experts, quoted by VOA",
+     "url": null
+    }
+   ]
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://allsanaag.com/scores-killed-in-somalia-in-clash-between-security-forces-islamic-state/"
+  ],
+  "contested_fields": [
+   {
+    "field": "strength",
+    "confidence": "low",
+    "reason": "UN 150–250 versus Somali experts 500–600 (VOA); the VOA figure cannot be verified independently."
+   }
+  ],
+  "notes": null,
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "is-libya",
+  "name": "Islamic State in Libya",
+  "aliases": [
+   "ISIL-Libya"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active (weakened)",
+  "in_main": true,
+  "countries": [
+   "Libya"
+  ],
+  "areas": "Fezzan region (south-west)",
+  "base_lat": 27.0,
+  "base_lon": 14.4,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Leader not named in sources reviewed."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "about 100 fighters",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN para 53.",
+   "attribution": "UN Monitoring Team, 38th report"
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "contested_fields": [],
+  "notes": null,
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "is-yemen",
+  "name": "Islamic State in Yemen",
+  "aliases": [
+   "ISIL-Yemen"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active (weak)",
+  "in_main": true,
+  "countries": [
+   "Yemen"
+  ],
+  "areas": "Bayda and southern governorates",
+  "base_lat": 14.0,
+  "base_lon": 45.6,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Leader not named in sources reviewed."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "about 150 fighters",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN para 81.",
+   "attribution": "UN Monitoring Team, 38th report"
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "contested_fields": [],
+  "notes": "UN para 81: IS spokesperson al-Ansari reported to be in Yemen.",
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "jund-al-khilafah",
+  "name": "Jund al-Khilafah in Tunisia (Soldiers of the Caliphate)",
+  "aliases": [
+   "JAK-T"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active (very small)",
+  "in_main": true,
+  "countries": [
+   "Tunisia"
+  ],
+  "areas": "Kasserine region",
+  "base_lat": 35.17,
+  "base_lon": 8.83,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Leader not named in sources reviewed."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "about a dozen fighters",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN para 51.",
+   "attribution": "UN Monitoring Team, 38th report"
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "contested_fields": [],
+  "notes": null,
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "hezbollah",
+  "name": "Hezbollah (Party of God)",
+  "aliases": [
+   "Hizballah",
+   "Lebanese Hezbollah"
+  ],
+  "family": "Iran-backed axis",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Lebanon",
+   "Syria (supply routes)"
+  ],
+  "areas": "South Lebanon, Bekaa Valley, Beirut southern suburbs",
+  "base_lat": 33.4,
+  "base_lon": 35.5,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Naim Qassem",
+   "since": "29 Oct 2024",
+   "since_confidence": "high",
+   "source": "https://www.reuters.com/world/middle-east/hezbollah-elects-naim-qassem-succeed-slain-head-nasrallah-2024-10-29/",
+   "confidence": "high",
+   "note": "Elected by the Shura Council after the killing of Hassan Nasrallah."
+  },
+  "leadership_change_last_24_months": "Qassem took over 29 Oct 2024, one day short of 24 months before 28 Oct 2026; counted as inside the window.",
+  "strength": null,
+  "sources": [
+   "https://www.timesofisrael.com/hezbollah-rearming-for-possible-renewed-conflict-with-israel-lebanese-sources-say/",
+   "https://www.straitstimes.com/world/middle-east/hezbollah-readies-for-new-regional-war-with-funds-from-iran-sources-say",
+   "https://www.aa.com.tr/en/middle-east/israel-carries-out-strikes-in-southern-lebanon-in-fresh-ceasefire-violations/4101864"
+  ],
+  "contested_fields": [],
+  "notes": "A US-brokered Israel–Lebanon ceasefire framework dates from June 2026; Qassem rejects disarmament (JFeed, Oct 2026).",
+  "family_id": "iran-axis",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "houthis",
+  "name": "Ansar Allah (the Houthi movement)",
+  "aliases": [
+   "Houthis",
+   "Ansar Allah",
+   "Supporters of God"
+  ],
+  "family": "Iran-backed axis",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Yemen",
+   "Saudi Arabia (targets)",
+   "Red Sea"
+  ],
+  "areas": "Sanaa and north-west Yemen; Hodeidah; Red Sea coast",
+  "base_lat": 15.35,
+  "base_lon": 44.2,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Abdul-Malik al-Houthi",
+   "since": "2004",
+   "since_confidence": "high",
+   "source": "https://www.odni.gov/nctc/terrorist_groups/huthi_movement.html",
+   "confidence": "high",
+   "note": "US National Counterterrorism Center: leader since 2004."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "tens of thousands (no precise figure)",
+   "source": "https://www.reuters.com/world/middle-east/houthi-red-sea-offensive-elevates-enigmatic-yemeni-commanders-standing-2026-09-16/",
+   "confidence": "low",
+   "note": "Reuters wording; no numeric range found.",
+   "attribution": "Reuters"
+  },
+  "sources": [
+   "https://www.odni.gov/nctc/terrorist_groups/huthi_movement.html",
+   "https://apnews.com/article/saudi-yemen-houthi-riyadh-airport-f0e0e6105f33400e37bb20bb9a8130af",
+   "https://www.reuters.com/world/middle-east/why-havent-houthis-irans-allies-yemen-stepped-into-war-2026-10-04/"
+  ],
+  "contested_fields": [],
+  "notes": null,
+  "family_id": "iran-axis",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "hamas",
+  "name": "Hamas (Islamic Resistance Movement)",
+  "aliases": [
+   "Harakat al-Muqawama al-Islamiyya",
+   "Izz ad-Din al-Qassam Brigades (military wing)"
+  ],
+  "family": "Iran-backed axis",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Gaza Strip",
+   "West Bank",
+   "Qatar and Turkey (political offices)"
+  ],
+  "areas": "Gaza Strip",
+  "base_lat": 31.5,
+  "base_lon": 34.45,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Khalil al-Hayya (political bureau head)",
+   "since": "20 Jul 2026",
+   "since_confidence": "high",
+   "source": "https://www.reuters.com/world/middle-east/hamas-names-khalil-al-hayya-new-leader-statement-says-2026-07-20/",
+   "confidence": "high",
+   "note": "Runoff against Khaled Meshaal, reportedly 35–34 in the Shura Council."
+  },
+  "leadership_change_last_24_months": "20 Jul 2026: al-Hayya elected head of the political bureau, succeeding Yahya Sinwar.",
+  "strength": {
+   "range": "25,000–30,000 fighters (N12); 30,000–40,000 operatives (Haaretz)",
+   "source": "https://fimed.tr/en/post?id=34211&slug=israels-channel-12-hamas-has-2500030000-fighters-after-nearly-3-years-of-war",
+   "confidence": "low",
+   "note": "Two Israeli estimates disagree.",
+   "attribution": "N12, Israel's Channel 12, citing Israeli assessments (25,000–30,000); Haaretz via the Times of Israel, citing military and Shin Bet intelligence (30,000–40,000)",
+   "estimates": [
+    {
+     "range": "25,000–30,000 fighters",
+     "source_name": "N12 (Israel's Channel 12), citing Israeli assessments, 28 Sep 2026",
+     "url": "https://fimed.tr/en/post?id=34211&slug=israels-channel-12-hamas-has-2500030000-fighters-after-nearly-3-years-of-war"
+    },
+    {
+     "range": "30,000–40,000 operatives",
+     "source_name": "Haaretz, citing Israeli military and Shin Bet intelligence, via the Times of Israel, 22 Oct 2026",
+     "url": "https://www.timesofisrael.com/report-israel-tells-us-hamas-doesnt-plan-to-disarm-and-is-rebuilding-its-forces/"
+    }
+   ]
+  },
+  "sources": [
+   "https://www.bbc.com/news/articles/cx25nzkyj50o",
+   "https://www.thenationalnews.com/news/mena/2026/07/23/new-hamas-leader-elected-by-narrowest-of-margins-with-gazas-backing/",
+   "https://www.bbc.com/news/articles/cmx2qlz7qrd4o",
+   "https://fimed.tr/en/post?id=34211&slug=israels-channel-12-hamas-has-2500030000-fighters-after-nearly-3-years-of-war",
+   "https://www.timesofisrael.com/report-israel-tells-us-hamas-doesnt-plan-to-disarm-and-is-rebuilding-its-forces/"
+  ],
+  "contested_fields": [
+   {
+    "field": "strength",
+    "confidence": "low",
+    "reason": "Two Israeli estimates differ (25,000–30,000 per N12; 30,000–40,000 per Haaretz via the Times of Israel), and no independent estimate exists."
+   }
+  ],
+  "notes": "Sunni group; counted in the Iran-backed axis because it describes itself and is described as an axis member. Placement is a decision for Trish.",
+  "family_id": "iran-axis",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "pij",
+  "name": "Palestinian Islamic Jihad",
+  "aliases": [
+   "PIJ",
+   "Harakat al-Jihad al-Islami"
+  ],
+  "family": "Iran-backed axis",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Gaza Strip",
+   "West Bank",
+   "Lebanon"
+  ],
+  "areas": "Gaza Strip, Jenin area",
+  "base_lat": 31.5,
+  "base_lon": 34.4,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Ziyad al-Nakhalah",
+   "since": "not verified",
+   "since_confidence": "low",
+   "source": "https://english.palinfo.com/news/2026/10/07/371562/",
+   "confidence": "high",
+   "note": "Still secretary-general as of Oct 2026; start date not confirmed this round."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://english.palinfo.com/news/2026/10/07/371562/",
+   "https://qodsna.com/en/421945"
+  ],
+  "contested_fields": [],
+  "notes": "Sunni group; see Hamas placement note.",
+  "family_id": "iran-axis",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "kataib-hezbollah",
+  "name": "Kata'ib Hezbollah (Hezbollah Brigades)",
+  "aliases": [
+   "KH"
+  ],
+  "family": "Iran-backed axis",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Iraq"
+  ],
+  "areas": "Baghdad belt, Jurf al-Sakhar",
+  "base_lat": 33.0,
+  "base_lon": 44.3,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Ahmad al-Hamidawi",
+   "since": "not verified",
+   "since_confidence": "low",
+   "source": "https://www.rudaw.net/english/categories/iraq/1079537",
+   "confidence": "medium",
+   "note": null
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://www.thenationalnews.com/news/mena/2026/10/01/resistance-has-won-this-round-kataib-hezbollah-denies-disarmament-deal-after-us-troops-leave-iraq/",
+   "https://www.rudaw.net/english/categories/iraq/1079537"
+  ],
+  "contested_fields": [],
+  "notes": "Rudaw: Baghdad set a new disarmament deadline of 30 June 2027 after the factions rejected a 30 Sept 2026 deadline.",
+  "family_id": "iran-axis",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "nujaba",
+  "name": "Harakat Hezbollah al-Nujaba",
+  "aliases": [
+   "Nujaba"
+  ],
+  "family": "Iran-backed axis",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Iraq",
+   "Syria"
+  ],
+  "areas": "Baghdad, Nineveh",
+  "base_lat": 33.3,
+  "base_lon": 44.4,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Akram al-Kaabi",
+   "since": "not verified",
+   "since_confidence": "low",
+   "source": "https://www.rudaw.net/english/categories/iraq/1079537",
+   "confidence": "medium",
+   "note": null
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://www.rudaw.net/english/categories/iraq/1079537"
+  ],
+  "contested_fields": [],
+  "notes": null,
+  "family_id": "iran-axis",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "aah",
+  "name": "Asa'ib Ahl al-Haq (League of the Righteous)",
+  "aliases": [
+   "AAH"
+  ],
+  "family": "Iran-backed axis",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Iraq"
+  ],
+  "areas": "Baghdad, Diyala, southern Iraq",
+  "base_lat": 33.3,
+  "base_lon": 44.4,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Qais al-Khazali",
+   "since": "not verified",
+   "since_confidence": "low",
+   "source": "https://www.dni.gov/nctc/terrorist_groups/aah.html",
+   "confidence": "medium",
+   "note": null
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://www.dni.gov/nctc/terrorist_groups/aah.html",
+   "https://www.washingtoninstitute.org/policy-analysis/iraqs-militia-balancing-act-gets-trickier-amid-deadlines-and-saudi-attacks"
+  ],
+  "contested_fields": [],
+  "notes": "Washington Institute: AAH announced disarmament in 2026, while KSS and Badr are more resistant.",
+  "family_id": "iran-axis",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "kss",
+  "name": "Kata'ib Sayyid al-Shuhada (Master of Martyrs Brigades)",
+  "aliases": [
+   "KSS"
+  ],
+  "family": "Iran-backed axis",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Iraq"
+  ],
+  "areas": "Baghdad, Basra",
+  "base_lat": 33.3,
+  "base_lon": 44.4,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Abu Alaa al-Walai (Hashim Finyan Rahim al-Saraji)",
+   "since": "not verified",
+   "since_confidence": "low",
+   "source": "https://mappingmilitants.org/profiles/kataib-sayyid-al-shuhada",
+   "confidence": "medium",
+   "note": null
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://mappingmilitants.org/profiles/kataib-sayyid-al-shuhada",
+   "https://www.iraqinews.com/iraq/kataib-sayyid-al-shuhada-al-walai-us-saudi-retaliation-delay-2026/"
+  ],
+  "contested_fields": [],
+  "notes": null,
+  "family_id": "iran-axis",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "badr",
+  "name": "Badr Organization",
+  "aliases": [
+   "Badr"
+  ],
+  "family": "Iran-backed axis",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Iraq"
+  ],
+  "areas": "Diyala, Baghdad",
+  "base_lat": 33.75,
+  "base_lon": 44.6,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Hadi al-Amiri",
+   "since": "not verified",
+   "since_confidence": "low",
+   "source": "https://www.washingtoninstitute.org/policy-analysis/iraqs-militia-balancing-act-gets-trickier-amid-deadlines-and-saudi-attacks",
+   "confidence": "medium",
+   "note": null
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://www.washingtoninstitute.org/policy-analysis/iraqs-militia-balancing-act-gets-trickier-amid-deadlines-and-saudi-attacks"
+  ],
+  "contested_fields": [],
+  "notes": null,
+  "family_id": "iran-axis",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "iri",
+  "name": "Islamic Resistance in Iraq (umbrella)",
+  "aliases": [
+   "IRI"
+  ],
+  "family": "Iran-backed axis",
+  "kind": "umbrella",
+  "status": "umbrella label",
+  "in_main": false,
+  "countries": [
+   "Iraq"
+  ],
+  "areas": "Iraq",
+  "base_lat": 33.3,
+  "base_lon": 44.4,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Umbrella label; no single leader."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://www.thenationalnews.com/news/mena/2026/10/01/resistance-has-won-this-round-kataib-hezbollah-denies-disarmament-deal-after-us-troops-leave-iraq/"
+  ],
+  "contested_fields": [],
+  "notes": "Shown as a link node only; not counted as a group.",
+  "family_id": "iran-axis",
+  "state": "umbrella",
+  "counted": false
+ },
+ {
+  "id": "taliban",
+  "name": "Taliban (Islamic Emirate of Afghanistan)",
+  "aliases": [
+   "Taliban",
+   "Islamic Emirate"
+  ],
+  "family": "Independent and nationalist",
+  "kind": "governing",
+  "status": "now governing (Afghanistan)",
+  "in_main": true,
+  "countries": [
+   "Afghanistan"
+  ],
+  "areas": "Afghanistan; leadership in Kandahar",
+  "base_lat": 31.6,
+  "base_lon": 65.7,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Hibatullah Akhundzada",
+   "since": "25 May 2016",
+   "since_confidence": "high",
+   "source": "https://www.bbc.com/news/world-asia-36375975",
+   "confidence": "high",
+   "note": null
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://www.bbc.com/news/world-asia-36375975"
+  ],
+  "contested_fields": [],
+  "notes": "Governs Afghanistan since August 2021.",
+  "family_id": "independent",
+  "state": "governing",
+  "counted": true
+ },
+ {
+  "id": "ttp",
+  "name": "Tehrik-e-Taliban Pakistan (Pakistani Taliban)",
+  "aliases": [
+   "TTP",
+   "Pakistani Taliban"
+  ],
+  "family": "Independent and nationalist",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Pakistan",
+   "Afghanistan (sanctuary)"
+  ],
+  "areas": "Khyber Pakhtunkhwa, Waziristan, Bajaur; Afghanistan border",
+  "base_lat": 32.5,
+  "base_lon": 70.0,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Noor Wali Mehsud",
+   "since": "22 Jun 2018",
+   "since_confidence": "high",
+   "source": "https://main.un.org/securitycouncil/en/content/noor-wali-mehsud",
+   "confidence": "high",
+   "note": "Fourth emir, after Mullah Fazlullah was killed (Dawn, Reuters)."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://main.un.org/securitycouncil/en/content/noor-wali-mehsud",
+   "https://www.dawn.com/news/1415660"
+  ],
+  "contested_fields": [],
+  "notes": "UN para 97–99: new divisions and a 'TTP Air Force' announced 25 Dec 2025; about 2,000 TTP fighters and families moved inland by the Taliban.",
+  "family_id": "independent",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "let",
+  "name": "Lashkar-e-Taiba (Army of the Pure)",
+  "aliases": [
+   "LeT"
+  ],
+  "family": "Independent and nationalist",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Pakistan",
+   "India (Jammu and Kashmir)"
+  ],
+  "areas": "Punjab (Pakistan); Jammu and Kashmir",
+  "base_lat": 31.8,
+  "base_lon": 74.26,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Hafiz Saeed (nominal chief); Talha Saeed taking operational control (reported)",
+   "since": "not verified",
+   "since_confidence": "low",
+   "source": "https://www.theprint.in/defence/decades-long-terror-trail-of-lashkar-jaish-the-bullseye-of-indias-operation-sindoor/2618704/",
+   "confidence": "low",
+   "note": "Indian press and an Indian news agency; not confirmed by an independent source."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://www.reuters.com/world/asia-pacific/who-are-pakistan-based-let-jem-groups-targeted-by-indian-strikes-2025-05-07/",
+   "https://theprint.in/defence/decades-long-terror-trail-of-lashkar-jaish-the-bullseye-of-indias-operation-sindoor/2618704/"
+  ],
+  "contested_fields": [
+   {
+    "field": "leader",
+    "confidence": "low",
+    "reason": "Indian-origin sources only."
+   }
+  ],
+  "notes": null,
+  "family_id": "independent",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "jem",
+  "name": "Jaish-e-Mohammed (Army of Muhammad)",
+  "aliases": [
+   "JeM"
+  ],
+  "family": "Independent and nationalist",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Pakistan",
+   "India (Jammu and Kashmir)"
+  ],
+  "areas": "Bahawalpur (Punjab, Pakistan); Jammu and Kashmir",
+  "base_lat": 29.4,
+  "base_lon": 71.7,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Masood Azhar (nominal); Abdul Rauf Asghar (reported operational head)",
+   "since": "not verified",
+   "since_confidence": "low",
+   "source": "https://theprint.in/defence/decades-long-terror-trail-of-lashkar-jaish-the-bullseye-of-indias-operation-sindoor/2618704/",
+   "confidence": "low",
+   "note": "Indian press sources."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://www.reuters.com/world/asia-pacific/who-are-pakistan-based-let-jem-groups-targeted-by-indian-strikes-2025-05-07/",
+   "https://theprint.in/defence/decades-long-terror-trail-of-lashkar-jaish-the-bullseye-of-indias-operation-sindoor/2618704/"
+  ],
+  "contested_fields": [
+   {
+    "field": "leader",
+    "confidence": "low",
+    "reason": "Indian-origin sources only."
+   }
+  ],
+  "notes": null,
+  "family_id": "independent",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "hts",
+  "name": "Hay'at Tahrir al-Sham",
+  "aliases": [
+   "HTS",
+   "Jabhat al-Nusra"
+  ],
+  "family": "Independent and nationalist",
+  "kind": "governing",
+  "status": "now governing (core of the Syrian government)",
+  "in_main": true,
+  "countries": [
+   "Syria"
+  ],
+  "areas": "Damascus, Idlib",
+  "base_lat": 33.5,
+  "base_lon": 36.3,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Ahmad al-Sharaa (Syrian president)",
+   "since": "not verified (president)",
+   "since_confidence": "low",
+   "source": "https://news.un.org/en/story/2025/11/1166303",
+   "confidence": "high",
+   "note": "Leads the Syrian government."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://news.un.org/en/story/2025/11/1166303",
+   "https://www.thenationalnews.com/news/us/2026/02/27/un-security-council-removes-jabhat-al-nusra-and-hts-from-sanctions-list/"
+  ],
+  "contested_fields": [],
+  "notes": "Its leader is Syria's president since the fall of the Assad government.",
+  "family_id": "independent",
+  "state": "governing",
+  "counted": true
+ },
+ {
+  "id": "jas",
+  "name": "Jama'atu Ahlis Sunna Lidda'awati wal-Jihad (Boko Haram, JAS)",
+  "aliases": [
+   "Boko Haram",
+   "JAS"
+  ],
+  "family": "Independent and nationalist",
+  "kind": "group",
+  "status": "active",
+  "in_main": true,
+  "countries": [
+   "Nigeria",
+   "Niger",
+   "Chad",
+   "Cameroon"
+  ],
+  "areas": "Sambisa Forest, Lake Chad islands, Mandara Mountains; a Sadiku faction in north-west Nigeria",
+  "base_lat": 11.5,
+  "base_lon": 13.7,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": "Ibrahim Bakura Doro",
+   "since": "effective leader after May 2021 (consolidated after Mar 2022)",
+   "since_confidence": "medium",
+   "source": "https://www.crisisgroup.org/brf/africa/west-africa/nigeria/b196-jas-vs-iswap-war-boko-haram-splinters",
+   "confidence": "medium",
+   "note": "The UN refers to a 'Bakura Modu' group in the Lake Chad basin (para 31); naming varies."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://docs.un.org/en/S/2026/651",
+   "https://www.crisisgroup.org/brf/africa/west-africa/nigeria/b196-jas-vs-iswap-war-boko-haram-splinters",
+   "https://www.reuters.com/world/africa/suspected-islamists-kill-nigerian-villagers-collecting-firewood-2026-10-02/"
+  ],
+  "contested_fields": [
+   {
+    "field": "leader name and start date",
+    "confidence": "medium",
+    "reason": "Sources use different spellings and the start date is not a single announced day."
+   }
+  ],
+  "notes": "UN para 30–31: surge in capability; 416 abducted at Ngoshe in March 2026; the Adamu Yunusa (Sadiku) faction killed over 160 in Kwara State in early February 2026. A reported secret ceasefire with the Nigerian state (The New Humanitarian) is denied by Boko Haram: contested.",
+  "family_id": "independent",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "ji",
+  "name": "Jemaah Islamiyah (Islamic Group)",
+  "aliases": [
+   "JI"
+  ],
+  "family": "Independent and nationalist",
+  "kind": "group",
+  "status": "dissolved (announced 30 Jun 2024)",
+  "in_main": false,
+  "countries": [
+   "Indonesia",
+   "Malaysia",
+   "Philippines"
+  ],
+  "areas": "Java, Sumatra, Sulawesi",
+  "base_lat": -7.0,
+  "base_lon": 110.0,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Group announced its own dissolution; 16 senior leaders signed it in Bogor."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://www.reuters.com/world/asia-pacific/southeast-asian-militant-group-jemaah-islamiyah-be-disbanded-say-its-senior-2024-07-04/",
+   "https://www.straitstimes.com/asia/se-asia/indonesia-s-ji-terror-group-declares-dissolution-but-security-threat-remains-say-analysts"
+  ],
+  "contested_fields": [
+   {
+    "field": "status",
+    "confidence": "medium",
+    "reason": "Analysts say a security threat remains despite the declaration."
+   }
+  ],
+  "notes": "Listed so the Southeast Asia picture is complete; not counted in the totals.",
+  "family_id": "independent",
+  "state": "dormant",
+  "counted": false
+ },
+ {
+  "id": "jad",
+  "name": "Jamaah Ansharut Daulah (Supporters of the State Group)",
+  "aliases": [
+   "JAD"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active (small online-driven cells)",
+  "in_main": true,
+  "countries": [
+   "Indonesia"
+  ],
+  "areas": "Central Sulawesi (Poso, Parigi Moutong), Java",
+  "base_lat": -1.4,
+  "base_lon": 120.7,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Decentralised cells; no single leader named in sources reviewed."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://en.antaranews.com/news/414867/indonesia-arrest-eight-isis-linked-suspects-in-central-sulawesi",
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "contested_fields": [],
+  "notes": "Islamic State-aligned; placed in the independent family at the parent's request. May 2026: Densus 88 (Indonesian police counter-terrorism unit) arrested eight suspected JAD members. UN para 104: Southeast Asian IS-linked capacity declined.",
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "mit",
+  "name": "Mujahidin Indonesia Timur (East Indonesia Mujahideen)",
+  "aliases": [
+   "MIT",
+   "Poso group"
+  ],
+  "family": "Independent and nationalist",
+  "kind": "group",
+  "status": "defunct (declared eradicated 2022)",
+  "in_main": false,
+  "countries": [
+   "Indonesia"
+  ],
+  "areas": "Poso, Central Sulawesi",
+  "base_lat": -1.4,
+  "base_lon": 120.75,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Leader Ali Kalora killed Sep 2021; last fugitive killed 29 Sep 2022."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://inp.polri.go.id/artikel/death-of-prominent-terrorist-figure-marks-the-end-of-poso-terrorist-hunt",
+   "https://www.liputan6.com/news/read/5168858/kapolri-tahun-2022-kami-nyatakan-kelompok-mit-berhasil-diberantas"
+  ],
+  "contested_fields": [],
+  "notes": "A sleeper-cell network linked to MIT was reported disrupted in May 2026 (CNA).",
+  "family_id": "independent",
+  "state": "dormant",
+  "counted": false
+ },
+ {
+  "id": "asg",
+  "name": "Abu Sayyaf Group",
+  "aliases": [
+   "ASG"
+  ],
+  "family": "Independent and nationalist",
+  "kind": "group",
+  "status": "no longer a structured group",
+  "in_main": false,
+  "countries": [
+   "Philippines"
+  ],
+  "areas": "Sulu, Basilan",
+  "base_lat": 6.0,
+  "base_lon": 121.0,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "US State Department 2024 country report: no leader or clear structure."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "fewer than 100 remnants",
+   "source": "https://www.ecoi.net/en/document/2144918.html",
+   "confidence": "medium",
+   "note": "US State Department, Country Reports on Terrorism 2024.",
+   "attribution": "US State Department"
+  },
+  "sources": [
+   "https://www.ecoi.net/en/document/2144918.html",
+   "https://bangsamoro.gov.ph/news/latest-news/sulu-now-abu-sayyaf-free-provincial-peace-and-order-council-declares/",
+   "https://peace.gov.ph/2025/06/lagdameo-galvez-lead-declaration-of-basilan-as-asg-free/"
+  ],
+  "contested_fields": [],
+  "notes": "Sulu declared ASG-free Sep 2023; Basilan Dec 2024 (national declaration Jun 2025).",
+  "family_id": "independent",
+  "state": "dormant",
+  "counted": false
+ },
+ {
+  "id": "biff",
+  "name": "Bangsamoro Islamic Freedom Fighters (BIFF, Bungos faction)",
+  "aliases": [
+   "BIFF",
+   "BIFF-Bungos"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active (degraded)",
+  "in_main": true,
+  "countries": [
+   "Philippines"
+  ],
+  "areas": "Maguindanao del Norte (Bangsamoro region)",
+  "base_lat": 6.9,
+  "base_lon": 124.4,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Leader Esmael Abubakar ('Commander Bungos') killed 5 Jul 2026; successor not named in sources reviewed."
+  },
+  "leadership_change_last_24_months": "5 Jul 2026: leader Esmael Abubakar killed in Sultan Kudarat, Maguindanao del Norte.",
+  "strength": null,
+  "sources": [
+   "https://mindanews.com/top-stories/2026/07/leader-of-biff-bungos-group-killed-in-maguindanao-del-norte/",
+   "https://www.philstar.com/nation/2026/07/05/2540020/wanted-top-biff-leader-killed-maguindanao-del-norte-shootout"
+  ],
+  "contested_fields": [],
+  "notes": "Islamic State-aligned; placed in the independent family at the parent's request.",
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "di-maute",
+  "name": "Dawlah Islamiyah – Maute Group",
+  "aliases": [
+   "DI-Maute",
+   "Maute group",
+   "DI-MG"
+  ],
+  "family": "Islamic State network",
+  "kind": "group",
+  "status": "active (degraded)",
+  "in_main": true,
+  "countries": [
+   "Philippines"
+  ],
+  "areas": "Lanao del Sur",
+  "base_lat": 7.9,
+  "base_lon": 124.3,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Leader Amerol Mangoranca ('Usman') killed 17 Apr 2026; successor not named in sources reviewed."
+  },
+  "leadership_change_last_24_months": "17 Apr 2026: leader Amerol Mangoranca and nine others killed at Marantao, Lanao del Sur.",
+  "strength": null,
+  "sources": [
+   "https://mb.com.ph/2026/04/17/army-police-neutralize-10-dawlah-islamiyah-maute-group-members-in-lanao-sur",
+   "https://www.gmanetwork.com/regionaltv/news/113741/10-alleged-di-mg-members-leader-killed-in-lanao-del-sur-clash/story/"
+  ],
+  "contested_fields": [],
+  "notes": "Islamic State-aligned; placed in the independent family at the parent's request.",
+  "family_id": "islamic-state",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "id": "dawlah-islamiyah",
+  "name": "Dawlah Islamiyah (umbrella of Philippine Islamic State-aligned factions)",
+  "aliases": [
+   "DI"
+  ],
+  "family": "Islamic State network",
+  "kind": "umbrella",
+  "status": "umbrella label",
+  "in_main": false,
+  "countries": [
+   "Philippines"
+  ],
+  "areas": "Maguindanao, Lanao del Sur",
+  "base_lat": 7.3,
+  "base_lon": 124.3,
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "source": null,
+   "confidence": null,
+   "note": "Umbrella label; no single leader."
+  },
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "sources": [
+   "https://www.gmanetwork.com/news/topstories/regions/1006197/dawlah-islamiya-sub-leader-3-others-killed-in-maguindanao-del-norte/story/"
+  ],
+  "contested_fields": [],
+  "notes": "16 Oct 2026: a DI sub-leader was killed at Sultan Mastura, Maguindanao del Norte. The report does not name the faction.",
+  "family_id": "islamic-state",
+  "state": "umbrella",
+  "counted": false
+ },
+ {
+  "aliases": [
+   "Jaish al-Adl",
+   "People's Fighters Front",
+   "Jebhe-ye Mobarezin-e Mardomi (JMM)"
+  ],
+  "contested_fields": [
+   {
+    "field": "current leadership",
+    "confidence": "low",
+    "reason": "No public successor; the coalition name varies between sources."
+   }
+  ],
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "kind": "group",
+  "in_main": true,
+  "leadership_change_last_24_months": "5 Nov 2024: founder-leader Salahuddin Farooqui (Abdolrahim Mullahzadeh) killed in a joint Iran–Pakistan operation that also killed his deputies (analyst account; Iran and Pakistan did not publish a full account).",
+  "strength": null,
+  "notes": "The Long War Journal counts 11 coalition-claimed attacks and 37 armed incidents in the province since January 2026. Analyst estimates of fighter numbers (100 to 600) rest on weak sources, so none is shown.",
+  "id": "jmm",
+  "name": "Jaish al-Adl and the People's Fighters Front (Army of Justice, Baluch coalition)",
+  "family": "Independent and nationalist",
+  "status": "active (fighting under a four-group coalition formed December 2025)",
+  "countries": [
+   "Iran",
+   "Pakistan (sanctuary, reported)"
+  ],
+  "areas": "Sistan and Baluchestan province, Iran",
+  "base_lat": 27.3,
+  "base_lon": 61.8,
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "confidence": null,
+   "source": null,
+   "note": "No successor to the founder-leader is publicly named."
+  },
+  "sources": [
+   "https://www.longwarjournal.org/archives/2026/10/insurgent-attacks-surge-in-southeastern-iran.php",
+   "https://www.rferl.org/a/iran-sistan-baluchistan-insurgency-jaish/33877179.html",
+   "https://www.al-monitor.com/originals/2026/09/how-new-baluch-militant-coalition-raises-pressure-iran-pakistan-border",
+   "https://talshiardi.substack.com/p/baluch-separatist-group-jaish-al"
+  ],
+  "family_id": "independent",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "aliases": [
+   "Hafiz Gul Bahadur network",
+   "Asud al-Khorasan (affiliated unit)"
+  ],
+  "contested_fields": [
+   {
+    "field": "role in Ittehad-ul-Mujahideen Pakistan",
+    "confidence": "medium",
+    "reason": "The New York Times and the South Asia Terrorism Portal say the alliance is led by this group; the UN Monitoring Team says al-Qaeda in the Indian Subcontinent formed its backbone."
+   }
+  ],
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "kind": "group",
+  "in_main": true,
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "notes": "The alliance it leads claimed the 18 September 2026 Kohat police-compound attack that killed at least 22 people.",
+  "id": "hgb",
+  "name": "Hafiz Gul Bahadur group (Waziri Taliban faction)",
+  "family": "Independent and nationalist",
+  "status": "active",
+  "countries": [
+   "Pakistan",
+   "Afghanistan (sanctuary, reported by Pakistan)"
+  ],
+  "areas": "North Waziristan, Bannu and Kohat, Khyber Pakhtunkhwa",
+  "base_lat": 32.95,
+  "base_lon": 70.1,
+  "leader": {
+   "name": "Hafiz Gul Bahadur",
+   "since": "not verified",
+   "since_confidence": "low",
+   "confidence": "high",
+   "source": "https://www.nytimes.com/2026/09/19/world/asia/pakistan-mosque-attack-bahadur.html",
+   "note": "Described as one of the longest-surviving commanders in the region."
+  },
+  "sources": [
+   "https://www.nytimes.com/2026/09/19/world/asia/pakistan-mosque-attack-bahadur.html",
+   "https://www.satp.org/south-asia-intelligence-review-Volume-25-No-16",
+   "https://khyberchronicles.pk/a-new-name-after-the-miranshah-attack-who-is-aswad-al-khorasan/",
+   "https://wenewsenglish.com/afghanistan-based-terror-network-behind-bannu-suicide-attack/"
+  ],
+  "family_id": "independent",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "aliases": [
+   "Ansaru",
+   "JAMBS",
+   "Mahmuda (linked cell)"
+  ],
+  "contested_fields": [
+   {
+    "field": "al-Qaeda link",
+    "confidence": "medium",
+    "reason": "Nigerian prosecutors say the leaders trained with JNIM; this is the prosecution's account."
+   }
+  ],
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "kind": "group",
+  "in_main": true,
+  "leadership_change_last_24_months": "May to Jul 2025: emir Mahmud Usman (Abu Bara'a) and deputy Mahmud al-Nigeri were arrested; both received life sentences on 20 Jul 2026.",
+  "strength": null,
+  "notes": "The leaders were charged over the 2022 Kuje prison break and the 2022 attack on Wawa cantonment.",
+  "id": "ansaru",
+  "name": "Ansaru (Jama'atu Ansarul Muslimina fi Biladis Sudan, Vanguard for the Protection of Muslims in Black Africa)",
+  "family": "al-Qaeda network",
+  "status": "weakened (top leaders jailed)",
+  "countries": [
+   "Nigeria"
+  ],
+  "areas": "Niger, Kwara and Kogi states, Kainji National Park area",
+  "base_lat": 10.0,
+  "base_lon": 5.3,
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "confidence": null,
+   "source": null,
+   "note": "No public successor to the jailed emir."
+  },
+  "sources": [
+   "https://www.channelstv.com/2026/07/20/court-jails-two-ansaru-commanders-for-life-over-terrorism/",
+   "https://www.vanguardngr.com/2026/07/two-al-qaeda-linked-terrorists-bag-life-sentences-after-pleading-guilty/",
+   "https://www.premiumtimesng.com/news/headlines/817608-the-untold-story-of-two-notorious-terrorists-captured-by-nigerian-govt.html",
+   "https://apnews.com/article/nigeria-militant-leaders-arrested-59391894574805512f870fcc0b1c6635"
+  ],
+  "family_id": "al-qaeda",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "aliases": [
+   "TRF"
+  ],
+  "contested_fields": [
+   {
+    "field": "leader",
+    "confidence": "low",
+    "reason": "Single Indian-government source; Pakistan denies involvement."
+   }
+  ],
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "kind": "group",
+  "in_main": true,
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "notes": "The South Asia Terrorism Portal describes it as a Lashkar-e-Taiba proxy.",
+  "id": "trf",
+  "name": "The Resistance Front (Kashmir front for Lashkar-e-Taiba)",
+  "family": "Independent and nationalist",
+  "status": "active (small; claimed two attacks in July 2026)",
+  "countries": [
+   "India (Jammu and Kashmir)"
+  ],
+  "areas": "Kashmir Valley",
+  "base_lat": 33.7,
+  "base_lon": 75.1,
+  "leader": {
+   "name": "Saifullah Sajid Jatt (named by India's National Investigation Agency as a top commander)",
+   "since": "not verified",
+   "since_confidence": "low",
+   "confidence": "low",
+   "source": "https://www.indiatoday.in/india/story/national-investigation-agency-chargesheet-pahalgam-terrorist-attack-pakistan-lies-involvement-links-saifullah-sajid-jatt-2914401-2026-05-20",
+   "note": "Indian agency account; Pakistan rejects it."
+  },
+  "sources": [
+   "https://indianexpress.com/article/india/manhunt-in-valley-as-terror-attack-claims-2-trf-link-being-probed-10814018/",
+   "https://www.eurasiareview.com/04082026-india-terror-resurgence-in-jk-analysis/",
+   "https://satp.org/terrorist-profile/india-jammukashmir/the-resistance-front-trf",
+   "https://www.indiatoday.in/india/story/national-investigation-agency-chargesheet-pahalgam-terrorist-attack-pakistan-lies-involvement-links-saifullah-sajid-jatt-2914401-2026-05-20"
+  ],
+  "family_id": "independent",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "aliases": [
+   "Katibat al-Ghoraba al-Faransiya"
+  ],
+  "contested_fields": [],
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "kind": "group",
+  "in_main": true,
+  "leadership_change_last_24_months": null,
+  "strength": {
+   "range": "a few dozen members",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "confidence": "medium",
+   "note": "UN para 65.",
+   "attribution": "UN Monitoring Team, 38th report"
+  },
+  "notes": "Still hostile to the Syrian government of Ahmad al-Sharaa.",
+  "id": "ghuraba",
+  "name": "Katibat al-Ghuraba al-Faransiya (Battalion of the Strangers, French-speaking fighters)",
+  "family": "al-Qaeda network",
+  "status": "active (a few dozen members)",
+  "countries": [
+   "Syria"
+  ],
+  "areas": "Idlib, north-west Syria",
+  "base_lat": 35.9,
+  "base_lon": 36.6,
+  "leader": {
+   "name": "Oumar Diaby",
+   "since": "not verified",
+   "since_confidence": "low",
+   "confidence": "medium",
+   "source": "https://docs.un.org/en/S/2026/651",
+   "note": "UN para 65."
+  },
+  "sources": [
+   "https://docs.un.org/en/S/2026/651"
+  ],
+  "family_id": "al-qaeda",
+  "state": "active",
+  "counted": true
+ },
+ {
+  "aliases": [
+   "Ansar Bayt al-Maqdis"
+  ],
+  "contested_fields": [],
+  "coords_note": "Approximate centre of the main operating area, assigned by the researcher; not a headquarters.",
+  "kind": "group",
+  "in_main": false,
+  "leadership_change_last_24_months": null,
+  "strength": null,
+  "notes": "Egyptian operations, tribal militias and amnesty offers reduced it to a small remnant; the Mapping Militants Project dates the last claimed attack to December 2022 and the US State Department says it claimed none in 2024.",
+  "id": "is-sinai",
+  "name": "Islamic State Sinai Province (Wilayat Sinai)",
+  "family": "Islamic State network",
+  "status": "dormant (no claimed attack since 2023)",
+  "countries": [
+   "Egypt"
+  ],
+  "areas": "North Sinai",
+  "base_lat": 31.0,
+  "base_lon": 33.8,
+  "leader": {
+   "name": null,
+   "since": null,
+   "since_confidence": null,
+   "confidence": null,
+   "source": null,
+   "note": "No public leader."
+  },
+  "sources": [
+   "https://www.dni.gov/nctc/terrorist_groups/isis_sinai.html",
+   "https://www.ecoi.net/en/document/2145054.html",
+   "https://mappingmilitants.org/profiles/islamic-state-sinai-province"
+  ],
+  "family_id": "islamic-state",
+  "state": "dormant",
+  "counted": false
+ }
+]

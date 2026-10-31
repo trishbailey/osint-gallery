@@ -25,17 +25,6 @@
       "deployKeySecret": "DEPLOY_KEY_CRITICAL_MINERALS"
     },
     {
-      "slug": "ukraine-money-flows",
-      "repo": "trishbailey/ukraine-money-flows",
-      "private": true,
-      "build": "",
-      "publish": "public",
-      "oldUrl": "https://ukraine-money-flows.onrender.com",
-      "status": "live",
-      "cardId": "ukraine-money-flows",
-      "deployKeySecret": "DEPLOY_KEY_UKRAINE_MONEY_FLOWS"
-    },
-    {
       "slug": "cartel",
       "repo": "trishbailey/cartel-dashboard",
       "private": false,
@@ -76,9 +65,9 @@
       "oldUrl": "",
       "status": "in-repo",
       "cardId": "belt-and-road",
-      "version": "1.1",
+      "version": "1.4",
       "entries": 136,
-      "note": "v1.1, 136 entries. Lives directly in this repo under /belt-and-road/ with its own workflow; not touched by the sync."
+      "note": "v1.4, 136 entries; removed the hover arrows to China from map tooltips, space after expanded RMB, phone details header no longer hidden by the Close bar. v1.3: numbered [n] source links in details panels and one Data Sources dropdown. Lives directly in this repo under /belt-and-road/ with its own workflow; not touched by the sync."
     },
     {
    "slug": "ghost-fleet",
@@ -103,6 +92,30 @@
    "cardId": "china-diplomats",
    "version": "1",
    "note": "v1. Lives directly in this repo under /china-diplomats/ (_src/ sources, data/ JSON). Data refreshed by _src/daily.sh through a PR; not touched by the sync."
+  },
+  {
+    "slug": "jihadist-groups",
+    "repo": "trishbailey/osint-gallery",
+    "private": false,
+    "build": "",
+    "publish": "",
+    "oldUrl": "",
+    "status": "in-repo",
+    "cardId": "jihadist-groups",
+    "version": "1",
+    "note": "v1. Lives directly in this repo under /jihadist-groups/ (_src/ builds data.json). Data refreshed through a PR; not touched by the sync."
+  },
+  {
+    "slug": "russia-soldiers",
+    "repo": "trishbailey/osint-gallery",
+    "private": false,
+    "build": "",
+    "publish": "",
+    "oldUrl": "",
+    "status": "in-repo",
+    "cardId": "russia-soldiers",
+    "version": "1",
+    "note": "v1 draft. Lives directly in this repo under /russia-soldiers/ (_src/ builds index.html and data/). Not touched by the sync."
   },
   {
       "slug": "middle-east",

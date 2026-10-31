@@ -51,7 +51,6 @@ All Beacon dashboards are served from this one Render static site (`beacon-tools
 |---|---|---|---|---|
 | `/world-brief/` | `trishbailey/world-brief` (private) | none | `public/` | live |
 | `/critical-minerals/` | `trishbailey/critical-minerals` (private) | none | `public/` | live |
-| `/ukraine-money-flows/` | `trishbailey/ukraine-money-flows` (private) | none | `public/` | live |
 | `/cartel/` | `trishbailey/cartel-dashboard` (public) | `bash pipeline/build.sh` | `public/` | live |
 | `/africa-brief/` | in this repo (`africa-brief/`, own workflow) | | | live, not synced |
 | `/water-security/` | (not yet) | | `public/` | reserved |
@@ -99,7 +98,6 @@ Each private dashboard repo has its own **read-only deploy key** (repo Settings 
 |---|---|
 | `trishbailey/world-brief` | `DEPLOY_KEY_WORLD_BRIEF` |
 | `trishbailey/critical-minerals` | `DEPLOY_KEY_CRITICAL_MINERALS` |
-| `trishbailey/ukraine-money-flows` | `DEPLOY_KEY_UKRAINE_MONEY_FLOWS` |
 
 The workflow writes GitHub's SSH host keys (from `https://api.github.com/meta`) to a known_hosts file. The script clones each private repo from `git@github.com:<repo>.git`, with `GIT_SSH_COMMAND` using only that repo's key and strict host checking. The key goes into a 0600 temp file that is deleted right after the clone. Secrets are never passed to build commands or printed. No personal access token is used.
 
@@ -123,4 +121,6 @@ Several bots work on this repo at once. To avoid overwriting each other:
 $0. This repo is public, so GitHub Actions minutes are free. `beacon-tools` stays a free Render static site with no build step (`echo no-build`), and no new Render services are added.
 
 ## CI check (every change)
-`.github/workflows/ci-check.yml` runs `scripts/ci_check.py` on every PR and push to main. It fails when a page or generator carries the retired GA tag or lacks `G-Z61EKRP8QV`, links to github.io or an old standalone `*.onrender.com` dashboard site, or when a changed dashboard fails the colour (no greys, delta E >= 20), label-size (>= 13px) or 390px phone-width checks (no sideways scroll, no JS errors). A PR that edits shared files (scripts/, .github/, render.yaml, README.md, root page files) or more than one dashboard folder fails unless it has the `trish-approved` label. Run locally: `python scripts/ci_check.py --changed-from origin/main`. It also fails map labels that sit more than 7px from their marker's edge (SVG and Leaflet maps) and all-caps acronyms that are never spelled out on the page, e.g. `Full name (ACR)`. Mark decorative SVG parts with `data-ci-ignore`.
+`.github/workflows/ci-check.yml` runs `scripts/ci_check.py` on every PR and push to main. It fails when a page or generator carries the retired GA tag or lacks `G-Z61EKRP8QV`, links to github.io or an old standalone `*.onrender.com` dashboard site, or when a changed dashboard fails the colour (no greys, delta E >= 20), label-size (>= 13px) or 390px phone-width checks (no sideways scroll, no JS errors). A PR that edits shared files (scripts/, .github/, render.yaml, README.md, root page files) or more than one dashboard folder fails unless it has the `trish-approved` label. Run locally: `python scripts/ci_check.py --changed-from origin/main`. It also fails map labels that sit more than 7px from their marker's edge (SVG and Leaflet maps) and all-caps acronyms that are never spelled out on the page, e.g. `Full name (ACR)`. Mark decorative SVG parts with `data-ci-ignore`. Shades of one group's own colour (an intensity tint ramp) are exempt from the delta E look-alike rule when the marks carry `data-ramp="<group>"` (on the mark or an ancestor); pairs from different groups are still checked.
+
+**Grey for defunct items only.** The no-grey rule has one opt-in exception, for markers of dissolved or defunct groups/items. Put `data-status="defunct"` (exact value) on the SVG shape or on a `<g>` inside the SVG that holds it, and name it with an `aria-label` or a child `<title>`, e.g. `<g data-status="defunct" aria-label="Dissolved: Example Front"><circle fill="#8a8a8a" .../></g>`. Only grey fills under that marker are exempt: the marker cannot be the `<svg>` root, a class such as `is-defunct` does nothing, unnamed markers fail, non-grey colours on it are checked as usual, and at most half the shapes in one SVG may use it. Every other grey still fails CI.

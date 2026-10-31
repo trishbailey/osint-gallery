@@ -1,7 +1,7 @@
 name: africa-brief-news
 on:
   schedule:
-    - cron: "30 9 * * *"   # 09:30 UTC = 5:30 AM ET (EDT) / 4:30 AM ET (EST)
+    - cron: "0 10 */2 * *"   # every 2 days at 10:00 UTC = 6:00 AM ET (EDT) / 5:00 AM ET (EST)
   workflow_dispatch:
 permissions:
   contents: write

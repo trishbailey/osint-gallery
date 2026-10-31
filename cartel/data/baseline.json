@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-27",
+ "as_of": "2026-10-30",
  "arcs": {
   "andes": {
    "phase": "Record coca output and Ecuador's gang war.",
@@ -36,7 +36,26 @@
    "turning_points": [
     "2026-06-05 PCC and CV designated FTOs."
    ],
-   "recent_log": []
+   "recent_log": [
+    {
+     "date": "2026-10-29",
+     "text": "Rio police targeted a Comando Vermelho cooking-gas monopoly that charged 150 reais per cylinder, and Mato Grosso do Sul served 20 warrants over the PCC-CV dispute.",
+     "links": [
+      {
+       "title": "Operação Dominus combate monopólio do gás do Comando Vermelho no RJ | G1",
+       "url": "https://g1.globo.com/rj/rio-de-janeiro/noticia/2026/10/28/policia-civil-e-mprj-deflagram-a-operacao-dominus.ghtml",
+       "source": "g1.globo.com",
+       "date": "2026-10-29"
+      },
+      {
+       "title": "Operação contra facções cumpre 20 mandados de prisão em MS - A Crítica de Campo Grande",
+       "url": "https://acritica.net/policia/operacao-contra-faccoes-cumpre-20-mandados-de-prisao-em-ms/",
+       "source": "acritica.net",
+       "date": "2026-10-29"
+      }
+     ]
+    }
+   ]
   },
   "cjng": {
    "phase": "The CJNG has been in a leadership succession since El Mencho was killed in February 2026.",
@@ -46,7 +65,56 @@
    "turning_points": [
     "2026-02-22 El Mencho killed."
    ],
-   "recent_log": []
+   "recent_log": [
+    {
+     "date": "2026-10-29",
+     "text": "The Navy arrested El Semáforo, named as El Tanque's successor on the Veracruz coast, in Tuxtepec, and Colombia arrested two alleged CJNG brokers with the Clan del Golfo.",
+     "links": [
+      {
+       "title": "La Jornada - Cae 'El Semáforo', señalado como sucesor de 'El Tanque' en el CJNG",
+       "url": "https://www.jornada.com.mx/noticia/2026/10/28/politica/cae-el-semaforo-senalado-como-sucesor-de-el-tanque-en-el-cjng",
+       "source": "jornada.com.mx",
+       "date": "2026-10-29"
+      },
+      {
+       "title": "Otro golpe al CJNG: Marina detiene en Oaxaca a ‘El Semáforo’, presunto sucesor de ‘El Tanque’",
+       "url": "https://elfinanciero.com.mx/estados/2026/10/28/otro-golpe-al-cjng-marina-detiene-en-oaxaca-a-el-semaforo-presunto-sucesor-de-el-tanque",
+       "source": "elfinanciero.com.mx",
+       "date": "2026-10-29"
+      },
+      {
+       "title": "Capturan en Barranquilla a dos enlaces del Cartel Jalisco con el Clan del Golfo",
+       "url": "https://eltiempo.com/colombia/barranquilla/los-dos-mexicanos-capturados-en-barranquilla-que-segun-la-policia-coordinaban-envios-de-toneladas-de-cocaina-a-ee-uu-y-europa-3597134",
+       "source": "eltiempo.com",
+       "date": "2026-10-29"
+      },
+      {
+       "title": "Capturan en Colombia a \"La Patrona\" y \"Pau\", mexicanos del CJNG | Proceso",
+       "url": "https://proceso.com.mx/internacional/2026/10/28/capturan-en-colombia-a-la-patrona-y-pau-mexicanos-del-cjng-382734.html",
+       "source": "proceso.com.mx",
+       "date": "2026-10-29"
+      }
+     ]
+    },
+    {
+     "date": "2026-10-30",
+     "text": "San Diego prosecutors indicted alleged CJNG tunnel engineer Luis Manuel Hernández Victoria on four counts, including material support for terrorism.",
+     "links": [
+      {
+       "title": "Fiscalía de EU acusa a ingeniero mexicano por narcotúnel del CJNG",
+       "url": "https://zetatijuana.com/2026/10/fiscalia-de-eu-acusa-a-ingeniero-mexicano-por-narcotunel-del-cjng/?utm_source=rss&utm_medium=rss&utm_campaign=fiscalia-de-eu-acusa-a-ingeniero-mexicano-por-narcotunel-del-cjng",
+       "source": "Zeta Tijuana",
+       "date": "2026-10-30"
+      },
+      {
+       "title": "Feds bring terrorism charge against engineer who ran cartel smuggling tunnel",
+       "url": "https://washingtontimes.com/news/2026/oct/30/feds-bring-terrorism-charge-engineer-who-ran-cartel-smuggling-tunnel",
+       "source": "washingtontimes.com",
+       "date": "2026-10-30"
+      }
+     ]
+    }
+   ]
   },
   "colombia": {
    "phase": "The Clan del Golfo, the ELN and FARC dissident factions compete over coca and routes.",
@@ -76,6 +144,72 @@
        "date": "2026-10-27"
       }
      ]
+    },
+    {
+     "date": "2026-10-28",
+     "text": "Colombian forces carried out a sixth bombing under De La Espriella, against Iván Mordisco's dissidents.",
+     "links": [
+      {
+       "title": "Atención: Fuerzas Militares ejecutaron sexto bombardeo del gobierno de De La Espriella; fue contra 'Mordisco' - El Tiempo",
+       "url": "https://eltiempo.com/justicia/conflicto-y-narcotrafico/atencion-fuerzas-militares-ejecutaron-sexto-bombardeo-del-gobierno-de-de-la-espriella-fue-contra-mordisco-en-cauca-3596854",
+       "source": "eltiempo.com",
+       "date": "2026-10-28"
+      },
+      {
+       "title": "Lo que se sabe del sexto bombardeo del gobierno de Abelardo De La Espriella en el suroccidente del país: el Conat ejecutó la operación - El Tiempo",
+       "url": "https://eltiempo.com/justicia/conflicto-y-narcotrafico/lo-que-se-sabe-del-sexto-bombardeo-del-gobierno-de-abelardo-de-la-espriella-en-el-suroccidente-del-pais-el-conat-ejecuto-la-operacion-3596901",
+       "source": "eltiempo.com",
+       "date": "2026-10-28"
+      }
+     ]
+    },
+    {
+     "date": "2026-10-29",
+     "text": "The military carried out the sixth bombing of De la Espriella's government, killing six, though outlets disagree on whether it hit the Clan del Golfo or Mordisco's dissidents.",
+     "links": [
+      {
+       "title": "Bombardeo contra el Clan del Golfo en Chocó: al menos seis muertos según reporte preliminar | Orden Público | Caracol Radio",
+       "url": "https://caracol.com.co/2026/10/28/bombardeo-contra-el-clan-del-golfo-al-menos-seis-muertos-y-un-capturado-segun-reporte-preliminar/",
+       "source": "caracol.com.co",
+       "date": "2026-10-29"
+      },
+      {
+       "title": "Seis muertos y un capturado dejó el sexto bombardeo del gobierno de Abelardo De La Espriella - El Tiempo",
+       "url": "https://eltiempo.com/justicia/conflicto-y-narcotrafico/seis-muertos-y-un-capturado-dejo-el-sexto-bombardeo-del-gobierno-de-abelardo-de-la-espriella-3596979",
+       "source": "eltiempo.com",
+       "date": "2026-10-29"
+      },
+      {
+       "title": "Atención: Fuerzas Militares ejecutaron sexto bombardeo del gobierno de De La Espriella; fue contra 'Mordisco' - El Tiempo",
+       "url": "https://eltiempo.com/justicia/conflicto-y-narcotrafico/atencion-fuerzas-militares-ejecutaron-sexto-bombardeo-del-gobierno-de-de-la-espriella-fue-contra-mordisco-en-cauca-3596854",
+       "source": "eltiempo.com",
+       "date": "2026-10-29"
+      }
+     ]
+    },
+    {
+     "date": "2026-10-30",
+     "text": "Outlets identified Clan del Golfo commander alias Alex among six killed in the Chocó bombing, and police broke a fuel-theft network funding the ELN and Clan del Golfo.",
+     "links": [
+      {
+       "title": "Alias Alex, el cabecilla del ‘clan del Golfo’ que habría muerto en el sexto bombardeo ordenado por De La Espriella - El Tiempo",
+       "url": "https://eltiempo.com/justicia/conflicto-y-narcotrafico/alias-alex-el-cabecilla-del-clan-del-golfo-que-habria-muerto-en-el-sexto-bombardeo-ordenado-por-de-la-espriella-3597359",
+       "source": "eltiempo.com",
+       "date": "2026-10-30"
+      },
+      {
+       "title": "Bombardeo en Chocó dejó seis muertos, entre ellos alias Álex, cabecilla del Clan del Golfo: este es el perfil - Infobae",
+       "url": "https://infobae.com/colombia/2026/10/30/bombardeo-en-choco-dejo-seis-muertos-entre-ellos-alias-alex-cabecilla-del-clan-del-golfo-este-es-el-perfil",
+       "source": "infobae.com",
+       "date": "2026-10-30"
+      },
+      {
+       "title": "Golpe a red que habría robado un millón de galones de combustible para financiar al Eln, ‘clan del Golfo’ y ‘los Pachenca’ - El Tiempo",
+       "url": "https://eltiempo.com/justicia/conflicto-y-narcotrafico/golpe-a-red-que-habria-robado-un-millon-de-galones-de-combustible-para-financiar-al-eln-clan-del-golfo-y-los-pachenca-3597444",
+       "source": "eltiempo.com",
+       "date": "2026-10-30"
+      }
+     ]
     }
    ]
   },
@@ -88,7 +222,80 @@
    "turning_points": [
     "2025-07-21 Fito extradited to the US."
    ],
-   "recent_log": []
+   "recent_log": [
+    {
+     "date": "2026-10-28",
+     "text": "The army seized a gold plant tied to Los Lobos valued at 6.74 million dollars, and a mayor was detained over a gang-linked laundering network.",
+     "links": [
+      {
+       "title": "Ejército de Ecuador interviene una planta de procesamiento de oro presuntamente vinculada con Los Lobos y captura a cuatro sospechosos en la Amazonía - Infobae",
+       "url": "https://infobae.com/america/america-latina/2026/10/27/ejercito-de-ecuador-interviene-una-planta-de-procesamiento-de-oro-presuntamente-vinculada-con-los-lobos-y-captura-a-cuatro-sospechosos-en-la-amazonia",
+       "source": "infobae.com",
+       "date": "2026-10-28"
+      },
+      {
+       "title": "Detienen a un alcalde en Ecuador por liderar presuntamente una red de lavado de activos - Infobae",
+       "url": "https://www.infobae.com/america/agencias/2026/10/28/detienen-a-un-alcalde-en-ecuador-por-liderar-presuntamente-una-red-de-lavado-de-activos/",
+       "source": "infobae.com",
+       "date": "2026-10-28"
+      }
+     ]
+    },
+    {
+     "date": "2026-10-29",
+     "text": "Police arrested the mayor of Vinces in a 3.2 million dollar laundering case tied to Los Choneros and Los Lobos, and Ecuador extradited a Los Choneros leader to the US.",
+     "links": [
+      {
+       "title": "Detienen al alcalde de Vinces en Ecuador por una investigación de lavado de activos de USD 3,2 millones - Infobae",
+       "url": "https://www.infobae.com/america/america-latina/2026/10/28/detienen-al-alcalde-de-vinces-en-ecuador-por-una-investigacion-de-lavado-de-activos-de-usd-32-millones/",
+       "source": "infobae.com",
+       "date": "2026-10-29"
+      },
+      {
+       "title": "Constructora del alcalde de Vinces, acusado de lavado de activos, alcanzó un crecimiento patrimonial de 570% en su mandato",
+       "url": "https://www.primicias.ec/sucesos/constructora-alcalde-vinces-crecimiento-patrimonial-lavado-activos-mandato-juan-alfonso-montalvan-135892/",
+       "source": "primicias.ec",
+       "date": "2026-10-29"
+      },
+      {
+       "title": "Ecuador extradita a EU a 2 vinculados con asesinato de Fernando Villavicencio; también envía a un cabecilla de \"Los Choneros\"",
+       "url": "https://www.eluniversal.com.mx/mundo/ecuador-extradita-a-eu-a-2-vinculados-con-asesinato-de-fernando-villavicencio-tambien-envia-a-un-cabecilla-de-los-choneros/",
+       "source": "El Universal",
+       "date": "2026-10-29"
+      },
+      {
+       "title": "Extraditan a EEUU a tres ecuatorianos acusados de narcotráfico, incluido cabecilla de Los Choneros",
+       "url": "https://clarin.com/estados-unidos/extraditan-a-eeuu-a-tres-ecuatorianos-acusados-de-narcotrafico-incluido-cabecilla-de-los-choneros_0_RI38fJkpE3.html",
+       "source": "clarin.com",
+       "date": "2026-10-29"
+      }
+     ]
+    },
+    {
+     "date": "2026-10-30",
+     "text": "Ecuador extradited Los Choneros leader Churrón, Daniel Salcedo and Ronald Herrera to the US, and ADN expelled Naranjal's mayor over narcotrafficking accusations.",
+     "links": [
+      {
+       "title": "Ecuador extradita a Daniel Salcedo, Ronald Herrera y alias 'Churrón' a Estados Unidos",
+       "url": "https://primicias.ec/politica/ecuador-extraditacion-daniel-salcedo-ronald-herrera-alias-churron-estados-unidos-135962",
+       "source": "primicias.ec",
+       "date": "2026-10-30"
+      },
+      {
+       "title": "Narcotráfico, guerrilla y lavado cripto· estos son los nexos entre las extradiciones a Estados Unidos desde Ecuador",
+       "url": "https://primicias.ec/seguridad/narcotrafico-guerrilla-lavado-cripto-nexos-extradiciones-estados-unidos-ecuador-136002",
+       "source": "primicias.ec",
+       "date": "2026-10-30"
+      },
+      {
+       "title": "ADN le quita el respaldo al alcalde de Naranjal, Juan Carlos Rivera, y empieza proceso para expulsarlo del movimiento",
+       "url": "https://primicias.ec/politica/adn-respaldo-alcalde-naranjal-juan-carlos-rivera-acusaciones-narcotrafico-136001",
+       "source": "primicias.ec",
+       "date": "2026-10-30"
+      }
+     ]
+    }
+   ]
   },
   "mexico": {
    "phase": "The Sinaloa civil war is in its second year, and the CJNG is in succession after El Mencho's death.",
@@ -105,7 +312,32 @@
     "2026-02-22 El Mencho killed.",
     "2026-07-20 El Mayo sentenced to life."
    ],
-   "recent_log": []
+   "recent_log": [
+    {
+     "date": "2026-10-30",
+     "text": "Authorities recaptured Los Ciclones' Axel Cárdenas in Matamoros, and Gulf Cartel cells answered with at least 15 blockades that left five or six dead and closed bridges to Texas.",
+     "links": [
+      {
+       "title": "En Tamaulipas, 6 muertos en narcobloqueos luego de la captura del capo Axel",
+       "url": "https://www.jornada.com.mx/2026/10/30/estados/031n1est?partner=rss",
+       "source": "La Jornada (estados)",
+       "date": "2026-10-30"
+      },
+      {
+       "title": "Bloqueos por 4 horas tras golpe a mando de Ciclones- Grupo Milenio",
+       "url": "https://milenio.com/policia/bloqueos-por-4-horas-tras-golpe-a-mando-de-ciclones",
+       "source": "milenio.com",
+       "date": "2026-10-30"
+      },
+      {
+       "title": "Cartel roadblocks paralyze Matamoros after arrest of Gulf Cartel leader’s son",
+       "url": "https://mexiconewsdaily.com/news/cartel-roadblocks-matamoros-arrest-gulf-cartel-leader-son/",
+       "source": "Mexico News Daily",
+       "date": "2026-10-29"
+      }
+     ]
+    }
+   ]
   },
   "money": {
    "phase": "CMLNs dominate cartel laundering, and the US targets Mexican banks.",
@@ -127,6 +359,36 @@
        "url": "https://www.excelsior.com.mx/nacional/marina-detiene-colombiano-ligado-mafia-prestamos-gota-gota",
        "source": "excelsior.com.mx",
        "date": "2026-10-27"
+      }
+     ]
+    },
+    {
+     "date": "2026-10-28",
+     "text": "A US court sentenced Colombian Tether-broker boss alias Rey to 13 years, and the FBI is seeking an alleged Clan del Golfo launderer.",
+     "links": [
+      {
+       "title": "Este es el colombiano condenado por millonario esquema de lavado de dinero a través de criptomonedas: le dictaron 13 años de cárcel en Estados Unidos - El Tiempo",
+       "url": "https://eltiempo.com/mundo/eeuu-y-canada/este-es-el-colombiano-condenado-por-millonario-esquema-de-lavado-de-dinero-a-traves-de-criptomonedas-le-dictaron-13-anos-de-carcel-en-estados-unidos-3596817",
+       "source": "eltiempo.com",
+       "date": "2026-10-28"
+      },
+      {
+       "title": "FBI busca a colombiano señalado de lavar US$54 millones para el Clan del Golfo: estas son las pistas en Colombia - ELHERALDO.CO",
+       "url": "https://elheraldo.co/colombia/2026/10/28/fbi-busca-a-colombiano-senalado-de-lavar-us54-millones-para-el-clan-del-golfo-estas-son-las-pistas-en-colombia",
+       "source": "elheraldo.co",
+       "date": "2026-10-28"
+      }
+     ]
+    },
+    {
+     "date": "2026-10-30",
+     "text": "A US court sentenced Honduras-based Chinese broker Wenshen Xu to 12 years with a 22 million dollar money judgement for cocaine, laundering and terrorism support.",
+     "links": [
+      {
+       "title": "Office of Public Affairs | Chinese National Sentenced to 12 Years in Prison for Narcotics Trafficking, Money Laundering, and Material Support to Terrorism | United States Department of Justice",
+       "url": "https://justice.gov/opa/pr/chinese-national-sentenced-12-years-prison-narcotics-trafficking-money-laundering-and",
+       "source": "justice.gov",
+       "date": "2026-10-30"
       }
      ]
     }
@@ -158,6 +420,84 @@
        "url": "https://www.mondaq.com/unitedstates/money-laundering/1860010/ofac-expands-operation-economic-outcast-with-actions-targeting-iranian-procurement-industry-and-sanctions-evasion",
        "source": "mondaq.com",
        "date": "2026-10-27"
+      }
+     ]
+    },
+    {
+     "date": "2026-10-28",
+     "text": "Navy forces killed Chuy González Peñuelas, a Cártel de Guasave figure wanted by the US, in Guasave; outlets disagree on his faction.",
+     "links": [
+      {
+       "title": "Muere en un operativo en Sinaloa Jesús ‘Chuy’ González Peñuelas, cabeza del Cartel de Guasave",
+       "url": "https://elpais.com/mexico/2026-10-28/muere-en-un-operativo-en-sinaloa-jesus-chuy-gonzalez-penuelas-cabeza-del-cartel-de-guasave.html",
+       "source": "El Pais Mexico",
+       "date": "2026-10-28"
+      },
+      {
+       "title": "'Chuy' González fue abatido en el enfrentamiento con fuerzas federales en Siete Ejidos, Guasave - Ríodoce",
+       "url": "https://riodoce.mx/2026/10/27/chuy-gonzalez-fue-abatido-en-el-enfrentamiento-con-fuerzas-federales-en-siete-ejidos-guasave",
+       "source": "riodoce.mx",
+       "date": "2026-10-28"
+      },
+      {
+       "title": "¿Quién era Jesús “Chuy” González Peñuelas? La DEA ofrecía 5 millones de dólares por él",
+       "url": "https://tvazteca.com/aztecanoticias/quien-era-jesus-chuy-gonzalez-penuelas-la-dea-ofrecia-5-millones-dolares-por-el",
+       "source": "tvazteca.com",
+       "date": "2026-10-28"
+      }
+     ]
+    },
+    {
+     "date": "2026-10-29",
+     "text": "Sheinbaum acknowledged a rise in Sinaloa homicides and sent the Security Cabinet, while a judge held four alleged Chapitos arms-network members for trial.",
+     "links": [
+      {
+       "title": "Sheinbaum: “por repunte de homicidios se envió a Sinaloa al gabinete de seguridad”",
+       "url": "https://www.jornada.com.mx/2026/10/29/estados/034n1est?partner=rss",
+       "source": "La Jornada (estados)",
+       "date": "2026-10-29"
+      },
+      {
+       "title": "Sheinbaum reconoce aumento de homicidios en Sinaloa en últimas semanas- Grupo Milenio",
+       "url": "https://milenio.com/politica/sheinbaum-reconoce-aumento-homicidios-sinaloa-semanas",
+       "source": "milenio.com",
+       "date": "2026-10-29"
+      },
+      {
+       "title": "Vinculan a proceso a cuatro presuntos integrantes de Los Chapitos- Grupo Milenio",
+       "url": "https://milenio.com/policia/vinculan-a-proceso-a-cuatro-presuntos-integrantes-de-los-chapitos",
+       "source": "milenio.com",
+       "date": "2026-10-29"
+      },
+      {
+       "title": "Golpe a la red de armas de Los Chapitos: el Pokémon y tres más se quedan presos en Guasave tras ser vinculados a proceso - Infobae",
+       "url": "https://infobae.com/mexico/2026/10/28/golpe-a-la-red-de-armas-de-los-chapitos-el-pokemon-y-tres-mas-se-quedan-presos-en-guasave-tras-ser-vinculados-a-proceso",
+       "source": "infobae.com",
+       "date": "2026-10-29"
+      }
+     ]
+    },
+    {
+     "date": "2026-10-30",
+     "text": "The Navy killed Guasave Cartel operator Chuy González, a Mayiza ally, and the DEA claimed a share in the operation.",
+     "links": [
+      {
+       "title": "The Navy Kills Jesús González Peñuelas, \"El Chuy,\" in Sinaloa",
+       "url": "https://www.borderlandbeat.com/2026/10/the-navy-kills-jesus-gonzalez-penuelas.html",
+       "source": "Borderland Beat",
+       "date": "2026-10-28"
+      },
+      {
+       "title": "DEA se atribuye participación en abatimiento del ‘Chuy González’, operador del Cártel de Guasave - Infobae",
+       "url": "https://www.infobae.com/mexico/2026/10/29/dea-se-atribuye-participacion-en-abatimiento-del-chuy-gonzalez-operador-del-cartel-de-guasave/",
+       "source": "infobae.com",
+       "date": "2026-10-30"
+      },
+      {
+       "title": "Cártel de Guasave: Quiénes son y cómo creció el poder del Chapo Isidro- Grupo Milenio",
+       "url": "https://milenio.com/policia/cartel-de-guasave-quienes-son-y-como-crecio-el-poder-del-chapo-isidro",
+       "source": "milenio.com",
+       "date": "2026-10-30"
       }
      ]
     }

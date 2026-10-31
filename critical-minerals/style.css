@@ -101,7 +101,7 @@ details.more>summary{min-height:44px;display:flex;align-items:center;font-family
 .hbars{list-style:none;margin:0;padding:0}.hb{display:grid;grid-template-columns:minmax(120px,190px) 1fr minmax(110px,150px);gap:8px;align-items:center;font-size:14px;margin:5px 0;color:var(--text)}
 .hb-t{background:var(--panel2);height:18px;border-radius:3px}.hb-f{display:block;height:100%;border-radius:3px}.hb-v{font-weight:700}
 .maptip{position:absolute;z-index:120;pointer-events:none;background:var(--panel2);color:var(--text);border:1px solid var(--gold);border-radius:4px;padding:4px 8px;font-size:14px;max-width:320px}
-#leadmap g[data-iso]:hover,#leadmap g[data-iso]:focus{fill:#C26AA8;outline:none}
+#leadmap g[data-iso]:hover,#leadmap g[data-iso]:focus{stroke:#c8a24a;stroke-width:1.6;outline:none}
 abbr[title]{text-decoration:underline dotted;cursor:help}
 @media(max-width:800px){.cm-layout{grid-template-columns:1fr}.cm-side{position:static;max-height:none}.side-toggle{display:block;width:100%;min-height:44px;font:700 15px Arial,sans-serif;background:var(--panel2);color:var(--text);border:1px solid var(--gold);border-radius:6px}
 .side-body{display:none}.cm-side.open .side-body{display:block}.fgroup{flex-direction:row;flex-wrap:wrap}.lg-wrap{grid-template-columns:1fr}.lg{flex-direction:row;flex-wrap:wrap}.hb{grid-template-columns:1fr 110px}.hb-t{grid-column:1/-1;order:3}}
@@ -138,19 +138,83 @@ table{display:block;width:100%}table tr{display:block;border-bottom:1px solid va
 .op-where{display:flex;flex-wrap:wrap;gap:4px 12px}.op-place{white-space:nowrap}.op-f{margin:8px 0 0;font-size:14px}
 @media(max-width:640px){.op-grid{grid-template-columns:1fr}}
 /* rare earths flow */
-.rf-svg{width:100%;height:auto;display:block}.rf-n{cursor:pointer}.rf-n:focus{outline:2px solid #c8a24a}
+.rf-svg{width:100%;height:auto;display:block}.rf-n{cursor:pointer}.rf-n:focus{outline:none}.rf-n:focus-visible rect{stroke:#c8a24a;stroke-width:4;stroke-opacity:1}
 .rf-l{transition:stroke-opacity .15s}.rf-hl .rf-l{stroke-opacity:.12}.rf-hl .rf-l.on{stroke-opacity:1}.rf-hl .rf-n rect{stroke-opacity:.35}.rf-hl .rf-n.on rect{stroke-opacity:1;stroke-width:3}
 .rf-prompt{color:#c8a24a;font-weight:700;font-size:14px;margin:0 0 8px}.rf-info{font-size:14px;min-height:1.2em;color:var(--text)}
-.rf-fb{font-size:13px}.rf-list{display:none;list-style:none;padding:0;margin:0}
-.rf-item{border:1px solid var(--line);border-radius:6px;margin:6px 0;background:var(--panel2)}
-.rf-t{width:100%;text-align:left;background:none;border:0;color:var(--text);font:inherit;font-weight:700;padding:12px;font-size:16px;cursor:pointer}
-.rf-t::after{content:" +";color:#c8a24a}.rf-t[aria-expanded=true]::after{content:" −"}
-.rf-b{margin:0;padding:0 12px 12px 26px;font-size:14px;color:var(--text)}.rf-b li{margin:6px 0}.rf-from{display:block;color:var(--muted,#b9c2d0)}
-.rf-list{display:block;list-style:none;padding:0;margin:8px 0 0}.rf-txt{margin:10px 0 0;border:1px solid var(--line);border-radius:6px;background:var(--panel2)}.rf-txt summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--gold);padding:10px 12px}.rf-txt .rf-list{padding:0 8px 8px}
-.rf-wide{overflow-x:auto;max-width:100%}@media(max-width:800px){.rf .lg-wrap{display:flex;flex-direction:column}.rf .lg-g{order:-1;width:100%}.rf-info{font-size:14px}.rf .lg{flex-direction:column}.rf-fg{flex-direction:row;flex-wrap:wrap}.rf-fb{min-height:44px;padding:6px 10px}}
-/* phone: the filters bar only applies to the minerals list, so it leaves once the rare earths flow and operators reach the top */
+.rf-list{margin:8px 0 0;padding:0 12px 10px}.rf-th{font-size:15px;color:var(--gold);margin:12px 0 4px}.rf-b{margin:0 0 6px;padding-left:20px;font-size:14px;color:var(--text);list-style:disc}.rf-b li{margin:6px 0;display:list-item}.rf-txt{margin:10px 0 0;border:1px solid var(--line);border-radius:6px;background:var(--panel2)}.rf-txt summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--gold);padding:10px 12px}
+.rf-wide{overflow-x:auto;max-width:100%}.rf-hit{cursor:pointer}.rf-prompt{margin:4px 0 10px}.rf-svg{max-width:none}.rf{margin:14px 0 6px;border-top:1px solid var(--line);padding-top:10px}.rf-h{font-size:16px;color:var(--gold);margin:0 0 6px}
+.rf-svg{min-width:504px}
+/* phone: the filters bar only applies to the minerals list, so it leaves once the operators section reaches the top */
 @media(max-width:800px){.cm-side.side-off:not(.open){visibility:hidden;pointer-events:none}}
 
 /* phone: charts whose labels would drop below 13px scroll sideways in their own box */
 .svg-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}.svg-hint{display:none}.svg-scroll+.svg-hint{display:block;font-size:13px;color:#9fb3c8;margin:4px 0}
 .fs-svg{max-width:100%}
+
+/* numbered references and the single Data Sources dropdown */
+.ref{font-size:13px;line-height:0;margin-left:1px;white-space:nowrap}.ref a{font-weight:700;padding:2px 1px}
+.ds-box{margin-top:28px}.ds{list-style:none;padding:0;margin:8px 0}.ds li{font-size:14px;margin:8px 0;overflow-wrap:anywhere;scroll-margin-top:80px}.ds li:target{outline:2px solid var(--gold);outline-offset:3px}.dsn{color:var(--gold);font-weight:700}
+.ds-h{font-size:15px;color:var(--gold);margin:14px 0 6px}.ds-logos li{overflow-wrap:anywhere}
+
+/* ===== From mine to end use: one end use at a time ===== */
+.cm-rest{padding-bottom:10px}
+.eu-prompt{color:var(--gold);font-size:15px;margin:4px 0 10px}.eu-prompt strong{color:var(--gold)}.eu-swipe,.eu-hint{display:none}
+.eu-chips{position:relative;display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.eu-chip{min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:6px 8px 6px 14px;font:700 15px Arial,Helvetica,sans-serif;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:22px;cursor:pointer}
+.eu-chip:hover,.eu-chip:focus-visible{border-color:var(--gold);outline:2px solid var(--gold)}
+.eu-chip[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:#0b1526}
+.eu-n2{min-width:24px;padding:1px 7px;border-radius:12px;background:var(--panel);color:var(--text);text-align:center;font-size:13px;font-weight:700}
+.eu-chip[aria-pressed=true] .eu-n2{background:#0b1526;color:var(--gold)}
+.eu-fig{padding:16px 18px}
+.eu-take{margin:0 0 12px}
+.eu-scroll{overflow-x:auto;max-width:100%}
+.eu-flow{display:flex;align-items:stretch;min-width:0}
+.eu-rows{flex:1 1 auto;min-width:0}
+.eu-h,.eu-r{display:grid;grid-template-columns:160px var(--cols)}
+.eu-h{margin-bottom:4px}.eu-ht{font-size:15px;font-weight:700;color:var(--gold)}
+.eu-list{list-style:none;margin:0;padding:0}
+.eu-r{align-items:center;min-height:62px;margin:0 0 12px}
+.eu-rn{display:flex;flex-direction:column;gap:2px;padding-right:12px}
+.eu-n{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:var(--text)}
+.eu-sw{flex:none;width:14px;height:14px;border-radius:3px;background:var(--c)}
+.eu-also{font-size:13px;color:var(--muted)}
+.eu-c{display:flex;align-items:center;min-width:0}
+.eu-b{flex:0 1 232px;min-width:0;display:flex;flex-direction:column;gap:2px;padding:7px 10px;background:var(--panel2);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:6px;color:var(--text)}
+.eu-cn{display:flex;align-items:center;flex-wrap:wrap;gap:0 2px;font-size:15px;font-weight:700;line-height:1.35;overflow-wrap:break-word}
+.eu-cs{font-size:13px;line-height:1.35}
+.eu-comp .eu-cn{font-weight:400;font-size:14px}
+.eu-cl{display:block;font-size:14px;line-height:1.35;overflow-wrap:break-word;margin-top:3px}.eu-cl strong{color:var(--gold)}
+.eu-cp{font-size:13px;line-height:1.35;color:var(--muted);overflow-wrap:break-word}
+.eu-nodeline{margin:10px 0 0;padding:7px 12px;border:1px solid var(--gold);border-radius:6px;background:var(--panel2);font-size:14px;color:var(--text)}.eu-nodeline strong{color:var(--gold)}
+.eu-ln{flex:1 1 20px;min-width:14px;height:6px;background:var(--c)}
+.eu-ln.last{position:relative}.eu-ln.last::after{content:"";position:absolute;right:-12px;top:50%;transform:translateY(-50%);border-left:12px solid var(--c);border-top:9px solid transparent;border-bottom:9px solid transparent}
+.eu-node{flex:0 0 190px;margin-left:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:12px 10px;text-align:center;background:var(--panel2);color:var(--text);border:3px solid var(--gold);border-radius:10px;font:inherit;cursor:pointer}
+.eu-node:hover,.eu-node:focus-visible{outline:2px solid var(--gold);outline-offset:2px;background:#16294a}
+.eu-nt{font-size:13px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.05em}.eu-nl{font-size:19px;font-weight:700;line-height:1.25}.eu-nc{font-size:14px}.eu-nh{font-size:13px;color:var(--muted)}
+.eu-caveat{margin:14px 0 6px;padding:8px 12px;border-left:4px solid var(--gold);background:var(--panel2);font-size:15px;color:var(--text)}
+.eu-gap{font-size:14px;margin:6px 0;color:var(--text)}
+.eu-th{font-size:15px;color:var(--gold);margin:14px 0 4px}
+.eu-text{margin:0 0 6px;padding-left:20px;font-size:14px;color:var(--text);list-style:disc}.eu-text li{display:list-item;margin:7px 0}
+@media(max-width:700px){
+.eu-swipe{display:block;font-size:13px;color:#9fb3c8;margin:0 0 4px}.eu-hint{display:block;font-size:13px;color:#9fb3c8;margin:4px 0}.eu-hint[hidden]{display:none}
+.eu-chips{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px;margin-bottom:8px}.eu-chip{flex:none;white-space:nowrap}
+.eu-fig{padding:12px 10px}
+.eu-flow{min-width:calc(var(--n) * 150px + 44px)}
+.eu-h,.eu-r{grid-template-columns:repeat(var(--n),minmax(0,1fr))}.eu-hn{display:none}
+.eu-r{row-gap:6px;margin-bottom:16px}.eu-rn{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:2px 10px;padding:0}
+.eu-b{padding:6px 8px}.eu-cn{font-size:14px}
+.eu-node{flex:0 0 28px;margin-left:12px;padding:0;gap:0;border-radius:8px}.eu-nt,.eu-nl,.eu-nc,.eu-nh{display:none}
+}
+
+/* phone: the rare earths chart scrolls sideways; fade the edge that has more content so nothing reads as a clipped box */
+@media(max-width:640px){.svg-scroll.fade-r{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 36px),transparent)}.svg-scroll.fade-l{-webkit-mask-image:linear-gradient(to left,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(to left,#000 calc(100% - 36px),transparent)}.svg-scroll.fade-l.fade-r{-webkit-mask-image:linear-gradient(to right,transparent,#000 36px,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(to right,transparent,#000 36px,#000 calc(100% - 36px),transparent)}}
+
+/* choropleth map: scale bar, caption line, top three */
+.mp-line{color:var(--text)}.mp-st{font-size:14px;font-weight:700;color:var(--gold);margin:0 0 8px;line-height:1.3}
+.mp-scale ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.mp-scale li{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text);min-height:28px}
+.mp-scale i{flex:none;display:block;width:30px;height:28px;border:1px solid transparent;box-sizing:border-box}
+.mp-scale li.nd{margin-top:8px}.mp-scale li.nd i{width:30px;height:20px;border-radius:2px}
+.mp-top{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--text)}.mp-top:empty{display:none}
+.mp-hint{font-size:13px;color:var(--text);margin:8px 0 0}
+@media(max-width:800px){.mp-scale ul{flex-direction:row;flex-wrap:wrap;gap:0}.mp-scale li:not(.nd){flex:1 1 0;min-width:0;flex-direction:column;align-items:stretch;gap:2px;font-size:13px;text-align:center;min-height:0}.mp-scale li:not(.nd) i{width:auto;height:18px}.mp-scale li.nd{margin:8px 0 0 12px;flex:none;min-height:0}}

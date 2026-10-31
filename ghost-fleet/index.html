@@ -3,9 +3,9 @@
 <title>Russia's Shadow Fleet Tracker | Beacon Intelligence Group</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z61EKRP8QV"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Z61EKRP8QV');</script>
-<link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css?v=9"></head><body>
+<link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css?v=15"></head><body>
 <header><a class="brand" href="./">BEACON INTELLIGENCE GROUP<span class="brand-sub">SHADOW FLEET · v1</span></a>
-<nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#map">Map</a><a href="../ukraine-money-flows/">Ukraine Money Flows</a></nav></header>
+<nav><a href="../">&larr; All tools &amp; dashboards</a><a href="#map">Map</a></nav></header>
 <div class="layout">
 <button id="ftoggle" aria-expanded="false" aria-controls="side">☰ Filters and layers</button>
 <aside id="side" aria-label="Map filters and key">
@@ -50,7 +50,7 @@
 <p id="shnote" class="note"></p>
 <section class="rusf" aria-labelledby="rush"><h2 id="rush" class="leadh2"></h2><p id="rusp" class="leadp"></p>
 <div class="rusgrid"><div id="ruschips" class="lchips rchips"></div>
-<div class="shbox"><h3 class="figt">Share of Russian loading-terminal calls by month</h3><div class="ckey"><span><i style="background:#c0504d"></i>Russian-flagged ships</span><span><i style="background:#c8a24a"></i>Other flags</span></div><div id="rusbars" class="rbars"></div></div></div>
+<div class="shbox"><h3 class="figt">Share of Russian loading-terminal calls by month</h3><div class="ckey"><span><i style="background:#c0504d"></i>Russian-flagged ships</span><span><i style="background:#c8a24a"></i>Non-Russian flags</span></div><div id="rusbars" class="rbars"></div></div></div>
 <p class="note">Flag on the day of each call; the last month is partial.</p></section>
 </section>
 <p class="intro">Russia moves much of its seaborne oil on ageing tankers with opaque owners and changing names and flags, often called the shadow fleet.</p>
@@ -77,8 +77,9 @@
 <button class="hl" data-k="load">Show loading ports on the map</button> <button class="hl" data-k="choke">Show Baltic routes on the map</button></details>
 </div></details>
 <details id="networks" class="grp" open><summary><h2>Company networks</h2></summary><p class="muted">Companies managing three or more of these ships; select one to show them on the map.</p><div id="nets" class="cards"></div><div id="addr"></div></details>
-<p class="credits note">Data credits: Powered by Global Fishing Watch (CC BY-NC 4.0) · Digitraffic, Fintraffic (CC BY 4.0) · Kystverket (NLOD) · OpenSanctions (CC BY-NC 4.0) · UN Comtrade · TeleGeography (CC BY-NC-SA) · EMODnet (CC BY 4.0) · Marine Regions, VLIZ (CC BY 4.0) · gpsjam.org · NGA World Port Index · Natural Earth.</p>
+
 </main></div>
+<details id="sources" class="sources"><summary>Data Sources</summary><ol><li id="src1"><a href="https://globalfishingwatch.org" target="_blank" rel="noopener">Global Fishing Watch</a>: vessel tracks, loitering and AIS gap events (CC BY-NC 4.0)</li><li id="src2"><a href="https://www.digitraffic.fi/en/" target="_blank" rel="noopener">Digitraffic, Fintraffic</a>: Baltic ship positions (CC BY 4.0)</li><li id="src3"><a href="https://www.kystverket.no/en/" target="_blank" rel="noopener">Kystverket</a>: Norwegian ship positions (NLOD)</li><li id="src4"><a href="https://www.opensanctions.org" target="_blank" rel="noopener">OpenSanctions</a>: sanctions and ownership records (CC BY-NC 4.0)</li><li id="src5"><a href="https://comtradeplus.un.org" target="_blank" rel="noopener">UN Comtrade</a>: trade flows</li><li id="src6"><a href="https://www.submarinecablemap.com" target="_blank" rel="noopener">TeleGeography</a>: undersea cable routes (CC BY-NC-SA)</li><li id="src7"><a href="https://emodnet.ec.europa.eu" target="_blank" rel="noopener">EMODnet</a>: pipelines and seabed infrastructure (CC BY 4.0)</li><li id="src8"><a href="https://www.marineregions.org" target="_blank" rel="noopener">Marine Regions, VLIZ</a>: maritime boundaries (EEZ) (CC BY 4.0)</li><li id="src9"><a href="https://gpsjam.org" target="_blank" rel="noopener">gpsjam.org</a>: GPS interference</li><li id="src10"><a href="https://msi.nga.mil/Publications/WPI" target="_blank" rel="noopener">NGA World Port Index</a>: world ports</li><li id="src11"><a href="https://www.naturalearthdata.com" target="_blank" rel="noopener">Natural Earth</a>: land, coastlines and cities (public domain)</li></ol></details>
 <div id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="ptitle" hidden><button id="pclose" aria-label="Close profile">✕</button><div id="pbody"></div></div>
-<script src="vendor/leaflet.js"></script><script src="app.js?v=5"></script><script src="story.js?v=5"></script><script src="shuttle.js?v=4"></script>
+<script src="vendor/leaflet.js"></script><script src="labels.js?v=2"></script><script src="app.js?v=9"></script><script src="story.js?v=13"></script><script src="shuttle.js?v=8"></script>
 </body></html>
