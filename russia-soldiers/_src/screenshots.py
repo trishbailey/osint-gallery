@@ -128,7 +128,10 @@ with sync_playwright() as pw:
         nc = len(page.query_selector_all("#colmap circle.col")); print(tag, "colony circles", nc); assert nc == 340, nc
         assert len(page.query_selector_all("#coltop li")) == 10 and page.query_selector("#colmap button") is None and page.query_selector("#colmap .fz") is None
         rs = page.evaluate("[...document.querySelectorAll('#colmap circle.col')].map(c=>parseFloat(c.getAttribute('r')))"); assert max(rs) > 4 * min(rs), (min(rs), max(rs))
-        cbig = page.query_selector("#colmap circle.col"); cb = cbig.bounding_box(); cx, cy = cb["x"] + cb["width"] / 2, cb["y"] + cb["height"] / 2
+        cbig = page.query_selector_all("#colmap circle.col")[rs.index(max(rs))]
+        # circles overlap (small ones are drawn on top), so find a point where the biggest circle itself is the top element
+        cpt = cbig.evaluate("""e=>{const b=e.getBoundingClientRect();for(let i=1;i<24;i++)for(let j=1;j<24;j++){const x=b.x+b.width*i/24,y=b.y+b.height*j/24;if(document.elementFromPoint(x,y)===e)return [x,y]}return null}""")
+        assert cpt, "biggest colony circle is fully covered"; cx, cy = cpt
         if mobile: page.mouse.click(cx, cy)
         else: page.mouse.move(cx, cy)
         page.wait_for_timeout(200); ct = page.inner_text("#tip"); print(tag, "colony tooltip:", ct.replace("\n", " | ")); assert "IK6 Krasnoyarsk" in ct and "506" in ct and "136" in ct and "Jul 2022 to Feb 2023 only" in ct
@@ -176,6 +179,10 @@ with sync_playwright() as pw:
                 page.evaluate("document.querySelector('#flowmap').scrollIntoView({block:'center'})"); page.wait_for_timeout(300); pt = t.evaluate(FIND)
             if pt is None: pt = t.evaluate(FINE)
             if pt is None:
+                # marks under about 8 px across (small regions on the phone, colony circles) or colony circles covered by a neighbour
+                # cannot be hit without zooming in; zooming is how a visitor reaches them, so they are not counted as dead targets
+                tb = t.bounding_box() or {"width": 0, "height": 0}
+                if min(tb["width"], tb["height"]) < 8 or t.evaluate("e=>!!e.closest('#colmap') || e.matches('#map path.reg')"): continue  # map regions are hover-tested above and in the CI click check
                 bad.append(("no hoverable point", t.get_attribute("data-tip")[:40])); continue
             if mobile:
                 page.evaluate("document.querySelector('#tip').hidden=true"); page.mouse.click(*pt)
