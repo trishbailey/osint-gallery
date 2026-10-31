@@ -56,6 +56,10 @@ with sync_playwright() as pw:
         page.evaluate("document.querySelector('#flow-sec').scrollIntoView()"); page.wait_for_timeout(400)
         assert page.evaluate("document.querySelector('#flow-sec').getBoundingClientRect().top < document.querySelector('#pris-sec').getBoundingClientRect().top")
         ns = len(page.query_selector_all("#flowmap g.st")); nr = len(page.query_selector_all("#flowmap path.rg")); print(tag, "flow arrows", ns, "regions", nr); assert ns == 5 and nr > 80
+        assert page.query_selector("#flowmap .hubbar") is None and len(page.query_selector_all("#flowmap path.bracket")) == 1 and len(page.query_selector_all("#flowmap path.leader")) == 3, "hub bar removed; front bracket and leader lines stay"
+        assert "151" in page.inner_text("#flowmap") and "Central Asia" in page.inner_text("#flowmap"), "Central Asia label names the 151"
+        cl_ = page.evaluate("[...document.querySelectorAll('#map text.citylab')].map(e=>[e.textContent,parseFloat(getComputedStyle(e).fontSize),getComputedStyle(e).pointerEvents])"); print(tag, "city labels", cl_)
+        assert sorted(c[0] for c in cl_) == ["Moscow", "St Petersburg"] and all(c[1] >= 13 and c[2] == "none" for c in cl_), cl_
         wid = page.evaluate("[...document.querySelectorAll('#flowmap g.st path.stp')].map(p=>parseFloat(getComputedStyle(p).strokeWidth))"); print(tag, "strand widths", min(wid), max(wid)); assert min(wid) >= 3 - 0.01 and max(wid) <= (34 if mobile else 56) + 0.01 and max(wid) / min(wid) > 5
         # country names must not touch the front line (bracket), its label, an arrow or a flow label, in the first view and after a zoom reset
         OVL = """()=>{const rect=e=>{const b=e.getBoundingClientRect();return {x:b.left,y:b.top,r:b.right,b:b.bottom}},hit=(a,o)=>a.x<o.r&&o.x<a.r&&a.y<o.b&&o.y<a.b;
@@ -85,7 +89,11 @@ with sync_playwright() as pw:
         assert page.evaluate("document.querySelector('#ridge svg').getBoundingClientRect().width <= document.documentElement.clientWidth + 1")
         box_ = page.evaluate("(()=>{const r=document.querySelectorAll('#ridge .tshit')[2].getBoundingClientRect();return [r.x+r.width/2,r.y+40]})()")
         page.mouse.move(*box_); page.mouse.click(*box_) if mobile else None; page.wait_for_timeout(150)
-        tp_ = page.inner_text("#tip"); assert "490,000" in tp_ and "11,000" in tp_ and "no data" in tp_ and "own scale" in tp_, tp_[:200]
+        tp_ = page.inner_text("#ridge .rtip"); assert "2024" in tp_ and "490,000" in tp_ and "11,000" in tp_ and "no data" in tp_ and "Source" not in tp_ and "[" in tp_, tp_[:200]
+        rt_ = page.evaluate("(()=>{const e=document.querySelector('#ridge .rtip'),b=e.getBoundingClientRect(),s=document.querySelector('#ridge svg').getBoundingClientRect(),c=getComputedStyle(e);return {w:b.width,h:b.height,fs:parseFloat(c.fontSize),bg:c.backgroundColor,above:b.bottom<=s.top+1,hi:getComputedStyle(document.querySelector('#ridge .rcol')).display}})()")
+        print(tag, "ridge tip", rt_); assert rt_["h"] < 200 and rt_["w"] < 400 and rt_["fs"] >= 13 and "rgba" in rt_["bg"] and rt_["hi"] != "none", rt_
+        if mobile: assert rt_["above"], "on a phone the hover sits above the chart, not over the rows"
+        assert page.query_selector("#ridge [data-tip]") is None, "ridge columns use the compact hover, not the page tooltip"
         shot(page, f"{tag}-09c-ridge-hover.png", full=False)
         nb = len(page.query_selector_all("#flowbars .brow")); print(tag, "named-dead bars", nb); assert nb == 4
         vals = page.evaluate("[...document.querySelectorAll('#flowbars .bv')].map(e=>parseInt(e.textContent.replace(/,/g,'')))"); assert vals == sorted(vals, reverse=True), vals
@@ -135,7 +143,7 @@ with sync_playwright() as pw:
         # prison colony map: 340 circles, top-10 list, tooltip on the biggest circle, zoom without buttons
         page.evaluate("document.querySelector('#colmap').scrollIntoView({block:'center'})"); page.wait_for_timeout(400)
         nc = len(page.query_selector_all("#colmap circle.col")); print(tag, "colony circles", nc); assert nc == 340, nc
-        assert len(page.query_selector_all("#coltop li")) == 10 and page.query_selector("#colmap button") is None and page.query_selector("#colmap .fz") is None
+        assert len(page.query_selector_all("#coltop li")) == 10 and page.query_selector("#coltop [data-tip]") is None and page.query_selector("#colmap button") is None and page.query_selector("#colmap .fz") is None
         rs = page.evaluate("[...document.querySelectorAll('#colmap circle.col')].map(c=>parseFloat(c.getAttribute('r')))"); assert max(rs) > 4 * min(rs), (min(rs), max(rs))
         cbig = page.query_selector_all("#colmap circle.col")[rs.index(max(rs))]
         # circles overlap (small ones are drawn on top), so find a point where the biggest circle itself is the top element

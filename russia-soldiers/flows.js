@@ -61,8 +61,6 @@ function draw(){
   var T=[fpt[0]+ux*(tot/2+5),fpt[1]+uy*(tot/2+5)],Bo=[fpt[0]-ux*(tot/2+5),fpt[1]-uy*(tot/2+5)];
   front.append('path').attr('class','bracket').attr('d','M'+[T[0]-ex*5,T[1]-ey*5]+'L'+T+'L'+Bo+'L'+[Bo[0]-ex*5,Bo[1]-ey*5]);
   front.append('text').attr('class','flab').attr('x',T[0]-12).attr('y',T[1]-6).attr('text-anchor','end').text(ph()?'Front':'Front in Ukraine (schematic)');
-  var hb=S.filter(function(s){return s.hub}).map(function(s){return s.A}).sort(function(p,q){return p[1]-q[1]});
-  if(hb.length>1)front.append('path').attr('class','bracket hubbar').attr('d','M'+hb.map(function(p){return p.join(',')}).join('L'));
   /* origin markers: one hub for the three Russian arrows, one dot per foreign arrow; each carries the arrow's tooltip */
   var orig=[],hubTip=F.arrows.filter(function(a){return a.hub}).map(function(a){return a.tip}).join('<hr>');
   if(S.some(function(s){return s.hub}))orig.push({id:'hub',ll:hubLL,tip:'<b>'+esc(F.hub.name)+'</b><br>The three Russian arrows start here. Recruitment totals are national: no outlet publishes them by region, so no region is singled out.'});
@@ -75,7 +73,7 @@ function draw(){
   /* every label names its own origin (country or group) and sits at the origin end of its arrow: foreign labels touch their origin dot,
      the three Russian labels sit in a column beside the hub bar with a short leader line from each arrow's start */
   function two(t,x,y1,l1,l2,anchor,gap){t.attr('text-anchor',anchor);t.append('tspan').attr('x',x).attr('y',y1).text(l1);t.append('tspan').attr('x',x).attr('y',y1+gap).attr('class','vnum').text(l2)}
-  var LN={vol:'Contract soldiers',mob:'Mobilised men',pri:'Prisoners',ca:'Central Asia, 5 states',prk:'North Korea'},gap=15;
+  var LN={vol:'Contract soldiers',mob:'Mobilised men',pri:'Prisoners',ca:'Central Asia: 5 of 151 source countries',prk:'North Korea'},gap=15;
   S.filter(function(s){return !s.hub}).forEach(function(s){
    var t=lblG.append('text').attr('class','dlab vlab');
    if(s.id==='prk')two(t,s.p[0],s.p[1]-12-gap,LN[s.id],s.label,'middle',gap);
@@ -195,10 +193,38 @@ function ridge(sel){
    dots.append('text').attr('x',cx(i)).attr('y',above?py-10:py+20).attr('text-anchor','middle').attr('class','rlab ind').text(single?shortN(q.low):shortN(q.low)+' to '+shortN(q.high))});
  });
  var ay=H-axh+18;svg.append('g').selectAll('text').data(S.years).enter().append('text').attr('x',function(d,i){return cx(i)}).attr('y',ay).attr('text-anchor','middle').attr('class','tick').text(function(d){return d});
- var cur=svg.append('line').attr('class','scur').attr('y1',2).attr('y2',H-axh).attr('stroke','#e9eef7').attr('stroke-width',1).attr('stroke-dasharray','3 3').style('display','none');
+ /* compact hover: year plus one short line per type, beside the hovered column on desktop (moved to the clearest gap) and in a slot above the chart on phones */
+ var colHi=svg.insert('rect',':first-child').attr('class','rcol').attr('y',2).attr('height',H-axh-2).attr('width',cw).style('display','none');
+ var tipE=document.createElement('div');tipE.className='rtip'+(N?' rtip-top':'');tipE.setAttribute('aria-hidden','true');
+ var hint='<div class="rt-h">Tap a year for values</div>';
+ if(N){tipE.innerHTML=hint;tipE.classList.add('idle');el.insertBefore(tipE,svg.node())}else{tipE.hidden=true;el.appendChild(tipE)}
+ var curves=null;
+ function obstacles(){if(curves)return curves;var pts=[],bx=[];
+  svg.selectAll('g.ridgerow path[stroke]').each(function(){var L=this.getTotalLength();for(var k=0;k<=L;k+=5){var q=this.getPointAtLength(k);pts.push([q.x,q.y])}});
+  svg.selectAll('g.ridgerow path[fill]').each(function(){var b=this.getBBox();if(b.width>0)bx.push([b.x,b.y-2,b.x+b.width,b.y+b.height+2])});
+  svg.selectAll('g.ridgerow text').each(function(){var b=this.getBBox();bx.push([b.x-3,b.y-2,b.x+b.width+3,b.y+b.height+2])});
+  return curves={pts:pts,bx:bx}}
+ function tipHtml(i){var yr=S.years[i],h='<div class="rt-h">'+yr+(S.rows.some(function(r){return r.part[i]})?' <span class="rt-m">(part year)</span>':'')+'</div>';
+  S.rows.forEach(function(r,ri){var e=S.ctips[i][ri];
+   h+='<div class="rt-r"><i style="background:'+r.color+'"></i><span class="rt-n">'+esc(r.short)+'</span>'+
+    (e.v==null?'<span class="rt-nd">no data</span>':'<b>'+(e.alloc?'~':'')+e.v.toLocaleString('en-US')+'</b>'+(e.part?'<span class="rt-m"> '+esc(e.part)+'</span>':'')+'<span class="rt-c">'+e.c.map(function(n){return '['+n+']'}).join('')+'</span>')+'</div>'});
+  return h}
+ function placeTip(i){var tw=tipE.offsetWidth,th=tipE.offsetHeight,ob=obstacles(),top0=svg.node().getBoundingClientRect().top-el.getBoundingClientRect().top,best=null,bc=1e12;
+  var xs=[];for(var xo=cx(i)+12;xo<=cx(i)+cw;xo+=8)xs.push(xo);for(xo=cx(i)-12-tw;xo>=cx(i)-cw-tw;xo-=8)xs.push(xo);
+  xs.forEach(function(x0){if(x0<0||x0+tw>w)return;var dxp=Math.abs(x0-cx(i)+(x0<cx(i)?tw:0))*0.04;
+   for(var y0=2;y0+th<=H-axh+2;y0+=8){var c=y0*0.02+dxp,r={x:x0,y:y0,r:x0+tw,b:y0+th};
+    for(var k=0;k<ob.pts.length;k++){var q=ob.pts[k];if(q[0]>r.x&&q[0]<r.r&&q[1]>r.y&&q[1]<r.b)c++}
+    for(k=0;k<ob.bx.length;k++){var o=ob.bx[k];if(r.x<o[2]&&o[0]<r.r&&r.y<o[3]&&o[1]<r.b)c+=60}
+    if(c<bc){bc=c;best=[x0,y0]}}});
+  if(!best)best=[Math.min(w-tw,cx(i)+10),2];
+  tipE.style.left=best[0]+'px';tipE.style.top=(top0+best[1])+'px'}
+ function showCol(i){colHi.attr('x',cx(i)-cw/2).style('display',null);tipE.innerHTML=tipHtml(i);tipE.classList.remove('idle');
+  if(!N){tipE.hidden=false;placeTip(i)}}
+ function hideCol(){colHi.style('display','none');if(N){tipE.innerHTML=hint;tipE.classList.add('idle')}else tipE.hidden=true}
  svg.append('g').selectAll('rect').data(S.years).enter().append('rect').attr('class','tshit').attr('x',function(d,i){return cx(i)-cw/2}).attr('y',0).attr('width',cw).attr('height',H).attr('fill','transparent')
-  .attr('tabindex',0).attr('data-tip',function(d,i){return S.tips[i]}).attr('aria-label',function(d,i){return S.tips[i].replace(/<[^>]+>/g,' ')})
-  .on('mouseenter focus',function(d,i){cur.attr('x1',cx(i)).attr('x2',cx(i)).style('display',null)}).on('mouseleave blur',function(){cur.style('display','none')});
+  .attr('tabindex',0).attr('aria-label',function(d,i){return S.tips[i].replace(/<[^>]+>/g,' ')})
+  .on('mouseenter focus',function(ev,d){showCol(S.years.indexOf(d))}).on('mouseleave blur',function(){if(!N)hideCol()});
+ if(N)document.addEventListener('click',function(e){if(!el.contains(e.target)||e.target.closest&&!e.target.closest('.tshit'))hideCol()});
  var show=function(){anim.forEach(function(a){a.cp.attr('width',w)});fades.forEach(function(f){f.g.style('opacity',1)})};
  var play=function(){RIDGE_PLAYED=true;
   anim.forEach(function(a){a.cp.transition().delay(a.d).duration(1500).ease(d3.easeCubicOut).attr('width',w)});
