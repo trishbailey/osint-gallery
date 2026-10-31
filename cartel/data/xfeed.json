@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-31T16:06:28Z",
+ "as_of": "2026-10-31T19:01:02Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -28,12 +28,31 @@
  ],
  "posts": [
   {
+   "id": "2116601717236085118",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2116601717236085118",
+   "created_at": "2026-10-31T18:42:28.000Z",
+   "text": "Uno de los detenidos dijo ser del Cártel de Sinaloa y amenazó al dueño con asesinarlo si no pagaba. En un inicio exigían 30 mil pesos, pero después pedían más https://t.co/T0lGBCRiWN",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "One of the detainees said he was from the Sinaloa Cartel and threatened to kill the owner if he did not pay. At first they demanded 30,000 pesos, but later they asked for more"
+  },
+  {
    "id": "2116557106677535094",
    "handle": "CrisisGroup",
    "url": "https://x.com/CrisisGroup/status/2116557106677535094",
    "created_at": "2026-10-31T15:45:12.000Z",
    "text": "Déclenché en avril 2023, le conflit soudanais a entraîné une dégradation de la sécurité dans le nord-est de la République centrafricaine. https://t.co/mYGnVI0ZIy",
-   "lang": "und",
+   "lang": "fr",
    "region_ids": [
     "HTI-1387",
     "HTI-1386"
@@ -51,7 +70,7 @@
    "url": "https://x.com/infobaemexico/status/2116556606942953485",
    "created_at": "2026-10-31T15:43:13.000Z",
    "text": "Los asesinatos no paran en plena pugna por el control del estado tras la ruptura interna del Cártel de Sinaloa https://t.co/xYhZd3OPC5 https://t.co/PJQTAHAkno",
-   "lang": "und",
+   "lang": "es",
    "region_ids": [
     "MEX-2711"
    ],
@@ -3922,78 +3941,6 @@
    "tier": "verified",
    "source_type": "research outlet",
    "label": null
-  },
-  {
-   "id": "2114054325626720733",
-   "handle": "GabSeguridadMX",
-   "url": "https://x.com/GabSeguridadMX/status/2114054325626720733",
-   "created_at": "2026-10-24T18:00:03.000Z",
-   "text": "Durante la revisión del equipaje de un pasajero procedente de Bogotá, Colombia, en la Terminal 1 del @AICM_mx, personal de @AduanasMx, en coordinación con @SEMAR_mx y @SSPCMexico, aseguró 8,659 tabletas que contienen hidrocodona y acetaminofén, ocultas en frascos de suplementos…",
-   "lang": "es",
-   "region_ids": [
-    "COL-1399"
-   ],
-   "country": "COL",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "official",
-   "label": "Official statement",
-   "text_en": "During inspection of the luggage of a passenger arriving from Bogotá, Colombia, at Terminal 1 of @AICM_mx, @AduanasMx staff, in coordination with @SEMAR_mx and @SSPCMexico, seized 8,659 tablets containing hydrocodone and acetaminophen, hidden in supplement bottles…"
-  },
-  {
-   "id": "2114047141882548317",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2114047141882548317",
-   "created_at": "2026-10-24T17:31:30.000Z",
-   "text": "➡️ Con drones y helicóptero, detienen en Zapopan al ‘Compa Mike 517’, buscado por EU y presunto operador del CDS 🟣🚔| En operativo que movilizó a elementos de la Secretaría de Seguridad del Estado de Jalisco, en Zapopan fue capturado Miguel Casillas, mejor conocido como ‘Compa ht…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ With drones and a helicopter, 'Compa Mike 517', wanted by the US and alleged CDS operator, arrested in Zapopan. In an operation by the Jalisco State Security Secretariat, Miguel Casillas, better known as 'Compa…', was captured in Zapopan"
-  },
-  {
-   "id": "2114039217060028691",
-   "handle": "ArmandoInfo",
-   "url": "https://x.com/ArmandoInfo/status/2114039217060028691",
-   "created_at": "2026-10-24T17:00:00.000Z",
-   "text": "Pero la suerte de Saab la enfrentaron primero sus socios. Álvaro Pulido Vargas estaba detenido en Caracas desde abril de 2023 por el caso Pdvsa-Cripto, mientras que Carlos Lizcano también quedó bajo arresto en febrero pasado tras la captura del propio https://t.co/qZ2kPYRCcz",
-   "lang": "es",
-   "region_ids": [
-    "VEN-43"
-   ],
-   "country": "VEN",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "regional outlet",
-   "label": null,
-   "text_en": "But Saab's partners met their fate first. Álvaro Pulido Vargas had been held in Caracas since April 2023 over the PDVSA-Crypto case, while Carlos Lizcano was also arrested last February after the capture of"
-  },
-  {
-   "id": "2114033352176980391",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2114033352176980391",
-   "created_at": "2026-10-24T16:36:42.000Z",
-   "text": "Así describen los narcocorridos a “El Compa Mike 517″ detenido en Jalisco: “Cuatro letras lo definen, radica con los güeros” https://t.co/RTd2e9oV6c",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "How narcocorridos describe \"El Compa Mike 517\", arrested in Jalisco: \"Four letters define him, he lives with the güeros\""
   }
  ]
 }
