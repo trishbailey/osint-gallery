@@ -96,82 +96,96 @@ function legend(){
  document.querySelectorAll('.fchip').forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.k)})});
 }
 
-/* Time series: people recruited in a dated period, one dot per sourced period. Two LINEAR panels, because the types differ by a factor of 30:
-   top panel 0 to 600,000 (contract soldiers and volunteers, mobilised), bottom panel 0 to 60,000 (prisoners, foreign nationals). No log scale.
-   A missing period is a gap, never a zero. A line joins only full-year points of one series; half-year and nine-month points, and series built from
-   different recruiters (prisoners: Wagner, then Storm Z), are drawn as separate dots with the bar of the period each covers, never a falling line.
+/* Time series: people recruited in a dated period, as FILLED areas down to a zero baseline (same look as the filled chart on the China
+   diplomats page: semi-transparent fills, dark outline, plain bottom axis, hover, left-to-right draw-in). Three LINEAR charts, one per section.
+   The fills OVERLAP and are not stacked, because the types are separate counts and a stack would add them into a false total.
+   A missing period is a gap, never a zero. Each figure is a block over the period it covers; only full-year points of one series are joined by a
+   smooth filled area; half-year points, single-date reports and series built from different recruiters (prisoners: Wagner, then Storm Z) are
+   separate blocks, never a rising or falling line. A range is a solid fill to its low figure plus a lighter band up to its high figure.
    Starts fully drawn; Play replays it left to right. */
-var tsTimer=null;
+var tsTimers={};
 function shortN(v){return v>=1e5?Math.round(v/1000)+'k':v>=1e4?(Math.round(v/100)/10).toString().replace(/\.0$/,'')+'k':fmt(v)}
-var PANELS=[
- {kinds:['vol','mob'],max:6e5,ticks:[0,1e5,2e5,3e5,4e5,5e5,6e5],tp:[0,2e5,4e5,6e5],title:'Contract soldiers and volunteers, mobilised: people recruited in the period (0 to 600,000)',tpt:'Contract, volunteers, mobilised (0 to 600,000)'},
- {kinds:['pri','for'],max:6e4,ticks:[0,1e4,2e4,3e4,4e4,5e4,6e4],tp:[0,2e4,4e4,6e4],title:'Prisoners, foreign nationals: people recruited in the period (0 to 60,000, a different scale from the panel above)',tpt:'Prisoners, foreign (0 to 60,000)'}
+var CHARTS=[
+ {el:'#flowts',sfx:'',kinds:['vol','mob'],max:6e5,ticks:[0,1e5,2e5,3e5,4e5,5e5,6e5],tp:[0,2e5,4e5,6e5],d:['2022-01-01','2026-10-28'],title:'Contract soldiers and volunteers, mobilised: people recruited in the period',tpt:'Contract, volunteers, mobilised'},
+ {el:'#prists',sfx:'-pri',half:1,kinds:['pri'],max:6e4,ticks:[0,1e4,2e4,3e4,4e4,5e4,6e4],tp:[0,2e4,4e4,6e4],d:['2022-01-01','2024-01-01'],title:'Prisoners: people recruited in the period, Wagner then Storm Z',tpt:'Prisoners: Wagner, then Storm Z'},
+ {el:'#forts',sfx:'-for',kinds:['for'],max:2e4,ticks:[0,5e3,1e4,1.5e4,2e4],tp:[0,1e4,2e4],d:['2022-01-01','2026-10-28'],title:'Foreign nationals counted by Ukraine: people recruited in the period',tpt:'Foreign nationals'}
 ];
-function series(){
- var el=$('#flowts');if(!el||!F.ts)return;var w=el.clientWidth;if(!w)return;var P=ph(),ph1=P?250:300,m={l:P?54:78,r:P?14:22,t:P?50:34,b:P?32:36};
- if(tsTimer){tsTimer.stop();tsTimer=null}
- var D=function(s){return new Date(s+'T00:00:00')},d0=D(F.ts.domain[0]),d1=D(F.ts.domain[1]);
+function series(){CHARTS.forEach(tsChart)}
+function tsChart(C){
+ var el=$(C.el);if(!el||!F.ts)return;var w=el.clientWidth;if(!w)return;var P=ph(),h=P?250:300,m={l:P?54:78,r:P?14:22,t:P?50:34,b:P?32:36};
+ if(tsTimers[C.sfx]){tsTimers[C.sfx].stop();tsTimers[C.sfx]=null}
+ var D=function(s){return new Date(s+'T00:00:00')},d0=D(C.d[0]),d1=D(C.d[1]);
  var x=d3.scaleTime().domain([d0,d1]).range([m.l,w-m.r]);
  var mid=function(p){return new Date((D(p.t0).getTime()+D(p.t1).getTime())/2)};
  var full=function(p){return D(p.t1)-D(p.t0)>=330*864e5||p.t0===p.t1};
- var h2='<div class="tsctl"><button type="button" class="chipb" id="tsplay">Play</button><ul class="legend tslegend">';
- F.ts.series.forEach(function(s){h2+='<li><span class="sw" style="background:'+s.color+'"></span>'+esc(LBL[s.kind])+'</li>'});
- h2+='<li><svg width="18" height="16" aria-hidden="true"><circle cx="9" cy="8" r="5.5" fill="#0b1526" stroke="#e43d3c" stroke-width="3"/></svg>Outside estimate</li></ul></div><div id="tschart"></div>';
+ var SER=F.ts.series.filter(function(s){return C.kinds.indexOf(s.kind)>=0});
+ var h2='<div class="tsctl"><button type="button" class="chipb" id="tsplay'+C.sfx+'">Play</button><ul class="legend tslegend">';
+ SER.forEach(function(s){h2+='<li><span class="sw" style="background:'+s.color+'"></span>'+esc(LBL[s.kind])+'</li>'});
+ if(SER.some(function(s){return s.est.length}))h2+='<li><svg width="18" height="16" aria-hidden="true"><circle cx="9" cy="8" r="5.5" fill="#0b1526" stroke="#e43d3c" stroke-width="3"/></svg>Outside estimate</li>';
+ h2+='<li><svg width="22" height="16" aria-hidden="true"><rect x="1" y="1" width="20" height="6" fill="#9fb3d6" fill-opacity=".3" stroke="#9fb3d6" stroke-dasharray="3 2"/><rect x="1" y="7" width="20" height="8" fill="#9fb3d6" fill-opacity=".6"/></svg>Range: low fill, high band</li></ul></div><div id="tschart'+C.sfx+'" class="tschart"></div>';
  el.innerHTML=h2;
- var yrs=[2022,2023,2024,2025,2026],clips=[],curs=[];
- PANELS.forEach(function(pn,pi){
-  var h=ph1,last=pi===PANELS.length-1;
-  var y=d3.scaleLinear().domain([0,pn.max]).range([h-m.b,m.t]);
-  var tk=P?pn.tp:pn.ticks;
-  var c=d3.select('#tschart').append('svg').attr('width',w).attr('height',h).attr('role','img').style('margin-top',pi?'10px':'0')
-   .attr('aria-label','Line chart on a linear scale, '+pn.title+'. Only periods with a published figure are drawn; gaps are not zeros.');
-  c.append('g').selectAll('line').data(tk).enter().append('line').attr('x1',m.l).attr('x2',w-m.r).attr('y1',y).attr('y2',y).attr('stroke','#24365a');
-  c.append('g').selectAll('text').data(tk).enter().append('text').attr('x',m.l-8).attr('y',function(v){return y(v)+4}).attr('text-anchor','end').attr('class','muted').text(function(v){return v===0?'0':P?(v>=1e6?'1M':(v/1000)+'k'):fmt(v)});
-  c.append('g').selectAll('text').data(yrs).enter().append('text').attr('x',function(v){return x(new Date(v+'-01-01T00:00:00'))+4}).attr('y',h-m.b+22).attr('class','muted').text(function(v){return v});
-  c.append('g').selectAll('line').data(yrs).enter().append('line').attr('x1',function(v){return x(new Date(v+'-01-01T00:00:00'))}).attr('x2',function(v){return x(new Date(v+'-01-01T00:00:00'))}).attr('y1',m.t).attr('y2',h-m.b+6).attr('stroke','#24365a');
-  if(P){c.append('text').attr('x',4).attr('y',14).attr('class','tstitle').text(pn.tpt);c.append('text').attr('x',4).attr('y',31).attr('class','tssub').text('People recruited in the period')}
-  else c.append('text').attr('x',m.l).attr('y',16).attr('class','tstitle').text(pn.title);
-  var id='tsclip'+pi;c.append('clipPath').attr('id',id).append('rect').attr('class','tsclipr').attr('id',pi===0?'tsclipr':null).attr('x',0).attr('y',0).attr('width',w).attr('height',h);clips.push(c.select('.tsclipr'));
-  var g=c.append('g').attr('clip-path','url(#'+id+')');
-  var line=d3.line().curve(d3.curveMonotoneX).x(function(p){return x(mid(p))}).y(function(p){return y(p.low)});
-  F.ts.series.filter(function(s){return pn.kinds.indexOf(s.kind)>=0}).forEach(function(s){
-   var runs=[],cur2=[];s.points.forEach(function(p,i){var pv=s.points[i-1],dated=i&&p.t0===p.t1&&pv.t0===pv.t1,brk=i&&!dated&&(s.nojoin||!full(p)||!full(pv)||D(p.t0)-D(pv.t1)>32*864e5);if(brk){runs.push(cur2);cur2=[]}cur2.push(p)});if(cur2.length)runs.push(cur2);
-   /* period bars: the time each figure covers */
-   g.append('g').selectAll('line').data(s.points).enter().append('line').attr('x1',function(p){return x(D(p.t0))}).attr('x2',function(p){return x(D(p.t1))}).attr('y1',function(p){return y(p.low)}).attr('y2',function(p){return y(p.low)})
-    .attr('stroke',s.color).attr('stroke-width',4).attr('opacity',.55).attr('stroke-linecap','butt');
-   /* a range is a capsule from its low to its high (both ends labelled), never a dot with a line above it */
-   var rng=function(q){var yl=y(q.low),yh=y(q.high),hh=Math.max(14,yl-yh),cy=(yl+yh)/2;return {y:cy-hh/2,h:hh}};
-   g.append('g').selectAll('rect').data(s.points.filter(function(p){return p.high>p.low})).enter().append('rect').attr('x',function(p){return x(mid(p))-7}).attr('width',14).attr('y',function(p){return rng(p).y}).attr('height',function(p){return rng(p).h}).attr('rx',7).attr('fill',s.color).attr('stroke','#0b1526').attr('stroke-width',1.5).style('pointer-events','none');
-   runs.forEach(function(r){if(r.length>1)g.append('path').attr('d',line(r)).attr('fill','none').attr('stroke',s.color).attr('stroke-width',4).attr('stroke-linejoin','round').attr('stroke-dasharray',r[0].t0===r[0].t1?'7 6':null)});
-   g.append('g').selectAll('circle').data(s.points.filter(function(p){return !(p.high>p.low)})).enter().append('circle').attr('cx',function(p){return x(mid(p))}).attr('cy',function(p){return y(p.low)}).attr('r',6).attr('fill',s.color).attr('stroke','#0b1526').attr('stroke-width',1.5).style('pointer-events','none');
-   /* hollow markers: outside estimates, nudged right so they do not sit on the official dot */
-   var ex=function(p){return x(mid(p))+(P?14:20)};
-   g.append('g').selectAll('rect').data(s.est.filter(function(p){return p.high>p.low})).enter().append('rect').attr('x',function(p){return ex(p)-7}).attr('width',14).attr('y',function(p){return rng(p).y}).attr('height',function(p){return rng(p).h}).attr('rx',7).attr('fill','#0b1526').attr('stroke',s.color).attr('stroke-width',3).style('pointer-events','none');
-   g.append('g').selectAll('circle').data(s.est.filter(function(p){return !(p.high>p.low)})).enter().append('circle').attr('cx',ex).attr('cy',function(p){return y(p.low)}).attr('r',5.5).attr('fill','#0b1526').attr('stroke',s.color).attr('stroke-width',3).style('pointer-events','none');
-   /* hit areas */
-   g.append('g').selectAll('circle').data(s.points).enter().append('circle').attr('class','tshit').attr('cx',function(p){return x(mid(p))}).attr('cy',function(p){return y((p.low+p.high)/2)}).attr('r',P?12:11).attr('fill','transparent').attr('tabindex',0).attr('data-tip',function(p){return p.tip});
-   g.append('g').selectAll('circle').data(s.est).enter().append('circle').attr('class','tshit').attr('cx',ex).attr('cy',function(p){return y((p.low+p.high)/2)}).attr('r',9).attr('fill','transparent').attr('tabindex',0).attr('data-tip',function(p){return p.tip});
-   /* value labels: every sourced value, each above its own dot (the mobilised range sits under its dot on a phone, clear of the 540k label) */
-   var below=function(p){return s.kind==='mob'&&p===s.points[0]},left=function(p){return s.kind==='mob'&&p!==s.points[0]};
-   g.append('g').selectAll('text').data(s.points).enter().append('text').attr('class','tslab')
-    .attr('x',function(p){return x(mid(p))+(below(p)?-8:left(p)?-11:0)}).attr('y',function(p){return left(p)?y(p.low)+5:below(p)?y(p.low)+22:y(p.high>p.low?p.high:p.low)-(p.high>p.low?14:12)})
-    .attr('text-anchor',function(p){var px=x(mid(p));return left(p)?'end':below(p)?'start':px<m.l+20?'start':px>w-24?'end':'middle'}).text(function(p){return p.high>p.low?shortN(p.low)+' to '+shortN(p.high):shortN(p.low)});
-  });
-  var cu=c.append('g').attr('class','tscur').style('display','none');
-  cu.append('line').attr('y1',m.t).attr('y2',h-m.b).attr('stroke','#c8a24a').attr('stroke-width',2);
-  if(pi===0)cu.append('text').attr('class','tscd').attr('y',m.t+14).attr('x',6);
-  curs.push(cu);
+ var yrs=d3.range(d0.getFullYear(),d1.getFullYear()+1);
+ var y=d3.scaleLinear().domain([0,C.max]).range([h-m.b,m.t]),tk=P?C.tp:C.ticks;
+ var c=d3.select('#tschart'+C.sfx).append('svg').attr('width',w).attr('height',h).attr('role','img')
+  .attr('aria-label','Filled area chart on a linear scale, '+C.title+'. Fills overlap and are not stacked. Only periods with a published figure are drawn; gaps are not zeros.');
+ c.append('g').selectAll('line').data(tk).enter().append('line').attr('x1',m.l).attr('x2',w-m.r).attr('y1',y).attr('y2',y).attr('stroke','#24365a');
+ c.append('g').selectAll('text').data(tk).enter().append('text').attr('x',m.l-8).attr('y',function(v){return y(v)+4}).attr('text-anchor','end').attr('class','muted').text(function(v){return v===0?'0':P?(v>=1e6?'1M':(v/1000)+'k'):fmt(v)});
+ var xt=[];yrs.forEach(function(v){xt.push({d:new Date(v+'-01-01T00:00:00'),l:String(v)});if(C.half)xt.push({d:new Date(v+'-07-01T00:00:00'),l:'Jul'})});
+ xt=xt.filter(function(t){return t.d<=d1&&x(t.d)>=m.l-1});
+ c.append('g').selectAll('text').data(xt).enter().append('text').attr('x',function(t){return x(t.d)+4}).attr('y',h-m.b+22).attr('class','muted').text(function(t){return t.l});
+ c.append('g').selectAll('line').data(xt).enter().append('line').attr('x1',function(t){return x(t.d)}).attr('x2',function(t){return x(t.d)}).attr('y1',h-m.b).attr('y2',h-m.b+6).attr('stroke','#5f7399');
+ c.append('line').attr('x1',m.l).attr('x2',w-m.r).attr('y1',h-m.b).attr('y2',h-m.b).attr('stroke','#5f7399');
+ if(P){c.append('text').attr('x',4).attr('y',14).attr('class','tstitle').text(C.tpt);c.append('text').attr('x',4).attr('y',31).attr('class','tssub').text('People recruited in the period')}
+ else c.append('text').attr('x',m.l).attr('y',16).attr('class','tstitle').text(C.title);
+ var id='tsclip'+C.sfx.replace('-','');c.append('clipPath').attr('id',id).append('rect').attr('class','tsclipr').attr('id',C.sfx===''?'tsclipr':'tsclipr'+C.sfx).attr('x',0).attr('y',0).attr('width',w).attr('height',h);
+ var clip=c.select('.tsclipr');
+ var g=c.append('g').attr('clip-path','url(#'+id+')');
+ var base=y(0);
+ var bx=function(p){var a=x(D(p.t0)),b=x(D(p.t1));if(b-a<14){var cx=(a+b)/2;a=cx-7;b=cx+7}return [a,b]};
+ var line=d3.line().curve(d3.curveMonotoneX).x(function(p){return x(mid(p))}).y(function(p){return y(p.low)});
+ var area=d3.area().curve(d3.curveMonotoneX).x(function(p){return x(mid(p))}).y0(base).y1(function(p){return y(p.low)});
+ SER.forEach(function(s){
+  var runs=[],cur2=[];s.points.forEach(function(p,i){var pv=s.points[i-1],dated=i&&p.t0===p.t1&&pv.t0===pv.t1,brk=i&&!dated&&(s.nojoin||!full(p)||!full(pv)||D(p.t0)-D(pv.t1)>32*864e5);if(brk){runs.push(cur2);cur2=[]}cur2.push(p)});if(cur2.length)runs.push(cur2);
+  var joined=function(r){return r.length>1&&r[0].t0!==r[0].t1};
+  var inJoined=function(p){return runs.some(function(r){return joined(r)&&r.indexOf(p)>=0})};
+  /* the period each figure covers: a filled block down to zero, lighter where a smooth area also joins it to its neighbours */
+  g.append('g').selectAll('rect').data(s.points).enter().append('rect').attr('class','tsbk').attr('x',function(p){return bx(p)[0]}).attr('width',function(p){return bx(p)[1]-bx(p)[0]})
+   .attr('y',function(p){return y(p.low)}).attr('height',function(p){return base-y(p.low)}).attr('fill',s.color).attr('fill-opacity',function(p){return inJoined(p)?.28:.62}).attr('stroke','#0b1526').attr('stroke-width',.6);
+  /* the range band: from the low figure up to the high figure */
+  g.append('g').selectAll('rect').data(s.points.filter(function(p){return p.high>p.low})).enter().append('rect').attr('x',function(p){return bx(p)[0]}).attr('width',function(p){return bx(p)[1]-bx(p)[0]})
+   .attr('y',function(p){return y(p.high)}).attr('height',function(p){return y(p.low)-y(p.high)}).attr('fill',s.color).attr('fill-opacity',.26).attr('stroke',s.color).attr('stroke-dasharray','4 3').attr('stroke-width',1.5);
+  runs.forEach(function(r){if(!(r.length>1))return;
+   if(joined(r))g.append('path').attr('d',area(r)).attr('fill',s.color).attr('fill-opacity',.62).attr('stroke','none');
+   g.append('path').attr('d',line(r)).attr('fill','none').attr('stroke',s.color).attr('stroke-width',3).attr('stroke-linejoin','round').attr('stroke-dasharray',joined(r)?null:'7 6')});
+  /* top edge of every block */
+  g.append('g').selectAll('line').data(s.points).enter().append('line').attr('x1',function(p){return bx(p)[0]}).attr('x2',function(p){return bx(p)[1]}).attr('y1',function(p){return y(p.low)}).attr('y2',function(p){return y(p.low)}).attr('stroke',s.color).attr('stroke-width',3);
+  g.append('g').selectAll('circle').data(s.points.filter(function(p){return !(p.high>p.low)})).enter().append('circle').attr('cx',function(p){return x(mid(p))}).attr('cy',function(p){return y(p.low)}).attr('r',5).attr('fill',s.color).attr('stroke','#0b1526').attr('stroke-width',1.5).style('pointer-events','none');
+  /* hollow markers: outside estimates, nudged right so they do not sit on the official block */
+  var rng=function(q){var yl=y(q.low),yh=y(q.high),hh=Math.max(14,yl-yh),cy=(yl+yh)/2;return {y:cy-hh/2,h:hh}};
+  var ex=function(p){return x(mid(p))+(P?14:20)};
+  g.append('g').selectAll('rect').data(s.est.filter(function(p){return p.high>p.low})).enter().append('rect').attr('x',function(p){return ex(p)-7}).attr('width',14).attr('y',function(p){return rng(p).y}).attr('height',function(p){return rng(p).h}).attr('rx',7).attr('fill','#0b1526').attr('stroke',s.color).attr('stroke-width',3).style('pointer-events','none');
+  g.append('g').selectAll('circle').data(s.est.filter(function(p){return !(p.high>p.low)})).enter().append('circle').attr('cx',ex).attr('cy',function(p){return y(p.low)}).attr('r',5.5).attr('fill','#0b1526').attr('stroke',s.color).attr('stroke-width',3).style('pointer-events','none');
+  /* hit areas: the whole block, so hovering the fill shows the source */
+  g.append('g').selectAll('rect').data(s.points).enter().append('rect').attr('class','tshit').attr('x',function(p){return bx(p)[0]}).attr('width',function(p){return bx(p)[1]-bx(p)[0]}).attr('y',function(p){return y(p.high)}).attr('height',function(p){return base-y(p.high)}).attr('fill','transparent').attr('tabindex',0).attr('data-tip',function(p){return p.tip});
+  g.append('g').selectAll('circle').data(s.est).enter().append('circle').attr('class','tshit').attr('cx',ex).attr('cy',function(p){return y((p.low+p.high)/2)}).attr('r',9).attr('fill','transparent').attr('tabindex',0).attr('data-tip',function(p){return p.tip});
+  /* value labels: every sourced value above its own block (the mobilised range sits under its dot on a phone, clear of the 540k label) */
+  var below=function(p){return s.kind==='mob'&&p===s.points[0]},left=function(p){return s.kind==='mob'&&p!==s.points[0]};
+  g.append('g').selectAll('text').data(s.points).enter().append('text').attr('class','tslab')
+   .attr('x',function(p){return x(mid(p))+(below(p)?-8:left(p)?-11:0)}).attr('y',function(p){return left(p)?y(p.low)+5:below(p)?y(p.low)+22:y(p.high>p.low?p.high:p.low)-(p.high>p.low?14:12)})
+   .attr('text-anchor',function(p){var px=x(mid(p));return left(p)?'end':below(p)?'start':px<m.l+20?'start':px>w-24?'end':'middle'}).text(function(p){return p.high>p.low?shortN(p.low)+' to '+shortN(p.high):shortN(p.low)});
  });
- var btn=$('#tsplay');
+ var cu=c.append('g').attr('class','tscur').style('display','none');
+ cu.append('line').attr('y1',m.t).attr('y2',h-m.b).attr('stroke','#c8a24a').attr('stroke-width',2);
+ cu.append('text').attr('class','tscd').attr('y',m.t+14).attr('x',6);
+ var btn=$('#tsplay'+C.sfx);
  var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
- var setW=function(px){clips.forEach(function(k){k.attr('width',Math.max(0,px))})};
  btn.addEventListener('click',function(){
-  if(tsTimer)tsTimer.stop();
-  var x0=x.range()[0],x1=x.range()[1],T=6500;btn.textContent='Playing';btn.disabled=true;curs.forEach(function(k){k.style('display',null)});setW(x0);
+  if(tsTimers[C.sfx])tsTimers[C.sfx].stop();
+  var x0=x.range()[0],x1=x.range()[1],T=6500;btn.textContent='Playing';btn.disabled=true;cu.style('display',null);clip.attr('width',x0);
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduce)T=1;
-  tsTimer=d3.timer(function(el2){var f=Math.min(1,el2/T),px=x0+(x1-x0)*f,dt=x.invert(px);setW(px);
-   curs.forEach(function(k){k.select('line').attr('x1',px).attr('x2',px)});curs[0].select('text').attr('x',px>w-90?px-84:px+6).text(MON[dt.getMonth()]+' '+dt.getFullYear());
-   if(f>=1){tsTimer.stop();tsTimer=null;setW(w);curs.forEach(function(k){k.style('display','none')});btn.textContent='Replay';btn.disabled=false}});
+  tsTimers[C.sfx]=d3.timer(function(el2){var f=Math.min(1,el2/T),px=x0+(x1-x0)*f,dt=x.invert(px);clip.attr('width',px);
+   cu.select('line').attr('x1',px).attr('x2',px);cu.select('text').attr('x',px>w-90?px-84:px+6).text(MON[dt.getMonth()]+' '+dt.getFullYear());
+   if(f>=1){tsTimers[C.sfx].stop();tsTimers[C.sfx]=null;clip.attr('width',w);cu.style('display','none');btn.textContent='Replay';btn.disabled=false}});
  });
 }
 function bars(){

@@ -175,6 +175,7 @@ def main():
     S["breaks"]["pov"] = [sig2(float(np.percentile(X("pov"), q))) for q in (25, 50, 75)]
     S["breaks"]["ru"] = [sig2(float(np.percentile(X("ru_share"), q))) for q in (25, 50, 75)]
     S["breaks"]["bonus"] = [sig2(float(np.percentile([x["bonus"]["months"] for x in bm], q))) for q in (25, 50, 75)]
+    S["breaks"]["dist"] = [sig2(float(np.percentile(dist, q))) for q in (25, 50, 75)]
     json.dump(dict(meta=dict(accessed="28 Oct 2026", mz_updated="23 Oct 2026", pop_date="1 Jan 2024", wage_year=2025), regions=rows),
               open(os.path.join(OUT, "regions.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump(S, open(os.path.join(OUT, "stats.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
