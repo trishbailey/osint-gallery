@@ -57,6 +57,15 @@ with sync_playwright() as pw:
         assert page.evaluate("document.querySelector('#flow-sec').getBoundingClientRect().top < document.querySelector('#pris-sec').getBoundingClientRect().top")
         ns = len(page.query_selector_all("#flowmap g.st")); nr = len(page.query_selector_all("#flowmap path.rg")); print(tag, "flow arrows", ns, "regions", nr); assert ns == 5 and nr > 80
         wid = page.evaluate("[...document.querySelectorAll('#flowmap g.st path.stp')].map(p=>parseFloat(getComputedStyle(p).strokeWidth))"); print(tag, "strand widths", min(wid), max(wid)); assert min(wid) >= 3 - 0.01 and max(wid) <= (34 if mobile else 56) + 0.01 and max(wid) / min(wid) > 5
+        # country names must not touch the front line (bracket), its label, an arrow or a flow label, in the first view and after a zoom reset
+        OVL = """()=>{const rect=e=>{const b=e.getBoundingClientRect();return {x:b.left,y:b.top,r:b.right,b:b.bottom}},hit=(a,o)=>a.x<o.r&&o.x<a.r&&a.y<o.b&&o.y<a.b;
+          const bad=[];const obs=[...document.querySelectorAll('#flowmap path.bracket,#flowmap text.flab,#flowmap text.dlab')].map(e=>[e.getAttribute('class'),rect(e)]);
+          const pts=[];document.querySelectorAll('#flowmap g.st path.stp').forEach(p=>{const L=p.getTotalLength(),m=p.getScreenCTM();for(let k=0;k<=L;k+=4){const q=p.getPointAtLength(k);pts.push([m.a*q.x+m.c*q.y+m.e,m.b*q.x+m.d*q.y+m.f])}});
+          document.querySelectorAll('#flowmap text.cname').forEach(t=>{const r=rect(t);if(r.r<0||r.x>innerWidth)return;obs.forEach(o=>{if(hit(r,o[1]))bad.push(t.textContent+' x '+o[0])});
+            if(pts.some(q=>q[0]>r.x&&q[0]<r.r&&q[1]>r.y&&q[1]<r.b))bad.push(t.textContent+' x arrow')});return bad}"""
+        page.evaluate("document.querySelector('#flowmap').scrollIntoView({block:'center'})"); page.wait_for_timeout(600)
+        ov1 = page.evaluate(OVL); page.evaluate("document.querySelector('#flowmap svg').dispatchEvent(new Event('zoomreset'))"); page.wait_for_timeout(600); ov2 = page.evaluate(OVL)
+        print(tag, "country-label overlaps", ov1, ov2); assert not ov1 and not ov2, ("country label overlaps the front line, an arrow or a label", ov1, ov2)
         shot(page, f"{tag}-09-flow-map.png", full=False)
         FIND2 = """g=>{const e=g.querySelector('path.stp');const L=e.getTotalLength();for(let i=1;i<40;i++){const q=e.getPointAtLength(L*i/40);const m=e.getScreenCTM();const x=m.a*q.x+m.c*q.y+m.e,y=m.b*q.x+m.d*q.y+m.f;if(x<0||y<0||x>innerWidth||y>innerHeight)continue;const t=document.elementFromPoint(x,y);if(t&&t.closest('[data-tip]')===g)return [x,y]}return null}"""
         got_tip = False
@@ -142,7 +151,7 @@ with sync_playwright() as pw:
             t1 = page.evaluate("document.querySelector('#colmap svg > g').getAttribute('transform')"); print(tag, "colony zoom", t0, "->", t1); assert t0 != t1
             sc = page.evaluate("window.scrollY"); page.mouse.move(700, 450); page.mouse.wheel(0, 300); page.wait_for_timeout(300)
             assert page.evaluate("window.scrollY") != sc, "plain scroll must still scroll the page over the colony map"
-        imgs = page.evaluate("[...document.querySelectorAll('.ph img')].map(i=>[i.complete&&i.naturalWidth>0,i.alt.length])"); print(tag, "photos", imgs); assert all(a and b > 20 for a, b in imgs) and len(imgs) == 13
+        imgs = page.evaluate("[...document.querySelectorAll('.ph img')].map(i=>[i.complete&&i.naturalWidth>0,i.alt.length])"); print(tag, "photos", imgs); assert all(a and b > 20 for a, b in imgs) and len(imgs) == 17
         for d in page.query_selector_all("details.how"):
             d.evaluate("e=>{let p=e.parentElement.closest('details');while(p){p.open=true;p=p.parentElement.closest('details')}}")
             d.scroll_into_view_if_needed(); before = d.evaluate("e=>e.open"); d.query_selector("summary").click(); page.wait_for_timeout(120)
