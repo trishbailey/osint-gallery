@@ -51,7 +51,6 @@ All Beacon dashboards are served from this one Render static site (`beacon-tools
 |---|---|---|---|---|
 | `/world-brief/` | `trishbailey/world-brief` (private) | none | `public/` | live |
 | `/critical-minerals/` | `trishbailey/critical-minerals` (private) | none | `public/` | live |
-| `/ukraine-money-flows/` | `trishbailey/ukraine-money-flows` (private) | none | `public/` | live |
 | `/cartel/` | `trishbailey/cartel-dashboard` (public) | `bash pipeline/build.sh` | `public/` | live |
 | `/africa-brief/` | in this repo (`africa-brief/`, own workflow) | | | live, not synced |
 | `/water-security/` | (not yet) | | `public/` | reserved |
@@ -99,7 +98,6 @@ Each private dashboard repo has its own **read-only deploy key** (repo Settings 
 |---|---|
 | `trishbailey/world-brief` | `DEPLOY_KEY_WORLD_BRIEF` |
 | `trishbailey/critical-minerals` | `DEPLOY_KEY_CRITICAL_MINERALS` |
-| `trishbailey/ukraine-money-flows` | `DEPLOY_KEY_UKRAINE_MONEY_FLOWS` |
 
 The workflow writes GitHub's SSH host keys (from `https://api.github.com/meta`) to a known_hosts file. The script clones each private repo from `git@github.com:<repo>.git`, with `GIT_SSH_COMMAND` using only that repo's key and strict host checking. The key goes into a 0600 temp file that is deleted right after the clone. Secrets are never passed to build commands or printed. No personal access token is used.
 
