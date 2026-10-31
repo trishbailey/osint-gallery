@@ -121,7 +121,7 @@ function tsChart(C){
  var SER=F.ts.series.filter(function(s){return C.kinds.indexOf(s.kind)>=0});
  var h2='<div class="tsctl"><button type="button" class="chipb" id="tsplay'+C.sfx+'">Play</button><ul class="legend tslegend">';
  SER.forEach(function(s){h2+='<li><span class="sw" style="background:'+s.color+'"></span>'+esc(LBL[s.kind])+'</li>'});
- if(SER.some(function(s){return s.est.length}))h2+='<li><svg width="18" height="16" aria-hidden="true"><circle cx="9" cy="8" r="5.5" fill="#0b1526" stroke="#e43d3c" stroke-width="3"/></svg>Outside estimate</li>';
+ if(SER.some(function(s){return s.est.length}))h2+='<li><svg width="18" height="16" aria-hidden="true"><circle cx="9" cy="8" r="5.5" fill="none" stroke="#e9eef7" stroke-width="7"/><circle cx="9" cy="8" r="5.5" fill="#0b1526" stroke="#e43d3c" stroke-width="3"/></svg>Outside estimate</li>';
  h2+='<li><svg width="22" height="16" aria-hidden="true"><rect x="1" y="1" width="20" height="6" fill="#9fb3d6" fill-opacity=".3" stroke="#9fb3d6" stroke-dasharray="3 2"/><rect x="1" y="7" width="20" height="8" fill="#9fb3d6" fill-opacity=".6"/></svg>Range: low fill, high band</li></ul></div><div id="tschart'+C.sfx+'" class="tschart"></div>';
  el.innerHTML=h2;
  var yrs=d3.range(d0.getFullYear(),d1.getFullYear()+1);
@@ -131,7 +131,7 @@ function tsChart(C){
  c.append('g').selectAll('line').data(tk).enter().append('line').attr('x1',m.l).attr('x2',w-m.r).attr('y1',y).attr('y2',y).attr('stroke','#24365a');
  c.append('g').selectAll('text').data(tk).enter().append('text').attr('x',m.l-8).attr('y',function(v){return y(v)+4}).attr('text-anchor','end').attr('class','muted').text(function(v){return v===0?'0':P?(v>=1e6?'1M':(v/1000)+'k'):fmt(v)});
  var xt=[];yrs.forEach(function(v){xt.push({d:new Date(v+'-01-01T00:00:00'),l:String(v)});if(C.half)xt.push({d:new Date(v+'-07-01T00:00:00'),l:'Jul'})});
- xt=xt.filter(function(t){return t.d<=d1&&x(t.d)>=m.l-1});
+ xt=xt.filter(function(t){return t.d<=d1&&x(t.d)>=m.l-1&&x(t.d)<=w-m.r-30});
  c.append('g').selectAll('text').data(xt).enter().append('text').attr('x',function(t){return x(t.d)+4}).attr('y',h-m.b+22).attr('class','muted').text(function(t){return t.l});
  c.append('g').selectAll('line').data(xt).enter().append('line').attr('x1',function(t){return x(t.d)}).attr('x2',function(t){return x(t.d)}).attr('y1',h-m.b).attr('y2',h-m.b+6).attr('stroke','#5f7399');
  c.append('line').attr('x1',m.l).attr('x2',w-m.r).attr('y1',h-m.b).attr('y2',h-m.b).attr('stroke','#5f7399');
@@ -163,7 +163,9 @@ function tsChart(C){
   /* hollow markers: outside estimates, nudged right so they do not sit on the official block */
   var rng=function(q){var yl=y(q.low),yh=y(q.high),hh=Math.max(14,yl-yh),cy=(yl+yh)/2;return {y:cy-hh/2,h:hh}};
   var ex=function(p){return x(mid(p))+(P?14:20)};
+  g.append('g').selectAll('rect').data(s.est.filter(function(p){return p.high>p.low})).enter().append('rect').attr('x',function(p){return ex(p)-7}).attr('width',14).attr('y',function(p){return rng(p).y}).attr('height',function(p){return rng(p).h}).attr('rx',7).attr('fill','none').attr('stroke','#e9eef7').attr('stroke-width',7).style('pointer-events','none');
   g.append('g').selectAll('rect').data(s.est.filter(function(p){return p.high>p.low})).enter().append('rect').attr('x',function(p){return ex(p)-7}).attr('width',14).attr('y',function(p){return rng(p).y}).attr('height',function(p){return rng(p).h}).attr('rx',7).attr('fill','#0b1526').attr('stroke',s.color).attr('stroke-width',3).style('pointer-events','none');
+  g.append('g').selectAll('circle').data(s.est.filter(function(p){return !(p.high>p.low)})).enter().append('circle').attr('cx',ex).attr('cy',function(p){return y(p.low)}).attr('r',5.5).attr('fill','none').attr('stroke','#e9eef7').attr('stroke-width',7).style('pointer-events','none');
   g.append('g').selectAll('circle').data(s.est.filter(function(p){return !(p.high>p.low)})).enter().append('circle').attr('cx',ex).attr('cy',function(p){return y(p.low)}).attr('r',5.5).attr('fill','#0b1526').attr('stroke',s.color).attr('stroke-width',3).style('pointer-events','none');
   /* hit areas: the whole block, so hovering the fill shows the source */
   g.append('g').selectAll('rect').data(s.points).enter().append('rect').attr('class','tshit').attr('x',function(p){return bx(p)[0]}).attr('width',function(p){return bx(p)[1]-bx(p)[0]}).attr('y',function(p){return y(p.high)}).attr('height',function(p){return base-y(p.high)}).attr('fill','transparent').attr('tabindex',0).attr('data-tip',function(p){return p.tip});

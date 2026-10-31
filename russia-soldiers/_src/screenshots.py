@@ -18,15 +18,15 @@ with sync_playwright() as pw:
         page.on("console", lambda m, t=tag: errs.append((t, m.text)) if m.type == "error" else None)
         page.goto(BASE); page.wait_for_selector("html[data-ready]", state="attached", timeout=15000); page.wait_for_timeout(600)
         shot(page, f"{tag}-01-top.png", full=False)
-        page.evaluate("document.querySelector('#remote-sec').scrollIntoView()"); page.wait_for_timeout(300)
-        shot(page, f"{tag}-01b-remote-evidence.png", full=False)
+        page.evaluate("document.querySelector('#pris-sec').scrollIntoView()"); page.wait_for_timeout(300)
+        shot(page, f"{tag}-01b-prisoners-top.png", full=False)
         page.evaluate("window.scrollTo(0,0)")
         if mobile:
             for d in page.query_selector_all("details.sec"): d.evaluate("e=>e.open=true")
             page.evaluate("window.dispatchEvent(new Event('resize'))"); page.wait_for_timeout(500)
         shot(page, f"{tag}-02-full.png")
         # map: hover + click a region, metric buttons
-        page.evaluate("document.querySelector('#map-sec').scrollIntoView()")
+        page.evaluate("document.querySelector('#dead-sec').scrollIntoView()")
         box = page.eval_on_selector("#map path.reg:nth-child(10)", "e=>{const b=e.getBoundingClientRect();return [b.x+b.width/2,b.y+b.height/2]}")
         paths = page.query_selector_all("#map path.reg"); print(tag, "map regions", len(paths))
         # tooltip on a big region
@@ -43,7 +43,7 @@ with sync_playwright() as pw:
         page.click("#closepanel"); page.wait_for_timeout(400); assert not page.evaluate("document.querySelector('#panel').classList.contains('open')")
         if mobile and page.evaluate("!document.querySelector('#mapside').open"):
             page.click("#mapside > summary"); page.wait_for_timeout(200)
-        for m in ("vol", "mob", "pri", "pov", "ru", "bonus", "deaths"):
+        for m in ("vol", "mob", "pri", "dist", "pov", "ru", "bonus", "deaths"):
             before = page.evaluate("[...document.querySelectorAll('#map path.reg')].map(p=>p.getAttribute('fill')).join()")
             page.click(f".chipb[data-metric={m}]"); page.wait_for_timeout(250)
             after = page.evaluate("[...document.querySelectorAll('#map path.reg')].map(p=>p.getAttribute('fill')).join()")
@@ -54,7 +54,7 @@ with sync_playwright() as pw:
         # round 4: flow map (first graphic) and North Korea section
         sig = lambda sel: page.evaluate(f"[...document.querySelectorAll('{sel} path')].map(p=>p.getAttribute('d')||'').join('|').length+':'+[...document.querySelectorAll('{sel} path')].map(p=>(p.getAttribute('d')||'').slice(0,40)).join('').length")
         page.evaluate("document.querySelector('#flow-sec').scrollIntoView()"); page.wait_for_timeout(400)
-        assert page.evaluate("document.querySelector('#flow-sec').getBoundingClientRect().top < document.querySelector('#remote-sec').getBoundingClientRect().top")
+        assert page.evaluate("document.querySelector('#flow-sec').getBoundingClientRect().top < document.querySelector('#pris-sec').getBoundingClientRect().top")
         ns = len(page.query_selector_all("#flowmap g.st")); nr = len(page.query_selector_all("#flowmap path.rg")); print(tag, "flow arrows", ns, "regions", nr); assert ns == 5 and nr > 80
         wid = page.evaluate("[...document.querySelectorAll('#flowmap g.st path.stp')].map(p=>parseFloat(getComputedStyle(p).strokeWidth))"); print(tag, "strand widths", min(wid), max(wid)); assert min(wid) >= 3 - 0.01 and max(wid) <= (34 if mobile else 56) + 0.01 and max(wid) / min(wid) > 5
         shot(page, f"{tag}-09-flow-map.png", full=False)
@@ -69,7 +69,7 @@ with sync_playwright() as pw:
         shot(page, f"{tag}-09b-flow-strand-hover.png", full=False)
         # time series: 9 line dots + 2 estimate markers + 3 more = 14 hit areas; hover one; Play must change the chart and end on Replay
         page.evaluate("document.querySelector('#flowts').scrollIntoView({block:'center'})"); page.wait_for_timeout(300)
-        nts = len(page.query_selector_all("#tschart .tshit")); print(tag, "time-series hit areas", nts); assert nts == 15, nts
+        nts = len(page.query_selector_all(".tschart .tshit")); print(tag, "time-series hit areas", nts); assert nts == 15, nts
         ntb = page.evaluate("[...document.querySelectorAll('#flowts button')].map(b=>b.textContent)"); assert ntb == ["Play"], ntb
         shot(page, f"{tag}-09c-flow-timeseries.png", full=False)
         before = page.evaluate("document.querySelector('#tsclipr').getAttribute('width')")
@@ -116,14 +116,30 @@ with sync_playwright() as pw:
         shot(page, f"{tag}-10d-nk-timeline.png", full=False)
         assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1"), "horizontal overflow"
         # section screenshots, nested toggles, sankey, photos, minimaps
-        for sid in ("flow-sec", "undercount", "pov-sec", "eth-sec", "bonus-sec", "pools-sec", "nk-sec", "trk-sec"):
+        for sid in ("flow-sec", "pris-sec", "nk-sec", "for-sec", "con-sec", "dead-sec", "undercount", "trk-sec"):
             page.evaluate("document.querySelector('#trk-sec').open=true;document.querySelector('#nk-sec').open=true")
             page.evaluate(f"document.querySelector('#{sid}').scrollIntoView()"); page.wait_for_timeout(250)
             shot(page, f"{tag}-07-{sid}.png", full=False)
-        for mm in ("#mm-pov", "#mm-ru", "#mm-bonus"):
+        for mm in ("#mm-bonus",):
             n = len(page.query_selector_all(mm + " path.reg")); print(tag, mm, "regions", n); assert n > 80, mm
-        nl = len(page.query_selector_all("#sankey path")); nr = len(page.query_selector_all("#sankey rect")); print(tag, "sankey links", nl, "nodes", nr); assert nl >= 25 and nr == 12
-        imgs = page.evaluate("[...document.querySelectorAll('.ph img')].map(i=>[i.complete&&i.naturalWidth>0,i.alt.length])"); print(tag, "photos", imgs); assert all(a and b > 20 for a, b in imgs) and len(imgs) == 11
+        assert page.query_selector("#sankey") is None, "sankey should be gone"
+        # prison colony map: 340 circles, top-10 list, tooltip on the biggest circle, zoom without buttons
+        page.evaluate("document.querySelector('#colmap').scrollIntoView({block:'center'})"); page.wait_for_timeout(400)
+        nc = len(page.query_selector_all("#colmap circle.col")); print(tag, "colony circles", nc); assert nc == 340, nc
+        assert len(page.query_selector_all("#coltop li")) == 10 and page.query_selector("#colmap button") is None and page.query_selector("#colmap .fz") is None
+        rs = page.evaluate("[...document.querySelectorAll('#colmap circle.col')].map(c=>parseFloat(c.getAttribute('r')))"); assert max(rs) > 4 * min(rs), (min(rs), max(rs))
+        cbig = page.query_selector("#colmap circle.col"); cb = cbig.bounding_box(); cx, cy = cb["x"] + cb["width"] / 2, cb["y"] + cb["height"] / 2
+        if mobile: page.mouse.click(cx, cy)
+        else: page.mouse.move(cx, cy)
+        page.wait_for_timeout(200); ct = page.inner_text("#tip"); print(tag, "colony tooltip:", ct.replace("\n", " | ")); assert "IK6 Krasnoyarsk" in ct and "506" in ct and "136" in ct and "Jul 2022 to Feb 2023 only" in ct
+        shot(page, f"{tag}-11-colony-map.png", full=False)
+        if not mobile:
+            t0 = page.evaluate("document.querySelector('#colmap svg > g').getAttribute('transform')")
+            page.mouse.move(700, 450); page.keyboard.down("Control"); page.mouse.wheel(0, -600); page.keyboard.up("Control"); page.wait_for_timeout(500)
+            t1 = page.evaluate("document.querySelector('#colmap svg > g').getAttribute('transform')"); print(tag, "colony zoom", t0, "->", t1); assert t0 != t1
+            sc = page.evaluate("window.scrollY"); page.mouse.move(700, 450); page.mouse.wheel(0, 300); page.wait_for_timeout(300)
+            assert page.evaluate("window.scrollY") != sc, "plain scroll must still scroll the page over the colony map"
+        imgs = page.evaluate("[...document.querySelectorAll('.ph img')].map(i=>[i.complete&&i.naturalWidth>0,i.alt.length])"); print(tag, "photos", imgs); assert all(a and b > 20 for a, b in imgs) and len(imgs) == 13
         for d in page.query_selector_all("details.how"):
             d.evaluate("e=>{let p=e.parentElement.closest('details');while(p){p.open=true;p=p.parentElement.closest('details')}}")
             d.scroll_into_view_if_needed(); before = d.evaluate("e=>e.open"); d.query_selector("summary").click(); page.wait_for_timeout(120)
