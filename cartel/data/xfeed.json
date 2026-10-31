@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-31T01:10:17Z",
+ "as_of": "2026-10-31T10:02:25Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,131 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2116405733394649178",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2116405733394649178",
+   "created_at": "2026-10-31T05:43:42.000Z",
+   "text": "Exigen justicia por asesinato de operador de grúa en Naucalpan que se negó a pagar extorsión: colocan féretro en Periférico Norte https://t.co/gk17Wl4Amu",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Calls for justice over the murder of a tow-truck operator in Naucalpan who refused to pay extortion: a coffin is placed on Periférico Norte"
+  },
+  {
+   "id": "2116391642382913699",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2116391642382913699",
+   "created_at": "2026-10-31T04:47:42.000Z",
+   "text": "Un grupo armado atacó con disparos de arma de grueso calibre la fachada de una vivienda en la colonia Progreso, en #Culiacán, donde un perrito llamado “#Pinto” resultó con un balazo en la cadera al ser alcanzado por uno de los proyectiles. https://t.co/YskUXqFI4R",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "An armed group fired heavy-calibre weapons at the facade of a house in the Progreso neighbourhood of Culiacán, where a dog named “Pinto” was shot in the hip when hit by one of the bullets."
+  },
+  {
+   "id": "2116383768067928124",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2116383768067928124",
+   "created_at": "2026-10-31T04:16:25.000Z",
+   "text": "Personas físicas y empresas sancionadas por EE.UU. por ligas con el Cártel de Sinaloa, promovieron juicios de amparo en BC. No les concedieron medidas cautelares para liberar cuentas bancarias Los detalles, en la edición impresa del Semanario ZETA. https://t.co/LWFrcEP2yx",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Individuals and companies sanctioned by the US for ties to the Sinaloa Cartel filed amparo lawsuits in Baja California. They were not granted injunctions to free their bank accounts. The details, in the print edition of Semanario ZETA."
+  },
+  {
+   "id": "2116383194597490780",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2116383194597490780",
+   "created_at": "2026-10-31T04:14:08.000Z",
+   "text": "➡️ Un perro llamado \"El Pinto\" resulta herido de bala tras ataque contra a un domicilio en la colonia Progreso de Culiacán. 🚨🚔| Hieren de bala a un perrito llamado \"El Pinto\", tras un ataque armado contra un domicilio en la colonia Progreso, en #Culiacán. 🔺 El canino https://t.c…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "A dog named \"El Pinto\" is wounded by gunfire after an attack on a home in the Progreso neighbourhood of Culiacán. A dog named \"El Pinto\" is shot after an armed attack on a home in the Progreso neighbourhood of Culiacán."
+  },
+  {
+   "id": "2116380045727899782",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2116380045727899782",
+   "created_at": "2026-10-31T04:01:37.000Z",
+   "text": "Detienen a Irineo Molina Espinoza, exalcalde de Tuxtepec, por desvío de 23 millones de pesos https://t.co/xtzRp6SSj7",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2723"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Irineo Molina Espinoza, former mayor of Tuxtepec, arrested over the diversion of 23 million pesos"
+  },
+  {
+   "id": "2116368796331958707",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2116368796331958707",
+   "created_at": "2026-10-31T03:16:55.000Z",
+   "text": "Lugarteniente y enlace de los colombianos, Israel Trigueros Muñoz, de los Rusos y el CDS, se había refugiado en Durango. Al día 13 de su regreso a Baja California, fue detenido. Los detalles, en la edición impresa del Semanario ZETA. https://t.co/qAdelujhwH",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2706",
+    "MEX-2710"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Lieutenant and liaison to the Colombians, Israel Trigueros Muñoz, of Los Rusos and the CDS, had taken refuge in Durango. On his 13th day back in Baja California, he was arrested. The details, in the print edition of Semanario ZETA."
+  },
+  {
+   "id": "2116356988489576588",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2116356988489576588",
+   "created_at": "2026-10-31T02:30:00.000Z",
+   "text": "El #expresidente municipal de San Juan Bautista #Tuxtepec, Oaxaca, Irineo Molina Espinoza, fue detenido por su presunta responsabilidad en el #desvío de más de 23 millones de pesos del patrimonio municipal durante su administración. https://t.co/obBkX4kOJM",
+   "lang": "es",
+   "region_ids": [
+    "ARG-1273",
+    "MEX-2723"
+   ],
+   "country": "ARG",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The former municipal president of San Juan Bautista Tuxtepec, Oaxaca, Irineo Molina Espinoza, was arrested for his alleged responsibility in diverting more than 23 million pesos of municipal assets during his administration."
+  },
   {
    "id": "2116316368865767895",
    "handle": "noticieristas",
@@ -3831,174 +3956,6 @@
    "source_type": "national outlet",
    "label": null,
    "text_en": "The Queen of the Wolves found her reward after facing doubts and defeats in her career, winning one of the most important international tournaments in the CMLL women's division"
-  },
-  {
-   "id": "2113919685682938305",
-   "handle": "CrisisGroup",
-   "url": "https://x.com/CrisisGroup/status/2113919685682938305",
-   "created_at": "2026-10-24T09:05:02.000Z",
-   "text": "Rivalry within one of the world’s largest drug trafficking groups in Sinaloa has sparked vicious fighting since 2024. To curb violence, Mexico should strengthen intelligence gathering and the prosecution of those supporting illegal groups. https://t.co/WjcLUiwkcf https://t.co/pz…",
-   "lang": "en",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "think tank",
-   "label": null
-  },
-  {
-   "id": "2113847953664377313",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2113847953664377313",
-   "created_at": "2026-10-24T04:20:00.000Z",
-   "text": "Uno de los detenidos en la Ciudad de México fue identificado como líder de una célula delictiva dedicada a la venta de drogas, extorsión y homicidio. https://t.co/JkNFkatlSx",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "One of those arrested in Mexico City was identified as the leader of a criminal cell dedicated to drug dealing, extortion and homicide."
-  },
-  {
-   "id": "2113846695352254633",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2113846695352254633",
-   "created_at": "2026-10-24T04:15:00.000Z",
-   "text": "Un juez vinculó a #proceso al exalcalde de #PuertoAventuras, #QuintanaRoo Gilberto “N”, y a dos exfuncionarios municipales por su probable participación en el delito de #extorsión agravada contra una persona comerciante. https://t.co/vY9MB6bhce",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "A judge ordered former #PuertoAventuras, #QuintanaRoo mayor Gilberto \"N\" and two former municipal officials to stand trial for their alleged role in aggravated #extortion of a merchant."
-  },
-  {
-   "id": "2113835370987327883",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2113835370987327883",
-   "created_at": "2026-10-24T03:30:00.000Z",
-   "text": "Un #adolescente fue #sentenciado a 4 años de internamiento en el Centro de Internamiento para Adolescentes (#CIA) por homicidio en #Sinaloa municipio, https://t.co/Kb8KYYsJ5O",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "A #teenager was #sentenced to 4 years in the Adolescent Detention Centre (#CIA) for a homicide in #Sinaloa municipality"
-  },
-  {
-   "id": "2113826680221409296",
-   "handle": "Primicias",
-   "url": "https://x.com/Primicias/status/2113826680221409296",
-   "created_at": "2026-10-24T02:55:28.000Z",
-   "text": "Tres hombres habrían protagonizado el ataque armado en el Malecón de Pedernales, Manabí, pasadas las 17:00, luego de un desfile cívico militar por las fiestas de cantonización y parroquialización. https://t.co/o28KI2sVYX https://t.co/pG9IqhrfsD",
-   "lang": "es",
-   "region_ids": [
-    "ECU-1282"
-   ],
-   "country": "ECU",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Three men allegedly carried out the armed attack on the Pedernales boardwalk, Manabí, after 17:00, following a civic-military parade for the canton's founding festivities."
-  },
-  {
-   "id": "2113820296125812961",
-   "handle": "Pajaropolitico",
-   "url": "https://x.com/Pajaropolitico/status/2113820296125812961",
-   "created_at": "2026-10-24T02:30:06.000Z",
-   "text": "🚨 El director de Seguridad Pública de Emiliano Zapata, Tabasco, Cleofás Juárez Lara, fue detenido durante cateos realizados por autoridades estatales https://t.co/DTXjj5Axzm",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2725"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "🚨 The public security director of Emiliano Zapata, Tabasco, Cleofás Juárez Lara, was arrested during searches by state authorities"
-  },
-  {
-   "id": "2113820274533478414",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2113820274533478414",
-   "created_at": "2026-10-24T02:30:00.000Z",
-   "text": "#CésarArmando fue declarado responsable del delito de homicidio calificado cometido con ventaja a propósito de un robo. https://t.co/K5UjZhe8Kr",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "#CésarArmando was found guilty of aggravated homicide committed with advantage in the course of a robbery."
-  },
-  {
-   "id": "2113813301628944715",
-   "handle": "InSightCrime",
-   "url": "https://x.com/InSightCrime/status/2113813301628944715",
-   "created_at": "2026-10-24T02:02:18.000Z",
-   "text": "🇸🇻 | El Salvador indicted more than 560 suspected leaders of the Barrio 18 gang for nearly 14,500 crimes committed since 2012 in one of the biggest judicial proceedings promoted under President Nayib Bukele’s state of emergency. https://t.co/eqHeAKnmR2 https://t.co/0R2V8qCRWB",
-   "lang": "en",
-   "region_ids": [],
-   "country": "SLV",
-   "group_ids": [
-    "b18"
-   ],
-   "tier": "verified",
-   "source_type": "research outlet",
-   "label": null
-  },
-  {
-   "id": "2113803412840001989",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2113803412840001989",
-   "created_at": "2026-10-24T01:23:00.000Z",
-   "text": "La autoridad estatal acusó a Iván Cazarín Molina por homicidio doloso calificado y lesiones dolosas calificadas, derivadas del ataque armado de enero de 2023 que dejó cinco víctimas mortales sobre la carretera federal a Xalapa https://t.co/Dxal69zWiy https://t.co/Y7qyiEWjci",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2734"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "State authorities charged Iván Cazarín Molina with aggravated intentional homicide and aggravated intentional injury, stemming from the January 2023 armed attack that left five dead on the federal highway to Xalapa"
-  },
-  {
-   "id": "2113802655219024351",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2113802655219024351",
-   "created_at": "2026-10-24T01:20:00.000Z",
-   "text": "El oficialismo calificó las acusaciones de la gobernadora de Chihuahua como \"temerarias\", \"frívolas\" y \"sin pruebas\", luego de que dijera en entrevista que Ariadna Montiel tiene nexos con el crimen organizado. https://t.co/EIDQWpENLr",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2709"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "The ruling party called the Chihuahua governor's accusations \"reckless\", \"frivolous\" and \"without evidence\" after she said in an interview that Ariadna Montiel has ties to organised crime."
   }
  ]
 }

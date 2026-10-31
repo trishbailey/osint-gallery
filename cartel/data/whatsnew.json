@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-30T19:02Z",
+ "as_of": "2026-10-31T10:03Z",
  "note": "Strategic digest of the last ~7 days, grouped by ongoing trend: leadership, splits and alliances, territory and routes, policy and designations, violence patterns, money. Routine seizures and minor arrests are left out. X posts are used only as sources. Verification: Confirmed = 2+ independent reliable sources; Single source; Official claim only. Status is shown only when sourced counts support it.",
  "trends": [
   {
@@ -346,9 +346,27 @@
    ],
    "developments": [
     {
+     "date": "2026-10-30",
+     "place": "Baja California",
+     "text": "US sanctions on Sinaloa Cartel-linked people and companies are holding in Mexican courts: ZETA reports that sanctioned individuals and firms in Baja California sought amparo injunctions to unfreeze their bank accounts and were refused, so the US designation keeps their money locked inside Mexico's own banking system.",
+     "verification": "Single source",
+     "regions": [],
+     "groups": [
+      "sinaloa"
+     ],
+     "sources": [
+      {
+       "url": "https://x.com/ZETATijuana/status/2116383768067928124",
+       "name": "ZETA Tijuana (X @ZETATijuana)",
+       "title": "Individuals and companies sanctioned by the US for ties to the Sinaloa Cartel filed amparo lawsuits in Baja Cal…",
+       "date": "2026-10-31"
+      }
+     ]
+    },
+    {
      "date": "2026-10-25",
      "place": "Salta and Zárate, Argentina",
-     "text": "Two Argentine court cases behind the new listing show different Mexican footholds: a Bolivia-based Sinaloa branch flying cocaine into Salta for export to Europe through Paraná river ports, and a small CJNG cell that tested a Belgium-to-Zárate MDMA shipment paid through hawala and crypto; specialists found no documented La Nueva Familia Michoacana presence, so the label outruns the evidence for that group.",
+     "text": "Two Argentine court cases behind Argentina's new terrorist listing of the Sinaloa Cartel and La Nueva Familia Michoacana show different Mexican footholds: a Bolivia-based Sinaloa branch flying cocaine into Salta for export to Europe through Paraná river ports, and a small CJNG cell that tested a Belgium-to-Zárate MDMA shipment paid through hawala and crypto; specialists found no documented La Nueva Familia Michoacana presence, so the label outruns the evidence for that group.",
      "verification": "Single source",
      "regions": [
       "ARG-1303",
@@ -420,32 +438,6 @@
        "name": "infobae.com",
        "title": "US federal prosecutor reacts to extradition of 'Mocho Olmedo', one of those protected under Petro's Total Peac",
        "date": "2026-10-25"
-      }
-     ]
-    },
-    {
-     "date": "2026-10-22",
-     "place": "Argentina",
-     "text": "Milei's government added the Sinaloa Cartel, La Nueva Familia Michoacana, the ELN and FARC-EP to Argentina's terrorist list, matching the US designations.",
-     "verification": "Confirmed",
-     "regions": [],
-     "groups": [
-      "sinaloa",
-      "lnfm",
-      "eln"
-     ],
-     "sources": [
-      {
-       "url": "https://x.com/noticieristas/status/2113352548702961788",
-       "name": "noticieristas (X @noticieristas)",
-       "title": "#Argentina 🇦🇷 | Argentina's government, led by President Javier Milei, added the Sinaloa Cartel and La Nueva F…",
-       "date": "2026-10-22"
-      },
-      {
-       "url": "https://x.com/Riodoce_mx/status/2113342121222778960",
-       "name": "Riodoce_mx (X @Riodoce_mx)",
-       "title": "The Government of #Argentina, led by President Javier Milei, declared Mexico's #Sinaloa #Cartel and La Nueva F…",
-       "date": "2026-10-22"
       }
      ]
     }
