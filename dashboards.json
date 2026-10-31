@@ -25,17 +25,6 @@
       "deployKeySecret": "DEPLOY_KEY_CRITICAL_MINERALS"
     },
     {
-      "slug": "ukraine-money-flows",
-      "repo": "trishbailey/ukraine-money-flows",
-      "private": true,
-      "build": "",
-      "publish": "public",
-      "oldUrl": "https://ukraine-money-flows.onrender.com",
-      "status": "live",
-      "cardId": "ukraine-money-flows",
-      "deployKeySecret": "DEPLOY_KEY_UKRAINE_MONEY_FLOWS"
-    },
-    {
       "slug": "cartel",
       "repo": "trishbailey/cartel-dashboard",
       "private": false,
