@@ -151,7 +151,7 @@ with sync_playwright() as pw:
             t1 = page.evaluate("document.querySelector('#colmap svg > g').getAttribute('transform')"); print(tag, "colony zoom", t0, "->", t1); assert t0 != t1
             sc = page.evaluate("window.scrollY"); page.mouse.move(700, 450); page.mouse.wheel(0, 300); page.wait_for_timeout(300)
             assert page.evaluate("window.scrollY") != sc, "plain scroll must still scroll the page over the colony map"
-        imgs = page.evaluate("[...document.querySelectorAll('.ph img')].map(i=>[i.complete&&i.naturalWidth>0,i.alt.length])"); print(tag, "photos", imgs); assert all(a and b > 20 for a, b in imgs) and len(imgs) == 13
+        imgs = page.evaluate("[...document.querySelectorAll('.ph img')].map(i=>[i.complete&&i.naturalWidth>0,i.alt.length])"); print(tag, "photos", imgs); assert all(a and b > 20 for a, b in imgs) and len(imgs) == 17
         for d in page.query_selector_all("details.how"):
             d.evaluate("e=>{let p=e.parentElement.closest('details');while(p){p.open=true;p=p.parentElement.closest('details')}}")
             d.scroll_into_view_if_needed(); before = d.evaluate("e=>e.open"); d.query_selector("summary").click(); page.wait_for_timeout(120)
