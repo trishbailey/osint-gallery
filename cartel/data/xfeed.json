@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-31T13:02:39Z",
+ "as_of": "2026-10-31T16:06:28Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -28,12 +28,66 @@
  ],
  "posts": [
   {
+   "id": "2116557106677535094",
+   "handle": "CrisisGroup",
+   "url": "https://x.com/CrisisGroup/status/2116557106677535094",
+   "created_at": "2026-10-31T15:45:12.000Z",
+   "text": "Déclenché en avril 2023, le conflit soudanais a entraîné une dégradation de la sécurité dans le nord-est de la République centrafricaine. https://t.co/mYGnVI0ZIy",
+   "lang": "und",
+   "region_ids": [
+    "HTI-1387",
+    "HTI-1386"
+   ],
+   "country": "HTI",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "Triggered in April 2023, the Sudanese conflict has led to a deterioration of security in the northeast of the Central African Republic."
+  },
+  {
+   "id": "2116556606942953485",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2116556606942953485",
+   "created_at": "2026-10-31T15:43:13.000Z",
+   "text": "Los asesinatos no paran en plena pugna por el control del estado tras la ruptura interna del Cártel de Sinaloa https://t.co/xYhZd3OPC5 https://t.co/PJQTAHAkno",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "The killings don't stop amid the fight for control of the state after the internal rupture of the Sinaloa Cartel"
+  },
+  {
+   "id": "2116547790599827906",
+   "handle": "InSightCrime",
+   "url": "https://x.com/InSightCrime/status/2116547790599827906",
+   "created_at": "2026-10-31T15:08:11.000Z",
+   "text": "🌎Ecuador’s El Encuentro and Paraguay’s Minga Guazú are among the few megaprisons already operating outside El Salvador. Argentina, Panama, and other countries are pursuing similar projects. Explore the region’s growing prison expansion. https://t.co/3YMHB3sUCJ https://t.co/ncuZI…",
+   "lang": "und",
+   "region_ids": [
+    "PAN-1340"
+   ],
+   "country": "PAN",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "research outlet",
+   "label": null,
+   "text_en": "Ecuador’s El Encuentro and Paraguay’s Minga Guazú are among the few megaprisons already operating outside El Salvador. Argentina, Panama, and other countries are pursuing similar projects. Explore th"
+  },
+  {
    "id": "2116515082016289230",
    "handle": "noticieristas",
    "url": "https://x.com/noticieristas/status/2116515082016289230",
    "created_at": "2026-10-31T12:58:13.000Z",
    "text": "Ataque armado en Culiacán deja herido de bala a un perrito; lo reportan estable Omar de la Rocha en \"Los Noticieristas\" Emisión Sabatina para todo Sinaloa. https://t.co/4br8BFfrzK",
-   "lang": "es",
+   "lang": "und",
    "region_ids": [
     "MEX-2711"
    ],
@@ -3940,22 +3994,6 @@
    "source_type": "national outlet",
    "label": null,
    "text_en": "How narcocorridos describe \"El Compa Mike 517\", arrested in Jalisco: \"Four letters define him, he lives with the güeros\""
-  },
-  {
-   "id": "2114011206730088840",
-   "handle": "InSightCrime",
-   "url": "https://x.com/InSightCrime/status/2114011206730088840",
-   "created_at": "2026-10-24T15:08:42.000Z",
-   "text": "🎙️When Héctor searched for his missing son, Dani in Guadalajara, Mexico, the clues he found led him to a more complex question: What happens when those who should be searching for your son may be involved in his disappearance? 🎧 Listen to our latest episode. https://t.co/j3FvqMy…",
-   "lang": "en",
-   "region_ids": [
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "research outlet",
-   "label": null
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-31T13:02:39Z",
+ "as_of": "2026-10-31T16:06:28Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,96 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "d3f88b2c7e",
+   "status": "single_source",
+   "title": "Déclenché en avril 2023, le conflit soudanais a entraîné une dégradation de la sécurité dans le nord-est de la République centrafricaine.",
+   "lang": "es",
+   "title_en": "Triggered in April 2023, the Sudanese conflict has led to a deterioration of security in the northeast of the Central African Republic.",
+   "first_report": "2026-10-31T15:45:12Z",
+   "first_report_precision": "minute",
+   "first_source": "Crisis Group",
+   "region_ids": [
+    "HTI-1386",
+    "HTI-1387"
+   ],
+   "country": "HTI",
+   "group_ids": [],
+   "outlets": [
+    "Crisis Group"
+   ],
+   "sources": [
+    {
+     "outlet": "crisisgroup",
+     "name": "Crisis Group",
+     "kind": "outlet",
+     "via": "X @CrisisGroup",
+     "url": "https://x.com/CrisisGroup/status/2116557106677535094",
+     "time": "2026-10-31T15:45:12Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "3d2da118f6",
+   "status": "single_source",
+   "title": "Los asesinatos no paran en plena pugna por el control del estado tras la ruptura interna del Cártel de Sinaloa",
+   "lang": "es",
+   "title_en": "The killings don't stop amid the fight for control of the state after the internal rupture of the Sinaloa Cartel",
+   "first_report": "2026-10-31T15:43:13Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2116556606942953485",
+     "time": "2026-10-31T15:43:13Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "8c9ad22454",
+   "status": "single_source",
+   "title": "🌎Ecuador’s El Encuentro and Paraguay’s Minga Guazú are among the few megaprisons already operating outside El Salvador. Argentina, Panama, and other countries are pursuing similar projects. Explore th",
+   "lang": "es",
+   "title_en": "Ecuador’s El Encuentro and Paraguay’s Minga Guazú are among the few megaprisons already operating outside El Salvador. Argentina, Panama, and other countries are pursuing similar projects. Explore th",
+   "first_report": "2026-10-31T15:08:11Z",
+   "first_report_precision": "minute",
+   "first_source": "InSight Crime",
+   "region_ids": [
+    "PAN-1340"
+   ],
+   "country": "PAN",
+   "group_ids": [],
+   "outlets": [
+    "InSight Crime"
+   ],
+   "sources": [
+    {
+     "outlet": "insight",
+     "name": "InSight Crime",
+     "kind": "outlet",
+     "via": "X @InSightCrime",
+     "url": "https://x.com/InSightCrime/status/2116547790599827906",
+     "time": "2026-10-31T15:08:11Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "bfc3ae7737",
    "status": "confirmed",
@@ -53,6 +143,1147 @@
      "url": "https://x.com/noticieristas/status/2116515082016289230",
      "time": "2026-10-31T12:58:13Z",
      "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "46e0b6136c",
+   "status": "confirmed",
+   "title": "El #regidor de Indaparapeo, #Michoacán, Adán Rodríguez Ávalos, fue #asesinado a balazos junto con su esposa cuando viajaban en una camioneta. Su hijo resultó herido en el ataque.",
+   "lang": "es",
+   "title_en": "Indaparapeo, Michoacán, councilman Adán Rodríguez Ávalos was shot dead along with his wife while travelling in a pickup truck. Their son was wounded in the attack.",
+   "first_report": "2026-10-29T19:10:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "chapitos",
+    "mayiza"
+   ],
+   "outlets": [
+    "Milenio",
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2115883868792275088",
+     "time": "2026-10-29T19:10:00Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/estados/michoacan-asesinan-a-regidor-y-a-su-esposa-en-indaparapeo",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/como-son-los-drones-fpv-que-usa-el-cartel-de-sinaloa",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/narcotrafico/beltran-leyva-caidas-detenciones-narcoguerra-sinaloa",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/narcotrafico/documental-el-mayo-zambada-que-dice-sobre-los-chapitos-cartel-sinaloa",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/vinculan-a-proceso-a-cuatro-presuntos-integrantes-de-los-chapitos",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/espectaculos/famosos/serj-tankian-colaboro-documental-netflix-el-mayo-zambada",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "994c58a734",
+   "status": "confirmed",
+   "title": "🔴 #AHORA | Cae en Matamoros Axel Alfredo, “El Titán”: operador del Cártel del Golfo y familiar de Osiel Cárdenas Guillén",
+   "lang": "es",
+   "title_en": "🔴 #NOW | Axel Alfredo, “El Titán”, a Gulf Cartel operator and relative of Osiel Cárdenas Guillén, is captured in Matamoros",
+   "first_report": "2026-10-29T22:55:41Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf",
+    "cdn"
+   ],
+   "outlets": [
+    "Infobae",
+    "La Jornada",
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115940665523921301",
+     "time": "2026-10-29T22:55:41Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2115957856688357489",
+     "time": "2026-10-30T00:04:00Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115996806119121407",
+     "time": "2026-10-30T02:38:46Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/10/30/el-titan-del-cartel-del-golfo-el-historial-criminal-que-llevo-a-su-nueva-detencion-a-dos-anos-de-su-polemica-liberacion/",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.jornada.com.mx/2026/10/31/estados/021n3est?partner=rss",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "55aee858bd",
+   "status": "confirmed",
+   "title": "EEUU acusa a “El Ingeniero”, mexicano señalado por construir narcotúnel del CJNG en Tijuana - Infobae",
+   "lang": "es",
+   "title_en": "US charges \"El Ingeniero\", a Mexican accused of building a CJNG narco-tunnel in Tijuana - Infobae",
+   "first_report": "2026-10-30T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2719",
+    "MEX-2723",
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae",
+    "Milenio",
+    "ZETA Tijuana"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/10/30/eeuu-acusa-a-el-ingeniero-mexicano-senalado-por-construir-narcotunel-del-cjng-en-tijuana",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/eu-acusa-ingeniero-mexicano-construir-tunel-transfronterizo-para-cjng",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.milenio.com/estados/grupos-criminales-se-disputan-control-de-juchitan",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.milenio.com/policia/detienen-a-cuatro-traficantes-de-droga-del-cjng-en-el-aicm",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.milenio.com/policia/narcotrafico/eu-revela-acusacion-el-ingeniero-cjng-por-tuneles-narcotrafico",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://zetatijuana.com/2026/10/fiscalia-de-eu-acusa-a-ingeniero-mexicano-por-narcotunel-del-cjng/?utm_source=rss&utm_medium=rss&utm_campaign=fiscalia-de-eu-acusa-a-ingeniero-mexicano-por-narcotunel-del-cjng",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/estados/grabaciones-exclusivas-confirman-muerte-carlos-manzo-a-cjng",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/estados/grupos-criminales-se-disputan-control-de-juchitan",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/10/30/eeuu-acusa-a-el-ingeniero-mexicano-senalado-por-construir-narcotunel-del-cjng-en-tijuana/",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "511fa971f1",
+   "status": "single_source",
+   "title": "Bloqueos por 4 horas tras golpe a mando de Ciclones- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-30T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": null,
+   "group_ids": [
+    "gulf"
+   ],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/bloqueos-por-4-horas-tras-golpe-a-mando-de-ciclones",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/politica/consulado-eu-matamoros-emite-alerta-seguridad-bloqueos",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "216f98d1a5",
+   "status": "single_source",
+   "title": "Enfrentamiento tras detención en Matamoros dejó cinco fallecidos- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-30T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/enfrentamiento-tras-detencion-en-matamoros-dejo-cinco-fallecidos",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/politica/claudia-sheinbaum-sobre-bloqueos-y-detencion-en-tamaulipas",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "433d091aaf",
+   "status": "confirmed",
+   "title": "Dan 12 años de prisión en EEUU a ciudadano chino que ayudó al CJNG a traficar droga y lavar dinero",
+   "lang": "es",
+   "title_en": "Chinese citizen who helped the CJNG traffic drugs and launder money sentenced to 12 years in prison in the US",
+   "first_report": "2026-10-30T16:12:49Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "GTM-1951",
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Excélsior",
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2116201666726805979",
+     "time": "2026-10-30T16:12:49Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/10/30/dan-12-anos-de-prision-en-eeuu-a-ciudadano-chino-que-ayudo-al-cjng-a-traficar-droga-y-lavar-dinero",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "excelsior",
+     "name": "Excélsior",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.excelsior.com.mx/internacional/condenan-estados-unidos-ciudadano-chino-por-lavado-dinero-y-apoyo-cjng",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "711097210c",
+   "status": "confirmed",
+   "title": "Francisco Manuel Bermúdez Cagua, alias 'Churrón', fue extraditado a Estados Unidos el 29 de octubre de 2026. Él es considerado uno de los cabecillas del grupo criminal Los Choneros.",
+   "lang": "es",
+   "title_en": "Francisco Manuel Bermúdez Cagua, alias 'Churrón', was extradited to the United States on October 29, 2026. He is considered one of the leaders of the criminal group Los Choneros.",
+   "first_report": "2026-10-30T20:11:58Z",
+   "first_report_precision": "minute",
+   "first_source": "Primicias",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "choneros"
+   ],
+   "outlets": [
+    "El Universo",
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "X @Primicias",
+     "url": "https://x.com/Primicias/status/2116261851897970858",
+     "time": "2026-10-30T20:11:58Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "eluniverso",
+     "name": "El Universo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eluniverso.com/internacional/estados-unidos/estados-unidos-recibe-en-extradicion-a-alias-churron-presunto-lider-de-los-choneros-nota",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "439853f8e8",
+   "status": "single_source",
+   "title": "La cúpula de La Mayiza: ¿Qué sabemos de ‘Aldo’, ‘El Güero Chompas’ y los cómplices del ‘Mayito Flaco’?",
+   "lang": "es",
+   "title_en": "The leadership of La Mayiza: what do we know about 'Aldo', 'El Güero Chompas' and the accomplices of 'Mayito Flaco'?",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Financiero",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng",
+    "chapitos",
+    "sinaloa",
+    "mayiza"
+   ],
+   "outlets": [
+    "El Financiero"
+   ],
+   "sources": [
+    {
+     "outlet": "elfinanciero",
+     "name": "El Financiero",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://elfinanciero.com.mx/nacional/2026/10/31/la-cupula-de-la-mayiza-que-sabemos-de-aldo-el-guero-chompas-y-los-complices-del-mayito-flaco",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "0f5510cc23",
+   "status": "single_source",
+   "title": "Sicarios asesinaron dentro de un taxi en Cali a antiguo capo del narcotráfico vinculado al Cartel del Norte del Valle - Infobae",
+   "lang": "es",
+   "title_en": "Hitmen killed a former drug lord linked to the Norte del Valle Cartel inside a taxi in Cali - Infobae",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "COL-1408"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/colombia/2026/10/30/sicarios-asesinaron-dentro-de-un-taxi-en-cali-a-antiguo-capo-del-narcotrafico-vinculado-al-cartel-del-norte-del-valle",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "8aafcdfd10",
+   "status": "single_source",
+   "title": "Asesinan a expolicía y luchador frente a su esposa e hijos en Quintana Roo - Infobae",
+   "lang": "es",
+   "title_en": "Former police officer and wrestler killed in front of his wife and children in Quintana Roo - Infobae",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2719",
+    "MEX-2736"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/10/30/asesinan-a-expolicia-y-luchador-frente-a-su-esposa-e-hijos-en-quintana-roo",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "9512917b01",
+   "status": "single_source",
+   "title": "El Guano no se retira: así conserva el poder a los 81 años el hermano de El Chapo Guzmán - Infobae",
+   "lang": "es",
+   "title_en": "El Guano isn't retiring: how El Chapo Guzmán's brother keeps power at 81 - Infobae",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "chapitos",
+    "sinaloa",
+    "mayiza"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/10/30/el-guano-no-se-retira-asi-conserva-el-poder-a-los-81-anos-el-hermano-de-el-chapo-guzman",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "a63a6102a9",
+   "status": "single_source",
+   "title": "México busca abatir a jefes del narco para que no haya “fuga de información” a Estados Unidos, afirma Jesús Lemus - Infobae",
+   "lang": "es",
+   "title_en": "Mexico seeks to kill drug bosses so there is no \"leak of information\" to the United States, says Jesús Lemus - Infobae",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "chapitos",
+    "sinaloa",
+    "mayiza"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/10/30/mexico-busca-abatir-a-jefes-del-narco-para-que-no-haya-fuga-de-informacion-a-estados-unidos-afirma-jesus-lemus",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "21185d0622",
+   "status": "single_source",
+   "title": "EN VIVO| Seguridad, narcotráfico y crimen en México hoy 31 de octubre - Infobae",
+   "lang": "es",
+   "title_en": "LIVE | Security, drug trafficking and crime in Mexico today, October 31 - Infobae",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "mayiza"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/10/31/en-vivo-seguridad-narcotrafico-y-crimen-en-mexico-hoy-31-de-octubre",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "6b578aa690",
+   "status": "single_source",
+   "title": "La Mayiza: quiénes son los hombres de confianza y aliados que mantienen el poder tras la captura de El Mayo Zambada - Infobae",
+   "lang": "es",
+   "title_en": "La Mayiza: who are the trusted men and allies keeping power after the capture of El Mayo Zambada - Infobae",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "chapitos",
+    "sinaloa",
+    "mayiza"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/10/31/la-mayiza-quienes-son-los-hombres-de-confianza-y-aliados-que-mantienen-el-poder-tras-la-captura-de-el-mayo-zambada",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "f719bdecf7",
+   "status": "official_claim_only",
+   "title": "Eastern District of New York | Top Ecuadorian Leader of Los Choneros, a Violent Foreign Terrorist Organization, Extradited to the United States to Face International Narcotics and Firearm Charges Foll",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "US Justice Department",
+   "region_ids": [],
+   "country": null,
+   "group_ids": [
+    "choneros"
+   ],
+   "outlets": [
+    "US Justice Department"
+   ],
+   "sources": [
+    {
+     "outlet": "justice",
+     "name": "US Justice Department",
+     "kind": "official",
+     "via": "headline",
+     "url": "https://justice.gov/usao-edny/pr/top-ecuadorian-leader-los-choneros-violent-foreign-terrorist-organization-extradited",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "ba9b51d946",
+   "status": "single_source",
+   "title": "Madre busca a su hijo tras reclutamiento forzado en Jalisco- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/estados/madre-busca-a-su-hijo-tras-reclutamiento-frozado-en-jalisco",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "f65e1624bb",
+   "status": "single_source",
+   "title": "Balacera-deja a-madre e-hija muertas en-Tláhuac-CdMx- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/balacera-deja-a-madre-e-hija-muertas-en-tlahuac-cdmx",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "08d48c6fb2",
+   "status": "single_source",
+   "title": "Narco despoja tierras en Tierra Caliente: la nueva narcopolítica | MVS Noticias",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "MVS Noticias",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "chapitos",
+    "sinaloa",
+    "mayiza"
+   ],
+   "outlets": [
+    "MVS Noticias"
+   ],
+   "sources": [
+    {
+     "outlet": "mvs",
+     "name": "MVS Noticias",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://mvsnoticias.com/video/2026/10/30/narco-despoja-tierras-en-tierra-caliente-la-nueva-narcopolitica-751806.html",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "0ca7aa6bce",
+   "status": "single_source",
+   "title": "Asesinan a un hombre cerca del basurón municipal de Culiacán - Ríodoce",
+   "lang": "es",
+   "title_en": "Man killed near the Culiacán municipal dump - Ríodoce",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://riodoce.mx/2026/10/30/asesinan-a-un-hombre-cerca-del-basuron-municipal-de-culiacan",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "8a7c3a12ad",
+   "status": "single_source",
+   "title": "Balean a motociclista en la colonia Los Mezcales; Ejército persigue y captura a los agresores - Ríodoce",
+   "lang": "es",
+   "title_en": "Motorcyclist shot in the Los Mezcales neighborhood; Army pursues and captures the attackers - Ríodoce",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://riodoce.mx/2026/10/30/atacan-a-balazos-a-motociclista-frente-a-una-primaria-en-la-colonia-los-mezcales-al-norte-de-culiacan",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "4760b515e3",
+   "status": "single_source",
+   "title": "Auditoría halla transas en el INE, UNAM, NL y Sinaloa; Clan Taddei, Territorium y funcionarios, en la mira",
+   "lang": "es",
+   "title_en": "Audit finds irregularities at the INE, UNAM, Nuevo León and Sinaloa; Clan Taddei, Territorium and officials under scrutiny",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "El Universal"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/nacion/auditoria-halla-transas-en-el-ine-unam-nl-y-sinaloa-clan-taddei-territorium-y-funcionarios-en-la-mira/",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "b7b67bff99",
+   "status": "single_source",
+   "title": "Marina despliega más mil 600 elementos en Sinaloa; Pedro Morales y Graciela Domínguez supervisan estrategia de seguridad",
+   "lang": "es",
+   "title_en": "Navy deploys more than 1,600 personnel in Sinaloa; Pedro Morales and Graciela Domínguez oversee security strategy",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "El Universal"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/nacion/marina-despliega-mas-mil-600-elementos-en-sinaloa-pedro-morales-y-graciela-dominguez-supervisan-estrategia-de-seguridad/",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "8bda420e9c",
+   "status": "single_source",
+   "title": "EEUU reitera oferta de diez millones de dólares por hondureño cabecilla de pandilla MS-13 - Infobae",
+   "lang": "es",
+   "title_en": "U.S. reiterates ten-million-dollar reward for Honduran MS-13 gang leader - Infobae",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [],
+   "country": "HND",
+   "group_ids": [
+    "tda",
+    "ms13"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/america/agencias/2026/10/31/eeuu-reitera-oferta-de-diez-millones-de-dolares-por-hondureno-cabecilla-de-pandilla-ms-13/",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "43390e49bc",
+   "status": "single_source",
+   "title": "Embajada de EE.UU. calificó de “narcoquinceañera” una fiesta vinculada con la alcaldesa de Zacapa y pidió prestar atención a las elecciones de 2027 en Guatemala",
+   "lang": "es",
+   "title_en": "U.S. Embassy called a party linked to the mayor of Zacapa a \"narco-quinceañera\" and urged attention to Guatemala's 2027 elections",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "GTM-1951",
+    "GTM-1963"
+   ],
+   "country": "GTM",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/guatemala/2026/10/31/embajada-de-eeuu-califico-de-narcoquinceanera-una-fiesta-vinculada-con-la-alcaldesa-de-zacapa-y-llamo-a-prestar-atencion-a-las-elecciones-de-2027-en-guatemala/",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "e4abf281aa",
+   "status": "single_source",
+   "title": "Guatemala: Capturan en Escuintla a presunto sicario vinculado a dos asesinatos de alto perfil, un excandidato a diputado y el director de una cárcel",
+   "lang": "es",
+   "title_en": "Guatemala: alleged hitman linked to two high-profile murders, of a former congressional candidate and a prison director, captured in Escuintla",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "GTM-1950"
+   ],
+   "country": "GTM",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/guatemala/2026/10/31/guatemala-capturan-en-escuintla-a-presunto-sicario-vinculado-a-dos-asesinatos-de-alto-perfil-un-excandidato-a-diputado-y-el-director-de-una-carcel/",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "6a4de72116",
+   "status": "single_source",
+   "title": "Comparecerá titular de DH de Jalisco por represión a protesta por el agua sucia",
+   "lang": "es",
+   "title_en": "Head of Jalisco human rights body to appear over repression of protest about dirty water",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "La Jornada",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "La Jornada"
+   ],
+   "sources": [
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.jornada.com.mx/2026/10/31/estados/021n2est?partner=rss",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "6011a84e37",
+   "status": "single_source",
+   "title": "Capacitarán policías de Italia y Chile a efectivos de la SSP de Zacatecas",
+   "lang": "es",
+   "title_en": "Police from Italy and Chile to train officers of the Zacatecas SSP",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "La Jornada",
+   "region_ids": [
+    "MEX-2713"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "La Jornada"
+   ],
+   "sources": [
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.jornada.com.mx/2026/10/31/estados/023n1est?partner=rss",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "6c9d6e8fd1",
+   "status": "single_source",
+   "title": "Colocan altar en Zócalo de Oaxaca por desaparecidos",
+   "lang": "es",
+   "title_en": "Altar for the disappeared placed in the Zócalo of Oaxaca",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "La Jornada",
+   "region_ids": [
+    "MEX-2723",
+    "MEX-2712"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "La Jornada"
+   ],
+   "sources": [
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.jornada.com.mx/2026/10/31/estados/023n4est?partner=rss",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "dcec22c315",
+   "status": "single_source",
+   "title": "Juez federal condena a integrante del CJNG por amenazas a periodista de Aguascalientes | Proceso",
+   "lang": "es",
+   "title_en": "Federal judge sentences CJNG member for threats against an Aguascalientes journalist | Proceso",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Proceso",
+   "region_ids": [
+    "MEX-2717"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.proceso.com.mx/nacional/2026/10/30/juez-federal-condena-a-integrante-del-cjng-por-amenazas-a-periodista-de-aguascalientes-382862.html",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "d48074a56c",
+   "status": "single_source",
+   "title": "Cúcuta, bajo el asedio de los criminales: así se vive en una de las ciudades más peligrosas de Colombia - Semana",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Semana",
+   "region_ids": [
+    "COL-1421"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "eln",
+    "tda"
+   ],
+   "outlets": [
+    "Semana"
+   ],
+   "sources": [
+    {
+     "outlet": "semana",
+     "name": "Semana",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.semana.com/nacion/cucuta/articulo/cucuta-bajo-el-asedio-de-los-criminales-asi-se-vive-en-una-de-las-ciudades-mas-peligrosas-de-colombia/202648/",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
     }
    ]
   },
@@ -176,8 +1407,8 @@
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
    "region_ids": [
-    "MEX-2706",
-    "MEX-2710"
+    "MEX-2710",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [
@@ -246,8 +1477,8 @@
    "first_report_precision": "minute",
    "first_source": "InSight Crime",
    "region_ids": [
-    "PRY-607",
-    "PAN-1340"
+    "PAN-1340",
+    "PRY-607"
    ],
    "country": "PAN",
    "group_ids": [],
@@ -407,35 +1638,6 @@
      "via": "X @parescolombia",
      "url": "https://x.com/parescolombia/status/2116263179978523051",
      "time": "2026-10-30T20:17:15Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "711097210c",
-   "status": "single_source",
-   "title": "Francisco Manuel Bermúdez Cagua, alias 'Churrón', fue extraditado a Estados Unidos el 29 de octubre de 2026. Él es considerado uno de los cabecillas del grupo criminal Los Choneros.",
-   "lang": "es",
-   "title_en": "Francisco Manuel Bermúdez Cagua, alias 'Churrón', was extradited to the United States on October 29, 2026. He is considered one of the leaders of the criminal group Los Choneros.",
-   "first_report": "2026-10-30T20:11:58Z",
-   "first_report_precision": "minute",
-   "first_source": "Primicias",
-   "region_ids": [],
-   "country": "ECU",
-   "group_ids": [
-    "choneros"
-   ],
-   "outlets": [
-    "Primicias"
-   ],
-   "sources": [
-    {
-     "outlet": "primicias",
-     "name": "Primicias",
-     "kind": "outlet",
-     "via": "X @Primicias",
-     "url": "https://x.com/Primicias/status/2116261851897970858",
-     "time": "2026-10-30T20:11:58Z",
      "time_precision": "minute"
     }
    ]
@@ -646,8 +1848,8 @@
    "first_report_precision": "minute",
    "first_source": "Animal Político",
    "region_ids": [
-    "MEX-2727",
-    "MEX-2724"
+    "MEX-2724",
+    "MEX-2727"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -778,35 +1980,6 @@
      "via": "X @InSightCrime",
      "url": "https://x.com/InSightCrime/status/2116213663694520649",
      "time": "2026-10-30T17:00:29Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "433d091aaf",
-   "status": "single_source",
-   "title": "Dan 12 años de prisión en EEUU a ciudadano chino que ayudó al CJNG a traficar droga y lavar dinero",
-   "lang": "es",
-   "title_en": "Chinese citizen who helped the CJNG traffic drugs and launder money sentenced to 12 years in prison in the US",
-   "first_report": "2026-10-30T16:12:49Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2116201666726805979",
-     "time": "2026-10-30T16:12:49Z",
      "time_precision": "minute"
     }
    ]
@@ -1066,8 +2239,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2706",
     "MEX-2711",
+    "MEX-2706",
     "MEX-2712"
    ],
    "country": "MEX",
@@ -1093,77 +2266,6 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://www.infobae.com/mexico/2026/10/29/cae-el-bocho-en-mexicali-senalado-como-operador-de-drogas-del-cartel-de-sinaloa-detenido-con-fentanilo-y-un-arma/",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "46e0b6136c",
-   "status": "confirmed",
-   "title": "El #regidor de Indaparapeo, #Michoacán, Adán Rodríguez Ávalos, fue #asesinado a balazos junto con su esposa cuando viajaban en una camioneta. Su hijo resultó herido en el ataque.",
-   "lang": "es",
-   "title_en": "Indaparapeo, Michoacán, councilman Adán Rodríguez Ávalos was shot dead along with his wife while travelling in a pickup truck. Their son was wounded in the attack.",
-   "first_report": "2026-10-29T19:10:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2711",
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa",
-    "mayiza",
-    "chapitos"
-   ],
-   "outlets": [
-    "Milenio",
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2115883868792275088",
-     "time": "2026-10-29T19:10:00Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/estados/michoacan-asesinan-a-regidor-y-a-su-esposa-en-indaparapeo",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/como-son-los-drones-fpv-que-usa-el-cartel-de-sinaloa",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/narcotrafico/beltran-leyva-caidas-detenciones-narcoguerra-sinaloa",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/narcotrafico/documental-el-mayo-zambada-que-dice-sobre-los-chapitos-cartel-sinaloa",
      "time": "2026-10-30T12:00:00Z",
      "time_precision": "day"
     }
@@ -1208,66 +2310,6 @@
    ]
   },
   {
-   "id": "994c58a734",
-   "status": "confirmed",
-   "title": "🔴 #AHORA | Cae en Matamoros Axel Alfredo, “El Titán”: operador del Cártel del Golfo y familiar de Osiel Cárdenas Guillén",
-   "lang": "es",
-   "title_en": "🔴 #NOW | Axel Alfredo, “El Titán”, a Gulf Cartel operator and relative of Osiel Cárdenas Guillén, is captured in Matamoros",
-   "first_report": "2026-10-29T22:55:41Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2716"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "gulf",
-    "cdn"
-   ],
-   "outlets": [
-    "Infobae",
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115940665523921301",
-     "time": "2026-10-29T22:55:41Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2115957856688357489",
-     "time": "2026-10-30T00:04:00Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115996806119121407",
-     "time": "2026-10-30T02:38:46Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/10/30/el-titan-del-cartel-del-golfo-el-historial-criminal-que-llevo-a-su-nueva-detencion-a-dos-anos-de-su-polemica-liberacion/",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
    "id": "1bf800f269",
    "status": "single_source",
    "title": "Extraditan a EEUU a tres ecuatorianos acusados de narcotráfico, incluido cabecilla de Los Choneros | AP News",
@@ -1277,8 +2319,8 @@
    "first_report_precision": "day",
    "first_source": "AP",
    "region_ids": [
-    "PAN-1338",
-    "COL-1425"
+    "COL-1425",
+    "PAN-1338"
    ],
    "country": "COL",
    "group_ids": [
@@ -1435,10 +2477,10 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
-    "juarez",
+    "gulf",
     "unidos",
-    "gulf"
+    "sinaloa",
+    "juarez"
    ],
    "outlets": [
     "Infobae"
@@ -1450,115 +2492,6 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://infobae.com/mexico/2026/10/30/cinco-carteles-mexicanos-designados-terroristas-por-eeuu-reciben-duros-golpes-en-4-dias",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "55aee858bd",
-   "status": "confirmed",
-   "title": "EEUU acusa a “El Ingeniero”, mexicano señalado por construir narcotúnel del CJNG en Tijuana - Infobae",
-   "lang": "es",
-   "title_en": "US charges \"El Ingeniero\", a Mexican accused of building a CJNG narco-tunnel in Tijuana - Infobae",
-   "first_report": "2026-10-30T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2719",
-    "MEX-2706",
-    "MEX-2723"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Infobae",
-    "Milenio",
-    "ZETA Tijuana"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://infobae.com/mexico/2026/10/30/eeuu-acusa-a-el-ingeniero-mexicano-senalado-por-construir-narcotunel-del-cjng-en-tijuana",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/eu-acusa-ingeniero-mexicano-construir-tunel-transfronterizo-para-cjng",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.milenio.com/estados/grupos-criminales-se-disputan-control-de-juchitan",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.milenio.com/policia/detienen-a-cuatro-traficantes-de-droga-del-cjng-en-el-aicm",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.milenio.com/policia/narcotrafico/eu-revela-acusacion-el-ingeniero-cjng-por-tuneles-narcotrafico",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://zetatijuana.com/2026/10/fiscalia-de-eu-acusa-a-ingeniero-mexicano-por-narcotunel-del-cjng/?utm_source=rss&utm_medium=rss&utm_campaign=fiscalia-de-eu-acusa-a-ingeniero-mexicano-por-narcotunel-del-cjng",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "511fa971f1",
-   "status": "single_source",
-   "title": "Bloqueos por 4 horas tras golpe a mando de Ciclones- Grupo Milenio",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-10-30T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "Milenio",
-   "region_ids": [],
-   "country": null,
-   "group_ids": [
-    "gulf"
-   ],
-   "outlets": [
-    "Milenio"
-   ],
-   "sources": [
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/bloqueos-por-4-horas-tras-golpe-a-mando-de-ciclones",
      "time": "2026-10-30T12:00:00Z",
      "time_precision": "day"
     }
@@ -1578,9 +2511,9 @@
    ],
    "country": "MEX",
    "group_ids": [
+    "chapitos",
     "sinaloa",
-    "mayiza",
-    "chapitos"
+    "mayiza"
    ],
    "outlets": [
     "Milenio"
@@ -1592,37 +2525,6 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://milenio.com/policia/cartel-de-guasave-quienes-son-y-como-crecio-el-poder-del-chapo-isidro",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "216f98d1a5",
-   "status": "single_source",
-   "title": "Enfrentamiento tras detención en Matamoros dejó cinco fallecidos- Grupo Milenio",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-10-30T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "Milenio",
-   "region_ids": [
-    "MEX-2716"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "gulf"
-   ],
-   "outlets": [
-    "Milenio"
-   ],
-   "sources": [
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/enfrentamiento-tras-detencion-en-matamoros-dejo-cinco-fallecidos",
      "time": "2026-10-30T12:00:00Z",
      "time_precision": "day"
     }
@@ -1768,6 +2670,65 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://primicias.ec/seguridad/toque-queda-convoys-policias-apolo-detenidos-guayaquil-ecuador-136058",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "11e4c6c407",
+   "status": "single_source",
+   "title": "Capturan en Colombia a \"La Patrona\" y \"Pau\", mexicanos del CJNG | Proceso",
+   "lang": "es",
+   "title_en": "\"La Patrona\" and \"Pau\", Mexicans in the CJNG, captured in Colombia. Sophia Mourra Lozano, \"La Patrona\", and Adolfo Paulin González, \"Pau\", members of the Cártel de Jalisco Nueva Generación, were arrested",
+   "first_report": "2026-10-30T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Proceso",
+   "region_ids": [],
+   "country": "COL",
+   "group_ids": [
+    "clan",
+    "cjng"
+   ],
+   "outlets": [
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://proceso.com.mx/internacional/2026/10/28/capturan-en-colombia-a-la-patrona-y-pau-mexicanos-del-cjng-382734.html",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "9202b0f1e7",
+   "status": "single_source",
+   "title": "Narcoterrorismo en Zacatecas: Adolfo Bonilla sospecha de un “pacto fallido” entre el crimen organizado y la gestión de Monreal | Proceso",
+   "lang": "es",
+   "title_en": "Narcoterrorism in Zacatecas: Adolfo Bonilla suspects a \"failed pact\" between organised crime and the Monreal administration | Proceso",
+   "first_report": "2026-10-30T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Proceso",
+   "region_ids": [
+    "MEX-2713"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://proceso.com.mx/nacional/2026/10/29/narcoterrorismo-en-zacatecas-adolfo-bonilla-sospecha-de-un-pacto-fallido-entre-el-crimen-organizado-382479.html",
      "time": "2026-10-30T12:00:00Z",
      "time_precision": "day"
     }
@@ -1938,8 +2899,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "PAN-1337",
-    "PAN-1340"
+    "PAN-1340",
+    "PAN-1337"
    ],
    "country": "PAN",
    "group_ids": [],
@@ -2084,8 +3045,8 @@
    "first_report_precision": "minute",
    "first_source": "Gabinete de Seguridad (Mexico)",
    "region_ids": [
-    "MEX-2716",
-    "MEX-2709"
+    "MEX-2709",
+    "MEX-2716"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2189,8 +3150,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
-    "chapitos"
+    "chapitos",
+    "sinaloa"
    ],
    "outlets": [
     "Proceso"
@@ -2615,96 +3576,6 @@
      "via": "X @infobaemexico",
      "url": "https://x.com/infobaemexico/status/2115838709819940942",
      "time": "2026-10-29T16:10:33Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "aaaf2bc983",
-   "status": "single_source",
-   "title": "Fernando “N”, alias “Delta 2” o “Güero Dani”, fue detenido en Yauhquemehcan durante un operativo coordinado entre autoridades federales y estatales; es señalado por su posible relación con delitos de ",
-   "lang": "es",
-   "title_en": "Fernando \"N\", alias \"Delta 2\" or \"Güero Dani\", was arrested in Yauhquemehcan during an operation coordinated between federal and state authorities; he is pointed to for his possible link to high-impact crimes in the Apiz",
-   "first_report": "2026-10-29T15:20:50Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2726"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115826198206984289",
-     "time": "2026-10-29T15:20:50Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "ae1c260d11",
-   "status": "single_source",
-   "title": "🔴 Fue capturado Carlos César, apodado ‘El Semáforo’, ‘Semo’ o ‘Señor de las Luces’, identificado por las autoridades como jefe regional del Cártel Jalisco Nueva Generación (CJNG) y presunto sucesor de",
-   "lang": "es",
-   "title_en": "Carlos César, nicknamed 'El Semáforo', 'Semo' or 'Señor de las Luces', identified by authorities as a regional boss of the Cártel Jalisco Nueva Generación (CJNG) and alleged successor to 'El Tanque', who was arrested in ",
-   "first_report": "2026-10-29T14:48:25Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2115818039048655242",
-     "time": "2026-10-29T14:48:25Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "8c60719c8d",
-   "status": "single_source",
-   "title": "NOUVEAU RAPPORT | Centrafrique : contenir les effets de la guerre au Soudan La guerre au Soudan alimente l’activité criminelle des groupes armés dans le nord-est de la Centrafrique, frontalier du Darf",
-   "lang": "es",
-   "title_en": "NEW REPORT | Central African Republic: containing the effects of the war in Sudan. The war in Sudan is fuelling criminal activity by armed groups in the northeast of the Central African Republic, bordering Darfur, while ",
-   "first_report": "2026-10-29T14:25:37Z",
-   "first_report_precision": "minute",
-   "first_source": "Crisis Group",
-   "region_ids": [
-    "HTI-1387",
-    "HTI-1386"
-   ],
-   "country": "HTI",
-   "group_ids": [],
-   "outlets": [
-    "Crisis Group"
-   ],
-   "sources": [
-    {
-     "outlet": "crisisgroup",
-     "name": "Crisis Group",
-     "kind": "outlet",
-     "via": "X @CrisisGroup",
-     "url": "https://x.com/CrisisGroup/status/2115812302226104335",
-     "time": "2026-10-29T14:25:37Z",
      "time_precision": "minute"
     }
    ]
