@@ -92,7 +92,26 @@ function draw(){
    else{t.attr('x',lx).attr('y',y).attr('text-anchor','start').text(LN[s.id]+' ');t.append('tspan').attr('class','vnum').text(s.label)}
   });
   if(hl.length){var ru=lblG.select('text.rus');if(!ru.empty()){var top=ly[0]+shift-(ph()?10+16:21),cy=+ru.attr('y');if(top<cy)ru.attr('y',top)}}
- }
+
+  /* country names never sit on the front line, its label, an arrow or another label: each is nudged to the nearest free spot inside its own country */
+  (function(){
+   var ob=[],pad=4,pts=[];
+   function bbx(n,x0,y0){var b=n.getBBox();return {x:b.x+(x0||0)-pad,y:b.y+(y0||0)-pad,r:b.x+b.width+(x0||0)+pad,b:b.y+b.height+(y0||0)+pad}}
+   front.selectAll('path.bracket,text.flab').each(function(){ob.push(bbx(this))});
+   lblG.selectAll('text,path.leader').each(function(){ob.push(bbx(this))});
+   strandG.selectAll('path.stg,path.stp').each(function(){var L=this.getTotalLength(),sw=(+this.getAttribute('stroke-width')||3)/2+pad;for(var k=0;k<=L;k+=6){var q=this.getPointAtLength(k);pts.push([q.x,q.y,sw])}});
+   function hits(r){for(var a=0;a<ob.length;a++){var o=ob[a];if(r.x<o.r&&o.x<r.r&&r.y<o.b&&o.y<r.b)return true}
+    for(var k=0;k<pts.length;k++){var q=pts[k];if(q[0]>r.x-q[2]&&q[0]<r.r+q[2]&&q[1]>r.y-q[2]&&q[1]<r.b+q[2])return true}return false}
+   cnl.each(function(f){
+    var c=pathGeo.centroid(f),bb=this.getBBox(),bd=pathGeo.bounds(f),best=null,bc=1e9,dx,dy;
+    for(dx=-120;dx<=120;dx+=6)for(dy=-120;dy<=120;dy+=6){
+     var r={x:c[0]+bb.x+dx-pad,y:c[1]+bb.y+dy-pad,r:c[0]+bb.x+bb.width+dx+pad,b:c[1]+bb.y+bb.height+dy+pad};
+     if(hits(r))continue;var cx=(r.x+r.r)/2,cy=(r.y+r.b)/2,out=cx<bd[0][0]||cx>bd[1][0]||cy<bd[0][1]||cy>bd[1][1];var cost=dx*dx+dy*dy+(out?40000:0);if(cost<bc){bc=cost;best=[dx,dy]}}
+    if(best)d3.select(this).attr('transform','translate('+(c[0]+best[0])+','+(c[1]+best[1])+')');
+    var fr=d3.select(this).node().getBBox();var tr=this.getCTM&&null;
+    ob.push({x:c[0]+(best?best[0]:0)+fr.x-pad,y:c[1]+(best?best[1]:0)+fr.y-pad,r:c[0]+(best?best[0]:0)+fr.x+fr.width+pad,b:c[1]+(best?best[1]:0)+fr.y+fr.height+pad});
+   });
+  })(); }
  zoomB=d3.zoom().scaleExtent([1,8]).translateExtent([[0,0],[w,h]]).filter(function(e){if(e.type==='wheel')return e.ctrlKey;if(e.touches)return e.touches.length>1;return !e.button})
   .on('zoom',function(e){cur.t=e.transform;render(e.transform)});
  svg.call(zoomB).on('dblclick.zoom',null);
