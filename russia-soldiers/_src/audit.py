@@ -329,6 +329,19 @@ for fn_, key_ in (("wagner-red-flag-chervishevskoye-2023.jpg", "img_wagner3"), (
     need("undercount photo has alt text " + fn_, re.search(r'src="img/' + re.escape(fn_) + r'"[^>]*alt="[^"]{40,}"', page) is not None)
     need("undercount photo credit and CC BY-SA 4.0 licence in sources list " + key_, SOURCES[key_]["url"] in page and "CC BY-SA 4.0" in SOURCES[key_]["full"] and "commons.wikimedia.org" in SOURCES[key_]["url"])
 need("undercount section holds four photos in one grid", len(re.findall(r"<img", re.search(r'id="undercount".*?</aside>', page, re.S).group(0))) == 4)
+# ---- flow map labels: each names its own origin; the Central Asia figure is one combined count for five states, not Kazakhstan
+_fj = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read()
+need("flow-map labels name their origin (country or group) on desktop and phone", all(x_ in _fj for x_ in ("vol:'Contract soldiers'", "mob:'Mobilised men'", "pri:'Prisoners'", "ca:'Central Asia, 5 states'", "prk:'North Korea'")) and "ph()?'':LBL" not in _fj)
+need("Central Asia tooltip says the 11,157 is one count for five named states, not one country", "One combined figure for five states: Uzbekistan, Tajikistan, Kazakhstan, Kyrgyzstan and Turkmenistan" in [a_ for a_ in J("data/flows.json")["arrows"] if a_["id"] == "ca"][0]["tip"])
+# ---- top photo strip: four real, freely licensed photos of Russian soldiers; credits only in the sources list
+for fn_, key_ in (("soldier-rpk-2023.jpg", "img_rpk"), ("soldiers-trench-2023.jpg", "img_mortar"), ("draftees-yalta-2022.jpg", "img_yalta"), ("mobilised-oath-sevastopol-2022.jpg", "img_sevastopol")):
+    sz_ = os.path.getsize(os.path.join(ROOT, "img", fn_))
+    need("top photo exists, compressed " + fn_, 20000 < sz_ < 150000)
+    need("top photo has alt text " + fn_, re.search(r'src="img/' + re.escape(fn_) + r'"[^>]*alt="[^"]{40,}"', page) is not None)
+    need("top photo credit and CC BY 4.0 licence in sources list " + key_, SOURCES[key_]["url"] in page and "CC BY 4.0" in SOURCES[key_]["full"] and "commons.wikimedia.org" in SOURCES[key_]["url"])
+_hero = re.search(r'id="hero".*?</div>', page, re.S).group(0)
+need("top strip holds four photos, above the headline-number cards", len(re.findall(r"<img", _hero)) == 4 and page.index('id="hero"') < page.index('id="kpis"'))
+need("no photo credit or author name on the top strip itself", "Ministry of Defence" not in re.sub(r"<[^>]+>", " ", _hero) and "Information Policy" not in _hero)
 _ajs = open(os.path.join(ROOT, "app.js"), encoding="utf-8").read()
 need("map layers say home region and per 100,000 residents; prisoners say recruited from prison", "Named dead recruited from prison, by home region, per 100,000 residents" in _ajs and _ajs.count("by home region, per 100,000 residents") >= 6 and "METRICS[m].what" in _ajs)
 need("map note says home region, not where a prison stands, and cites Mediazona's method", "not where a prison, unit or cemetery stands" in _html.unescape(text) and SOURCES["mz_geo"]["url"] in page and "Four years of war" in SOURCES["mz_geo"]["full"])
@@ -521,7 +534,7 @@ need("Mediazona colony data credited in Data Sources with licence, BBC partner a
 need("colonies.js is loaded and the vendored CSV sits in data/", 'src="colonies.js"' in page and os.path.exists(os.path.join(ROOT, "data", "prison-recruitment-wagner-all-colonies.csv")))
 need("prisoners section holds the colony map, the prisoner chart, the finding and three prisoner photos", page.index('id="pris-sec"') < page.index('id="colmap"') < page.index('Prisoners outnumber mobilised men among the named dead') < page.index('id="nk-sec"') and len(re.findall(r"<img", re.search(r'id="pris-sec".*?id="nk-sec"', page, re.S).group(0))) == 3)
 need("prisoners outnumber mobilised men among the named dead, 27,379 against 20,690", S["type_totals"]["pri"] == 27379 and S["type_totals"]["mob"] == 20690)
-need("foreign section carries Central Asia 11,157 recruited and at least 1,399 killed, matching the flow data", all(x_ in text for x_ in ("11,157", "1,399")) and [a_["low"] for a_ in FL["arrows"] if a_["id"] == "ca"] == [11157] and "at least 1,399 of them killed" in [a_ for a_ in FL["arrows"] if a_["id"] == "ca"][0]["tip"])
+need("foreign section carries Central Asia 11,157 recruited and at least 1,399 killed, matching the flow data", all(x_ in text for x_ in ("11,157", "1,399")) and [a_["low"] for a_ in FL["arrows"] if a_["id"] == "ca"] == [11157] and "at least 1,399 of them killed" in [a_ for a_ in J("data/flows.json")["arrows"] if a_["id"] == "ca"][0]["tip"])
 _ap = open(os.path.join(ROOT, "app.js"), encoding="utf-8").read()
 need("regional map: a transparent hit target sits at the bounding-box centre of any region whose centre falls outside its shape, and selects that region", "isPointInFill" in _ap and "regpin" in _ap and "attr('fill-opacity',0)" in _ap and "selectRegion(r)" in _ap[_ap.index("regpin"):_ap.index("regpin") + 1400] and "circle.regpin{cursor:pointer}" in open(os.path.join(ROOT, "style.css"), encoding="utf-8").read())
 need("no unresolved tokens", "{{" not in page and "[[" not in page)

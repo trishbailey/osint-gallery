@@ -55,6 +55,7 @@ def build():
     arrows = []
     for a in ARROWS:
         t = [f"<b>{eh(a['name'])}</b>", f"{rng(a['low'], a['high'])} people recruited, {eh(a['period'])}"]
+        if a["id"] == "ca": t.insert(1, "One combined figure for five states: Uzbekistan, Tajikistan, Kazakhstan, Kyrgyzstan and Turkmenistan. It is not a count for any single country.")
         if a["low"] != a["high"]:
             t.append(f"Solid width shows the low value, {a['low']:,}; the pale band reaches {a['high']:,}")
         else:

@@ -29,7 +29,7 @@ function draw(){
  var cn=gLand.append('g').selectAll('path').data(F._nb.features).enter().append('path').attr('class','cn');
  var rg=gLand.append('g').selectAll('path').data(G.features).enter().append('path').attr('class','rg')
   .attr('data-tip',function(f){var r=byNe[f.properties.name];return r?'<b>'+esc(r.en)+'</b> ('+esc(r.fd)+' district)<br>'+fmt(r.deaths)+' named dead (secondary measure): '+fmt(r.vol)+' volunteers, '+fmt(r.mob)+' mobilised, '+fmt(r.pri)+' prisoners<br>No recruitment count is published for this region<br>Mediazona regional pages, '+F.named_dead_date:''});
- var cnl=gL.append('g').selectAll('text').data(F._nb.features.filter(function(f){return{'Kazakhstan':1,'China':1,'Mongolia':1,'Belarus':1}[f.properties.name]})).enter().append('text').attr('class','cname').text(function(f){return f.properties.name});
+ var cnl=gL.append('g').selectAll('text').data(F._nb.features.filter(function(f){return{'China':1,'Mongolia':1,'Belarus':1}[f.properties.name]})).enter().append('text').attr('class','cname').text(function(f){return f.properties.name});
  var front=gL.append('g');VMAX=F.vmax;var S=strands();
  var strandG=gF.append('g'),dotG=gL.append('g'),lblG=gL.append('g');
  var hubLL=F.hub.ll;
@@ -71,12 +71,27 @@ function draw(){
   dotG.selectAll('circle').attr('cx',function(o){return proj(o.ll)[0]}).attr('cy',function(o){return proj(o.ll)[1]}).attr('data-tip',function(o){return o.tip});
   lblG.selectAll('*').remove();
   var hp=proj(hubLL);
-  if(S.some(function(s){return s.hub}))lblG.append('text').attr('class','dlab').attr('x',hp[0]-4).attr('y',Math.min.apply(null,S.filter(function(s){return s.hub}).map(function(s){return s.A[1]-s.wh/2}))-10).attr('text-anchor','start').text(ph()?'Russia':'Russia, all regions');
-  S.forEach(function(s){
-   var t=lblG.append('text').attr('class','dlab vlab').text((ph()?'':LBL[s.id]+' ')+s.label);
-   if(s.hub){t.attr('x',s.A[0]+(ph()?9:12)).attr('y',s.A[1]+5).attr('text-anchor','start')}
-   else{t.attr('x',s.p[0]).attr('y',s.p[1]+(s.id==='prk'?-12:20)).attr('text-anchor','middle')}
+  if(S.some(function(s){return s.hub}))lblG.append('text').attr('class','dlab rus').attr('x',hp[0]-4).attr('y',Math.min.apply(null,S.filter(function(s){return s.hub}).map(function(s){return s.A[1]-s.wh/2}))-10).attr('text-anchor','start').text(ph()?'Russia':'Russia, all regions');
+  /* every label names its own origin (country or group) and sits at the origin end of its arrow: foreign labels touch their origin dot,
+     the three Russian labels sit in a column beside the hub bar with a short leader line from each arrow's start */
+  function two(t,x,y1,l1,l2,anchor,gap){t.attr('text-anchor',anchor);t.append('tspan').attr('x',x).attr('y',y1).text(l1);t.append('tspan').attr('x',x).attr('y',y1+gap).attr('class','vnum').text(l2)}
+  var LN={vol:'Contract soldiers',mob:'Mobilised men',pri:'Prisoners',ca:'Central Asia, 5 states',prk:'North Korea'},gap=15;
+  S.filter(function(s){return !s.hub}).forEach(function(s){
+   var t=lblG.append('text').attr('class','dlab vlab');
+   if(s.id==='prk')two(t,s.p[0],s.p[1]-12-gap,LN[s.id],s.label,'middle',gap);
+   else two(t,s.p[0],s.p[1]+20,LN[s.id],s.label,'middle',gap);
   });
+  var hl=S.filter(function(s){return s.hub}).sort(function(a,b){return a.A[1]-b.A[1]}),lg=ph()?36:21,lx=(hp[0]+(ph()?16:20)),ly=[];
+  hl.forEach(function(s,i){var y=s.A[1];if(i&&y<ly[i-1]+lg)y=ly[i-1]+lg;ly.push(y)});
+  var shift=(hl.reduce(function(a,s){return a+s.A[1]},0)-ly.reduce(function(a,y){return a+y},0))/Math.max(1,hl.length);
+  hl.forEach(function(s,i){
+   var y=ly[i]+shift;
+   lblG.append('path').attr('class','leader').attr('d','M'+s.A[0]+','+s.A[1]+'L'+(lx-4)+','+(y-(ph()?8:4)));
+   var t=lblG.append('text').attr('class','dlab vlab');
+   if(ph())two(t,lx,y-10,LN[s.id],s.label,'start',gap);
+   else{t.attr('x',lx).attr('y',y).attr('text-anchor','start').text(LN[s.id]+' ');t.append('tspan').attr('class','vnum').text(s.label)}
+  });
+  if(hl.length){var ru=lblG.select('text.rus');if(!ru.empty()){var top=ly[0]+shift-(ph()?10+16:21),cy=+ru.attr('y');if(top<cy)ru.attr('y',top)}}
  }
  zoomB=d3.zoom().scaleExtent([1,8]).translateExtent([[0,0],[w,h]]).filter(function(e){if(e.type==='wheel')return e.ctrlKey;if(e.touches)return e.touches.length>1;return !e.button})
   .on('zoom',function(e){cur.t=e.transform;render(e.transform)});
