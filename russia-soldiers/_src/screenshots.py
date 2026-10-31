@@ -90,7 +90,7 @@ with sync_playwright() as pw:
         box_ = page.evaluate("(()=>{const r=document.querySelectorAll('#ridge .tshit')[2].getBoundingClientRect();return [r.x+r.width/2,r.y+40]})()")
         page.mouse.move(*box_); page.mouse.click(*box_) if mobile else None; page.wait_for_timeout(150)
         tp_ = page.inner_text("#ridge .rtip"); assert "2024" in tp_ and "490,000" in tp_ and "11,000" in tp_ and "no data" in tp_ and "Source" not in tp_ and "[" in tp_, tp_[:200]
-        rt_ = page.evaluate("(()=>{const e=document.querySelector('#ridge .rtip'),b=e.getBoundingClientRect(),s=document.querySelector('#ridge svg').getBoundingClientRect(),c=getComputedStyle(e);return {w:b.width,h:b.height,fs:parseFloat(c.fontSize),bg:c.backgroundColor,above:b.bottom<=s.top+1,hi:getComputedStyle(document.querySelector('#ridge .rcol')).display}})()")
+        rt_ = page.evaluate("(()=>{const e=document.querySelector('#ridge .rtip'),b=e.getBoundingClientRect(),s=document.querySelector('#ridge > svg').getBoundingClientRect(),c=getComputedStyle(e);return {w:b.width,h:b.height,fs:parseFloat(c.fontSize),bg:c.backgroundColor,above:b.bottom<=s.top+1,hi:getComputedStyle(document.querySelector('#ridge .rcol')).display}})()")
         print(tag, "ridge tip", rt_); assert rt_["h"] < 200 and rt_["w"] < 400 and rt_["fs"] >= 13 and "rgba" in rt_["bg"] and rt_["hi"] != "none", rt_
         if mobile: assert rt_["above"], "on a phone the hover sits above the chart, not over the rows"
         assert page.query_selector("#ridge [data-tip]") is None, "ridge columns use the compact hover, not the page tooltip"

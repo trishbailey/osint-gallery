@@ -245,7 +245,7 @@ circle.col:hover,circle.col:focus-visible{stroke:var(--gold);stroke-width:2px}
 .rtip .rt-nd{color:var(--muted);font-style:italic}
 .rtip .rt-m{color:var(--muted)}
 .rtip .rt-c{color:var(--muted);font-size:13px}
-.rtip-top{position:sticky;top:6px;min-width:0;margin:4px 0 6px;min-height:136px;box-sizing:border-box}
+.rtip-top{position:relative;min-width:0;margin:4px 0 6px;min-height:136px;box-sizing:border-box}
 .rtip-top.idle{display:flex;align-items:center;justify-content:center;color:var(--muted)}
 .rtip-top.idle .rt-h{font-weight:400;font-size:13px;margin:0}
 .tshit:focus{outline:none}

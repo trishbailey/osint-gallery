@@ -219,7 +219,7 @@ function ridge(sel){
   if(!best)best=[Math.min(w-tw,cx(i)+10),2];
   tipE.style.left=best[0]+'px';tipE.style.top=(top0+best[1])+'px'}
  function showCol(i){colHi.attr('x',cx(i)-cw/2).style('display',null);tipE.innerHTML=tipHtml(i);tipE.classList.remove('idle');
-  if(!N){tipE.hidden=false;placeTip(i)}}
+  if(!N){tipE.hidden=false;placeTip(i)}else{var tb=tipE.getBoundingClientRect();if(tb.top<4||tb.bottom>innerHeight-4)window.scrollBy({top:tb.top-8,behavior:'smooth'})}}
  function hideCol(){colHi.style('display','none');if(N){tipE.innerHTML=hint;tipE.classList.add('idle')}else tipE.hidden=true}
  svg.append('g').selectAll('rect').data(S.years).enter().append('rect').attr('class','tshit').attr('x',function(d,i){return cx(i)-cw/2}).attr('y',0).attr('width',cw).attr('height',H).attr('fill','transparent')
   .attr('tabindex',0).attr('aria-label',function(d,i){return S.tips[i].replace(/<[^>]+>/g,' ')})
