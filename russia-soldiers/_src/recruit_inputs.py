@@ -22,7 +22,7 @@ VOL_CONTEXT = [
  part("isw_istories23", "354,400 people signed military contracts in 2023, as opposed to 540,000 claimed by the Russian MoD", ["354,400", "540,000"], 354400, "iStories budget-based estimate for 2023: 354,400", "2025-06-05"),
  part("istories_407", "407,200 people is the maximum estimate of those recruited into the army in 2024, while the minimum number of new recruits is 374,200", ["407,200", "374,200"], 407200, "iStories budget-based estimate for 2024: 374,200 to 407,200", "2025-05-30"),
 ]
-# --- mobilised
+# --- mobilized
 MOB_CONTEXT = [part("meduza_318", "Putin said Friday that 318,000 people were drafted as part of Russia’s mobilization campaign", ["318,000"], 318000, "Putin, 4 Nov 2022: 318,000 drafted, volunteers included", "2022-11-04")]
 # --- prisoners
 PRI_LOW = [pool("wagner", 48366, "Wagner, 2022 to 2023: at least 48,366 (BBC News Russian and Mediazona, Jun 2024)", "2024-06-10", "48,366"),
@@ -39,8 +39,8 @@ ARROWS = [
       low_parts=[pool("contracts_since2022", 1300000, "roughly 1.3 million contract soldiers since 2022 (War on the Rocks, 14 Jul 2026; an estimate with no method given)", "2026-07-14", "1.3 million")],
       high_parts=VOL_HIGH, context=VOL_CONTEXT, period="2023 to first half of 2026 (no 2022 figure is counted in the high value)",
       status="Official claims add to the high end; independent budget-based estimates are 10 to 34% lower than the official figure for the same year (2023: 354,400 against 540,000; 2024: 374,200 to 407,200 against about 450,000).", dead_key="vol"),
- dict(id="mob", type="mob", name="Mobilised men", ll=None, hub=True, low=300000, high=527703,
-      low_parts=[pool("mobilised", 300000, "300,000 called up in the partial mobilisation (Defence Minister to the President, 28 Oct 2022)", "2022-10-28", "300,000")],
+ dict(id="mob", type="mob", name="Mobilized men", ll=None, hub=True, low=300000, high=527703,
+      low_parts=[pool("mobilised", 300000, "300,000 called up in the partial mobilization (Defense Minister to the President, 28 Oct 2022)", "2022-10-28", "300,000")],
       high_parts=[part("dw_mz527", "оценила число призванных в сентябре-октябре 2022 года россиян в 527 703 человека", ["527 703"], 527703, "at least 527,703 (Mediazona estimate from accelerated marriages, 2 Mar 2023)", "2023-03-02")],
       context=MOB_CONTEXT, period="September to October 2022 (one wave; no later call-up is counted)",
       status="Mediazona calls its figure a minimum; the Kremlin has not accepted it.", dead_key="mob"),
@@ -84,7 +84,7 @@ _wag22 = round(48366 * WAG_DAYS["y2022"] / WAG_DAYS["total"]); _wag23 = 48366 - 
 _stz = pool("stormz", 28200, "Storm Z, from Feb 2023: lower bound about 28,2 thousand (iStories, 6 Feb 2025)", "2025-02-06", "28,2 тыс")
 NK11 = part("bbc_shoigu", "Western officials had in January told the BBC that at least 1,000 of an estimated 11,000 North Korean troops in Russia had been killed in just three months.", ["11,000"], 11000,
             "an estimated 11,000 North Korean troops in Russia (Western officials, January 2025, via BBC, 18 Jun 2025)", "2025-06-18")
-_MOB = pool("mobilised", 300000, "300,000 called up in the partial mobilisation (Defence Minister to the President, 28 Oct 2022)", "2022-10-28", "300,000")
+_MOB = pool("mobilised", 300000, "300,000 called up in the partial mobilization (Defense Minister to the President, 28 Oct 2022)", "2022-10-28", "300,000")
 def yp(typ, year, value, parts, period, what, ctx=(), alloc=None, note="", pq=()):
     return dict(type=typ, year=year, value=value, parts=parts, period=period, what=what, ctx=list(ctx), alloc=alloc, note=note, pq=list(pq))
 def gap(typ, year, note): return dict(type=typ, year=year, value=None, parts=[], period="", what="", ctx=[], alloc=None, note=note, pq=[])
@@ -94,7 +94,7 @@ YEARLY = [
  yp("vol", 2024, 490000, [VOL_HIGH[1], VOL_HIGH[2]], "Jan to Dec 2024", "official claim: about 450,000 contracts plus over 40,000 volunteer-formation recruits (Medvedev, 24 Jan 2025)", ctx=["independent estimate from budget data: 374,200 to 407,200 (iStories)"]),
  yp("vol", 2025, 454704, [VOL_HIGH[3], VOL_HIGH[4]], "Jan to Dec 2025", "official claim: 422,704 contracts plus 32,000 volunteers (Medvedev, 16 Jan 2026)"),
  yp("vol", 2026, 200000, [VOL_HIGH[5]], "Jan to Jun 2026 only", "official claim: around 200,000 in the first half (Medvedev, reported 30 Jul 2026)", note="Half a year only: not comparable with a full year."),
- yp("mob", 2022, 300000, [_MOB], "Sep to Oct 2022", "the partial mobilisation: 300,000 called up (Defence Minister to the President, 28 Oct 2022)", ctx=["Mediazona later estimated at least 527,703 for the same call-up"], note="One call-up wave."),
+ yp("mob", 2022, 300000, [_MOB], "Sep to Oct 2022", "the partial mobilization: 300,000 called up (Defense Minister to the President, 28 Oct 2022)", ctx=["Mediazona later estimated at least 527,703 for the same call-up"], note="One call-up wave."),
  gap("mob", 2023, "No source gives a figure for this year."), gap("mob", 2024, "No source gives a figure for this year."), gap("mob", 2025, "No source gives a figure for this year."), gap("mob", 2026, "No source gives a figure for this year."),
  yp("pri", 2022, _wag22, [_wag], "1 Jul to 31 Dec 2022 (184 of 222 days)", f"Wagner: at least 48,366 over 1 Jul 2022 to 7 Feb 2023; {_wag22:,} of it allocated to 2022 by days", alloc=dict(share=WAG_DAYS["y2022"], of=WAG_DAYS["total"]),
     note="An allocation at an even pace, not a count: the source gives one total for the whole period.", pq=[("meduza_wagner", "Первая вербовка состоялась 1 июля 2022 года"), ("meduza_wagner", "7 февраля 2023 года")]),
@@ -111,7 +111,7 @@ YEARLY += [gap("nk", 2022, "No source gives a figure for this year."), gap("nk",
            yp("nk", 2024, 11000, [NK11], "Oct to Dec 2024", "an estimated 11,000 North Korean troops in Russia (Western officials, January 2025, via BBC)", ctx=["Later totals are cumulative: about 13,000 sent since Oct 2024 (South Korea's NIS, Sep 2025)"]),
            gap("nk", 2025, "No yearly figure: later estimates are cumulative (about 13,000 sent since Oct 2024, NIS; 11,000 to 14,000 in the Kursk campaign, BBC)."),
            gap("nk", 2026, "No yearly figure.")]
-RIDGE_ROWS = [("vol", "Contract and volunteers", "#e43d3c", "Contract"), ("mob", "Mobilised", "#2ec4b6", "Mobilised"), ("pri", "Prisoners (Wagner, Storm Z)", "#e8c547", "Prisoners"),
+RIDGE_ROWS = [("vol", "Contract and volunteers", "#e43d3c", "Contract"), ("mob", "Mobilized", "#2ec4b6", "Mobilized"), ("pri", "Prisoners (Wagner, Storm Z)", "#e8c547", "Prisoners"),
                  ("for", "Foreign nationals (incl. Central Asia)", "#4f9dff", "Foreign"), ("nk", "North Korea (troops)", "#b07cf0", "N. Korea")]
 RIDGE_LABEL = "Yearly estimates from different sources; rows are separate estimates, not an official total."
 
@@ -123,4 +123,4 @@ INDEP = [
  dict(type="vol", year=2024, low=374200, high=407200, parts=[VOL_CONTEXT[1]], what="independent estimate from budget data (iStories): 374,200 to 407,200"),
  dict(type="mob", year=2022, low=527703, high=527703, parts=[part("dw_mz527", "оценила число призванных в сентябре-октябре 2022 года россиян в 527 703 человека", ["527 703"], 527703, "at least 527,703 (Mediazona estimate from accelerated marriages, 2 Mar 2023)", "2023-03-02")], what="independent estimate (Mediazona)"),
 ]
-RIDGE_TITLES = {"vol": "Contract and volunteers", "mob": "Mobilised", "pri": "Prisoners (Wagner, Storm Z)", "for": "Foreign (incl. Central Asia)", "nk": "North Korea (troops)"}
+RIDGE_TITLES = {"vol": "Contract and volunteers", "mob": "Mobilized", "pri": "Prisoners (Wagner, Storm Z)", "for": "Foreign (incl. Central Asia)", "nk": "North Korea (troops)"}

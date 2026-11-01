@@ -1,8 +1,8 @@
-"""Regional signing payments (standard Defence Ministry contract, regional budget part only), transcribed from the
+"""Regional signing payments (standard Defense Ministry contract, regional budget part only), transcribed from the
 VoenSchet card snapshot saved in data/raw/voenschet_cards_snapshot_2026-10-28.txt.
-(iso, name on VoenSchet, regional roubles, status, fragment copied verbatim from the card)
-status: ok = card says verified or updated; ends_oct31 = card says the programme runs only to 31 Oct 2026;
-stale = card says data older than 30 days, needs a new check, or programme expired; range = card gives a range and the upper end is charted; unpublished = amount comes from media reports or an unpublished act."""
+(iso, name on VoenSchet, regional rubles, status, fragment copied verbatim from the card)
+status: ok = card says verified or updated; ends_oct31 = card says the program runs only to 31 Oct 2026;
+stale = card says data older than 30 days, needs a new check, or program expired; range = card gives a range and the upper end is charted; unpublished = amount comes from media reports or an unpublished act."""
 FEDERAL = 400000  # federal sign-on payment, per the same cards ("федеральными 400 000 ₽") and Kluge
 B = [
 ("RU-CHU","Чукотский АО",3600000,"ok","3 600 000 ₽ из окружного бюджета за контракт не менее чем на год"),
@@ -83,17 +83,17 @@ B = [
 ]
 # regions on the map left out of the bonus chart, with the reason read from their VoenSchet card
 EXCLUDED = {
- "RU-CU":("Чувашская Республика","programme ran only to 30 Sep 2026 with no extension found"),
+ "RU-CU":("Чувашская Республика","program ran only to 30 Sep 2026 with no extension found"),
  "RU-KL":("Республика Калмыкия","card does not say whether the 3 million includes the federal payment"),
  "RU-IN":("Республика Ингушетия","amount depends on the unit and no figure is given"),
  "RU-OMS":("Омская область","decree ran only to 1 Oct 2026 and no new act was found"),
  "RU-UD":("Удмуртская Республика","regional amount not confirmed"),
- "RU-SAM":("Самарская область","reported cut from 2.2 million to 400,000 roubles with no act found"),
+ "RU-SAM":("Самарская область","reported cut from 2.2 million to 400,000 rubles with no act found"),
 }
 
 # Added in round 3: regions that were excluded and now have a figure from a second source, kept apart because the
 # fragment is checked against a different saved page (data/raw/quotes/<file>.txt).
-# (iso, name, regional roubles, status, fragment, file)
+# (iso, name, regional rubles, status, fragment, file)
 B2 = [
 ("RU-KGD","Калининградская обл.",1400000,"stale","| Калининградская обл. | 1 800 000 | 1 400 000 | - |","gogov"),
 ("RU-NIZ","Нижегородская обл.",1500000,"stale","| Нижегородская обл. | 1 900 000 | 1 500 000 |","gogov"),

@@ -250,3 +250,6 @@ circle.col:hover,circle.col:focus-visible{stroke:var(--gold);stroke-width:2px}
 .rtip-top.idle .rt-h{font-weight:400;font-size:13px;margin:0}
 .tshit:focus{outline:none}
 .citydot{fill:#fff;stroke:#0b1526;stroke-width:1.6px}.citylab{font-size:14px;font-weight:700;fill:#fff;paint-order:stroke;stroke:#0b1526;stroke-width:4px;stroke-linejoin:round;pointer-events:none}
+
+.kpi-duo b.duo{display:flex;flex-direction:column;gap:6px;font-size:inherit;line-height:1.1}.kpi-duo .duo i{font-style:normal;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:8px;min-width:0}.kpi-duo .duo strong{font-size:1.6rem;line-height:1.1;color:var(--r2)}.kpi-duo .duo em{font-style:normal;font-size:.9rem;line-height:1.25;font-weight:600;color:var(--text)}
+@media (max-width:560px){.kpi-duo .duo strong{font-size:1.35rem}}

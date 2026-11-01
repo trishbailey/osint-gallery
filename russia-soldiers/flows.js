@@ -6,7 +6,7 @@ var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').
 var fmt=function(n){return Number(n).toLocaleString('en-US')};
 var ph=function(){return window.matchMedia('(max-width:700px)').matches};
 var F,R,G,byNe={},feat={},on={vol:true,mob:true,pri:true,'for':true},T0=null,svg,zoomB,cur,VMAX=1;
-var IDX={vol:0,mob:1,pri:2,ca:1,prk:1},LBL={vol:'Contract and volunteers',mob:'Mobilised',pri:'Prisoners','for':'Foreign nationals',ca:'Central Asia',prk:'North Korea'};
+var IDX={vol:0,mob:1,pri:2,ca:1,prk:1},LBL={vol:'Contract and volunteers',mob:'Mobilized',pri:'Prisoners','for':'Foreign nationals',ca:'Central Asia',prk:'North Korea'};
 var wOf=function(v){return Math.max(F.wmin,(ph()?F.wmax_ph:F.wmax)*v/VMAX)};
 var pathGeo;
 
@@ -16,7 +16,7 @@ function draw(){
  var el=$('#flowmap');if(!el)return;var w=el.clientWidth;if(!w)return;var h=ph()?460:520;
  el.innerHTML='';
  svg=d3.select(el).append('svg').attr('width',w).attr('height',h).attr('role','img')
-  .attr('aria-label','Map of Russia and neighbouring countries with curved arrows from Russia, Central Asia and North Korea to the front in Ukraine. Arrow width shows the number of people recruited; colour shows how they joined.');
+  .attr('aria-label','Map of Russia and neighboring countries with curved arrows from Russia, Central Asia and North Korea to the front in Ukraine. Arrow width shows the number of people recruited; color shows how they joined.');
  var proj=d3.geoConicConformal().rotate([-100,0]).parallels([52,64]);
  var pts=[];for(var lo=20;lo<=135;lo+=5){pts.push([lo,35.5]);pts.push([lo,67.5])}for(var la=35.5;la<=67.5;la+=4){pts.push([20,la]);pts.push([135,la])}
  proj.fitExtent([[6,6],[w-6,h-6]],{type:'MultiPoint',coordinates:pts});
@@ -28,7 +28,7 @@ function draw(){
  var gLand=svg.append('g'),gF=svg.append('g'),gL=svg.append('g');
  var cn=gLand.append('g').selectAll('path').data(F._nb.features).enter().append('path').attr('class','cn');
  var rg=gLand.append('g').selectAll('path').data(G.features).enter().append('path').attr('class','rg')
-  .attr('data-tip',function(f){var r=byNe[f.properties.name];return r?'<b>'+esc(r.en)+'</b> ('+esc(r.fd)+' district)<br>'+fmt(r.deaths)+' named dead (secondary measure): '+fmt(r.vol)+' volunteers, '+fmt(r.mob)+' mobilised, '+fmt(r.pri)+' prisoners<br>No recruitment count is published for this region<br>Mediazona regional pages, '+F.named_dead_date:''});
+  .attr('data-tip',function(f){var r=byNe[f.properties.name];return r?'<b>'+esc(r.en)+'</b> ('+esc(r.fd)+' district)<br>'+fmt(r.deaths)+' named dead (secondary measure): '+fmt(r.vol)+' volunteers, '+fmt(r.mob)+' mobilized, '+fmt(r.pri)+' prisoners<br>No recruitment count is published for this region<br>Mediazona regional pages, '+F.named_dead_date:''});
  var cnl=gL.append('g').selectAll('text').data(F._nb.features.filter(function(f){return{'China':1,'Mongolia':1,'Belarus':1}[f.properties.name]})).enter().append('text').attr('class','cname').text(function(f){return f.properties.name});
  var front=gL.append('g');VMAX=F.vmax;var S=strands();
  var strandG=gF.append('g'),dotG=gL.append('g'),lblG=gL.append('g');
@@ -73,7 +73,7 @@ function draw(){
   /* every label names its own origin (country or group) and sits at the origin end of its arrow: foreign labels touch their origin dot,
      the three Russian labels sit in a column beside the hub bar with a short leader line from each arrow's start */
   function two(t,x,y1,l1,l2,anchor,gap){t.attr('text-anchor',anchor);t.append('tspan').attr('x',x).attr('y',y1).text(l1);t.append('tspan').attr('x',x).attr('y',y1+gap).attr('class','vnum').text(l2)}
-  var LN={vol:'Contract soldiers',mob:'Mobilised men',pri:'Prisoners',ca:'Central Asia: 5 of 151 source countries',prk:'North Korea'},gap=15;
+  var LN={vol:'Contract soldiers',mob:'Mobilized men',pri:'Prisoners',ca:'Central Asia: 5 of 151 source countries',prk:'North Korea'},gap=15;
   S.filter(function(s){return !s.hub}).forEach(function(s){
    var t=lblG.append('text').attr('class','dlab vlab');
    if(s.id==='prk')two(t,s.p[0],s.p[1]-12-gap,LN[s.id],s.label,'middle',gap);
@@ -121,7 +121,7 @@ function pick(k){on[k]=!on[k];var b=document.querySelector('.fchip[data-k="'+k+'
 function legend(){
  var by={};F.arrows.forEach(function(a){by[a.id]=a});
  var sub={vol:fmt(by.vol.low)+' to '+fmt(by.vol.high),mob:fmt(by.mob.low)+' to '+fmt(by.mob.high),pri:fmt(by.pri.low)+' to '+fmt(by.pri.high),'for':'North Korea '+fmt(by.prk.low)+' to '+fmt(by.prk.high)+'; Central Asia '+fmt(by.ca.low)};
- var h='<div class="fk-col"><h3 class="sideh">Colour: how they joined</h3><div class="seg">';
+ var h='<div class="fk-col"><h3 class="sideh">Color: how they joined</h3><div class="seg">';
  ['vol','mob','pri','for'].forEach(function(k){h+='<button type="button" class="chipb fchip" data-k="'+k+'" aria-pressed="true"><span class="sw" style="background:'+F.types[k].color+'"></span><span class="fl">'+esc(F.types[k].name)+'<small>'+sub[k]+' recruited</small></span></button>'});
  h+='</div></div>';
  $('#flowkey').innerHTML=h;

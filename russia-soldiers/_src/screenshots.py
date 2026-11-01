@@ -196,7 +196,7 @@ with sync_playwright() as pw:
                 page.evaluate("document.querySelector('#flowmap').scrollIntoView({block:'center'})"); page.wait_for_timeout(300); pt = t.evaluate(FIND)
             if pt is None: pt = t.evaluate(FINE)
             if pt is None:
-                # marks under about 8 px across (small regions on the phone, colony circles) or colony circles covered by a neighbour
+                # marks under about 8 px across (small regions on the phone, colony circles) or colony circles covered by a neighbor
                 # cannot be hit without zooming in; zooming is how a visitor reaches them, so they are not counted as dead targets
                 tb = t.bounding_box() or {"width": 0, "height": 0}
                 if min(tb["width"], tb["height"]) < 8 or t.evaluate("e=>!!e.closest('#colmap') || e.matches('#map path.reg')"): continue  # map regions are hover-tested above and in the CI click check

@@ -51,14 +51,14 @@ def values():
                  f"But the pattern is uneven: Tuva ({n0(tu['deaths_rate'])}, {n1(tu['ru_share'])}% Russian) is highest, while Chechnya ({n0(by['RU-CE']['deaths_rate'])}) and Ingushetia ({n0(by['RU-IN']['deaths_rate'])}) are among the lowest, and the link with Russian share is weak (r = {sg(c['ru']['pearson'][0])}, p = {c['ru']['pearson'][1]:.2f}).")
     o = S["ols"]
     V["ols"] = (f"Fitting distance, wage and Russian share together on {o['n']} regions explains {n0(o['r2']*100)}% of the variation in rates, and almost all of that comes from distance "
-                f"(standardised weights: distance {n2(o['beta_dist'])}, wage {n2(o['beta_wage'])}, Russian share {n2(o['beta_ru'])}).")
+                f"(standardized weights: distance {n2(o['beta_dist'])}, wage {n2(o['beta_wage'])}, Russian share {n2(o['beta_ru'])}).")
     top = bs[0]
     V["capb"] = (f"Finding: the bonus is worth a median of {n1(S['bonus_median_months'])} months of local wages across {S['bonus_n']} regions, and the most months are offered in regions with lower wages: "
                  f"{top['en']} ({n1(top['bonus']['months'])} months), then {bs[1]['en']} and {bs[2]['en']}. The regions with the biggest bonuses in months have lower death rates, not higher ones "
                  f"(Spearman {sg(S['bonus_corr_all']['spearman'][0])} across {S['bonus_corr_all']['n']} regions, {sg(S['bonus_corr_firm']['spearman'][0])} across the {S['bonus_corr_firm']['n']} firm ones, which is not significant). "
                  f"Bonuses are a sign of how hard a region is pushed to recruit, and the data here do not show them reaching the people who die.")
     tt = S["type_totals"]; tot = S["named_85"]
-    V["captype"] = (f"Finding: among the {n0(tot)} names in the 85 regions, {n0(tt['vol'])} are labelled volunteers, {n0(tt['pri'])} prisoners and {n0(tt['mob'])} mobilised men. The rest are labelled by arm of service or have no data. "
+    V["captype"] = (f"Finding: among the {n0(tot)} names in the 85 regions, {n0(tt['vol'])} are labeled volunteers, {n0(tt['pri'])} prisoners and {n0(tt['mob'])} mobilized men. The rest are labeled by arm of service or have no data. "
                     f"Volunteer and prisoner rates both rise with distance from Moscow (Spearman {sg(S['type_dist_spearman']['vol'][0])} and {sg(S['type_dist_spearman']['pri'][0])}).")
     V["capb"] = V["capb"].replace("Bonuses are a sign of how hard a region is pushed to recruit, and the data here do not show them reaching the people who die.", "A bigger bonus relative to pay does not go with more deaths in a region.")
     # --- round 3: one-line verdicts (long explanations stay behind toggles) and new sections
@@ -68,27 +68,27 @@ def values():
                   f"and poverty adds {n1((op['r2'] - od['r2']) * 100)} points to the {n1(od['r2'] * 100)}% that distance already explains.")
     V["pov_how"] = (f"Poverty is the share of residents with income below the poverty line, Rosstat 2025. The link is positive but weak: Pearson r = {sg(c['pov']['pearson'][0])} (p = {c['pov']['pearson'][1]:.2f}), "
                     f"Spearman {sg(c['pov']['spearman'][0])} (p = {c['pov']['spearman'][1]:.2f}), and it is no stronger without the two derived regions (r = {sg(c['pov_published']['pearson'][0])} across {c['pov_published']['n']}). "
-                    f"Poor regions are also remote (poverty against distance, Spearman {sg(c['pov_dist']['spearman'][0])}), and with distance in the model poverty\u2019s standardised weight falls to {n2(op['beta_pov'])} against {n2(op['beta_dist'])} for distance. "
+                    f"Poor regions are also remote (poverty against distance, Spearman {sg(c['pov_dist']['spearman'][0])}), and with distance in the model poverty\u2019s standardized weight falls to {n2(op['beta_pov'])} against {n2(op['beta_dist'])} for distance. "
                     f"The poorest regions split: Ingushetia ({n1(pt['RU-IN'][2])}% poor) and Chechnya ({n1(pt['RU-CE'][2])}%) have {n0(pt['RU-IN'][3])} and {n0(pt['RU-CE'][3])} named dead per 100,000, among the lowest, "
                     f"while Tuva ({n1(pt['RU-TY'][2])}%, {n0(pt['RU-TY'][3])}) and Buryatia ({n1(pt['RU-BU'][2])}%, {n0(pt['RU-BU'][3])}) are among the highest.")
     V["v_wage"] = f"Wages: no clear pattern. Spearman {sg(c['wage']['spearman'][0])}; lowest-paid quarter {n0(q[0]['rate'])}, below the two middle quarters ({n0(q[1]['rate'])} and {n0(q[2]['rate'])})."
     V["v_eth"] = (f"Minority: mixed. Republics {n0(g['republics']['rate'])} against {n0(g['non_republics']['rate'])} elsewhere, but Russian share alone is not linked (r = {sg(c['ru']['pearson'][0])}, p = {c['ru']['pearson'][1]:.2f}, 85 regions).")
     V["v_bonus"] = f"Bonus: median {n1(S['bonus_median_months'])} months of local wages across {S['bonus_n']} regions; bigger bonuses go with lower death rates (Spearman {sg(S['bonus_corr_all']['spearman'][0])})."
-    V["v_type"] = f"Named dead by label: {n0(tt['vol'])} volunteers, {n0(tt['pri'])} prisoners, {n0(tt['mob'])} mobilised."
+    V["v_type"] = f"Named dead by label: {n0(tt['vol'])} volunteers, {n0(tt['pri'])} prisoners, {n0(tt['mob'])} mobilized."
     V["v_rank"] = f"The ten highest rates hold {n1(S['top10_pop_share'])}% of residents but {n1(S['top10_death_share'])}% of the named dead; none is in the Central district."
     V["uc_line"] = f"The named list undercounts. A probate-registry estimate puts Russian military dead at {n0(pr['total'])} by the end of 2025, {n1(pr['mult'])} times the {n0(pr['named_at_date'])} names on the list when it was made."
     import build_flows; build_flows.build()
     FL = D("flows.json")
     A = {x["id"]: x for x in FL["arrows"]}; BR = {x["kind"]: x["n"] for x in FL["bars"]}
     assert A["vol"]["low"] > A["mob"]["high"] > A["pri"]["low"] and BR["pri"] > BR["mob"] and FL["bars"][0]["kind"] == "vol"
-    V["v_flow"] = (f"Contract soldiers and volunteers are by far the biggest inflow: {n0(A['vol']['low'])} to {n0(A['vol']['high'])} recruited, against {n0(A['mob']['low'])} to {n0(A['mob']['high'])} mobilised and "
+    V["v_flow"] = (f"Contract soldiers and volunteers are by far the biggest inflow: {n0(A['vol']['low'])} to {n0(A['vol']['high'])} recruited, against {n0(A['mob']['low'])} to {n0(A['mob']['high'])} mobilized and "
                    f"{n0(A['pri']['low'])} to {n0(A['pri']['high'])} prisoners.")
     import recruit_inputs as RIY
     YV = {(y_["type"], y_["year"]): y_ for y_ in RIY.YEARLY}
     assert YV[("vol", 2023)]["value"] > YV[("vol", 2025)]["value"] and YV[("for", 2025)]["value"] > YV[("for", 2023)]["value"]
     V["ridge_label"] = RIY.RIDGE_LABEL
     V["ridge_note"] = ("Each row has its own scale: every row is linear from zero to the maximum printed beside its name, so heights are not comparable between rows. "
-                       "A filled curve joins only consecutive years that both have a sourced value. A glowing dot is a single year with no neighbour to join, and part-year points (2026) are never joined. "
+                       "A filled curve joins only consecutive years that both have a sourced value. A glowing dot is a single year with no neighbor to join, and part-year points (2026) are never joined. "
                        "Solid is the official claim or the single published figure; the dashed curve and lighter band are an independent estimate. Hover or tap a year for exact values and sources.")
     V["flow_skipped"] = FL["skipped"]; V["flow_notdrawn"] = FL["not_drawn"]
     import nk_inputs as NKI
@@ -97,7 +97,7 @@ def values():
                  "Contested: how many North Koreans have died (2,304 named by the BBC against 3,000 claimed by Ukraine) and the missile unit.")
     V["r_dag_ru"] = n1(by["RU-DA"]["ru_share"])
     V["r_ru_p"] = f"{c['ru']['pearson'][1]:.2f}"
-    V["ols_pov"] = (f"With distance, poverty and Russian share together on 85 regions, {n0(S['ols_pov']['r2']*100)}% of the variation is explained (standardised weights: distance {n2(S['ols_pov']['beta_dist'])}, "
+    V["ols_pov"] = (f"With distance, poverty and Russian share together on 85 regions, {n0(S['ols_pov']['r2']*100)}% of the variation is explained (standardized weights: distance {n2(S['ols_pov']['beta_dist'])}, "
                     f"poverty {n2(S['ols_pov']['beta_pov'])}, Russian share {n2(S['ols_pov']['beta_ru'])}).")
     V["pov_derived"] = " and ".join(S["pov_derived"])
     V["probate_regular"] = n0(pr["regular"]); V["probate_late"] = n0(pr["late"])
@@ -118,7 +118,7 @@ def values():
                     f"Mediazona and BBC News Russian found {CO['rows']} such numbers, from K1 to K617 with 116 missing, and matched 341 of them to named colonies; locations are as plotted on Mediazona\u2019s map. "
                     f"{n0(ud['n'] - 1)} colonies could not be named, and one more, IK24 Ukhta, is not drawn because Mediazona\u2019s English and Russian labels name different colonies (Ukhta in Komi, and Fornosovo near St Petersburg); "
                     f"together they hold {n0(ud['recruits'])} of the {n0(CO['total_recruits'])} recruits. \u201cKilled\u201d comes from Wagner\u2019s payment records, which cover deaths from January 2022 to August 2023, and is not a loss rate for the recruits.")
-    V["v_type_pris"] = f"Prisoners outnumber mobilised men among the named dead: {n0(tt['pri'])} against {n0(tt['mob'])}.[[mz_regions]]"
+    V["v_type_pris"] = f"Prisoners outnumber mobilized men among the named dead: {n0(tt['pri'])} against {n0(tt['mob'])}.[[mz_regions]]"
     V["v_for"] = (f"Foreign contract signers counted by Ukraine rose from {n0(YV[('for', 2023)]['value'])} in 2023 to {n0(YV[('for', 2025)]['value'])} in 2025;[[liga_foreign]] "
                   f"{n0(A['ca']['low'])} recruits are from Central Asia.[[occrp_foreign]]")
     V["ca_n"] = n0(A["ca"]["low"]); V["ca_killed"] = "1,399"
@@ -138,7 +138,7 @@ def values():
     V["ridge_table"] = "<ul class=\"yrlist\">" + "".join(items) + "</ul>"
     V["ridge_how"] = ("Every row is one estimate per calendar year, taken from the source numbered next to it; the sources differ, so the rows are separate estimates that do not add up to an official total. "
                        "Each row has its own linear scale from zero. A year with no source is a gap: it is left empty and marked \u201cno data\u201d, and nothing is interpolated or carried over from another year. "
-                       "Contract soldiers and volunteers are official claims, so they may be inflated; independent budget-data estimates are lower and are drawn as a dashed curve with a lighter band (a range for 2024). Mediazona\u2019s later estimate of the 2022 mobilisation is a hollow ring. 2026 is part-year, so it is shown as a dot and not joined. "
+                       "Contract soldiers and volunteers are official claims, so they may be inflated; independent budget-data estimates are lower and are drawn as a dashed curve with a lighter band (a range for 2024). Mediazona\u2019s later estimate of the 2022 mobilization is a hollow ring. 2026 is part-year, so it is shown as a dot and not joined. "
                        "<b>Allocation method.</b> Wagner\u2019s total of at least 48,366 prisoners covers 1 July 2022 to 7 February 2023, 222 days.[[ng_wagner]][[meduza_wagner]] "
                        f"At an even pace, 184 days fall in 2022 ({n0(YV[('pri', 2022)]['value'])}) and 38 in 2023 ({n0(YV[('pri', 2023)]['value'] - 28200)}), which is an allocation, not a count; Wagner\u2019s real pace was uneven. "
                        "Storm Z\u2019s 28,200 (iStories\u2019 lower bound; the range runs to 29,000)[[istories]] is all placed in 2023 and leaves out the first wave. The prisoners layer for 2023 is the sum. "
@@ -146,9 +146,9 @@ def values():
                        "Foreign nationals are Ukraine\u2019s yearly counts of contract signers[[liga_foreign]] and include Central Asians, whose total is not split by year.[[occrp_foreign]]")
     return V
 
-GROUPS = [("contracts", "Contract soldiers (volunteers)"), ("mobilised", "Mobilised men"), ("prisoners", "Prisoners"), ("foreigners", "Foreign recruits"), ("northkorea", "North Korea: troops and workers")]
+GROUPS = [("contracts", "Contract soldiers (volunteers)"), ("mobilised", "Mobilized men"), ("prisoners", "Prisoners"), ("foreigners", "Foreign recruits"), ("northkorea", "North Korea: troops and workers")]
 def pool_rows(groups):
-    items = [p for p in D("pools.json")["items"] if p["low"] and p["unit"] != "roubles"]
+    items = [p for p in D("pools.json")["items"] if p["low"] and p["unit"] != "rubles"]
     mx = max(p["high"] for p in items)
     out = []
     for gk, gl in [g for g in GROUPS if g[0] in groups]:
