@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-01T01:02:06Z",
+ "as_of": "2026-11-01T11:09:28Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,40 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2116771749870080010",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2116771749870080010",
+   "created_at": "2026-11-01T05:58:07.000Z",
+   "text": "Detienen a dos policías de Tránsito de Ixtapaluca por secuestrar a transportista y exigirle 40 mil pesos https://t.co/wT8zN4AwH1",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Two Ixtapaluca traffic police officers arrested for kidnapping a trucker and demanding 40,000 pesos from him"
+  },
+  {
+   "id": "2116706658223321268",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2116706658223321268",
+   "created_at": "2026-11-01T01:39:28.000Z",
+   "text": "🕯️ Con una fosa simbólica frente al Palacio Municipal, el Colectivo Por Las Voces Sin Justicia AC y familias buscadoras de Mazatlán exigen visibilizar las desapariciones y apoyo para continuar buscando a sus seres queridos. https://t.co/b7YIuv2x8A",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "🕯️ With a symbolic grave in front of the Municipal Palace, the Colectivo Por Las Voces Sin Justicia AC and searching families of Mazatlán demand visibility for the disappearances and support to keep searching for their loved ones."
+  },
   {
    "id": "2116690435573756376",
    "handle": "Primicias",
@@ -3931,91 +3965,6 @@
    "source_type": "national outlet",
    "label": null,
    "text_en": "The criminal cell is linked to the Sinaloa Cartel, specifically the faction led by the son of Ismael \"El Mayo\" Zambada"
-  },
-  {
-   "id": "2114227957694669113",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2114227957694669113",
-   "created_at": "2026-10-25T05:30:00.000Z",
-   "text": "Cuestionan gasto de mil 200 millones en Rodeo Saltillo ante falta de recursos para desaparecidos El Centro Fray Juan de Larios cuestionó que se privilegien proyectos de espectáculos mientras persisten carencias en las labores de búsqueda e identificación humana.",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2708"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "1.2 billion pesos spent on Rodeo Saltillo questioned amid lack of resources for the disappeared. The Centro Fray Juan de Larios questioned favouring entertainment projects while search and human-identification work remains under-resourced."
-  },
-  {
-   "id": "2114171109075489255",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2114171109075489255",
-   "created_at": "2026-10-25T01:44:06.000Z",
-   "text": "Abaten a “El Meny Carranza” y detienen a cuatro más tras enfrentamiento armado en San Antonio, Sonora https://t.co/Eiypo8oSpH",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2712"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "\"El Meny Carranza\" killed and four others arrested after armed clash in San Antonio, Sonora"
-  },
-  {
-   "id": "2114168912266903940",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2114168912266903940",
-   "created_at": "2026-10-25T01:35:22.000Z",
-   "text": "➡️ Asegura FGR Terraza Valentino’s en #Mazatlán por caso Carlos Emilio 🚨🚔| A más de un año del caso Carlos Emilio en Mazatlán, aseguran Terraza Valentino’s. La FGR colocó este sábado sellos en el inmueble como parte de las investigaciones por la desaparición del joven https://t.…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "➡️ FGR seizes Terraza Valentino's in #Mazatlán over the Carlos Emilio case. More than a year after the Carlos Emilio case in Mazatlán, Terraza Valentino's was seized. On Saturday the FGR placed seals on the property as part of the investigation into the young man's disappearance…"
-  },
-  {
-   "id": "2114167559859888216",
-   "handle": "ArmandoInfo",
-   "url": "https://x.com/ArmandoInfo/status/2114167559859888216",
-   "created_at": "2026-10-25T01:30:00.000Z",
-   "text": "En la cotizada urbanización Altamira, una edificación de dos pisos de lo que parecía iba ser una obra residencial, quedó inconclusa. Pertenecía al círculo de Alex Saab. En la fachada se ve ahora un cartel descolorido de la Dgcim, pero permanece sin custodia https://t.co/7mROl7y2…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2716"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "regional outlet",
-   "label": null,
-   "text_en": "In the upscale Altamira development, a two-storey building that appeared to be a residential project was left unfinished. It belonged to Alex Saab's circle. A faded DGCIM sign now hangs on the facade, but it remains unguarded"
-  },
-  {
-   "id": "2114160766207078813",
-   "handle": "SSPCMexico",
-   "url": "https://x.com/SSPCMexico/status/2114160766207078813",
-   "created_at": "2026-10-25T01:03:00.000Z",
-   "text": "Como resultado de la coordinación interinstitucional, en #Sonora fueron detenidos cuatro generadores de violencia y neutralizado Francisco “N”, alias “El Meny Carranza”, identificado como objetivo prioritario en la región. También se aseguró armamento y droga. https://t.co/wJf3H…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2712"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "official",
-   "label": "Official statement",
-   "text_en": "As a result of inter-agency coordination, four violence generators were arrested in #Sonora and Francisco \"N\", alias \"El Meny Carranza\", identified as a priority target in the region, was neutralised. Weapons and drugs were also seized."
   }
  ]
 }

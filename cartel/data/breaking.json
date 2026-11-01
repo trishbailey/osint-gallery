@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-01T01:02:06Z",
+ "as_of": "2026-11-01T11:09:28Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -9,11 +9,69 @@
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
   {
+   "id": "0eac5c18eb",
+   "status": "single_source",
+   "title": "Detienen a dos policías de Tránsito de Ixtapaluca por secuestrar a transportista y exigirle 40 mil pesos",
+   "lang": "es",
+   "title_en": "Two Ixtapaluca traffic police officers arrested for kidnapping a trucker and demanding 40,000 pesos from him",
+   "first_report": "2026-11-01T05:58:07Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2116771749870080010",
+     "time": "2026-11-01T05:58:07Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "05c7810e1e",
+   "status": "single_source",
+   "title": "🕯️ Con una fosa simbólica frente al Palacio Municipal, el Colectivo Por Las Voces Sin Justicia AC y familias buscadoras de Mazatlán exigen visibilizar las desapariciones y apoyo para continuar buscand",
+   "lang": "es",
+   "title_en": "🕯️ With a symbolic grave in front of the Municipal Palace, the Colectivo Por Las Voces Sin Justicia AC and searching families of Mazatlán demand visibility for the disappearances and support to keep searching",
+   "first_report": "2026-11-01T01:39:28Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2116706658223321268",
+     "time": "2026-11-01T01:39:28Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
    "id": "f65f3d92d7",
    "status": "single_source",
    "title": "La Policía realizó un reporte de los daños y afectaciones ocasionados por el ataque con explosivos a un camión de gas en Puerto Bolívar, Machala y ofreció recompensas por información de los presuntos ",
    "lang": "es",
-   "title_en": "Police issued a report on the damage caused by the explosives attack on a gas truck in Puerto Bolívar, Machala, and offered rewards for information on the alleged",
+   "title_en": "Police issued a report on the damage caused by the explosives attack on a gas truck in Puerto Bolívar, Machala, and offered rewards for information on the alleged perpetrators.",
    "first_report": "2026-11-01T00:35:00Z",
    "first_report_precision": "minute",
    "first_source": "Primicias",
@@ -165,8 +223,8 @@
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
    "region_ids": [
-    "MEX-2706",
-    "MEX-2710"
+    "MEX-2710",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [
@@ -259,8 +317,8 @@
    "first_report_precision": "minute",
    "first_source": "Crisis Group",
    "region_ids": [
-    "HTI-1387",
-    "HTI-1386"
+    "HTI-1386",
+    "HTI-1387"
    ],
    "country": "HTI",
    "group_ids": [],
@@ -398,8 +456,8 @@
    "first_source": "Infobae",
    "region_ids": [
     "MEX-2719",
-    "MEX-2706",
-    "MEX-2723"
+    "MEX-2723",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [
@@ -663,8 +721,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "GTM-1951",
-    "MEX-2719"
+    "MEX-2719",
+    "GTM-1951"
    ],
    "country": "MEX",
    "group_ids": [
@@ -753,15 +811,15 @@
    "first_report_precision": "day",
    "first_source": "El Financiero",
    "region_ids": [
-    "MEX-2719",
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2719"
    ],
    "country": "MEX",
    "group_ids": [
     "mayiza",
-    "sinaloa",
+    "chapitos",
     "cjng",
-    "chapitos"
+    "sinaloa"
    ],
    "outlets": [
     "El Financiero"
@@ -817,8 +875,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2736",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2736"
    ],
    "country": "MEX",
    "group_ids": [
@@ -854,8 +912,8 @@
    "country": "MEX",
    "group_ids": [
     "mayiza",
-    "sinaloa",
-    "chapitos"
+    "chapitos",
+    "sinaloa"
    ],
    "outlets": [
     "Infobae"
@@ -887,8 +945,8 @@
    "country": "MEX",
    "group_ids": [
     "mayiza",
-    "sinaloa",
-    "chapitos"
+    "chapitos",
+    "sinaloa"
    ],
    "outlets": [
     "Infobae"
@@ -952,8 +1010,8 @@
    "country": "MEX",
    "group_ids": [
     "mayiza",
-    "sinaloa",
-    "chapitos"
+    "chapitos",
+    "sinaloa"
    ],
    "outlets": [
     "Infobae"
@@ -1072,8 +1130,8 @@
    "country": "MEX",
    "group_ids": [
     "mayiza",
-    "sinaloa",
-    "chapitos"
+    "chapitos",
+    "sinaloa"
    ],
    "outlets": [
     "MVS Noticias"
@@ -1220,8 +1278,8 @@
    "region_ids": [],
    "country": "HND",
    "group_ids": [
-    "ms13",
-    "tda"
+    "tda",
+    "ms13"
    ],
    "outlets": [
     "Infobae"
@@ -1248,8 +1306,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "GTM-1951",
-    "GTM-1963"
+    "GTM-1963",
+    "GTM-1951"
    ],
    "country": "GTM",
    "group_ids": [],
@@ -1461,8 +1519,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "eln",
-    "tda"
+    "tda",
+    "eln"
    ],
    "outlets": [
     "Semana"
@@ -1599,8 +1657,8 @@
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
    "region_ids": [
-    "MEX-2706",
-    "MEX-2710"
+    "MEX-2710",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [
@@ -2264,12 +2322,12 @@
    ]
   },
   {
-   "id": "6d919a369c",
+   "id": "20aeef42fd",
    "status": "single_source",
-   "title": "➡️ Localizan con vida a turistas del Estado de México que habían desaparecido en Capomos, Angostura #ÚltimaHora 🚨🚔| Localizan con vida a turistas del Estado de México, Noé García Vargas y José Luis Am",
+   "title": "Localizan con vida a los dos jóvenes del Edomex desaparecidos en Angostura La Primera Emisión de “Los Noticieristas” con Luis Alberto Díaz y todo su equipo.",
    "lang": "es",
-   "title_en": "Tourists from the State of Mexico who had disappeared in Capomos, Angostura, are found alive #BreakingNews | Tourists from the State of Mexico, Noé García Vargas and José Luis Amador Rosas, reported missing on October 21",
-   "first_report": "2026-10-30T02:38:51Z",
+   "title_en": "The two young people from Edomex who went missing in Angostura have been found alive. The First Edition of “Los Noticieristas” with Luis Alberto Díaz and his whole team.",
+   "first_report": "2026-10-30T12:58:10Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
    "region_ids": [
@@ -2286,57 +2344,9 @@
      "name": "Los Noticieristas",
      "kind": "outlet",
      "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2115996827229016177",
-     "time": "2026-10-30T02:38:51Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
      "url": "https://x.com/noticieristas/status/2116152683950477762",
      "time": "2026-10-30T12:58:10Z",
      "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "c2ca5c5d09",
-   "status": "confirmed",
-   "title": "#HoyEnAnimal 29 de octubre: México despide a Cuauhtémoc Cárdenas, Sheinbaum propone que Talleres Gráficos produzca más material electoral y detienen a una funcionaria de Uruapan por presunto encubrimi",
-   "lang": "es",
-   "title_en": "#HoyEnAnimal October 29: Mexico bids farewell to Cuauhtémoc Cárdenas, Sheinbaum proposes that Talleres Gráficos produce more electoral material, and a Uruapan official is detained for alleged cover-up in the Carlos Manzo",
-   "first_report": "2026-10-30T03:00:01Z",
-   "first_report_precision": "minute",
-   "first_source": "Animal Político",
-   "region_ids": [
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Animal Político",
-    "Milenio"
-   ],
-   "sources": [
-    {
-     "outlet": "animal",
-     "name": "Animal Político",
-     "kind": "outlet",
-     "via": "X @Pajaropolitico",
-     "url": "https://x.com/Pajaropolitico/status/2116002152720302204",
-     "time": "2026-10-30T03:00:01Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/detienen-alejandra-vargas-funcionaria-uruapan-caso-manzo",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
     }
    ]
   },
@@ -2355,8 +2365,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "choneros",
-    "lobos"
+    "lobos",
+    "choneros"
    ],
    "outlets": [
     "AP"
@@ -2419,8 +2429,8 @@
    "country": null,
    "group_ids": [
     "clan",
-    "eln",
-    "exfarc"
+    "exfarc",
+    "eln"
    ],
    "outlets": [
     "El Tiempo",
@@ -2509,8 +2519,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "choneros",
-    "lobos"
+    "lobos",
+    "choneros"
    ],
    "outlets": [
     "El Universal"
@@ -2541,10 +2551,10 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
     "gulf",
-    "unidos",
-    "juarez"
+    "juarez",
+    "cjng",
+    "unidos"
    ],
    "outlets": [
     "Infobae"
@@ -2576,8 +2586,8 @@
    "country": "MEX",
    "group_ids": [
     "mayiza",
-    "sinaloa",
-    "chapitos"
+    "chapitos",
+    "sinaloa"
    ],
    "outlets": [
     "Milenio"
@@ -2589,6 +2599,35 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://milenio.com/policia/cartel-de-guasave-quienes-son-y-como-crecio-el-poder-del-chapo-isidro",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "11533679ef",
+   "status": "single_source",
+   "title": "Detienen a Alejandra Vargas, funcionaria de Uruapan, por caso Manzo- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-30T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/detienen-alejandra-vargas-funcionaria-uruapan-caso-manzo",
      "time": "2026-10-30T12:00:00Z",
      "time_precision": "day"
     }
@@ -2877,8 +2916,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "choneros",
-    "lobos"
+    "lobos",
+    "choneros"
    ],
    "outlets": [
     "Infobae"
@@ -2992,9 +3031,9 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2706",
+    "MEX-2711",
     "MEX-2712",
-    "MEX-2711"
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [
@@ -3102,152 +3141,6 @@
      "url": "https://www.infobae.com/panama/2026/10/30/panama-golpea-al-narcotrafico-con-1208-paquetes-de-droga-incautados-en-menos-de-24-horas/",
      "time": "2026-10-30T12:00:00Z",
      "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "0c88bb978e",
-   "status": "single_source",
-   "title": "Bloqueos y balaceras en Matamoros dejan una niña sin vida; su madre y rescatista resultan heridos La jornada de violencia afectó diferentes sectores de Matamoros, luego de un operativo de autoridades ",
-   "lang": "es",
-   "title_en": "Blockades and shootouts in Matamoros leave a girl dead; her mother and a rescuer are wounded. The day of violence affected different parts of Matamoros, after an operation by federal authorities in which an alleged prior",
-   "first_report": "2026-10-30T03:20:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Proceso",
-   "region_ids": [
-    "MEX-2716"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Proceso"
-   ],
-   "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2116007181929902258",
-     "time": "2026-10-30T03:20:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "2b1a84a887",
-   "status": "single_source",
-   "title": "El detenido, identificado como Axel Alfredo Cárdenas Rodríguez, resultó ser hijo de “El Contador” y sobrino nieto de Osiel Cárdenas Guillén, fundador del Cártel del Golfo y de Los Zetas",
-   "lang": "es",
-   "title_en": "The detainee, identified as Axel Alfredo Cárdenas Rodríguez, turned out to be the son of \"El Contador\" and the great-nephew of Osiel Cárdenas Guillén, founder of the Gulf Cartel and Los Zetas.",
-   "first_report": "2026-10-30T02:38:46Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "gulf",
-    "cdn"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115996806119121407",
-     "time": "2026-10-30T02:38:46Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "3228d3172d",
-   "status": "single_source",
-   "title": "La acusación es la séptima en el caso del túnel, donde se decomisó más de una tonelada de cocaína",
-   "lang": "es",
-   "title_en": "The indictment is the seventh in the tunnel case, in which more than a tonne of cocaine was seized",
-   "first_report": "2026-10-30T02:30:46Z",
-   "first_report_precision": "minute",
-   "first_source": "ZETA Tijuana",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "ZETA Tijuana"
-   ],
-   "sources": [
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "X @ZETATijuana",
-     "url": "https://x.com/ZETATijuana/status/2115994792165351472",
-     "time": "2026-10-30T02:30:46Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "14d94a828c",
-   "status": "single_source",
-   "title": "La extradición de ocho procesados a Estados Unidos da pistas sobre una estrategia que apunta a una red transnacional que unía a la cúpula de Los Choneros, a proveedores de cocaína de las FARC, a lavad",
-   "lang": "es",
-   "title_en": "The extradition of eight defendants to the United States offers clues to a strategy aimed at a transnational network linking the Los Choneros leadership, FARC cocaine suppliers, cryptocurrency launderers and state ties i",
-   "first_report": "2026-10-30T01:13:46Z",
-   "first_report_precision": "minute",
-   "first_source": "Primicias",
-   "region_ids": [],
-   "country": "ECU",
-   "group_ids": [
-    "choneros"
-   ],
-   "outlets": [
-    "Primicias"
-   ],
-   "sources": [
-    {
-     "outlet": "primicias",
-     "name": "Primicias",
-     "kind": "outlet",
-     "via": "X @Primicias",
-     "url": "https://x.com/Primicias/status/2115975417014169762",
-     "time": "2026-10-30T01:13:46Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "d0db7acbc1",
-   "status": "single_source",
-   "title": "#Patricio fue detenido en la carretera México 15, #Escuinapa-#Mazatlán, en el entronque del Libramiento a Chilillos, #Rosario con un arma de fuego tipo fusil, 107 cartuchos, cuatro cargadores, siete c",
-   "lang": "es",
-   "title_en": "#Patricio was detained on the México 15 highway, #Escuinapa-#Mazatlán, at the junction with the Chilillos bypass, #Rosario, with a rifle-type firearm, 107 cartridges, four magazines, seven shell casings and 80 small bags",
-   "first_report": "2026-10-30T01:10:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2115974465980961268",
-     "time": "2026-10-30T01:10:00Z",
-     "time_precision": "minute"
     }
    ]
   }
