@@ -17,7 +17,7 @@ function key(){
  $('#colkey').innerHTML=h}
 function top(){
  var a=C.colonies.slice().sort(function(x,y){return y.n-x.n}).slice(0,10);
- $('#coltop').innerHTML=a.map(function(c,i){return '<li tabindex="0" data-tip="'+esc(tip(c))+'"><span class="ct-n">'+fmt(c.n)+'</span><span class="ct-l"><b>'+esc(c.name)+'</b>, '+esc(c.region)+'</span><span class="ct-k">'+fmt(c.killed)+' killed</span></li>'}).join('')}
+ $('#coltop').innerHTML=a.map(function(c,i){return '<li><span class="ct-n">'+fmt(c.n)+'</span><span class="ct-l"><b>'+esc(c.name)+'</b>, '+esc(c.region)+'</span><span class="ct-k">'+fmt(c.killed)+' killed</span></li>'}).join('')}
 function draw(){
  var el=$('#colmap');if(!el)return;var w=el.clientWidth;if(!w)return;var h=ph()?400:540;
  el.innerHTML='';

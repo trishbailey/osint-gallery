@@ -73,7 +73,7 @@
    "low": 11157,
    "high": 11157,
    "label": "11,157",
-   "tip": "<b>Central Asia (five states)</b><br>One combined figure for five states: Uzbekistan, Tajikistan, Kazakhstan, Kyrgyzstan and Turkmenistan. It is not a count for any single country.<br>11,157 people recruited, to late 2025 (OCCRP report)<br>Width shows 11,157<br>Low: Central Asia, five states: 11,157 recruits (Ukraine's Coordination Headquarters, via OCCRP)<br>Also: at least 1,399 of them killed (same source)<br>Ukrainian figures that OCCRP could not check independently."
+   "tip": "<b>Central Asia (five states)</b><br>One combined figure for five states: Uzbekistan, Tajikistan, Kazakhstan, Kyrgyzstan and Turkmenistan. It is not a count for any single country. These five are only some of the 151 countries and territories that foreign contract signers come from (45,959 identified by Ukraine, to 1 Oct 2026); recruits from every other country are not on this map and are in the Foreign recruits section.<br>11,157 people recruited, to late 2025 (OCCRP report)<br>Width shows 11,157<br>Low: Central Asia, five states: 11,157 recruits (Ukraine's Coordination Headquarters, via OCCRP)<br>Also: at least 1,399 of them killed (same source)<br>Ukrainian figures that OCCRP could not check independently."
   },
   {
    "id": "prk",
@@ -320,6 +320,198 @@
    "<b>2024</b><br><b>Contract and volunteers: 490,000</b> (Jan to Dec 2024)<br>Official claim: about 450,000 contracts plus over 40,000 volunteer-formation recruits (Medvedev, 24 Jan 2025)<br>Also: independent estimate from budget data: 374,200 to 407,200 (iStories)<br>Source: TASS, 24 Jan 2025<br><b>Mobilised: no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><b>Prisoners (Wagner, Storm Z): no data</b><br>No yearly count exists. The 140,000 to 180,000 convict figure is a cumulative claim by Ukraine. Nothing is drawn.<br><b>Foreign nationals (incl. Central Asia): 8,877</b> (Jan to Dec 2024)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (8,877)<br>Also: Central Asia: 11,157 to late 2025 in total, with no yearly split (inside this count)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): 11,000</b> (Oct to Dec 2024)<br>An estimated 11,000 North Korean troops in Russia (Western officials, January 2025, via BBC)<br>Also: Later totals are cumulative: about 13,000 sent since Oct 2024 (South Korea's NIS, Sep 2025)<br>Source: BBC News, 18 Jun 2025<br><i>Estimates from different sources, not an official total. Each row has its own scale.</i>",
    "<b>2025</b><br><b>Contract and volunteers: 454,704</b> (Jan to Dec 2025)<br>Official claim: 422,704 contracts plus 32,000 volunteers (Medvedev, 16 Jan 2026)<br>Source: Interfax, 16 Jan 2026<br><b>Mobilised: no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><b>Prisoners (Wagner, Storm Z): no data</b><br>No yearly count exists. Nothing is drawn.<br><b>Foreign nationals (incl. Central Asia): 16,085</b> (Jan to Dec 2025)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (16,085)<br>Also: Central Asia: 11,157 to late 2025 in total, with no yearly split (inside this count)<br>Source: LIGA.net, 19 Oct 2026<br><b>North Korea (troops): no data</b><br>No yearly figure: later estimates are cumulative (about 13,000 sent since Oct 2024, NIS; 11,000 to 14,000 in the Kursk campaign, BBC). Nothing is drawn.<br><i>Estimates from different sources, not an official total. Each row has its own scale.</i>",
    "<b>2026 (part year, see each row)</b><br><b>Contract and volunteers: 200,000</b> (Jan to Jun 2026 only)<br>Official claim: around 200,000 in the first half (Medvedev, reported 30 Jul 2026)<br>Source: Novaya Gazeta Europe, 30 Jul 2026<br>Half a year only: not comparable with a full year.<br><b>Mobilised: no data</b><br>No source gives a figure for this year. Nothing is drawn.<br><b>Prisoners (Wagner, Storm Z): no data</b><br>No yearly count exists. Nothing is drawn.<br><b>Foreign nationals (incl. Central Asia): 16,168</b> (Jan to Sep 2026 only)<br>Foreign nationals who signed Russian contracts, as counted by Ukraine (16,168)<br>Source: LIGA.net, 19 Oct 2026<br>Nine months only.<br><b>North Korea (troops): no data</b><br>No yearly figure. Nothing is drawn.<br><i>Estimates from different sources, not an official total. Each row has its own scale.</i>"
+  ],
+  "ctips": [
+   [
+    {
+     "id": "vol",
+     "v": null,
+     "c": []
+    },
+    {
+     "id": "mob",
+     "v": 300000,
+     "alloc": false,
+     "part": null,
+     "c": [
+      10
+     ]
+    },
+    {
+     "id": "pri",
+     "v": 40087,
+     "alloc": true,
+     "part": null,
+     "c": [
+      13,
+      14
+     ]
+    },
+    {
+     "id": "for",
+     "v": 94,
+     "alloc": false,
+     "part": null,
+     "c": [
+      17
+     ]
+    },
+    {
+     "id": "nk",
+     "v": null,
+     "c": []
+    }
+   ],
+   [
+    {
+     "id": "vol",
+     "v": 540000,
+     "alloc": false,
+     "part": null,
+     "c": [
+      7
+     ]
+    },
+    {
+     "id": "mob",
+     "v": null,
+     "c": []
+    },
+    {
+     "id": "pri",
+     "v": 36479,
+     "alloc": true,
+     "part": null,
+     "c": [
+      13,
+      15,
+      14
+     ]
+    },
+    {
+     "id": "for",
+     "v": 4067,
+     "alloc": false,
+     "part": null,
+     "c": [
+      17
+     ]
+    },
+    {
+     "id": "nk",
+     "v": null,
+     "c": []
+    }
+   ],
+   [
+    {
+     "id": "vol",
+     "v": 490000,
+     "alloc": false,
+     "part": null,
+     "c": [
+      19
+     ]
+    },
+    {
+     "id": "mob",
+     "v": null,
+     "c": []
+    },
+    {
+     "id": "pri",
+     "v": null,
+     "c": []
+    },
+    {
+     "id": "for",
+     "v": 8877,
+     "alloc": false,
+     "part": null,
+     "c": [
+      17
+     ]
+    },
+    {
+     "id": "nk",
+     "v": 11000,
+     "alloc": false,
+     "part": null,
+     "c": [
+      16
+     ]
+    }
+   ],
+   [
+    {
+     "id": "vol",
+     "v": 454704,
+     "alloc": false,
+     "part": null,
+     "c": [
+      20
+     ]
+    },
+    {
+     "id": "mob",
+     "v": null,
+     "c": []
+    },
+    {
+     "id": "pri",
+     "v": null,
+     "c": []
+    },
+    {
+     "id": "for",
+     "v": 16085,
+     "alloc": false,
+     "part": null,
+     "c": [
+      17
+     ]
+    },
+    {
+     "id": "nk",
+     "v": null,
+     "c": []
+    }
+   ],
+   [
+    {
+     "id": "vol",
+     "v": 200000,
+     "alloc": false,
+     "part": "Jan to Jun",
+     "c": [
+      21
+     ]
+    },
+    {
+     "id": "mob",
+     "v": null,
+     "c": []
+    },
+    {
+     "id": "pri",
+     "v": null,
+     "c": []
+    },
+    {
+     "id": "for",
+     "v": 16168,
+     "alloc": false,
+     "part": "Jan to Sep",
+     "c": [
+      17
+     ]
+    },
+    {
+     "id": "nk",
+     "v": null,
+     "c": []
+    }
+   ]
   ],
   "label": "Yearly estimates from different sources; rows are separate estimates, not an official total."
  },

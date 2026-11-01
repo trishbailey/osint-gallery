@@ -191,6 +191,11 @@ def build():
     assert "{{" not in src and "[[" not in src, re.findall(r"\{\{.*?\}\}|\[\[.*?\]\]", src)
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(src)
     cites = {k: i + 1 for i, k in enumerate(order)}
+    # the compact ridgeline hover carries the page's own citation numbers
+    fj = os.path.join(ROOT, "data", "flows.json"); FJ = json.load(open(fj, encoding="utf-8"))
+    for yr_ in FJ["ridge"]["ctips"]:
+        for e_ in yr_: e_["c"] = [cites[k_] for k_ in e_["c"]]
+    json.dump(FJ, open(fj, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump(cites, open(os.path.join(ROOT, "data", "cites.json"), "w"), indent=1)
     return cites, order, V
 

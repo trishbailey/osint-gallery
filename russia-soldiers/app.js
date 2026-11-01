@@ -63,7 +63,13 @@ function drawMap(){
   if(this.isPointInFill(pt))return;var own=this,hit=false;gMap.selectAll('path.reg').each(function(){if(this!==own&&this.isPointInFill(pt))hit=true});if(hit)return; /* centre lies in another region: that region owns the click */
   gPin.append('circle').datum(f).attr('class','regpin').attr('cx',pt.x).attr('cy',pt.y).attr('r',6).attr('fill','#000').attr('fill-opacity',0)
    .attr('data-tip',function(){var r=byNe[f.properties.name];return r?regionTip(r,metric):''}).on('click',function(e,d){var r=byNe[d.properties.name];if(r)selectRegion(r)})});
- zoom=d3.zoom().scaleExtent([1,14]).translateExtent([[0,0],[w,h]]).on('zoom',function(e){gMap.attr('transform',e.transform)});
+ /* city markers: Moscow and St Petersburg, drawn above the regions on every layer; white dot and label with a dark halo, kept the same size when zooming, and never catching a click */
+ var gCity=gMap.append('g').attr('class','cities').attr('aria-hidden','true').style('pointer-events','none');
+ [['St Petersburg',30.32,59.94,8,-9],['Moscow',37.62,55.75,8,19]].forEach(function(c){var p=proj([c[1],c[2]]);
+  var g=gCity.append('g').attr('class','city').attr('data-xy',p[0]+','+p[1]).attr('transform','translate('+p+')');
+  g.append('circle').attr('class','citydot').attr('r',4.5);g.append('text').attr('class','citylab').attr('x',c[3]).attr('y',c[4]).text(c[0])});
+ zoom=d3.zoom().scaleExtent([1,14]).translateExtent([[0,0],[w,h]]).on('zoom',function(e){gMap.attr('transform',e.transform);
+  gCity.selectAll('g.city').attr('transform',function(){var p=this.getAttribute('data-xy');return 'translate('+p+') scale('+(1/e.transform.k)+')'})});
  svgMap.call(zoom);
  if(selected)markSel();
 }

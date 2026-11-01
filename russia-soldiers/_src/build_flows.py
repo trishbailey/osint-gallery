@@ -46,7 +46,17 @@ def ridge_build():
     for yr in YEARS:
         lab = f"<b>{yr}{' (part year, see each row)' if yr == 2026 else ''}</b>"
         tips.append(lab + "<br>" + "<br>".join(line(k, yr) for k, *_ in RIDGE_ROWS) + "<br><i>Estimates from different sources, not an official total. Each row has its own scale.</i>")
-    return dict(years=YEARS, rows=rows, tips=tips, label=RIDGE_LABEL)
+    # compact hover: per year one short entry per type (value, part-year flag, citation keys; build_site turns the keys into the page's citation numbers)
+    ctips = []
+    for yr in YEARS:
+        e = []
+        for k, nm, col, sh in RIDGE_ROWS:
+            y = Y[(k, yr)]
+            if y["value"] is None: e.append(dict(id=k, v=None, c=[])); continue
+            ck = list(dict.fromkeys([q["src"] for q in y["parts"]] + [a for a, _ in y["pq"]]))
+            e.append(dict(id=k, v=y["value"], alloc=bool(y["alloc"]), part=PART_YEAR.get((k, yr)), c=ck))
+        ctips.append(e)
+    return dict(years=YEARS, rows=rows, tips=tips, ctips=ctips, label=RIDGE_LABEL)
 
 def build():
     R = json.load(open(os.path.join(ROOT, "data", "regions.json"), encoding="utf-8"))["regions"]
@@ -55,7 +65,7 @@ def build():
     arrows = []
     for a in ARROWS:
         t = [f"<b>{eh(a['name'])}</b>", f"{rng(a['low'], a['high'])} people recruited, {eh(a['period'])}"]
-        if a["id"] == "ca": t.insert(1, "One combined figure for five states: Uzbekistan, Tajikistan, Kazakhstan, Kyrgyzstan and Turkmenistan. It is not a count for any single country.")
+        if a["id"] == "ca": t.insert(1, "One combined figure for five states: Uzbekistan, Tajikistan, Kazakhstan, Kyrgyzstan and Turkmenistan. It is not a count for any single country. These five are only some of the 151 countries and territories that foreign contract signers come from (45,959 identified by Ukraine, to 1 Oct 2026); recruits from every other country are not on this map and are in the Foreign recruits section.")
         if a["low"] != a["high"]:
             t.append(f"Solid width shows the low value, {a['low']:,}; the pale band reaches {a['high']:,}")
         else:
