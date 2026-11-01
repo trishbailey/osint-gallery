@@ -61,7 +61,7 @@ def ridge_build():
 def build():
     R = json.load(open(os.path.join(ROOT, "data", "regions.json"), encoding="utf-8"))["regions"]
     dead = {k: sum(r[k] for r in R) for k in ("vol", "mob", "pri")}
-    dead_txt = {"vol": "volunteers and contract soldiers", "mob": "mobilised men", "pri": "prisoners"}
+    dead_txt = {"vol": "volunteers and contract soldiers", "mob": "mobilized men", "pri": "prisoners"}
     arrows = []
     for a in ARROWS:
         t = [f"<b>{eh(a['name'])}</b>", f"{rng(a['low'], a['high'])} people recruited, {eh(a['period'])}"]

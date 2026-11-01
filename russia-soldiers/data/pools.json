@@ -52,11 +52,11 @@
   {
    "id": "mobilised",
    "pool": "mobilised",
-   "label": "Mobilised men, Sept to Oct 2022",
+   "label": "Mobilized men, Sept to Oct 2022",
    "low": 300000,
    "high": 300000,
    "unit": "men",
-   "text": "300,000 men called up in the partial mobilisation announced on 21 Sep 2022 and declared complete on 28 Oct 2022",
+   "text": "300,000 men called up in the partial mobilization announced on 21 Sep 2022 and declared complete on 28 Oct 2022",
    "figures": [
     "300,000",
     "82,000"
@@ -64,7 +64,7 @@
    "src": "kremlin",
    "quote": "the partial mobilisation effort, which involved calling up 300,000 people and deploying them to military units",
    "quote2": "After completing the training, 82,000 reservists were sent to the area of the special military operation, including more than 41,000 who joined units there",
-   "note": "Defence Minister’s report to the president; 82,000 had been sent to the combat zone by that date."
+   "note": "Defense Minister’s report to the president; 82,000 had been sent to the combat zone by that date."
   },
   {
    "id": "wagner",
@@ -84,7 +84,7 @@
   {
    "id": "stormz",
    "pool": "prisoners",
-   "label": "Prisoners in Storm Z units (Defence Ministry)",
+   "label": "Prisoners in Storm Z units (Defense Ministry)",
    "low": 28200,
    "high": 29000,
    "unit": "prisoners",
@@ -233,8 +233,8 @@
    "label": "Fee paid to a private recruiter per signed contract",
    "low": 1250000,
    "high": 1250000,
-   "unit": "roubles",
-   "text": "private recruiters paid up to 1.25 million roubles per contract through Moscow and 850,000 through Orenburg",
+   "unit": "rubles",
+   "text": "private recruiters paid up to 1.25 million rubles per contract through Moscow and 850,000 through Orenburg",
    "figures": [
     "1.25 million",
     "850,000"

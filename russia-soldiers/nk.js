@@ -77,7 +77,7 @@ function mapDraw(){
  svg.call(zm).on('dblclick.zoom',null);svg.call(zm.transform,cur.t);el.setAttribute('data-ready','1');
 }
 function key(){
- var h='<h3 class="sideh">Colour: what moves</h3><ul class="legend">';
+ var h='<h3 class="sideh">Color: what moves</h3><ul class="legend">';
  Object.keys(N.kinds).forEach(function(k){h+='<li><span class="sw" style="background:'+N.kinds[k].color+'"></span>'+esc(N.kinds[k].name)+'</li>'});
  h+='</ul><h3 class="sideh">Line: how firm</h3><ul class="legend">';
  [['documented','Documented',null],['reported','Reported','16 7'],['contested','Contested','2 8']].forEach(function(x){

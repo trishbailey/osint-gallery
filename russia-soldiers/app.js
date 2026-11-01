@@ -6,14 +6,14 @@ var fmt=function(x,d){d=d||0;return x.toLocaleString('en-US',{minimumFractionDig
 var NAVY='#12203a';
 var METRICS={deaths:{name:'All named dead',what:'named dead',legend:'Named dead per 100,000',unit:'named dead per 100,000',sfx:''},
  vol:{name:'Volunteers',what:'named dead who joined as volunteers',legend:'Named dead who joined as volunteers, by home region, per 100,000 residents',unit:'named dead who joined as volunteers, by home region, per 100,000 residents',sfx:''},
- mob:{name:'Mobilised',what:'named dead who were mobilised',legend:'Named dead who were mobilised, by home region, per 100,000 residents',unit:'named dead who were mobilised, by home region, per 100,000 residents',sfx:''},
+ mob:{name:'Mobilized',what:'named dead who were mobilized',legend:'Named dead who were mobilized, by home region, per 100,000 residents',unit:'named dead who were mobilized, by home region, per 100,000 residents',sfx:''},
  pri:{name:'Prisoners',what:'named dead recruited from prison',legend:'Named dead recruited from prison, by home region, per 100,000 residents',unit:'named dead recruited from prison, by home region, per 100,000 residents',sfx:''},
  dist:{name:'Distance from Moscow',legend:'Distance from Moscow, straight line, km',unit:'km from Moscow in a straight line',sfx:' km'},
  pov:{name:'Poverty rate',legend:'Residents below the poverty line, 2025, %',unit:'of residents below the poverty line (2025)',sfx:'%'},
  ru:{name:'Russian share',legend:'Ethnic Russians, share of residents, 2020 census, %',unit:'of residents ethnic Russian (2020 census)',sfx:'%'},
  bonus:{name:'Bonus in months',legend:'Signing bonus in months of local average wage',unit:'months of local average wage',sfx:''}};
 function valOf(r,m){return m==='dist'?r.dist_km:m==='pov'?r.pov:m==='ru'?r.ru_share:m==='bonus'?(r.bonus&&r.bonus.months!=null?r.bonus.months:null):r[m+'_rate']}
-var STATUS={range:'The card gives a regional range of 1.5 to 3 million roubles. The upper end is charted.',ok:'Firm: the regional card says the amount is confirmed.',ends_oct31:'The programme runs only to 31 Oct 2026.',stale:'The card data (or, for Kaliningrad, Nizhny Novgorod and Kirov, a Jan 2026 aggregator table) is more than 30 days old, or the programme is marked expired.',unpublished:'The amount comes from media reports or an unpublished act.'};
+var STATUS={range:'The card gives a regional range of 1.5 to 3 million rubles. The upper end is charted.',ok:'Firm: the regional card says the amount is confirmed.',ends_oct31:'The program runs only to 31 Oct 2026.',stale:'The card data (or, for Kaliningrad, Nizhny Novgorod and Kirov, a Jan 2026 aggregator table) is more than 30 days old, or the program is marked expired.',unpublished:'The amount comes from media reports or an unpublished act.'};
 var R,S,G,byNe={},byIso={},metric='deaths',selected=null,tipEl,bonusAll=false,firmOnly=false;
 var phone=function(){return window.matchMedia('(max-width:700px)').matches};
 
@@ -42,7 +42,7 @@ function regionTip(r,m){var v=valOf(r,m);
  if(m==='pov')return '<b>'+esc(r.en)+'</b><br>'+fmt(v,1)+'% '+METRICS[m].unit+(r.pov_kind==='derived'?'<br>Derived from the poor headcount and population':'');
  if(m==='dist')return '<b>'+esc(r.en)+'</b><br>'+fmt(v)+' km from Moscow in a straight line<br>'+fmt(r.deaths_rate,1)+' named dead per 100,000 (rank '+rank(r,'deaths_rate')+' of 85)';
  if(m==='ru')return '<b>'+esc(r.en)+'</b><br>'+fmt(v,1)+'% '+METRICS[m].unit;
- if(m==='bonus'){var b=r.bonus;return v==null?'<b>'+esc(r.en)+'</b><br>No signing-bonus figure: '+esc(b.excluded):'<b>'+esc(r.en)+'</b><br>'+fmt(v,1)+' '+METRICS[m].unit+'<br>'+fmt(b.total)+' roubles in total'}
+ if(m==='bonus'){var b=r.bonus;return v==null?'<b>'+esc(r.en)+'</b><br>No signing-bonus figure: '+esc(b.excluded):'<b>'+esc(r.en)+'</b><br>'+fmt(v,1)+' '+METRICS[m].unit+'<br>'+fmt(b.total)+' rubles in total'}
  var c=r[m];return '<b>'+esc(r.en)+'</b><br>'+fmt(v,1)+' '+METRICS[m].unit+'<br>'+fmt(c)+' '+METRICS[m].what+' among '+fmt(r.pop)+' residents'+(m==='deaths'?'<br>Rank '+rank(r,'deaths_rate')+' of 85 by named dead per 100,000':'')}
 /* map */
 var proj,pathGen,zoom,gMap,svgMap;
@@ -56,11 +56,11 @@ function drawMap(){
   .attr('data-tip',function(f){var r=byNe[f.properties.name];return r?regionTip(r,metric):''})
   .attr('fill',function(f){return fillOf(byNe[f.properties.name],metric)})
   .on('click',function(e,f){var r=byNe[f.properties.name];if(r)selectRegion(r)});
- /* Invisible hit target for a region whose bounding-box centre lies outside its own shape (a coast or a bay: Yamalo-Nenets, Arkhangelsk). A click or tap at that centre,
+ /* Invisible hit target for a region whose bounding-box center lies outside its own shape (a coast or a bay: Yamalo-Nenets, Arkhangelsk). A click or tap at that center,
     where automated and assistive pointers aim, selects the region like a click on its land does. Transparent, so nothing changes visually. */
  var gPin=gMap.append('g').attr('class','regpins').attr('aria-hidden','true');
  gMap.selectAll('path.reg').each(function(f){var b=this.getBBox(),pt=svgMap.node().createSVGPoint();pt.x=b.x+b.width/2;pt.y=b.y+b.height/2;
-  if(this.isPointInFill(pt))return;var own=this,hit=false;gMap.selectAll('path.reg').each(function(){if(this!==own&&this.isPointInFill(pt))hit=true});if(hit)return; /* centre lies in another region: that region owns the click */
+  if(this.isPointInFill(pt))return;var own=this,hit=false;gMap.selectAll('path.reg').each(function(){if(this!==own&&this.isPointInFill(pt))hit=true});if(hit)return; /* center lies in another region: that region owns the click */
   gPin.append('circle').datum(f).attr('class','regpin').attr('cx',pt.x).attr('cy',pt.y).attr('r',6).attr('fill','#000').attr('fill-opacity',0)
    .attr('data-tip',function(){var r=byNe[f.properties.name];return r?regionTip(r,metric):''}).on('click',function(e,d){var r=byNe[d.properties.name];if(r)selectRegion(r)})});
  /* city markers: Moscow and St Petersburg, drawn above the regions on every layer; white dot and label with a dark halo, kept the same size when zooming, and never catching a click */
@@ -85,11 +85,11 @@ function selectRegion(r){selected=r;markSel();var b=r.bonus,h='<h3>'+esc(r.en)+'
  var row=function(a,v){h+='<dt>'+a+'</dt><dd>'+v+'</dd>'};
  row('Federal district',r.fd);row('Residents (1 Jan 2024)',fmt(r.pop));
  row('Named dead',fmt(r.deaths));row('Per 100,000',fmt(r.deaths_rate,1)+' (rank '+rank(r,'deaths_rate')+' of 85)');
- row('Volunteers',fmt(r.vol)+' ('+fmt(r.vol_rate,1)+' per 100,000)');row('Mobilised',fmt(r.mob)+' ('+fmt(r.mob_rate,1)+')');row('Prisoners',fmt(r.pri)+' ('+fmt(r.pri_rate,1)+')');
- row('Average wage, 2025',fmt(r.wage)+' roubles');
+ row('Volunteers',fmt(r.vol)+' ('+fmt(r.vol_rate,1)+' per 100,000)');row('Mobilized',fmt(r.mob)+' ('+fmt(r.mob_rate,1)+')');row('Prisoners',fmt(r.pri)+' ('+fmt(r.pri_rate,1)+')');
+ row('Average wage, 2025',fmt(r.wage)+' rubles');
  row('Poverty rate, 2025',fmt(r.pov,1)+'%'+(r.pov_kind==='derived'?' (derived)':''));row('Ethnic Russians (2020)',fmt(r.ru_share,1)+'%');
  row('Distance from Moscow',fmt(r.dist_km)+' km');h+='</dl>';
- if(b.months){h+='<p><b>Signing bonus:</b> '+fmt(b.total)+' roubles ('+fmt(b.federal)+' federal and '+fmt(b.regional)+' regional) is '+fmt(b.months,1)+' months of the local average wage. '+STATUS[b.status]+'</p>'}
+ if(b.months){h+='<p><b>Signing bonus:</b> '+fmt(b.total)+' rubles ('+fmt(b.federal)+' federal and '+fmt(b.regional)+' regional) is '+fmt(b.months,1)+' months of the local average wage. '+STATUS[b.status]+'</p>'}
  else h+='<p><b>Signing bonus:</b> not charted. '+esc(b.excluded)+'.</p>';
  hideTip();$('#panelbody').innerHTML=h;$('#panel').classList.add('open')}
 function closePanel(){$('#panel').classList.remove('open');selected=null;if(gMap)markSel()}
@@ -103,7 +103,7 @@ function drawBonus(){
  var max=R.reduce(function(m,r){return r.bonus.months?Math.max(m,r.bonus.months):m},0);
  $('#bonusbars').innerHTML=a.map(function(r){var b=r.bonus;
   return barRow(r.en,b.months,max,RAMP[2],fmt(b.months,1)+' months',
-   '<b>'+esc(r.en)+'</b><br>'+fmt(b.total)+' roubles ('+fmt(b.federal)+' federal and '+fmt(b.regional)+' regional)<br>'+fmt(b.months,1)+' months of the average wage of '+fmt(r.wage)+' roubles<br>'+STATUS[b.status],b.status!=='ok')}).join('');
+   '<b>'+esc(r.en)+'</b><br>'+fmt(b.total)+' rubles ('+fmt(b.federal)+' federal and '+fmt(b.regional)+' regional)<br>'+fmt(b.months,1)+' months of the average wage of '+fmt(r.wage)+' rubles<br>'+STATUS[b.status],b.status!=='ok')}).join('');
  $('#bonusmore').textContent=bonusAll?'Show top 15 only':'Show all '+all+' regions'}
 /* undercount */
 function drawUc(){var p=S.probate,mx=p.total;

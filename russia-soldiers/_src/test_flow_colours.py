@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Colour checks the CI does not do for strokes: the arrow colours on the flow map and the North Korea graphics must differ by CIEDE2000 >= 20
+"""Color checks the CI does not do for strokes: the arrow colors on the flow map and the North Korea graphics must differ by CIEDE2000 >= 20
 from each other and from the land fills, none may be grey, and the arrow widths must follow the linear scale (3 px minimum, 56 px at the largest high figure, 34 px on phones). Exit 1 on failure."""
 import json, os, re, sys, math
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.join(HERE, "..")
@@ -36,5 +36,5 @@ for a in F["arrows"]:
 sm = sorted(F["arrows"], key=lambda a: a["low"])
 if w(max(a["low"] for a in F["arrows"])) / w(sm[0]["low"]) < 10: bad.append("biggest arrow is not at least 10 times as wide as the smallest")
 if "samples" in F or "fz-in" in js or "Square-root" in js: bad.append("the width key list or the zoom buttons are still present")
-print("flow colours:", "FAIL " + "; ".join(bad) if bad else "ok")
+print("flow colors:", "FAIL " + "; ".join(bad) if bad else "ok")
 sys.exit(1 if bad else 0)
