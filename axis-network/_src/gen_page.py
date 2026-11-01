@@ -113,7 +113,7 @@ CSS='''sup{font-size:13px;line-height:0}#trend .chip{border:1px solid var(--line
 
 :root{--bg:#0b1526;--panel:#12203a;--panel2:#0f1b31;--line:#24365a;--text:#e6e9ef;--muted:#9aa6b8;--gold:#c8a24a;--red:#c0504d}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-main{max-width:1100px;margin:0 auto;padding:22px 18px 40px}a{color:var(--gold)}
+main{max-width:1100px;margin:0 auto;padding:22px 18px 40px}a{color:var(--gold)}.backlink{display:flex;align-items:center;min-height:44px;margin:-10px 0 4px;font-size:15px;text-decoration:none}.backlink:hover{text-decoration:underline}
 h1{font-size:30px;margin:0 0 6px}h2{font-size:21px;margin:0 0 4px}.intro{font-size:16.5px;margin:0 0 6px;max-width:820px}.thru{font-size:14px;color:var(--gold);font-weight:600}
 .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}.st{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:10px;padding:10px 14px}.st b{display:block;font-size:26px;line-height:1.15}.st span{font-size:14px;color:var(--muted)}
 section{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
@@ -404,7 +404,7 @@ surge=''.join(wl[:1]).replace('<li>','<p class="wsurge">').replace('</li>','</p>
 WEEK=(f'<section id="week"><h2>New this week: {rng(T["end"])}</h2>{surge}<p class="prompt">This week’s Houthi threat posts and claimed strikes by category, newest first. Reposts of the same text are folded into one entry; a post can appear in more than one category. Claims are the Houthis’ own. Tap a category to open it.</p>'
       +''.join(_wcat(c) for c in WK.get('cats',[]))+'</section>')
 page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Houthi threats turn to Saudi Arabia | Axis Channel Network</title><meta name="description" content="{DESC}"><meta property="og:title" content="Houthi threats turn to Saudi Arabia"><meta property="og:description" content="{DESC}"><meta property="og:image" content="https://beacon-tools.onrender.com/axis-network/og.png"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><link rel="icon" href="../favicon.svg"><style>{CSS}</style></head><body><main>
+<title>Houthi threats turn to Saudi Arabia | Axis Channel Network</title><meta name="description" content="{DESC}"><meta property="og:title" content="Houthi threats turn to Saudi Arabia"><meta property="og:description" content="{DESC}"><meta property="og:image" content="https://beacon-tools.onrender.com/axis-network/og.png"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><link rel="icon" href="../favicon.svg"><style>{CSS}</style></head><body><main><a class="backlink" href="../#dashboards" title="Back to all dashboards">&larr; All dashboards</a>
 <h1>Houthi threats turn to Saudi Arabia</h1>
 <p class="intro">{INTRO}</p>
 <div class="thru">Data through {nice(D["data_through"])} (latest collected post) · main window: {rng(D["data_through"],30)}</div>

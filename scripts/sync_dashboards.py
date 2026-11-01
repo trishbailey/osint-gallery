@@ -27,6 +27,17 @@ def run(cmd, cwd, env=None):
 def clean_env():
     return {k: v for k, v in os.environ.items() if k not in SECRET_ENVS}
 
+BACK_LINK = ('<a data-alldash href="/#dashboards" title="Back to all dashboards" style="display:flex;align-items:center;'
+             'min-height:44px;padding:0 24px;background:#0b1526;color:#c8a24a;font:15px system-ui,-apple-system,Segoe UI,sans-serif;'
+             'text-decoration:none">&larr; All dashboards</a>')
+
+def add_back_link(text):
+    """Every dashboard gets the same '<- All dashboards' link at the very top (Trish, 2026-11-01). Synced dashboards
+    come from other repos, so it is added here, once per page, just before the first <header>."""
+    if "data-alldash" in text or "Back to all dashboards" in text or "All tools &amp; dashboards" in text:
+        return text
+    return re.sub(r"(<header\b)", lambda m: BACK_LINK + m.group(1), text, count=1, flags=re.I)
+
 def rewrite(text, slug, old_url, ext):
     base = "/" + slug + "/"
     if old_url:
@@ -53,6 +64,8 @@ def rewrite(text, slug, old_url, ext):
             text = re.sub(old_loader, '<script async src="https://www.googletagmanager.com/gtag/js?id=' + GA_MAIN + '"></script>', text)
         if GA_MAIN not in text:
             text = re.sub(r"(<head[^>]*>)", lambda m: m.group(1) + GA_SNIPPET, text, count=1, flags=re.I)
+    if ext in (".html", ".htm"):
+        text = add_back_link(text)
     if ext in (".html", ".htm") and "data-slash-fix" not in text:
         # /<slug> (no trailing slash) would break relative asset paths; bounce to /<slug>/
         fix = ('<script data-slash-fix>if(location.pathname==="/' + slug + '")'
