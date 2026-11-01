@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-01T11:09:28Z",
+ "as_of": "2026-11-01T14:07:07Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,40 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2116893022801850488",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2116893022801850488",
+   "created_at": "2026-11-01T14:00:01.000Z",
+   "text": "“Quería que el Estado le pusiera nombre a mi dolor” Verónica Ramírez tenía 22 años cuando halló a su madre asesinada en una calle de la CDMX; el caso se clasificó como homicidio culposo y nunca hubo responsable. Hoy, a 13 años, se dedica a la fotografía y acompaña a familias de",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "“I wanted the State to put a name to my pain.” Verónica Ramírez was 22 when she found her mother murdered on a street in Mexico City (CDMX); the case was classified as negligent homicide and no one was ever held responsible. Today, 13 years later, she works in photography and accompanies families of"
+  },
+  {
+   "id": "2116862835221205435",
+   "handle": "parescolombia",
+   "url": "https://x.com/parescolombia/status/2116862835221205435",
+   "created_at": "2026-11-01T12:00:03.000Z",
+   "text": "En abril de 1983, Jaime Bateman desapareció en la selva del Darién. El Flaco soñaba con una Colombia más justa, pero la guerra truncó su camino. Su historia sigue viva en la memoria de un país que aún busca la paz. https://t.co/UZpFjh6IfA https://t.co/D6hRi0yojA",
+   "lang": "und",
+   "region_ids": [
+    "PAN-1418"
+   ],
+   "country": "PAN",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "In April 1983, Jaime Bateman disappeared in the Darién jungle. El Flaco dreamed of a fairer Colombia, but the war cut his path short. His story lives on in the memory of a country that still seeks peace."
+  },
   {
    "id": "2116771749870080010",
    "handle": "infobaemexico",
