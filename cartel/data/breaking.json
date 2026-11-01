@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-01T17:02:24Z",
+ "as_of": "2026-11-01T20:09:46Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -9,17 +9,46 @@
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
   {
+   "id": "0f2e15336c",
+   "status": "single_source",
+   "title": "🔴El 1 de noviembre de 2025, Carlos Manzo, alcalde de Uruapan, Michoacán, fue asesinado durante un evento público. Tras el ataque, Grecia Quiroz se convirtió en la alcaldesa y lideresa del Movimiento d",
+   "lang": "es",
+   "title_en": "On November 1, 2025, Carlos Manzo, mayor of Uruapan, Michoacán, was killed during a public event. After the attack, Grecia Quiroz became mayor and leader of the Movimiento d",
+   "first_report": "2026-11-01T17:44:44Z",
+   "first_report_precision": "minute",
+   "first_source": "Animal Político",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Animal Político"
+   ],
+   "sources": [
+    {
+     "outlet": "animal",
+     "name": "Animal Político",
+     "kind": "outlet",
+     "via": "X @Pajaropolitico",
+     "url": "https://x.com/Pajaropolitico/status/2116949574904602985",
+     "time": "2026-11-01T17:44:44Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
    "id": "3ccf69440d",
    "status": "single_source",
    "title": "Le conflit soudanais offre de nouvelles opportunités aux groupes armés centrafricains actifs dans le nord-est, pour reconstituer leur capacités perdues aux cours des dernières années et lancer de nouv",
    "lang": "es",
-   "title_en": "The Sudanese conflict offers new opportunities to Central African armed groups active in the northeast to rebuild capabilities lost in recent years and launch new",
+   "title_en": "The Sudanese conflict offers new opportunities to Central African armed groups active in the northeast to rebuild capabilities lost in recent years and launch new attacks.",
    "first_report": "2026-11-01T15:45:13Z",
    "first_report_precision": "minute",
    "first_source": "Crisis Group",
    "region_ids": [
-    "HTI-1387",
-    "HTI-1386"
+    "HTI-1386",
+    "HTI-1387"
    ],
    "country": "HTI",
    "group_ids": [],
@@ -388,9 +417,9 @@
    ],
    "country": "COL",
    "group_ids": [
-    "eln",
+    "clan",
     "exfarc",
-    "clan"
+    "eln"
    ],
    "outlets": [
     "Infobae"
@@ -693,10 +722,10 @@
    "first_report_precision": "day",
    "first_source": "Proceso",
    "region_ids": [
-    "MEX-2712",
     "MEX-2706",
     "MEX-2711",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2712"
    ],
    "country": "MEX",
    "group_ids": [
@@ -730,8 +759,8 @@
    "region_ids": [],
    "country": "COL",
    "group_ids": [
-    "eln",
-    "clan"
+    "clan",
+    "eln"
    ],
    "outlets": [
     "Semana"
@@ -1057,8 +1086,8 @@
    "first_report_precision": "minute",
    "first_source": "Crisis Group",
    "region_ids": [
-    "HTI-1387",
-    "HTI-1386"
+    "HTI-1386",
+    "HTI-1387"
    ],
    "country": "HTI",
    "group_ids": [],
@@ -1239,10 +1268,10 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
     "sinaloa",
     "chapitos",
-    "cjng"
+    "cjng",
+    "mayiza"
    ],
    "outlets": [
     "El Financiero"
@@ -1394,9 +1423,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
     "sinaloa",
-    "chapitos"
+    "chapitos",
+    "mayiza"
    ],
    "outlets": [
     "Infobae"
@@ -1427,9 +1456,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
     "sinaloa",
-    "chapitos"
+    "chapitos",
+    "mayiza"
    ],
    "outlets": [
     "Infobae"
@@ -1460,8 +1489,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
-    "sinaloa"
+    "sinaloa",
+    "mayiza"
    ],
    "outlets": [
     "Infobae"
@@ -1492,9 +1521,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
     "sinaloa",
-    "chapitos"
+    "chapitos",
+    "mayiza"
    ],
    "outlets": [
     "Infobae"
@@ -1683,9 +1712,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
     "sinaloa",
-    "chapitos"
+    "chapitos",
+    "mayiza"
    ],
    "outlets": [
     "MVS Noticias"
@@ -2505,299 +2534,6 @@
      "via": "X @parescolombia",
      "url": "https://x.com/parescolombia/status/2116263179978523051",
      "time": "2026-10-30T20:17:15Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "d8706e2633",
-   "status": "single_source",
-   "title": "Atacan a balazos a motociclista y detienen a los presuntos agresores en Culiacán A la 1 con Omar de la Rocha y todo su equipo en \"Los Noticieristas\".",
-   "lang": "es",
-   "title_en": "Motorcyclist shot at and the alleged attackers detained in Culiacán. At 1 o'clock with Omar de la Rocha and his whole team on \"Los Noticieristas\".",
-   "first_report": "2026-10-30T19:59:15Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2116258651455488003",
-     "time": "2026-10-30T19:59:15Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "0a99c0be9c",
-   "status": "official_claim_only",
-   "title": "En Matamoros, Tamaulipas, Fuerzas Especiales de @Defensamx1 y @GN_MEXICO_ detuvieron a dos personas, entre ellas Axel Alfredo “N”, alias “Axel”, identificado como segundo al mando de la facción “Ciclo",
-   "lang": "es",
-   "title_en": "In Matamoros, Tamaulipas, Special Forces of @Defensamx1 and @GN_MEXICO_ detained two people, among them Axel Alfredo \"N\", alias \"Axel\", identified as second-in-command of the \"Ciclones\" faction of the Gulf Cartel, a crim",
-   "first_report": "2026-10-30T19:58:29Z",
-   "first_report_precision": "minute",
-   "first_source": "Gabinete de Seguridad (Mexico)",
-   "region_ids": [
-    "MEX-2716"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "gulf"
-   ],
-   "outlets": [
-    "Gabinete de Seguridad (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "gabsec",
-     "name": "Gabinete de Seguridad (Mexico)",
-     "kind": "official",
-     "via": "X @GabSeguridadMX",
-     "url": "https://x.com/GabSeguridadMX/status/2116258461000544636",
-     "time": "2026-10-30T19:58:29Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "dd7d73f293",
-   "status": "single_source",
-   "title": "El occiso presentaba rastros de golpes. El hallazgo tuvo lugar con el antecedente del homicidio de un joven, el 21 de agosto, en la clínica Jireh",
-   "lang": "es",
-   "title_en": "The deceased showed signs of beating. The discovery came after the homicide of a young man on August 21 at the Jireh clinic",
-   "first_report": "2026-10-30T19:46:02Z",
-   "first_report_precision": "minute",
-   "first_source": "ZETA Tijuana",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "ZETA Tijuana"
-   ],
-   "sources": [
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "X @ZETATijuana",
-     "url": "https://x.com/ZETATijuana/status/2116255324461990134",
-     "time": "2026-10-30T19:46:02Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "35510f0e21",
-   "status": "single_source",
-   "title": "➡️ La Catrina Buscadora, representación con la que los alumnos de la UAdeO #Guasave, reconocen el dolor de las desapariciones forzadas 🔹 La representación presentada por estudiantes de la UAdeO fue re",
-   "lang": "es",
-   "title_en": "La Catrina Buscadora, a representation with which UAdeO #Guasave students recognise the pain of enforced disappearances. The representation presented by UAdeO students was recognised by members of Rastreadoras de Guasave",
-   "first_report": "2026-10-30T18:39:37Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2116238611381113273",
-     "time": "2026-10-30T18:39:37Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "bef1949eda",
-   "status": "single_source",
-   "title": "Detienen a “El Chorejas”, líder de Los Aparicio, banda dedicada a la extorsión, asesinato y tráfico de drogas en Morelos",
-   "lang": "es",
-   "title_en": "\"El Chorejas\" arrested, leader of Los Aparicio, a gang dedicated to extortion, murder and drug trafficking in Morelos",
-   "first_report": "2026-10-30T18:07:35Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2732"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2116230548897075626",
-     "time": "2026-10-30T18:07:35Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "cd7bf4bc5e",
-   "status": "single_source",
-   "title": "🚨🚔| No han sido identificadas las cabezas humanas encontradas en hechos ocurridos en #Mazatlán y #Culiacán, respectivamente, informó la titular de la Fiscalía General del Estado (FGE), Claudia Zulema ",
-   "lang": "es",
-   "title_en": "The human heads found in incidents in #Mazatlán and #Culiacán, respectively, have not been identified, said the head of the State Attorney General's Office (FGE), Claudia Zulema Sánchez Kondo. The prosecutor specified th",
-   "first_report": "2026-10-30T17:32:08Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2116221628942111121",
-     "time": "2026-10-30T17:32:08Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "0024e206dc",
-   "status": "single_source",
-   "title": "🔴 Detienen a presunto responsable de envenenar perros en Parque España y la Condesa. Policías de la CDMX detuvieron a un hombre de 58 años en el cruce de Atlixco y Juan Escutia, señalado por colocar c",
-   "lang": "es",
-   "title_en": "Alleged culprit arrested for poisoning dogs in Parque España and La Condesa. Mexico City police detained a 58-year-old man at the corner of Atlixco and Juan Escutia, accused of placing poisoned bait in Parque España and ",
-   "first_report": "2026-10-30T17:30:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Animal Político",
-   "region_ids": [
-    "MEX-2727",
-    "MEX-2724"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Animal Político"
-   ],
-   "sources": [
-    {
-     "outlet": "animal",
-     "name": "Animal Político",
-     "kind": "outlet",
-     "via": "X @Pajaropolitico",
-     "url": "https://x.com/Pajaropolitico/status/2116221091559436499",
-     "time": "2026-10-30T17:30:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "009f5b9f07",
-   "status": "single_source",
-   "title": "🚨 Fue acusado de diseñar y construir un pasadizo presuntamente utilizado CJNG para introducir drogas a EEUU",
-   "lang": "es",
-   "title_en": "He was charged with designing and building a passageway allegedly used by the CJNG to bring drugs into the US",
-   "first_report": "2026-10-30T17:30:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2116221093333926231",
-     "time": "2026-10-30T17:30:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "c5fee37bbb",
-   "status": "single_source",
-   "title": "El detenido cumplirá también cinco años de libertad condicional supervisada tras purgar la pena de prisión en Estados Unidos.",
-   "lang": "es",
-   "title_en": "The detainee will also serve five years of supervised release after completing his prison sentence in the United States.",
-   "first_report": "2026-10-30T17:09:38Z",
-   "first_report_precision": "minute",
-   "first_source": "ZETA Tijuana",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "ZETA Tijuana"
-   ],
-   "sources": [
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "X @ZETATijuana",
-     "url": "https://x.com/ZETATijuana/status/2116215966862332110",
-     "time": "2026-10-30T17:09:38Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "2c287b3920",
-   "status": "single_source",
-   "title": "Hallan fosa con cadáver frente a Unidad Deportiva de SF; presumen que hay otro Los restos fueron hallados luego de varias horas de trabajo entre cateo y exhumación, en un domicilio de la colonia Los A",
-   "lang": "es",
-   "title_en": "Grave with a body found opposite the SF Sports Unit; another is presumed. The remains were found after several hours of search and exhumation work at a home in the Los Arcos neighbourhood.",
-   "first_report": "2026-10-30T17:06:15Z",
-   "first_report_precision": "minute",
-   "first_source": "ZETA Tijuana",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "ZETA Tijuana"
-   ],
-   "sources": [
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "X @ZETATijuana",
-     "url": "https://x.com/ZETATijuana/status/2116215117096325432",
-     "time": "2026-10-30T17:06:15Z",
      "time_precision": "minute"
     }
    ]

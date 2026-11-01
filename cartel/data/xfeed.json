@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-01T17:02:24Z",
+ "as_of": "2026-11-01T20:09:46Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,23 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2116949574904602985",
+   "handle": "Pajaropolitico",
+   "url": "https://x.com/Pajaropolitico/status/2116949574904602985",
+   "created_at": "2026-11-01T17:44:44.000Z",
+   "text": "🔴El 1 de noviembre de 2025, Carlos Manzo, alcalde de Uruapan, Michoacán, fue asesinado durante un evento público. Tras el ataque, Grecia Quiroz se convirtió en la alcaldesa y lideresa del Movimiento del Sombrero. https://t.co/ULRGOgioFe",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "On November 1, 2025, Carlos Manzo, mayor of Uruapan, Michoacán, was killed during a public event. After the attack, Grecia Quiroz became mayor and leader of the Movimiento del Sombrero."
+  },
   {
    "id": "2116919498485719352",
    "handle": "CrisisGroup",
@@ -3914,73 +3931,6 @@
    "source_type": "national outlet",
    "label": null,
    "text_en": "Samuel \"N\" was arrested together with two alleged members of the criminal group operating in Guerrero"
-  },
-  {
-   "id": "2114447704549982582",
-   "handle": "InSightCrime",
-   "url": "https://x.com/InSightCrime/status/2114447704549982582",
-   "created_at": "2026-10-25T20:03:11.000Z",
-   "text": "🇸🇻 | More than 560 suspected leaders of the Barrio 18 have been indicted by El Salvador in one of the most extensive judicial processes under the country’s state of emergency. How has President Nayib Bukele’s crackdown on gangs affected the country’s security landscape? https://…",
-   "lang": "en",
-   "region_ids": [],
-   "country": "SLV",
-   "group_ids": [
-    "b18"
-   ],
-   "tier": "verified",
-   "source_type": "research outlet",
-   "label": null
-  },
-  {
-   "id": "2114439526571728941",
-   "handle": "GabSeguridadMX",
-   "url": "https://x.com/GabSeguridadMX/status/2114439526571728941",
-   "created_at": "2026-10-25T19:30:42.000Z",
-   "text": "En el marco de la Estrategia Nacional contra la Extorsión, en Iguala, Guerrero, elementos de @Defensamx1, @SSPCMexico y @GN_MEXICO_, en coordinación con la @FGEGuerrero y la @SSPGro, cumplimentaron órdenes de aprehensión contra Samuel “N”, Pedro “N” y Heriberto “N”, integrantes…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2729"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "official",
-   "label": "Official statement",
-   "text_en": "Under the National Strategy against Extortion, in Iguala, Guerrero, personnel of @Defensamx1, @SSPCMexico and @GN_MEXICO_, in coordination with @FGEGuerrero and @SSPGro, executed arrest warrants against Samuel \"N\", Pedro \"N\" and Heriberto \"N\", members…"
-  },
-  {
-   "id": "2114419217839579592",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2114419217839579592",
-   "created_at": "2026-10-25T18:10:00.000Z",
-   "text": "Una #balacera en la colonia #MiguelHidalgo, en #Culiacán, movilizó a corporaciones de seguridad. En el lugar localizaron ocho casquillos y un inmueble con impactos de bala. https://t.co/jUDXmljjQT",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "A #shootout in the #MiguelHidalgo neighbourhood of #Culiacán mobilised security forces. Eight shell casings and a building with bullet impacts were found at the scene."
-  },
-  {
-   "id": "2114416702280626307",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2114416702280626307",
-   "created_at": "2026-10-25T18:00:00.000Z",
-   "text": "Detienen a transportista en Eagle Pass, Texas, por presuntos vínculos con huachicol; Mejía Berdeja pide “operación enjambre” en Coahuila Julio Rodolfo González, empresario nigropetense detenido, quien tiene también la nacionalidad estadunidense, es dueño de la empresa Frontera",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2708"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Truck operator arrested in Eagle Pass, Texas, over alleged links to huachicol (fuel theft); Mejía Berdeja calls for an \"Operation Swarm\" in Coahuila. Julio Rodolfo González, a Piedras Negras businessman who also holds US citizenship, owns the company Frontera"
   }
  ]
 }
