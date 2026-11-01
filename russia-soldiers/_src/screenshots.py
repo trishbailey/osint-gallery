@@ -85,11 +85,15 @@ with sync_playwright() as pw:
         nfg = page.evaluate("[document.querySelectorAll('#fgrid g.fg').length, document.querySelectorAll('#fgrid g.fg.cum circle.fc').length, document.querySelectorAll('#fgrid g.fg.agg circle.fc').length, document.querySelectorAll('#fgrid g.fg.y2026 circle.ring').length]"); print(tag, "foreign circles", nfg)
         assert nfg == [15, 6, 1, 8], nfg
         FOV = """()=>{const bad=[],r=e=>e.getBoundingClientRect(),hit=(a,b)=>a.left<b.right&&b.left<a.right&&a.top<b.bottom&&b.top<a.bottom;
-          document.querySelectorAll('#fgrid svg').forEach(sv=>{const L=[...sv.querySelectorAll('text.dlab')],C=[...sv.querySelectorAll('g.fg circle.fc')];
-            L.forEach((t,i)=>{const a=r(t);if(parseFloat(getComputedStyle(t.querySelector('tspan')).fontSize)<13)bad.push('small '+t.textContent);
+          document.querySelectorAll('#fgrid svg').forEach(sv=>{const L=[...sv.querySelectorAll('text.dlab,text.glab')],C=[...sv.querySelectorAll('g.fg circle.fc')];
+            L.forEach((t,i)=>{const a=r(t);if(parseFloat(getComputedStyle(t.querySelector('tspan')||t).fontSize)<13)bad.push('small '+t.textContent);
               L.forEach((u,j)=>{if(j>i&&hit(a,r(u)))bad.push(t.textContent+' x '+u.textContent)});
               C.forEach(c=>{const b=r(c),cx=(b.left+b.right)/2,cy=(b.top+b.bottom)/2,R=b.width/2,x=Math.max(a.left,Math.min(cx,a.right)),y=Math.max(a.top,Math.min(cy,a.bottom));if(Math.hypot(x-cx,y-cy)<R-0.5)bad.push(t.textContent+' covers a circle')})})});
           return bad}"""
+        GL = page.evaluate("Object.fromEntries([...document.querySelectorAll('#fgrid .fmap > div')].map(d=>[d.id.slice(3),[...d.querySelectorAll('text.glab')].map(t=>t.textContent)]))"); print(tag, "orientation labels", {k: len(v) for k, v in GL.items()})
+        assert all(x in GL["central"] for x in ("Russia", "China", "Afghanistan", "Iran")), GL["central"]
+        assert all(len(GL[k]) >= n for k, n in ((("central", 6), ("belarus", 5), ("africa", 9), ("latam", 7), ("seasia", 6)) if mobile else (("central", 7), ("belarus", 5), ("africa", 12), ("latam", 7), ("seasia", 6)))), GL
+        assert page.evaluate("[...document.querySelectorAll('#fgrid path.cn')].every(p=>getComputedStyle(p).strokeWidth!=='0px'&&getComputedStyle(p).stroke!=='none')")
         fo = page.evaluate(FOV); print(tag, "foreign label overlaps", fo); assert not fo, fo
         page.evaluate("document.querySelector('#fm-central').scrollIntoView({block:'center'})"); page.wait_for_timeout(300)
         bx = page.eval_on_selector("#fm-central g.fg.cum circle.fhit", "e=>{const b=e.getBoundingClientRect();return [b.x+b.width/2,b.y+b.height/2]}")

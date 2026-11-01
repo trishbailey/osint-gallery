@@ -12,11 +12,11 @@ var rOf=function(n){return (ph()?F.rk_ph:F.rk)*Math.sqrt(n)};
 function col(v){var s=Math.min(1,v/F.vmax)*3,i=Math.min(2,Math.floor(s));return d3.interpolateRgb(RAMP[i],RAMP[i+1])(s-i)}
 /* region frames (lon, lat corners), svg height on desktop and on a phone, and label direction preferences */
 var MAPS={
- central:{box:[[47,33],[85,54]],boxph:[[53,34],[81,52]],h:[430,330],conic:true},
- belarus:{box:[[19,47],[39,58]],h:[430,330]},
- africa:{box:[[-26,-30],[58,26]],h:[400,340]},
- latam:{box:[[-90,-22],[-58,14]],h:[400,340]},
- seasia:{box:[[92,-12],[142,12]],h:[400,230]}
+ central:{box:[[47,33],[85,54]],boxph:[[50,34],[82,55]],h:[430,400],conic:true},
+ belarus:{box:[[19,47],[39,58]],h:[430,360]},
+ africa:{box:[[-26,-30],[58,26]],h:[400,430]},
+ latam:{box:[[-90,-22],[-58,14]],h:[400,440]},
+ seasia:{box:[[92,-12],[142,12]],h:[400,270]}
 };
 var PREFS={yemen:['bottom','bR','top','tR','left','right'],sudan:['left','top','right'],sierraleone:['bottom','right','top'],turkmenistan:['left','bottom','top'],tajikistan:['right','bottom'],kyrgyzstan:['top','right']};
 var PREF=['right','left','top','bottom','tr','tl','br','bl'];
@@ -50,7 +50,35 @@ function place(svg,items,W_,H_){
    if(placed.some(function(p){return hit(r,p)}))return false;
    best=r;return true});
   if(!best){var c=cands[(d.pref||PREF)[0]];best={x0:Math.max(2,Math.min(W_-w-2,c[0])),y0:Math.max(2,Math.min(H_-h-2,c[1]))};best.x1=best.x0+w;best.y1=best.y0+h}
-  placed.push(best);t.attr('transform','translate('+(best.x0-bb.x)+','+(best.y0-bb.y)+')')})
+  placed.push(best);t.attr('transform','translate('+(best.x0-bb.x)+','+(best.y0-bb.y)+')')});
+ return placed
+}
+/* Orientation labels: every neighbouring country that helps a reader find the circles, in pale blue italic-free text, plus the seas. Each is [Natural Earth name, label, lon, lat of the preferred spot];
+   a spot is taken only if its text sits inside that country (water labels anywhere free), covers no circle, value label, leader or earlier label. Earlier entries win. */
+var GEO={
+ central:[['Russia','Russia',60,54.5],['China','China',79.5,40.5],['Afghanistan','Afghanistan',66,34.8],['Iran','Iran',55,34.5],['Pakistan','Pakistan',72,34.2],['Azerbaijan','Azerbaijan',48.5,40.4],['Mongolia','Mongolia',85,48],['~','Caspian Sea',50.6,44]],
+ belarus:[['Russia','Russia',35,55.5],['Ukraine','Ukraine',31,49.5],['Poland','Poland',20.5,51.8],['Lithuania','Lithuania',23.8,55.4],['Latvia','Latvia',25,57],['Romania','Romania',25,46.8],['Slovakia','Slovakia',20,48.7],['Moldova','Moldova',28.4,47.2]],
+ africa:[['Egypt','Egypt',30,26.5],['Libya','Libya',17,24],['Algeria','Algeria',3,24],['Mali','Mali',-3,17],['Niger','Niger',9,17],['Chad','Chad',19,15],['Nigeria','Nigeria',8,9],['Ethiopia','Ethiopia',40,8],['Democratic Republic of the Congo','DR Congo',23,-3],['United Republic of Tanzania','Tanzania',34.8,-6.3],['Angola','Angola',17.5,-12],['South Africa','South Africa',24.5,-29],['Saudi Arabia','Saudi Arabia',45,24],['Somalia','Somalia',46,5],['Mauritania','Mauritania',-10,20],['~','Atlantic Ocean',-17,10],['~','Indian Ocean',52,-18]],
+ latam:[['Brazil','Brazil',-60,-9],['Venezuela','Venezuela',-66,7.5],['Ecuador','Ecuador',-78.5,-1.5],['Bolivia','Bolivia',-64.5,-17],['Chile','Chile',-70.5,-21],['Panama','Panama',-80,8.5],['Nicaragua','Nicaragua',-85,12.8],['Guyana','Guyana',-59,5],['~','Pacific Ocean',-86,-8],['~','Caribbean Sea',-75,13.5]],
+ seasia:[['Malaysia','Malaysia',102,4.5],['Thailand','Thailand',100.8,12],['Vietnam','Vietnam',108,12],['Philippines','Philippines',122,10],['Papua New Guinea','Papua New Guinea',144,-6],['Cambodia','Cambodia',105,12.5],['Australia','Australia',135,-12],['~','Indian Ocean',94,-8],['~','South China Sea',112,8],['~','Pacific Ocean',132,5]]
+};
+var OFF=[[0,0],[0,-16],[0,16],[-28,0],[28,0],[-28,-16],[28,-16],[-28,16],[28,16],[0,-32],[0,32],[-56,0],[56,0],[-56,-16],[56,16]];
+function geoLabels(svg,id,proj,feats,circles,rects,leader,W_,H_){
+ var g=svg.append('g').attr('class','geolabs'),hitr=function(a,b){return !(a.x1<=b.x0||a.x0>=b.x1||a.y1<=b.y0||a.y0>=b.y1)},
+  cr=function(r,c){var cx=Math.max(r.x0,Math.min(c.x,r.x1)),cy=Math.max(r.y0,Math.min(c.y,r.y1));return Math.hypot(cx-c.x,cy-c.y)<c.r+2},
+  inside=function(f,x,y){var q=proj.invert([x,y]);return !!q&&d3.geoContains(f,q)};
+ (GEO[id]||[]).forEach(function(e){
+  var f=e[0]==='~'?null:feats[e[0]],p=proj([e[2],e[3]]);if(e[0]!=='~'&&!f)return;
+  var t=g.append('text').attr('class',f?'glab':'glab sea').text(e[1]),bb=t.node().getBBox(),w=bb.width,h=bb.height,ok=null;
+  [true,false].some(function(strict){return OFF.some(function(o){
+   var cx=p[0]+o[0],cy=p[1]+o[1],r={x0:cx-w/2,y0:cy-h/2,x1:cx+w/2,y1:cy+h/2};
+   if(r.x0<2||r.y0<2||r.x1>W_-2||r.y1>H_-2)return false;
+   if(f&&!(inside(f,cx,cy)&&(!strict||(inside(f,r.x0,cy)&&inside(f,r.x1,cy)))))return false;
+   if(circles.some(function(c){return cr(r,c)})||rects.some(function(q){return hitr(r,q)}))return false;
+   if(leader&&[0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1].some(function(u){var x=leader[0]+(leader[2]-leader[0])*u,y=leader[1]+(leader[3]-leader[1])*u;return x>r.x0-3&&x<r.x1+3&&y>r.y0-3&&y<r.y1+3}))return false;
+   ok=r;return true})});
+  if(!ok){t.remove();return}
+  rects.push(ok);t.attr('transform','translate('+(ok.x0-bb.x)+','+(ok.y0-bb.y)+')')})
 }
 function drawMap(id){
  var cfg=MAPS[id],el=$('#fm-'+id);if(!el)return;var w=el.clientWidth;if(!w)return;var h=cfg.h[ph()?1:0];el.innerHTML='';
@@ -63,10 +91,10 @@ function drawMap(id){
  g.selectAll('path.cn').data(W.features).enter().append('path').attr('class',function(f){return 'cn'+(have[f.properties.name]?' hv':'')}).attr('d',path);
  if(cfg.conic)g.selectAll('path.cn2').data(NB.features).enter().append('path').attr('class',function(f){return 'cn'+(have[f.properties.name]?' hv':'')}).attr('d',path);
  var pts=its.map(function(i){var p=proj(i.ll);return {i:i,x:p[0],y:p[1],r:rOf(i.value)}});
- var lab=[];
+ var lab=[],lead=null;
  pts.filter(function(p){return p.i.kind==='agg'}).forEach(function(p){
   var t=proj(F.africa_target),dx=t[0]-p.x,dy=t[1]-p.y,L=Math.hypot(dx,dy);
-  svg.append('path').attr('class','leader').attr('d','M'+(p.x+dx/L*(p.r+1))+','+(p.y+dy/L*(p.r+1))+'L'+t[0]+','+t[1]);
+  lead=[p.x+dx/L*(p.r+1),p.y+dy/L*(p.r+1),t[0],t[1]];svg.append('path').attr('class','leader').attr('d','M'+(p.x+dx/L*(p.r+1))+','+(p.y+dy/L*(p.r+1))+'L'+t[0]+','+t[1]);
   svg.append('circle').attr('class','leaderdot').attr('cx',t[0]).attr('cy',t[1]).attr('r',3)});
  pts.slice().sort(function(a,b){return b.r-a.r}).forEach(function(p){
   var i=p.i,gp=svg.append('g').attr('class','fg '+i.kind).attr('tabindex',0).attr('data-tip',i.tip)
@@ -76,7 +104,8 @@ function drawMap(id){
   gp.append('circle').attr('class','fhit').attr('cx',p.x).attr('cy',p.y).attr('r',Math.max(p.r,14));
   var sub=i.kind==='y2026'?fmt(i.value)+' in Jan to Sep 2026':fmt(i.value);
   lab.push({x:p.x,y:p.y,r:p.r,label:i.kind==='agg'?['Africa, 37 countries','combined: '+fmt(i.value)]:i.kind==='y2026'?[i.name,fmt(i.value)+', 2026 only']:[i.name,fmt(i.value)],pref:i.kind==='agg'?['bottom','top','left']:PREFS[i.id]})});
- place(svg,lab,w,h)}
+ var rects=place(svg,lab,w,h),feats={};W.features.forEach(function(f){feats[f.properties.name]=f});
+ geoLabels(svg,id,proj,feats,pts.map(function(p){return {x:p.x,y:p.y,r:p.r}}),rects,lead,w,h)}
 function draw(){legend();Object.keys(MAPS).forEach(drawMap)}
 Promise.all(['data/foreign.json','data/world110.json','vendor/ne_neighbours.geojson'].map(function(u){return fetch(u).then(function(r){return r.json()})})).then(function(res){
  F=res[0];W=res[1];NB=res[2];draw();

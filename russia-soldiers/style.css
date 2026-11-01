@@ -260,7 +260,8 @@ circle.col:hover,circle.col:focus-visible{stroke:var(--gold);stroke-width:2px}
 .fmap h4.mini{margin:2px 0 6px;line-height:1.3}
 .fm-central{grid-column:span 8}.fm-belarus{grid-column:span 4}.fm-africa{grid-column:span 6}.fm-latam,.fm-seasia{grid-column:span 3}
 .fmap>div{width:100%}.fmap svg{display:block;max-width:100%}
-.fmap .cn{fill:#132646}.fmap .cn.hv{fill:#1b3258}
+.fmap .cn{fill:#132646;stroke:#6f93c8;stroke-width:1px}.fmap .cn.hv{fill:#1b3258;stroke:#c3d7f4;stroke-width:1.6px}
+.fmap .glab{font-size:13px;fill:#a9c4ea;paint-order:stroke;stroke:#0b1426;stroke-width:3px;pointer-events:none}.fmap .glab.sea{font-style:italic;fill:#7fa6dc}
 .fg{cursor:pointer}.fg:focus{outline:none}.fc{stroke:#fdedeb;stroke-width:1px}
 .fc.ring{fill:none;stroke:var(--gold);stroke-width:2.5px;stroke-dasharray:5 3}
 .fhit{fill:transparent}
