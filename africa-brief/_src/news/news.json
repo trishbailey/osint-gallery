@@ -1,6 +1,94 @@
 {
 "sahel": [
 {
+"outlet": "lefaso",
+"title": "Burkina Faso : Le premier DNS & Brand Lab appelle les entreprises à mieux protéger leurs noms de domaine et leur identité numérique",
+"link": "https://lefaso.net/spip.php?article150417",
+"ts": 1793538614,
+"lang": "fr",
+"outlet_name": "Lefaso.net",
+"state": "no",
+"owner": "Privately owned (founder Cyriaque Paré)",
+"title_en": "Burkina Faso: The first DNS & Brand Lab calls on companies to better protect their domain names and digital identities"
+},
+{
+"outlet": "lefaso",
+"title": "Burkina/66ᵉanniversaire des Forces armées nationales : Le capitaine Ibrahim Traoré salue leur résilience et leur détermination",
+"link": "https://lefaso.net/spip.php?article150416",
+"ts": 1793534674,
+"lang": "fr",
+"outlet_name": "Lefaso.net",
+"state": "no",
+"owner": "Privately owned (founder Cyriaque Paré)",
+"title_en": "Burkina/66th anniversary of the National Armed Forces: Captain Ibrahim Traoré welcomes their resilience and determination"
+},
+{
+"outlet": "jeuneafrique",
+"title": "L’intervention au Niger, un test de crédibilité grandeur nature pour l’armée algérienne",
+"link": "https://www.jeuneafrique.com/1857411/politique/lintervention-au-niger-un-test-de-credibilite-grandeur-nature-pour-larmee-algerienne/",
+"ts": 1793528275,
+"lang": "fr",
+"outlet_name": "Jeune Afrique",
+"state": "no",
+"owner": "Groupe Jeune Afrique (Ben Yahmed family)",
+"title_en": "Intervention in Niger, a nature-sized credibility test for the Algerian army"
+},
+{
+"outlet": "rfiafrique",
+"title": "Burkina Faso: l'apprentissage en langues nationales renforcé dans les écoles",
+"link": "https://www.rfi.fr/fr/afrique/20261101-burkina-faso-l-apprentissage-en-langues-nationales-renforc%C3%A9-dans-les-%C3%A9coles",
+"ts": 1793524574,
+"lang": "fr",
+"outlet_name": "RFI Afrique",
+"state": "yes",
+"owner": "France Médias Monde",
+"title_en": "Burkina Faso: national language learning strengthened in schools"
+},
+{
+"outlet": "lefaso",
+"title": "Burkina/Handicap visuel : À Kaya, Antoine Nabasnogo Ouissogonoma de combat la mendicité par l'artisanat",
+"link": "https://lefaso.net/spip.php?article150406",
+"ts": 1793523600,
+"lang": "fr",
+"outlet_name": "Lefaso.net",
+"state": "no",
+"owner": "Privately owned (founder Cyriaque Paré)",
+"title_en": "Burkina/Visual disability: Antoine Nabasnogo Ouissogonoma in Kaya fighting begging by craftsmanship"
+},
+{
+"outlet": "lefaso",
+"title": "Burkina/ Artisanat : À Kaya, des personnes déplacées internes tressent leur autonomie",
+"link": "https://lefaso.net/spip.php?article150405",
+"ts": 1793523600,
+"lang": "fr",
+"outlet_name": "Lefaso.net",
+"state": "no",
+"owner": "Privately owned (founder Cyriaque Paré)",
+"title_en": "Burkina/Crafts: In Kaya, internally displaced people are building their autonomy"
+},
+{
+"outlet": "rfiafrique",
+"title": "La météorite retrouvée en 2022 au Mali livre ses premiers secrets",
+"link": "https://www.rfi.fr/fr/afrique/20261101-la-m%C3%A9t%C3%A9orite-retrouv%C3%A9e-en-2022-au-mali-livre-ses-premiers-secrets",
+"ts": 1793498887,
+"lang": "fr",
+"outlet_name": "RFI Afrique",
+"state": "yes",
+"owner": "France Médias Monde",
+"title_en": "Meteorite discovered in Mali in 2022 reveals its first secrets"
+},
+{
+"outlet": "maliweb",
+"title": "Justice : Sidi Sosso Diarra, ancien Vérificateur général du Mali placé sous mandat de dépôt - maliweb",
+"link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNM1g1VTFLbU5ndWgxNGQ2eTN1ZmxUSEJQUzY4aWdlc0NSdGFuWUVhNFVLay1LUFpCRWQzZ3V4ZjMyLXY4TXU5MzZ6ZU1jVlV1LWo4bFVFM3B0TmQtXzhIeUZnLVh2Ri12SFQzdmxLUTV3NDFMTDVwOVF5YlAyYng0MlF6SWsyaHZDRjllNjZkZFlsRUFSUC1PZ3o5UjJZVW9DdTc4V0NVd3pYbHBkTllsNXZ6b1J3VklhZTF6cA?oc=5",
+"ts": 1793464976,
+"lang": "fr",
+"outlet_name": "Maliweb",
+"state": "no",
+"owner": "Private aggregator",
+"title_en": "Justice: Sidi Sosso Diarra, former Inspector General of Mali placed under a deposition warrant - maliweb"
+},
+{
 "outlet": "jeuneafrique",
 "title": "Algérie-Niger : pourquoi Alger a choisi d’assumer un rôle de « parrain sécuritaire »",
 "link": "https://www.jeuneafrique.com/1857444/politique/algerie-niger-pourquoi-alger-a-choisi-dassumer-un-role-de-parrain-securitaire/",
@@ -12,158 +100,26 @@
 "title_en": "Algeria-Niger: why Algeria chose to assume the role of security sponsor "
 },
 {
-"outlet": "rt_ar",
-"title": "تبون يحدد دوافع قرار إرسال الجيش الجزائري إلى النيجر",
-"link": "https://rtarabic.com/news/1849105/",
-"ts": 1793460289,
-"lang": "ar",
-"outlet_name": "RT Arabic",
+"outlet": "rfiafrique",
+"title": "Sadibou Marong (RSF): deux mois de détention au secret pour Moussa Kaka au Niger",
+"link": "https://www.rfi.fr/fr/podcasts/le-grand-invit%C3%A9-afrique/20261031-sadibou-marong-rsf-deux-mois-de-d%C3%A9tention-au-secret-pour-moussa-kaka-au-niger",
+"ts": 1793429402,
+"lang": "fr",
+"outlet_name": "RFI Afrique",
 "state": "yes",
-"owner": "ANO TV-Novosti",
-"title_en": "Tappon identifies the motives behind the decision to send the Algerian army to Niger ."
+"owner": "France Médias Monde",
+"title_en": "Sadibou Marong (RSF): Two months of secret detention for Moussa Kaka in Niger"
 },
 {
-"outlet": "africainitiative",
-"title": "Страны Сахеля намерены развивать совместные инфраструктурные проекты — МИД Мали",
-"link": "https://afrinz.ru/2026/10/strany-sahelya-namereny-razvivat-sovmestnye-infrastrukturnye-proekty-mid-mali/",
-"ts": 1793460252,
-"lang": "ru",
-"outlet_name": "African Initiative (Африканская инициатива)",
+"outlet": "rfiafrique",
+"title": "Deux mois de détention de Moussa Kaka au Niger: «Sa place est devant un micro»",
+"link": "https://www.rfi.fr/fr/afrique/20261031-deux-mois-de-d%C3%A9tention-de-moussa-kaka-au-niger-sa-place-est-devant-un-micro",
+"ts": 1793422824,
+"lang": "fr",
+"outlet_name": "RFI Afrique",
 "state": "yes",
-"owner": "Russian state-linked agency (founded 2023)",
-"title_en": "Sahel countries intend to develop joint infrastructure projects  Mali Foreign Ministry"
-},
-{
-"outlet": "africainitiative",
-"title": "Буркина-Фасо, Мали и Нигер провели консультации на полях саммита Россия — Африка",
-"link": "https://afrinz.ru/2026/10/burkina-faso-mali-i-niger-proveli-konsultatsii-na-polyah-sammita-rossiya-afrika/",
-"ts": 1793457201,
-"lang": "ru",
-"outlet_name": "African Initiative (Африканская инициатива)",
-"state": "yes",
-"owner": "Russian state-linked agency (founded 2023)",
-"title_en": "Burkina Faso, Mali and Niger held consultations on the sidelines of the summit Russia  Africa"
-},
-{
-"outlet": "lefaso",
-"title": "Burkina/Violences faites aux femmes : Il défigure sa compagne à l'acide après son refus d'avorter et écope de la prison à perpétuité",
-"link": "https://lefaso.net/spip.php?article150396",
-"ts": 1793455140,
-"lang": "fr",
-"outlet_name": "Lefaso.net",
-"state": "no",
-"owner": "Privately owned (founder Cyriaque Paré)",
-"title_en": "Burkina/Violence against women: He depicts his wife with acid after refusing to have an abortion and is serving life in prison"
-},
-{
-"outlet": "africainitiative",
-"title": "Мали и «КамАЗ» работают над созданием предприятий по производству техники — глава МИД",
-"link": "https://afrinz.ru/2026/10/mali-i-kamaz-rabotayut-nad-sozdaniem-predpriyatiy-po-proizvodstvu-tehniki-glava-mid/",
-"ts": 1793451557,
-"lang": "ru",
-"outlet_name": "African Initiative (Африканская инициатива)",
-"state": "yes",
-"owner": "Russian state-linked agency (founded 2023)",
-"title_en": "Mali and KamAZ are working on the creation of equipment manufacturing enterprises"
-},
-{
-"outlet": "rt_fr",
-"title": "Burkina Faso : le Premier ministre défend le rapprochement avec Moscou et affirme une amélioration sécuritaire",
-"link": "https://rtenfrancais.tv/afrique/139524-burkina-faso-premier-ministre-defend-russie",
-"ts": 1793450778,
-"lang": "fr",
-"outlet_name": "RT en français",
-"state": "yes",
-"owner": "ANO TV-Novosti",
-"title_en": "Burkina Faso: Prime Minister defends rapprochement with Moscow and affirms security improvement"
-},
-{
-"outlet": "africainitiative",
-"title": "Глава МИД Мали рассказал о приоритетах экономического сотрудничества с Россией",
-"link": "https://afrinz.ru/2026/10/glava-mid-mali-rasskazal-o-prioritetah-ekonomicheskogo-sotrudnichestva-s-rossiey/",
-"ts": 1793449752,
-"lang": "ru",
-"outlet_name": "African Initiative (Африканская инициатива)",
-"state": "yes",
-"owner": "Russian state-linked agency (founded 2023)",
-"title_en": "Foreign Minister of Mali spoke about the priorities of economic cooperation with Russia"
-},
-{
-"outlet": "lefaso",
-"title": "Burkina/SIAO 2026 : L'affluence des premiers jours donne espoir aux exposants",
-"link": "https://lefaso.net/spip.php?article150392",
-"ts": 1793446920,
-"lang": "fr",
-"outlet_name": "Lefaso.net",
-"state": "no",
-"owner": "Privately owned (founder Cyriaque Paré)",
-"title_en": "Burkina/SIAO 2026: The first few days of attendance give hope to exhibitors"
-},
-{
-"outlet": "lefaso",
-"title": "Burkina/Hommage aux martyrs de l'insurrection populaire : « Le Burkina Faso sera totalement libre, souverain et indépendant », réaffirme le capitaine Ibrahim Traoré",
-"link": "https://lefaso.net/spip.php?article150391",
-"ts": 1793446860,
-"lang": "fr",
-"outlet_name": "Lefaso.net",
-"state": "no",
-"owner": "Privately owned (founder Cyriaque Paré)",
-"title_en": "Burkina/Homage to the martyrs of the popular uprising:  Burkina Faso will be totally free, sovereign and independent , reiterates Captain Ibrahim Traoré"
-},
-{
-"outlet": "lefaso",
-"title": "Burkina/Orpaillage artisanal : Partis chercher de l'or, ils reviennent à bout de souffle",
-"link": "https://lefaso.net/spip.php?article150383",
-"ts": 1793444400,
-"lang": "fr",
-"outlet_name": "Lefaso.net",
-"state": "no",
-"owner": "Privately owned (founder Cyriaque Paré)",
-"title_en": "Burkina/Craftsman's Village: Going to look for gold, they come back breathless"
-},
-{
-"outlet": "premiumtimes",
-"title": "EXCLUSIVE: Report details NSCDC officers’ contributions to detention tragedy in Niger, recommends dismissal, prosecution",
-"link": "https://www.premiumtimesng.com/regional/north-central/921693-exclusive-report-details-nscdc-officers-contributions-to-detention-tragedy-in-niger-recommends-dismissal-prosecution.html",
-"ts": 1793433270,
-"lang": "en",
-"outlet_name": "Premium Times",
-"state": "no",
-"owner": "Premium Times Services (Dapo Olorunyomi)",
-"title_en": null
-},
-{
-"outlet": "tchadinfos",
-"title": "‎Tchad–Niger : à Moscou, N’Djamena et Niamey choisissent la voie du dialogue",
-"link": "https://tchadinfos.com/2026/10/31/tchad-niger-a-moscou-ndjamena-et-niamey-choisissent-la-voie-du-dialogue/",
-"ts": 1793432751,
-"lang": "fr",
-"outlet_name": "Tchadinfos",
-"state": "no",
-"owner": "Private",
-"title_en": "Chad and Niger: in Moscow, NDjamena and Niamey choose the path of dialogue"
-},
-{
-"outlet": "maliweb",
-"title": "GOONGA TAN : Mali-Burkina Faso : des accusations à l'épreuve des faits - Maliweb",
-"link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOazZUWlVQY2NkVzJhcTNFMmhUTk1tcWxjdTIySHhsLThUdlBSNGgtcFd4UGpPYWlWMkhCUm9QcUVxZENLbDZLeGpfaDVfU21mYW11QXl2eTVvaUkxM3c3OG9kMVZhZm5yTElCZWZXamw1dUd5NDlJeHpGN25jR1MwVnU4eFZRRnB6dHA1RFVHWXVDcUhoenRHbG00TzdWVGt5b2NZbmkta2IydGVaeTkwOXRNVTBVV004cVFwUnpOMl8?oc=5",
-"ts": 1793416321,
-"lang": "fr",
-"outlet_name": "Maliweb",
-"state": "no",
-"owner": "Private aggregator",
-"title_en": "GOONGA TAN: Mali-Burkina Faso: allegations are factually proven - Maliweb"
-},
-{
-"outlet": "maliweb",
-"title": "Ophtalmologues marocains : consultations gratuites et dons de lunettes au Mali - Maliweb",
-"link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQVRhY3l0VzFsVXNoX2Z1NmNRTnF6NkZUR2tlUk41NE84RVlBVzJkRi1uNXhMRjYyOElNYWdTdXluVUNPclNkRnVGUktOaV90aGx3U3IyT3dadFlRejhrcVQyc0t2dVNKSFpTVDQ1NlM0aVM3U3pQcG5wdlNWNkJwMGNhVVp6WHJJRUVMcjg4NmdaaHduU29VWjIxczVfN0IxUWp3TXlCYkxtSnY4TWhteA?oc=5",
-"ts": 1793412585,
-"lang": "fr",
-"outlet_name": "Maliweb",
-"state": "no",
-"owner": "Private aggregator",
-"title_en": "Moroccan ophthalmologists: free consultations and donations of glasses in Mali - Maliweb"
+"owner": "France Médias Monde",
+"title_en": "Moussa Kaka's two-month detention in Niger: His place is in front of a microphone"
 },
 {
 "outlet": "maliweb",
@@ -199,15 +155,26 @@
 "title_en": null
 },
 {
+"outlet": "france24_afrique",
+"title": "Sommet Russie-Afrique, déploiement algérien au Niger, frappe meurtrière au Darfour : l'hebdo Afrique",
+"link": "https://www.france24.com/fr/afrique/20261030-sommet-russie-afrique-d%C3%A9ploiement-algerien-niger-frappe-meurtriere-darfour-hebdo-afrique",
+"ts": 1793355198,
+"lang": "fr",
+"outlet_name": "France 24 Afrique",
+"state": "yes",
+"owner": "France Médias Monde",
+"title_en": "Russia-Africa summit, Algerian deployment in Niger, deadly strike in Darfur: the hebdo Africa"
+},
+{
 "outlet": "maliweb",
-"title": "Formation professionnelle : 23 étudiants maliens s'envolent pour la Chine - Maliweb",
-"link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxONS1pZTROR1VGVVBJWGRwMXNiaDc4M2lyUDJ2RHFLWnZGdXB4WVlzMnN2ZlBsNEZZSXNKMzA2ZWJIdXZ3aWZRRUc5RFhPSE41WkQ4c3FESGFvcjVjeW5BMHIwYkFoc1AxcVo3MlNRTkdFS3d2X3JPOWkyUnVNYk5OSTB5dTFKc2NDS0RSUk1SN0dWb2ZyTDB2d3Fab2lkSHJ6b0NpdjdmQmdZVVVWRXF6QVR1WjExcjNnc1piQWpRSFhRMTRDczU4LVltQWJRdw?oc=5",
-"ts": 1793363480,
+"title": "SOMMET RUSSIE-AFRIQUE : Le Président Assimi GOÏTA réaffirme la vision du Mali pour un partenariat fondé sur la souveraineté et le développement mutuel - Maliweb",
+"link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOenlweUM0alVGXzloVVVNZGtHV29IekFaOEQzOGFyYnE1VmlwekVPSHZ1VVUxNnBUM1VoLVNZZnppMkY1MXFrcTNmbjRIVm9YNDBuWFN1a3NwN2dtU0drZG9ES2dTOE9UWUdOc1R6QksxY2x1cGhuT25Fa1FXSUxyWFpHZ0hfR25Fek5hLU9CRFpwdmZrYlBTMTBtN252a0lnRTdlOFRBWFFCdnFkcVU1REhqeTU5ZlVhM0xyNmMtNmpFUTg?oc=5",
+"ts": 1793350962,
 "lang": "fr",
 "outlet_name": "Maliweb",
 "state": "no",
 "owner": "Private aggregator",
-"title_en": "Vocational training: 23 Malian students fly to China - Maliweb"
+"title_en": "RUSSIA-AFRICA SUMMET: President Assimi Goita reaffirms Mali's vision for a partnership based on sovereignty and mutual development - Maliweb"
 },
 {
 "outlet": "jeuneafrique",
@@ -232,15 +199,26 @@
 "title_en": null
 },
 {
-"outlet": "jeuneafrique",
-"title": "Coris, le trublion burkinabè qui défie les géants malgré un bilan de poche",
-"link": "https://www.jeuneafrique.com/1854213/economie-entreprises/coris-le-trublion-burkinabe-qui-defie-les-geants-malgre-un-bilan-de-poche/",
-"ts": 1793274927,
+"outlet": "france24_afrique",
+"title": "Tchad : le pays dément les accusations du Niger concernant une frappe de drone",
+"link": "https://www.france24.com/fr/vid%C3%A9o/20261029-tchad-le-pays-d%C3%A9ment-les-accusations-du-niger-concernant-une-frappe-de-drone",
+"ts": 1793292627,
 "lang": "fr",
-"outlet_name": "Jeune Afrique",
+"outlet_name": "France 24 Afrique",
+"state": "yes",
+"owner": "France Médias Monde",
+"title_en": "Chad: Niger denies allegations of drone strike"
+},
+{
+"outlet": "maliweb",
+"title": "Assimi Goïta à Moscou : « Le Mali choisit ses partenaires, il ne subit plus » - Maliweb",
+"link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOUlZDYjRmVnA2alF2ekdMMllfNkxCSUFqMWIyRzRLemlHSkxWR1JBaVVuZmlwZG1sTmZMeFRhOTJfREtqNDlZTm8tV2IwcjA3NEVxZjY3ZFAxeUFFLUlJZmIwRTNVS3VhbGJ3NDE3c0wycE1UNVR1VGpDYVkzX0FaWmZxZ1UwS0RCa3o1ekRrSHpXN3puODlWbmt3V1BPekhVcEpmNWdYUWJsWVpmOThCekUtb2U3WkFHSEs3Rk5YTlBZWnY1SnZz?oc=5",
+"ts": 1793272140,
+"lang": "fr",
+"outlet_name": "Maliweb",
 "state": "no",
-"owner": "Groupe Jeune Afrique (Ben Yahmed family)",
-"title_en": "Coris, the Burkinabe troublemaker who defies giants despite a budget"
+"owner": "Private aggregator",
+"title_en": "Assimi Goïta in Moscow:  Mali chooses its partners, it no longer suffers  - Maliweb"
 },
 {
 "outlet": "dwportugues_africa",
@@ -252,6 +230,17 @@
 "state": "no",
 "owner": "Deutsche Welle",
 "title_en": "Mali: Is Ukraine supporting the rebels against Russia? - DW.com"
+},
+{
+"outlet": "alwihda",
+"title": "Le Tchad dément formellement toute implication dans des frappes contre le Niger - Alwihda Info",
+"link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOazJkS2JDY0pjNXc4YnBqOXNTMDlGSHBDZngySFhSbXRHYWpmQ3RjaEMtTWNfc2VaZzVLY0hvd0xsbTJaRTZSMVBmcEttZVo1UExRS3IxM3VXcjdHam1mOXk3b2dpRmt1dGxBcGVyTHExMlR0OFVsU1pTcC1LZzFsYmhSZDhkYlAzMjJnUnRIak9EWmtxdUFEVHI2Sldrc1hjYk53Tnk3M04ybk9f?oc=5",
+"ts": 1793105883,
+"lang": "fr",
+"outlet_name": "Alwihda Info",
+"state": "no",
+"owner": "Private",
+"title_en": "Chad formally denies any involvement in strikes against Niger - Alwihda Info"
 },
 {
 "outlet": "bbcafrique",
@@ -300,15 +289,92 @@
 ],
 "lake-chad": [
 {
+"outlet": "premiumtimes",
+"title": "Joint naval, army forces kill 34 insurgents in Lake Chad region",
+"link": "https://www.premiumtimesng.com/news/headlines/921902-joint-naval-army-forces-kill-34-insurgents-in-lake-chad-region.html",
+"ts": 1793544599,
+"lang": "en",
+"outlet_name": "Premium Times",
+"state": "no",
+"owner": "Premium Times Services (Dapo Olorunyomi)",
+"title_en": null
+},
+{
+"outlet": "seneweb",
+"title": "Tchad : au moins 25 morts et 22 blessées dans un conflit intercommunautaire",
+"link": "https://www.seneweb.com/fr/news/Afrique/tchad-au-moins-25-morts-et-22-blessees-dans-un-conflit-intercommunautaire_n_999002359.html",
+"ts": 1793541880,
+"lang": "fr",
+"outlet_name": "Seneweb",
+"state": "no",
+"owner": "Private",
+"title_en": "Chad: At least 25 killed and 22 wounded in intercommunal conflict"
+},
+{
 "outlet": "tchadinfos",
-"title": "Tchad : un nouveau parti libéral fait son entrée sur la scène politique",
-"link": "https://tchadinfos.com/2026/10/31/tchad-un-nouveau-parti-liberal-fait-son-entree-sur-la-scene-politique/",
-"ts": 1793453439,
+"title": "Tchad : le gouvernement valide le bilan biennal du programme politique du chef de l’État",
+"link": "https://tchadinfos.com/2026/11/01/tchad-le-gouvernement-valide-le-bilan-biennal-du-programme-politique-du-chef-de-letat/",
+"ts": 1793529030,
 "lang": "fr",
 "outlet_name": "Tchadinfos",
 "state": "no",
 "owner": "Private",
-"title_en": "Chad: a new liberal party enters the political scene"
+"title_en": "Chad: Government approves the biennial report on the political programme of the Head of State"
+},
+{
+"outlet": "tchadinfos",
+"title": "‎Tchad : le ministre de la Sécurité publique interdit la circulation des motos hors zones urbaines dans quatre provinces",
+"link": "https://tchadinfos.com/2026/11/01/tchad-le-ministre-de-la-securite-publique-interdit-la-circulation-des-motos-hors-zones-urbaines-dans-quatre-provinces/",
+"ts": 1793523796,
+"lang": "fr",
+"outlet_name": "Tchadinfos",
+"state": "no",
+"owner": "Private",
+"title_en": "Chad: Minister of Public Safety bans motorcycles from urban areas in four provinces"
+},
+{
+"outlet": "rfiafrique",
+"title": "Le Cameroun interdit la vente de motos sans plaque d'immatriculation pour lutter contre la criminalité",
+"link": "https://www.rfi.fr/fr/afrique/20261101-le-cameroun-interdit-la-vente-de-motos-sans-plaque-d-immatriculation-pour-lutter-contre-la-criminalit%C3%A9",
+"ts": 1793512236,
+"lang": "fr",
+"outlet_name": "RFI Afrique",
+"state": "yes",
+"owner": "France Médias Monde",
+"title_en": "Cameroon bans the sale of motorcycles without license plates to fight crime"
+},
+{
+"outlet": "alwihda",
+"title": "تشاد: حظر استخدام الدراجات النارية خارج المدن في أربع مقاطعات - Alwihda Info",
+"link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcXEzOWJrWDF1NVpmZW4yNko4WEhjUTFVd0dLd3YwMnhuTEx4RHVKcWlobVpOZDFLajNtSzhyNEF1TVRfUllLUE90bEx4TGpQa0l3bVdzd2wtZkdxdksxU0QzT0RZNE9zOUhIRzJNRFZQNmExTkI0bTdjRGRrVFUzc3JBUQ?oc=5",
+"ts": 1793473904,
+"lang": "ar",
+"outlet_name": "Alwihda Info",
+"state": "no",
+"owner": "Private",
+"title_en": "Chad: Motorcycles banned outside cities in four provinces - Alwihda Info"
+},
+{
+"outlet": "alwihda",
+"title": "Tchad : interdiction de la circulation des motos hors des zones urbaines dans quatre provinces - Alwihda Info",
+"link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOUUhQTkFEd2dPcU41SkZhdnZWcU43OEhseTBDRi1SeV9MNjZ6Y0tmcG55enNqQi1mVEFDMEtXUUw1X2ZUODFJY1I4STJ2SmREdnMwdDd3WHJZX1pMcjR1aTloV0FoVFp6MW9WbjV5M0ZKSnpGVG1HclNBOFdGQVpLUHl2NXJmM3p3R2I0UVJJbzhkVWdUV19wM3o3UkM4cTEzbjVaemlpS0FKOF9fTE1SZzllYkFxZFk5cHhHVDBB?oc=5",
+"ts": 1793473604,
+"lang": "fr",
+"outlet_name": "Alwihda Info",
+"state": "no",
+"owner": "Private",
+"title_en": "Chad: ban on motorcycles outside urban areas in four provinces - Alwihda Info"
+},
+{
+"outlet": "alwihda",
+"title": "Tchad : le gouvernement compte en gouttes, N’Djamena pleure en cascades - Alwihda Info",
+"link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPS2ZRbUljeTh4MnllQWo3cDhubUdXbGR2eWFabXBMRl9VS216b0RTalAzdUlrSlIybVd5TWNLRG9RT0VkNlFOT3MxNmxUS3h4Q0pfQWdYX1ZBdUx3eEFpbm5pTzBlQlJhRkJrbENVUHYyMElhVkpnLS1JY1poTUV6dUF5d25kTDVONmhkaW1CVTJyWXhEZ2pRV0hWcXE?oc=5",
+"ts": 1793470904,
+"lang": "fr",
+"outlet_name": "Alwihda Info",
+"state": "no",
+"owner": "Private",
+"title_en": "Chad: the government is in drops, NDjamena is crying in waterfalls - Alwihda Info"
 },
 {
 "outlet": "rfiafrique",
@@ -322,17 +388,6 @@
 "title_en": "Cameroon: deep dissatisfaction with the quality of Internet coverage"
 },
 {
-"outlet": "actucameroun",
-"title": "David Pagou lance un appel aux binationaux : « Montrez que vous voulez jouer pour le Cameroun ! »",
-"link": "https://actucameroun.com/2026/10/31/david-pagou-lance-un-appel-aux-binationaux-montrez-que-vous-voulez-jouer-pour-le-cameroun/",
-"ts": 1793440420,
-"lang": "fr",
-"outlet_name": "Actu Cameroun",
-"state": "no",
-"owner": "Private",
-"title_en": "David Pagou calls on the two-nationals:  Show that you want to play for Cameroon! "
-},
-{
 "outlet": "rfiafrique",
 "title": "Cameroun: le géant nigérian Dangote s'implante dans le secteur pétrolier",
 "link": "https://www.rfi.fr/fr/afrique/20261031-cameroun-le-g%C3%A9ant-nig%C3%A9rian-dangote-s-implante-dans-le-secteur-p%C3%A9trolier",
@@ -342,72 +397,6 @@
 "state": "yes",
 "owner": "France Médias Monde",
 "title_en": "Cameroon: Nigerian oil giant Dangote is in the oil business"
-},
-{
-"outlet": "actucameroun",
-"title": "Cameroun : le parti RENA officialise son entrée sur la scène politique",
-"link": "https://actucameroun.com/2026/10/31/cameroun-le-parti-rena-officialise-son-entree-sur-la-scene-politique/",
-"ts": 1793438968,
-"lang": "fr",
-"outlet_name": "Actu Cameroun",
-"state": "no",
-"owner": "Private",
-"title_en": "Cameroon: RENA party officially enters the political scene"
-},
-{
-"outlet": "aminiya",
-"title": "Yadda sojoji suka kashe ’yan ISWAP 48, suka ƙwato makamai",
-"link": "https://aminiya.ng/yadda-sojoji-suka-kashe-yan-iswap-48-suka-%c6%99wato-makamai/",
-"ts": 1793437963,
-"lang": "ha",
-"outlet_name": "Aminiya (Daily Trust)",
-"state": "no",
-"owner": "Media Trust Ltd",
-"title_en": "How soldiers killed 48 ISWAP members, armed"
-},
-{
-"outlet": "actucameroun",
-"title": "Médecine traditionnelle au Cameroun : le Parlement plaide pour une meilleure structuration",
-"link": "https://actucameroun.com/2026/10/31/medecine-traditionnelle-au-cameroun-le-parlement-plaide-pour-une-meilleure-structuration/",
-"ts": 1793437838,
-"lang": "fr",
-"outlet_name": "Actu Cameroun",
-"state": "no",
-"owner": "Private",
-"title_en": "Traditional medicine in Cameroon: Parliament calls for better structuring"
-},
-{
-"outlet": "tchadinfos",
-"title": "‎Moov Africa Tchad s’engage aux côtés du Forum National de l’Emploi pour l’insertion professionnelle de 300 jeunes",
-"link": "https://tchadinfos.com/2026/10/31/moov-africa-tchad-sengage-aux-cotes-du-forum-national-de-lemploi-pour-linsertion-de-300-jeunes/",
-"ts": 1793437637,
-"lang": "fr",
-"outlet_name": "Tchadinfos",
-"state": "no",
-"owner": "Private",
-"title_en": "Moov Africa Chad joins the National Employment Forum for the Vocational Integration of 300 young people"
-},
-{
-"outlet": "tchadinfos",
-"title": "Tchad : le 5ᵉ Colloque international de l’ENA s’achève sur un appel à un développement africain fondé sur les potentialités du continent",
-"link": "https://tchadinfos.com/2026/10/31/tchad-le-5%e1%b5%89-colloque-international-de-lena-sacheve-sur-un-appel-a-un-developpement-africain-fonde-sur-les-potentialites-du-continent/",
-"ts": 1793437234,
-"lang": "fr",
-"outlet_name": "Tchadinfos",
-"state": "no",
-"owner": "Private",
-"title_en": "Chad: 5th NAFTA International Conference concludes on a call for African development based on the continent's potential"
-},
-{
-"outlet": "tchadinfos",
-"title": "‎Tchad–Niger : à Moscou, N’Djamena et Niamey choisissent la voie du dialogue",
-"link": "https://tchadinfos.com/2026/10/31/tchad-niger-a-moscou-ndjamena-et-niamey-choisissent-la-voie-du-dialogue/",
-"ts": 1793432751,
-"lang": "fr",
-"outlet_name": "Tchadinfos",
-"state": "no",
-"owner": "Private",
-"title_en": "Chad and Niger: in Moscow, NDjamena and Niamey choose the path of dialogue"
 },
 {
 "outlet": "libyaherald",
@@ -421,17 +410,6 @@
 "title_en": null
 },
 {
-"outlet": "rfiafrique",
-"title": "«Le Cameroun fait face à une dégradation de sa situation économique», estime Célestin Tawamba",
-"link": "https://www.rfi.fr/fr/podcasts/invit%C3%A9-afrique-midi/20261030-le-cameroun-fait-face-%C3%A0-une-d%C3%A9gradation-de-sa-situation-%C3%A9conomique-estime-c%C3%A9lestin-tawamba",
-"ts": 1793383559,
-"lang": "fr",
-"outlet_name": "RFI Afrique",
-"state": "yes",
-"owner": "France Médias Monde",
-"title_en": "Cameroon is facing a deterioration in its economic situation, says Célestin Tawamba"
-},
-{
 "outlet": "jeuneafrique",
 "title": "Carburants au Cameroun : comment la Sonara a fait affaire avec Aliko Dangote",
 "link": "https://www.jeuneafrique.com/1857756/economie-entreprises/carburants-au-cameroun-comment-la-sonara-a-fait-affaire-avec-aliko-dangote/",
@@ -441,17 +419,6 @@
 "state": "no",
 "owner": "Groupe Jeune Afrique (Ben Yahmed family)",
 "title_en": "Fuels in Cameroon: how Sonara dealt with Aliko Dangote"
-},
-{
-"outlet": "rfihausa",
-"title": "Sojojin Najeriya sun hallaka mayaƙan ISWAP 48 a Buni Yadi",
-"link": "https://www.rfi.fr/ha/najeriya/20261030-sojojin-najeriya-sun-hallaka-maya%C6%99an-iswap-48-a-buni-yadi",
-"ts": 1793376059,
-"lang": "ha",
-"outlet_name": "RFI Hausa",
-"state": "yes",
-"owner": "France Médias Monde",
-"title_en": "48 ISWAP fighters killed by Nigerian troops in Buni Yadi"
 },
 {
 "outlet": "theafricareport",
@@ -531,6 +498,17 @@
 "title_en": "Martinez Zogo trial in Cameroon: Perfect Ayissi Nanga charged with Martin Savom and Galax Yves Landry Etoga"
 },
 {
+"outlet": "france24_afrique",
+"title": "Sortie du Tchad de la CPI : une aubaine pour les criminels de guerre soudanais ?",
+"link": "https://www.france24.com/fr/vid%C3%A9o/20261029-tchad-les-survivants-racontent-l-horreur-un-an-apr%C3%A8s-le-massacre-d-el-fasher",
+"ts": 1793293006,
+"lang": "fr",
+"outlet_name": "France 24 Afrique",
+"state": "yes",
+"owner": "France Médias Monde",
+"title_en": "Chad's exit from the ICC: a boon for Sudanese war criminals?"
+},
+{
 "outlet": "alwihda",
 "title": "Cameroun : le prince Albert II de Monaco attendu à Yaoundé ce 30 octobre - Alwihda Info",
 "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPNngtN3RaY2g2SkFIcWg5aHhOQUtpeFJsNEdQaTVSczBIMEd2NXFPWkk3WE5FZmV3NmFOTldNbGxES2NHOFdaMDVGR1prRWpwQ3RjSFg1LTNXTHJMak5ZcTJMR2ZpN0hGSk9XLTUtejdiTmRTSU16Yl92c21jNkpIOVEtOGlDNmNmQVpYODZSODJwdUhSVHRDeXNRVFMwaW9p?oc=5",
@@ -540,85 +518,118 @@
 "state": "no",
 "owner": "Private",
 "title_en": "Cameroon: Prince Albert II of Monaco expected in Yaoundé on 30 October - Alwihda Info"
-},
-{
-"outlet": "jeuneafrique",
-"title": "Au Tchad, le contrôle des mines d’or de Miski provoque de nouveaux affrontements",
-"link": "https://www.jeuneafrique.com/1856923/politique/au-tchad-le-controle-des-mines-dor-de-miski-provoque-de-nouveaux-affrontements/",
-"ts": 1793267732,
-"lang": "fr",
-"outlet_name": "Jeune Afrique",
-"state": "no",
-"owner": "Groupe Jeune Afrique (Ben Yahmed family)",
-"title_en": "In Chad, the control of the Miski gold mines causes further clashes"
-},
-{
-"outlet": "alwihda",
-"title": "Sécurité au Cameroun : mesures fermes dans la région du Centre après la présidentielle - Alwihda Info",
-"link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQelN3NXFiRXkwMnQ1UTBzc2UyQmw4NEh2WVNISUpNU0pBamJodktJaVp4dk1nUUNMQWg3UEgwNTVNNXN2cU43d2dJbzlqRkdfZlNjU0laa0hWWlR1UnBETjJWeU53SHE2UUhaWlR0WXhwNnNUeU9fcW5SWks5VVBCVXB5VG1QdWQxUzJQTDd0YzNCTXdkMXViYnJYX05vYXQtMVdSS0RQQnNVZTFuU2NSRzlBNA?oc=5",
-"ts": 1793030457,
-"lang": "fr",
-"outlet_name": "Alwihda Info",
-"state": "no",
-"owner": "Private",
-"title_en": "Security in Cameroon: strong measures in the Central region after the presidential election - Alwihda Info"
-},
-{
-"outlet": "alwihda",
-"title": "Escroquerie présumée de 8 millions de FCFA à N'Djamena : le prévenu nie en bloc devant le tribunal - Alwihda Info",
-"link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQM3Q0bFhlZGZ2VzhxLXZLN2RkX0N1RFBiOEt4RDduX2xCbk5WanNuS0V1S3J6bm5nNzdZXzR3UXNfLTVodFV1X2lwRkJNRE9NNHFNeWhfR3lHa3hkRVk4VzY4NHdpRzNLQ0M3a2ZfZTdxOFNwT1ZtN2pGOGN2V2FUd29fcUltLWw2MkdrYm41a2MzU2J0WThyMzk0STBSN2Z1UzhWVUJEekh0ZVVuY1I3TWFTdndVWUNHQkQzaHd3LWdVZw?oc=5",
-"ts": 1792735809,
-"lang": "fr",
-"outlet_name": "Alwihda Info",
-"state": "no",
-"owner": "Private",
-"title_en": "Suspected fraud of 8 million FCFA in N'Djamena: defendant denied in court - Alwihda Info"
-},
-{
-"outlet": "alwihda",
-"title": "Tchad : quatre morts et quatorze blessés dans une frappe de drone à Bamina - Alwihda Info",
-"link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWWp1NU9mWXpOZkJZRE9Zdm1IMGRpWnBlN2l6RUhlbGVmc1JYcU9iMEJpOFd3cGxXbFJRLVNCSGQwaHo5WDVrZTNycDFYTmM1c3hqa21JQzZlX3hudWFERkRvcFJZck9tVnBZYVU0ZnBlQjlnX2hPNWZKOTlEbjBremd1R1dqckFjWUJCSHA5eFlZYVFodGVhVFA0eFFOS0FiamJV?oc=5",
-"ts": 1792624984,
-"lang": "fr",
-"outlet_name": "Alwihda Info",
-"state": "no",
-"owner": "Private",
-"title_en": "Chad: four dead and 14 injured in drone strike in Bamina - Alwihda Info"
 }
 ],
 "sudan": [
 {
+"outlet": "jeuneafrique",
+"title": "Soudan : un an après sa prise par Hemetti, El-Fasher reste une ville fantôme",
+"link": "https://www.jeuneafrique.com/1857235/politique/soudan-un-an-apres-sa-prise-par-hemetti-el-fasher-reste-une-ville-fantome/",
+"ts": 1793549264,
+"lang": "fr",
+"outlet_name": "Jeune Afrique",
+"state": "no",
+"owner": "Groupe Jeune Afrique (Ben Yahmed family)",
+"title_en": "Sudan: A year after Hemetti's capture, El-Fasher remains a ghost town"
+},
+{
 "outlet": "sudantribune_ar",
-"title": "في مواجهة الموت البطيء.. سوء التغذية ينتزع الحياة من صغار دارفور",
-"link": "https://sudantribune.net/article/320696",
-"ts": 1793460537,
+"title": "بنك السودان يتحرك لتمويل السلع الاستراتيجية وإصلاح القطاع المصرفي",
+"link": "https://sudantribune.net/article/320733",
+"ts": 1793546806,
 "lang": "ar",
 "outlet_name": "Sudan Tribune (Arabic)",
 "state": "no",
 "owner": "Same",
-"title_en": "In the face of slow death, malnutrition robs Darfur's young of life."
+"title_en": "Bank of Sudan moves to finance strategic goods and reform the banking sector"
 },
 {
-"outlet": "sudantribune_ar",
-"title": "«الدعم السريع» تقصف منشأة كهرباء ومحطة لضخ النفط شرقي السودان",
-"link": "https://sudantribune.net/article/320690",
-"ts": 1793449595,
-"lang": "ar",
-"outlet_name": "Sudan Tribune (Arabic)",
-"state": "no",
-"owner": "Same",
-"title_en": "Rapid support bombing power plant and oil pump station in eastern Sudan"
-},
-{
-"outlet": "nation",
-"title": "The impossible logistics of South Sudan's December elections",
-"link": "https://nation.africa/kenya/news/africa/the-impossible-logistics-of-south-sudan-s-december-elections--5653180",
-"ts": 1793433600,
+"outlet": "radiotamazuj",
+"title": "Op-Ed| From liberation to state capture: What South Sudan can learn from South Africa’s Madlanga Commission",
+"link": "https://www.radiotamazuj.org/en/news/article/op-ed-from-liberation-to-state-capture-what-south-sudan-can-learn-from-south-africas-madlanga-commission",
+"ts": 1793524867,
 "lang": "en",
-"outlet_name": "Daily Nation",
+"outlet_name": "Radio Tamazuj",
 "state": "no",
-"owner": "Nation Media Group",
+"owner": "Free Voice / donor-funded",
 "title_en": null
+},
+{
+"outlet": "radiotamazuj",
+"title": "Opinion| The untying of the Gordian knot: Why relieving South Sudan’s bloated executive was a necessary act of statecraft",
+"link": "https://www.radiotamazuj.org/en/news/article/opinion-the-untying-of-the-gordian-knot-why-relieving-south-sudans-bloated-executive-was-a-necessary-act-of-statecraft",
+"ts": 1793524128,
+"lang": "en",
+"outlet_name": "Radio Tamazuj",
+"state": "no",
+"owner": "Free Voice / donor-funded",
+"title_en": null
+},
+{
+"outlet": "sudantribune",
+"title": "Egypt condemns drone attacks in Sudan, urges halt to RSF arms supply - Sudan Tribune",
+"link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5PdkIzNHh2QzBoa2pqN1dacjFJOFc3TF9EbUJlaV8yWjRiVkFfMHJjU0c3MW05cjJaNC1oejVYLW5ic0x5UWRJa2NRRWdaLUhM?oc=5",
+"ts": 1793487525,
+"lang": "en",
+"outlet_name": "Sudan Tribune",
+"state": "no",
+"owner": "Private, Paris-based",
+"title_en": null
+},
+{
+"outlet": "sudantribune_ar",
+"title": "السودان يتهم أوكرانيا بتدريب مقاتلي «الدعم السريع» ويقدم شكوى إلى الأمم المتحدة",
+"link": "https://sudantribune.net/article/320717",
+"ts": 1793483129,
+"lang": "ar",
+"outlet_name": "Sudan Tribune (Arabic)",
+"state": "no",
+"owner": "Same",
+"title_en": "Sudan accuses Ukraine of training fighters and has filed a complaint with the United Nations."
+},
+{
+"outlet": "sudantribune",
+"title": "Sudan accuses Ethiopia of facilitating drone strikes on infrastructure - Sudan Tribune",
+"link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5IMVY0VmVPVm1PUlRSbkRsdkhYNDRHQ1JaZXF1cTd0Y3ZfUVdGMmwtZzFSMDluMFJIZzFuZ2Z5MlkxdkdDUkRKc1dwVzh4V1RK?oc=5",
+"ts": 1793476533,
+"lang": "en",
+"outlet_name": "Sudan Tribune",
+"state": "no",
+"owner": "Private, Paris-based",
+"title_en": null
+},
+{
+"outlet": "sudantribune_ar",
+"title": "الأمم المتحدة تدين تصاعد هجمات المسيّرات في السودان",
+"link": "https://sudantribune.net/article/320706",
+"ts": 1793471307,
+"lang": "ar",
+"outlet_name": "Sudan Tribune (Arabic)",
+"state": "no",
+"owner": "Same",
+"title_en": "The U.N. condemns the escalating car attacks in Sudan."
+},
+{
+"outlet": "radiotamazuj",
+"title": "Burhan risks repeating Bashir’s failed Russia gambit, analyst warns",
+"link": "https://www.radiotamazuj.org/en/news/article/burhan-risks-repeating-bashirs-failed-russia-gambit-analyst-warns",
+"ts": 1793469129,
+"lang": "en",
+"outlet_name": "Radio Tamazuj",
+"state": "no",
+"owner": "Free Voice / donor-funded",
+"title_en": null
+},
+{
+"outlet": "sudantribune_ar",
+"title": "السودان يطالب المجتمع الدولي بتحمل مسؤولياته تجاه التواطؤ الإثيوبي",
+"link": "https://sudantribune.net/article/320699",
+"ts": 1793465790,
+"lang": "ar",
+"outlet_name": "Sudan Tribune (Arabic)",
+"state": "no",
+"owner": "Same",
+"title_en": "Sudan calls on the international community to take responsibility for Ethiopian complicity"
 },
 {
 "outlet": "rfiafrique",
@@ -632,94 +643,6 @@
 "title_en": "Sadibou Marong (RSF): Two months of secret detention for Moussa Kaka in Niger"
 },
 {
-"outlet": "addisstandard",
-"title": "#Daily_Brief: #US, dozens of countries warn of rising famine risk in #Sudan, urge aid access - Addis Standard",
-"link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE00ellBamJpSU1fNnJNZkU4RnRLRExzSGIxYUU5aHBwbzNhSjEzRXNsMHZabE0tWTRqSzcyUTVTRTJHR2FFRDRHTG8tcG5tclBOc1E?oc=5",
-"ts": 1793427668,
-"lang": "en",
-"outlet_name": "Addis Standard",
-"state": "no",
-"owner": "Private (Tsedale Lemma)",
-"title_en": null
-},
-{
-"outlet": "addisstandard",
-"title": "Daily_Brief: #Sudan rights group says army drone strike kills more than 100 in #Darfur market - Addis Standard",
-"link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9Ha3NOZzNWTnFxaEk5cFF5MG1aMGtWVGhHQzExTWhET3lndVNZVTB3WU5URjlxSU1XZ2lKRFpCM2t2aUJKUW10OC0yMHVQTUhMUGc?oc=5",
-"ts": 1793424842,
-"lang": "en",
-"outlet_name": "Addis Standard",
-"state": "no",
-"owner": "Private (Tsedale Lemma)",
-"title_en": null
-},
-{
-"outlet": "sudantribune",
-"title": "Sudan offers Russia mining sites, Red Sea economic zone - Sudan Tribune",
-"link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE8zcnEtc0pKNjNvNHBubHRsSUlxbS1GNTFtTS1UdURVeEpzYTJTOF95ZXNEUjVRWW96VHJfNmt5ZzZnSnI1ZVVYVUNFTmxuS1pL?oc=5",
-"ts": 1793394653,
-"lang": "en",
-"outlet_name": "Sudan Tribune",
-"state": "no",
-"owner": "Private, Paris-based",
-"title_en": null
-},
-{
-"outlet": "radiotamazuj",
-"title": "Sudan offers Russia Red Sea investment, mining opportunities",
-"link": "https://www.radiotamazuj.org/en/news/article/sudan-offers-russia-red-sea-investment-mining-opportunities",
-"ts": 1793387927,
-"lang": "en",
-"outlet_name": "Radio Tamazuj",
-"state": "no",
-"owner": "Free Voice / donor-funded",
-"title_en": null
-},
-{
-"outlet": "eyeradio",
-"title": "UK provides 2.8 million US dollars for flood preparedness in South Sudan",
-"link": "https://eyeradio.org/uk-provides-2-8-million-us-dollars-for-flood-preparedness-in-south-sudan/?utm_source=rss&utm_medium=rss&utm_campaign=uk-provides-2-8-million-us-dollars-for-flood-preparedness-in-south-sudan",
-"ts": 1793367102,
-"lang": "en",
-"outlet_name": "Eye Radio",
-"state": "no",
-"owner": "Private (Eye Media)",
-"title_en": null
-},
-{
-"outlet": "radiotamazuj",
-"title": "SSPLM leader condemns South Sudan-Russia oil deal, calls it illegal",
-"link": "https://www.radiotamazuj.org/en/news/article/ssplm-leader-condemns-south-sudan-russia-oil-deal-calls-it-illegal",
-"ts": 1793365236,
-"lang": "en",
-"outlet_name": "Radio Tamazuj",
-"state": "no",
-"owner": "Free Voice / donor-funded",
-"title_en": null
-},
-{
-"outlet": "sudantribune_ar",
-"title": "مسيرات «الدعم السريع» في شندي.. قصف (11) محطة كهرباء خلال (10) أيام",
-"link": "https://sudantribune.net/article/320660",
-"ts": 1793360237,
-"lang": "ar",
-"outlet_name": "Sudan Tribune (Arabic)",
-"state": "no",
-"owner": "Same",
-"title_en": "Rapid support marches in Shandy, bombing of 11 power stations in 10 days."
-},
-{
-"outlet": "radiotamazuj",
-"title": "Families displaced to Al-Manar camp in East Darfur after crop failure",
-"link": "https://www.radiotamazuj.org/en/news/article/families-displaced-to-al-manar-camp-in-east-darfur-after-crop-failure",
-"ts": 1793359047,
-"lang": "en",
-"outlet_name": "Radio Tamazuj",
-"state": "no",
-"owner": "Free Voice / donor-funded",
-"title_en": null
-},
-{
 "outlet": "sudantribune",
 "title": "Rapid Support Forces drone strikes target gold mines in Sudan’s Blue Nile - Sudan Tribune",
 "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5KVFM0SWhfalRxZlh2QkdaMGsyenR2d2pfTnJ6a19XOFkwN2dCZE02ZUFQVVhLdjN0QnNqZFZDNWc1MjBtNUZaRUNXSXlCcnhT?oc=5",
@@ -729,17 +652,6 @@
 "state": "no",
 "owner": "Private, Paris-based",
 "title_en": null
-},
-{
-"outlet": "sudantribune_ar",
-"title": "الأمم المتحدة: مدنيو السودان محاصرون بين ضربات المسيّرات واعتقالات السلطات",
-"link": "https://sudantribune.net/article/320652",
-"ts": 1793309483,
-"lang": "ar",
-"outlet_name": "Sudan Tribune (Arabic)",
-"state": "no",
-"owner": "Same",
-"title_en": "UN: Sudanese civilians trapped between motorist strikes and authorities' arrests"
 },
 {
 "outlet": "dabanga",
@@ -786,14 +698,14 @@
 "title_en": null
 },
 {
-"outlet": "sudantribune",
-"title": "Sudan opposes UAE candidate Lana Nusseibeh for UN secretary-general role - Sudan Tribune",
-"link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1oLVR1RDFOWG9FNkdJUDJnbG5yVU14VXloSkNvZlcwM2FTRWg0ZjY2QUdfdW1FNHZySHFpdEh5Zlo4TFBDZmVZWm1xMk9tblpy?oc=5",
-"ts": 1793268391,
+"outlet": "cgtn",
+"title": "Sudan accuses drone attacks to alleged activity in Ethiopia",
+"link": "https://newsaf.cgtn.com/news/2026-10-29/Sudan-accuses-drone-attacks-to-alleged-activity-in-Ethiopia-1RDuCgxZXc4/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World",
+"ts": 1793265984,
 "lang": "en",
-"outlet_name": "Sudan Tribune",
-"state": "no",
-"owner": "Private, Paris-based",
+"outlet_name": "CGTN",
+"state": "yes",
+"owner": "China Media Group (CCP Central Propaganda Dept)",
 "title_en": null
 },
 {
@@ -805,6 +717,17 @@
 "outlet_name": "Radio Dabanga",
 "state": "no",
 "owner": "Free Press Unlimited / Radio Darfur Network",
+"title_en": null
+},
+{
+"outlet": "ahram",
+"title": "President El-Sisi meets Sudan, Kenya, and Mali leaders in Moscow - Foreign Affairs - Egypt - Ahram Online",
+"link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPNnhWOEt1VDlkVHdsQWhUSmRzT0JtakFhV2NLci10STU4ZHZuRmpzalBJV0FNMmFTaUxnLS1BaFNZcXhicndSVkRPc1VPNTE0UlUyUnhPZ2xMNlpkVkNCbVhrVDJyTHBGV3NQdThhYng0UXY1aWUyYlhWQUFjTXZIcWtnRmFZY2NkWFd6MC1PRTd5eXo5ZThwSGJVb0tXbXZjZFlINzRMVksyZGU2eE5aTjFB?oc=5",
+"ts": 1793257200,
+"lang": "en",
+"outlet_name": "Ahram Online",
+"state": "yes",
+"owner": "Al-Ahram Establishment",
 "title_en": null
 },
 {
@@ -830,37 +753,15 @@
 "title_en": "Sudan: Market hit in Darfur region now stands at more than 100 dead"
 },
 {
-"outlet": "cgtn",
-"title": "UN commission warns of ‘constitutional coup’ in South Sudan",
-"link": "https://newsaf.cgtn.com/news/2026-10-28/UN-commission-warns-of-constitutional-coup-in-South-Sudan-1RBQP7badHy/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World",
-"ts": 1793192534,
-"lang": "en",
-"outlet_name": "CGTN",
-"state": "yes",
-"owner": "China Media Group (CCP Central Propaganda Dept)",
-"title_en": null
-},
-{
-"outlet": "addisstandard",
-"title": "Daily_Brief: #Sudan reports power outages across #Khartoum following drone attacks, with reports linking launches to #Ethiopia - Addis Standard",
-"link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1vSndtS01kT3lKa3BkQUlZaWJwS1lMUENLN1hqaTdnT2NwWkppU0F2Q3YxWnY5TkwwWFdZSl82NE5TVjdBSnV6SnMyNVFyLVQ1Qnc?oc=5",
-"ts": 1793167427,
-"lang": "en",
-"outlet_name": "Addis Standard",
+"outlet": "alwihda",
+"title": "Soudan : alerte rouge internationale face au risque imminent de famine - Alwihda Info",
+"link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQT0VaTjNpOThTT0VteTBWUUEzUVdrN3JNOGJyQ2ZnS2NUanI1UXFBaFgzb0IyTkFoTWk1WU1oOW10Mk5QQU1qRjZ1OHFIVERQanNXWFlRTUNEMjI4X0hRSjhxMVBicG5BNWxxYW80SUF6WHhoWlpuOVhjUFc4WG50ZWVlS2pWM0ZfOGV0WFprYmpUblN4elpuS3BQalpDZw?oc=5",
+"ts": 1793101383,
+"lang": "fr",
+"outlet_name": "Alwihda Info",
 "state": "no",
-"owner": "Private (Tsedale Lemma)",
-"title_en": null
-},
-{
-"outlet": "allafrica",
-"title": "South Sudan: Evidentia AI Completes South Sudan Pilot with the Department of Betting, Gaming and Lotteries, Advancing Transparent and Accountable Gaming Oversight Across Africa",
-"link": "https://allafrica.com/stories/202610270581.html",
-"ts": 1793109276,
-"lang": "en",
-"outlet_name": "AllAfrica",
-"state": "no",
-"owner": "AllAfrica Global Media",
-"title_en": null
+"owner": "Private",
+"title_en": "Sudan: international red alert to the imminent risk of famine - Alwihda Info"
 },
 {
 "outlet": "newhumanitarian",
@@ -921,14 +822,201 @@
 "great-lakes": [
 {
 "outlet": "actualite_cd",
-"title": "RDC : Fayulu dénonce le transfert de Prince Epenge à Makala malgré la suspension des admissions dans cette prison de Kinshasa",
-"link": "https://actualite.cd/2026/10/31/rdc-fayulu-denonce-le-transfert-de-prince-epenge-makala-malgre-la-suspension-des",
-"ts": 1793450682,
+"title": "RDC : « On ne va pas faire le dialogue avec les supplétifs du Rwanda » insiste Félix Tshisekedi devant la diaspora congolaise de Moscou",
+"link": "https://actualite.cd/2026/11/01/rdc-ne-va-pas-faire-le-dialogue-avec-les-suppletifs-du-rwanda-insiste-felix-tshisekedi",
+"ts": 1793537820,
 "lang": "fr",
 "outlet_name": "Actualite.cd",
 "state": "no",
 "owner": "Private (Patient Ligodi)",
-"title_en": "DRC: Fayulu denounces Prince Epenge's transfer to Makala despite the suspension of admissions to this prison in Kinshasa"
+"title_en": "DRC:  We will not engage in dialogue with Rwanda's alternates  insists Félix Tshisekedi in front of the Congolese diaspora in Moscow"
+},
+{
+"outlet": "rfiafrique",
+"title": "RDC: l’Organisation mondiale du commerce valide la politique commerciale du pays",
+"link": "https://www.rfi.fr/fr/afrique/20261101-rdc-l-organisation-mondiale-du-commerce-valide-la-politique-commerciale-du-pays",
+"ts": 1793537093,
+"lang": "fr",
+"outlet_name": "RFI Afrique",
+"state": "yes",
+"owner": "France Médias Monde",
+"title_en": "The DRC: the World Trade Organization confirms the country's trade policy"
+},
+{
+"outlet": "actualite_cd",
+"title": "JOJ Dakar 2026: La RDC est présente dans la capitale sénégalaise avec 7 disciplines",
+"link": "https://actualite.cd/2026/11/01/joj-dakar-2026-la-rdc-est-presente-dans-la-capitale-senegalaise-avec-7-disciplines",
+"ts": 1793536904,
+"lang": "fr",
+"outlet_name": "Actualite.cd",
+"state": "no",
+"owner": "Private (Patient Ligodi)",
+"title_en": "JOJ Dakar 2026: The DRC is present in the Senegalese capital with 7 disciplines"
+},
+{
+"outlet": "rfiafrique",
+"title": "RDC: l’opposant Prince Epinge transféré à la prison de Makala, son avocat craint pour sa sécurité",
+"link": "https://www.rfi.fr/fr/afrique/20261101-rdc-l-opposant-prince-epinge-transf%C3%A9r%C3%A9-%C3%A0-la-prison-de-makala-son-avocat-craint-pour-sa-s%C3%A9curit%C3%A9",
+"ts": 1793530230,
+"lang": "fr",
+"outlet_name": "RFI Afrique",
+"state": "yes",
+"owner": "France Médias Monde",
+"title_en": "DRC: Opposition Prince Epinge transferred to Makala Prison, his lawyer concerned for his safety"
+},
+{
+"outlet": "mwananchi",
+"title": "Doroth: ACT Wazalendo ndio kimbilio na matumaini ya Watanzania",
+"link": "https://www.mwananchi.co.tz/mw/zanzibar/siasa/doroth-act-wazalendo-ndio-kimbilio-na-matumaini-ya-watanzania-5654398",
+"ts": 1793529900,
+"lang": "sw",
+"outlet_name": "Mwananchi",
+"state": "no",
+"owner": "Mwananchi Communications (Nation Media Group)",
+"title_en": "Doroth: ACT Patriots are the refuge and hope of Tanzanians"
+},
+{
+"outlet": "monitor_ug",
+"title": "Beyond silence: How a deaf Kampala couple navigates parenthood, social stigma",
+"link": "https://www.monitor.co.ug/uganda/news/national/beyond-silence-how-a-deaf-kampala-couple-navigates-parenthood-social-stigma-5654236",
+"ts": 1793529589,
+"lang": "en",
+"outlet_name": "Daily Monitor",
+"state": "no",
+"owner": "Nation Media Group",
+"title_en": null
+},
+{
+"outlet": "eyeradio",
+"title": "Morobo County hands over Congolese national to DRC authorities",
+"link": "https://eyeradio.org/morobo-county-hands-over-congolese-national-to-drc-authorities/?utm_source=rss&utm_medium=rss&utm_campaign=morobo-county-hands-over-congolese-national-to-drc-authorities",
+"ts": 1793525399,
+"lang": "en",
+"outlet_name": "Eye Radio",
+"state": "no",
+"owner": "Private (Eye Media)",
+"title_en": null
+},
+{
+"outlet": "actualite_cd",
+"title": "RDC : le GCI encourage un dialogue intercongolais inclusif et insiste sur le fait que les divergences politiques ne peuvent être résolues par les armes",
+"link": "https://actualite.cd/2026/11/01/rdc-le-gci-encourage-un-dialogue-intercongolais-inclusif-et-insiste-sur-le-fait-que-les",
+"ts": 1793520125,
+"lang": "fr",
+"outlet_name": "Actualite.cd",
+"state": "no",
+"owner": "Private (Patient Ligodi)",
+"title_en": "DRC: GCI encourages inclusive inter-Congolese dialogue and insists that political differences cannot be resolved by arms"
+},
+{
+"outlet": "actualite_cd",
+"title": "Est de la RDC : les ADF ont profité du peu de priorité que leur accorde Kinshasa, concentré sur la lutte contre le M23, le gouvernement appelé à rééquilibrer ses priorités sécuritaires face à ces deux menaces",
+"link": "https://actualite.cd/2026/11/01/est-de-la-rdc-les-adf-ont-profite-du-peu-de-priorite-que-leur-accorde-kinshasa-concentre",
+"ts": 1793519952,
+"lang": "fr",
+"outlet_name": "Actualite.cd",
+"state": "no",
+"owner": "Private (Patient Ligodi)",
+"title_en": "East of the DRC: the ADF took advantage of the low priority given to them in Kinshasa, focused on combating M23, the government called for rebalancing its security priorities in the face of these two threats"
+},
+{
+"outlet": "aminiya",
+"title": "Ebola ta yi ajalin fiye da mutum 5,000 a Congo",
+"link": "https://aminiya.ng/ebola-ta-yi-ajalin-fiye-da-mutum-5000-a-congo/",
+"ts": 1793518480,
+"lang": "ha",
+"outlet_name": "Aminiya (Daily Trust)",
+"state": "no",
+"owner": "Media Trust Ltd",
+"title_en": "Ebola has killed more than 5,000 people in Congo"
+},
+{
+"outlet": "myjoyonline",
+"title": "More than 5,000 die from Ebola in DR Congo’s deadliest outbreak",
+"link": "https://www.myjoyonline.com/more-than-5000-die-from-ebola-in-dr-congos-deadliest-outbreak/",
+"ts": 1793517320,
+"lang": "en",
+"outlet_name": "MyJoyOnline",
+"state": "no",
+"owner": "Multimedia Group (Kwasi Twum)",
+"title_en": null
+},
+{
+"outlet": "jornaldeangola",
+"title": "Museu do Reino do Kongo recebe peças recuperadas na RDC - Jornal de Angola",
+"link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQd2lsVWxuM1JXd0RCVVR5SkhzRTNILVlybUZRS0lwOEtnWGpNOGtFZVZUdjcyeXhyaktTcWhNd01qNnotN1RJWjRSWEYtOU85QUhBejZuQW9IQXRsbTJZcEMxSll1SW9GcWFnYS1TZlZPeXlxNW11alJNNmk2UjU5S0hUQjB5YnNpdVk3TzBNSHRvRlJJZzNRU09LZzJ1cE10ZTZTbDdKTWgzRkh4SE9jUHZfem5UUWs?oc=5",
+"ts": 1793516561,
+"lang": "pt",
+"outlet_name": "Jornal de Angola",
+"state": "yes",
+"owner": "Edições Novembro (state)",
+"title_en": "Museum of the Kingdom of Congo receives pieces recovered from the DRC - Angola Journal"
+},
+{
+"outlet": "monitor_ug",
+"title": "Past & Present: UK’s House of Lords discusses Uganda human rights situation",
+"link": "https://www.monitor.co.ug/uganda/magazines/people-power/past-present-uk-s-house-of-lords-discusses-uganda-human-rights-situation-5654084",
+"ts": 1793510100,
+"lang": "en",
+"outlet_name": "Daily Monitor",
+"state": "no",
+"owner": "Nation Media Group",
+"title_en": null
+},
+{
+"outlet": "france24_afrique",
+"title": "JOJ Dakar 2026 : L'escrime, une discipline qui gagne du terrain en RD Congo",
+"link": "https://www.france24.com/fr/vid%C3%A9o/20261031-joj-dakar-2026-l-escrime-une-discipline-qui-gagne-du-terrain-en-rd-congo",
+"ts": 1793483660,
+"lang": "fr",
+"outlet_name": "France 24 Afrique",
+"state": "yes",
+"owner": "France Médias Monde",
+"title_en": "JOJ Dakar 2026: Crime, a discipline that is gaining ground in the Democratic Republic of Congo"
+},
+{
+"outlet": "kigalitoday",
+"title": "U Burusiya bwiyemeje gufasha u Rwanda guteza imbere ibikorwa remezo by'ingufu za Nikeleyeli",
+"link": "https://www.kigalitoday.com/amakuru/mu-mahanga/article/u-burusiya-bwiyemeje-gufasha-u-rwanda-guteza-imbere-ibikorwa-remezo-by-ingufu-za-nikeleyeli",
+"ts": 1793473184,
+"lang": "sw",
+"outlet_name": "Kigali Today",
+"state": "no",
+"owner": "Private",
+"title_en": "Russia is committed to supporting Rwanda in advancing the development of the nuclear reactor"
+},
+{
+"outlet": "bbcafrique",
+"title": "Plus de 5 000 personnes meurent d'Ebola lors de l'épidémie la plus meurtrière qu'ait connue la République démocratique du Congo",
+"link": "https://www.bbc.com/afrique/articles/cm93z2750zn0o?at_medium=RSS&at_campaign=rss",
+"ts": 1793472987,
+"lang": "fr",
+"outlet_name": "BBC Afrique",
+"state": "no",
+"owner": "BBC World Service",
+"title_en": "More than 5,000 people are dying of Ebola in the deadliest outbreak in the history of the Democratic Republic of Congo"
+},
+{
+"outlet": "monitor_ug",
+"title": "Caramel Café, Kampala’s sweet spot for family dining and fun",
+"link": "https://www.monitor.co.ug/uganda/lifestyle/dining-recipes/caramel-caf%C3%A9-kampala-s-sweet-spot-for-family-dining-and-fun-5653940",
+"ts": 1793468882,
+"lang": "en",
+"outlet_name": "Daily Monitor",
+"state": "no",
+"owner": "Nation Media Group",
+"title_en": null
+},
+{
+"outlet": "monitor_ug",
+"title": "Lango transporters hike fares to Kampala over high fuel prices",
+"link": "https://www.monitor.co.ug/uganda/news/national/lango-transporters-hike-fares-to-kampala-over-high-fuel-prices-5653950",
+"ts": 1793467006,
+"lang": "en",
+"outlet_name": "Daily Monitor",
+"state": "no",
+"owner": "Nation Media Group",
+"title_en": null
 },
 {
 "outlet": "rfikiswahili",
@@ -942,37 +1030,15 @@
 "title_en": "DRC: Prime Minister Judith Suminwa presents a budget of $24.8 billion"
 },
 {
-"outlet": "rt_fr",
-"title": "RDC : Judith Suminwa présente un projet de budget de 24,8 milliards de dollars pour 2027",
-"link": "https://rtenfrancais.tv/afrique/139560-rdc-judith-suminwa-presente-projet",
-"ts": 1793448114,
-"lang": "fr",
-"outlet_name": "RT en français",
-"state": "yes",
-"owner": "ANO TV-Novosti",
-"title_en": "DRC: Judith Suminwa presents a draft budget of $24.8 billion for 2027"
-},
-{
-"outlet": "actualite_cd",
-"title": "La RDC et la Belgique rendent hommage aux soldats congolais de la Force publique tombés en Égypte durant la seconde guerre mondiale",
-"link": "https://actualite.cd/2026/10/31/la-rdc-et-la-belgique-rendent-hommage-aux-soldats-congolais-de-la-force-publique-tombes",
-"ts": 1793446838,
-"lang": "fr",
-"outlet_name": "Actualite.cd",
+"outlet": "igihe",
+"title": "Abanyarwanda babiri bashimuswe na CMI bagiye mu munsi mukuru muri Uganda - IGIHE",
+"link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNbEVEbU05MzJZLTNmSTFMeGN0SVFkZVZQQTNmQmF0ejllNy03UUNkWEFjRC1WRFozbkh2S0tCdG5rQnpQSVBUWWxfcWpyV1RfdmRhT1FLZFlDYWZkNGRyQURsbThFNTNHSkptamtYaXpCS1lJdnB3VUE3UTZwVFZhT1BKa19ZX0hxb2JOaDR2X25Pc082dGo5cmlNSkttUDk4QWJPUkpsVThfTWR2?oc=5",
+"ts": 1793446820,
+"lang": "rw",
+"outlet_name": "IGIHE",
 "state": "no",
-"owner": "Private (Patient Ligodi)",
-"title_en": "DRC and Belgium pay tribute to Congolese soldiers killed in Egypt during World War II"
-},
-{
-"outlet": "actualite_cd",
-"title": "Kinshasa : l'opposant Prince Epenge transféré à Makala",
-"link": "https://actualite.cd/2026/10/31/kinshasa-lopposant-prince-epenge-transfere-makala",
-"ts": 1793444564,
-"lang": "fr",
-"outlet_name": "Actualite.cd",
-"state": "no",
-"owner": "Private (Patient Ligodi)",
-"title_en": "Kinshasa: Opposition Prince Epenge transferred to Makala"
+"owner": "Private",
+"title_en": "Two Rwandans kidnapped by the WCC for a party in Uganda - TIME"
 },
 {
 "outlet": "somaliguardian",
@@ -986,58 +1052,14 @@
 "title_en": null
 },
 {
-"outlet": "actualite_cd",
-"title": "RDC : 48e sur 54, une gouvernance en léger recul, minée par la sécurité et l'économie (indice Ibrahim 2026)",
-"link": "https://actualite.cd/2026/10/31/rdc-48e-sur-54-une-gouvernance-en-leger-recul-minee-par-la-securite-et-leconomie-indice",
-"ts": 1793441220,
-"lang": "fr",
-"outlet_name": "Actualite.cd",
-"state": "no",
-"owner": "Private (Patient Ligodi)",
-"title_en": "DRC: 48th out of 54, governance slightly declining, undermined by security and the economy (Ibrahim 2026)"
-},
-{
-"outlet": "citizen_tz",
-"title": "Semu: Modern offices reflect ACT Wazalendo’s ambition for power",
-"link": "https://www.thecitizen.co.tz/tanzania/zanzibar/semu-modern-offices-reflect-act-wazalendo-s-ambition-for-power-5653372",
-"ts": 1793440865,
-"lang": "en",
-"outlet_name": "The Citizen",
-"state": "no",
-"owner": "Nation Media Group",
-"title_en": null
-},
-{
-"outlet": "rfiafrique",
-"title": "RDC: la Première ministre Judith Suminwa présente un budget en hausse, à 24,8 milliards de dollars",
-"link": "https://www.rfi.fr/fr/afrique/20261031-rdc-la-premi%C3%A8re-ministre-judith-suminwa-pr%C3%A9sente-un-budget-en-hausse-%C3%A0-24-8-milliards-de-dollars",
-"ts": 1793434972,
-"lang": "fr",
-"outlet_name": "RFI Afrique",
-"state": "yes",
-"owner": "France Médias Monde",
-"title_en": "DRC: Prime Minister Judith Suminwa presents a budget increase to $24.8 billion"
-},
-{
 "outlet": "newtimes",
-"title": "What stood out for Rwanda at Russia-Africa Summit 2026?| The New Times - The New Times",
-"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZ3U5cVVkVDBuX3hFTTk5UGxwcmNteWJtbk16bkwxSHVvM1h6WGNVVmEyVWkyY1RUREE2SGZ6LThxMWZIN253YnlfSEVnOGtiSHNRVkpCdWdxMzFNLWVpbnVRZjBtQ19kUDItOGc5elJ1eFoyaHVqeTZBWU1BMzRqcmJDVjhkdnQ4U0c3YTF5M3FJNnlUcDlsQzM1TmhFakdjRVI2aEZEaVZteEnSAbABQVVfeXFMTVMyUjhPSW5zZEp1TGRiMjMzTS1Xb1VaQkxFN25DNERyMkRWaUdrd1Rfemd5ci1JenM1UWQ4WmM1VjZHc3I0d29KNnlVZ3dhOHhWeVMwdnZVR3dlRzlheVc2MjhiejNxYloxa0NaR0Z3QmU0alhKTF9UejBlWFZrQWRMSW8xMGhYSFQ0M01fdmNyaS1WMUp5VjRqSDdzakNzZk9GN2dtZTN1Z0JhaVhoTjc?oc=5",
-"ts": 1793432141,
+"title": "Construction of Rwanda's first nuclear reactor 'to commence soon'| The New Times - The New Times",
+"link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOMDU3em5mZEo2N0JzWTB1cWR4MGQzYkxBTWx1R0tMaGxIRXpWVW1kMG01TGVJVlhHTWFVaTFKRm84WnRLRnpmSGlJSGRiMDJSQ3ZuZDRwQnNSOEJJWHloNjhIc0N3QkNTSVVpTmFaM2lOOVhnaWlaRzJLa3ROdVlhQTFyX0pDbGo2N1laYWhVT3B1cldOX3NZdWlzX3pWblhUeEJBRjFTcU1QRkVqYVVhN0dVLU5TUdIBuwFBVV95cUxNUmlJTEw4ejFYX0pFbjdESU9Pc3NUWkl4MlRGM0FXUGJZdXJURFZPMHk1R0ZmenlkbU5rVVhZLURZaEc5dmtLMHhBUHZITU9XMkF1WTVhQ2xJSExNZzVWeWJHQmlubWR6NTdFcjdSeVA1SXROUjNxV1JqNm16TmV2bFhVT1ZSTHFvSlF3bDVpaDBpaE5XUTBVUkQwZUxFdUNlM1pnOTJZUGJhdzZhTGk3UHNLZFNxbElLSEJn?oc=5",
+"ts": 1793439632,
 "lang": "en",
 "outlet_name": "The New Times",
 "state": "de facto",
 "owner": "Rwanda Printing and Publishing Media House",
-"title_en": null
-},
-{
-"outlet": "monitor_ug",
-"title": "Congo Ebola outbreak kills more than 5,000",
-"link": "https://www.monitor.co.ug/uganda/news/congo-ebola-outbreak-kills-more-than-5-000-5653212",
-"ts": 1793429651,
-"lang": "en",
-"outlet_name": "Daily Monitor",
-"state": "no",
-"owner": "Nation Media Group",
 "title_en": null
 },
 {
@@ -1050,28 +1072,6 @@
 "state": "no",
 "owner": "BBC World Service",
 "title_en": "RD Congo: Court to speed up Kabila's ex-government crackdown"
-},
-{
-"outlet": "umuseke",
-"title": "Umujyi wa Kigali wafunze inyubako 5 z’ubucuruzi",
-"link": "https://umuseke.rw/umujyi-wa-kigali-wafunze-inyubako-5-zubucuruzi/",
-"ts": 1793420739,
-"lang": "sw",
-"outlet_name": "Umuseke",
-"state": "no",
-"owner": "Private",
-"title_en": "Kigali city to study 5 commercial buildings"
-},
-{
-"outlet": "rfiafrique",
-"title": "Blanchiment d'argent: le GAFI retire la Côte d'Ivoire et la RDC de sa liste grise",
-"link": "https://www.rfi.fr/fr/afrique/20261031-blanchiment-d-argent-le-gafi-retire-la-c%C3%B4te-d-ivoire-et-la-rdc-de-sa-liste-grise",
-"ts": 1793415191,
-"lang": "fr",
-"outlet_name": "RFI Afrique",
-"state": "yes",
-"owner": "France Médias Monde",
-"title_en": "Money laundering: FATF removes Côte d'Ivoire and the DRC from its gray list"
 },
 {
 "outlet": "iwacu",
@@ -1107,39 +1107,6 @@
 "title_en": "INES-Ruhengeri: 1,729 graduates are committed to contributing to Rwanda's development."
 },
 {
-"outlet": "monitor_ug",
-"title": "Ebong: only Ugandan hunting for gold in Congo",
-"link": "https://www.monitor.co.ug/uganda/sports/boxing/ebong-only-ugandan-hunting-for-gold-in-congo--5653058",
-"ts": 1793387508,
-"lang": "en",
-"outlet_name": "Daily Monitor",
-"state": "no",
-"owner": "Nation Media Group",
-"title_en": null
-},
-{
-"outlet": "tv5monde",
-"title": "Rwanda, États-Unis: pourquoi Washington durcit le ton contre Kigali malgré les accords de paix avec la RD Congo?",
-"link": "https://information.tv5monde.com/international/rwanda-etats-unis-pourquoi-washington-durcit-le-ton-contre-kigali-malgre-les-accords-de-paix-avec-la-rd-congo-2843742",
-"ts": 1793384605,
-"lang": "fr",
-"outlet_name": "TV5Monde Info",
-"state": "yes",
-"owner": "TV5Monde consortium (France, Belgium, Switzerland, Canada)",
-"title_en": "Rwanda, United States: why is Washington hardening its voice against Kigali despite peace agreements with the Democratic Republic of Congo?"
-},
-{
-"outlet": "umuseke",
-"title": "Kiyovu Sports yagarutse Kigali FC",
-"link": "https://umuseke.rw/kiyovu-sports-yagarutse-kigali-fc/",
-"ts": 1793381115,
-"lang": "rw",
-"outlet_name": "Umuseke",
-"state": "no",
-"owner": "Private",
-"title_en": "Kiyovu Sports returned to Kigali FC"
-},
-{
 "outlet": "allafrica",
 "title": "Liberia: Congo Town Overpasses Spark Political Storm",
 "link": "https://allafrica.com/stories/202610300522.html",
@@ -1162,15 +1129,15 @@
 "title_en": null
 },
 {
-"outlet": "umuseke",
-"title": "Igitero cya ‘Drone’ cyahitanye abasirikare ba “Special Forces” ya FARDC",
-"link": "https://umuseke.rw/igitero-cya-drone-cyahitanye-abasirikare-ba-special-forces-ya-fardc/",
-"ts": 1793364497,
-"lang": "rw",
-"outlet_name": "Umuseke",
+"outlet": "maliweb",
+"title": "RDC : Kinshasa appelle Moscou à soutenir l’exigence de l’ONU sur le retrait des troupes rwandaises - Maliweb",
+"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNeGEwcDVlQXdVSUhvQTdDR2w0amdUSmhHRVJhZEpUbnpadVAzaklXYWk1NU9ZekRibENHWmstd3YtTURyMlJsY2RQb2NITXdwaEhuUlBNdlp5TTJlUHo5ZFI3WXN4Zml2QUFMN1dybFlJSEVjYVhBbVpoRW9RR3pXbXROUmVIVnNaaWxBY2tYRGFkS25iYjgyb1BkTi1Pd2Y5UVc4bGZfbWhKbExRSWV4WjNVcDA?oc=5",
+"ts": 1793360200,
+"lang": "fr",
+"outlet_name": "Maliweb",
 "state": "no",
-"owner": "Private",
-"title_en": "A drone strike killed FARDC Special Forces personnel"
+"owner": "Private aggregator",
+"title_en": "DRC: Kinshasa calls on Moscow to support UN demand for the withdrawal of Rwandan troops - Maliweb"
 },
 {
 "outlet": "theafricareport",
@@ -1181,17 +1148,6 @@
 "outlet_name": "The Africa Report",
 "state": "no",
 "owner": "Groupe Jeune Afrique",
-"title_en": null
-},
-{
-"outlet": "monitor_ug",
-"title": "Church of Uganda names new bishops for Mbale, North West Ankole ahead of 2027 wave of retirements",
-"link": "https://www.monitor.co.ug/uganda/news/national/church-of-uganda-names-new-bishops-for-mbale-north-west-ankole-ahead-of-2027-wave-of-retirements-5652090",
-"ts": 1793358288,
-"lang": "en",
-"outlet_name": "Daily Monitor",
-"state": "no",
-"owner": "Nation Media Group",
 "title_en": null
 },
 {
@@ -1226,17 +1182,6 @@
 "state": "no",
 "owner": "AllAfrica Global Media",
 "title_en": null
-},
-{
-"outlet": "corbeau",
-"title": "RDC : Félix Tshisekedi lie la révision constitutionnelle à la fin de l’agression, un argument démagogique pour justifier son projet",
-"link": "https://corbeaunews-centrafrique.org/tshisekedi-revision-constitution-rdc/",
-"ts": 1793332860,
-"lang": "fr",
-"outlet_name": "Corbeau News Centrafrique",
-"state": "no",
-"owner": "Private",
-"title_en": "DRC: Félix Tshisekedi links constitutional revision to the end of aggression, a demagogic argument to justify his project"
 },
 {
 "outlet": "jeuneafrique",
@@ -1283,17 +1228,6 @@
 "title_en": "The United States has signed a treaty with Rwanda's military ministries and a military bank to plunder the war in the Democratic Republic of Congo."
 },
 {
-"outlet": "gabonreview",
-"title": "COP31 : les OSC du Bassin du Congo planchent sur une position commune",
-"link": "https://www.gabonreview.com/cop31-les-osc-du-bassin-du-congo-planchent-sur-une-position-commune/",
-"ts": 1793266854,
-"lang": "fr",
-"outlet_name": "Gabonreview",
-"state": "no",
-"owner": "Private",
-"title_en": "COP31: CSOs in the Congo Basin agree on a common position"
-},
-{
 "outlet": "reuters_africa",
 "title": "US imposes sanctions on Rwanda's defense ministry over Congo conflict - Reuters",
 "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPSFV5WTBDc2l5NVRFbllUS1NOZzZTM2x3cVVmaV9ydHhIdGRScmJVV3FQYTdJYlRMclVKZHVCSTEwcnpJaGpVUDZmVWlfZzN6NzA1b0VrZllGZHhWYVc5YkpCYTFONl82NlI5MWVxZ1NzZ3BPRzU4aG9iNlZLLWtVWW0tdXN4ZmVfbktkeHlKV1VpZG44RlNIZEVR?oc=5",
@@ -1303,17 +1237,6 @@
 "state": "no",
 "owner": "Thomson Reuters",
 "title_en": null
-},
-{
-"outlet": "kigalitoday",
-"title": "Mu magororero y'ibanze mu Rwanda harimo abanyabyaha ruharwa-Komisiyo y'Igihugu y'Uburenganzira bwa Muntu",
-"link": "https://www.kigalitoday.com/ubutabera/amakuru/article/mu-magororero-y-ibanze-mu-rwanda-harimo-abanyabyaha-ruharwa-komisiyo-y-uburenganzira-bwa-muntu",
-"ts": 1793201103,
-"lang": "rw",
-"outlet_name": "Kigali Today",
-"state": "no",
-"owner": "Private",
-"title_en": "Among the main crimes committed in Rwanda are those perpetrated by the National Human Rights Commission"
 },
 {
 "outlet": "bbcgahuza",
@@ -1336,31 +1259,75 @@
 "state": "no",
 "owner": "Private, diaspora",
 "title_en": null
-},
-{
-"outlet": "bbcgahuza",
-"title": "DRC: Umutwe wa ADF urashinjwa gukora magendu mu bucukuzi bwa zahabu",
-"link": "https://www.bbc.com/gahuza/articles/crx2dj1z02wpo?at_medium=RSS&at_campaign=rss",
-"ts": 1793120005,
-"lang": "sw",
-"outlet_name": "BBC Gahuza",
-"state": "no",
-"owner": "BBC World Service",
-"title_en": "DRC: ADF leader charged with illegal activity in gold mining"
-},
-{
-"outlet": "reuters_africa",
-"title": "Congo opposition rejects armed rebellion, calls for inclusive dialogue - Reuters",
-"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMFB6Zk05RkNXM29mSmUzc2wzZDFUdWJra0RYT0lhUmRZdko0UGZTZ05scFppUnJ0QzZGMFJtNDh1VXd1ejhNSzJqaE5vWERYLTRBc1B6MGxxVS1JSVUtVXd5ZTFWV1M4M3JBZGg2ZDFlUlFhSFlUUExzRy0tQmZLM0FNTWxLYkpOOU1pZ2ZKVnB1UHpZUEtCYkQ3a0ljNkJWOVRsWE5ZdkxpUGdYa0Q1OXFvRFk?oc=5",
-"ts": 1793117493,
-"lang": "en",
-"outlet_name": "Reuters Africa",
-"state": "no",
-"owner": "Thomson Reuters",
-"title_en": null
 }
 ],
 "car": [
+{
+"outlet": "tass",
+"title": "Президент ЦАР рассказал о процессе разоружения боевиков",
+"link": "https://tass.ru/mezhdunarodnaya-panorama/28276383",
+"ts": 1793545582,
+"lang": "ru",
+"outlet_name": "TASS",
+"state": "yes",
+"owner": "Russian state",
+"title_en": "President of the CAR told about the process of disarmament of militants"
+},
+{
+"outlet": "corbeau",
+"title": "Centrafrique : le BRDC lance le défi de la rue et met Touadéra au pied du mur",
+"link": "https://corbeaunews-centrafrique.org/brdc-marche-pacifique-bangui-touadera/",
+"ts": 1793527200,
+"lang": "fr",
+"outlet_name": "Corbeau News Centrafrique",
+"state": "no",
+"owner": "Private",
+"title_en": "Central Africa: BRDC challenges the streets and puts Touadéra at the foot of the wall"
+},
+{
+"outlet": "corbeau",
+"title": "Bangui sous les eaux : Sosthène Dingombé s’interroge sur le sens spirituel de la catastrophe",
+"link": "https://corbeaunews-centrafrique.org/sosthene-dingombe-inondations-bangui-spirituel/",
+"ts": 1793520000,
+"lang": "fr",
+"outlet_name": "Corbeau News Centrafrique",
+"state": "no",
+"owner": "Private",
+"title_en": "Bangui underwater: Sosthène Dingombé questions the spiritual meaning of the disaster"
+},
+{
+"outlet": "corbeau",
+"title": "Centrafrique : Après huit années de coopération et trois sommets Russie-Afrique, quels bénéfices concrets ce partenariat a t-il apporté au peuple centrafricain ?",
+"link": "https://corbeaunews-centrafrique.org/bilan-partenariat-russie-afrique-centrafrique/",
+"ts": 1793516400,
+"lang": "fr",
+"outlet_name": "Corbeau News Centrafrique",
+"state": "no",
+"owner": "Private",
+"title_en": "Central Africa: After eight years of cooperation and three Russia-Africa summits, what tangible benefits has this partnership brought to the Central African people?"
+},
+{
+"outlet": "corbeau",
+"title": "Centrafrique : Bangui paralysée par une « ville morte » naturelle administrative",
+"link": "https://corbeaunews-centrafrique.org/bangui-paralysee-penurie-carburant/",
+"ts": 1793505660,
+"lang": "fr",
+"outlet_name": "Corbeau News Centrafrique",
+"state": "no",
+"owner": "Private",
+"title_en": "Central Africa: Bangui paralyzed by a dead city"
+},
+{
+"outlet": "rfiafrique",
+"title": "Bras de fer contre la vie chère en Centrafrique: le BRDC réclame la libération de cinq activistes",
+"link": "https://www.rfi.fr/fr/afrique/20261031-bras-de-fer-contre-la-vie-ch%C3%A8re-en-centrafrique-le-brdc-r%C3%A9clame-la-lib%C3%A9ration-de-cinq-activistes",
+"ts": 1793468693,
+"lang": "fr",
+"outlet_name": "RFI Afrique",
+"state": "yes",
+"owner": "France Médias Monde",
+"title_en": "Fight against expensive life in Central Africa: BRDC calls for the release of five activists"
+},
 {
 "outlet": "oubangui",
 "title": "Sunu Assurance renforce son engagement auprès du secteur éducatif centrafricain",
@@ -1417,28 +1384,6 @@
 "title_en": "Mining: a dashboard to shed light on mining permits in Central Africa"
 },
 {
-"outlet": "corbeau",
-"title": "Centrafrique : Touadéra face au choc des aides gelées, de la dette et des salaires",
-"link": "https://corbeaunews-centrafrique.org/centrafrique-touadera-face-au-choc-des-aides-gelees-de-la-dette-et-des-salaires/",
-"ts": 1793361600,
-"lang": "fr",
-"outlet_name": "Corbeau News Centrafrique",
-"state": "no",
-"owner": "Private",
-"title_en": "Central Africa: Toadera faced with the shock of frozen aid, debt and wages"
-},
-{
-"outlet": "corbeau",
-"title": "Centrafrique : le BRDC appelle à une mobilisation générale le 13 novembre à Bangui contre la vie chère et le régime Touadéra",
-"link": "https://corbeaunews-centrafrique.org/brdc-mobilisation-generale-bangui-carburant/",
-"ts": 1793356200,
-"lang": "fr",
-"outlet_name": "Corbeau News Centrafrique",
-"state": "no",
-"owner": "Private",
-"title_en": "Central Africa: BRDC calls for a general mobilization on 13 November in Bangui against expensive living and the Touadéra regime"
-},
-{
 "outlet": "radiondeke",
 "title": "Centrafrique : Nola, un accord trouvé sur la taxation des produits forestiers non ligneux",
 "link": "https://www.radiondekeluka.org/107904-centrafrique-nola-un-accord-trouve-sur-la-taxation-des-produits-forestiers-non-ligneux",
@@ -1461,28 +1406,6 @@
 "title_en": "Russia-Africa summit: focus on Russian investment in strategic sectors"
 },
 {
-"outlet": "corbeau",
-"title": "Centrafrique : Arthur Bertrand Piri, le parrain qui contrôle la mafia du pétrole russe à Bangui",
-"link": "https://corbeaunews-centrafrique.org/sopraf-petrole-russe-bangui/",
-"ts": 1793350800,
-"lang": "fr",
-"outlet_name": "Corbeau News Centrafrique",
-"state": "no",
-"owner": "Private",
-"title_en": "Central Africa: Arthur Bertrand Piri, the patron who controls the Russian oil mafia in Bangui"
-},
-{
-"outlet": "corbeau",
-"title": "Centrafrique : Wagner arrête le représentant de Mahamat Al-Khatim Atahir Nour sur un chantier minier de Kouki et le force à faire une déclaration vidéo",
-"link": "https://corbeaunews-centrafrique.org/mahamat-al-khatim-wagner-arrestation/",
-"ts": 1793343600,
-"lang": "fr",
-"outlet_name": "Corbeau News Centrafrique",
-"state": "no",
-"owner": "Private",
-"title_en": "Central Africa: Wagner arrests Mahamat Al-Khatim's representative Atahir Nour at a mining site in Kouki and forces him to make a video statement"
-},
-{
 "outlet": "radiondeke",
 "title": "Bangui : la gendarmerie détruit une importante quantité de boissons frelatées",
 "link": "https://www.radiondekeluka.org/107870-bangui-la-gendarmerie-detruit-une-importante-quantite-de-boissons-frelatees",
@@ -1496,25 +1419,157 @@
 ],
 "horn": [
 {
-"outlet": "rt_ar",
-"title": "مخاوف مصرية من طموحات إثيوبيا في البحر الأحمر.. ماذا تخطط أديس أبابا؟",
-"link": "https://rtarabic.com/middle_east/1849104-%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D9%85%D8%B5%D8%B1%D9%8A%D8%A9-%D9%85%D9%86-%D8%B7%D9%85%D9%88%D8%AD%D8%A7%D8%AA-%D8%A5%D8%AB%D9%8A%D9%88%D8%A8%D9%8A%D8%A7-%D9%81%D9%8A-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1-%D8%A7%D9%84%D8%A3%D8%AD%D9%85%D8%B1-%D9%85%D8%A7%D8%B0%D8%A7-%D8%AA%D8%AE%D8%B7%D8%B7-%D8%A3%D8%AF%D9%8A%D8%B3-%D8%A3%D8%A8%D8%A7%D8%A8%D8%A7/",
-"ts": 1793460178,
-"lang": "ar",
-"outlet_name": "RT Arabic",
-"state": "yes",
-"owner": "ANO TV-Novosti",
-"title_en": "Egyptian fears of Ethiopian ambitions in the Red Sea... what is Addis Ababa planning?"
-},
-{
 "outlet": "hiiraan",
-"title": "WHERE ARE THE SOMALI INTELLECTUALS WHO WILL STAND UP TO SAVE SOMALIA?",
-"link": "https://www.hiiraan.com/op4/2026/Oct/206660/where_are_the_somali_intellectuals_who_will_stand_up_to_save_somalia.aspx",
-"ts": 1793458715,
+"title": "Israeli Ambassador Presents Credentials in Somaliland as Both Sides Seek Trade and Security Ties",
+"link": "https://www.hiiraan.com/news4/2026/Nov/206666/israeli_ambassador_presents_credentials_in_somaliland_as_both_sides_seek_trade_and_security_ties.aspx",
+"ts": 1793548967,
 "lang": "en",
 "outlet_name": "Hiiraan Online",
 "state": "no",
 "owner": "Private, diaspora",
+"title_en": null
+},
+{
+"outlet": "rt_ar",
+"title": "الخرطوم تتهم إثيوبيا بدور مباشر في حرب المسيّرات وتوثق الأدلة جنائياً",
+"link": "https://rtarabic.com/middle_east/1849354-%D8%A7%D9%84%D8%AE%D8%B1%D8%B7%D9%88%D9%85-%D8%AA%D8%AA%D9%87%D9%85-%D8%A5%D8%AB%D9%8A%D9%88%D8%A8%D9%8A%D8%A7-%D8%A8%D8%AF%D9%88%D8%B1-%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%81%D9%8A-%D8%AD%D8%B1%D8%A8-%D8%A7%D9%84%D9%85%D8%B3%D9%8A%D8%B1%D8%A7%D8%AA-%D9%88%D8%AA%D9%88%D8%AB%D9%82-%D8%A7%D9%84%D8%A3%D8%AF%D9%84%D8%A9-%D8%AC%D9%86%D8%A7%D8%A6%D9%8A%D8%A7/",
+"ts": 1793545266,
+"lang": "ar",
+"outlet_name": "RT Arabic",
+"state": "yes",
+"owner": "ANO TV-Novosti",
+"title_en": "Khartoum accuses Ethiopia of direct involvement in the war on drugs and documents the evidence criminally."
+},
+{
+"outlet": "eyeradio",
+"title": "Ethiopia’s Abiy puts cabinet ministers through military training",
+"link": "https://eyeradio.org/ethiopias-abiy-puts-cabinet-ministers-through-military-training/?utm_source=rss&utm_medium=rss&utm_campaign=ethiopias-abiy-puts-cabinet-ministers-through-military-training",
+"ts": 1793535532,
+"lang": "en",
+"outlet_name": "Eye Radio",
+"state": "no",
+"owner": "Private (Eye Media)",
+"title_en": null
+},
+{
+"outlet": "hiiraan",
+"title": "UN Political Mission Closes in Somalia as Constitutional Dispute Remains Unresolved",
+"link": "https://www.hiiraan.com/news4/2026/Nov/206664/un_political_mission_closes_in_somalia_as_constitutional_dispute_remains_unresolved.aspx",
+"ts": 1793527704,
+"lang": "en",
+"outlet_name": "Hiiraan Online",
+"state": "no",
+"owner": "Private, diaspora",
+"title_en": null
+},
+{
+"outlet": "eyeradio",
+"title": "Juba City Council introduces identification numbers for revenue collectors",
+"link": "https://eyeradio.org/juba-city-council-introduces-identification-numbers-for-revenue-collectors/?utm_source=rss&utm_medium=rss&utm_campaign=juba-city-council-introduces-identification-numbers-for-revenue-collectors",
+"ts": 1793525883,
+"lang": "en",
+"outlet_name": "Eye Radio",
+"state": "no",
+"owner": "Private (Eye Media)",
+"title_en": null
+},
+{
+"outlet": "radiotamazuj",
+"title": "Op-Ed| From liberation to state capture: What South Sudan can learn from South Africa’s Madlanga Commission",
+"link": "https://www.radiotamazuj.org/en/news/article/op-ed-from-liberation-to-state-capture-what-south-sudan-can-learn-from-south-africas-madlanga-commission",
+"ts": 1793524867,
+"lang": "en",
+"outlet_name": "Radio Tamazuj",
+"state": "no",
+"owner": "Free Voice / donor-funded",
+"title_en": null
+},
+{
+"outlet": "hiiraan",
+"title": "Somalia Gains Duty-Free Access to EU Market Under Trade Scheme",
+"link": "https://www.hiiraan.com/news4/2026/Nov/206662/somalia_gains_dutyfree_access_to_eu_market_under_trade_scheme.aspx",
+"ts": 1793524282,
+"lang": "en",
+"outlet_name": "Hiiraan Online",
+"state": "no",
+"owner": "Private, diaspora",
+"title_en": null
+},
+{
+"outlet": "radiotamazuj",
+"title": "Opinion| The untying of the Gordian knot: Why relieving South Sudan’s bloated executive was a necessary act of statecraft",
+"link": "https://www.radiotamazuj.org/en/news/article/opinion-the-untying-of-the-gordian-knot-why-relieving-south-sudans-bloated-executive-was-a-necessary-act-of-statecraft",
+"ts": 1793524128,
+"lang": "en",
+"outlet_name": "Radio Tamazuj",
+"state": "no",
+"owner": "Free Voice / donor-funded",
+"title_en": null
+},
+{
+"outlet": "rfihausa",
+"title": "Harin sojan Ethiopia ya kashe mutum 25 a Amhara",
+"link": "https://www.rfi.fr/ha/afrika/20261101-harin-sojin-ethiopia-ya-kashe-mutum-25-a-amhara",
+"ts": 1793520487,
+"lang": "sw",
+"outlet_name": "RFI Hausa",
+"state": "yes",
+"owner": "France Médias Monde",
+"title_en": "Harin sojan of Ethiopia kills 25 people in Amhara"
+},
+{
+"outlet": "hiiraan",
+"title": "Somalia Opens Party Registration for 2027 Elections Amid Opposition Dispute",
+"link": "https://www.hiiraan.com/news4/2026/Nov/206661/somalia_opens_party_registration_for_2027_elections_amid_opposition_dispute.aspx",
+"ts": 1793519270,
+"lang": "en",
+"outlet_name": "Hiiraan Online",
+"state": "no",
+"owner": "Private, diaspora",
+"title_en": null
+},
+{
+"outlet": "bbcgahuza",
+"title": "Minisitiri w'intebe wa Ethiopia yashyize abaminisitiri mu myitozo ya gisirikare",
+"link": "https://www.bbc.com/gahuza/articles/cqm2djkwnk34o?at_medium=RSS&at_campaign=rss",
+"ts": 1793506055,
+"lang": "sw",
+"outlet_name": "BBC Gahuza",
+"state": "no",
+"owner": "BBC World Service",
+"title_en": "Ethiopian prime minister places ministers in military exercises"
+},
+{
+"outlet": "sudantribune",
+"title": "Sudan accuses Ethiopia of facilitating drone strikes on infrastructure - Sudan Tribune",
+"link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5IMVY0VmVPVm1PUlRSbkRsdkhYNDRHQ1JaZXF1cTd0Y3ZfUVdGMmwtZzFSMDluMFJIZzFuZ2Z5MlkxdkdDUkRKc1dwVzh4V1RK?oc=5",
+"ts": 1793476533,
+"lang": "en",
+"outlet_name": "Sudan Tribune",
+"state": "no",
+"owner": "Private, Paris-based",
+"title_en": null
+},
+{
+"outlet": "somaliguardian",
+"title": "UN mission in Somalia closes after three decades",
+"link": "https://www.somaliguardian.com/news/somalia-news/un-mission-somalia-untmis-closes-after-three-decades/",
+"ts": 1793469074,
+"lang": "en",
+"outlet_name": "Somali Guardian",
+"state": "no",
+"owner": "Private",
+"title_en": null
+},
+{
+"outlet": "ena_amharic",
+"title": "Tanzanian Delegates Recommend Addis Ababa's Urban Dev't Efforts for Other African Cities - ENA English",
+"link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5lbkFIM2d1TmNoS1BjN05TZnJmbmpiNDkxbjVaTkdwakFTTUtVSVFQZ1kzczlKNks3OG82TUY4QUVVWUxoQlJObGhnejNxdEVLbmc?oc=5",
+"ts": 1793458505,
+"lang": "en",
+"outlet_name": "Ethiopian News Agency",
+"state": "yes",
+"owner": "Ethiopian state",
 "title_en": null
 },
 {
@@ -1529,14 +1584,14 @@
 "title_en": null
 },
 {
-"outlet": "hiiraan",
-"title": "EU Naval Mission Investigates Reported Hijacking of Iranian Vessel Off Somalia",
-"link": "https://www.hiiraan.com/news4/2026/Oct/206659/eu_naval_mission_investigates_reported_hijacking_of_iranian_vessel_off_somalia.aspx",
-"ts": 1793456794,
+"outlet": "ena_amharic",
+"title": "PMO Hails Addis Ababa’s 2026 Global Award as Catalyst for Sustainable Urban Growth across Ethiopia - ENA English",
+"link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBZSTZ1NDdCcEg0N293T1BJeU9zY0lFaW0xM0dwYlRYZW16dUdUVVAxYmhnbnhrU2tpb3RRaUFzMTc0MGVvcG5hWnI4Q0QydjJfemc?oc=5",
+"ts": 1793456388,
 "lang": "en",
-"outlet_name": "Hiiraan Online",
-"state": "no",
-"owner": "Private, diaspora",
+"outlet_name": "Ethiopian News Agency",
+"state": "yes",
+"owner": "Ethiopian state",
 "title_en": null
 },
 {
@@ -1551,14 +1606,14 @@
 "title_en": null
 },
 {
-"outlet": "ena_amharic",
-"title": "PMO Hails Addis Ababa’s 2026 Global Award as Catalyst for Sustainable Urban Growth across Ethiopia - ENA English",
-"link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5zMk5OY1ZQZHpObWFCdGRVLXh4c056MnFNYWl4NDV1Z3o3NmI5VzMxZmZlLW1pbmNrTXhkM3BRaE1CbHpWU2h5dUxMSnRHd0VYNmc?oc=5",
-"ts": 1793453311,
+"outlet": "cgtn",
+"title": "UN political mission in Somalia ends after more than three decades",
+"link": "https://newsaf.cgtn.com/news/2026-10-31/UN-political-mission-in-Somalia-ends-after-more-than-three-decades-1RH94jlw208/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World",
+"ts": 1793454758,
 "lang": "en",
-"outlet_name": "Ethiopian News Agency",
+"outlet_name": "CGTN",
 "state": "yes",
-"owner": "Ethiopian state",
+"owner": "China Media Group (CCP Central Propaganda Dept)",
 "title_en": null
 },
 {
@@ -1573,28 +1628,6 @@
 "title_en": "After three decades, the United Nations ends its political mission in Somalia"
 },
 {
-"outlet": "hiiraan",
-"title": "Somalia Faces Rising Rift Valley Fever Risk, Threatening Livestock Livelihoods",
-"link": "https://www.hiiraan.com/news4/2026/Oct/206658/somalia_faces_rising_rift_valley_fever_risk_threatening_livestock_livelihoods.aspx",
-"ts": 1793451865,
-"lang": "en",
-"outlet_name": "Hiiraan Online",
-"state": "no",
-"owner": "Private, diaspora",
-"title_en": null
-},
-{
-"outlet": "rfihausa",
-"title": "Ƴan gudun hijra Ethiopia sama da dubu 50 sun ketara iyakar Kenya",
-"link": "https://www.rfi.fr/ha/afrika/20261031-%C6%B4an-gudun-hijra-ethiopia-sama-da-dubu-50-sun-ketara-iyakar-kenya",
-"ts": 1793442049,
-"lang": "ha",
-"outlet_name": "RFI Hausa",
-"state": "yes",
-"owner": "France Médias Monde",
-"title_en": "More than 50,000 Ethiopian refugees crossed the border into Kenya"
-},
-{
 "outlet": "somaliguardian",
 "title": "Uganda begins troop pullout from Somalia after 20 years",
 "link": "https://www.somaliguardian.com/news/somalia-news/uganda-begins-troop-pullout-from-somalia/",
@@ -1603,39 +1636,6 @@
 "outlet_name": "Somali Guardian",
 "state": "no",
 "owner": "Private",
-"title_en": null
-},
-{
-"outlet": "hiiraan",
-"title": "Somaliland Police Arrest Three Journalists in 10 Days, Press Group Says",
-"link": "https://www.hiiraan.com/news4/2026/Oct/206656/somaliland_police_arrest_three_journalists_in_10_days_press_group_says.aspx",
-"ts": 1793438995,
-"lang": "en",
-"outlet_name": "Hiiraan Online",
-"state": "no",
-"owner": "Private, diaspora",
-"title_en": null
-},
-{
-"outlet": "ena_amharic",
-"title": "Ethiopia’s Quest for Seaport at Irreversible Stage, Say Experts - ENA English",
-"link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBmWGxHWk9tRi1FSEI5YUN5amNSVk5ya1NHNEJBQXNnSXpoV0pIa0hDdnRrNXRIa3N0UDJqR2Z4MjdDUF9nRkk1T2k5Zkw1bld2cGc?oc=5",
-"ts": 1793436300,
-"lang": "en",
-"outlet_name": "Ethiopian News Agency",
-"state": "yes",
-"owner": "Ethiopian state",
-"title_en": null
-},
-{
-"outlet": "reporter_et",
-"title": "Moscow Summit Demands Compensation For Colonial-Era Damages On African Countries - The Reporter Ethiopia",
-"link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1Jb3VUSWF6bF9EUVNGVDlzQ1AwMVBXYkpTN1dYZnNzNjdxYlY4RmVvN3JMRnEwRXF6MEtiOE0yTDI1RGpiV084aGs1RWx4QkJ2UHlQMQ?oc=5",
-"ts": 1793435949,
-"lang": "en",
-"outlet_name": "The Reporter (Ethiopia)",
-"state": "no",
-"owner": "Media & Communications Center (Amare Aregawi)",
 "title_en": null
 },
 {
@@ -1661,14 +1661,25 @@
 "title_en": null
 },
 {
-"outlet": "nation",
-"title": "The impossible logistics of South Sudan's December elections",
-"link": "https://nation.africa/kenya/news/africa/the-impossible-logistics-of-south-sudan-s-december-elections--5653180",
-"ts": 1793433600,
+"outlet": "reporter_et",
+"title": "Ethiopia Overtakes Tanzania To Become Top LDC Services Exporter: WTO-OECD Report - The Reporter Ethiopia",
+"link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1jd0JnQzdISEdaM2F6cU9wN3Nnc1NXSFRvaGptTWhteGdoNExudDJRUXVzS1hManNQVjlFSjVVX21Ub3Jub1hQclpldHBMU3oxZjgyTw?oc=5",
+"ts": 1793435163,
 "lang": "en",
-"outlet_name": "Daily Nation",
+"outlet_name": "The Reporter (Ethiopia)",
 "state": "no",
-"owner": "Nation Media Group",
+"owner": "Media & Communications Center (Amare Aregawi)",
+"title_en": null
+},
+{
+"outlet": "reporter_et",
+"title": "IMF To Review Implementation Schedule For Ethiopia’s New Economic Forecasting Model - The Reporter Ethiopia",
+"link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE10d1RMZVVXQy1qZUk4bXJpd1ZZUlMwbEtpaTFqNjBzZW5RRHl3VU1zTEN5MERvV1A4ZWRIU3J4eXpaME5HQ0E4UHFMUXVLZ1FQQ2ZRYg?oc=5",
+"ts": 1793434783,
+"lang": "en",
+"outlet_name": "The Reporter (Ethiopia)",
+"state": "no",
+"owner": "Media & Communications Center (Amare Aregawi)",
 "title_en": null
 },
 {
@@ -1694,15 +1705,15 @@
 "title_en": "United Nations calls for an end to decades of illegal imprisonment and human trafficking in Eritrea"
 },
 {
-"outlet": "rfiafrique",
-"title": "Somalie: les journalistes pris pour cibles pour avoir raconté l’histoire de Sadia",
-"link": "https://www.rfi.fr/fr/podcasts/menaces-sur-l-information/20261031-somalie-les-journalistes-pris-pour-cibles-pour-avoir-racont%C3%A9-l-histoire-de-sadia",
-"ts": 1793429264,
-"lang": "fr",
-"outlet_name": "RFI Afrique",
-"state": "yes",
-"owner": "France Médias Monde",
-"title_en": "Somalia: journalists targeted for telling Sadia's story"
+"outlet": "garowe",
+"title": "Somalia: Aden Madobe meets Ethiopian military officials amid rising tensions in South West State - Garowe Online",
+"link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOVUswOE1QWDE3WEt6MkVBb1JTVkxXQmgya1hhd2dfWE1Xd2ppV19ZTnI1R3F1QkJxUGlzeDZLb3g4QzY2SW9US3loMHNwVklQWTJmbnlkR1pONXJDdVZLdUpYeXl6NWo3dUFNTWRLYi0teDJXRkFxTzJqcmphN3k4NUhiRlR6RkhBRWVmelVJemlSX2FMQUJ4Rk9ucmRxY0tQZ2w4Y3dXcE5uYUNFY3RBc3JOWkpqOWp3RjdWYnBlT0V0ZDZQT3JaQVRacnVUc0R6OG5ONWlJOA?oc=5",
+"ts": 1793425420,
+"lang": "en",
+"outlet_name": "Garowe Online",
+"state": "no",
+"owner": "Private",
+"title_en": null
 },
 {
 "outlet": "reuters_africa",
@@ -1738,32 +1749,10 @@
 "title_en": null
 },
 {
-"outlet": "eyeradio",
-"title": "UK provides 2.8 million US dollars for flood preparedness in South Sudan",
-"link": "https://eyeradio.org/uk-provides-2-8-million-us-dollars-for-flood-preparedness-in-south-sudan/?utm_source=rss&utm_medium=rss&utm_campaign=uk-provides-2-8-million-us-dollars-for-flood-preparedness-in-south-sudan",
-"ts": 1793367102,
-"lang": "en",
-"outlet_name": "Eye Radio",
-"state": "no",
-"owner": "Private (Eye Media)",
-"title_en": null
-},
-{
-"outlet": "radiotamazuj",
-"title": "SSPLM leader condemns South Sudan-Russia oil deal, calls it illegal",
-"link": "https://www.radiotamazuj.org/en/news/article/ssplm-leader-condemns-south-sudan-russia-oil-deal-calls-it-illegal",
-"ts": 1793365236,
-"lang": "en",
-"outlet_name": "Radio Tamazuj",
-"state": "no",
-"owner": "Free Voice / donor-funded",
-"title_en": null
-},
-{
 "outlet": "addisstandard",
-"title": "#Daily_Brief: #Ethiopia ranks third among #Russian fertilizer importers - Addis Standard",
-"link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE8yNkh5eHMzVnhfRkFid1FSUnllREhZRGMzUEc0NkdFTTYxYmNzRjREeDFuRjdySHp1bzFUMENGM25EbHRMTEZ4cjJ3ZnVSdlU2TlE?oc=5",
-"ts": 1793351339,
+"title": "News: At least a dozen civilians killed in yet another army drone strike in Tigray’s Rama town - Addis Standard",
+"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPeTAwRklFcWV4YTJ1dk10cU9EZWVuTkgzTnlYblZkYnRmWnZ1X2o0b0F6d2Q0amdqUE5DVm8xbTBld3AwSFJYOEpIUWdybmdTTFpZRGE5bHpFTnBtN19Ld01Gb05iQTRkRTUwTnBKX0E1cGFOXzMwOGdUT0VBeWpJT2h1T2piaXB3S1dqZFVxa0J1ZXA1TU1Mc3lMVy1FaVNYUmNhbzNsTW1mMzhBYWpiMDFsRng?oc=5",
+"ts": 1793371837,
 "lang": "en",
 "outlet_name": "Addis Standard",
 "state": "no",
@@ -1826,25 +1815,14 @@
 "title_en": null
 },
 {
-"outlet": "bbcsomali",
-"title": "Doon Soomaali u rarneed oo lagu weeraray Marinka Hormuz",
-"link": "https://www.bbc.com/somali/articles/cmgel04p7qyro?at_medium=RSS&at_campaign=rss",
-"ts": 1793286638,
-"lang": "so",
-"outlet_name": "BBC Somali",
-"state": "no",
-"owner": "BBC World Service",
-"title_en": "Somali cargo ship attacked in the Strait of Hormuz"
-},
-{
-"outlet": "theafricareport",
-"title": "Ethiopia’s Russian fighter jets raise stakes in Eritrea standoff",
-"link": "https://www.theafricareport.com/434873/ethiopias-russian-fighter-jets-raise-stakes-in-eritrea-standoff/",
-"ts": 1793280600,
+"outlet": "reporter_et",
+"title": "How Is Saudi Arabia Fueling ‘Conflicts’ In The Red Sea? - The Reporter Ethiopia",
+"link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBaNWpqRWtFLVM3cEdXQlAwbkdyY0ZfdThkaDdQaTR2VFJCT2xaVS04ZFRwVlRCcFhIZng2SkxVRHRCS0tibnRsYWJLVVNBWUNlTnlHNQ?oc=5",
+"ts": 1793287631,
 "lang": "en",
-"outlet_name": "The Africa Report",
+"outlet_name": "The Reporter (Ethiopia)",
 "state": "no",
-"owner": "Groupe Jeune Afrique",
+"owner": "Media & Communications Center (Amare Aregawi)",
 "title_en": null
 },
 {
@@ -1879,34 +1857,91 @@
 "state": "no",
 "owner": "Private",
 "title_en": null
+}
+],
+"coastal-wa": [
+{
+"outlet": "myjoyonline",
+"title": "Harmful peer associations in universities lead to academic failure – Presbyterian University Ghana VC warns freshmen",
+"link": "https://www.myjoyonline.com/harmful-peer-associations-in-universities-lead-to-academic-failure-presbyterian-university-ghana-vc-warns-freshmen/",
+"ts": 1793550273,
+"lang": "en",
+"outlet_name": "MyJoyOnline",
+"state": "no",
+"owner": "Multimedia Group (Kwasi Twum)",
+"title_en": null
 },
 {
-"outlet": "bbcamharic",
-"title": "ሩሲያ በኢትዮጵያ እና ኤርትራ መካከል 'ታማኝ' አደራዳሪ መሆን ትችላለች? ለምንስ ማደራደር ፈለገች?",
-"link": "https://www.bbc.com/amharic/articles/cwd09rr212mmo?at_medium=RSS&at_campaign=rss",
-"ts": 1793262517,
-"lang": "am",
-"outlet_name": "BBC Amharic",
+"outlet": "myjoyonline",
+"title": "Syrian arrested at Beirut Airport with 40kg suspected cocaine shipment from Ghana – NACOC confirms",
+"link": "https://www.myjoyonline.com/syrian-arrested-at-beirut-airport-with-40kg-suspected-cocaine-shipment-from-ghana-nacoc-confirms/",
+"ts": 1793546397,
+"lang": "en",
+"outlet_name": "MyJoyOnline",
 "state": "no",
-"owner": "BBC World Service",
-"title_en": "Russia could be a 'faithful' mediator between Ethiopia and Eritrea, and why did it want to negotiate?"
+"owner": "Multimedia Group (Kwasi Twum)",
+"title_en": null
 },
 {
-"outlet": "bbcamharic",
-"title": "ኢትዮጵያ ከሩሲያ የተረከበቻቸው የጦር ጄቶች ወታደራዊ አቅሟን ምን ያህል ይለውጡታል?",
-"link": "https://www.bbc.com/amharic/articles/cmy0e158q5zeo?at_medium=RSS&at_campaign=rss",
-"ts": 1793246396,
-"lang": "am",
-"outlet_name": "BBC Amharic",
+"outlet": "myjoyonline",
+"title": "Constitutional reforms would be fitting 70th Independence anniversary gift – CDD-Ghana",
+"link": "https://www.myjoyonline.com/constitutional-reforms-would-be-fitting-70th-independence-anniversary-gift-cdd-ghana/",
+"ts": 1793545137,
+"lang": "en",
+"outlet_name": "MyJoyOnline",
 "state": "no",
-"owner": "BBC World Service",
-"title_en": "How much will the Ethiopian military jets acquired from Russia change its military capabilities?"
+"owner": "Multimedia Group (Kwasi Twum)",
+"title_en": null
+},
+{
+"outlet": "abidjannet",
+"title": "Journée Africaine de la Jeunesse: le gouvernement ivoirien veut mieux adapter la formation des jeunes aux besoins du marché de l'emploi - Abidjan.net News",
+"link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOS1c0QmlBdEs2bmlsUjlSR3dCVXFpSXhuZG1venBXZnpEM2tqT185eEhwU0hXYnhqNUQwajQ0ekdlanl6bW11YXRNMW9QT0JrMmZhamp2OVRhMVhXNElBUUZSZDdoS0xxa3lsaUU2NWFWUmJfRkFKUV9rNEpreDVLTmFMOFVOX3A1NXVzUkZRcGZfdEZyenVpTnVBdVBRem5yRVNSNG84YjRPTkdJTGJ1UnZPWmV6VFNGZHAzSU1sWVFxT2k3UUI5R2FrbTcxNHFCTjNKdFR5Vy0xd1N2QUpfUFM4Z0VTRWxBSHdNOHBlQ1pjZV93cDBKNnRCZHlLb2VvRl8xRw?oc=5",
+"ts": 1793536667,
+"lang": "fr",
+"outlet_name": "Abidjan.net",
+"state": "no",
+"owner": "Private",
+"title_en": "African Youth Day: Ivorian government wants to better adapt youth training to the needs of the labour market - Abidjan.net News"
+},
+{
+"outlet": "dailytrust",
+"title": "Trump intervenes as Ghana demands justice for teenager killed in US",
+"link": "https://dailytrust.com/trump-intervenes-as-ghana-demands-justice-for-teenager-killed-in-us/",
+"ts": 1793515244,
+"lang": "en",
+"outlet_name": "Daily Trust",
+"state": "no",
+"owner": "Media Trust Ltd",
+"title_en": null
+},
+{
+"outlet": "myjoyonline",
+"title": "From stability to transformation: 5 tests for Ghana’s 2027 Budget",
+"link": "https://www.myjoyonline.com/from-stability-to-transformation-5-tests-for-ghanas-2027-budget/",
+"ts": 1793486044,
+"lang": "en",
+"outlet_name": "MyJoyOnline",
+"state": "no",
+"owner": "Multimedia Group (Kwasi Twum)",
+"title_en": null
+},
+{
+"outlet": "ghanaweb",
+"title": "Galamsey: Prof Bokpin calls for national review of fight against illegal mining - GhanaWeb",
+"link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNaDYxa3NiWl8yU0l5SnVodHBTckxhQ2xNeGxGdk9JV0lIb2FzbkVxcE9TSUo0S1dxTk9ELXFSbWZBTHowRUtWb1VLeFgtUlBsdS1TeG5iUkRTWjd5SnRHcmRHZGZFU29SQ1k4Mk1VR0drNlRsalZFTmxyY2czbnRhUU1pUXlSTU1VQ3dfQ0U4dnBNbGJfSXNQSUoxQnY1SFM5bGJHdzlEenQxOXhGZVp1bmhPZzRkUWhZTW5FVGg2UWUxQ180YXZ4NUFXOU9tVXVmSnNR?oc=5",
+"ts": 1793476434,
+"lang": "en",
+"outlet_name": "GhanaWeb",
+"state": "no",
+"owner": "Private (Africa Web Holding)",
+"title_en": null
 },
 {
 "outlet": "reuters_africa",
-"title": "Ethiopia says it received Russian Su-35 jets, S-400 air defence systems to follow - Reuters",
-"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSFFKVlhvVHNVYnBybVFJNEZPNEZ4Y2hRTjJac0NVMkxLb2tBbTVYOGVkblBNOWRHck4xSnV2WGpGV3lzTm5fckZNaldFSVltUERCQ3lIUFo3aDc5MVZkVzdRSklkcXFQbGR5OGlOTjBjaWNISnlFaVlyb3MzbFY5VGJiS2FBbENTdTVCYzlaX0JoTjRoYksyczJwQWdHX1NtcGliQ1pZejZoMEh4bjJsZ2JHdm8?oc=5",
-"ts": 1793201950,
+"title": "Ghana says Russia to back 2,000 MW nuclear plant, deepen ties - Reuters",
+"link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVEU1TzJ6c1lISFlURGdCYlJscFltNmo3ay1SblgxNEtKU1lwcEhEcHZpMjg3TWE0VkVrdEtwSFF0dzhxRExVdUQtZTlkU2pENWpTRkdER3FHWEk1RzNRdFA2QlFVcmdzWWNSZ044MjNBejRPeFFNX3dwRUItTXRndW1UaXJxdHJkcThxUUtsVFo2d19MdFZVbVJFM245bW9iSEZwZENCQWk?oc=5",
+"ts": 1793475943,
 "lang": "en",
 "outlet_name": "Reuters Africa",
 "state": "no",
@@ -1914,29 +1949,38 @@
 "title_en": null
 },
 {
-"outlet": "addisstandard",
-"title": "News Alert: Ethiopia receives 12 Russian Su-35 fighter jets, plans to acquire four S-400 air defense batteries - Addis Standard",
-"link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPeUNHVXREWklNamswRnlndktpaXlaU1YtaTlKNHNNcmpuekxybnpaLWloZktSVkM1VnYyaWJNbFcyODNqM09jVmVYd2R4WnJMWWJjQnd1TnRNU1RiUHhCVkk0RERScld2OWRDcGNNb1I1OUowVXp6bjQwSThLcm5JR2c3WlYwazhxTGVEZVVzTUZCTUI3aGdUS1NLWWtKRXBDUUFmblpvejd0TU95NWhndDRieWRQTF9rWnFTRVZPMlJIZ2l5YUpxV0xzQXpPRXlk?oc=5",
-"ts": 1793188692,
+"outlet": "ghanaweb",
+"title": "Two Private Jets, One Kidnap: Kwesi Pratt recounts alleged Israeli operation in Ghana - GhanaWeb",
+"link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOYURzQnBaQTZvb2FUVGdvNkRQRXV0NTRqT3RualB4T3JrR19qWFJWQmo0Rnd6VllJRG01bzVzSlFWNzAxc3RpMllSRHZ5MzI4VUpCRHR1YkZOMEZBYnQyR2I0eDEyZmxLYTdrODVWUWhoZkNhNmZRQmtvSWVRam5pRW1PUURBTk1LYldObFppNzNNd3NrNTI0cGdLaUhqbzlIMXJDTHY0cWZYa3RTNEdBRG9kaFNkNDVyWUREaEtsVmFQVVNveXFtSXBZNURlTzB1b0g5dGFRLUMyZw?oc=5",
+"ts": 1793472534,
 "lang": "en",
-"outlet_name": "Addis Standard",
+"outlet_name": "GhanaWeb",
 "state": "no",
-"owner": "Private (Tsedale Lemma)",
+"owner": "Private (Africa Web Holding)",
 "title_en": null
 },
 {
-"outlet": "addisstandard",
-"title": "News: Russia repeats offer to host Ethiopia-Eritrea dialogue, PM Abiy arrives in Moscow for Africa summit - Addis Standard",
-"link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQcVc3cXcyVFZRa3pQTjVuejljYktrT2I3a3JLMm1vRmswZU1iTGVBQ0hNMjZmelBPY0J4ZkRnLVIzekxFdnRKaWltQWh5cVNGTFhFNDA5US1ZS0JmaExCS1JsRzRfTkVtWHZWZlJGZTM4bmo1aC1FRnhNdTliQVBNVXVFczJPR2g3clppQ1RTaS1TbkswSWxnQnoyRDlnSExzdU5LMmsxbUhlN1dBekJkQVcyVzRfbW1vSTktM09JeTFqeWs?oc=5",
-"ts": 1793172443,
-"lang": "en",
-"outlet_name": "Addis Standard",
+"outlet": "jeuneafrique",
+"title": "Nkrumah, Rawlings, Akufo-Addo… Au Ghana, les filles de président, entre héritage et affaires",
+"link": "https://www.jeuneafrique.com/1856948/politique/nkrumah-rawlings-akufo-addo-au-ghana-les-filles-de-president-entre-heritage-et-affaires/",
+"ts": 1793469275,
+"lang": "fr",
+"outlet_name": "Jeune Afrique",
 "state": "no",
-"owner": "Private (Tsedale Lemma)",
-"title_en": null
-}
-],
-"coastal-wa": [
+"owner": "Groupe Jeune Afrique (Ben Yahmed family)",
+"title_en": "Nkrumah, Rawlings, Akufo-Addo... in Ghana, the daughters of the president, between heritage and business"
+},
+{
+"outlet": "abidjannet",
+"title": "Côte d’Ivoire : Incendie maîtrisé sur le site gazier de Petroci à Vridi, aucune victime (Officiel) - Abidjan.net News",
+"link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNUUMyUVBpVXVxSHI1YUY1emJ6ZWtHSmEtRXlWREVHUzVCdG1GSXVsUHAyaDhaaG5BZjJCaDF4UjhFLVNhT0NDa093VDlyVFJudGpYRUYwaXVjbmxqRHBIanZXOVFKSUduUkl1OXlFdzc3T3doTjlRR0duRkZ0emFSQUpJN2V0ZUYyeXZoUWdwVEU0S1FlUmN5Tk84SzBfX0dtWGZtdnFDdElmNFhNRGtLV3NmM2k4Y3RtQ3FrTWxHaVVKRXRFTWIyVnc1b0xYQQ?oc=5",
+"ts": 1793465688,
+"lang": "fr",
+"outlet_name": "Abidjan.net",
+"state": "no",
+"owner": "Private",
+"title_en": "Côte d'Ivoire: Fire contained at Petroci gas site in Vridi, no casualties (Official) - Abidjan.net News"
+},
 {
 "outlet": "abidjannet",
 "title": "Intégration : la 12è revue annuelle des réformes et projets communautaires de l'UEMOA en Côte d'Ivoire prévue du 09 au 11 novembre - Abidjan.net News",
@@ -1960,37 +2004,15 @@
 "title_en": "Fight against money laundering and terrorist financing: Côte d'Ivoire out of the FATF grey list - Abidjan.net News"
 },
 {
-"outlet": "myjoyonline",
-"title": "COCOBOD CEO woos investors with Ghana’s new cocoa financing model at New York forum",
-"link": "https://www.myjoyonline.com/cocobod-ceo-woos-investors-with-ghanas-new-cocoa-financing-model-at-new-york-forum/",
-"ts": 1793456828,
+"outlet": "monitor_ug",
+"title": "Accra Convening: Acilo joins continental heavyweights to drive Africa’s leadership narrative",
+"link": "https://www.monitor.co.ug/uganda/news/national/accra-convening-acilo-joins-continental-heavyweights-to-drive-africa-s-leadership-narrative-5653786",
+"ts": 1793458882,
 "lang": "en",
-"outlet_name": "MyJoyOnline",
+"outlet_name": "Daily Monitor",
 "state": "no",
-"owner": "Multimedia Group (Kwasi Twum)",
+"owner": "Nation Media Group",
 "title_en": null
-},
-{
-"outlet": "myjoyonline",
-"title": "Christian Council of Ghana questions government’s conflicting stance on galamsey",
-"link": "https://www.myjoyonline.com/christian-council-of-ghana-questions-governments-conflicting-stance-on-galamsey/",
-"ts": 1793454148,
-"lang": "en",
-"outlet_name": "MyJoyOnline",
-"state": "no",
-"owner": "Multimedia Group (Kwasi Twum)",
-"title_en": null
-},
-{
-"outlet": "abidjannet",
-"title": "Côte d’Ivoire : la cellule de médiation pour désamorcer les conflits fonciers lance ses activités - Abidjan.net News",
-"link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQNFZnSEZpTTY4ckxmdDc4bXJwYmU5NFhWX1BxTDk1MmFPdENWVTY1YlJmaXZqUVcxY1FoSWluZFBQZXB4NmtERkZRQ2pqanI5ejYxUHYxMGhCOU05OHlMb19yQzNKWjlFOFRuZlZweVMwMDU5LVNmUnRtU0lYaTJMQ2pPRnd6MTRCZTZfaWJENDJQZHVteFJpOWpZaWdQMWdvclo1cGNiVmtUSGlJTzg4VDY0d05TdUFtSWRYeWJhSVMzMjRyX003YjZ5RDM5aGh5?oc=5",
-"ts": 1793453295,
-"lang": "fr",
-"outlet_name": "Abidjan.net",
-"state": "no",
-"owner": "Private",
-"title_en": "Cote d'Ivoire: the mediation cell to defuse land disputes starts its activities - Abidjan.net News"
 },
 {
 "outlet": "lefaso",
@@ -2002,50 +2024,6 @@
 "state": "no",
 "owner": "Privately owned (founder Cyriaque Paré)",
 "title_en": "Côte d'Ivoire/Justice: Government denies Jeune Afrique's revelations about an alleged corruption network at the Economic and Financial Crime Centre"
-},
-{
-"outlet": "myjoyonline",
-"title": "Galamsey has evolved into transnational organised crime – Prof. Appiagyei-Tua",
-"link": "https://www.myjoyonline.com/galamsey-has-evolved-into-transnational-organised-crime-prof-appiagyei-tua/",
-"ts": 1793450264,
-"lang": "en",
-"outlet_name": "MyJoyOnline",
-"state": "no",
-"owner": "Multimedia Group (Kwasi Twum)",
-"title_en": null
-},
-{
-"outlet": "myjoyonline",
-"title": "NDC officials and other party members are the ones doing galamsey – Miracles Aboagye",
-"link": "https://www.myjoyonline.com/ndc-officials-and-other-party-members-are-the-ones-doing-galamsey-miracles-aboagye/",
-"ts": 1793450150,
-"lang": "en",
-"outlet_name": "MyJoyOnline",
-"state": "no",
-"owner": "Multimedia Group (Kwasi Twum)",
-"title_en": null
-},
-{
-"outlet": "abidjannet",
-"title": "Côte d’Ivoire : Alain Kouadio, PDG du Groupe Kaydan, sacré « Entrepreneur de l’année » aux Awards du Patronat 2026 - Abidjan.net News",
-"link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQU0U5S094bkUzd0J0WE5mOFBRQnY1dFlvZm1fRkk4SVNPTnNUcjNWaS1lZklyZXBtTXVrZVFfU25pNjZyZzNEYVpvemhqdHkzTEI1U1FqU3BCQVZ0SHd3TGhEblFCYkw1cjlrMmdRQ3BVVDJIT0VjYTl0QVk0eEduRGl4ZlZTTmJXdjhYVUphMzFtdTRmZktzSjU5cjBTc1VnYmltdkhwX1VmbHlyZnhEYVlzREFtQUo1SWJYSHYya0V5N2tXakdWSjloUi1yMkp2RFJPZXFKcGM1MVRlemc?oc=5",
-"ts": 1793447411,
-"lang": "fr",
-"outlet_name": "Abidjan.net",
-"state": "no",
-"owner": "Private",
-"title_en": "Ivory Coast: Alain Kouadio, CEO of the Kaydan Group, awarded Entrepreneur of the Year at the 2026 Patronage Awards - Abidjan.net News"
-},
-{
-"outlet": "ghanaweb",
-"title": "Two private jets, One kidnap: Kwesi Pratt recounts alleged Israeli operation in Ghana - GhanaWeb",
-"link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOYURzQnBaQTZvb2FUVGdvNkRQRXV0NTRqT3RualB4T3JrR19qWFJWQmo0Rnd6VllJRG01bzVzSlFWNzAxc3RpMllSRHZ5MzI4VUpCRHR1YkZOMEZBYnQyR2I0eDEyZmxLYTdrODVWUWhoZkNhNmZRQmtvSWVRam5pRW1PUURBTk1LYldObFppNzNNd3NrNTI0cGdLaUhqbzlIMXJDTHY0cWZYa3RTNEdBRG9kaFNkNDVyWUREaEtsVmFQVVNveXFtSXBZNURlTzB1b0g5dGFRLUMyZw?oc=5",
-"ts": 1793446133,
-"lang": "en",
-"outlet_name": "GhanaWeb",
-"state": "no",
-"owner": "Private (Africa Web Holding)",
-"title_en": null
 },
 {
 "outlet": "ghanaweb",
@@ -2070,39 +2048,6 @@
 "title_en": null
 },
 {
-"outlet": "rfiafrique",
-"title": "Blanchiment d'argent: le GAFI retire la Côte d'Ivoire et la RDC de sa liste grise",
-"link": "https://www.rfi.fr/fr/afrique/20261031-blanchiment-d-argent-le-gafi-retire-la-c%C3%B4te-d-ivoire-et-la-rdc-de-sa-liste-grise",
-"ts": 1793415191,
-"lang": "fr",
-"outlet_name": "RFI Afrique",
-"state": "yes",
-"owner": "France Médias Monde",
-"title_en": "Money laundering: FATF removes Côte d'Ivoire and the DRC from its gray list"
-},
-{
-"outlet": "rfiafrique",
-"title": "Togo: la Cédéao adresse une lettre de relance au ministre de la Justice portant sur la réforme constitutionnelle",
-"link": "https://www.rfi.fr/fr/afrique/20261031-togo-la-c%C3%A9d%C3%A9ao-adresse-une-lettre-de-relance-au-ministre-de-la-justice-portant-sur-la-r%C3%A9forme-constitutionnelle",
-"ts": 1793414941,
-"lang": "fr",
-"outlet_name": "RFI Afrique",
-"state": "yes",
-"owner": "France Médias Monde",
-"title_en": "Togo: Cedeao sends a letter of encouragement to the Minister of Justice on constitutional reform"
-},
-{
-"outlet": "rfiafrique",
-"title": "Côte d'Ivoire: l'héritage du photographe Paul Kodjo dans son pays d'origine",
-"link": "https://www.rfi.fr/fr/podcasts/reportage-afrique/20261030-c%C3%B4te-d-ivoire-l-h%C3%A9ritage-du-photographe-paul-kodjo-dans-son-pays-d-origine",
-"ts": 1793402729,
-"lang": "fr",
-"outlet_name": "RFI Afrique",
-"state": "yes",
-"owner": "France Médias Monde",
-"title_en": "Côte d'Ivoire: the legacy of photographer Paul Kodjo in his home country"
-},
-{
 "outlet": "lefaso",
 "title": "SIAO 2026 : Le Burkina Faso, le Mali, le Niger et le Ghana veulent renforcer leur coopération dans l'artisanat",
 "link": "https://lefaso.net/spip.php?article150381",
@@ -2112,50 +2057,6 @@
 "state": "no",
 "owner": "Privately owned (founder Cyriaque Paré)",
 "title_en": "SIAO 2026: Burkina Faso, Mali, Niger and Ghana want to strengthen their cooperation in crafts"
-},
-{
-"outlet": "lefaso",
-"title": "Lutte contre le blanchiment de capitaux : La Côte d'Ivoire sort de la liste grise du GAFI",
-"link": "https://lefaso.net/spip.php?article150387",
-"ts": 1793397606,
-"lang": "fr",
-"outlet_name": "Lefaso.net",
-"state": "no",
-"owner": "Privately owned (founder Cyriaque Paré)",
-"title_en": "Fight against money laundering: Côte d'Ivoire removed from the FATF grey list"
-},
-{
-"outlet": "lefaso",
-"title": "Cinéma : Le Burkinabè Abdul Aziz Diallo décroche le 3e Prix national d'excellence 2026 en Côte d'Ivoire",
-"link": "https://lefaso.net/spip.php?article150373",
-"ts": 1793376900,
-"lang": "fr",
-"outlet_name": "Lefaso.net",
-"state": "no",
-"owner": "Privately owned (founder Cyriaque Paré)",
-"title_en": "Film: Burkinabe Abdul Aziz Diallo receives the 3rd National Award of Excellence 2026 in Côte d'Ivoire"
-},
-{
-"outlet": "meduza",
-"title": "«Путин — диктатор, который убивает женщин и детей». Премьер Эстонии отказался смягчить риторику в адрес России (как того хотели США)",
-"link": "https://meduza.io/news/2026/10/30/putin-diktator-kotoryy-ubivaet-zhenschin-i-detey-premier-estonii-otkazalsya-smyagchit-ritoriku-v-adres-rossii-kak-togo-hoteli-ssha",
-"ts": 1793372068,
-"lang": "ru",
-"outlet_name": "Meduza",
-"state": "no",
-"owner": "Independent (Galina Timchenko)",
-"title_en": "Putin  a dictator who kills women and children. Prime Minister of Estonia refused to soften the rhetoric against Russia (as the US wanted)"
-},
-{
-"outlet": "ghanaweb",
-"title": "How a visit to Ghana changed NASA astronaut Christina Koch's perspective on life - GhanaWeb",
-"link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNVXljRFJPR1puajRMcXZLanl6eWo2SDdKTzBNM2ViaTRnQko1eGdLZGdOZXNmamZqTm4zaUpvX1ZuS0pTclliYzNHd0ZKUTFXekFLZVFHNlRzSi1fRGNVTGFpb2ZYZElMOVBMcUlrRXVpQl9VeWNwUVljcnM1NVhtQVdlSmp0V3czeUx2cVVkM2xlNUpOZ3VmZklFb0lzUjNta2FiODQxUlN4cE50c0ZIWW5RWTUzWGNoQzh1WTlhdThBNzNMUnExbS0zTG9fQ0pmODNrUzln?oc=5",
-"ts": 1793353430,
-"lang": "en",
-"outlet_name": "GhanaWeb",
-"state": "no",
-"owner": "Private (Africa Web Holding)",
-"title_en": null
 },
 {
 "outlet": "gabonreview",
@@ -2191,17 +2092,6 @@
 "title_en": null
 },
 {
-"outlet": "jeuneafrique",
-"title": "Or au Ghana : après Damang, Gold Fields risque-t-il d’être évincé de la mine de Tarkwa ?",
-"link": "https://www.jeuneafrique.com/1856609/economie-entreprises/or-au-ghana-apres-damang-gold-fields-risque-t-il-detre-evince-de-la-mine-de-tarkwa/",
-"ts": 1793262442,
-"lang": "fr",
-"outlet_name": "Jeune Afrique",
-"state": "no",
-"owner": "Groupe Jeune Afrique (Ben Yahmed family)",
-"title_en": "But in Ghana: after Damang, is Gold Fields in danger of being evicted from the Tarkwa mine?"
-},
-{
 "outlet": "lemonde_afrique",
 "title": "Anita Afonu, coproductrice du documentaire « The Eyes of Ghana » : « Face aux films coloniaux qui nous montraient comme des sauvages, Kwame Nkrumah avait compris le pouvoir des images »",
 "link": "https://www.lemonde.fr/afrique/article/2026/10/28/anita-afonu-coproductrice-du-documentaire-the-eyes-of-ghana-face-aux-films-coloniaux-qui-nous-montraient-comme-des-sauvages-kwame-nkrumah-avait-compris-le-pouvoir-des-images_6801621_3212.html",
@@ -2226,6 +2116,61 @@
 ],
 "southern": [
 {
+"outlet": "myjoyonline",
+"title": "Amadu Mohammed settles for silver at Elite Champs after defeat to Zambia’s Mwengo",
+"link": "https://www.myjoyonline.com/amadu-mohammed-settles-for-silver-at-elite-champs-after-defeat-to-zambias-mwengo/",
+"ts": 1793548647,
+"lang": "en",
+"outlet_name": "MyJoyOnline",
+"state": "no",
+"owner": "Multimedia Group (Kwasi Twum)",
+"title_en": null
+},
+{
+"outlet": "opais",
+"title": "Daniel Chapo saúda jovens pelo Dia da Juventude Africana",
+"link": "https://opais.co.mz/daniel-chapo-sauda-jovens-pelo-dia-da-juventude-africana/",
+"ts": 1793545546,
+"lang": "pt",
+"outlet_name": "O País",
+"state": "no",
+"owner": "SOICO group",
+"title_en": "Daniel Chapo greets young people on African Youth Day"
+},
+{
+"outlet": "opais",
+"title": "Moçambique procura na Tanzânia experiências para criação da Reserva Alimentar Nacional",
+"link": "https://opais.co.mz/mocambique-procura-na-tanzania-experiencias-para-criacao-da-reserva-alimentar-nacional/",
+"ts": 1793543295,
+"lang": "pt",
+"outlet_name": "O País",
+"state": "no",
+"owner": "SOICO group",
+"title_en": "Mozambique seeks experience in Tanzania for the creation of the National Food Reserve"
+},
+{
+"outlet": "rfiportugues",
+"title": "Incêndio de grandes proporções destrói parcialmente única unidade de oncologia de Moçambique",
+"link": "https://www.rfi.fr/pt/%C3%A1frica-lus%C3%B3fona/20261101-inc%C3%AAndio-de-grandes-propor%C3%A7%C3%B5es-destr%C3%B3i-parcialmente-%C3%BAnica-unidade-de-oncologia-de-mo%C3%A7ambique",
+"ts": 1793539420,
+"lang": "pt",
+"outlet_name": "RFI Português",
+"state": "yes",
+"owner": "France Médias Monde",
+"title_en": "Large fire partially destroys a single oncology unit in Mozambique"
+},
+{
+"outlet": "noticias_mz",
+"title": "Em Angónia: SG da Frelimo reafirma compromisso com valores culturais e desenvolvimento",
+"link": "https://www.jornalnoticias.co.mz/destaque/em-angonia-sg-da-frelimo-reafirma-compromisso-com-valores-culturais-e-desenvolvimento/",
+"ts": 1793529102,
+"lang": "pt",
+"outlet_name": "Notícias (Mozambique)",
+"state": "yes",
+"owner": "Sociedade do Notícias (state-linked shareholders)",
+"title_en": "In Angonia: Frelimo's SG reaffirms its commitment to cultural values and development"
+},
+{
 "outlet": "rfiportugues",
 "title": "Moçambique assinou acordos de serviços aéreos com São Tomé e Príncipe e com a Guiné-Bissau",
 "link": "https://www.rfi.fr/pt/%C3%A1frica-lus%C3%B3fona/20261031-mo%C3%A7ambique-assinou-acordos-de-servi%C3%A7os-a%C3%A9reos-com-s%C3%A3o-tom%C3%A9-e-pr%C3%ADncipe-e-com-a-guin%C3%A9-bissau",
@@ -2235,17 +2180,6 @@
 "state": "yes",
 "owner": "France Médias Monde",
 "title_en": "Mozambique signed air services agreements with São Tomé and Príncipe and Guinea-Bissau"
-},
-{
-"outlet": "opais",
-"title": "COTUR e Solenta Aviation lançam três voos semanais entre Maputo e Vilankulo",
-"link": "https://opais.co.mz/cotur-e-solenta-aviation-lancam-tres-voos-semanais-entre-maputo-e-vilankulo/",
-"ts": 1793448873,
-"lang": "pt",
-"outlet_name": "O País",
-"state": "no",
-"owner": "SOICO group",
-"title_en": "COTUR and Solenta Aviation launch three weekly flights between Maputo and Vilankulo"
 },
 {
 "outlet": "rfiportugues",
@@ -2259,37 +2193,15 @@
 "title_en": "Violence against women in Mozambique does not reach the courts"
 },
 {
-"outlet": "opais",
-"title": "Gueta chapo felicita Rady Gramane pelo título de título de Campeã Africana de Boxe",
-"link": "https://opais.co.mz/gueta-chapo-felicita-rady-gramane-pelo-titulo-de-titulo-de-campea-africana-de-boxe/",
-"ts": 1793441759,
-"lang": "pt",
-"outlet_name": "O País",
+"outlet": "newzimbabwe",
+"title": "Zimbabwe lowers growth forecast to 3.5 pct in 2027 amid drought fears - NewZimbabwe.com",
+"link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRTNRVmRFalRacWpWQ0dHWldsbG9Jc3pZMkZnNTlGeERVNnpYSlFhSG5odFktRXpTOUJLaTBJOWFjYjF2NWtpcnExUFRKdzZMVVFxZGswemxWbjBjTFR1em45amF1bjQ1M3ViT2N6ZG5fRkFtenFqbVByMmlOaU9pcHFueTlVZi1oU3NWMkhMNnJvcG0xNm9uOXBuZ0FQeFk?oc=5",
+"ts": 1793419031,
+"lang": "en",
+"outlet_name": "NewZimbabwe",
 "state": "no",
-"owner": "SOICO group",
-"title_en": "Geta Plapo congratulates Rady Gramane on winning the title of African Boxing Champion"
-},
-{
-"outlet": "noticias_mz",
-"title": "Gueta Chapo felicita Rady Gramane pelo título de campeã africana de Boxe",
-"link": "https://www.jornalnoticias.co.mz/destaque/gueta-chapo-felicita-rady-gramane-pelo-titulo-de-campea-africana-de-boxe/",
-"ts": 1793440076,
-"lang": "pt",
-"outlet_name": "Notícias (Mozambique)",
-"state": "yes",
-"owner": "Sociedade do Notícias (state-linked shareholders)",
-"title_en": "Gueta Chapo congratulates Rady Gramane on the title of African boxing champion"
-},
-{
-"outlet": "opais",
-"title": "Moçambique na 29.ª posição com deterioração na governação",
-"link": "https://opais.co.mz/mocambique-na-29-a-posicao-com-deterioracao-na-governacao/",
-"ts": 1793437531,
-"lang": "pt",
-"outlet_name": "O País",
-"state": "no",
-"owner": "SOICO group",
-"title_en": "Mozambique in 29th position with deteriorating governance"
+"owner": "Private, diaspora",
+"title_en": null
 },
 {
 "outlet": "newzimbabwe",
@@ -2325,17 +2237,6 @@
 "title_en": null
 },
 {
-"outlet": "noticias_mz",
-"title": "Cresce cooperação na Defesa entre Moçambique e Índia",
-"link": "https://www.jornalnoticias.co.mz/destaque/cresce-cooperacao-na-defesa-entre-mocambique-e-india/",
-"ts": 1793351102,
-"lang": "pt",
-"outlet_name": "Notícias (Mozambique)",
-"state": "yes",
-"owner": "Sociedade do Notícias (state-linked shareholders)",
-"title_en": "Growing defence cooperation between Mozambique and India"
-},
-{
 "outlet": "newzimbabwe",
 "title": "600,000-tonne grain reserve, drought insurance as Zimbabwe braces for El Niño - NewZimbabwe.com",
 "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNck5IeDJnX1hnTG1acmpGZGwwM1MyRmowd2I0NlBmbmZkYVFJaHEwbU0xZkI1bTdKYmYxZzh2V01qTlRMcDRNYTV3N3NWekI2YWpJckRNcXhDYWdzcmdoYU9seWlaeG9pZXg4c2FGWDhpWlRNemExS3Qwakc0dVh4d0gxNm9jbjFjNFhXNTU1dmFtVW9CSGZJU0E3MHJTSkxtcmNtc0xtOA?oc=5",
@@ -2358,15 +2259,15 @@
 "title_en": null
 },
 {
-"outlet": "newzimbabwe",
-"title": "Zimbabwe’s platinum boom: Where is the wealth? - NewZimbabwe.com",
-"link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBLQVIzVi01TVA5bndlVUloX2s1T1FPeXdJVks5VjNEMGNzeG1Tc1pLbE5MbTlmYXB6UmZOM2pUNlUxZUctLVpRVXkwd2hIQ0w2a0Naa2R1Z3VsTy1kZG5CTy1mM3FCb29NMmNQQ3E0cndzTkwtWllURGFaSE4?oc=5",
-"ts": 1793246494,
-"lang": "en",
-"outlet_name": "NewZimbabwe",
+"outlet": "dwportugues_africa",
+"title": "FRELIMO pede responsabilização pelos danos nos protestos - DW.com",
+"link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNT3VWZTRBUmNDQTB0SU5IZ2VlTlViM0VyX3NfRHBtUVhmQldrTS1sclYwY2dwRDdoZnJ6YzhsMDMzblhYRXk1V2pIaG1UX0ItaW1aVTBKNTlSWEtRVEgwNnBPYlFRcDllTVo5NENHZW85SF9MM1JDXzk4cWtMTXA4WmNfdmVSYVdTbWV5VGkwbk00NFRrVk9HVEFydnl1Nkk1bi12eWV30gGmAUFVX3lxTFBrSU01ZHRwMVBDUnh4Wm4yTEltZWJfSDNDYUFLTHNDU2QtSC11TWJ5bmh4bHBoMlhDSmxSM011YTl6bkRGanV0OUh0aWRhdkNmb3RnRVI2V0E5Mk01NUpnLURoWnh6Y21aMmJwc25IcTB3UTZRcUwxSVFCMkx1ZnBRZWFCd3AwRTNrVV94QW8wM3k1MG1YSmdFUGVJOWIxY01JTDBiVXc?oc=5",
+"ts": 1793194482,
+"lang": "pt",
+"outlet_name": "DW África (Português)",
 "state": "no",
-"owner": "Private, diaspora",
-"title_en": null
+"owner": "Deutsche Welle",
+"title_en": "FRELIMO calls for accountability for damages in the protests - DW.com"
 },
 {
 "outlet": "reuters_africa",
@@ -2380,6 +2281,17 @@
 "title_en": null
 },
 {
+"outlet": "ena_amharic",
+"title": "Ethiopian Airlines Expands African Network with Thrice-Weekly Flights to Mozambique’s Nacala - ENA English",
+"link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1nVUFLX2VsemhpNDY2bnQzeFQ0VE0wVWxEeUItWHE0RFFFa0piakV0SlppN3ktekJtNE0wZElBWjFYNGxwUVlxcXQyY01NcW9aNUE?oc=5",
+"ts": 1793085130,
+"lang": "en",
+"outlet_name": "Ethiopian News Agency",
+"state": "yes",
+"owner": "Ethiopian state",
+"title_en": null
+},
+{
 "outlet": "dwportugues_africa",
 "title": "Moçambique: Ex-guerrilheiros da RENAMO mantêm pressão para congresso - DW.com",
 "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQMlktU3VFTW5WT0ltQ00yb25RQl9Ob0g2OFZyNjBTbXhjSlg2QnlWUG00a1U2SFhwcFdKbHg2VzBqSWpIUzhPWUdwVkZnSHdNeElNb2ZTTlpGMXh6Q25XZEtCRzBHbmJWbWs0MmxoSmVIMnJxc2RlZWxsU25wUnZBOU9BZjdlX3FWakhoOHhxSjZJT2V2VkpUaGk1R3N3M0ZZb3ZXQnZ2MlJpNVZCRzJTbExSUmhRVTYyRFFz0gG7AUFVX3lxTE0xaWdrLTFxTWNrQ0t5VmRiX1hBR3dkYUU2eEY0ZW00Zm9IZU5FMF9EY2tibGJndW1fWHdDOW1XZk1BRGp5RDc1WHI4cmpFMGhXclM4ajNhT0F2cUtsVWJoNjE5X202Y2hTdVhqNHpEdUtRSU1NbDh1NW5OWkZCZm5fUzFISy15dl90dWw1ZS1hNndjNW5tc2FEMVlNejgxYVdTT3QtLTRJQVVZWG9RX1JSN2lSQWEwVEFOckE?oc=5",
@@ -2389,17 +2301,6 @@
 "state": "no",
 "owner": "Deutsche Welle",
 "title_en": "Mozambique: Former RENAMO guerrillas maintain pressure for congress - DW.com"
-},
-{
-"outlet": "dwportugues_africa",
-"title": "Cabo Delgado volta a atrair milhões de dólares - DW.com",
-"link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUnZyekdMSkItMkFGa25JLUh3aGdPZ0xpYjVOSkNEV1hZVXphbjdMWHp2TnpTX0lWRHFZWlpxN1dBeGFRUGFFeHVyS0xVQVJTNVUzd1VXcFl5N2t0OGEyTmpRaW9DMzNGTmxQM0xqdWxEd3lMZm45LWFPTEZnTXBtWUFwb2NXTTNSb3hxQmpkZlpTdTlUa3l3R9IBmAFBVV95cUxOUTdFSFNqYUhTamg2M2VOWjF5eGhvNHBOdUZ0YXlERjRnQlNrYkpzM2k1ZHV6OWY5c25sbHNpbmNLdTNfMWFuRlhXVzQ2VVJSMHp4MXRQeVBzcWtwUENHN09NYTByTHV4MFVLa3E2dUgwSURMenlSMzFoS2RYNGEzOGoxdWhzX0ctcUNXcEtoVHJtYWxmLWZaeA?oc=5",
-"ts": 1793023964,
-"lang": "pt",
-"outlet_name": "DW África (Português)",
-"state": "no",
-"owner": "Deutsche Welle",
-"title_en": "Cabo Delgado is again attracting millions of dollars - DW.com"
 },
 {
 "outlet": "zitamar",
@@ -2424,17 +2325,6 @@
 "title_en": null
 },
 {
-"outlet": "dwportugues_africa",
-"title": "Moçambique vai pagar horas extra a 29 mil professores - DW.com",
-"link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNWHJGeWJUakZDMWxGM2RDXzUwRHFrY2dXeHpKNVRHNkxVX3ZKRHJsOHl5QzRsRVVoeWxyVlRMTU1LOTkya1Z1N2tWTDM4dk9GUTVFQVBDQ3NDMzFYaGFFaThZSHlVTnUwUU12bXN6YUoyVWViM3AxVXNsNDVtcUdZdDVBT3ZxeHhzanRSdGVqenZqT29tRGtqZm1iQdIBmwFBVV95cUxPaVhWWFkwdzRaaWNmVlYtV1RfM2ZIWWdYOEV3MXZMaEdZRWpFTUN5MzQ0dm0tX2RuRVNvVGIxQWt1RklMRWRRd0tTbFEwUldMUGRrSEpBSFhMaDU4UHdzUTEzd3RzYTNGTDczMnJxUmNySUVud3E5eEVOaG1iMjhhVXE3b05NY282Y0N5T1IwMUZfWV9GazFTZVM1SQ?oc=5",
-"ts": 1792566000,
-"lang": "pt",
-"outlet_name": "DW África (Português)",
-"state": "no",
-"owner": "Deutsche Welle",
-"title_en": "Mozambique will pay overtime to 29 thousand teachers - DW.com"
-},
-{
 "outlet": "lusa",
 "title": "Pelo menos 15.394 migrantes fugiram da África do Sul por Moçambique - OIM - LUSA",
 "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNQW1ELWMwczFGQmVWR2IxOGpzQTBTYXpqZmc2RnQxSm1sNDV6ektsQ2FWZG9rWUhNaGQ1cEd1MTJTQU9Md2ZUdHJ4emM2aU1QZVM4NHBPclVuNzFnc1BSdHEzelNMWFJFWHV3OTAzS0Z0N3g4ZVVtbndBdHJVWVNMbkdiMUhRQlB4OURjbDJwcllha0c5c1R5Y0gycXRWMXhxaUFRaVdYajc0MnhpU0dkYk43T29aeENvNFE?oc=5",
@@ -2448,6 +2338,281 @@
 ],
 "north": [
 {
+"outlet": "rt_ar",
+"title": "ضربة مفاجئة لمدخني الشيشة في مصر.. زيادة أسعار المعسل",
+"link": "https://rtarabic.com/business/1849386-%D8%B6%D8%B1%D8%A8%D8%A9-%D9%85%D9%81%D8%A7%D8%AC%D8%A6%D8%A9-%D9%84%D9%85%D8%AF%D8%AE%D9%86%D9%8A-%D8%A7%D9%84%D8%B4%D9%8A%D8%B4%D8%A9-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1-%D8%B2%D9%8A%D8%A7%D8%AF%D8%A9-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%84/",
+"ts": 1793550846,
+"lang": "ar",
+"outlet_name": "RT Arabic",
+"state": "yes",
+"owner": "ANO TV-Novosti",
+"title_en": "A surprise blow to the glass smokers in Egypt, the rise in honey prices."
+},
+{
+"outlet": "rt_ar",
+"title": "بوريطة: المغرب كان على دراية بالفيتو الروسي بشأن الصحراء الغربية ولم يسع إلى منعه",
+"link": "https://rtarabic.com/middle_east/1849363-%D8%A8%D9%88%D8%B1%D9%8A%D8%B7%D8%A9-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8-%D9%83%D8%A7%D9%86-%D8%B9%D9%84%D9%89-%D8%AF%D8%B1%D8%A7%D9%8A%D8%A9-%D8%A8%D8%A7%D9%84%D9%81%D9%8A%D8%AA%D9%88-%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A-%D8%A8%D8%B4%D8%A3%D9%86-%D8%A7%D9%84%D8%B5%D8%AD%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9-%D9%88%D9%84%D9%85-%D9%8A%D8%B3%D8%B9-%D8%A5%D9%84%D9%89-%D9%85%D9%86%D8%B9%D9%87/",
+"ts": 1793548003,
+"lang": "ar",
+"outlet_name": "RT Arabic",
+"state": "yes",
+"owner": "ANO TV-Novosti",
+"title_en": "BURITA: Morocco was aware of the Russian veto on Western Sahara and could not prevent it."
+},
+{
+"outlet": "rt_ar",
+"title": "مصر.. اعتقال كويتيين في مطار القاهرة لرميهما فتاة مغربية من الطابق السابع لفندق شهير",
+"link": "https://rtarabic.com/society/1849342-%D9%85%D8%B5%D8%B1-%D8%A7%D8%B9%D8%AA%D9%82%D8%A7%D9%84-%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D9%8A%D9%86-%D9%81%D9%8A-%D9%85%D8%B7%D8%A7%D8%B1-%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9-%D9%84%D8%B1%D9%85%D9%8A%D9%87%D9%85%D8%A7-%D9%81%D8%AA%D8%A7%D8%A9-%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9-%D9%85%D9%86-%D8%A7%D9%84%D8%B7%D8%A7%D8%A8%D9%82-%D8%A7%D9%84%D8%B3%D8%A7%D8%A8%D8%B9-%D9%84%D9%81%D9%86%D8%AF%D9%82%D8%B4%D9%87%D9%8A%D8%B1/",
+"ts": 1793542901,
+"lang": "ar",
+"outlet_name": "RT Arabic",
+"state": "yes",
+"owner": "ANO TV-Novosti",
+"title_en": "Egypt, Kuwaitis were arrested at Cairo airport for throwing a Moroccan girl from the seventh floor of a famous hotel."
+},
+{
+"outlet": "rt_ar",
+"title": "مصر توقع اتفاق تمويل بقيمة مليار دولار مع البنك الدولي",
+"link": "https://rtarabic.com/business/1849346-%D9%85%D8%B5%D8%B1-%D8%AA%D9%88%D9%82%D8%B9-%D8%A7%D8%AA%D9%81%D8%A7%D9%82-%D8%AA%D9%85%D9%88%D9%8A%D9%84-%D8%A8%D9%82%D9%8A%D9%85%D8%A9-%D9%85%D9%84%D9%8A%D8%A7%D8%B1-%D8%AF%D9%88%D9%84%D8%A7%D8%B1-%D9%85%D8%B9-%D8%A7%D9%84%D8%A8%D9%86%D9%83-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A/",
+"ts": 1793542726,
+"lang": "ar",
+"outlet_name": "RT Arabic",
+"state": "yes",
+"owner": "ANO TV-Novosti",
+"title_en": "Egypt signed a billion-dollar financing agreement with the World Bank ."
+},
+{
+"outlet": "tsa",
+"title": "Sahara occidental : le Maroc prend le risque d’une reprise de la guerre",
+"link": "https://www.tsa-algerie.com/sahara-occidental-le-maroc-prend-le-risque-dune-reprise-de-la-guerre/",
+"ts": 1793542587,
+"lang": "fr",
+"outlet_name": "TSA Algérie",
+"state": "no",
+"owner": "Private",
+"title_en": "Western Sahara: Morocco risks a resumption of war"
+},
+{
+"outlet": "ahram",
+"title": "Infographic| Egypt’s GDP growth projected to reach 5.1% in 2026, outpacing regional peers - Economy - Business - Ahram Online",
+"link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5UY0dEdnV5MlpxUmlpYzRldnJ1bm01MGRxRXB0TVU3T3hYVGRhSGRCbkk2LUZTVl9uOHROdHBOUVY1aDlJU3JpWGY4TVpOT09lc3l3aGl1RUQ?oc=5",
+"ts": 1793537355,
+"lang": "en",
+"outlet_name": "Ahram Online",
+"state": "yes",
+"owner": "Al-Ahram Establishment",
+"title_en": null
+},
+{
+"outlet": "hespress",
+"title": "Douanes : l’intelligence artificielle permet au Maroc de récupérer 730 millions de dirhams",
+"link": "https://fr.hespress.com/494666-douanes-lintelligence-artificielle-permet-au-maroc-de-recuperer-730-millions-de-dirhams.html",
+"ts": 1793536652,
+"lang": "fr",
+"outlet_name": "Hespress",
+"state": "no",
+"owner": "Private",
+"title_en": "Customs: Artificial intelligence enables Morocco to recover 730 million dirhams"
+},
+{
+"outlet": "tsa",
+"title": "Essais nucléaires : face au refus français, l’Algérie poursuit seule la décontamination",
+"link": "https://www.tsa-algerie.com/essais-nucleaires-face-au-refus-francais-lalgerie-poursuit-seule-la-decontamination/",
+"ts": 1793536527,
+"lang": "fr",
+"outlet_name": "TSA Algérie",
+"state": "no",
+"owner": "Private",
+"title_en": "Nuclear tests: despite French refusal, Algeria continues to decontaminate alone"
+},
+{
+"outlet": "tsa",
+"title": "ALERTE. Déchets nucléaires : l’Algérie relance les accusations contre la France",
+"link": "https://www.tsa-algerie.com/alerte-dechets-nucleaires-lalgerie-relance-les-accusations-contre-la-france/",
+"ts": 1793534061,
+"lang": "fr",
+"outlet_name": "TSA Algérie",
+"state": "no",
+"owner": "Private",
+"title_en": "Nuclear waste: Algeria reiterates its accusations against France"
+},
+{
+"outlet": "bbcarabic",
+"title": "بعد الجدل حول قضية \"مدى مصر\"، مجلس القضاء المصري ينفي الإخلال بضمانات المحاكمة",
+"link": "https://www.bbc.com/arabic/articles/cmj4702x1ydro?at_medium=RSS&at_campaign=rss",
+"ts": 1793531821,
+"lang": "ar",
+"outlet_name": "BBC Arabic",
+"state": "no",
+"owner": "BBC World Service",
+"title_en": "Following the controversy over the \"Egypt scope\" case, the Egyptian judiciary council denies any breach of trial guarantees."
+},
+{
+"outlet": "tsa",
+"title": "Gazoduc Transsaharien : l’Algérie envisage d’associer les compagnies russes",
+"link": "https://www.tsa-algerie.com/gazoduc-transsaharien-lalgerie-envisage-dassocier-les-compagnies-russes/",
+"ts": 1793530808,
+"lang": "fr",
+"outlet_name": "TSA Algérie",
+"state": "no",
+"owner": "Private",
+"title_en": "Trans-Saharan gas pipeline: Algeria plans to partner with Russian companies"
+},
+{
+"outlet": "kapitalis",
+"title": "Solidarité | De l’«istiftah» des commerçants de Tunis au «café suspendu» de Naples",
+"link": "https://kapitalis.com/tunisie/2026/11/01/solidarite-de-listiftah-des-commercant-de-tunis-au-cafe-suspendu-de-naples/",
+"ts": 1793530178,
+"lang": "fr",
+"outlet_name": "Kapitalis",
+"state": "no",
+"owner": "Private",
+"title_en": "Solidarity from the list of traders in Tunis to the suspended coffee shop in Naples"
+},
+{
+"outlet": "rfiafrique",
+"title": "Sissi promet de quitter le pouvoir en 2030: vrai tournant pour l’Égypte ou mise en scène du régime militaire?",
+"link": "https://www.rfi.fr/fr/moyen-orient/20261101-sissi-promet-de-quitter-le-pouvoir-en-2030-vrai-tournant-pour-l-%C3%A9gypte-ou-mise-en-sc%C3%A8ne-du-r%C3%A9gime-militaire",
+"ts": 1793528737,
+"lang": "fr",
+"outlet_name": "RFI Afrique",
+"state": "yes",
+"owner": "France Médias Monde",
+"title_en": "Sissi promises to leave power in 2030: real turning point for Egypt or the staging of the military regime?"
+},
+{
+"outlet": "kapitalis",
+"title": "L’Italie, 1er fournisseur de machines agricoles de la Tunisie",
+"link": "https://kapitalis.com/tunisie/2026/11/01/litalie-1er-fournisseur-de-machines-agricoles-de-la-tunisie/",
+"ts": 1793528437,
+"lang": "fr",
+"outlet_name": "Kapitalis",
+"state": "no",
+"owner": "Private",
+"title_en": "Italy, first supplier of agricultural machinery in Tunisia"
+},
+{
+"outlet": "actucameroun",
+"title": "L’Espérance de Tunis passe à l’offensive pour David Roy Nyengue",
+"link": "https://actucameroun.com/2026/11/01/lesperance-de-tunis-passe-a-loffensive-pour-david-roy-nyengue/",
+"ts": 1793523730,
+"lang": "fr",
+"outlet_name": "Actu Cameroun",
+"state": "no",
+"owner": "Private",
+"title_en": "The hope of Tunis is on the offensive for David Roy Nyengue"
+},
+{
+"outlet": "kapitalis",
+"title": "Ce que la Tunisie peut attendre du développement de ses relations avec la Russie",
+"link": "https://kapitalis.com/tunisie/2026/11/01/ce-que-la-tunisie-peut-attendre-du-developpement-de-ses-relations-avec-la-russie/",
+"ts": 1793521505,
+"lang": "fr",
+"outlet_name": "Kapitalis",
+"state": "no",
+"owner": "Private",
+"title_en": "What Tunisia can expect from developing relations with Russia"
+},
+{
+"outlet": "actucameroun",
+"title": "« On donnera tout » : Yvana Yakana Makana mobilise les supporters avant le grand rendez-vous face au FUS Rabat",
+"link": "https://actucameroun.com/2026/11/01/on-donnera-tout-yvana-yakana-makana-mobilise-les-supporters-avant-le-grand-rendez-vous-face-au-fus-rabat/",
+"ts": 1793520453,
+"lang": "fr",
+"outlet_name": "Actu Cameroun",
+"state": "no",
+"owner": "Private",
+"title_en": " We will give everything : Yvana Yakana Makana mobilizes supporters before the big meeting in front of FUS Rabat"
+},
+{
+"outlet": "sudantribune",
+"title": "Egypt condemns drone attacks in Sudan, urges halt to RSF arms supply - Sudan Tribune",
+"link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5PdkIzNHh2QzBoa2pqN1dacjFJOFc3TF9EbUJlaV8yWjRiVkFfMHJjU0c3MW05cjJaNC1oejVYLW5ic0x5UWRJa2NRRWdaLUhM?oc=5",
+"ts": 1793487525,
+"lang": "en",
+"outlet_name": "Sudan Tribune",
+"state": "no",
+"owner": "Private, Paris-based",
+"title_en": null
+},
+{
+"outlet": "libyaherald",
+"title": "Tripoli Chamber of Commerce signs MoU with Italian-Arab Chamber to enhance Libyan & Italian economic & commercial cooperation",
+"link": "https://libyaherald.com/2026/10/tripoli-chamber-of-commerce-signs-mou-with-italian-arab-chamber-to-enhance-libyan-italian-economic-commercial-cooperation/",
+"ts": 1793480160,
+"lang": "en",
+"outlet_name": "Libya Herald",
+"state": "no",
+"owner": "Private",
+"title_en": null
+},
+{
+"outlet": "alwasat",
+"title": "أسعار الذهب في ليبيا السبت (31 أكتوبر 2026) - بوابة الوسط",
+"link": "https://news.google.com/rss/articles/CBMiREFVX3lxTE4yTHR4bDdzTE1INzBPZVl2RUpTbGxEc1otbmFGcHc3bU5HelY4ZE1hSXY1Umd3YTRkNkVTbnJVdnNsTERW?oc=5",
+"ts": 1793478857,
+"lang": "ar",
+"outlet_name": "Al Wasat",
+"state": "no",
+"owner": "Private (Mahmoud Shammam)",
+"title_en": "Gold prices in Libya Saturday (October 31, 2026) - Central gate"
+},
+{
+"outlet": "libyaherald",
+"title": "Aldabaiba discusses the instability in Libya’s economy",
+"link": "https://libyaherald.com/2026/10/aldabaiba-discusses-the-instability-in-libyas-economy/",
+"ts": 1793478120,
+"lang": "en",
+"outlet_name": "Libya Herald",
+"state": "no",
+"owner": "Private",
+"title_en": null
+},
+{
+"outlet": "kapitalis",
+"title": "Violences dans les stades | 12 individus arrêtés à Tunis",
+"link": "https://kapitalis.com/tunisie/2026/10/31/violences-dans-les-stades-12-individus-arretes-a-tunis/",
+"ts": 1793477165,
+"lang": "fr",
+"outlet_name": "Kapitalis",
+"state": "no",
+"owner": "Private",
+"title_en": "Violence in stadiums 12 people arrested in Tunis"
+},
+{
+"outlet": "libyaobserver",
+"title": "Armed group shuts down Hamada pipeline valve, halting crude oil supplies to Al-Zawiya refinery - The Libya Observer",
+"link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOaXBKZXBKT0JlYTNzRUhFOWVWWEpmT0t0LVpqVXoxZW1QNktQNkltYnQwTUtlSHNac093MlJBdUcybWFVNVdEZ2lKclVZQVZFb2JUYzZ6dVRma29yeXVEUVhiMVlmNGlCdTlUVFBSRTNGVmMwejZreHVUS0FwOGZiTzBrek5aOEhuUjBUamtjckZiNDlkSmgtX2hVcW9FNXNfdEZLZTlTMHJNaGRmVEtsaWVqQ3hHbV9wUmZTN0FndWY?oc=5",
+"ts": 1793471330,
+"lang": "en",
+"outlet_name": "Libya Observer",
+"state": "no",
+"owner": "Private",
+"title_en": null
+},
+{
+"outlet": "libyaobserver",
+"title": "US State Department slaps visa restrictions on Osama Njeem and his wife over human rights violations - The Libya Observer",
+"link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQbWoxYllPVFJpWlNLNmw0aDBZZ0pSUTMwSncxOC1LZGJXNS05RDdVNGtObzJiaUxwbDdnbFBBVzRtZEdtdmRYV29hZE8wZHlULTlwTUllWm85SEVRRU05eDQ4WFFOMzdrQzBBeFN2MTV4QmZLNllCc0lDOF9EUThmR21Qck1iZ1hmbFU3TGVSb1NZb3kxTVhjai1mQXZKeFR2Yzh5Y1N2dmRTQ25NZXpJbHdhcEUwMmM?oc=5",
+"ts": 1793470466,
+"lang": "en",
+"outlet_name": "Libya Observer",
+"state": "no",
+"owner": "Private",
+"title_en": null
+},
+{
+"outlet": "jeuneafrique",
+"title": "Égypte, Maroc, Algérie, Nigeria : qui possède les principales marines de guerre en Afrique ?",
+"link": "https://www.jeuneafrique.com/1856461/politique/egypte-maroc-algerie-nigeria-qui-possede-les-principales-marines-de-guerre-en-afrique/",
+"ts": 1793469860,
+"lang": "fr",
+"outlet_name": "Jeune Afrique",
+"state": "no",
+"owner": "Groupe Jeune Afrique (Ben Yahmed family)",
+"title_en": "Egypt, Morocco, Algeria, Nigeria: who owns the largest war marines in Africa?"
+},
+{
 "outlet": "jeuneafrique",
 "title": "Algérie-Niger : pourquoi Alger a choisi d’assumer un rôle de « parrain sécuritaire »",
 "link": "https://www.jeuneafrique.com/1857444/politique/algerie-niger-pourquoi-alger-a-choisi-dassumer-un-role-de-parrain-securitaire/",
@@ -2457,94 +2622,6 @@
 "state": "no",
 "owner": "Groupe Jeune Afrique (Ben Yahmed family)",
 "title_en": "Algeria-Niger: why Algeria chose to assume the role of security sponsor "
-},
-{
-"outlet": "tsa",
-"title": "ALERTE. Non-renouvellement du mandat de la Minurso : l’Algérie réagit",
-"link": "https://www.tsa-algerie.com/alerte-non-renouvellement-du-mandat-de-la-minurso-lalgerie-reagit/",
-"ts": 1793458251,
-"lang": "fr",
-"outlet_name": "TSA Algérie",
-"state": "no",
-"owner": "Private",
-"title_en": "Alert: No renewal of Minurso's mandate: Algeria reacts"
-},
-{
-"outlet": "ahram",
-"title": "Egypt - Society - Ahram Online",
-"link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNVDhLWXZENFdCVWxZWXRMaGVQZ0xCcWhvaWg2U0ZuTkhXbzQ3cUlvSFMwOE1nU2xLNXQ0ZVgzWnBXUlBhVk1VamlPb3dwTFpjOUFJVnhjSmFNcDZHQmZoUDl1RWxtQWlibE9ycWVmZ1B0RkRITmEzcVZlWEx2YXJRSDc4bDJFZ0lsTGZ2Tng5d2VlNjdhQnZTbg?oc=5",
-"ts": 1793456931,
-"lang": "en",
-"outlet_name": "Ahram Online",
-"state": "yes",
-"owner": "Al-Ahram Establishment",
-"title_en": null
-},
-{
-"outlet": "kapitalis",
-"title": "La Tunisie va-t-elle enfin reconnaître la marocanité du Sahara occidental ?",
-"link": "https://kapitalis.com/tunisie/2026/10/31/la-tunisie-va-t-elle-enfin-reconnaitre-la-marocanite-du-sahara-occidental/",
-"ts": 1793450559,
-"lang": "fr",
-"outlet_name": "Kapitalis",
-"state": "no",
-"owner": "Private",
-"title_en": "Will Tunisia finally recognize the Moroccan identity of Western Sahara?"
-},
-{
-"outlet": "kapitalis",
-"title": "Tunis | Peine de mort pour le meurtrier d’une fillette de 5 ans",
-"link": "https://kapitalis.com/tunisie/2026/10/31/tunis-peine-de-mort-pour-le-meurtrier-dune-fillette-de-5-ans/",
-"ts": 1793447418,
-"lang": "fr",
-"outlet_name": "Kapitalis",
-"state": "no",
-"owner": "Private",
-"title_en": "Tunis Death penalty for the murder of a 5-year-old girl"
-},
-{
-"outlet": "ahram",
-"title": "Ten killed, 24 injured in microbus-truck collision in Giza - Urban & Transport - Egypt - Ahram Online",
-"link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5YcGNzTy0zN1c2OU9KUTEyQW5Wa1ludnZ5SXNGWlp2ZGRTdE5TelE3a1UtbHR3ZDdHSFU0V2pxQkJQY0lNRWI0cko2cVp5UDF2QWdjMWFrWFA?oc=5",
-"ts": 1793447258,
-"lang": "en",
-"outlet_name": "Ahram Online",
-"state": "yes",
-"owner": "Al-Ahram Establishment",
-"title_en": null
-},
-{
-"outlet": "actualite_cd",
-"title": "La RDC et la Belgique rendent hommage aux soldats congolais de la Force publique tombés en Égypte durant la seconde guerre mondiale",
-"link": "https://actualite.cd/2026/10/31/la-rdc-et-la-belgique-rendent-hommage-aux-soldats-congolais-de-la-force-publique-tombes",
-"ts": 1793446838,
-"lang": "fr",
-"outlet_name": "Actualite.cd",
-"state": "no",
-"owner": "Private (Patient Ligodi)",
-"title_en": "DRC and Belgium pay tribute to Congolese soldiers killed in Egypt during World War II"
-},
-{
-"outlet": "tsa",
-"title": "Sahara occidental : à l’ONU, l’Algérie fait le parallèle avec la Palestine",
-"link": "https://www.tsa-algerie.com/sahara-occidental-a-lonu-lalgerie-fait-le-parallele-avec-la-palestine/",
-"ts": 1793446563,
-"lang": "fr",
-"outlet_name": "TSA Algérie",
-"state": "no",
-"owner": "Private",
-"title_en": "Western Sahara: Algeria is parallel to Palestine at the UN"
-},
-{
-"outlet": "kapitalis",
-"title": "Gouvernance | La Tunisie perd 5 place en 7 ans dans l’IIAG",
-"link": "https://kapitalis.com/tunisie/2026/10/31/gouvernance-la-tunisie-perd-5-place-en-7-ans-dans-liiag/",
-"ts": 1793444284,
-"lang": "fr",
-"outlet_name": "Kapitalis",
-"state": "no",
-"owner": "Private",
-"title_en": "Governance: Tunisia loses five places in seven years in the IIIAG"
 },
 {
 "outlet": "alwasat",
@@ -2558,26 +2635,15 @@
 "title_en": "The U.N. mission's efforts are complementary to the U.S. initiative in Libya, and dire consequences await those who stand in the way - the Middle Gate."
 },
 {
-"outlet": "hespress",
-"title": "Sahara : comment le veto russe a ouvert une nouvelle séquence favorable au Maroc",
-"link": "https://fr.hespress.com/494584-sahara-comment-le-veto-russe-a-ouvert-une-nouvelle-sequence-favorable-au-maroc.html",
-"ts": 1793435763,
+"outlet": "maliweb",
+"title": "Dr. Abdoul Latif Aïdara sur le 1er anniversaire de la résolution 2797 du conseil de sécurité : \"La Résolution 2797 demande aux parties de participer aux discussions sans conditions préalables et sur la base du plan d'autonomie proposé par le Maroc\" - Maliweb",
+"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPS3FpcHJpRGxsQkFSejFLcGZtOWVCaVBiWEE1S1hreG01bHl3RXNrbEIxVkNQdzdUaVhkOXFXZWw2X0pHRUFPWm1keE9CeDNhZ1g4YVFrcDI4NEhlOVpmc085bWxfdk5FbWM1dTFPSWtFaXp2cU5kSzFNMWpyT1VMUlBwZ0l4UVhjdXNBdGhwVnQyeGpUM1Q2WU9rRVBWYlNLSXhHZTY2RHFZMmdtQjd5bGlfYlY?oc=5",
+"ts": 1793415024,
 "lang": "fr",
-"outlet_name": "Hespress",
+"outlet_name": "Maliweb",
 "state": "no",
-"owner": "Private",
-"title_en": "Sahara: how the Russian veto opened up a new sequence in favour of Morocco"
-},
-{
-"outlet": "tsa",
-"title": "Sahara occidental : Rabat proclame la fin du dossier onusien, sans pouvoir dessaisir l’ONU",
-"link": "https://www.tsa-algerie.com/sahara-occidental-rabat-proclame-la-fin-du-dossier-onusien-sans-pouvoir-dessaisir-lonu/",
-"ts": 1793431838,
-"lang": "fr",
-"outlet_name": "TSA Algérie",
-"state": "no",
-"owner": "Private",
-"title_en": "Western Sahara: Rabat announces the end of the UN dossier, unable to give up on the UN"
+"owner": "Private aggregator",
+"title_en": "Dr. Abdoul Latif Aïdara on the 1st anniversary of Security Council Resolution 2797: \"Resolution 2797 calls on the parties to participate in the discussions without preconditions and on the basis of the autonomy plan proposed by Morocco\" - Maliweb"
 },
 {
 "outlet": "alwasat",
@@ -2589,17 +2655,6 @@
 "state": "no",
 "owner": "Private (Mahmoud Shammam)",
 "title_en": "Gold prices in Libya Friday (30 October 2026) - Central Gate"
-},
-{
-"outlet": "tsa",
-"title": "Sahara occidental : le Maroc crie victoire, le veto russe lui rappelle la réalité",
-"link": "https://www.tsa-algerie.com/sahara-occidental-le-maroc-crie-victoire-le-veto-russe-lui-rappelle-la-realite/",
-"ts": 1793392690,
-"lang": "fr",
-"outlet_name": "TSA Algérie",
-"state": "no",
-"owner": "Private",
-"title_en": "Western Sahara: Morocco cries out for victory, Russian veto reminds it of reality"
 },
 {
 "outlet": "libyaherald",
@@ -2624,87 +2679,10 @@
 "title_en": "The Security Council extends the mandate of the UN mission in Libya for an additional year."
 },
 {
-"outlet": "ahram",
-"title": "Al-Ahram to mark 200 years of Egyptian educational missions to France - Society - Egypt - Ahram Online",
-"link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9KLXJPQ2diV1FGSm55VG1EZEVwb3NjT1NGeEdDVS1pZ2YwMFo3alVxZlRVcEk1ZjNVSzd5aDNCUkRhc042cXFvcnpLTUtpemZFTHVPQzVmTlA?oc=5",
-"ts": 1793382568,
-"lang": "en",
-"outlet_name": "Ahram Online",
-"state": "yes",
-"owner": "Al-Ahram Establishment",
-"title_en": null
-},
-{
-"outlet": "alwasat",
-"title": "ماذا تريد تركيا من تحركاتها الجديدة في ليبيا؟ خبراء يتحدثون لـ«الوسط» - بوابة الوسط",
-"link": "https://news.google.com/rss/articles/CBMiREFVX3lxTE81ME1EUWtZendIX3E3aldqODNjMlpxNFBySElKSXF2djR5OXdvT2NmakJtRDhVNGlxYUpzdEIwR1QyNHVk?oc=5",
-"ts": 1793377385,
-"lang": "ar",
-"outlet_name": "Al Wasat",
-"state": "no",
-"owner": "Private (Mahmoud Shammam)",
-"title_en": "What does Turkey want from its new moves in Libya?"
-},
-{
-"outlet": "allafrica",
-"title": "Tunisia: Tunisia's 1st Agricultural Census Launched",
-"link": "https://allafrica.com/stories/202610300525.html",
-"ts": 1793376124,
-"lang": "en",
-"outlet_name": "AllAfrica",
-"state": "no",
-"owner": "AllAfrica Global Media",
-"title_en": null
-},
-{
-"outlet": "rfiafrique",
-"title": "Le rallye-raid Dakar se déroulera en janvier au Portugal et au Maroc en 2027",
-"link": "https://www.rfi.fr/fr/sports/20261030-le-rallye-raid-dakar-se-d%C3%A9roulera-en-janvier-au-portugal-et-au-maroc-en-2027",
-"ts": 1793361116,
-"lang": "fr",
-"outlet_name": "RFI Afrique",
-"state": "yes",
-"owner": "France Médias Monde",
-"title_en": "The Dakar Rally Raid will take place in January in Portugal and Morocco in 2027"
-},
-{
-"outlet": "hiiraan",
-"title": "Egypt, Somalia discuss regional security at Russia-Africa summit",
-"link": "https://www.hiiraan.com/security4/2026/Oct/206647/egypt_somalia_discuss_regional_security_at_russiaafrica_summit.aspx",
-"ts": 1793344239,
-"lang": "en",
-"outlet_name": "Hiiraan Online",
-"state": "no",
-"owner": "Private, diaspora",
-"title_en": null
-},
-{
 "outlet": "libyaherald",
 "title": "France advises against travel to most Libya, including Tripoli - travel to Benghazi Misrata & Sirte only if absolutely necessary",
 "link": "https://libyaherald.com/2026/10/france-advises-against-travel-to-most-libya-including-tripoli-travel-to-benghazi-misrata-sirte-only-if-absolutely-necessary/",
 "ts": 1793309640,
-"lang": "en",
-"outlet_name": "Libya Herald",
-"state": "no",
-"owner": "Private",
-"title_en": null
-},
-{
-"outlet": "libyaherald",
-"title": "PIB participates in Tripoli’s Forum for the Localisation of the Oil Industry in Libya",
-"link": "https://libyaherald.com/2026/10/pib-participates-in-tripolis-forum-for-the-localisation-of-the-oil-industry-in-libya/",
-"ts": 1793308980,
-"lang": "en",
-"outlet_name": "Libya Herald",
-"state": "no",
-"owner": "Private",
-"title_en": null
-},
-{
-"outlet": "libyaherald",
-"title": "General Assembly of Tripoli Court of Appeals affirms independence of judiciary, separation of powers & rejection of interference",
-"link": "https://libyaherald.com/2026/10/general-assembly-of-tripoli-court-of-appeals-affirms-independence-of-judiciary-separation-of-powers-rejection-of-interference/",
-"ts": 1793307840,
 "lang": "en",
 "outlet_name": "Libya Herald",
 "state": "no",
@@ -2720,17 +2698,6 @@
 "outlet_name": "Reuters Africa",
 "state": "no",
 "owner": "Thomson Reuters",
-"title_en": null
-},
-{
-"outlet": "addisstandard",
-"title": "Daily_Brief: #Türkiye, #Egypt to hold joint naval exercise in Alexandria amid warming defense ties - Addis Standard",
-"link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9VTDEteDg5VDJGaFg5NTd2b01lWUpmcEZUcFhvN1dvNVJ1bXFhVk5GRnNDdXN1NTcxOURZNzdKVGZBVnBhM1VJaDdlMTJ0MGp4dlE?oc=5",
-"ts": 1793289656,
-"lang": "en",
-"outlet_name": "Addis Standard",
-"state": "no",
-"owner": "Private (Tsedale Lemma)",
 "title_en": null
 },
 {
@@ -2767,17 +2734,6 @@
 "title_en": "Is Egypt capable of destroying the Ethiopian Renaissance dam?"
 },
 {
-"outlet": "france24_afrique",
-"title": "Tunisie : des familles sans nouvelles de leurs jeunes envoyés au front avec la Russie",
-"link": "https://www.france24.com/fr/vid%C3%A9o/20261029-tunisie-des-familles-sans-nouvelles-de-leurs-jeunes-envoy%C3%A9s-au-front-avec-la-russie",
-"ts": 1793274848,
-"lang": "fr",
-"outlet_name": "France 24 Afrique",
-"state": "yes",
-"owner": "France Médias Monde",
-"title_en": "Tunisia: Families without news of their children sent to the front with Russia"
-},
-{
 "outlet": "libyaobserver",
 "title": "Libya to compete in six sports at Dakar 2026 Youth Olympics - The Libya Observer",
 "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGlhTGtMOXB6ODQ5QUQ1MmdVSTdqQ0sxVzlRVDcwV05oQmQ1N3Fpd1pINjBKaktGRm1Kb2ZQV1Y2bVdGeF9iVzNHdmtrYjJjcFhvcW04cEhLcGdLTFRnZUEtQ3VFSEhWNktVWlVpT2RZRy1VS1dBdFAzWTlzeDQ3YXJ0eXg2MzlKLUE?oc=5",
@@ -2789,58 +2745,25 @@
 "title_en": null
 },
 {
-"outlet": "libyaobserver",
-"title": "Media sources: Al-Zubi and Saddam sign preliminary document on unifying Libya’s military and establishing joint command structure - The Libya Observer",
-"link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQclJIdjZjSnNSSWl4ZVhDNmhoeVpkcGhOSVppdVFCRGNTMHRveW1JbzRybW9tRFJFN09ONUNBODM1Nm8wUHZ2cGNOQi1lZmpyVlZoQ3BXcGRPaE9wLTgtQzE1Wm5peG9VZHhHeTFoUzJJLUFfeTRlZG8xMFFMMDdrTjh3NHllbkwxcjJBN1FNNmxVVXBoN21lbEJHaHRqd2lJSDc0WlBpc2xYTUFWZjRVcEs0NFVDbi1Q?oc=5",
-"ts": 1793204579,
-"lang": "en",
-"outlet_name": "Libya Observer",
-"state": "no",
-"owner": "Private",
-"title_en": null
-},
-{
-"outlet": "libyaobserver",
-"title": "Libya chairs Arab-Islamic coordination meeting on Palestinian resolutions at UN - The Libya Observer",
-"link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOLUpCdDdQb3o2N0lwTHl6OHNQaE9MbTVMbG9jQTRheHc1bW9uTmQtN2ZSOTVJcHN2MW5wM28zZHhZSjdwUHNZUDNSWEFuVl9MQzJYeEh5VFNjVUdxUHFNblcwd05rM0I2bU16SDhrVUMwMnRHaThfdEhtLTN1X3k0YnM0cU9yVFR4cDQ3NkxfMXV6NkdmbFFyNEI4czZraG1EeF9lWEtR?oc=5",
-"ts": 1793200009,
-"lang": "en",
-"outlet_name": "Libya Observer",
-"state": "no",
-"owner": "Private",
-"title_en": null
-},
-{
-"outlet": "aps_dz",
-"title": "Le MC Alger hérite du groupe B avec le Zamalek, le Club africain et Young Africans - وكالة الأنباء الجزائرية",
-"link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNV2N3clVJbVdlaGNjWXRBNGFmd3VTYTBGS2ZvOW5hMUxZTGptOHVTOVl6WFI4ODhmc2ZBbUdHYXM4RnFGNzZzOUliTm13aXpUeXphUUpyYktMZFd5ZXFXcG5hZTNtVVdSUXZtUEVxcVF5MG9neFJta1NtYjVGUy15NUVZQUFfdlBrMG9vd0JSMUFWb244cERDZkZjYWZTSnplWlJMUmVORkJWRzlja2J0UGc4X2dqLTdNYm5ZN3hYaXdkYUw1Z1RvVzBCa3ozYXNK?oc=5",
-"ts": 1793191440,
-"lang": "ar",
-"outlet_name": "APS (Algérie Presse Service)",
-"state": "yes",
-"owner": "Algerian state",
-"title_en": "Le MC Alger hérite du groupe B avec le Zamalek, le Club africain et Young Africans - Algerian news agency"
-},
-{
-"outlet": "lemonde_afrique",
-"title": "Tunisie : un journaliste indépendant, critique virulent du président, condamné à quatre ans de prison",
-"link": "https://www.lemonde.fr/international/article/2026/10/28/tunisie-un-journaliste-independant-critique-virulent-du-president-condamne-a-quatre-ans-de-prison_6801350_3210.html",
-"ts": 1793142566,
+"outlet": "maliweb",
+"title": "Fin des hésitations : l’Algérie s’impose au Sahel - maliweb",
+"link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNQVpyUXkxeHZfakRMVmVvSlNQUzV3NHVOLUZiNkRXcGRqTUtNd20wOU9iUlc0SVduRFQyRHdLRDR6cXBpc2d6N0NCOVNvdTlsN2JEVGRReG1pMXMzX0dHX3RCb05VMjBXVWk3cUpLNzhqQk5yakptMkpOZ0tJYWRCRlZBWm1VYUVaVHdnTWxTSGRCN3I4cnRfdw?oc=5",
+"ts": 1793199218,
 "lang": "fr",
-"outlet_name": "Le Monde Afrique",
+"outlet_name": "Maliweb",
 "state": "no",
-"owner": "Groupe Le Monde (Niel, Pigasse; Kretinsky's stake transferred to a fund)",
-"title_en": "Tunisia: Independent journalist, fierce critic of the president, sentenced to four years in prison"
+"owner": "Private aggregator",
+"title_en": "End of hesitation: Algeria imposes on the Sahel - maliweb"
 },
 {
-"outlet": "addisstandard",
-"title": "Daily_Brief: #Egypt parliament authorises military support to #Saudi_Arabia amid Houthi attacks - Addis Standard",
-"link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1WOVV3dkRaNmpVUVp2RWRoUkZibTY5cm1QVDNFb3BoeWlqd0JCTUJiRlJadU81RzZZWTdLTkJHVFFiTkpHVXN4NFFQQ0xibnZrdEE?oc=5",
-"ts": 1793133208,
+"outlet": "libyaobserver",
+"title": "Egypt, Bahrain, UAE and Greece say Turkey-Libya maritime deal threatens regional security - The Libya Observer",
+"link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNbHhBTmZzUi10S1pFaTRxeDVZZzhKRXJoaG9NLVI1ZldxSGtiV2l6bl90dWFmdHVORXdFd20zWkk0SUFYdHBPUXZrYlpCN0Z6S1BjMHcwc2VXOG41ZWQxSXhiRU5EZHJfRldHd3pER1lMUWZjc2gta04ycEZmSVFPb3FDRFJpY1pqMTBQSG9NSHpuMExFRm9PNXN6Y3RTMzU5TURUdlVtc0lNQ2czUHV0bmh6S0IxVEFy?oc=5",
+"ts": 1793125520,
 "lang": "en",
-"outlet_name": "Addis Standard",
+"outlet_name": "Libya Observer",
 "state": "no",
-"owner": "Private (Tsedale Lemma)",
+"owner": "Private",
 "title_en": null
 },
 {
@@ -2853,62 +2776,51 @@
 "state": "no",
 "owner": "BBC World Service",
 "title_en": "Why is Algeria deploying troops to Niger?"
-},
-{
-"outlet": "libyaobserver",
-"title": "Koury stresses importance of consensus and dialogue in shaping Libya’s future, achieving political stability - The Libya Observer",
-"link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNGJDUHdoeG1HMjhnQXVyZy1kenZiMERuaGtWNk0yaUdPbDNuQmFGLW5aN0hOQVFvTjZkUzZ3UUQ1LUkwYXZPejZhRzlLLXY1RlBoOTdVNnFTZzBJRjNqNXdPbVBvNTNBSzVub21qMWs0RUR0ZEdYcWhzNGd3ZjdCcjUzR19XSXNuRTNvYk5vTDhvalMybWRSWmp5cHNmOFdsMi13Q0xKQkFkVFU4WmRzVVBlVVFPc2tjcU12Zg?oc=5",
-"ts": 1793039047,
-"lang": "en",
-"outlet_name": "Libya Observer",
-"state": "no",
-"owner": "Private",
-"title_en": null
-},
-{
-"outlet": "reuters_africa",
-"title": "Algeria to deploy army units to Niger to protect energy and economic interests - Reuters",
-"link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPOTFrSWZjQ0E0MUdTd05BVGstWk9FNUhCNTZiN21BZEhIX3B1MHgzZDdrSzFsSGt2Q2xZMGEtODdIMm5qbUNwR2EzSXpuNnFJZUk4QmZZbF9NeURyVE1yRGU2Wk5icVJOdHUzNll2ZFh5VGxIQTFpbi1vOUg3VmJLUEdpN0dzMm1Dbzl0Vi1QaUhNMGIzdmZ3UUxTUmhFZkxOVXQ5MktseVZSdHczTWg2U2V5SGdyOWtTZGJPSXZCTm5JUQ?oc=5",
-"ts": 1793036800,
-"lang": "en",
-"outlet_name": "Reuters Africa",
-"state": "no",
-"owner": "Thomson Reuters",
-"title_en": null
-},
-{
-"outlet": "madamasr",
-"title": "St. Catherine Monastery’s land ownership lawsuits adjourned after archbishop backs Egypt-Greece deal",
-"link": "https://www.madamasr.com/en/2026/10/26/news/u/st-catherine-monasterys-land-ownership-lawsuits-adjourned-after-archbishop-backs-egypt-greece-deal/",
-"ts": 1793020835,
-"lang": "en",
-"outlet_name": "Mada Masr",
-"state": "no",
-"owner": "Independent (Lina Attalah)",
-"title_en": null
 }
 ],
 "continent": [
 {
-"outlet": "senego",
-"title": "Sommet Russie–Afrique : Moscou fait entendre sa voix, les attentes africaines demeurent (Par Malickoum)",
-"link": "https://senego.com/sommet-russie-afrique-moscou-fait-entendre-sa-voix-les-attentes-africaines-demeurent-par-malickoum_2019176.html",
-"ts": 1793451963,
-"lang": "fr",
-"outlet_name": "Senego",
+"outlet": "scmp",
+"title": "From rifles to radar: China upgrades its African arms trade as Russia and the West retreat",
+"link": "https://www.scmp.com/news/china/diplomacy/article/3372870/rifles-radar-china-upgrades-its-african-arms-trade-russia-and-west-retreat",
+"ts": 1793527211,
+"lang": "en",
+"outlet_name": "South China Morning Post",
 "state": "no",
-"owner": "Private",
-"title_en": "Russia Africa Summit: Moscow makes its voice heard, African expectations remain (by Malickoum)"
+"owner": "Alibaba Group",
+"title_en": null
 },
 {
-"outlet": "citizen_tz",
-"title": "Tanzania among African countries in talks with Russia over nuclear power projects",
-"link": "https://www.thecitizen.co.tz/tanzania/news/international/tanzania-among-african-countries-in-talks-with-russia-over-nuclear-power-projects-5653288",
-"ts": 1793438538,
+"outlet": "myjoyonline",
+"title": "President Mahama back home after Russia-Africa Summit",
+"link": "https://www.myjoyonline.com/president-mahama-back-home-after-russia-africa-summit/",
+"ts": 1793524225,
 "lang": "en",
-"outlet_name": "The Citizen",
+"outlet_name": "MyJoyOnline",
 "state": "no",
-"owner": "Nation Media Group",
+"owner": "Multimedia Group (Kwasi Twum)",
+"title_en": null
+},
+{
+"outlet": "scmp",
+"title": "Russia surpasses France in African youth appeal, still trails China: survey",
+"link": "https://www.scmp.com/news/china/diplomacy/article/3372843/russia-surpasses-france-african-youth-appeal-still-trails-china-survey",
+"ts": 1793498417,
+"lang": "en",
+"outlet_name": "South China Morning Post",
+"state": "no",
+"owner": "Alibaba Group",
+"title_en": null
+},
+{
+"outlet": "cgtn",
+"title": "China-Africa green mobility cooperation gains momentum",
+"link": "https://newsaf.cgtn.com/news/2026-10-31/China-Africa-green-mobility-cooperation-gains-momentum--1RGW5ON6OMU/p.html?UTM_Source=cgtn&UTM_Medium=rss&UTM_Campaign=World",
+"ts": 1793440298,
+"lang": "en",
+"outlet_name": "CGTN",
+"state": "yes",
+"owner": "China Media Group (CCP Central Propaganda Dept)",
 "title_en": null
 },
 {
@@ -2923,17 +2835,6 @@
 "title_en": "Russia-Africa Summit: several agreements on education and culture signed"
 },
 {
-"outlet": "kapitalis",
-"title": "Un sommet Russie-Afrique avec vue sur la Méditerranée",
-"link": "https://kapitalis.com/tunisie/2026/10/31/un-sommet-russie-afrique-avec-vue-sur-la-mediterranee/",
-"ts": 1793428200,
-"lang": "fr",
-"outlet_name": "Kapitalis",
-"state": "no",
-"owner": "Private",
-"title_en": "A summit between Russia and Africa overlooking the Mediterranean"
-},
-{
 "outlet": "tv5monde",
 "title": "Sommet Russie-Afrique: Moscou renforce ses liens avec le continent",
 "link": "https://information.tv5monde.com/afrique/video/sommet-russie-afrique-moscou-renforce-ses-liens-avec-le-continent-2843829",
@@ -2943,17 +2844,6 @@
 "state": "yes",
 "owner": "TV5Monde consortium (France, Belgium, Switzerland, Canada)",
 "title_en": "Russia-Africa Summit: Moscow strengthens ties with the continent"
-},
-{
-"outlet": "monitor_ug",
-"title": "At Moscow Summit, Ruto demands equal partnership, UN security council seat for Africa",
-"link": "https://www.monitor.co.ug/uganda/news/at-moscow-summit-ruto-demands-equal-partnership-un-security-council-seat-for-africa-5652876",
-"ts": 1793379767,
-"lang": "en",
-"outlet_name": "Daily Monitor",
-"state": "no",
-"owner": "Nation Media Group",
-"title_en": null
 },
 {
 "outlet": "maliweb",
@@ -2978,17 +2868,6 @@
 "title_en": null
 },
 {
-"outlet": "rfiportugues",
-"title": "Rússia promete apoio diplomático e financeiro a África",
-"link": "https://www.rfi.fr/pt/mundo/20261030-r%C3%BAssia-promete-apoio-diplom%C3%A1tico-e-financeiro-a-%C3%A1frica",
-"ts": 1793361354,
-"lang": "pt",
-"outlet_name": "RFI Português",
-"state": "yes",
-"owner": "France Médias Monde",
-"title_en": "Russia pledges diplomatic and financial support to Africa"
-},
-{
 "outlet": "lemonde_afrique",
 "title": "Au sommet Russie-Afrique, Vladimir Poutine tente de séduire ses hôtes en étrillant le « néocolonialisme » de l’Occident",
 "link": "https://www.lemonde.fr/international/article/2026/10/30/au-sommet-russie-afrique-vladimir-poutine-tente-de-seduire-ses-hotes-en-etrillant-le-neocolonialisme-de-l-occident_6803073_3210.html",
@@ -2998,28 +2877,6 @@
 "state": "no",
 "owner": "Groupe Le Monde (Niel, Pigasse; Kretinsky's stake transferred to a fund)",
 "title_en": "At the Russia-Africa summit, Vladimir Putin tries to seduce his hosts by stirring up Western neocolonialism."
-},
-{
-"outlet": "chinaglobalsouth",
-"title": "Europe’s Africa-China Pulse Check - The China-Global South Project",
-"link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMFVXRXhCb2d0QnA2VjluQXhyZkg4MkdLVC1lTTR1ejJaemVLbTExeU8tYmcwS0tJQ2NsZ19aRnUzOGt5NU5zQ3ppTlRmZkZCSlo0d1VNMWEtQ05aLWhvaTFjMEJXMUQ0am1ZdHlxdEVVa1l6SjBQX2tQR2JraW1rMEJBYTBnWEs0X18wOElvekVDNzVnNFhmYVRIaDM4YkFRdTZsSg?oc=5",
-"ts": 1793350456,
-"lang": "en",
-"outlet_name": "China-Global South Project",
-"state": "no",
-"owner": "Independent (Eric Olander, Cobus van Staden)",
-"title_en": null
-},
-{
-"outlet": "alwasat",
-"title": "روسيا تحذر من نشاط مسلحين أوكرانيين في أفريقيا وتستشهد بحادثة «أركتيك ميتاغاز» - بوابة الوسط",
-"link": "https://news.google.com/rss/articles/CBMiREFVX3lxTE9JbkxEMC03ajd6el8zZGZxNUQ1blhvYXBUU1NyY0JCbExzcXAyWFB2bEIzNTRjenc3aEozbjVtd282SWdC?oc=5",
-"ts": 1793349572,
-"lang": "ar",
-"outlet_name": "Al Wasat",
-"state": "no",
-"owner": "Private (Mahmoud Shammam)",
-"title_en": "Russia warns of Ukrainian militant activity in Africa, citing the Arctic Metagase incident."
 },
 {
 "outlet": "maliweb",
@@ -3033,6 +2890,17 @@
 "title_en": "Russia-Africa Summit: President of Faso calls for concrete commitments to serve the people - Maliweb"
 },
 {
+"outlet": "allafrica",
+"title": "Africa: Russia-Africa Agricultural Ties Key to Strengthening Food Security, Says Analyst",
+"link": "https://allafrica.com/stories/202610300152.html",
+"ts": 1793338376,
+"lang": "en",
+"outlet_name": "AllAfrica",
+"state": "no",
+"owner": "AllAfrica Global Media",
+"title_en": null
+},
+{
 "outlet": "france24_afrique",
 "title": "Un sommet Russie-Afrique à l'avantage de Moscou ?",
 "link": "https://www.france24.com/fr/%C3%A9missions/journal-de-l-afrique/20261029-un-sommet-russie-afrique-%C3%A0-l-avantage-de-moscou",
@@ -3042,17 +2910,6 @@
 "state": "yes",
 "owner": "France Médias Monde",
 "title_en": "A Russian-African summit to Moscow's advantage?"
-},
-{
-"outlet": "gabonreview",
-"title": "Russie-Afrique : le Gabon plaide pour un partenariat économique plus équilibré",
-"link": "https://www.gabonreview.com/russie-afrique-le-gabon-plaide-pour-un-partenariat-economique-plus-equilibre/",
-"ts": 1793293630,
-"lang": "fr",
-"outlet_name": "Gabonreview",
-"state": "no",
-"owner": "Private",
-"title_en": "Russia-Africa: Gabon calls for a more balanced economic partnership"
 },
 {
 "outlet": "sputnik_afrique",
@@ -3066,26 +2923,15 @@
 "title_en": "Vladimir Putin and the AU President at a press conference at the Russia-Africa Summit - VIDEO"
 },
 {
-"outlet": "addisstandard",
-"title": "#Daily_Brief: Putin woos #African leaders, says #Russia a better partner than ‘colonial’ West - Addis Standard",
-"link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE8ycGV3T2FrYVByMmhMVzlPam44Ml81RHlZaDFnbGZzNG80NlZLRG91bVUtczRMM1BMR2xhOWhfMVViMFBDcDc2T2Z2VEFUV3NlUXc?oc=5",
-"ts": 1793292381,
+"outlet": "ahram",
+"title": "Behind the scenes at Russia-Africa summit: ‘Africano’ coffee and pastry queues - Africa - World - Ahram Online",
+"link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNeXN4UnAxYndNT2x1bVNZdlZsX2QwZmxSSUZYYklIQ3FjZi1za0JsTmV3XzlYczRzSkp3OW5PTXdrWFNSWjJrU0Fnc1hDRzUyaEZSTktnaVppNTY1TW9hQkVwYWNVRW5Dank5YnJlQ3pLOVJEeERFVUlmSFJSNDNaUlhTZThWVkhqekFEa3MyNmd3NUNmRk5RbDU3cVp4QlRtbnVzRnowSDZXU2NHdFMyOWJVbHdYaUs1TnJXQQ?oc=5",
+"ts": 1793274238,
 "lang": "en",
-"outlet_name": "Addis Standard",
-"state": "no",
-"owner": "Private (Tsedale Lemma)",
-"title_en": null
-},
-{
-"outlet": "france24_afrique",
-"title": "Sommet Russie-Afrique pour renforcer les liens politiques ?",
-"link": "https://www.france24.com/fr/vid%C3%A9o/20261029-sommet-russie-afrique-pour-renforcer-les-liens-politiques",
-"ts": 1793270481,
-"lang": "fr",
-"outlet_name": "France 24 Afrique",
+"outlet_name": "Ahram Online",
 "state": "yes",
-"owner": "France Médias Monde",
-"title_en": "Russia-Africa summit to strengthen political ties ?"
+"owner": "Al-Ahram Establishment",
+"title_en": null
 },
 {
 "outlet": "maliweb",
@@ -3158,6 +3004,28 @@
 "title": "Africa’s Resources Belong to Africa, But So Does the Responsibility - The China-Global South Project",
 "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNUmpGZGF4WEtNX2puSFdBTDJzcnBNdV9CeFg2YklkbnBqejhDcXBqNEpyREdHcDVROWs5WVZFX1RFZm1EdVFzcTRpTkhqQzF1aDZKbTgycVJScXBDdEtMWE5QU21UY2VIZWZBa2o2V2xNZkNQdk5yWGJoeXRwZEx1RjdkTFlBVDNKZkJnOHRiZ1BqNlU?oc=5",
 "ts": 1792740491,
+"lang": "en",
+"outlet_name": "China-Global South Project",
+"state": "no",
+"owner": "Independent (Eric Olander, Cobus van Staden)",
+"title_en": null
+},
+{
+"outlet": "dwhausa",
+"title": "Tattaunawar AES da ECOWAS: Siyasa ko Dabara? - DW.com",
+"link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOSXkyLVFpNWJqOXVheFU3aVJmeWxwUlNMb01xQVNCN1Utb0RFMEZuSUUzWUtzVGpUVGtLa2M2U21acENDbkdESTVLaU16U1M0cFRXVjJHVDNBTHhpYkhReWQxZFZ2R2xtd0kwd3g2WmVQZXI1S0pMaEs3VmR3Q2lZb3lScVpldw?oc=5",
+"ts": 1792652400,
+"lang": "ha",
+"outlet_name": "DW Hausa",
+"state": "no",
+"owner": "Deutsche Welle",
+"title_en": "AES and ECOWAS talks: Politics or Strategy? - DW.com"
+},
+{
+"outlet": "chinaglobalsouth",
+"title": "China’s Chery Picks Omoda C4 as Its First Vehicle to Be Built in South Africa - The China-Global South Project",
+"link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNdGluTDhXZHpFN1RWN0JCUmVvOEotXzA2Y0EzQy1vYS0zLWlneHhTV1BaeUlHcjFaTFlFSy1XdVdKa21aUExnd2U1TUNVN1J1U09VVU9xUDlUd2N1ZHQ5WkJNZUM5aVc0UEstNkc5b2hWMnY0Q0JGcHFQRDM3d254eEhJbTViRElXUVVrVUFPVEtITk5ZdE4tcUJaNkpQeEVscy1R?oc=5",
+"ts": 1792652400,
 "lang": "en",
 "outlet_name": "China-Global South Project",
 "state": "no",
