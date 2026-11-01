@@ -91,6 +91,7 @@ def build():
     json.dump(out, open(os.path.join(ROOT, "data", "flows.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     nk = dict(rows=NK.ROWS, timeline=NK.TL, places=NK.PLACES, lines=NK.LINES, kinds={k: dict(name=v[0], color=v[1]) for k, v in NK.KINDS.items()}, status=NK.STATUS)
     json.dump(nk, open(os.path.join(ROOT, "data", "nk.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    build_foreign()
     return out, nk
 
 MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -128,3 +129,32 @@ def render():
 
 if __name__ == "__main__":
     o, n = build(); print(len(o["arrows"]), "arrows", len(n["rows"]), "rows")
+
+
+def build_foreign():
+    """data/foreign.json: the circles of the Foreign recruits maps. Cumulative totals and January to September 2026 sign-ups are separate kinds, and every tooltip says which it is."""
+    import foreign_inputs as FI
+    W = json.load(open(os.path.join(ROOT, "data", "world110.json"), encoding="utf-8"))
+    lab = {f["properties"]["name"]: (f["properties"]["lx"], f["properties"]["ly"]) for f in W["features"]}
+    items = []
+    for it in FI.ITEMS:
+        kind = it["kind"]; nm = it["name"]; v = it["value"]; srcs = "; ".join(p["label"].split(" (", 1)[1].rstrip(")") for p in it["parts"])
+        if kind == "cum" and it["id"] != "belarus":
+            t = [f"<b>{eh(nm)}</b>", f"{v:,} contract signers identified, cumulative since 2022, to 1 Oct 2026", "Not the number now fighting; ethnic Central Asians with Russian citizenship are left out", "Source: " + eh(srcs)]
+        elif it["id"] == "belarus":
+            t = [f"<b>{eh(nm)}</b>", f"{v:,} Belarusian citizens fighting on Russia\u2019s side, as of 20 May 2026, of whom 440 were killed", "A different count from contract signers, and older than the Central Asia figures",
+                 "Also: " + eh(it["extra"][0]["label"]), "Source: " + eh(srcs)]
+        elif kind == "agg":
+            t = [f"<b>{eh(nm)}</b>", f"{v:,} people recruited in total, of whom 486 are known to have been killed, to Aug 2026", "One combined figure: no split by country is given, so it is a cumulative total and is not comparable with the January to September 2026 rings",
+                 "Source: " + eh(srcs)]
+        else:
+            t = [f"<b>{eh(nm)}</b>", f"{v:,} contracts signed from January to September 2026 only", "Not a total: earlier years are not included, so do not compare it with the filled circles"]
+            if it.get("prev"): t.append(f"For comparison, the whole of 2025: {it['prev']:,}")
+            t.append("Source: " + eh(srcs))
+        t.append(FI.CAVEAT)
+        if kind == "agg": ll = FI.AFRICA_LL
+        else: ll = list(lab[FI.WORLD_NAME[it["id"]]])
+        items.append(dict(id=it["id"], name=nm, kind=kind, value=v, map=it["map"], ll=ll, tip="<br>".join(t), cites=list(dict.fromkeys(p["src"] for p in it["parts"] + it.get("extra", [])))))
+    out = dict(items=items, vmax=FI.VMAX, rk=FI.RK, rk_ph=FI.RK_PH, africa_target=FI.AFRICA_TARGET, maps=[dict(id=i, title=t) for i, t in FI.MAPS], caveat=FI.CAVEAT)
+    json.dump(out, open(os.path.join(ROOT, "data", "foreign.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    return out

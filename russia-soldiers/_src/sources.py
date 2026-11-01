@@ -147,3 +147,18 @@ SOURCES.update({
  "ne_admin0": dict(short="Natural Earth admin-0 countries, 1:50m", url="https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/",
    full="Natural Earth, 1:50m admin-0 countries (public domain), simplified for the flow maps. Boundaries are drawn as Natural Earth shows them and carry no political endorsement."),
 })
+
+SOURCES.update({
+ "timesca_ca": dict(short="Times of Central Asia, 23 Oct 2026", url="https://timesca.com/ukraine-says-more-than-20400-central-asians-signed-russian-army-contracts/",
+   full="Times of Central Asia, \u201cUkraine Says More Than 20,400 Central Asians Signed Russian Army Contracts\u201d, 23 Oct 2026, on the October figures of the \u201cI Want to Live\u201d project of Ukraine\u2019s Coordination Headquarters for the Treatment of Prisoners of War: 8,207 from Uzbekistan, 5,308 from Tajikistan, 3,819 from Kazakhstan, 2,219 from Kyrgyzstan and 884 from Turkmenistan. Identified contract signers as of 1 Oct 2026, not the number now fighting; ethnic Central Asians with Russian citizenship are left out. The report says the figures have not been independently verified."),
+ "daryo_ca": dict(short="Daryo, 22 Oct 2026", url="https://daryo.uz/ru/2026/10/22/v-ukrainskom-plenu-naxodyatsya-grajdane-59-stran-bolshe-vsego-iz-tsentralnoy-azii/",
+   full="Daryo (in Russian), 22 Oct 2026, publishing the \u201cI Want to Live\u201d project\u2019s table of contract signers from the five Central Asian states by year, 2022 to the first nine months of 2026, with a total of 20,437. Ukrainian figures, not independently verified."),
+ "liga_pow": dict(short="LIGA.net, 19 Oct 2026 (prisoner survey and 2026 growth)", url="https://news.liga.net/en/amp/war/news/almost-half-of-the-foreign-prisoners-of-war-knew-they-were-going-to-fight-against-ukraine-coordination-headquarters",
+   full="LIGA.net, \u201cAlmost half of the foreign prisoners of war knew they were going to fight against Ukraine \u2013 Coordination Headquarters\u201d, 19 Oct 2026: contracts signed in the first nine months of 2026 compared with 2025 for Indonesia (283), Peru (503), Sierra Leone (225), Burundi (699), Colombia (1,449), Yemen (772), Sudan (223) and Belarus (1,862). Ukrainian figures, not independently verified."),
+ "nashaniva_by": dict(short="Nasha Niva, 26 May 2026", url="https://nashaniva.com/en/396117",
+   full="Nasha Niva, \u201cUkrainians named the number of Belarusians fighting on Russia\u2019s side and how many of them died\u201d, 26 May 2026: according to the Ukrainian side at a Coordination Headquarters meeting, 2,871 citizens of Belarus were fighting on Russia\u2019s side as of 20 May 2026, and 440 of them had been killed. Ukrainian figure, not independently verified."),
+ "pravda_africa": dict(short="Ukrainska Pravda, 16 Aug 2026", url="https://www.pravda.com.ua/eng/news/2026/08/16/8048914/",
+   full="Ukrainska Pravda, \u201cUkraine knows of nearly 3,000 Africans recruited into Russia\u2019s armed forces\u201d, 16 Aug 2026, from Ukraine\u2019s Foreign Ministry reply to a query by the public broadcaster Suspilne: at least 2,982 people from 37 African countries recruited, 486 known killed, 35 held as prisoners of war from 17 countries. Ukrainian figures, not independently verified."),
+ "ne_world110": dict(short="Natural Earth admin-0 countries, 1:110m", url="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/",
+   full="Natural Earth, 1:110m admin-0 countries (public domain), trimmed for the Foreign recruits maps. Boundaries are drawn as Natural Earth shows them and carry no political endorsement."),
+})

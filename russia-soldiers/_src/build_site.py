@@ -120,8 +120,8 @@ def values():
                     f"together they hold {n0(ud['recruits'])} of the {n0(CO['total_recruits'])} recruits. \u201cKilled\u201d comes from Wagner\u2019s payment records, which cover deaths from January 2022 to August 2023, and is not a loss rate for the recruits.")
     V["v_type_pris"] = f"Prisoners outnumber mobilized men among the named dead: {n0(tt['pri'])} against {n0(tt['mob'])}.[[mz_regions]]"
     V["v_for"] = (f"Foreign contract signers counted by Ukraine rose from {n0(YV[('for', 2023)]['value'])} in 2023 to {n0(YV[('for', 2025)]['value'])} in 2025;[[liga_foreign]] "
-                  f"{n0(A['ca']['low'])} recruits are from Central Asia.[[occrp_foreign]]")
-    V["ca_n"] = n0(A["ca"]["low"]); V["ca_killed"] = "1,399"
+                  f"{n0(A['ca']['low'])} contract signers from Central Asia are identified to 1 Oct 2026.[[timesca_ca]] These are Ukrainian figures, not independently verified.")
+    V["ca_n"] = n0(A["ca"]["low"]); V["ca_killed"] = "1,399"; V["ca_earlier"] = "11,157"
     V["ts_gaps_for"] = "No dated figure was found for foreigners before 2022. That is a gap, not a zero."
     def cell(t, yr):
         y_ = YV[(t, yr)]
@@ -143,7 +143,7 @@ def values():
                        f"At an even pace, 184 days fall in 2022 ({n0(YV[('pri', 2022)]['value'])}) and 38 in 2023 ({n0(YV[('pri', 2023)]['value'] - 28200)}), which is an allocation, not a count; Wagner\u2019s real pace was uneven. "
                        "Storm Z\u2019s 28,200 (iStories\u2019 lower bound; the range runs to 29,000)[[istories]] is all placed in 2023 and leaves out the first wave. The prisoners layer for 2023 is the sum. "
                        "North Korea: the only yearly figure is the 11,000 troops that Western officials estimated in January 2025;[[bbc_shoigu]] later figures are cumulative and are not split by year, so 2025 and 2026 are gaps. "
-                       "Foreign nationals are Ukraine\u2019s yearly counts of contract signers[[liga_foreign]] and include Central Asians, whose total is not split by year.[[occrp_foreign]]")
+                       "Foreign nationals are Ukraine\u2019s yearly counts of contract signers[[liga_foreign]] and include Central Asians (20,437 of them to 1 Oct 2026).[[timesca_ca]]")
     return V
 
 GROUPS = [("contracts", "Contract soldiers (volunteers)"), ("mobilised", "Mobilized men"), ("prisoners", "Prisoners"), ("foreigners", "Foreign recruits"), ("northkorea", "North Korea: troops and workers")]

@@ -80,6 +80,23 @@ with sync_playwright() as pw:
                 if page.is_visible("#tip") and "recruited" in page.inner_text("#tip"): got_tip = True; print(tag, "arrow tooltip:", page.inner_text("#tip").replace("\n", " | ")[:150]); break
         assert got_tip, "no arrow tooltip"
         shot(page, f"{tag}-09b-flow-strand-hover.png", full=False)
+        # foreign recruits maps: 15 circles (7 filled cumulative, 8 dashed rings), labels at least 13 px and clear of every circle and of each other, tooltip on hover or tap
+        page.evaluate("document.querySelector('#for-sec').scrollIntoView()"); page.wait_for_selector("html[data-fg]", state="attached"); page.wait_for_timeout(500)
+        nfg = page.evaluate("[document.querySelectorAll('#fgrid g.fg').length, document.querySelectorAll('#fgrid g.fg.cum circle.fc').length, document.querySelectorAll('#fgrid g.fg.agg circle.fc').length, document.querySelectorAll('#fgrid g.fg.y2026 circle.ring').length]"); print(tag, "foreign circles", nfg)
+        assert nfg == [15, 6, 1, 8], nfg
+        FOV = """()=>{const bad=[],r=e=>e.getBoundingClientRect(),hit=(a,b)=>a.left<b.right&&b.left<a.right&&a.top<b.bottom&&b.top<a.bottom;
+          document.querySelectorAll('#fgrid svg').forEach(sv=>{const L=[...sv.querySelectorAll('text.dlab')],C=[...sv.querySelectorAll('g.fg circle.fc')];
+            L.forEach((t,i)=>{const a=r(t);if(parseFloat(getComputedStyle(t.querySelector('tspan')).fontSize)<13)bad.push('small '+t.textContent);
+              L.forEach((u,j)=>{if(j>i&&hit(a,r(u)))bad.push(t.textContent+' x '+u.textContent)});
+              C.forEach(c=>{const b=r(c),cx=(b.left+b.right)/2,cy=(b.top+b.bottom)/2,R=b.width/2,x=Math.max(a.left,Math.min(cx,a.right)),y=Math.max(a.top,Math.min(cy,a.bottom));if(Math.hypot(x-cx,y-cy)<R-0.5)bad.push(t.textContent+' covers a circle')})})});
+          return bad}"""
+        fo = page.evaluate(FOV); print(tag, "foreign label overlaps", fo); assert not fo, fo
+        page.evaluate("document.querySelector('#fm-central').scrollIntoView({block:'center'})"); page.wait_for_timeout(300)
+        bx = page.eval_on_selector("#fm-central g.fg.cum circle.fhit", "e=>{const b=e.getBoundingClientRect();return [b.x+b.width/2,b.y+b.height/2]}")
+        page.mouse.move(bx[0], bx[1]); page.mouse.click(bx[0], bx[1]); page.wait_for_timeout(300)
+        tp = page.evaluate("(()=>{const t=document.getElementById('tip');return t.hidden?'':t.innerText})()"); print(tag, "foreign tip", tp[:80].replace("\n", " | "))
+        assert "not independently verified" in tp and "cumulative" in tp, tp
+        shot(page, f"{tag}-09b-foreign.png", full=False)
         # yearly ridgeline: 5 rows, 5 hover columns, draws in on scroll (no Play button), curves only between consecutive sourced years, hover shows exact values
         page.evaluate("document.querySelector('#ridge').scrollIntoView({block:'center'})"); page.wait_for_timeout(3800)
         assert len(page.query_selector_all("#ridge .ridgerow")) == 5 and len(page.query_selector_all("#ridge .tshit")) == 5
