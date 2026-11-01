@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-01T20:09:46Z",
+ "as_of": "2026-11-01T23:06:52Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -9,11 +9,40 @@
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
   {
-   "id": "0f2e15336c",
+   "id": "7b5a1010f1",
    "status": "single_source",
+   "title": "En la cotizada urbanización Altamira, una edificación de dos pisos de lo que parecía iba ser una obra residencial, quedó inconclusa. Pertenecía al círculo de Alex Saab. En la fachada se ve ahora un ca",
+   "lang": "es",
+   "title_en": "In the upscale Altamira development, a two-storey building that appeared to be a residential project was left unfinished. It belonged to Alex Saab's circle. A faded DGCIM sign now hangs on the facade, but it remains ungu",
+   "first_report": "2026-11-01T23:00:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Armando.Info",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Armando.Info"
+   ],
+   "sources": [
+    {
+     "outlet": "armando",
+     "name": "Armando.Info",
+     "kind": "outlet",
+     "via": "X @ArmandoInfo",
+     "url": "https://x.com/ArmandoInfo/status/2117028914203898307",
+     "time": "2026-11-01T23:00:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "0f2e15336c",
+   "status": "confirmed",
    "title": "🔴El 1 de noviembre de 2025, Carlos Manzo, alcalde de Uruapan, Michoacán, fue asesinado durante un evento público. Tras el ataque, Grecia Quiroz se convirtió en la alcaldesa y lideresa del Movimiento d",
    "lang": "es",
-   "title_en": "On November 1, 2025, Carlos Manzo, mayor of Uruapan, Michoacán, was killed during a public event. After the attack, Grecia Quiroz became mayor and leader of the Movimiento d",
+   "title_en": "On November 1, 2025, Carlos Manzo, mayor of Uruapan, Michoacán, was killed during a public event. After the attack, Grecia Quiroz became mayor and leader of the Movimiento del Sombrero.",
    "first_report": "2026-11-01T17:44:44Z",
    "first_report_precision": "minute",
    "first_source": "Animal Político",
@@ -23,7 +52,8 @@
    "country": "MEX",
    "group_ids": [],
    "outlets": [
-    "Animal Político"
+    "Animal Político",
+    "Infobae"
    ],
    "sources": [
     {
@@ -33,6 +63,104 @@
      "via": "X @Pajaropolitico",
      "url": "https://x.com/Pajaropolitico/status/2116949574904602985",
      "time": "2026-11-01T17:44:44Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2117025720144654390",
+     "time": "2026-11-01T22:47:18Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "fbb6883f3f",
+   "status": "single_source",
+   "title": "🚔🚨| Dos hombres perdieron la vida y uno más resultó lesionado durante un ataque armado registrado alrededor de las 12:30 horas de este domingo, al interior de un centro de rehabilitación ubicado en la",
+   "lang": "es",
+   "title_en": "Two men were killed and another was wounded in an armed attack at around 12:30 this Sunday inside a rehabilitation center in the",
+   "first_report": "2026-11-01T21:42:44Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2117009471394214279",
+     "time": "2026-11-01T21:42:44Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "f29070cb62",
+   "status": "single_source",
+   "title": "Caen por extorsión \"El Chulo\" y \"El Gil\", operadores de La Nueva Familia Michoacana en Toluca",
+   "lang": "es",
+   "title_en": "\"El Chulo\" and \"El Gil\", operators of La Nueva Familia Michoacana in Toluca, arrested for extortion",
+   "first_report": "2026-11-01T21:12:51Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "lnfm"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2117001949354631363",
+     "time": "2026-11-01T21:12:51Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "ce0ba3db25",
+   "status": "single_source",
+   "title": "A un año del homicidio del exalcalde de Uruapan, su viuda pidió una investigación transparente y sin límites por intereses políticos o económicos",
+   "lang": "es",
+   "title_en": "One year after the killing of the former mayor of Uruapan, his widow called for a transparent investigation with no limits set by political or economic interests",
+   "first_report": "2026-11-01T21:12:49Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2117001940357792232",
+     "time": "2026-11-01T21:12:49Z",
      "time_precision": "minute"
     }
    ]
@@ -417,9 +545,9 @@
    ],
    "country": "COL",
    "group_ids": [
-    "clan",
     "exfarc",
-    "eln"
+    "eln",
+    "clan"
    ],
    "outlets": [
     "Infobae"
@@ -759,8 +887,8 @@
    "region_ids": [],
    "country": "COL",
    "group_ids": [
-    "clan",
-    "eln"
+    "eln",
+    "clan"
    ],
    "outlets": [
     "Semana"
@@ -992,8 +1120,8 @@
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
    "region_ids": [
-    "MEX-2710",
-    "MEX-2706"
+    "MEX-2706",
+    "MEX-2710"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1215,45 +1343,6 @@
    ]
   },
   {
-   "id": "711097210c",
-   "status": "confirmed",
-   "title": "Francisco Manuel Bermúdez Cagua, alias 'Churrón', fue extraditado a Estados Unidos el 29 de octubre de 2026. Él es considerado uno de los cabecillas del grupo criminal Los Choneros.",
-   "lang": "es",
-   "title_en": "Francisco Manuel Bermúdez Cagua, alias 'Churrón', was extradited to the United States on October 29, 2026. He is considered one of the leaders of the criminal group Los Choneros.",
-   "first_report": "2026-10-30T20:11:58Z",
-   "first_report_precision": "minute",
-   "first_source": "Primicias",
-   "region_ids": [],
-   "country": "ECU",
-   "group_ids": [
-    "choneros"
-   ],
-   "outlets": [
-    "El Universo",
-    "Primicias"
-   ],
-   "sources": [
-    {
-     "outlet": "primicias",
-     "name": "Primicias",
-     "kind": "outlet",
-     "via": "X @Primicias",
-     "url": "https://x.com/Primicias/status/2116261851897970858",
-     "time": "2026-10-30T20:11:58Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "eluniverso",
-     "name": "El Universo",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://eluniverso.com/internacional/estados-unidos/estados-unidos-recibe-en-extradicion-a-alias-churron-presunto-lider-de-los-choneros-nota",
-     "time": "2026-10-31T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
    "id": "439853f8e8",
    "status": "single_source",
    "title": "La cúpula de La Mayiza: ¿Qué sabemos de ‘Aldo’, ‘El Güero Chompas’ y los cómplices del ‘Mayito Flaco’?",
@@ -1268,8 +1357,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
     "chapitos",
+    "sinaloa",
     "cjng",
     "mayiza"
    ],
@@ -1312,6 +1401,35 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://eltiempo.com/justicia/conflicto-y-narcotrafico/golpe-a-red-que-habria-robado-un-millon-de-galones-de-combustible-para-financiar-al-eln-clan-del-golfo-y-los-pachenca-3597444",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "36804ecaa6",
+   "status": "single_source",
+   "title": "Estados Unidos recibe en extradición a alias ‘Churrón’, presunto líder de Los Choneros | Estados Unidos | Internacional | El Universo",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universo",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "choneros"
+   ],
+   "outlets": [
+    "El Universo"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniverso",
+     "name": "El Universo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eluniverso.com/internacional/estados-unidos/estados-unidos-recibe-en-extradicion-a-alias-churron-presunto-lider-de-los-choneros-nota",
      "time": "2026-10-31T12:00:00Z",
      "time_precision": "day"
     }
@@ -1423,8 +1541,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
     "chapitos",
+    "sinaloa",
     "mayiza"
    ],
    "outlets": [
@@ -1456,8 +1574,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
     "chapitos",
+    "sinaloa",
     "mayiza"
    ],
    "outlets": [
@@ -1521,8 +1639,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
     "chapitos",
+    "sinaloa",
     "mayiza"
    ],
    "outlets": [
@@ -1712,8 +1830,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
     "chapitos",
+    "sinaloa",
     "mayiza"
    ],
    "outlets": [
@@ -1891,8 +2009,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "GTM-1963",
-    "GTM-1951"
+    "GTM-1951",
+    "GTM-1963"
    ],
    "country": "GTM",
    "group_ids": [],
@@ -2165,8 +2283,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "tda",
-    "eln"
+    "eln",
+    "tda"
    ],
    "outlets": [
     "Semana"
@@ -2303,8 +2421,8 @@
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
    "region_ids": [
-    "MEX-2710",
-    "MEX-2706"
+    "MEX-2706",
+    "MEX-2710"
    ],
    "country": "MEX",
    "group_ids": [
@@ -2326,12 +2444,12 @@
    ]
   },
   {
-   "id": "ebab5b30c9",
+   "id": "846f4aeebd",
    "status": "single_source",
-   "title": "➡️ Ataque armado en Real del Valle, Mazatlán; sujetos disparan contra una vivienda y arrojan un arma afuera de un negocio de comida. 🚨🚔| Sujetos armados dispararon en repetidas ocasiones contra una vi",
+   "title": "➡️ Ataque armado en Villa Galaxia deja un hombre muerto y un menor herido en Mazatlán. 🚨🚔| Un hombre perdió la vida y un menor resultó herido durante un ataque armado en el Parque de las Estrellas, en",
    "lang": "es",
-   "title_en": "Armed attack in Real del Valle, Mazatlán; gunmen fire on a house and throw a weapon outside a food business. Armed men fired repeatedly at a house in the Real del Valle subdivision in #Mazatlán. After the attack,",
-   "first_report": "2026-10-30T23:00:12Z",
+   "title_en": "Armed attack in Villa Galaxia leaves one man dead and a minor wounded in Mazatlán. A man was killed and a minor was wounded during an armed attack at Parque de las Estrellas, in the Villa Galaxia subdivision of #Mazatlán",
+   "first_report": "2026-10-30T23:48:36Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
    "region_ids": [
@@ -2343,15 +2461,6 @@
     "Los Noticieristas"
    ],
    "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2116304191563899060",
-     "time": "2026-10-30T23:00:12Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "noticieristas",
      "name": "Los Noticieristas",
@@ -2418,122 +2527,6 @@
      "via": "X @Riodoce_mx",
      "url": "https://x.com/Riodoce_mx/status/2116306654669025551",
      "time": "2026-10-30T23:10:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "77937cf575",
-   "status": "single_source",
-   "title": "El Concejo Municipal de Vinces aprobó una licencia sin remuneración de hasta 60 días para el alcalde Alfonso Montalván, detenido en el marco de una investigación por presunto lavado de activos.",
-   "lang": "es",
-   "title_en": "The Vinces Municipal Council approved unpaid leave of up to 60 days for Mayor Alfonso Montalván, who was detained as part of an investigation into alleged money laundering.",
-   "first_report": "2026-10-30T22:15:12Z",
-   "first_report_precision": "minute",
-   "first_source": "Primicias",
-   "region_ids": [
-    "ECU-1281"
-   ],
-   "country": "ECU",
-   "group_ids": [],
-   "outlets": [
-    "Primicias"
-   ],
-   "sources": [
-    {
-     "outlet": "primicias",
-     "name": "Primicias",
-     "kind": "outlet",
-     "via": "X @Primicias",
-     "url": "https://x.com/Primicias/status/2116292864141300151",
-     "time": "2026-10-30T22:15:12Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "f0b8b3ba1f",
-   "status": "single_source",
-   "title": "#DENUNCIA🚨 I ¿Qué pasa con las desapariciones en Buenaventura? La familia de Dilan merece conocer la verdad. Como su caso, hay muchos más: familias que viven en zozobra sin saber qué pasó con sus sere",
-   "lang": "es",
-   "title_en": "#COMPLAINT🚨 | What is happening with the disappearances in Buenaventura? Dilan's family deserves to know the truth. Like his case, there are many more: families living in anguish without knowing what happened to their lo",
-   "first_report": "2026-10-30T21:30:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Fundación Paz & Reconciliación",
-   "region_ids": [
-    "COL-1408"
-   ],
-   "country": "COL",
-   "group_ids": [],
-   "outlets": [
-    "Fundación Paz & Reconciliación"
-   ],
-   "sources": [
-    {
-     "outlet": "pares",
-     "name": "Fundación Paz & Reconciliación",
-     "kind": "outlet",
-     "via": "X @parescolombia",
-     "url": "https://x.com/parescolombia/status/2116281490598445404",
-     "time": "2026-10-30T21:30:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "c308996f5e",
-   "status": "single_source",
-   "title": "#ParesReporta La riqueza del Catatumbo ha sido una de las razones por las que los violentos se han cebado históricamente contra esta región",
-   "lang": "es",
-   "title_en": "#ParesReporta The wealth of Catatumbo has been one of the reasons violent groups have historically preyed on this region",
-   "first_report": "2026-10-30T21:00:01Z",
-   "first_report_precision": "minute",
-   "first_source": "Fundación Paz & Reconciliación",
-   "region_ids": [
-    "COL-1421"
-   ],
-   "country": "COL",
-   "group_ids": [],
-   "outlets": [
-    "Fundación Paz & Reconciliación"
-   ],
-   "sources": [
-    {
-     "outlet": "pares",
-     "name": "Fundación Paz & Reconciliación",
-     "kind": "outlet",
-     "via": "X @parescolombia",
-     "url": "https://x.com/parescolombia/status/2116273945498255806",
-     "time": "2026-10-30T21:00:01Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "268e2113d4",
-   "status": "single_source",
-   "title": "#ParesPaz ¿Es cierto que se viene una militarización fuerte en Bogotá? ¿Son más especulaciones? Todo el análisis acá",
-   "lang": "es",
-   "title_en": "#ParesPaz Is it true that a heavy militarization is coming to Bogotá? Or is it more speculation? The full analysis here",
-   "first_report": "2026-10-30T20:17:15Z",
-   "first_report_precision": "minute",
-   "first_source": "Fundación Paz & Reconciliación",
-   "region_ids": [
-    "COL-1399"
-   ],
-   "country": "COL",
-   "group_ids": [],
-   "outlets": [
-    "Fundación Paz & Reconciliación"
-   ],
-   "sources": [
-    {
-     "outlet": "pares",
-     "name": "Fundación Paz & Reconciliación",
-     "kind": "outlet",
-     "via": "X @parescolombia",
-     "url": "https://x.com/parescolombia/status/2116263179978523051",
-     "time": "2026-10-30T20:17:15Z",
      "time_precision": "minute"
     }
    ]
