@@ -151,14 +151,6 @@
       "status": "live"
     },
     {
-      "id": "ukraine-money-flows",
-      "name": "Ukraine Money Flows",
-      "blurb": "Follows aid, financing and funding flows to and around Ukraine, with sources for each figure.",
-      "icon": "",
-      "enterUrl": "https://beacon-tools.onrender.com/ukraine-money-flows/",
-      "status": "live"
-    },
-    {
       "id": "cartel",
       "name": "Latin America Cartel Dashboard",
       "blurb": "Maps cartel territory, violence, leaders, money flows and seizures across Latin America, with a live X feed and sourced timelines.",
@@ -195,6 +187,13 @@
       "name": "Jihadist Groups",
       "blurb": "Who's who of 45 jihadist groups in four families: a map, who leads each group, links between groups, the last 30 days of major incidents and the momentum of each group.",
       "enterUrl": "https://beacon-tools.onrender.com/jihadist-groups/",
+      "status": "live"
+    },
+    {
+      "id": "russia-soldiers",
+      "name": "Russia's Soldiers",
+      "blurb": "Where Russia's troops for the war in Ukraine come from: recruitment flows by type, named dead per head by region, prisoners and North Korean troops, and signing bonuses against local wages.",
+      "enterUrl": "https://beacon-tools.onrender.com/russia-soldiers/",
       "status": "live"
     }
   ]

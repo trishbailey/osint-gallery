@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-30T13:14Z",
+ "as_of": "2026-11-01T17:03Z",
  "note": "Strategic digest of the last ~7 days, grouped by ongoing trend: leadership, splits and alliances, territory and routes, policy and designations, violence patterns, money. Routine seizures and minor arrests are left out. X posts are used only as sources. Verification: Confirmed = 2+ independent reliable sources; Single source; Official claim only. Status is shown only when sourced counts support it.",
  "trends": [
   {
@@ -198,6 +198,38 @@
    ],
    "developments": [
     {
+     "date": "2026-10-30",
+     "place": "United States",
+     "text": "US prosecutions are reaching CJNG's cross-border support network, not only its commanders: a US court sentenced a Chinese national to 12 years for helping CJNG traffic drugs and launder money, and the engineer accused of designing a CJNG narco-tunnel into the US became the seventh person charged in the Tijuana tunnel case, where more than a tonne of cocaine was seized.",
+     "verification": "Single source",
+     "regions": [
+      "MEX-2706"
+     ],
+     "groups": [
+      "cjng"
+     ],
+     "sources": [
+      {
+       "url": "https://x.com/infobaemexico/status/2116201666726805979",
+       "name": "infobaemexico (X @infobaemexico)",
+       "title": "Chinese citizen who helped the CJNG traffic drugs and launder money sentenced to 12 years in prison in the US",
+       "date": "2026-10-30"
+      },
+      {
+       "url": "https://x.com/infobaemexico/status/2116221093333926231",
+       "name": "infobaemexico (X @infobaemexico)",
+       "title": "He was charged with designing and building a passageway allegedly used by the CJNG to bring drugs into the US",
+       "date": "2026-10-30"
+      },
+      {
+       "url": "https://x.com/ZETATijuana/status/2115994792165351472",
+       "name": "ZETATijuana (X @ZETATijuana)",
+       "title": "The indictment is the seventh in the tunnel case, in which more than a tonne of cocaine was seized",
+       "date": "2026-10-30"
+      }
+     ]
+    },
+    {
      "date": "2026-10-28",
      "place": "Oaxaca",
      "text": "Navy, federal security and prosecutors' forces arrested Carlos César Cruz Muñoz, 'El Semáforo', whom Riodoce and Infobae describe as a second-tier CJNG regional boss and possible successor to 'El Tanque', taken on 5 October; that is two consecutive heads of the same regional command removed in about three weeks.",
@@ -314,9 +346,27 @@
    ],
    "developments": [
     {
+     "date": "2026-10-30",
+     "place": "Baja California",
+     "text": "US sanctions on Sinaloa Cartel-linked people and companies are holding in Mexican courts: ZETA reports that sanctioned individuals and firms in Baja California sought amparo injunctions to unfreeze their bank accounts and were refused, so the US designation keeps their money locked inside Mexico's own banking system.",
+     "verification": "Single source",
+     "regions": [],
+     "groups": [
+      "sinaloa"
+     ],
+     "sources": [
+      {
+       "url": "https://x.com/ZETATijuana/status/2116383768067928124",
+       "name": "ZETA Tijuana (X @ZETATijuana)",
+       "title": "Individuals and companies sanctioned by the US for ties to the Sinaloa Cartel filed amparo lawsuits in Baja Cal…",
+       "date": "2026-10-31"
+      }
+     ]
+    },
+    {
      "date": "2026-10-25",
      "place": "Salta and Zárate, Argentina",
-     "text": "Two Argentine court cases behind the new listing show different Mexican footholds: a Bolivia-based Sinaloa branch flying cocaine into Salta for export to Europe through Paraná river ports, and a small CJNG cell that tested a Belgium-to-Zárate MDMA shipment paid through hawala and crypto; specialists found no documented La Nueva Familia Michoacana presence, so the label outruns the evidence for that group.",
+     "text": "Two Argentine court cases behind Argentina's new terrorist listing of the Sinaloa Cartel and La Nueva Familia Michoacana show different Mexican footholds: a Bolivia-based Sinaloa branch flying cocaine into Salta for export to Europe through Paraná river ports, and a small CJNG cell that tested a Belgium-to-Zárate MDMA shipment paid through hawala and crypto; specialists found no documented La Nueva Familia Michoacana presence, so the label outruns the evidence for that group.",
      "verification": "Single source",
      "regions": [
       "ARG-1303",
@@ -388,32 +438,6 @@
        "name": "infobae.com",
        "title": "US federal prosecutor reacts to extradition of 'Mocho Olmedo', one of those protected under Petro's Total Peac",
        "date": "2026-10-25"
-      }
-     ]
-    },
-    {
-     "date": "2026-10-22",
-     "place": "Argentina",
-     "text": "Milei's government added the Sinaloa Cartel, La Nueva Familia Michoacana, the ELN and FARC-EP to Argentina's terrorist list, matching the US designations.",
-     "verification": "Confirmed",
-     "regions": [],
-     "groups": [
-      "sinaloa",
-      "lnfm",
-      "eln"
-     ],
-     "sources": [
-      {
-       "url": "https://x.com/noticieristas/status/2113352548702961788",
-       "name": "noticieristas (X @noticieristas)",
-       "title": "#Argentina 🇦🇷 | Argentina's government, led by President Javier Milei, added the Sinaloa Cartel and La Nueva F…",
-       "date": "2026-10-22"
-      },
-      {
-       "url": "https://x.com/Riodoce_mx/status/2113342121222778960",
-       "name": "Riodoce_mx (X @Riodoce_mx)",
-       "title": "The Government of #Argentina, led by President Javier Milei, declared Mexico's #Sinaloa #Cartel and La Nueva F…",
-       "date": "2026-10-22"
       }
      ]
     }
@@ -560,6 +584,37 @@
     "IC_CHONEROS"
    ],
    "developments": [
+    {
+     "date": "2026-11-01",
+     "place": "Guayas, Manabí, Los Ríos, El Oro, Esmeraldas",
+     "text": "Ecuador began its fourth curfew of the year on 1 November across five coastal provinces after 33 night-time violent deaths, and the armed forces reported 40 arrests in Guayaquil on the first night; a fourth round of restrictions in one year shows the coastal violence outlasting each earlier one, weeks before the elections.",
+     "verification": "Confirmed",
+     "regions": [],
+     "groups": [
+      "lobos",
+      "choneros"
+     ],
+     "sources": [
+      {
+       "url": "https://primicias.ec/sucesos/fuerzas-armadas-detenidos-guayas-restricciones-movilidad-toque-queda-ecuador-136204",
+       "name": "primicias.ec",
+       "title": "On the first day of the curfew, the Armed Forces apprehend 40 people in Guayaquil",
+       "date": "2026-11-01"
+      },
+      {
+       "url": "https://elmostrador.cl/noticias/mundo/2026/11/01/ecuador-inicia-cuarto-toque-de-queda-del-ano-para-contener-la-violencia-a-semanas-de-las-elecciones",
+       "name": "elmostrador.cl",
+       "title": "Ecuador begins fourth curfew of the year to contain violence weeks before the elections",
+       "date": "2026-11-01"
+      },
+      {
+       "url": "https://uhnplus.com/america-latina-ecuador-daniel-noboa-toque-de-queda-provincias-seguridad",
+       "name": "uhnplus.com",
+       "title": "Noboa decrees curfew in five provinces of Ecuador to neutralize organized crime",
+       "date": "2026-11-01"
+      }
+     ]
+    },
     {
      "date": "2026-10-29",
      "place": "Ecuador to US",

@@ -35,8 +35,14 @@ const pmax=Math.max(...S.ports.map(p=>p.n));
 const inb=p=>p.lon>lo0&&p.lon<lo1&&p.lat>la0&&p.lat<la1;
 const pts=S.ports.filter(inb).map(p=>`<circle class="sport" cx="${X(p.lon).toFixed(1)}" cy="${Y(p.lat).toFixed(1)}" r="${(3+9*Math.sqrt(p.n/pmax)).toFixed(1)}" fill="#9b7be8" stroke="#0b1526" stroke-width="1.5" tabindex="0" data-tip="${esc(/^CHN-/.test(p.port)?"Unnamed port":p.port.charAt(0)+p.port.slice(1).toLowerCase())}, China: ${p.n} voyages from Kozmino"><title>${esc(p.port)}: ${p.n} voyages from Kozmino</title></circle>`).join("");
 const kz=[X(133.0),Y(42.75)];
-const lead=(x1,y1,x2,y2)=>`<line class="lead" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#c8a24a" stroke-width="1" stroke-dasharray="3 3"/>`;
-const lk=S.ports.find(p=>p.port==="LONGKOU")||S.ports[0];
+const lead=(x1,y1,x2,y2)=>`<line class="lead" x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="#c8a24a" stroke-width="1"/>`;
+// Callouts sit in open sea: clear of the route line and its leader lines, off the land, off the port dots (checked by _src/test_label_overlap.py).
+// Each callout is centred on its anchor (lon, lat) and joined by a thin leader to the thing it describes.
+const dj=S.ports.find(p=>p.port==="DONGJIAKOU")||S.ports[1]||S.ports[0];
+const CO=[{lon:134.3,lat:40.4,tx:[X(133.0),Y(42.75)+8],html:`<b>${S.coreKozPct}%</b> of core-ship voyages load at Kozmino`},
+ {lon:125.2,lat:31.3,tx:[X(dj.lon)+4,Y(dj.lat)+4],html:`<b>${shan}</b> of ${S.kozChina} China voyages end in Shandong`},
+ {lon:132.9,lat:37.2,tx:"route",html:`About ${Math.round(S.transitKozCHN)} days at sea`}];
+const pt=(lo,la)=>[X(lo),Y(la)];
 document.getElementById("shmap").innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Map of the tanker route from Kozmino in Russia to ports in Shandong, China">
 <g data-ci-ignore><rect width="${W}" height="${H}" fill="#0d1d36"/><g fill="#1b2d4d" stroke="#2c4470" stroke-width=".6">${land}</g></g>
 <path d="${rd}" fill="none" id="shroute" stroke="#c8a24a" stroke-width="1.5" stroke-linejoin="round" opacity=".7"><title>Kozmino to Shandong: ${S.kozChina} voyages in 12 months</title></path>
@@ -44,11 +50,31 @@ document.getElementById("shmap").innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserv
 <g class="sarr" transform="translate(${mid[0].toFixed(1)},${mid[1].toFixed(1)}) rotate(${ang.toFixed(0)})"><path d="M-7,-5 L5,0 L-7,5 Z" fill="#c8a24a"/></g>
 ${pts}
 <circle class="sport" cx="${kz[0].toFixed(1)}" cy="${kz[1].toFixed(1)}" r="8" fill="#5cc98a" stroke="#0b1526" stroke-width="2" tabindex="0" data-tip="Kozmino, Russia: oil loading terminal on the Pacific coast"><title>Kozmino (loading port, Russia)</title></circle>
-${lead(kz[0]-4,kz[1]+8,X(133.2),Y(39.9))}${lead(X(lk.lon)+10,Y(lk.lat),X(123.6),Y(36.4))}${lead(X(126.5),Y(33.6),X(126.3),Y(32.2))}
+${CO.map((c,i)=>{const a=pt(c.lon,c.lat),t=c.tx==="route"?mid:c.tx;return lead(t[0],t[1],a[0],a[1])}).join("")}
 </svg>
-<div class="callout" style="left:${(X(131.6)/W*100).toFixed(1)}%;top:${(Y(39.9)/H*100).toFixed(1)}%"><b>${S.coreKozPct}%</b> of core-ship voyages load at Kozmino</div>
-<div class="callout" style="left:${(X(122.0)/W*100).toFixed(1)}%;top:${(Y(35.6)/H*100).toFixed(1)}%"><b>${shan}</b> of ${S.kozChina} China voyages end in Shandong</div>
-<div class="callout" style="left:${(X(123.6)/W*100).toFixed(1)}%;top:${(Y(31.6)/H*100).toFixed(1)}%">Sea route: about ${Math.round(S.transitKozCHN)} days to Shandong</div>`;
+${CO.map(c=>`<div class="callout" style="left:${(X(c.lon)/W*100).toFixed(1)}%;top:${(Y(c.lat)/H*100).toFixed(1)}%">${c.html}</div>`).join("")}`;
+// place names: nations and major port cities, plain light text with no box (laid out by labels.js; dropped when they would touch the route, a dot, a callout, another label or foreign land)
+(()=>{const box=document.getElementById("shmap"),svg=box.querySelector("svg"),route=svg.querySelector("#shroute");if(!window.GFL||!route)return;
+ const RU="Russian Federation",NAT=[[RU,"Russia"],["China","China"],["Republic of Korea","South Korea"],["Dem. Rep. Korea","North Korea"],["Japan","Japan"]],
+  CITY=[["Kozmino",42.74,132.95,RU],["Qingdao",36.07,120.38,"China"],["Dalian",38.91,121.62,"China"],["Busan",35.10,129.04,"Republic of Korea"]];
+ const paths=[...svg.querySelectorAll("g[data-ci-ignore] path")].map(p=>({name:(p.querySelector("title")||{}).textContent||"",path:new Path2D(p.getAttribute("d"))}));
+ const NS="http://www.w3.org/2000/svg",ov=document.createElementNS(NS,"svg");ov.setAttribute("class","plsv");ov.setAttribute("aria-hidden","true");box.appendChild(ov);
+ function draw(){box.querySelectorAll(".plc").forEach(e=>e.remove());ov.innerHTML="";
+  const sb=svg.getBoundingClientRect(),bb=box.getBoundingClientRect(),w=sb.width,h=sb.height,sc=w/W,ox=sb.left-bb.left,oy=sb.top-bb.top;if(!w)return;
+  const items=[],mkEl=(k,t,key)=>{const e=document.createElement("div");e.className="plc "+k;e.dataset.kind=k;e.dataset.cn=key;e.textContent=t;box.appendChild(e);return e};
+  NAT.forEach(n=>{const e=mkEl("nation",n[1],n[0]);items.push({kind:"nation",key:n[0],ax:w/2,ay:h/2,w:e.offsetWidth,h:e.offsetHeight,el:e})});
+  CITY.forEach(c=>{const e=mkEl("city",c[0],c[3]);items.push({kind:"city",key:c[3],ax:X(c[2]+0)*sc,ay:Y(c[1])*sc,w:e.offsetWidth,h:e.offsetHeight,el:e})});
+  
+  GFL.layout({w,h,pad:4,items,
+   land:(ctx,fill)=>{ctx.save();ctx.scale(sc,sc);paths.forEach(p=>{ctx.fillStyle=fill(p.name);ctx.fill(p.path)});ctx.restore()},
+   obst:(ctx,pad)=>{ctx.lineJoin=ctx.lineCap="round";const L=route.getTotalLength();ctx.lineWidth=1.5*sc+2*pad;ctx.beginPath();for(let d=0;d<=L;d+=3){const q=route.getPointAtLength(d);d?ctx.lineTo(q.x*sc,q.y*sc):ctx.moveTo(q.x*sc,q.y*sc)}ctx.stroke();
+    svg.querySelectorAll("line.lead").forEach(l=>{if(getComputedStyle(l).display==="none")return;ctx.lineWidth=1+2*pad;ctx.beginPath();ctx.moveTo(+l.getAttribute("x1")*sc,+l.getAttribute("y1")*sc);ctx.lineTo(+l.getAttribute("x2")*sc,+l.getAttribute("y2")*sc);ctx.stroke()});
+    svg.querySelectorAll(".sport").forEach(c=>{ctx.beginPath();ctx.arc(+c.getAttribute("cx")*sc,+c.getAttribute("cy")*sc,+c.getAttribute("r")*sc+1+pad,0,7);ctx.fill()});
+    box.querySelectorAll(".callout").forEach(c=>{if(getComputedStyle(c).position!=="absolute")return;const r=c.getBoundingClientRect();ctx.fillRect(r.left-sb.left-pad,r.top-sb.top-pad,r.width+2*pad,r.height+2*pad)})}});
+  items.forEach(it=>{if(!it.at){it.el.remove();return}const a=it.at;it.el.style.left=(a.l+ox)+"px";it.el.style.top=(a.t+oy)+"px";
+   if(a.lead){ov.insertAdjacentHTML("beforeend",`<line class="plead" x1="${(a.lead[0]+ox).toFixed(1)}" y1="${(a.lead[1]+oy).toFixed(1)}" x2="${(a.lead[2]+ox).toFixed(1)}" y2="${(a.lead[3]+oy).toFixed(1)}"/>`);
+    if(a.dot)ov.insertAdjacentHTML("beforeend",`<circle class="pdot" cx="${(it.ax+ox).toFixed(1)}" cy="${(it.ay+oy).toFixed(1)}" r="2.5"/>`)}})}
+ draw();let rt=0;new ResizeObserver(()=>{clearTimeout(rt);rt=setTimeout(draw,80)}).observe(box)})();
 // flowing chevrons along the route (shows the route, not ship positions)
 (()=>{const svg=document.querySelector("#shmap svg"),pth=svg.querySelector("#shroute");if(!pth||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
  svg.querySelector(".sarr").style.display="none";const len=pth.getTotalLength(),g=document.createElementNS("http://www.w3.org/2000/svg","g");svg.insertBefore(g,svg.querySelector(".sport"));

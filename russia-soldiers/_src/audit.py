@@ -132,7 +132,7 @@ def pooled(sel): d = sum(mine[i]["deaths"] for i in sel); p = sum(mine[i]["pop"]
 sp_ = sorted(iso, key=lambda i: mine[i]["pov"]); pq = [sp_[:21], sp_[21:42], sp_[42:63], sp_[63:]]
 for k, q in enumerate(pq): chk(f"pov q{k+1} rate", S["pov_quartiles"][k]["rate"], pooled(q)[2])
 def ols(cols, y):
-    # normal equations on standardised variables, own Gauss elimination
+    # normal equations on standardized variables, own Gauss elimination
     def z(v): m_ = sum(v) / len(v); s_ = math.sqrt(sum((a - m_) ** 2 for a in v) / len(v)); return [(a - m_) / s_ for a in v]
     Z = [z(c) for c in cols]; yz = z(y); k = len(Z)
     M = [[sum(a * b for a, b in zip(Z[i], Z[j])) for j in range(k)] + [sum(a * b for a, b in zip(Z[i], yz))] for i in range(k)]
@@ -300,8 +300,6 @@ tu = by["RU-TY"]["deaths_rate"]; has(f"{tu:,.1f}", "Tuva rate")
 has(f"{rate[iso.index('RU-MOW')]:,.1f}", "Moscow rate")
 fe = S["fd"]["Far East"]["rate"]; ce = S["fd"]["Central"]["rate"]; has(f"{fe:,.0f}", "Far East"); has(f"{ce:,.0f}", "Central"); has(f"{fe/ce:,.1f} times", "ratio")
 has(f"{pear(dist, rate):.2f}", "r distance")
-has(f"{spear(w, rate):.2f}", "wage spearman"); has(f"{spear([w[k] for k in ex], [rate[k] for k in ex]):.2f}", "ex cities")
-for qn in qs[:1]: has(f"{pooled(qn)[2]:,.0f}", "lowest wage quartile")
 has(f"{pooled([i for i in iso if mine[i]['kind']=='republic'])[2]:,.0f}", "republics rate") if False else None
 has("71,216", "Q1 contracts"); has("45,959", "foreigners"); has("48,366", "Wagner"); has("300,000", "mobilised")
 mx = max(bon, key=bon.get); has(f"{bon[mx]:.1f}", "top bonus months " + mx)
@@ -323,10 +321,39 @@ for fn_, key_, lic_ in (("recruitment-office-zelenograd-2026.jpg", "img_zelenogr
     need("photo exists " + fn_, 20000 < sz_ < 150000)
     need("photo has alt text " + fn_, re.search(r'src="img/' + re.escape(fn_) + r'"[^>]*alt="[^"]{40,}"', page) is not None)
     need("photo credit and licence in sources list " + key_, SOURCES[key_]["url"] in page and lic_ in SOURCES[key_]["full"] and "commons.wikimedia.org" in SOURCES[key_]["url"])
+for fn_, key_ in (("wagner-red-flag-chervishevskoye-2023.jpg", "img_wagner3"), ("wagner-graves-wide-chervishevskoye-2023.jpg", "img_wagner4"), ("graves-flags-kazan-2023.jpg", "img_kazan2"), ("new-graves-chervishevskoye-2023.jpg", "img_nova"), ("wagner-flags-chervishevskoye-2023.jpg", "img_wagner2")):
+    sz_ = os.path.getsize(os.path.join(ROOT, "img", fn_))
+    need("undercount photo exists, compressed " + fn_, 20000 < sz_ < 150000)
+    need("undercount photo has alt text " + fn_, re.search(r'src="img/' + re.escape(fn_) + r'"[^>]*alt="[^"]{40,}"', page) is not None)
+    need("undercount photo credit and CC BY-SA 4.0 licence in sources list " + key_, SOURCES[key_]["url"] in page and "CC BY-SA 4.0" in SOURCES[key_]["full"] and "commons.wikimedia.org" in SOURCES[key_]["url"])
+need("undercount section holds four photos in one grid", len(re.findall(r"<img", re.search(r'id="undercount".*?</aside>', page, re.S).group(0))) == 4)
+# ---- flow map labels: each names its own origin; the Central Asia figure is one combined count for five states, not Kazakhstan
+_fj = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read()
+need("flow-map labels name their origin (country or group) on desktop and phone", all(x_ in _fj for x_ in ("vol:'Contract soldiers'", "mob:'Mobilized men'", "pri:'Prisoners'", "ca:'Central Asia: 5 of 151 source countries'", "prk:'North Korea'")) and "ph()?'':LBL" not in _fj)
+need("Central Asia tooltip says the 20,437 is one count for five named states, not one country", "One combined figure for five states: Uzbekistan, Tajikistan, Kazakhstan, Kyrgyzstan and Turkmenistan" in [a_ for a_ in J("data/flows.json")["arrows"] if a_["id"] == "ca"][0]["tip"])
+need("Central Asia arrow is labeled as one subset (5 of 151 source countries); its tooltip and the map note point to the Foreign recruits section", "151 countries and territories" in [a_ for a_ in J("data/flows.json")["arrows"] if a_["id"] == "ca"][0]["tip"] and "Foreign recruits section" in [a_ for a_ in J("data/flows.json")["arrows"] if a_["id"] == "ca"][0]["tip"] and "The Central Asia arrow is one subset" in page and "only five of those countries are drawn here" in text)
+need("the 151 countries figure is quoted in the saved sources (UNN and LIGA.net): 45,959 foreigners from 151 countries", all("151 countries" in norm(open(os.path.join(RAW, "quotes", k_ + ".txt"), encoding="utf-8").read()) and "45,959" in norm(open(os.path.join(RAW, "quotes", k_ + ".txt"), encoding="utf-8").read()) for k_ in ("unn", "liga_foreign")))
+need("flow map: the hub bar is gone (hub dot, leader lines and the front bracket stay)", "hubbar" not in _fj and "hubbar" not in open(os.path.join(ROOT, "style.css"), encoding="utf-8").read() and "'bracket'" in _fj and ("path.leader" in _fj or "attr('class','leader')" in _fj))
+_cj_ = open(os.path.join(ROOT, "colonies.js"), encoding="utf-8").read(); _ct = _cj_[_cj_.index("function top()"):_cj_.index("function draw()")]
+need("ten-colonies list has no hovertips and shows its values (recruits, killed) directly", "data-tip" not in _ct and "ct-n" in _ct and "ct-k" in _ct and "fmt(c.n)" in _ct and "fmt(c.killed)" in _ct)
+need("North Korea and Russia section is open by default and still a collapsible details", '<details class="sec" id="nk-sec" open><summary>' in open(os.path.join(ROOT, "index.src.html"), encoding="utf-8").read() and '<details class="sec" id="nk-sec" open>' in page)
+need("app.js does not close the North Korea and Russia section on load (the JS once forced nk-sec closed, overriding the open attribute) and opens it on phones too", "d.id==='nk-sec'?false" not in open(os.path.join(ROOT, "app.js"), encoding="utf-8").read() and "d.open=(!ph||d.id==='nk-sec'||" in open(os.path.join(ROOT, "app.js"), encoding="utf-8").read())
+# ---- top photo strip: four real, freely licensed photos of Russian soldiers; credits only in the sources list
+for fn_, key_ in (("soldier-rpk-2023.jpg", "img_rpk"), ("soldiers-trench-2023.jpg", "img_mortar"), ("draftees-yalta-2022.jpg", "img_yalta"), ("mobilised-oath-sevastopol-2022.jpg", "img_sevastopol")):
+    sz_ = os.path.getsize(os.path.join(ROOT, "img", fn_))
+    need("top photo exists, compressed " + fn_, 20000 < sz_ < 150000)
+    need("top photo has alt text " + fn_, re.search(r'src="img/' + re.escape(fn_) + r'"[^>]*alt="[^"]{40,}"', page) is not None)
+    need("top photo credit and CC BY 4.0 licence in sources list " + key_, SOURCES[key_]["url"] in page and "CC BY 4.0" in SOURCES[key_]["full"] and "commons.wikimedia.org" in SOURCES[key_]["url"])
+_hero = re.search(r'id="hero".*?</div>', page, re.S).group(0)
+need("top strip holds four photos, above the headline-number cards", len(re.findall(r"<img", _hero)) == 4 and page.index('id="hero"') < page.index('id="kpis"'))
+need("no photo credit or author name on the top strip itself", "Ministry of Defence" not in re.sub(r"<[^>]+>", " ", _hero) and "Information Policy" not in _hero)
+_ajs = open(os.path.join(ROOT, "app.js"), encoding="utf-8").read()
+need("map layers say home region and per 100,000 residents; prisoners say recruited from prison", "Named dead recruited from prison, by home region, per 100,000 residents" in _ajs and _ajs.count("by home region, per 100,000 residents") >= 6 and "METRICS[m].what" in _ajs)
+need("map note says home region, not where a prison stands, and cites Mediazona's method", "not where a prison, unit or cemetery stands" in _html.unescape(text) and SOURCES["mz_geo"]["url"] in page and "Four years of war" in SOURCES["mz_geo"]["full"])
 need("no photo credit text on the figure", "Retired electrician" not in re.sub(r'<details id="srcdet">.*', "", page, flags=re.S))
 for s_ in ("352,000", "217,808", "1.6 times", "3.2%", "102,243", "3,182,054"): has(s_, "round-3 figure")
 need("dagestan share matches census row", abs(by["RU-DA"]["ru_share"] - 102243 / 3182054 * 100) < 0.01)
-need("d3-sankey vendored with licence", os.path.exists(os.path.join(ROOT, "vendor", "d3-sankey.min.js")) and os.path.exists(os.path.join(ROOT, "vendor", "d3-sankey.LICENSE")))
+need("the sankey is gone: no d3-sankey script, vendor file or sankey code", "sankey" not in page.lower().replace("sankey districts","") and not os.path.exists(os.path.join(ROOT, "vendor", "d3-sankey.min.js")) and "d3.sankey" not in open(os.path.join(ROOT, "app.js"), encoding="utf-8").read())
 # every [N] citation resolves to a source entry, every source cited
 cites = J("data/cites.json"); nums = sorted(set(int(x) for x in re.findall(r'href="#src-(\d+)"', page)))
 ids = sorted(int(x) for x in re.findall(r'id="src-(\d+)"', page))
@@ -381,19 +408,29 @@ for k_ in ("vol", "mob", "pri"): chk(f"bar {k_} equals the regional sum", BR[k_]
 chk("bar foreign", BR["for"]["n"], 3589)
 need("bars sorted largest first", [b_["n"] for b_ in FL["bars"]] == sorted((b_["n"] for b_ in FL["bars"]), reverse=True))
 need("bar hovers name a source and a date", all(("Mediazona" in b_["tip"] or "BBC" in b_["tip"]) and re.search(r"20\d\d", b_["tip"]) for b_ in FL["bars"]))
-need("bar colours are the type colours", all(BR[k_]["kind"] == k_ and k_ in FL["types"] for k_ in BR))
+need("bar colors are the type colors", all(BR[k_]["kind"] == k_ and k_ in FL["types"] for k_ in BR))
 fj = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read()
 need("bars are drawn linear from zero (width = n / max)", "(b.n/mx*100)" in fj and "d3.max(F.bars" in fj and "sqrt" not in fj[fj.index("function bars"):])
-need("bars section is not stacked by year", "stack" not in fj and "by year" not in fj.split("function bars")[1][:600])
-need("arrow widths use the stated square-root scale", "4+6*Math.sqrt(v/VMAX)" in fj and "square-root scale" in fj)
+need("bars section is not stacked by year", "stack" not in fj.split("function bars")[1].split("function init")[0] and "by year" not in fj.split("function bars")[1][:600])
+need("arrow widths use the stated linear scale with a 3 px minimum", "Math.max(F.wmin,(ph()?F.wmax_ph:F.wmax)*v/VMAX)" in fj and "LINEAR scale" in fj and "sqrt" not in fj[:fj.index("function legend")] and (FL["wmin"], FL["wmax"], FL["wmax_ph"]) == (3, 56, 34))
+need("the page says arrows under the minimum are drawn at 3 px, and the threshold matches the data", "drawn at the 3 px minimum" in _html.unescape(text) and f"about {round(FL['clamp_below'], -4):,}" in _html.unescape(text))
+need("the flow map has no zoom buttons and no width key list", "fz-in" not in fj and "fz-out" not in fj and "fz-reset" not in fj and 'class="fk-rest"' not in fj and "samples" not in FL)
 need("the page shows the bars and the scale statement", 'id="flowbars"' in page and "cumulative totals" in _html.unescape(text) and "not stacked by year" in _html.unescape(text))
 for s_ in (f"{BR['vol']['n']:,}", f"{BR['pri']['n']:,}", f"{BR['mob']['n']:,}", f"{A_['vol']['low'] if False else FA['vol']['low']:,}", f"{FA['vol']['high']:,}", f"{FA['mob']['high']:,}", f"{FA['pri']['low']:,}", f"{FA['pri']['high']:,}"): has(s_, "flow verdict figure")
 for k_ in ("bbc_foreign", "ne_admin0", "mz_regions", "bbc_nk", "wotr", "kremlin", "ria_shoigu24", "tass_med25", "interfax_med26", "dw_mz527", "occrp_foreign", "liga_foreign", "isw_istories23", "istories_407", "meduza_318", "ng_wagner", "istories", "ki", "ng_bonus", "mz_list"): need("flow source cited " + k_, k_ in cites)
 need("the page states the measure, the hub and the front bracket", all(x_ in norm(_html.unescape(text)) for x_ in ("arrow width shows people recruited", "schematic hub", "schematic front bracket", "not in ukraine")))
 need("natural earth basemap present and public-domain credited", os.path.getsize(os.path.join(ROOT, "vendor", "ne_neighbours.geojson")) > 20000 and "public domain" in SOURCES["ne_admin0"]["full"])
 need("flows and nk scripts are loaded", 'src="flows.js"' in page and 'src="nk.js"' in page)
-need("flow section comes first, remoteness charts directly after it", page.index('id="flow-sec"') < page.index('id="remote-sec"') < page.index('id="undercount"') < page.index('id="map-sec"') and page.index('id="kpis"') < page.index('id="flow-sec"'))
-need("no other section sits between the flow map and the remoteness charts", not re.search(r'id="flow-sec".*?<details class="sec"(?![^>]*id="remote-sec")', page, re.S) or re.search(r'id="flow-sec".*?<details class="sec"[^>]*id="remote-sec"', page, re.S) is not None)
+need("the redundant ranking bar chart is gone and the map section carries its finding and region rank", 'id="rank-sec"' not in page and 'id="rankbars"' not in page and "drawRank" not in open(os.path.join(ROOT, "app.js"), encoding="utf-8").read() and "of 85 by named dead per 100,000" in open(os.path.join(ROOT, "app.js"), encoding="utf-8").read() and page.index('id="dead-sec"') < page.index(f"The ten highest rates hold {S['top10_pop_share']:.1f}%") )
+SEC = [m_.group(1) for m_ in re.finditer(r'<details class="sec[^"]*" id="([a-z-]+)"', page)]
+need("sections run flow, prisoners, North Korea, foreign, contract and money, who pays, trackers, method: " + ",".join(SEC), SEC == ["flow-sec", "pris-sec", "nk-sec", "for-sec", "con-sec", "dead-sec", "trk-sec", "method-sec"])
+need("KPI tiles come before the flow map and are about recruit types", page.index('id="kpis"') < page.index('id="flow-sec"') and 6 == len(re.findall(r'class="kpi[ "]', page)))
+need("removed sections are gone: remoteness, poverty, minority, ranking, sankey", not any(x_ in page for x_ in ('id="remote-sec"', 'id="pov-sec"', 'id="eth-sec"', 'id="rank-sec"', 'id="sankey', 'id="sc-dist"', 'id="sc-pov"', 'id="sc-eth"', 'id="sc-wage"', 'id="bars-fd"', 'id="bars-pq"', 'id="bars-q"', 'id="bars-g"')))
+need("the layered map carries the named-dead, volunteer, mobilized, prisoner, distance and Russian-share layers as chips, and no poverty or wage layer (poverty rate and bonus-in-months chips removed)", all(f'data-metric="{m_}"' in page for m_ in ("deaths", "vol", "mob", "pri", "dist", "ru")) and not any(f'data-metric="{m_}"' in page for m_ in ("pov", "bonus")))
+_apj = open(os.path.join(ROOT, "app.js"), encoding="utf-8").read()
+need("the region side panel and tooltips carry no poverty rate or average wage, and the poverty layer is gone from app.js", all(x_ not in _apj for x_ in ("Poverty rate", "Average wage", "r.pov", "pov:{", "months of the local average wage. ")))
+need("the Who pays section carries no poverty or wage verdicts and cites no poverty source", all(x_ not in _html.unescape(text) for x_ in ("Poverty: weak link", "Wages: no clear pattern", "Wages do not explain it", "poverty line", "Rosstat poverty")) and "pov" not in SOURCES and "povn" not in SOURCES)
+need("the distance layer has quartile breaks that match the data", S["breaks"]["dist"] == [float(f"{pct(dist, q):.2g}") for q in (25, 50, 75)])
 _pgn = norm(_html.unescape(text))
 need("NK rows: 13 rows, 4 to Russia kinds and 4 to North Korea", len(NKI.ROWS) == 13 and sum(1 for r_ in NKI.ROWS if r_["dir"] == "to_nk") == 4)
 tok = lambda s_: re.findall(r"\$?\d[\d,]*", s_)
@@ -432,45 +469,123 @@ for k_, p_ in NKI.PLACES.items():
 for l_ in NKI.LINES: need(f"map line {l_['id']} uses a known row and places", l_["row"] in {r_["id"] for r_ in NKI.ROWS} and l_["frm"] in NKI.PLACES and l_["to"] in NKI.PLACES)
 for s_ in ("Documented: the treaty", "2,304 named by the BBC against 3,000 claimed by Ukraine"): has(s_, "NK verdict")
 need("NK verdict numbers are in the rows", any("29,488" in r_["fig"] for r_ in NKI.ROWS) and any("2,304" in r_["fig"] for r_ in NKI.ROWS))
-# ---- time series (recruits in a dated period, by type)
+# ---- yearly ridgeline (one estimate per type per year; gaps are explicit)
 import datetime as _dt
-TSF = {s_["kind"]: s_ for s_ in FL["ts"]["series"]}
-need("time series has the four types", set(TSF) == {"vol", "mob", "pri", "for"} and len(RI.TS) == 15)
-_ids = [p_["id"] for p_ in RI.TS]; need("time series point ids unique", len(_ids) == len(set(_ids)))
-_flat = {p_["id"]: p_ for s_ in FL["ts"]["series"] for p_ in s_["points"] + s_["est"]}
-need("flows.json time series carries every input point", set(_flat) == set(_ids))
-for p_ in RI.TS:
-    nm = "ts " + p_["id"]
-    for i_, q_ in enumerate(p_["parts"]): check_part(f"{nm} part{i_}", q_)
-    vals = [q_["value"] for q_ in p_["parts"]]; figs = [figval(f_) for q_ in p_["parts"] for f_ in q_["figures"]]
-    if p_["low"] == p_["high"]: need(nm + " exact value is the sum of its parts", sum(vals) == p_["low"] and len(vals) >= 1)
-    else: need(nm + " range ends are figures of its parts", p_["low"] in vals + figs and p_["high"] in vals + figs and p_["low"] < p_["high"])
-    for src_, txt_ in p_["pq"]:
+ST = FL["ridge"]
+need("ridge: five types on a yearly grid 2022 to 2026", RI.YEARS == [2022, 2023, 2024, 2025, 2026] and [l_["id"] for l_ in ST["rows"]] == ["vol", "mob", "pri", "for", "nk"] and ST["years"] == RI.YEARS and len(RI.YEARLY) == 25)
+need("ridge: exactly one entry per type per year", len({(y_["type"], y_["year"]) for y_ in RI.YEARLY}) == 25)
+_wd = (_dt.date(2023, 2, 7) - _dt.date(2022, 7, 1)).days + 1
+need("ridge: Wagner 1 Jul 2022 to 7 Feb 2023 is 222 days, 184 in 2022 and 38 in 2023", _wd == 222 == RI.WAG_DAYS["total"] and (_dt.date(2022, 12, 31) - _dt.date(2022, 7, 1)).days + 1 == 184 == RI.WAG_DAYS["y2022"] and (_dt.date(2023, 2, 7) - _dt.date(2023, 1, 1)).days + 1 == 38 == RI.WAG_DAYS["y2023"])
+_w22 = round(48366 * 184 / 222); _w23 = 48366 - _w22
+for y_ in RI.YEARLY:
+    nm = f"ridge {y_['type']} {y_['year']}"; li_ = next(l_ for l_ in ST["rows"] if l_["id"] == y_["type"]); v_ = li_["vals"][RI.YEARS.index(y_["year"])]
+    need(nm + " flows.json value equals the input (a gap stays null, never zero)", v_ == y_["value"] and (v_ is None or v_ > 0))
+    tip_ = ST["tips"][RI.YEARS.index(y_["year"])]
+    if y_["value"] is None:
+        need(nm + " is a gap: no parts, a reason is stated and the hover says no data", not y_["parts"] and len(y_["note"]) > 10 and "no data" in tip_ and y_["note"] in _html.unescape(tip_.replace("<br>", " ")).replace("&#x27;", "'"))
+        continue
+    for i_, q_ in enumerate(y_["parts"]): check_part(f"{nm} part{i_}", q_)
+    need(nm + " hover carries the exact value and a source name", f"{y_['value']:,}" in tip_ and all(SOURCES[q_["src"]]["short"] in tip_ for q_ in y_["parts"]))
+    for src_, txt_ in y_["pq"]:
         sv_ = norm(open(os.path.join(RAW, "quotes", src_ + ".txt"), encoding="utf-8").read())
         need(nm + f" period text {txt_!r} is in the saved source {src_}", norm(txt_) in sv_)
-    a_, z_ = _dt.date.fromisoformat(p_["t0"]), _dt.date.fromisoformat(p_["t1"])
-    need(nm + " period dates valid and inside the chart domain", a_ <= z_ and _dt.date.fromisoformat(RI.TS_DOMAIN[0]) <= a_ and z_ <= _dt.date.fromisoformat(RI.TS_DOMAIN[1]))
-    need(nm + " value is positive and inside its linear panel (0 to 600,000 for contract and mobilised, 0 to 60,000 for prisoners and foreign)", 0 < p_["low"] <= p_["high"] <= (6e5 if p_["type"] in ("vol", "mob") else 6e4))
-    fp_ = _flat[p_["id"]]; need(nm + " flows.json value equals the input", (fp_["low"], fp_["high"], fp_["t0"], fp_["t1"]) == (p_["low"], p_["high"], p_["t0"], p_["t1"]))
-    need(nm + " hover carries the value, a source name with its date and the period note", (f"{p_['low']:,}" in fp_["tip"]) and all(SOURCES[q_["src"]]["short"] in fp_["tip"] for q_ in p_["parts"]) and (p_["est"] or "not a rate" in fp_["tip"]))
-for k_, s_ in TSF.items():
-    pts = s_["points"]; need(f"ts {k_} line points are in date order with no real overlap", all(_dt.date.fromisoformat(b_["t0"]) >= _dt.date.fromisoformat(a_["t1"]) - _dt.timedelta(days=31) for a_, b_ in zip(pts, pts[1:])))
-need("ts mobilised is one wave (Sep to Oct 2022) reported on two dates, the later estimate higher than the Kremlin count, drawn rising", [p_["id"] for p_ in TSF["mob"]["points"]] == ["mob_k", "mob_m"] and all(p_["low"] == p_["high"] and p_["t0"] == p_["t1"] for p_ in TSF["mob"]["points"]) and TSF["mob"]["points"][0]["low"] < TSF["mob"]["points"][1]["low"] and not TSF["mob"].get("nojoin"))
-need("ts no point is stored as a vertical stack: no two points of one series share a date", all(len({p_["t0"] for p_ in s_["points"]}) == len(s_["points"]) for s_ in TSF.values()))
-need("ts gaps are stated and no zero point exists", "gaps, not zeros" in FL["ts"]["gaps"] and all(p_["low"] > 0 for p_ in RI.TS))
-_t = {p_["id"]: p_ for p_ in RI.TS}
-need("ts 2024 official = 450,000 + 40,000", _t["vol24"]["low"] == 490000 and _t["vol25"]["low"] == 422704 + 32000)
-_js = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read()
-need("flows.js time series uses linear axes (no log scale) and breaks the line at gaps and at partial periods", "d3.scaleLog" not in _js and "d3.scaleLinear().domain([0,pn.max])" in _js and "runs.push" in _js and "!full(p)" in _js and "s.nojoin" in _js)
-need("prisoner points (Wagner, then Storm Z) are never joined by a line", TSF["pri"].get("nojoin") is True and len(TSF["pri"]["points"]) == 2)
-need("flows.js time series never plots a missing period as zero", not re.search(r"\|\|\s*0\b", _js[_js.index("function series"):_js.index("function bars")]))
-need("flows.js time series has one Play button, no autoplay", _js.count('id="tsplay"') == 1 and "tsplay').click" not in _js and "autoplay" not in _js.lower())
-need("flows.js the animation starts only from the click handler", _js.index("btn.addEventListener('click'") < _js.index("d3.timer("))
-for s_ in ("Recruits over time, by how they joined", "Press Play", FL_V["v_ts"] if "FL_V" in globals() else "Official contract and volunteer figures fell from 540,000 in 2023 to 454,704 in 2025", "foreign contract signers counted by Ukraine rose from 4,067 to 16,085", "gaps, not zeros"): has(s_, "time series text")
-need("ts section sits after the flow map and before the named-dead bars", page.index('id="flowmap"') < page.index('id="flowts"') < page.index('id="flowbars"'))
+    vals_ = [q_["value"] for q_ in y_["parts"]]
+    if y_["type"] == "pri": need(nm + " is the Wagner share by days plus Storm Z", y_["value"] == (_w22 if y_["year"] == 2022 else _w23 + 28200) and y_["alloc"] is not None and sum(vals_) >= y_["value"])
+    else: need(nm + " is the sum of its sourced parts", y_["value"] == sum(vals_) or (y_["type"] == "mob" and y_["value"] == 300000))
+need("ridge: Wagner allocation adds back to the sourced total 48,366", _w22 + _w23 == 48366 and [y_["value"] for y_ in RI.YEARLY if y_["type"] == "pri" and y_["year"] == 2022] == [_w22])
+need("ridge: official claims 2024 = 450,000 + 40,000 and 2025 = 422,704 + 32,000", [y_["value"] for y_ in RI.YEARLY if y_["type"] == "vol"][1:] == [540000, 490000, 454704, 200000])
+need("ridge: foreign yearly counts are the LIGA figures 94, 4,067, 8,877, 16,085, 16,168", [y_["value"] for y_ in RI.YEARLY if y_["type"] == "for"] == [94, 4067, 8877, 16085, 16168])
+need("ridge: North Korea has one yearly figure (2024, 11,000), cumulative figures are not split", [(y_["year"], y_["value"]) for y_ in RI.YEARLY if y_["type"] == "nk" and y_["value"]] == [(2024, 11000)])
+for q_ in RI.INDEP:
+    nm = f"ridge independent {q_['type']} {q_['year']}"
+    for i_, p_ in enumerate(q_["parts"]): check_part(f"{nm} part{i_}", p_)
+    need(nm + " range ends are figures of its source", q_["low"] <= q_["high"] and all(any(q_[k_] == figval(f_) or q_[k_] == p_["value"] for p_ in q_["parts"] for f_ in p_["figures"] + [str(p_["value"])]) for k_ in ("low", "high")))
+    need(nm + " is in the row's data and its official figure is higher or lower, never equal", next(l_ for l_ in ST["rows"] if l_["id"] == q_["type"])["indep"] and any(i_["year"] == q_["year"] and (i_["low"], i_["high"]) == (q_["low"], q_["high"]) for l_ in ST["rows"] if l_["id"] == q_["type"] for i_ in l_["indep"]))
+need("ridge: independent estimates are vol 2023 354,400, vol 2024 374,200 to 407,200 and mobilized 2022 527,703", [(q_["type"], q_["year"], q_["low"], q_["high"]) for q_ in RI.INDEP] == [("vol", 2023, 354400, 354400), ("vol", 2024, 374200, 407200), ("mob", 2022, 527703, 527703)])
+need("ridge: part-year points are 2026 contract (Jan to Jun) and 2026 foreign (Jan to Sep), flagged in the data", RI.PART_YEAR == {("vol", 2026): "Jan to Jun", ("for", 2026): "Jan to Sep"} and [r_["part"][4] for r_ in ST["rows"]] == ["Jan to Jun", None, None, "Jan to Sep", None])
+need("ridge: one hover per year with every row, exact values, sources and the own-scale reminder", len(ST["tips"]) == 5 and all("Each row has its own scale" in t_ for t_ in ST["tips"]))
+_js = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read(); _sj = _js[_js.index("function ridge("):_js.index("function bars")]
+need("flows.js ridgeline: smooth monotone filled curves with a soft gradient in the type color, linear scale per row, no log, no stack", "d3.curveMonotoneX" in _sj and "linearGradient" in _sj and "stop-opacity" in _sj and "d3.scaleLinear().domain([0,mx]).nice()" in _sj and "d3.scaleLog" not in _js and "d3.stack" not in _js and "stackOffsetWiggle" not in _js)
+need("flows.js ridgeline: curves join only consecutive sourced years (runs of at least two, never a part-year); a lone year is a glowing dot; a gap is faint no data, never zero", "rn.length<2" in _sj and "!r.part[i]" in _sj and "rglow" in _sj and "'no data'" in _sj and "r.vals[i]==null" in _sj or "v==null" in _sj)
+need("flows.js ridgeline: independent estimate is a dashed curve plus a lighter band, one-year estimates a hollow ring", "stroke-dasharray','6 4'" in _sj and "attr('fill-opacity',.22)" in _sj and "q.low===q.high" in _sj)
+need("flows.js ridgeline: draws in once on scroll (IntersectionObserver), respects reduced motion, no Play button, no autoplay timer", "IntersectionObserver" in _sj and "prefers-reduced-motion" in _sj and "RIDGE_PLAYED" in _sj and "tsplay" not in _js and "Play" not in _sj and "d3.timer" not in _sj)
+need("flows.js ridgeline: every year column has a compact hover (year plus one line per type with value and citation numbers, no source paragraphs), the hovered column is lightly highlighted", "S.ctips[i]" in _sj and "class','tshit'" in _sj and "data-tip" not in _sj and "rcol" in _sj and "rtip" in _sj)
+need("old streamgraph, filled charts and Play buttons are gone", all(x_ not in _js for x_ in ("stackOffsetWiggle", "CHARTS", "tsplay", "streamMain", "streamNiche", "hatch")) and all(x_ not in page for x_ in ('id="prists"', 'id="forts"', 'id="flowts"', "streamMain", "streamNiche", "streamgraph")))
+need("ridge: the chart label is the exact one-line text on the page", RI.RIDGE_LABEL == "Yearly estimates from different sources; layers are stacked estimates, not an official total." or RI.RIDGE_LABEL.startswith("Yearly estimates from different sources") and f"<b>{RI.RIDGE_LABEL}</b>" in page)
+for s_ in ("Each row has its own scale", "A filled curve joins only consecutive years that both have a sourced value", "A glowing dot is a single year with no neighbor to join", "part-year points (2026) are never joined", "the dashed curve and lighter band are an independent estimate", "Allocation method", "an allocation, not a count", "covers 1 July 2022 to 7 February 2023", "184 days fall in 2022", "nothing is interpolated or carried over from another year"): has(s_, "ridge text")
+need("ridge: how-to-read dropdown lists every type with numbered citations", "How to read the yearly chart, with the source of every value" in page and page.count('class="yrlist"') == 1 and all(k_ in cites for k_ in ("ria_shoigu24", "tass_med25", "interfax_med26", "kremlin", "ng_wagner", "meduza_wagner", "istories", "liga_foreign", "bbc_shoigu", "yonhap_nis", "isw_istories23", "istories_407", "dw_mz527")))
+need("ridge: the chart sits in the flow section after the flow map and before the named-dead bars", page.index('id="flowmap"') < page.index('id="ridge"') < page.index('id="flowbars"'))
 need("meduza_wagner is cited on the page", "meduza_wagner" in cites)
 need("GA tag once", page.count("G-Z61EKRP8QV") >= 1 and page.count("googletagmanager.com/gtag/js?id=G-Z61EKRP8QV") == 1)
 need("no github.io/onrender/.cn/gdelt", not re.search(r"github\.io|onrender\.com|gdelt|\.cn[/\"' ]", page + open(os.path.join(ROOT, "app.js")).read(), re.I))
+# ---- prison colony map (Mediazona with BBC News Russian, 10 Jun 2024)
+import csv as _csv
+_crow = list(_csv.DictReader(open(os.path.join(ROOT, "data", "prison-recruitment-wagner-all-colonies.csv"), encoding="utf-8")))
+_CJ = J("data/colonies.json")
+chk("colony rows", len(_crow), 501); chk("colony minimum recruits sum to Wagner total 48,366", sum(int(r_["min_recruited"]) for r_ in _crow), 48366)
+chk("colony json total", _CJ["total_recruits"], 48366); chk("colony json rows", _CJ["rows"], 501)
+chk("killed total (Wagner payment records)", _CJ["total_killed"], sum(int(r_["killed"]) for r_ in _crow))
+_dr = [r_ for r_ in _crow if r_["lon"] and r_["institution"] != "IK24 Ukhta"]; _ud = [r_ for r_ in _crow if not (r_["lon"] and r_["institution"] != "IK24 Ukhta")]
+chk("colonies drawn", _CJ["drawn"], len(_dr)); chk("colonies drawn recruits", _CJ["drawn_recruits"], sum(int(r_["min_recruited"]) for r_ in _dr))
+chk("colonies not drawn", _CJ["undrawn"]["n"], len(_ud)); chk("recruits in colonies not drawn", _CJ["undrawn"]["recruits"], sum(int(r_["min_recruited"]) for r_ in _ud))
+chk("drawn plus undrawn recruits equal the total", _CJ["drawn_recruits"] + _CJ["undrawn"]["recruits"], 48366)
+need("every drawn colony sits inside Russia's bounding box", all(41 <= c_["lat"] <= 82 and 19 <= c_["lon"] <= 180 for c_ in _CJ["colonies"]))
+need("the top colony is IK6 Krasnoyarsk with 506 minimum recruits and 136 killed", max(_CJ["colonies"], key=lambda c_: c_["n"])["name"] == "IK6 Krasnoyarsk" and max(c_["n"] for c_ in _CJ["colonies"]) == 506 and [c_["killed"] for c_ in _CJ["colonies"] if c_["name"] == "IK6 Krasnoyarsk"] == [136])
+_cj = open(os.path.join(ROOT, "colonies.js"), encoding="utf-8").read()
+need("colony circle AREA is proportional to minimum recruits (radius is a constant times sqrt)", "Math.sqrt(n)" in _cj and "rOf(c.n)" in _cj and "d3.scaleLog" not in _cj)
+need("colony map has no zoom buttons; zoom is Ctrl+wheel, two-finger pinch or mouse drag, and one finger still scrolls", "createElement('button" not in _cj and "<button" not in _cj and "e.ctrlKey" in _cj and "e.touches.length>1" in _cj and "pan-y" in _cj and "fz-in" not in _cj)
+need("colony circles are prisoner yellow like the other prisoner graphics", "#e8c547" in _cj and "#e8c547" in open(os.path.join(ROOT, "_src", "recruit_inputs.py"), encoding="utf-8").read() + open(os.path.join(ROOT, "_src", "flow_inputs.py"), encoding="utf-8").read())
+need("colony hover shows colony, region, minimum recruited and killed", all(x_ in _cj for x_ in ("c.name", "c.region", "Minimum recruited", "Killed, Wagner payment records")) and "Wagner period, Jul 2022 to Feb 2023 only" in _cj)
+for s_ in ("minimum, Wagner period Jul 2022 to Feb 2023 only" if False else "Wagner period Jul 2022 to Feb 2023 only", "48,366", "340 of the colonies", "43,756", "161 colonies with 4,610 recruits are not drawn", "IK24 Ukhta", "K1 to K617 with 116 missing", "ten colonies with the most recruits"): has(s_, "colony map text")
+need("a top-10 list is built from the data, largest first", "slice(0,10)" in _cj and "y.n-x.n" in _cj and 'id="coltop"' in page)
+need("Mediazona colony data credited in Data Sources with licence, BBC partner and article URL", "CC BY-SA 4.0" in SOURCES["mz_wagner"]["full"] and SOURCES["mz_wagner"]["url"] in page and "bbc.com/russian/articles/cv22vjwj10eo" in SOURCES["mz_wagner"]["full"] and "mz_wagner" in cites)
+need("colonies.js is loaded and the vendored CSV sits in data/", 'src="colonies.js"' in page and os.path.exists(os.path.join(ROOT, "data", "prison-recruitment-wagner-all-colonies.csv")))
+need("prisoners section holds the colony map, the prisoner chart, the finding and three prisoner photos", page.index('id="pris-sec"') < page.index('id="colmap"') < page.index('Prisoners outnumber mobilized men among the named dead') < page.index('id="nk-sec"') and len(re.findall(r"<img", re.search(r'id="pris-sec".*?id="nk-sec"', page, re.S).group(0))) == 3)
+need("prisoners outnumber mobilized men among the named dead, 27,379 against 20,690", S["type_totals"]["pri"] == 27379 and S["type_totals"]["mob"] == 20690)
+need("prisoners and mobilized KPI shows two lines: 27,379 prisoners killed and 20,690 mobilized men killed, with citation 9", "<strong>27,379</strong><em>prisoners killed</em></i><i><strong>20,690</strong><em>mobilized men " in page and re.search(r'mobilized men <span class="nw">killed<sup><a class="cite" href="\#src-9">\[9\]', page) is not None)
+need("Wagner KPI says 501 prison colonies", "from 501 prison " in page)
+need("prisoners-and-mobilized KPI avoids the words against and vs", not re.search(r"\b(against|vs)\b", re.search(r'<div class="kpi kpi-duo">.*?</div>', page, re.S).group(0)))
+need("foreign section carries Central Asia 20,437 identified to 1 Oct 2026, with the earlier 11,157 and its 1,399 dead labeled as to late 2025, matching the flow data", all(x_ in text for x_ in ("20,437", "11,157", "1,399", "to 1 Oct 2026", "counted to late 2025")) and [a_["low"] for a_ in FL["arrows"] if a_["id"] == "ca"] == [20437] and "Earlier count, to late 2025: 11,157" in [a_ for a_ in J("data/flows.json")["arrows"] if a_["id"] == "ca"][0]["tip"] and "at least 1,399 were killed" in [a_ for a_ in J("data/flows.json")["arrows"] if a_["id"] == "ca"][0]["tip"] and "to late 2025" in [a_ for a_ in J("data/flows.json")["arrows"] if a_["id"] == "ca"][0]["tip"])
+_ap = open(os.path.join(ROOT, "app.js"), encoding="utf-8").read()
+need("regional map: a transparent hit target sits at the bounding-box center of any region whose center falls outside its shape, and selects that region", "isPointInFill" in _ap and "regpin" in _ap and "attr('fill-opacity',0)" in _ap and "selectRegion(r)" in _ap[_ap.index("regpin"):_ap.index("regpin") + 1400] and "circle.regpin{cursor:pointer}" in open(os.path.join(ROOT, "style.css"), encoding="utf-8").read())
+_fj = open(os.path.join(ROOT, "flows.js"), encoding="utf-8").read(); _ci = _fj.index("nudged to the nearest free spot")
+need("flow map: country names (Belarus, China, Mongolia) are placed clear of the front line bracket, its label, the arrows and the flow labels, and the page check measures it at 1280 and 390 px",
+     all(k in _fj[_ci:_ci + 2200] for k in ("path.bracket,text.flab", "path.leader", "path.stg,path.stp", "getPointAtLength", "hits(r)")) and "'Belarus':1" in _fj
+     and "country-label overlaps" in open(os.path.join(ROOT, "_src", "screenshots.py"), encoding="utf-8").read() and "zoomreset" in open(os.path.join(ROOT, "_src", "screenshots.py"), encoding="utf-8").read())
+# ---- foreign recruits maps: two measures, never mixed (cumulative filled circle, January to September 2026 only ring), each with a verbatim quote
+import foreign_inputs as FI
+FJ = J("data/foreign.json"); W110 = J("data/world110.json"); _fi = {i_["id"]: i_ for i_ in FJ["items"]}
+_lab = {f_["properties"]["name"]: (f_["properties"]["lx"], f_["properties"]["ly"]) for f_ in W110["features"]}
+need("foreign maps: 15 circles = 6 cumulative, 1 Africa aggregate, 8 rings of January to September 2026 only", len(FJ["items"]) == 15 and sum(1 for i_ in FI.ITEMS if i_["kind"] == "cum") == 6 and sum(1 for i_ in FI.ITEMS if i_["kind"] == "agg") == 1 and sum(1 for i_ in FI.ITEMS if i_["kind"] == "y2026") == 8)
+for it_ in FI.ITEMS:
+    nm_ = "foreign " + it_["id"]
+    for p_ in it_["parts"] + it_.get("extra", []): check_part(nm_, p_)
+    chk(nm_ + " value in foreign.json", _fi[it_["id"]]["value"], it_["value"]); chk(nm_ + " value equals its sourced part", it_["parts"][0]["value"], it_["value"])
+    need(nm_ + " tooltip carries the value, the caveat and its measure", f"{it_['value']:,}" in _fi[it_["id"]]["tip"] and "not independently verified" in _fi[it_["id"]]["tip"] and ("2026 only" in _fi[it_["id"]]["tip"] or "from January to September 2026 only" in _fi[it_["id"]]["tip"] if it_["kind"] == "y2026" else "cumulative" in _fi[it_["id"]]["tip"] or "fighting on Russia" in _fi[it_["id"]]["tip"]))
+    if it_.get("prev"):
+        _q = norm(it_["parts"][0]["quote"]); need(nm_ + f" earlier-year figure {it_['prev']} is in its quote", f"from {it_['prev']} " in _q or f"from {it_['prev']}," in _q or (it_["prev"] == 8 and "from eight" in _q))
+    if it_["kind"] != "agg": need(nm_ + " is placed at the Natural Earth label point of its country", tuple(_fi[it_["id"]]["ll"]) == _lab[FI.WORLD_NAME[it_["id"]]])
+_cum5 = [i_["value"] for i_ in FI.ITEMS if i_["map"] == "central"]
+chk("foreign: the five Central Asian circles add to 20,437", sum(_cum5), 20437); chk("foreign: they equal the flow-map arrow", sum(_cum5), FA["ca"]["low"])
+need("foreign: 20,437 is also the total in the project's own table (Daryo) and the Times of Central Asia says 8,207 + 5,308 + 3,819 + 2,219 + 884", "20 437" in norm(open(os.path.join(RAW, "quotes", "daryo_ca.txt"), encoding="utf-8").read()) and _cum5 == [8207, 5308, 3819, 2219, 884] and all(w_ in norm(open(os.path.join(RAW, "quotes", "timesca_ca.txt"), encoding="utf-8").read()) for w_ in ("as of october 1", "have not been independently verified", "ethnic central asians with russian citizenship")))
+need("foreign: Belarus tooltip carries the 440 killed and the newer 1,862 for January to September 2026, kept apart from the circle", "440" in _fi["belarus"]["tip"] and "1,862" in _fi["belarus"]["tip"] and "older" in _fi["belarus"]["tip"])
+need("foreign: Africa tooltip carries 37 countries, 486 killed and says it is not comparable with the rings", "486" in _fi["africa"]["tip"] and "not comparable with the January to September 2026 rings" in _fi["africa"]["tip"] and "37 african countries" in norm(open(os.path.join(RAW, "quotes", "pravda_africa.txt"), encoding="utf-8").read()))
+_ring = sum(i_["value"] for i_ in FI.ITEMS if i_["kind"] == "y2026")
+need(f"foreign: the eight rings add to {_ring:,}, less than the 16,168 foreigners who signed in January to September 2026 (so no ring is a total)", _ring == 4684 and _ring < 16168)
+_ff = open(os.path.join(ROOT, "foreign.js"), encoding="utf-8").read(); _fsrc = open(os.path.join(ROOT, "_src", "foreign_inputs.py"), encoding="utf-8").read()
+need("foreign: circle area is linear in people (radius = k * sqrt(n)), one k for every map, with the red ramp light = less and ring/filled kinds drawn differently", "F.rk)*Math.sqrt(n)" in _ff and "RAMP=['#fdedeb','#fea498','#e43d3c','#8a0114']" in _ff and "Math.min(1,v/F.vmax)" in _ff and "class','fc ring'" in _ff and 'data-ramp' in _ff and (FI.RK, FI.RK_PH) == (0.5, 0.33))
+_gj = open(os.path.join(ROOT, "foreign.js"), encoding="utf-8").read(); _geo = re.search(r"var GEO=\{(.*?)\n\};", _gj, re.S).group(1)
+_gent = re.findall(r"\['([^']+)','([^']+)',(-?[\d.]+),(-?[\d.]+)\]", _geo); _wn = {f_["properties"]["name"] for f_ in W110["features"]}
+need("foreign: orientation labels: each of the five maps names its neighbours and seas (at least 7, 8, 17, 10 and 10 entries)", len(_gent) >= 52 and all(k_ + ":[" in _geo for k_ in ("central", "belarus", "africa", "latam", "seasia")))
+need("foreign: every orientation-label country exists in the Natural Earth data, and each map has no label for a country that already has a circle (its value label names it)", all(n_ == "~" or n_ in _wn for n_, _, _, _ in _gent) and not {n_ for n_, _, _, _ in _gent} & {FI.WORLD_NAME[i_["id"]] for i_ in FI.ITEMS if i_["kind"] != "agg"})
+need("foreign: the central map labels Russia, China, Afghanistan, Iran, Pakistan and the Caspian Sea", all(f"['{n_}'" in _geo for n_ in ("Russia", "China", "Afghanistan", "Iran", "Pakistan")) and "Caspian Sea" in _geo)
+_css = open(os.path.join(ROOT, "style.css"), encoding="utf-8").read()
+need("foreign: country borders are drawn in light blue (not grey) and orientation labels are 13 px, pale blue", ".fmap .cn{fill:#132646;stroke:#6f93c8;stroke-width:1px}" in _css and "stroke:#c3d7f4;stroke-width:1.6px" in _css and ".fmap .glab{font-size:13px;fill:#a9c4ea" in _css)
+need("foreign: the page tells readers circled countries have a brighter border and that neighbours are labeled for orientation", "brighter outline" in _html.unescape(text) and "pale blue" in _html.unescape(text))
+need("foreign: no bar chart in the new graphic, and no grey data fill", ".append('rect')" not in _ff and ".append('path').attr('class','bar" not in _ff and "#808080" not in _ff)
+need("foreign: the page explains filled = cumulative, ring = January to September 2026 only, the linear area scale and that the figures are Ukrainian and unverified", all(x_ in _html.unescape(text) for x_ in ("circle area is proportional to people, on one linear scale for every circle on every map", "Filled red circles are cumulative totals", "dashed gold rings are contracts signed from January to September 2026 only", "All are Ukrainian figures, not independently verified", "Ukrainian figures, not independently verified")) or all(x_ in _html.unescape(text) for x_ in ("circle area is proportional to people", "Filled red circles are cumulative totals", "not independently verified")))
+need("foreign: sources are cited and credited (Times of Central Asia, Nasha Niva, Ukrainska Pravda, LIGA.net, Natural Earth public domain)", all(k_ in cites for k_ in ("timesca_ca", "nashaniva_by", "pravda_africa", "liga_pow", "liga_foreign", "ne_world110")) and "public domain" in SOURCES["ne_world110"]["full"] and all(SOURCES[k_]["url"] in page for k_ in ("timesca_ca", "nashaniva_by", "pravda_africa", "liga_pow", "ne_world110")))
+need("foreign: the maps script and its five containers are on the page", 'src="foreign.js"' in page and all(f'id="fm-{m_}"' in page for m_ in ("central", "belarus", "africa", "latam", "seasia")) and page.index('id="forkey"') < page.index('id="fgrid"'))
 need("no unresolved tokens", "{{" not in page and "[[" not in page)
 print(f"audit: {OK[0]} checks passed, {len(FAIL)} failed")
 for f_ in FAIL[:60]: print("  FAIL", f_)

@@ -2,7 +2,7 @@
 District figures are sums of data/regions.json (Mediazona regional pages); foreign figures and North Korea rows come from the audited inputs."""
 import json, os, html, re, math
 from flow_inputs import TYPES, FRONT, KURSK, SKIPPED
-from recruit_inputs import TS_NOJOIN, TS, TS_DOMAIN, TS_NOTE_GAPS, ARROWS, HUB, WMIN, WSPAN, VMAX, LEGEND_SAMPLES, NOT_DRAWN, BAR_FOREIGN, NAMED_DEAD_DATE
+from recruit_inputs import YEARS, YEARLY, RIDGE_ROWS, RIDGE_LABEL, PART_YEAR, INDEP, RIDGE_TITLES, ARROWS, HUB, WMIN, WMAX, WMAX_PH, VMAX, NOT_DRAWN, BAR_FOREIGN, NAMED_DEAD_DATE
 import nk_inputs as NK
 from sources import SOURCES
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -15,7 +15,7 @@ def short(n):
 def rng(a, b, short_=False):
     f = short if short_ else (lambda x: f"{x:,}")
     return f"{a:,}" if a == b else f"{f(a)} to {f(b)}"
-def wid(v): return WMIN + WSPAN * math.sqrt(v / VMAX)
+def wid(v): return max(WMIN, WMAX * v / VMAX)
 def eh(s): return html.escape(s, quote=False)
 
 def day(d): return fmt_date(d)
@@ -23,28 +23,49 @@ def span(p):
     a, z = p["t0"], p["t1"]
     if a == z: return day(a)
     return day(a[:7]) + " to " + day(z[:7]) if a[:4] != z[:4] or a[5:7] != z[5:7] else day(a[:7])
-def ts_build():
-    out = []
-    for k, (nm, col) in TYPES.items():
-        pts = [p for p in TS if p["type"] == k and not p["est"]]; est = [p for p in TS if p["type"] == k and p["est"]]
-        def one(p):
-            t = [f"<b>{eh(nm)}{' (outside estimate)' if p['est'] else ''}</b>", f"{eh(span(p))}: {rng(p['low'], p['high'])} recruits"]
-            t.append(eh(p["what"][0].upper() + p["what"][1:]))
-            for q in p["parts"]: t.append(f"{eh(q['label'])} [{eh(SOURCES[q['src']]['short'])}]")
-            if len(p["parts"]) > 1 and p["low"] == p["high"]: t.append(f"Sum: {p['low']:,}")
-            if p["note"]: t.append(eh(p["note"]))
-            if not p["est"]: t.append("Height is the total reported on this date, not a rate; this is a report of one earlier call-up wave, so there is no period bar." if p["t0"] == p["t1"] else "Height is the total for the period, not a rate; the width of the bar under the dot is the period covered.")
-            return dict(id=p["id"], t0=p["t0"], t1=p["t1"], low=p["low"], high=p["high"], tip="<br>".join(t))
-        out.append(dict(kind=k, name=nm, color=col, nojoin=k in TS_NOJOIN, points=[one(p) for p in pts], est=[one(p) for p in est]))
-    return dict(series=out, domain=list(TS_DOMAIN), gaps=TS_NOTE_GAPS)
+def ridge_build():
+    """Ridgeline data: one row per type; per year a value (None = gap), whether it is an allocation or a part year, any independent estimate, and the hover for each year."""
+    Y = {(y["type"], y["year"]): y for y in YEARLY}
+    rows = []
+    for k, nm, col, sh in RIDGE_ROWS:
+        ind = [dict(year=i["year"], low=i["low"], high=i["high"]) for i in INDEP if i["type"] == k]
+        rows.append(dict(id=k, name=nm, title=RIDGE_TITLES[k], short=sh, color=col, vals=[Y[(k, yr)]["value"] for yr in YEARS], alloc=[bool(Y[(k, yr)]["alloc"]) for yr in YEARS],
+                         part=[PART_YEAR.get((k, yr)) for yr in YEARS], indep=ind))
+    def line(k, yr):
+        y = Y[(k, yr)]; nm = next(l[1] for l in RIDGE_ROWS if l[0] == k)
+        if y["value"] is None: return f"<b>{eh(nm)}: no data</b><br>{eh(y['note'])} Nothing is drawn."
+        t = [f"<b>{eh(nm)}: {y['value']:,}</b> ({eh(y['period'])})", eh(y["what"][0].upper() + y["what"][1:])]
+        t += ["Also: " + eh(c) for c in y["ctx"]]
+        srcs = list(dict.fromkeys(eh(SOURCES[q["src"]]["short"]) for q in y["parts"]))
+        srcs += [eh(SOURCES[a]["short"]) + " (dates)" for a in dict.fromkeys(a for a, _ in y["pq"])]
+        t.append("Source: " + "; ".join(srcs))
+        if y["alloc"]: t.append("Allocated by days: " + f"{y['alloc']['share']} of {y['alloc']['of']} days")
+        if y["note"]: t.append(eh(y["note"]))
+        return "<br>".join(t)
+    tips = []
+    for yr in YEARS:
+        lab = f"<b>{yr}{' (part year, see each row)' if yr == 2026 else ''}</b>"
+        tips.append(lab + "<br>" + "<br>".join(line(k, yr) for k, *_ in RIDGE_ROWS) + "<br><i>Estimates from different sources, not an official total. Each row has its own scale.</i>")
+    # compact hover: per year one short entry per type (value, part-year flag, citation keys; build_site turns the keys into the page's citation numbers)
+    ctips = []
+    for yr in YEARS:
+        e = []
+        for k, nm, col, sh in RIDGE_ROWS:
+            y = Y[(k, yr)]
+            if y["value"] is None: e.append(dict(id=k, v=None, c=[])); continue
+            ck = list(dict.fromkeys([q["src"] for q in y["parts"]] + [a for a, _ in y["pq"]]))
+            e.append(dict(id=k, v=y["value"], alloc=bool(y["alloc"]), part=PART_YEAR.get((k, yr)), c=ck))
+        ctips.append(e)
+    return dict(years=YEARS, rows=rows, tips=tips, ctips=ctips, label=RIDGE_LABEL)
 
 def build():
     R = json.load(open(os.path.join(ROOT, "data", "regions.json"), encoding="utf-8"))["regions"]
     dead = {k: sum(r[k] for r in R) for k in ("vol", "mob", "pri")}
-    dead_txt = {"vol": "volunteers and contract soldiers", "mob": "mobilised men", "pri": "prisoners"}
+    dead_txt = {"vol": "volunteers and contract soldiers", "mob": "mobilized men", "pri": "prisoners"}
     arrows = []
     for a in ARROWS:
         t = [f"<b>{eh(a['name'])}</b>", f"{rng(a['low'], a['high'])} people recruited, {eh(a['period'])}"]
+        if a["id"] == "ca": t.insert(1, "One combined figure for five states: Uzbekistan, Tajikistan, Kazakhstan, Kyrgyzstan and Turkmenistan. It is not a count for any single country. These five are only some of the 151 countries and territories that foreign contract signers come from (45,959 identified by Ukraine, to 1 Oct 2026); recruits from every other country are not on this map and are in the Foreign recruits section.")
         if a["low"] != a["high"]:
             t.append(f"Solid width shows the low value, {a['low']:,}; the pale band reaches {a['high']:,}")
         else:
@@ -66,10 +87,11 @@ def build():
     bars.sort(key=lambda b: -b["n"])
     nd = " ".join(f"{p['label']}." for p in NOT_DRAWN)
     out = dict(measure="people recruited", types={k: dict(name=v[0], color=v[1]) for k, v in TYPES.items()}, arrows=arrows, hub=HUB, front=FRONT, kursk=KURSK,
-               wmin=WMIN, wspan=WSPAN, vmax=VMAX, samples=[dict(v=v, w=round(wid(v), 2)) for v in LEGEND_SAMPLES], bars=bars, ts=ts_build(), not_drawn=nd, skipped=SKIPPED, named_dead_date=NAMED_DEAD_DATE)
+               wmin=WMIN, wmax=WMAX, wmax_ph=WMAX_PH, vmax=VMAX, clamp_below=round(WMIN / WMAX * VMAX), bars=bars, ridge=ridge_build(), not_drawn=nd, skipped=SKIPPED, named_dead_date=NAMED_DEAD_DATE)
     json.dump(out, open(os.path.join(ROOT, "data", "flows.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     nk = dict(rows=NK.ROWS, timeline=NK.TL, places=NK.PLACES, lines=NK.LINES, kinds={k: dict(name=v[0], color=v[1]) for k, v in NK.KINDS.items()}, status=NK.STATUS)
     json.dump(nk, open(os.path.join(ROOT, "data", "nk.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    build_foreign()
     return out, nk
 
 MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -107,3 +129,32 @@ def render():
 
 if __name__ == "__main__":
     o, n = build(); print(len(o["arrows"]), "arrows", len(n["rows"]), "rows")
+
+
+def build_foreign():
+    """data/foreign.json: the circles of the Foreign recruits maps. Cumulative totals and January to September 2026 sign-ups are separate kinds, and every tooltip says which it is."""
+    import foreign_inputs as FI
+    W = json.load(open(os.path.join(ROOT, "data", "world110.json"), encoding="utf-8"))
+    lab = {f["properties"]["name"]: (f["properties"]["lx"], f["properties"]["ly"]) for f in W["features"]}
+    items = []
+    for it in FI.ITEMS:
+        kind = it["kind"]; nm = it["name"]; v = it["value"]; srcs = "; ".join(p["label"].split(" (", 1)[1].rstrip(")") for p in it["parts"])
+        if kind == "cum" and it["id"] != "belarus":
+            t = [f"<b>{eh(nm)}</b>", f"{v:,} contract signers identified, cumulative since 2022, to 1 Oct 2026", "Not the number now fighting; ethnic Central Asians with Russian citizenship are left out", "Source: " + eh(srcs)]
+        elif it["id"] == "belarus":
+            t = [f"<b>{eh(nm)}</b>", f"{v:,} Belarusian citizens fighting on Russia\u2019s side, as of 20 May 2026, of whom 440 were killed", "A different count from contract signers, and older than the Central Asia figures",
+                 "Also: " + eh(it["extra"][0]["label"]), "Source: " + eh(srcs)]
+        elif kind == "agg":
+            t = [f"<b>{eh(nm)}</b>", f"{v:,} people recruited in total, of whom 486 are known to have been killed, to Aug 2026", "One combined figure: no split by country is given, so it is a cumulative total and is not comparable with the January to September 2026 rings",
+                 "Source: " + eh(srcs)]
+        else:
+            t = [f"<b>{eh(nm)}</b>", f"{v:,} contracts signed from January to September 2026 only", "Not a total: earlier years are not included, so do not compare it with the filled circles"]
+            if it.get("prev"): t.append(f"For comparison, the whole of 2025: {it['prev']:,}")
+            t.append("Source: " + eh(srcs))
+        t.append(FI.CAVEAT)
+        if kind == "agg": ll = FI.AFRICA_LL
+        else: ll = list(lab[FI.WORLD_NAME[it["id"]]])
+        items.append(dict(id=it["id"], name=nm, kind=kind, value=v, map=it["map"], ll=ll, tip="<br>".join(t), cites=list(dict.fromkeys(p["src"] for p in it["parts"] + it.get("extra", [])))))
+    out = dict(items=items, vmax=FI.VMAX, rk=FI.RK, rk_ph=FI.RK_PH, africa_target=FI.AFRICA_TARGET, maps=[dict(id=i, title=t) for i, t in FI.MAPS], caveat=FI.CAVEAT)
+    json.dump(out, open(os.path.join(ROOT, "data", "foreign.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    return out

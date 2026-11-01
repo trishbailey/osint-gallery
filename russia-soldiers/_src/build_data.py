@@ -129,7 +129,7 @@ def main():
     srt = sorted(rows, key=lambda x: x["wage"])
     qs = [srt[0:21], srt[21:42], srt[42:63], srt[63:85]]
     S["wage_quartiles"] = [dict(pooled(q), wage_min=min(x["wage"] for x in q), wage_max=max(x["wage"] for x in q)) for q in qs]
-    # OLS standardised
+    # OLS standardized
     def z(v): v = np.asarray(v, float); return (v - v.mean()) / v.std()
     A = np.column_stack([np.ones(len(ru_rows)), z([x["dist_km"] for x in ru_rows]), z([x["wage"] for x in ru_rows]), z([x["ru_share"] for x in ru_rows])])
     y = z(rr); beta = np.linalg.lstsq(A, y, rcond=None)[0]; res = y - A @ beta
@@ -164,7 +164,7 @@ def main():
     S["bonus_bottom"] = [(x["iso"], x["en"], x["bonus"]["months"]) for x in bs[-5:]]
     S["bonus_median_months"] = float(np.median([x["bonus"]["months"] for x in bm]))
     S["wage_rf_2025"] = wages["Российская Федерация"]["2025"] if "Российская Федерация" in wages else None
-    # recruitment-type shares among type-labelled dead
+    # recruitment-type shares among type-labeled dead
     S["type_totals"] = {k: sum(x[k] for x in rows) for k in ("vol", "mob", "pri")}
     S["sankey"] = {f: {k: sum(x[k] for x in rows if x["fd"] == f) for k in ("vol", "pri", "mob")} for f in FD_EN.values()}
     for f in S["sankey"]: S["sankey"][f]["other"] = S["fd"][f]["deaths"] - sum(S["sankey"][f].values())
@@ -175,6 +175,7 @@ def main():
     S["breaks"]["pov"] = [sig2(float(np.percentile(X("pov"), q))) for q in (25, 50, 75)]
     S["breaks"]["ru"] = [sig2(float(np.percentile(X("ru_share"), q))) for q in (25, 50, 75)]
     S["breaks"]["bonus"] = [sig2(float(np.percentile([x["bonus"]["months"] for x in bm], q))) for q in (25, 50, 75)]
+    S["breaks"]["dist"] = [sig2(float(np.percentile(dist, q))) for q in (25, 50, 75)]
     json.dump(dict(meta=dict(accessed="28 Oct 2026", mz_updated="23 Oct 2026", pop_date="1 Jan 2024", wage_year=2025), regions=rows),
               open(os.path.join(OUT, "regions.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump(S, open(os.path.join(OUT, "stats.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
@@ -183,9 +184,9 @@ def main():
     with open(os.path.join(OUT, "russia_soldiers_regions.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["ISO 3166-2 code","Region","Type (republic/other)","Federal district","Population 1 Jan 2024 (Rosstat)","Rural share of population %",
-                    "Named dead (Mediazona+BBC, 23 Oct 2026)","Named dead per 100,000","Named dead volunteers","Volunteers per 100,000","Named dead mobilised","Mobilised per 100,000",
-                    "Named dead prisoners","Prisoners per 100,000","Average monthly wage 2025 roubles (Rosstat)","Ethnic Russian share % (census 2020)","Distance from Moscow km (centroid to centroid)","Poverty rate 2025 % (Rosstat)","Poverty rate basis",
-                    "Federal bonus roubles","Regional bonus roubles (standard contract)","Total bonus roubles","Total bonus in months of local wages","Bonus data status","Bonus note"])
+                    "Named dead (Mediazona+BBC, 23 Oct 2026)","Named dead per 100,000","Named dead volunteers","Volunteers per 100,000","Named dead mobilized","Mobilized per 100,000",
+                    "Named dead prisoners","Prisoners per 100,000","Average monthly wage 2025 rubles (Rosstat)","Ethnic Russian share % (census 2020)","Distance from Moscow km (centroid to centroid)","Poverty rate 2025 % (Rosstat)","Poverty rate basis",
+                    "Federal bonus rubles","Regional bonus rubles (standard contract)","Total bonus rubles","Total bonus in months of local wages","Bonus data status","Bonus note"])
         for x in rows:
             b = x["bonus"]
             w.writerow([x[c] if not isinstance(x[c], float) else round(x[c], 2) for c in cols] +

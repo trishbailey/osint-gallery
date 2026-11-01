@@ -19,7 +19,9 @@ Change checks (--changed-from BASE):
   7. No numbered-key circles/badges (numbers 1,2,3... centred in circles or round pills; count bubbles are fine).
   8. Desktop: paragraph text (>=160 chars, 3+ lines) fills >= 75% of its container (source lists and side-by-side cards excluded) width.
   9. Desktop: every visible button changes something on screen when clicked.
-  10. Each checked dashboard's _src/test_*.py (figures derived from data) must pass.
+  10. Click every clickable map shape (SVG shape with a pointer cursor) and every visible button at 1280px and 390px: each click must change
+      something on screen, raise no JS/console error, and hit a real target (at most 30 shapes and 30 buttons per page per size, sampled evenly; with --changed-from only on the dashboards whose folders changed).
+  11. Each checked dashboard's _src/test_*.py (figures derived from data) must pass.
 Grey exception (defunct markers only): a grey fill is allowed solely on a shape that sits inside a
 <g> (or is itself) marked data-status="defunct" AND carries a name (aria-label or a child <title>).
 The marker may not be the <svg> root, other values (is-defunct, defunct-ish, ...) do nothing, only greys
@@ -315,6 +317,101 @@ def button_checks(pg, slug, url, limit=200):
             errs.append(f"{slug} [desktop]: button '{name}' shows nothing when clicked")
     return errs
 
+SHAPES_JS = r"""() => { const out = [];
+  const svgs = [...document.querySelectorAll('svg')];
+  svgs.forEach(sv => sv.querySelectorAll('path,circle,rect,polygon,ellipse,use')  /* leaf shapes: a click on one bubbles to its group's handler */.forEach(e => {
+    if (e.closest('[data-ci-ignore],button,a,summary,[role=button],defs,clipPath,mask,pattern')) return;
+    const cs = getComputedStyle(e); if (cs.cursor !== 'pointer' || cs.display === 'none' || cs.visibility === 'hidden' || cs.pointerEvents === 'none') return;
+    const b = e.getBoundingClientRect(); if (b.width < 3 || b.height < 3 || b.bottom < 0 || b.right < 0) return;
+    out.push(e); }));
+  return out.map((e, i) => { e.setAttribute('data-ci-shape', i);
+    return {i, t: (e.getAttribute('aria-label') || (e.querySelector('title') || {}).textContent || e.id || e.tagName).toString().trim().slice(0, 40)}; }); }"""
+
+HIT_JS = r"""([x, y, i]) => { const e = document.elementFromPoint(x, y); const t = document.querySelector('[data-ci-shape="' + i + '"]');
+  return !!(e && t && (t === e || t.contains(e) || e.contains(t))); }"""
+
+def _sample(items, limit):
+    """At most LIMIT items spread evenly across the list (so a 200-shape map is sampled, not just its first corner)."""
+    if len(items) <= limit:
+        return items
+    step = len(items) / limit
+    return [items[int(k * step)] for k in range(limit)]
+
+def click_target_checks(pg, slug, label, shapes_limit=30, buttons_limit=30):
+    """Click every clickable map shape (SVG element with a pointer cursor) and every visible button at the
+    current viewport. Each click must change something on screen, must not throw a JS error or log a
+    console error, and the target must be on screen and clickable. Clicks run in sequence on one page load
+    (reloading only if a click left the page), so a toggle that changes state still counts as doing something."""
+    errs, seen = [], []
+    pg.on("pageerror", lambda e: seen.append(str(e)[:140]))
+    pg.on("console", lambda m: seen.append(m.text[:140]) if m.type == "error" and not m.text.startswith("Failed to load resource") else None)
+    url = pg.url
+    for kind, js, attr, limit in (("shape", SHAPES_JS, "data-ci-shape", shapes_limit), ("button", BUTTONS_JS, "data-ci-btn", buttons_limit)):
+        targets = pg.evaluate(js)
+        picked = _sample(targets, limit)
+        if len(targets) > limit:
+            print(f"NOTE {slug} [{label}]: {len(targets)} {kind}s, click-tested an even sample of {limit}")
+        for t in picked:
+            name = (t.get("t") or "(no label)")
+            if kind == "button" and RESET_RE.match(name.strip()):
+                continue
+            outcome = None
+            for attempt in (0, 1):  # a failed click is retried once on a fresh page: an earlier click may have left a panel open over this target
+                try:
+                    if attempt or pg.url != url:
+                        pg.goto(url, wait_until="load", timeout=45000); pg.wait_for_timeout(2500)
+                        pg.evaluate(js)
+                    loc = pg.locator(f'[{attr}="{t["i"]}"]')
+                    if loc.count() != 1 or not loc.is_visible():
+                        break
+                    loc.scroll_into_view_if_needed(timeout=2000)
+                    loc.hover(timeout=2000, force=True); pg.wait_for_timeout(150)
+                    s0 = pg.evaluate(SNAP_JS); pg.wait_for_timeout(300); s1 = pg.evaluate(SNAP_JS)
+                    n_ids, n_par = _delta(s0, s1)
+                    before = len(seen)
+                    box = loc.bounding_box()
+                    if kind == "shape":
+                        top = pg.evaluate(HIT_JS, [box["x"] + box["width"] / 2, box["y"] + box["height"] / 2, t["i"]]) if box else False
+                        if not top:
+                            break  # covered by something else (a neighbour, label or open panel): not a dead target of its own
+                        pg.mouse.click(box["x"] + box["width"] / 2, box["y"] + box["height"] / 2)
+                    else:
+                        loc.click(timeout=3000)
+                    pg.wait_for_timeout(500)
+                    s2 = pg.evaluate(SNAP_JS)
+                    outcome = (s1, s2, n_ids, n_par, before)
+                    break
+                except Exception as e:
+                    if attempt == 1 and kind == "button" and t.get("real"):
+                        errs.append(f"{slug} [{label}]: button '{name}' could not be clicked ({type(e).__name__})")
+            if not outcome:
+                continue
+            s1, s2, n_ids, n_par, before = outcome
+            c_ids, c_par = _delta(s1, s2)
+            if len(seen) > before:
+                errs.append(f"{slug} [{label}]: clicking {kind} '{name}' raised a JS/console error: {seen[before][:100]}")
+            elif not (c_ids - n_ids) and not (c_par - n_par):
+                errs.append(f"{slug} [{label}]: {kind} '{name}' shows nothing when clicked (empty target)")
+    return errs
+
+def click_checks(port, slugs, viewports=((1280, 800, "click 1280px"), (390, 844, "click 390px"))):
+    from playwright.sync_api import sync_playwright
+    errs = []
+    with sync_playwright() as p:
+        br = p.chromium.launch(args=["--no-sandbox"])
+        for slug in slugs:
+            for w, h, label in viewports:
+                pg = br.new_page(viewport={"width": w, "height": h})
+                try:
+                    pg.goto(f"http://127.0.0.1:{port}/{slug}/", wait_until="load", timeout=45000)
+                    pg.wait_for_timeout(3000)
+                    errs += click_target_checks(pg, slug, label)
+                except Exception as e:
+                    errs.append(f"{slug} [{label}]: click check could not run ({str(e)[:100]})")
+                pg.close()
+        br.close()
+    return errs
+
 def browser_checks(port, slugs):
     from playwright.sync_api import sync_playwright
     errs, warns = [], []
@@ -391,9 +488,14 @@ def browser_checks(port, slugs):
 SHARED_TOP = {"scripts", ".github", "brand", "icons"}
 SHARED_ROOT_FILES = {"render.yaml", "README.md", "index.html", "app.js", "styles.css", "tools.json", "favicon.svg"}
 
-def changed_files(base):
+def changed_files(base, head="HEAD", cwd=None):
+    """Files the branch itself changed: diff from the merge base of BASE and HEAD to HEAD
+    (git's three-dot form, written out). Commits that landed on BASE after the branch left it,
+    or that a stale BASE sha predates, are never counted as the branch's changes."""
+    cwd = cwd or ROOT
     try:
-        out = subprocess.check_output(["git", "diff", "--name-only", f"{base}...HEAD"], cwd=ROOT, text=True)
+        mb = subprocess.check_output(["git", "merge-base", base, head], cwd=cwd, text=True).strip()
+        out = subprocess.check_output(["git", "diff", "--name-only", mb, head], cwd=cwd, text=True)
         return [x for x in out.splitlines() if x]
     except Exception:
         return []
@@ -404,12 +506,14 @@ def main():
     ap.add_argument("--port", type=int, default=8765)
     ap.add_argument("--slugs", default="", help="comma list; default = every */index.html")
     ap.add_argument("--changed-from", default="", help="git base ref; check only changed dashboards")
+    ap.add_argument("--changed-head", default="HEAD", help="git ref of the branch tip (a PR's head sha); changes are measured from merge-base(base, head)")
     a = ap.parse_args()
     errs = static_checks()
     all_slugs = sorted(os.path.basename(os.path.dirname(p)) for p in glob.glob(os.path.join(ROOT, "*", "index.html")))
     slugs = [s for s in a.slugs.split(",") if s] or all_slugs
+    touched = []
     if a.changed_from:
-        files = changed_files(a.changed_from)
+        files = changed_files(a.changed_from, a.changed_head)
         print("Changed files:", len(files))
         shared = [f for f in files if f.split("/")[0] in SHARED_TOP or f in SHARED_ROOT_FILES]
         touched = sorted({f.split("/")[0] for f in files if "/" in f and f.split("/")[0] in all_slugs})
@@ -439,6 +543,7 @@ def main():
         http.server.SimpleHTTPRequestHandler.log_message = lambda *x: None
         threading.Thread(target=srv.serve_forever, daemon=True).start()
         errs += browser_checks(a.port, slugs)
+        errs += click_checks(a.port, [x for x in slugs if x in touched] if a.changed_from else slugs)
         srv.shutdown()
     for e in errs:
         print("FAIL:", e)

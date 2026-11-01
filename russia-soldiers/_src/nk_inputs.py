@@ -32,7 +32,7 @@ ROWS = [
  dict(id="containers", short='Munitions: 29,488 containers', dir="to_ru", kind="arms", fig="29,488", line="containers of munitions by sea, Sep 2023 to Jan 2026, in 112 voyages", status="documented",
       ev=[dict(src="istories_nk_en", quote="between September 2023 and January 2026, the Russian military received at least 29,488 containers of DPRK weaponry", figures=["29,488"]),
           dict(src="istories_nk_en", quote="these four Russian ships conducted at least 112 voyages to North Korea", figures=["112"])],
-      more="Ship movement logs, port records and satellite imagery, matched by iStories and the Open Source Centre; part of the count for the unseen voyages is estimated from averages. Shipments fell from five voyages a month to three from autumn 2024, and only one was found in 2026."),
+      more="Ship movement logs, port records and satellite imagery, matched by iStories and the Open Source Centre; part of the count for the unseen voyages is estimated from averages. Shipments fell from five voyages a month to three from fall 2024, and only one was found in 2026."),
  dict(id="rounds", short='Shells and rockets: 8 to 11 million', dir="to_ru", kind="arms", fig="8 to 11 million", line="shells and rockets: the Open Source Centre's estimate", status="reported",
       ev=[dict(src="istories_nk_en", quote="this is equivalent to between 8 million and 11 million artillery shells and rockets", figures=["8 million", "11 million"]),
           dict(src="istories_nk_en", quote="accounting for 75% to 100% of all daily artillery fire, according to reports from Russian artillerymen obtained by Reuters", figures=["75%", "100%"])],

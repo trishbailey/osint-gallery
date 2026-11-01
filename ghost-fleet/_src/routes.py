@@ -26,3 +26,5 @@ for (lp,dc),c in pc.items():
 if R: json.dump(R,open(RP,"w"),separators=(",",":"))
 S["routes"]=[{"from":k.split("|")[0],"to":k.split("|")[1],"n":v["n"],"line":v["line"]} for k,v in (R or old).items()]
 print("ROUTES",len(S["routes"]),[(r["from"],r["to"],r["n"],len(r["line"])) for r in S["routes"]])
+
+exec(open(os.path.join(H,"classroutes.py")).read())

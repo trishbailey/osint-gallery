@@ -1213,7 +1213,7 @@ function drawMap(el,ids,w,h,opt={}){const bs=B.filter(b=>ids.includes(b.id));con
   el.selectAll('.basin-extra').remove();
   const stB=t=>t.style('font-weight',700).style('font-size','14px').style('fill','#e6e9ef');
   const nmB=c=>c.replace('United States of America','United States').replace('Democratic Republic of the Congo','DR Congo').replace('Dem. Rep. Congo','DR Congo').replace('The former Yugoslav Republic of Macedonia','North Macedonia');
-  labs.forEach(d=>{if(!P.add(lg,d.x,d.y,d.text,t=>{stB(t);if(d.gerd)t.style('fill','#ff6b81')},'lab-dam')&&sparse)addPlace(d.text,`<b>${d.say||d.text}</b>`,1)});
+  labs.forEach(d=>{if(!P.add(lg,d.x,d.y,d.text,t=>stB(t),'lab-dam')&&sparse)addPlace(d.text,`<b>${d.say||d.text}</b>`,1)});
   const seenB=[];
   AR.forEach(b=>[b.up,b.down.c].forEach(name=>{const q=ptOf(b,name);if(!q)return;const [x,y]=pr(q);if(seenB.some(s=>s.n===name&&Math.hypot(s.x-x,s.y-y)<70))return;seenB.push({n:name,x,y});const label=nmB(name);if(!P.add(lg,x,y,label,t=>stB(t),null,(cx,cy)=>inCountry(pr,name,cx,cy))&&sparse)addPlace(label,`<b>${label}</b>`,2)}));
   const mainsB=C.rivers.filter(r=>r[3]&&inside(r[2]));
@@ -1404,7 +1404,7 @@ function wireWorldBasins(svg){
  if(layer) root.appendChild(layer);
 }
 function show(id,scroll){clearTip();const ri=REG.findIndex(r=>r[1].flat().includes(+id));if(ri>=0)setRegion(ri);setArrowNotes([arrowSay([+id])]);
- const b=B.find(x=>x.id==id);d3.selectAll('#chips .chip').classed('on',d=>d.id==id);(()=>{let hit=false;d3.selectAll('#sumchips .chip').classed('on',function(){const on=!hit&&this.dataset.id==String(id);if(on)hit=true;return on})})();const P=d3.select('#panel').html('');P.append('button').attr('type','button').attr('class','back-region full').attr('data-expect','back').text('Back to region').on('click',()=>{clearTip();holdLevel(1);if(isPhone())closeSheet();const el=document.getElementById(ri>=0?'reg'+ri:'s-maps');if(el)el.scrollIntoView({behavior:'smooth',block:'start'})});
+ const b=B.find(x=>x.id==id);d3.selectAll('#chips .chip').classed('on',d=>d.id==id);(()=>{let hit=false;d3.selectAll('#sumchips .chip').classed('on',function(){const on=!hit&&this.dataset.id==String(id);if(on)hit=true;return on})})();const P=d3.select('#panel').html('');P.append('button').attr('type','button').attr('class','back-region full').attr('data-expect','back').text('Back to world map').on('click',()=>{clearTip();holdLevel(1);if(isPhone())closeSheet();const el=document.getElementById('map-world')||document.getElementById('s-maps');if(!el)return;const root=document.documentElement,prev=root.style.scrollBehavior;root.style.scrollBehavior='auto';try{el.scrollIntoView({behavior:'instant',block:'center'})}catch(e){el.scrollIntoView({block:'center'})}root.style.scrollBehavior=prev});
  const Lf=P.append('div');Lf.append('h3').text(shown(b.name));
  if(isPhone()&&scroll)openSheet();
  Lf.attr('class','full basin-stage');

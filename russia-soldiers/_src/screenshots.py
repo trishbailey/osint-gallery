@@ -18,15 +18,16 @@ with sync_playwright() as pw:
         page.on("console", lambda m, t=tag: errs.append((t, m.text)) if m.type == "error" else None)
         page.goto(BASE); page.wait_for_selector("html[data-ready]", state="attached", timeout=15000); page.wait_for_timeout(600)
         shot(page, f"{tag}-01-top.png", full=False)
-        page.evaluate("document.querySelector('#remote-sec').scrollIntoView()"); page.wait_for_timeout(300)
-        shot(page, f"{tag}-01b-remote-evidence.png", full=False)
+        nko = page.evaluate("document.querySelector('#nk-sec').open"); print(tag, "North Korea section open on load:", nko); assert nko, "North Korea and Russia section must be open on load"
+        page.evaluate("document.querySelector('#pris-sec').scrollIntoView()"); page.wait_for_timeout(300)
+        shot(page, f"{tag}-01b-prisoners-top.png", full=False)
         page.evaluate("window.scrollTo(0,0)")
         if mobile:
             for d in page.query_selector_all("details.sec"): d.evaluate("e=>e.open=true")
             page.evaluate("window.dispatchEvent(new Event('resize'))"); page.wait_for_timeout(500)
         shot(page, f"{tag}-02-full.png")
         # map: hover + click a region, metric buttons
-        page.evaluate("document.querySelector('#map-sec').scrollIntoView()")
+        page.evaluate("document.querySelector('#dead-sec').scrollIntoView()")
         box = page.eval_on_selector("#map path.reg:nth-child(10)", "e=>{const b=e.getBoundingClientRect();return [b.x+b.width/2,b.y+b.height/2]}")
         paths = page.query_selector_all("#map path.reg"); print(tag, "map regions", len(paths))
         # tooltip on a big region
@@ -43,20 +44,32 @@ with sync_playwright() as pw:
         page.click("#closepanel"); page.wait_for_timeout(400); assert not page.evaluate("document.querySelector('#panel').classList.contains('open')")
         if mobile and page.evaluate("!document.querySelector('#mapside').open"):
             page.click("#mapside > summary"); page.wait_for_timeout(200)
-        for m in ("vol", "mob", "pri", "pov", "ru", "bonus", "deaths"):
+        for m in ("vol", "mob", "pri", "dist", "ru", "deaths"):
             before = page.evaluate("[...document.querySelectorAll('#map path.reg')].map(p=>p.getAttribute('fill')).join()")
             page.click(f".chipb[data-metric={m}]"); page.wait_for_timeout(250)
             after = page.evaluate("[...document.querySelectorAll('#map path.reg')].map(p=>p.getAttribute('fill')).join()")
             print(tag, "metric", m, "fills changed" if before != after else "fills same"); 
             if m == "pri": shot(page, f"{tag}-05-map-prisoners.png", full=False)
-            if m == "pov": shot(page, f"{tag}-05b-map-poverty.png", full=False)
             if m == "bonus": shot(page, f"{tag}-05c-map-bonus.png", full=False)
         # round 4: flow map (first graphic) and North Korea section
         sig = lambda sel: page.evaluate(f"[...document.querySelectorAll('{sel} path')].map(p=>p.getAttribute('d')||'').join('|').length+':'+[...document.querySelectorAll('{sel} path')].map(p=>(p.getAttribute('d')||'').slice(0,40)).join('').length")
         page.evaluate("document.querySelector('#flow-sec').scrollIntoView()"); page.wait_for_timeout(400)
-        assert page.evaluate("document.querySelector('#flow-sec').getBoundingClientRect().top < document.querySelector('#remote-sec').getBoundingClientRect().top")
+        assert page.evaluate("document.querySelector('#flow-sec').getBoundingClientRect().top < document.querySelector('#pris-sec').getBoundingClientRect().top")
         ns = len(page.query_selector_all("#flowmap g.st")); nr = len(page.query_selector_all("#flowmap path.rg")); print(tag, "flow arrows", ns, "regions", nr); assert ns == 5 and nr > 80
-        wid = page.evaluate("[...document.querySelectorAll('#flowmap g.st path.stp')].map(p=>parseFloat(getComputedStyle(p).strokeWidth))"); print(tag, "strand widths", min(wid), max(wid)); assert min(wid) >= 4 and max(wid) <= 10.01
+        assert page.query_selector("#flowmap .hubbar") is None and len(page.query_selector_all("#flowmap path.bracket")) == 1 and len(page.query_selector_all("#flowmap path.leader")) == 3, "hub bar removed; front bracket and leader lines stay"
+        assert "151" in page.inner_text("#flowmap") and "Central Asia" in page.inner_text("#flowmap"), "Central Asia label names the 151"
+        cl_ = page.evaluate("[...document.querySelectorAll('#map text.citylab')].map(e=>[e.textContent,parseFloat(getComputedStyle(e).fontSize),getComputedStyle(e).pointerEvents])"); print(tag, "city labels", cl_)
+        assert sorted(c[0] for c in cl_) == ["Moscow", "St Petersburg"] and all(c[1] >= 13 and c[2] == "none" for c in cl_), cl_
+        wid = page.evaluate("[...document.querySelectorAll('#flowmap g.st path.stp')].map(p=>parseFloat(getComputedStyle(p).strokeWidth))"); print(tag, "strand widths", min(wid), max(wid)); assert min(wid) >= 3 - 0.01 and max(wid) <= (34 if mobile else 56) + 0.01 and max(wid) / min(wid) > 5
+        # country names must not touch the front line (bracket), its label, an arrow or a flow label, in the first view and after a zoom reset
+        OVL = """()=>{const rect=e=>{const b=e.getBoundingClientRect();return {x:b.left,y:b.top,r:b.right,b:b.bottom}},hit=(a,o)=>a.x<o.r&&o.x<a.r&&a.y<o.b&&o.y<a.b;
+          const bad=[];const obs=[...document.querySelectorAll('#flowmap path.bracket,#flowmap text.flab,#flowmap text.dlab')].map(e=>[e.getAttribute('class'),rect(e)]);
+          const pts=[];document.querySelectorAll('#flowmap g.st path.stp').forEach(p=>{const L=p.getTotalLength(),m=p.getScreenCTM();for(let k=0;k<=L;k+=4){const q=p.getPointAtLength(k);pts.push([m.a*q.x+m.c*q.y+m.e,m.b*q.x+m.d*q.y+m.f])}});
+          document.querySelectorAll('#flowmap text.cname').forEach(t=>{const r=rect(t);if(r.r<0||r.x>innerWidth)return;obs.forEach(o=>{if(hit(r,o[1]))bad.push(t.textContent+' x '+o[0])});
+            if(pts.some(q=>q[0]>r.x&&q[0]<r.r&&q[1]>r.y&&q[1]<r.b))bad.push(t.textContent+' x arrow')});return bad}"""
+        page.evaluate("document.querySelector('#flowmap').scrollIntoView({block:'center'})"); page.wait_for_timeout(600)
+        ov1 = page.evaluate(OVL); page.evaluate("document.querySelector('#flowmap svg').dispatchEvent(new Event('zoomreset'))"); page.wait_for_timeout(600); ov2 = page.evaluate(OVL)
+        print(tag, "country-label overlaps", ov1, ov2); assert not ov1 and not ov2, ("country label overlaps the front line, an arrow or a label", ov1, ov2)
         shot(page, f"{tag}-09-flow-map.png", full=False)
         FIND2 = """g=>{const e=g.querySelector('path.stp');const L=e.getTotalLength();for(let i=1;i<40;i++){const q=e.getPointAtLength(L*i/40);const m=e.getScreenCTM();const x=m.a*q.x+m.c*q.y+m.e,y=m.b*q.x+m.d*q.y+m.f;if(x<0||y<0||x>innerWidth||y>innerHeight)continue;const t=document.elementFromPoint(x,y);if(t&&t.closest('[data-tip]')===g)return [x,y]}return null}"""
         got_tip = False
@@ -67,17 +80,42 @@ with sync_playwright() as pw:
                 if page.is_visible("#tip") and "recruited" in page.inner_text("#tip"): got_tip = True; print(tag, "arrow tooltip:", page.inner_text("#tip").replace("\n", " | ")[:150]); break
         assert got_tip, "no arrow tooltip"
         shot(page, f"{tag}-09b-flow-strand-hover.png", full=False)
-        # time series: 9 line dots + 2 estimate markers + 3 more = 14 hit areas; hover one; Play must change the chart and end on Replay
-        page.evaluate("document.querySelector('#flowts').scrollIntoView({block:'center'})"); page.wait_for_timeout(300)
-        nts = len(page.query_selector_all("#tschart .tshit")); print(tag, "time-series hit areas", nts); assert nts == 15, nts
-        ntb = page.evaluate("[...document.querySelectorAll('#flowts button')].map(b=>b.textContent)"); assert ntb == ["Play"], ntb
-        shot(page, f"{tag}-09c-flow-timeseries.png", full=False)
-        before = page.evaluate("document.querySelector('#tsclipr').getAttribute('width')")
-        page.click("#tsplay"); page.wait_for_timeout(1500)
-        mid_w = page.evaluate("document.querySelector('#tsclipr').getAttribute('width')"); assert float(mid_w) < float(before), (mid_w, before)
-        shot(page, f"{tag}-09c2-flow-timeseries-playing.png", full=False)
-        page.wait_for_function("document.querySelector('#tsplay').textContent==='Replay'", timeout=12000)
-        assert float(page.evaluate("document.querySelector('#tsclipr').getAttribute('width')")) >= float(before) - 0.5
+        # foreign recruits maps: 15 circles (7 filled cumulative, 8 dashed rings), labels at least 13 px and clear of every circle and of each other, tooltip on hover or tap
+        page.evaluate("document.querySelector('#for-sec').scrollIntoView()"); page.wait_for_selector("html[data-fg]", state="attached"); page.wait_for_timeout(500)
+        nfg = page.evaluate("[document.querySelectorAll('#fgrid g.fg').length, document.querySelectorAll('#fgrid g.fg.cum circle.fc').length, document.querySelectorAll('#fgrid g.fg.agg circle.fc').length, document.querySelectorAll('#fgrid g.fg.y2026 circle.ring').length]"); print(tag, "foreign circles", nfg)
+        assert nfg == [15, 6, 1, 8], nfg
+        FOV = """()=>{const bad=[],r=e=>e.getBoundingClientRect(),hit=(a,b)=>a.left<b.right&&b.left<a.right&&a.top<b.bottom&&b.top<a.bottom;
+          document.querySelectorAll('#fgrid svg').forEach(sv=>{const L=[...sv.querySelectorAll('text.dlab,text.glab')],C=[...sv.querySelectorAll('g.fg circle.fc')];
+            L.forEach((t,i)=>{const a=r(t);if(parseFloat(getComputedStyle(t.querySelector('tspan')||t).fontSize)<13)bad.push('small '+t.textContent);
+              L.forEach((u,j)=>{if(j>i&&hit(a,r(u)))bad.push(t.textContent+' x '+u.textContent)});
+              C.forEach(c=>{const b=r(c),cx=(b.left+b.right)/2,cy=(b.top+b.bottom)/2,R=b.width/2,x=Math.max(a.left,Math.min(cx,a.right)),y=Math.max(a.top,Math.min(cy,a.bottom));if(Math.hypot(x-cx,y-cy)<R-0.5)bad.push(t.textContent+' covers a circle')})})});
+          return bad}"""
+        GL = page.evaluate("Object.fromEntries([...document.querySelectorAll('#fgrid .fmap > div')].map(d=>[d.id.slice(3),[...d.querySelectorAll('text.glab')].map(t=>t.textContent)]))"); print(tag, "orientation labels", {k: len(v) for k, v in GL.items()})
+        assert all(x in GL["central"] for x in ("Russia", "China", "Afghanistan", "Iran")), GL["central"]
+        assert all(len(GL[k]) >= n for k, n in ((("central", 6), ("belarus", 5), ("africa", 9), ("latam", 7), ("seasia", 6)) if mobile else (("central", 7), ("belarus", 5), ("africa", 12), ("latam", 7), ("seasia", 6)))), GL
+        assert page.evaluate("[...document.querySelectorAll('#fgrid path.cn')].every(p=>getComputedStyle(p).strokeWidth!=='0px'&&getComputedStyle(p).stroke!=='none')")
+        fo = page.evaluate(FOV); print(tag, "foreign label overlaps", fo); assert not fo, fo
+        page.evaluate("document.querySelector('#fm-central').scrollIntoView({block:'center'})"); page.wait_for_timeout(300)
+        bx = page.eval_on_selector("#fm-central g.fg.cum circle.fhit", "e=>{const b=e.getBoundingClientRect();return [b.x+b.width/2,b.y+b.height/2]}")
+        page.mouse.move(bx[0], bx[1]); page.mouse.click(bx[0], bx[1]); page.wait_for_timeout(300)
+        tp = page.evaluate("(()=>{const t=document.getElementById('tip');return t.hidden?'':t.innerText})()"); print(tag, "foreign tip", tp[:80].replace("\n", " | "))
+        assert "not independently verified" in tp and "cumulative" in tp, tp
+        shot(page, f"{tag}-09b-foreign.png", full=False)
+        # yearly ridgeline: 5 rows, 5 hover columns, draws in on scroll (no Play button), curves only between consecutive sourced years, hover shows exact values
+        page.evaluate("document.querySelector('#ridge').scrollIntoView({block:'center'})"); page.wait_for_timeout(3800)
+        assert len(page.query_selector_all("#ridge .ridgerow")) == 5 and len(page.query_selector_all("#ridge .tshit")) == 5
+        assert page.evaluate("[...document.querySelectorAll('#ridge button')].length") == 0, "ridge has no Play button"
+        assert page.evaluate("document.querySelectorAll('#ridge .ridgerow')[0].querySelectorAll('path[fill^=\"url(\"]').length") == 1 and page.evaluate("document.querySelectorAll('#ridge .ridgerow')[4].querySelectorAll('path[fill^=\"url(\"]').length") == 0
+        assert page.evaluate("[...document.querySelectorAll('#ridge .nod')].length") == 12, "twelve empty years say no data"
+        assert page.evaluate("document.querySelector('#ridge svg').getBoundingClientRect().width <= document.documentElement.clientWidth + 1")
+        box_ = page.evaluate("(()=>{const r=document.querySelectorAll('#ridge .tshit')[2].getBoundingClientRect();return [r.x+r.width/2,r.y+40]})()")
+        page.mouse.move(*box_); page.mouse.click(*box_) if mobile else None; page.wait_for_timeout(150)
+        tp_ = page.inner_text("#ridge .rtip"); assert "2024" in tp_ and "490,000" in tp_ and "11,000" in tp_ and "no data" in tp_ and "Source" not in tp_ and "[" in tp_, tp_[:200]
+        rt_ = page.evaluate("(()=>{const e=document.querySelector('#ridge .rtip'),b=e.getBoundingClientRect(),s=document.querySelector('#ridge > svg').getBoundingClientRect(),c=getComputedStyle(e);return {w:b.width,h:b.height,fs:parseFloat(c.fontSize),bg:c.backgroundColor,above:b.bottom<=s.top+1,hi:getComputedStyle(document.querySelector('#ridge .rcol')).display}})()")
+        print(tag, "ridge tip", rt_); assert rt_["h"] < 200 and rt_["w"] < 400 and rt_["fs"] >= 13 and "rgba" in rt_["bg"] and rt_["hi"] != "none", rt_
+        if mobile: assert rt_["above"], "on a phone the hover sits above the chart, not over the rows"
+        assert page.query_selector("#ridge [data-tip]") is None, "ridge columns use the compact hover, not the page tooltip"
+        shot(page, f"{tag}-09c-ridge-hover.png", full=False)
         nb = len(page.query_selector_all("#flowbars .brow")); print(tag, "named-dead bars", nb); assert nb == 4
         vals = page.evaluate("[...document.querySelectorAll('#flowbars .bv')].map(e=>parseInt(e.textContent.replace(/,/g,'')))"); assert vals == sorted(vals, reverse=True), vals
         page.evaluate("document.querySelector('#flowbars').scrollIntoView({block:'center'})"); page.wait_for_timeout(200)
@@ -94,8 +132,7 @@ with sync_playwright() as pw:
         for k in ("pri", "for", "mob", "vol"):
             page.click(f".fchip[data-k={k}]"); page.wait_for_timeout(150)
         page.click(f".fchip[data-k=pri]"); page.click(f".fchip[data-k=pri]"); page.wait_for_timeout(150)
-        for bid in ("#fz-in", "#fz-out", "#fz-reset"):
-            before = sig("#flowmap"); page.click(bid); page.wait_for_timeout(450); after = sig("#flowmap"); print(tag, bid, "view changed" if before != after else "view same")
+        assert page.query_selector("#fz-in") is None, "zoom buttons should be gone"
         page.evaluate("document.querySelector('#nk-sec').open=true"); page.evaluate("window.dispatchEvent(new Event('resize'))"); page.wait_for_timeout(600)
         page.evaluate("document.querySelector('#nk-sec').scrollIntoView()"); page.wait_for_timeout(300)
         rows = len(page.query_selector_all("#nkrel g.nkr")); print(tag, "nk rows", rows); assert rows == 13
@@ -117,14 +154,33 @@ with sync_playwright() as pw:
         shot(page, f"{tag}-10d-nk-timeline.png", full=False)
         assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1"), "horizontal overflow"
         # section screenshots, nested toggles, sankey, photos, minimaps
-        for sid in ("flow-sec", "undercount", "pov-sec", "eth-sec", "bonus-sec", "pools-sec", "nk-sec", "trk-sec"):
+        for sid in ("flow-sec", "pris-sec", "nk-sec", "for-sec", "con-sec", "dead-sec", "undercount", "trk-sec"):
             page.evaluate("document.querySelector('#trk-sec').open=true;document.querySelector('#nk-sec').open=true")
             page.evaluate(f"document.querySelector('#{sid}').scrollIntoView()"); page.wait_for_timeout(250)
             shot(page, f"{tag}-07-{sid}.png", full=False)
-        for mm in ("#mm-pov", "#mm-ru", "#mm-bonus"):
+        for mm in ("#mm-bonus",):
             n = len(page.query_selector_all(mm + " path.reg")); print(tag, mm, "regions", n); assert n > 80, mm
-        nl = len(page.query_selector_all("#sankey path")); nr = len(page.query_selector_all("#sankey rect")); print(tag, "sankey links", nl, "nodes", nr); assert nl >= 25 and nr == 12
-        imgs = page.evaluate("[...document.querySelectorAll('.ph img')].map(i=>[i.complete&&i.naturalWidth>0,i.alt.length])"); print(tag, "photos", imgs); assert all(a and b > 20 for a, b in imgs) and len(imgs) == 8
+        assert page.query_selector("#sankey") is None, "sankey should be gone"
+        # prison colony map: 340 circles, top-10 list, tooltip on the biggest circle, zoom without buttons
+        page.evaluate("document.querySelector('#colmap').scrollIntoView({block:'center'})"); page.wait_for_timeout(400)
+        nc = len(page.query_selector_all("#colmap circle.col")); print(tag, "colony circles", nc); assert nc == 340, nc
+        assert len(page.query_selector_all("#coltop li")) == 10 and page.query_selector("#coltop [data-tip]") is None and page.query_selector("#colmap button") is None and page.query_selector("#colmap .fz") is None
+        rs = page.evaluate("[...document.querySelectorAll('#colmap circle.col')].map(c=>parseFloat(c.getAttribute('r')))"); assert max(rs) > 4 * min(rs), (min(rs), max(rs))
+        cbig = page.query_selector_all("#colmap circle.col")[rs.index(max(rs))]
+        # circles overlap (small ones are drawn on top), so find a point where the biggest circle itself is the top element
+        cpt = cbig.evaluate("""e=>{const b=e.getBoundingClientRect();for(let i=1;i<24;i++)for(let j=1;j<24;j++){const x=b.x+b.width*i/24,y=b.y+b.height*j/24;if(document.elementFromPoint(x,y)===e)return [x,y]}return null}""")
+        assert cpt, "biggest colony circle is fully covered"; cx, cy = cpt
+        if mobile: page.mouse.click(cx, cy)
+        else: page.mouse.move(cx, cy)
+        page.wait_for_timeout(200); ct = page.inner_text("#tip"); print(tag, "colony tooltip:", ct.replace("\n", " | ")); assert "IK6 Krasnoyarsk" in ct and "506" in ct and "136" in ct and "Jul 2022 to Feb 2023 only" in ct
+        shot(page, f"{tag}-11-colony-map.png", full=False)
+        if not mobile:
+            t0 = page.evaluate("document.querySelector('#colmap svg > g').getAttribute('transform')")
+            page.mouse.move(700, 450); page.keyboard.down("Control"); page.mouse.wheel(0, -600); page.keyboard.up("Control"); page.wait_for_timeout(500)
+            t1 = page.evaluate("document.querySelector('#colmap svg > g').getAttribute('transform')"); print(tag, "colony zoom", t0, "->", t1); assert t0 != t1
+            sc = page.evaluate("window.scrollY"); page.mouse.move(700, 450); page.mouse.wheel(0, 300); page.wait_for_timeout(300)
+            assert page.evaluate("window.scrollY") != sc, "plain scroll must still scroll the page over the colony map"
+        imgs = page.evaluate("[...document.querySelectorAll('.ph img')].map(i=>[i.complete&&i.naturalWidth>0,i.alt.length])"); print(tag, "photos", imgs); assert all(a and b > 20 for a, b in imgs) and len(imgs) == 17
         for d in page.query_selector_all("details.how"):
             d.evaluate("e=>{let p=e.parentElement.closest('details');while(p){p.open=true;p=p.parentElement.closest('details')}}")
             d.scroll_into_view_if_needed(); before = d.evaluate("e=>e.open"); d.query_selector("summary").click(); page.wait_for_timeout(120)
@@ -134,7 +190,7 @@ with sync_playwright() as pw:
         # zoom
         page.mouse.move(bb["x"] + 20, bb["y"] + 20)
         # other buttons
-        for sel, what in (("#rankmore", "#rankbars .brow"), ("#bonusmore", "#bonusbars .brow"), ("#firmonly", "#bonusbars .brow")):
+        for sel, what in (("#bonusmore", "#bonusbars .brow"), ("#firmonly", "#bonusbars .brow")):
             page.evaluate(f"document.querySelector('{sel}').scrollIntoView({{block:'center'}})")
             n0 = len(page.query_selector_all(what)); page.click(sel); page.wait_for_timeout(200); n1 = len(page.query_selector_all(what))
             print(tag, sel, n0, "->", n1); assert n0 != n1, sel
@@ -152,14 +208,19 @@ with sync_playwright() as pw:
           for(let i=1;i<50;i++)for(let j=1;j<50;j++){const x=b.x+b.width*i/50,y=b.y+b.height*j/50;if(x<0||y<0||x>innerWidth||y>innerHeight||!ok(x,y))continue;let r=0;for(;r<8;r++){if(![[r,0],[-r,0],[0,r],[0,-r],[r,r],[-r,-r],[r,-r],[-r,r]].every(d=>ok(x+d[0],y+d[1])))break}if(r>bs){bs=r;best=[x,y]}}return best}"""
         step = max(1, len(tips) // 150)
         for t in tips[::step] + [x for x in tips if x.evaluate("e=>e.classList.contains('reg')")][::3]:
+            if not t.is_visible(): continue  # e.g. a map dot outside the current view or a chip-hidden arrow: nothing to hover
             t.scroll_into_view_if_needed(); page.wait_for_timeout(70); pt = t.evaluate(FIND)
             if pt is None and t.evaluate("e=>!!e.closest('#flowmap')"):
                 # flow map elements outside the zoomed phone view: zoom out to the whole map, as a visitor would, then look again
                 page.evaluate("document.querySelector('#flowmap').scrollIntoView({block:'center'})")
-                for _ in range(3): page.click("#fz-out"); page.wait_for_timeout(300)
+                page.evaluate("document.querySelector('#flowmap svg').dispatchEvent(new Event('zoomreset'))")
                 page.evaluate("document.querySelector('#flowmap').scrollIntoView({block:'center'})"); page.wait_for_timeout(300); pt = t.evaluate(FIND)
             if pt is None: pt = t.evaluate(FINE)
             if pt is None:
+                # marks under about 8 px across (small regions on the phone, colony circles) or colony circles covered by a neighbor
+                # cannot be hit without zooming in; zooming is how a visitor reaches them, so they are not counted as dead targets
+                tb = t.bounding_box() or {"width": 0, "height": 0}
+                if min(tb["width"], tb["height"]) < 8 or t.evaluate("e=>!!e.closest('#colmap') || e.matches('#map path.reg')"): continue  # map regions are hover-tested above and in the CI click check
                 bad.append(("no hoverable point", t.get_attribute("data-tip")[:40])); continue
             if mobile:
                 page.evaluate("document.querySelector('#tip').hidden=true"); page.mouse.click(*pt)

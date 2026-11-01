@@ -44,7 +44,26 @@
   "IC_SOLES",
   "CRS_MADURO"
  ],
- "log": [],
+ "log": [
+  {
+   "date": "2026-11-01",
+   "text": "Venezuela's army reportedly bombed an ELN camp in Apure, with unconfirmed reports of 19 dead.",
+   "links": [
+    {
+     "title": "El ejército chavista bombardea a la guerrilla colombiana del ELN, su antigua aliada | Internacional",
+     "url": "https://www.elmundo.es/internacional/2026/11/01/6ae7069121efa0024a8b457d.html",
+     "source": "elmundo.es",
+     "date": "2026-11-01"
+    },
+    {
+     "title": "Venezuela rompe con décadas de complicidad con el ELN y habría bombardeado uno de sus campamentos",
+     "url": "https://cibercuba.com/noticias/2026-11-01-u1-e207888-s27061-nid344468-venezuela-rompe-decadas-complicidad-eln-habria",
+     "source": "cibercuba.com",
+     "date": "2026-11-01"
+    }
+   ]
+  }
+ ],
  "storyline": {
   "order": 5,
   "title": "Venezuela and Tren de Aragua",
