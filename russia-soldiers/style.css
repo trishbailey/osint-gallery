@@ -250,3 +250,5 @@ circle.col:hover,circle.col:focus-visible{stroke:var(--gold);stroke-width:2px}
 .rtip-top.idle .rt-h{font-weight:400;font-size:13px;margin:0}
 .tshit:focus{outline:none}
 .citydot{fill:#fff;stroke:#0b1526;stroke-width:1.6px}.citylab{font-size:14px;font-weight:700;fill:#fff;paint-order:stroke;stroke:#0b1526;stroke-width:4px;stroke-linejoin:round;pointer-events:none}
+
+.kpi-vs b{font-size:1.35rem;line-height:1.2}.kpi-vs b i{font-style:normal;display:block}.kpi-vs b i+i{font-size:1.05rem;color:var(--text,#e6e9ef);margin-top:2px}
