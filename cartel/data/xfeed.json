@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-31T22:07:38Z",
+ "as_of": "2026-11-01T01:02:06Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,59 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2116690435573756376",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2116690435573756376",
+   "created_at": "2026-11-01T00:35:00.000Z",
+   "text": "La Policía realizó un reporte de los daños y afectaciones ocasionados por el ataque con explosivos a un camión de gas en Puerto Bolívar, Machala y ofreció recompensas por información de los presuntos responsables. https://t.co/KwjK0afbfX",
+   "lang": "es",
+   "region_ids": [
+    "ECU-1267"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Police issued a report on the damage caused by the explosives attack on a gas truck in Puerto Bolívar, Machala, and offered rewards for information on the alleged perpetrators."
+  },
+  {
+   "id": "2116675147662836049",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2116675147662836049",
+   "created_at": "2026-10-31T23:34:15.000Z",
+   "text": "El Dámaso del Cártel de Tláhuac se queda preso en el Reclusorio Oriente: juez lo procesa por extorsionar una llantera https://t.co/VzdKzv73Lb",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "El Dámaso of the Tláhuac Cartel stays jailed in the Reclusorio Oriente: judge orders him to stand trial for extorting a tire shop"
+  },
+  {
+   "id": "2116670441192390953",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2116670441192390953",
+   "created_at": "2026-10-31T23:15:33.000Z",
+   "text": "Personas físicas y empresas sancionadas por EE.UU. por ligas con el Cártel de Sinaloa, promovieron juicios de amparo en BC. No les concedieron medidas cautelares para liberar cuentas bancarias Los detalles, en la edición impresa del Semanario ZETA. https://t.co/elQr3TKDzt",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Individuals and companies sanctioned by the US for ties to the Sinaloa Cartel filed amparo lawsuits in Baja California. They were not granted injunctions to free their bank accounts."
+  },
   {
    "id": "2116632668246798498",
    "handle": "ZETATijuana",
@@ -3963,57 +4016,6 @@
    "source_type": "official",
    "label": "Official statement",
    "text_en": "As a result of inter-agency coordination, four violence generators were arrested in #Sonora and Francisco \"N\", alias \"El Meny Carranza\", identified as a priority target in the region, was neutralised. Weapons and drugs were also seized."
-  },
-  {
-   "id": "2114149235188699201",
-   "handle": "GabSeguridadMX",
-   "url": "https://x.com/GabSeguridadMX/status/2114149235188699201",
-   "created_at": "2026-10-25T00:17:11.000Z",
-   "text": "En Sonora, como resultado de trabajos de inteligencia naval y un operativo encabezado por @SEMAR_mx, en coordinación con @SSPCMexico y la @fgjesonora, fueron detenidos cuatro integrantes de un grupo delictivo. Durante la operación, realizada en inmediaciones del poblado de San h…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2712"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "official",
-   "label": "Official statement",
-   "text_en": "In Sonora, as a result of naval intelligence work and an operation led by @SEMAR_mx, in coordination with @SSPCMexico and @fgjesonora, four members of a criminal group were arrested. During the operation, carried out near the settlement of San h…"
-  },
-  {
-   "id": "2114123575816761408",
-   "handle": "Primicias",
-   "url": "https://x.com/Primicias/status/2114123575816761408",
-   "created_at": "2026-10-24T22:35:13.000Z",
-   "text": "La Policía Nacional decomisó cangrejos rojos durante controles en el aeropuerto Mariscal Sucre de Quito. Desde octubre de 2025, Ecuador mantiene prohibida por seis años la exportación de todas estas especies. https://t.co/5WOqZjgEJS https://t.co/tqFBQBBa6m",
-   "lang": "es",
-   "region_ids": [
-    "ECU-1287"
-   ],
-   "country": "ECU",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "The National Police seized red crabs during checks at Quito's Mariscal Sucre airport. Since October 2025, Ecuador has banned the export of all these species for six years."
-  },
-  {
-   "id": "2114122561965453668",
-   "handle": "InSightCrime",
-   "url": "https://x.com/InSightCrime/status/2114122561965453668",
-   "created_at": "2026-10-24T22:31:11.000Z",
-   "text": "🇧🇷 | As Brazil prepares for Sunday’s presidential runoff, the US terrorist designations of the PCC and Comando Vermelho have fueled debate. Flávio Bolsonaro supports the move, while Lula has raised concerns about potential threats to Brazilian sovereignty. https://t.co/TtPFwBjc6…",
-   "lang": "en",
-   "region_ids": [],
-   "country": "BRA",
-   "group_ids": [
-    "pcc",
-    "cv"
-   ],
-   "tier": "verified",
-   "source_type": "research outlet",
-   "label": null
   }
  ]
 }

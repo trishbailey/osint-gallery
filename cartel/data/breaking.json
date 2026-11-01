@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-31T22:07:38Z",
+ "as_of": "2026-11-01T01:02:06Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,95 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "f65f3d92d7",
+   "status": "single_source",
+   "title": "La Policía realizó un reporte de los daños y afectaciones ocasionados por el ataque con explosivos a un camión de gas en Puerto Bolívar, Machala y ofreció recompensas por información de los presuntos ",
+   "lang": "es",
+   "title_en": "Police issued a report on the damage caused by the explosives attack on a gas truck in Puerto Bolívar, Machala, and offered rewards for information on the alleged",
+   "first_report": "2026-11-01T00:35:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Primicias",
+   "region_ids": [
+    "ECU-1267"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "X @Primicias",
+     "url": "https://x.com/Primicias/status/2116690435573756376",
+     "time": "2026-11-01T00:35:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "259928dd3f",
+   "status": "single_source",
+   "title": "El Dámaso del Cártel de Tláhuac se queda preso en el Reclusorio Oriente: juez lo procesa por extorsionar una llantera",
+   "lang": "es",
+   "title_en": "El Dámaso of the Tláhuac Cartel stays jailed in the Reclusorio Oriente: judge orders him to stand trial for extorting a tire shop",
+   "first_report": "2026-10-31T23:34:15Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2116675147662836049",
+     "time": "2026-10-31T23:34:15Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "48605a42e2",
+   "status": "single_source",
+   "title": "Personas físicas y empresas sancionadas por EE.UU. por ligas con el Cártel de Sinaloa, promovieron juicios de amparo en BC. No les concedieron medidas cautelares para liberar cuentas bancarias Los det",
+   "lang": "es",
+   "title_en": "Individuals and companies sanctioned by the US for ties to the Sinaloa Cartel filed amparo lawsuits in Baja California. They were not granted injunctions to free their bank accounts.",
+   "first_report": "2026-10-31T23:15:33Z",
+   "first_report_precision": "minute",
+   "first_source": "ZETA Tijuana",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "ZETA Tijuana"
+   ],
+   "sources": [
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "X @ZETATijuana",
+     "url": "https://x.com/ZETATijuana/status/2116670441192390953",
+     "time": "2026-10-31T23:15:33Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "99118862dd",
    "status": "single_source",
@@ -103,7 +192,7 @@
    "status": "single_source",
    "title": "En una serie documental de tres episodios, Darren Foster y Miguel Fernández Flores, directores, exponen con material inédito como fue del traslado del cofundador del Cártel de Sinaloa a Estados Unidos",
    "lang": "es",
-   "title_en": "In a three-episode documentary series, directors Darren Foster and Miguel Fernández Flores use previously unseen material to show how the co-founder of the Cártel de Sinaloa was transferred to the United States",
+   "title_en": "In a three-episode documentary series, directors Darren Foster and Miguel Fernández Flores use previously unseen material to show how the co-founder of the Cártel de Sinaloa was transferred to the United States.",
    "first_report": "2026-10-31T19:04:44Z",
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
@@ -295,76 +384,6 @@
      "url": "https://x.com/noticieristas/status/2116515082016289230",
      "time": "2026-10-31T12:58:13Z",
      "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "994c58a734",
-   "status": "confirmed",
-   "title": "🔴 #AHORA | Cae en Matamoros Axel Alfredo, “El Titán”: operador del Cártel del Golfo y familiar de Osiel Cárdenas Guillén",
-   "lang": "es",
-   "title_en": "🔴 #NOW | Axel Alfredo, “El Titán”, a Gulf Cartel operator and relative of Osiel Cárdenas Guillén, is captured in Matamoros",
-   "first_report": "2026-10-29T22:55:41Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2716"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "gulf",
-    "cdn"
-   ],
-   "outlets": [
-    "Infobae",
-    "La Jornada",
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115940665523921301",
-     "time": "2026-10-29T22:55:41Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2115957856688357489",
-     "time": "2026-10-30T00:04:00Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115996806119121407",
-     "time": "2026-10-30T02:38:46Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/10/30/el-titan-del-cartel-del-golfo-el-historial-criminal-que-llevo-a-su-nueva-detencion-a-dos-anos-de-su-polemica-liberacion/",
-     "time": "2026-10-30T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "jornada",
-     "name": "La Jornada",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.jornada.com.mx/2026/10/31/estados/021n3est?partner=rss",
-     "time": "2026-10-31T12:00:00Z",
-     "time_precision": "day"
     }
    ]
   },
@@ -644,8 +663,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2719",
-    "GTM-1951"
+    "GTM-1951",
+    "MEX-2719"
    ],
    "country": "MEX",
    "group_ids": [
@@ -734,15 +753,15 @@
    "first_report_precision": "day",
    "first_source": "El Financiero",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "chapitos",
+    "mayiza",
     "sinaloa",
-    "mayiza"
+    "cjng",
+    "chapitos"
    ],
    "outlets": [
     "El Financiero"
@@ -798,8 +817,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2719",
-    "MEX-2736"
+    "MEX-2736",
+    "MEX-2719"
    ],
    "country": "MEX",
    "group_ids": [
@@ -834,9 +853,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
+    "mayiza",
     "sinaloa",
-    "mayiza"
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -867,9 +886,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
+    "mayiza",
     "sinaloa",
-    "mayiza"
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -900,8 +919,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
-    "mayiza"
+    "mayiza",
+    "sinaloa"
    ],
    "outlets": [
     "Infobae"
@@ -932,9 +951,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
+    "mayiza",
     "sinaloa",
-    "mayiza"
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -1052,9 +1071,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
+    "mayiza",
     "sinaloa",
-    "mayiza"
+    "chapitos"
    ],
    "outlets": [
     "MVS Noticias"
@@ -1201,8 +1220,8 @@
    "region_ids": [],
    "country": "HND",
    "group_ids": [
-    "tda",
-    "ms13"
+    "ms13",
+    "tda"
    ],
    "outlets": [
     "Infobae"
@@ -1229,8 +1248,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "GTM-1963",
-    "GTM-1951"
+    "GTM-1951",
+    "GTM-1963"
    ],
    "country": "GTM",
    "group_ids": [],
@@ -1308,6 +1327,37 @@
    ]
   },
   {
+   "id": "5c98ec3fb6",
+   "status": "single_source",
+   "title": "Retiran 72 vehículos tras bloqueos en Matamoros por captura de narco",
+   "lang": "es",
+   "title_en": "72 vehicles removed after blockades in Matamoros over capture of drug trafficker",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "La Jornada",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "outlets": [
+    "La Jornada"
+   ],
+   "sources": [
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.jornada.com.mx/2026/10/31/estados/021n3est?partner=rss",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
    "id": "6011a84e37",
    "status": "single_source",
    "title": "Capacitarán policías de Italia y Chile a efectivos de la SSP de Zacatecas",
@@ -1346,8 +1396,8 @@
    "first_report_precision": "day",
    "first_source": "La Jornada",
    "region_ids": [
-    "MEX-2723",
-    "MEX-2712"
+    "MEX-2712",
+    "MEX-2723"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -1411,8 +1461,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "tda",
-    "eln"
+    "eln",
+    "tda"
    ],
    "outlets": [
     "Semana"
@@ -1619,8 +1669,8 @@
    "first_report_precision": "minute",
    "first_source": "InSight Crime",
    "region_ids": [
-    "PAN-1340",
-    "PRY-607"
+    "PRY-607",
+    "PAN-1340"
    ],
    "country": "PAN",
    "group_ids": [],
@@ -1990,8 +2040,8 @@
    "first_report_precision": "minute",
    "first_source": "Animal Político",
    "region_ids": [
-    "MEX-2727",
-    "MEX-2724"
+    "MEX-2724",
+    "MEX-2727"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2305,8 +2355,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "AP"
@@ -2369,8 +2419,8 @@
    "country": null,
    "group_ids": [
     "clan",
-    "exfarc",
-    "eln"
+    "eln",
+    "exfarc"
    ],
    "outlets": [
     "El Tiempo",
@@ -2459,8 +2509,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "El Universal"
@@ -2491,10 +2541,10 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "unidos",
+    "cjng",
     "gulf",
-    "juarez",
-    "cjng"
+    "unidos",
+    "juarez"
    ],
    "outlets": [
     "Infobae"
@@ -2525,9 +2575,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
+    "mayiza",
     "sinaloa",
-    "mayiza"
+    "chapitos"
    ],
    "outlets": [
     "Milenio"
@@ -2730,8 +2780,8 @@
    "region_ids": [],
    "country": "COL",
    "group_ids": [
-    "clan",
-    "cjng"
+    "cjng",
+    "clan"
    ],
    "outlets": [
     "Proceso"
@@ -2827,8 +2877,8 @@
    "region_ids": [],
    "country": "ECU",
    "group_ids": [
-    "lobos",
-    "choneros"
+    "choneros",
+    "lobos"
    ],
    "outlets": [
     "Infobae"
@@ -2995,6 +3045,37 @@
    ]
   },
   {
+   "id": "5e12adc64f",
+   "status": "single_source",
+   "title": "“El Titán” del Cártel del Golfo: el historial criminal que llevó a su nueva detención a dos años de su polémica liberación - Infobae",
+   "lang": "es",
+   "title_en": "Gulf Cartel's \"El Titán\": the criminal record that led to his new arrest two years after his controversial release - Infobae",
+   "first_report": "2026-10-30T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/10/30/el-titan-del-cartel-del-golfo-el-historial-criminal-que-llevo-a-su-nueva-detencion-a-dos-anos-de-su-polemica-liberacion/",
+     "time": "2026-10-30T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
    "id": "23a5ba0762",
    "status": "single_source",
    "title": "Panamá golpea al narcotráfico con 1,208 paquetes de droga incautados en menos de 24 horas",
@@ -3049,6 +3130,36 @@
      "via": "X @proceso",
      "url": "https://x.com/proceso/status/2116007181929902258",
      "time": "2026-10-30T03:20:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "2b1a84a887",
+   "status": "single_source",
+   "title": "El detenido, identificado como Axel Alfredo Cárdenas Rodríguez, resultó ser hijo de “El Contador” y sobrino nieto de Osiel Cárdenas Guillén, fundador del Cártel del Golfo y de Los Zetas",
+   "lang": "es",
+   "title_en": "The detainee, identified as Axel Alfredo Cárdenas Rodríguez, turned out to be the son of \"El Contador\" and the great-nephew of Osiel Cárdenas Guillén, founder of the Gulf Cartel and Los Zetas.",
+   "first_report": "2026-10-30T02:38:46Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "gulf",
+    "cdn"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2115996806119121407",
+     "time": "2026-10-30T02:38:46Z",
      "time_precision": "minute"
     }
    ]
@@ -3136,221 +3247,6 @@
      "via": "X @Riodoce_mx",
      "url": "https://x.com/Riodoce_mx/status/2115974465980961268",
      "time": "2026-10-30T01:10:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "b263806a9b",
-   "status": "official_claim_only",
-   "title": "En tres acciones de inspección en aduanas de Ciudad Juárez, Chihuahua, y Nuevo Laredo y Reynosa, Tamaulipas, personal de @AduanasMx y @GN_MEXICO_, en coordinación con @SSPCMexico y @FGRMexico, detuvo ",
-   "lang": "es",
-   "title_en": "In three inspection actions at customs in Ciudad Juárez, Chihuahua, and Nuevo Laredo and Reynosa, Tamaulipas, personnel from @AduanasMx and @GN_MEXICO_, coordinating with @SSPCMexico and @FGRMexico, arrested three people",
-   "first_report": "2026-10-29T23:52:49Z",
-   "first_report_precision": "minute",
-   "first_source": "Gabinete de Seguridad (Mexico)",
-   "region_ids": [
-    "MEX-2716",
-    "MEX-2709"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Gabinete de Seguridad (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "gabsec",
-     "name": "Gabinete de Seguridad (Mexico)",
-     "kind": "official",
-     "via": "X @GabSeguridadMX",
-     "url": "https://x.com/GabSeguridadMX/status/2115955043073712580",
-     "time": "2026-10-29T23:52:49Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "8a3c669aa3",
-   "status": "single_source",
-   "title": "LOS LORENZANA, EL CLAN NARCO DE GUATEMALA QUE CONSTRUYÓ UNA ALIANZA DE DÉCADAS CON EL CÁRTEL DE SINALOA La fiesta de 15 años de la hija de un narcotraficante confeso volvió a poner bajo el reflector a",
-   "lang": "es",
-   "title_en": "LOS LORENZANA, THE GUATEMALAN NARCO CLAN THAT BUILT A DECADES-LONG ALLIANCE WITH THE SINALOA CARTEL. The 15th-birthday party of the daughter of a confessed drug trafficker put Zacapa back in the spotlight and exposed the",
-   "first_report": "2026-10-29T23:40:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711",
-    "GTM-1963",
-    "GTM-1951"
-   ],
-   "country": "GTM",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2115951817095835808",
-     "time": "2026-10-29T23:40:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "cbced733e1",
-   "status": "single_source",
-   "title": "La célula controlaba rutas marítimas para el trasiego de cocaína entre Faro de Bucerías y Huahua, en Aquila",
-   "lang": "es",
-   "title_en": "The cell controlled maritime routes for moving cocaine between Faro de Bucerías and Huahua, in Aquila.",
-   "first_report": "2026-10-29T23:30:52Z",
-   "first_report_precision": "minute",
-   "first_source": "ZETA Tijuana",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "ZETA Tijuana"
-   ],
-   "sources": [
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "X @ZETATijuana",
-     "url": "https://x.com/ZETATijuana/status/2115949519187718529",
-     "time": "2026-10-29T23:30:52Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "b6af3d2d7b",
-   "status": "single_source",
-   "title": "Titular de SATES, ligado a Rocha Moya, deja gabinete de Sinaloa José Carlos Cárdenas Mellado aparece en un informe del Centro Nacional de Inteligencia y servicios de vigilancia militar como uno de los",
-   "lang": "es",
-   "title_en": "Head of SATES, linked to Rocha Moya, leaves Sinaloa's cabinet. José Carlos Cárdenas Mellado appears in a report by the National Intelligence Center and military surveillance services as one of the alleged links between R",
-   "first_report": "2026-10-29T23:00:01Z",
-   "first_report_precision": "minute",
-   "first_source": "Proceso",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "chapitos",
-    "sinaloa"
-   ],
-   "outlets": [
-    "Proceso"
-   ],
-   "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2115941754549440541",
-     "time": "2026-10-29T23:00:01Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "ca0f3132df",
-   "status": "single_source",
-   "title": "En Ojinaga, #Chihuahua, #detienen a Sergio N, alias “El Señor de la A”, identificado como jefe de plaza de “La Línea”, grupo criminal vinculado al Nuevo Cártel de Juárez. Tras la captura, un avión de ",
-   "lang": "es",
-   "title_en": "In Ojinaga, #Chihuahua, Sergio N, alias “El Señor de la A”, identified as the local boss (jefe de plaza) of “La Línea”, a criminal group linked to the Nuevo Cártel de Juárez, was #arrested. After the capture, a Mexican A",
-   "first_report": "2026-10-29T22:53:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2709",
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "juarez"
-   ],
-   "outlets": [
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2115939988747751440",
-     "time": "2026-10-29T22:53:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "e5d7688ebe",
-   "status": "single_source",
-   "title": "#LoLeíste Un hombre de nacionalidad rusa fue detenido en el municipio de Tecate, portando una granada y con identificaciones falsas que lo acreditaban como presunto agente de la Interpol.",
-   "lang": "es",
-   "title_en": "#YouReadIt A Russian national was arrested in the municipality of Tecate carrying a grenade and fake IDs identifying him as a supposed Interpol agent.",
-   "first_report": "2026-10-29T22:45:30Z",
-   "first_report_precision": "minute",
-   "first_source": "ZETA Tijuana",
-   "region_ids": [
-    "MEX-2706",
-    "NIC-655"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "ZETA Tijuana"
-   ],
-   "sources": [
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "X @ZETATijuana",
-     "url": "https://x.com/ZETATijuana/status/2115938103894413449",
-     "time": "2026-10-29T22:45:30Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "a68aa2209d",
-   "status": "single_source",
-   "title": "Se enfocarían en patrullajes preventivos orientados en delitos de alto impacto, identificación de miembros de organizaciones delictivas, combate a la extorsión, cobro de piso y homicidios",
-   "lang": "es",
-   "title_en": "They would focus on preventive patrols aimed at high-impact crimes, identifying members of criminal organizations, combating extortion, protection-fee collection (cobro de piso) and homicides.",
-   "first_report": "2026-10-29T22:45:26Z",
-   "first_report_precision": "minute",
-   "first_source": "ZETA Tijuana",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "ZETA Tijuana"
-   ],
-   "sources": [
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "X @ZETATijuana",
-     "url": "https://x.com/ZETATijuana/status/2115938086190223716",
-     "time": "2026-10-29T22:45:26Z",
      "time_precision": "minute"
     }
    ]
