@@ -1,0 +1,260 @@
+{
+ "items": [
+  {
+   "id": "uzbekistan",
+   "name": "Uzbekistan",
+   "kind": "cum",
+   "value": 8207,
+   "map": "central",
+   "ll": [
+    64.01,
+    41.69
+   ],
+   "tip": "<b>Uzbekistan</b><br>8,207 contract signers identified, cumulative since 2022, to 1 Oct 2026<br>Not the number now fighting; ethnic Central Asians with Russian citizenship are left out<br>Source: Ukraine's Coordination Headquarters, via Times of Central Asia, as of 1 Oct 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "timesca_ca"
+   ]
+  },
+  {
+   "id": "tajikistan",
+   "name": "Tajikistan",
+   "kind": "cum",
+   "value": 5308,
+   "map": "central",
+   "ll": [
+    72.59,
+    38.2
+   ],
+   "tip": "<b>Tajikistan</b><br>5,308 contract signers identified, cumulative since 2022, to 1 Oct 2026<br>Not the number now fighting; ethnic Central Asians with Russian citizenship are left out<br>Source: Ukraine's Coordination Headquarters, via Times of Central Asia, as of 1 Oct 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "timesca_ca"
+   ]
+  },
+  {
+   "id": "kazakhstan",
+   "name": "Kazakhstan",
+   "kind": "cum",
+   "value": 3819,
+   "map": "central",
+   "ll": [
+    68.69,
+    49.05
+   ],
+   "tip": "<b>Kazakhstan</b><br>3,819 contract signers identified, cumulative since 2022, to 1 Oct 2026<br>Not the number now fighting; ethnic Central Asians with Russian citizenship are left out<br>Source: Ukraine's Coordination Headquarters, via Times of Central Asia, as of 1 Oct 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "timesca_ca"
+   ]
+  },
+  {
+   "id": "kyrgyzstan",
+   "name": "Kyrgyzstan",
+   "kind": "cum",
+   "value": 2219,
+   "map": "central",
+   "ll": [
+    74.53,
+    41.67
+   ],
+   "tip": "<b>Kyrgyzstan</b><br>2,219 contract signers identified, cumulative since 2022, to 1 Oct 2026<br>Not the number now fighting; ethnic Central Asians with Russian citizenship are left out<br>Source: Ukraine's Coordination Headquarters, via Times of Central Asia, as of 1 Oct 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "timesca_ca"
+   ]
+  },
+  {
+   "id": "turkmenistan",
+   "name": "Turkmenistan",
+   "kind": "cum",
+   "value": 884,
+   "map": "central",
+   "ll": [
+    58.68,
+    39.86
+   ],
+   "tip": "<b>Turkmenistan</b><br>884 contract signers identified, cumulative since 2022, to 1 Oct 2026<br>Not the number now fighting; ethnic Central Asians with Russian citizenship are left out<br>Source: Ukraine's Coordination Headquarters, via Times of Central Asia, as of 1 Oct 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "timesca_ca"
+   ]
+  },
+  {
+   "id": "belarus",
+   "name": "Belarus",
+   "kind": "cum",
+   "value": 2871,
+   "map": "belarus",
+   "ll": [
+    28.42,
+    53.82
+   ],
+   "tip": "<b>Belarus</b><br>2,871 Belarusian citizens fighting on Russia’s side, as of 20 May 2026, of whom 440 were killed<br>A different count from contract signers, and older than the Central Asia figures<br>Also: Belarus alone signed 1,862 new contracts from January to September 2026 (LIGA.net, 19 Oct 2026), a newer and different count<br>Source: the Ukrainian side, as of 20 May 2026, via Nasha Niva<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "nashaniva_by",
+    "liga_pow"
+   ]
+  },
+  {
+   "id": "africa",
+   "name": "Africa, 37 countries combined",
+   "kind": "agg",
+   "value": 2982,
+   "map": "africa",
+   "ll": [
+    -8.0,
+    -9.0
+   ],
+   "tip": "<b>Africa, 37 countries combined</b><br>2,982 people recruited in total, of whom 486 are known to have been killed, to Aug 2026<br>One combined figure: no split by country is given, so it is a cumulative total and is not comparable with the January to September 2026 rings<br>Source: Ukraine's Foreign Ministry, via Ukrainska Pravda, 16 Aug 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "pravda_africa"
+   ]
+  },
+  {
+   "id": "yemen",
+   "name": "Yemen",
+   "kind": "y2026",
+   "value": 772,
+   "map": "africa",
+   "ll": [
+    45.87,
+    15.33
+   ],
+   "tip": "<b>Yemen</b><br>772 contracts signed from January to September 2026 only<br>Not a total: earlier years are not included, so do not compare it with the filled circles<br>For comparison, the whole of 2025: 136<br>Source: Ukraine's Coordination Headquarters, via LIGA.net, 19 Oct 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "liga_pow"
+   ]
+  },
+  {
+   "id": "burundi",
+   "name": "Burundi",
+   "kind": "y2026",
+   "value": 699,
+   "map": "africa",
+   "ll": [
+    29.92,
+    -3.33
+   ],
+   "tip": "<b>Burundi</b><br>699 contracts signed from January to September 2026 only<br>Not a total: earlier years are not included, so do not compare it with the filled circles<br>For comparison, the whole of 2025: 30<br>Source: Ukraine's Coordination Headquarters, via LIGA.net, 19 Oct 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "liga_pow"
+   ]
+  },
+  {
+   "id": "zimbabwe",
+   "name": "Zimbabwe",
+   "kind": "y2026",
+   "value": 530,
+   "map": "africa",
+   "ll": [
+    29.93,
+    -18.91
+   ],
+   "tip": "<b>Zimbabwe</b><br>530 contracts signed from January to September 2026 only<br>Not a total: earlier years are not included, so do not compare it with the filled circles<br>Source: Ukraine's Coordination Headquarters, via LIGA.net, 19 Oct 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "liga_foreign"
+   ]
+  },
+  {
+   "id": "sierraleone",
+   "name": "Sierra Leone",
+   "kind": "y2026",
+   "value": 225,
+   "map": "africa",
+   "ll": [
+    -11.76,
+    8.62
+   ],
+   "tip": "<b>Sierra Leone</b><br>225 contracts signed from January to September 2026 only<br>Not a total: earlier years are not included, so do not compare it with the filled circles<br>For comparison, the whole of 2025: 9<br>Source: Ukraine's Coordination Headquarters, via LIGA.net, 19 Oct 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "liga_pow"
+   ]
+  },
+  {
+   "id": "sudan",
+   "name": "Sudan",
+   "kind": "y2026",
+   "value": 223,
+   "map": "africa",
+   "ll": [
+    29.26,
+    16.33
+   ],
+   "tip": "<b>Sudan</b><br>223 contracts signed from January to September 2026 only<br>Not a total: earlier years are not included, so do not compare it with the filled circles<br>For comparison, the whole of 2025: 74<br>Source: Ukraine's Coordination Headquarters, via LIGA.net, 19 Oct 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "liga_pow"
+   ]
+  },
+  {
+   "id": "colombia",
+   "name": "Colombia",
+   "kind": "y2026",
+   "value": 1449,
+   "map": "latam",
+   "ll": [
+    -73.17,
+    3.37
+   ],
+   "tip": "<b>Colombia</b><br>1,449 contracts signed from January to September 2026 only<br>Not a total: earlier years are not included, so do not compare it with the filled circles<br>For comparison, the whole of 2025: 427<br>Source: Ukraine's Coordination Headquarters, via LIGA.net, 19 Oct 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "liga_pow"
+   ]
+  },
+  {
+   "id": "peru",
+   "name": "Peru",
+   "kind": "y2026",
+   "value": 503,
+   "map": "latam",
+   "ll": [
+    -72.9,
+    -12.98
+   ],
+   "tip": "<b>Peru</b><br>503 contracts signed from January to September 2026 only<br>Not a total: earlier years are not included, so do not compare it with the filled circles<br>For comparison, the whole of 2025: 18<br>Source: Ukraine's Coordination Headquarters, via LIGA.net, 19 Oct 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "liga_pow"
+   ]
+  },
+  {
+   "id": "indonesia",
+   "name": "Indonesia",
+   "kind": "y2026",
+   "value": 283,
+   "map": "seasia",
+   "ll": [
+    101.89,
+    -0.95
+   ],
+   "tip": "<b>Indonesia</b><br>283 contracts signed from January to September 2026 only<br>Not a total: earlier years are not included, so do not compare it with the filled circles<br>For comparison, the whole of 2025: 8<br>Source: Ukraine's Coordination Headquarters, via LIGA.net, 19 Oct 2026<br>Ukrainian figures, not independently verified.",
+   "cites": [
+    "liga_pow"
+   ]
+  }
+ ],
+ "vmax": 8207,
+ "rk": 0.5,
+ "rk_ph": 0.33,
+ "africa_target": [
+  14.0,
+  -8.0
+ ],
+ "maps": [
+  {
+   "id": "central",
+   "title": "Central Asia: contract signers identified, cumulative to 1 Oct 2026"
+  },
+  {
+   "id": "belarus",
+   "title": "Belarus: citizens fighting for Russia, to 20 May 2026"
+  },
+  {
+   "id": "africa",
+   "title": "Africa and Arabia: all of Africa combined, and January to September 2026 sign-ups"
+  },
+  {
+   "id": "latam",
+   "title": "Latin America: January to September 2026 sign-ups"
+  },
+  {
+   "id": "seasia",
+   "title": "Southeast Asia: January to September 2026 sign-ups"
+  }
+ ],
+ "caveat": "Ukrainian figures, not independently verified."
+}

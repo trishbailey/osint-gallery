@@ -87,8 +87,19 @@
 
 <details class="sec" id="for-sec" open><summary><h2>Foreign recruits</h2></summary>
 <p class="cap"><b>{{v_for}}</b></p>
+<h4 class="mini">Where foreign recruits come from</h4>
+<div class="barblock forblock"><aside class="side2" id="forkey" aria-label="Key to the foreign recruits maps"></aside>
+<div class="chartcol"><div class="fgrid" id="fgrid">
+<figure class="fmap fm-central"><h4 class="mini">Central Asia: contract signers identified, cumulative to 1 Oct 2026</h4><div id="fm-central" data-alt="Map of Central Asia with one filled red circle for each of five countries. Circle area shows the cumulative number of contract signers Ukraine has identified. Uzbekistan 8,207, Tajikistan 5,308, Kazakhstan 3,819, Kyrgyzstan 2,219, Turkmenistan 884."></div></figure>
+<figure class="fmap fm-belarus"><h4 class="mini">Belarus: citizens fighting for Russia, to 20 May 2026</h4><div id="fm-belarus" data-alt="Map of Belarus with one filled red circle for 2,871 Belarusian citizens fighting on Russia's side as of 20 May 2026."></div></figure>
+<figure class="fmap fm-africa"><h4 class="mini">Africa and Arabia: all of Africa combined (filled), and January to September 2026 sign-ups (rings)</h4><div id="fm-africa" data-alt="Map of Africa and Yemen. One filled red circle in the Atlantic stands for 2,982 people recruited from 37 African countries combined. Dashed gold rings show contracts signed from January to September 2026 only: Yemen 772, Burundi 699, Zimbabwe 530, Sierra Leone 225, Sudan 223."></div></figure>
+<figure class="fmap fm-latam"><h4 class="mini">Latin America: January to September 2026 sign-ups</h4><div id="fm-latam" data-alt="Map of northern South America with dashed gold rings for contracts signed from January to September 2026 only: Colombia 1,449 and Peru 503."></div></figure>
+<figure class="fmap fm-seasia"><h4 class="mini">Southeast Asia: January to September 2026 sign-ups</h4><div id="fm-seasia" data-alt="Map of Southeast Asia with a dashed gold ring for Indonesia: 283 contracts signed from January to September 2026 only."></div></figure>
+</div>
+<p class="note"><b>How to read it:</b> circle area is proportional to people, on one linear scale for every circle on every map. <b>Filled red circles are cumulative totals</b> (darker red means more people); <b>dashed gold rings are contracts signed from January to September 2026 only</b>, not totals, so compare rings with rings and filled circles with filled circles. Countries with a circle have a brighter outline and a white name; neighbors and seas are named in pale blue for orientation. Hover or tap a circle for its source and period.</p>
+<p class="note">Central Asia counts identified contract signers since 2022.[[timesca_ca]] Belarus is an older and different count, citizens fighting on Russia’s side to 20 May 2026.[[nashaniva_by]] Africa is one combined total for 37 countries to August 2026, with no split by country.[[pravda_africa]] The rings come from LIGA.net’s report of the Coordination Headquarters’ 2026 figures.[[liga_pow]][[liga_foreign]] All are Ukrainian figures, not independently verified. Basemap: Natural Earth.[[ne_world110]]</p></div></div>
 <div class="bars pools" id="poolbars-for">{{pool_rows_for}}</div>
-<div class="gaps"><div class="gap g-for"><span class="gt">Foreigners</span><div class="gn"><b>{{foreigners}}</b><i>foreign contract signers named by Ukraine</i></div><div class="gn"><b>{{ca_n}}</b><i>from Central Asia, to late 2025</i></div><div class="gn"><b>{{ca_killed}}</b><i>of them killed, at least</i></div><p>The named count is a floor, not a total. The Central Asia figures are Ukrainian and OCCRP could not check them independently.[[unn]][[meduza_foreign]][[occrp_foreign]]</p></div></div>
+<div class="gaps"><div class="gap g-for"><span class="gt">Foreigners</span><div class="gn"><b>{{foreigners}}</b><i>foreign contract signers named by Ukraine</i></div><div class="gn"><b>{{ca_n}}</b><i>from Central Asia, to 1 Oct 2026</i></div><div class="gn"><b>{{ca_killed}}</b><i>killed, at least, of the {{ca_earlier}} counted to late 2025 (no newer count)</i></div><p>The named count is a floor, not a total. The Central Asia figures are Ukrainian and have not been independently verified.[[unn]][[meduza_foreign]][[timesca_ca]][[occrp_foreign]]</p></div></div>
 <details class="how"><summary>How the foreign figures are counted</summary>
 <p>Foreigners are the contract signers counted by Ukraine’s Coordination Headquarters, as reported by LIGA.net.[[liga_foreign]] {{ts_gaps_for}} Foreign dead come from BBC News Russian with Mediazona, 10 Jul 2026: the BBC pieces differ slightly (3,586 and 3,589); the bars use 3,589 = 2,304 North Korean + 1,285 verified by BBC News Russian.[[bbc_foreign]]</p></details>
 </details>
@@ -194,4 +205,5 @@
 <script src="flows.js"></script>
 <script src="colonies.js"></script>
 <script src="nk.js"></script>
+<script src="foreign.js"></script>
 </body></html>

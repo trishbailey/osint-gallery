@@ -28,8 +28,17 @@ MOB_CONTEXT = [part("meduza_318", "Putin said Friday that 318,000 people were dr
 PRI_LOW = [pool("wagner", 48366, "Wagner, 2022 to 2023: at least 48,366 (BBC News Russian and Mediazona, Jun 2024)", "2024-06-10", "48,366"),
            pool("stormz", 28200, "Storm Z, to Feb 2025: about 28,200 to 29,000 (iStories estimate)", "2025-02-06", "28,2 тыс")]
 # --- foreign
-CA = part("occrp_foreign", "Uzbekistan, Tajikistan, Kazakhstan, Kyrgyzstan and Turkmenistan together sent 11,157 recruits.", ["11,157"], 11157, "Central Asia, five states: 11,157 recruits (Ukraine's Coordination Headquarters, via OCCRP)", "2025-12-31")
-CA_DEAD = part("occrp_foreign", "At least 1,399 of them have been killed", ["1,399"], 1399, "at least 1,399 of them killed (same source)", "2025-12-31")
+_TC = "timesca_ca"; _TD = "2026-10-01"; _TS = "Ukraine's Coordination Headquarters, via Times of Central Asia, as of 1 Oct 2026"
+CA_PARTS = [
+ part(_TC, "The project\u2019s October figures identify 8,207 Uzbek citizens and 5,308 Tajiks", ["8,207"], 8207, f"Uzbekistan 8,207 ({_TS})", _TD),
+ part(_TC, "The project\u2019s October figures identify 8,207 Uzbek citizens and 5,308 Tajiks", ["5,308"], 5308, f"Tajikistan 5,308 ({_TS})", _TD),
+ part(_TC, "Kazakhstan accounts for 3,819.", ["3,819"], 3819, f"Kazakhstan 3,819 ({_TS})", _TD),
+ part(_TC, "A further 2,219 are from Kyrgyzstan, and 884 from Turkmenistan.", ["2,219"], 2219, f"Kyrgyzstan 2,219 ({_TS})", _TD),
+ part(_TC, "A further 2,219 are from Kyrgyzstan, and 884 from Turkmenistan.", ["884"], 884, f"Turkmenistan 884 ({_TS})", _TD),
+]
+CA_TOTAL = part("daryo_ca", "\u0412\u0441\u0435\u0433\u043e \u0441 2022 \u0433\u043e\u0434\u0430 \u043a\u043e\u043d\u0442\u0440\u0430\u043a\u0442\u044b \u043f\u043e\u0434\u043f\u0438\u0441\u0430\u043b\u0438 20 437 \u0433\u0440\u0430\u0436\u0434\u0430\u043d \u0441\u0442\u0440\u0430\u043d \u0426\u0435\u043d\u0442\u0440\u0430\u043b\u044c\u043d\u043e\u0439 \u0410\u0437\u0438\u0438", ["20 437"], 20437, "the same total, 20,437, in the project's own table (Daryo, 22 Oct 2026)", "2026-10-22")
+CA_PRIOR = part("occrp_foreign", "Uzbekistan, Tajikistan, Kazakhstan, Kyrgyzstan and Turkmenistan together sent 11,157 recruits.", ["11,157"], 11157, "Earlier count, to late 2025: 11,157 (OCCRP, 5 Mar 2026)", "2025-12-31")
+CA_DEAD = part("occrp_foreign", "At least 1,399 of them have been killed", ["1,399"], 1399, "of that earlier 11,157 (to late 2025), at least 1,399 were killed (OCCRP, 5 Mar 2026); no newer count of dead was found", "2025-12-31")
 NKP = pool("nk", 14000, "North Korea: 11,000 to 14,000 in the Kursk campaign (BBC, 14 Sep 2026)", "2026-09-14", "14,000")
 
 NAMED_DEAD_DATE = "23 Oct 2026"
@@ -49,9 +58,9 @@ ARROWS = [
       high_parts=[pool("szru", 180000, "up to 180,000 by Nov 2024 (Ukraine's Foreign Intelligence Service; unverified)", "2025-01-03", "180,000")],
       context=[], period="2022 to 2025",
       status="The low value adds two separate counts; the high value is a claim by one side and could not be checked.", dead_key="pri"),
- dict(id="ca", type="for", name="Central Asia (five states)", ll=[66.9, 41.3], hub=False, low=11157, high=11157,
-      low_parts=[CA], high_parts=[CA], context=[CA_DEAD], period="to late 2025 (OCCRP report)",
-      status="Ukrainian figures that OCCRP could not check independently.", dead_key=None),
+ dict(id="ca", type="for", name="Central Asia (five states)", ll=[66.9, 41.3], hub=False, low=20437, high=20437,
+      low_parts=CA_PARTS, high_parts=CA_PARTS, context=[CA_TOTAL, CA_PRIOR, CA_DEAD], period="identified contract signers, to 1 Oct 2026",
+      status="Ukrainian figures, not independently verified. Contract signers identified by name, not the number now fighting; ethnic Central Asians with Russian citizenship are left out.", dead_key=None),
  dict(id="prk", type="for", name="North Korea", ll=[125.75, 39.02], hub=False, low=11000, high=14000,
       low_parts=[pool("nk", 11000, "between 11,000 and 14,000 fought in the Kursk campaign (BBC, 14 Sep 2026)", "2026-09-14", "11,000")],
       high_parts=[NKP], context=[], period="Kursk campaign, 2024 to 2025 (soldiers, not contract signers)",
@@ -106,7 +115,7 @@ YEARLY = [
 _LQ = "2022 – 94 contracts; → 2023 – 4,067; → 2024 – 8,877; → 2025 – 16,085; → for the first nine months of 2026 – 16,168"
 for yr, fig, v, per in ((2022, "94", 94, "Jan to Dec 2022"), (2023, "4,067", 4067, "Jan to Dec 2023"), (2024, "8,877", 8877, "Jan to Dec 2024"), (2025, "16,085", 16085, "Jan to Dec 2025"), (2026, "16,168", 16168, "Jan to Sep 2026 only")):
     YEARLY.append(yp("for", yr, v, [part("liga_foreign", _LQ, [fig], v, f"foreign contract signers counted by Ukraine in {yr}: {fig}", "2026-10-19")], per, f"foreign nationals who signed Russian contracts, as counted by Ukraine ({v:,})",
-                     ctx=["Central Asia: 11,157 to late 2025 in total, with no yearly split (inside this count)"] if yr in (2024, 2025) else [], note="Nine months only." if yr == 2026 else ""))
+                     ctx=["Central Asia: 20,437 to 1 Oct 2026 across all years (inside this count)"] if yr in (2024, 2025) else [], note="Nine months only." if yr == 2026 else ""))
 YEARLY += [gap("nk", 2022, "No source gives a figure for this year."), gap("nk", 2023, "No source gives a figure for this year."),
            yp("nk", 2024, 11000, [NK11], "Oct to Dec 2024", "an estimated 11,000 North Korean troops in Russia (Western officials, January 2025, via BBC)", ctx=["Later totals are cumulative: about 13,000 sent since Oct 2024 (South Korea's NIS, Sep 2025)"]),
            gap("nk", 2025, "No yearly figure: later estimates are cumulative (about 13,000 sent since Oct 2024, NIS; 11,000 to 14,000 in the Kursk campaign, BBC)."),
