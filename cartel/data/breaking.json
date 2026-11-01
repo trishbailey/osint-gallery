@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-01T14:07:07Z",
+ "as_of": "2026-11-01T17:02:24Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -9,11 +9,111 @@
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
   {
+   "id": "3ccf69440d",
+   "status": "single_source",
+   "title": "Le conflit soudanais offre de nouvelles opportunités aux groupes armés centrafricains actifs dans le nord-est, pour reconstituer leur capacités perdues aux cours des dernières années et lancer de nouv",
+   "lang": "es",
+   "title_en": "The Sudanese conflict offers new opportunities to Central African armed groups active in the northeast to rebuild capabilities lost in recent years and launch new",
+   "first_report": "2026-11-01T15:45:13Z",
+   "first_report_precision": "minute",
+   "first_source": "Crisis Group",
+   "region_ids": [
+    "HTI-1387",
+    "HTI-1386"
+   ],
+   "country": "HTI",
+   "group_ids": [],
+   "outlets": [
+    "Crisis Group"
+   ],
+   "sources": [
+    {
+     "outlet": "crisisgroup",
+     "name": "Crisis Group",
+     "kind": "outlet",
+     "via": "X @CrisisGroup",
+     "url": "https://x.com/CrisisGroup/status/2116919498485719352",
+     "time": "2026-11-01T15:45:13Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "e25ab06891",
+   "status": "confirmed",
+   "title": "Grabaciones exclusivas confirman muerte de Manzo a CJNG- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2719",
+    "MEX-2720",
+    "ARG-1273"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae",
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/estados/grabaciones-exclusivas-confirman-muerte-carlos-manzo-a-cjng",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/como-fue-la-detencion-de-el-rhino-cjng-carlos-manzo",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/ultimo-discurso-de-carlos-manzo-en-uruapan-patria-o-muerte-asi-fue",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.milenio.com/estados/grabaciones-exclusivas-confirman-muerte-carlos-manzo-a-cjng",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2116902870431756346",
+     "time": "2026-11-01T14:39:09Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
    "id": "7c8ccbe5ed",
    "status": "single_source",
    "title": "“Quería que el Estado le pusiera nombre a mi dolor” Verónica Ramírez tenía 22 años cuando halló a su madre asesinada en una calle de la CDMX; el caso se clasificó como homicidio culposo y nunca hubo r",
    "lang": "es",
-   "title_en": "“I wanted the State to put a name to my pain.” Verónica Ramírez was 22 when she found her mother murdered on a street in Mexico City (CDMX); the case was classified as negligent homicide and no one was ever held r",
+   "title_en": "“I wanted the State to put a name to my pain.” Verónica Ramírez was 22 when she found her mother murdered on a street in Mexico City (CDMX); the case was classified as negligent homicide and no one was ever held responsi",
    "first_report": "2026-11-01T14:00:01Z",
    "first_report_precision": "minute",
    "first_source": "Proceso",
@@ -42,7 +142,7 @@
    "status": "single_source",
    "title": "En abril de 1983, Jaime Bateman desapareció en la selva del Darién. El Flaco soñaba con una Colombia más justa, pero la guerra truncó su camino. Su historia sigue viva en la memoria de un país que aún",
    "lang": "es",
-   "title_en": "In April 1983, Jaime Bateman disappeared in the Darién jungle. El Flaco dreamed of a fairer Colombia, but the war cut his path short. His story lives on in the memory of a country that still",
+   "title_en": "In April 1983, Jaime Bateman disappeared in the Darién jungle. El Flaco dreamed of a fairer Colombia, but the war cut his path short. His story lives on in the memory of a country that still seeks peace.",
    "first_report": "2026-11-01T12:00:03Z",
    "first_report_precision": "minute",
    "first_source": "Fundación Paz & Reconciliación",
@@ -63,6 +163,588 @@
      "url": "https://x.com/parescolombia/status/2116862835221205435",
      "time": "2026-11-01T12:00:03Z",
      "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "52a73049c9",
+   "status": "single_source",
+   "title": "Vocalista de System of a Down participó en documental del Mayo Zambada- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": null,
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/espectaculos/famosos/serj-tankian-colaboro-documental-netflix-el-mayo-zambada",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/narcotrafico/la-vanidad-de-el-mayo-como-su-confianza-lo-llevo-a-la-carcel",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "b7b67bff99",
+   "status": "confirmed",
+   "title": "Marina despliega más mil 600 elementos en Sinaloa; Pedro Morales y Graciela Domínguez supervisan estrategia de seguridad",
+   "lang": "es",
+   "title_en": "Navy deploys more than 1,600 personnel in Sinaloa; Pedro Morales and Graciela Domínguez oversee security strategy",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "El Universal",
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/nacion/marina-despliega-mas-mil-600-elementos-en-sinaloa-pedro-morales-y-graciela-dominguez-supervisan-estrategia-de-seguridad/",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/estados/raymundo-morales-se-reune-con-graciela-dominguez-sinaloa",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/estados/retienen-a-conductor-por-simular-escena-del-crimen-en-guasave-sinaloa",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "fa760c65c6",
+   "status": "single_source",
+   "title": "Niña de 6 años resulta intoxicada con cocaína en Osorno: su madre y otros 3 detenidos por narcotráfico | Nacional | BioBioChile",
+   "lang": "es",
+   "title_en": "6-year-old girl poisoned with cocaine in Osorno: her mother and 3 others detained for drug trafficking | National | BioBioChile",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "BioBioChile",
+   "region_ids": [
+    "CHL-2704"
+   ],
+   "country": "CHL",
+   "group_ids": [
+    "tda"
+   ],
+   "outlets": [
+    "BioBioChile"
+   ],
+   "sources": [
+    {
+     "outlet": "biobio",
+     "name": "BioBioChile",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://biobiochile.cl/noticias/nacional/region-de-los-lagos/2026/10/31/nina-de-6-anos-resulta-intoxicada-con-cocaina-en-osorno-su-madre-y-otros-3-detenidos-por-narcotrafico.shtml",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "6564663aea",
+   "status": "single_source",
+   "title": "Antioquia, el ‘tablero’ clave en lucha contra la criminalidad - El Tiempo",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Tiempo",
+   "region_ids": [
+    "COL-1314"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "outlets": [
+    "El Tiempo"
+   ],
+   "sources": [
+    {
+     "outlet": "eltiempo",
+     "name": "El Tiempo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eltiempo.com/amp/justicia/delitos/antioquia-el-tablero-clave-en-lucha-contra-la-criminalidad-3597683",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "d78112ea18",
+   "status": "single_source",
+   "title": "Operación militar contra el 'clan del Golfo' en Nóvita, Chocó, dejó siete muertos y un capturado tras bombardeo: identificaron a tercer cabecilla - El Tiempo",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Tiempo",
+   "region_ids": [],
+   "country": null,
+   "group_ids": [
+    "clan"
+   ],
+   "outlets": [
+    "El Tiempo"
+   ],
+   "sources": [
+    {
+     "outlet": "eltiempo",
+     "name": "El Tiempo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eltiempo.com/justicia/conflicto-y-narcotrafico/operacion-militar-contra-el-clan-del-golfo-en-novita-choco-dejo-siete-muertos-y-un-capturado-tras-bombardeo-identificaron-a-tercer-cabecilla-3597791",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "0a67e1bbf0",
+   "status": "single_source",
+   "title": "Dos presuntos integrantes de Los Lobos fueron aprehendidos en Playas",
+   "lang": "es",
+   "title_en": "Two alleged members of Los Lobos were apprehended in Playas",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Diario Extra (Ecuador)",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "lobos"
+   ],
+   "outlets": [
+    "Diario Extra (Ecuador)"
+   ],
+   "sources": [
+    {
+     "outlet": "extra",
+     "name": "Diario Extra (Ecuador)",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://extra.ec/noticia/ecuador/dos-presuntos-integrantes-lobos-aprehendidos-playas-166735.html",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "096d75b070",
+   "status": "single_source",
+   "title": "Medellín será sede de cumbre militar internacional contra los carteles en febrero de 2027: asistirán más de 19 ministros de Defensa - Infobae",
+   "lang": "es",
+   "title_en": "Medellín will host an international military summit against the cartels in February 2027: more than 19 defense ministers will attend - Infobae",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "COL-1314"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "eln",
+    "exfarc",
+    "clan"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/colombia/2026/11/01/medellin-sera-sede-de-cumbre-militar-internacional-contra-los-carteles-en-febrero-de-2027-asistiran-mas-de-19-ministros-de-defensa",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "588ca18de7",
+   "status": "single_source",
+   "title": "Narcoviolencia en Sinaloa: Marina envió otros mil 600 elementos tras hallazgo de dos cabezas humanas - Infobae",
+   "lang": "es",
+   "title_en": "Narco-violence in Sinaloa: Navy sent another 1,600 personnel after two human heads were found - Infobae",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/10/31/narcoviolencia-en-sinaloa-marina-envio-otros-mil-600-elementos-tras-hallazgo-de-dos-cabezas-humanas",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "53613474ae",
+   "status": "confirmed",
+   "title": "Un chat cifrado, 34 detenidos y su círculo cercano involucrado con el CJNG: los avances en el asesinato de Carlos Manzo a un año del crimen - Infobae",
+   "lang": "es",
+   "title_en": "An encrypted chat, 34 detained and his inner circle involved with the CJNG: progress in the murder of Carlos Manzo a year after the crime - Infobae",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2719",
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Excélsior",
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/01/un-chat-cifrado-34-detenidos-y-su-circulo-cercano-involucrado-con-el-cjng-los-avances-en-el-asesinato-de-carlos-manzo-a-un-ano-del-crimen",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "excelsior",
+     "name": "Excélsior",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.excelsior.com.mx/nacional/asesinato-manzo-venganza-cjng-tras-ano-90-investigacion",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "973046d19b",
+   "status": "single_source",
+   "title": "Alcaldesa de Baba anuncia terminación unilateral de contrato con firma vinculada a Jackson Zambrano, financista de Los Lobos",
+   "lang": "es",
+   "title_en": "Mayor of Baba announces unilateral termination of contract with firm linked to Jackson Zambrano, financier of Los Lobos",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Primicias",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "lobos"
+   ],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://primicias.ec/politica/alcaldesa-baba-jael-melo-terminacion-unilateral-contrato-empresa-vinculada-jackson-zambrano-financista-lobos-losrios-135997",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "873addeffd",
+   "status": "single_source",
+   "title": "En primer día del toque de queda, Fuerzas Armadas aprehende a 40 personas en Guayaquil",
+   "lang": "es",
+   "title_en": "On the first day of the curfew, the Armed Forces apprehend 40 people in Guayaquil",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Primicias",
+   "region_ids": [
+    "ECU-1280"
+   ],
+   "country": "ECU",
+   "group_ids": [],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://primicias.ec/sucesos/fuerzas-armadas-detenidos-guayas-restricciones-movilidad-toque-queda-ecuador-136204",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "c2f8681219",
+   "status": "single_source",
+   "title": "Secretario de Marina visita Mazatlán y se reúne con la gobernadora - Ríodoce",
+   "lang": "es",
+   "title_en": "Navy Secretary visits Mazatlán and meets with the governor - Ríodoce",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://riodoce.mx/2026/10/31/secretario-de-marina-visita-mazatlan-y-se-reune-con-la-gobernadora",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "4edc9064d0",
+   "status": "single_source",
+   "title": "La Policía de Control Fiscal decomisa cerca de 156,000 productos de contrabando en Puntarenas",
+   "lang": "es",
+   "title_en": "The Fiscal Control Police seize about 156,000 contraband products in Puntarenas",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "CRI-1330"
+   ],
+   "country": "CRI",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/costa-rica/2026/11/01/la-policia-de-control-fiscal-decomisa-cerca-de-156000-productos-de-contrabando-en-puntarenas/",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "39936b5c31",
+   "status": "single_source",
+   "title": "En un ataque armado hieren a dos militares en el límite entre Ixchiguán y Tajumulco en Guatemala",
+   "lang": "es",
+   "title_en": "Two soldiers wounded in an armed attack on the border between Ixchiguán and Tajumulco in Guatemala",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "GTM-1951"
+   ],
+   "country": "GTM",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/guatemala/2026/10/31/en-un-ataque-armado-hieren-a-dos-militares-en-el-limite-entre-ixchiguan-y-tajumulco-en-guatemala/",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "16e86d813c",
+   "status": "single_source",
+   "title": "Estados Unidos reitera recompensa de $10 millones por información que permita capturar al hondureño alias “El Porky”",
+   "lang": "es",
+   "title_en": "United States reiterates $10 million reward for information leading to the capture of Honduran alias \"El Porky\"",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [],
+   "country": "HND",
+   "group_ids": [
+    "ms13"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/honduras/2026/11/01/estados-unidos-reitera-recompensa-de-10-millones-por-informacion-que-permita-capturar-al-hondureno-alias-el-porky/",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "c2c7f70206",
+   "status": "single_source",
+   "title": "Emma Coronel le preguntó a la IA si era mala persona tras describirle su pasado legal en vivo con streamer - Infobae",
+   "lang": "es",
+   "title_en": "Emma Coronel asked AI whether she was a bad person after describing her legal past live with a streamer - Infobae",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [],
+   "country": null,
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/10/31/emma-coronel-le-pregunto-a-la-ia-si-era-mala-persona-tras-describirle-sus-cargos-en-vivo-con-streamer/",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "eedbbc0dba",
+   "status": "single_source",
+   "title": "Cárteles, totoaba y redes agalleras: la urdimbre que extingue a la vaquita marina | Proceso",
+   "lang": "es",
+   "title_en": "Cartels, totoaba and gillnets: the web that is driving the vaquita marina to extinction | Proceso",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Proceso",
+   "region_ids": [
+    "MEX-2712",
+    "MEX-2706",
+    "MEX-2711",
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "cjng"
+   ],
+   "outlets": [
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.proceso.com.mx/reportajes/2026/10/31/carteles-totoaba-y-redes-agalleras-la-urdimbre-que-extingue-a-la-vaquita-marina-382875.html",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "2698dfecfe",
+   "status": "single_source",
+   "title": "“Deben poner las armas abajo”: Rusia se refiere a organizaciones criminales en Colombia, como el ELN y el Clan del Golfo - Semana",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Semana",
+   "region_ids": [],
+   "country": "COL",
+   "group_ids": [
+    "eln",
+    "clan"
+   ],
+   "outlets": [
+    "Semana"
+   ],
+   "sources": [
+    {
+     "outlet": "semana",
+     "name": "Semana",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.semana.com/mundo/articulo/deben-poner-las-armas-abajo-rusia-se-refiere-a-organizaciones-criminales-en-colombia-y-menciona-al-eln-y-el-clan-del-golfo/202600/",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
     }
    ]
   },
@@ -375,8 +1057,8 @@
    "first_report_precision": "minute",
    "first_source": "Crisis Group",
    "region_ids": [
-    "HTI-1386",
-    "HTI-1387"
+    "HTI-1387",
+    "HTI-1386"
    ],
    "country": "HTI",
    "group_ids": [],
@@ -504,57 +1186,6 @@
    ]
   },
   {
-   "id": "433d091aaf",
-   "status": "confirmed",
-   "title": "Dan 12 años de prisión en EEUU a ciudadano chino que ayudó al CJNG a traficar droga y lavar dinero",
-   "lang": "es",
-   "title_en": "Chinese citizen who helped the CJNG traffic drugs and launder money sentenced to 12 years in prison in the US",
-   "first_report": "2026-10-30T16:12:49Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "GTM-1951",
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Excélsior",
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2116201666726805979",
-     "time": "2026-10-30T16:12:49Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://infobae.com/mexico/2026/10/30/dan-12-anos-de-prision-en-eeuu-a-ciudadano-chino-que-ayudo-al-cjng-a-traficar-droga-y-lavar-dinero",
-     "time": "2026-10-31T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "excelsior",
-     "name": "Excélsior",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.excelsior.com.mx/internacional/condenan-estados-unidos-ciudadano-chino-por-lavado-dinero-y-apoyo-cjng",
-     "time": "2026-10-31T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
    "id": "711097210c",
    "status": "confirmed",
    "title": "Francisco Manuel Bermúdez Cagua, alias 'Churrón', fue extraditado a Estados Unidos el 29 de octubre de 2026. Él es considerado uno de los cabecillas del grupo criminal Los Choneros.",
@@ -608,10 +1239,10 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
     "mayiza",
+    "sinaloa",
     "chapitos",
-    "sinaloa"
+    "cjng"
    ],
    "outlets": [
     "El Financiero"
@@ -623,6 +1254,35 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://elfinanciero.com.mx/nacional/2026/10/31/la-cupula-de-la-mayiza-que-sabemos-de-aldo-el-guero-chompas-y-los-complices-del-mayito-flaco",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "8a9558ad81",
+   "status": "single_source",
+   "title": "Golpe a red que habría robado un millón de galones de combustible para financiar al Eln, ‘clan del Golfo’ y ‘los Pachenca’ - El Tiempo",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Tiempo",
+   "region_ids": [],
+   "country": null,
+   "group_ids": [
+    "clan"
+   ],
+   "outlets": [
+    "El Tiempo"
+   ],
+   "sources": [
+    {
+     "outlet": "eltiempo",
+     "name": "El Tiempo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eltiempo.com/justicia/conflicto-y-narcotrafico/golpe-a-red-que-habria-robado-un-millon-de-galones-de-combustible-para-financiar-al-eln-clan-del-golfo-y-los-pachenca-3597444",
      "time": "2026-10-31T12:00:00Z",
      "time_precision": "day"
     }
@@ -690,6 +1350,37 @@
    ]
   },
   {
+   "id": "eb28bf8c04",
+   "status": "single_source",
+   "title": "Dan 12 años de prisión en EEUU a ciudadano chino que ayudó al CJNG a traficar droga y lavar dinero - Infobae",
+   "lang": "es",
+   "title_en": "Chinese citizen who helped the CJNG traffic drugs and launder money sentenced to 12 years in prison in the US",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "GTM-1951"
+   ],
+   "country": "GTM",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/10/30/dan-12-anos-de-prision-en-eeuu-a-ciudadano-chino-que-ayudo-al-cjng-a-traficar-droga-y-lavar-dinero",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
    "id": "9512917b01",
    "status": "single_source",
    "title": "El Guano no se retira: así conserva el poder a los 81 años el hermano de El Chapo Guzmán - Infobae",
@@ -704,8 +1395,8 @@
    "country": "MEX",
    "group_ids": [
     "mayiza",
-    "chapitos",
-    "sinaloa"
+    "sinaloa",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -737,8 +1428,8 @@
    "country": "MEX",
    "group_ids": [
     "mayiza",
-    "chapitos",
-    "sinaloa"
+    "sinaloa",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -802,8 +1493,8 @@
    "country": "MEX",
    "group_ids": [
     "mayiza",
-    "chapitos",
-    "sinaloa"
+    "sinaloa",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -844,66 +1535,6 @@
      "kind": "official",
      "via": "headline",
      "url": "https://justice.gov/usao-edny/pr/top-ecuadorian-leader-los-choneros-violent-foreign-terrorist-organization-extradited",
-     "time": "2026-10-31T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "52a73049c9",
-   "status": "single_source",
-   "title": "Vocalista de System of a Down participó en documental del Mayo Zambada- Grupo Milenio",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-10-31T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "Milenio",
-   "region_ids": [],
-   "country": null,
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "Milenio"
-   ],
-   "sources": [
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/espectaculos/famosos/serj-tankian-colaboro-documental-netflix-el-mayo-zambada",
-     "time": "2026-10-31T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "e25ab06891",
-   "status": "single_source",
-   "title": "Grabaciones exclusivas confirman muerte de Manzo a CJNG- Grupo Milenio",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-10-31T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "Milenio",
-   "region_ids": [
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Milenio"
-   ],
-   "sources": [
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/estados/grabaciones-exclusivas-confirman-muerte-carlos-manzo-a-cjng",
      "time": "2026-10-31T12:00:00Z",
      "time_precision": "day"
     }
@@ -1053,8 +1684,8 @@
    "country": "MEX",
    "group_ids": [
     "mayiza",
-    "chapitos",
-    "sinaloa"
+    "sinaloa",
+    "chapitos"
    ],
    "outlets": [
     "MVS Noticias"
@@ -1161,29 +1792,31 @@
    ]
   },
   {
-   "id": "b7b67bff99",
+   "id": "7bc2bee465",
    "status": "single_source",
-   "title": "Marina despliega más mil 600 elementos en Sinaloa; Pedro Morales y Graciela Domínguez supervisan estrategia de seguridad",
+   "title": "Condenan en Estados Unidos a ciudadano chino por lavado de dinero y apoyo al CJNG | Excélsior",
    "lang": "es",
-   "title_en": "Navy deploys more than 1,600 personnel in Sinaloa; Pedro Morales and Graciela Domínguez oversee security strategy",
+   "title_en": "Chinese citizen sentenced in the United States for money laundering and support to the CJNG | Excélsior",
    "first_report": "2026-10-31T12:00:00Z",
    "first_report_precision": "day",
-   "first_source": "El Universal",
+   "first_source": "Excélsior",
    "region_ids": [
-    "MEX-2711"
+    "MEX-2719"
    ],
    "country": "MEX",
-   "group_ids": [],
+   "group_ids": [
+    "cjng"
+   ],
    "outlets": [
-    "El Universal"
+    "Excélsior"
    ],
    "sources": [
     {
-     "outlet": "eluniversal",
-     "name": "El Universal",
+     "outlet": "excelsior",
+     "name": "Excélsior",
      "kind": "outlet",
      "via": "headline",
-     "url": "https://www.eluniversal.com.mx/nacion/marina-despliega-mas-mil-600-elementos-en-sinaloa-pedro-morales-y-graciela-dominguez-supervisan-estrategia-de-seguridad/",
+     "url": "https://www.excelsior.com.mx/internacional/condenan-estados-unidos-ciudadano-chino-por-lavado-dinero-y-apoyo-cjng",
      "time": "2026-10-31T12:00:00Z",
      "time_precision": "day"
     }
@@ -1279,6 +1912,35 @@
    ]
   },
   {
+   "id": "7a1a1bcace",
+   "status": "single_source",
+   "title": "Identifican a dos hombres encontrados calcinados en un cementerio de Honduras",
+   "lang": "es",
+   "title_en": "Two men found burned in a cemetery in Honduras identified",
+   "first_report": "2026-10-31T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "HND-662"
+   ],
+   "country": "HND",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/honduras/2026/10/31/identifican-a-dos-hombres-encontrados-calcinados-en-un-cementerio-de-honduras/",
+     "time": "2026-10-31T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
    "id": "dd454b3c63",
    "status": "single_source",
    "title": "EEUU acusa a “El Ingeniero”, mexicano señalado por construir narcotúnel del CJNG en Tijuana - Infobae",
@@ -1288,8 +1950,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2719",
-    "MEX-2706"
+    "MEX-2706",
+    "MEX-2719"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1877,14 +2539,14 @@
    ]
   },
   {
-   "id": "25933e6888",
-   "status": "confirmed",
-   "title": "🟣 Una ola de ‘narcobloqueos’ y balaceras se desató este jueves en Matamoros, Tamaulipas, luego de un operativo federal en el que fue detenido Axel Alfredo Cárdenas, alias ‘Axel’, presunto segundo al m",
+   "id": "0a99c0be9c",
+   "status": "official_claim_only",
+   "title": "En Matamoros, Tamaulipas, Fuerzas Especiales de @Defensamx1 y @GN_MEXICO_ detuvieron a dos personas, entre ellas Axel Alfredo “N”, alias “Axel”, identificado como segundo al mando de la facción “Ciclo",
    "lang": "es",
-   "title_en": "🟣 A wave of 'narcoblockades' and shootouts broke out this Thursday in Matamoros, Tamaulipas, after a federal operation in which Axel Alfredo Cárdenas, alias 'Axel', alleged second-in-command of 'Los Ciclones', a faction ",
-   "first_report": "2026-10-30T15:27:30Z",
+   "title_en": "In Matamoros, Tamaulipas, Special Forces of @Defensamx1 and @GN_MEXICO_ detained two people, among them Axel Alfredo \"N\", alias \"Axel\", identified as second-in-command of the \"Ciclones\" faction of the Gulf Cartel, a crim",
+   "first_report": "2026-10-30T19:58:29Z",
    "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
+   "first_source": "Gabinete de Seguridad (Mexico)",
    "region_ids": [
     "MEX-2716"
    ],
@@ -1893,19 +2555,9 @@
     "gulf"
    ],
    "outlets": [
-    "Gabinete de Seguridad (Mexico)",
-    "Los Noticieristas"
+    "Gabinete de Seguridad (Mexico)"
    ],
    "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2116190262590411124",
-     "time": "2026-10-30T15:27:30Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "gabsec",
      "name": "Gabinete de Seguridad (Mexico)",
@@ -2146,93 +2798,6 @@
      "via": "X @ZETATijuana",
      "url": "https://x.com/ZETATijuana/status/2116215117096325432",
      "time": "2026-10-30T17:06:15Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "7e7252379d",
-   "status": "single_source",
-   "title": "🇪🇨 | Ecuador’s most prominent criminal groups, the Choneros and the Lobos, have been in a bloody feud since the death of Choneros leader Jorge Luis Zambrano, alias “Rasquiña.” His murder sparked a pow",
-   "lang": "es",
-   "title_en": "Ecuador’s most prominent criminal groups, the Choneros and the Lobos, have been in a bloody feud since the death of Choneros leader Jorge Luis Zambrano, alias “Rasquiña.” His murder sparked a power struggle that now exte",
-   "first_report": "2026-10-30T17:00:29Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [],
-   "country": "ECU",
-   "group_ids": [
-    "choneros"
-   ],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2116213663694520649",
-     "time": "2026-10-30T17:00:29Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "cb180428a6",
-   "status": "single_source",
-   "title": "🪦 Contra la fosa común: las cruces que le devuelven el nombre a quienes murieron en la calle. En la Ciudad de México, morir en la calle casi siempre equivale a desaparecer en el anonimato de la fosa c",
-   "lang": "es",
-   "title_en": "🪦 Against the common grave: the crosses that give back the names of those who died on the street. In Mexico City, dying on the street almost always means disappearing into the anonymity of the common grave. The system as",
-   "first_report": "2026-10-30T15:30:01Z",
-   "first_report_precision": "minute",
-   "first_source": "Animal Político",
-   "region_ids": [
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Animal Político"
-   ],
-   "sources": [
-    {
-     "outlet": "animal",
-     "name": "Animal Político",
-     "kind": "outlet",
-     "via": "X @Pajaropolitico",
-     "url": "https://x.com/Pajaropolitico/status/2116190896429420975",
-     "time": "2026-10-30T15:30:01Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "89a7c75746",
-   "status": "single_source",
-   "title": "El Sindicato de Telefonistas exige la restitución de 185 empleados despedidos; aseguran que con la huelga indefinida no habrá personal que de atención o reparaciones en caso que los servicios fallen e",
-   "lang": "es",
-   "title_en": "The Telephone Workers' Union demands the reinstatement of 185 dismissed employees; they say that with the indefinite strike there will be no staff to provide service or repairs if services fail",
-   "first_report": "2026-10-30T15:16:02Z",
-   "first_report_precision": "minute",
-   "first_source": "ZETA Tijuana",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "ZETA Tijuana"
-   ],
-   "sources": [
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "X @ZETATijuana",
-     "url": "https://x.com/ZETATijuana/status/2116187376334582244",
-     "time": "2026-10-30T15:16:02Z",
      "time_precision": "minute"
     }
    ]

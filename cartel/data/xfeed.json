@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-01T14:07:07Z",
+ "as_of": "2026-11-01T17:02:24Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,41 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2116919498485719352",
+   "handle": "CrisisGroup",
+   "url": "https://x.com/CrisisGroup/status/2116919498485719352",
+   "created_at": "2026-11-01T15:45:13.000Z",
+   "text": "Le conflit soudanais offre de nouvelles opportunités aux groupes armés centrafricains actifs dans le nord-est, pour reconstituer leur capacités perdues aux cours des dernières années et lancer de nouvelles attaques. https://t.co/mYGnVI0ZIy",
+   "lang": "und",
+   "region_ids": [
+    "HTI-1387",
+    "HTI-1386"
+   ],
+   "country": "HTI",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "The Sudanese conflict offers new opportunities to Central African armed groups active in the northeast to rebuild capabilities lost in recent years and launch new attacks."
+  },
+  {
+   "id": "2116902870431756346",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2116902870431756346",
+   "created_at": "2026-11-01T14:39:09.000Z",
+   "text": "Un chat cifrado, 34 detenidos y su círculo cercano involucrado con el CJNG: los avances en el asesinato de Carlos Manzo a un año del crimen https://t.co/Lyfxqez1Ph",
+   "lang": "es",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "An encrypted chat, 34 detained and his inner circle involved with the CJNG: progress in the murder of Carlos Manzo a year after the crime"
+  },
   {
    "id": "2116893022801850488",
    "handle": "proceso",
@@ -3946,59 +3981,6 @@
    "source_type": "national outlet",
    "label": null,
    "text_en": "Truck operator arrested in Eagle Pass, Texas, over alleged links to huachicol (fuel theft); Mejía Berdeja calls for an \"Operation Swarm\" in Coahuila. Julio Rodolfo González, a Piedras Negras businessman who also holds US citizenship, owns the company Frontera"
-  },
-  {
-   "id": "2114396616748577127",
-   "handle": "Primicias",
-   "url": "https://x.com/Primicias/status/2114396616748577127",
-   "created_at": "2026-10-25T16:40:11.000Z",
-   "text": "Suben a 10 los muertos por un bombardeo militar contra la guerrilla del ELN en Colombia, entre ellos dos cabecillas. https://t.co/DOU4us4SuN",
-   "lang": "es",
-   "region_ids": [],
-   "country": "COL",
-   "group_ids": [
-    "eln"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Death toll rises to 10 from a military bombing of the ELN guerrilla in Colombia, including two commanders."
-  },
-  {
-   "id": "2114394052963574089",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2114394052963574089",
-   "created_at": "2026-10-25T16:30:00.000Z",
-   "text": "Linchan a presuntos asesinos de mujer y nieta en Chiapas; uno fue decapitado (Video) Pobladores de Ostuacán irrumpieron por la fuerza en las instalaciones de seguridad municipal de donde sacaron a los dos hombres, quienes permanecían bajo custodia policial por el homicidio de",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2735"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Alleged killers of a woman and her granddaughter lynched in Chiapas; one was decapitated (video). Residents of Ostuacán forced their way into the municipal security facility and took out the two men, who were in police custody for the murder of"
-  },
-  {
-   "id": "2114370593164320962",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2114370593164320962",
-   "created_at": "2026-10-25T14:56:47.000Z",
-   "text": "La célula criminal está vinculada con el Cártel de Sinaloa, específicamente con la facción liderada por el hijo de Ismael “El Mayo” Zambada https://t.co/DF01qNz2Lx https://t.co/EsJ27ewoRD",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "The criminal cell is linked to the Sinaloa Cartel, specifically the faction led by the son of Ismael \"El Mayo\" Zambada"
   }
  ]
 }
