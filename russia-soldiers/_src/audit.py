@@ -339,6 +339,7 @@ need("flow map: the hub bar is gone (hub dot, leader lines and the front bracket
 _cj_ = open(os.path.join(ROOT, "colonies.js"), encoding="utf-8").read(); _ct = _cj_[_cj_.index("function top()"):_cj_.index("function draw()")]
 need("ten-colonies list has no hovertips and shows its values (recruits, killed) directly", "data-tip" not in _ct and "ct-n" in _ct and "ct-k" in _ct and "fmt(c.n)" in _ct and "fmt(c.killed)" in _ct)
 need("North Korea and Russia section is open by default and still a collapsible details", '<details class="sec" id="nk-sec" open><summary>' in open(os.path.join(ROOT, "index.src.html"), encoding="utf-8").read() and '<details class="sec" id="nk-sec" open>' in page)
+need("app.js does not close the North Korea and Russia section on load (the JS once forced nk-sec closed, overriding the open attribute) and opens it on phones too", "d.id==='nk-sec'?false" not in open(os.path.join(ROOT, "app.js"), encoding="utf-8").read() and "d.open=(!ph||d.id==='nk-sec'||" in open(os.path.join(ROOT, "app.js"), encoding="utf-8").read())
 # ---- top photo strip: four real, freely licensed photos of Russian soldiers; credits only in the sources list
 for fn_, key_ in (("soldier-rpk-2023.jpg", "img_rpk"), ("soldiers-trench-2023.jpg", "img_mortar"), ("draftees-yalta-2022.jpg", "img_yalta"), ("mobilised-oath-sevastopol-2022.jpg", "img_sevastopol")):
     sz_ = os.path.getsize(os.path.join(ROOT, "img", fn_))

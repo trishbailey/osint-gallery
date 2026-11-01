@@ -18,6 +18,7 @@ with sync_playwright() as pw:
         page.on("console", lambda m, t=tag: errs.append((t, m.text)) if m.type == "error" else None)
         page.goto(BASE); page.wait_for_selector("html[data-ready]", state="attached", timeout=15000); page.wait_for_timeout(600)
         shot(page, f"{tag}-01-top.png", full=False)
+        nko = page.evaluate("document.querySelector('#nk-sec').open"); print(tag, "North Korea section open on load:", nko); assert nko, "North Korea and Russia section must be open on load"
         page.evaluate("document.querySelector('#pris-sec').scrollIntoView()"); page.wait_for_timeout(300)
         shot(page, f"{tag}-01b-prisoners-top.png", full=False)
         page.evaluate("window.scrollTo(0,0)")

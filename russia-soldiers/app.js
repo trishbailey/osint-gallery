@@ -126,8 +126,8 @@ function drawAll(){drawMap();recolor();drawMinis()}
 function init(res){
  R=res[0].regions;S=res[1];G=res[2];tipEl=$('#tip');
  R.forEach(function(r){byNe[r.ne]=r;byIso[r.iso]=r});
- // desktop: everything open; phone: only the map section open, map options behind one button
- var ph=phone();document.querySelectorAll('details.sec').forEach(function(d){d.open=d.id==='nk-sec'?false:(!ph||d.id==='flow-sec'||d.id==='pris-sec'||d.id==='dead-sec')});
+ // desktop: everything open; phone: only the map, flow, prisoners and North Korea sections open, map options behind one button
+ var ph=phone();document.querySelectorAll('details.sec').forEach(function(d){d.open=(!ph||d.id==='nk-sec'||d.id==='flow-sec'||d.id==='pris-sec'||d.id==='dead-sec')});
  $('#mapside').open=!ph;
  $('#legend').innerHTML=legendHTML('deaths');
  $('#legend3').innerHTML='<li><span class="sw" style="background:var(--r3)"></span>Firm amount</li><li><span class="sw dash"></span>Ends 31 Oct 2026, card over 30 days old, a range, or a media report</li>';
