@@ -300,8 +300,6 @@ tu = by["RU-TY"]["deaths_rate"]; has(f"{tu:,.1f}", "Tuva rate")
 has(f"{rate[iso.index('RU-MOW')]:,.1f}", "Moscow rate")
 fe = S["fd"]["Far East"]["rate"]; ce = S["fd"]["Central"]["rate"]; has(f"{fe:,.0f}", "Far East"); has(f"{ce:,.0f}", "Central"); has(f"{fe/ce:,.1f} times", "ratio")
 has(f"{pear(dist, rate):.2f}", "r distance")
-has(f"{spear(w, rate):.2f}", "wage spearman"); has(f"{spear([w[k] for k in ex], [rate[k] for k in ex]):.2f}", "ex cities")
-for qn in qs[:1]: has(f"{pooled(qn)[2]:,.0f}", "lowest wage quartile")
 has(f"{pooled([i for i in iso if mine[i]['kind']=='republic'])[2]:,.0f}", "republics rate") if False else None
 has("71,216", "Q1 contracts"); has("45,959", "foreigners"); has("48,366", "Wagner"); has("300,000", "mobilised")
 mx = max(bon, key=bon.get); has(f"{bon[mx]:.1f}", "top bonus months " + mx)
@@ -339,6 +337,7 @@ need("flow map: the hub bar is gone (hub dot, leader lines and the front bracket
 _cj_ = open(os.path.join(ROOT, "colonies.js"), encoding="utf-8").read(); _ct = _cj_[_cj_.index("function top()"):_cj_.index("function draw()")]
 need("ten-colonies list has no hovertips and shows its values (recruits, killed) directly", "data-tip" not in _ct and "ct-n" in _ct and "ct-k" in _ct and "fmt(c.n)" in _ct and "fmt(c.killed)" in _ct)
 need("North Korea and Russia section is open by default and still a collapsible details", '<details class="sec" id="nk-sec" open><summary>' in open(os.path.join(ROOT, "index.src.html"), encoding="utf-8").read() and '<details class="sec" id="nk-sec" open>' in page)
+need("app.js does not close the North Korea and Russia section on load (the JS once forced nk-sec closed, overriding the open attribute) and opens it on phones too", "d.id==='nk-sec'?false" not in open(os.path.join(ROOT, "app.js"), encoding="utf-8").read() and "d.open=(!ph||d.id==='nk-sec'||" in open(os.path.join(ROOT, "app.js"), encoding="utf-8").read())
 # ---- top photo strip: four real, freely licensed photos of Russian soldiers; credits only in the sources list
 for fn_, key_ in (("soldier-rpk-2023.jpg", "img_rpk"), ("soldiers-trench-2023.jpg", "img_mortar"), ("draftees-yalta-2022.jpg", "img_yalta"), ("mobilised-oath-sevastopol-2022.jpg", "img_sevastopol")):
     sz_ = os.path.getsize(os.path.join(ROOT, "img", fn_))
@@ -427,7 +426,10 @@ SEC = [m_.group(1) for m_ in re.finditer(r'<details class="sec[^"]*" id="([a-z-]
 need("sections run flow, prisoners, North Korea, foreign, contract and money, who pays, trackers, method: " + ",".join(SEC), SEC == ["flow-sec", "pris-sec", "nk-sec", "for-sec", "con-sec", "dead-sec", "trk-sec", "method-sec"])
 need("KPI tiles come before the flow map and are about recruit types", page.index('id="kpis"') < page.index('id="flow-sec"') and 6 == len(re.findall(r'class="kpi[ "]', page)))
 need("removed sections are gone: remoteness, poverty, minority, ranking, sankey", not any(x_ in page for x_ in ('id="remote-sec"', 'id="pov-sec"', 'id="eth-sec"', 'id="rank-sec"', 'id="sankey', 'id="sc-dist"', 'id="sc-pov"', 'id="sc-eth"', 'id="sc-wage"', 'id="bars-fd"', 'id="bars-pq"', 'id="bars-q"', 'id="bars-g"')))
-need("the layered map carries distance, poverty, Russian share, bonus and prisoner layers as chips", all(f'data-metric="{m_}"' in page for m_ in ("deaths", "vol", "mob", "pri", "dist", "pov", "ru", "bonus")))
+need("the layered map carries the named-dead, volunteer, mobilized, prisoner, distance and Russian-share layers as chips, and no poverty or wage layer (poverty rate and bonus-in-months chips removed)", all(f'data-metric="{m_}"' in page for m_ in ("deaths", "vol", "mob", "pri", "dist", "ru")) and not any(f'data-metric="{m_}"' in page for m_ in ("pov", "bonus")))
+_apj = open(os.path.join(ROOT, "app.js"), encoding="utf-8").read()
+need("the region side panel and tooltips carry no poverty rate or average wage, and the poverty layer is gone from app.js", all(x_ not in _apj for x_ in ("Poverty rate", "Average wage", "r.pov", "pov:{", "months of the local average wage. ")))
+need("the Who pays section carries no poverty or wage verdicts and cites no poverty source", all(x_ not in _html.unescape(text) for x_ in ("Poverty: weak link", "Wages: no clear pattern", "Wages do not explain it", "poverty line", "Rosstat poverty")) and "pov" not in SOURCES and "povn" not in SOURCES)
 need("the distance layer has quartile breaks that match the data", S["breaks"]["dist"] == [float(f"{pct(dist, q):.2g}") for q in (25, 50, 75)])
 _pgn = norm(_html.unescape(text))
 need("NK rows: 13 rows, 4 to Russia kinds and 4 to North Korea", len(NKI.ROWS) == 13 and sum(1 for r_ in NKI.ROWS if r_["dir"] == "to_nk") == 4)

@@ -9,10 +9,9 @@ var METRICS={deaths:{name:'All named dead',what:'named dead',legend:'Named dead 
  mob:{name:'Mobilized',what:'named dead who were mobilized',legend:'Named dead who were mobilized, by home region, per 100,000 residents',unit:'named dead who were mobilized, by home region, per 100,000 residents',sfx:''},
  pri:{name:'Prisoners',what:'named dead recruited from prison',legend:'Named dead recruited from prison, by home region, per 100,000 residents',unit:'named dead recruited from prison, by home region, per 100,000 residents',sfx:''},
  dist:{name:'Distance from Moscow',legend:'Distance from Moscow, straight line, km',unit:'km from Moscow in a straight line',sfx:' km'},
- pov:{name:'Poverty rate',legend:'Residents below the poverty line, 2025, %',unit:'of residents below the poverty line (2025)',sfx:'%'},
  ru:{name:'Russian share',legend:'Ethnic Russians, share of residents, 2020 census, %',unit:'of residents ethnic Russian (2020 census)',sfx:'%'},
  bonus:{name:'Bonus in months',legend:'Signing bonus in months of local average wage',unit:'months of local average wage',sfx:''}};
-function valOf(r,m){return m==='dist'?r.dist_km:m==='pov'?r.pov:m==='ru'?r.ru_share:m==='bonus'?(r.bonus&&r.bonus.months!=null?r.bonus.months:null):r[m+'_rate']}
+function valOf(r,m){return m==='dist'?r.dist_km:m==='ru'?r.ru_share:m==='bonus'?(r.bonus&&r.bonus.months!=null?r.bonus.months:null):r[m+'_rate']}
 var STATUS={range:'The card gives a regional range of 1.5 to 3 million rubles. The upper end is charted.',ok:'Firm: the regional card says the amount is confirmed.',ends_oct31:'The program runs only to 31 Oct 2026.',stale:'The card data (or, for Kaliningrad, Nizhny Novgorod and Kirov, a Jan 2026 aggregator table) is more than 30 days old, or the program is marked expired.',unpublished:'The amount comes from media reports or an unpublished act.'};
 var R,S,G,byNe={},byIso={},metric='deaths',selected=null,tipEl,bonusAll=false,firmOnly=false;
 var phone=function(){return window.matchMedia('(max-width:700px)').matches};
@@ -39,7 +38,6 @@ function bindTips(){
  window.addEventListener('scroll',hideTip,{passive:true});
 }
 function regionTip(r,m){var v=valOf(r,m);
- if(m==='pov')return '<b>'+esc(r.en)+'</b><br>'+fmt(v,1)+'% '+METRICS[m].unit+(r.pov_kind==='derived'?'<br>Derived from the poor headcount and population':'');
  if(m==='dist')return '<b>'+esc(r.en)+'</b><br>'+fmt(v)+' km from Moscow in a straight line<br>'+fmt(r.deaths_rate,1)+' named dead per 100,000 (rank '+rank(r,'deaths_rate')+' of 85)';
  if(m==='ru')return '<b>'+esc(r.en)+'</b><br>'+fmt(v,1)+'% '+METRICS[m].unit;
  if(m==='bonus'){var b=r.bonus;return v==null?'<b>'+esc(r.en)+'</b><br>No signing-bonus figure: '+esc(b.excluded):'<b>'+esc(r.en)+'</b><br>'+fmt(v,1)+' '+METRICS[m].unit+'<br>'+fmt(b.total)+' rubles in total'}
@@ -86,10 +84,9 @@ function selectRegion(r){selected=r;markSel();var b=r.bonus,h='<h3>'+esc(r.en)+'
  row('Federal district',r.fd);row('Residents (1 Jan 2024)',fmt(r.pop));
  row('Named dead',fmt(r.deaths));row('Per 100,000',fmt(r.deaths_rate,1)+' (rank '+rank(r,'deaths_rate')+' of 85)');
  row('Volunteers',fmt(r.vol)+' ('+fmt(r.vol_rate,1)+' per 100,000)');row('Mobilized',fmt(r.mob)+' ('+fmt(r.mob_rate,1)+')');row('Prisoners',fmt(r.pri)+' ('+fmt(r.pri_rate,1)+')');
- row('Average wage, 2025',fmt(r.wage)+' rubles');
- row('Poverty rate, 2025',fmt(r.pov,1)+'%'+(r.pov_kind==='derived'?' (derived)':''));row('Ethnic Russians (2020)',fmt(r.ru_share,1)+'%');
+ row('Ethnic Russians (2020)',fmt(r.ru_share,1)+'%');
  row('Distance from Moscow',fmt(r.dist_km)+' km');h+='</dl>';
- if(b.months){h+='<p><b>Signing bonus:</b> '+fmt(b.total)+' rubles ('+fmt(b.federal)+' federal and '+fmt(b.regional)+' regional) is '+fmt(b.months,1)+' months of the local average wage. '+STATUS[b.status]+'</p>'}
+ if(b.months){h+='<p><b>Signing bonus:</b> '+fmt(b.total)+' rubles ('+fmt(b.federal)+' federal and '+fmt(b.regional)+' regional). '+STATUS[b.status]+'</p>'}
  else h+='<p><b>Signing bonus:</b> not charted. '+esc(b.excluded)+'.</p>';
  hideTip();$('#panelbody').innerHTML=h;$('#panel').classList.add('open')}
 function closePanel(){$('#panel').classList.remove('open');selected=null;if(gMap)markSel()}
@@ -126,8 +123,8 @@ function drawAll(){drawMap();recolor();drawMinis()}
 function init(res){
  R=res[0].regions;S=res[1];G=res[2];tipEl=$('#tip');
  R.forEach(function(r){byNe[r.ne]=r;byIso[r.iso]=r});
- // desktop: everything open; phone: only the map section open, map options behind one button
- var ph=phone();document.querySelectorAll('details.sec').forEach(function(d){d.open=d.id==='nk-sec'?false:(!ph||d.id==='flow-sec'||d.id==='pris-sec'||d.id==='dead-sec')});
+ // desktop: everything open; phone: only the map, flow, prisoners and North Korea sections open, map options behind one button
+ var ph=phone();document.querySelectorAll('details.sec').forEach(function(d){d.open=(!ph||d.id==='nk-sec'||d.id==='flow-sec'||d.id==='pris-sec'||d.id==='dead-sec')});
  $('#mapside').open=!ph;
  $('#legend').innerHTML=legendHTML('deaths');
  $('#legend3').innerHTML='<li><span class="sw" style="background:var(--r3)"></span>Firm amount</li><li><span class="sw dash"></span>Ends 31 Oct 2026, card over 30 days old, a range, or a media report</li>';
