@@ -44,13 +44,12 @@ with sync_playwright() as pw:
         page.click("#closepanel"); page.wait_for_timeout(400); assert not page.evaluate("document.querySelector('#panel').classList.contains('open')")
         if mobile and page.evaluate("!document.querySelector('#mapside').open"):
             page.click("#mapside > summary"); page.wait_for_timeout(200)
-        for m in ("vol", "mob", "pri", "dist", "pov", "ru", "bonus", "deaths"):
+        for m in ("vol", "mob", "pri", "dist", "ru", "deaths"):
             before = page.evaluate("[...document.querySelectorAll('#map path.reg')].map(p=>p.getAttribute('fill')).join()")
             page.click(f".chipb[data-metric={m}]"); page.wait_for_timeout(250)
             after = page.evaluate("[...document.querySelectorAll('#map path.reg')].map(p=>p.getAttribute('fill')).join()")
             print(tag, "metric", m, "fills changed" if before != after else "fills same"); 
             if m == "pri": shot(page, f"{tag}-05-map-prisoners.png", full=False)
-            if m == "pov": shot(page, f"{tag}-05b-map-poverty.png", full=False)
             if m == "bonus": shot(page, f"{tag}-05c-map-bonus.png", full=False)
         # round 4: flow map (first graphic) and North Korea section
         sig = lambda sel: page.evaluate(f"[...document.querySelectorAll('{sel} path')].map(p=>p.getAttribute('d')||'').join('|').length+':'+[...document.querySelectorAll('{sel} path')].map(p=>(p.getAttribute('d')||'').slice(0,40)).join('').length")

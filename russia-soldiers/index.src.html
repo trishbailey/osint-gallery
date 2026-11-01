@@ -136,9 +136,7 @@
 <button type="button" class="chipb" data-metric="mob" aria-pressed="false">Mobilized</button>
 <button type="button" class="chipb" data-metric="pri" aria-pressed="false">Prisoners</button>
 <button type="button" class="chipb" data-metric="dist" aria-pressed="false">Distance from Moscow</button>
-<button type="button" class="chipb" data-metric="pov" aria-pressed="false">Poverty rate</button>
 <button type="button" class="chipb" data-metric="ru" aria-pressed="false">Russian share</button>
-<button type="button" class="chipb" data-metric="bonus" aria-pressed="false">Bonus in months</button>
 </div>
 <h3 class="sideh" id="legtitle">Named dead per 100,000</h3>
 <ul class="legend" id="legend"></ul>
@@ -152,14 +150,9 @@
 <details class="how"><summary>How the map is made</summary>
 <p>Names are counted by home region from Mediazona's regional pages,[[mz_regions]] and divided by the Rosstat estimate of residents on 1 Jan 2024.[[pop]] Borders are Natural Earth, simplified.[[ne]] Crimea and Sevastopol are drawn as Russian-administered and are not recognized as Russian by Ukraine or most states. Scroll or pinch to zoom, drag to move, tap a region for its details. Regions with no figure are dark blue. Every layer counts men by home region, where they lived, not where a prison, unit or cemetery stands: Mediazona uses the residence in an obituary, then the registration address, then the birthplace, and the burial place only as a last resort.[[mz_geo]] The Prisoners layer is named dead recruited from prison.</p></details>
 <p class="cap"><b>{{v_remote}}</b></p>
-<p class="cap"><b>{{v_pov}}</b></p>
 <p class="cap"><b>{{v_eth}}</b></p>
-<p class="cap"><b>{{v_wage}}</b></p>
 <details class="how"><summary>How the layers were tested</summary>
 <p>{{cap1}}</p>
-<p>{{pov_how}}[[pov]] {{ols_pov}}</p>
-<p>The poverty rate is income-based and Rosstat changed its method in 2021 and revised earlier years in 2024, so it is a rough guide to deprivation. The Nenets and Khanty-Mansi areas have no published rate, so theirs is the published headcount divided by population ({{pov_derived}}).[[povn]]</p>
-<p>{{cap2}} Wages are the 2025 average for organizations, from Rosstat,[[wage]] not adjusted for local prices.</p>
 <p>{{cap3}}</p>
 <p>Shares are from the 2020 census as compiled by real-stats.ru,[[census]] which lists only the largest peoples of each region and has no Russian row for Dagestan. Dagestan is filled from Rosstat's national-composition table: 102,243 Russians among 3,182,054 residents, {{r_dag_ru}}%,[[census_dag]] so all 85 regions are in the test. {{ols}}</p>
 <p>Distance is measured in a straight line from the middle of Moscow city to the middle of each region's largest land area. Pearson's r measures a straight-line link and runs from −1 to 1, where 0 is no link. Spearman's rho does the same for rankings and is less sensitive to a few extreme regions. These describe the data and do not show cause.</p></details>
@@ -188,7 +181,7 @@
 <ul class="plain small">
 <li>Rates are named dead divided by the Rosstat population estimate of 1 Jan 2024. Both the list and the population move over time, and the list lags recent months. The 23 Oct 2026 total of {{named_total}} is the sum of Mediazona's regional pages; a Meduza article of 10 Jul 2026 quoted a main-list figure of 233,033 and the two were not reconciled.[[meduza_foreign]]</li>
 <li>The map covers 85 regions. Names from Donetsk, Luhansk, Baikonur, foreigners and unknown origin have no regional population or wage and are left out of every rate.</li>
-<li>Poverty rates are Rosstat 2025 figures for 83 regions and derived for two. Wages are 2025 nominal averages and bonuses are October 2026 rates, so months of wages are slightly overstated where pay has risen since.</li>
+<li>Wages are 2025 nominal averages and bonuses are October 2026 rates, so months of wages are slightly overstated where pay has risen since.</li>
 <li>Bonus status: "firm" means the regional card says the amount was confirmed. Other bars are outlined because the program ends on 31 Oct 2026, the card data is more than 30 days old, the amount is from an older table, or it comes from media reports. Sakha's card gives a range of 1.5 to 3 million rubles regionally and the upper end is charted. Karachay-Cherkessia is shown at the standard 2.1 million rubles, and the card gives 3.1 million for reservists.[[vs]]</li>
 <li>Regions left out of the bonus chart: {{excluded_list}}.</li>
 <li>Descriptions only. Nothing on this page is a forecast.</li>

@@ -38,10 +38,6 @@ SOURCES = {
  "insider": dict(short="The Insider, 6 Oct 2026", url="https://theins.press/en/inv/297906",
    full="The Insider, \u201cHunting for cannon fodder: how Russia\u2019s private recruitment market for the war in Ukraine really works\u201d, 6 Oct 2026."),
 
- "pov": dict(short="Rosstat poverty rate 2025 (via roschart.ru)", url="https://roschart.ru/reyting/bednost",
-   full="Rosstat, share of the population with money income below the poverty line, % of residents, 2025, by region, as tabulated by roschart.ru (83 regions; none for the Nenets and Khanty-Mansi areas). Rosstat changed the poverty-line method in 2021 and revised 2012 to 2022 in 2024, and the measure is based on income, so it is a rough guide to deprivation."),
- "povn": dict(short="Rosstat poor headcount 2025 (via Statbase)", url="https://statbase.ru/datasets/national-statistics-of-russia/labor-income-prices/population-with-incomes-below-the-poverty-line-by-region-national-stat/",
-   full="Rosstat, population with money income below the poverty line, persons rounded to 100, 2025, by region, as tabulated by Statbase. Used to cross-check the published rates (headcount divided by population agrees within 1 percentage point) and to derive the rate for the Nenets and Khanty-Mansi areas, which roschart.ru does not list."),
  "mz_probate": dict(short="Mediazona and Meduza probate estimate, 9 May 2026", url="https://en.zona.media/article/2026/05/09/losses",
    full="Mediazona and Meduza, \u201c352,000 deaths in four years\u201d, 9 May 2026: an estimate of male Russian citizens aged 18 to 59 killed from the start of the full-scale invasion to the end of 2025, from excess entries in Russia\u2019s Probate Registry plus court-declared deaths. It covers officially confirmed deaths of Russian citizens only and gives no regional split. The late-registration part (about 90,000) is an estimate as of mid-2025 that the authors say will rise."),
  "meduza_foreign": dict(short="Meduza on the BBC and Mediazona foreign-dead count, 10 Jul 2026", url="https://meduza.io/en/news/2026/07/10/over-3-500-foreign-nationals-killed-fighting-for-russia-in-ukraine-bbc-finds",
