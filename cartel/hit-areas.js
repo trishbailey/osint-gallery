@@ -33,7 +33,9 @@
     var p = document.createElementNS(NS, "path");
     p.setAttribute("d", "M" + h.map(function (q) { return q[0].toFixed(1) + "," + q[1].toFixed(1); }).join("L") + "Z");
     p.setAttribute("class", "hitarea");
-    p.setAttribute("fill", "transparent"); p.setAttribute("stroke", "none");
+    p.setAttribute("fill", "transparent");
+    /* a transparent stroke gives the area some width: the centre of a diagonal link's box lies exactly on the edge of its hull (the chord), which a fill alone does not catch */
+    p.setAttribute("stroke", "transparent"); p.setAttribute("stroke-width", "14"); p.setAttribute("stroke-linejoin", "round");
     p.style.cursor = "pointer";
     var t = el.querySelector("title") || (target && target.querySelector("title"));
     if (t) p.appendChild(t.cloneNode(true));
