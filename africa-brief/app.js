@@ -162,7 +162,9 @@ document.getElementById("L-pow").onchange=e=>{gP.style("display",e.target.checke
 document.getElementById("L-res").onchange=e=>{gR.style("display",e.target.checked?null:"none");syncL&&syncL();};
 document.getElementById("L-allres").onchange=e=>{if(e.target.checked&&!document.getElementById("L-res").checked){document.getElementById("L-res").checked=true;document.getElementById("L-res").onchange({target:{checked:true}});}applyR();};
  /* zoom to region */
- const zoom=d3.zoom().scaleExtent([1,6]).on("zoom",e=>{const k=e.transform.k;zk=k;Z.attr("transform",e.transform);resSel.attr("transform",d=>`translate(${proj(d.lonlat)}) scale(${1/k})`);gP.selectAll(".prow").attr("transform",d=>`translate(${d.x},${d.y}) scale(${1/k})`);gPL.selectAll("*").remove();gTop.selectAll("text").style("font-size",(14/e.transform.k)+"px").style("stroke-width",(4/e.transform.k)+"px");});
+ const zoom=d3.zoom().scaleExtent([1,6]).on("zoom",e=>{const k=e.transform.k;zk=k;Z.attr("transform",e.transform);resSel.attr("transform",d=>`translate(${proj(d.lonlat)}) scale(${1/k})`);gP.selectAll(".prow").attr("transform",d=>`translate(${d.x},${d.y}) scale(${1/k})`);gPL.selectAll("*").remove();gTop.selectAll("text").style("font-size",(14/e.transform.k)+"px").style("stroke-width",(4/e.transform.k)+"px");})
+  .on("end",()=>{const R=svg.node().getBoundingClientRect();/* shapes whose centre has been zoomed out of the map frame are clipped away: take them out of the click and focus order until the map moves back */
+   Z.selectAll("path.hex,path.conf").style("visibility",function(){const b=this.getBoundingClientRect(),cx=b.left+b.width/2,cy=b.top+b.height/2;return cx<R.left||cx>R.right||cy<R.top||cy>R.bottom?"hidden":null;});});
  svg.call(zoom).on("wheel.zoom",null).on("dblclick.zoom",null);
  const rb=document.getElementById("reset");rb.onclick=()=>{svg.transition().duration(600).call(zoom.transform,d3.zoomIdentity);rb.classList.remove("show");};
  function openRegion(r,f){const fc={type:"FeatureCollection",features:afr.features.filter(x=>r.countries.includes(x.properties.ADM0_A3))};
