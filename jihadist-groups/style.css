@@ -4,6 +4,7 @@ html{scroll-behavior:smooth;scroll-padding-top:12px}
 body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 "Helvetica Neue",Arial,sans-serif;-webkit-text-size-adjust:100%}
 a{color:var(--link)}
 a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+a.backlink{display:flex;align-items:center;min-height:44px;padding:0 24px;font-size:15px;color:var(--gold);text-decoration:none}a.backlink:hover{text-decoration:underline}
 header{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;align-items:flex-end;padding:10px 24px 6px;border-bottom:1px solid var(--line)}
 .brand{font-size:13px;letter-spacing:.18em;color:var(--muted);text-decoration:none}
 .brand .mark{color:var(--gold);font-weight:700}
@@ -162,6 +163,7 @@ sup.fn a{color:var(--link);text-decoration:none;padding:0 1px}
 }
 @media (max-width:700px){
   header{padding:8px 14px 0}
+  a.backlink{padding:0 14px}
   h1{font-size:21px}
   nav{flex-wrap:nowrap;overflow-x:auto;width:100%;gap:14px;scrollbar-width:thin}
   nav a{white-space:nowrap}

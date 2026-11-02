@@ -3,6 +3,7 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 "Helvetica Neue",Arial,sans-serif}
 a{color:var(--link)}a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+a.backlink{display:flex;align-items:center;min-height:44px;padding:0 24px;font-size:15px;color:var(--gold);text-decoration:none}a.backlink:hover{text-decoration:underline}
 header{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:flex-end;padding:14px 24px 10px;border-bottom:1px solid var(--line)}
 .brand{font-size:13px;letter-spacing:.18em;color:var(--muted);text-decoration:none}.brand .mark{color:var(--gold);font-weight:700}.brand-sub{display:block;font-size:13px;letter-spacing:.12em;color:var(--gold);margin-top:4px}
 nav{display:flex;flex-wrap:wrap;gap:16px;font-size:14px}nav a{color:var(--text);text-decoration:none}nav a:hover{color:var(--gold)}
@@ -157,7 +158,7 @@ details summary{cursor:pointer;color:#82B1FF;font-weight:700;font-size:13px}
 .cfgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(560px,1fr));gap:12px}
 .cf{display:grid;grid-template-columns:200px 1fr;gap:14px;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:12px;cursor:pointer}
 .cf.on,.cf:focus{border-color:#FFE272;outline:none}.cf[hidden]{display:none}
-.cfloc{width:200px;height:190px;border-radius:4px}.cfloc .insbg{fill:#0b1526;stroke:#9cc1f0}.cfloc .insaf{fill:#24365a}.cfloc .insc{fill:#FFE272}
+.cfloc{width:200px;height:190px;border-radius:4px;pointer-events:none}/* decorative locator map: a click goes to the card behind it, which opens the region */.cfloc .insbg{fill:#0b1526;stroke:#9cc1f0}.cfloc .insaf{fill:#24365a}.cfloc .insc{fill:#FFE272}
 .cf h3{margin:0 0 8px;font-size:17px}.vs{display:grid;grid-template-columns:1fr 30px 1fr;gap:6px}
 .vsx{align-self:start;margin-top:4px;text-align:center;font:800 14px "Helvetica Neue",Arial,sans-serif;color:#fff}
 .side{border-top:4px solid;padding-top:6px}.side.sa{border-color:#00CBFF}.side.sb{border-color:#FF80FF}
@@ -198,7 +199,7 @@ details summary{cursor:pointer;color:#82B1FF;font-weight:700;font-size:13px}
 .kclust,.fbtn,.goldph,#scrim,.shx{display:none}
 @media(max-width:600px){
  html,body{overflow-x:hidden}
- header{padding:10px 12px 8px}.brand-sub{display:block}header>a,header .brand{min-height:44px;display:flex;align-items:center}
+ a.backlink{padding:0 12px} header{padding:10px 12px 8px}.brand-sub{display:block}header>a,header .brand{min-height:44px;display:flex;align-items:center}
  nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%}
  nav a{min-height:44px;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--panel2);border:1px solid var(--line);border-radius:22px;font-size:13px;padding:2px 6px}
  main,.wrap{padding-left:10px!important;padding-right:10px!important}

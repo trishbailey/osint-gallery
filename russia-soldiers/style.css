@@ -6,6 +6,8 @@ body{margin:0;background:var(--bg);color:var(--text);font:17px/1.55 system-ui,-a
 a{color:var(--gold)}
 .top{padding:22px 24px 6px;border-bottom:1px solid var(--line)}
 h1{margin:0;font-size:2rem;line-height:1.15;letter-spacing:.01em}
+.backlink{display:inline-flex;align-items:center;min-height:44px;font-size:.95rem;text-decoration:none;margin:-8px 0 0}
+.backlink:hover{text-decoration:underline}
 .sub{margin:6px 0 12px;color:var(--muted);font-size:1rem}
 main{padding:16px 24px 40px;width:100%}
 .lead{margin:10px 0}

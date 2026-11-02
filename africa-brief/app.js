@@ -162,7 +162,9 @@ document.getElementById("L-pow").onchange=e=>{gP.style("display",e.target.checke
 document.getElementById("L-res").onchange=e=>{gR.style("display",e.target.checked?null:"none");syncL&&syncL();};
 document.getElementById("L-allres").onchange=e=>{if(e.target.checked&&!document.getElementById("L-res").checked){document.getElementById("L-res").checked=true;document.getElementById("L-res").onchange({target:{checked:true}});}applyR();};
  /* zoom to region */
- const zoom=d3.zoom().scaleExtent([1,6]).on("zoom",e=>{const k=e.transform.k;zk=k;Z.attr("transform",e.transform);resSel.attr("transform",d=>`translate(${proj(d.lonlat)}) scale(${1/k})`);gP.selectAll(".prow").attr("transform",d=>`translate(${d.x},${d.y}) scale(${1/k})`);gPL.selectAll("*").remove();gTop.selectAll("text").style("font-size",(14/e.transform.k)+"px").style("stroke-width",(4/e.transform.k)+"px");});
+ const zoom=d3.zoom().scaleExtent([1,6]).on("zoom",e=>{const k=e.transform.k;zk=k;Z.attr("transform",e.transform);resSel.attr("transform",d=>`translate(${proj(d.lonlat)}) scale(${1/k})`);gP.selectAll(".prow").attr("transform",d=>`translate(${d.x},${d.y}) scale(${1/k})`);gPL.selectAll("*").remove();gTop.selectAll("text").style("font-size",(14/e.transform.k)+"px").style("stroke-width",(4/e.transform.k)+"px");})
+  .on("end",()=>{const R=svg.node().getBoundingClientRect();/* shapes whose centre has been zoomed out of the map frame are clipped away: take them out of the click and focus order until the map moves back */
+   Z.selectAll("path.hex,path.conf").style("visibility",function(){const b=this.getBoundingClientRect(),cx=b.left+b.width/2,cy=b.top+b.height/2;return cx<R.left||cx>R.right||cy<R.top||cy>R.bottom?"hidden":null;});});
  svg.call(zoom).on("wheel.zoom",null).on("dblclick.zoom",null);
  const rb=document.getElementById("reset");rb.onclick=()=>{svg.transition().duration(600).call(zoom.transform,d3.zoomIdentity);rb.classList.remove("show");};
  function openRegion(r,f){const fc={type:"FeatureCollection",features:afr.features.filter(x=>r.countries.includes(x.properties.ADM0_A3))};
@@ -350,6 +352,8 @@ const goldChart=()=>{const R=B.goldroutes,SK=R.sankey,el=document.getElementById
  nd.append("rect").attr("x",d=>d.x0).attr("y",d=>d.y0).attr("width",d=>d.x1-d.x0).attr("height",d=>Math.max(2,d.y1-d.y0)).attr("rx",4).attr("fill",d=>OC[d.name]||(d.name.startsWith("UAE")?"#00FFE5":"#F5F7FF"));
  const nOn=d=>op(null,l=>l.source===d||l.target===d||(d===U&&l.k==="re")?.95:.15);
  nd.on("mouseenter",(e,d)=>nOn(d)).on("focus",(e,d)=>nOn(d)).on("mouseleave",rst).on("blur",rst);
+ const ntip=d=>`<b>${esc(lab(d.name))}: ${Math.round(d.value*10)/10} t (${SK.year||""})</b><div class="tsub">Highlighted: every flow that starts or ends here. Hover or tap a flow for its route.</div>`;
+ nd.on("click",(e,d)=>{e.stopPropagation();nOn(d);tipShow(ntip(d),e);}).on("keydown",function(e,d){if(e.key==="Enter"||e.key===" "){e.preventDefault();nOn(d);tipAt(ntip(d),this);}});
  const pill=(x,y,txt,anc,cls)=>{const g=sv.append("g").attr("class","skp "+(cls||""));const t=g.append("text").attr("x",x).attr("y",y).attr("text-anchor",anc).text(txt);const b=t.node().getBBox();g.insert("rect","text").attr("class","skhit").attr("x",b.x-4).attr("y",b.y-2).attr("width",b.width+8).attr("height",b.height+4);return g;};
  ALL.forEach(d=>{const v=Math.round(d.value*10)/10,ym=(d.y0+d.y1)/2+5;
   if(OR.includes(d.name))pill(d.x0-8,ym,`${d.name} ${v} t`,"end");
