@@ -38,6 +38,23 @@ def add_back_link(text):
         return text
     return re.sub(r"(<header\b)", lambda m: BACK_LINK + m.group(1), text, count=1, flags=re.I)
 
+SYNCED_DIR = os.path.join(ROOT, "scripts", "synced")
+
+def add_extras(slug, site_dir):
+    """Fixes that must survive every re-sync live here, not in the other bot's repo: if scripts/synced/<slug>-hit-areas.js
+    exists it is copied into the dashboard folder as hit-areas.js and loaded by index.html (once)."""
+    src = os.path.join(SYNCED_DIR, slug + "-hit-areas.js")
+    page = os.path.join(site_dir, "index.html")
+    if not (os.path.isfile(src) and os.path.isfile(page)):
+        return
+    shutil.copyfile(src, os.path.join(site_dir, "hit-areas.js"))
+    t = open(page, encoding="utf-8").read()
+    if "hit-areas.js" not in t:
+        tag = '<script src="hit-areas.js" defer></script>'
+        n = re.sub(r"</body>", lambda m: tag + m.group(0), t, count=1, flags=re.I)
+        if n == t: n = t + tag
+        open(page, "w", encoding="utf-8").write(n)
+
 def rewrite(text, slug, old_url, ext):
     base = "/" + slug + "/"
     if old_url:
@@ -118,6 +135,7 @@ def build(d):
                 except UnicodeDecodeError: continue
                 n = rewrite(t, slug, d.get("oldUrl", ""), ext)
                 if n != t: open(p, "w", encoding="utf-8").write(n)
+        add_extras(slug, out)
         open(os.path.join(out, ".source"), "w").write(f"{repo}@{sha}\n")
         dest = os.path.join(ROOT, slug)
         if os.path.isdir(os.path.join(dest, "_src")):
