@@ -8,8 +8,8 @@ D = ROOT / "data_in"
 OUT = ROOT.parent / "data.json"
 L = lambda n: json.load(open(D / n))
 
-ASOF = "2026-10-30"
-WINDOW = ("2026-09-30", "2026-10-30")
+ASOF = "2026-11-02"
+WINDOW = ("2026-10-03", "2026-11-02")
 
 # ---- colours: ONE place. The page reads these from data.json. ------------------------------
 FAMILY_COLORS = {"al-qaeda": "#3d9be9", "islamic-state": "#e8575a", "iran-axis": "#2fc48d", "independent": "#b78cf2"}
@@ -47,10 +47,11 @@ THEATRE = {
     "al-shabaab": "Horn of Africa", "is-somalia": "Horn of Africa", "iscap-adf": "Central and southern Africa", "is-mozambique": "Central and southern Africa",
     "houthis": "Levant, Iraq and the Gulf", "hezbollah": "Levant, Iraq and the Gulf", "kataib-hezbollah": "Levant, Iraq and the Gulf", "is-syria": "Levant, Iraq and the Gulf",
     "iskp": "South and Central Asia", "ttp": "South and Central Asia", "jmm": "South and Central Asia", "dawlah-islamiyah": "Southeast Asia",
+    "hamas": "Levant, Iraq and the Gulf", "taliban": "South and Central Asia",
 }
 THEATRE_ORDER = ["Sahel", "Lake Chad Basin and Nigeria", "Horn of Africa", "Central and southern Africa", "Levant, Iraq and the Gulf", "South and Central Asia", "Southeast Asia"]
 
-# Leadership changes in the last 24 months (to 30 Oct 2026): date, kind, whether the top leader changed
+# Leadership changes in the last 24 months (to ASOF; older entries drop out automatically): date, kind, whether the top leader changed
 CHANGES = {
     "hezbollah": ("2024-10-29", "New top leader", True), "jmm": ("2024-11-05", "Founder-leader killed", True),
     "ansaru": ("2025-07-31", "Top leaders arrested", True), "di-maute": ("2026-04-17", "Top leader killed", True),
@@ -58,6 +59,7 @@ CHANGES = {
     "biff": ("2026-07-05", "Top leader killed", True), "hamas": ("2026-07-20", "New top leader", True),
     "al-shabaab": ("2026-02-01", "Finance chiefs killed", False),
 }
+CUTOFF = str(int(ASOF[:4]) - 2) + ASOF[4:]
 CHANGE_TEXT = {  # one clean sentence per change
     "hezbollah": "Naim Qassem became leader on 29 October 2024.",
     "jmm": "Founder-leader Salahuddin Farooqui was killed on 5 November 2024 in a joint Iran and Pakistan operation, and no successor is publicly named.",
@@ -129,6 +131,7 @@ groups = []
 for g in G:
     gid = g["id"]
     ch = CHANGES.get(gid)
+    if ch and ch[0] < CUTOFF: ch = None  # outside the 24-month window
     st = g.get("strength")
     strength = None
     if st:
@@ -227,17 +230,17 @@ T.append(("JNIM is the largest group in the movement, and it still concedes grou
           "It has 7,000 to 8,000 members and keeps Bamako short of fuel, yet Mali's army, backed by Russia's Africa Corps, retook Kidal on 6 October.",
           [UN, inc_url("jnim", "Bamako"), inc_url("jnim", "Kidal")]))
 T.append(("The Islamic State's strength lies in its African provinces, not its core.",
-          "Islamic State West Africa was linked to 3,520 deaths in the past year and the Sahel province to 1,842, while the core lost its deputy leader in May 2026 and keeps up to 3,000 fighters, mostly in Syria.",
-          [AC, UN]))
+          "Islamic State West Africa was linked to 3,520 deaths in the past year and the Sahel province to 1,842, and Nigeria's army reports Islamic State West Africa assaults on Buni Yadi and Kukawa within three days. The core lost its deputy leader in May 2026 and keeps up to 3,000 fighters, mostly in Syria.",
+          [AC, inc_url("iswap", "Kukawa"), UN]))
 T.append(("Al-Qaeda's centre is marginal and its energy sits in two affiliates.",
-          "The UN says its senior leadership is marginalised and faces declining relevance. AQAP has about 2,000 fighters and is reported to work with the Houthis, and al-Shabaab trains with the Houthis, as reported.",
-          [UN]))
+          "The UN says its senior leadership is marginalised and faces declining relevance. AQAP has about 2,000 fighters and is reported to work with the Houthis. Al-Shabaab routed Turkish-trained Somali troops near Jameeca on 26 October, the army's worst reverse in years, and the government has opened an inquiry.",
+          [UN, inc_url("al-shabaab", "Jameeca"), "https://qncnews.com/2026/11/01/somali-army-toll-climbs-as-inquiry-opens-into-leego-rout/"]))
 T.append(("The Iran-backed axis is fighting on several fronts at once.",
-          "The Houthis hit Riyadh's airport on 10 October, killing 12 people, struck Aden's airport on 28 October and are tightening their siege of Taiz. Israeli strikes continue in southern Lebanon despite the June ceasefire framework. Iraqi factions keep their weapons after US troops left on 1 October, and Hamas has a new leader, Khalil al-Hayya, since 20 July.",
-          [inc_url("houthis", "Riyadh"), inc_url("houthis", "Aden"), inc_url("houthis", "Jabal Sabr"), inc_url("hezbollah", "Lebanon"), inc_url("kataib-hezbollah", "Baghdad"), "https://www.thenationalnews.com/news/mena/2026/07/23/new-hamas-leader-elected-by-narrowest-of-margins-with-gazas-backing/"]))
+          "The Houthis hit Riyadh's airport on 10 October, killing 12 people, fired missiles at Aden's airport and presidential palace on 28 and 30 October and are tightening their siege of Taiz. Israeli strikes continue in southern Lebanon and Gaza despite ceasefires, killing five Hamas-run police officers on 1 November. Iraqi factions keep their weapons after US troops left on 1 October, and Hamas has a new leader, Khalil al-Hayya, since 20 July.",
+          [inc_url("houthis", "Riyadh"), inc_url("houthis", "Aden International"), inc_url("houthis", "Maashiq"), inc_url("houthis", "Jabal Sabr"), inc_url("hezbollah", "Lebanon"), inc_url("hamas", "Mawasi"), "https://www.thenationalnews.com/news/mena/2026/10/01/resistance-has-won-this-round-kataib-hezbollah-denies-disarmament-deal-after-us-troops-leave-iraq/", "https://www.thenationalnews.com/news/mena/2026/07/23/new-hamas-leader-elected-by-narrowest-of-margins-with-gazas-backing/"]))
 T.append(("In South Asia the Taliban shelter the Pakistani Taliban and fight the Islamic State.",
-          "The UN reports that the Taliban give the Pakistani Taliban greater freedom of movement, while the Islamic State Khorasan Province is the Taliban's greatest threat, and border clashes with Pakistan continue.",
-          [UN, inc_url("ttp", "Kurram")]))
+          "The UN reports that the Taliban give the Pakistani Taliban greater freedom of movement, while the Islamic State Khorasan Province is the Taliban's greatest threat. Taliban and Pakistani forces traded fire at Torkham on 1 November, and Pakistan's military warns Kabul of punishment for harboring militants.",
+          [UN, inc_url("ttp", "Kurram"), inc_url("taliban", "Torkham")]))
 T.append(("Southeast Asia's old groups are gone.",
           "Jemaah Islamiyah dissolved in June 2024, the East Indonesia Mujahideen is declared eradicated, Abu Sayyaf is under 100 remnants, and the leaders of the Maute group and the BIFF Bungos faction were killed in April and July 2026.",
           [by["ji"]["sources"][0], by["asg"]["sources"][0], by["di-maute"]["sources"][0], by["biff"]["sources"][0]]))
@@ -245,11 +248,11 @@ content["takeaway"] = [{"lead": a, "html": wn(b, c)} for a, b, c in T]
 
 BOTTOM = {
     "Sahel": ("JNIM and the Islamic State Sahel Province fight each other as well as the army, and JNIM claims two Burkina Faso army posts in one day.", [SOUFAN, inc_url("jnim", "Kidal"), inc_url("jnim", "Bilanga")]),
-    "Lake Chad Basin and Nigeria": ("Suspected Islamic State West Africa fighters overran an army base, Boko Haram killed farmers, Lakurawa attacked troops in Kebbi, and the army says air strikes killed two Islamic State West Africa commanders.", [inc_url("iswap", "Mairari"), inc_url("jas", "Marte"), inc_url("lakurawa", "Maiyama"), inc_url("iswap", "Kerenoa")]),
-    "Horn of Africa": ("Al-Shabaab ambushed Somali troops while Puntland forces pushed Islamic State Somalia in the Cal Miskaad mountains.", [inc_url("al-shabaab", "Jameeca"), inc_url("is-somalia", "Cal Miskaad")]),
+    "Lake Chad Basin and Nigeria": ("Suspected Islamic State West Africa fighters overran an army base and later assaulted Kukawa, Lakurawa attacked troops in Kebbi, and the army says air strikes killed two Islamic State West Africa commanders.", [inc_url("iswap", "Mairari"), inc_url("iswap", "Kukawa"), inc_url("lakurawa", "Maiyama"), inc_url("iswap", "Kerenoa")]),
+    "Horn of Africa": ("Al-Shabaab routed a Turkish-trained Somali force while Puntland forces pushed Islamic State Somalia in the Cal Miskaad mountains.", [inc_url("al-shabaab", "Jameeca"), inc_url("is-somalia", "Cal Miskaad")]),
     "Central and southern Africa": ("Islamic State-linked fighters keep attacking civilians in Ituri and Cabo Delgado.", [inc_url("iscap-adf", "Mambasa"), inc_url("is-mozambique", "Nangade")]),
-    "Levant, Iraq and the Gulf": ("Houthi missiles struck the airports of Riyadh and Aden, Houthi forces advanced on the mountain above Taiz, Israeli strikes continue in southern Lebanon, and Jordan struck alleged Islamic State hideouts in Syria.", [inc_url("houthis", "Riyadh"), inc_url("houthis", "Aden"), inc_url("houthis", "Jabal Sabr"), inc_url("hezbollah", "Lebanon"), inc_url("is-syria", "Daraa")]),
-    "South and Central Asia": ("Cross-border and insurgent attacks continue from Pakistan to Iran.", [inc_url("ttp", "Kurram"), inc_url("jmm", "Rask")]),
+    "Levant, Iraq and the Gulf": ("Houthi missiles struck Riyadh's airport and targeted Aden's airport and presidential palace, Houthi forces advanced on the mountain above Taiz, Israeli strikes continue in southern Lebanon and Gaza, and Jordan struck alleged Islamic State hideouts in Syria.", [inc_url("houthis", "Riyadh"), inc_url("houthis", "Aden International"), inc_url("houthis", "Maashiq"), inc_url("hamas", "Mawasi"), inc_url("houthis", "Jabal Sabr"), inc_url("hezbollah", "Lebanon"), inc_url("is-syria", "Daraa")]),
+    "South and Central Asia": ("Pakistan and the Taliban trade fire on the border while the Islamic State Khorasan Province targets Taliban officials.", [inc_url("ttp", "Kurram"), inc_url("taliban", "Torkham"), inc_url("iskp", "Fayzabad")]),
     "Southeast Asia": ("Philippine forces keep killing Dawlah Islamiyah leaders.", [inc_url("dawlah-islamiyah", "Sultan Mastura")]),
 }
 content["storylines"] = [{"theatre": t, "bottom": wn(BOTTOM[t][0], BOTTOM[t][1]), "incidents": [x["id"] for x in incs if x["theatre"] == t]} for t in THEATRE_ORDER]
