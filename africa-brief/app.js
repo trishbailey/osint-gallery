@@ -350,6 +350,8 @@ const goldChart=()=>{const R=B.goldroutes,SK=R.sankey,el=document.getElementById
  nd.append("rect").attr("x",d=>d.x0).attr("y",d=>d.y0).attr("width",d=>d.x1-d.x0).attr("height",d=>Math.max(2,d.y1-d.y0)).attr("rx",4).attr("fill",d=>OC[d.name]||(d.name.startsWith("UAE")?"#00FFE5":"#F5F7FF"));
  const nOn=d=>op(null,l=>l.source===d||l.target===d||(d===U&&l.k==="re")?.95:.15);
  nd.on("mouseenter",(e,d)=>nOn(d)).on("focus",(e,d)=>nOn(d)).on("mouseleave",rst).on("blur",rst);
+ const ntip=d=>`<b>${esc(lab(d.name))}: ${Math.round(d.value*10)/10} t (${SK.year||""})</b><div class="tsub">Highlighted: every flow that starts or ends here. Hover or tap a flow for its route.</div>`;
+ nd.on("click",(e,d)=>{e.stopPropagation();nOn(d);tipShow(ntip(d),e);}).on("keydown",function(e,d){if(e.key==="Enter"||e.key===" "){e.preventDefault();nOn(d);tipAt(ntip(d),this);}});
  const pill=(x,y,txt,anc,cls)=>{const g=sv.append("g").attr("class","skp "+(cls||""));const t=g.append("text").attr("x",x).attr("y",y).attr("text-anchor",anc).text(txt);const b=t.node().getBBox();g.insert("rect","text").attr("class","skhit").attr("x",b.x-4).attr("y",b.y-2).attr("width",b.width+8).attr("height",b.height+4);return g;};
  ALL.forEach(d=>{const v=Math.round(d.value*10)/10,ym=(d.y0+d.y1)/2+5;
   if(OR.includes(d.name))pill(d.x0-8,ym,`${d.name} ${v} t`,"end");
