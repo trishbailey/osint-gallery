@@ -210,7 +210,7 @@ content["intro"] = (f"This page profiles {len(counted)} jihadist groups in four 
     "and what happened in the last 30 days. Hover or tap any marker, node or card for the detail. Superscript numbers open the sources at the bottom. "
     "Contested facts carry a confidence level and a reason. Descriptive analysis only.")
 content["finding"] = (
-    f"Africa is now the centre of gravity of the movement. Militant Islamist groups caused 23,872 deaths in Africa in the 12 months to mid-2026, 42% of them in the Sahel, "
+    f"Africa is now the center of gravity of the movement. Militant Islamist groups caused 23,872 deaths in Africa in the 12 months to mid-2026, 42% of them in the Sahel, "
     f"and {africa_n} of the {len(counted)} groups tracked here are based on the continent.")
 content["finding_html"] = wn(content["finding"], [AC])
 content["bars_title"] = "Deaths linked to militant Islamist groups in Africa, 12 months to mid-2026"
@@ -232,8 +232,8 @@ T.append(("JNIM is the largest group in the movement, and it still concedes grou
 T.append(("The Islamic State's strength lies in its African provinces, not its core.",
           "Islamic State West Africa was linked to 3,520 deaths in the past year and the Sahel province to 1,842, and Nigeria's army reports Islamic State West Africa assaults on Buni Yadi and Kukawa within three days. The core lost its deputy leader in May 2026 and keeps up to 3,000 fighters, mostly in Syria.",
           [AC, inc_url("iswap", "Kukawa"), UN]))
-T.append(("Al-Qaeda's centre is marginal and its energy sits in two affiliates.",
-          "The UN says its senior leadership is marginalised and faces declining relevance. AQAP has about 2,000 fighters and is reported to work with the Houthis. Al-Shabaab routed Turkish-trained Somali troops near Jameeca on 26 October, the army's worst reverse in years, and the government has opened an inquiry.",
+T.append(("Al-Qaeda's center is marginal and its energy sits in two affiliates.",
+          "The UN says its senior leadership is marginalized and faces declining relevance. AQAP has about 2,000 fighters and is reported to work with the Houthis. Al-Shabaab routed Turkish-trained Somali troops near Jameeca on 26 October, the army's worst reverse in years, and the government has opened an inquiry.",
           [UN, inc_url("al-shabaab", "Jameeca"), "https://qncnews.com/2026/11/01/somali-army-toll-climbs-as-inquiry-opens-into-leego-rout/"]))
 T.append(("The Iran-backed axis is fighting on several fronts at once.",
           "The Houthis hit Riyadh's airport on 10 October, killing 12 people, fired missiles at Aden's airport and presidential palace on 28 and 30 October and are tightening their siege of Taiz. Israeli strikes continue in southern Lebanon and Gaza despite ceasefires, killing five Hamas-run police officers on 1 November. Iraqi factions keep their weapons after US troops left on 1 October, and Hamas has a new leader, Khalil al-Hayya, since 20 July.",
@@ -263,7 +263,7 @@ content["confidence_note"] = ("Confidence is high when two independent sources a
     "government, group or analyst claim. A link is documented when an official or UN record states it and reported when a news or analyst source says so.")
 content["gaps"] = ("Not yet covered: Ajnad Bayt al-Maqdis, Ansar al-Tawhid, Hizbul Mujahideen, Central Asian groups, Lebanese Sunni groups, other Palestinian factions and Iran's Afghan and Pakistani Shia brigades. "
     "No credible strength estimate exists for Hezbollah, al-Shabaab, the Islamic State Khorasan Province, the Pakistani Taliban, Lashkar-e-Taiba, Jaish-e-Mohammed or the Iraqi factions, so none is shown. "
-    "Map positions are the approximate centre of each group's operating area, not a headquarters.")
+    "Map positions are the approximate center of each group's operating area, not a headquarters.")
 
 # image credits
 credits = []
