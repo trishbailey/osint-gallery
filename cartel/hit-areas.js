@@ -28,7 +28,7 @@
     if (!el.getClientRects().length) return;  /* layer switched off: try again when it is shown */
     el.setAttribute("data-halo", "1");
     var h;
-    try { if (!needsHalo(el, stroked)) return; h = hull(sample(el)); } catch (e) { return; }
+    try { if (!needsHalo(el, stroked)) return; var pts = sample(el), bb = el.getBBox(); pts.push([bb.x + bb.width / 2, bb.y + bb.height / 2]); /* the box centre must be inside the area: a click there is what a tap on a diagonal link looks like */ h = hull(pts); } catch (e) { return; }
     if (h.length < 3) return;
     var p = document.createElementNS(NS, "path");
     p.setAttribute("d", "M" + h.map(function (q) { return q[0].toFixed(1) + "," + q[1].toFixed(1); }).join("L") + "Z");
