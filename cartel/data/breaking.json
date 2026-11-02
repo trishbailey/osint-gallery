@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-02T02:01:03Z",
+ "as_of": "2026-11-02T11:01:40Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,93 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "2570d706ed",
+   "status": "single_source",
+   "title": "Sentencian a “El Pozoles” de La Unión Tepito a cinco años de prisión La condena contrasta con los antecedentes delictivos atribuidos a Brayan “N”, quien ha sido relacionado con investigaciones por des",
+   "lang": "es",
+   "title_en": "“El Pozoles” of La Unión Tepito sentenced to five years in prison. The sentence contrasts with the criminal record attributed to Brayan “N”, who has been linked to investigations into disappearances, homicide, extortion ",
+   "first_report": "2026-11-02T06:58:46Z",
+   "first_report_precision": "minute",
+   "first_source": "Proceso",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2117149401038655515",
+     "time": "2026-11-02T06:58:46Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "675ba0acc4",
+   "status": "single_source",
+   "title": "➡️ Mujeres buscadoras piden no olvidar a los desaparecidos durante la Callejoneada de #Mazatlán 🟣| Un grupo de mujeres buscadoras se hizo presente durante la tradicional Callejoneada de Mazatlán para ",
+   "lang": "es",
+   "title_en": "Women searchers ask that the disappeared not be forgotten during the Mazatlán Callejoneada. A group of women searchers appeared at the traditional Mazatlán Callejoneada to remember the disappeared and those who are",
+   "first_report": "2026-11-02T05:18:49Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2117124248795783288",
+     "time": "2026-11-02T05:18:49Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "15c4cf5463",
+   "status": "single_source",
+   "title": "Pero la suerte de Saab la enfrentaron primero sus socios. Álvaro Pulido Vargas estaba detenido en Caracas desde abril de 2023 por el caso Pdvsa-Cripto, mientras que Carlos Lizcano también quedó bajo a",
+   "lang": "es",
+   "title_en": "But Saab's partners met their fate first. Álvaro Pulido Vargas had been held in Caracas since April 2023 over the PDVSA-Crypto case, while Carlos Lizcano was also arrested last February after the capture of",
+   "first_report": "2026-11-02T02:30:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Armando.Info",
+   "region_ids": [
+    "VEN-43"
+   ],
+   "country": "VEN",
+   "group_ids": [],
+   "outlets": [
+    "Armando.Info"
+   ],
+   "sources": [
+    {
+     "outlet": "armando",
+     "name": "Armando.Info",
+     "kind": "outlet",
+     "via": "X @ArmandoInfo",
+     "url": "https://x.com/ArmandoInfo/status/2117081764380209409",
+     "time": "2026-11-02T02:30:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "fbb6883f3f",
    "status": "single_source",
@@ -123,8 +210,8 @@
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
    "region_ids": [
-    "MEX-2706",
-    "MEX-2710"
+    "MEX-2710",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [
@@ -654,8 +741,8 @@
    "country": "COL",
    "group_ids": [
     "clan",
-    "exfarc",
-    "eln"
+    "eln",
+    "exfarc"
    ],
    "outlets": [
     "Infobae"
@@ -929,15 +1016,15 @@
    "first_report_precision": "day",
    "first_source": "Proceso",
    "region_ids": [
-    "MEX-2706",
     "MEX-2719",
+    "MEX-2706",
     "MEX-2712",
     "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "sinaloa"
+    "sinaloa",
+    "cjng"
    ],
    "outlets": [
     "Proceso"
@@ -1199,8 +1286,8 @@
    "first_report_precision": "minute",
    "first_source": "ZETA Tijuana",
    "region_ids": [
-    "MEX-2706",
-    "MEX-2710"
+    "MEX-2710",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1374,12 +1461,12 @@
    ]
   },
   {
-   "id": "bfc3ae7737",
-   "status": "confirmed",
-   "title": "➡️ Un perro llamado \"El Pinto\" resulta herido de bala tras ataque contra a un domicilio en la colonia Progreso de Culiacán. 🚨🚔| Hieren de bala a un perrito llamado \"El Pinto\", tras un ataque armado co",
+   "id": "6f23b08017",
+   "status": "single_source",
+   "title": "Ataque armado en Culiacán deja herido de bala a un perrito; lo reportan estable Omar de la Rocha en \"Los Noticieristas\" Emisión Sabatina para todo Sinaloa.",
    "lang": "es",
-   "title_en": "A dog named \"El Pinto\" is wounded by gunfire after an attack on a home in the Progreso neighbourhood of Culiacán. A dog named \"El Pinto\" is shot after an armed attack on a home in the Progreso neighbourhood of Culiacán.",
-   "first_report": "2026-10-31T04:14:08Z",
+   "title_en": "Armed attack in Culiacán leaves a puppy wounded by gunfire; it is reported stable. Omar de la Rocha on \"Los Noticieristas\" Saturday edition for all of Sinaloa.",
+   "first_report": "2026-10-31T12:58:13Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
    "region_ids": [
@@ -1388,28 +1475,9 @@
    "country": "MEX",
    "group_ids": [],
    "outlets": [
-    "Los Noticieristas",
-    "Ríodoce"
+    "Los Noticieristas"
    ],
    "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2116383194597490780",
-     "time": "2026-10-31T04:14:08Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2116391642382913699",
-     "time": "2026-10-31T04:47:42Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "noticieristas",
      "name": "Los Noticieristas",
@@ -1436,9 +1504,9 @@
    ],
    "country": "MEX",
    "group_ids": [
+    "sinaloa",
     "cjng",
     "mayiza",
-    "sinaloa",
     "chapitos"
    ],
    "outlets": [
@@ -1553,8 +1621,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2736",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2736"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1620,8 +1688,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
     "sinaloa",
+    "mayiza",
     "chapitos"
    ],
    "outlets": [
@@ -1653,8 +1721,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
     "sinaloa",
+    "mayiza",
     "chapitos"
    ],
    "outlets": [
@@ -1686,8 +1754,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
-    "sinaloa"
+    "sinaloa",
+    "mayiza"
    ],
    "outlets": [
     "Infobae"
@@ -1718,8 +1786,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
     "sinaloa",
+    "mayiza",
     "chapitos"
    ],
    "outlets": [
@@ -1909,8 +1977,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "mayiza",
     "sinaloa",
+    "mayiza",
     "chapitos"
    ],
    "outlets": [
@@ -2060,8 +2128,8 @@
    "region_ids": [],
    "country": "HND",
    "group_ids": [
-    "ms13",
-    "tda"
+    "tda",
+    "ms13"
    ],
    "outlets": [
     "Infobae"
@@ -2176,8 +2244,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2706",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [
@@ -2377,138 +2445,6 @@
      "url": "https://www.semana.com/nacion/cucuta/articulo/cucuta-bajo-el-asedio-de-los-criminales-asi-se-vive-en-una-de-las-ciudades-mas-peligrosas-de-colombia/202648/",
      "time": "2026-10-31T12:00:00Z",
      "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "275b8a6b8e",
-   "status": "single_source",
-   "title": "Exigen justicia por asesinato de operador de grúa en Naucalpan que se negó a pagar extorsión: colocan féretro en Periférico Norte",
-   "lang": "es",
-   "title_en": "Calls for justice over the murder of a tow-truck operator in Naucalpan who refused to pay extortion: a coffin is placed on Periférico Norte",
-   "first_report": "2026-10-31T05:43:42Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2731"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2116405733394649178",
-     "time": "2026-10-31T05:43:42Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "389758a1b1",
-   "status": "single_source",
-   "title": "Personas físicas y empresas sancionadas por EE.UU. por ligas con el Cártel de Sinaloa, promovieron juicios de amparo en BC. No les concedieron medidas cautelares para liberar cuentas bancarias Los det",
-   "lang": "es",
-   "title_en": "Individuals and companies sanctioned by the US for ties to the Sinaloa Cartel filed amparo lawsuits in Baja California. They were not granted injunctions to free their bank accounts. The details, in the print edition of ",
-   "first_report": "2026-10-31T04:16:25Z",
-   "first_report_precision": "minute",
-   "first_source": "ZETA Tijuana",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "ZETA Tijuana"
-   ],
-   "sources": [
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "X @ZETATijuana",
-     "url": "https://x.com/ZETATijuana/status/2116383768067928124",
-     "time": "2026-10-31T04:16:25Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "6d664ce05a",
-   "status": "confirmed",
-   "title": "El #expresidente municipal de San Juan Bautista #Tuxtepec, Oaxaca, Irineo Molina Espinoza, fue detenido por su presunta responsabilidad en el #desvío de más de 23 millones de pesos del patrimonio muni",
-   "lang": "es",
-   "title_en": "The former municipal president of San Juan Bautista Tuxtepec, Oaxaca, Irineo Molina Espinoza, was arrested for his alleged responsibility in diverting more than 23 million pesos of municipal assets during his administrat",
-   "first_report": "2026-10-31T02:30:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2723",
-    "ARG-1273"
-   ],
-   "country": "ARG",
-   "group_ids": [],
-   "outlets": [
-    "Infobae",
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2116356988489576588",
-     "time": "2026-10-31T02:30:00Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2116380045727899782",
-     "time": "2026-10-31T04:01:37Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "3d3a78245c",
-   "status": "single_source",
-   "title": "Lugarteniente y enlace de los colombianos, Israel Trigueros Muñoz, de los Rusos y el CDS, se había refugiado en Durango. Al día 13 de su regreso a Baja California, fue detenido. Los detalles, en la ed",
-   "lang": "es",
-   "title_en": "Lieutenant and liaison to the Colombians, Israel Trigueros Muñoz, of Los Rusos and the CDS, had taken refuge in Durango. On his 13th day back in Baja California, he was arrested. The details, in the print edition of Sema",
-   "first_report": "2026-10-31T03:16:55Z",
-   "first_report_precision": "minute",
-   "first_source": "ZETA Tijuana",
-   "region_ids": [
-    "MEX-2706",
-    "MEX-2710"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "ZETA Tijuana"
-   ],
-   "sources": [
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "X @ZETATijuana",
-     "url": "https://x.com/ZETATijuana/status/2116368796331958707",
-     "time": "2026-10-31T03:16:55Z",
-     "time_precision": "minute"
     }
    ]
   }

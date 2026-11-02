@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-02T02:01:03Z",
+ "as_of": "2026-11-02T11:01:40Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,57 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2117149401038655515",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2117149401038655515",
+   "created_at": "2026-11-02T06:58:46.000Z",
+   "text": "Sentencian a “El Pozoles” de La Unión Tepito a cinco años de prisión La condena contrasta con los antecedentes delictivos atribuidos a Brayan “N”, quien ha sido relacionado con investigaciones por desaparición de personas, homicidio, extorsión y otros delitos.",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "“El Pozoles” of La Unión Tepito sentenced to five years in prison. The sentence contrasts with the criminal record attributed to Brayan “N”, who has been linked to investigations into disappearances, homicide, extortion and other crimes."
+  },
+  {
+   "id": "2117124248795783288",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2117124248795783288",
+   "created_at": "2026-11-02T05:18:49.000Z",
+   "text": "➡️ Mujeres buscadoras piden no olvidar a los desaparecidos durante la Callejoneada de #Mazatlán 🟣| Un grupo de mujeres buscadoras se hizo presente durante la tradicional Callejoneada de Mazatlán para recordar a las personas desaparecidas y a quienes ya no están. La alcaldesa htt…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Women searchers ask that the disappeared not be forgotten during the Mazatlán Callejoneada. A group of women searchers appeared at the traditional Mazatlán Callejoneada to remember the disappeared and those who are no longer here. The mayor…"
+  },
+  {
+   "id": "2117081764380209409",
+   "handle": "ArmandoInfo",
+   "url": "https://x.com/ArmandoInfo/status/2117081764380209409",
+   "created_at": "2026-11-02T02:30:00.000Z",
+   "text": "Pero la suerte de Saab la enfrentaron primero sus socios. Álvaro Pulido Vargas estaba detenido en Caracas desde abril de 2023 por el caso Pdvsa-Cripto, mientras que Carlos Lizcano también quedó bajo arresto en febrero pasado tras la captura del propio https://t.co/a0mu8Q3aNt",
+   "lang": "es",
+   "region_ids": [
+    "VEN-43"
+   ],
+   "country": "VEN",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "regional outlet",
+   "label": null,
+   "text_en": "But Saab's partners met their fate first. Álvaro Pulido Vargas had been held in Caracas since April 2023 over the PDVSA-Crypto case, while Carlos Lizcano was also arrested last February after the capture of"
+  },
   {
    "id": "2117073104203596027",
    "handle": "noticieristas",
@@ -3856,94 +3907,6 @@
    "source_type": "regional outlet",
    "label": null,
    "text_en": "In the Altamira development, a two-storey building that appeared to be a residential project was left unfinished. It belonged to Alex Saab's circle. A faded DGCIM sign now hangs on the facade"
-  },
-  {
-   "id": "2114652049027514709",
-   "handle": "CrisisGroup",
-   "url": "https://x.com/CrisisGroup/status/2114652049027514709",
-   "created_at": "2026-10-26T09:35:11.000Z",
-   "text": "Nuclear weapons are again central to European security at a time when uncertainty about Washington grows. Our new report examines how European NATO allies can strengthen deterrence, bolster assurance and avoid escalation. https://t.co/deXCXp4rYw",
-   "lang": "en",
-   "region_ids": [
-    "PRY-607"
-   ],
-   "country": "PRY",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "think tank",
-   "label": null
-  },
-  {
-   "id": "2114606097927393603",
-   "handle": "ZETATijuana",
-   "url": "https://x.com/ZETATijuana/status/2114606097927393603",
-   "created_at": "2026-10-26T06:32:35.000Z",
-   "text": "Fue capturado en el restaurante Pampas ubicado a metros del Centro Cívico de Mexicali; es buscado por secuestro. Los detalles en: https://t.co/udLZpIpTNL https://t.co/lsfvfF8CmD",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "gulf"
-   ],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "He was captured at the Pampas restaurant, located a short distance from the Mexicali Civic Center; he is wanted for kidnapping. Details at the link."
-  },
-  {
-   "id": "2114596959600144491",
-   "handle": "ZETATijuana",
-   "url": "https://x.com/ZETATijuana/status/2114596959600144491",
-   "created_at": "2026-10-26T05:56:17.000Z",
-   "text": "Fue capturado en el restaurante Pampas ubicado a metros del Centro Cívico de Mexicali; es buscado por secuestro. https://t.co/udLZpIpTNL",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "gulf"
-   ],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "He was captured at the Pampas restaurant, located a short distance from the Mexicali Civic Center; he is wanted for kidnapping."
-  },
-  {
-   "id": "2114593302724944303",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2114593302724944303",
-   "created_at": "2026-10-26T05:41:45.000Z",
-   "text": "Identifican en fosa clandestina restos de Mauricio Vázquez, jornalero mixteco desaparecido hace 10 meses en Navolato https://t.co/6fdnZhgH16",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Remains of Mauricio Vázquez, a Mixtec farmworker who disappeared 10 months ago in Navolato, identified in a clandestine grave"
-  },
-  {
-   "id": "2114567339530183125",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2114567339530183125",
-   "created_at": "2026-10-26T03:58:35.000Z",
-   "text": "Asesinan a balazos a un dirigente sindical en un restaurante de Tuxpan, Veracruz https://t.co/H68fzWcX71",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2734"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Union leader shot dead in a restaurant in Tuxpan, Veracruz"
   }
  ]
 }
