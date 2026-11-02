@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-01T23:06:52Z",
+ "as_of": "2026-11-02T02:01:03Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -28,6 +28,77 @@
  ],
  "posts": [
   {
+   "id": "2117073104203596027",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2117073104203596027",
+   "created_at": "2026-11-02T01:55:36.000Z",
+   "text": "🚔🚨| Dos hombres perdieron la vida durante un ataque armado registrado este domingo 1 de noviembre en el fraccionamiento Cima Horizonte, en #Mazatlán, cuando se encontraban a bordo de un automóvil de color blanco. 🔺 De acuerdo con los primeros reportes, la agresión ocurrió https:…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "🚔🚨| Two men lost their lives in an armed attack on Sunday, November 1, in the Cima Horizonte subdivision in #Mazatlán, while they were in a white car. 🔺 According to initial reports, the attack took place…"
+  },
+  {
+   "id": "2117056073240592399",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2117056073240592399",
+   "created_at": "2026-11-02T00:47:55.000Z",
+   "text": "La alcaldesa de Baba, Jael Melo Olvera, habla sobre el contrato para obras de agua potable y alcantarillado con firma vinculada a Jackson Zambrano, financista de Los Lobos. https://t.co/kasvKLpdyu https://t.co/ldyKwH2mLu",
+   "lang": "und",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "lobos"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "The mayor of Baba, Jael Melo Olvera, speaks about the contract for drinking water and sewer works with a firm linked to Jackson Zambrano, financier of Los Lobos."
+  },
+  {
+   "id": "2117048428161057190",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2117048428161057190",
+   "created_at": "2026-11-02T00:17:32.000Z",
+   "text": "Detienen a tres hombres por realizar una construcción irregular en una zona protegida de Tláhuac: fiscalía investiga delitos contra el ambiente https://t.co/lW1InRLkwR",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Three men arrested for irregular construction in a protected area of Tláhuac: prosecutor's office investigates environmental crimes"
+  },
+  {
+   "id": "2117032840789438651",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2117032840789438651",
+   "created_at": "2026-11-01T23:15:36.000Z",
+   "text": "Lugarteniente y enlace de los colombianos, Israel Trigueros Muñoz, de los Rusos y el CDS, se había refugiado en Durango. Al día 13 de su regreso a Baja California, fue detenido. Los detalles, en la edición impresa del Semanario ZETA. https://t.co/gSecBGe4PQ",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2706",
+    "MEX-2710"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Lieutenant and liaison to the Colombians, Israel Trigueros Muñoz, of Los Rusos and the CDS, had taken refuge in Durango. On his 13th day back in Baja California, he was arrested."
+  },
+  {
    "id": "2117028914203898307",
    "handle": "ArmandoInfo",
    "url": "https://x.com/ArmandoInfo/status/2117028914203898307",
@@ -50,7 +121,7 @@
    "url": "https://x.com/infobaemexico/status/2117025720144654390",
    "created_at": "2026-11-01T22:47:18.000Z",
    "text": "El homicidio ocurrió la noche del 1 de noviembre de 2025, durante el Festival de las Velas, cuando Manzo era entonces alcalde de Uruapan https://t.co/0GIG6FVUT0 https://t.co/Ci27Kq5MHC",
-   "lang": "und",
+   "lang": "es",
    "region_ids": [
     "MEX-2720"
    ],
@@ -3873,41 +3944,6 @@
    "source_type": "national outlet",
    "label": null,
    "text_en": "Union leader shot dead in a restaurant in Tuxpan, Veracruz"
-  },
-  {
-   "id": "2114506672659906571",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2114506672659906571",
-   "created_at": "2026-10-25T23:57:31.000Z",
-   "text": "Un exempleado del Supremo Tribunal de Justicia del Estado de Sinaloa (#STJES) fue #privadodelalibertad por un grupo armado con armas largas y cortas y equipo táctico en la colonia José María Morelos y Pavón, en #Culiacán. https://t.co/AzkXz9o1VR",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2732",
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "A former employee of the Sinaloa State Supreme Court of Justice (#STJES) was #deprivedofliberty by an armed group carrying long and short guns and tactical gear in the José María Morelos y Pavón neighbourhood, in #Culiacán."
-  },
-  {
-   "id": "2114502265247879310",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2114502265247879310",
-   "created_at": "2026-10-25T23:40:00.000Z",
-   "text": "Fuerzas colombianas abaten a 10 miembros de la guerrilla del ELN en el suroeste del país El presidente Abelardo de la Espriella presentó en la red social X los resultados de la operación “Ónix”, la que calificó como “el golpe más duro” a esa estructura armada en los últimos ocho",
-   "lang": "es",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "eln"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Colombian forces kill 10 members of the ELN guerrilla in the country's southwest. President Abelardo de la Espriella presented on X the results of Operation \"Ónix\", which he called \"the hardest blow\" to that armed structure in the last eight"
   }
  ]
 }

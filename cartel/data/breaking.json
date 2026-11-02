@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-01T23:06:52Z",
+ "as_of": "2026-11-02T02:01:03Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,143 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "fbb6883f3f",
+   "status": "single_source",
+   "title": "🚔🚨| Dos hombres perdieron la vida y uno más resultó lesionado durante un ataque armado registrado alrededor de las 12:30 horas de este domingo, al interior de un centro de rehabilitación ubicado en la",
+   "lang": "es",
+   "title_en": "Two men were killed and another was wounded in an armed attack at around 12:30 this Sunday inside a rehabilitation center in the Felipe Ángeles neighborhood of #Mazatlán.",
+   "first_report": "2026-11-01T21:42:44Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2117009471394214279",
+     "time": "2026-11-01T21:42:44Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2117073104203596027",
+     "time": "2026-11-02T01:55:36Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "973046d19b",
+   "status": "single_source",
+   "title": "Alcaldesa de Baba anuncia terminación unilateral de contrato con firma vinculada a Jackson Zambrano, financista de Los Lobos",
+   "lang": "es",
+   "title_en": "Mayor of Baba announces unilateral termination of contract with firm linked to Jackson Zambrano, financier of Los Lobos",
+   "first_report": "2026-11-01T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Primicias",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "lobos"
+   ],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://primicias.ec/politica/alcaldesa-baba-jael-melo-terminacion-unilateral-contrato-empresa-vinculada-jackson-zambrano-financista-lobos-losrios-135997",
+     "time": "2026-11-01T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "X @Primicias",
+     "url": "https://x.com/Primicias/status/2117056073240592399",
+     "time": "2026-11-02T00:47:55Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "76898891fc",
+   "status": "single_source",
+   "title": "Detienen a tres hombres por realizar una construcción irregular en una zona protegida de Tláhuac: fiscalía investiga delitos contra el ambiente",
+   "lang": "es",
+   "title_en": "Three men arrested for irregular construction in a protected area of Tláhuac: prosecutor's office investigates environmental crimes",
+   "first_report": "2026-11-02T00:17:32Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2117048428161057190",
+     "time": "2026-11-02T00:17:32Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "fd77836fd6",
+   "status": "single_source",
+   "title": "Lugarteniente y enlace de los colombianos, Israel Trigueros Muñoz, de los Rusos y el CDS, se había refugiado en Durango. Al día 13 de su regreso a Baja California, fue detenido. Los detalles, en la ed",
+   "lang": "es",
+   "title_en": "Lieutenant and liaison to the Colombians, Israel Trigueros Muñoz, of Los Rusos and the CDS, had taken refuge in Durango. On his 13th day back in Baja California, he was arrested.",
+   "first_report": "2026-11-01T23:15:36Z",
+   "first_report_precision": "minute",
+   "first_source": "ZETA Tijuana",
+   "region_ids": [
+    "MEX-2706",
+    "MEX-2710"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "ZETA Tijuana"
+   ],
+   "sources": [
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "X @ZETATijuana",
+     "url": "https://x.com/ZETATijuana/status/2117032840789438651",
+     "time": "2026-11-01T23:15:36Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "7b5a1010f1",
    "status": "single_source",
@@ -72,35 +209,6 @@
      "via": "X @infobaemexico",
      "url": "https://x.com/infobaemexico/status/2117025720144654390",
      "time": "2026-11-01T22:47:18Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "fbb6883f3f",
-   "status": "single_source",
-   "title": "🚔🚨| Dos hombres perdieron la vida y uno más resultó lesionado durante un ataque armado registrado alrededor de las 12:30 horas de este domingo, al interior de un centro de rehabilitación ubicado en la",
-   "lang": "es",
-   "title_en": "Two men were killed and another was wounded in an armed attack at around 12:30 this Sunday inside a rehabilitation center in the",
-   "first_report": "2026-11-01T21:42:44Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2117009471394214279",
-     "time": "2026-11-01T21:42:44Z",
      "time_precision": "minute"
     }
    ]
@@ -545,9 +653,9 @@
    ],
    "country": "COL",
    "group_ids": [
+    "clan",
     "exfarc",
-    "eln",
-    "clan"
+    "eln"
    ],
    "outlets": [
     "Infobae"
@@ -632,35 +740,6 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://www.excelsior.com.mx/nacional/asesinato-manzo-venganza-cjng-tras-ano-90-investigacion",
-     "time": "2026-11-01T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "973046d19b",
-   "status": "single_source",
-   "title": "Alcaldesa de Baba anuncia terminación unilateral de contrato con firma vinculada a Jackson Zambrano, financista de Los Lobos",
-   "lang": "es",
-   "title_en": "Mayor of Baba announces unilateral termination of contract with firm linked to Jackson Zambrano, financier of Los Lobos",
-   "first_report": "2026-11-01T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "Primicias",
-   "region_ids": [],
-   "country": "ECU",
-   "group_ids": [
-    "lobos"
-   ],
-   "outlets": [
-    "Primicias"
-   ],
-   "sources": [
-    {
-     "outlet": "primicias",
-     "name": "Primicias",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://primicias.ec/politica/alcaldesa-baba-jael-melo-terminacion-unilateral-contrato-empresa-vinculada-jackson-zambrano-financista-lobos-losrios-135997",
      "time": "2026-11-01T12:00:00Z",
      "time_precision": "day"
     }
@@ -851,14 +930,14 @@
    "first_source": "Proceso",
    "region_ids": [
     "MEX-2706",
-    "MEX-2711",
     "MEX-2719",
-    "MEX-2712"
+    "MEX-2712",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
-    "cjng"
+    "cjng",
+    "sinaloa"
    ],
    "outlets": [
     "Proceso"
@@ -887,8 +966,8 @@
    "region_ids": [],
    "country": "COL",
    "group_ids": [
-    "eln",
-    "clan"
+    "clan",
+    "eln"
    ],
    "outlets": [
     "Semana"
@@ -1352,15 +1431,15 @@
    "first_report_precision": "day",
    "first_source": "El Financiero",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2719"
+    "MEX-2719",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
-    "sinaloa",
     "cjng",
-    "mayiza"
+    "mayiza",
+    "sinaloa",
+    "chapitos"
    ],
    "outlets": [
     "El Financiero"
@@ -1541,9 +1620,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
+    "mayiza",
     "sinaloa",
-    "mayiza"
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -1574,9 +1653,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
+    "mayiza",
     "sinaloa",
-    "mayiza"
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -1607,8 +1686,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
-    "mayiza"
+    "mayiza",
+    "sinaloa"
    ],
    "outlets": [
     "Infobae"
@@ -1639,9 +1718,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
+    "mayiza",
     "sinaloa",
-    "mayiza"
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -1830,9 +1909,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
+    "mayiza",
     "sinaloa",
-    "mayiza"
+    "chapitos"
    ],
    "outlets": [
     "MVS Noticias"
@@ -1981,8 +2060,8 @@
    "region_ids": [],
    "country": "HND",
    "group_ids": [
-    "tda",
-    "ms13"
+    "ms13",
+    "tda"
    ],
    "outlets": [
     "Infobae"
@@ -2283,8 +2362,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "eln",
-    "tda"
+    "tda",
+    "eln"
    ],
    "outlets": [
     "Semana"
@@ -2362,35 +2441,25 @@
    ]
   },
   {
-   "id": "fd52697275",
+   "id": "6d664ce05a",
    "status": "confirmed",
-   "title": "Detienen a Irineo Molina, exalcalde de Tuxtepec, Oaxaca, por desvío de 23 mdp A unos días de unirse a MC tras renunciar a Morena al no obtener la reelección, el exdiputado federal fue aprehendido por ",
+   "title": "El #expresidente municipal de San Juan Bautista #Tuxtepec, Oaxaca, Irineo Molina Espinoza, fue detenido por su presunta responsabilidad en el #desvío de más de 23 millones de pesos del patrimonio muni",
    "lang": "es",
-   "title_en": "Irineo Molina, former mayor of Tuxtepec, Oaxaca, arrested over the diversion of 23 million pesos. Days after joining MC, having quit Morena when he did not win re-election, the former federal deputy was arrested for unla",
-   "first_report": "2026-10-30T23:20:00Z",
+   "title_en": "The former municipal president of San Juan Bautista Tuxtepec, Oaxaca, Irineo Molina Espinoza, was arrested for his alleged responsibility in diverting more than 23 million pesos of municipal assets during his administrat",
+   "first_report": "2026-10-31T02:30:00Z",
    "first_report_precision": "minute",
-   "first_source": "Proceso",
+   "first_source": "Ríodoce",
    "region_ids": [
     "MEX-2723",
     "ARG-1273"
    ],
-   "country": "MEX",
+   "country": "ARG",
    "group_ids": [],
    "outlets": [
     "Infobae",
-    "Proceso",
     "Ríodoce"
    ],
    "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2116309171402658066",
-     "time": "2026-10-30T23:20:00Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "riodoce",
      "name": "Ríodoce",
@@ -2439,94 +2508,6 @@
      "via": "X @ZETATijuana",
      "url": "https://x.com/ZETATijuana/status/2116368796331958707",
      "time": "2026-10-31T03:16:55Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "846f4aeebd",
-   "status": "single_source",
-   "title": "➡️ Ataque armado en Villa Galaxia deja un hombre muerto y un menor herido en Mazatlán. 🚨🚔| Un hombre perdió la vida y un menor resultó herido durante un ataque armado en el Parque de las Estrellas, en",
-   "lang": "es",
-   "title_en": "Armed attack in Villa Galaxia leaves one man dead and a minor wounded in Mazatlán. A man was killed and a minor was wounded during an armed attack at Parque de las Estrellas, in the Villa Galaxia subdivision of #Mazatlán",
-   "first_report": "2026-10-30T23:48:36Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2116316368865767895",
-     "time": "2026-10-30T23:48:36Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "4f471e9d57",
-   "status": "single_source",
-   "title": "Costa Rica is a key freight route connecting the ports of Panama with the rest of Central America. But transport costs are rising as trucks travelling these routes are falling prey to violent and soph",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-10-30T23:31:16Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [
-    "PAN-1340",
-    "PRY-607"
-   ],
-   "country": "PAN",
-   "group_ids": [],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2116312005862687122",
-     "time": "2026-10-30T23:31:16Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "44ffc6249f",
-   "status": "single_source",
-   "title": "La Fiscalía General de la República (#FGR) obtuvo sentencia condenatoria contra nueve detenidos en un enfrentamiento entre grupos antagónicos en las inmediaciones del poblado de El Guasimal, la Sindic",
-   "lang": "es",
-   "title_en": "The Attorney General's Office (#FGR) obtained a conviction against nine people detained in a clash between rival groups near the village of El Guasimal, in the Imala district of #Culiacán.",
-   "first_report": "2026-10-30T23:10:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2116306654669025551",
-     "time": "2026-10-30T23:10:00Z",
      "time_precision": "minute"
     }
    ]
