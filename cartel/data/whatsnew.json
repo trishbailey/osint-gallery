@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-02T11:01Z",
+ "as_of": "2026-11-04T14:03Z",
  "note": "Strategic digest of the last ~7 days, grouped by ongoing trend: leadership, splits and alliances, territory and routes, policy and designations, violence patterns, money. Routine seizures and minor arrests are left out. X posts are used only as sources. Verification: Confirmed = 2+ independent reliable sources; Single source; Official claim only. Status is shown only when sourced counts support it.",
  "trends": [
   {
@@ -19,6 +19,26 @@
     "ELPAIS_SIN"
    ],
    "developments": [
+    {
+     "date": "2026-11-02",
+     "place": "Mazatlán",
+     "text": "Ríodoce counts more than 100 homicides in Mazatlán in October, the city's most violent month, and its mayor now calls security 'a challenge': the war's southern front has become as deadly as Culiacán's, with the port and tourist economy inside the contested ground.",
+     "verification": "Single source",
+     "regions": [
+      "MEX-2711"
+     ],
+     "groups": [
+      "sinaloa"
+     ],
+     "sources": [
+      {
+       "url": "https://riodoce.mx/2026/11/02/alcaldesa-de-mazatlan-ve-un-reto-en-seguridad-tras-octubre-el-mes-mas-violento-con-mas-de-100-homicidios",
+       "name": "Ríodoce",
+       "title": "Mazatlán mayor sees 'a challenge' in security after October, the most violent month with more than 100 homicides",
+       "date": "2026-11-02"
+      }
+     ]
+    },
     {
      "date": "2026-10-28",
      "place": "Sinaloa municipality, northern Sinaloa",
@@ -465,6 +485,39 @@
     }
    ],
    "developments": [
+    {
+     "date": "2026-11-03",
+     "place": "Venezuelan border states",
+     "text": "InSight Crime's investigation finds the ELN has consolidated control over much of the Colombia-Venezuela border and, through Zulia, reached Venezuela's Caribbean coast, profiting from the cocaine crossing it; a reported bombing of an ELN camp in Apure has raised the question of whether its working relationship with the Venezuelan government has ended, which bears directly on the rear base the group relies on while Colombia's offensive runs.",
+     "verification": "Single source",
+     "regions": [
+      "VEN-31",
+      "VEN-25"
+     ],
+     "groups": [
+      "eln"
+     ],
+     "sources": [
+      {
+       "url": "https://x.com/InSightCrime/status/2117383963215802568",
+       "name": "InSightCrime (X @InSightCrime)",
+       "title": "The ELN has consolidated its control over much of the border between Venezuela and Colombia, and is profiting …",
+       "date": "2026-11-02"
+      },
+      {
+       "url": "https://x.com/InSightCrime/status/2117739569554567577",
+       "name": "InSightCrime (X @InSightCrime)",
+       "title": "The ELN has established itself in the Venezuelan states bordering Colombia, where it engages in lucrative crim…",
+       "date": "2026-11-03"
+      },
+      {
+       "url": "https://x.com/InSightCrime/status/2117691941693411772",
+       "name": "InSightCrime (X @InSightCrime)",
+       "title": "Reports of a bombing targeting an ELN camp in Apure state, near the Colombian border, raise questions about wh…",
+       "date": "2026-11-03"
+      }
+     ]
+    },
     {
      "date": "2026-10-27",
      "place": "Cúcuta",
