@@ -24,6 +24,7 @@ HTML = '''<!doctype html><html lang="en"><head><script data-slash-fix>if(locatio
 <meta name="description" content="45 jihadist groups in four families: leaders, locations, links, the last 30 days and momentum.">
 <meta property="og:title" content="Jihadist Groups: Who's Who"><meta property="og:image" content="og.png">
 <link rel="stylesheet" href="style.css"></head><body>
+<a class="backlink" href="../#dashboards" title="Back to all dashboards">&larr; All dashboards</a>
 <header><div><a class="brand" href="https://beaconintelligencegroup.com"><span class="mark">BEACON</span> INTELLIGENCE GROUP<span class="brand-sub">JIHADIST GROUPS</span></a><h1>Jihadist Groups: Who's Who</h1></div>
 <nav aria-label="Sections"><a href="#map">Map</a><a href="#links">Links between groups</a><a href="#leaders">Leaders</a><a href="#incidents">Last 30 days</a><a href="#momentum">Momentum</a><a href="#take">Takeaway</a><a href="#sources">Sources</a></nav></header>
 <p class="lead" id="lede"><span id="intro">Loading.</span> Data as of <span id="asof"></span>.</p>
@@ -38,15 +39,15 @@ HTML = '''<!doctype html><html lang="en"><head><script data-slash-fix>if(locatio
 <h3>Show</h3><div class="group">
 <button class="fbtn" type="button" id="dormBtn" aria-pressed="true"></button>
 <button class="fbtn" type="button" id="incBtn" aria-pressed="false" style="--c:#e6e9ef"><span class="sw sq" style="transform:rotate(45deg) scale(.8);--c:#e6e9ef"></span>Last 30 days incidents<span class="ct">__INC_N__</span></button></div>
-<div class="hidephone"><h3>Key</h3><div class="keyrow"><span class="sw" style="--c:#8fa3c4"></span>Group</div><div class="keyrow"><span class="sw ring"></span>Now governing</div><div class="keyrow"><span class="sw dia" style="--c:#8fa3c4"></span>Incident, in its family colour</div></div>
+<div class="hidephone"><h3>Key</h3><div class="keyrow"><span class="sw" style="--c:#8fa3c4"></span>Group</div><div class="keyrow"><span class="sw ring"></span>Now governing</div><div class="keyrow"><span class="sw dia" style="--c:#8fa3c4"></span>Incident, in its family color</div></div>
 </aside>
 <div>
 <figure>
-<div class="mapwrap" id="mapwrap"><svg id="mapsvg" role="img" aria-label="World map with one marker per group, coloured by family"></svg>
+<div class="mapwrap" id="mapwrap"><svg id="mapsvg" role="img" aria-label="World map with one marker per group, colored by family"></svg>
 <div class="zoom"><button class="btn" type="button" id="zin" aria-label="Zoom in">+</button><button class="btn" type="button" id="zout" aria-label="Zoom out">−</button><button class="btn" type="button" id="zreset">Reset view</button></div></div>
 <figcaption id="mapcap"></figcaption></figure>
 <div class="regions" id="regions" role="group" aria-label="Zoom to a region"></div>
-<p class="muted">Drag to pan, scroll or pinch to zoom. Markers sit at the centre of each group's operating area and are spread apart where they overlap. Tap a marker for the leader card.</p>
+<p class="muted">Drag to pan, scroll or pinch to zoom. Markers sit at the center of each group's operating area and are spread apart where they overlap. Tap a marker for the leader card.</p>
 <div class="bars"><h3 id="barstitle"></h3><div id="bars"></div><p class="muted" id="barsnote"></p></div>
 </div></div></section>
 
@@ -54,7 +55,7 @@ HTML = '''<!doctype html><html lang="en"><head><script data-slash-fix>if(locatio
 <p>Groups fight, cooperate, fund and split from each other, and most links run inside one family. Every link is marked documented or reported, with a confidence level.</p>
 <div class="mapgrid hidephone">
 <aside class="side" aria-label="Link filters"><h3>Link type</h3><div class="group" id="typeBtns"></div>
-<h3>Node colour</h3><div id="gkeyfam"></div>
+<h3>Node color</h3><div id="gkeyfam"></div>
 <div class="keyrow"><span class="sw ring"></span>Now governing</div>
 <div class="keyrow"><span class="sw" style="background:transparent;border:3px solid #e6e9ef"></span>Outside actor (state or non-Islamist partner)</div>
 <p class="muted">Use the family buttons above the map to hide a family here too.</p></aside>
