@@ -15,7 +15,8 @@ Change checks (--changed-from BASE):
   6. Shared files (scripts/, .github/, render.yaml, README.md, root index.html/app.js/
      styles.css/tools.json, brand/, icons/) or more than one dashboard folder changed in
      one PR fail unless the PR carries the 'trish-approved' label (SHARED_OK=1).
-     Browser checks then run only on the dashboards whose folders changed.
+     Browser checks then run on the dashboards whose folders changed, or on every
+     dashboard when a shared file changed. Click checks stay on the changed folders.
   7. No numbered-key circles/badges (numbers 1,2,3... centred in circles or round pills; count bubbles are fine).
   8. Desktop: paragraph text (>=160 chars, 3+ lines) fills >= 75% of its container (source lists and side-by-side cards excluded) width.
   9. Desktop: every visible button changes something on screen when clicked.
@@ -29,7 +30,10 @@ are exempt (any other colour on the marker is checked as usual), and at most hal
 shapes may be exempt. Every other grey still fails.
 Colour pairs are checked on every SVG unless all its colours share one hue (within 40 deg).
 Shapes inside an element marked data-ci-ignore (or flags/logos/icons) are skipped.
-Usage: python scripts/ci_check.py [--static-only] [--port 8765]
+The GitHub workflow runs the browser and click checks one dashboard per job, in parallel.
+What is tested, and the waits inside each check, are unchanged. --list-plan prints the
+JSON list of dashboards those jobs should run. --one SLUG runs that dashboard only.
+Usage: python scripts/ci_check.py [--static-only] [--no-figures] [--port 8765]
 """
 import json, os, re, sys, glob, math, argparse, subprocess, threading, http.server, functools
 
@@ -500,41 +504,82 @@ def changed_files(base, head="HEAD", cwd=None):
     except Exception:
         return []
 
+def dashboard_slugs():
+    return sorted(os.path.basename(os.path.dirname(p)) for p in glob.glob(os.path.join(ROOT, "*", "index.html")))
+
+def work_plan(changed_from, changed_head, slugs_arg):
+    """Which dashboards get browser checks, and which of those also get click checks.
+
+    Same rules as before: --changed-from limits both to the dashboards whose folders
+    changed, except a shared-file edit browser-checks every dashboard and click-checks
+    only the folders that actually changed. --slugs is the manual list when --changed-from
+    is not set. Returns (browser_slugs, click_slugs, log_lines, policy_errors)."""
+    all_slugs = dashboard_slugs()
+    logs, policy = [], []
+    if not changed_from:
+        slugs = [s for s in slugs_arg.split(",") if s] or all_slugs
+        return slugs, list(slugs), logs, policy
+    files = changed_files(changed_from, changed_head)
+    logs.append(f"Changed files: {len(files)}")
+    shared = [f for f in files if f.split("/")[0] in SHARED_TOP or f in SHARED_ROOT_FILES]
+    touched = sorted({f.split("/")[0] for f in files if "/" in f and f.split("/")[0] in all_slugs})
+    ok = os.environ.get("SHARED_OK") == "1"
+    if shared:
+        msg = f"shared files changed: {shared[:8]}"
+        (logs.append("NOTE (trish-approved): " + msg) if ok else
+         policy.append(msg + " - needs Trish's OK (add the 'trish-approved' label)"))
+    if len(touched) > 1:
+        msg = f"more than one dashboard folder changed: {touched}"
+        (logs.append("NOTE (trish-approved): " + msg) if ok else
+         policy.append(msg + " - touch only your own folder, or get Trish's OK"))
+    slugs = touched
+    # a change to the checks or shared site files can break any page: re-check every dashboard
+    if any(f.split("/")[0] in SHARED_TOP or f in SHARED_ROOT_FILES for f in files):
+        slugs = all_slugs
+        logs.append("Checks or shared files changed: browser-checking every dashboard")
+    logs.append("Dashboards to browser-check: " + (repr(slugs) if slugs else "none"))
+    click = [s for s in slugs if s in touched]
+    return slugs, click, logs, policy
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--static-only", action="store_true")
+    ap.add_argument("--no-static", action="store_true", help="skip the GA/link checks and the shared-file rule")
+    ap.add_argument("--no-figures", action="store_true", help="skip per-dashboard _src/test_*.py")
+    ap.add_argument("--one", default="", help="browser, click, and figure checks for this one dashboard")
+    ap.add_argument("--list-plan", action="store_true", help="print the browser-check slugs as a JSON list and exit")
     ap.add_argument("--port", type=int, default=8765)
     ap.add_argument("--slugs", default="", help="comma list; default = every */index.html")
     ap.add_argument("--changed-from", default="", help="git base ref; check only changed dashboards")
     ap.add_argument("--changed-head", default="HEAD", help="git ref of the branch tip (a PR's head sha); changes are measured from merge-base(base, head)")
     a = ap.parse_args()
-    errs = static_checks()
-    all_slugs = sorted(os.path.basename(os.path.dirname(p)) for p in glob.glob(os.path.join(ROOT, "*", "index.html")))
-    slugs = [s for s in a.slugs.split(",") if s] or all_slugs
-    touched = []
-    if a.changed_from:
-        files = changed_files(a.changed_from, a.changed_head)
-        print("Changed files:", len(files))
-        shared = [f for f in files if f.split("/")[0] in SHARED_TOP or f in SHARED_ROOT_FILES]
-        touched = sorted({f.split("/")[0] for f in files if "/" in f and f.split("/")[0] in all_slugs})
-        ok = os.environ.get("SHARED_OK") == "1"
-        if shared:
-            msg = f"shared files changed: {shared[:8]}"
-            (print("NOTE (trish-approved):", msg) if ok else errs.append(msg + " - needs Trish's OK (add the 'trish-approved' label)"))
-        if len(touched) > 1:
-            msg = f"more than one dashboard folder changed: {touched}"
-            (print("NOTE (trish-approved):", msg) if ok else errs.append(msg + " - touch only your own folder, or get Trish's OK"))
-        slugs = touched
-        # a change to the checks or shared site files can break any page: re-check every dashboard
-        if any(f.split("/")[0] in SHARED_TOP or f in SHARED_ROOT_FILES for f in files):
-            slugs = all_slugs
-            print("Checks or shared files changed: browser-checking every dashboard")
-        print("Dashboards to browser-check:", slugs or "none")
-    for slug in slugs:  # per-dashboard figure tests: every number must come from the data
-        for t in sorted(glob.glob(os.path.join(ROOT, slug, "_src", "test_*.py"))):
-            rc = subprocess.run([sys.executable, t], cwd=ROOT).returncode
-            if rc:
-                errs.append(f"{os.path.relpath(t, ROOT)} failed (figures on the page do not match the data)")
+    slugs, click, logs, policy = work_plan(a.changed_from, a.changed_head, a.slugs)
+    if a.list_plan:
+        for line in logs:
+            print(line, file=sys.stderr)
+        print("[]" if a.static_only else json.dumps(slugs))
+        return
+    errs = []
+    if not a.no_static:
+        errs += static_checks()
+        for line in logs:
+            print(line)
+        errs += policy
+    if a.one:
+        if a.one not in slugs:
+            print(f"{a.one}: not selected for browser checks", file=sys.stderr)
+            for e in errs:
+                print("FAIL:", e)
+            print(f"\n{len(errs)} problem(s)." if errs else "All checks passed.")
+            sys.exit(1 if errs else 0)
+        slugs = [a.one]
+        click = [a.one] if a.one in click else []
+    if not a.no_figures:
+        for slug in slugs:  # per-dashboard figure tests: every number must come from the data
+            for t in sorted(glob.glob(os.path.join(ROOT, slug, "_src", "test_*.py"))):
+                rc = subprocess.run([sys.executable, t], cwd=ROOT).returncode
+                if rc:
+                    errs.append(f"{os.path.relpath(t, ROOT)} failed (figures on the page do not match the data)")
     if not a.static_only and slugs:
         handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=ROOT)
         http.server.ThreadingHTTPServer.allow_reuse_address = True
@@ -543,7 +588,8 @@ def main():
         http.server.SimpleHTTPRequestHandler.log_message = lambda *x: None
         threading.Thread(target=srv.serve_forever, daemon=True).start()
         errs += browser_checks(a.port, slugs)
-        errs += click_checks(a.port, [x for x in slugs if x in touched] if a.changed_from else slugs)
+        if click:
+            errs += click_checks(a.port, click)
         srv.shutdown()
     for e in errs:
         print("FAIL:", e)
