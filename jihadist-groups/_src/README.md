@@ -24,7 +24,7 @@ The page is static. `index.html` is a shell, `app.js` draws everything from `../
 ## Colours
 
 Family colours and the dissolved or dormant colour are set once in `build_data.py` and read by the page from `data.json`.
-`DISSOLVED_COLOR` is amber (`#d9a441`) because the shared colour check forbids grey data fills. To switch dissolved markers to grey once the shared check allows it, change that one variable to `#9aa6b8`, rebuild, and update the `is_grey` assertion in `test_figures.py`.
+`DISSOLVED_COLOR` is amber (`#d9a441`). The shared colour check allows grey only on a named special-category marker (`data-status` exactly `defunct`, `dissolved`, `inactive`, or `disbanded`, or a non-empty `data-special-category`), and this page's own test still rejects grey fills. To switch dissolved markers to grey, mark them as that special category, change `DISSOLVED_COLOR` to `#9aa6b8`, rebuild, and update the `is_grey` assertion in `test_figures.py`.
 
 ## Daily refresh (run by hand or by a scheduled agent, always through a PR)
 

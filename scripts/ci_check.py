@@ -9,8 +9,9 @@ Static checks (all pages):
 Browser checks (each dashboard page, desktop 1440px and phone 390px):
   3. Phone width: no horizontal overflow at 390px, no JS errors.
   4. Label size: every visible SVG text label renders at >= 13px.
-  5. Colour: no grey data fills (low-saturation SVG shapes) and no near-identical
-     fill pairs (CIEDE2000 delta E < 20) among the distinct data colours of each SVG.
+  5. Colour: no grey data fills (low-saturation SVG shapes), except greys on a named
+     special-category marker, and no near-identical fill pairs (CIEDE2000 delta E < 20)
+     among the distinct data colours of each SVG.
 Change checks (--changed-from BASE):
   6. Shared files (scripts/, .github/, render.yaml, README.md, root index.html/app.js/
      styles.css/tools.json, brand/, icons/) or more than one dashboard folder changed in
@@ -22,11 +23,16 @@ Change checks (--changed-from BASE):
   10. Click every clickable map shape (SVG shape with a pointer cursor) and every visible button at 1280px and 390px: each click must change
       something on screen, raise no JS/console error, and hit a real target (at most 30 shapes and 30 buttons per page per size, sampled evenly; with --changed-from only on the dashboards whose folders changed).
   11. Each checked dashboard's _src/test_*.py (figures derived from data) must pass.
-Grey exception (defunct markers only): a grey fill is allowed solely on a shape that sits inside a
-<g> (or is itself) marked data-status="defunct" AND carries a name (aria-label or a child <title>).
-The marker may not be the <svg> root, other values (is-defunct, defunct-ish, ...) do nothing, only greys
-are exempt (any other colour on the marker is checked as usual), and at most half of an SVG's data
-shapes may be exempt. Every other grey still fails.
+Grey exception (special categories only): grey still fails when it is a main category on a
+graphic (a group family, a map layer, a chart series, or any other ordinary data fill). A grey
+fill is allowed only on a shape that sits inside a <g> (or is itself) marked as a special category
+AND named (aria-label or a child <title>). Mark it with an exact data-status of "defunct",
+"dissolved", "inactive", or "disbanded", or with a non-empty data-special-category="<name>" for
+any other special category (dormant, historic, and similar). data-status="defunct" still works.
+The marker may not be the <svg> root. Other values (is-defunct, defunct-ish, "inactive defunct",
+"Inactive") and an empty data-special-category do nothing. Only greys are exempt (any other colour
+on the marker is checked as usual), and at most half of an SVG's data shapes may be exempt.
+Every other grey still fails.
 Colour pairs are checked on every SVG unless all its colours share one hue (within 40 deg).
 Shapes inside an element marked data-ci-ignore (or flags/logos/icons) are skipped.
 Usage: python scripts/ci_check.py [--static-only] [--port 8765]
@@ -143,12 +149,16 @@ COLLECT_JS = r"""() => {
  out.overflow = Math.max(document.documentElement.scrollWidth, document.body ? document.body.scrollWidth : 0) - window.innerWidth;
  const svgs = [...document.querySelectorAll('svg')].filter(s => {const b = s.getBoundingClientRect(); return b.width > 120 && b.height > 80;});
  svgs.forEach((s, i) => {
-   const cols = {}, dcols = {}, ramps = {}, badDefunct = [];
+   const cols = {}, dcols = {}, ramps = {}, badSpecial = [];
    const seenBad = new Set();
-   // Opt-in for dissolved/defunct items: data-status="defunct" (exact value) on the shape or a group inside
-   // this svg (never the svg root), and the marker must be named (aria-label or direct child <title>).
+   // Grey opt-in for a special category, not for a main category (group family, map layer, chart series).
+   // Exact data-status in this set, or a non-empty data-special-category, on the shape or a <g> inside
+   // this svg (never the svg root). The marker must be named (aria-label or direct child <title>).
+   const SPECIAL_STATUS = new Set(['defunct', 'dissolved', 'inactive', 'disbanded']);
    const named = m => (m.getAttribute('aria-label') || '').trim() !== '' ||
      [...m.children].some(c => c.tagName.toLowerCase() === 'title' && c.textContent.trim() !== '');
+   const isSpecial = m => SPECIAL_STATUS.has(m.getAttribute('data-status')) ||
+     (m.getAttribute('data-special-category') || '').trim() !== '';
    s.querySelectorAll('rect,circle,path,polygon,ellipse').forEach(e => {
      const cs = getComputedStyle(e); if (cs.display === 'none' || cs.visibility === 'hidden') return;
      if (e.closest('defs,clipPath,mask,pattern')) return;
@@ -159,17 +169,20 @@ COLLECT_JS = r"""() => {
      const v = m[1].split(',').map(Number); const a = (v.length > 3 ? v[3] : 1) * parseFloat(cs.fillOpacity || 1) * parseFloat(cs.opacity || 1);
      if (a < 0.05) return;
      const k = v.slice(0, 3).join(',');
-     const mk = e.closest('[data-status="defunct"]');
+     let mk = null;
+     for (let n = e; n && n !== s.parentElement; n = n.parentElement) {
+       if (isSpecial(n)) { mk = n; break; }
+     }
      let target = cols;
      if (mk) {
        if (mk !== s && s.contains(mk) && named(mk)) target = dcols;
-       else if (!seenBad.has(mk)) { seenBad.add(mk); badDefunct.push(mk === s ? 'svg root' : (mk.id || mk.tagName.toLowerCase())); }
+       else if (!seenBad.has(mk)) { seenBad.add(mk); badSpecial.push(mk === s ? 'svg root' : (mk.id || mk.tagName.toLowerCase())); }
      }
      target[k] = (target[k] || 0) + 1;
      // data-ramp="<group>" (on the mark or an ancestor) declares the fill as one shade in that group's own tint ramp
      const rp = e.closest('[data-ramp]'); if (rp) { (ramps[k] = ramps[k] || []); const g = rp.getAttribute('data-ramp'); if (!ramps[k].includes(g)) ramps[k].push(g); }
    });
-   out.svgs.push({i, id: s.id || s.getAttribute('class') || ('svg' + i), cols, dcols, ramps, badDefunct});
+   out.svgs.push({i, id: s.id || s.getAttribute('class') || ('svg' + i), cols, dcols, ramps, badSpecial});
  });
  document.querySelectorAll('svg text').forEach(t => {
    const b = t.getBoundingClientRect(); const cs = getComputedStyle(t);
@@ -192,8 +205,9 @@ def is_grey(rgb):
     return math.hypot(a, b) < 6 and 22 <= L <= 92
 
 def defunct_split(cols, dcols):
-    """Merge the shape colours found under valid data-status="defunct" markers back into the
-    checked colours, except greys: those are exempt. Returns (colours to check, exempt shape count)."""
+    """Merge colours found under a valid special-category marker back into the checked colours,
+    except greys: those are exempt. data-status="defunct" is one such marker. Returns
+    (colours to check, exempt shape count)."""
     live = dict(cols)
     exempt = 0
     for k, n in dcols.items():
@@ -456,11 +470,11 @@ def browser_checks(port, slugs):
                 for s in r["svgs"]:
                     live, exempt = defunct_split(s["cols"], s["dcols"])
                     s["cols"] = live
-                    for b in s["badDefunct"]:
-                        errs.append(f"{slug} svg '{s['id'][:30]}': data-status=\"defunct\" on {b} is not valid (must sit on a shape or <g> inside the svg, not the svg root, and carry an aria-label or <title>), so its greys are not exempt")
+                    for b in s["badSpecial"]:
+                        errs.append(f"{slug} svg '{s['id'][:30]}': special-category marker on {b} is not valid (must sit on a shape or <g> inside the svg, not the svg root, and carry an aria-label or <title>), so its greys are not exempt")
                     n_all = sum(live.values()) + sum(s["dcols"].values())
                     if exempt > n_all / 2:
-                        errs.append(f"{slug} svg '{s['id'][:30]}': {exempt} of {n_all} shapes use the defunct grey exemption (limit: half of the svg); grey is only for dissolved/defunct items")
+                        errs.append(f"{slug} svg '{s['id'][:30]}': {exempt} of {n_all} shapes use the special-category grey exemption (limit: half of the svg); grey is only for special categories, not main categories such as group families, map layers or chart series")
                     cols = [tuple(map(int, k.split(","))) for k in s["cols"]]
                     data = [c for c in cols if not is_background(c)]
                     greys = [c for c in data if is_grey(c)]

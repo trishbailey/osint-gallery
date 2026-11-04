@@ -13,7 +13,10 @@ WINDOW = ("2026-10-05", "2026-11-04")
 
 # ---- colours: ONE place. The page reads these from data.json. ------------------------------
 FAMILY_COLORS = {"al-qaeda": "#3d9be9", "islamic-state": "#e8575a", "iran-axis": "#2fc48d", "independent": "#b78cf2"}
-# Marker colour for dissolved or dormant groups. One variable: switch to grey ("#9aa6b8") later if the shared colour check allows it.
+# Marker colour for dissolved or dormant groups. Amber, not grey: test_figures.py still rejects grey.
+# The shared check allows grey only on a named special-category marker (data-status defunct, dissolved,
+# inactive or disbanded, or data-special-category). To switch, mark those shapes, set this to "#9aa6b8",
+# rebuild, and update the is_grey assertion in test_figures.py.
 DISSOLVED_COLOR = "#d9a441"
 
 FAMILIES = [

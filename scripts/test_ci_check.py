@@ -2,7 +2,10 @@
 """Self-test for scripts/ci_check.py: the browser checks must fail a page with look-alike
 category colours (two greens, two blues, 16 colours), numbered-key circles, short text and a
 dead button, and pass a clean page (incl. a 16-step single-hue intensity ramp).
-Grey exception: grey passes only on a named data-status="defunct" marker inside the svg; every other grey fails."""
+Grey exception: grey passes on a named special-category marker inside the svg (exact data-status
+defunct, dissolved, inactive or disbanded, or a non-empty data-special-category). Grey on a main
+category (group family, map layer, chart series) and every other grey still fails.
+data-status="defunct" still passes."""
 import os, sys, functools, threading, http.server
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import ci_check as c
@@ -14,8 +17,8 @@ c.ROOT = "/tmp/ci-selftest"  # screenshots go here, not into the repo
 bad = c.browser_checks(srv.server_address[1], ["bad"])
 bad2 = c.browser_checks(srv.server_address[1], ["bad2"])  # pill keys, narrow text in a card, hover-only button
 good = c.browser_checks(srv.server_address[1], ["good"])
-defunct_ok = c.browser_checks(srv.server_address[1], ["defunct_ok"])  # greys on defunct markers only
-defunct_bad = c.browser_checks(srv.server_address[1], ["defunct_bad"])  # every one of these greys must still fail
+defunct_ok = c.browser_checks(srv.server_address[1], ["defunct_ok"])  # greys on named special-category markers, including data-status="defunct"
+defunct_bad = c.browser_checks(srv.server_address[1], ["defunct_bad"])  # main-category greys and every other invalid grey must still fail
 srv.shutdown()
 want = {"look-alike colour": False, "numbered circles": False, "stop well short": False, "shows nothing": False}
 for e in bad:
@@ -26,13 +29,23 @@ for e in bad2:
     for k in want2:
         if k in e: want2[k] = True
 fails = [f"bad2 page not caught: {k}" for k, v in want2.items() if not v] + [f"bad page not caught: {k}" for k, v in want.items() if not v] + [f"clean page flagged: {e}" for e in good]
-fails += [f"defunct-marked grey wrongly flagged: {e}" for e in defunct_ok]
-for svg_id in ["bad-plain-grey", "bad-class-only", "bad-wrong-value", "bad-unnamed", "bad-svg-root", "bad-grey-beside-marker"]:
-    if not any(f"svg '{svg_id}'" in e and "grey data fill" in e for e in defunct_bad):
+fails += [f"special-category grey wrongly flagged: {e}" for e in defunct_ok]
+grey_bad = ["bad-plain-grey", "bad-class-only", "bad-wrong-value", "bad-unnamed", "bad-svg-root", "bad-grey-beside-marker",
+            "bad-family-grey", "bad-layer-grey", "bad-series-grey", "bad-special-empty", "bad-special-blank",
+            "bad-special-unnamed", "bad-special-root", "bad-status-retired", "bad-status-case"]
+for svg_id in grey_bad:
+    if not any(f"svg '{svg_id}':" in e and "grey data fill" in e for e in defunct_bad):
         fails.append(f"grey not caught on {svg_id}")
-if not any("svg 'bad-unnamed'" in e and "not valid" in e for e in defunct_bad): fails.append("unnamed defunct marker not reported")
-if not any("svg 'bad-svg-root'" in e and "not valid" in e for e in defunct_bad): fails.append("defunct marker on svg root not reported")
-if not any("svg 'bad-too-many'" in e and "limit: half" in e for e in defunct_bad): fails.append("over-use of the defunct exemption not caught")
+for svg_id in ["bad-unnamed", "bad-svg-root", "bad-special-unnamed", "bad-special-root"]:
+    if not any(f"svg '{svg_id}':" in e and "not valid" in e for e in defunct_bad):
+        fails.append(f"invalid special-category marker not reported on {svg_id}")
+not_a_marker = ["bad-plain-grey", "bad-class-only", "bad-wrong-value", "bad-family-grey", "bad-layer-grey", "bad-series-grey",
+                "bad-special-empty", "bad-special-blank", "bad-status-retired", "bad-status-case", "bad-grey-beside-marker"]
+for svg_id in not_a_marker:
+    if any(f"svg '{svg_id}':" in e and "not valid" in e for e in defunct_bad):
+        fails.append(f"non-marker reported as an invalid special category: {svg_id}")
+if not any("svg 'bad-too-many':" in e and "limit: half" in e for e in defunct_bad): fails.append("over-use of the defunct exemption not caught")
+if not any("svg 'bad-too-many-special':" in e and "limit: half" in e for e in defunct_bad): fails.append("over-use of the data-special-category exemption not caught")
 # changed_files must use the merge base: a branch that is merely behind main must not be blamed for main's newer commits
 import subprocess, tempfile
 def _git(d, *a): return subprocess.check_output(["git", "-c", "user.name=t", "-c", "user.email=t@t", *a], cwd=d, text=True).strip()
