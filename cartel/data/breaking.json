@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-04T17:04:20Z",
+ "as_of": "2026-11-04T19:55:40Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,184 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "6fd44d89d1",
+   "status": "single_source",
+   "title": "De acuerdo con el investigador y especialista en crimen organizado, Víctor Sánchez, hay cuatro factores que han permitido a la Nueva Familia Michoacana crecer hasta convertirse en la tercera organizac",
+   "lang": "es",
+   "title_en": "According to researcher and organized crime specialist Víctor Sánchez, four factors have allowed the Nueva Familia Michoacana to grow into the third-strongest criminal organization",
+   "first_report": "2026-11-04T19:50:05Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "lnfm"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118068286344589465",
+     "time": "2026-11-04T19:50:05Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "76fc653bc3",
+   "status": "confirmed",
+   "title": "La traición contra Carlos Manzo: CJNG silenció al alcalde de Uruapan- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-03T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "InSight Crime",
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/traicion-contra-carlos-manzo-cjng-silencio-alcalde-uruapan",
+     "time": "2026-11-03T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "insight",
+     "name": "InSight Crime",
+     "kind": "outlet",
+     "via": "X @InSightCrime",
+     "url": "https://x.com/InSightCrime/status/2117799713839755524",
+     "time": "2026-11-04T02:02:53Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "insight",
+     "name": "InSight Crime",
+     "kind": "outlet",
+     "via": "X @InSightCrime",
+     "url": "https://x.com/InSightCrime/status/2118063425481818481",
+     "time": "2026-11-04T19:30:47Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "1136e76c53",
+   "status": "single_source",
+   "title": "Alrededor de 80 personas fueron evacuadas hacia el Coliseo de Deportes de Santa Cruz debido a los estragos de las lluvias. El balance incluye una persona fallecida en Bellavista, y dos desaparecidos e",
+   "lang": "es",
+   "title_en": "About 80 people were evacuated to the Santa Cruz Sports Coliseum because of rain damage. The toll includes one person dead in Bellavista and two missing in the Divino Niño sector",
+   "first_report": "2026-11-04T18:58:23Z",
+   "first_report_precision": "minute",
+   "first_source": "Primicias",
+   "region_ids": [
+    "ARG-1271",
+    "BOL-1940"
+   ],
+   "country": "ARG",
+   "group_ids": [],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "X @Primicias",
+     "url": "https://x.com/Primicias/status/2118055271897452652",
+     "time": "2026-11-04T18:58:23Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "83bd57a4b0",
+   "status": "single_source",
+   "title": "Presuntos familiares de \"El Mencho\" visitaron su tumba en Zapopan por Día de Muertos - Infobae",
+   "lang": "es",
+   "title_en": "Alleged relatives of \"El Mencho\" visited his grave in Zapopan for Day of the Dead - Infobae",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/04/presuntos-familiares-de-el-mencho-visitaron-su-tumba-en-zapopan-por-dia-de-muertos/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118048130130145604",
+     "time": "2026-11-04T18:30:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "d246108152",
+   "status": "single_source",
+   "title": "🚨 #ParesInforma | Atentado con explosivos en la vía Panamericana, en Cauca. Una volqueta cargada con explosivos fue detonada este miércoles 4 de noviembre en El Estrecho, zona rural de Patía, cerca de",
+   "lang": "es",
+   "title_en": "#ParesInforma | Explosives attack on the Pan-American Highway in Cauca. A dump truck loaded with explosives was detonated this Wednesday, November 4, in El Estrecho, a rural area of Patía, near",
+   "first_report": "2026-11-04T17:08:04Z",
+   "first_report_precision": "minute",
+   "first_source": "Fundación Paz & Reconciliación",
+   "region_ids": [
+    "COL-1404"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "outlets": [
+    "Fundación Paz & Reconciliación"
+   ],
+   "sources": [
+    {
+     "outlet": "pares",
+     "name": "Fundación Paz & Reconciliación",
+     "kind": "outlet",
+     "via": "X @parescolombia",
+     "url": "https://x.com/parescolombia/status/2118027510843593155",
+     "time": "2026-11-04T17:08:04Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "a92d285de6",
    "status": "confirmed",
@@ -40,6 +218,15 @@
      "url": "https://x.com/infobaemexico/status/2117810483453415932",
      "time": "2026-11-04T02:45:40Z",
      "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/04/capturan-a-seis-miembros-del-cartel-de-sinaloa-en-tuxtla-les-decomisaron-armas-de-fuego-y-equipo-tactico/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
     },
     {
      "outlet": "sspc",
@@ -142,7 +329,7 @@
    "status": "single_source",
    "title": "➡️ Ataque con explosivos en Coto Premier Mazatlán; detonan artefacto en cochera y localizan otro junto a la vivienda 🚨🚔| Ataque explosivo en el fraccionamiento Coto Premier, en Mazatlán, dejó daños en",
    "lang": "es",
-   "title_en": "Explosives attack in Coto Premier, Mazatlán; a device detonated in a garage and another was found next to the house | An explosive attack in the Coto Premier subdivision in Mazatlán damaged",
+   "title_en": "Explosives attack in Coto Premier, Mazatlán; a device detonated in a garage and another was found next to the house | An explosive attack in the Coto Premier subdivision in Mazatlán damaged the garage of a house, where o",
    "first_report": "2026-11-04T15:39:41Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
@@ -171,7 +358,7 @@
    "status": "single_source",
    "title": "El Palabrero | Parte II: el plan Para atrapar a Crook, Rafa le propone al jefe policial pagarle un millón de dólares al Cartel Jalisco Nueva Generación y al Barrio 18. Luego de consultar con “el patró",
    "lang": "es",
-   "title_en": "El Palabrero | Part II: the plan. To catch Crook, Rafa proposes to the police chief that they pay one million dollars to the Cartel Jalisco Nueva Generación and Barrio 18. After consulting with “the boss”",
+   "title_en": "El Palabrero | Part II: the plan. To catch Crook, Rafa proposes to the police chief that they pay one million dollars to the Cartel Jalisco Nueva Generación and Barrio 18. After consulting with “the boss,” the police off",
    "first_report": "2026-11-04T14:17:29Z",
    "first_report_precision": "minute",
    "first_source": "El Faro",
@@ -180,8 +367,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "b18"
+    "b18",
+    "cjng"
    ],
    "outlets": [
     "El Faro"
@@ -228,23 +415,46 @@
    ]
   },
   {
-   "id": "8a95d0b744",
-   "status": "official_claim_only",
-   "title": "Como parte de las acciones para fortalecer la seguridad de Sinaloa, elementos de @SEMAR_mx, en coordinación con @SSPCMexico y @FGRMexico, realizaron dos operativos en las inmediaciones de Caminaguato ",
+   "id": "4e8599c363",
+   "status": "confirmed",
+   "title": "Marina realiza acciones de prevención en Sinaloa; asegura vehículos, armas y droga en Caminaguato y El Tepuche",
    "lang": "es",
-   "title_en": "As part of actions to strengthen security in Sinaloa, personnel from @SEMAR_mx, in coordination with @SSPCMexico and @FGRMexico, carried out two operations near Caminaguato and El Tepuche, where they seized five vehicles",
-   "first_report": "2026-11-04T12:04:31Z",
-   "first_report_precision": "minute",
-   "first_source": "Gabinete de Seguridad (Mexico)",
+   "title_en": "Navy carries out prevention actions in Sinaloa; seizes vehicles, weapons and drugs in Caminaguato and El Tepuche",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
    "region_ids": [
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2719"
    ],
    "country": "MEX",
-   "group_ids": [],
+   "group_ids": [
+    "cjng"
+   ],
    "outlets": [
-    "Gabinete de Seguridad (Mexico)"
+    "El Universal",
+    "Gabinete de Seguridad (Mexico)",
+    "Infobae"
    ],
    "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/nacion/marina-realiza-acciones-de-prevencion-en-sinaloa-asegura-vehiculos-armas-y-droga-en-caminaguato-y-el-tepuche/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/04/marina-incauta-armas-drogas-y-vehiculos-en-dos-operativos-en-sinaloa-afectacion-economica-al-narco-es-de-61-mdp/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
     {
      "outlet": "gabsec",
      "name": "Gabinete de Seguridad (Mexico)",
@@ -253,6 +463,931 @@
      "url": "https://x.com/GabSeguridadMX/status/2117951120291066065",
      "time": "2026-11-04T12:04:31Z",
      "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "e64d1d9704",
+   "status": "confirmed",
+   "title": "Capturan a “El Tartas” y dos más, presuntos operadores del CJNG en Puebla: se les acusa de ser parte de la logística del cártel en la zona",
+   "lang": "es",
+   "title_en": "\"El Tartas\" and two others, alleged CJNG operatives in Puebla, are captured: they are accused of being part of the cartel's logistics in the area",
+   "first_report": "2026-11-02T21:57:29Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2719",
+    "MEX-2711",
+    "MEX-2718",
+    "MEX-2723"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae",
+    "La Jornada"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2117375571906695567",
+     "time": "2026-11-02T21:57:29Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/02/capturan-a-el-tartas-y-dos-mas-presuntos-operadores-del-cjng-en-puebla-se-les-acusa-de-ser-parte-de-la-logistica-del-cartel-en-la-zona/",
+     "time": "2026-11-03T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/03/de-jalisco-a-oaxaca-marina-golpea-liderazgos-del-cjng-los-salazar-y-cartel-de-guasave-en-solo-dos-semanas/",
+     "time": "2026-11-03T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/03/de-jalisco-a-oaxaca-marina-golpea-liderazgos-del-cjng-los-salazar-y-cartel-de-guasave-en-solo-dos-semanas",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.jornada.com.mx/noticia/2026/11/03/politica/semar-destaca-golpes-al-cjng-los-salazar-y-cartel-de-guasave-en-cinco-estados",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "1c6857eddd",
+   "status": "confirmed",
+   "title": "DEA aportó inteligencia para ubicar a Chuy González, por quien ofrecía 5 millones de dólares",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-03T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Imparcial",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "El Imparcial",
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "elimparcial",
+     "name": "El Imparcial",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://elimparcial.com/mexico/2026/11/03/dea-aporto-inteligencia-para-ubicar-a-chuy-gonzalez-por-quien-ofrecia-5-millones-de-dolares",
+     "time": "2026-11-03T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://losnoticieristas.com/policiaca/2026/11/dea-confirma-que-aporto-inteligencia-para-ubicar-a-chuy-gonzalez-en-guasave-sinaloa-1159882/",
+     "time": "2026-11-03T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "elimparcial",
+     "name": "El Imparcial",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.elimparcial.com/mexico/2026/11/03/dea-aporto-inteligencia-para-ubicar-a-chuy-gonzalez-por-quien-ofrecia-5-millones-de-dolares/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "6f18a5632c",
+   "status": "single_source",
+   "title": "Aumentó 140% el número de adolescentes desaparecidos en jalisco desde 2019",
+   "lang": "es",
+   "title_en": "The number of missing adolescents in Jalisco has risen 140% since 2019",
+   "first_report": "2026-11-03T18:44:51Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2719",
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "chapitos",
+    "sinaloa",
+    "cjng",
+    "mayiza"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2117689480706425052",
+     "time": "2026-11-03T18:44:51Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/03/aumento-140-el-numero-de-adolescentes-desaparecidos-en-jalisco-desde-2019",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "9260b377b9",
+   "status": "confirmed",
+   "title": "Harfuch destaca decomiso de 133 kilos de metanfetamina en Sinaloa: la droga estaba oculta en un tractocamión",
+   "lang": "es",
+   "title_en": "Harfuch highlights seizure of 133 kilos of methamphetamine in Sinaloa: the drug was hidden in a tractor-trailer",
+   "first_report": "2026-11-03T23:07:32Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae",
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2117755586443948494",
+     "time": "2026-11-03T23:07:32Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/aseguran-tractocamion-con-metanfetamina-en-sinaloa",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "b0864ae438",
+   "status": "confirmed",
+   "title": "Detienen en Iztapalapa a Alan Rafael, alias “El Chopercito”, objetivo prioritario ligado con al menos 10 homicidios",
+   "lang": "es",
+   "title_en": "Alan Rafael, alias \"El Chopercito,\" a priority target linked to at least 10 homicides, is arrested in Iztapalapa",
+   "first_report": "2026-11-04T00:41:10Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "El Universal",
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2117779149804753016",
+     "time": "2026-11-04T00:41:10Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/metropoli/con-que-homicidios-relacionan-a-el-chopersito-lo-vinculan-con-al-menos-10-asesinatos-en-iztapalapa/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/03/en-vivo-seguridad-narcotrafico-y-crimen-en-mexico-hoy-3-de-noviembre-abogada-de-emma-coronel-planea-pedir-llamadas-monitoreadas-para-que-retome-contacto-con-el-chapo/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "270d9e5e66",
+   "status": "single_source",
+   "title": "Nuevo ataque con explosivos contra un peaje en el oeste de Colombia - Infobae",
+   "lang": "es",
+   "title_en": "New explosives attack on a toll booth in western Colombia - Infobae",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "COL-1408"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "eln",
+    "clan"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/america/agencias/2026/11/04/nuevo-ataque-con-explosivos-contra-un-peaje-en-el-oeste-de-colombia",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "1fbbb14332",
+   "status": "single_source",
+   "title": "Clan del Golfo tiene presencia en el 72 % de Antioquia y llega a 94 municipios en 2026 - Infobae",
+   "lang": "es",
+   "title_en": "Clan del Golfo has a presence in 72% of Antioquia and reaches 94 municipalities in 2026 - Infobae",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "COL-1314"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "eln",
+    "clan"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/colombia/2026/11/04/clan-del-golfo-tiene-presencia-en-el-72-de-antioquia-y-llega-a-94-municipios-en-2026",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "23184a7a72",
+   "status": "confirmed",
+   "title": "Así fue la vida de Antonio Oseguera, hermano de “El Mencho”: pobreza, trabajo infantil y adicciones hasta llegar al CJNG - Infobae",
+   "lang": "es",
+   "title_en": "The life of Antonio Oseguera, brother of “El Mencho”: poverty, child labor and addiction on the road to the CJNG - Infobae",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae",
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/03/asi-fue-la-vida-de-antonio-oseguera-hermano-de-el-mencho-pobreza-trabajo-infantil-y-adicciones-hasta-llegar-al-cjng",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/03/tony-montana-hermano-de-el-mencho-pide-compasion-al-juez-que-dictara-su-sentencia-en-eeuu",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/narcotrafico/cual-es-estado-salud-antonio-oseguera-cervantes-tony-montana-cjng",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/tony-montana-hermano-mencho-carta-cjng-adicciones",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.milenio.com/policia/narcotrafico/quien-era-el-padre-de-el-mencho-fundador-del-cjng-esto-sabemos",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "4fc0bbc492",
+   "status": "single_source",
+   "title": "Los Chapitos pierden territorios, sicarios y negocios por traiciones de sus aliados, advierte especialista - Infobae",
+   "lang": "es",
+   "title_en": "Los Chapitos are losing territory, gunmen and businesses to betrayals by their allies, specialist warns - Infobae",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "chapitos",
+    "sinaloa",
+    "mayiza"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/03/los-chapitos-pierden-territorios-sicarios-y-negocios-por-traiciones-de-sus-aliados-advierte-especialista",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "9aa74749d2",
+   "status": "single_source",
+   "title": "Detienen en Coahuila a grupo criminal proveniente de Tamaulipas- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2716",
+    "MEX-2708"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/detienen-coahuila-grupo-criminal-proveniente-tamaulipas",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "8e8eb631ed",
+   "status": "single_source",
+   "title": "U.S. Assisted Venezuela in Deadly Drone Strike, Officials Say - The New York Times",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "The New York Times",
+   "region_ids": [
+    "VEN-41"
+   ],
+   "country": "VEN",
+   "group_ids": [
+    "tda"
+   ],
+   "outlets": [
+    "The New York Times"
+   ],
+   "sources": [
+    {
+     "outlet": "nyt",
+     "name": "The New York Times",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://nytimes.com/2026/11/03/world/americas/us-venezuela-strike-eln-drug-trafficking.html",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "b21476b9c9",
+   "status": "single_source",
+   "title": "El Oro rompe récord de homicidios· Escuelas de sicarios y plazas de droga de USD 2.000 diarios impulsan la violencia, según informes de la fuerza pública",
+   "lang": "es",
+   "title_en": "El Oro breaks homicide record: hitman schools and drug sales points worth USD 2,000 a day drive the violence, according to security force reports",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Primicias",
+   "region_ids": [
+    "ECU-1267"
+   ],
+   "country": "ECU",
+   "group_ids": [
+    "choneros"
+   ],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://primicias.ec/seguridad/provincia-eloro-record-homicidios-2026-microtrafico-escuelas-sicarios-droga-muertes-violentas-machala-136084",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "559db04df7",
+   "status": "single_source",
+   "title": "Se sorprende Eligio López por señalamientos de la ASF sobre triangulación de recursos en Sinaloa - Ríodoce",
+   "lang": "es",
+   "title_en": "Eligio López surprised by ASF findings of triangulation of funds in Sinaloa - Ríodoce",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://riodoce.mx/2026/11/03/se-sorprende-eligio-lopez-por-senalamientos-de-la-asf-sobre-triangulacion-de-recursos-en-sinaloa",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "d015c85468",
+   "status": "single_source",
+   "title": "La Policía capturó en Medellín a dos hombres que transportaban dos armas y varios cartuchos modificados con plomo en un vehículo particular - El Tiempo",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Tiempo",
+   "region_ids": [
+    "COL-1314"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "outlets": [
+    "El Tiempo"
+   ],
+   "sources": [
+    {
+     "outlet": "eltiempo",
+     "name": "El Tiempo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eltiempo.com/colombia/medellin/la-policia-capturo-en-medellin-a-dos-hombres-que-transportaban-dos-armas-y-varios-cartuchos-modificados-con-plomo-en-un-vehiculo-particular-3598189",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "5252a151f1",
+   "status": "single_source",
+   "title": "Reportan segunda muerte de un interno en penal de Culiacán en 15 días; Fiscalía investigará las causas del deceso",
+   "lang": "es",
+   "title_en": "Second death of an inmate in Culiacán prison reported in 15 days; prosecutor's office to investigate the cause",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "El Universal"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/estados/reportan-segunda-muerte-de-un-interno-en-penal-de-culiacan-en-15-dias-fiscalia-investigara-las-causas-del-deceso/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "9eda7cce6e",
+   "status": "single_source",
+   "title": "Vorágine insaciable: Reclutan a cientos de jóvenes para sostener la guerra en Sinaloa",
+   "lang": "es",
+   "title_en": "Insatiable vortex: hundreds of young people recruited to sustain the war in Sinaloa",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "El Universal"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/grafico/periodismo-de-investigacion/voragine-insaciable-reclutan-a-cientos-de-jovenes-para-sostener-la-guerra-en-sinaloa/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "418e279e0e",
+   "status": "single_source",
+   "title": "Fuga de agua provoca cierre vial en Calzada México-Tacuba; descartan afectaciones en estación Colegio Militar",
+   "lang": "es",
+   "title_en": "Water leak forces road closure on Calzada México-Tacuba; impact on Colegio Militar station ruled out",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2730"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "El Universal"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/metropoli/fuga-de-agua-provoca-cierre-vial-en-calzada-mexico-tacuba-descartan-afectaciones-en-estacion-colegio-militar/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "96afe312ae",
+   "status": "single_source",
+   "title": "El Senado aprueba sin oposición la enmienda constitucional que amplía el rol del Gobierno federal en seguridad - Infobae",
+   "lang": "es",
+   "title_en": "Senate approves without opposition the constitutional amendment expanding the federal government's role in security - Infobae",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [],
+   "country": null,
+   "group_ids": [
+    "cv",
+    "pcc"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/america/agencias/2026/11/04/el-senado-aprueba-sin-oposicion-la-enmienda-constitucional-que-amplia-el-rol-del-gobierno-federal-en-seguridad/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "b6c2136418",
+   "status": "single_source",
+   "title": "Inundaciones en Galápagos dejan 2.000 familias afectadas: alcaldesa de Santa Cruz descartó desaparecidos",
+   "lang": "es",
+   "title_en": "Floods in Galápagos affect 2,000 families: Santa Cruz mayor rules out missing persons",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "ARG-1271",
+    "ECU-1270",
+    "BOL-1940"
+   ],
+   "country": "ARG",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/america/america-latina/2026/11/04/inundaciones-en-galapagos-dejan-2000-familias-afectadas-alcaldesa-de-santa-cruz-descarto-desaparecidos/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "cb0917b132",
+   "status": "single_source",
+   "title": "Uruguay desplegará un operativo con hasta 6.700 policías y militares para la vista del papa León XIV",
+   "lang": "es",
+   "title_en": "Uruguay to deploy up to 6,700 police and soldiers for the visit of Pope Leo XIV",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "NIC-658"
+   ],
+   "country": "NIC",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/america/america-latina/2026/11/04/uruguay-desplegara-un-operativo-con-hasta-6700-policias-y-militares-para-la-vista-del-papa-leon-xiv/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "1a8043f124",
+   "status": "single_source",
+   "title": "“La Diablita” fue deportada de Estados Unidos y capturada en El Salvador por presuntos vínculos con Barrio 18 Sureños",
+   "lang": "es",
+   "title_en": "“La Diablita” was deported from the United States and captured in El Salvador over alleged links to Barrio 18 Sureños",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "ECU-1286"
+   ],
+   "country": "ECU",
+   "group_ids": [
+    "b18"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/el-salvador/2026/11/04/la-diablita-fue-deportada-de-estados-unidos-y-capturada-en-el-salvador-por-presuntos-vinculos-con-barrio-18-surenos/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "28102798fd",
+   "status": "single_source",
+   "title": "Nicaragua excluye a Cuba y Venezuela de las autorizaciones militares para 2027",
+   "lang": "es",
+   "title_en": "Nicaragua excludes Cuba and Venezuela from its military authorizations for 2027",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "VEN-43",
+    "NIC-659"
+   ],
+   "country": "NIC",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/nicaragua/2026/11/04/nicaragua-excluye-a-cuba-y-venezuela-de-las-autorizaciones-militares-para-2027/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "42e17ea19b",
+   "status": "single_source",
+   "title": "Panamá acumula 495 homicidios en 2026: la violencia supera las cifras del año pasado",
+   "lang": "es",
+   "title_en": "Panama has 495 homicides in 2026: violence exceeds last year's figures",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "PAN-1340"
+   ],
+   "country": "PAN",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/panama/2026/11/04/panama-acumula-495-homicidios-en-2026-la-violencia-supera-las-cifras-del-ano-pasado/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "30b21d24ed",
+   "status": "single_source",
+   "title": "“¡Te voy a volar el dedo!”: encontraron un video de las torturas a una víctima del triple crimen de Florencio Varela - Infobae",
+   "lang": "es",
+   "title_en": "“I'm going to blow your finger off!”: video found of the torture of a victim of the Florencio Varela triple murder - Infobae",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [],
+   "country": null,
+   "group_ids": [
+    "tda"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/sociedad/policiales/2026/11/04/te-voy-a-volar-el-dedo-encontraron-una-video-de-las-torturas-a-la-victima-del-triple-crimen-en-el-telefono-de-un-narco-peruano/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "5ea528c6b5",
+   "status": "single_source",
+   "title": "Hallan dos fosas clandestinas en el Valle de Mexicali",
+   "lang": "es",
+   "title_en": "Two clandestine graves found in the Mexicali Valley",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "La Jornada",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "La Jornada"
+   ],
+   "sources": [
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.jornada.com.mx/2026/11/04/estados/030n5est?partner=rss",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "61d46a853b",
+   "status": "single_source",
+   "title": "Hermano de \"El Mencho\" da a conocer cuántos años de cárcel quiere pasar en EU",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "TV Azteca Noticias",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "TV Azteca Noticias"
+   ],
+   "sources": [
+    {
+     "outlet": "tvazteca",
+     "name": "TV Azteca Noticias",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.tvazteca.com/aztecanoticias/hermano-el-mencho-del-cjng-pide-numero-anos-carcel-sentenci-eu-esta-fue-la-razon",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
     }
    ]
   },
@@ -342,76 +1477,6 @@
      "via": "X @infobaemexico",
      "url": "https://x.com/infobaemexico/status/2117808491645501520",
      "time": "2026-11-04T02:37:46Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "76fc653bc3",
-   "status": "confirmed",
-   "title": "La traición contra Carlos Manzo: CJNG silenció al alcalde de Uruapan- Grupo Milenio",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-11-03T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "Milenio",
-   "region_ids": [
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "InSight Crime",
-    "Milenio"
-   ],
-   "sources": [
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/traicion-contra-carlos-manzo-cjng-silencio-alcalde-uruapan",
-     "time": "2026-11-03T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2117799713839755524",
-     "time": "2026-11-04T02:02:53Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "b0864ae438",
-   "status": "single_source",
-   "title": "Detienen en Iztapalapa a Alan Rafael, alias “El Chopercito”, objetivo prioritario ligado con al menos 10 homicidios",
-   "lang": "es",
-   "title_en": "Alan Rafael, alias \"El Chopercito,\" a priority target linked to at least 10 homicides, is arrested in Iztapalapa",
-   "first_report": "2026-11-04T00:41:10Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117779149804753016",
-     "time": "2026-11-04T00:41:10Z",
      "time_precision": "minute"
     }
    ]
@@ -559,35 +1624,6 @@
      "via": "X @Riodoce_mx",
      "url": "https://x.com/Riodoce_mx/status/2117761239736897699",
      "time": "2026-11-03T23:30:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "9260b377b9",
-   "status": "single_source",
-   "title": "Harfuch destaca decomiso de 133 kilos de metanfetamina en Sinaloa: la droga estaba oculta en un tractocamión",
-   "lang": "es",
-   "title_en": "Harfuch highlights seizure of 133 kilos of methamphetamine in Sinaloa: the drug was hidden in a tractor-trailer",
-   "first_report": "2026-11-03T23:07:32Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117755586443948494",
-     "time": "2026-11-03T23:07:32Z",
      "time_precision": "minute"
     }
    ]
@@ -781,35 +1817,6 @@
    ]
   },
   {
-   "id": "6f18a5632c",
-   "status": "single_source",
-   "title": "Aumentó 140% el número de adolescentes desaparecidos en jalisco desde 2019",
-   "lang": "es",
-   "title_en": "The number of missing adolescents in Jalisco has risen 140% since 2019",
-   "first_report": "2026-11-03T18:44:51Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117689480706425052",
-     "time": "2026-11-03T18:44:51Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
    "id": "d96313759a",
    "status": "single_source",
    "title": "Today, readers turn to InSight Crime to understand issues ranging from fentanyl markets to the expansion of the Tren de Aragua because our reporting follows these stories over time—not just when they ",
@@ -848,10 +1855,10 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2711",
     "MEX-2721",
+    "MEX-2711",
     "MEX-2725",
-    "MEX-2727"
+    "MEX-2726"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -909,8 +1916,8 @@
    "first_report_precision": "minute",
    "first_source": "Crisis Group",
    "region_ids": [
-    "HTI-1387",
-    "HTI-1386"
+    "HTI-1386",
+    "HTI-1387"
    ],
    "country": "HTI",
    "group_ids": [],
@@ -990,124 +1997,6 @@
    ]
   },
   {
-   "id": "cc3f050946",
-   "status": "confirmed",
-   "title": "#Últimahora 🚨🚔| Se registra ataque a balazos en la Feria Ganadera de #Culiacán 🐄 🎡. Se desconoce si fue a la fachada del inmueble o una agresión a los militares. En el sitio se recogieron al menos 16 ",
-   "lang": "es",
-   "title_en": "#BreakingNews 🚨🚔| A shooting attack is reported at the Livestock Fair in #Culiacán 🐄 🎡. It is unknown whether it targeted the building's facade or was an attack on soldiers. At least 16 shell casings were collected at th",
-   "first_report": "2026-11-02T17:37:44Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "El Universal",
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2117310200306913578",
-     "time": "2026-11-02T17:37:44Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2117321741018210317",
-     "time": "2026-11-02T18:23:35Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2117345806202077285",
-     "time": "2026-11-02T19:59:13Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2117491966015397969",
-     "time": "2026-11-03T05:40:00Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "eluniversal",
-     "name": "El Universal",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.eluniversal.com.mx/estados/caen-3-presuntos-responsables-de-ataque-a-instalaciones-de-la-feria-ganadera-en-sinaloa-hay-un-menor-entre-los-detenidos/",
-     "time": "2026-11-03T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "e64d1d9704",
-   "status": "single_source",
-   "title": "Capturan a “El Tartas” y dos más, presuntos operadores del CJNG en Puebla: se les acusa de ser parte de la logística del cártel en la zona",
-   "lang": "es",
-   "title_en": "\"El Tartas\" and two others, alleged CJNG operatives in Puebla, are captured: they are accused of being part of the cartel's logistics in the area",
-   "first_report": "2026-11-02T21:57:29Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2719",
-    "MEX-2724",
-    "MEX-2711",
-    "MEX-2712"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117375571906695567",
-     "time": "2026-11-02T21:57:29Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/11/02/capturan-a-el-tartas-y-dos-mas-presuntos-operadores-del-cjng-en-puebla-se-les-acusa-de-ser-parte-de-la-logistica-del-cartel-en-la-zona/",
-     "time": "2026-11-03T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/11/03/de-jalisco-a-oaxaca-marina-golpea-liderazgos-del-cjng-los-salazar-y-cartel-de-guasave-en-solo-dos-semanas/",
-     "time": "2026-11-03T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
    "id": "0f41c69615",
    "status": "single_source",
    "title": "Como eleições nos EUA devem selar destino de Trump e futuro da relação com o Brasil em 4º mandato de Lula - BBC News Brasil",
@@ -1119,8 +2008,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "pcc",
-    "cv"
+    "cv",
+    "pcc"
    ],
    "outlets": [
     "BBC"
@@ -1141,47 +2030,6 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://bbc.com/portuguese/live/c6073r14jp7gt",
-     "time": "2026-11-03T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "1c6857eddd",
-   "status": "confirmed",
-   "title": "DEA aportó inteligencia para ubicar a Chuy González, por quien ofrecía 5 millones de dólares",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-11-03T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "El Imparcial",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "El Imparcial",
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "elimparcial",
-     "name": "El Imparcial",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://elimparcial.com/mexico/2026/11/03/dea-aporto-inteligencia-para-ubicar-a-chuy-gonzalez-por-quien-ofrecia-5-millones-de-dolares",
-     "time": "2026-11-03T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://losnoticieristas.com/policiaca/2026/11/dea-confirma-que-aporto-inteligencia-para-ubicar-a-chuy-gonzalez-en-guasave-sinaloa-1159882/",
      "time": "2026-11-03T12:00:00Z",
      "time_precision": "day"
     }
@@ -1255,15 +2103,15 @@
    "first_report_precision": "day",
    "first_source": "Excélsior",
    "region_ids": [
-    "MEX-2718",
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2718"
    ],
    "country": "MEX",
    "group_ids": [
     "chapitos",
-    "mayiza",
+    "sinaloa",
     "cjng",
-    "sinaloa"
+    "mayiza"
    ],
    "outlets": [
     "Excélsior"
@@ -1622,6 +2470,35 @@
    ]
   },
   {
+   "id": "ba44dc5a80",
+   "status": "single_source",
+   "title": "Caen 3 presuntos responsables de ataque a instalaciones de la Feria Ganadera en Sinaloa; hay un menor entre los detenidos",
+   "lang": "es",
+   "title_en": "Three alleged perpetrators of the attack on the Livestock Fair grounds in Sinaloa are arrested; a minor is among those detained",
+   "first_report": "2026-11-03T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "El Universal"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/estados/caen-3-presuntos-responsables-de-ataque-a-instalaciones-de-la-feria-ganadera-en-sinaloa-hay-un-menor-entre-los-detenidos/",
+     "time": "2026-11-03T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
    "id": "d6a1639628",
    "status": "single_source",
    "title": "Violencia en Sinaloa: atacan a un policía municipal y a una mujer en hechos distintos en Mazatlán; vandalizan dos inmuebles en Culiacán",
@@ -1719,8 +2596,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2719",
-    "MEX-2720"
+    "MEX-2720",
+    "MEX-2719"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1811,8 +2688,8 @@
    "first_report_precision": "day",
    "first_source": "La Jornada",
    "region_ids": [
-    "MEX-2730",
-    "MEX-2732"
+    "MEX-2732",
+    "MEX-2730"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -1887,6 +2764,44 @@
      "url": "https://zetatijuana.com/2026/11/localizan-nueva-fosa-clandestina-en-el-poblado-miguel-aleman-en-mexicali-2/?utm_source=rss&utm_medium=rss&utm_campaign=localizan-nueva-fosa-clandestina-en-el-poblado-miguel-aleman-en-mexicali-2",
      "time": "2026-11-03T12:00:00Z",
      "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "442c86a93b",
+   "status": "single_source",
+   "title": "Se registra ataque a balazos en la Feria Ganadera de Culiacán A la 1 con Omar de la Rocha y todo su equipo en \"Los Noticieristas\".",
+   "lang": "es",
+   "title_en": "A shooting attack is reported at the Culiacán Livestock Fair. At 1 p.m. with Omar de la Rocha and his whole team on \"Los Noticieristas\".",
+   "first_report": "2026-11-02T19:59:13Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2117345806202077285",
+     "time": "2026-11-02T19:59:13Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2117491966015397969",
+     "time": "2026-11-03T05:40:00Z",
+     "time_precision": "minute"
     }
    ]
   },
@@ -2160,35 +3075,6 @@
      "via": "X @ZETATijuana",
      "url": "https://x.com/ZETATijuana/status/2117357983306752404",
      "time": "2026-11-02T20:47:36Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "a26e02afb7",
-   "status": "single_source",
-   "title": "Ocho periodistas fueron agredidos en cobertura del abatimiento de El Mencho: RSF acusa al CJNG como “depredador de la libertad de prensa”",
-   "lang": "es",
-   "title_en": "Eight journalists were attacked while covering the killing of El Mencho: RSF names the CJNG a \"predator of press freedom\"",
-   "first_report": "2026-11-02T19:21:04Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117336208145596770",
-     "time": "2026-11-02T19:21:04Z",
      "time_precision": "minute"
     }
    ]

@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-04T17:04:20Z",
+ "as_of": "2026-11-04T19:55:40Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,96 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2118068286344589465",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2118068286344589465",
+   "created_at": "2026-11-04T19:50:05.000Z",
+   "text": "De acuerdo con el investigador y especialista en crimen organizado, Víctor Sánchez, hay cuatro factores que han permitido a la Nueva Familia Michoacana crecer hasta convertirse en la tercera organización delictiva más fuerte del país, solo por detrás ... https://t.co/N9SsyZvAe2…",
+   "lang": "und",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "lnfm"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "According to researcher and organized crime specialist Víctor Sánchez, four factors have allowed the Nueva Familia Michoacana to grow into the third-strongest criminal organization in the country, behind only ..."
+  },
+  {
+   "id": "2118063425481818481",
+   "handle": "InSightCrime",
+   "url": "https://x.com/InSightCrime/status/2118063425481818481",
+   "created_at": "2026-11-04T19:30:47.000Z",
+   "text": "A year after Uruapan Mayor Carlos Manzo’s killing, the CJNG commander linked to his murder has been tied to the assassination of influencer Valeria Márquez. Who is accused of orchestrating the high-profile killings, and what does his role reveal about the CJNG’s structure? https…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "research outlet",
+   "label": null,
+   "text_en": "A year after Uruapan Mayor Carlos Manzo’s killing, the CJNG commander linked to his murder has been tied to the assassination of influencer Valeria Márquez. Who is accused of orchestrating the high-profile killings, and what does his role reveal about the CJNG’s structure?"
+  },
+  {
+   "id": "2118055271897452652",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2118055271897452652",
+   "created_at": "2026-11-04T18:58:23.000Z",
+   "text": "Alrededor de 80 personas fueron evacuadas hacia el Coliseo de Deportes de Santa Cruz debido a los estragos de las lluvias. El balance incluye una persona fallecida en Bellavista, y dos desaparecidos en el sector Divino Niño, según el ECU 911. https://t.co/IJYHnegv1f",
+   "lang": "und",
+   "region_ids": [
+    "ARG-1271",
+    "BOL-1940"
+   ],
+   "country": "ARG",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "About 80 people were evacuated to the Santa Cruz Sports Coliseum because of rain damage. The toll includes one person dead in Bellavista and two missing in the Divino Niño sector, according to ECU 911."
+  },
+  {
+   "id": "2118048130130145604",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2118048130130145604",
+   "created_at": "2026-11-04T18:30:00.000Z",
+   "text": "PRESUNTOS FAMILIARES DE \"EL MENCHO\" VIISTARON SU TUMBA EN ZAPOPAN POR DÍA DE MUERTOS La visita coincidió con la llegada de nuevos arreglos florales, entre ellos una corona firmada por \"la familia Guerrero\", el clan de \"Tío Lako\" señalado como uno de los brazos armados del CJNG.…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "ALLEGED RELATIVES OF \"EL MENCHO\" VISITED HIS GRAVE IN ZAPOPAN FOR DAY OF THE DEAD. The visit coincided with the arrival of new flower arrangements, including a wreath signed by \"the Guerrero family\", the clan of \"Tío Lako\", identified as one of the CJNG's armed wings."
+  },
+  {
+   "id": "2118027510843593155",
+   "handle": "parescolombia",
+   "url": "https://x.com/parescolombia/status/2118027510843593155",
+   "created_at": "2026-11-04T17:08:04.000Z",
+   "text": "🚨 #ParesInforma | Atentado con explosivos en la vía Panamericana, en Cauca. Una volqueta cargada con explosivos fue detonada este miércoles 4 de noviembre en El Estrecho, zona rural de Patía, cerca de una subestación de Policía. https://t.co/GCGAdg80ft",
+   "lang": "und",
+   "region_ids": [
+    "COL-1404"
+   ],
+   "country": "COL",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "#ParesInforma | Explosives attack on the Pan-American Highway in Cauca. A dump truck loaded with explosives was detonated this Wednesday, November 4, in El Estrecho, a rural area of Patía, near a police substation."
+  },
   {
    "id": "2118019003301892312",
    "handle": "infobaemexico",
@@ -3410,108 +3500,6 @@
    "source_type": "national outlet",
    "label": null,
    "text_en": "Nine Mexicans are arrested in California accused of stealing train cargo; they are linked to the Sinaloa Cartel"
-  },
-  {
-   "id": "2115526723567567098",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115526723567567098",
-   "created_at": "2026-10-28T19:30:50.000Z",
-   "text": "Conductor de app secuestró a jovencita de 16 años, mandó su ubicación en tiempo real a su mamá y pudieron rescatarla en Tijuana https://t.co/heijNGlsPO",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "A ride-app driver kidnapped a 16-year-old girl; she sent her real-time location to her mother and she was rescued in Tijuana"
-  },
-  {
-   "id": "2115520503750254634",
-   "handle": "InSightCrime",
-   "url": "https://x.com/InSightCrime/status/2115520503750254634",
-   "created_at": "2026-10-28T19:06:07.000Z",
-   "text": "From Honduras and Costa Rica to Ecuador and Panama, governments are embracing massive prisons as part of their response to organized crime. Our analysis maps where these projects stand—and what they reveal about regional security strategies. https://t.co/3YMHB3sUCJ https://t.co/…",
-   "lang": "en",
-   "region_ids": [
-    "PAN-1340"
-   ],
-   "country": "PAN",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "research outlet",
-   "label": null
-  },
-  {
-   "id": "2115518971101286670",
-   "handle": "ArmandoInfo",
-   "url": "https://x.com/ArmandoInfo/status/2115518971101286670",
-   "created_at": "2026-10-28T19:00:01.000Z",
-   "text": "En la urbanización Altamira, una edificación de dos pisos de lo que parecía iba ser una obra residencial, quedó inconclusa. Pertenecía al círculo de Alex Saab. En la fachada se ve ahora un cartel descolorido del Dgcim👇🏻https://t.co/arZjBmsVKB https://t.co/j9jHliEXzO",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2716"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "regional outlet",
-   "label": null,
-   "text_en": "In the Altamira development, a two-storey building that appeared to be a residential project was left unfinished. It belonged to Alex Saab's circle. A faded DGCIM sign now hangs on the facade"
-  },
-  {
-   "id": "2115518968597246363",
-   "handle": "Pajaropolitico",
-   "url": "https://x.com/Pajaropolitico/status/2115518968597246363",
-   "created_at": "2026-10-28T19:00:01.000Z",
-   "text": "🚨 Marina abate a “Chuy Peñuelas”, presunto operador del Cártel de Guasave por quien EU ofrecía 5 mdd La Secretaría de Marina abatió a dos presuntos integrantes del Cártel de Guasave en la localidad Alfredo V. Bonfil, municipio de Sinaloa, tras repeler una agresión armada. https:…",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Navy kills \"Chuy Peñuelas\", alleged Guasave Cartel operator for whom the US offered $5 million. The Navy killed two alleged Guasave Cartel members in the locality of Alfredo V. Bonfil, Sinaloa municipality, after repelling an armed attack."
-  },
-  {
-   "id": "2115515190083248348",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115515190083248348",
-   "created_at": "2026-10-28T18:45:00.000Z",
-   "text": "🔺 La CDMX prometió planes individualizados para cada caso de desaparecidos y mecanismos para supervisar la atención a las víctimas https://t.co/qOL27HIiS5",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Mexico City promised individualized plans for each disappearance case and mechanisms to oversee care for victims"
-  },
-  {
-   "id": "2115505965621510416",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115505965621510416",
-   "created_at": "2026-10-28T18:08:21.000Z",
-   "text": "Del cobro de piso al despojo de potreros: así controla el narco el negocio ganadero en Guerrero y Michoacán https://t.co/Cz6lnzh1yp",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2729",
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "From extortion fees to seizing pastures: how the narco controls the cattle business in Guerrero and Michoacán"
   }
  ]
 }
