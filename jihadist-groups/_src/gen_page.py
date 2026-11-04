@@ -24,6 +24,7 @@ HTML = '''<!doctype html><html lang="en"><head><script data-slash-fix>if(locatio
 <meta name="description" content="45 jihadist groups in four families: leaders, locations, links, the last 30 days and momentum.">
 <meta property="og:title" content="Jihadist Groups: Who's Who"><meta property="og:image" content="og.png">
 <link rel="stylesheet" href="style.css"></head><body>
+<a class="backlink" href="../#dashboards" title="Back to all dashboards">&larr; All dashboards</a>
 <header><div><a class="brand" href="https://beaconintelligencegroup.com"><span class="mark">BEACON</span> INTELLIGENCE GROUP<span class="brand-sub">JIHADIST GROUPS</span></a><h1>Jihadist Groups: Who's Who</h1></div>
 <nav aria-label="Sections"><a href="#map">Map</a><a href="#links">Links between groups</a><a href="#leaders">Leaders</a><a href="#incidents">Last 30 days</a><a href="#momentum">Momentum</a><a href="#take">Takeaway</a><a href="#sources">Sources</a></nav></header>
 <p class="lead" id="lede"><span id="intro">Loading.</span> Data as of <span id="asof"></span>.</p>
