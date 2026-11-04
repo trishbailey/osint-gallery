@@ -2,7 +2,7 @@
  {
   "id": "al-qaeda-core",
   "trend": "declining",
-  "reason": "The UN says its senior leadership is marginalised and it faces 'declining relevance'; its de facto leader may be endangered by the Iran war.",
+  "reason": "The UN says its senior leadership is marginalized and it faces 'declining relevance'; its de facto leader may be endangered by the Iran war.",
   "sources": [
    "https://docs.un.org/en/S/2026/651"
   ],
@@ -39,13 +39,14 @@
  },
  {
   "id": "al-shabaab",
-  "trend": "steady",
-  "reason": "UN says it shifted to fewer, more targeted attacks after the 2025 surge and lost finance chiefs; the 26 Oct Jameeca ambush shows continued capacity.",
+  "trend": "rising",
+  "reason": "The UN says it shifted to fewer, more targeted attacks after the 2025 surge, but its 26 Oct rout of Turkish-trained troops near Jameeca was the army's worst reverse in years, and a security source describes its influence expanding across South West State.",
   "sources": [
    "https://docs.un.org/en/S/2026/651",
-   "https://apnews.com/article/somalia-alshabab-military-f962f8d432b9513c6a93246b2981a2cb"
+   "https://qncnews.com/2026/11/01/somali-army-toll-climbs-as-inquiry-opens-into-leego-rout/",
+   "https://www.dawn.com/news/2040362"
   ],
-  "confidence": "medium"
+  "confidence": "low"
  },
  {
   "id": "aqis",
@@ -133,10 +134,11 @@
  {
   "id": "iswap",
   "trend": "rising",
-  "reason": "Most active Islamic State affiliate: 174+ attacks Jan–May 2026, more drones, and the 13 Oct Mairari base attack; leadership is unclear.",
+  "reason": "Most active Islamic State affiliate: 174+ attacks Jan–May 2026, more drones, the 13 Oct Mairari base attack and assaults on Buni Yadi and Kukawa on 29–31 Oct; leadership is unclear.",
   "sources": [
    "https://docs.un.org/en/S/2026/651",
-   "https://www.vanguardngr.com/2026/10/boko-haram-attack-kills-soldiers-civilians-in-borno/"
+   "https://www.vanguardngr.com/2026/10/boko-haram-attack-kills-soldiers-civilians-in-borno/",
+   "https://punchng.com/soldiers-kill-iswap-leaders-foil-attack-in-borno/"
   ],
   "confidence": "medium"
  },
@@ -230,11 +232,12 @@
  {
   "id": "houthis",
   "trend": "rising",
-  "reason": "A Houthi missile killed 12 at Riyadh airport on 10 Oct and missiles hit Aden airport on 28 Oct, the sixth strike there in days; government forces report ground gains near Bab el-Mandeb, which the Houthis deny.",
+  "reason": "A Houthi missile killed 12 at Riyadh airport on 10 Oct, and missiles targeted Aden airport on 28 Oct, its sixth strike that month, and the presidential palace on 30 Oct; government forces report ground gains near Bab el-Mandeb, which the Houthis deny.",
   "sources": [
    "https://apnews.com/article/saudi-yemen-houthi-riyadh-airport-f0e0e6105f33400e37bb20bb9a8130af",
    "https://www.al-monitor.com/originals/2026/10/houthis-strike-yemens-aden-airport-after-evacuation-warning",
-   "https://apnews.com/article/yemen-houthis-iran-saudi-arabia-red-sea-taiz-e87beb84a0d146e4f0546b50508f7e32"
+   "https://apnews.com/article/yemen-houthis-iran-saudi-arabia-red-sea-taiz-e87beb84a0d146e4f0546b50508f7e32",
+   "https://www.devdiscourse.com/article/international/3999792-yemen-government-forces-say-houthis-attack-aden-airport-and-presidential-palace"
   ],
   "confidence": "low"
  },
@@ -305,9 +308,10 @@
  {
   "id": "taliban",
   "trend": "steady",
-  "reason": "Governs Afghanistan; faces ISKP and cross-border clashes with Pakistan.",
+  "reason": "Governs Afghanistan; faces ISKP, and its forces traded fire with Pakistan's at Torkham on 1 Nov.",
   "sources": [
-   "https://docs.un.org/en/S/2026/651"
+   "https://docs.un.org/en/S/2026/651",
+   "https://www.dawn.com/news/2041542"
   ],
   "confidence": "medium"
  },

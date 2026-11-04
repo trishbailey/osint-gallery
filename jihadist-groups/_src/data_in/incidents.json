@@ -1,62 +1,9 @@
 {
- "window": "2026-09-30 to 2026-10-30",
+ "window": [
+  "2026-10-05",
+  "2026-11-04"
+ ],
  "incidents": [
-  {
-   "group": "kataib-hezbollah",
-   "date": "2026-10-01",
-   "date_precision": "day",
-   "place": "Baghdad, Iraq",
-   "lat": 33.306,
-   "lon": 44.387,
-   "description": "US troops leave Iraq; Kata'ib Hezbollah says it has agreed no disarmament deal and 'the resistance has won this round'.",
-   "url": "https://www.thenationalnews.com/news/mena/2026/10/01/resistance-has-won-this-round-kataib-hezbollah-denies-disarmament-deal-after-us-troops-leave-iraq/",
-   "urls_extra": [],
-   "confidence": "medium",
-   "note": null
-  },
-  {
-   "group": "jas",
-   "date": "2026-10-02",
-   "date_precision": "day",
-   "place": "Marte, Borno State, Nigeria",
-   "lat": 12.403,
-   "lon": 13.833,
-   "description": "Suspected Boko Haram fighters kill 15 or more farmers and firewood gatherers; three are missing.",
-   "url": "https://www.reuters.com/world/africa/suspected-islamists-kill-nigerian-villagers-collecting-firewood-2026-10-02/",
-   "urls_extra": [
-    "https://apnews.com/article/nigeria-attack-boko-haram-farmers-ee6915e38c397636738569fb1da232b3"
-   ],
-   "confidence": "medium",
-   "note": "Reuters says 'suspected Islamists'; AP says 15 dead."
-  },
-  {
-   "group": "jmm",
-   "date": "2026-10-02",
-   "date_precision": "range (2 to 8 Oct)",
-   "place": "Rask and Iranshahr area, Sistan and Baluchestan, Iran",
-   "lat": 26.9,
-   "lon": 61.9,
-   "confidence": "medium",
-   "description": "The Baluch coalition claims five attacks on Iranian security forces in seven days, including a mine and gunfire attack on a Guards vehicle at Rudmahi that killed five.",
-   "note": "Claims by the coalition; Iranian figures for losses are lower.",
-   "url": "https://www.longwarjournal.org/archives/2026/10/insurgent-attacks-surge-in-southeastern-iran.php",
-   "urls_extra": []
-  },
-  {
-   "group": "iskp",
-   "date": "2026-10-04",
-   "date_precision": "day",
-   "place": "Fayzabad, Badakhshan, Afghanistan",
-   "lat": 37.216,
-   "lon": 70.613,
-   "description": "A motorcycle bomb targets a Taliban intelligence official; ISKP claims it and the National Resistance Front also claims it.",
-   "url": "https://margallanews.com/story/badakhshan-faizabad-intelligence-attack-competing-nrf-iskp-claims-2026-10-04",
-   "urls_extra": [
-    "https://khyberchronicles.pk/who-struck-the-taliban-in-badakhshan-iskp-and-nrf-both-claim-explosive-attack-on-intelligence-official/"
-   ],
-   "confidence": "low",
-   "note": "Contested: two competing claims; neither authenticated; Afghan authorities have not confirmed."
-  },
   {
    "group": "houthis",
    "date": "2026-10-05",
@@ -83,7 +30,7 @@
    "url": "https://thesoufancenter.org/intelbrief-2026-october-28/",
    "urls_extra": [],
    "confidence": "medium",
-   "note": "Kidal coordinates are the town centre."
+   "note": "Kidal coordinates are the town center."
   },
   {
    "group": "is-mozambique",
@@ -293,9 +240,11 @@
    "place": "Jameeca, Buurhakaba District, Somalia",
    "lat": 2.795,
    "lon": 44.078,
-   "description": "Al-Shabaab ambushes Somali troops; at least 20 soldiers killed per a survivor, dozens per other reports; the army claims about 75 militants killed.",
+   "description": "Al-Shabaab ambushes Turkish-trained Somali troops advancing on Burhakaba with car bombs; soldiers tell Reuters they carried 40 dead and more than 100 wounded to Mogadishu, al-Shabaab claims 413 killed (unverified), and the government opens an inquiry.",
    "url": "https://apnews.com/article/somalia-alshabab-military-f962f8d432b9513c6a93246b2981a2cb",
-   "urls_extra": [],
+   "urls_extra": [
+    "https://www.streetinsider.com/Reuters/Dozens+of+Somali+soldiers+killed+in+battle+with+al+Shabaab%2C+soldiers+say/27236330.html"
+   ],
    "confidence": "medium",
    "note": "Tolls differ widely across sources; al-Shabaab claims 321."
   },
@@ -384,6 +333,79 @@
    "urls_extra": [],
    "confidence": "low",
    "note": "Group claim reported by the trackingterrorism.org tracker; not independently verified."
+  },
+  {
+   "group": "houthis",
+   "date": "2026-10-30",
+   "date_precision": "day",
+   "place": "Maashiq presidential palace, Aden, Yemen",
+   "lat": 12.78,
+   "lon": 45.04,
+   "description": "Yemen's government says the Houthis fire ballistic missiles at the Maashiq presidential palace and Aden airport, a day after the airport reopened; the Saudi-led coalition says it downed a Houthi drone over Medina, which the Houthis deny.",
+   "url": "https://www.devdiscourse.com/article/international/3999792-yemen-government-forces-say-houthis-attack-aden-airport-and-presidential-palace",
+   "urls_extra": [
+    "https://www.indiatoday.in/world/story/houthis-target-medina-yemeni-presidential-palace-again-in-fresh-escalation-middle-east-3029064-2026-10-31"
+   ],
+   "confidence": "medium",
+   "note": "Palace position approximate. No casualty figures given."
+  },
+  {
+   "group": "iswap",
+   "date": "2026-10-31",
+   "date_precision": "day",
+   "place": "Kukawa, Borno State, Nigeria",
+   "lat": 12.924,
+   "lon": 13.566,
+   "description": "Nigeria's army says it repels a large Islamic State West Africa assault on its Kukawa positions, killing a Shura Council member and two Arab fighters, three days after an attack on Buni Yadi in Yobe State.",
+   "url": "https://punchng.com/soldiers-kill-iswap-leaders-foil-attack-in-borno/",
+   "urls_extra": [],
+   "confidence": "low",
+   "note": "Army account only."
+  },
+  {
+   "group": "taliban",
+   "date": "2026-11-01",
+   "date_precision": "day",
+   "place": "Torkham and Angoor Adda, Afghanistan-Pakistan border",
+   "lat": 34.129,
+   "lon": 71.096,
+   "description": "Pakistani and Afghan Taliban forces exchange fire over a disputed checkpoint, shutting the Torkham crossing for five hours; mortar fire near Angoor Adda kills a civilian, and Pakistan's military warns Kabul of 'punishment' for harboring militants.",
+   "url": "https://www.dawn.com/news/2041542",
+   "urls_extra": [
+    "https://www.khaama.com/clashes-reported-near-torkham-border-crossing/"
+   ],
+   "confidence": "medium",
+   "note": null
+  },
+  {
+   "group": "hamas",
+   "date": "2026-11-01",
+   "date_precision": "day",
+   "place": "Al-Mawasi, Khan Younis, Gaza Strip",
+   "lat": 31.36,
+   "lon": 34.27,
+   "description": "An Israeli drone strike kills five Hamas-run police officers in Al-Mawasi and another strike kills three civilians in Gaza City, a year into the ceasefire; Israel says it hit military operatives.",
+   "url": "https://www.bbc.com/news/articles/cmqln14rrzxvo",
+   "urls_extra": [
+    "https://www.aljazeera.com/news/2026/11/1/at-least-eight-palestinians-killed-in-israeli-attacks-across-gaza"
+   ],
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "group": "houthis",
+   "date": "2026-11-02",
+   "date_precision": "day",
+   "place": "Tur al-Bahah, Lahj, Yemen",
+   "lat": 13.12,
+   "lon": 44.28,
+   "description": "Houthi forces take Al-Maqatirah district and fight government troops at the entrance to Tur al-Bahah, within 80 km of Aden, their closest approach since 2015.",
+   "url": "https://www.dawn.com/news/2041746",
+   "urls_extra": [
+    "https://www.yemenmonitor.com/en/Details/ArtMID/908/ArticleID/186747"
+   ],
+   "confidence": "medium",
+   "note": "Front-line positions from military sources cited by agencies; coordinates are the district center, approximate."
   }
  ],
  "note": "Groups with no incident listed: no strategic-scale event was verified in the window with a usable source."
