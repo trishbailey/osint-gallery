@@ -1,21 +1,9 @@
 {
- "window": "2026-10-03 to 2026-11-02",
+ "window": [
+  "2026-10-05",
+  "2026-11-04"
+ ],
  "incidents": [
-  {
-   "group": "iskp",
-   "date": "2026-10-04",
-   "date_precision": "day",
-   "place": "Fayzabad, Badakhshan, Afghanistan",
-   "lat": 37.216,
-   "lon": 70.613,
-   "description": "A motorcycle bomb targets a Taliban intelligence official; ISKP claims it and the National Resistance Front also claims it.",
-   "url": "https://margallanews.com/story/badakhshan-faizabad-intelligence-attack-competing-nrf-iskp-claims-2026-10-04",
-   "urls_extra": [
-    "https://khyberchronicles.pk/who-struck-the-taliban-in-badakhshan-iskp-and-nrf-both-claim-explosive-attack-on-intelligence-official/"
-   ],
-   "confidence": "low",
-   "note": "Contested: two competing claims; neither authenticated; Afghan authorities have not confirmed."
-  },
   {
    "group": "houthis",
    "date": "2026-10-05",
@@ -403,6 +391,21 @@
    ],
    "confidence": "high",
    "note": null
+  },
+  {
+   "group": "houthis",
+   "date": "2026-11-02",
+   "date_precision": "day",
+   "place": "Tur al-Bahah, Lahj, Yemen",
+   "lat": 13.12,
+   "lon": 44.28,
+   "description": "Houthi forces take Al-Maqatirah district and fight government troops at the entrance to Tur al-Bahah, within 80 km of Aden, their closest approach since 2015.",
+   "url": "https://www.dawn.com/news/2041746",
+   "urls_extra": [
+    "https://www.yemenmonitor.com/en/Details/ArtMID/908/ArticleID/186747"
+   ],
+   "confidence": "medium",
+   "note": "Front-line positions from military sources cited by agencies; coordinates are the district center, approximate."
   }
  ],
  "note": "Groups with no incident listed: no strategic-scale event was verified in the window with a usable source."
