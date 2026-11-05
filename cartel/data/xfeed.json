@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-04T19:55:40Z",
+ "as_of": "2026-11-04T23:04:21Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -28,12 +28,206 @@
  ],
  "posts": [
   {
+   "id": "2118115564556067128",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2118115564556067128",
+   "created_at": "2026-11-04T22:57:57.000Z",
+   "text": "Buscadoras por la Paz Sonora localizan una fosa clandestina con restos de al menos cuatro personas en Suaqui Grande https://t.co/PjE1FkIg6o",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2712"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Buscadoras por la Paz Sonora find a clandestine grave with the remains of at least four people in Suaqui Grande"
+  },
+  {
+   "id": "2118113203397812303",
+   "handle": "ioangrillo",
+   "url": "https://x.com/ioangrillo/status/2118113203397812303",
+   "created_at": "2026-11-04T22:48:34.000Z",
+   "text": "The Gulf Cartel’s Mega Narco-Blockade and Extortion Racket Matamoros was shut down Thursday with 52 burning vehicles and had 6 deaths, including 7 year old girl likely shot from police chopper. It followed arrest of \"Titan\" who headed extortion in city↓ https://t.co/4vvvyDE3jw",
+   "lang": "en",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "tier": "verified",
+   "source_type": "journalist",
+   "label": null
+  },
+  {
+   "id": "2118108596466483578",
+   "handle": "Pajaropolitico",
+   "url": "https://x.com/Pajaropolitico/status/2118108596466483578",
+   "created_at": "2026-11-04T22:30:16.000Z",
+   "text": "⚖️🚔 Vinculan a proceso a Rosa Alejandra “N”, secretaria del Bienestar de Uruapan, por presunto encubrimiento en el homicidio del exalcalde Carlos Manzo. La fiscalía la detuvo tras ignorar tres citatorios. https://t.co/1HFcSagbxW https://t.co/zx76WOzvxH",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Rosa Alejandra “N”, Uruapan's welfare secretary, is ordered to stand trial for allegedly covering up the killing of former mayor Carlos Manzo. Prosecutors arrested her after she ignored three summons."
+  },
+  {
+   "id": "2118105102867132645",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2118105102867132645",
+   "created_at": "2026-11-04T22:16:23.000Z",
+   "text": "Capturan en Coatzacoalcos a Samuel de la Cruz, alias “El Panda”, presunto líder regional del CJNG https://t.co/fQPLJkeWkL",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2734"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Samuel de la Cruz, alias “El Panda”, alleged regional leader of the CJNG, captured in Coatzacoalcos"
+  },
+  {
+   "id": "2118100987382771989",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2118100987382771989",
+   "created_at": "2026-11-04T22:00:02.000Z",
+   "text": "Reporteros Sin Fronteras incluye al CJNG en lista de \"depredadores de la libertad de prensa\" Debido a los ataques contra periodistas durante la cobertura de la muerte de \"El Mencho\", la organización criminal mexicana fue incluida en la lista junto con Donald Trump, Vladimir",
+   "lang": "es",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Reporters Without Borders adds the CJNG to its list of \"predators of press freedom\". Because of attacks on journalists during coverage of the death of \"El Mencho\", the Mexican criminal organization was included on the list alongside Donald Trump, Vladimir"
+  },
+  {
+   "id": "2118096035692302754",
+   "handle": "GabSeguridadMX",
+   "url": "https://x.com/GabSeguridadMX/status/2118096035692302754",
+   "created_at": "2026-11-04T21:40:21.000Z",
+   "text": "Resultado de trabajos de inteligencia naval e investigación, elementos de @SEMAR_mx, en coordinación con @SSPCMexico y autoridades estatales y municipales, detuvieron en Coatzacoalcos, Veracruz, a Samuel “N”, alias “Panda”, identificado como líder regional de un grupo delictivo.…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2734"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "As a result of naval intelligence and investigative work, @SEMAR_mx personnel, in coordination with @SSPCMexico and state and municipal authorities, arrested Samuel “N”, alias “Panda”, identified as a regional leader of a criminal group, in Coatzacoalcos, Veracruz.…"
+  },
+  {
+   "id": "2118086515414712728",
+   "handle": "InSightCrime",
+   "url": "https://x.com/InSightCrime/status/2118086515414712728",
+   "created_at": "2026-11-04T21:02:32.000Z",
+   "text": "While in Colombia’s Arauca department the ELN operates as an insurgent force, across the border in Venezuela’s Apure it functions as a paramilitary group. Read more about this duality in our investigation: https://t.co/G4aJ282GJt https://t.co/YLV19paEZt",
+   "lang": "en",
+   "region_ids": [
+    "VEN-25"
+   ],
+   "country": "VEN",
+   "group_ids": [
+    "eln"
+   ],
+   "tier": "verified",
+   "source_type": "research outlet",
+   "label": null
+  },
+  {
+   "id": "2118082518461387073",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2118082518461387073",
+   "created_at": "2026-11-04T20:46:39.000Z",
+   "text": "➡️ Ejecutan a balazos a una reconocida abogada cuando viajaba a bordo de un vehículo en La Marina, en Mazatlán. 🚨🚔| Ejecutan a balazos a una reconocida abogada identificada como María de Los Ángeles la cual viajaba a bordo de un vehículo Mazda en la zona de La Marina, en https:/…",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "A well-known lawyer is shot dead while riding in a vehicle in La Marina, Mazatlán. A well-known lawyer identified as María de Los Ángeles is shot dead"
+  },
+  {
+   "id": "2118079196362629358",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2118079196362629358",
+   "created_at": "2026-11-04T20:33:27.000Z",
+   "text": "⚠️ Paseando con metralletas: así agarraron a seis integrantes del Cártel de Sinaloa en Chiapas https://t.co/wABcMlbwcD https://t.co/5Kl5tNUjLn",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2735",
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Driving around with machine guns: how six members of the Sinaloa Cartel were caught in Chiapas"
+  },
+  {
+   "id": "2118072634604736840",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2118072634604736840",
+   "created_at": "2026-11-04T20:07:22.000Z",
+   "text": "Sus nombres habrían aparecido en una libreta de Sidronio Casarrubias, exlíder detenido de Guerreros Unidos, cártel de Guerrero https://t.co/OQkHeXewK2 https://t.co/twwXqSGMMt",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2729"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Their names reportedly appeared in a notebook belonging to Sidronio Casarrubias, the jailed former leader of Guerreros Unidos, a Guerrero cartel"
+  },
+  {
+   "id": "2118072445261258860",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2118072445261258860",
+   "created_at": "2026-11-04T20:06:37.000Z",
+   "text": "La Central de Abasto necesita seguridad al nivel de una alcaldía: diputada exige frenar extorsiones y delitos del crimen organizado https://t.co/JgrIW2pjIc",
+   "lang": "es",
+   "region_ids": [
+    "PRY-607"
+   ],
+   "country": "PRY",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "The Central de Abasto needs security on the level of a borough: a congresswoman demands a halt to extortion and organized crime offenses"
+  },
+  {
    "id": "2118068286344589465",
    "handle": "infobaemexico",
    "url": "https://x.com/infobaemexico/status/2118068286344589465",
    "created_at": "2026-11-04T19:50:05.000Z",
    "text": "De acuerdo con el investigador y especialista en crimen organizado, Víctor Sánchez, hay cuatro factores que han permitido a la Nueva Familia Michoacana crecer hasta convertirse en la tercera organización delictiva más fuerte del país, solo por detrás ... https://t.co/N9SsyZvAe2…",
-   "lang": "und",
+   "lang": "es",
    "region_ids": [],
    "country": "MEX",
    "group_ids": [
@@ -50,7 +244,7 @@
    "url": "https://x.com/InSightCrime/status/2118063425481818481",
    "created_at": "2026-11-04T19:30:47.000Z",
    "text": "A year after Uruapan Mayor Carlos Manzo’s killing, the CJNG commander linked to his murder has been tied to the assassination of influencer Valeria Márquez. Who is accused of orchestrating the high-profile killings, and what does his role reveal about the CJNG’s structure? https…",
-   "lang": "und",
+   "lang": "en",
    "region_ids": [
     "MEX-2720"
    ],
@@ -60,8 +254,7 @@
    ],
    "tier": "verified",
    "source_type": "research outlet",
-   "label": null,
-   "text_en": "A year after Uruapan Mayor Carlos Manzo’s killing, the CJNG commander linked to his murder has been tied to the assassination of influencer Valeria Márquez. Who is accused of orchestrating the high-profile killings, and what does his role reveal about the CJNG’s structure?"
+   "label": null
   },
   {
    "id": "2118055271897452652",
@@ -3394,112 +3587,6 @@
    "source_type": "national outlet",
    "label": null,
    "text_en": "Blow to Los Chapitos' weapons network: El Pokémon and three others stay jailed in Guasave after being ordered to stand trial"
-  },
-  {
-   "id": "2115557971774382191",
-   "handle": "_elfaro_",
-   "url": "https://x.com/_elfaro_/status/2115557971774382191",
-   "created_at": "2026-10-28T21:35:00.000Z",
-   "text": "A lo largo de las últimas dos décadas, Juan Francisco Solórzano Foppa ocupó cargos públicos en los que se suele hacer enemigos. En sus años de fiscal, investigó a la Rueda —o cúpula— de la pandilla Barrio 18 en Guatemala y logró condenas contra dirigentes incluyendo a su máximo…",
-   "lang": "und",
-   "region_ids": [
-    "GTM-1951"
-   ],
-   "country": "GTM",
-   "group_ids": [
-    "b18"
-   ],
-   "tier": "verified",
-   "source_type": "regional outlet",
-   "label": null,
-   "text_en": "Over the past two decades, Juan Francisco Solórzano Foppa held public posts in which one tends to make enemies. In his years as a prosecutor, he investigated the Rueda (the leadership) of the Barrio 18 gang in Guatemala and won convictions against its leaders, including its top…"
-  },
-  {
-   "id": "2115550462607012069",
-   "handle": "parescolombia",
-   "url": "https://x.com/parescolombia/status/2115550462607012069",
-   "created_at": "2026-10-28T21:05:09.000Z",
-   "text": "#ParesReporta Cúcuta, la capital, ha sufrido durante décadas la violencia que azota a municipios del departamento. Análisis https://t.co/OwJHW8EYld https://t.co/rMwj1CkRXU",
-   "lang": "es",
-   "region_ids": [
-    "COL-1421"
-   ],
-   "country": "COL",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "think tank",
-   "label": null,
-   "text_en": "#ParesReporta Cúcuta, the capital, has suffered for decades from the violence that plagues the department's municipalities. Analysis"
-  },
-  {
-   "id": "2115549651080188036",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115549651080188036",
-   "created_at": "2026-10-28T21:01:56.000Z",
-   "text": "⚠️ Omar García Harfuch viaja a Sinaloa para revisar resultados de la estrategia de seguridad y fortalecer acciones contra el narco https://t.co/jJ8b33xIQN",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "⚠️ Omar García Harfuch travels to Sinaloa to review the results of the security strategy and strengthen actions against drug trafficking"
-  },
-  {
-   "id": "2115548311646028040",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115548311646028040",
-   "created_at": "2026-10-28T20:56:37.000Z",
-   "text": "Omar García Harfuch viaja a Sinaloa para revisar resultados de la estrategia de seguridad y fortalecer acciones contra el narco https://t.co/jJ8b33xIQN",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Omar García Harfuch travels to Sinaloa to review the results of the security strategy and strengthen actions against drug trafficking"
-  },
-  {
-   "id": "2115534833367552034",
-   "handle": "GabSeguridadMX",
-   "url": "https://x.com/GabSeguridadMX/status/2115534833367552034",
-   "created_at": "2026-10-28T20:03:03.000Z",
-   "text": "En Yucatán, elementos de @SEMAR_mx, @SSPCMexico y @FGRMexico, a través de la Agencia de Investigación Criminal, en coordinación con el @INAMI_mx, detuvieron en Mérida a Richard “N”, de nacionalidad estadounidense, considerado un objetivo prioritario para el gobierno de Estados h…",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2737"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "official",
-   "label": "Official statement",
-   "text_en": "In Yucatán, personnel from @SEMAR_mx, @SSPCMexico and @FGRMexico, through the Criminal Investigation Agency, in coordination with @INAMI_mx, detained in Mérida Richard “N”, a US national considered a priority target by the United States government…"
-  },
-  {
-   "id": "2115533623482835024",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115533623482835024",
-   "created_at": "2026-10-28T19:58:15.000Z",
-   "text": "Nueve mexicanos son detenidos en California acusados de robar cargas de trenes: los ligan con el Cártel de Sinaloa https://t.co/k66XE61liz",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Nine Mexicans are arrested in California accused of stealing train cargo; they are linked to the Sinaloa Cartel"
   }
  ]
 }

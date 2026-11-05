@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-04T19:55:40Z",
+ "as_of": "2026-11-04T23:04:21Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -9,11 +9,320 @@
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
   {
+   "id": "91132cae6a",
+   "status": "single_source",
+   "title": "Buscadoras por la Paz Sonora localizan una fosa clandestina con restos de al menos cuatro personas en Suaqui Grande",
+   "lang": "es",
+   "title_en": "Buscadoras por la Paz Sonora find a clandestine grave with the remains of at least four people in Suaqui Grande",
+   "first_report": "2026-11-04T22:57:57Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2712"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118115564556067128",
+     "time": "2026-11-04T22:57:57Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "1c14f99fca",
+   "status": "single_source",
+   "title": "The Gulf Cartel’s Mega Narco-Blockade and Extortion Racket Matamoros was shut down Thursday with 52 burning vehicles and had 6 deaths, including 7 year old girl likely shot from police chopper. It fol",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-04T22:48:34Z",
+   "first_report_precision": "minute",
+   "first_source": "Ioan Grillo",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "outlets": [
+    "Ioan Grillo"
+   ],
+   "sources": [
+    {
+     "outlet": "grillo",
+     "name": "Ioan Grillo",
+     "kind": "outlet",
+     "via": "X @ioangrillo",
+     "url": "https://x.com/ioangrillo/status/2118113203397812303",
+     "time": "2026-11-04T22:48:34Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "69fcd17dc5",
+   "status": "single_source",
+   "title": "⚖️🚔 Vinculan a proceso a Rosa Alejandra “N”, secretaria del Bienestar de Uruapan, por presunto encubrimiento en el homicidio del exalcalde Carlos Manzo. La fiscalía la detuvo tras ignorar tres citator",
+   "lang": "es",
+   "title_en": "Rosa Alejandra “N”, Uruapan's welfare secretary, is ordered to stand trial for allegedly covering up the killing of former mayor Carlos Manzo. Prosecutors arrested her after she ignored three summons",
+   "first_report": "2026-11-04T22:30:16Z",
+   "first_report_precision": "minute",
+   "first_source": "Animal Político",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Animal Político"
+   ],
+   "sources": [
+    {
+     "outlet": "animal",
+     "name": "Animal Político",
+     "kind": "outlet",
+     "via": "X @Pajaropolitico",
+     "url": "https://x.com/Pajaropolitico/status/2118108596466483578",
+     "time": "2026-11-04T22:30:16Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "ac59509d5c",
+   "status": "confirmed",
+   "title": "Capturan en Coatzacoalcos a Samuel de la Cruz, alias “El Panda”, presunto líder regional del CJNG",
+   "lang": "es",
+   "title_en": "Samuel de la Cruz, alias “El Panda”, alleged regional leader of the CJNG, captured in Coatzacoalcos",
+   "first_report": "2026-11-04T21:40:21Z",
+   "first_report_precision": "minute",
+   "first_source": "Gabinete de Seguridad (Mexico)",
+   "region_ids": [
+    "MEX-2734"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Gabinete de Seguridad (Mexico)",
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "gabsec",
+     "name": "Gabinete de Seguridad (Mexico)",
+     "kind": "official",
+     "via": "X @GabSeguridadMX",
+     "url": "https://x.com/GabSeguridadMX/status/2118096035692302754",
+     "time": "2026-11-04T21:40:21Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118105102867132645",
+     "time": "2026-11-04T22:16:23Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "e9d4eecde2",
+   "status": "single_source",
+   "title": "Reporteros Sin Fronteras incluye al CJNG en lista de \"depredadores de la libertad de prensa\" Debido a los ataques contra periodistas durante la cobertura de la muerte de \"El Mencho\", la organización c",
+   "lang": "es",
+   "title_en": "Reporters Without Borders adds the CJNG to its list of \"predators of press freedom\". Because of attacks on journalists during coverage of the death of \"El Mencho\", the organization c",
+   "first_report": "2026-11-04T22:00:02Z",
+   "first_report_precision": "minute",
+   "first_source": "Proceso",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2118100987382771989",
+     "time": "2026-11-04T22:00:02Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "e52d89e711",
+   "status": "single_source",
+   "title": "While in Colombia’s Arauca department the ELN operates as an insurgent force, across the border in Venezuela’s Apure it functions as a paramilitary group. Read more about this duality in our investiga",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-04T21:02:32Z",
+   "first_report_precision": "minute",
+   "first_source": "InSight Crime",
+   "region_ids": [
+    "VEN-25"
+   ],
+   "country": "VEN",
+   "group_ids": [
+    "eln"
+   ],
+   "outlets": [
+    "InSight Crime"
+   ],
+   "sources": [
+    {
+     "outlet": "insight",
+     "name": "InSight Crime",
+     "kind": "outlet",
+     "via": "X @InSightCrime",
+     "url": "https://x.com/InSightCrime/status/2118086515414712728",
+     "time": "2026-11-04T21:02:32Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "54598fa33b",
+   "status": "single_source",
+   "title": "➡️ Ejecutan a balazos a una reconocida abogada cuando viajaba a bordo de un vehículo en La Marina, en Mazatlán. 🚨🚔| Ejecutan a balazos a una reconocida abogada identificada como María de Los Ángeles l",
+   "lang": "es",
+   "title_en": "A well-known lawyer is shot dead while riding in a vehicle in La Marina, Mazatlán. A well-known lawyer identified as María de Los Ángeles is shot dead",
+   "first_report": "2026-11-04T20:46:39Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2118082518461387073",
+     "time": "2026-11-04T20:46:39Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "c9475a29c9",
+   "status": "single_source",
+   "title": "⚠️ Paseando con metralletas: así agarraron a seis integrantes del Cártel de Sinaloa en Chiapas",
+   "lang": "es",
+   "title_en": "Driving around with machine guns: how six members of the Sinaloa Cartel were caught in Chiapas",
+   "first_report": "2026-11-04T20:33:27Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2735",
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118079196362629358",
+     "time": "2026-11-04T20:33:27Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "c085f649b4",
+   "status": "single_source",
+   "title": "Sus nombres habrían aparecido en una libreta de Sidronio Casarrubias, exlíder detenido de Guerreros Unidos, cártel de Guerrero",
+   "lang": "es",
+   "title_en": "Their names reportedly appeared in a notebook belonging to Sidronio Casarrubias, the jailed former leader of Guerreros Unidos, a Guerrero cartel",
+   "first_report": "2026-11-04T20:07:22Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2729"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118072634604736840",
+     "time": "2026-11-04T20:07:22Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "33fd59c69b",
+   "status": "single_source",
+   "title": "La Central de Abasto necesita seguridad al nivel de una alcaldía: diputada exige frenar extorsiones y delitos del crimen organizado",
+   "lang": "es",
+   "title_en": "The Central de Abasto needs security on the level of a borough: a congresswoman demands a halt to extortion and organized crime offenses",
+   "first_report": "2026-11-04T20:06:37Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "PRY-607"
+   ],
+   "country": "PRY",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118072445261258860",
+     "time": "2026-11-04T20:06:37Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
    "id": "6fd44d89d1",
    "status": "single_source",
    "title": "De acuerdo con el investigador y especialista en crimen organizado, Víctor Sánchez, hay cuatro factores que han permitido a la Nueva Familia Michoacana crecer hasta convertirse en la tercera organizac",
    "lang": "es",
-   "title_en": "According to researcher and organized crime specialist Víctor Sánchez, four factors have allowed the Nueva Familia Michoacana to grow into the third-strongest criminal organization",
+   "title_en": "According to researcher and organized crime specialist Víctor Sánchez, four factors have allowed the Nueva Familia Michoacana to grow into the third-strongest criminal organization in the country, behind only ...",
    "first_report": "2026-11-04T19:50:05Z",
    "first_report_precision": "minute",
    "first_source": "Infobae",
@@ -92,13 +401,13 @@
    "status": "single_source",
    "title": "Alrededor de 80 personas fueron evacuadas hacia el Coliseo de Deportes de Santa Cruz debido a los estragos de las lluvias. El balance incluye una persona fallecida en Bellavista, y dos desaparecidos e",
    "lang": "es",
-   "title_en": "About 80 people were evacuated to the Santa Cruz Sports Coliseum because of rain damage. The toll includes one person dead in Bellavista and two missing in the Divino Niño sector",
+   "title_en": "About 80 people were evacuated to the Santa Cruz Sports Coliseum because of rain damage. The toll includes one person dead in Bellavista and two missing in the Divino Niño sector, according to ECU 911.",
    "first_report": "2026-11-04T18:58:23Z",
    "first_report_precision": "minute",
    "first_source": "Primicias",
    "region_ids": [
-    "ARG-1271",
-    "BOL-1940"
+    "BOL-1940",
+    "ARG-1271"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -162,7 +471,7 @@
    "status": "single_source",
    "title": "🚨 #ParesInforma | Atentado con explosivos en la vía Panamericana, en Cauca. Una volqueta cargada con explosivos fue detonada este miércoles 4 de noviembre en El Estrecho, zona rural de Patía, cerca de",
    "lang": "es",
-   "title_en": "#ParesInforma | Explosives attack on the Pan-American Highway in Cauca. A dump truck loaded with explosives was detonated this Wednesday, November 4, in El Estrecho, a rural area of Patía, near",
+   "title_en": "#ParesInforma | Explosives attack on the Pan-American Highway in Cauca. A dump truck loaded with explosives was detonated this Wednesday, November 4, in El Estrecho, a rural area of Patía, near a police substation.",
    "first_report": "2026-11-04T17:08:04Z",
    "first_report_precision": "minute",
    "first_source": "Fundación Paz & Reconciliación",
@@ -467,77 +776,6 @@
    ]
   },
   {
-   "id": "e64d1d9704",
-   "status": "confirmed",
-   "title": "Capturan a “El Tartas” y dos más, presuntos operadores del CJNG en Puebla: se les acusa de ser parte de la logística del cártel en la zona",
-   "lang": "es",
-   "title_en": "\"El Tartas\" and two others, alleged CJNG operatives in Puebla, are captured: they are accused of being part of the cartel's logistics in the area",
-   "first_report": "2026-11-02T21:57:29Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2719",
-    "MEX-2711",
-    "MEX-2718",
-    "MEX-2723"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Infobae",
-    "La Jornada"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117375571906695567",
-     "time": "2026-11-02T21:57:29Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/11/02/capturan-a-el-tartas-y-dos-mas-presuntos-operadores-del-cjng-en-puebla-se-les-acusa-de-ser-parte-de-la-logistica-del-cartel-en-la-zona/",
-     "time": "2026-11-03T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/11/03/de-jalisco-a-oaxaca-marina-golpea-liderazgos-del-cjng-los-salazar-y-cartel-de-guasave-en-solo-dos-semanas/",
-     "time": "2026-11-03T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://infobae.com/mexico/2026/11/03/de-jalisco-a-oaxaca-marina-golpea-liderazgos-del-cjng-los-salazar-y-cartel-de-guasave-en-solo-dos-semanas",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "jornada",
-     "name": "La Jornada",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.jornada.com.mx/noticia/2026/11/03/politica/semar-destaca-golpes-al-cjng-los-salazar-y-cartel-de-guasave-en-cinco-estados",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
    "id": "1c6857eddd",
    "status": "confirmed",
    "title": "DEA aportó inteligencia para ubicar a Chuy González, por quien ofrecía 5 millones de dólares",
@@ -588,6 +826,68 @@
    ]
   },
   {
+   "id": "a36263be43",
+   "status": "confirmed",
+   "title": "La Jornada - Semar destaca golpes al ‘CJNG’, ‘Los Salazar’ y cártel de Guasave en cinco estados",
+   "lang": "es",
+   "title_en": "La Jornada - Navy highlights blows to the 'CJNG', 'Los Salazar' and the Guasave cartel in five states",
+   "first_report": "2026-11-03T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "La Jornada",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2719",
+    "MEX-2727",
+    "MEX-2718"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae",
+    "La Jornada"
+   ],
+   "sources": [
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://jornada.com.mx/noticia/2026/11/03/politica/semar-destaca-golpes-al-cjng-los-salazar-y-cartel-de-guasave-en-cinco-estados",
+     "time": "2026-11-03T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/03/de-jalisco-a-oaxaca-marina-golpea-liderazgos-del-cjng-los-salazar-y-cartel-de-guasave-en-solo-dos-semanas/",
+     "time": "2026-11-03T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/03/de-jalisco-a-oaxaca-marina-golpea-liderazgos-del-cjng-los-salazar-y-cartel-de-guasave-en-solo-dos-semanas",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.jornada.com.mx/noticia/2026/11/03/politica/semar-destaca-golpes-al-cjng-los-salazar-y-cartel-de-guasave-en-cinco-estados",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
    "id": "6f18a5632c",
    "status": "single_source",
    "title": "Aumentó 140% el número de adolescentes desaparecidos en jalisco desde 2019",
@@ -602,10 +902,10 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
     "sinaloa",
     "cjng",
-    "mayiza"
+    "mayiza",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -732,8 +1032,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "eln",
-    "clan"
+    "clan",
+    "eln"
    ],
    "outlets": [
     "Infobae"
@@ -764,8 +1064,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "eln",
-    "clan"
+    "clan",
+    "eln"
    ],
    "outlets": [
     "Infobae"
@@ -864,9 +1164,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
     "sinaloa",
-    "mayiza"
+    "mayiza",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -1162,9 +1462,9 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
+    "BOL-1940",
     "ARG-1271",
-    "ECU-1270",
-    "BOL-1940"
+    "ECU-1270"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -1253,8 +1553,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "VEN-43",
-    "NIC-659"
+    "NIC-659",
+    "VEN-43"
    ],
    "country": "NIC",
    "group_ids": [],
@@ -1401,8 +1701,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2706"
+    "MEX-2706",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1765,8 +2065,8 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2731",
-    "MEX-2732"
+    "MEX-2732",
+    "MEX-2731"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -1855,10 +2155,10 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2721",
-    "MEX-2711",
+    "MEX-2726",
+    "MEX-2727",
     "MEX-2725",
-    "MEX-2726"
+    "MEX-2720"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2103,15 +2403,15 @@
    "first_report_precision": "day",
    "first_source": "Excélsior",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2718"
+    "MEX-2718",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
     "sinaloa",
     "cjng",
-    "mayiza"
+    "mayiza",
+    "chapitos"
    ],
    "outlets": [
     "Excélsior"
@@ -2171,9 +2471,9 @@
    ],
    "country": "COL",
    "group_ids": [
-    "eln",
     "clan",
-    "exfarc"
+    "exfarc",
+    "eln"
    ],
    "outlets": [
     "Infobae"
@@ -2214,39 +2514,6 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://infobae.com/sociedad/policiales/2026/11/02/de-los-crimenes-mas-atroces-estrangulo-a-su-pareja-degollo-a-tres-ninos-e-incendio-la-casa-con-su-bebe-en-brazos",
-     "time": "2026-11-03T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "a36263be43",
-   "status": "single_source",
-   "title": "La Jornada - Semar destaca golpes al ‘CJNG’, ‘Los Salazar’ y cártel de Guasave en cinco estados",
-   "lang": "es",
-   "title_en": "La Jornada - Navy highlights blows to the 'CJNG', 'Los Salazar' and the Guasave cartel in five states",
-   "first_report": "2026-11-03T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "La Jornada",
-   "region_ids": [
-    "MEX-2711",
-    "MEX-2727",
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "La Jornada"
-   ],
-   "sources": [
-    {
-     "outlet": "jornada",
-     "name": "La Jornada",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://jornada.com.mx/noticia/2026/11/03/politica/semar-destaca-golpes-al-cjng-los-salazar-y-cartel-de-guasave-en-cinco-estados",
      "time": "2026-11-03T12:00:00Z",
      "time_precision": "day"
     }
@@ -2413,10 +2680,10 @@
    "first_report_precision": "day",
    "first_source": "Semana",
    "region_ids": [
-    "COL-1399",
-    "COL-1314",
+    "COL-1412",
     "COL-1408",
-    "COL-1412"
+    "COL-1399",
+    "COL-1314"
    ],
    "country": "COL",
    "group_ids": [
@@ -2447,8 +2714,8 @@
    "first_report_precision": "day",
    "first_source": "El Tiempo",
    "region_ids": [
-    "VEN-43",
-    "VEN-41"
+    "VEN-41",
+    "VEN-43"
    ],
    "country": "VEN",
    "group_ids": [
@@ -2566,8 +2833,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "ARG-1271",
-    "BOL-1940"
+    "BOL-1940",
+    "ARG-1271"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -2581,6 +2848,38 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://www.infobae.com/america/america-latina/2026/11/03/acribillan-a-un-hombre-en-bolivia-y-dejan-un-cartel-de-amenaza-contra-el-viceministro-de-regimen-interior/",
+     "time": "2026-11-03T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "0275a01a27",
+   "status": "single_source",
+   "title": "Capturan a “El Tartas” y dos más, presuntos operadores del CJNG en Puebla: se les acusa de ser parte de la logística del cártel en la zona - Infobae",
+   "lang": "es",
+   "title_en": "\"El Tartas\" and two others, alleged CJNG operatives in Puebla, are captured: they are accused of being part of the cartel's logistics in the area - Infobae",
+   "first_report": "2026-11-03T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2724",
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/02/capturan-a-el-tartas-y-dos-mas-presuntos-operadores-del-cjng-en-puebla-se-les-acusa-de-ser-parte-de-la-logistica-del-cartel-en-la-zona/",
      "time": "2026-11-03T12:00:00Z",
      "time_precision": "day"
     }
@@ -2747,8 +3046,8 @@
    "first_report_precision": "day",
    "first_source": "ZETA Tijuana",
    "region_ids": [
-    "MEX-2716",
-    "MEX-2706"
+    "MEX-2706",
+    "MEX-2716"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2768,12 +3067,12 @@
    ]
   },
   {
-   "id": "442c86a93b",
+   "id": "9b02a86772",
    "status": "single_source",
-   "title": "Se registra ataque a balazos en la Feria Ganadera de Culiacán A la 1 con Omar de la Rocha y todo su equipo en \"Los Noticieristas\".",
+   "title": "🚨🚔| Detienen a tres civiles armados con presunta droga; se les atribuye también su participación en el ataque a balazos a la fachada de la Feria Ganadera 🎡🎠, en #Culiacán",
    "lang": "es",
-   "title_en": "A shooting attack is reported at the Culiacán Livestock Fair. At 1 p.m. with Omar de la Rocha and his whole team on \"Los Noticieristas\".",
-   "first_report": "2026-11-02T19:59:13Z",
+   "title_en": "🚨🚔| Three armed civilians arrested with suspected drugs; they are also accused of taking part in the shooting attack on the facade of the Livestock Fair 🎡🎠 in #Culiacán",
+   "first_report": "2026-11-03T05:40:00Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
    "region_ids": [
@@ -2785,15 +3084,6 @@
     "Los Noticieristas"
    ],
    "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2117345806202077285",
-     "time": "2026-11-02T19:59:13Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "noticieristas",
      "name": "Los Noticieristas",
@@ -2864,17 +3154,17 @@
    ]
   },
   {
-   "id": "1f128b9f21",
+   "id": "9c2daac094",
    "status": "single_source",
-   "title": "From Honduras and Costa Rica to Ecuador and Panama, governments are embracing massive prisons as part of their response to organized crime. Our analysis maps where these projects stand—and what they r",
+   "title": "Costa Rica is a key freight route connecting the ports of Panama with the rest of Central America. But transport costs are rising as trucks travelling these routes are falling prey to violent and soph",
    "lang": "en",
    "title_en": null,
-   "first_report": "2026-11-02T22:43:22Z",
+   "first_report": "2026-11-03T02:43:51Z",
    "first_report_precision": "minute",
    "first_source": "InSight Crime",
    "region_ids": [
-    "PAN-1340",
-    "PRY-607"
+    "PRY-607",
+    "PAN-1340"
    ],
    "country": "PAN",
    "group_ids": [],
@@ -2882,15 +3172,6 @@
     "InSight Crime"
    ],
    "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2117387117911237060",
-     "time": "2026-11-02T22:43:22Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "insight",
      "name": "InSight Crime",
@@ -2956,125 +3237,6 @@
      "via": "X @InSightCrime",
      "url": "https://x.com/InSightCrime/status/2117410262319767906",
      "time": "2026-11-03T00:15:20Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "f2f01c5e13",
-   "status": "single_source",
-   "title": "The ELN has consolidated its control over much of the border between Venezuela and Colombia, and is profiting from the enormous quantity of cocaine passing across. Read our investigation:",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-11-02T22:30:50Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [],
-   "country": null,
-   "group_ids": [
-    "eln"
-   ],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2117383963215802568",
-     "time": "2026-11-02T22:30:50Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "c386968072",
-   "status": "single_source",
-   "title": "#OpiniónYAnálisis La creciente presencia del crimen organizado en Querétaro. \"Existen siete organizaciones criminales que tienen presencia en Querétaro, la más importante de todas es el Cártel Jalisco",
-   "lang": "es",
-   "title_en": "#OpinionAndAnalysis The growing presence of organized crime in Querétaro. \"Seven criminal organizations have a presence in Querétaro, the most important of all is the Jalisco New Generation Cartel, which has a presence i",
-   "first_report": "2026-11-02T21:15:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Animal Político",
-   "region_ids": [
-    "MEX-2719",
-    "MEX-2733"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Animal Político"
-   ],
-   "sources": [
-    {
-     "outlet": "animal",
-     "name": "Animal Político",
-     "kind": "outlet",
-     "via": "X @Pajaropolitico",
-     "url": "https://x.com/Pajaropolitico/status/2117364877710827729",
-     "time": "2026-11-02T21:15:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "576731fc75",
-   "status": "single_source",
-   "title": "Un total de 97.5 toneladas de #cocaína han sido aseguradas por la Secretaría de #Marina en aguas del #Pacíficomexicano durante la presente administración, lo que representa una afectación económica es",
-   "lang": "es",
-   "title_en": "A total of 97.5 tons of #cocaine have been seized by the #Navy in #MexicanPacific waters during the current administration, representing an estimated economic hit of 25 billion pesos to criminal organizations.",
-   "first_report": "2026-11-02T21:10:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2117363619478302818",
-     "time": "2026-11-02T21:10:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "7896d5ac84",
-   "status": "single_source",
-   "title": "La organización ubicó a los periodistas locales que cubren crimen organizado y corrupción como los más expuestos a la violencia",
-   "lang": "es",
-   "title_en": "The organization identified local journalists who cover organized crime and corruption as the most exposed to violence",
-   "first_report": "2026-11-02T20:47:36Z",
-   "first_report_precision": "minute",
-   "first_source": "ZETA Tijuana",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "ZETA Tijuana"
-   ],
-   "sources": [
-    {
-     "outlet": "zeta",
-     "name": "ZETA Tijuana",
-     "kind": "outlet",
-     "via": "X @ZETATijuana",
-     "url": "https://x.com/ZETATijuana/status/2117357983306752404",
-     "time": "2026-11-02T20:47:36Z",
      "time_precision": "minute"
     }
    ]
