@@ -1,13 +1,16 @@
 name: ci-check
 # One check on every change: retired GA tag, github.io / old onrender links,
 # shared-file edits without Trish's OK, and colour / label-size / 390px phone checks
-# on the dashboards a change touches (every dashboard when the checks or shared files change). Run manually with all=true for a full audit.
+# on the dashboards a change touches (every dashboard when the checks or shared files change).
+# Browser and click checks run one job per dashboard, in parallel, so a full re-check
+# finishes in about the time of the slowest dashboard instead of the sum of all of them.
+# The checks themselves are the same, including per-button waits. Run manually with all=true for a full audit.
 on:
   pull_request:
     types: [opened, synchronize, reopened, labeled, unlabeled]
   push:
     branches: [main]
-  workflow_dispatch:
+    10|  workflow_dispatch:
     inputs:
       all:
         description: "Browser-check every dashboard (full audit)"
@@ -17,12 +20,37 @@ permissions:
   contents: read
 concurrency:
   group: ci-check-${{ github.event_name == 'push' && github.sha || github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+    20|  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
-  check:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      slugs: ${{ steps.set.outputs.slugs }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+    30|      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - id: set
+        env:
+          SHARED_OK: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'trish-approved') && '1' || '0' }}
+          EVENT: ${{ github.event_name }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BEFORE_SHA: ${{ github.event.before }}
+    40|          ALL: ${{ inputs.all }}
+        run: |
+          source scripts/ci_args.sh
+          slugs=$(python scripts/ci_check.py --list-plan "${CI_ARGS[@]}")
+          python -c 'import json,sys; json.loads(sys.argv[1])' "$slugs"
+          echo "slugs=$slugs" >> "$GITHUB_OUTPUT"
+          echo "browser jobs: $slugs"
+  static:
     runs-on: ubuntu-latest
     timeout-minutes: 120
-    steps:
+    50|    steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -32,35 +60,73 @@ jobs:
       - name: Install Playwright Chromium
         run: |
           pip install --quiet playwright
-          python -m playwright install --with-deps chromium
+    60|          python -m playwright install --with-deps chromium
       - name: Self-test the checks (must catch look-alike colours, number badges, short text, dead buttons)
         run: python scripts/test_ci_check.py
-      - name: Run checks
+      - name: Static checks and figure tests
         env:
           SHARED_OK: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'trish-approved') && '1' || '0' }}
           EVENT: ${{ github.event_name }}
           BASE_REF: ${{ github.event.pull_request.base.ref }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           BEFORE_SHA: ${{ github.event.before }}
+    70|          ALL: ${{ inputs.all }}
+        run: |
+          source scripts/ci_args.sh
+          # Figure tests stay here (they are not the slow part). Browser and click checks are the matrix.
+          python scripts/ci_check.py --static-only "${CI_ARGS[@]}"
+  browser:
+    needs: plan
+    if: needs.plan.outputs.slugs != '[]' && needs.plan.outputs.slugs != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+    80|      fail-fast: false
+      matrix:
+        slug: ${{ fromJson(needs.plan.outputs.slugs) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+    90|      - name: Install Playwright Chromium
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+      - name: Browser and click checks
+        env:
+          SHARED_OK: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'trish-approved') && '1' || '0' }}
+          EVENT: ${{ github.event_name }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+   100|          BEFORE_SHA: ${{ github.event.before }}
           ALL: ${{ inputs.all }}
         run: |
-          if [ "$EVENT" = "pull_request" ]; then
-            # measure from the merge base of the branch tip and the CURRENT base branch, so a branch that is
-            # merely behind main (or a base sha that predates newer main commits) is not blamed for main's changes
-            git fetch --quiet origin "$BASE_REF"
-            python scripts/ci_check.py --changed-from "origin/$BASE_REF" --changed-head "$HEAD_SHA"
-          elif [ "$EVENT" = "push" ] && [ -n "$BEFORE_SHA" ] && [ "$BEFORE_SHA" != "0000000000000000000000000000000000000000" ]; then
-            # direct pushes (e.g. the sync bot) are already merged; shared-file edits are reported, page checks gate
-            SHARED_OK=1 python scripts/ci_check.py --changed-from "$BEFORE_SHA"
-          elif [ "$ALL" = "true" ]; then
-            python scripts/ci_check.py
-          else
-            python scripts/ci_check.py --static-only
-          fi
+          source scripts/ci_args.sh
+          # --no-static / --no-figures: those already ran in the static job. Click checks still
+          # run only for a dashboard whose folder changed, which --one keeps.
+          python scripts/ci_check.py --one "${{ matrix.slug }}" --no-static --no-figures "${CI_ARGS[@]}"
       - name: Upload screenshots
         if: always()
         uses: actions/upload-artifact@v4
-        with:
-          name: ci-screens
+   110|        with:
+          name: ci-screens-${{ matrix.slug }}
           path: ci-screens/
           if-no-files-found: ignore
+  check:
+    needs: [plan, static, browser]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail unless every part passed
+   120|        env:
+          PLAN: ${{ needs.plan.result }}
+          STATIC: ${{ needs.static.result }}
+          BROWSER: ${{ needs.browser.result }}
+        run: |
+          echo "plan=$PLAN static=$STATIC browser=$BROWSER"
+          test "$PLAN" = success
+          test "$STATIC" = success
+          test "$BROWSER" = success -o "$BROWSER" = skipped
