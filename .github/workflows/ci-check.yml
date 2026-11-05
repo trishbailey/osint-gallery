@@ -60,7 +60,31 @@ jobs:
       - name: Install Playwright Chromium
         run: |
           pip install --quiet playwright
-          python -m playwright install --with-deps chromium
+          # A stuck apt mirror has hung this step until the 120 minute job timeout.
+          # Playwright runs apt-get as root in its own session, so `timeout` alone
+          # kills python and leaves apt holding the dpkg lock. Stop that apt before
+          # another try. Eight minutes is enough for a slow mirror; a dead one does not sit for two hours.
+          stop_apt() {
+            sudo pkill -TERM -x apt-get 2>/dev/null || true
+            sudo pkill -TERM -x apt 2>/dev/null || true
+            sudo pkill -TERM -x dpkg 2>/dev/null || true
+            sleep 2
+            sudo pkill -KILL -x apt-get 2>/dev/null || true
+            sudo pkill -KILL -x apt 2>/dev/null || true
+            sudo pkill -KILL -x dpkg 2>/dev/null || true
+            timeout 60 sudo dpkg --configure -a || true
+          }
+          ok=0
+          for attempt in 1 2; do
+            if timeout --kill-after=20 480 python -m playwright install --with-deps chromium; then
+              ok=1
+              break
+            fi
+            echo "Playwright install did not finish (attempt ${attempt}); stopping leftover apt"
+            stop_apt
+            sleep 5
+          done
+          test "$ok" = 1
       - name: Self-test the checks (must catch look-alike colours, number badges, short text, dead buttons)
         run: python scripts/test_ci_check.py
       - name: Static checks and figure tests
@@ -94,7 +118,31 @@ jobs:
       - name: Install Playwright Chromium
         run: |
           pip install --quiet playwright
-          python -m playwright install --with-deps chromium
+          # A stuck apt mirror has hung this step until the 120 minute job timeout.
+          # Playwright runs apt-get as root in its own session, so `timeout` alone
+          # kills python and leaves apt holding the dpkg lock. Stop that apt before
+          # another try. Eight minutes is enough for a slow mirror; a dead one does not sit for two hours.
+          stop_apt() {
+            sudo pkill -TERM -x apt-get 2>/dev/null || true
+            sudo pkill -TERM -x apt 2>/dev/null || true
+            sudo pkill -TERM -x dpkg 2>/dev/null || true
+            sleep 2
+            sudo pkill -KILL -x apt-get 2>/dev/null || true
+            sudo pkill -KILL -x apt 2>/dev/null || true
+            sudo pkill -KILL -x dpkg 2>/dev/null || true
+            timeout 60 sudo dpkg --configure -a || true
+          }
+          ok=0
+          for attempt in 1 2; do
+            if timeout --kill-after=20 480 python -m playwright install --with-deps chromium; then
+              ok=1
+              break
+            fi
+            echo "Playwright install did not finish (attempt ${attempt}); stopping leftover apt"
+            stop_apt
+            sleep 5
+          done
+          test "$ok" = 1
       - name: Browser and click checks
         env:
           SHARED_OK: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'trish-approved') && '1' || '0' }}

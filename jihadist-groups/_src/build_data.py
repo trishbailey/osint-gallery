@@ -13,7 +13,8 @@ WINDOW = ("2026-10-06", "2026-11-05")
 
 # ---- colours: ONE place. The page reads these from data.json. ------------------------------
 FAMILY_COLORS = {"al-qaeda": "#3d9be9", "islamic-state": "#e8575a", "iran-axis": "#2fc48d", "independent": "#b78cf2"}
-# Marker colour for dissolved or dormant groups: grey, allowed by the shared colour check only on elements marked data-status="defunct".
+# Marker colour for dissolved or dormant groups: grey, allowed by the shared colour check
+# on a named special-category marker. data-status="defunct" is that marker; app.js sets it.
 DISSOLVED_COLOR = "#a4a4a7"
 
 FAMILIES = [
