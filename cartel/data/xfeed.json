@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-05T11:05:01Z",
+ "as_of": "2026-11-05T13:56:22Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -27,6 +27,75 @@
   "vhmichel"
  ],
  "posts": [
+  {
+   "id": "2118327483728580931",
+   "handle": "Pajaropolitico",
+   "url": "https://x.com/Pajaropolitico/status/2118327483728580931",
+   "created_at": "2026-11-05T13:00:03.000Z",
+   "text": "📱 La Policía Cibernética de la CDMX alertó sobre una estafa en WhatsApp que utiliza fotos de visualización única para amenazar y extorsionar a usuarios. Los delincuentes aseguran que abrir la imagen fue un delito y exigen dinero, pero las autoridades aclaran que verla no https:/…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "📱 Mexico City's Cyber Police warned of a WhatsApp scam that uses view-once photos to threaten and extort users. The criminals claim that opening the image was a crime and demand money, but the authorities clarify that viewing it is not…"
+  },
+  {
+   "id": "2118325294029296009",
+   "handle": "SSPCMexico",
+   "url": "https://x.com/SSPCMexico/status/2118325294029296009",
+   "created_at": "2026-11-05T12:51:21.000Z",
+   "text": "En dos operaciones marítimas realizadas en costas de #Chiapas y #Oaxaca, personal de @SEMAR_mx, asegura más de una tonelada de cocaína. https://t.co/IqKkQjxPQv https://t.co/k95sZJPHbp",
+   "lang": "es",
+   "region_ids": [
+    "MEX-2735",
+    "MEX-2723"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "In two maritime operations off the coasts of #Chiapas and #Oaxaca, @SEMAR_mx personnel seized more than a ton of cocaine."
+  },
+  {
+   "id": "2118325006258090266",
+   "handle": "CrisisGroup",
+   "url": "https://x.com/CrisisGroup/status/2118325006258090266",
+   "created_at": "2026-11-05T12:50:12.000Z",
+   "text": "Criminal turf wars are raging in the Mexican state of Sinaloa, killing and displacing thousands. The government should harness U.S. pressure to tackle the official collusion and corruption that sustains organised crime. https://t.co/WjcLUiwkcf",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "think tank",
+   "label": null,
+   "text_en": "Criminal turf wars are raging in the Mexican state of Sinaloa, killing and displacing thousands. The government should harness U.S. pressure to tackle the official collusion and corruption that sustains organised crime."
+  },
+  {
+   "id": "2118317456984772970",
+   "handle": "Primicias",
+   "url": "https://x.com/Primicias/status/2118317456984772970",
+   "created_at": "2026-11-05T12:20:12.000Z",
+   "text": "Más de 300 policías participaron en el operativo contra Los Lobos, con apoyo internacional, desplegado en seis provincias de Ecuador. https://t.co/tU2TuQzU87 https://t.co/iduzUM8zLg",
+   "lang": "und",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "lobos"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "More than 300 police officers took part in the operation against Los Lobos, with international support, deployed across six provinces of Ecuador."
+  },
   {
    "id": "2118295322992451913",
    "handle": "Primicias",
@@ -3541,58 +3610,6 @@
    "source_type": "think tank",
    "label": null,
    "text_en": "NEW REPORT | Central African Republic: containing the effects of the war in Sudan. The war in Sudan is fuelling criminal activity by armed groups in the northeast of the Central African Republic, bordering Darfur, while Bangui's external partnerships are undermining its"
-  },
-  {
-   "id": "2115772638899429738",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115772638899429738",
-   "created_at": "2026-10-29T11:48:00.000Z",
-   "text": "Detienen en Tecate a exmilitar ruso buscado por Interpol: portaba granada y documentos falsos https://t.co/KnHEhfH52r",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2706",
-    "NIC-655"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Former Russian soldier wanted by Interpol arrested in Tecate: he was carrying a grenade and false documents"
-  },
-  {
-   "id": "2115766896368705714",
-   "handle": "CrisisGroup",
-   "url": "https://x.com/CrisisGroup/status/2115766896368705714",
-   "created_at": "2026-10-29T11:25:11.000Z",
-   "text": "After decades of conflict, achieving durable peace in Indian- administered Kashmir and preventing a resumption of war with Pakistan will require bold moves that look beyond counter-insurgency and central government diktat. Our new report explains how this can be done.",
-   "lang": "und",
-   "region_ids": [
-    "PRY-607"
-   ],
-   "country": "PRY",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "think tank",
-   "label": null,
-   "text_en": "After decades of conflict, achieving durable peace in Indian- administered Kashmir and preventing a resumption of war with Pakistan will require bold moves that look beyond counter-insurgency and central government diktat. Our new report explains how this can be done."
-  },
-  {
-   "id": "2115762922731253945",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115762922731253945",
-   "created_at": "2026-10-29T11:09:24.000Z",
-   "text": "Carlos César Cruz Muñoz fue detenido el 28 de octubre en Tuxtepec, Oaxaca https://t.co/X4OSXtB26I https://t.co/kXoX7rRZ3U",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2723"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Carlos César Cruz Muñoz was arrested on October 28 in Tuxtepec, Oaxaca"
   }
  ]
 }
