@@ -60,7 +60,18 @@ jobs:
       - name: Install Playwright Chromium
         run: |
           pip install --quiet playwright
-          python -m playwright install --with-deps chromium
+          # A stuck apt mirror has hung this step until the 120 minute job timeout.
+          # Bound each try and retry so one bad mirror does not cancel the whole matrix.
+          ok=0
+          for attempt in 1 2 3; do
+            if timeout 180 python -m playwright install --with-deps chromium; then
+              ok=1
+              break
+            fi
+            echo "Playwright install did not finish (attempt ${attempt}); retrying"
+            sleep 15
+          done
+          test "$ok" = 1
       - name: Self-test the checks (must catch look-alike colours, number badges, short text, dead buttons)
         run: python scripts/test_ci_check.py
       - name: Static checks and figure tests
@@ -94,7 +105,18 @@ jobs:
       - name: Install Playwright Chromium
         run: |
           pip install --quiet playwright
-          python -m playwright install --with-deps chromium
+          # A stuck apt mirror has hung this step until the 120 minute job timeout.
+          # Bound each try and retry so one bad mirror does not cancel the whole matrix.
+          ok=0
+          for attempt in 1 2 3; do
+            if timeout 180 python -m playwright install --with-deps chromium; then
+              ok=1
+              break
+            fi
+            echo "Playwright install did not finish (attempt ${attempt}); retrying"
+            sleep 15
+          done
+          test "$ok" = 1
       - name: Browser and click checks
         env:
           SHARED_OK: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'trish-approved') && '1' || '0' }}
