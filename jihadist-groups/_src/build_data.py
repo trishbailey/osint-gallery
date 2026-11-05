@@ -8,13 +8,13 @@ D = ROOT / "data_in"
 OUT = ROOT.parent / "data.json"
 L = lambda n: json.load(open(D / n))
 
-ASOF = "2026-11-04"
-WINDOW = ("2026-10-05", "2026-11-04")
+ASOF = "2026-11-05"
+WINDOW = ("2026-10-06", "2026-11-05")
 
 # ---- colours: ONE place. The page reads these from data.json. ------------------------------
 FAMILY_COLORS = {"al-qaeda": "#3d9be9", "islamic-state": "#e8575a", "iran-axis": "#2fc48d", "independent": "#b78cf2"}
-# Marker colour for dissolved or dormant groups. One variable: switch to grey ("#9aa6b8") later if the shared colour check allows it.
-DISSOLVED_COLOR = "#d9a441"
+# Marker colour for dissolved or dormant groups: grey, allowed by the shared colour check only on elements marked data-status="defunct".
+DISSOLVED_COLOR = "#a4a4a7"
 
 FAMILIES = [
     {"id": "al-qaeda", "name": "al-Qaeda network", "blurb": "Al-Qaeda's core and the regional groups that follow it."},
@@ -45,7 +45,7 @@ REGION = {  # for the Africa count and the incident storylines
 THEATRE = {
     "jnim": "Sahel", "issp": "Sahel", "jas": "Lake Chad Basin and Nigeria", "iswap": "Lake Chad Basin and Nigeria", "lakurawa": "Lake Chad Basin and Nigeria",
     "al-shabaab": "Horn of Africa", "is-somalia": "Horn of Africa", "iscap-adf": "Central and southern Africa", "is-mozambique": "Central and southern Africa",
-    "houthis": "Levant, Iraq and the Gulf", "hezbollah": "Levant, Iraq and the Gulf", "kataib-hezbollah": "Levant, Iraq and the Gulf", "is-syria": "Levant, Iraq and the Gulf",
+    "houthis": "Levant, Iraq and the Gulf", "is-iraq": "Levant, Iraq and the Gulf", "hezbollah": "Levant, Iraq and the Gulf", "kataib-hezbollah": "Levant, Iraq and the Gulf", "is-syria": "Levant, Iraq and the Gulf",
     "iskp": "South and Central Asia", "ttp": "South and Central Asia", "jmm": "South and Central Asia", "dawlah-islamiyah": "Southeast Asia",
     "hamas": "Levant, Iraq and the Gulf", "taliban": "South and Central Asia",
 }
@@ -230,14 +230,14 @@ T.append(("JNIM is the largest group in the movement, and it still concedes grou
           "It has 7,000 to 8,000 members and keeps Bamako short of fuel, yet Mali's army, backed by Russia's Africa Corps, retook Kidal on 6 October.",
           [UN, inc_url("jnim", "Bamako"), inc_url("jnim", "Kidal")]))
 T.append(("The Islamic State's strength lies in its African provinces, not its core.",
-          "Islamic State West Africa was linked to 3,520 deaths in the past year and the Sahel province to 1,842, and Nigeria's army reports Islamic State West Africa assaults on Buni Yadi and Kukawa within three days. The core lost its deputy leader in May 2026 and keeps up to 3,000 fighters, mostly in Syria.",
-          [AC, inc_url("iswap", "Kukawa"), UN]))
+          "Islamic State West Africa was linked to 3,520 deaths in the past year and the Sahel province to 1,842, and Nigeria's army reports Islamic State West Africa assaults on Buni Yadi and Kukawa within three days. The core lost its deputy leader in May 2026 and keeps up to 3,000 fighters, mostly in Syria, while its cells around Hawija attack Iraqi forces for the first time since the US-led mission ended on 30 September.",
+          [AC, inc_url("iswap", "Kukawa"), UN, inc_url("is-iraq", "Hawija")]))
 T.append(("Al-Qaeda's center is marginal and its energy sits in two affiliates.",
-          "The UN says its senior leadership is marginalized and faces declining relevance. AQAP has about 2,000 fighters and is reported to work with the Houthis. Al-Shabaab routed Turkish-trained Somali troops near Jameeca on 26 October, the army's worst reverse in years, and the government has opened an inquiry.",
-          [UN, inc_url("al-shabaab", "Jameeca"), "https://qncnews.com/2026/11/01/somali-army-toll-climbs-as-inquiry-opens-into-leego-rout/"]))
+          "The UN says its senior leadership is marginalized and faces declining relevance. AQAP has about 2,000 fighters and is reported to work with the Houthis. Al-Shabaab routed Turkish-trained Somali troops near Jameeca on 26 October, the army's worst reverse in years, and has reopened a front against Puntland forces in the Galgala mountains.",
+          [UN, inc_url("al-shabaab", "Jameeca"), "https://qncnews.com/2026/11/01/somali-army-toll-climbs-as-inquiry-opens-into-leego-rout/", inc_url("al-shabaab", "Galgala")]))
 T.append(("The Iran-backed axis is fighting on several fronts at once.",
-          "The Houthis hit Riyadh's airport on 10 October, killing 12 people, fired missiles at Aden's airport and presidential palace on 28 and 30 October, tighten their siege of Taiz and are fighting within 80 km of Aden, their closest approach since 2015. Israeli strikes continue in southern Lebanon and Gaza despite ceasefires, killing five Hamas-run police officers on 1 November. Iraqi factions keep their weapons after US troops left on 1 October, and Hamas has a new leader, Khalil al-Hayya, since 20 July.",
-          [inc_url("houthis", "Riyadh"), inc_url("houthis", "Aden International"), inc_url("houthis", "Maashiq"), inc_url("houthis", "Jabal Sabr"), inc_url("houthis", "Tur al-Bahah"), inc_url("hezbollah", "Lebanon"), inc_url("hamas", "Mawasi"), "https://www.thenationalnews.com/news/mena/2026/10/01/resistance-has-won-this-round-kataib-hezbollah-denies-disarmament-deal-after-us-troops-leave-iraq/", "https://www.thenationalnews.com/news/mena/2026/07/23/new-hamas-leader-elected-by-narrowest-of-margins-with-gazas-backing/"]))
+          "The Houthis hit Riyadh's airport on 10 October, killing 12 people, fired missiles at Aden's airport and presidential palace on 28 and 30 October and at a recruit camp in Al-Dhale on 4 November, and tighten their siege of Taiz. They fight within 80 km of Aden, their closest approach since 2015, as government forces retake positions in Al-Maqatirah. Israeli strikes continue in southern Lebanon and Gaza despite ceasefires, killing five Hamas-run police officers on 1 November. Iraqi factions keep their weapons after US troops left on 1 October, and Hamas has a new leader, Khalil al-Hayya, since 20 July.",
+          [inc_url("houthis", "Riyadh"), inc_url("houthis", "Aden International"), inc_url("houthis", "Maashiq"), inc_url("houthis", "Jabal Sabr"), inc_url("houthis", "Tur al-Bahah"), inc_url("houthis", "Qatabah"), inc_url("houthis", "Al-Maqatirah"), inc_url("hezbollah", "Lebanon"), inc_url("hamas", "Mawasi"), "https://www.thenationalnews.com/news/mena/2026/10/01/resistance-has-won-this-round-kataib-hezbollah-denies-disarmament-deal-after-us-troops-leave-iraq/", "https://www.thenationalnews.com/news/mena/2026/07/23/new-hamas-leader-elected-by-narrowest-of-margins-with-gazas-backing/"]))
 T.append(("In South Asia the Taliban shelter the Pakistani Taliban and fight the Islamic State.",
           "The UN reports that the Taliban give the Pakistani Taliban greater freedom of movement, while the Islamic State Khorasan Province is the Taliban's greatest threat. Taliban and Pakistani forces traded fire at Torkham on 1 November, and Pakistan's military warns Kabul of punishment for harboring militants.",
           [UN, inc_url("ttp", "Kurram"), inc_url("taliban", "Torkham")]))
@@ -249,9 +249,9 @@ content["takeaway"] = [{"lead": a, "html": wn(b, c)} for a, b, c in T]
 BOTTOM = {
     "Sahel": ("JNIM and the Islamic State Sahel Province fight each other as well as the army, and JNIM claims two Burkina Faso army posts in one day.", [SOUFAN, inc_url("jnim", "Kidal"), inc_url("jnim", "Bilanga")]),
     "Lake Chad Basin and Nigeria": ("Suspected Islamic State West Africa fighters overran an army base and later assaulted Kukawa, Lakurawa attacked troops in Kebbi, and the army says air strikes killed two Islamic State West Africa commanders.", [inc_url("iswap", "Mairari"), inc_url("iswap", "Kukawa"), inc_url("lakurawa", "Maiyama"), inc_url("iswap", "Kerenoa")]),
-    "Horn of Africa": ("Al-Shabaab routed a Turkish-trained Somali force while Puntland forces pushed Islamic State Somalia in the Cal Miskaad mountains.", [inc_url("al-shabaab", "Jameeca"), inc_url("is-somalia", "Cal Miskaad")]),
-    "Central and southern Africa": ("Islamic State-linked fighters keep attacking civilians in Ituri and Cabo Delgado.", [inc_url("iscap-adf", "Mambasa"), inc_url("is-mozambique", "Nangade")]),
-    "Levant, Iraq and the Gulf": ("Houthi missiles struck Riyadh's airport and targeted Aden's airport and presidential palace, Houthi forces now fight within 80 km of Aden, Israeli strikes continue in southern Lebanon and Gaza, and Jordan struck alleged Islamic State hideouts in Syria.", [inc_url("houthis", "Riyadh"), inc_url("houthis", "Aden International"), inc_url("houthis", "Maashiq"), inc_url("hamas", "Mawasi"), inc_url("houthis", "Jabal Sabr"), inc_url("houthis", "Tur al-Bahah"), inc_url("hezbollah", "Lebanon"), inc_url("is-syria", "Daraa")]),
+    "Horn of Africa": ("Al-Shabaab routed a Turkish-trained Somali force and reopened a front in Puntland's Galgala mountains, while Puntland forces pushed Islamic State Somalia in the Cal Miskaad mountains.", [inc_url("al-shabaab", "Jameeca"), inc_url("al-shabaab", "Galgala"), inc_url("is-somalia", "Cal Miskaad")]),
+    "Central and southern Africa": ("Islamic State-linked fighters keep attacking civilians in Ituri and Cabo Delgado, where 14 people from Muidumbe were beheaded in a week.", [inc_url("iscap-adf", "Mambasa"), inc_url("is-mozambique", "Nangade"), inc_url("is-mozambique", "Muidumbe")]),
+    "Levant, Iraq and the Gulf": ("Houthi missiles struck Riyadh's airport, Aden's airport and presidential palace and a recruit camp in Al-Dhale, and Houthi forces fight within 80 km of Aden. Israeli strikes continue in southern Lebanon and Gaza, Syria accuses Hezbollah of plotting to bomb the Homs refinery, Jordan struck alleged Islamic State hideouts in Syria, and Islamic State cells attack Iraqi forces around Hawija.", [inc_url("houthis", "Riyadh"), inc_url("houthis", "Aden International"), inc_url("houthis", "Maashiq"), inc_url("houthis", "Qatabah"), inc_url("hamas", "Mawasi"), inc_url("houthis", "Jabal Sabr"), inc_url("houthis", "Tur al-Bahah"), inc_url("hezbollah", "Lebanon"), inc_url("hezbollah", "Homs"), inc_url("is-syria", "Daraa"), inc_url("is-iraq", "Hawija")]),
     "South and Central Asia": ("Pakistan and the Taliban trade fire on the border, and the Pakistani Taliban press attacks inside Pakistan.", [inc_url("ttp", "Kurram"), inc_url("taliban", "Torkham")]),
     "Southeast Asia": ("Philippine forces keep killing Dawlah Islamiyah leaders.", [inc_url("dawlah-islamiyah", "Sultan Mastura")]),
 }

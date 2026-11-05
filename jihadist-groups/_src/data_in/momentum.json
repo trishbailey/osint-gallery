@@ -40,11 +40,12 @@
  {
   "id": "al-shabaab",
   "trend": "rising",
-  "reason": "The UN says it shifted to fewer, more targeted attacks after the 2025 surge, but its 26 Oct rout of Turkish-trained troops near Jameeca was the army's worst reverse in years, and a security source describes its influence expanding across South West State.",
+  "reason": "The UN says it shifted to fewer, more targeted attacks after the 2025 surge, but its 26 Oct rout of Turkish-trained troops near Jameeca was the army's worst reverse in years, and a security source describes its influence expanding across South West State, and since 19 Oct it attacks Puntland forces in the Galgala mountains for the first time in years.",
   "sources": [
    "https://docs.un.org/en/S/2026/651",
    "https://qncnews.com/2026/11/01/somali-army-toll-climbs-as-inquiry-opens-into-leego-rout/",
-   "https://www.dawn.com/news/2040362"
+   "https://www.dawn.com/news/2040362",
+   "https://www.hiiraan.com/security4/2026/Oct/206631/at_least_three_civilians_killed_seven_wounded_in_alshabab_mortar_shelling_in_puntland.aspx"
   ],
   "confidence": "low"
  },
@@ -106,12 +107,13 @@
  },
  {
   "id": "is-iraq",
-  "trend": "declining",
-  "reason": "The UN says it is 'at its weakest' and cannot mount significant attacks.",
+  "trend": "steady",
+  "reason": "The UN says it is 'at its weakest', yet since 5 Oct its cells around Hawija attack Iraqi forces for the first time since the US-led mission ended; the Soufan Center calls the activity sporadic.",
   "sources": [
-   "https://docs.un.org/en/S/2026/651"
+   "https://docs.un.org/en/S/2026/651",
+   "https://thesoufancenter.org/intelbrief-2026-november-5/"
   ],
-  "confidence": "medium"
+  "confidence": "low"
  },
  {
   "id": "iskp",
@@ -232,12 +234,13 @@
  {
   "id": "houthis",
   "trend": "rising",
-  "reason": "A Houthi missile killed 12 at Riyadh airport on 10 Oct, and missiles targeted Aden airport on 28 Oct, its sixth strike that month, and the presidential palace on 30 Oct; government forces report ground gains near Bab el-Mandeb, which the Houthis deny.",
+  "reason": "A Houthi missile killed 12 at Riyadh airport on 10 Oct, and missiles targeted Aden airport on 28 Oct, its sixth strike that month, and the presidential palace on 30 Oct; government forces report ground gains near Bab el-Mandeb, which the Houthis deny. On 4 Nov a Houthi missile hit a recruit camp in Al-Dhale while government forces retook positions in Al-Maqatirah.",
   "sources": [
    "https://apnews.com/article/saudi-yemen-houthi-riyadh-airport-f0e0e6105f33400e37bb20bb9a8130af",
    "https://www.al-monitor.com/originals/2026/10/houthis-strike-yemens-aden-airport-after-evacuation-warning",
    "https://apnews.com/article/yemen-houthis-iran-saudi-arabia-red-sea-taiz-e87beb84a0d146e4f0546b50508f7e32",
-   "https://www.devdiscourse.com/article/international/3999792-yemen-government-forces-say-houthis-attack-aden-airport-and-presidential-palace"
+   "https://www.devdiscourse.com/article/international/3999792-yemen-government-forces-say-houthis-attack-aden-airport-and-presidential-palace",
+   "https://south24.net/news/newse.php?nid=5846&tags=initial-toll-9-dead-50-wounded-in-houthi-attacks-on-aldhalea-lahj"
   ],
   "confidence": "low"
  },
