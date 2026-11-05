@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-05T02:02Z",
+ "as_of": "2026-11-05T20:03Z",
  "note": "Strategic digest of the last ~7 days, grouped by ongoing trend: leadership, splits and alliances, territory and routes, policy and designations, violence patterns, money. Routine seizures and minor arrests are left out. X posts are used only as sources. Verification: Confirmed = 2+ independent reliable sources; Single source; Official claim only. Status is shown only when sourced counts support it.",
  "trends": [
   {
@@ -366,6 +366,28 @@
    ],
    "developments": [
     {
+     "date": "2026-11-05",
+     "place": "Colombia / Mexico City",
+     "text": "Colombia detained Mexico City judge Luis Benítez Alcántara and the United States is seeking his extradition to California over an alleged $2 million bribe tied to the Ryan Wedding network that freed a trafficking associate: a sitting Mexican judge is now inside a US extradition case for a paid release, which puts judicial corruption next to the designation-and-extradition pressure already on the groups.",
+     "verification": "Confirmed",
+     "regions": [],
+     "groups": [],
+     "sources": [
+      {
+       "url": "https://www.eluniversal.com.mx/cartera/eu-arresta-a-juez-mexicano-que-libero-a-narcotraficante-colaborador-de-ryan-wedding-lo-acusa-de-aceptar-soborno-de-2-mdd/",
+       "name": "El Universal",
+       "title": "US arrests Mexican judge who freed a drug trafficker linked to Ryan Wedding; accuses him of accepting a $2 mil",
+       "date": "2026-11-05"
+      },
+      {
+       "url": "https://elpais.com/us/2026-11-05/detenido-en-colombia-un-juez-mexicano-acusado-de-aceptar-un-soborno-de-2-millones-de-dolares-de-la-red-de-ryan-wedding.html",
+       "name": "El Pais Mexico",
+       "title": "Mexican judge detained in Colombia accused of accepting a two-million-dollar bribe from the Ryan Wedding netwo",
+       "date": "2026-11-05"
+      }
+     ]
+    },
+    {
      "date": "2026-10-30",
      "place": "Baja California",
      "text": "US sanctions on Sinaloa Cartel-linked people and companies are holding in Mexican courts: ZETA reports that sanctioned individuals and firms in Baja California sought amparo injunctions to unfreeze their bank accounts and were refused, so the US designation keeps their money locked inside Mexico's own banking system.",
@@ -419,27 +441,6 @@
        "name": "Infobae America",
        "title": "Mariaca and Lanchipa, Bolivia's last two attorneys general, under US scrutiny over alleged drug-trafficking li",
        "date": "2026-10-25"
-      }
-     ]
-    },
-    {
-     "date": "2026-10-24",
-     "place": "Brazil",
-     "text": "The US terrorist designation of the PCC and Comando Vermelho became a runoff issue: Flávio Bolsonaro backs it, while Lula raises sovereignty concerns.",
-     "verification": "Single source",
-     "regions": [
-      "BRA-1311"
-     ],
-     "groups": [
-      "pcc",
-      "cv"
-     ],
-     "sources": [
-      {
-       "url": "https://x.com/InSightCrime/status/2114122561965453668",
-       "name": "InSightCrime (X @InSightCrime)",
-       "title": "🇧🇷 | As Brazil prepares for Sunday’s presidential runoff, the US terrorist designations of the PCC and Comando…",
-       "date": "2026-10-24"
       }
      ]
     },

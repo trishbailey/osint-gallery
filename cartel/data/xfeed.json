@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-05T16:58:03Z",
+ "as_of": "2026-11-05T20:01:08Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -28,12 +28,81 @@
  ],
  "posts": [
   {
+   "id": "2118432550209134988",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2118432550209134988",
+   "created_at": "2026-11-05T19:57:33.000Z",
+   "text": "David Alejandro “N”, alias “Doble TT”, fue detenido por su probable participación en el homicidio de Abraham Ruiz Aguilar, empresario originario de Córdoba, Veracruz, atacado cuando viajaba en un BMW blanco https://t.co/LmTOgBHC9A https://t.co/45QwG8wLoQ",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2734"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "David Alejandro “N”, alias “Doble TT”, was detained for his probable role in the killing of Abraham Ruiz Aguilar, a businessman from Córdoba, Veracruz, attacked while traveling in a white BMW"
+  },
+  {
+   "id": "2118418074378309943",
+   "handle": "proceso",
+   "url": "https://x.com/proceso/status/2118418074378309943",
+   "created_at": "2026-11-05T19:00:01.000Z",
+   "text": "Detienen a 14 presuntos integrantes de banda criminal “Los Lobos”, acusados de asesinatos en Ecuador El flujo bancario de esta organización, investigada además por delitos como narcotráfico y tráfico de armas, durante el último año fue \"de aproximadamente cinco millones de",
+   "lang": "und",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "lobos"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "14 alleged members of criminal gang “Los Lobos” detained, accused of killings in Ecuador. The group's bank flow, also investigated for drug and arms trafficking, over the past year was \"about five million"
+  },
+  {
+   "id": "2118406693658771846",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2118406693658771846",
+   "created_at": "2026-11-05T18:14:48.000Z",
+   "text": "➡️ Cae en Sonora implicado en feminicidio de madre atacada cuando llevaba a su bebé a guardería en Escuinapa 🚨 ¡Lo detienen en Sonora por feminicidio en Escuinapa! Jesús “N” es señalado por el ataque armado contra una madre y su bebé de un año cuando se dirigían a una https://t.…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2712"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "➡️ Man implicated in feminicide of mother attacked while taking her baby to daycare in Escuinapa falls in Sonora 🚨 Detained in Sonora for Escuinapa feminicide! Jesús “N” is named in the armed attack on a mother and her one-year-old baby as they headed to a"
+  },
+  {
+   "id": "2118390384992624677",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2118390384992624677",
+   "created_at": "2026-11-05T17:10:00.000Z",
+   "text": "Detienen a hombre con presunta #droga en #Mazatlán; aseguran más #narcóticos en Villa Unión. https://t.co/eLarU6lEIy",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Man detained with alleged #drugs in #Mazatlán; more #narcotics seized in Villa Unión."
+  },
+  {
    "id": "2118382835228959088",
    "handle": "proceso",
    "url": "https://x.com/proceso/status/2118382835228959088",
    "created_at": "2026-11-05T16:40:00.000Z",
    "text": "Marina decomisa más de una tonelada de cocaína en Chiapas y Oaxaca; calcula golpe de 273 millones de pesos al narco Durante los operativos, realizados por personal de la Armada de México en funciones de Guardia Costera, fueron asegurados 32 bultos con un peso aproximado de mil",
-   "lang": "es",
+   "lang": "und",
    "region_ids": [
     "MEX-2735",
     "MEX-2723"
@@ -51,7 +120,7 @@
    "url": "https://x.com/SSPCMexico/status/2118380479590109626",
    "created_at": "2026-11-05T16:30:38.000Z",
    "text": "Con información del Centro Nacional de Inteligencia, elementos del @GabSeguridadMX, en coordinación con la @SS_Edomex, @FiscaliaEdomex y @Pemex, ejecutaron 38 cateos en inmuebles del #EdoMex y #CDMX, donde fueron detenidas 32 personas. https://t.co/u4GX4MWVQk https://t.co/hley4V…",
-   "lang": "es",
+   "lang": "und",
    "region_ids": [
     "MEX-2727",
     "MEX-2731"
@@ -3400,217 +3469,6 @@
    "source_type": "local outlet",
    "label": null,
    "text_en": "The Telephone Workers' Union demands the reinstatement of 185 dismissed employees; they say that with the indefinite strike there will be no staff to provide service or repairs if services fail in Baja California."
-  },
-  {
-   "id": "2115896159785169007",
-   "handle": "noticieristas",
-   "url": "https://x.com/noticieristas/status/2115896159785169007",
-   "created_at": "2026-10-29T19:58:50.000Z",
-   "text": "➡️ Ataque armado en restaurante de Mazatlán deja un fallecido y un herido grave. 🚨🚔 Un hombre fue privado de la vida y otro resultó gravemente herido tras un ataque a balazos dentro de un restaurante de la avenida Paseo del Pacífico, en #Mazatlán. https://t.co/jcNShTyXU9",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "Armed attack at a Mazatlán restaurant leaves one dead and one seriously wounded. A man was killed and another seriously wounded in a shooting inside a restaurant on Paseo del Pacífico avenue in Mazatlán."
-  },
-  {
-   "id": "2115883868792275088",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2115883868792275088",
-   "created_at": "2026-10-29T19:10:00.000Z",
-   "text": "El #regidor de Indaparapeo, #Michoacán, Adán Rodríguez Ávalos, fue #asesinado a balazos junto con su esposa cuando viajaban en una camioneta. Su hijo resultó herido en el ataque. https://t.co/V0LrJ85vvf",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "Indaparapeo, Michoacán, councilman Adán Rodríguez Ávalos was shot dead along with his wife while travelling in a pickup truck. Their son was wounded in the attack."
-  },
-  {
-   "id": "2115883113989427448",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115883113989427448",
-   "created_at": "2026-10-29T19:07:00.000Z",
-   "text": "🚨 Rosa Alejandra Vargas es madre de un escolta del exedil y tía de dos de los presuntos responsables de filtrar datos al CJNG https://t.co/YY6ptidt85",
-   "lang": "es",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Rosa Alejandra Vargas is the mother of one of the former mayor's bodyguards and the aunt of two of the alleged people responsible for leaking information to the CJNG"
-  },
-  {
-   "id": "2115882801526428103",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115882801526428103",
-   "created_at": "2026-10-29T19:05:45.000Z",
-   "text": "La fiesta de 15 años de la hija de un narcotraficante confeso volvió a poner bajo el reflector a Zacapa y destapó los vínculos familiares de la alcaldesa con Los Lorenzana, un clan señalado por EEUU de traficar cocaína hacia México para el Cártel de ... https://t.co/q4ZQ4m0Q4u h…",
-   "lang": "es",
-   "region_ids": [
-    "GTM-1963"
-   ],
-   "country": "GTM",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "The quinceañera party for the daughter of a confessed drug trafficker put Zacapa back in the spotlight and exposed the mayor's family ties to Los Lorenzana, a clan accused by the US of trafficking cocaine to Mexico for the Cartel of ..."
-  },
-  {
-   "id": "2115881401081823397",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2115881401081823397",
-   "created_at": "2026-10-29T19:00:11.000Z",
-   "text": "Detienen a secretaria de Bienestar de Uruapan por encubrimiento en caso Carlos Manzo La Fiscalía de Michoacán no precisó qué acciones u omisiones se le atribuyen a la funcionaria ni a quién habría favorecido. https://t.co/MMM7gjuBGc",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Uruapan Welfare secretary arrested for cover-up in the Carlos Manzo case. The Michoacán Prosecutor's Office did not specify what actions or omissions are attributed to the official or whom she allegedly favoured."
-  },
-  {
-   "id": "2115879822689755386",
-   "handle": "SSPCMexico",
-   "url": "https://x.com/SSPCMexico/status/2115879822689755386",
-   "created_at": "2026-10-29T18:53:55.000Z",
-   "text": "En #Michoacán, elementos de @SEMAR_mx, #SSPC y @FGRMexico, en coordinación con autoridades estatales, detuvieron a tres personas en Coahuayana de Hidalgo, quienes contaban con órdenes de aprehensión por diferentes delitos y son señaladas como generadoras de violencia en ese http…",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2730",
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "official",
-   "label": "Official statement",
-   "text_en": "In Michoacán, SEMAR, SSPC and FGR personnel, coordinating with state authorities, arrested three people in Coahuayana de Hidalgo who had arrest warrants for various crimes and are identified as violence generators in that…"
-  },
-  {
-   "id": "2115875054969880588",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115875054969880588",
-   "created_at": "2026-10-29T18:34:58.000Z",
-   "text": "Cae “El Bocho” en Mexicali: es señalado como operador de drogas del Cártel de Sinaloa, detenido con fentanilo y un arma https://t.co/nCi8j5HzRd",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2706",
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "\"El Bocho\" caught in Mexicali: identified as a Sinaloa Cartel drug operator, arrested with fentanyl and a weapon"
-  },
-  {
-   "id": "2115873804954009984",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2115873804954009984",
-   "created_at": "2026-10-29T18:30:00.000Z",
-   "text": "El #Ejército aseguró en #Sinaloa mil 490 litros y 400 kilos de químicos para fabricar #metanfetamina, además de 15 kilos de un precursor para elaborar #fentanilo. https://t.co/ZObq5qWlCB",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "The Army seized in Sinaloa 1,490 litres and 400 kilos of chemicals for making methamphetamine, plus 15 kilos of a fentanyl precursor."
-  },
-  {
-   "id": "2115871001842172254",
-   "handle": "GabSeguridadMX",
-   "url": "https://x.com/GabSeguridadMX/status/2115871001842172254",
-   "created_at": "2026-10-29T18:18:52.000Z",
-   "text": "En Michoacán, elementos de @SEMAR_mx, en coordinación con @SSPCMexico, @FGRMexico, @FiscaliaMich y @SSeguridad_Mich, ejecutaron tres órdenes de cateo y detuvieron a tres integrantes de una célula delictiva generadora de violencia, quienes cuentan con órdenes de aprehensión y htt…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "official",
-   "label": "Official statement",
-   "text_en": "In Michoacán, SEMAR personnel, coordinating with SSPC, FGR, the Michoacán Prosecutor's Office and the state Security Secretariat, carried out three search warrants and arrested three members of a violence-generating criminal cell who have arrest warrants and…"
-  },
-  {
-   "id": "2115860448021225550",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115860448021225550",
-   "created_at": "2026-10-29T17:36:56.000Z",
-   "text": "⚠️ Fue detenido con una granada de fragmentación y documentos apócrifos que lo acreditaban como agente de la #CIA https://t.co/DuTLh0SGC6",
-   "lang": "und",
-   "region_ids": [
-    "NIC-655"
-   ],
-   "country": "NIC",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "He was arrested with a fragmentation grenade and forged documents identifying him as a CIA agent"
-  },
-  {
-   "id": "2115853635804401806",
-   "handle": "ZETATijuana",
-   "url": "https://x.com/ZETATijuana/status/2115853635804401806",
-   "created_at": "2026-10-29T17:09:52.000Z",
-   "text": "El ataque ocurrió un día después de que la Guardia Civil de Michoacán asumió el control de la seguridad en Uruapan https://t.co/9h5xG0joix",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "The attack came a day after Michoacán's Civil Guard took over security in Uruapan"
-  },
-  {
-   "id": "2115851653161091213",
-   "handle": "Primicias",
-   "url": "https://x.com/Primicias/status/2115851653161091213",
-   "created_at": "2026-10-29T17:01:59.000Z",
-   "text": "Ecuador envió a Estados Unidos a Daniel Salcedo, a Ronald Herrera, un testigo clave del caso Villavicencio, y a alias 'Churrón', cabecilla de Los Choneros. Estos son los perfiles de los extraditados. https://t.co/HYXKMNz40z https://t.co/qWJU8R8p2s",
-   "lang": "es",
-   "region_ids": [
-    "COL-1425",
-    "PAN-1338"
-   ],
-   "country": "COL",
-   "group_ids": [
-    "choneros"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Ecuador sent Daniel Salcedo, Ronald Herrera (a key witness in the Villavicencio case) and alias 'Churrón', a Los Choneros leader, to the United States. These are the profiles of the extradited."
   }
  ]
 }

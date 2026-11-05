@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-05T16:58:03Z",
+ "as_of": "2026-11-05T20:01:08Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -9,11 +9,139 @@
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
   {
+   "id": "9861c32c7d",
+   "status": "single_source",
+   "title": "David Alejandro “N”, alias “Doble TT”, fue detenido por su probable participación en el homicidio de Abraham Ruiz Aguilar, empresario originario de Córdoba, Veracruz, atacado cuando viajaba en un BMW ",
+   "lang": "es",
+   "title_en": "David Alejandro “N”, alias “Doble TT”, was detained for his probable role in the killing of Abraham Ruiz Aguilar, a businessman from Córdoba, Veracruz, attacked while traveling in a BMW",
+   "first_report": "2026-11-05T19:57:33Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2734"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118432550209134988",
+     "time": "2026-11-05T19:57:33Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "9ca2679f12",
+   "status": "confirmed",
+   "title": "Detienen a 14 presuntos integrantes de banda criminal acusados de numerosos asesinatos en Ecuador | AP News",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "AP",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "lobos",
+    "choneros"
+   ],
+   "outlets": [
+    "AP",
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "ap",
+     "name": "AP",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://apnews.com/article/ecuador-violencia-crimen-organizado-3f5629458e018a5b62451595930193f4",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2118418074378309943",
+     "time": "2026-11-05T19:00:01Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "e765380fcb",
+   "status": "single_source",
+   "title": "➡️ Cae en Sonora implicado en feminicidio de madre atacada cuando llevaba a su bebé a guardería en Escuinapa 🚨 ¡Lo detienen en Sonora por feminicidio en Escuinapa! Jesús “N” es señalado por el ataque ",
+   "lang": "es",
+   "title_en": "➡️ Man implicated in feminicide of mother attacked while taking her baby to daycare in Escuinapa falls in Sonora 🚨 Detained in Sonora for Escuinapa feminicide! Jesús “N” is named in the attack",
+   "first_report": "2026-11-05T18:14:48Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2712",
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2118406693658771846",
+     "time": "2026-11-05T18:14:48Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "968debb269",
+   "status": "single_source",
+   "title": "Detienen a hombre con presunta #droga en #Mazatlán; aseguran más #narcóticos en Villa Unión.",
+   "lang": "es",
+   "title_en": "Man detained with alleged #drugs in #Mazatlán; more #narcotics seized in Villa Unión.",
+   "first_report": "2026-11-05T17:10:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2118390384992624677",
+     "time": "2026-11-05T17:10:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
    "id": "60d02268e0",
    "status": "confirmed",
    "title": "Marina decomisa más de una tonelada de cocaína en Chiapas y Oaxaca; calcula golpe de 273 millones de pesos al narco Durante los operativos, realizados por personal de la Armada de México en funciones ",
    "lang": "es",
-   "title_en": "Navy seizes more than a ton of cocaine in Chiapas and Oaxaca; estimates a 273-million-peso blow to drug traffickers. During the operations, carried out by Mexican Navy personnel acting as Coast Guard,",
+   "title_en": "Navy seizes more than a ton of cocaine in Chiapas and Oaxaca; estimates a 273-million-peso blow to drug traffickers. During the operations, carried out by Mexican Navy personnel acting as Coast Guard, 32 packages weighin",
    "first_report": "2026-11-05T12:51:21Z",
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
@@ -58,8 +186,8 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2731",
-    "MEX-2727"
+    "MEX-2727",
+    "MEX-2731"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -83,7 +211,7 @@
    "status": "single_source",
    "title": "➡️ Marina ‘golpea’ al narcotráfico: Interceptan más de una tonelada de cocaína en las costas del Pacífico; hay un detenido 🟣🚔| Dos operaciones de vigilancia marítima en el Océano Pacífico permitieron ",
    "lang": "es",
-   "title_en": "Navy 'strikes' drug trafficking: more than a ton of cocaine intercepted off the Pacific coast; one person arrested. Two maritime surveillance operations in the Pacific Ocean allowed",
+   "title_en": "Navy 'strikes' drug trafficking: more than a ton of cocaine intercepted off the Pacific coast; one person arrested. Two maritime surveillance operations in the Pacific Ocean allowed Navy personnel to intercept a shipment",
    "first_report": "2026-11-05T16:27:12Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
@@ -112,7 +240,7 @@
    "status": "single_source",
    "title": "✍️ En México, los hallazgos de fosas clandestinas se acumulan sin que las autoridades ofrezcan respuestas suficientes sobre lo ocurrido. El caso de la “fosa de dientes de leche” en Zacapu, Michoacán, ",
    "lang": "es",
-   "title_en": "In Mexico, discoveries of clandestine graves keep piling up without authorities offering sufficient answers about what happened. The case of the \"baby teeth grave\" in Zacapu, Michoacán,",
+   "title_en": "In Mexico, discoveries of clandestine graves keep piling up without authorities offering sufficient answers about what happened. The case of the \"baby teeth grave\" in Zacapu, Michoacán, shows how the uncertainty suffered",
    "first_report": "2026-11-05T15:56:41Z",
    "first_report_precision": "minute",
    "first_source": "Causa en Común",
@@ -226,23 +354,36 @@
    ]
   },
   {
-   "id": "2a362fe9df",
-   "status": "single_source",
-   "title": "Más de 300 policías participaron en el operativo contra Los Lobos, con apoyo internacional, desplegado en seis provincias de Ecuador.",
-   "lang": "es",
-   "title_en": "More than 300 police officers took part in the operation against Los Lobos, with international support, deployed across six provinces of Ecuador.",
-   "first_report": "2026-11-05T12:20:12Z",
-   "first_report_precision": "minute",
-   "first_source": "Primicias",
-   "region_ids": [],
-   "country": "ECU",
+   "id": "63c3981a13",
+   "status": "confirmed",
+   "title": "Operativo contra facción de Los Lobos deja 14 detenidos y 25 allanamientos en seis provincias | Seguridad | Política | El Universo",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universo",
+   "region_ids": [
+    "CHL-2701",
+    "ECU-1281"
+   ],
+   "country": "CHL",
    "group_ids": [
     "lobos"
    ],
    "outlets": [
+    "El Universo",
     "Primicias"
    ],
    "sources": [
+    {
+     "outlet": "eluniverso",
+     "name": "El Universo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eluniverso.com/politica/seguridad/operativo-contra-faccion-de-los-lobos-deja-14-detenidos-y-25-allanamientos-en-seis-provincias-nota",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    },
     {
      "outlet": "primicias",
      "name": "Primicias",
@@ -255,8 +396,598 @@
    ]
   },
   {
-   "id": "cf586f4d0e",
+   "id": "9260b377b9",
+   "status": "confirmed",
+   "title": "Harfuch destaca decomiso de 133 kilos de metanfetamina en Sinaloa: la droga estaba oculta en un tractocamión",
+   "lang": "es",
+   "title_en": "Harfuch highlights seizure of 133 kilos of methamphetamine in Sinaloa: the drug was hidden in a tractor-trailer",
+   "first_report": "2026-11-03T23:07:32Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2721"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "mayiza",
+    "chapitos"
+   ],
+   "outlets": [
+    "Infobae",
+    "Los Noticieristas",
+    "Milenio",
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2117755586443948494",
+     "time": "2026-11-03T23:07:32Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2117761066608259471",
+     "time": "2026-11-03T23:29:19Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2117763247705129468",
+     "time": "2026-11-03T23:37:59Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/aseguran-tractocamion-con-metanfetamina-en-sinaloa",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/estados/yeraldine-bonilla-presenta-renuncia-secretaria-gobierno-sinaloa",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/guerra-del-cartel-de-sinaloa-se-extiende-a-nayarit",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "b0864ae438",
+   "status": "confirmed",
+   "title": "Detienen en Iztapalapa a Alan Rafael, alias “El Chopercito”, objetivo prioritario ligado con al menos 10 homicidios",
+   "lang": "es",
+   "title_en": "Alan Rafael, alias \"El Chopercito,\" a priority target linked to at least 10 homicides, is arrested in Iztapalapa",
+   "first_report": "2026-11-04T00:41:10Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2727",
+    "MEX-2720",
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "El Universal",
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2117779149804753016",
+     "time": "2026-11-04T00:41:10Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/metropoli/con-que-homicidios-relacionan-a-el-chopersito-lo-vinculan-con-al-menos-10-asesinatos-en-iztapalapa/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/03/en-vivo-seguridad-narcotrafico-y-crimen-en-mexico-hoy-3-de-noviembre-abogada-de-emma-coronel-planea-pedir-llamadas-monitoreadas-para-que-retome-contacto-con-el-chapo/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/04/en-vivo-seguridad-narcotrafico-y-crimen-en-mexico-hoy-4-de-noviembre/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "a92d285de6",
+   "status": "confirmed",
+   "title": "Capturan a seis miembros del Cártel de Sinaloa en Tuxtla: les decomisaron armas de fuego y equipo táctico",
+   "lang": "es",
+   "title_en": "Six Sinaloa Cartel members captured in Tuxtla: firearms and tactical gear were seized from them",
+   "first_report": "2026-11-04T02:45:40Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2735",
+    "MEX-2734",
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Infobae",
+    "Los Noticieristas",
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2117810483453415932",
+     "time": "2026-11-04T02:45:40Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/04/capturan-a-seis-miembros-del-cartel-de-sinaloa-en-tuxtla-les-decomisaron-armas-de-fuego-y-equipo-tactico/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2117962535785656501",
+     "time": "2026-11-04T12:49:53Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2117996398675214551",
+     "time": "2026-11-04T15:04:26Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2118005422871450061",
+     "time": "2026-11-04T15:40:18Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118019003301892312",
+     "time": "2026-11-04T16:34:15Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/04/paseando-con-metralletas-asi-agarraron-a-seis-integrantes-del-cartel-de-sinaloa-en-chiapas-l-video",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "1fbbb14332",
    "status": "single_source",
+   "title": "Clan del Golfo tiene presencia en el 72 % de Antioquia y llega a 94 municipios en 2026 - Infobae",
+   "lang": "es",
+   "title_en": "Clan del Golfo has a presence in 72% of Antioquia and reaches 94 municipalities in 2026 - Infobae",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "COL-1314"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "clan",
+    "eln"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/colombia/2026/11/04/clan-del-golfo-tiene-presencia-en-el-72-de-antioquia-y-llega-a-94-municipios-en-2026",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/colombia/2026/11/04/clan-del-golfo-usaria-bandas-locales-para-extorsiones-sicariato-y-secuestros-selectivos",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/colombia/2026/11/04/clan-del-golfo-tiene-presencia-en-el-72-de-antioquia-y-llega-a-94-municipios-en-2026/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "23184a7a72",
+   "status": "confirmed",
+   "title": "Así fue la vida de Antonio Oseguera, hermano de “El Mencho”: pobreza, trabajo infantil y adicciones hasta llegar al CJNG - Infobae",
+   "lang": "es",
+   "title_en": "The life of Antonio Oseguera, brother of “El Mencho”: poverty, child labor and addiction on the road to the CJNG - Infobae",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae",
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/03/asi-fue-la-vida-de-antonio-oseguera-hermano-de-el-mencho-pobreza-trabajo-infantil-y-adicciones-hasta-llegar-al-cjng",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/03/tony-montana-hermano-de-el-mencho-pide-compasion-al-juez-que-dictara-su-sentencia-en-eeuu",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/narcotrafico/cual-es-estado-salud-antonio-oseguera-cervantes-tony-montana-cjng",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/tony-montana-hermano-mencho-carta-cjng-adicciones",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.milenio.com/policia/narcotrafico/quien-era-el-padre-de-el-mencho-fundador-del-cjng-esto-sabemos",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/eu-solicita-30-anos-prision-hermano-mencho",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/narcotrafico/cjng-cartel-reyes-neutralizan-a-posibles-sucesores",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/narcotrafico/cjng-el-destino-de-los-hermanos-oseguera-cervantes",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/narcotrafico/quienes-son-hijos-tony-montana-familia-hermano-el-mencho-cjng",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "9eda7cce6e",
+   "status": "single_source",
+   "title": "Vorágine insaciable: Reclutan a cientos de jóvenes para sostener la guerra en Sinaloa",
+   "lang": "es",
+   "title_en": "Insatiable vortex: hundreds of young people recruited to sustain the war in Sinaloa",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "cjng",
+    "mayiza",
+    "chapitos"
+   ],
+   "outlets": [
+    "El Universal"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/grafico/periodismo-de-investigacion/voragine-insaciable-reclutan-a-cientos-de-jovenes-para-sostener-la-guerra-en-sinaloa/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eluniversal.com.mx/grafico/periodismo-de-investigacion/voragine-insaciable-reclutan-a-cientos-de-jovenes-para-sostener-la-guerra-en-sinaloa",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "ac59509d5c",
+   "status": "confirmed",
+   "title": "Capturan en Coatzacoalcos a Samuel de la Cruz, alias “El Panda”, presunto líder regional del CJNG",
+   "lang": "es",
+   "title_en": "Samuel de la Cruz, alias “El Panda”, alleged regional leader of the CJNG, captured in Coatzacoalcos",
+   "first_report": "2026-11-04T21:40:21Z",
+   "first_report_precision": "minute",
+   "first_source": "Gabinete de Seguridad (Mexico)",
+   "region_ids": [
+    "MEX-2734",
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "El Universal",
+    "Gabinete de Seguridad (Mexico)",
+    "Infobae",
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "gabsec",
+     "name": "Gabinete de Seguridad (Mexico)",
+     "kind": "official",
+     "via": "X @GabSeguridadMX",
+     "url": "https://x.com/GabSeguridadMX/status/2118096035692302754",
+     "time": "2026-11-04T21:40:21Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118105102867132645",
+     "time": "2026-11-04T22:16:23Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2118126656434884666",
+     "time": "2026-11-04T23:42:02Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/04/capturan-en-coatzacoalcos-a-samuel-de-la-cruz-alias-el-panda-presunto-lider-regional-del-cjng",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/nacion/cae-el-panda-jefe-de-plaza-del-cjng-en-coatzacoalcos-veracruz-esta-ligado-al-secuestro-de-dos-empresarios/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "e9d4eecde2",
+   "status": "confirmed",
+   "title": "Reporteros Sin Fronteras incluye al CJNG en lista de \"depredadores de la libertad de prensa\" Debido a los ataques contra periodistas durante la cobertura de la muerte de \"El Mencho\", la organización c",
+   "lang": "es",
+   "title_en": "Reporters Without Borders adds the CJNG to its list of \"predators of press freedom\". Because of attacks on journalists during coverage of the death of \"El Mencho\", the Mexican criminal organization was included on the li",
+   "first_report": "2026-11-04T22:00:02Z",
+   "first_report_precision": "minute",
+   "first_source": "Proceso",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae",
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2118100987382771989",
+     "time": "2026-11-04T22:00:02Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118153830231576614",
+     "time": "2026-11-05T01:30:01Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/05/reporteros-sin-fronteras-incluye-al-cjng-en-la-lista-de-depredadores-de-la-libertad-de-prensa-por-ataques-contra-periodistas",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "3387a09fe8",
+   "status": "single_source",
+   "title": "La sentencia por el caso Blanqueo Fito fue notificada. El tribunal confirmó decomiso de bienes, pero aclaró que hay limitaciones. También se ordenó la repatriación del capital de una propiedad interna",
+   "lang": "es",
+   "title_en": "The ruling in the Blanqueo Fito case was notified. The court confirmed the seizure of assets but clarified that there are limitations. It also ordered the repatriation of capital from an international property.",
+   "first_report": "2026-11-05T03:31:21Z",
+   "first_report_precision": "minute",
+   "first_source": "Primicias",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "choneros"
+   ],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "X @Primicias",
+     "url": "https://x.com/Primicias/status/2118184366727668090",
+     "time": "2026-11-05T03:31:21Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://primicias.ec/seguridad/alias-fito-choneros-caso-blanqueo-fito-sentencia-uafe-fiscalia-terrenos-lavado-activos-136403",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "cf586f4d0e",
+   "status": "confirmed",
    "title": "Policía detiene a 14 presuntos miembros de Los Lobos vinculados a 60 homicidios, extorsiones y narcotráfico.",
    "lang": "es",
    "title_en": "Police arrest 14 alleged members of Los Lobos linked to 60 homicides, extortion and drug trafficking.",
@@ -269,6 +1000,7 @@
     "lobos"
    ],
    "outlets": [
+    "Infobae",
     "Primicias"
    ],
    "sources": [
@@ -280,6 +1012,876 @@
      "url": "https://x.com/Primicias/status/2118295322992451913",
      "time": "2026-11-05T10:52:15Z",
      "time_precision": "minute"
+    },
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://primicias.ec/seguridad/lobos-operativo-zeus-4-policia-asesinatos-homicidios-reimberg-136429",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/america/america-latina/2026/11/05/ecuador-capturo-a-14-presuntos-integrantes-de-los-lobos-vinculados-con-60-asesinatos/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "6e0f5536a4",
+   "status": "single_source",
+   "title": "Disputa entre Clan del Golfo y Eln y asesinato de un líder desplazan a 500 indígenas en Chocó | EL ESPECTADOR",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Espectador",
+   "region_ids": [],
+   "country": null,
+   "group_ids": [
+    "clan"
+   ],
+   "outlets": [
+    "El Espectador"
+   ],
+   "sources": [
+    {
+     "outlet": "elespectador",
+     "name": "El Espectador",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://elespectador.com/judicial/disputa-entre-clan-del-golfo-y-eln-y-asesinato-de-un-lider-desplazan-500-indigenas-en-choco",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "c9bf774983",
+   "status": "confirmed",
+   "title": "Detienen en Ciudad de México a “El Chino”, señalado como líder de una red de lavado de dinero vinculada al crimen organizado, y aseguran más de 43 millones de pesos, droga y vehículos",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Imparcial",
+   "region_ids": [
+    "MEX-2727",
+    "MEX-2736",
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "El Imparcial",
+    "Excélsior",
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "elimparcial",
+     "name": "El Imparcial",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://elimparcial.com/mexico/2026/11/04/detienen-en-ciudad-de-mexico-a-el-chino-senalado-como-lider-de-una-red-de-lavado-de-dinero-vinculada-al-crimen-organizado-y-aseguran-mas-de-43-millones-de-pesos-droga-y-vehiculos",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://proceso.com.mx/nacional/2026/11/4/golpe-a-red-de-lavado-de-dinero-en-cdmx-el-chino-tenia-escondidos-43-millones-de-pesos-en-efectivo-383146.html",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "excelsior",
+     "name": "Excélsior",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.excelsior.com.mx/nacional/cae-chino-cdmx-con-43-mdp-presunto-lider-red-lavado-dinero",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "15d6cc4efb",
+   "status": "single_source",
+   "title": "Ocho integrantes de las disidencias de ‘Iván Mordisco’, incluido un cabecilla, se sometieron a la justicia en Cauca - El Tiempo",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Tiempo",
+   "region_ids": [
+    "COL-1399",
+    "COL-1314",
+    "COL-1425"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "clan",
+    "exfarc"
+   ],
+   "outlets": [
+    "El Tiempo"
+   ],
+   "sources": [
+    {
+     "outlet": "eltiempo",
+     "name": "El Tiempo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eltiempo.com/amp/justicia/conflicto-y-narcotrafico/ocho-integrantes-de-las-disidencias-de-ivan-mordisco-incluido-un-cabecilla-se-sometieron-a-la-justicia-en-cauca-3598350",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "1c8fe23ee7",
+   "status": "single_source",
+   "title": "A la cárcel dos presuntos integrantes del Tren de Aragua que extorsionaban a comerciantes y bicitaxistas en Bogotá: 16 personas resultaron afectadas - El Tiempo",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Tiempo",
+   "region_ids": [
+    "COL-1399"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "tda"
+   ],
+   "outlets": [
+    "El Tiempo"
+   ],
+   "sources": [
+    {
+     "outlet": "eltiempo",
+     "name": "El Tiempo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eltiempo.com/bogota/a-la-carcel-dos-presuntos-integrantes-del-tren-de-aragua-que-extorsionaban-a-comerciantes-y-bicitaxistas-en-bogota-16-personas-resultaron-afectadas-3598751",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "1fa8bf4715",
+   "status": "single_source",
+   "title": "EPM y el Metro de Medellín bajo amenaza de las disidencias de las Farc: la estrategia terrorista de la célula urbana en la capital de Antioquia - El Tiempo",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Tiempo",
+   "region_ids": [
+    "COL-1314"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "clan",
+    "exfarc"
+   ],
+   "outlets": [
+    "El Tiempo"
+   ],
+   "sources": [
+    {
+     "outlet": "eltiempo",
+     "name": "El Tiempo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eltiempo.com/colombia/medellin/epm-y-el-metro-de-medellin-bajo-amenaza-de-las-disidencias-de-las-farc-la-estrategia-terrorista-de-la-celula-urbana-en-la-capital-de-antioquia-3598536",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "af7ea3915a",
+   "status": "single_source",
+   "title": "Música y religión | Caricaturas | Opinión | El Universo",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universo",
+   "region_ids": [
+    "ECU-1282"
+   ],
+   "country": "ECU",
+   "group_ids": [
+    "chone_killers",
+    "choneros",
+    "los_tiguerones"
+   ],
+   "outlets": [
+    "El Universo"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniverso",
+     "name": "El Universo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eluniverso.com/opinion/caricaturas/musica-y-religion-nota",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "8d23ae42a8",
+   "status": "single_source",
+   "title": "907 intervenciones policiales dejan 544 aprehendidos y detenidos en Ecuador en una semana | Seguridad | Política | El Universo",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universo",
+   "region_ids": [
+    "ECU-1282"
+   ],
+   "country": "ECU",
+   "group_ids": [
+    "chone_killers",
+    "choneros",
+    "los_tiguerones"
+   ],
+   "outlets": [
+    "El Universo"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniverso",
+     "name": "El Universo",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://eluniverso.com/politica/seguridad/907-intervenciones-policiales-dejan-544-aprehendidos-y-detenidos-en-ecuador-en-una-semana-nota",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "0244e5d179",
+   "status": "single_source",
+   "title": "Un venezolano de Miami lavó más de USD 1.000 millones para narcotraficantes y fue condenado a 12 años de prisión - Infobae",
+   "lang": "es",
+   "title_en": "A Venezuelan from Miami laundered more than USD 1 billion for drug traffickers and was sentenced to 12 years in prison - Infobae",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "PAN-1340"
+   ],
+   "country": "PAN",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/estados-unidos/2026/11/04/un-venezolano-de-miami-lavo-mas-de-usd-1000-millones-para-narcotraficantes-y-fue-condenado-a-12-anos-de-prision",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "af30426a15",
+   "status": "single_source",
+   "title": "Desde sus vínculos con Guerreros Unidos a guerra contra el CJNG: así fue como Los Linos operaron en Morelos - Infobae",
+   "lang": "es",
+   "title_en": "From ties to Guerreros Unidos to a war against CJNG: how Los Linos operated in Morelos - Infobae",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2719",
+    "MEX-2732"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/04/desde-sus-vinculos-con-guerreros-unidos-a-guerra-contra-el-cjng-asi-fue-como-los-linos-operaron-en-morelos",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "89258a3e32",
+   "status": "single_source",
+   "title": "La Nueva Familia Michoacana: cómo se convirtió en la tercera organzación delictiva más poderosa de México - Infobae",
+   "lang": "es",
+   "title_en": "La Nueva Familia Michoacana: how it became Mexico's third most powerful criminal organization - Infobae",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng",
+    "sinaloa",
+    "lnfm",
+    "chapitos"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/04/la-nueva-familia-michoacana-como-se-convirtio-en-la-tercera-organzacion-delictiva-mas-poderosa-de-mexico",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "d74d836479",
+   "status": "single_source",
+   "title": "Amenazan con narcomanta a artistas y asistentes al Palenque de Culiacán 2026 - Infobae",
+   "lang": "es",
+   "title_en": "Artists and attendees at the Culiacán 2026 Palenque threatened with a narcomanta - Infobae",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "mayiza",
+    "chapitos"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/05/amenazan-con-narcomanta-a-artistas-y-asistentes-al-palenque-de-culiacan-2026",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "272823d782",
+   "status": "single_source",
+   "title": "Brazil",
+   "lang": "es",
+   "title_en": "Brazil",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "InSight Crime",
+   "region_ids": [
+    "BRA-627"
+   ],
+   "country": "BRA",
+   "group_ids": [
+    "pcc",
+    "cv"
+   ],
+   "outlets": [
+    "InSight Crime"
+   ],
+   "sources": [
+    {
+     "outlet": "insight",
+     "name": "InSight Crime",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://insightcrime.org/brazil-organized-crime-news/brazil-profile/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "60c09d1669",
+   "status": "single_source",
+   "title": "De patrullar el Pacífico a refugio marino: hunden buque de la Marina tras 45 años de servicio | Los Noticieristas",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2718"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://losnoticieristas.com/nacional/2026/11/de-patrullar-el-pacifico-a-refugio-marino-hunden-buque-de-la-marina-tras-45-anos-de-servicio-1161209/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "da0865bb83",
+   "status": "single_source",
+   "title": "Quién era José Alfredo García Gutiérrez | Perfil- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/estados/quien-era-jose-alfredo-garcia-gutierrez-perfil",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "fde13d596b",
+   "status": "single_source",
+   "title": "Estos son los estados a los que ha llegado el movimiento del sombrero- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/estados/son-los-a-los-que-ha-llegado-el-movimiento-del-sombrero",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "5e9405f361",
+   "status": "single_source",
+   "title": "Los Linos: del cártel de Sinaloa al violento clan que sembró terror en Morelos | MVS Noticias",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "MVS Noticias",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2732"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "mayiza",
+    "chapitos"
+   ],
+   "outlets": [
+    "MVS Noticias"
+   ],
+   "sources": [
+    {
+     "outlet": "mvs",
+     "name": "MVS Noticias",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://mvsnoticias.com/entrevistas/2026/11/4/los-linos-del-cartel-de-sinaloa-al-violento-clan-que-sembro-terror-en-morelos-752327.html",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "ddd15ab602",
+   "status": "single_source",
+   "title": "Esto se sabe de la detención de Jacobo Bucaram Pulley y los políticos Jaime Estrada Bonilla y Jaime Estrada Medranda",
+   "lang": "es",
+   "title_en": "What is known about the detention of Jacobo Bucaram Pulley and politicians Jaime Estrada Bonilla and Jaime Estrada Medranda",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Primicias",
+   "region_ids": [
+    "PAN-1340"
+   ],
+   "country": "PAN",
+   "group_ids": [],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://primicias.ec/seguridad/detenidos-jacobo-bucaram-pulley-jaime-estrada-bonilla-medranda-interpol-narcotrafico-136411",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "0e15fc6d13",
+   "status": "single_source",
+   "title": "Descubren a hombre pescando ilegalmente pulpos en sistema arrecifal de Veracruz; aseguran 25 ejemplares",
+   "lang": "es",
+   "title_en": "Man found illegally fishing octopuses in Veracruz reef system; 25 specimens seized",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2734"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "El Universal"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/estados/descubren-a-hombre-pescando-ilegalmente-pulpos-en-sistema-arrecifal-de-veracruz-aseguran-25-ejemplares/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "a686f83ab9",
+   "status": "single_source",
+   "title": "Bolivia: expresidente del TSJ tenía una orden de captura por narcotráfico y organización criminal",
+   "lang": "es",
+   "title_en": "Bolivia: former TSJ president had an arrest warrant for drug trafficking and criminal organization",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "ARG-1271",
+    "BOL-1940"
+   ],
+   "country": "ARG",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/america/america-latina/2026/11/05/bolivia-expresidente-del-tsj-tenia-una-orden-de-captura-por-narcotrafico-y-organizacion-criminal/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "4f8319b28b",
+   "status": "single_source",
+   "title": "Ofensiva en Cúcuta dejó más de 100 capturados: autoridades recuperaron mercancía avaluada en cerca de $500 millones - Infobae",
+   "lang": "es",
+   "title_en": "Offensive in Cúcuta left more than 100 captured: authorities recovered merchandise valued at about $500 million - Infobae",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "COL-1421"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "eln",
+    "tda"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/colombia/2026/11/04/ofensiva-en-cucuta-dejo-mas-de-100-capturados-autoridades-recuperaron-mercancia-avaluada-en-cerca-de-500-millones/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "553d4e85c1",
+   "status": "single_source",
+   "title": "Vicepresidente afirma en la Cumbre Iberoamericana que las tropas salvadoreñas en Haití “no son una fuerza de ocupación”",
+   "lang": "es",
+   "title_en": "Vice president says at the Ibero-American Summit that Salvadoran troops in Haiti “are not an occupation force”",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "HTI-1388"
+   ],
+   "country": "HTI",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/el-salvador/2026/11/05/vicepresidente-afirma-en-la-cumbre-iberoamericana-que-las-tropas-salvadorenas-en-haiti-no-son-una-fuerza-de-ocupacion/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "73cd528086",
+   "status": "single_source",
+   "title": "De Arnoldo Vargas a Xiomara Ovalle: los alcaldes de Zacapa que han sido vinculados a redes criminales y del narcotráfico en Guatemala",
+   "lang": "es",
+   "title_en": "From Arnoldo Vargas to Xiomara Ovalle: the Zacapa mayors who have been linked to criminal and drug-trafficking networks in Guatemala",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "GTM-1963",
+    "GTM-1951"
+   ],
+   "country": "GTM",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/guatemala/2026/11/05/de-arnoldo-vargas-a-xiomara-ovalle-los-alcaldes-de-zacapa-que-han-sido-vinculados-a-redes-criminales-y-del-narcotrafico-en-guatemala/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "ac5e13d0de",
+   "status": "single_source",
+   "title": "Panamá incautó más de 1,800 armas de fuego en nueve meses, un incremento del 37%",
+   "lang": "es",
+   "title_en": "Panama seized more than 1,800 firearms in nine months, a 37% increase",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "PAN-1340"
+   ],
+   "country": "PAN",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/panama/2026/11/05/panama-incauto-mas-de-1800-armas-de-fuego-en-nueve-meses-un-incremento-del-37/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "f6b85e7244",
+   "status": "single_source",
+   "title": "Plan Michoacán por la Paz y la Justicia tiene avance de 67%, dice Sheinbaum",
+   "lang": "es",
+   "title_en": "Plan Michoacán for Peace and Justice is 67% complete, Sheinbaum says",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "La Jornada",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "La Jornada"
+   ],
+   "sources": [
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.jornada.com.mx/2026/11/05/estados/027n1est?partner=rss",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "784c2edc5a",
+   "status": "single_source",
+   "title": "Jalisco: atrae FGR denuncia de abogada contra Lemus, por vejaciones tras marcha",
+   "lang": "es",
+   "title_en": "Jalisco: FGR takes up lawyer's complaint against Lemus over mistreatment after a march",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "La Jornada",
+   "region_ids": [
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "La Jornada"
+   ],
+   "sources": [
+    {
+     "outlet": "jornada",
+     "name": "La Jornada",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.jornada.com.mx/2026/11/05/estados/027n2est?partner=rss",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "cc19ed1f51",
+   "status": "single_source",
+   "title": "Más de 100 capturados megaoperativo Fiscalía bandas criminales Cúcuta - Semana",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Semana",
+   "region_ids": [
+    "COL-1421"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "eln",
+    "tda"
+   ],
+   "outlets": [
+    "Semana"
+   ],
+   "sources": [
+    {
+     "outlet": "semana",
+     "name": "Semana",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.semana.com/nacion/articulo/mas-de-100-capturados-dejo-un-megaoperativo-de-la-fiscalia-en-cucuta-contra-organizaciones-criminales/202646/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "c4b931b314",
+   "status": "single_source",
+   "title": "Disparan a sospechoso de robo en Riverside y cierran garita de San Ysidro, pretendía fugarse en Tijuana.",
+   "lang": "es",
+   "title_en": "Robbery suspect shot in Riverside and San Ysidro port of entry closed; he was trying to flee into Tijuana.",
+   "first_report": "2026-11-05T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "ZETA Tijuana",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "ZETA Tijuana"
+   ],
+   "sources": [
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://zetatijuana.com/2026/11/disparan-a-sospechoso-de-robo-en-riverside-y-cierran-garita-de-san-ysidro-antes-de-fugarse-a-tijuana/?utm_source=rss&utm_medium=rss&utm_campaign=disparan-a-sospechoso-de-robo-en-riverside-y-cierran-garita-de-san-ysidro-antes-de-fugarse-a-tijuana",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
     }
    ]
   },
@@ -293,8 +1895,8 @@
    "first_report_precision": "minute",
    "first_source": "Proceso",
    "region_ids": [
-    "MEX-2732",
-    "NIC-24"
+    "NIC-24",
+    "MEX-2732"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -358,35 +1960,6 @@
      "via": "X @Riodoce_mx",
      "url": "https://x.com/Riodoce_mx/status/2118191774648909901",
      "time": "2026-11-05T04:00:47Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "3387a09fe8",
-   "status": "single_source",
-   "title": "La sentencia por el caso Blanqueo Fito fue notificada. El tribunal confirmó decomiso de bienes, pero aclaró que hay limitaciones. También se ordenó la repatriación del capital de una propiedad interna",
-   "lang": "es",
-   "title_en": "The ruling in the Blanqueo Fito case was notified. The court confirmed the seizure of assets but clarified that there are limitations. It also ordered the repatriation of capital from an international property.",
-   "first_report": "2026-11-05T03:31:21Z",
-   "first_report_precision": "minute",
-   "first_source": "Primicias",
-   "region_ids": [],
-   "country": "ECU",
-   "group_ids": [
-    "choneros"
-   ],
-   "outlets": [
-    "Primicias"
-   ],
-   "sources": [
-    {
-     "outlet": "primicias",
-     "name": "Primicias",
-     "kind": "outlet",
-     "via": "X @Primicias",
-     "url": "https://x.com/Primicias/status/2118184366727668090",
-     "time": "2026-11-05T03:31:21Z",
      "time_precision": "minute"
     }
    ]
@@ -523,45 +2096,6 @@
      "via": "X @noticieristas",
      "url": "https://x.com/noticieristas/status/2118170740348305615",
      "time": "2026-11-05T02:37:12Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "e9d4eecde2",
-   "status": "confirmed",
-   "title": "Reporteros Sin Fronteras incluye al CJNG en lista de \"depredadores de la libertad de prensa\" Debido a los ataques contra periodistas durante la cobertura de la muerte de \"El Mencho\", la organización c",
-   "lang": "es",
-   "title_en": "Reporters Without Borders adds the CJNG to its list of \"predators of press freedom\". Because of attacks on journalists during coverage of the death of \"El Mencho\", the Mexican criminal organization was included on the li",
-   "first_report": "2026-11-04T22:00:02Z",
-   "first_report_precision": "minute",
-   "first_source": "Proceso",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Infobae",
-    "Proceso"
-   ],
-   "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2118100987382771989",
-     "time": "2026-11-04T22:00:02Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2118153830231576614",
-     "time": "2026-11-05T01:30:01Z",
      "time_precision": "minute"
     }
    ]
@@ -770,57 +2304,6 @@
    ]
   },
   {
-   "id": "ac59509d5c",
-   "status": "confirmed",
-   "title": "Capturan en Coatzacoalcos a Samuel de la Cruz, alias “El Panda”, presunto líder regional del CJNG",
-   "lang": "es",
-   "title_en": "Samuel de la Cruz, alias “El Panda”, alleged regional leader of the CJNG, captured in Coatzacoalcos",
-   "first_report": "2026-11-04T21:40:21Z",
-   "first_report_precision": "minute",
-   "first_source": "Gabinete de Seguridad (Mexico)",
-   "region_ids": [
-    "MEX-2734"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Gabinete de Seguridad (Mexico)",
-    "Infobae",
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "gabsec",
-     "name": "Gabinete de Seguridad (Mexico)",
-     "kind": "official",
-     "via": "X @GabSeguridadMX",
-     "url": "https://x.com/GabSeguridadMX/status/2118096035692302754",
-     "time": "2026-11-04T21:40:21Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2118105102867132645",
-     "time": "2026-11-04T22:16:23Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2118126656434884666",
-     "time": "2026-11-04T23:42:02Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
    "id": "91132cae6a",
    "status": "single_source",
    "title": "Buscadoras por la Paz Sonora localizan una fosa clandestina con restos de al menos cuatro personas en Suaqui Grande",
@@ -979,8 +2462,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2735"
+    "MEX-2735",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1129,8 +2612,8 @@
    "first_report_precision": "minute",
    "first_source": "Primicias",
    "region_ids": [
-    "BOL-1940",
-    "ARG-1271"
+    "ARG-1271",
+    "BOL-1940"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -1214,86 +2697,6 @@
      "via": "X @parescolombia",
      "url": "https://x.com/parescolombia/status/2118027510843593155",
      "time": "2026-11-04T17:08:04Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "a92d285de6",
-   "status": "confirmed",
-   "title": "Capturan a seis miembros del Cártel de Sinaloa en Tuxtla: les decomisaron armas de fuego y equipo táctico",
-   "lang": "es",
-   "title_en": "Six Sinaloa Cartel members captured in Tuxtla: firearms and tactical gear were seized from them",
-   "first_report": "2026-11-04T02:45:40Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711",
-    "MEX-2734",
-    "MEX-2731"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "Infobae",
-    "Los Noticieristas",
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117810483453415932",
-     "time": "2026-11-04T02:45:40Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/11/04/capturan-a-seis-miembros-del-cartel-de-sinaloa-en-tuxtla-les-decomisaron-armas-de-fuego-y-equipo-tactico/",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2117962535785656501",
-     "time": "2026-11-04T12:49:53Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2117996398675214551",
-     "time": "2026-11-04T15:04:26Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2118005422871450061",
-     "time": "2026-11-04T15:40:18Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2118019003301892312",
-     "time": "2026-11-04T16:34:15Z",
      "time_precision": "minute"
     }
    ]
@@ -1399,8 +2802,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "b18",
-    "cjng"
+    "cjng",
+    "b18"
    ],
    "outlets": [
     "El Faro"
@@ -1499,157 +2902,6 @@
    ]
   },
   {
-   "id": "6f18a5632c",
-   "status": "single_source",
-   "title": "Aumentó 140% el número de adolescentes desaparecidos en jalisco desde 2019",
-   "lang": "es",
-   "title_en": "The number of missing adolescents in Jalisco has risen 140% since 2019",
-   "first_report": "2026-11-03T18:44:51Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2719",
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa",
-    "chapitos",
-    "cjng",
-    "mayiza"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117689480706425052",
-     "time": "2026-11-03T18:44:51Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://infobae.com/mexico/2026/11/03/aumento-140-el-numero-de-adolescentes-desaparecidos-en-jalisco-desde-2019",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "9260b377b9",
-   "status": "confirmed",
-   "title": "Harfuch destaca decomiso de 133 kilos de metanfetamina en Sinaloa: la droga estaba oculta en un tractocamión",
-   "lang": "es",
-   "title_en": "Harfuch highlights seizure of 133 kilos of methamphetamine in Sinaloa: the drug was hidden in a tractor-trailer",
-   "first_report": "2026-11-03T23:07:32Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae",
-    "Los Noticieristas",
-    "Milenio",
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117755586443948494",
-     "time": "2026-11-03T23:07:32Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2117761066608259471",
-     "time": "2026-11-03T23:29:19Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2117763247705129468",
-     "time": "2026-11-03T23:37:59Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/aseguran-tractocamion-con-metanfetamina-en-sinaloa",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "b0864ae438",
-   "status": "confirmed",
-   "title": "Detienen en Iztapalapa a Alan Rafael, alias “El Chopercito”, objetivo prioritario ligado con al menos 10 homicidios",
-   "lang": "es",
-   "title_en": "Alan Rafael, alias \"El Chopercito,\" a priority target linked to at least 10 homicides, is arrested in Iztapalapa",
-   "first_report": "2026-11-04T00:41:10Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "El Universal",
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117779149804753016",
-     "time": "2026-11-04T00:41:10Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "eluniversal",
-     "name": "El Universal",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.eluniversal.com.mx/metropoli/con-que-homicidios-relacionan-a-el-chopersito-lo-vinculan-con-al-menos-10-asesinatos-en-iztapalapa/",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/11/03/en-vivo-seguridad-narcotrafico-y-crimen-en-mexico-hoy-3-de-noviembre-abogada-de-emma-coronel-planea-pedir-llamadas-monitoreadas-para-que-retome-contacto-con-el-chapo/",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
    "id": "270d9e5e66",
    "status": "single_source",
    "title": "Nuevo ataque con explosivos contra un peaje en el oeste de Colombia - Infobae",
@@ -1663,8 +2915,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "clan",
-    "eln"
+    "eln",
+    "clan"
    ],
    "outlets": [
     "Infobae"
@@ -1682,21 +2934,24 @@
    ]
   },
   {
-   "id": "1fbbb14332",
+   "id": "d978c65889",
    "status": "single_source",
-   "title": "Clan del Golfo tiene presencia en el 72 % de Antioquia y llega a 94 municipios en 2026 - Infobae",
+   "title": "Aumentó 140% el número de adolescentes desaparecidos en jalisco desde 2019 - Infobae",
    "lang": "es",
-   "title_en": "Clan del Golfo has a presence in 72% of Antioquia and reaches 94 municipalities in 2026 - Infobae",
+   "title_en": "The number of missing adolescents in Jalisco has risen 140% since 2019",
    "first_report": "2026-11-04T12:00:00Z",
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "COL-1314"
+    "MEX-2711",
+    "MEX-2719"
    ],
-   "country": "COL",
+   "country": "MEX",
    "group_ids": [
-    "clan",
-    "eln"
+    "cjng",
+    "sinaloa",
+    "mayiza",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -1707,75 +2962,7 @@
      "name": "Infobae",
      "kind": "outlet",
      "via": "headline",
-     "url": "https://infobae.com/colombia/2026/11/04/clan-del-golfo-tiene-presencia-en-el-72-de-antioquia-y-llega-a-94-municipios-en-2026",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "23184a7a72",
-   "status": "confirmed",
-   "title": "Así fue la vida de Antonio Oseguera, hermano de “El Mencho”: pobreza, trabajo infantil y adicciones hasta llegar al CJNG - Infobae",
-   "lang": "es",
-   "title_en": "The life of Antonio Oseguera, brother of “El Mencho”: poverty, child labor and addiction on the road to the CJNG - Infobae",
-   "first_report": "2026-11-04T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Infobae",
-    "Milenio"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://infobae.com/mexico/2026/11/03/asi-fue-la-vida-de-antonio-oseguera-hermano-de-el-mencho-pobreza-trabajo-infantil-y-adicciones-hasta-llegar-al-cjng",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://infobae.com/mexico/2026/11/03/tony-montana-hermano-de-el-mencho-pide-compasion-al-juez-que-dictara-su-sentencia-en-eeuu",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/narcotrafico/cual-es-estado-salud-antonio-oseguera-cervantes-tony-montana-cjng",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/tony-montana-hermano-mencho-carta-cjng-adicciones",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.milenio.com/policia/narcotrafico/quien-era-el-padre-de-el-mencho-fundador-del-cjng-esto-sabemos",
+     "url": "https://infobae.com/mexico/2026/11/03/aumento-140-el-numero-de-adolescentes-desaparecidos-en-jalisco-desde-2019",
      "time": "2026-11-04T12:00:00Z",
      "time_precision": "day"
     }
@@ -1840,8 +3027,8 @@
    "country": "MEX",
    "group_ids": [
     "sinaloa",
-    "chapitos",
-    "mayiza"
+    "mayiza",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -1883,6 +3070,68 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://milenio.com/policia/detienen-coahuila-grupo-criminal-proveniente-tamaulipas",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "165c20b8ef",
+   "status": "single_source",
+   "title": "Cae ‘El Semáforo’, sucesor de ‘El Tanque’ en el CJNG- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2723"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/el-semaforo-sucesor-el-tanque-cjng-detenido-23-dias-veracruz-oaxaca",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "d801e29551",
+   "status": "single_source",
+   "title": "Muerte de niña en Matamoros: investigan disparos de Guardia Estatal- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2716"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "gulf"
+   ],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/muerte-nina-matamoros-investigan-disparos-guardia-estatal",
      "time": "2026-11-04T12:00:00Z",
      "time_precision": "day"
     }
@@ -2069,37 +3318,6 @@
    ]
   },
   {
-   "id": "9eda7cce6e",
-   "status": "single_source",
-   "title": "Vorágine insaciable: Reclutan a cientos de jóvenes para sostener la guerra en Sinaloa",
-   "lang": "es",
-   "title_en": "Insatiable vortex: hundreds of young people recruited to sustain the war in Sinaloa",
-   "first_report": "2026-11-04T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "El Universal",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "El Universal"
-   ],
-   "sources": [
-    {
-     "outlet": "eluniversal",
-     "name": "El Universal",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.eluniversal.com.mx/grafico/periodismo-de-investigacion/voragine-insaciable-reclutan-a-cientos-de-jovenes-para-sostener-la-guerra-en-sinaloa/",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
    "id": "418e279e0e",
    "status": "single_source",
    "title": "Fuga de agua provoca cierre vial en Calzada México-Tacuba; descartan afectaciones en estación Colegio Militar",
@@ -2140,8 +3358,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "cv",
-    "pcc"
+    "pcc",
+    "cv"
    ],
    "outlets": [
     "Infobae"
@@ -2168,9 +3386,9 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
+    "ARG-1271",
     "ECU-1270",
-    "BOL-1940",
-    "ARG-1271"
+    "BOL-1940"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -2259,8 +3477,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "VEN-43",
-    "NIC-659"
+    "NIC-659",
+    "VEN-43"
    ],
    "country": "NIC",
    "group_ids": [],
@@ -2407,8 +3625,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2706",
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [
@@ -2548,34 +3766,24 @@
    ]
   },
   {
-   "id": "e70a8be2da",
-   "status": "confirmed",
-   "title": "Cae “El Patrón” o “El Señor” líder de Los Linos, cártel que opera en Morelos, informó García Harfuch",
+   "id": "bd0b260bcb",
+   "status": "single_source",
+   "title": "🚔🔎 Autoridades detuvieron en Edomex a Lino “N”, alias “El Patrón”, presunto líder de “Los Linos”, grupo delictivo ligado a homicidios y extorsión en Morelos. Con esto suman nueve miembros detenidos.",
    "lang": "es",
-   "title_en": "\"El Patrón\" or \"El Señor,\" leader of Los Linos, a cartel operating in Morelos, is captured, García Harfuch reported",
-   "first_report": "2026-11-03T18:49:54Z",
+   "title_en": "🚔🔎 Authorities arrested in Edomex Lino \"N,\" alias \"El Patrón,\" alleged leader of \"Los Linos,\" a criminal group linked to homicides and extortion in Morelos. With this, nine members have been arrested.",
+   "first_report": "2026-11-03T23:30:20Z",
    "first_report_precision": "minute",
-   "first_source": "Infobae",
+   "first_source": "Animal Político",
    "region_ids": [
-    "MEX-2732",
-    "MEX-2731"
+    "MEX-2731",
+    "MEX-2732"
    ],
    "country": "MEX",
    "group_ids": [],
    "outlets": [
-    "Animal Político",
-    "Infobae"
+    "Animal Político"
    ],
    "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117690751693787642",
-     "time": "2026-11-03T18:49:54Z",
-     "time_precision": "minute"
-    },
     {
      "outlet": "animal",
      "name": "Animal Político",
@@ -2710,157 +3918,6 @@
      "via": "X @InSightCrime",
      "url": "https://x.com/InSightCrime/status/2117717728387534901",
      "time": "2026-11-03T20:37:06Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "5b87624c54",
-   "status": "single_source",
-   "title": "Lo detienen en festejos de Día de Muertos y horas después lo hallan muerto en los separos en Oaxaca: Investigan a su compañero de celda",
-   "lang": "es",
-   "title_en": "He is detained during Day of the Dead festivities and hours later found dead in the holding cells in Oaxaca: his cellmate is under investigation",
-   "first_report": "2026-11-03T19:32:19Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2723"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117701424427532548",
-     "time": "2026-11-03T19:32:19Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "e3417a5a7c",
-   "status": "official_claim_only",
-   "title": "Como parte de la Estrategia Nacional contra la Extorsión, autoridades federales detuvieron en #Ixtapaluca, #EdoMéx, a Lino “N”, alias “El Patrón”, identificado como líder de un grupo delictivo y uno d",
-   "lang": "es",
-   "title_en": "As part of the National Strategy Against Extortion, federal authorities arrested in #Ixtapaluca, #EdoMéx, Lino \"N,\" alias \"El Patrón,\" identified as the leader of a criminal group and one of the main generators of violen",
-   "first_report": "2026-11-03T19:09:44Z",
-   "first_report_precision": "minute",
-   "first_source": "SSPC (Mexico)",
-   "region_ids": [
-    "MEX-2732",
-    "MEX-2731"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2117695743947649461",
-     "time": "2026-11-03T19:09:44Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "8a9553f319",
-   "status": "single_source",
-   "title": "Reports of a bombing targeting an ELN camp in Apure state, near the Colombian border, raise questions about whether the group’s collaborative relationship with the Venezuelan government has come to an",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-11-03T18:54:38Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [
-    "VEN-25"
-   ],
-   "country": "VEN",
-   "group_ids": [
-    "eln"
-   ],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2117691941693411772",
-     "time": "2026-11-03T18:54:38Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "d96313759a",
-   "status": "single_source",
-   "title": "Today, readers turn to InSight Crime to understand issues ranging from fentanyl markets to the expansion of the Tren de Aragua because our reporting follows these stories over time—not just when they ",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-11-03T17:50:12Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [],
-   "country": null,
-   "group_ids": [
-    "tda"
-   ],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2117675725041869113",
-     "time": "2026-11-03T17:50:12Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "f04c283518",
-   "status": "official_claim_only",
-   "title": "Autoridades federales realizaron detenciones, cateos, aseguramientos de armas y droga en #Chihuahua, #CDMX, #Edomex, #Guerrero, #Michoacán, #Nayarit, #Puebla, #Sinaloa, #Tabasco, #Tamaulipas y #Tlaxca",
-   "lang": "es",
-   "title_en": "Federal authorities carried out arrests, searches, and seizures of weapons and drugs in #Chihuahua, #CDMX, #Edomex, #Guerrero, #Michoacán, #Nayarit, #Puebla, #Sinaloa, #Tabasco, #Tamaulipas and #Tlaxcala on October 30 an",
-   "first_report": "2026-11-03T17:11:36Z",
-   "first_report_precision": "minute",
-   "first_source": "SSPC (Mexico)",
-   "region_ids": [
-    "MEX-2727",
-    "MEX-2711",
-    "MEX-2726",
-    "MEX-2721"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2117666014435631355",
-     "time": "2026-11-03T17:11:36Z",
      "time_precision": "minute"
     }
    ]
