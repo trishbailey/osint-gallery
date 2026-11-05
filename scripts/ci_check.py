@@ -210,6 +210,95 @@ def hue_spread(cols):
     gaps = [(hs[(i + 1) % len(hs)] - hs[i]) % 360 for i in range(len(hs))]
     return 360 - max(gaps) if len(hs) > 1 else 0
 
+# Map labels must touch their marker (measured edge to edge, in screen pixels) and
+# acronyms must be spelled out once on the page.
+LABEL_GAP_MAX = 7      # px, edge to edge (guide: "a gap of a few pixels"; water-security uses 6, +1 for rounding)
+LABEL_ASSOC = 24       # px: a marker this close is taken to be the label's own marker
+LABEL_JS = r"""(opt) => {
+ const MAXG = opt.max, ASSOC = opt.assoc;
+ const out = {maps: 0, labels: 0, fails: []};
+ const shown = e => { const b = e.getBoundingClientRect(), cs = getComputedStyle(e);
+   return b.width > 0 && b.height > 0 && cs.display !== 'none' && cs.visibility !== 'hidden' && cs.opacity !== '0'
+     && !e.closest('[data-ci-ignore],defs,clipPath,mask,pattern,[class*=legend],[id*=legend],[class*=sidebar],aside'); };
+ const gap = (a, b) => { const dx = Math.max(a.left - b.right, b.left - a.right, 0), dy = Math.max(a.top - b.bottom, b.top - a.bottom, 0); return Math.hypot(dx, dy); };
+ const judge = (labels, markers, kind) => {
+   out.maps++;
+   labels.forEach(l => {
+     out.labels++;
+     let best = null, bd = 1e9;
+     markers.forEach(m => { if (m.el === l.el || l.el.contains(m.el) || m.el.contains(l.el)) return; const d = gap(l.r, m.r); if (d < bd) { bd = d; best = m; } });
+     if (best && bd <= ASSOC && bd > MAXG) out.fails.push({t: l.t, gap: Math.round(bd * 10) / 10, kind});
+   });
+ };
+ // d3 / SVG maps: a map is an svg with many paths (the basemap); markers are small circles and short symbol paths
+ document.querySelectorAll('svg').forEach(svg => {
+   const sb = svg.getBoundingClientRect(); if (sb.width < 300 || sb.height < 200 || svg.closest('[data-ci-ignore],.leaflet-container')) return;
+   if (svg.querySelectorAll('path').length < 15) return;   // a map has a basemap: many shape paths
+   if (svg.closest('[class*=timeline],[id*=timeline]') || [svg.id || '', svg.getAttribute('class') || ''].some(x => /(^|\s)(tl|timeline|net|network|rf|sankey)([\s_-]|svg|$)/i.test(x))) return;   // timelines, networks and flow diagrams are not maps
+   const BASE = /(^|[\s_-])(land|adm|hex|country|countries|state|states|region|border|borders|basin|basins|bg|coast|graticule|sphere|river|rivers|lakes?)([\s_-]|$)/;
+   const markers = [], labels = [];
+   svg.querySelectorAll('circle,ellipse,use,path,polygon').forEach(e => {
+     if (!shown(e) || e.closest('[class*=flag],[id*=flag],[class*=logo],image,text')) return;
+     if (e.tagName === 'path' && ((e.getAttribute('d') || '').length > 80 || BASE.test(e.getAttribute('class') || ''))) return;   // symbol paths are short; basemap shapes are not markers
+     if (e.tagName === 'polygon' && (e.getAttribute('points') || '').split(/[ ,]+/).length > 14) return;
+     const b = e.getBoundingClientRect(); if (b.width < 4 || b.height < 4 || b.width > 36 || b.height > 36) return;
+     const cs = getComputedStyle(e); if (cs.fill === 'none' && (cs.stroke === 'none' || !parseFloat(cs.strokeWidth))) return;
+     if (e.tagName === 'circle' && b.width < 7 && !e.hasAttribute('data-ci-marker')) return;   // dots in a dot grid are not map markers
+     markers.push({el: e, r: b});
+   });
+   svg.querySelectorAll('text').forEach(t => { const tx = t.textContent.trim(); if (tx.length < 2 || !shown(t) || /^[\d.,%+\-\s]+$/.test(tx)) return;
+     const b = t.getBoundingClientRect(); if (b.width < 6) return; labels.push({el: t, r: b, t: tx.slice(0, 40)}); });
+   if (markers.length && labels.length) judge(labels, markers, 'svg');
+ });
+ // Leaflet maps: markers are icons / circle markers, labels are permanent tooltips or text-only div icons
+ document.querySelectorAll('.leaflet-container').forEach(c => {
+   const markers = [], labels = [];
+   c.querySelectorAll('.leaflet-marker-icon, path.leaflet-interactive, .leaflet-tooltip').forEach(e => {
+     if (!shown(e)) return; const b = e.getBoundingClientRect(); const tx = (e.textContent || '').trim();
+     const isTip = e.classList.contains('leaflet-tooltip');
+     if (isTip || (tx.length > 1 && !/^[\d.,%+\-\s]+$/.test(tx) && e.classList.contains('leaflet-marker-icon') && b.width > 24)) { labels.push({el: e, r: b, t: tx.slice(0, 40)}); return; }
+     if (b.width >= 4 && b.height >= 4 && b.width <= 48 && b.height <= 48 && !tx) markers.push({el: e, r: b});
+   });
+   if (markers.length && labels.length) judge(labels, markers, 'leaflet');
+ });
+ return out; }"""
+
+ACRO_ALLOW = {"US", "UK", "EU", "UN", "USA", "USD", "EUR", "GBP", "UTC", "AM", "PM", "ID", "OK", "TV", "II", "III", "IV", "VI", "VII", "VIII", "IX", "XI", "XII",
+              "DR", "LLC", "LTD", "INC", "PLC", "JSC", "OOO", "FZCO", "GMBH", "LP"}   # universally known, or company-form suffixes in names
+ACRO_JS = r"""(allow) => {
+ const skip = 'script,style,noscript,template,title,head,[data-ci-ignore]';
+ const srcs = 'footer,[class*=source],[id*=source],[class*=srcdet],[id^=src],[class*=credit],[class*=foot],[class*=brand],[class*=attribution],header,nav';   // citations and brand strips: text counts as a definition, not as a use
+ const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+ const parts = [], toks = [];
+ for (let n; (n = w.nextNode());) {
+   const p = n.parentElement; if (!p || p.closest(skip)) continue;
+   const t = n.textContent.replace(/\s+/g, ' ').trim(); if (!t || /https?:\/\//.test(t)) continue;
+   parts.push(t);
+   if (p.closest(srcs)) continue;
+   // runs of two or more capitalised words (company names, brand strips, headings) are not acronyms
+   const words = [...t.matchAll(/[A-Za-z0-9_&]+/g)].map(m => ({w: m[0], i: m.index}));
+   const caps = words.map(x => /^[A-Z]{2,}$/.test(x.w));
+   words.forEach((x, k) => { if (!caps[k] || x.w.length > 5) return;
+     const nb = (j) => j >= 0 && j < words.length && caps[j] && /^[\s-]*$/.test(t.slice(Math.min(x.i, words[j].i) + (j < k ? words[j].w.length : x.w.length), Math.max(x.i, words[j].i)));
+     if (nb(k - 1) || nb(k + 1)) return;
+     const pre = t[x.i - 1], post = t[x.i + x.w.length]; if (pre === '_' || post === '_' || /^-\d/.test(t.slice(x.i + x.w.length))) return;   // MS-13, F-35 are names
+    if (x.w.length >= 4 && /^\s[A-Z][a-z]/.test(t.slice(x.i + x.w.length))) return;   // YANG Peidong: a surname
+     toks.push(x.w); });
+ }
+ const text = parts.join(' ');
+ const seen = {}; toks.forEach(a => seen[a] = (seen[a] || 0) + 1);
+ const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+ const bad = [];
+ Object.keys(seen).forEach(a => {
+   if (allow.includes(a)) return;
+   const e = esc(a);
+   const ok = new RegExp('[(\\[]\\s*' + e + '(?![A-Za-z])').test(text)                       // Full name (ACR)
+     || new RegExp('(?<![A-Za-z])' + e + '\\s*\\((?:[a-z]{2,}|[A-Z][a-z]+)[^)]{3,}\\)').test(text)   // ACR (full name)
+     || new RegExp('(?<![A-Za-z])' + e + '\\s*(?:[:=\\u2013\\u2014]|,? (?:stands for|short for|means|is the|is a|are the))\\s*\\S').test(text);   // ACR: full name
+   if (!ok) { const i = text.search(new RegExp('(?<![A-Za-z])' + e + '(?![A-Za-z])')); bad.push({a, n: seen[a], ctx: text.slice(Math.max(0, i - 40), i + 40)}); }
+ });
+ return bad; }"""
+
 # Numbered circles, text stopping short, and buttons that show nothing.
 LAYOUT_JS = r"""() => {
  const vis = e => { const b = e.getBoundingClientRect(); const cs = getComputedStyle(e);
@@ -412,7 +501,7 @@ def click_checks(port, slugs, viewports=((1280, 800, "click 1280px"), (390, 844,
         br.close()
     return errs
 
-def browser_checks(port, slugs):
+def browser_checks(port, slugs, base=None):
     from playwright.sync_api import sync_playwright
     errs, warns = [], []
     with sync_playwright() as p:
@@ -423,10 +512,12 @@ def browser_checks(port, slugs):
                 jserr = []
                 pg.on("pageerror", lambda e: jserr.append(str(e)[:160]))
                 try:
-                    pg.goto(f"http://127.0.0.1:{port}/{slug}/", wait_until="load", timeout=45000)
+                    pg.goto(f"{base or f'http://127.0.0.1:{port}'}/{slug}/", wait_until="load", timeout=45000)
                     pg.wait_for_timeout(3500)
                     r = pg.evaluate(COLLECT_JS)
                     lay = pg.evaluate(LAYOUT_JS)
+                    lab = pg.evaluate(LABEL_JS, {"max": LABEL_GAP_MAX, "assoc": LABEL_ASSOC})
+                    acro = pg.evaluate(ACRO_JS, sorted(ACRO_ALLOW)) if name == "desktop" else []
                 except Exception as e:
                     errs.append(f"{slug} [{name}]: page failed to load ({str(e)[:120]})")
                     pg.close(); continue
@@ -440,8 +531,14 @@ def browser_checks(port, slugs):
                 if name == "desktop" and lay["narrow"]:
                     ex = "; ".join(f"'{n['t']}' {n['w']}px of {n['avail']}px" for n in lay["narrow"][:3])
                     errs.append(f"{slug} [desktop]: {len(lay['narrow'])} text block(s) stop well short of the right edge, e.g. {ex}")
+                if lab["fails"]:
+                    ex = "; ".join(f"'{f['t']}' {f['gap']}px" for f in lab["fails"][:4])
+                    errs.append(f"{slug} [{name}]: {len(lab['fails'])} map label(s) sit more than {LABEL_GAP_MAX}px from their marker edge (the label must touch its marker), e.g. {ex}")
+                if acro:
+                    ex = ", ".join(f"{x['a']} (x{x['n']})" for x in acro[:10])
+                    errs.append(f"{slug} [{name}]: {len(acro)} acronym(s) never spelled out on the page (write the full name once, with the acronym in brackets): {ex}")
                 if name == "desktop":
-                    errs += button_checks(pg, slug, f"http://127.0.0.1:{port}/{slug}/")
+                    errs += button_checks(pg, slug, f"{base or f'http://127.0.0.1:{port}'}/{slug}/")
                 pg.close()
                 for e in jserr:
                     errs.append(f"{slug} [{name}]: JS error: {e}")
@@ -505,6 +602,7 @@ def main():
     ap.add_argument("--static-only", action="store_true")
     ap.add_argument("--port", type=int, default=8765)
     ap.add_argument("--slugs", default="", help="comma list; default = every */index.html")
+    ap.add_argument("--base-url", default="", help="browser-check a deployed site (e.g. https://beacon-tools.onrender.com) instead of the local files")
     ap.add_argument("--changed-from", default="", help="git base ref; check only changed dashboards")
     ap.add_argument("--changed-head", default="HEAD", help="git ref of the branch tip (a PR's head sha); changes are measured from merge-base(base, head)")
     a = ap.parse_args()
@@ -542,7 +640,7 @@ def main():
         handler.log_message = lambda *x: None
         http.server.SimpleHTTPRequestHandler.log_message = lambda *x: None
         threading.Thread(target=srv.serve_forever, daemon=True).start()
-        errs += browser_checks(a.port, slugs)
+        errs += browser_checks(a.port, slugs, a.base_url.rstrip('/') or None)
         errs += click_checks(a.port, [x for x in slugs if x in touched] if a.changed_from else slugs)
         srv.shutdown()
     for e in errs:
