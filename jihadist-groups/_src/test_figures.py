@@ -49,7 +49,7 @@ if dis in fam: errs.append("dissolved colour matches a family colour")
 if ci.is_background(hexrgb(dis)): errs.append(f"{dis} reads as background")
 # graph link colours and land colour must also be distinct from the node colours
 for c in ["#ff9f43", "#2ee6d6", "#ff7eb6", "#ffffff"]:
-    pass  # links are strokes, not fills: CI checks fills only
+    pass  # link strokes are not grey data strokes; CI flags grey data strokes, not every stroke
 
 # 3. notes resolve
 nums = {s["n"] for s in D["sources"]}

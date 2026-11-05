@@ -9,8 +9,8 @@ Static checks (all pages):
 Browser checks (each dashboard page, desktop 1440px and phone 390px):
   3. Phone width: no horizontal overflow at 390px, no JS errors.
   4. Label size: every visible SVG text label renders at >= 13px.
-  5. Colour: no grey data fills (low-saturation SVG shapes), except greys on a named
-     special-category marker, and no near-identical fill pairs (CIEDE2000 delta E < 20)
+  5. Colour: no grey data fills or data strokes (low-saturation SVG shapes), except greys
+     on a special-category marker, and no near-identical fill pairs (CIEDE2000 delta E < 20)
      among the distinct data colours of each SVG.
 Change checks (--changed-from BASE):
   6. Shared files (scripts/, .github/, render.yaml, README.md, root index.html/app.js/
@@ -25,15 +25,18 @@ Change checks (--changed-from BASE):
       something on screen, raise no JS/console error, and hit a real target (at most 30 shapes and 30 buttons per page per size, sampled evenly; with --changed-from only on the dashboards whose folders changed).
   11. Each checked dashboard's _src/test_*.py (figures derived from data) must pass.
 Grey exception (special categories only): grey still fails when it is a main category on a
-graphic (a group family, a map layer, a chart series, or any other ordinary data fill). A grey
-fill is allowed only on a shape that sits inside a <g> (or is itself) marked as a special category
-AND named (aria-label or a child <title>). Mark it with an exact data-status of "defunct",
-"dissolved", "inactive", or "disbanded", or with a non-empty data-special-category="<name>" for
-any other special category (dormant, historic, and similar). data-status="defunct" still works.
-The marker may not be the <svg> root. Other values (is-defunct, defunct-ish, "inactive defunct",
-"Inactive") and an empty data-special-category do nothing. Only greys are exempt (any other colour
-on the marker is checked as usual), and at most half of an SVG's data shapes may be exempt.
-Every other grey still fails.
+graphic (a group family, a map layer, a chart series, or any other ordinary data fill or stroke).
+It is allowed when the shape, or an ancestor inside the svg, has an exact data-status of
+"defunct", "dissolved", "inactive", "disbanded", "retired", or "historical", or a non-empty
+data-special-category="<name>" (dormant, historic, and similar). That marker must be named
+(aria-label or a child <title>) and must not be the <svg> root. data-status="defunct" still works.
+A class or a legend label that names one of those statuses also allows the grey (class "is-defunct",
+a legend row labelled "Dissolved"). Other values ("inactive defunct", "Inactive", an empty
+data-special-category, a class that does not name a status) do nothing. Only greys are exempt,
+and at most half of an SVG's data shapes may be exempt.
+Not data colours, so never flagged: paints with opacity < 0.35, decorative strokes (gridlines,
+borders, axes, hairlines, basemap plates), and secondary text, including --muted #9aa6b8.
+Every other grey data fill or stroke still fails.
 Colour pairs are checked on every SVG unless all its colours share one hue (within 40 deg).
 Shapes inside an element marked data-ci-ignore (or flags/logos/icons) are skipped.
 The GitHub workflow runs the browser and click checks one dashboard per job, in parallel.
@@ -146,48 +149,146 @@ def ciede2000(l1, l2):
     Rt = -math.sin(math.radians(2 * dth)) * Rc
     return math.sqrt((dLp / Sl) ** 2 + (dCp / Sc) ** 2 + (dHp / Sh) ** 2 + Rt * (dCp / Sc) * (dHp / Sh))
 
-# Collect data-mark colours: filled rect/circle/path inside SVG, excluding background-like
-# dark fills (basemap/panels), white/near-white text-like fills and tiny shapes.
+# Collect data-mark colours from SVG shapes. Decorative strokes, basemap plates, near-transparent
+# paints and secondary text are not data colours. Grey is recorded apart when it sits on a
+# special-category marker (see the grey exception above).
 COLLECT_JS = r"""() => {
  const out = {labels: [], svgs: [], overflow: 0};
  out.overflow = Math.max(document.documentElement.scrollWidth, document.body ? document.body.scrollWidth : 0) - window.innerWidth;
  const svgs = [...document.querySelectorAll('svg')].filter(s => {const b = s.getBoundingClientRect(); return b.width > 120 && b.height > 80;});
+ const STATUS_RE = /(?:^|[^a-z])(defunct|dissolved|inactive|disbanded|retired|historical)(?:[^a-z]|$)/i;
+ const STROKE_DECOR = /(?:^|[^a-z])(gridlines?|grid-lines?|grids?|axes|axis|ticks?|tick-lines?|domains?|borders?|frames?|outlines?|graticules?|hairlines?|zerolines?|baselines?)(?:[^a-z]|$)/i;
+ const BASEMAP = /(?:^|[^a-z])(basemaps?|map-bg|mapbg)(?:[^a-z]|$)/i;
+ const DATA_SERIES = /(?:^|[^a-z])(series|category|categories)(?:[^a-z]|$)/i;
+ const SPECIAL_STATUS = new Set(['defunct', 'dissolved', 'inactive', 'disbanded', 'retired', 'historical']);
+ const blob = n => ((n.getAttribute && n.getAttribute('class')) || '') + ' ' + (n.id || '') + ' ' + ((n.getAttribute && n.getAttribute('role')) || '');
+ const labOf = rgb => {
+   const lin = c => { c /= 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
+   const r = lin(rgb[0]), g = lin(rgb[1]), b = lin(rgb[2]);
+   const x = (0.4124 * r + 0.3576 * g + 0.1805 * b) / 0.95047;
+   const y = (0.2126 * r + 0.7152 * g + 0.0722 * b);
+   const z = (0.0193 * r + 0.1192 * g + 0.9505 * b) / 1.08883;
+   const f = t => t > 0.008856 ? Math.pow(t, 1 / 3) : 7.787 * t + 16 / 116;
+   const fx = f(x), fy = f(y), fz = f(z);
+   return [116 * fy - 16, 500 * (fx - fy), 200 * (fy - fz)];
+ };
+ const isGrey = rgb => { const [L, a, b] = labOf(rgb); return Math.hypot(a, b) < 6 && L >= 22 && L <= 92; };
+ const isBg = rgb => { const L = labOf(rgb)[0]; return L < 22 || L > 92; };
+ const named = m => (m.getAttribute('aria-label') || '').trim() !== '' ||
+   [...m.children].some(c => c.tagName.toLowerCase() === 'title' && c.textContent.trim() !== '');
+ const isSpecial = m => SPECIAL_STATUS.has(m.getAttribute('data-status')) ||
+   (m.getAttribute('data-special-category') || '').trim() !== '';
+ const isLegendNode = n => {
+   if (!n || !n.getAttribute) return false;
+   if ((n.tagName || '').toLowerCase() === 'legend') return true;
+   return /(?:^|[^a-z])(legend|keyrow)(?:[^a-z]|$)/i.test((n.getAttribute('class') || '') + ' ' + (n.getAttribute('role') || ''));
+ };
+ const legendOk = n => {
+   if (!isLegendNode(n)) return false;
+   const bits = [n.getAttribute('aria-label') || ''];
+   [...n.children].forEach(c => {
+     const t = (c.tagName || '').toLowerCase();
+     if (t === 'text' || t === 'title' || t === 'span' || t === 'label' || t === 'figcaption') bits.push(c.textContent || '');
+   });
+   const label = bits.join(' ').replace(/\s+/g, ' ').trim();
+   if (!label || label.length > 80 || !STATUS_RE.test(label)) return false;
+   const shapes = [...n.querySelectorAll('rect,circle,path,polygon,ellipse,line,polyline')];
+   if (/^(rect|circle|path|polygon|ellipse|line|polyline)$/.test((n.tagName || '').toLowerCase())) shapes.push(n);
+   return shapes.length > 0 && shapes.length <= 3;
+ };
+ // Class or legend label naming a special status. The <svg> root never counts.
+ const classOrLegend = (el, s) => {
+   let n = el;
+   while (n && n !== s) {
+     if (STATUS_RE.test(n.getAttribute('class') || '')) return true;
+     if (legendOk(n)) return true;
+     n = n.parentElement;
+   }
+   n = s.parentElement;
+   let steps = 0;
+   while (n && n !== document.body && steps < 4) {
+     if (legendOk(n)) return true;
+     if (!isLegendNode(n)) break;
+     n = n.parentElement;
+     steps++;
+   }
+   return false;
+ };
+ const parsePaint = (rgb, extra, opacity) => {
+   if (!rgb || rgb === 'none') return null;
+   const m = rgb.match(/rgba?\(([^)]+)\)/);
+   if (!m) return null;
+   const v = m[1].split(',').map(Number);
+   const spec = parseFloat(extra), op = parseFloat(opacity);
+   const a = (v.length > 3 ? v[3] : 1) * (isNaN(spec) ? 1 : spec) * (isNaN(op) ? 1 : op);
+   return {rgb: v.slice(0, 3).map(n => Math.round(n)), a};
+ };
+ // opacity < 0.35 (rounded to a percent, so 0.35 still counts) drops a grey paint.
+ const keepPaint = p => p && p.a >= 0.05 && !(isGrey(p.rgb) && Math.round(p.a * 100) < 35);
+ const basemapEl = (e, s, b) => {
+   let n = e;
+   while (n && n !== s) { if (BASEMAP.test(blob(n))) return true; n = n.parentElement; }
+   if ((e.tagName || '').toLowerCase() !== 'rect') return false;
+   const sb = s.getBoundingClientRect();
+   return !!(sb.width && sb.height && b.width >= sb.width * 0.9 && b.height >= sb.height * 0.9);
+ };
+ const strokeDecor = (e, s, cs) => {
+   let n = e;
+   while (n && n !== s) { if (STROKE_DECOR.test(blob(n))) return true; n = n.parentElement; }
+   const series = DATA_SERIES.test(blob(e));
+   const tag = (e.tagName || '').toLowerCase();
+   if ((tag === 'line' || tag === 'polyline') && !series) return true;
+   const sw = parseFloat(cs.strokeWidth) || 0;
+   if (sw > 0 && sw < 1.5 && !series) return true;
+   return false;
+ };
+ const hairlineBox = b => {
+   const thin = Math.min(b.width, b.height), long = Math.max(b.width, b.height);
+   return thin > 0 && thin < 3 && long >= 48;
+ };
  svgs.forEach((s, i) => {
-   const cols = {}, dcols = {}, ramps = {}, badSpecial = [];
+   const cols = {}, strokes = {}, dcols = {}, dstrokes = {}, ramps = {}, badSpecial = [];
    const seenBad = new Set();
    // Grey opt-in for a special category, not for a main category (group family, map layer, chart series).
-   // Exact data-status in this set, or a non-empty data-special-category, on the shape or a <g> inside
-   // this svg (never the svg root). The marker must be named (aria-label or direct child <title>).
-   const SPECIAL_STATUS = new Set(['defunct', 'dissolved', 'inactive', 'disbanded']);
-   const named = m => (m.getAttribute('aria-label') || '').trim() !== '' ||
-     [...m.children].some(c => c.tagName.toLowerCase() === 'title' && c.textContent.trim() !== '');
-   const isSpecial = m => SPECIAL_STATUS.has(m.getAttribute('data-status')) ||
-     (m.getAttribute('data-special-category') || '').trim() !== '';
-   s.querySelectorAll('rect,circle,path,polygon,ellipse').forEach(e => {
+   // Exact data-status, a non-empty data-special-category, a class, or a legend label naming that status,
+   // on the shape or an ancestor inside this svg (never the svg root). A data-status / data-special-category
+   // marker must still be named (aria-label or direct child <title>).
+   s.querySelectorAll('rect,circle,path,polygon,ellipse,line,polyline').forEach(e => {
      const cs = getComputedStyle(e); if (cs.display === 'none' || cs.visibility === 'hidden') return;
      if (e.closest('defs,clipPath,mask,pattern')) return;
      if (e.closest('[data-ci-ignore]')) return;
      if (e.closest('[class*=flag],[id*=flag],[class*=logo],[class*=emblem],[class*=icon],image,foreignObject')) return;
-     const b = e.getBoundingClientRect(); if (b.width * b.height < 400) return;
-     const f = cs.fill; const m = f && f.match(/rgba?\(([^)]+)\)/); if (!m) return;
-     const v = m[1].split(',').map(Number); const a = (v.length > 3 ? v[3] : 1) * parseFloat(cs.fillOpacity || 1) * parseFloat(cs.opacity || 1);
-     if (a < 0.05) return;
-     const k = v.slice(0, 3).join(',');
+     const b = e.getBoundingClientRect();
+     const long = Math.max(b.width, b.height) >= 48;
+     if (b.width * b.height < 400 && !long) return;
+     if (basemapEl(e, s, b)) return;
+     if (hairlineBox(b) && !DATA_SERIES.test(blob(e)) && !classOrLegend(e, s)) return;
+     const fill = parsePaint(cs.fill, cs.fillOpacity, cs.opacity);
+     const stroke = parsePaint(cs.stroke, cs.strokeOpacity, cs.opacity);
+     const recordFill = keepPaint(fill);
+     const categoryFill = !!(recordFill && !isBg(fill.rgb) && Math.round(fill.a * 100) >= 35);
+     const recordStroke = keepPaint(stroke) && isGrey(stroke.rgb) && !categoryFill && !strokeDecor(e, s, cs);
+     if (!recordFill && !recordStroke) return;
      let mk = null;
      for (let n = e; n && n !== s.parentElement; n = n.parentElement) {
        if (isSpecial(n)) { mk = n; break; }
      }
-     let target = cols;
-     if (mk) {
-       if (mk !== s && s.contains(mk) && named(mk)) target = dcols;
+     let exempt = classOrLegend(e, s);
+     if (mk && !exempt) {
+       if (mk !== s && s.contains(mk) && named(mk)) exempt = true;
        else if (!seenBad.has(mk)) { seenBad.add(mk); badSpecial.push(mk === s ? 'svg root' : (mk.id || mk.tagName.toLowerCase())); }
      }
-     target[k] = (target[k] || 0) + 1;
-     // data-ramp="<group>" (on the mark or an ancestor) declares the fill as one shade in that group's own tint ramp
-     const rp = e.closest('[data-ramp]'); if (rp) { (ramps[k] = ramps[k] || []); const g = rp.getAttribute('data-ramp'); if (!ramps[k].includes(g)) ramps[k].push(g); }
+     const paint = (bucket, p) => { const k = p.rgb.join(','); bucket[k] = (bucket[k] || 0) + 1; return k; };
+     if (recordFill) {
+       const k = paint(exempt ? dcols : cols, fill);
+       // data-ramp="<group>" (on the mark or an ancestor) declares the fill as one shade in that group's own tint ramp
+       const rp = e.closest('[data-ramp]'); if (rp) { (ramps[k] = ramps[k] || []); const g = rp.getAttribute('data-ramp'); if (!ramps[k].includes(g)) ramps[k].push(g); }
+     }
+     if (recordStroke) paint(exempt ? dstrokes : strokes, stroke);
    });
-   out.svgs.push({i, id: s.id || s.getAttribute('class') || ('svg' + i), cols, dcols, ramps, badSpecial});
+   out.svgs.push({i, id: s.id || s.getAttribute('class') || ('svg' + i), cols, dcols, strokes, dstrokes, ramps, badSpecial});
  });
+ // Text size only. Secondary text, including --muted #9aa6b8, is not a data fill or stroke.
  document.querySelectorAll('svg text').forEach(t => {
    const b = t.getBoundingClientRect(); const cs = getComputedStyle(t);
    if (!b.width || cs.display === 'none' || cs.visibility === 'hidden' || !t.textContent.trim()) return;
@@ -474,9 +575,12 @@ def browser_checks(port, slugs):
                 for s in r["svgs"]:
                     live, exempt = defunct_split(s["cols"], s["dcols"])
                     s["cols"] = live
+                    dstrokes = s.get("dstrokes") or {}
+                    live_s, exempt_s = defunct_split(s.get("strokes") or {}, dstrokes)
+                    exempt += exempt_s
                     for b in s["badSpecial"]:
                         errs.append(f"{slug} svg '{s['id'][:30]}': special-category marker on {b} is not valid (must sit on a shape or <g> inside the svg, not the svg root, and carry an aria-label or <title>), so its greys are not exempt")
-                    n_all = sum(live.values()) + sum(s["dcols"].values())
+                    n_all = sum(live.values()) + sum(s["dcols"].values()) + sum(live_s.values()) + sum(dstrokes.values())
                     if exempt > n_all / 2:
                         errs.append(f"{slug} svg '{s['id'][:30]}': {exempt} of {n_all} shapes use the special-category grey exemption (limit: half of the svg); grey is only for special categories, not main categories such as group families, map layers or chart series")
                     cols = [tuple(map(int, k.split(","))) for k in s["cols"]]
@@ -484,6 +588,9 @@ def browser_checks(port, slugs):
                     greys = [c for c in data if is_grey(c)]
                     if greys:
                         errs.append(f"{slug} svg '{s['id'][:30]}': grey data fill(s) {['#%02x%02x%02x' % g for g in greys[:4]]}")
+                    sgreys = [c for c in (tuple(map(int, k.split(","))) for k in live_s) if not is_background(c) and is_grey(c)]
+                    if sgreys:
+                        errs.append(f"{slug} svg '{s['id'][:30]}': grey data stroke(s) {['#%02x%02x%02x' % g for g in sgreys[:4]]}")
                     chrom = [c for c in data if not is_grey(c)]
                     if len(chrom) > 2 and hue_spread(chrom) <= 40:
                         continue  # single-hue intensity ramp (guide rule 1): pairwise check not meaningful
