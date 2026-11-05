@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-05T13:56:22Z",
+ "as_of": "2026-11-05T16:58:03Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,165 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "60d02268e0",
+   "status": "confirmed",
+   "title": "Marina decomisa más de una tonelada de cocaína en Chiapas y Oaxaca; calcula golpe de 273 millones de pesos al narco Durante los operativos, realizados por personal de la Armada de México en funciones ",
+   "lang": "es",
+   "title_en": "Navy seizes more than a ton of cocaine in Chiapas and Oaxaca; estimates a 273-million-peso blow to drug traffickers. During the operations, carried out by Mexican Navy personnel acting as Coast Guard,",
+   "first_report": "2026-11-05T12:51:21Z",
+   "first_report_precision": "minute",
+   "first_source": "SSPC (Mexico)",
+   "region_ids": [
+    "MEX-2735",
+    "MEX-2723"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Proceso",
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2118325294029296009",
+     "time": "2026-11-05T12:51:21Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2118382835228959088",
+     "time": "2026-11-05T16:40:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "5cffa344e6",
+   "status": "official_claim_only",
+   "title": "Con información del Centro Nacional de Inteligencia, elementos del @GabSeguridadMX, en coordinación con la @SS_Edomex, @FiscaliaEdomex y @Pemex, ejecutaron 38 cateos en inmuebles del #EdoMex y #CDMX, ",
+   "lang": "es",
+   "title_en": "Acting on information from the National Intelligence Center, personnel from @GabSeguridadMX, in coordination with @SS_Edomex, @FiscaliaEdomex and @Pemex, carried out 38 search operations at properties in #EdoMex and #CDM",
+   "first_report": "2026-11-05T16:30:38Z",
+   "first_report_precision": "minute",
+   "first_source": "SSPC (Mexico)",
+   "region_ids": [
+    "MEX-2731",
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2118380479590109626",
+     "time": "2026-11-05T16:30:38Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "74480e8037",
+   "status": "single_source",
+   "title": "➡️ Marina ‘golpea’ al narcotráfico: Interceptan más de una tonelada de cocaína en las costas del Pacífico; hay un detenido 🟣🚔| Dos operaciones de vigilancia marítima en el Océano Pacífico permitieron ",
+   "lang": "es",
+   "title_en": "Navy 'strikes' drug trafficking: more than a ton of cocaine intercepted off the Pacific coast; one person arrested. Two maritime surveillance operations in the Pacific Ocean allowed",
+   "first_report": "2026-11-05T16:27:12Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2118379617056694767",
+     "time": "2026-11-05T16:27:12Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "af2e76a834",
+   "status": "single_source",
+   "title": "✍️ En México, los hallazgos de fosas clandestinas se acumulan sin que las autoridades ofrezcan respuestas suficientes sobre lo ocurrido. El caso de la “fosa de dientes de leche” en Zacapu, Michoacán, ",
+   "lang": "es",
+   "title_en": "In Mexico, discoveries of clandestine graves keep piling up without authorities offering sufficient answers about what happened. The case of the \"baby teeth grave\" in Zacapu, Michoacán,",
+   "first_report": "2026-11-05T15:56:41Z",
+   "first_report_precision": "minute",
+   "first_source": "Causa en Común",
+   "region_ids": [
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Causa en Común"
+   ],
+   "sources": [
+    {
+     "outlet": "causa",
+     "name": "Causa en Común",
+     "kind": "outlet",
+     "via": "X @causaencomun",
+     "url": "https://x.com/causaencomun/status/2118371935562223918",
+     "time": "2026-11-05T15:56:41Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "0d40e25e68",
+   "status": "single_source",
+   "title": "Harfuch y militares arman operativo sorpresa en Edomex: detienen a líder de una célula del CJNG y al sucesor de El Choko",
+   "lang": "es",
+   "title_en": "Harfuch and the military mount a surprise operation in Edomex: they arrest the leader of a CJNG cell and the successor of El Choko",
+   "first_report": "2026-11-05T14:02:13Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118343128243437726",
+     "time": "2026-11-05T14:02:13Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "ff078318f1",
    "status": "single_source",
@@ -38,41 +197,11 @@
    ]
   },
   {
-   "id": "60d02268e0",
-   "status": "official_claim_only",
-   "title": "En dos operaciones marítimas realizadas en costas de #Chiapas y #Oaxaca, personal de @SEMAR_mx, asegura más de una tonelada de cocaína.",
-   "lang": "es",
-   "title_en": "In two maritime operations off the coasts of #Chiapas and #Oaxaca, @SEMAR_mx personnel seized more than a ton of cocaine.",
-   "first_report": "2026-11-05T12:51:21Z",
-   "first_report_precision": "minute",
-   "first_source": "SSPC (Mexico)",
-   "region_ids": [
-    "MEX-2735",
-    "MEX-2723"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2118325294029296009",
-     "time": "2026-11-05T12:51:21Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
    "id": "09221333ad",
    "status": "single_source",
    "title": "Criminal turf wars are raging in the Mexican state of Sinaloa, killing and displacing thousands. The government should harness U.S. pressure to tackle the official collusion and corruption that sustai",
    "lang": "es",
-   "title_en": "Criminal turf wars are raging in the Mexican state of Sinaloa, killing and displacing thousands. The government should harness U.S. pressure to tackle the official collusion and corruption that sustai",
+   "title_en": "Criminal turf wars are raging in the Mexican state of Sinaloa, killing and displacing thousands. The government should harness U.S. pressure to tackle the official collusion and corruption that sustains organised crime.",
    "first_report": "2026-11-05T12:50:12Z",
    "first_report_precision": "minute",
    "first_source": "Crisis Group",
@@ -850,8 +979,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2735",
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2735"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1000,8 +1129,8 @@
    "first_report_precision": "minute",
    "first_source": "Primicias",
    "region_ids": [
-    "ARG-1271",
-    "BOL-1940"
+    "BOL-1940",
+    "ARG-1271"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -1100,8 +1229,8 @@
    "first_source": "Infobae",
    "region_ids": [
     "MEX-2711",
-    "MEX-2731",
-    "MEX-2734"
+    "MEX-2734",
+    "MEX-2731"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1270,8 +1399,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "b18"
+    "b18",
+    "cjng"
    ],
    "outlets": [
     "El Faro"
@@ -1384,9 +1513,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "chapitos",
     "sinaloa",
+    "chapitos",
+    "cjng",
     "mayiza"
    ],
    "outlets": [
@@ -1429,7 +1558,9 @@
    "group_ids": [],
    "outlets": [
     "Infobae",
-    "Milenio"
+    "Los Noticieristas",
+    "Milenio",
+    "SSPC (Mexico)"
    ],
    "sources": [
     {
@@ -1439,6 +1570,24 @@
      "via": "X @infobaemexico",
      "url": "https://x.com/infobaemexico/status/2117755586443948494",
      "time": "2026-11-03T23:07:32Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2117761066608259471",
+     "time": "2026-11-03T23:29:19Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2117763247705129468",
+     "time": "2026-11-03T23:37:59Z",
      "time_precision": "minute"
     },
     {
@@ -1644,8 +1793,8 @@
    "region_ids": [
     "MEX-2711",
     "MEX-2719",
-    "MEX-2718",
-    "MEX-2712"
+    "MEX-2727",
+    "MEX-2718"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1690,8 +1839,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
     "sinaloa",
+    "chapitos",
     "mayiza"
    ],
    "outlets": [
@@ -1719,8 +1868,8 @@
    "first_report_precision": "day",
    "first_source": "Milenio",
    "region_ids": [
-    "MEX-2716",
-    "MEX-2708"
+    "MEX-2708",
+    "MEX-2716"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2019,9 +2168,9 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "ARG-1271",
     "ECU-1270",
-    "BOL-1940"
+    "BOL-1940",
+    "ARG-1271"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -2399,55 +2548,6 @@
    ]
   },
   {
-   "id": "ad9903001d",
-   "status": "confirmed",
-   "title": "Tres hombres, uno de ellos menor de edad, presuntamente relacionados con el ataque a la fachada de la #FeriaGanadera en #Culiacán, fueron detenidos ayer lunes.",
-   "lang": "es",
-   "title_en": "Three men, one of them a minor, allegedly linked to the attack on the facade of the #LivestockFair in #Culiacán, were arrested yesterday, Monday.",
-   "first_report": "2026-11-03T15:44:57Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas",
-    "Ríodoce",
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2117644206491808123",
-     "time": "2026-11-03T15:44:57Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2117761066608259471",
-     "time": "2026-11-03T23:29:19Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2117763247705129468",
-     "time": "2026-11-03T23:37:59Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
    "id": "e70a8be2da",
    "status": "confirmed",
    "title": "Cae “El Patrón” o “El Señor” líder de Los Linos, cártel que opera en Morelos, informó García Harfuch",
@@ -2653,8 +2753,8 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2731",
-    "MEX-2732"
+    "MEX-2732",
+    "MEX-2731"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2743,10 +2843,10 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2721",
-    "MEX-2720",
+    "MEX-2727",
     "MEX-2711",
-    "MEX-2724"
+    "MEX-2726",
+    "MEX-2721"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2761,125 +2861,6 @@
      "via": "X @SSPCMexico",
      "url": "https://x.com/SSPCMexico/status/2117666014435631355",
      "time": "2026-11-03T17:11:36Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "ada416d82f",
-   "status": "single_source",
-   "title": "Narco disfraces y falsos embolsados dejan 125 detenidos en Los Mochis y Mazatlán",
-   "lang": "es",
-   "title_en": "Narco costumes and fake bagged bodies lead to 125 arrests in Los Mochis and Mazatlán",
-   "first_report": "2026-11-03T15:47:19Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117644804456640626",
-     "time": "2026-11-03T15:47:19Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "84cf19f91a",
-   "status": "single_source",
-   "title": "Les avancées sécuritaires réalisées par la RCA au cours des dernières années restent fragiles. La guerre au Soudan risque d’inverser cette dynamique en recréant, dans le nord-est du pays, les conditio",
-   "lang": "es",
-   "title_en": "The security gains made by the CAR in recent years remain fragile. The war in Sudan risks reversing this trend by recreating, in the northeast of the country, the conditions that had allowed armed groups to thrive.",
-   "first_report": "2026-11-03T15:45:12Z",
-   "first_report_precision": "minute",
-   "first_source": "Crisis Group",
-   "region_ids": [
-    "HTI-1386",
-    "HTI-1387"
-   ],
-   "country": "HTI",
-   "group_ids": [],
-   "outlets": [
-    "Crisis Group"
-   ],
-   "sources": [
-    {
-     "outlet": "crisisgroup",
-     "name": "Crisis Group",
-     "kind": "outlet",
-     "via": "X @CrisisGroup",
-     "url": "https://x.com/CrisisGroup/status/2117644271134060608",
-     "time": "2026-11-03T15:45:12Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "cbf917a0bb",
-   "status": "single_source",
-   "title": "De Sudamérica a Michoacán: así era la ruta del tráfico de cocaína de Los Pichilinguillos, célula vinculada a Cárteles Unidos",
-   "lang": "es",
-   "title_en": "From South America to Michoacán: this was the cocaine trafficking route of Los Pichilinguillos, a cell linked to Cárteles Unidos",
-   "first_report": "2026-11-03T14:43:26Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "unidos"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117628723595800646",
-     "time": "2026-11-03T14:43:26Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "b0ec0aed82",
-   "status": "single_source",
-   "title": "Un fin de semana de terror en el campo colombiano. Ataques en Tolima, Huila y Cauca dejaron muertos y heridos, incluida una bebé de dos meses. Mientras las ciudades celebraban Halloween, la guerra vol",
-   "lang": "es",
-   "title_en": "A weekend of terror in the Colombian countryside. Attacks in Tolima, Huila and Cauca left dead and wounded, including a two-month-old baby. While the cities celebrated Halloween, the war struck the civilian population ag",
-   "first_report": "2026-11-03T14:13:42Z",
-   "first_report_precision": "minute",
-   "first_source": "Fundación Paz & Reconciliación",
-   "region_ids": [
-    "COL-1402"
-   ],
-   "country": "COL",
-   "group_ids": [],
-   "outlets": [
-    "Fundación Paz & Reconciliación"
-   ],
-   "sources": [
-    {
-     "outlet": "pares",
-     "name": "Fundación Paz & Reconciliación",
-     "kind": "outlet",
-     "via": "X @parescolombia",
-     "url": "https://x.com/parescolombia/status/2117621241238483075",
-     "time": "2026-11-03T14:13:42Z",
      "time_precision": "minute"
     }
    ]
