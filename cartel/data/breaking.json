@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-05T02:01:18Z",
+ "as_of": "2026-11-05T11:05:02Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -9,11 +9,80 @@
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
   {
-   "id": "596a9be1a1",
+   "id": "cf586f4d0e",
    "status": "single_source",
+   "title": "Policía detiene a 14 presuntos miembros de Los Lobos vinculados a 60 homicidios, extorsiones y narcotráfico.",
+   "lang": "es",
+   "title_en": "Police arrest 14 alleged members of Los Lobos linked to 60 homicides, extortion and drug trafficking.",
+   "first_report": "2026-11-05T10:52:15Z",
+   "first_report_precision": "minute",
+   "first_source": "Primicias",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "lobos"
+   ],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "X @Primicias",
+     "url": "https://x.com/Primicias/status/2118295322992451913",
+     "time": "2026-11-05T10:52:15Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "9fbb929758",
+   "status": "confirmed",
+   "title": "Asesinan a luchador social y regidor morenista de Cuernavaca; había denunciado amenazas Gabriel Rivas Ríos tenía más de cinco décadas de trayectoria en movimientos sociales. Fue diputado local por el ",
+   "lang": "es",
+   "title_en": "Social activist and Morena councilor from Cuernavaca killed; he had reported threats. Gabriel Rivas Ríos had more than five decades in social movements. He was a local deputy for the",
+   "first_report": "2026-11-05T04:00:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Proceso",
+   "region_ids": [
+    "MEX-2732",
+    "NIC-24"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Animal Político",
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2118191577575407873",
+     "time": "2026-11-05T04:00:00Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "animal",
+     "name": "Animal Político",
+     "kind": "outlet",
+     "via": "X @Pajaropolitico",
+     "url": "https://x.com/Pajaropolitico/status/2118205626257969320",
+     "time": "2026-11-05T04:55:50Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "596a9be1a1",
+   "status": "confirmed",
    "title": "🚔⚖️ Alejandro Duarte, hermano del exgobernador de Chihuahua César Duarte, fue detenido en Parral durante una revisión en la que le encontraron presunta cocaína, marihuana y 11 cartuchos de uso exclusi",
    "lang": "es",
-   "title_en": "Alejandro Duarte, brother of former Chihuahua governor César Duarte, was arrested in Parral during a check in which he was found with suspected cocaine, marijuana and 11 rounds of ammunition reserved for",
+   "title_en": "Alejandro Duarte, brother of former Chihuahua governor César Duarte, was arrested in Parral during a check in which he was found with suspected cocaine, marijuana and 11 rounds of ammunition reserved for the Army.",
    "first_report": "2026-11-05T02:00:08Z",
    "first_report_precision": "minute",
    "first_source": "Animal Político",
@@ -23,7 +92,8 @@
    "country": "MEX",
    "group_ids": [],
    "outlets": [
-    "Animal Político"
+    "Animal Político",
+    "Ríodoce"
    ],
    "sources": [
     {
@@ -33,6 +103,180 @@
      "via": "X @Pajaropolitico",
      "url": "https://x.com/Pajaropolitico/status/2118161409074672024",
      "time": "2026-11-05T02:00:08Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2118191774648909901",
+     "time": "2026-11-05T04:00:47Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "3387a09fe8",
+   "status": "single_source",
+   "title": "La sentencia por el caso Blanqueo Fito fue notificada. El tribunal confirmó decomiso de bienes, pero aclaró que hay limitaciones. También se ordenó la repatriación del capital de una propiedad interna",
+   "lang": "es",
+   "title_en": "The ruling in the Blanqueo Fito case was notified. The court confirmed the seizure of assets but clarified that there are limitations. It also ordered the repatriation of capital from an international property",
+   "first_report": "2026-11-05T03:31:21Z",
+   "first_report_precision": "minute",
+   "first_source": "Primicias",
+   "region_ids": [],
+   "country": "ECU",
+   "group_ids": [
+    "choneros"
+   ],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "X @Primicias",
+     "url": "https://x.com/Primicias/status/2118184366727668090",
+     "time": "2026-11-05T03:31:21Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "7cc55984ed",
+   "status": "confirmed",
+   "title": "🚨🚔| Un hombre fue privado de su libertad con lujo de violencia por un grupo armado que viajaba a bordo de un vehículo de modelo reciente, durante la tarde de este miércoles, en la colonia Lázaro Cárde",
+   "lang": "es",
+   "title_en": "A man was violently abducted by an armed group traveling in a late-model vehicle on Wednesday afternoon in the Lázaro Cárdenas neighborhood, Culiacán.",
+   "first_report": "2026-11-04T23:34:03Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas",
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2118124647703032210",
+     "time": "2026-11-04T23:34:03Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2118132845038174535",
+     "time": "2026-11-05T00:06:37Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2118182746824528350",
+     "time": "2026-11-05T03:24:55Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "98c2626561",
+   "status": "single_source",
+   "title": "Detienen a tres personas acusadas de violar y golpear a niña de tres años en Chimalhuacán: entre ellas su madre y su padrastro",
+   "lang": "es",
+   "title_en": "Three people arrested accused of raping and beating a three-year-old girl in Chimalhuacán: among them her mother and stepfather",
+   "first_report": "2026-11-05T03:04:11Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118177528015659444",
+     "time": "2026-11-05T03:04:11Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "729937a496",
+   "status": "single_source",
+   "title": "Los Linos: 14 años de expansión en Morelos y una ruta de cocaína hacia Estados Unidos Autoridades federales han señalado al grupo criminal como uno de los principales generadores de violencia en la en",
+   "lang": "es",
+   "title_en": "Los Linos: 14 years of expansion in Morelos and a cocaine route to the United States. Federal authorities have flagged the criminal group as one of the main drivers of violence in the",
+   "first_report": "2026-11-05T02:40:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Proceso",
+   "region_ids": [
+    "MEX-2732"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2118171442634432998",
+     "time": "2026-11-05T02:40:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "318ed5c587",
+   "status": "single_source",
+   "title": "➡️ “La seguridad seguirá reforzándose”: gobernadora garantiza apoyo para la Feria Ganadera; desconoce amenazas al Palenque 🟣| Luego del ataque a balazos contra la fachada de las instalaciones de la Fe",
+   "lang": "es",
+   "title_en": "➡️ “Security will continue to be reinforced”: governor guarantees support for the Livestock Fair; says she is unaware of threats to the Palenque 🟣| After the shooting attack on the facade of the Livestock Fair facilities",
+   "first_report": "2026-11-05T02:37:12Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2118170740348305615",
+     "time": "2026-11-05T02:37:12Z",
      "time_precision": "minute"
     }
    ]
@@ -110,7 +354,7 @@
    "status": "single_source",
    "title": "Bojun “N”, alias “#ElChino”, presunto líder de una red internacional de lavado de dinero, tráfico de armas, tráfico de personas y extorsión a comerciantes. Las fuerzas de seguridad aseguraron más de 4",
    "lang": "es",
-   "title_en": "Bojun \"N\", alias \"El Chino\", alleged leader of an international network for money laundering, arms trafficking, human trafficking and extortion of merchants. Security forces seized more than 4",
+   "title_en": "Bojun \"N\", alias \"El Chino\", alleged leader of an international network for money laundering, arms trafficking, human trafficking and extortion of merchants. Security forces seized more than 43.7 million pesos in cash, s",
    "first_report": "2026-11-05T01:05:00Z",
    "first_report_precision": "minute",
    "first_source": "Ríodoce",
@@ -139,7 +383,7 @@
    "status": "single_source",
    "title": "🚨 La policía española investiga por presunto homicidio imprudente la muerte del futbolista Jesús de Miguel, de 30 años, quien sufrió un choque con el portero Jesús Owono durante un partido. Fue trasla",
    "lang": "es",
-   "title_en": "Spanish police are investigating as possible involuntary manslaughter the death of 30-year-old footballer Jesús de Miguel, who collided with goalkeeper Jesús Owono during a match. He was taken",
+   "title_en": "Spanish police are investigating as possible involuntary manslaughter the death of 30-year-old footballer Jesús de Miguel, who collided with goalkeeper Jesús Owono during a match. He was taken to hospital, where his deat",
    "first_report": "2026-11-05T00:37:32Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
@@ -217,46 +461,6 @@
      "via": "X @ArmandoInfo",
      "url": "https://x.com/ArmandoInfo/status/2118134951715492326",
      "time": "2026-11-05T00:15:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "7cc55984ed",
-   "status": "confirmed",
-   "title": "🚨🚔| Un hombre fue privado de su libertad con lujo de violencia por un grupo armado que viajaba a bordo de un vehículo de modelo reciente, durante la tarde de este miércoles, en la colonia Lázaro Cárde",
-   "lang": "es",
-   "title_en": "A man was violently abducted by an armed group traveling in a late-model vehicle on Wednesday afternoon in the Lázaro Cárdenas neighborhood",
-   "first_report": "2026-11-04T23:34:03Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711",
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas",
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2118124647703032210",
-     "time": "2026-11-04T23:34:03Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2118132845038174535",
-     "time": "2026-11-05T00:06:37Z",
      "time_precision": "minute"
     }
    ]
@@ -698,8 +902,8 @@
    "first_report_precision": "minute",
    "first_source": "Primicias",
    "region_ids": [
-    "ARG-1271",
-    "BOL-1940"
+    "BOL-1940",
+    "ARG-1271"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -968,8 +1172,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "b18"
+    "b18",
+    "cjng"
    ],
    "outlets": [
     "El Faro"
@@ -1129,8 +1333,8 @@
    "region_ids": [
     "MEX-2719",
     "MEX-2711",
-    "MEX-2727",
-    "MEX-2718"
+    "MEX-2723",
+    "MEX-2712"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1194,10 +1398,10 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "sinaloa",
     "mayiza",
-    "chapitos"
+    "chapitos",
+    "cjng",
+    "sinaloa"
    ],
    "outlets": [
     "Infobae"
@@ -1456,9 +1660,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
     "mayiza",
-    "chapitos"
+    "chapitos",
+    "sinaloa"
    ],
    "outlets": [
     "Infobae"
@@ -1485,8 +1689,8 @@
    "first_report_precision": "day",
    "first_source": "Milenio",
    "region_ids": [
-    "MEX-2708",
-    "MEX-2716"
+    "MEX-2716",
+    "MEX-2708"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -1726,8 +1930,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "pcc",
-    "cv"
+    "cv",
+    "pcc"
    ],
    "outlets": [
     "Infobae"
@@ -1754,9 +1958,9 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "ARG-1271",
+    "ECU-1270",
     "BOL-1940",
-    "ECU-1270"
+    "ARG-1271"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -1993,8 +2197,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2706"
+    "MEX-2706",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
@@ -2447,10 +2651,10 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2727",
     "MEX-2731",
     "MEX-2724",
-    "MEX-2711"
+    "MEX-2725",
+    "MEX-2720"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2508,8 +2712,8 @@
    "first_report_precision": "minute",
    "first_source": "Crisis Group",
    "region_ids": [
-    "HTI-1386",
-    "HTI-1387"
+    "HTI-1387",
+    "HTI-1386"
    ],
    "country": "HTI",
    "group_ids": [],
@@ -2600,8 +2804,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "pcc",
-    "cv"
+    "cv",
+    "pcc"
    ],
    "outlets": [
     "BBC"
@@ -2700,10 +2904,10 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "sinaloa",
     "mayiza",
-    "chapitos"
+    "chapitos",
+    "cjng",
+    "sinaloa"
    ],
    "outlets": [
     "Excélsior"
@@ -2764,8 +2968,8 @@
    "country": "COL",
    "group_ids": [
     "clan",
-    "exfarc",
-    "eln"
+    "eln",
+    "exfarc"
    ],
    "outlets": [
     "Infobae"
@@ -2974,8 +3178,8 @@
    "region_ids": [
     "COL-1314",
     "COL-1412",
-    "COL-1408",
-    "COL-1399"
+    "COL-1399",
+    "COL-1408"
    ],
    "country": "COL",
    "group_ids": [
@@ -3006,8 +3210,8 @@
    "first_report_precision": "day",
    "first_source": "El Tiempo",
    "region_ids": [
-    "VEN-43",
-    "VEN-41"
+    "VEN-41",
+    "VEN-43"
    ],
    "country": "VEN",
    "group_ids": [
@@ -3125,8 +3329,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "ARG-1271",
-    "BOL-1940"
+    "BOL-1940",
+    "ARG-1271"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -3279,8 +3483,8 @@
    "first_report_precision": "day",
    "first_source": "La Jornada",
    "region_ids": [
-    "MEX-2730",
-    "MEX-2732"
+    "MEX-2732",
+    "MEX-2730"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -3355,123 +3559,6 @@
      "url": "https://zetatijuana.com/2026/11/localizan-nueva-fosa-clandestina-en-el-poblado-miguel-aleman-en-mexicali-2/?utm_source=rss&utm_medium=rss&utm_campaign=localizan-nueva-fosa-clandestina-en-el-poblado-miguel-aleman-en-mexicali-2",
      "time": "2026-11-03T12:00:00Z",
      "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "9b02a86772",
-   "status": "single_source",
-   "title": "🚨🚔| Detienen a tres civiles armados con presunta droga; se les atribuye también su participación en el ataque a balazos a la fachada de la Feria Ganadera 🎡🎠, en #Culiacán",
-   "lang": "es",
-   "title_en": "🚨🚔| Three armed civilians arrested with suspected drugs; they are also accused of taking part in the shooting attack on the facade of the Livestock Fair 🎡🎠 in #Culiacán",
-   "first_report": "2026-11-03T05:40:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Los Noticieristas",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Los Noticieristas"
-   ],
-   "sources": [
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2117491966015397969",
-     "time": "2026-11-03T05:40:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "748a8c6db9",
-   "status": "single_source",
-   "title": "Un hombre que se encontraba privado de la #libertad por un grupo armado fue dejado en libertad con vida atado de las manos con cinta canela y cubierto del rostro frente al parque deportivo del fraccio",
-   "lang": "es",
-   "title_en": "A man who had been held by an armed group was released alive, his hands bound with duct tape and his face covered, in front of the sports park of the Valle Dorado subdivision, La Conquista sector, in northern #Culiacán.",
-   "first_report": "2026-11-03T04:12:18Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2117469895159861398",
-     "time": "2026-11-03T04:12:18Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "b9567c3fbe",
-   "status": "single_source",
-   "title": "El secretario de Seguridad Pública de #Mazatlán, #GabinoUlisesJacobo Guerrero, confirmó que el viernes un grupo armado entró a las instalaciones de la #Jumapam y que el caso quedó a cargo de la Fiscal",
-   "lang": "es",
-   "title_en": "#Mazatlán's Public Security Secretary, #GabinoUlisesJacobo Guerrero, confirmed that on Friday an armed group entered the #Jumapam facilities and that the case was handed to the State Attorney General's Office.",
-   "first_report": "2026-11-03T03:57:13Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2117466098492993725",
-     "time": "2026-11-03T03:57:13Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "9c2daac094",
-   "status": "single_source",
-   "title": "Costa Rica is a key freight route connecting the ports of Panama with the rest of Central America. But transport costs are rising as trucks travelling these routes are falling prey to violent and soph",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-11-03T02:43:51Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [
-    "PAN-1340",
-    "PRY-607"
-   ],
-   "country": "PAN",
-   "group_ids": [],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2117447636877762578",
-     "time": "2026-11-03T02:43:51Z",
-     "time_precision": "minute"
     }
    ]
   }
