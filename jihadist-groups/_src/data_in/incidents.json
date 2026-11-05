@@ -1,24 +1,9 @@
 {
  "window": [
-  "2026-10-05",
-  "2026-11-04"
+  "2026-10-06",
+  "2026-11-05"
  ],
  "incidents": [
-  {
-   "group": "houthis",
-   "date": "2026-10-05",
-   "date_precision": "day",
-   "place": "Mokha and Bab el-Mandeb area, Yemen",
-   "lat": 13.318,
-   "lon": 43.25,
-   "description": "Saudi-backed Yemeni forces say they retook areas around the Bab el-Mandeb strait; the Houthis deny losing ground.",
-   "url": "https://apnews.com/article/yemen-houthis-iran-saudi-arabia-red-sea-taiz-e87beb84a0d146e4f0546b50508f7e32",
-   "urls_extra": [
-    "https://english.alarabiya.net/News/middle-east/2026/10/05/yemeni-government-forces-retake-strategic-red-sea-port-of-mokha"
-   ],
-   "confidence": "low",
-   "note": "Contested: government claim versus Houthi denial."
-  },
   {
    "group": "jnim",
    "date": "2026-10-06",
@@ -47,6 +32,19 @@
    ],
    "confidence": "low",
    "note": "Source for the two named incidents is a weak tracker (trackingterrorism.org); the ReliefWeb monitor confirms a wave of violence in September–October only."
+  },
+  {
+   "group": "is-iraq",
+   "date": "2026-10-06",
+   "date_precision": "day",
+   "place": "Hawija District, Kirkuk, Iraq",
+   "lat": 35.323,
+   "lon": 43.782,
+   "description": "Islamic State fighters disable thermal cameras and attack a Popular Mobilization Forces brigade, a day after hitting a Federal Police brigade, in the group's first attacks on Iraqi government forces since the US-led coalition mission ended on 30 September. An explosive at an Islamic State hideout in Kirkuk kills an Iraqi brigadier general on 14 October.",
+   "url": "https://thesoufancenter.org/intelbrief-2026-november-5/",
+   "urls_extra": [],
+   "confidence": "medium",
+   "note": "Single analytic source citing Iraqi officials."
   },
   {
    "group": "jnim",
@@ -322,6 +320,21 @@
    "note": "Single source: Nigerian military statement, not independently verified."
   },
   {
+   "group": "al-shabaab",
+   "date": "2026-10-28",
+   "date_precision": "day",
+   "place": "Galgala mountains, Bari, Puntland, Somalia",
+   "lat": 11.194,
+   "lon": 49.006,
+   "description": "Al-Shabaab mortar fire kills at least three civilians and wounds seven in Galgala, after roadside bomb and mortar attacks on Puntland forces there since 19 October, its first in the area in years.",
+   "url": "https://www.hiiraan.com/security4/2026/Oct/206631/at_least_three_civilians_killed_seven_wounded_in_alshabab_mortar_shelling_in_puntland.aspx",
+   "urls_extra": [
+    "https://somalireport.com/article/626/al-shabaab-shelling-kills-3-civilians-wounds-7-in-puntlands-galgala-mountains",
+    "https://www.criticalthreats.org/analysis/al-shabaab-somalia-algeria-niger-libya-morocco-haftar"
+   ],
+   "confidence": "high"
+  },
+  {
    "group": "jnim",
    "date": "2026-10-29",
    "date_precision": "day",
@@ -393,6 +406,21 @@
    "note": null
   },
   {
+   "group": "is-mozambique",
+   "date": "2026-11-01",
+   "date_precision": "week to 1 Nov",
+   "place": "Between Muidumbe and Mueda districts, Cabo Delgado, Mozambique",
+   "lat": -11.784,
+   "lon": 39.912,
+   "description": "Islamic State Mozambique fighters kill 14 people from Muidumbe district, beheading them, and claim the attacks; Mozambique's government confirms new killings and abductions in Muidumbe villages on 4 November.",
+   "url": "https://aimnews.org/2026/11/04/terrorists-kill-14-in-low-lying-area-between-muidumbe-and-mueda/",
+   "urls_extra": [
+    "https://www.dw.com/pt-002/governo-confirma-novos-ataques-e-raptos-em-cabo-delgado/a-79857205"
+   ],
+   "confidence": "medium",
+   "note": "The toll comes from local sources and the group's claim; the government confirms killings without a figure."
+  },
+  {
    "group": "houthis",
    "date": "2026-11-02",
    "date_precision": "day",
@@ -406,6 +434,48 @@
    ],
    "confidence": "medium",
    "note": "Front-line positions from military sources cited by agencies; coordinates are the district center, approximate."
+  },
+  {
+   "group": "hezbollah",
+   "date": "2026-11-03",
+   "date_precision": "day",
+   "place": "Homs oil refinery, Syria",
+   "lat": 34.718,
+   "lon": 36.638,
+   "description": "Syria's General Intelligence Service says it foils a Hezbollah-linked plot to bomb the Homs oil refinery, one of Syria's two refineries, and arrests two people with explosive devices. Hezbollah denies any presence in Syria.",
+   "url": "https://www.aljazeera.com/news/2026/11/3/syria-arrests-cell-it-links-to-isis-over-plot-against-oil-refinery",
+   "urls_extra": [],
+   "confidence": "low",
+   "note": "Contested: Syrian government claim versus Hezbollah denial."
+  },
+  {
+   "group": "houthis",
+   "date": "2026-11-04",
+   "date_precision": "day",
+   "place": "Al-Allalah military camp, Qatabah, Al-Dhale, Yemen",
+   "lat": 13.852,
+   "lon": 44.703,
+   "description": "A Houthi ballistic missile hits a training camp for new recruits in northern Al-Dhale, and another strikes a detention site in Lahj. The Houthis also claim missile and drone strikes on Saudi military sites in Jazan and Najran.",
+   "url": "https://south24.net/news/newse.php?nid=5846&tags=initial-toll-9-dead-50-wounded-in-houthi-attacks-on-aldhalea-lahj",
+   "urls_extra": [
+    "https://m.aa.com.tr/en/middle-east/4-airstrikes-target-houthi-weapons-depots-military-vehicles-in-yemen-report/4110961",
+    "https://www.aljazeera.net/news/liveblog/2026/11/4/%d8%a7%d9%84%d9%8a%d9%85%d9%86-%d9%85%d8%a8%d8%a7%d8%b4%d8%b1-%d8%a7%d9%84%d8%ae%d8%a7%d8%b1%d8%ac%d9%8a%d8%a9-%d8%a7%d9%84%d9%8a%d9%85%d9%86%d9%8a%d8%a9-%d8%aa%d8%af%d9%8a%d9%86"
+   ],
+   "confidence": "medium",
+   "note": "Tolls differ: South24 gives 9 dead and 50 wounded in the two strikes (initial count), Anadolu Agency 14 dead and more than 30 wounded at the camp. The Saudi strikes rest on the Houthi claim."
+  },
+  {
+   "group": "houthis",
+   "date": "2026-11-04",
+   "date_precision": "day",
+   "place": "Al-Maqatirah, Lahj, Yemen",
+   "lat": 13.2,
+   "lon": 44.181,
+   "description": "Government forces, backed by the Giants Brigades, retake positions in Al-Maqatirah, including a height over the Aden–Turbah road, and push back Houthi attacks toward Tur al-Bahah, two days after the Houthi advance there.",
+   "url": "https://english.aawsat.com/arab-world/5337643-yemeni-govt-forces-regain-initiative-against-houthis",
+   "urls_extra": [],
+   "confidence": "low",
+   "note": "Rests on government-side field sources."
   }
  ],
  "note": "Groups with no incident listed: no strategic-scale event was verified in the window with a usable source."
