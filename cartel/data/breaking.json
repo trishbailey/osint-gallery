@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-05T20:01:08Z",
+ "as_of": "2026-11-05T23:06:38Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -9,11 +9,139 @@
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
   {
+   "id": "dc48b03145",
+   "status": "official_claim_only",
+   "title": "𝗥𝗲𝘄𝗮𝗿𝗱 𝗢𝗳𝗳𝗲𝗿𝘀 𝗨𝗽 𝘁𝗼 $𝟱𝟬 𝗠𝗶𝗹𝗹𝗶𝗼𝗻 𝗳𝗼𝗿 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻 𝗟𝗲𝗮𝗱𝗶𝗻𝗴 𝘁𝗼 𝗔𝗿𝗿𝗲𝘀𝘁𝘀 𝗮𝗻𝗱/𝗼𝗿 𝗖𝗼𝗻𝘃𝗶𝗰𝘁𝗶𝗼𝗻𝘀 𝗼𝗳 𝗙𝗼𝗿𝗲𝗶𝗴𝗻 𝗧𝗲𝗿𝗿𝗼𝗿𝗶𝘀𝘁 𝗢𝗿𝗴𝗮𝗻𝗶𝘇𝗮𝘁𝗶𝗼𝗻 𝗧𝗿𝗲𝗻 𝗱𝗲 𝗔𝗿𝗮𝗴𝘂𝗮 (𝗧𝗱𝗔) 𝗟𝗲𝗮𝗱𝗲𝗿𝘀",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-05T22:20:29Z",
+   "first_report_precision": "minute",
+   "first_source": "DEA",
+   "region_ids": [
+    "NIC-24"
+   ],
+   "country": null,
+   "group_ids": [
+    "tda"
+   ],
+   "outlets": [
+    "DEA"
+   ],
+   "sources": [
+    {
+     "outlet": "dea",
+     "name": "DEA",
+     "kind": "official",
+     "via": "X @DEAHQ",
+     "url": "https://x.com/DEAHQ/status/2118468523441701072",
+     "time": "2026-11-05T22:20:29Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "dea",
+     "name": "DEA",
+     "kind": "official",
+     "via": "X @DEAHQ",
+     "url": "https://x.com/DEAHQ/status/2118470664868770104",
+     "time": "2026-11-05T22:29:00Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "dea",
+     "name": "DEA",
+     "kind": "official",
+     "via": "X @DEAHQ",
+     "url": "https://x.com/DEAHQ/status/2118474750200590725",
+     "time": "2026-11-05T22:45:14Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "ef5d1f1ba5",
+   "status": "single_source",
+   "title": "➡️ ¡Acusado en EU! Luis Benítez, juez mexicano, cae en Colombia por liberar a operador del exolímpico Ryan Wedding. #Internacional 🔴 | El juez federal mexicano Luis Benítez Alcántara fue detenido en C",
+   "lang": "es",
+   "title_en": "➡️ Accused in the US! Luis Benítez, Mexican judge, falls in Colombia for freeing an associate of former Olympian Ryan Wedding. #Internacional 🔴 | Mexican federal judge Luis Benítez Alcántara was detained in C",
+   "first_report": "2026-11-05T22:12:38Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2118466547849289929",
+     "time": "2026-11-05T22:12:38Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "60d02268e0",
+   "status": "confirmed",
+   "title": "Marina decomisa más de una tonelada de cocaína en Chiapas y Oaxaca; calcula golpe de 273 millones de pesos al narco Durante los operativos, realizados por personal de la Armada de México en funciones ",
+   "lang": "es",
+   "title_en": "Navy seizes more than a ton of cocaine in Chiapas and Oaxaca; estimates a 273-million-peso blow to drug traffickers. During the operations, carried out by Mexican Navy personnel acting as Coast Guard, 32 packages weighin",
+   "first_report": "2026-11-05T12:51:21Z",
+   "first_report_precision": "minute",
+   "first_source": "SSPC (Mexico)",
+   "region_ids": [
+    "MEX-2735",
+    "MEX-2723"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Animal Político",
+    "Proceso",
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2118325294029296009",
+     "time": "2026-11-05T12:51:21Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2118382835228959088",
+     "time": "2026-11-05T16:40:00Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "animal",
+     "name": "Animal Político",
+     "kind": "outlet",
+     "via": "X @Pajaropolitico",
+     "url": "https://x.com/Pajaropolitico/status/2118455818286985633",
+     "time": "2026-11-05T21:30:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
    "id": "9861c32c7d",
    "status": "single_source",
    "title": "David Alejandro “N”, alias “Doble TT”, fue detenido por su probable participación en el homicidio de Abraham Ruiz Aguilar, empresario originario de Córdoba, Veracruz, atacado cuando viajaba en un BMW ",
    "lang": "es",
-   "title_en": "David Alejandro “N”, alias “Doble TT”, was detained for his probable role in the killing of Abraham Ruiz Aguilar, a businessman from Córdoba, Veracruz, attacked while traveling in a BMW",
+   "title_en": "David Alejandro “N”, alias “Doble TT”, was detained for his probable role in the killing of Abraham Ruiz Aguilar, a businessman from Córdoba, Veracruz, attacked while traveling in a white BMW",
    "first_report": "2026-11-05T19:57:33Z",
    "first_report_precision": "minute",
    "first_source": "Infobae",
@@ -82,13 +210,13 @@
    "status": "single_source",
    "title": "➡️ Cae en Sonora implicado en feminicidio de madre atacada cuando llevaba a su bebé a guardería en Escuinapa 🚨 ¡Lo detienen en Sonora por feminicidio en Escuinapa! Jesús “N” es señalado por el ataque ",
    "lang": "es",
-   "title_en": "➡️ Man implicated in feminicide of mother attacked while taking her baby to daycare in Escuinapa falls in Sonora 🚨 Detained in Sonora for Escuinapa feminicide! Jesús “N” is named in the attack",
+   "title_en": "➡️ Man implicated in feminicide of mother attacked while taking her baby to daycare in Escuinapa falls in Sonora 🚨 Detained in Sonora for Escuinapa feminicide! Jesús “N” is named in the armed attack on a mother and her o",
    "first_report": "2026-11-05T18:14:48Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
    "region_ids": [
-    "MEX-2712",
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2712"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -137,46 +265,6 @@
    ]
   },
   {
-   "id": "60d02268e0",
-   "status": "confirmed",
-   "title": "Marina decomisa más de una tonelada de cocaína en Chiapas y Oaxaca; calcula golpe de 273 millones de pesos al narco Durante los operativos, realizados por personal de la Armada de México en funciones ",
-   "lang": "es",
-   "title_en": "Navy seizes more than a ton of cocaine in Chiapas and Oaxaca; estimates a 273-million-peso blow to drug traffickers. During the operations, carried out by Mexican Navy personnel acting as Coast Guard, 32 packages weighin",
-   "first_report": "2026-11-05T12:51:21Z",
-   "first_report_precision": "minute",
-   "first_source": "SSPC (Mexico)",
-   "region_ids": [
-    "MEX-2735",
-    "MEX-2723"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Proceso",
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2118325294029296009",
-     "time": "2026-11-05T12:51:21Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2118382835228959088",
-     "time": "2026-11-05T16:40:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
    "id": "5cffa344e6",
    "status": "official_claim_only",
    "title": "Con información del Centro Nacional de Inteligencia, elementos del @GabSeguridadMX, en coordinación con la @SS_Edomex, @FiscaliaEdomex y @Pemex, ejecutaron 38 cateos en inmuebles del #EdoMex y #CDMX, ",
@@ -186,8 +274,8 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2727",
-    "MEX-2731"
+    "MEX-2731",
+    "MEX-2727"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -410,9 +498,9 @@
    ],
    "country": "MEX",
    "group_ids": [
+    "chapitos",
     "sinaloa",
-    "mayiza",
-    "chapitos"
+    "mayiza"
    ],
    "outlets": [
     "Infobae",
@@ -550,8 +638,8 @@
    "region_ids": [
     "MEX-2711",
     "MEX-2735",
-    "MEX-2734",
-    "MEX-2731"
+    "MEX-2731",
+    "MEX-2734"
    ],
    "country": "MEX",
    "group_ids": [
@@ -799,8 +887,8 @@
    "group_ids": [
     "sinaloa",
     "cjng",
-    "mayiza",
-    "chapitos"
+    "chapitos",
+    "mayiza"
    ],
    "outlets": [
     "El Universal"
@@ -1073,8 +1161,8 @@
    "first_source": "El Imparcial",
    "region_ids": [
     "MEX-2727",
-    "MEX-2736",
-    "MEX-2706"
+    "MEX-2706",
+    "MEX-2736"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -1123,14 +1211,14 @@
    "first_report_precision": "day",
    "first_source": "El Tiempo",
    "region_ids": [
-    "COL-1399",
+    "COL-1425",
     "COL-1314",
-    "COL-1425"
+    "COL-1399"
    ],
    "country": "COL",
    "group_ids": [
-    "clan",
-    "exfarc"
+    "exfarc",
+    "clan"
    ],
    "outlets": [
     "El Tiempo"
@@ -1192,8 +1280,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "clan",
-    "exfarc"
+    "exfarc",
+    "clan"
    ],
    "outlets": [
     "El Tiempo"
@@ -1315,8 +1403,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2719",
-    "MEX-2732"
+    "MEX-2732",
+    "MEX-2719"
    ],
    "country": "MEX",
    "group_ids": [
@@ -1353,9 +1441,9 @@
    "country": "MEX",
    "group_ids": [
     "cjng",
+    "chapitos",
     "sinaloa",
-    "lnfm",
-    "chapitos"
+    "lnfm"
    ],
    "outlets": [
     "Infobae"
@@ -1386,9 +1474,9 @@
    ],
    "country": "MEX",
    "group_ids": [
+    "chapitos",
     "sinaloa",
-    "mayiza",
-    "chapitos"
+    "mayiza"
    ],
    "outlets": [
     "Infobae"
@@ -1419,8 +1507,8 @@
    ],
    "country": "BRA",
    "group_ids": [
-    "pcc",
-    "cv"
+    "cv",
+    "pcc"
    ],
    "outlets": [
     "InSight Crime"
@@ -1539,9 +1627,9 @@
    ],
    "country": "MEX",
    "group_ids": [
+    "chapitos",
     "sinaloa",
-    "mayiza",
-    "chapitos"
+    "mayiza"
    ],
    "outlets": [
     "MVS Noticias"
@@ -1626,8 +1714,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "ARG-1271",
-    "BOL-1940"
+    "BOL-1940",
+    "ARG-1271"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -1660,8 +1748,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "eln",
-    "tda"
+    "tda",
+    "eln"
    ],
    "outlets": [
     "Infobae"
@@ -1717,8 +1805,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "GTM-1963",
-    "GTM-1951"
+    "GTM-1951",
+    "GTM-1963"
    ],
    "country": "GTM",
    "group_ids": [],
@@ -1838,8 +1926,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "eln",
-    "tda"
+    "tda",
+    "eln"
    ],
    "outlets": [
     "Semana"
@@ -1895,8 +1983,8 @@
    "first_report_precision": "minute",
    "first_source": "Proceso",
    "region_ids": [
-    "NIC-24",
-    "MEX-2732"
+    "MEX-2732",
+    "NIC-24"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2612,8 +2700,8 @@
    "first_report_precision": "minute",
    "first_source": "Primicias",
    "region_ids": [
-    "ARG-1271",
-    "BOL-1940"
+    "BOL-1940",
+    "ARG-1271"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -2949,9 +3037,9 @@
    "country": "MEX",
    "group_ids": [
     "cjng",
+    "chapitos",
     "sinaloa",
-    "mayiza",
-    "chapitos"
+    "mayiza"
    ],
    "outlets": [
     "Infobae"
@@ -2980,8 +3068,8 @@
    "region_ids": [
     "MEX-2711",
     "MEX-2719",
-    "MEX-2727",
-    "MEX-2718"
+    "MEX-2718",
+    "MEX-2727"
    ],
    "country": "MEX",
    "group_ids": [
@@ -3026,9 +3114,9 @@
    ],
    "country": "MEX",
    "group_ids": [
+    "chapitos",
     "sinaloa",
-    "mayiza",
-    "chapitos"
+    "mayiza"
    ],
    "outlets": [
     "Infobae"
@@ -3055,8 +3143,8 @@
    "first_report_precision": "day",
    "first_source": "Milenio",
    "region_ids": [
-    "MEX-2708",
-    "MEX-2716"
+    "MEX-2716",
+    "MEX-2708"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -3358,8 +3446,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "pcc",
-    "cv"
+    "cv",
+    "pcc"
    ],
    "outlets": [
     "Infobae"
@@ -3386,9 +3474,9 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "ARG-1271",
+    "BOL-1940",
     "ECU-1270",
-    "BOL-1940"
+    "ARG-1271"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -3625,8 +3713,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2706"
+    "MEX-2706",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [
@@ -3775,8 +3863,8 @@
    "first_report_precision": "minute",
    "first_source": "Animal Político",
    "region_ids": [
-    "MEX-2731",
-    "MEX-2732"
+    "MEX-2732",
+    "MEX-2731"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -3820,104 +3908,6 @@
      "via": "X @Riodoce_mx",
      "url": "https://x.com/Riodoce_mx/status/2117761239736897699",
      "time": "2026-11-03T23:30:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "e29b836347",
-   "status": "single_source",
-   "title": "The ELN has established itself in the Venezuelan states bordering Colombia, where it engages in lucrative crimes. In Zulia, its advance was particularly successful, giving the ELN access to Venezuela’",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-11-03T22:03:53Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [
-    "VEN-31"
-   ],
-   "country": "VEN",
-   "group_ids": [
-    "eln"
-   ],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2117739569554567577",
-     "time": "2026-11-03T22:03:53Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "c1762effa8",
-   "status": "single_source",
-   "title": "Qué dijo El Mayo Zambada de la crisis de los 130 mil desaparecidos en el país",
-   "lang": "es",
-   "title_en": "What El Mayo Zambada said about the crisis of the 130,000 missing in the country",
-   "first_report": "2026-11-03T20:10:36Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117711059448483914",
-     "time": "2026-11-03T20:10:36Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117733557221155291",
-     "time": "2026-11-03T21:40:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "a2ff308a85",
-   "status": "single_source",
-   "title": "🎙️Organized crime has shaped the lives of generations of residents of the Colombian city of In Buenaventura, Colombia, In our latest podcast episode, the story of a mother’s search for her three disap",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-11-03T20:37:06Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [
-    "COL-1408"
-   ],
-   "country": "COL",
-   "group_ids": [],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2117717728387534901",
-     "time": "2026-11-03T20:37:06Z",
      "time_precision": "minute"
     }
    ]
