@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-04T23:04:21Z",
+ "as_of": "2026-11-05T02:01:18Z",
  "window_days": 7,
  "note": "Posts from verified professional, researcher and official X accounts only, tagged to regions and groups by pipeline/tag_x.py. Official accounts are labelled 'Official statement'. Tags are keyword matches and can be wrong; open the post.",
  "accounts": [
@@ -28,12 +28,218 @@
  ],
  "posts": [
   {
+   "id": "2118161409074672024",
+   "handle": "Pajaropolitico",
+   "url": "https://x.com/Pajaropolitico/status/2118161409074672024",
+   "created_at": "2026-11-05T02:00:08.000Z",
+   "text": "🚔⚖️ Alejandro Duarte, hermano del exgobernador de Chihuahua César Duarte, fue detenido en Parral durante una revisión en la que le encontraron presunta cocaína, marihuana y 11 cartuchos de uso exclusivo del Ejército. https://t.co/SaIvzc6WoG",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2709"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Alejandro Duarte, brother of former Chihuahua governor César Duarte, was arrested in Parral during a check in which he was found with suspected cocaine, marijuana and 11 rounds of ammunition reserved for the Army."
+  },
+  {
+   "id": "2118153830231576614",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2118153830231576614",
+   "created_at": "2026-11-05T01:30:01.000Z",
+   "text": "Reporteros Sin Fronteras incluye al CJNG en la lista de “depredadores de la libertad de prensa” por ataques contra periodistas https://t.co/XAJNqTo2ia",
+   "lang": "und",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Reporters Without Borders includes the CJNG on its list of \"predators of press freedom\" over attacks on journalists"
+  },
+  {
+   "id": "2118148878134284366",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2118148878134284366",
+   "created_at": "2026-11-05T01:10:20.000Z",
+   "text": "La fiscalía solicitó además cinco años de libertad supervisada para Antonio Oseguera Cervantes, mientras que la defensa del exintegrante del CJNG pidió una condena de apenas 20 años para su cliente https://t.co/rZnjYLje4S https://t.co/GPnZk9vDxm",
+   "lang": "und",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Prosecutors also requested five years of supervised release for Antonio Oseguera Cervantes, while the defense of the former CJNG member asked for a sentence of just 20 years for its client"
+  },
+  {
+   "id": "2118147535328211390",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2118147535328211390",
+   "created_at": "2026-11-05T01:05:00.000Z",
+   "text": "Bojun “N”, alias “#ElChino”, presunto líder de una red internacional de lavado de dinero, tráfico de armas, tráfico de personas y extorsión a comerciantes. Las fuerzas de seguridad aseguraron más de 43.7 millones de pesos en efectivo, divididos en moneda nacional y dólares",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Bojun \"N\", alias \"El Chino\", alleged leader of an international network for money laundering, arms trafficking, human trafficking and extortion of merchants. Security forces seized more than 43.7 million pesos in cash, split between Mexican pesos and dollars"
+  },
+  {
+   "id": "2118140622015979873",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2118140622015979873",
+   "created_at": "2026-11-05T00:37:32.000Z",
+   "text": "🚨 La policía española investiga por presunto homicidio imprudente la muerte del futbolista Jesús de Miguel, de 30 años, quien sufrió un choque con el portero Jesús Owono durante un partido. Fue trasladado al hospital, donde se confirmó su fallecimiento. ⚽ El CD Tenerife https://…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "Spanish police are investigating as possible involuntary manslaughter the death of 30-year-old footballer Jesús de Miguel, who collided with goalkeeper Jesús Owono during a match. He was taken to hospital, where his death was confirmed. CD Tenerife…"
+  },
+  {
+   "id": "2118140554265375196",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2118140554265375196",
+   "created_at": "2026-11-05T00:37:15.000Z",
+   "text": "Asesinan a coordinador del Movimiento del Sombrero en Tijuana: crimen ocurre a un año de la muerte de Carlos Manzo https://t.co/ROE7ryfKUq",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "Coordinator of the Movimiento del Sombrero killed in Tijuana: the crime comes a year after the death of Carlos Manzo"
+  },
+  {
+   "id": "2118134951715492326",
+   "handle": "ArmandoInfo",
+   "url": "https://x.com/ArmandoInfo/status/2118134951715492326",
+   "created_at": "2026-11-05T00:15:00.000Z",
+   "text": "El Sebin se apoderó de una quinta residencial en las colinas del sur de Caracas para convertirla en una “casa segura”. Pero luego le dio uso como escondite de desaparecidos y centro de torturas📍https://t.co/rte4CMecB8 https://t.co/k6IMg8yDUs",
+   "lang": "es",
+   "region_ids": [
+    "VEN-43"
+   ],
+   "country": "VEN",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "regional outlet",
+   "label": null,
+   "text_en": "SEBIN (Venezuela's intelligence service) seized a residential villa in the hills of southern Caracas to turn it into a \"safe house\". But it then used it as a hiding place for the disappeared and as a torture centre."
+  },
+  {
+   "id": "2118132845038174535",
+   "handle": "Riodoce_mx",
+   "url": "https://x.com/Riodoce_mx/status/2118132845038174535",
+   "created_at": "2026-11-05T00:06:37.000Z",
+   "text": "Un hombre que hasta el momento se encuentra sin identificar fue privado de la libertad por un grupo armado durante la tarde de este miércoles cuando se encontraba conduciendo un automóvil en la colonia Lázaro Cárdenas, sector Mercado de Abastos, en #Culiacán.",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2720",
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "A so-far unidentified man was abducted by an armed group on Wednesday afternoon while driving a car in the Lázaro Cárdenas neighborhood, Mercado de Abastos sector, in Culiacán."
+  },
+  {
+   "id": "2118129988016935038",
+   "handle": "ZETATijuana",
+   "url": "https://x.com/ZETATijuana/status/2118129988016935038",
+   "created_at": "2026-11-04T23:55:16.000Z",
+   "text": "La célula del detenido operaba en Jáltipan, Cosoleacaque y Minatitlán, según las investigaciones de la SEMAR https://t.co/xJuWQ6I3Oa",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2734"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "The detainee's cell operated in Jáltipan, Cosoleacaque and Minatitlán, according to SEMAR investigations"
+  },
+  {
+   "id": "2118128410916483195",
+   "handle": "infobaemexico",
+   "url": "https://x.com/infobaemexico/status/2118128410916483195",
+   "created_at": "2026-11-04T23:49:00.000Z",
+   "text": "Elementos de la Agencia Estatal de Investigación lo sorprendieron en Parral, cuando conducía una camioneta Toyota, con cocaína, cigarrillos forjados con marihuana y municiones calibre .45 de uso militar https://t.co/ukRN8opWj3 https://t.co/jiYTLSZhoC",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2709"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "national outlet",
+   "label": null,
+   "text_en": "State Investigation Agency officers caught him in Parral driving a Toyota pickup with cocaine, hand-rolled marijuana cigarettes and .45-caliber military-use ammunition"
+  },
+  {
+   "id": "2118126656434884666",
+   "handle": "SSPCMexico",
+   "url": "https://x.com/SSPCMexico/status/2118126656434884666",
+   "created_at": "2026-11-04T23:42:02.000Z",
+   "text": "En #Veracruz, autoridades federales y estalaes, detuvieron en #Coatzacoalcos, a Samuel “N”, alias “Panda”, identificado como líder regional de un grupo delictivo, quien cuenta con una orden de aprehensión por privación ilegal de la libertad y está relacionado con delitos de http…",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2734"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "official",
+   "label": "Official statement",
+   "text_en": "In Veracruz, federal and state authorities arrested Samuel \"N\", alias \"Panda\", in Coatzacoalcos; he is identified as a regional leader of a criminal group, has an arrest warrant for kidnapping and is linked to crimes of…"
+  },
+  {
+   "id": "2118124647703032210",
+   "handle": "noticieristas",
+   "url": "https://x.com/noticieristas/status/2118124647703032210",
+   "created_at": "2026-11-04T23:34:03.000Z",
+   "text": "🚨🚔| Un hombre fue privado de su libertad con lujo de violencia por un grupo armado que viajaba a bordo de un vehículo de modelo reciente, durante la tarde de este miércoles, en la colonia Lázaro Cárdenas, #Culiacán. Info 📲 https://t.co/IRLMygl9eA https://t.co/c16kXck01F",
+   "lang": "und",
+   "region_ids": [
+    "MEX-2720",
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "tier": "verified",
+   "source_type": "local outlet",
+   "label": null,
+   "text_en": "A man was violently abducted by an armed group traveling in a late-model vehicle on Wednesday afternoon in the Lázaro Cárdenas neighborhood, Culiacán."
+  },
+  {
    "id": "2118115564556067128",
    "handle": "infobaemexico",
    "url": "https://x.com/infobaemexico/status/2118115564556067128",
    "created_at": "2026-11-04T22:57:57.000Z",
    "text": "Buscadoras por la Paz Sonora localizan una fosa clandestina con restos de al menos cuatro personas en Suaqui Grande https://t.co/PjE1FkIg6o",
-   "lang": "es",
+   "lang": "und",
    "region_ids": [
     "MEX-2712"
    ],
@@ -3408,185 +3614,6 @@
    "source_type": "national outlet",
    "label": null,
    "text_en": "Human rights defender Reynaldo Pérez killed in Chiapas; the UN had warned about threats against him"
-  },
-  {
-   "id": "2115624663254790516",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115624663254790516",
-   "created_at": "2026-10-29T02:00:00.000Z",
-   "text": "🚨 \"El Semáforo\" es identificado como un líder de segundo nivel en el CJNG https://t.co/tvFCXYrnSc",
-   "lang": "und",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "🚨 \"El Semáforo\" is identified as a second-tier leader in the CJNG"
-  },
-  {
-   "id": "2115624409159610633",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2115624409159610633",
-   "created_at": "2026-10-29T01:59:00.000Z",
-   "text": "Nueve hombres de nacionalidad #mexicana fueron #detenidos en San Bernardino, #California, acusados de pertenecer al cártel de Sinaloa y dedicarse al #robo de carga de #trenes, de acuerdo con el Departamento del Sheriff del Condado. https://t.co/vR9iO3uzzU",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "Nine #Mexican men were #arrested in San Bernardino, #California, accused of belonging to the Sinaloa cartel and of #robbing cargo from #trains, according to the County Sheriff's Department."
-  },
-  {
-   "id": "2115619627531145370",
-   "handle": "proceso",
-   "url": "https://x.com/proceso/status/2115619627531145370",
-   "created_at": "2026-10-29T01:40:00.000Z",
-   "text": "Dos hermanos son asesinados en calles del Centro Histórico de la CDMX Un franelero y un comerciante, ambos identificados como hermanos, fueron víctimas de un ataque directo con arma de fuego en las calles República de Perú y Argentina. https://t.co/lDfKstCSOm",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2727"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Two brothers killed on streets of Mexico City's Historic Center. A parking attendant and a street vendor, both identified as brothers, were victims of a direct gun attack on República de Perú and Argentina streets."
-  },
-  {
-   "id": "2115613336436174993",
-   "handle": "ArmandoInfo",
-   "url": "https://x.com/ArmandoInfo/status/2115613336436174993",
-   "created_at": "2026-10-29T01:15:00.000Z",
-   "text": "El Sebin se apoderó de una quinta residencial en las colinas del sur de Caracas para convertirla en una “casa segura”. Pero luego le dio uso como escondite de desaparecidos y centro de torturas📍https://t.co/rte4CMeKqG https://t.co/QpohtXBr8d",
-   "lang": "und",
-   "region_ids": [
-    "VEN-43"
-   ],
-   "country": "VEN",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "regional outlet",
-   "label": null,
-   "text_en": "SEBIN (Venezuela's intelligence service) seized a residential villa in the hills of southern Caracas to turn it into a \"safe house\". But it then used it as a hiding place for the disappeared and as a torture centre."
-  },
-  {
-   "id": "2115612833035551075",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2115612833035551075",
-   "created_at": "2026-10-29T01:13:00.000Z",
-   "text": "La #FGE informó que #Andrick “N” fue #sentenciado a 16 años y 8 meses de prisión tras ser declarado penalmente responsable del delito de homicidio calificado en grado de tentativa. https://t.co/dC02u1lpo2",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "The #FGE reported that #Andrick \"N\" was #sentenced to 16 years and 8 months in prison after being found criminally responsible for attempted aggravated homicide."
-  },
-  {
-   "id": "2115608696940122621",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115608696940122621",
-   "created_at": "2026-10-29T00:56:34.000Z",
-   "text": "EEUU presenta cargos contra 24 integrantes de una red vinculada al Cártel de Sinaloa, con operación en Tennessee https://t.co/ErOVNg0j29",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "US files charges against 24 members of a network linked to the Sinaloa Cartel operating in Tennessee"
-  },
-  {
-   "id": "2115607278833344958",
-   "handle": "SSPCMexico",
-   "url": "https://x.com/SSPCMexico/status/2115607278833344958",
-   "created_at": "2026-10-29T00:50:56.000Z",
-   "text": "En #Oaxaca, personal de @SEMAR_mx, en coordinación con #SSPC y @FGRMexico, detuvo a Carlos “N”, alias “El Semáforo”, junto con Ana Gabriela “N”, integrantes de un grupo delictivo vinculado con secuestros y homicidios. En esta acción se aseguraron armas, granadas, sustancias http…",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2723"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "official",
-   "label": "Official statement",
-   "text_en": "In #Oaxaca, personnel from @SEMAR_mx, in coordination with #SSPC and @FGRMexico, arrested Carlos \"N\", alias \"El Semáforo\", along with Ana Gabriela \"N\", members of a criminal group linked to kidnappings and homicides. Weapons, grenades and substances were seized in the operation…"
-  },
-  {
-   "id": "2115592107377189343",
-   "handle": "ZETATijuana",
-   "url": "https://x.com/ZETATijuana/status/2115592107377189343",
-   "created_at": "2026-10-28T23:50:38.000Z",
-   "text": "El fallo informático que activó la señal roja se originó por un tren detenido en la vía. https://t.co/ghVUxO8q9M",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2706"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "The computer failure that triggered the red signal was caused by a train stopped on the track."
-  },
-  {
-   "id": "2115588422194868722",
-   "handle": "Riodoce_mx",
-   "url": "https://x.com/Riodoce_mx/status/2115588422194868722",
-   "created_at": "2026-10-28T23:36:00.000Z",
-   "text": "De acuerdo con las autoridades de #EU, los hombres son señalados por presuntamente formar parte de una organización de narcotráfico relacionada con el CDS, dedicada a distribuir fentanilo y cocaína en el centro de #Tennessee. La red también habría #lavado millones de dólares",
-   "lang": "es",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "tier": "verified",
-   "source_type": "local outlet",
-   "label": null,
-   "text_en": "According to US authorities, the men are allegedly part of a drug trafficking organization tied to the CDS that distributed fentanyl and cocaine in central Tennessee. The network also allegedly laundered millions of dollars"
-  },
-  {
-   "id": "2115586565246165444",
-   "handle": "infobaemexico",
-   "url": "https://x.com/infobaemexico/status/2115586565246165444",
-   "created_at": "2026-10-28T23:28:37.000Z",
-   "text": "Golpe a la red de armas de Los Chapitos: el Pokémon y tres más se quedan presos en Guasave tras ser vinculados a proceso https://t.co/NOKqHMH2lN",
-   "lang": "und",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa",
-    "chapitos"
-   ],
-   "tier": "verified",
-   "source_type": "national outlet",
-   "label": null,
-   "text_en": "Blow to Los Chapitos' weapons network: El Pokémon and three others stay jailed in Guasave after being ordered to stand trial"
   }
  ]
 }

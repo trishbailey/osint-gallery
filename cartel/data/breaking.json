@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-04T23:04:21Z",
+ "as_of": "2026-11-05T02:01:18Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,368 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "596a9be1a1",
+   "status": "single_source",
+   "title": "🚔⚖️ Alejandro Duarte, hermano del exgobernador de Chihuahua César Duarte, fue detenido en Parral durante una revisión en la que le encontraron presunta cocaína, marihuana y 11 cartuchos de uso exclusi",
+   "lang": "es",
+   "title_en": "Alejandro Duarte, brother of former Chihuahua governor César Duarte, was arrested in Parral during a check in which he was found with suspected cocaine, marijuana and 11 rounds of ammunition reserved for",
+   "first_report": "2026-11-05T02:00:08Z",
+   "first_report_precision": "minute",
+   "first_source": "Animal Político",
+   "region_ids": [
+    "MEX-2709"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Animal Político"
+   ],
+   "sources": [
+    {
+     "outlet": "animal",
+     "name": "Animal Político",
+     "kind": "outlet",
+     "via": "X @Pajaropolitico",
+     "url": "https://x.com/Pajaropolitico/status/2118161409074672024",
+     "time": "2026-11-05T02:00:08Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "e9d4eecde2",
+   "status": "confirmed",
+   "title": "Reporteros Sin Fronteras incluye al CJNG en lista de \"depredadores de la libertad de prensa\" Debido a los ataques contra periodistas durante la cobertura de la muerte de \"El Mencho\", la organización c",
+   "lang": "es",
+   "title_en": "Reporters Without Borders adds the CJNG to its list of \"predators of press freedom\". Because of attacks on journalists during coverage of the death of \"El Mencho\", the Mexican criminal organization was included on the li",
+   "first_report": "2026-11-04T22:00:02Z",
+   "first_report_precision": "minute",
+   "first_source": "Proceso",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae",
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2118100987382771989",
+     "time": "2026-11-04T22:00:02Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118153830231576614",
+     "time": "2026-11-05T01:30:01Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "8b5d1283d2",
+   "status": "single_source",
+   "title": "La fiscalía solicitó además cinco años de libertad supervisada para Antonio Oseguera Cervantes, mientras que la defensa del exintegrante del CJNG pidió una condena de apenas 20 años para su cliente",
+   "lang": "es",
+   "title_en": "Prosecutors also requested five years of supervised release for Antonio Oseguera Cervantes, while the defense of the former CJNG member asked for a sentence of just 20 years for its client",
+   "first_report": "2026-11-05T01:10:20Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118148878134284366",
+     "time": "2026-11-05T01:10:20Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "a17aa82995",
+   "status": "single_source",
+   "title": "Bojun “N”, alias “#ElChino”, presunto líder de una red internacional de lavado de dinero, tráfico de armas, tráfico de personas y extorsión a comerciantes. Las fuerzas de seguridad aseguraron más de 4",
+   "lang": "es",
+   "title_en": "Bojun \"N\", alias \"El Chino\", alleged leader of an international network for money laundering, arms trafficking, human trafficking and extortion of merchants. Security forces seized more than 4",
+   "first_report": "2026-11-05T01:05:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2118147535328211390",
+     "time": "2026-11-05T01:05:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "32c7f9fac8",
+   "status": "single_source",
+   "title": "🚨 La policía española investiga por presunto homicidio imprudente la muerte del futbolista Jesús de Miguel, de 30 años, quien sufrió un choque con el portero Jesús Owono durante un partido. Fue trasla",
+   "lang": "es",
+   "title_en": "Spanish police are investigating as possible involuntary manslaughter the death of 30-year-old footballer Jesús de Miguel, who collided with goalkeeper Jesús Owono during a match. He was taken",
+   "first_report": "2026-11-05T00:37:32Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2118140622015979873",
+     "time": "2026-11-05T00:37:32Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "7c128595f4",
+   "status": "single_source",
+   "title": "Asesinan a coordinador del Movimiento del Sombrero en Tijuana: crimen ocurre a un año de la muerte de Carlos Manzo",
+   "lang": "es",
+   "title_en": "Coordinator of the Movimiento del Sombrero killed in Tijuana: the crime comes a year after the death of Carlos Manzo",
+   "first_report": "2026-11-05T00:37:15Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2706"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118140554265375196",
+     "time": "2026-11-05T00:37:15Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "682628ee56",
+   "status": "single_source",
+   "title": "El Sebin se apoderó de una quinta residencial en las colinas del sur de Caracas para convertirla en una “casa segura”. Pero luego le dio uso como escondite de desaparecidos y centro de torturas📍",
+   "lang": "es",
+   "title_en": "SEBIN (Venezuela's intelligence service) seized a residential villa in the hills of southern Caracas to turn it into a \"safe house\". But it then used it as a hiding place for the disappeared and as a torture centre.",
+   "first_report": "2026-11-05T00:15:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Armando.Info",
+   "region_ids": [
+    "VEN-43"
+   ],
+   "country": "VEN",
+   "group_ids": [],
+   "outlets": [
+    "Armando.Info"
+   ],
+   "sources": [
+    {
+     "outlet": "armando",
+     "name": "Armando.Info",
+     "kind": "outlet",
+     "via": "X @ArmandoInfo",
+     "url": "https://x.com/ArmandoInfo/status/2118134951715492326",
+     "time": "2026-11-05T00:15:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "7cc55984ed",
+   "status": "confirmed",
+   "title": "🚨🚔| Un hombre fue privado de su libertad con lujo de violencia por un grupo armado que viajaba a bordo de un vehículo de modelo reciente, durante la tarde de este miércoles, en la colonia Lázaro Cárde",
+   "lang": "es",
+   "title_en": "A man was violently abducted by an armed group traveling in a late-model vehicle on Wednesday afternoon in the Lázaro Cárdenas neighborhood",
+   "first_report": "2026-11-04T23:34:03Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2720"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas",
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2118124647703032210",
+     "time": "2026-11-04T23:34:03Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2118132845038174535",
+     "time": "2026-11-05T00:06:37Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "0ef2528d1c",
+   "status": "single_source",
+   "title": "La célula del detenido operaba en Jáltipan, Cosoleacaque y Minatitlán, según las investigaciones de la SEMAR",
+   "lang": "es",
+   "title_en": "The detainee's cell operated in Jáltipan, Cosoleacaque and Minatitlán, according to SEMAR investigations",
+   "first_report": "2026-11-04T23:55:16Z",
+   "first_report_precision": "minute",
+   "first_source": "ZETA Tijuana",
+   "region_ids": [
+    "MEX-2734"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "ZETA Tijuana"
+   ],
+   "sources": [
+    {
+     "outlet": "zeta",
+     "name": "ZETA Tijuana",
+     "kind": "outlet",
+     "via": "X @ZETATijuana",
+     "url": "https://x.com/ZETATijuana/status/2118129988016935038",
+     "time": "2026-11-04T23:55:16Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "a32fc69058",
+   "status": "single_source",
+   "title": "Elementos de la Agencia Estatal de Investigación lo sorprendieron en Parral, cuando conducía una camioneta Toyota, con cocaína, cigarrillos forjados con marihuana y municiones calibre .45 de uso milit",
+   "lang": "es",
+   "title_en": "State Investigation Agency officers caught him in Parral driving a Toyota pickup with cocaine, hand-rolled marijuana cigarettes and .45-caliber military-use ammunition",
+   "first_report": "2026-11-04T23:49:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2709"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118128410916483195",
+     "time": "2026-11-04T23:49:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "ac59509d5c",
+   "status": "confirmed",
+   "title": "Capturan en Coatzacoalcos a Samuel de la Cruz, alias “El Panda”, presunto líder regional del CJNG",
+   "lang": "es",
+   "title_en": "Samuel de la Cruz, alias “El Panda”, alleged regional leader of the CJNG, captured in Coatzacoalcos",
+   "first_report": "2026-11-04T21:40:21Z",
+   "first_report_precision": "minute",
+   "first_source": "Gabinete de Seguridad (Mexico)",
+   "region_ids": [
+    "MEX-2734"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Gabinete de Seguridad (Mexico)",
+    "Infobae",
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "gabsec",
+     "name": "Gabinete de Seguridad (Mexico)",
+     "kind": "official",
+     "via": "X @GabSeguridadMX",
+     "url": "https://x.com/GabSeguridadMX/status/2118096035692302754",
+     "time": "2026-11-04T21:40:21Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118105102867132645",
+     "time": "2026-11-04T22:16:23Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2118126656434884666",
+     "time": "2026-11-04T23:42:02Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "91132cae6a",
    "status": "single_source",
@@ -73,7 +435,7 @@
    "status": "single_source",
    "title": "⚖️🚔 Vinculan a proceso a Rosa Alejandra “N”, secretaria del Bienestar de Uruapan, por presunto encubrimiento en el homicidio del exalcalde Carlos Manzo. La fiscalía la detuvo tras ignorar tres citator",
    "lang": "es",
-   "title_en": "Rosa Alejandra “N”, Uruapan's welfare secretary, is ordered to stand trial for allegedly covering up the killing of former mayor Carlos Manzo. Prosecutors arrested her after she ignored three summons",
+   "title_en": "Rosa Alejandra “N”, Uruapan's welfare secretary, is ordered to stand trial for allegedly covering up the killing of former mayor Carlos Manzo. Prosecutors arrested her after she ignored three summons.",
    "first_report": "2026-11-04T22:30:16Z",
    "first_report_precision": "minute",
    "first_source": "Animal Político",
@@ -93,76 +455,6 @@
      "via": "X @Pajaropolitico",
      "url": "https://x.com/Pajaropolitico/status/2118108596466483578",
      "time": "2026-11-04T22:30:16Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "ac59509d5c",
-   "status": "confirmed",
-   "title": "Capturan en Coatzacoalcos a Samuel de la Cruz, alias “El Panda”, presunto líder regional del CJNG",
-   "lang": "es",
-   "title_en": "Samuel de la Cruz, alias “El Panda”, alleged regional leader of the CJNG, captured in Coatzacoalcos",
-   "first_report": "2026-11-04T21:40:21Z",
-   "first_report_precision": "minute",
-   "first_source": "Gabinete de Seguridad (Mexico)",
-   "region_ids": [
-    "MEX-2734"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Gabinete de Seguridad (Mexico)",
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "gabsec",
-     "name": "Gabinete de Seguridad (Mexico)",
-     "kind": "official",
-     "via": "X @GabSeguridadMX",
-     "url": "https://x.com/GabSeguridadMX/status/2118096035692302754",
-     "time": "2026-11-04T21:40:21Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2118105102867132645",
-     "time": "2026-11-04T22:16:23Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "e9d4eecde2",
-   "status": "single_source",
-   "title": "Reporteros Sin Fronteras incluye al CJNG en lista de \"depredadores de la libertad de prensa\" Debido a los ataques contra periodistas durante la cobertura de la muerte de \"El Mencho\", la organización c",
-   "lang": "es",
-   "title_en": "Reporters Without Borders adds the CJNG to its list of \"predators of press freedom\". Because of attacks on journalists during coverage of the death of \"El Mencho\", the organization c",
-   "first_report": "2026-11-04T22:00:02Z",
-   "first_report_precision": "minute",
-   "first_source": "Proceso",
-   "region_ids": [],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "Proceso"
-   ],
-   "sources": [
-    {
-     "outlet": "proceso",
-     "name": "Proceso",
-     "kind": "outlet",
-     "via": "X @proceso",
-     "url": "https://x.com/proceso/status/2118100987382771989",
-     "time": "2026-11-04T22:00:02Z",
      "time_precision": "minute"
     }
    ]
@@ -237,8 +529,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2735",
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2735"
    ],
    "country": "MEX",
    "group_ids": [
@@ -406,8 +698,8 @@
    "first_report_precision": "minute",
    "first_source": "Primicias",
    "region_ids": [
-    "BOL-1940",
-    "ARG-1271"
+    "ARG-1271",
+    "BOL-1940"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -506,8 +798,8 @@
    "first_source": "Infobae",
    "region_ids": [
     "MEX-2711",
-    "MEX-2731",
-    "MEX-2734"
+    "MEX-2734",
+    "MEX-2731"
    ],
    "country": "MEX",
    "group_ids": [
@@ -676,8 +968,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "b18",
-    "cjng"
+    "cjng",
+    "b18"
    ],
    "outlets": [
     "El Faro"
@@ -835,8 +1127,8 @@
    "first_report_precision": "day",
    "first_source": "La Jornada",
    "region_ids": [
-    "MEX-2711",
     "MEX-2719",
+    "MEX-2711",
     "MEX-2727",
     "MEX-2718"
    ],
@@ -902,8 +1194,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
     "cjng",
+    "sinaloa",
     "mayiza",
     "chapitos"
    ],
@@ -1193,8 +1485,8 @@
    "first_report_precision": "day",
    "first_source": "Milenio",
    "region_ids": [
-    "MEX-2716",
-    "MEX-2708"
+    "MEX-2708",
+    "MEX-2716"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -1434,8 +1726,8 @@
    "region_ids": [],
    "country": null,
    "group_ids": [
-    "cv",
-    "pcc"
+    "pcc",
+    "cv"
    ],
    "outlets": [
     "Infobae"
@@ -1462,8 +1754,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "BOL-1940",
     "ARG-1271",
+    "BOL-1940",
     "ECU-1270"
    ],
    "country": "ARG",
@@ -1553,8 +1845,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "NIC-659",
-    "VEN-43"
+    "VEN-43",
+    "NIC-659"
    ],
    "country": "NIC",
    "group_ids": [],
@@ -1701,8 +1993,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2706",
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [
@@ -2155,10 +2447,10 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2726",
     "MEX-2727",
-    "MEX-2725",
-    "MEX-2720"
+    "MEX-2731",
+    "MEX-2724",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2308,8 +2600,8 @@
    "region_ids": [],
    "country": "BRA",
    "group_ids": [
-    "cv",
-    "pcc"
+    "pcc",
+    "cv"
    ],
    "outlets": [
     "BBC"
@@ -2408,8 +2700,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "sinaloa",
     "cjng",
+    "sinaloa",
     "mayiza",
     "chapitos"
    ],
@@ -2680,10 +2972,10 @@
    "first_report_precision": "day",
    "first_source": "Semana",
    "region_ids": [
+    "COL-1314",
     "COL-1412",
     "COL-1408",
-    "COL-1399",
-    "COL-1314"
+    "COL-1399"
    ],
    "country": "COL",
    "group_ids": [
@@ -2714,8 +3006,8 @@
    "first_report_precision": "day",
    "first_source": "El Tiempo",
    "region_ids": [
-    "VEN-41",
-    "VEN-43"
+    "VEN-43",
+    "VEN-41"
    ],
    "country": "VEN",
    "group_ids": [
@@ -2833,8 +3125,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "BOL-1940",
-    "ARG-1271"
+    "ARG-1271",
+    "BOL-1940"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -2987,8 +3279,8 @@
    "first_report_precision": "day",
    "first_source": "La Jornada",
    "region_ids": [
-    "MEX-2732",
-    "MEX-2730"
+    "MEX-2730",
+    "MEX-2732"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -3163,8 +3455,8 @@
    "first_report_precision": "minute",
    "first_source": "InSight Crime",
    "region_ids": [
-    "PRY-607",
-    "PAN-1340"
+    "PAN-1340",
+    "PRY-607"
    ],
    "country": "PAN",
    "group_ids": [],
@@ -3179,64 +3471,6 @@
      "via": "X @InSightCrime",
      "url": "https://x.com/InSightCrime/status/2117447636877762578",
      "time": "2026-11-03T02:43:51Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "713ea79408",
-   "status": "single_source",
-   "title": "En la urbanización Altamira, una edificación de dos pisos de lo que parecía iba ser una obra residencial, quedó inconclusa. Pertenecía al círculo de Alex Saab. En la fachada se ve ahora un cartel desc",
-   "lang": "es",
-   "title_en": "In the Altamira development, a two-storey building that appeared to be a residential project was left unfinished. It belonged to Alex Saab's circle. A faded DGCIM sign now hangs on the facade",
-   "first_report": "2026-11-03T00:30:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Armando.Info",
-   "region_ids": [
-    "MEX-2716"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Armando.Info"
-   ],
-   "sources": [
-    {
-     "outlet": "armando",
-     "name": "Armando.Info",
-     "kind": "outlet",
-     "via": "X @ArmandoInfo",
-     "url": "https://x.com/ArmandoInfo/status/2117413950874882497",
-     "time": "2026-11-03T00:30:00Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "de4517da61",
-   "status": "single_source",
-   "title": "Gio was one of Ecuador’s best-known gangsta rappers. He was also part the inner circle of the country’s most notorious drug lord and leader of the Choneros gang, \"Fito.\" . 🎧 Listen to his story in the",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-11-03T00:15:20Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [],
-   "country": "ECU",
-   "group_ids": [
-    "choneros"
-   ],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2117410262319767906",
-     "time": "2026-11-03T00:15:20Z",
      "time_precision": "minute"
     }
    ]
