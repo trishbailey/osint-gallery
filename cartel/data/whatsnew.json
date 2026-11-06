@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-05T23:08Z",
+ "as_of": "2026-11-06T11:25Z",
  "note": "Strategic digest of the last ~7 days, grouped by ongoing trend: leadership, splits and alliances, territory and routes, policy and designations, violence patterns, money. Routine seizures and minor arrests are left out. X posts are used only as sources. Verification: Confirmed = 2+ independent reliable sources; Single source; Official claim only. Status is shown only when sourced counts support it.",
  "trends": [
   {
@@ -525,7 +525,7 @@
     {
      "date": "2026-11-03",
      "place": "Venezuelan border states",
-     "text": "InSight Crime's investigation finds the ELN has consolidated control over much of the Colombia-Venezuela border and, through Zulia, reached Venezuela's Caribbean coast, profiting from the cocaine crossing it; a reported bombing of an ELN camp in Apure has raised the question of whether its working relationship with the Venezuelan government has ended, which bears directly on the rear base the group relies on while Colombia's offensive runs.",
+     "text": "InSight Crime's investigation finds the ELN has consolidated control over much of the Colombia-Venezuela border and, through Zulia, reached Venezuela's Caribbean coast, profiting from the cocaine crossing it; its follow-up analysis frames a Venezuelan airstrike on an ELN camp in Apure as a test of two decades of Chavista tolerance, which bears directly on the rear base the group relies on while Colombia's offensive runs.",
      "verification": "Single source",
      "regions": [
       "VEN-31",
@@ -552,6 +552,12 @@
        "name": "InSightCrime (X @InSightCrime)",
        "title": "Reports of a bombing targeting an ELN camp in Apure state, near the Colombian border, raise questions about wh…",
        "date": "2026-11-03"
+      },
+      {
+       "url": "https://x.com/InSightCrime/status/2118539337910432218",
+       "name": "InSightCrime (X @InSightCrime)",
+       "title": "#NewAnalysis | Venezuela’s Airstrike on the ELN Tests 2 Decades of Chavista Tolerance:",
+       "date": "2026-11-06"
       }
      ]
     },
@@ -932,6 +938,42 @@
  ],
  "other": [
   {
+   "date": "2026-11-06",
+   "place": "Naucalpan de Juárez, State of Mexico",
+   "text": "SSPC forces killed Edgar Aarón 'N', alias 'El General' or 'El Lic', described as founder and leader of the Cártel Nuevo Imperio and as the alleged mastermind of the killing of police commander Milton Morales, after he and associates opened fire on officers during an operation; the strike removes the named head of a State of Mexico kidnapping-and-extortion group that Animal Político and Proceso had flagged among the region's main violence generators.",
+   "verification": "Confirmed",
+   "regions": [
+    "MEX-2715"
+   ],
+   "groups": [],
+   "sources": [
+    {
+     "url": "https://x.com/Pajaropolitico/status/2118546484744327244",
+     "name": "Pajaropolitico (X @Pajaropolitico)",
+     "title": "🚔⚠️ Edgar Aarón ‘N’, alias “El General”, alleged mastermind of the killing of Milton Morales and leader of the…",
+     "date": "2026-11-06"
+    },
+    {
+     "url": "https://x.com/proceso/status/2118528797091774861",
+     "name": "proceso (X @proceso)",
+     "title": "\"El General,\" identified as leader of the Cártel Nuevo Imperio and as ordering the killing of police commander…",
+     "date": "2026-11-06"
+    },
+    {
+     "url": "https://x.com/Riodoce_mx/status/2118538882673230117",
+     "name": "Riodoce_mx (X @Riodoce_mx)",
+     "title": "In Naucalpan de Juárez, #EstadodeMéxico, #SSPC officers were attacked with gunfire while carrying out an opera…",
+     "date": "2026-11-06"
+    },
+    {
+     "url": "https://x.com/SSPCMexico/status/2118514974553264450",
+     "name": "SSPCMexico (X @SSPCMexico)",
+     "title": "In #EdoMex, #SSPC officers were attacked with gunfire while carrying out an operation. As a result, Edgar “N”,…",
+     "date": "2026-11-06"
+    }
+   ]
+  },
+  {
    "date": "2026-11-04",
    "place": "Mexico City, Tijuana and Cancún",
    "text": "Mexican federal forces arrested Bojun 'N', alias 'El Chino', a 41-year-old naturalized Mexican described as the head of a money-laundering network serving a criminal group, and seized about 43.7 million pesos in cash (US$920,000 plus 26.98 million pesos) at a house in Mexico City's Miguel Hidalgo borough; officials tie the network to extortion of merchants, arms trafficking and human trafficking in Mexico City, Tijuana and Cancún, which adds a China-born financier to the money side of Mexican organized crime, while TV Azteca alone reports a prior record in China and links to La Unión Tepito.",
@@ -966,24 +1008,6 @@
      "name": "TV Azteca",
      "title": "Who is 'El Chino', caught with more than 43 million in Mexico City? What is known about his laundering network",
      "date": "2026-11-04"
-    }
-   ]
-  },
-  {
-   "date": "2026-10-24",
-   "place": "El Salvador",
-   "text": "El Salvador indicted more than 560 alleged Barrio 18 leaders for about 14,500 crimes since 2012, one of the largest cases under the state of emergency.",
-   "verification": "Single source",
-   "regions": [],
-   "groups": [
-    "b18"
-   ],
-   "sources": [
-    {
-     "url": "https://x.com/InSightCrime/status/2113813301628944715",
-     "name": "InSightCrime (X @InSightCrime)",
-     "title": "🇸🇻 | El Salvador indicted more than 560 suspected leaders of the Barrio 18 gang for nearly 14,500 crimes commi…",
-     "date": "2026-10-24"
     }
    ]
   }

@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-05T23:06:38Z",
+ "as_of": "2026-11-06T11:11:16Z",
  "keep_hours": 48,
  "rules": {
   "confirmed": "two or more independent professional outlets, or an official body plus at least one outlet",
@@ -8,6 +8,312 @@
  },
  "note": "Built by pipeline/breaking.py from verified X accounts and professional-outlet headlines only (data/outlets.json). Grouping is by place, group, time and shared keywords and can be wrong; open the sources.",
  "events": [
+  {
+   "id": "5ece10ebd8",
+   "status": "confirmed",
+   "title": "🚨🚔| Un enfrentamiento a balazos entre civiles armados y fuerzas federales habría dejado al menos tres fallecidos en hechos ocurridos en la comunidad de Las Trancas, en #Navolato. Info 📲",
+   "lang": "es",
+   "title_en": "🚨🚔| A shootout between armed civilians and federal forces reportedly left at least three dead in incidents in the community of Las Trancas, in #Navolato. Info 📲",
+   "first_report": "2026-11-06T01:38:06Z",
+   "first_report_precision": "minute",
+   "first_source": "Los Noticieristas",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Los Noticieristas",
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2118518252276273382",
+     "time": "2026-11-06T01:38:06Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2118536249795297599",
+     "time": "2026-11-06T02:49:37Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2118572075288015077",
+     "time": "2026-11-06T05:11:58Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "037c51c79c",
+   "status": "single_source",
+   "title": "#Severo “N”, de 33 años de edad, quedó a disposición del Juzgado de Primera Instancia de Control y de Enjuiciamiento Penal de la Región Sur, tras ser #detenido por intento de feminicidio en grado de t",
+   "lang": "es",
+   "title_en": "#Severo “N”, 33 years old, was placed at the disposal of the Southern Region First Instance Criminal Control and Trial Court after being #arrested for attempted femicide",
+   "first_report": "2026-11-06T04:23:50Z",
+   "first_report_precision": "minute",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2118559963547353114",
+     "time": "2026-11-06T04:23:50Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "25012deea5",
+   "status": "single_source",
+   "title": "Con tres meses de diferencia, alias 'Hueso' y alias 'Cali' fueron detenidos en la misma casa del norte de Quito: uno señalado como sicario de Los Choneros y el otro como presunto cabecilla de Los Lobo",
+   "lang": "es",
+   "title_en": "Three months apart, alias 'Hueso' and alias 'Cali' were arrested in the same house in northern Quito: one identified as a Los Choneros hitman and the other as an alleged leader of Los Lobo",
+   "first_report": "2026-11-06T03:40:38Z",
+   "first_report_precision": "minute",
+   "first_source": "Primicias",
+   "region_ids": [
+    "COL-1408",
+    "ECU-1287"
+   ],
+   "country": "COL",
+   "group_ids": [
+    "lobos",
+    "choneros"
+   ],
+   "outlets": [
+    "Primicias"
+   ],
+   "sources": [
+    {
+     "outlet": "primicias",
+     "name": "Primicias",
+     "kind": "outlet",
+     "via": "X @Primicias",
+     "url": "https://x.com/Primicias/status/2118549090954834257",
+     "time": "2026-11-06T03:40:38Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "08c7f8ae32",
+   "status": "confirmed",
+   "title": "En Naucalpan de Juárez, #EstadodeMéxico, elementos de la #SSPC fueron atacados a balazos mientras realizaban un operativo y, al repeler la #agresión, Edgar “N”, alias “El General” o “El Lic”, identifi",
+   "lang": "es",
+   "title_en": "In Naucalpan de Juárez, #EstadodeMéxico, #SSPC officers were attacked with gunfire while carrying out an operation and, while repelling the #attack, Edgar “N”, alias “El General” or “El Lic”, identifi",
+   "first_report": "2026-11-06T01:25:04Z",
+   "first_report_precision": "minute",
+   "first_source": "SSPC (Mexico)",
+   "region_ids": [
+    "MEX-2731"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Animal Político",
+    "Ríodoce",
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2118514974553264450",
+     "time": "2026-11-06T01:25:04Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2118538882673230117",
+     "time": "2026-11-06T03:00:04Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "animal",
+     "name": "Animal Político",
+     "kind": "outlet",
+     "via": "X @Pajaropolitico",
+     "url": "https://x.com/Pajaropolitico/status/2118546484744327244",
+     "time": "2026-11-06T03:30:17Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "394f5a1541",
+   "status": "single_source",
+   "title": "Capturan en Puebla a \"El Morgan\" y a \"El Chino\", ligados a la extorsión y el narcomenudeo en la localidad de Copales",
+   "lang": "es",
+   "title_en": "\"El Morgan\" and \"El Chino,\" linked to extortion and retail drug sales in the locality of Copales, are captured in Puebla",
+   "first_report": "2026-11-06T03:10:32Z",
+   "first_report_precision": "minute",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2724"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118541515035234625",
+     "time": "2026-11-06T03:10:32Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "a3d1a80850",
+   "status": "single_source",
+   "title": "#NewAnalysis | Venezuela’s Airstrike on the ELN Tests 2 Decades of Chavista Tolerance:",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-06T03:01:53Z",
+   "first_report_precision": "minute",
+   "first_source": "InSight Crime",
+   "region_ids": [],
+   "country": "VEN",
+   "group_ids": [
+    "eln"
+   ],
+   "outlets": [
+    "InSight Crime"
+   ],
+   "sources": [
+    {
+     "outlet": "insight",
+     "name": "InSight Crime",
+     "kind": "outlet",
+     "via": "X @InSightCrime",
+     "url": "https://x.com/InSightCrime/status/2118539337910432218",
+     "time": "2026-11-06T03:01:53Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "6ab3696c21",
+   "status": "single_source",
+   "title": "Ya llegó al top 1 en la categoría de series en cinco países la miniserie documental “La caída de El Mayo”, de Netflix, la cual reconstruye la vida criminal, la misteriosa captura y la custodia en Esta",
+   "lang": "es",
+   "title_en": "The Netflix documentary miniseries “La caída de El Mayo” has reached No. 1 in the series category in five countries; it reconstructs the criminal life, mysterious capture, and custody in the Unite",
+   "first_report": "2026-11-06T03:00:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Proceso",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2118538865296175608",
+     "time": "2026-11-06T03:00:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "8a56139f60",
+   "status": "single_source",
+   "title": "Abaten a \"El General\" señalado como líder del Cártel Nuevo Imperio y de ordenar el asesinato del mando policiaco Milton Morales El sujeto estaba catalogado como uno de los principales generadores de v",
+   "lang": "es",
+   "title_en": "\"El General,\" identified as leader of the Cártel Nuevo Imperio and as ordering the killing of police commander Milton Morales, is killed. The subject was listed as one of the main generators of v",
+   "first_report": "2026-11-06T02:20:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Proceso",
+   "region_ids": [
+    "PRY-607"
+   ],
+   "country": "PRY",
+   "group_ids": [],
+   "outlets": [
+    "Proceso"
+   ],
+   "sources": [
+    {
+     "outlet": "proceso",
+     "name": "Proceso",
+     "kind": "outlet",
+     "via": "X @proceso",
+     "url": "https://x.com/proceso/status/2118528797091774861",
+     "time": "2026-11-06T02:20:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "752c646b3a",
+   "status": "single_source",
+   "title": "Al ahora detenido se le acusa de los hechos ocurridos el pasado 30 de julio en #Escuinapa, cuando la víctima fue agredida con disparos de arma de fuego, lesiones que posteriormente le provocaron la mu",
+   "lang": "es",
+   "title_en": "The now-detained man is accused in the events of July 30 in #Escuinapa, when the victim was attacked with gunfire, wounds that later caused his de",
+   "first_report": "2026-11-05T23:30:00Z",
+   "first_report_precision": "minute",
+   "first_source": "Ríodoce",
+   "region_ids": [
+    "MEX-2711"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "Ríodoce"
+   ],
+   "sources": [
+    {
+     "outlet": "riodoce",
+     "name": "Ríodoce",
+     "kind": "outlet",
+     "via": "X @Riodoce_mx",
+     "url": "https://x.com/Riodoce_mx/status/2118486017090920725",
+     "time": "2026-11-05T23:30:00Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
   {
    "id": "dc48b03145",
    "status": "official_claim_only",
@@ -54,6 +360,15 @@
      "url": "https://x.com/DEAHQ/status/2118474750200590725",
      "time": "2026-11-05T22:45:14Z",
      "time_precision": "minute"
+    },
+    {
+     "outlet": "dea",
+     "name": "DEA",
+     "kind": "official",
+     "via": "X @DEAHQ",
+     "url": "https://x.com/DEAHQ/status/2118483606788067755",
+     "time": "2026-11-05T23:20:26Z",
+     "time_precision": "minute"
     }
    ]
   },
@@ -62,7 +377,7 @@
    "status": "single_source",
    "title": "➡️ ¡Acusado en EU! Luis Benítez, juez mexicano, cae en Colombia por liberar a operador del exolímpico Ryan Wedding. #Internacional 🔴 | El juez federal mexicano Luis Benítez Alcántara fue detenido en C",
    "lang": "es",
-   "title_en": "➡️ Accused in the US! Luis Benítez, Mexican judge, falls in Colombia for freeing an associate of former Olympian Ryan Wedding. #Internacional 🔴 | Mexican federal judge Luis Benítez Alcántara was detained in C",
+   "title_en": "➡️ Accused in the US! Luis Benítez, Mexican judge, falls in Colombia for freeing an associate of former Olympian Ryan Wedding. #Internacional 🔴 | Mexican federal judge Luis Benítez Alcántara was detained in Colombia, fla",
    "first_report": "2026-11-05T22:12:38Z",
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
@@ -96,8 +411,8 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2735",
-    "MEX-2723"
+    "MEX-2723",
+    "MEX-2735"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -215,8 +530,8 @@
    "first_report_precision": "minute",
    "first_source": "Los Noticieristas",
    "region_ids": [
-    "MEX-2711",
-    "MEX-2712"
+    "MEX-2712",
+    "MEX-2711"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -274,8 +589,8 @@
    "first_report_precision": "minute",
    "first_source": "SSPC (Mexico)",
    "region_ids": [
-    "MEX-2731",
-    "MEX-2727"
+    "MEX-2727",
+    "MEX-2731"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -451,8 +766,8 @@
    "first_report_precision": "day",
    "first_source": "El Universo",
    "region_ids": [
-    "CHL-2701",
-    "ECU-1281"
+    "ECU-1281",
+    "CHL-2701"
    ],
    "country": "CHL",
    "group_ids": [
@@ -480,239 +795,6 @@
      "url": "https://x.com/Primicias/status/2118317456984772970",
      "time": "2026-11-05T12:20:12Z",
      "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "9260b377b9",
-   "status": "confirmed",
-   "title": "Harfuch destaca decomiso de 133 kilos de metanfetamina en Sinaloa: la droga estaba oculta en un tractocamión",
-   "lang": "es",
-   "title_en": "Harfuch highlights seizure of 133 kilos of methamphetamine in Sinaloa: the drug was hidden in a tractor-trailer",
-   "first_report": "2026-11-03T23:07:32Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711",
-    "MEX-2721"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "chapitos",
-    "sinaloa",
-    "mayiza"
-   ],
-   "outlets": [
-    "Infobae",
-    "Los Noticieristas",
-    "Milenio",
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117755586443948494",
-     "time": "2026-11-03T23:07:32Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2117761066608259471",
-     "time": "2026-11-03T23:29:19Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2117763247705129468",
-     "time": "2026-11-03T23:37:59Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/aseguran-tractocamion-con-metanfetamina-en-sinaloa",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/estados/yeraldine-bonilla-presenta-renuncia-secretaria-gobierno-sinaloa",
-     "time": "2026-11-05T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "milenio",
-     "name": "Milenio",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://milenio.com/policia/guerra-del-cartel-de-sinaloa-se-extiende-a-nayarit",
-     "time": "2026-11-05T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "b0864ae438",
-   "status": "confirmed",
-   "title": "Detienen en Iztapalapa a Alan Rafael, alias “El Chopercito”, objetivo prioritario ligado con al menos 10 homicidios",
-   "lang": "es",
-   "title_en": "Alan Rafael, alias \"El Chopercito,\" a priority target linked to at least 10 homicides, is arrested in Iztapalapa",
-   "first_report": "2026-11-04T00:41:10Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2727",
-    "MEX-2720",
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "El Universal",
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117779149804753016",
-     "time": "2026-11-04T00:41:10Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "eluniversal",
-     "name": "El Universal",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.eluniversal.com.mx/metropoli/con-que-homicidios-relacionan-a-el-chopersito-lo-vinculan-con-al-menos-10-asesinatos-en-iztapalapa/",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/11/03/en-vivo-seguridad-narcotrafico-y-crimen-en-mexico-hoy-3-de-noviembre-abogada-de-emma-coronel-planea-pedir-llamadas-monitoreadas-para-que-retome-contacto-con-el-chapo/",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/11/04/en-vivo-seguridad-narcotrafico-y-crimen-en-mexico-hoy-4-de-noviembre/",
-     "time": "2026-11-05T12:00:00Z",
-     "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "a92d285de6",
-   "status": "confirmed",
-   "title": "Capturan a seis miembros del Cártel de Sinaloa en Tuxtla: les decomisaron armas de fuego y equipo táctico",
-   "lang": "es",
-   "title_en": "Six Sinaloa Cartel members captured in Tuxtla: firearms and tactical gear were seized from them",
-   "first_report": "2026-11-04T02:45:40Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2711",
-    "MEX-2735",
-    "MEX-2731",
-    "MEX-2734"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "Infobae",
-    "Los Noticieristas",
-    "SSPC (Mexico)"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117810483453415932",
-     "time": "2026-11-04T02:45:40Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/11/04/capturan-a-seis-miembros-del-cartel-de-sinaloa-en-tuxtla-les-decomisaron-armas-de-fuego-y-equipo-tactico/",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2117962535785656501",
-     "time": "2026-11-04T12:49:53Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "noticieristas",
-     "name": "Los Noticieristas",
-     "kind": "outlet",
-     "via": "X @noticieristas",
-     "url": "https://x.com/noticieristas/status/2117996398675214551",
-     "time": "2026-11-04T15:04:26Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "sspc",
-     "name": "SSPC (Mexico)",
-     "kind": "official",
-     "via": "X @SSPCMexico",
-     "url": "https://x.com/SSPCMexico/status/2118005422871450061",
-     "time": "2026-11-04T15:40:18Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2118019003301892312",
-     "time": "2026-11-04T16:34:15Z",
-     "time_precision": "minute"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://infobae.com/mexico/2026/11/04/paseando-con-metralletas-asi-agarraron-a-seis-integrantes-del-cartel-de-sinaloa-en-chiapas-l-video",
-     "time": "2026-11-05T12:00:00Z",
-     "time_precision": "day"
     }
    ]
   },
@@ -871,6 +953,58 @@
    ]
   },
   {
+   "id": "3197bf8a5e",
+   "status": "single_source",
+   "title": "Aseguran tractocamión con metanfetamina en Sinaloa- Grupo Milenio",
+   "lang": "en",
+   "title_en": null,
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Milenio",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2721"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa",
+    "mayiza",
+    "chapitos"
+   ],
+   "outlets": [
+    "Milenio"
+   ],
+   "sources": [
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/aseguran-tractocamion-con-metanfetamina-en-sinaloa",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/estados/yeraldine-bonilla-presenta-renuncia-secretaria-gobierno-sinaloa",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "milenio",
+     "name": "Milenio",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://milenio.com/policia/guerra-del-cartel-de-sinaloa-se-extiende-a-nayarit",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
    "id": "9eda7cce6e",
    "status": "single_source",
    "title": "Vorágine insaciable: Reclutan a cientos de jóvenes para sostener la guerra en Sinaloa",
@@ -887,8 +1021,8 @@
    "group_ids": [
     "sinaloa",
     "cjng",
-    "chapitos",
-    "mayiza"
+    "mayiza",
+    "chapitos"
    ],
    "outlets": [
     "El Universal"
@@ -909,6 +1043,89 @@
      "kind": "outlet",
      "via": "headline",
      "url": "https://eluniversal.com.mx/grafico/periodismo-de-investigacion/voragine-insaciable-reclutan-a-cientos-de-jovenes-para-sostener-la-guerra-en-sinaloa",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "113d35214a",
+   "status": "single_source",
+   "title": "EN VIVO| Seguridad, narcotráfico y crimen en México hoy 3 de noviembre: capturan a “El Chopercito”, objetivo prioritario ligado con al menos 10 homicidios en CDMX - Infobae",
+   "lang": "es",
+   "title_en": "LIVE | Security, drug trafficking and crime in Mexico today, November 3: “El Chopercito” captured, a priority target linked to at least 10 homicides in CDMX - Infobae",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2727",
+    "MEX-2720",
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/03/en-vivo-seguridad-narcotrafico-y-crimen-en-mexico-hoy-3-de-noviembre-abogada-de-emma-coronel-planea-pedir-llamadas-monitoreadas-para-que-retome-contacto-con-el-chapo/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/04/en-vivo-seguridad-narcotrafico-y-crimen-en-mexico-hoy-4-de-noviembre/",
+     "time": "2026-11-05T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
+   "id": "b11795b62a",
+   "status": "single_source",
+   "title": "Capturan a seis miembros del Cártel de Sinaloa en Tuxtla: les decomisaron armas de fuego y equipo táctico - Infobae",
+   "lang": "es",
+   "title_en": "Six Sinaloa Cartel members captured in Tuxtla: firearms and tactical gear were seized from them",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "Infobae",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2735"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "sinaloa"
+   ],
+   "outlets": [
+    "Infobae"
+   ],
+   "sources": [
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/04/capturan-a-seis-miembros-del-cartel-de-sinaloa-en-tuxtla-les-decomisaron-armas-de-fuego-y-equipo-tactico/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://infobae.com/mexico/2026/11/04/paseando-con-metralletas-asi-agarraron-a-seis-integrantes-del-cartel-de-sinaloa-en-chiapas-l-video",
      "time": "2026-11-05T12:00:00Z",
      "time_precision": "day"
     }
@@ -1161,8 +1378,8 @@
    "first_source": "El Imparcial",
    "region_ids": [
     "MEX-2727",
-    "MEX-2706",
-    "MEX-2736"
+    "MEX-2736",
+    "MEX-2706"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -1211,9 +1428,9 @@
    "first_report_precision": "day",
    "first_source": "El Tiempo",
    "region_ids": [
+    "COL-1399",
     "COL-1425",
-    "COL-1314",
-    "COL-1399"
+    "COL-1314"
    ],
    "country": "COL",
    "group_ids": [
@@ -1312,9 +1529,9 @@
    ],
    "country": "ECU",
    "group_ids": [
+    "los_tiguerones",
     "chone_killers",
-    "choneros",
-    "los_tiguerones"
+    "choneros"
    ],
    "outlets": [
     "El Universo"
@@ -1345,9 +1562,9 @@
    ],
    "country": "ECU",
    "group_ids": [
+    "los_tiguerones",
     "chone_killers",
-    "choneros",
-    "los_tiguerones"
+    "choneros"
    ],
    "outlets": [
     "El Universo"
@@ -1440,10 +1657,10 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "chapitos",
+    "lnfm",
     "sinaloa",
-    "lnfm"
+    "cjng",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -1474,9 +1691,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
     "sinaloa",
-    "mayiza"
+    "mayiza",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -1627,9 +1844,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
     "sinaloa",
-    "mayiza"
+    "mayiza",
+    "chapitos"
    ],
    "outlets": [
     "MVS Noticias"
@@ -1714,8 +1931,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "BOL-1940",
-    "ARG-1271"
+    "ARG-1271",
+    "BOL-1940"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -1748,8 +1965,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "tda",
-    "eln"
+    "eln",
+    "tda"
    ],
    "outlets": [
     "Infobae"
@@ -1805,8 +2022,8 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "GTM-1951",
-    "GTM-1963"
+    "GTM-1963",
+    "GTM-1951"
    ],
    "country": "GTM",
    "group_ids": [],
@@ -1926,8 +2143,8 @@
    ],
    "country": "COL",
    "group_ids": [
-    "tda",
-    "eln"
+    "eln",
+    "tda"
    ],
    "outlets": [
     "Semana"
@@ -1983,8 +2200,8 @@
    "first_report_precision": "minute",
    "first_source": "Proceso",
    "region_ids": [
-    "MEX-2732",
-    "NIC-24"
+    "NIC-24",
+    "MEX-2732"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -2550,8 +2767,8 @@
    "first_report_precision": "minute",
    "first_source": "Infobae",
    "region_ids": [
-    "MEX-2735",
-    "MEX-2711"
+    "MEX-2711",
+    "MEX-2735"
    ],
    "country": "MEX",
    "group_ids": [
@@ -2700,8 +2917,8 @@
    "first_report_precision": "minute",
    "first_source": "Primicias",
    "region_ids": [
-    "BOL-1940",
-    "ARG-1271"
+    "ARG-1271",
+    "BOL-1940"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -2785,6 +3002,98 @@
      "via": "X @parescolombia",
      "url": "https://x.com/parescolombia/status/2118027510843593155",
      "time": "2026-11-04T17:08:04Z",
+     "time_precision": "minute"
+    }
+   ]
+  },
+  {
+   "id": "4e8599c363",
+   "status": "confirmed",
+   "title": "Marina realiza acciones de prevención en Sinaloa; asegura vehículos, armas y droga en Caminaguato y El Tepuche",
+   "lang": "es",
+   "title_en": "Navy carries out prevention actions in Sinaloa; seizes vehicles, weapons and drugs in Caminaguato and El Tepuche",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2711",
+    "MEX-2734",
+    "MEX-2731",
+    "MEX-2719"
+   ],
+   "country": "MEX",
+   "group_ids": [
+    "cjng"
+   ],
+   "outlets": [
+    "El Universal",
+    "Gabinete de Seguridad (Mexico)",
+    "Infobae",
+    "Los Noticieristas",
+    "SSPC (Mexico)"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/nacion/marina-realiza-acciones-de-prevencion-en-sinaloa-asegura-vehiculos-armas-y-droga-en-caminaguato-y-el-tepuche/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.infobae.com/mexico/2026/11/04/marina-incauta-armas-drogas-y-vehiculos-en-dos-operativos-en-sinaloa-afectacion-economica-al-narco-es-de-61-mdp/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    },
+    {
+     "outlet": "gabsec",
+     "name": "Gabinete de Seguridad (Mexico)",
+     "kind": "official",
+     "via": "X @GabSeguridadMX",
+     "url": "https://x.com/GabSeguridadMX/status/2117951120291066065",
+     "time": "2026-11-04T12:04:31Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2117962535785656501",
+     "time": "2026-11-04T12:49:53Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "noticieristas",
+     "name": "Los Noticieristas",
+     "kind": "outlet",
+     "via": "X @noticieristas",
+     "url": "https://x.com/noticieristas/status/2117996398675214551",
+     "time": "2026-11-04T15:04:26Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "sspc",
+     "name": "SSPC (Mexico)",
+     "kind": "official",
+     "via": "X @SSPCMexico",
+     "url": "https://x.com/SSPCMexico/status/2118005422871450061",
+     "time": "2026-11-04T15:40:18Z",
+     "time_precision": "minute"
+    },
+    {
+     "outlet": "infobae",
+     "name": "Infobae",
+     "kind": "outlet",
+     "via": "X @infobaemexico",
+     "url": "https://x.com/infobaemexico/status/2118019003301892312",
+     "time": "2026-11-04T16:34:15Z",
      "time_precision": "minute"
     }
    ]
@@ -2890,8 +3199,8 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "cjng",
-    "b18"
+    "b18",
+    "cjng"
    ],
    "outlets": [
     "El Faro"
@@ -2933,58 +3242,6 @@
      "via": "X @ArmandoInfo",
      "url": "https://x.com/ArmandoInfo/status/2117965094155854234",
      "time": "2026-11-04T13:00:02Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "4e8599c363",
-   "status": "confirmed",
-   "title": "Marina realiza acciones de prevención en Sinaloa; asegura vehículos, armas y droga en Caminaguato y El Tepuche",
-   "lang": "es",
-   "title_en": "Navy carries out prevention actions in Sinaloa; seizes vehicles, weapons and drugs in Caminaguato and El Tepuche",
-   "first_report": "2026-11-04T12:00:00Z",
-   "first_report_precision": "day",
-   "first_source": "El Universal",
-   "region_ids": [
-    "MEX-2711",
-    "MEX-2719"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "El Universal",
-    "Gabinete de Seguridad (Mexico)",
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "eluniversal",
-     "name": "El Universal",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.eluniversal.com.mx/nacion/marina-realiza-acciones-de-prevencion-en-sinaloa-asegura-vehiculos-armas-y-droga-en-caminaguato-y-el-tepuche/",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "headline",
-     "url": "https://www.infobae.com/mexico/2026/11/04/marina-incauta-armas-drogas-y-vehiculos-en-dos-operativos-en-sinaloa-afectacion-economica-al-narco-es-de-61-mdp/",
-     "time": "2026-11-04T12:00:00Z",
-     "time_precision": "day"
-    },
-    {
-     "outlet": "gabsec",
-     "name": "Gabinete de Seguridad (Mexico)",
-     "kind": "official",
-     "via": "X @GabSeguridadMX",
-     "url": "https://x.com/GabSeguridadMX/status/2117951120291066065",
-     "time": "2026-11-04T12:04:31Z",
      "time_precision": "minute"
     }
    ]
@@ -3037,9 +3294,9 @@
    "country": "MEX",
    "group_ids": [
     "cjng",
-    "chapitos",
     "sinaloa",
-    "mayiza"
+    "mayiza",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -3114,9 +3371,9 @@
    ],
    "country": "MEX",
    "group_ids": [
-    "chapitos",
     "sinaloa",
-    "mayiza"
+    "mayiza",
+    "chapitos"
    ],
    "outlets": [
     "Infobae"
@@ -3143,8 +3400,8 @@
    "first_report_precision": "day",
    "first_source": "Milenio",
    "region_ids": [
-    "MEX-2716",
-    "MEX-2708"
+    "MEX-2708",
+    "MEX-2716"
    ],
    "country": "MEX",
    "group_ids": [],
@@ -3406,6 +3663,35 @@
    ]
   },
   {
+   "id": "fae6de4fe2",
+   "status": "single_source",
+   "title": "¿Con qué homicidios relacionan a “El Chopersito”?; lo vinculan con al menos 10 asesinatos en Iztapalapa",
+   "lang": "es",
+   "title_en": "Which homicides is “El Chopersito” linked to? He is tied to at least 10 killings in Iztapalapa",
+   "first_report": "2026-11-04T12:00:00Z",
+   "first_report_precision": "day",
+   "first_source": "El Universal",
+   "region_ids": [
+    "MEX-2727"
+   ],
+   "country": "MEX",
+   "group_ids": [],
+   "outlets": [
+    "El Universal"
+   ],
+   "sources": [
+    {
+     "outlet": "eluniversal",
+     "name": "El Universal",
+     "kind": "outlet",
+     "via": "headline",
+     "url": "https://www.eluniversal.com.mx/metropoli/con-que-homicidios-relacionan-a-el-chopersito-lo-vinculan-con-al-menos-10-asesinatos-en-iztapalapa/",
+     "time": "2026-11-04T12:00:00Z",
+     "time_precision": "day"
+    }
+   ]
+  },
+  {
    "id": "418e279e0e",
    "status": "single_source",
    "title": "Fuga de agua provoca cierre vial en Calzada México-Tacuba; descartan afectaciones en estación Colegio Militar",
@@ -3474,9 +3760,9 @@
    "first_report_precision": "day",
    "first_source": "Infobae",
    "region_ids": [
-    "BOL-1940",
+    "ARG-1271",
     "ECU-1270",
-    "ARG-1271"
+    "BOL-1940"
    ],
    "country": "ARG",
    "group_ids": [],
@@ -3700,215 +3986,6 @@
      "url": "https://www.tvazteca.com/aztecanoticias/hermano-el-mencho-del-cjng-pide-numero-anos-carcel-sentenci-eu-esta-fue-la-razon",
      "time": "2026-11-04T12:00:00Z",
      "time_precision": "day"
-    }
-   ]
-  },
-  {
-   "id": "1c9808c2e2",
-   "status": "single_source",
-   "title": "Autoridades llevan a juicio al \"Negro Pimentel\", integrante del Cártel de Sinaloa arrestado en Ensenada",
-   "lang": "es",
-   "title_en": "Authorities bring \"Negro Pimentel,\" a Sinaloa Cartel member arrested in Ensenada, to trial",
-   "first_report": "2026-11-04T03:48:22Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2706",
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "sinaloa"
-   ],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117826261762408663",
-     "time": "2026-11-04T03:48:22Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "78315250c4",
-   "status": "single_source",
-   "title": "Golpe a Los Tlacos: detienen a “El Pikachu” por el homicidio del abogado Anselmo Campuzano en Guerrero",
-   "lang": "es",
-   "title_en": "Blow to Los Tlacos: \"El Pikachu\" arrested for the homicide of lawyer Anselmo Campuzano in Guerrero",
-   "first_report": "2026-11-04T03:11:50Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2729"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117817067663499462",
-     "time": "2026-11-04T03:11:50Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "061b3a3412",
-   "status": "single_source",
-   "title": "Oposición destapa al “cártel electoral” en Sonora, acusan que hijo de Guadalupe Taddei lo encabeza",
-   "lang": "es",
-   "title_en": "Opposition exposes an \"electoral cartel\" in Sonora, alleging that Guadalupe Taddei's son leads it",
-   "first_report": "2026-11-04T02:37:46Z",
-   "first_report_precision": "minute",
-   "first_source": "Infobae",
-   "region_ids": [
-    "MEX-2712"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Infobae"
-   ],
-   "sources": [
-    {
-     "outlet": "infobae",
-     "name": "Infobae",
-     "kind": "outlet",
-     "via": "X @infobaemexico",
-     "url": "https://x.com/infobaemexico/status/2117808491645501520",
-     "time": "2026-11-04T02:37:46Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "08ed33f384",
-   "status": "single_source",
-   "title": "🇲🇽 | It’s been one year since Uruapan Mayor Carlos Manzo was killed during a Day of the Dead celebration in Mexico. Which CJNG figure has been linked to his murder, and what does the case reveal about",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-11-04T02:02:53Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [
-    "MEX-2720"
-   ],
-   "country": "MEX",
-   "group_ids": [
-    "cjng"
-   ],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2117799713839755524",
-     "time": "2026-11-04T02:02:53Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "5974386d83",
-   "status": "single_source",
-   "title": "🇨🇷Cargo theft is changing how companies move goods through Central America. Journeys that once took 3-4 days can now take up to 6 as drivers avoid night travel, while some companies have shifted cargo",
-   "lang": "en",
-   "title_en": null,
-   "first_report": "2026-11-04T00:02:24Z",
-   "first_report_precision": "minute",
-   "first_source": "InSight Crime",
-   "region_ids": [
-    "PRY-607"
-   ],
-   "country": "PRY",
-   "group_ids": [],
-   "outlets": [
-    "InSight Crime"
-   ],
-   "sources": [
-    {
-     "outlet": "insight",
-     "name": "InSight Crime",
-     "kind": "outlet",
-     "via": "X @InSightCrime",
-     "url": "https://x.com/InSightCrime/status/2117769395724321167",
-     "time": "2026-11-04T00:02:24Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "bd0b260bcb",
-   "status": "single_source",
-   "title": "🚔🔎 Autoridades detuvieron en Edomex a Lino “N”, alias “El Patrón”, presunto líder de “Los Linos”, grupo delictivo ligado a homicidios y extorsión en Morelos. Con esto suman nueve miembros detenidos.",
-   "lang": "es",
-   "title_en": "🚔🔎 Authorities arrested in Edomex Lino \"N,\" alias \"El Patrón,\" alleged leader of \"Los Linos,\" a criminal group linked to homicides and extortion in Morelos. With this, nine members have been arrested.",
-   "first_report": "2026-11-03T23:30:20Z",
-   "first_report_precision": "minute",
-   "first_source": "Animal Político",
-   "region_ids": [
-    "MEX-2732",
-    "MEX-2731"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Animal Político"
-   ],
-   "sources": [
-    {
-     "outlet": "animal",
-     "name": "Animal Político",
-     "kind": "outlet",
-     "via": "X @Pajaropolitico",
-     "url": "https://x.com/Pajaropolitico/status/2117761325065441745",
-     "time": "2026-11-03T23:30:20Z",
-     "time_precision": "minute"
-    }
-   ]
-  },
-  {
-   "id": "048f7dce68",
-   "status": "single_source",
-   "title": "De acuerdo con las investigaciones, los hechos ocurrieron el 21 de abril del presente año, en una localidad de la sindicatura de #Altata, municipio de #Navolato, donde el ahora detenido presuntamente ",
-   "lang": "es",
-   "title_en": "According to the investigation, the events took place on April 21 of this year in a community in the #Altata district, municipality of #Navolato, where the detainee allegedly tried to kill a person.",
-   "first_report": "2026-11-03T23:30:00Z",
-   "first_report_precision": "minute",
-   "first_source": "Ríodoce",
-   "region_ids": [
-    "MEX-2711"
-   ],
-   "country": "MEX",
-   "group_ids": [],
-   "outlets": [
-    "Ríodoce"
-   ],
-   "sources": [
-    {
-     "outlet": "riodoce",
-     "name": "Ríodoce",
-     "kind": "outlet",
-     "via": "X @Riodoce_mx",
-     "url": "https://x.com/Riodoce_mx/status/2117761239736897699",
-     "time": "2026-11-03T23:30:00Z",
-     "time_precision": "minute"
     }
    ]
   }
