@@ -165,7 +165,7 @@
   "Китай — Европа",
   "Китай-Европа"
  ],
- "Long March 90th anniversary": {
+  "Long March 90th anniversary": {
   "any": [
    "Long March",
    "长征",
@@ -189,6 +189,48 @@
    "运载火箭",
    "ロケット",
    "ракет"
+  ]
+ },
+ "140th Canton Fair": {
+  "any": [
+   "Canton",
+   "广交会",
+   "Import and Export",
+   "Feria de Cantón",
+   "FeriaDeCantón",
+   "high-standard opening",
+   "high-quality development",
+   "140th edition",
+   "expanding imports of quality products"
+  ],
+  "not": [
+   "Wuzhen",
+   "乌镇",
+   "世界互联网",
+   "World Internet",
+   "WorldInternet"
+  ]
+ },
+ "Li Qiang's keynote at the 2026 World Internet Conference Wuzhen Summit": {
+  "any": [
+   "Wuzhen",
+   "乌镇",
+   "世界互联网大会",
+   "World Internet Conference",
+   "WorldInternetConference",
+   "people-centered approach to internet",
+   "human agency must remain paramount",
+   "approche plus centrée sur l'humain"
+  ],
+  "also": [
+   "Li Qiang",
+   "李强",
+   "Premier"
+  ],
+  "not": [
+   "Canton",
+   "广交会",
+   "Import and Export Fair"
   ]
  }
 }

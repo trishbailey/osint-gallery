@@ -111,7 +111,9 @@ def on_topic(i,nm_):
 # A named topic with no surviving cluster (e.g. after the backfill re-clusters) can be re-formed from the posts that match its keywords, if 5+ accounts carry it.
 for nm_ in [k for k in RULES if not k.startswith('_') and k not in grp]:
     m=[i for i in range(N) if on_topic(i,nm_)]
-    if len({rows[i]['h'] for i in m})>=5: CLM.append(m);CL.append(dict(key=rows[m[0]]['id'],name=nm_,desc=None));grp[nm_]=[len(CL)-1]
+    if len({rows[i]['h'] for i in m})>=5:
+        desc=next((v.get('desc') for v in NAMES.values() if v.get('name')==nm_),None)
+        CLM.append(m);CL.append(dict(key=rows[m[0]]['id'],name=nm_,desc=desc));grp[nm_]=[len(CL)-1]
 named=[]
 for nm_,ixs in grp.items():
     m=sorted({i for n in ixs for i in CLM[n] if on_topic(i,nm_)},key=lambda i:rows[i]['t']);seen=set();hs=[]
@@ -162,18 +164,32 @@ _mxr=sorted([dict(h=h,country=acc.get(h.lower(),{}).get('country_posted','?'),ce
 matrix=dict(points=_mp,window_days=7,total_accounts=len(_mxr),rows=_mxr[:25])
 # ---------- synchronized bursts ----------
 WIN=dt.timedelta(hours=6);bursts=[]
+def add_burst(n,mem,name,named):
+    hs={rows[i]['h'] for i in mem}
+    if len(hs)<4: return
+    mem=sorted(mem,key=lambda i:rows[i]['t'])
+    en=[rows[i]['c'] for i in mem if rows[i]['lang']=='en' and len(rows[i]['c'])>20]
+    q=collections.Counter(en).most_common(1)[0][0] if en else rows[mem[0]]['c']
+    bursts.append(dict(cl=n,name=name,named=bool(named),start=rows[mem[0]]['t'],end=rows[mem[-1]]['t'],accounts=len(hs),
+      countries=len({rows[i]['country'] for i in mem}),quote=q[:220]+('…' if len(q)>220 else ''),quote_en=bool(en),langs=dict(collections.Counter(rows[i]['lang'] for i in mem)),ids=[rows[i]['id'] for i in mem]))
 for n,m in enumerate(clusters[:40]):
-    ts=[(T(rows[i]['t']),i) for i in m];j=0;used=set()
+    ts=[(T(rows[i]['t']),i) for i in m];used=set()
+    cname=CL[n]['name'] if n<len(CL) else None
     for a_ in range(len(ts)):
         if ts[a_][1] in used:continue
-        grp=[x for x in ts if ts[a_][0]<=x[0]<=ts[a_][0]+WIN and x[1] not in used]
-        hs={rows[i]['h'] for _,i in grp}
-        if len(hs)>=4:
-            for _,i in grp:used.add(i)
-            mem=[i for _,i in grp];en=[rows[i]['c'] for i in mem if rows[i]['lang']=='en' and len(rows[i]['c'])>20]
-            q=collections.Counter(en).most_common(1)[0][0] if en else rows[mem[0]]['c']
-            bursts.append(dict(cl=n,name=CL[n]['name'] or CL[n]['sample'][:90],named=bool(CL[n]['name']),start=rows[grp[0][1]]['t'],end=rows[grp[-1][1]]['t'],accounts=len(hs),
-              countries=len({rows[i]['country'] for i in mem}),quote=q[:220]+('…' if len(q)>220 else ''),quote_en=bool(en),langs=dict(collections.Counter(rows[i]['lang'] for i in mem)),ids=[rows[i]['id'] for i in mem]))
+        win=[x for x in ts if ts[a_][0]<=x[0]<=ts[a_][0]+WIN and x[1] not in used]
+        if len({rows[i]['h'] for _,i in win})<4: continue
+        for _,i in win: used.add(i)
+        mem=[i for _,i in win];bytp=collections.defaultdict(list);bare=[]
+        for i in mem:
+            tp=rows[i].get('tp')
+            (bytp[tp] if tp else bare).append(i)
+        # A near-duplicate window can hold two talking points. Name each point from its own posts.
+        if bytp:
+            for tp,mm in bytp.items(): add_burst(n,mm,tp,True)
+            if bare: add_burst(n,bare,cname or CL[n]['sample'][:90],bool(cname))
+        else:
+            add_burst(n,mem,cname or CL[n]['sample'][:90],bool(cname))
 burst_ids={i for b in bursts for i in b['ids']}
 LBL_OVR={'MFA_China':'Foreign Ministry spokesperson','SpoxCHN_MaoNing':'Spokesperson Mao Ning','SpoxCHN_LinJian':'Spokesperson Lin Jian','DGAfrica_MFA':'MFA Africa dept (Du Xiaohui)',
  'Ambassador_Liu':'Liu Yuxi (MFA)','ChnConsul_osaka':'Consulate in Osaka','ChnEmbassy_jp':'Embassy in Japan','XisMoments':"Xi's Moments (state media)",'CgtnJapanese':'CGTN Japanese','XHNews':'Xinhua News',

@@ -97,7 +97,8 @@ const DAYR=(()=>{const n=ST.days.length,f=ST.days.findIndex((d,i)=>ST.series.sli
 // One click handler on the whole chart: opens the talking point under the pointer, or the nearest layer, so thin layers and finger taps still hit.
 function hitOpen(svg,stk,x,y,days,w){svg.style('cursor','pointer').on('click',e=>{const td=e.target&&e.target.__data__;if(td&&td.key!=null&&e.target.tagName==='path'){openNarr(td.key);return}const [mx,my]=d3.pointer(e,svg.node()),sc=w/svg.node().getBoundingClientRect().width,X=mx*sc,Y=my*sc;
  const i=d3.minIndex(days,dd=>Math.abs(x(dd)-X)),v=y.invert(Y);let best=null,bd=1/0;stk.forEach(l=>{const a=l[i][0],b=l[i][1];if(b<=a)return;const dd=v<a?a-v:v>b?v-b:0;if(dd<bd){bd=dd;best=l.key}});
- if(best!=null&&Y<y.range()[0])openNarr(best)})}
+ if(best!=null&&Y<y.range()[0])openNarr(best)});
+ svg.selectAll('path.domain,.tick line,.tick text').style('cursor','default').style('pointer-events','none')}
 // chips under each talking-points chart: click opens the explanation panel
 function tpChips(el,keys){VK[el]=keys;if(!document.getElementById(el).hidden)tpLeg(keys)}
 function tpLeg(keys){d3.select('#lg-tp').html('').selectAll('div').data(keys).join('div').style('cursor','pointer').attr('title','Click to read what it says').html(k=>`<span class="sw sq" style="background:${TPC[k]}"></span>${esc(ST.series[k].name)}`).on('click',(e,k)=>openNarr(k));narrKeys(d3.select('#lg-tp').selectAll('div'),k=>k)}
