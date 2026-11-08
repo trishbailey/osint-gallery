@@ -116,7 +116,14 @@ for nm_ in [k for k in RULES if not k.startswith('_') and k not in grp]:
         CLM.append(m);CL.append(dict(key=rows[m[0]]['id'],name=nm_,desc=desc));grp[nm_]=[len(CL)-1]
 named=[]
 for nm_,ixs in grp.items():
-    m=sorted({i for n in ixs for i in CLM[n] if on_topic(i,nm_)},key=lambda i:rows[i]['t']);seen=set();hs=[]
+    m=sorted({i for n in ixs for i in CLM[n] if on_topic(i,nm_)},key=lambda i:rows[i]['t'])
+    if nm_=='Long March 90th anniversary':
+        # The anniversary is split across many small components, so a name key on one component does not
+        # cover the others. A post that still matches the rule, and was not given a different topic, stays.
+        have=set(m)
+        extra=[i for i in range(N) if i not in have and on_topic(i,nm_) and not rows[i].get('tp')]
+        if extra: m=sorted(have|set(extra),key=lambda i:rows[i]['t'])
+    seen=set();hs=[]
     if os.environ.get('CD_DEBUG'):
         for i in sorted({i for n in ixs for i in CLM[n] if not on_topic(i,nm_)}): print('DROP',nm_[:12],'|',rows[i]['lang'],len(rows[i]['c']),rows[i]['c'][:110].replace('\n',' '))
     if len({rows[i]['h'] for i in m})<3: continue
@@ -163,6 +170,29 @@ for r in rows:
 _mxr=sorted([dict(h=h,country=acc.get(h.lower(),{}).get('country_posted','?'),cells=dict(v)) for h,v in mx.items()],key=lambda x:-sum(x['cells'].values()))
 matrix=dict(points=_mp,window_days=7,total_accounts=len(_mxr),rows=_mxr[:25])
 # ---------- synchronized bursts ----------
+def burst_windows(stamped, window, min_accounts=4):
+    """One topic. stamped items are (time, account, index).
+    A window starts at the next unused post and takes later unused posts through start+window.
+    Posts are marked used only when that window has min_accounts distinct accounts."""
+    stamped=sorted(stamped,key=lambda x:(x[0],x[2]))
+    used=set();out=[]
+    for a in range(len(stamped)):
+        if stamped[a][2] in used: continue
+        t0=stamped[a][0]
+        win=[x for x in stamped if t0<=x[0]<=t0+window and x[2] not in used]
+        if len({x[1] for x in win})<min_accounts: continue
+        for x in win: used.add(x[2])
+        out.append([x[2] for x in win])
+    return out
+def bursts_by_topic(events, window, min_accounts=4):
+    """events are (time, account, topic, index). Each topic has its own used set, so an earlier
+    post of another topic cannot consume a later valid window of this one."""
+    groups={}
+    for time,account,topic,idx in events: groups.setdefault(topic,[]).append((time,account,idx))
+    out=[]
+    for topic,stamped in groups.items():
+        for mem in burst_windows(stamped,window,min_accounts): out.append((topic,mem))
+    return out
 WIN=dt.timedelta(hours=6);bursts=[]
 def add_burst(n,mem,name,named):
     hs={rows[i]['h'] for i in mem}
@@ -173,23 +203,11 @@ def add_burst(n,mem,name,named):
     bursts.append(dict(cl=n,name=name,named=bool(named),start=rows[mem[0]]['t'],end=rows[mem[-1]]['t'],accounts=len(hs),
       countries=len({rows[i]['country'] for i in mem}),quote=q[:220]+('…' if len(q)>220 else ''),quote_en=bool(en),langs=dict(collections.Counter(rows[i]['lang'] for i in mem)),ids=[rows[i]['id'] for i in mem]))
 for n,m in enumerate(clusters[:40]):
-    ts=[(T(rows[i]['t']),i) for i in m];used=set()
     cname=CL[n]['name'] if n<len(CL) else None
-    for a_ in range(len(ts)):
-        if ts[a_][1] in used:continue
-        win=[x for x in ts if ts[a_][0]<=x[0]<=ts[a_][0]+WIN and x[1] not in used]
-        if len({rows[i]['h'] for _,i in win})<4: continue
-        for _,i in win: used.add(i)
-        mem=[i for _,i in win];bytp=collections.defaultdict(list);bare=[]
-        for i in mem:
-            tp=rows[i].get('tp')
-            (bytp[tp] if tp else bare).append(i)
-        # A near-duplicate window can hold two talking points. Name each point from its own posts.
-        if bytp:
-            for tp,mm in bytp.items(): add_burst(n,mm,tp,True)
-            if bare: add_burst(n,bare,cname or CL[n]['sample'][:90],bool(cname))
-        else:
-            add_burst(n,mem,cname or CL[n]['sample'][:90],bool(cname))
+    events=[(T(rows[i]['t']),rows[i]['h'],rows[i].get('tp'),i) for i in m]
+    for tp,mem in bursts_by_topic(events,WIN):
+        if tp: add_burst(n,mem,tp,True)
+        else: add_burst(n,mem,cname or CL[n]['sample'][:90],bool(cname))
 burst_ids={i for b in bursts for i in b['ids']}
 LBL_OVR={'MFA_China':'Foreign Ministry spokesperson','SpoxCHN_MaoNing':'Spokesperson Mao Ning','SpoxCHN_LinJian':'Spokesperson Lin Jian','DGAfrica_MFA':'MFA Africa dept (Du Xiaohui)',
  'Ambassador_Liu':'Liu Yuxi (MFA)','ChnConsul_osaka':'Consulate in Osaka','ChnEmbassy_jp':'Embassy in Japan','XisMoments':"Xi's Moments (state media)",'CgtnJapanese':'CGTN Japanese','XHNews':'Xinhua News',
