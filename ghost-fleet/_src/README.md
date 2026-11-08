@@ -1,7 +1,7 @@
 # Ghost fleet dashboard (/ghost-fleet/)
 Static page; data rebuilt daily by `.github/workflows/ghost-fleet-rebuild.yml` (cron 05:41 UTC).
 
-Pipeline: `seed.py` (manual, occasional) -> `vessels_seed.json`; `fetch.py` (needs Actions secret `GFW_API_TOKEN`; never print it) -> `data/vessels.json`, `data/events.json` (gitignored); `build.py` -> `data/map.json`, `data/tracks.json`, `data/profiles.json`; `palette_check.py` gate.
+Pipeline: `seed.py` (manual, occasional) -> `vessels_seed.json`; `fetch.py` (needs Actions secret `GFW_API_TOKEN`; never print it) -> `data/vessels.json`, `data/events.json` (gitignored); `build.py` -> `data/map.json`, `data/tracks.json`, `data/profiles.json`; `palette_check.py` gate. The gate reads category colours from `app.js` (event types and behaviour classes), `story.js` (chapter 1 `B3C` and `RED`) and `shuttle.js` (buyer `CC`). A missing or malformed palette fails the run; it does not skip that palette.
 
 ## Vessel list sources (repo note only; the page shows no designation labels)
 - UK FCDO Russia sanctions list, vessels (program GB-RUS), via OpenSanctions `gb_fcdo_sanctions`: https://data.opensanctions.org/datasets/latest/gb_fcdo_sanctions/targets.simple.csv
