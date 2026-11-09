@@ -1,171 +1,166 @@
 {
- "data_through": "2026-11-05",
- "window_start": "2026-10-07",
+ "data_through": "2026-11-09",
+ "window_start": "2026-10-11",
  "collection": {
   "channels": 128,
-  "posts": 643853,
+  "posts": 672891,
   "start": "2026-05-01",
-  "end": "2026-11-05"
+  "end": "2026-11-09"
  },
  "by_group": {
   "houthi": {
    "ch": 25,
-   "posts": 95740
+   "posts": 104043
   },
   "irgc": {
    "ch": 4,
-   "posts": 35854
+   "posts": 38853
   },
   "hezbollah": {
    "ch": 17,
-   "posts": 38831
+   "posts": 41697
   },
   "hamas": {
    "ch": 10,
-   "posts": 43143
+   "posts": 46299
   },
   "iraqi": {
    "ch": 23,
-   "posts": 55665
+   "posts": 60375
   },
   "aligned": {
    "ch": 4,
-   "posts": 11832
+   "posts": 12609
   },
   "pij": {
    "ch": 1,
-   "posts": 278
+   "posts": 291
   }
  },
  "flow30": [
   [
    "aligned",
    "hezbollah",
-   657
+   670
   ],
   [
    "houthi",
    "irgc",
-   342
+   333
   ],
   [
    "houthi",
    "hezbollah",
-   288
+   278
   ],
   [
    "hezbollah",
    "iraqi",
-   248
+   236
   ],
   [
    "irgc",
    "hezbollah",
-   218
-  ],
-  [
-   "houthi",
-   "iraqi",
-   192
+   217
   ],
   [
    "irgc",
    "houthi",
-   187
+   190
+  ],
+  [
+   "houthi",
+   "iraqi",
+   177
   ],
   [
    "iraqi",
    "hezbollah",
-   165
+   175
   ],
   [
    "aligned",
    "iraqi",
-   158
+   152
   ],
   [
    "hezbollah",
    "houthi",
-   135
+   129
   ],
   [
    "hezbollah",
    "irgc",
-   113
+   117
   ],
   [
    "hamas",
    "irgc",
-   99
-  ],
-  [
-   "iraqi",
-   "houthi",
-   84
+   104
   ],
   [
    "hamas",
    "hezbollah",
-   81
+   77
+  ],
+  [
+   "iraqi",
+   "houthi",
+   76
   ],
   [
    "aligned",
    "houthi",
-   69
-  ],
-  [
-   "hezbollah",
-   "aligned",
-   54
+   65
   ],
   [
    "irgc",
    "iraqi",
-   47
+   51
   ],
   [
    "irgc",
    "hamas",
-   37
+   40
+  ],
+  [
+   "hezbollah",
+   "aligned",
+   39
   ],
   [
    "iraqi",
    "aligned",
-   31
+   34
   ],
   [
    "hamas",
    "iraqi",
-   31
+   29
+  ],
+  [
+   "iraqi",
+   "hamas",
+   12
   ],
   [
    "hezbollah",
    "hamas",
-   13
-  ],
-  [
-   "iraqi",
-   "hamas",
-   13
+   12
   ],
   [
    "houthi",
    "aligned",
-   9
-  ],
-  [
-   "hamas",
-   "houthi",
    8
   ],
   [
-   "aligned",
    "hamas",
-   5
+   "houthi",
+   7
   ],
   [
-   "iraqi",
-   "irgc",
+   "aligned",
+   "hamas",
    4
   ],
   [
@@ -174,9 +169,9 @@
    3
   ],
   [
-   "houthi",
-   "hamas",
-   2
+   "iraqi",
+   "irgc",
+   3
   ],
   [
    "pij",
@@ -185,85 +180,85 @@
   ],
   [
    "pij",
-   "hezbollah",
+   "iraqi",
    2
   ],
   [
    "pij",
-   "iraqi",
-   2
+   "hezbollah",
+   1
   ]
  ],
  "flow7": [
   [
    "aligned",
    "hezbollah",
-   114
+   111
   ],
   [
-   "hezbollah",
-   "iraqi",
+   "houthi",
+   "irgc",
    64
   ],
   [
    "houthi",
    "hezbollah",
-   53
+   57
+  ],
+  [
+   "hezbollah",
+   "iraqi",
+   56
   ],
   [
    "irgc",
    "hezbollah",
-   49
+   47
   ],
   [
-   "houthi",
-   "irgc",
-   49
-  ],
-  [
-   "irgc",
-   "houthi",
-   42
-  ],
-  [
+   "iraqi",
    "hezbollah",
-   "irgc",
    36
   ],
   [
-   "aligned",
-   "iraqi",
-   31
-  ],
-  [
-   "iraqi",
    "hezbollah",
-   29
+   "irgc",
+   35
   ],
   [
+   "irgc",
    "houthi",
-   "iraqi",
-   24
+   29
   ],
   [
    "hamas",
    "irgc",
-   24
+   28
   ],
   [
-   "irgc",
+   "aligned",
    "iraqi",
-   24
+   21
   ],
   [
-   "hezbollah",
    "houthi",
+   "iraqi",
    20
   ],
   [
    "hamas",
    "hezbollah",
+   19
+  ],
+  [
+   "irgc",
+   "iraqi",
    17
+  ],
+  [
+   "hezbollah",
+   "houthi",
+   16
   ],
   [
    "iraqi",
@@ -271,52 +266,42 @@
    14
   ],
   [
-   "irgc",
-   "hamas",
-   13
-  ],
-  [
    "aligned",
    "houthi",
-   11
+   9
+  ],
+  [
+   "irgc",
+   "hamas",
+   8
   ],
   [
    "iraqi",
    "aligned",
-   7
+   6
   ],
   [
-   "iraqi",
-   "hamas",
+   "hezbollah",
+   "aligned",
    5
   ],
   [
    "hamas",
    "iraqi",
-   4
-  ],
-  [
-   "hezbollah",
-   "aligned",
-   4
-  ],
-  [
-   "houthi",
-   "aligned",
-   4
-  ],
-  [
-   "hezbollah",
-   "hamas",
-   4
-  ],
-  [
-   "hamas",
-   "houthi",
    3
   ],
   [
-   "aligned",
+   "iraqi",
+   "hamas",
+   2
+  ],
+  [
+   "hamas",
+   "houthi",
+   2
+  ],
+  [
+   "hezbollah",
    "hamas",
    2
   ],
@@ -326,108 +311,118 @@
    1
   ],
   [
+   "aligned",
+   "hamas",
+   1
+  ],
+  [
+   "houthi",
+   "aligned",
+   1
+  ],
+  [
    "iraqi",
    "irgc",
    1
   ]
  ],
- "xcopies30": 3299,
- "xstories30": 2640,
+ "xcopies30": 3243,
+ "xstories30": 2627,
  "origin30": {
-  "houthi": 833,
-  "irgc": 489,
-  "hezbollah": 563,
-  "hamas": 222,
-  "iraqi": 297,
-  "aligned": 889,
-  "pij": 6
+  "houthi": 796,
+  "irgc": 498,
+  "hezbollah": 533,
+  "hamas": 220,
+  "iraqi": 300,
+  "aligned": 891,
+  "pij": 5
  },
- "allcopies30": 24288,
+ "allcopies30": 22534,
  "allorigin30": {
-  "houthi": 15652,
-  "irgc": 492,
-  "hezbollah": 892,
-  "hamas": 4468,
-  "iraqi": 1889,
-  "aligned": 889,
-  "pij": 6
+  "houthi": 14126,
+  "irgc": 501,
+  "hezbollah": 839,
+  "hamas": 4257,
+  "iraqi": 1915,
+  "aligned": 891,
+  "pij": 5
  },
  "topsrc30": [
   [
    "almayadeen",
    "aligned",
-   760
+   766
   ],
   [
    "alalamarabic",
    "irgc",
-   444
+   450
   ],
   [
    "sadaa_almasirah",
    "houthi",
-   439
+   426
   ],
   [
    "ahednews",
    "hezbollah",
-   275
+   261
   ],
   [
    "manarbreaking",
    "hezbollah",
-   205
+   200
   ]
  ],
  "week": {
-  "xcopies": 649,
-  "prev_weekly": 806.0,
+  "xcopies": 611,
+  "prev_weekly": 805.0,
   "origin": {
-   "aligned": 158,
-   "houthi": 130,
-   "irgc": 128,
-   "hezbollah": 128,
-   "iraqi": 56,
-   "hamas": 49
+   "aligned": 142,
+   "houthi": 142,
+   "hezbollah": 114,
+   "irgc": 101,
+   "iraqi": 59,
+   "hamas": 53
   },
   "prev_origin": {
-   "aligned": 230.3,
-   "houthi": 207.7,
-   "hezbollah": 127.3,
-   "irgc": 110.3,
-   "iraqi": 75.3,
-   "hamas": 53.3,
+   "aligned": 222.3,
+   "houthi": 200.7,
+   "hezbollah": 134.7,
+   "irgc": 122.7,
+   "iraqi": 72.7,
+   "hamas": 50.3,
    "pij": 1.7
   },
   "top_pairs": [
    [
     "aligned",
     "hezbollah",
-    114
+    111
    ],
    [
-    "hezbollah",
-    "iraqi",
+    "houthi",
+    "irgc",
     64
    ],
    [
     "houthi",
     "hezbollah",
-    53
+    57
    ]
   ]
  },
  "pay": {
-  "selectors": 104,
-  "channels": 17,
-  "cross_group": 0,
-  "shared": 59,
-  "max_channels": 7,
+  "selectors": 109,
+  "channels": 23,
+  "cross_group": 3,
+  "shared": 61,
+  "max_channels": 9,
   "by_type": [
    [
     "Bank card",
-    45,
-    24
+    48,
+    26
    ],
    [
     "Named donation campaign",
@@ -441,7 +436,7 @@
    ],
    [
     "Donation phone number",
-    9,
+    11,
     3
    ],
    [
@@ -451,22 +446,28 @@
    ]
   ],
   "by_group": {
-   "irgc": 14,
+   "irgc": 18,
    "hamas": 2,
+   "aligned": 2,
    "iraqi": 1
   },
   "first": "2026-05-01",
-  "last": "2026-11-05",
-  "in_window": 75,
-  "edges": 242,
+  "last": "2026-11-09",
+  "in_window": 80,
+  "edges": 256,
   "top": [
    [
     "5041721113821434",
     "Bank card",
-    7
+    9
    ],
    [
     "6037997599856011",
+    "Bank card",
+    9
+   ],
+   [
+    "5892107050077463",
     "Bank card",
     7
    ],
@@ -476,12 +477,7 @@
     5
    ],
    [
-    "6037997950416207",
-    "Bank card",
-    5
-   ],
-   [
-    "6063737005379720",
+    "6037997950394024",
     "Bank card",
     5
    ]
@@ -492,11 +488,11 @@
    "v": "6037997599856011",
    "t": "Bank card",
    "k": "bank",
-   "g": "irgc",
+   "g": "aligned;irgc",
    "ch": [
     [
      "@sarbazane_g",
-     26,
+     27,
      [
       "https://t.me/sarbazane_g/133681",
       "https://t.me/sarbazane_g/133561",
@@ -518,7 +514,7 @@
     ],
     [
      "@sepah_ir",
-     25,
+     26,
      [
       "https://t.me/sepah_ir/31976",
       "https://t.me/sepah_ir/31863",
@@ -529,7 +525,7 @@
     ],
     [
      "@sepahcybery",
-     27,
+     28,
      [
       "https://t.me/sepahcybery/151854",
       "https://t.me/sepahcybery/151640",
@@ -540,7 +536,7 @@
     ],
     [
      "@SaberinFa",
-     7,
+     8,
      [
       "https://t.me/SaberinFa/87369",
       "https://t.me/SaberinFa/87062",
@@ -551,7 +547,7 @@
     ],
     [
      "@sepah_pasdaran",
-     7,
+     8,
      [
       "https://t.me/sepah_pasdaran/214014",
       "https://t.me/sepah_pasdaran/213695",
@@ -562,7 +558,7 @@
     ],
     [
      "@sepah_quds",
-     7,
+     8,
      [
       "https://t.me/sepah_quds/230014",
       "https://t.me/sepah_quds/229694",
@@ -570,17 +566,37 @@
       "https://t.me/sepah_quds/230509",
       "https://t.me/sepah_quds/230503"
      ]
+    ],
+    [
+     "@mehr_baraan",
+     4,
+     [
+      "https://t.me/mehr_baraan/223",
+      "https://t.me/mehr_baraan/222",
+      "https://t.me/mehr_baraan/221",
+      "https://t.me/mehr_baraan/220"
+     ]
+    ],
+    [
+     "@sepah_news1",
+     4,
+     [
+      "https://t.me/sepah_news1/100964",
+      "https://t.me/sepah_news1/100876",
+      "https://t.me/sepah_news1/100748",
+      "https://t.me/sepah_news1/100643"
+     ]
     ]
    ],
-   "m": 119,
+   "m": 133,
    "f": "2026-07-27",
-   "l": "2026-11-02"
+   "l": "2026-11-05"
   },
   {
    "v": "5041721113821434",
    "t": "Bank card",
    "k": "bank",
-   "g": "irgc",
+   "g": "aligned;irgc",
    "ch": [
     [
      "@sarbazane_g",
@@ -646,11 +662,101 @@
      [
       "https://t.me/sepah_quds/230197"
      ]
+    ],
+    [
+     "@mehr_baraan",
+     1,
+     [
+      "https://t.me/mehr_baraan/215"
+     ]
+    ],
+    [
+     "@sepah_news1",
+     1,
+     [
+      "https://t.me/sepah_news1/100487"
+     ]
     ]
    ],
-   "m": 42,
+   "m": 44,
    "f": "2026-06-18",
    "l": "2026-10-22"
+  },
+  {
+   "v": "5892107050077463",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "aligned;irgc",
+   "ch": [
+    [
+     "@sepah",
+     5,
+     [
+      "https://t.me/sepah/73920",
+      "https://t.me/sepah/72228",
+      "https://t.me/sepah/77806",
+      "https://t.me/sepah/77491",
+      "https://t.me/sepah/76927"
+     ]
+    ],
+    [
+     "@sepahcybery",
+     9,
+     [
+      "https://t.me/sepahcybery/150059",
+      "https://t.me/sepahcybery/148014",
+      "https://t.me/sepahcybery/146991",
+      "https://t.me/sepahcybery/146040",
+      "https://t.me/sepahcybery/153966"
+     ]
+    ],
+    [
+     "@SaberinFa",
+     2,
+     [
+      "https://t.me/SaberinFa/87205",
+      "https://t.me/SaberinFa/88678"
+     ]
+    ],
+    [
+     "@sarbazane_g",
+     3,
+     [
+      "https://t.me/sarbazane_g/135556",
+      "https://t.me/sarbazane_g/136774",
+      "https://t.me/sarbazane_g/137248"
+     ]
+    ],
+    [
+     "@sepah_pasdaran",
+     2,
+     [
+      "https://t.me/sepah_pasdaran/213848",
+      "https://t.me/sepah_pasdaran/215208"
+     ]
+    ],
+    [
+     "@kheyrine_ir",
+     5,
+     [
+      "https://t.me/kheyrine_ir/4092",
+      "https://t.me/kheyrine_ir/4085",
+      "https://t.me/kheyrine_ir/4077",
+      "https://t.me/kheyrine_ir/4072",
+      "https://t.me/kheyrine_ir/4063"
+     ]
+    ],
+    [
+     "@sepah_news1",
+     1,
+     [
+      "https://t.me/sepah_news1/100831"
+     ]
+    ]
+   ],
+   "m": 27,
+   "f": "2026-07-14",
+   "l": "2026-11-08"
   },
   {
    "v": "6037997950394024",
@@ -903,63 +1009,6 @@
    "m": 24,
    "f": "2026-06-17",
    "l": "2026-07-24"
-  },
-  {
-   "v": "5892107050077463",
-   "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@sepah",
-     5,
-     [
-      "https://t.me/sepah/73920",
-      "https://t.me/sepah/72228",
-      "https://t.me/sepah/77806",
-      "https://t.me/sepah/77491",
-      "https://t.me/sepah/76927"
-     ]
-    ],
-    [
-     "@sepahcybery",
-     8,
-     [
-      "https://t.me/sepahcybery/150059",
-      "https://t.me/sepahcybery/148014",
-      "https://t.me/sepahcybery/146991",
-      "https://t.me/sepahcybery/146040",
-      "https://t.me/sepahcybery/153966"
-     ]
-    ],
-    [
-     "@SaberinFa",
-     2,
-     [
-      "https://t.me/SaberinFa/87205",
-      "https://t.me/SaberinFa/88678"
-     ]
-    ],
-    [
-     "@sarbazane_g",
-     2,
-     [
-      "https://t.me/sarbazane_g/135556",
-      "https://t.me/sarbazane_g/136774"
-     ]
-    ],
-    [
-     "@sepah_pasdaran",
-     2,
-     [
-      "https://t.me/sepah_pasdaran/213848",
-      "https://t.me/sepah_pasdaran/215208"
-     ]
-    ]
-   ],
-   "m": 19,
-   "f": "2026-07-14",
-   "l": "2026-11-04"
   },
   {
    "v": "پویش حیاتی مشارکت کنید",
@@ -1635,7 +1684,7 @@
    "l": "2026-07-24"
   },
   {
-   "v": "5859838820415648",
+   "v": "5892107010701079",
    "t": "Bank card",
    "k": "bank",
    "g": "irgc",
@@ -1703,7 +1752,109 @@
    "l": "2026-06-12"
   },
   {
-   "v": "5892107010701079",
+   "v": "6393468800111701",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@SaberinFa",
+     2,
+     [
+      "https://t.me/SaberinFa/74246",
+      "https://t.me/SaberinFa/70472"
+     ]
+    ],
+    [
+     "@sepah_pasdaran",
+     1,
+     [
+      "https://t.me/sepah_pasdaran/200705"
+     ]
+    ],
+    [
+     "@sepah_quds",
+     2,
+     [
+      "https://t.me/sepah_quds/217566",
+      "https://t.me/sepah_quds/214333"
+     ]
+    ]
+   ],
+   "m": 5,
+   "f": "2026-05-08",
+   "l": "2026-06-12"
+  },
+  {
+   "v": "0xe721438df16fc55a602597836d40794689b2e4af",
+   "t": "Crypto wallet (ETH / EVM)",
+   "k": "crypto",
+   "g": "irgc",
+   "ch": [
+    [
+     "@SaberinFa",
+     2,
+     [
+      "https://t.me/SaberinFa/74246",
+      "https://t.me/SaberinFa/70472"
+     ]
+    ],
+    [
+     "@sepah_pasdaran",
+     1,
+     [
+      "https://t.me/sepah_pasdaran/200705"
+     ]
+    ],
+    [
+     "@sepah_quds",
+     2,
+     [
+      "https://t.me/sepah_quds/217566",
+      "https://t.me/sepah_quds/214333"
+     ]
+    ]
+   ],
+   "m": 5,
+   "f": "2026-05-08",
+   "l": "2026-06-12"
+  },
+  {
+   "v": "bc1q8dc88dxfg2y4funlvr2szqns8zct8g84yl20p4",
+   "t": "Crypto wallet (BTC)",
+   "k": "crypto",
+   "g": "irgc",
+   "ch": [
+    [
+     "@SaberinFa",
+     2,
+     [
+      "https://t.me/SaberinFa/74246",
+      "https://t.me/SaberinFa/70472"
+     ]
+    ],
+    [
+     "@sepah_pasdaran",
+     1,
+     [
+      "https://t.me/sepah_pasdaran/200705"
+     ]
+    ],
+    [
+     "@sepah_quds",
+     2,
+     [
+      "https://t.me/sepah_quds/217566",
+      "https://t.me/sepah_quds/214333"
+     ]
+    ]
+   ],
+   "m": 5,
+   "f": "2026-05-08",
+   "l": "2026-06-12"
+  },
+  {
+   "v": "5859838820415648",
    "t": "Bank card",
    "k": "bank",
    "g": "irgc",
@@ -1771,108 +1922,6 @@
    "l": "2026-06-12"
   },
   {
-   "v": "bc1q8dc88dxfg2y4funlvr2szqns8zct8g84yl20p4",
-   "t": "Crypto wallet (BTC)",
-   "k": "crypto",
-   "g": "irgc",
-   "ch": [
-    [
-     "@SaberinFa",
-     2,
-     [
-      "https://t.me/SaberinFa/74246",
-      "https://t.me/SaberinFa/70472"
-     ]
-    ],
-    [
-     "@sepah_pasdaran",
-     1,
-     [
-      "https://t.me/sepah_pasdaran/200705"
-     ]
-    ],
-    [
-     "@sepah_quds",
-     2,
-     [
-      "https://t.me/sepah_quds/217566",
-      "https://t.me/sepah_quds/214333"
-     ]
-    ]
-   ],
-   "m": 5,
-   "f": "2026-05-08",
-   "l": "2026-06-12"
-  },
-  {
-   "v": "0xe721438df16fc55a602597836d40794689b2e4af",
-   "t": "Crypto wallet (ETH / EVM)",
-   "k": "crypto",
-   "g": "irgc",
-   "ch": [
-    [
-     "@SaberinFa",
-     2,
-     [
-      "https://t.me/SaberinFa/74246",
-      "https://t.me/SaberinFa/70472"
-     ]
-    ],
-    [
-     "@sepah_pasdaran",
-     1,
-     [
-      "https://t.me/sepah_pasdaran/200705"
-     ]
-    ],
-    [
-     "@sepah_quds",
-     2,
-     [
-      "https://t.me/sepah_quds/217566",
-      "https://t.me/sepah_quds/214333"
-     ]
-    ]
-   ],
-   "m": 5,
-   "f": "2026-05-08",
-   "l": "2026-06-12"
-  },
-  {
-   "v": "6393468800111701",
-   "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@SaberinFa",
-     2,
-     [
-      "https://t.me/SaberinFa/74246",
-      "https://t.me/SaberinFa/70472"
-     ]
-    ],
-    [
-     "@sepah_pasdaran",
-     1,
-     [
-      "https://t.me/sepah_pasdaran/200705"
-     ]
-    ],
-    [
-     "@sepah_quds",
-     2,
-     [
-      "https://t.me/sepah_quds/217566",
-      "https://t.me/sepah_quds/214333"
-     ]
-    ]
-   ],
-   "m": 5,
-   "f": "2026-05-08",
-   "l": "2026-06-12"
-  },
-  {
    "v": "6104338800980720",
    "t": "Bank card",
    "k": "bank",
@@ -1905,6 +1954,39 @@
    "m": 5,
    "f": "2026-06-27",
    "l": "2026-07-07"
+  },
+  {
+   "v": "5041727010882924",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepahcybery",
+     2,
+     [
+      "https://t.me/sepahcybery/151166",
+      "https://t.me/sepahcybery/152248"
+     ]
+    ],
+    [
+     "@sarbazane_g",
+     1,
+     [
+      "https://t.me/sarbazane_g/134000"
+     ]
+    ],
+    [
+     "@sepah",
+     1,
+     [
+      "https://t.me/sepah/76104"
+     ]
+    ]
+   ],
+   "m": 4,
+   "f": "2026-09-08",
+   "l": "2026-09-22"
   },
   {
    "v": "5041727010882932",
@@ -1940,37 +2022,37 @@
    "l": "2026-09-22"
   },
   {
-   "v": "5041727010882924",
+   "v": "5892101800000032",
    "t": "Bank card",
    "k": "bank",
    "g": "irgc",
    "ch": [
     [
-     "@sepahcybery",
+     "@TasnimNewsEN",
+     1,
+     [
+      "https://t.me/TasnimNewsEN/98926"
+     ]
+    ],
+    [
+     "@Tasnimnews",
+     1,
+     [
+      "https://t.me/Tasnimnews/454004"
+     ]
+    ],
+    [
+     "@farsna",
      2,
      [
-      "https://t.me/sepahcybery/151166",
-      "https://t.me/sepahcybery/152248"
-     ]
-    ],
-    [
-     "@sarbazane_g",
-     1,
-     [
-      "https://t.me/sarbazane_g/134000"
-     ]
-    ],
-    [
-     "@sepah",
-     1,
-     [
-      "https://t.me/sepah/76104"
+      "https://t.me/farsna/472304",
+      "https://t.me/farsna/471819"
      ]
     ]
    ],
    "m": 4,
-   "f": "2026-09-08",
-   "l": "2026-09-22"
+   "f": "2026-10-25",
+   "l": "2026-11-03"
   },
   {
    "v": "پویش جان فدا",
@@ -2229,38 +2311,6 @@
    "l": "2026-08-16"
   },
   {
-   "v": "پویش مهم بپیوندید",
-   "t": "Named campaign",
-   "k": "other",
-   "g": "irgc",
-   "ch": [
-    [
-     "@Saberin_ir",
-     1,
-     [
-      "https://t.me/Saberin_ir/66559"
-     ]
-    ],
-    [
-     "@sarbazane_g",
-     1,
-     [
-      "https://t.me/sarbazane_g/131771"
-     ]
-    ],
-    [
-     "@sepahcybery",
-     1,
-     [
-      "https://t.me/sepahcybery/149246"
-     ]
-    ]
-   ],
-   "m": 3,
-   "f": "2026-08-16",
-   "l": "2026-08-16"
-  },
-  {
    "v": "پویش قربانی برای سلامتی",
    "t": "Named campaign",
    "k": "other",
@@ -2293,8 +2343,40 @@
    "l": "2026-08-16"
   },
   {
-   "v": "IR130560611828007270488201",
-   "t": "Bank account (IBAN)",
+   "v": "پویش مهم بپیوندید",
+   "t": "Named campaign",
+   "k": "other",
+   "g": "irgc",
+   "ch": [
+    [
+     "@Saberin_ir",
+     1,
+     [
+      "https://t.me/Saberin_ir/66559"
+     ]
+    ],
+    [
+     "@sarbazane_g",
+     1,
+     [
+      "https://t.me/sarbazane_g/131771"
+     ]
+    ],
+    [
+     "@sepahcybery",
+     1,
+     [
+      "https://t.me/sepahcybery/149246"
+     ]
+    ]
+   ],
+   "m": 3,
+   "f": "2026-08-16",
+   "l": "2026-08-16"
+  },
+  {
+   "v": "6219861441175436",
+   "t": "Bank card",
    "k": "bank",
    "g": "irgc",
    "ch": [
@@ -2325,8 +2407,8 @@
    "l": "2026-09-15"
   },
   {
-   "v": "6219861441175436",
-   "t": "Bank card",
+   "v": "IR130560611828007270488201",
+   "t": "Bank account (IBAN)",
    "k": "bank",
    "g": "irgc",
    "ch": [
@@ -2485,6 +2567,34 @@
    "l": "2026-10-14"
   },
   {
+   "v": "6037697090099273",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@Saberin_ir",
+     4,
+     [
+      "https://t.me/Saberin_ir/62864",
+      "https://t.me/Saberin_ir/62762",
+      "https://t.me/Saberin_ir/71037",
+      "https://t.me/Saberin_ir/71274"
+     ]
+    ],
+    [
+     "@sepahcybery",
+     1,
+     [
+      "https://t.me/sepahcybery/155595"
+     ]
+    ]
+   ],
+   "m": 5,
+   "f": "2026-05-31",
+   "l": "2026-11-09"
+  },
+  {
    "v": "0x33c5df0bf813be615c9513c307ac1a555ef997cb",
    "t": "Crypto wallet (ETH / EVM)",
    "k": "crypto",
@@ -2612,8 +2722,8 @@
    "l": "2026-06-04"
   },
   {
-   "v": "IR280560611828007337942701",
-   "t": "Bank account (IBAN)",
+   "v": "6219861446654062",
+   "t": "Bank card",
    "k": "bank",
    "g": "irgc",
    "ch": [
@@ -2637,8 +2747,8 @@
    "l": "2026-06-15"
   },
   {
-   "v": "6219861446654062",
-   "t": "Bank card",
+   "v": "IR280560611828007337942701",
+   "t": "Bank account (IBAN)",
    "k": "bank",
    "g": "irgc",
    "ch": [
@@ -2781,28 +2891,6 @@
    "l": "2026-07-23"
   },
   {
-   "v": "IR050190000000103555185003",
-   "t": "Bank account (IBAN)",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@masaf",
-     12,
-     [
-      "https://t.me/masaf/237536",
-      "https://t.me/masaf/234722",
-      "https://t.me/masaf/232391",
-      "https://t.me/masaf/229777",
-      "https://t.me/masaf/217402"
-     ]
-    ]
-   ],
-   "m": 12,
-   "f": "2026-05-08",
-   "l": "2026-10-27"
-  },
-  {
    "v": "6037691990014623",
    "t": "Bank card",
    "k": "bank",
@@ -2810,7 +2898,7 @@
    "ch": [
     [
      "@masaf",
-     12,
+     13,
      [
       "https://t.me/masaf/237536",
       "https://t.me/masaf/234722",
@@ -2820,9 +2908,31 @@
      ]
     ]
    ],
-   "m": 12,
+   "m": 13,
    "f": "2026-05-08",
-   "l": "2026-10-27"
+   "l": "2026-11-05"
+  },
+  {
+   "v": "IR050190000000103555185003",
+   "t": "Bank account (IBAN)",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@masaf",
+     13,
+     [
+      "https://t.me/masaf/237536",
+      "https://t.me/masaf/234722",
+      "https://t.me/masaf/232391",
+      "https://t.me/masaf/229777",
+      "https://t.me/masaf/217402"
+     ]
+    ]
+   ],
+   "m": 13,
+   "f": "2026-05-08",
+   "l": "2026-11-05"
   },
   {
    "v": "6037997599377331",
@@ -2869,26 +2979,26 @@
    "l": "2026-11-03"
   },
   {
-   "v": "IR740170000000352664728002",
-   "t": "Bank account (IBAN)",
+   "v": "5041721112169215",
+   "t": "Bank card",
    "k": "bank",
    "g": "irgc",
    "ch": [
     [
-     "@mahdaviatsiasi",
-     5,
+     "@masaf",
+     6,
      [
-      "https://t.me/mahdaviatsiasi/88227",
-      "https://t.me/mahdaviatsiasi/88143",
-      "https://t.me/mahdaviatsiasi/88056",
-      "https://t.me/mahdaviatsiasi/87894",
-      "https://t.me/mahdaviatsiasi/79694"
+      "https://t.me/masaf/230807",
+      "https://t.me/masaf/229995",
+      "https://t.me/masaf/229702",
+      "https://t.me/masaf/212009",
+      "https://t.me/masaf/211859"
      ]
     ]
    ],
-   "m": 5,
-   "f": "2026-05-09",
-   "l": "2026-08-01"
+   "m": 6,
+   "f": "2026-06-01",
+   "l": "2026-11-07"
   },
   {
    "v": "6037991780769752",
@@ -2913,30 +3023,30 @@
    "l": "2026-08-01"
   },
   {
-   "v": "5041721112169215",
-   "t": "Bank card",
+   "v": "IR740170000000352664728002",
+   "t": "Bank account (IBAN)",
    "k": "bank",
    "g": "irgc",
    "ch": [
     [
-     "@masaf",
+     "@mahdaviatsiasi",
      5,
      [
-      "https://t.me/masaf/230807",
-      "https://t.me/masaf/229995",
-      "https://t.me/masaf/229702",
-      "https://t.me/masaf/212009",
-      "https://t.me/masaf/211859"
+      "https://t.me/mahdaviatsiasi/88227",
+      "https://t.me/mahdaviatsiasi/88143",
+      "https://t.me/mahdaviatsiasi/88056",
+      "https://t.me/mahdaviatsiasi/87894",
+      "https://t.me/mahdaviatsiasi/79694"
      ]
     ]
    ],
    "m": 5,
-   "f": "2026-06-01",
-   "l": "2026-08-20"
+   "f": "2026-05-09",
+   "l": "2026-08-01"
   },
   {
-   "v": "IR750120010000002226996949",
-   "t": "Bank account (IBAN)",
+   "v": "6104338800683498",
+   "t": "Bank card",
    "k": "bank",
    "g": "irgc",
    "ch": [
@@ -2957,8 +3067,8 @@
    "l": "2026-08-03"
   },
   {
-   "v": "6104338800683498",
-   "t": "Bank card",
+   "v": "IR750120010000002226996949",
+   "t": "Bank account (IBAN)",
    "k": "bank",
    "g": "irgc",
    "ch": [
@@ -3021,6 +3131,27 @@
    "l": "2026-10-22"
   },
   {
+   "v": "پویش بزرگ مردمی",
+   "t": "Named campaign",
+   "k": "other",
+   "g": "irgc",
+   "ch": [
+    [
+     "@masaf",
+     4,
+     [
+      "https://t.me/masaf/211479",
+      "https://t.me/masaf/210873",
+      "https://t.me/masaf/247502",
+      "https://t.me/masaf/248713"
+     ]
+    ]
+   ],
+   "m": 4,
+   "f": "2026-05-27",
+   "l": "2026-11-08"
+  },
+  {
    "v": "پویش هدیه بابا(ویژه متولدین",
    "t": "Named campaign",
    "k": "other",
@@ -3063,28 +3194,8 @@
    "l": "2026-11-03"
   },
   {
-   "v": "6037697090099273",
+   "v": "5041727010671814",
    "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@Saberin_ir",
-     3,
-     [
-      "https://t.me/Saberin_ir/62864",
-      "https://t.me/Saberin_ir/62762",
-      "https://t.me/Saberin_ir/71037"
-     ]
-    ]
-   ],
-   "m": 3,
-   "f": "2026-05-31",
-   "l": "2026-11-05"
-  },
-  {
-   "v": "IR960700010002208016821006",
-   "t": "Bank account (IBAN)",
    "k": "bank",
    "g": "irgc",
    "ch": [
@@ -3103,8 +3214,8 @@
    "l": "2026-09-07"
   },
   {
-   "v": "5041727010671814",
-   "t": "Bank card",
+   "v": "IR960700010002208016821006",
+   "t": "Bank account (IBAN)",
    "k": "bank",
    "g": "irgc",
    "ch": [
@@ -3181,26 +3292,6 @@
    "m": 3,
    "f": "2026-06-19",
    "l": "2026-06-22"
-  },
-  {
-   "v": "پویش بزرگ مردمی",
-   "t": "Named campaign",
-   "k": "other",
-   "g": "irgc",
-   "ch": [
-    [
-     "@masaf",
-     3,
-     [
-      "https://t.me/masaf/211479",
-      "https://t.me/masaf/210873",
-      "https://t.me/masaf/247502"
-     ]
-    ]
-   ],
-   "m": 3,
-   "f": "2026-05-27",
-   "l": "2026-11-02"
   },
   {
    "v": "6037691990359184",
@@ -3281,6 +3372,25 @@
    "l": "2026-07-06"
   },
   {
+   "v": "IR320700001000225281250002",
+   "t": "Bank account (IBAN)",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@sepah_quds",
+     2,
+     [
+      "https://t.me/sepah_quds/221045",
+      "https://t.me/sepah_quds/228250"
+     ]
+    ]
+   ],
+   "m": 2,
+   "f": "2026-07-11",
+   "l": "2026-09-26"
+  },
+  {
    "v": "5041721062806279",
    "t": "Bank card",
    "k": "bank",
@@ -3300,23 +3410,23 @@
    "l": "2026-09-26"
   },
   {
-   "v": "IR320700001000225281250002",
-   "t": "Bank account (IBAN)",
+   "v": "6104338400080293",
+   "t": "Bank card",
    "k": "bank",
-   "g": "irgc",
+   "g": "aligned",
    "ch": [
     [
-     "@sepah_quds",
+     "@kheyrine_ir",
      2,
      [
-      "https://t.me/sepah_quds/221045",
-      "https://t.me/sepah_quds/228250"
+      "https://t.me/kheyrine_ir/4075",
+      "https://t.me/kheyrine_ir/4059"
      ]
     ]
    ],
    "m": 2,
-   "f": "2026-07-11",
-   "l": "2026-09-26"
+   "f": "2026-10-23",
+   "l": "2026-10-30"
   },
   {
    "v": "6104338800617231",
@@ -3481,45 +3591,27 @@
    "l": "2026-09-23"
   },
   {
-   "v": "IR020150000003101092740065",
-   "t": "Bank account (IBAN)",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@serfan_jahate_ettela",
-     1,
-     [
-      "https://t.me/serfan_jahate_ettela/571466"
-     ]
-    ]
-   ],
-   "m": 1,
-   "f": "2026-10-23",
-   "l": "2026-10-23"
-  },
-  {
-   "v": "5892107046137041",
-   "t": "Bank card",
-   "k": "bank",
-   "g": "irgc",
-   "ch": [
-    [
-     "@serfan_jahate_ettela",
-     1,
-     [
-      "https://t.me/serfan_jahate_ettela/571466"
-     ]
-    ]
-   ],
-   "m": 1,
-   "f": "2026-10-23",
-   "l": "2026-10-23"
-  },
-  {
    "v": "09151220771",
    "t": "Phone number",
    "k": "other",
+   "g": "irgc",
+   "ch": [
+    [
+     "@serfan_jahate_ettela",
+     1,
+     [
+      "https://t.me/serfan_jahate_ettela/571466"
+     ]
+    ]
+   ],
+   "m": 1,
+   "f": "2026-10-23",
+   "l": "2026-10-23"
+  },
+  {
+   "v": "IR020150000003101092740065",
+   "t": "Bank account (IBAN)",
+   "k": "bank",
    "g": "irgc",
    "ch": [
     [
@@ -3571,6 +3663,42 @@
    "l": "2026-10-23"
   },
   {
+   "v": "5892107046137041",
+   "t": "Bank card",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@serfan_jahate_ettela",
+     1,
+     [
+      "https://t.me/serfan_jahate_ettela/571466"
+     ]
+    ]
+   ],
+   "m": 1,
+   "f": "2026-10-23",
+   "l": "2026-10-23"
+  },
+  {
+   "v": "IR820600260201108691003001",
+   "t": "Bank account (IBAN)",
+   "k": "bank",
+   "g": "irgc",
+   "ch": [
+    [
+     "@serfan_jahate_ettela",
+     1,
+     [
+      "https://t.me/serfan_jahate_ettela/572139"
+     ]
+    ]
+   ],
+   "m": 1,
+   "f": "2026-10-31",
+   "l": "2026-10-31"
+  },
+  {
    "v": "6104337806663215",
    "t": "Bank card",
    "k": "bank",
@@ -3607,22 +3735,58 @@
    "l": "2026-10-31"
   },
   {
-   "v": "IR820600260201108691003001",
-   "t": "Bank account (IBAN)",
+   "v": "5041727010838603",
+   "t": "Bank card",
    "k": "bank",
-   "g": "irgc",
+   "g": "aligned",
    "ch": [
     [
-     "@serfan_jahate_ettela",
+     "@kheyrine_ir",
      1,
      [
-      "https://t.me/serfan_jahate_ettela/572139"
+      "https://t.me/kheyrine_ir/4097"
      ]
     ]
    ],
    "m": 1,
-   "f": "2026-10-31",
-   "l": "2026-10-31"
+   "f": "2026-11-08",
+   "l": "2026-11-08"
+  },
+  {
+   "v": "+989001079672",
+   "t": "Phone number",
+   "k": "other",
+   "g": "irgc",
+   "ch": [
+    [
+     "@farsna",
+     1,
+     [
+      "https://t.me/farsna/471238"
+     ]
+    ]
+   ],
+   "m": 1,
+   "f": "2026-10-28",
+   "l": "2026-10-28"
+  },
+  {
+   "v": "+982179672000",
+   "t": "Phone number",
+   "k": "other",
+   "g": "irgc",
+   "ch": [
+    [
+     "@farsna",
+     1,
+     [
+      "https://t.me/farsna/471238"
+     ]
+    ]
+   ],
+   "m": 1,
+   "f": "2026-10-28",
+   "l": "2026-10-28"
   }
  ],
  "themes": {
@@ -3703,53 +3867,53 @@
   "sites": 20
  },
  "threats": {
-  "end": "2026-11-05",
+  "end": "2026-11-09",
   "base_start": "2026-05-01",
-  "w30_start": "2026-10-07",
-  "w7_start": "2026-10-30",
-  "p21_start": "2026-10-09",
+  "w30_start": "2026-10-11",
+  "w7_start": "2026-11-03",
+  "p21_start": "2026-10-13",
   "tot": {
-   "base": 73154,
-   "last30": 38390,
-   "prior21": 26654,
-   "last7": 8067
+   "base": 78723,
+   "last30": 38843,
+   "prior21": 26841,
+   "last7": 9231
   },
-  "nthreat": 2219,
+  "nthreat": 2308,
   "nch": 25,
-  "nposts": 167414,
+  "nposts": 175717,
   "rows": [
    {
     "k": "riyadh",
     "l": "Riyadh",
     "side": "sa",
     "base": [
-     34,
-     4.6
+     42,
+     5.3
     ],
     "last30": [
      136,
-     35.4
+     35.0
     ],
     "prior21": [
-     118,
-     44.3
+     99,
+     36.9
     ],
     "last7": [
-     11,
-     13.6
+     14,
+     15.2
     ],
     "ex": [
      [
-      "https://t.me/almasirahnews/57416",
-      "2026-11-04"
+      "https://t.me/AlmasirahVideos/177074",
+      "2026-11-09"
      ],
      [
-      "https://t.me/almasirah_all/435621",
-      "2026-11-04"
+      "https://t.me/sadaa_almasirah/158888",
+      "2026-11-09"
      ],
      [
-      "https://t.me/almasirah_all/435616",
-      "2026-11-04"
+      "https://t.me/almasirah2/307258",
+      "2026-11-09"
      ]
     ]
    },
@@ -3759,19 +3923,19 @@
     "side": "sa",
     "base": [
      24,
-     3.3
+     3.0
     ],
     "last30": [
      49,
-     12.8
+     12.6
     ],
     "prior21": [
-     45,
-     16.9
+     47,
+     17.5
     ],
     "last7": [
-     4,
-     5.0
+     0,
+     0.0
     ],
     "ex": [
      [
@@ -3793,33 +3957,33 @@
     "l": "Jizan, Najran and Asir (Saudi border provinces)",
     "side": "sa",
     "base": [
-     111,
-     15.2
+     112,
+     14.2
     ],
     "last30": [
-     150,
-     39.1
+     156,
+     40.2
     ],
     "prior21": [
-     104,
-     39.0
+     128,
+     47.7
     ],
     "last7": [
-     46,
-     57.0
+     9,
+     9.7
     ],
     "ex": [
      [
-      "https://t.me/alforgan_net/183285",
-      "2026-11-04"
+      "https://t.me/AlmasirahVideos/176971",
+      "2026-11-08"
      ],
      [
-      "https://t.me/alforgan_net/183279",
-      "2026-11-04"
+      "https://t.me/Saba_Newsye/335058",
+      "2026-11-08"
      ],
      [
-      "https://t.me/almasirah_all/434747",
-      "2026-11-02"
+      "https://t.me/masirah_sada/202234",
+      "2026-11-07"
      ]
     ]
    },
@@ -3829,19 +3993,19 @@
     "side": "gulf",
     "base": [
      19,
-     2.6
+     2.4
     ],
     "last30": [
      6,
-     1.6
+     1.5
     ],
     "prior21": [
-     2,
-     0.8
+     6,
+     2.2
     ],
     "last7": [
-     4,
-     5.0
+     0,
+     0.0
     ],
     "ex": [
      [
@@ -3863,20 +4027,20 @@
     "l": "Bab al-Mandab strait",
     "side": "sea",
     "base": [
-     21,
-     2.9
+     24,
+     3.0
     ],
     "last30": [
-     9,
-     2.3
+     6,
+     1.5
     ],
     "prior21": [
-     7,
-     2.6
+     6,
+     2.2
     ],
     "last7": [
-     2,
-     2.5
+     0,
+     0.0
     ],
     "ex": [
      [
@@ -3898,33 +4062,33 @@
     "l": "United States",
     "side": "us",
     "base": [
-     276,
-     37.7
+     285,
+     36.2
     ],
     "last30": [
-     41,
-     10.7
+     37,
+     9.5
     ],
     "prior21": [
-     15,
-     5.6
+     18,
+     6.7
     ],
     "last7": [
-     16,
-     19.8
+     13,
+     14.1
     ],
     "ex": [
      [
-      "https://t.me/almasirah_all/435624",
-      "2026-11-04"
+      "https://t.me/masirah_sada/203834",
+      "2026-11-08"
      ],
      [
-      "https://t.me/almasirah_all/435610",
-      "2026-11-03"
+      "https://t.me/masirah_sada/203248",
+      "2026-11-08"
      ],
      [
-      "https://t.me/AlmasirahVideos/176234",
-      "2026-11-03"
+      "https://t.me/almasirah_all/436752",
+      "2026-11-05"
      ]
     ]
    },
@@ -3933,33 +4097,33 @@
     "l": "Israel",
     "side": "il",
     "base": [
-     187,
-     25.6
+     198,
+     25.2
     ],
     "last30": [
-     46,
-     12.0
+     44,
+     11.3
     ],
     "prior21": [
      32,
-     12.0
+     11.9
     ],
     "last7": [
-     10,
-     12.4
+     9,
+     9.7
     ],
     "ex": [
      [
-      "https://t.me/ansarallh_yemen/64774",
-      "2026-11-02"
+      "https://t.me/Saba_Newsye/335230",
+      "2026-11-09"
      ],
      [
-      "https://t.me/Saba_Newsye/333922",
-      "2026-11-02"
+      "https://t.me/masirah_sada/203834",
+      "2026-11-08"
      ],
      [
-      "https://t.me/AlmasirahVideos/175893",
-      "2026-11-01"
+      "https://t.me/masirah_sada/203248",
+      "2026-11-08"
      ]
     ]
    },
@@ -3968,33 +4132,33 @@
     "l": "Strait of Hormuz",
     "side": "sea",
     "base": [
-     73,
-     10.0
+     75,
+     9.5
     ],
     "last30": [
-     16,
-     4.2
+     17,
+     4.4
     ],
     "prior21": [
-     11,
-     4.1
+     7,
+     2.6
     ],
     "last7": [
-     5,
-     6.2
+     3,
+     3.2
     ],
     "ex": [
      [
-      "https://t.me/Saba_Newsye/333364",
-      "2026-10-30"
+      "https://t.me/almasirah_all/437336",
+      "2026-11-07"
      ],
      [
-      "https://t.me/sadaa_almasirah/157660",
-      "2026-10-30"
+      "https://t.me/almasirah2/306957",
+      "2026-11-07"
      ],
      [
-      "https://t.me/almasirah2/306031",
-      "2026-10-30"
+      "https://t.me/almasirah2/306735",
+      "2026-11-05"
      ]
     ]
    },
@@ -4004,19 +4168,19 @@
     "side": "sea",
     "base": [
      55,
-     7.5
+     7.0
     ],
     "last30": [
      5,
      1.3
     ],
     "prior21": [
-     3,
-     1.1
+     5,
+     1.9
     ],
     "last7": [
-     2,
-     2.5
+     0,
+     0.0
     ],
     "ex": [
      [
@@ -4036,62 +4200,62 @@
   ],
   "trend": {
    "weeks": [
-    "2026-05-01",
-    "2026-05-08",
-    "2026-05-15",
-    "2026-05-22",
-    "2026-05-29",
-    "2026-06-05",
-    "2026-06-12",
-    "2026-06-19",
-    "2026-06-26",
-    "2026-07-03",
-    "2026-07-10",
-    "2026-07-17",
-    "2026-07-24",
-    "2026-07-31",
-    "2026-08-07",
-    "2026-08-14",
-    "2026-08-21",
-    "2026-08-28",
-    "2026-09-04",
-    "2026-09-11",
-    "2026-09-18",
-    "2026-09-25",
-    "2026-10-02",
-    "2026-10-09",
-    "2026-10-16",
-    "2026-10-23",
-    "2026-10-30"
+    "2026-05-05",
+    "2026-05-12",
+    "2026-05-19",
+    "2026-05-26",
+    "2026-06-02",
+    "2026-06-09",
+    "2026-06-16",
+    "2026-06-23",
+    "2026-06-30",
+    "2026-07-07",
+    "2026-07-14",
+    "2026-07-21",
+    "2026-07-28",
+    "2026-08-04",
+    "2026-08-11",
+    "2026-08-18",
+    "2026-08-25",
+    "2026-09-01",
+    "2026-09-08",
+    "2026-09-15",
+    "2026-09-22",
+    "2026-09-29",
+    "2026-10-06",
+    "2026-10-13",
+    "2026-10-20",
+    "2026-10-27",
+    "2026-11-03"
    ],
    "tot": [
-    1919,
-    1922,
-    2314,
-    2813,
-    2971,
-    3011,
-    2495,
-    2320,
-    1910,
-    2559,
-    3016,
-    3189,
-    3529,
-    2135,
-    2620,
-    2382,
-    1932,
-    2131,
-    2115,
-    3073,
-    7774,
-    8163,
-    10530,
-    8908,
-    8527,
-    9219,
-    8067
+    2094,
+    1991,
+    2809,
+    2516,
+    3180,
+    2718,
+    2352,
+    2276,
+    2074,
+    2675,
+    3455,
+    3187,
+    2778,
+    2509,
+    2472,
+    2221,
+    1874,
+    1884,
+    2684,
+    5407,
+    8662,
+    8882,
+    9760,
+    9082,
+    8415,
+    9344,
+    9231
    ],
    "s": [
     {
@@ -4106,58 +4270,58 @@
       0,
       0,
       0,
-      0,
       1,
-      3,
+      0,
       5,
-      1,
+      4,
       1,
       0,
       0,
       0,
       0,
-      1,
-      1,
+      0,
+      2,
       5,
-      11,
+      10,
+      6,
+      31,
+      39,
+      48,
       12,
-      50,
-      23,
-      45,
-      11
+      14
      ]
     },
     {
      "k": "us",
      "l": "United States",
      "n": [
-      19,
-      4,
-      7,
-      7,
+      11,
+      3,
       9,
-      29,
-      5,
+      8,
+      22,
+      14,
       10,
       8,
-      14,
-      30,
-      23,
-      17,
-      14,
-      3,
-      5,
-      13,
-      10,
-      14,
-      6,
       9,
-      13,
-      17,
+      15,
+      39,
+      11,
+      21,
+      5,
+      4,
+      14,
+      8,
       7,
-      7,
-      1,
-      16
+      14,
+      12,
+      12,
+      8,
+      16,
+      8,
+      0,
+      10,
+      13
      ]
     },
     {
@@ -4166,31 +4330,31 @@
      "n": [
       3,
       4,
-      6,
-      5,
-      11,
-      29,
-      6,
-      18,
-      13,
+      9,
+      9,
+      26,
       8,
-      17,
-      12,
+      9,
+      23,
       10,
       6,
-      3,
-      8,
-      2,
-      1,
-      2,
-      5,
+      21,
+      6,
+      10,
       4,
-      13,
+      6,
       5,
-      13,
+      2,
+      0,
+      5,
+      6,
+      6,
       8,
-      11,
-      10
+      14,
+      6,
+      8,
+      18,
+      9
      ]
     },
     {
@@ -4215,15 +4379,15 @@
       0,
       0,
       0,
-      0,
-      22,
-      0,
+      19,
+      3,
       5,
       3,
       12,
       16,
-      14,
-      14
+      10,
+      18,
+      0
      ]
     },
     {
@@ -4238,40 +4402,40 @@
       0,
       0,
       0,
-      0,
       2,
       0,
       4,
-      2,
-      2,
-      0,
-      3,
-      0,
-      0,
       1,
       1,
+      2,
+      1,
+      2,
+      0,
+      0,
+      2,
       0,
       4,
       5,
+      2,
       28,
-      9,
-      8,
-      4
+      14,
+      5,
+      0
      ]
     }
    ],
    "ranked": [
     [
      "us",
-     317
+     311
     ],
     [
      "israel",
-     233
+     241
     ],
     [
      "riyadh",
-     170
+     178
     ],
     [
      "khamis",
@@ -4308,7 +4472,7 @@
     {
      "d": "2026-10-19",
      "kind": "claim",
-     "u": "https://t.me/army21ye/3916"
+     "u": "https://t.me/army21ye/3915"
     },
     {
      "d": "2026-10-22",
@@ -4318,7 +4482,7 @@
     {
      "d": "2026-10-24",
      "kind": "claim",
-     "u": "https://t.me/army21ye/3946"
+     "u": "https://t.me/army21ye/3945"
     },
     {
      "d": "2026-10-25",
@@ -4344,6 +4508,21 @@
      "d": "2026-11-04",
      "kind": "claim",
      "u": "https://t.me/army21ye/4012"
+    },
+    {
+     "d": "2026-11-06",
+     "kind": "claim",
+     "u": "https://t.me/army21ye/4025"
+    },
+    {
+     "d": "2026-11-07",
+     "kind": "claim",
+     "u": "https://t.me/army21ye/4029"
+    },
+    {
+     "d": "2026-11-08",
+     "kind": "claim",
+     "u": "https://t.me/army21ye/4038"
     }
    ]
   },
@@ -4355,20 +4534,20 @@
     "la": 24.958,
     "lo": 46.699,
     "base": [
-     3,
-     0.4
+     7,
+     0.9
     ],
     "last30": [
-     44,
-     11.5
+     40,
+     10.3
     ],
     "last7": [
-     1,
-     1.2
+     0,
+     0.0
     ],
     "prior21": [
-     39,
-     14.6
+     32,
+     11.9
     ],
     "ex": [
      [
@@ -4380,7 +4559,7 @@
       "2026-10-25"
      ],
      [
-      "https://t.me/SabaNewsyeMedia/287413",
+      "https://t.me/SabaNewsyeMedia/287412",
       "2026-10-25"
      ]
     ],
@@ -4436,15 +4615,15 @@
     ],
     "last30": [
      13,
-     3.4
+     3.3
     ],
     "last7": [
      0,
      0.0
     ],
     "prior21": [
-     13,
-     4.9
+     12,
+     4.5
     ],
     "ex": [
      [
@@ -4470,19 +4649,19 @@
     "lo": 42.804,
     "base": [
      30,
-     4.1
+     3.8
     ],
     "last30": [
      56,
-     14.6
+     14.4
     ],
     "last7": [
-     14,
-     17.4
+     0,
+     0.0
     ],
     "prior21": [
-     42,
-     15.8
+     44,
+     16.4
     ],
     "ex": [
      [
@@ -4508,11 +4687,11 @@
     "lo": 38.236,
     "base": [
      29,
-     4.0
+     3.7
     ],
     "last30": [
      20,
-     5.2
+     5.1
     ],
     "last7": [
      0,
@@ -4557,8 +4736,8 @@
      0.0
     ],
     "prior21": [
-     2,
-     0.8
+     0,
+     0.0
     ],
     "ex": [
      [
@@ -4584,7 +4763,7 @@
     ],
     "last30": [
      6,
-     1.6
+     1.5
     ],
     "last7": [
      0,
@@ -4592,7 +4771,7 @@
     ],
     "prior21": [
      6,
-     2.3
+     2.2
     ],
     "ex": [
      [
@@ -4615,7 +4794,7 @@
    "riyadh": {
     "n": 136,
     "named": {
-     "King Khalid Airport": 42,
+     "King Khalid Airport": 38,
      "Riyadh refinery": 7,
      "Aramco HQ (Dhahran)": 13,
      "Khamis Mushait air base": 9,
@@ -4624,19 +4803,19 @@
      "Saudi defence ministry": 6
     },
     "general": {
-     "place named generally": 61,
-     "airport (unnamed)": 21,
-     "energy (unnamed)": 3
+     "energy (unnamed)": 3,
+     "airport (unnamed)": 24,
+     "place named generally": 62
     },
-    "ngen": 85,
+    "ngen": 89,
     "ex": [
      [
-      "https://t.me/almasirahnews/57416",
-      "2026-11-04"
+      "https://t.me/AlmasirahVideos/177074",
+      "2026-11-09"
      ],
      [
-      "https://t.me/almasirah_all/435621",
-      "2026-11-04"
+      "https://t.me/sadaa_almasirah/158888",
+      "2026-11-09"
      ]
     ]
    },
@@ -4667,7 +4846,7 @@
     ]
    },
    "south": {
-    "n": 150,
+    "n": 156,
     "named": {
      "King Khalid Airport": 8,
      "Khamis Mushait air base": 56,
@@ -4675,40 +4854,50 @@
      "Saudi defence ministry": 6
     },
     "general": {
-     "airport (unnamed)": 3,
-     "place named generally": 85
+     "place named generally": 90,
+     "airport (unnamed)": 4
     },
-    "ngen": 88,
+    "ngen": 94,
     "ex": [
      [
-      "https://t.me/alforgan_net/183285",
-      "2026-11-04"
+      "https://t.me/AlmasirahVideos/176971",
+      "2026-11-08"
      ],
      [
-      "https://t.me/alforgan_net/183279",
-      "2026-11-04"
+      "https://t.me/Saba_Newsye/335058",
+      "2026-11-08"
      ]
     ]
    }
   },
   "week": {
-   "start": "2026-10-30",
+   "start": "2026-11-03",
    "warns": [],
    "claims": [
     {
-     "d": "Nov 4",
+     "d": "Nov 8",
      "t": [
-      "Jizan, Najran and Asir"
+      "King Khalid Airport",
+      "Riyadh",
+      "Aramco oil company sites"
      ],
-     "u": "https://t.me/MilitaryMediaY/47203"
+     "u": "https://t.me/army21ye/4039"
     },
     {
-     "d": "Nov 3",
+     "d": "Nov 7",
      "t": [
-      "Abha airport",
+      "Riyadh",
+      "Aramco oil company sites",
+      "King Khalid Airport"
+     ],
+     "u": "https://t.me/army21ye/4032"
+    },
+    {
+     "d": "Nov 6",
+     "t": [
       "Khamis Mushait air base"
      ],
-     "u": "https://t.me/MilitaryMediaY/47198"
+     "u": "https://t.me/army21ye/4025"
     }
    ],
    "cats": [
@@ -4716,58 +4905,60 @@
      "k": "claims",
      "l": "Claimed strikes",
      "items": [
+      "c64eb8b1a17a",
+      "e93d4560ce9e",
+      "ac3a52a05a74",
+      "28aea785ac45",
+      "1a4e713b67d1",
       "49f1c0ecfefc",
       "9d1ad7e4e370",
       "f5e98a8083a4",
-      "ed29e78c573e",
-      "1cf7fd309c33"
+      "ed29e78c573e"
      ]
     },
     {
      "k": "warn",
      "l": "Warnings and evacuation notices",
      "items": [
-      "2463b6172970",
-      "f0852a4d95c8",
-      "596eefc95a45",
-      "0483ac7fdee8",
-      "8137754fcc75"
+      "00211f29346a"
      ]
     },
     {
      "k": "air",
      "l": "Airports and airline warnings",
      "items": [
+      "c64eb8b1a17a",
+      "3e833c911b13",
+      "e93d4560ce9e",
+      "ac3a52a05a74",
+      "28aea785ac45",
       "fd9b41d4445b",
-      "9d1ad7e4e370",
-      "bda600354598",
-      "8708146d4816",
-      "f0852a4d95c8"
+      "9d1ad7e4e370"
      ]
     },
     {
      "k": "energy",
      "l": "Oil and energy sites",
      "items": [
-      "deb369e1b0d2",
-      "8708146d4816",
-      "31e3aa8bf129",
-      "f0852a4d95c8",
-      "f0797a8dd80a",
-      "53d557be392a",
-      "4d81b1ac4407",
-      "761fd3586780"
+      "c64eb8b1a17a",
+      "e93d4560ce9e",
+      "ac3a52a05a74",
+      "28aea785ac45",
+      "9b7d4614f355",
+      "fc5263811926",
+      "deb369e1b0d2"
      ]
     },
     {
      "k": "mil",
      "l": "Military bases",
      "items": [
+      "e93d4560ce9e",
+      "ac3a52a05a74",
+      "28aea785ac45",
+      "1a4e713b67d1",
       "49f1c0ecfefc",
-      "9d1ad7e4e370",
-      "bda600354598",
-      "4993ea5395d9",
-      "b0b44e019d36"
+      "9d1ad7e4e370"
      ]
     },
     {
@@ -4779,47 +4970,355 @@
      "k": "city",
      "l": "Cities and regions",
      "items": [
+      "072f531889a7",
+      "cb5ae6d74658",
+      "87d55c45ba60",
+      "c64eb8b1a17a",
+      "3e833c911b13",
+      "23ebec09415d",
+      "e93d4560ce9e",
+      "ac3a52a05a74",
+      "28aea785ac45",
+      "01de49935866",
+      "1a4e713b67d1",
+      "4f71b0bf8068",
+      "e1bf895d8a4b",
       "49f1c0ecfefc",
       "28075ad3ebf9",
       "e2081251c553",
       "a483113344f7",
       "d139cfe10eb8",
       "716ba8b5ab35",
-      "9d1ad7e4e370",
-      "bda600354598",
-      "4f71b0bf8068",
-      "c6a015d3e7d5",
-      "8708146d4816",
-      "a6958e724d90",
-      "4993ea5395d9",
-      "de2906807f71",
-      "dfcd7f04d5ec",
-      "b0b44e019d36",
-      "23ebec09415d",
-      "e3884cef0ce6"
+      "9d1ad7e4e370"
      ]
     },
     {
      "k": "ius",
      "l": "Israel, US and shipping",
      "items": [
-      "fd9b41d4445b",
-      "bda600354598",
-      "2463b6172970",
-      "8708146d4816",
-      "2b2b50b7ac28",
-      "6b7b4d1a756e",
-      "596eefc95a45",
-      "0483ac7fdee8",
-      "f0797a8dd80a",
-      "53d557be392a",
-      "4d81b1ac4407",
-      "8137754fcc75",
-      "761fd3586780"
+      "17aa00a74438",
+      "00211f29346a",
+      "4740f606a3b5",
+      "9b7d4614f355",
+      "fc5263811926",
+      "fd9b41d4445b"
      ]
     }
    ],
    "items": {
+    "17aa00a74438": {
+     "id": "17aa00a74438",
+     "dt": "Nov 9, 5:49 AM",
+     "ts": "2026-11-09T10:49:23+00:00",
+     "ch": "saba_newsye",
+     "u": "https://t.me/Saba_Newsye/335230",
+     "also": 0,
+     "tags": [
+      "Israel"
+     ],
+     "cats": [
+      "ius"
+     ],
+     "ar": "عشرات المستوطنين يقتحمون الأقصى وسط تحذيرات من تصعيد خلال ديسمبر اقتحم عشرات المستوطنين، صباح اليوم الاثنين، باحات المسجد الأقصى المبارك، بحماية مشددة من قوات العدو الإسرائيلي، وسط تحذيرات مقدسية من تصعيد الاقتحامات خلال عيد «الحانوكاة» العبري المقرر الشهر المقبل. وكالة سبأ",
+     "en": "Dozens of settlers storm Al-Aqsa amid warnings of escalation in December. Dozens of settlers stormed the courtyards of Al-Aqsa Mosque this Monday morning under heavy protection from Israeli enemy forces, amid warnings from Jerusalem of escalating incursions during the Hebrew holiday of Hanukkah next month. (Saba News Agency)"
+    },
+    "072f531889a7": {
+     "id": "072f531889a7",
+     "dt": "Nov 9, 1:26 AM",
+     "ts": "2026-11-09T06:26:52+00:00",
+     "ch": "alforgan_net",
+     "u": "https://t.me/alforgan_net/183715",
+     "also": 0,
+     "tags": [
+      "Riyadh"
+     ],
+     "cats": [
+      "city"
+     ],
+     "ar": "إعلام سعودي: ‏إطلاق الإنذار المبكر في الرياض للتحذير من خطر",
+     "en": "Saudi media: early warning sirens sounded in Riyadh warning of a danger."
+    },
+    "cb5ae6d74658": {
+     "id": "cb5ae6d74658",
+     "dt": "Nov 9, 1:19 AM",
+     "ts": "2026-11-09T06:19:08+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/307258",
+     "also": 3,
+     "tags": [
+      "Riyadh"
+     ],
+     "cats": [
+      "city"
+     ],
+     "ar": "إعلام سعودي: إطلاق إنذار في مدينة الرياض للتحذير من خطر",
+     "en": "Saudi media: a warning alarm sounded in the city of Riyadh to warn of a danger."
+    },
+    "00211f29346a": {
+     "id": "00211f29346a",
+     "dt": "Nov 8, 5:55 PM",
+     "ts": "2026-11-08T22:55:36+00:00",
+     "ch": "masirah_sada",
+     "u": "https://t.me/masirah_sada/203834",
+     "also": 0,
+     "tags": [
+      "United States",
+      "Israel"
+     ],
+     "cats": [
+      "warn",
+      "ius"
+     ],
+     "ar": "إن الله هو الرحمن الرحيم هو الذي يأمرنا أن نقف هذه المواقف، أليس الله هو أرحم بنا من أي إنسان آخر؟ أرحم بنا من آبائنا وأمهاتنا وأرحم بنا من زعماء بلداننا؟ أرحم بنا من حكوماتنا؟ هو من يطلب من عباده المؤمنين أن يتحركوا، هو من يعمل هذا العمل الكبير جداً، جداً في هدايتنا إلى أن نكون واعين، هو من يعمل …",
+     "en": "A sermon-style address saying God commands believers to stand firm and take action, and that He is more merciful to us than our parents or our governments. It frames mobilization as a religious duty. (Excerpt; no specific target named.)"
+    },
+    "87d55c45ba60": {
+     "id": "87d55c45ba60",
+     "dt": "Nov 8, 5:19 PM",
+     "ts": "2026-11-08T22:19:09+00:00",
+     "ch": "masirah_sada",
+     "u": "https://t.me/masirah_sada/203770",
+     "also": 0,
+     "tags": [
+      "Riyadh"
+     ],
+     "cats": [
+      "city"
+     ],
+     "ar": "تعز ستحرر من العملاء الخونة حزب الانجاس تعز محافظة يمنية وتعتبر وطننا جميعا لاتقلي ماجابنا من صنعاء لا تعز أصحاب تعز نص صنعاء وهم منها وهي منهم كذلك تعز نحن منها وهي منا ولن نتركها لشويه صعاليك حق ورعان أذي مايعجبه طبيعي الورعان ملان السعودية والمتحولين يسيروا يتسربتوا في موسم الرياض لاما نوصل …",
+     "en": "A user comment on Taiz: says Taiz will be freed from the \"traitor agents\" and is a Yemeni province belonging to all Yemenis, and mocks Saudi Arabia and its Riyadh Season entertainment events. (Excerpt)"
+    },
+    "c64eb8b1a17a": {
+     "id": "c64eb8b1a17a",
+     "dt": "Nov 8, 8:40 AM",
+     "ts": "2026-11-08T13:40:47+00:00",
+     "ch": "militarymediay",
+     "u": "https://t.me/MilitaryMediaY/47237",
+     "also": 1,
+     "tags": [
+      "King Khalid Airport"
+     ],
+     "cats": [
+      "claims",
+      "air",
+      "energy",
+      "city"
+     ],
+     "ar": "بيان القوات المسلحة اليمنية بشأن تنفيذ أربع عمليات عسكرية نوعية استهدفت مطار خالد الدولي وخزانات أرامكو والمركز المالي في عاصمة العدو السعودي الرياض وشركة أرامكو في بقيق وتحشيدات العدو السعودي وضباطه في الجوف ومأرب ولحج - 8 نوفمبر 2026م بيانٌ صادرٌ عن القواتِ المسلحةِ اليمنيةِ بسمِ اللهِ الرحمنِ …",
+     "en": "Statement by the Yemeni armed forces on four special military operations that targeted Khalid International Airport and Aramco tanks and the financial center in the Saudi enemy's capital Riyadh, Aramco in Abqaiq, and Saudi enemy troop concentrations and officers in Al-Jawf, Marib and Lahj. Nov 8, 2026. (Excerpt)"
+    },
+    "4740f606a3b5": {
+     "id": "4740f606a3b5",
+     "dt": "Nov 8, 7:38 AM",
+     "ts": "2026-11-08T12:38:40+00:00",
+     "ch": "masirah_sada",
+     "u": "https://t.me/masirah_sada/203248",
+     "also": 0,
+     "tags": [
+      "United States",
+      "Israel"
+     ],
+     "cats": [
+      "ius"
+     ],
+     "ar": "الجولاني هو عميل مرتزق اسرائيل دخلت الى مناطق كثيرة في سوريا ولاجاب كلمة لاكن مجرد ضربة من الجيش الاردني قام يتوعد ويهدد ويصرح اي انهم اذلة على الكافرين اعزة على اخوانهم في الدين وهم ليسوا الا توابع زرعها الموساد والنظام الامريكي الكافر عملاء لايجرؤون على رفع كلمة ضد اسيادهم",
+     "en": "A user comment calling Al-Jolani an agent and mercenary of Israel, saying he threatens loudly after a single strike by the Jordanian army, and calling such figures Mossad-planted proxies of the \"infidel American system\" who dare not speak against their masters. (Excerpt)"
+    },
+    "3e833c911b13": {
+     "id": "3e833c911b13",
+     "dt": "Nov 8, 7:05 AM",
+     "ts": "2026-11-08T12:05:32+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/307166",
+     "also": 3,
+     "tags": [
+      "Riyadh"
+     ],
+     "cats": [
+      "air",
+      "city"
+     ],
+     "ar": "الخارجية الألمانية: مطار الرياض الدولي يتعرض لهجمات منتظمة ومتكررة وسط تحذيرات يمنية من استخدام المطار",
+     "en": "German Foreign Ministry: Riyadh International Airport is under regular and repeated attacks, amid Yemeni warnings against using the airport."
+    },
+    "23ebec09415d": {
+     "id": "23ebec09415d",
+     "dt": "Nov 7, 2:09 PM",
+     "ts": "2026-11-07T19:09:36+00:00",
+     "ch": "sadaa_almasirah",
+     "u": "https://t.me/sadaa_almasirah/158690",
+     "also": 4,
+     "tags": [
+      "Jizan, Najran and Asir"
+     ],
+     "cats": [
+      "city"
+     ],
+     "ar": "إعلام سعودي: إطلاق إنذار في جيزان للتحذير من خطر",
+     "en": "Saudi media: an alarm has been sounded in Jizan warning of a danger"
+    },
+    "e93d4560ce9e": {
+     "id": "e93d4560ce9e",
+     "dt": "Nov 7, 10:30 AM",
+     "ts": "2026-11-07T15:30:55+00:00",
+     "ch": "militarymediay",
+     "u": "https://t.me/MilitaryMediaY/47232",
+     "also": 0,
+     "tags": [
+      "King Khalid Airport"
+     ],
+     "cats": [
+      "claims",
+      "air",
+      "energy",
+      "mil",
+      "city"
+     ],
+     "ar": "بيان القوات المسلحة اليمنية بشأن تنفيذ 6 عمليات عسكرية نوعية استهدفت مطار خالد الدولي وخزانات النفط وبرج التقطير التابع لشركة أرامكو في الرياض وشركة أرامكو في خريص ومحطة الضخ رقم (8) بالدوادمي وتحشيدات العدو السعودي في نجران والجوف ومأرب - 7 نوفمبر 2026م بيانٌ صادرٌ عن القواتِ المسلحةِ اليمنيةِ …",
+     "en": "Statement by the Yemeni armed forces on six special military operations targeting Khalid International Airport, oil tanks and the distillation tower of Aramco in Riyadh, Aramco in Khurais, pumping station No. 8 in Dawadmi, and Saudi enemy troop concentrations in Najran, Al-Jawf and Marib. Nov 7, 2026. (Excerpt)"
+    },
+    "ac3a52a05a74": {
+     "id": "ac3a52a05a74",
+     "dt": "Nov 7, 10:30 AM",
+     "ts": "2026-11-07T15:30:50+00:00",
+     "ch": "army21ye",
+     "u": "https://t.me/army21ye/4031",
+     "also": 0,
+     "tags": [
+      "Riyadh",
+      "Aramco oil company sites"
+     ],
+     "cats": [
+      "claims",
+      "air",
+      "energy",
+      "mil",
+      "city"
+     ],
+     "ar": "بيانٌ صادرٌ عن القواتِ المسلحةِ اليمنيةِ بسمِ اللهِ الرحمنِ الرحيمِ قالَ تعالى: {فَمَنِ اعْتَدَى عَلَيْكُمْ فَاعْتَدُوا عَلَيْهِ بِمِثْلِ مَا اعْتَدَى عَلَيْكُمْ} صدقَ اللهُ العظيم في إطارِ الردِّ على العدوانِ السعوديِّ الغاشمِ على بلدِنا وردًّا على جرائمِه الوحشيةِ والتي كانت آخرُها جريمتُه …",
+     "en": "Statement by the Yemeni armed forces, in response to the Saudi aggression and its brutal crimes, the latest of which was a recent massacre. It announces six operations, the first targeting Khalid Airport and the Aramco tanks and distillation tower in Riyadh. (Excerpt)"
+    },
+    "28aea785ac45": {
+     "id": "28aea785ac45",
+     "dt": "Nov 7, 10:30 AM",
+     "ts": "2026-11-07T15:30:47+00:00",
+     "ch": "army21ye",
+     "u": "https://t.me/army21ye/4029",
+     "also": 0,
+     "tags": [
+      "King Khalid Airport"
+     ],
+     "cats": [
+      "claims",
+      "air",
+      "energy",
+      "mil",
+      "city"
+     ],
+     "ar": "بيان القوات المسلحة اليمنية بشأن تنفيذ ست عمليات عسكرية نوعية بعدد كبير من الصواريخ الباليستية والمجنحة والطائرات المسيرة، العملية الأولى استهدفت مطار خالد وخزانات النفط وبرج التقطير التابعة لأرامكو بالرياض، والثانية استهدفت شركة أرامكو في خريص، والثالثة استهدفت محطة الضخ رقم 8 في منطقة الدوادمي، …",
+     "en": "Statement by the Yemeni armed forces on six special operations using a large number of ballistic and cruise missiles and drones: the first targeted Khalid Airport and the Aramco oil tanks and distillation tower in Riyadh; the second Aramco in Khurais; the third pumping station No. 8 in the Dawadmi area. (Excerpt)"
+    },
+    "01de49935866": {
+     "id": "01de49935866",
+     "dt": "Nov 7, 7:32 AM",
+     "ts": "2026-11-07T12:32:16+00:00",
+     "ch": "masirah_sada",
+     "u": "https://t.me/masirah_sada/202234",
+     "also": 0,
+     "tags": [
+      "Jizan, Najran and Asir"
+     ],
+     "cats": [
+      "city"
+     ],
+     "ar": "/عاجل | الدفاع المدني السعودي: إطلاق إنذار للتحذير من تهديد محتمل في نجران",
+     "en": "Urgent | Saudi Civil Defense: a warning alarm sounded to warn of a possible threat in Najran."
+    },
+    "9b7d4614f355": {
+     "id": "9b7d4614f355",
+     "dt": "Nov 7, 5:13 AM",
+     "ts": "2026-11-07T10:13:05+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/306957",
+     "also": 3,
+     "tags": [
+      "Strait of Hormuz"
+     ],
+     "cats": [
+      "energy",
+      "ius"
+     ],
+     "ar": "بحرية حرس الثورة الإسلامية: حريق في ناقلة نفط مخالفة شرقي مضيق هرمز كانت تبحر في المنطقة المحظورة دون اكتراث بالتحذيرات المتكررة",
+     "en": "Revolutionary Guard navy: a fire broke out on a violating oil tanker east of the Strait of Hormuz that was sailing in the prohibited area without heeding repeated warnings."
+    },
+    "1a4e713b67d1": {
+     "id": "1a4e713b67d1",
+     "dt": "Nov 6, 8:32 AM",
+     "ts": "2026-11-06T13:32:00+00:00",
+     "ch": "army21ye",
+     "u": "https://t.me/army21ye/4025",
+     "also": 1,
+     "tags": [
+      "Khamis Mushait air base"
+     ],
+     "cats": [
+      "claims",
+      "mil",
+      "city"
+     ],
+     "ar": "عند الساعة 7:10 من صباح اليوم الجمعة أقلعت طائرة \"F-15\" تابعة للعدو السعودي من قاعدة خميس مشيط واستهدفت سوق الحضارة في مديرية الوازعية بمحافظة تعز بثلاث غارات وخلفت عشرات الشهداء والجرحى من المدنيين، وغادرت محافظة تعز الساعة 8:00ص وعادت إلى نفس القاعدة. هذه الجرائم الوحشية لن تمر دون رد وعقاب بإذن …",
+     "en": "At 7:10 this Friday morning, a Saudi enemy F-15 took off from Khamis Mushait base and struck the Al-Hadhara market in Al-Wazi'iyah district of Taiz with three raids, leaving dozens of civilians dead and wounded. It left Taiz at 8:00 and returned to the same base. These brutal crimes will not go unanswered. (Excerpt)"
+    },
+    "4f71b0bf8068": {
+     "id": "4f71b0bf8068",
+     "dt": "Nov 5, 7:10 PM",
+     "ts": "2026-11-06T00:10:23+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/306773",
+     "also": 6,
+     "tags": [
+      "Jizan, Najran and Asir"
+     ],
+     "cats": [
+      "city"
+     ],
+     "ar": "إعلام سعودي: إطلاق إنذار في نجران للتحذير من خطر",
+     "en": "Saudi media: sirens sounded in Najran to warn of danger."
+    },
+    "e1bf895d8a4b": {
+     "id": "e1bf895d8a4b",
+     "dt": "Nov 5, 7:08 PM",
+     "ts": "2026-11-06T00:08:53+00:00",
+     "ch": "alforgan_net",
+     "u": "https://t.me/alforgan_net/183422",
+     "also": 0,
+     "tags": [
+      "Jizan, Najran and Asir"
+     ],
+     "cats": [
+      "city"
+     ],
+     "ar": "إعلام العدو السعودي: إطلاق الإنذار المبكر في منطقة نجران للتحذير من خطر محتمل",
+     "en": "Saudi enemy media: early warning sirens sounded in the Najran area warning of a possible danger."
+    },
+    "fc5263811926": {
+     "id": "fc5263811926",
+     "dt": "Nov 5, 12:17 PM",
+     "ts": "2026-11-05T17:17:49+00:00",
+     "ch": "almasirah2",
+     "u": "https://t.me/almasirah2/306735",
+     "also": 0,
+     "tags": [
+      "United States",
+      "Israel"
+     ],
+     "cats": [
+      "energy",
+      "ius"
+     ],
+     "ar": "تتابعون في نشرة الأخبار الرئيسة لقناة المسيرة – الخميس 25-05-1448هـ 05-11-2026م مجزرةٌ مروعةٌ في صعدة: سبعةُ شهداءَ بينهم أطفالٌ تحولوا إلى أشلاء .. العدوُ السعوديُ يستهدفُ أسرتين بين مزارعِها في سحار ويغتالُ المُسعفين شواظ تنقضُّ على تحشيداتِ وآلياتِ الضابطِ السعودي فارس الشمري شرقي الجوف.. …",
+     "en": "Al-Masirah main news bulletin, Thursday Nov 5, 2026: a horrific massacre in Saada, with seven dead including children, as the Saudi enemy targets two families on their farms in Sahar and kills paramedics; fighters strike Saudi officer Fares al-Shammari's troop concentrations and vehicles east of Al-Jawf. (Excerpt)"
+    },
     "deb369e1b0d2": {
      "id": "deb369e1b0d2",
      "dt": "Nov 5, 4:25 AM",
@@ -4998,413 +5497,6 @@
      ],
      "ar": "استهدفت قواتنا المسلحة تحشيدات العدو السعودي التابعة للضابط السعودي فارس الشمري شرقي محافظة الجوف بعدد من الصواريخ الباليستية وكانت الإصابات مباشرة وخلفت عددا كبيرا من القتلى والجرحى وتدمير وإحراق عدد من الآليات.",
      "en": "Our armed forces targeted Saudi enemy troop concentrations belonging to Saudi officer Fares al-Shammari, east of Al-Jawf governorate, with a number of ballistic missiles. The hits were direct and left a large number of dead and wounded and a number of vehicles destroyed and burned."
-    },
-    "bda600354598": {
-     "id": "bda600354598",
-     "dt": "Nov 2, 3:47 PM",
-     "ts": "2026-11-02T20:47:29+00:00",
-     "ch": "ansarallh_yemen",
-     "u": "https://t.me/ansarallh_yemen/64774",
-     "also": 0,
-     "tags": [
-      "King Khalid Airport"
-     ],
-     "cats": [
-      "air",
-      "mil",
-      "city",
-      "ius"
-     ],
-     "ar": "المستشار العسكري المصري احمد عز الدين ...يعود من جديد ابن يحيي: أحمد عز الدين كاتب صحفي وخبير استراتيجي أحمد عز الدين يكتب: شيخوخة الإمبراطورية وتوابعها! (1) اليمن على امتداد ثمانية أعوام لم تتوقف الطائرات السعودية والإسرائيلية والأمريكية، عن قصف شمال اليمن، فلم يبقوا حجرا فوق حجر في صنعاء أحمد عز …",
-     "en": "Egyptian military adviser Ahmed Ezz El-Din ... returns again. Ahmed Ezz El-Din, journalist and strategic expert, writes: \"The aging of the empire and its aftershocks! (1)\" For eight years Saudi, Israeli and American aircraft have not stopped bombing northern Yemen, leaving not one stone upon another in Sanaa. Ahmed Ezz …"
-    },
-    "2463b6172970": {
-     "id": "2463b6172970",
-     "dt": "Nov 2, 1:28 PM",
-     "ts": "2026-11-02T18:28:25+00:00",
-     "ch": "saba_newsye",
-     "u": "https://t.me/Saba_Newsye/333922",
-     "also": 0,
-     "tags": [
-      "United States",
-      "Israel"
-     ],
-     "cats": [
-      "warn",
-      "ius"
-     ],
-     "ar": "ناطق الحكومة د.عمر البخيتي: العدو السعودي يواصل استهداف التجمعات المدنية كسياسة ثابتة لديه هدفها قتل أكبر قدر ممكن من أبناء الشعب اليمني - العدو السعودي يضاعف من جرائمه باستهداف كافة مظاهر الحياة من موانئ ومنشآت تعليمية وجسور ومنازل وكل ما يرتبط بخدمة المواطن. - نستنكر استهداف العدو السعودي اليوم …",
-     "en": "Government spokesman Dr. Omar al-Bukhaiti: the Saudi enemy keeps targeting civilian gatherings as a fixed policy, aiming to kill as many Yemenis as possible. - The Saudi enemy is multiplying its crimes by targeting every aspect of life, including ports, schools, bridges, homes and everything tied to serving the citizen. - We condemn the Saudi enemy's targeting today …"
-    },
-    "4f71b0bf8068": {
-     "id": "4f71b0bf8068",
-     "dt": "Nov 2, 5:45 AM",
-     "ts": "2026-11-02T10:45:32+00:00",
-     "ch": "almasirah2",
-     "u": "https://t.me/almasirah2/306278",
-     "also": 6,
-     "tags": [
-      "Jizan, Najran and Asir"
-     ],
-     "cats": [
-      "city"
-     ],
-     "ar": "إعلام سعودي: إطلاق إنذار في نجران للتحذير من خطر",
-     "en": "Saudi media: sirens sounded in Najran to warn of danger."
-    },
-    "c6a015d3e7d5": {
-     "id": "c6a015d3e7d5",
-     "dt": "Nov 2, 12:10 AM",
-     "ts": "2026-11-02T05:10:31+00:00",
-     "ch": "almasirah_all",
-     "u": "https://t.me/almasirah_all/434633",
-     "also": 0,
-     "tags": [
-      "Jizan, Najran and Asir"
-     ],
-     "cats": [
-      "city"
-     ],
-     "ar": "إعلام سعودي يُعلن عن إطلاق إنذار في جيزان للتحذير من خطر",
-     "en": "Saudi media announces an alarm sounded in Jizan warning of a danger"
-    },
-    "8708146d4816": {
-     "id": "8708146d4816",
-     "dt": "Nov 1, 12:37 PM",
-     "ts": "2026-11-01T17:37:21+00:00",
-     "ch": "almasirah2",
-     "u": "https://t.me/almasirah2/306209",
-     "also": 5,
-     "tags": [
-      "United Arab Emirates",
-      "United States"
-     ],
-     "cats": [
-      "air",
-      "energy",
-      "city",
-      "ius"
-     ],
-     "ar": "مقدمة النشرة الرئيسة لقناة المسيرة – الأحد 21-05-1448هـ 01-11-2026م طائراتٌ في الأجواءِ تائهة، ومطاراتٌ على مدارِ الوقتِ مقفلةٌ معطّلة، ومنشآتٌ تحترقُ بين لحظةٍ وأخرى، وخطوطُ نفطٍ تنزف، وطرقُ شحنٍ تختنق، وبورصةٌ مضطربة، واستثماراتٌ قلقة، ومستثمرون لا يجدون بيئةً آمنة، على وقْعِ انذاراتٍ لا تهدأ، …",
-     "en": "Opening of the main bulletin on Al-Masirah TV, Sunday 21-05-1448 AH, 1-11-2026: Aircraft lost in the skies, airports closed and out of service around the clock, facilities burning from one moment to the next, oil pipelines bleeding, shipping routes choking, a jittery stock market, anxious investments, and investors who cannot find a safe environment, amid warnings that never let up, …"
-    },
-    "2b2b50b7ac28": {
-     "id": "2b2b50b7ac28",
-     "dt": "Nov 1, 12:27 PM",
-     "ts": "2026-11-01T17:27:31+00:00",
-     "ch": "saba_newsye",
-     "u": "https://t.me/Saba_Newsye/333706",
-     "also": 0,
-     "tags": [
-      "Israel"
-     ],
-     "cats": [
-      "ius"
-     ],
-     "ar": "أهالي قرية في جنوب سوريا يمزقون لافتات تهديد وضعتها قوات العدو الإسرائيلي مزّق أهالٍ من قرية الصمدانية الغربية بريف القنيطرة جنوبي سوريا، لافتات تحذيرية وضعتها قوات العدو الإسرائيلي صباح اليوم الأحد في القرية، تتضمن تحذيرات من تنقل المدنيين ضمن قوافل تضم أكثر من ثلاث مركبات، مع التهديد باستهداف …",
-     "en": "Residents of a village in southern Syria tear down threatening signs put up by Israeli enemy forces. Residents of the village of West Samdaniyah in the Quneitra countryside, southern Syria, tore down warning signs that Israeli enemy forces put up in the village this Sunday morning. The signs warn civilians against moving in convoys of more than three vehicles, with a threat to target …"
-    },
-    "31e3aa8bf129": {
-     "id": "31e3aa8bf129",
-     "dt": "Nov 1, 12:16 PM",
-     "ts": "2026-11-01T17:16:58+00:00",
-     "ch": "almasirah2",
-     "u": "https://t.me/almasirah2/306208",
-     "also": 0,
-     "tags": [
-      "Aramco oil company sites"
-     ],
-     "cats": [
-      "energy"
-     ],
-     "ar": "تتابعون في نشرة الأخبار الرئيسة لقناة المسيرة – الأحد 21-05-1448هـ 01-11-2026م صنعاء تحذر.. أجواءُ السعودية غيرُ آمنة، ومنشآتُ أرامكو في مرمى قواتِنا...عملياتُ اليمنِ تُعمِّقُ انكماشَ الاقتصادِ السعودي الصحةُ تعلنُ استشهادَ وإصابةَ خمسةِ مواطنين في جبل حبشي بتعز، واعتداءاتٌ سعوديةٌ جديدةٌ على …",
-     "en": "Following the main news bulletin on Al-Masirah TV, Sunday 21-05-1448 AH, 1-11-2026: Sanaa warns: Saudi airspace is not safe, and Aramco facilities are within our forces' range ... Yemen's operations deepen the contraction of the Saudi economy. The Health Ministry announces five citizens killed and wounded in Jabal Habashi in Taiz, and new Saudi attacks on …"
-    },
-    "a6958e724d90": {
-     "id": "a6958e724d90",
-     "dt": "Nov 1, 10:32 AM",
-     "ts": "2026-11-01T15:32:51+00:00",
-     "ch": "almasirahvideos",
-     "u": "https://t.me/AlmasirahVideos/175862",
-     "also": 1,
-     "tags": [
-      "Jizan, Najran and Asir"
-     ],
-     "cats": [
-      "city"
-     ],
-     "ar": "إعلام سعودي: إطلاق إنذار في خميس مشيط و أبها للتحذير من خطر",
-     "en": "Saudi media: an alarm has been sounded in Khamis Mushait and Abha warning of a danger"
-    },
-    "4993ea5395d9": {
-     "id": "4993ea5395d9",
-     "dt": "Nov 1, 10:30 AM",
-     "ts": "2026-11-01T15:30:12+00:00",
-     "ch": "almasirah2",
-     "u": "https://t.me/almasirah2/306201",
-     "also": 6,
-     "tags": [
-      "Khamis Mushait air base"
-     ],
-     "cats": [
-      "mil",
-      "city"
-     ],
-     "ar": "إعلام سعودي: إطلاق إنذار في خميس مشيط وأبها للتحذير من خطر",
-     "en": "Saudi media: sirens sounded in Khamis Mushait and Abha to warn of danger."
-    },
-    "f0852a4d95c8": {
-     "id": "f0852a4d95c8",
-     "dt": "Nov 1, 9:25 AM",
-     "ts": "2026-11-01T14:25:32+00:00",
-     "ch": "saba_newsye",
-     "u": "https://t.me/Saba_Newsye/333636",
-     "also": 1,
-     "tags": [
-      "Aramco oil company sites"
-     ],
-     "cats": [
-      "warn",
-      "air",
-      "energy"
-     ],
-     "ar": "مصدر عسكري لوكالة سبأ: منشآت أرامكو في مرمى القوات المسلحة اليمنية والاستثمارات فيها مغامرة محفوفة بالخسائر . - نحذر شركات الطيران العالمية من استخدام الأجواء السعودية باستثناء أجواء مكة المكرمة والمدينة المنورة. التصعيد بالتصعيد الحصار بالحصار وكالة سبأ",
-     "en": "A military source to the Saba news agency: Aramco facilities are within range of the Yemeni armed forces, and investing in them is an adventure laden with losses. - We warn global airlines against using Saudi airspace, except the airspace of Mecca and Medina. Escalation for escalation, siege for siege. Saba news agency"
-    },
-    "6b7b4d1a756e": {
-     "id": "6b7b4d1a756e",
-     "dt": "Nov 1, 7:50 AM",
-     "ts": "2026-11-01T12:50:05+00:00",
-     "ch": "saba_newsye",
-     "u": "https://t.me/Saba_Newsye/333597",
-     "also": 0,
-     "tags": [
-      "Israel"
-     ],
-     "cats": [
-      "ius"
-     ],
-     "ar": "قوات العدو الإسرائيلي تضع لافتات تحذيرية داخل الجنوب السوري وتتوعد المخالفين بالاستهداف وضعت قوات العدو الإسرائيلي لافتات تحذيرية في مناطق بريف القنيطرة جنوبي سوريا، تطالب الأهالي بعدم التحرك ضمن قوافل تضم أكثر من ثلاث مركبات، متوعدة باستهداف المخالفين. وكالة سبأ",
-     "en": "Israeli enemy forces put up warning signs inside southern Syria and threaten violators with attack. Israeli enemy forces put up warning signs in areas of the Quneitra countryside in southern Syria, demanding that residents not move in convoys of more than three vehicles and threatening to target violators. Saba news agency"
-    },
-    "1cf7fd309c33": {
-     "id": "1cf7fd309c33",
-     "dt": "Oct 31, 1:15 PM",
-     "ts": "2026-10-31T17:15:04+00:00",
-     "ch": "militarymediay",
-     "u": "https://t.me/MilitaryMediaY/47184",
-     "also": 0,
-     "tags": [],
-     "cats": [
-      "claims"
-     ],
-     "ar": "مشاهد عمليات قنص نوعية استهدفت عناصر التحشيدات التابعة للعدو السعودي في جبهات مأرب - 31 أكتوبر 2026م | تقرير",
-     "en": "Footage of high-quality sniper operations targeting members of the Saudi enemy's troop concentrations on the Marib fronts, 31 October 2026 | report"
-    },
-    "596eefc95a45": {
-     "id": "596eefc95a45",
-     "dt": "Oct 31, 11:57 AM",
-     "ts": "2026-10-31T15:57:51+00:00",
-     "ch": "saba_newsye",
-     "u": "https://t.me/Saba_Newsye/333491",
-     "also": 0,
-     "tags": [
-      "United States",
-      "Israel"
-     ],
-     "cats": [
-      "warn",
-      "ius"
-     ],
-     "ar": "عمران: لقاء مسلح لقبايل العصيمات إعلانا للنفير العام ومواجهة لتصعيد العدو السعودي ومباركة لعمليات القوات المسلحة - قبايل العصيمات في عمران: نحذر المرتزقة والعملاء من عواقب الخيانة والتورط مع العدو السعودي لتنفيذ المخططات الأمريكية والإسرائيلية - نجدد تفويض السيد القائد لمواجهة تصعيد العدو السعودي …",
-     "en": "Imran: an armed gathering of the Usaimat tribes declares a general mobilization, confronts the Saudi enemy's escalation and blesses the armed forces' operations. - Usaimat tribes in Imran: we warn the mercenaries and agents of the consequences of treason and of collaborating with the Saudi enemy to carry out American and Israeli plans. - We renew our mandate to the Leader to confront the Saudi enemy's escalation …"
-    },
-    "0483ac7fdee8": {
-     "id": "0483ac7fdee8",
-     "dt": "Oct 31, 11:55 AM",
-     "ts": "2026-10-31T15:55:58+00:00",
-     "ch": "almasirah2",
-     "u": "https://t.me/almasirah2/306112",
-     "also": 4,
-     "tags": [
-      "United States",
-      "Israel"
-     ],
-     "cats": [
-      "warn",
-      "ius"
-     ],
-     "ar": "قبايل العصيمات في عمران: نحذر المرتزقة والعملاء من عواقب الخيانة والتورط مع العدو السعودي لتنفيذ المخططات الأمريكية والإسرائيلية",
-     "en": "Usaimat tribes in Imran: we warn the mercenaries and agents of the consequences of treason and of collaborating with the Saudi enemy to carry out American and Israeli plans"
-    },
-    "de2906807f71": {
-     "id": "de2906807f71",
-     "dt": "Oct 31, 5:07 AM",
-     "ts": "2026-10-31T09:07:36+00:00",
-     "ch": "alforgan_net",
-     "u": "https://t.me/alforgan_net/182992",
-     "also": 7,
-     "tags": [
-      "Jizan, Najran and Asir"
-     ],
-     "cats": [
-      "city"
-     ],
-     "ar": "إعلام سعودي: إطلاق الإنذار المبكر في نجران للتحذير من خطر",
-     "en": "Saudi media: the early-warning alarm has been sounded in Najran warning of a danger"
-    },
-    "dfcd7f04d5ec": {
-     "id": "dfcd7f04d5ec",
-     "dt": "Oct 31, 3:18 AM",
-     "ts": "2026-10-31T07:18:30+00:00",
-     "ch": "almasirah2",
-     "u": "https://t.me/almasirah2/306060",
-     "also": 5,
-     "tags": [
-      "Riyadh",
-      "Jizan, Najran and Asir"
-     ],
-     "cats": [
-      "city"
-     ],
-     "ar": "إعلام سعودي: إطلاق تحذيرات في جيزان بشأن خطر محتمل بعد ساعتين من إطلاق تحذير في الرياض",
-     "en": "Saudi media: warnings have been sounded in Jizan about a possible danger, two hours after a warning was sounded in Riyadh"
-    },
-    "f0797a8dd80a": {
-     "id": "f0797a8dd80a",
-     "dt": "Oct 30, 4:38 PM",
-     "ts": "2026-10-30T20:38:26+00:00",
-     "ch": "saba_newsye",
-     "u": "https://t.me/Saba_Newsye/333364",
-     "also": 0,
-     "tags": [
-      "Strait of Hormuz"
-     ],
-     "cats": [
-      "energy",
-      "ius"
-     ],
-     "ar": "بحرية حرس الثورة الإسلامية: انفجار ناقلة نفط عملاقة مخالفة هي الرابعة اليوم إثر اصطدامها بلغم في المسار غير المصرح به بمضيق هرمز - لا تزال النيران مشتعلة في الناقلة العملاقة منذ عصر اليوم وعلى متنها أكثر من مليوني برميل من النفط الخام - ناقلة النفط العملاقة المخالفة تجاهلت تحذيراتنا بعدم المرور عبر …",
-     "en": "Islamic Revolution Guards Corps Navy: a violating supertanker has exploded, the fourth today, after hitting a mine in the unauthorized lane in the Strait of Hormuz. - The fire has been burning on the supertanker since this afternoon, with more than two million barrels of crude oil on board. - The violating supertanker ignored our warnings not to pass through …"
-    },
-    "53d557be392a": {
-     "id": "53d557be392a",
-     "dt": "Oct 30, 4:27 PM",
-     "ts": "2026-10-30T20:27:12+00:00",
-     "ch": "almasirah2",
-     "u": "https://t.me/almasirah2/306031",
-     "also": 4,
-     "tags": [
-      "Strait of Hormuz"
-     ],
-     "cats": [
-      "energy",
-      "ius"
-     ],
-     "ar": "بحرية حرس الثورة: ناقلة النفط العملاقة المخالفة تجاهلت تحذيراتنا بعدم المرور عبر المسار الجنوبي غير المصرح به في مضيق هرمز",
-     "en": "IRGC Navy: the violating supertanker ignored our warnings not to pass through the unauthorized southern lane in the Strait of Hormuz"
-    },
-    "4d81b1ac4407": {
-     "id": "4d81b1ac4407",
-     "dt": "Oct 30, 4:25 PM",
-     "ts": "2026-10-30T20:25:05+00:00",
-     "ch": "sadaa_almasirah",
-     "u": "https://t.me/sadaa_almasirah/157659",
-     "also": 2,
-     "tags": [
-      "Strait of Hormuz"
-     ],
-     "cats": [
-      "energy",
-      "ius"
-     ],
-     "ar": "بحرية حرس الثورة: ناقلة نفط العملاقة المخالفة تجاهلت تحذيراتنا بعدم المرور عبر المسار الجنوبي غير المصرح به في مضيق هرمز",
-     "en": "IRGC Navy: the violating supertanker ignored our warnings not to pass through the unauthorized southern lane in the Strait of Hormuz"
-    },
-    "b0b44e019d36": {
-     "id": "b0b44e019d36",
-     "dt": "Oct 30, 11:48 AM",
-     "ts": "2026-10-30T15:48:53+00:00",
-     "ch": "almasirah2",
-     "u": "https://t.me/almasirah2/305962",
-     "also": 6,
-     "tags": [
-      "Khamis Mushait air base"
-     ],
-     "cats": [
-      "mil",
-      "city"
-     ],
-     "ar": "إعلام سعودي: إطلاق إنذار في خميس مشيط للتحذير من خطر",
-     "en": "Saudi media: an alarm has been sounded in Khamis Mushait warning of a danger"
-    },
-    "8137754fcc75": {
-     "id": "8137754fcc75",
-     "dt": "Oct 30, 10:57 AM",
-     "ts": "2026-10-30T14:57:09+00:00",
-     "ch": "saba_newsye",
-     "u": "https://t.me/Saba_Newsye/333222",
-     "also": 0,
-     "tags": [
-      "Bab al-Mandab strait",
-      "Red Sea shipping"
-     ],
-     "cats": [
-      "warn",
-      "ius"
-     ],
-     "ar": "الهيئة العامة للشؤون البحرية: ندين استمرار استهداف العدو السعودي لجزيرة ميون بمضيق باب المندب والفنارات البحرية والمنشآت الملاحية فيها، وآخرها استهدافه لها يوم أمس - استهداف العدو السعودي لجزيرة ميون والفنارات البحرية يُعد انتهاكًا خطيرًا يهدد سلامة الملاحة البحرية في البحر الأحمر ومضيق باب المندب …",
-     "en": "General Authority for Maritime Affairs: we condemn the Saudi enemy's continued targeting of Mayun Island in the Bab al-Mandab Strait, its maritime lighthouses and navigation facilities, most recently yesterday. - The Saudi enemy's targeting of Mayun Island and the maritime lighthouses is a serious violation that threatens the safety of maritime navigation in the Red Sea and the Bab al-Mandab Strait …"
-    },
-    "23ebec09415d": {
-     "id": "23ebec09415d",
-     "dt": "Oct 30, 9:21 AM",
-     "ts": "2026-10-30T13:21:24+00:00",
-     "ch": "sadaa_almasirah",
-     "u": "https://t.me/sadaa_almasirah/157576",
-     "also": 6,
-     "tags": [
-      "Jizan, Najran and Asir"
-     ],
-     "cats": [
-      "city"
-     ],
-     "ar": "إعلام سعودي: إطلاق إنذار في جيزان للتحذير من خطر",
-     "en": "Saudi media: an alarm has been sounded in Jizan warning of a danger"
-    },
-    "e3884cef0ce6": {
-     "id": "e3884cef0ce6",
-     "dt": "Oct 30, 9:14 AM",
-     "ts": "2026-10-30T13:14:37+00:00",
-     "ch": "alforgan_net",
-     "u": "https://t.me/alforgan_net/182925",
-     "also": 0,
-     "tags": [
-      "Jizan, Najran and Asir"
-     ],
-     "cats": [
-      "city"
-     ],
-     "ar": "إعلام سعودي: إطلاق الإنذار المبكر في جيزان للتحذير من خطر",
-     "en": "Saudi media: the early-warning alarm has been sounded in Jizan warning of a danger"
-    },
-    "761fd3586780": {
-     "id": "761fd3586780",
-     "dt": "Oct 30, 6:53 AM",
-     "ts": "2026-10-30T10:53:51+00:00",
-     "ch": "almasirah2",
-     "u": "https://t.me/almasirah2/305925",
-     "also": 0,
-     "tags": [
-      "United States",
-      "Strait of Hormuz"
-     ],
-     "cats": [
-      "energy",
-      "ius"
-     ],
-     "ar": "بحرية الثورة الإسلامية: تعرض ناقلتي نفط مخالفتين لحادث وتوقفهما جنوب مضيق هرمز أثناء محاولة عبورهما عبر مسار غير مصرح به بحرية الثورة الإسلامية: الناقلتان أطفأتا أنظمة الملاحة وحاولتا الخروج من هرمز بدعم من الجيش الأمريكي الإرهابي وتجاهلتا تحذيراتنا اللاسلكية",
-     "en": "Islamic Revolution Navy: two violating oil tankers suffered an incident and stopped south of the Strait of Hormuz while trying to cross through an unauthorized lane. Islamic Revolution Navy: the two tankers switched off their navigation systems and tried to exit Hormuz with the backing of the terrorist US military, and ignored our radio warnings"
     }
    }
   },
@@ -5412,9 +5504,9 @@
    {
     "l": "United States",
     "why": "surging",
-    "n7": 16,
-    "r7": 19.8,
-    "rp": 5.6
+    "n7": 13,
+    "r7": 14.1,
+    "rp": 6.7
    }
   ],
   "case": {
@@ -5457,9 +5549,9 @@
    "ex": "https://t.me/MilitaryMediaY/47023"
   },
   "iraqi": {
-   "n": 139,
-   "med": 230,
-   "u2": 48,
+   "n": 132,
+   "med": 231,
+   "u2": 46,
    "ch": 8,
    "claim": [
     "sajadsda",
@@ -5470,8 +5562,8 @@
  },
  "coord": {
   "channels": 84,
-  "posts": 281343,
+  "posts": 304167,
   "start": "2026-09-20",
-  "end": "2026-11-05"
+  "end": "2026-11-09"
  }
 }
