@@ -32,10 +32,12 @@ def nw(word,*ns): return f'<span class="nw">{word}{"".join(fn(n) for n in ns)}</
 cap1=(f'Houthi channels start {hpct}% of all copied messages ({f(ao["houthi"])} of {f(tot)}), mostly passed between their own channels. '
       f'Across groups, {"pro-Axis news outlets (mainly Al Mayadeen)" if topx=="aligned" else G[topx][0]} are the biggest source ({tx}% of {f(x30)} cross-group copies), '
       f'and Houthis lead among the armed groups ({hx}%), feeding the IRGC, Hezbollah and the Iraqi militias {nw("most",1)}.')
-cap2=(f'{p["channels"]} channels posted {p["selectors"]} payment methods. None is shared between two groups, but {p["shared"]} are reposted by 2 to {p["max_channels"]} channels of the same {nw("group",2)}.')
+cap2=(f'{p["channels"]} channels posted {p["selectors"]} payment methods. '+(f'{p["cross_group"]} {"is" if p["cross_group"]==1 else "are"} shared between two groups; {p["shared"]} are reposted by 2 to {p["max_channels"]} channels of the same {nw("group",2)}.' if p.get('cross_group') else f'None is shared between two groups, but {p["shared"]} are reposted by 2 to {p["max_channels"]} channels of the same {nw("group",2)}.'))
 TOP={g:th['cats'][max(range(5),key=lambda i:v[i])] for g,v in th['by_group'].items()}
-cap3=(f'Each group keeps its own focus: Houthis on the {TOP["houthi"]} ({th["by_group"]["houthi"][0]:.0f}%), Hamas on Palestine ({th["by_group"]["hamas"][1]:.0f}%) and the IRGC on the Iran–Israel–US standoff ({th["by_group"]["irgc"][2]:.0f}%{nw(")",3)}.')
-cap3=cap3.replace('%<span class="nw">)','%)<span class="nw">').replace(f'{nw(")",3)}',f'){fn(3)}') 
+TOPI={g:max(range(5),key=lambda i:v[i]) for g,v in th['by_group'].items()}
+_ir=th['by_group']['irgc']; _iri=TOPI['irgc']; _ir2=max((i for i in range(5) if i!=_iri), key=lambda i:_ir[i])
+cap3=(f'Each group keeps its own focus: Houthis on the {TOP["houthi"]} ({th["by_group"]["houthi"][TOPI["houthi"]]:.0f}%), Hamas on Palestine ({th["by_group"]["hamas"][1]:.0f}%), and the IRGC on {TOP["irgc"].lower()} ({_ir[_iri]:.0f}%), just ahead of the {th["cats"][_ir2].lower()} ({_ir[_ir2]:.0f}%).')
+
 gl=lambda g:G[g][0]
 chips=[(f'{f(w["xcopies"])}','cross-group copies in the last 7 days',f'{sg(wchg)}% vs the weekly average of the 3 weeks before'),
  (f'{f(hw)}','of them started on Houthi channels',f'{sg(hwchg)}% vs the earlier weekly average'),
@@ -58,6 +60,8 @@ tsrc=[f'Houthi threat posts: posts from {T["nch"]} Houthi channels ({f(T["nposts
  f'<a href="{cs["claim"]}" target="_blank" rel="noopener nofollow">Houthi military media claim, @MilitaryMediaY, {cs["claim_t"]}</a>']+[f'<a href="{u}" target="_blank" rel="noopener nofollow">{html.escape(t)}</a>' for _,u,t in cs['press']]+[
  f'Houthi warnings to airlines operating in Saudi airspace: {aq["n"]} threat posts since {nice(aq["first"])}; first <a href="{aq["first_url"]}" target="_blank" rel="noopener nofollow">{aq["first_url"].replace("https://","")}</a>, renewed in <a href="{aq["ex"]}" target="_blank" rel="noopener nofollow">{aq["ex"].replace("https://","")}</a>.']
 if iq: tsrc.append(f'Iraqi militia reposts: identical text first posted by the Houthi military channels @MilitaryMediaY or @army21ye and later posted by an Iraqi militia channel, last 30 days ({iq["n"]} reposts by {iq["ch"]} channels). Fastest repost of the Oct 14 claim: <a href="{iq["claim"][2]}" target="_blank" rel="noopener nofollow">@{iq["claim"][0]}</a>.')
+tsrc.append(f'Themes: {f(th["coded"])} public Telegram posts coded into five topics with a written codebook (Nov 5, 2026 run, including the IRGC collection catch-up and Palestinian Islamic Jihad backfill). Each share is the percent of that group’s coded posts.')
+cap3=cap3+fn(len(SRC)+len(tsrc))
 nF=lambda i:FN0+i
 rz=TR['riyadh']; ar=TR['aramco']; sth=TR['south']
 thead=(f'Houthi threats have shifted from Israel, the US and the Red Sea to named targets inside Saudi {nw("Arabia,",nF(0))} and claimed strikes have followed the {nw("warnings.",nF(1),nF(2),nF(3))}')
@@ -244,11 +248,11 @@ function netmap(){const box=document.getElementById('net');box.innerHTML='';cons
  if(matchMedia('(prefers-reduced-motion: reduce)').matches){parts.forEach(p=>{const[x,y]=bz(p.p0,p.p1,p.p2,p.ph);p.c.setAttribute('cx',x);p.c.setAttribute('cy',y)});return}
  const t0=performance.now(),id=++netmap.id;(function tick(now){if(id!==netmap.id)return;const T=(now-t0)/1000;parts.forEach(p=>{const[x,y]=bz(p.p0,p.p1,p.p2,(T*p.sp+p.ph)%1);p.c.setAttribute('cx',x);p.c.setAttribute('cy',y)});requestAnimationFrame(tick)})(t0)}
 const PG=document.getElementById('pg'),PT=document.getElementById('pt'),PQ=document.getElementById('pq');
-[...new Set(D.PL.map(x=>x.g))].forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=D.G[g][0];PG.appendChild(o)});
+[...new Set(D.PL.flatMap(x=>x.g.split(';')))].forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=D.G[g][0];PG.appendChild(o)});
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-function plist(){const q=PQ.value.trim().toLowerCase(),R=D.PL.filter(x=>(!PG.value||x.g===PG.value)&&(!PT.value||x.k===PT.value)&&(!q||(x.v+' '+x.ch.map(c=>c[0]).join(' ')).toLowerCase().includes(q)));
+function plist(){const q=PQ.value.trim().toLowerCase(),R=D.PL.filter(x=>(!PG.value||x.g.split(';').includes(PG.value))&&(!PT.value||x.k===PT.value)&&(!q||(x.v+' '+x.ch.map(c=>c[0]).join(' ')).toLowerCase().includes(q)));
  document.getElementById('pn').textContent=`${R.length} of ${D.PL.length} shown. Tap a row for channels, dates and source posts.`;
- document.getElementById('plist').innerHTML=R.map(x=>`<details class="pr"><summary><span class="mono" dir="auto">${esc(x.v)}</span><span class="pm">${x.ch.length} channel${x.ch.length>1?'s':''}</span><span class="pt">${esc(x.t)} · <span style="color:${D.G[x.g][1]}">${esc(D.G[x.g][0])}</span></span><span class="pm">${x.m} posts</span></summary><div class="pb">First seen ${x.f} · last seen ${x.l}<ul>${x.ch.map(c=>`<li>${esc(c[0])}: ${c[1]} post${c[1]>1?'s':''}. ${c[2].map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener nofollow">post ${i+1}</a>`).join(' · ')}</li>`).join('')}</ul></div></details>`).join('')}
+ document.getElementById('plist').innerHTML=R.map(x=>`<details class="pr"><summary><span class="mono" dir="auto">${esc(x.v)}</span><span class="pm">${x.ch.length} channel${x.ch.length>1?'s':''}</span><span class="pt">${esc(x.t)} · ${x.g.split(';').map(k=>`<span style="color:${D.G[k][1]}">${esc(D.G[k][0])}</span>`).join(' + ')}</span><span class="pm">${x.m} posts</span></summary><div class="pb">First seen ${x.f} · last seen ${x.l}<ul>${x.ch.map(c=>`<li>${esc(c[0])}: ${c[1]} post${c[1]>1?'s':''}. ${c[2].map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener nofollow">post ${i+1}</a>`).join(' · ')}</li>`).join('')}</ul></div></details>`).join('')}
 [PG,PT].forEach(e=>e.onchange=plist);PQ.oninput=plist;plist();
 netmap.id=0;netmap();addEventListener('resize',()=>{netmap();applySel()});
 let TW='30';
@@ -429,7 +433,7 @@ page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta na
 <div><div class="lbl" id="ttitle"></div><p class="prompt">Change in threat posts naming each target, per 10,000 Houthi posts. Tap a row for counts and example posts.</p><div id="thr"></div></div></div>
 <p class="cap">{tcap}</p>{tcase}{tlines}{tcave}</section>
 <section id="pay"><h2>Shared payment methods</h2><p class="prompt">Payment methods posted in the channels, by type</p>
-<p class="cap" style="margin:0 0 10px"><b>None of the {p["selectors"]} payment details is shared between two groups. {p["shared"]} are reposted by several channels of the same group, mostly the IRGC ({sum(1 for x in D["paylist"] if x["g"]=="irgc")} of {p["selectors"]}).</b></p>
+<p class="cap" style="margin:0 0 10px"><b>{(str(p["cross_group"])+" of the "+str(p["selectors"])+" payment details "+("is" if p["cross_group"]==1 else "are")+" shared between two groups. " if p.get("cross_group") else "None of the "+str(p["selectors"])+" payment details is shared between two groups. ")}{p["shared"]} are reposted by several channels of the same group, mostly the IRGC ({sum(1 for x in D["paylist"] if "irgc" in str(x["g"]).split(";"))} of {p["selectors"]}).</b></p>
 <div class="row"><div class="leg">{leg2}</div><div>{pb}</div></div><p class="cap">{cap2} Channels posting them: {pg}.</p>
 <details id="pdd"><summary>See every account number and crypto wallet ({p["selectors"]})</summary><div class="in">
 <p class="prompt" style="color:var(--text)">Posted by the channels for fundraising, {nice(p["first"])} to {nice(p["last"])}; shown here for research reference only.</p>
@@ -444,6 +448,7 @@ page=f'''<!doctype html><html lang="en"><head>{GA}<meta charset="utf-8"><meta na
 <div id="fsel" hidden aria-live="polite"><div></div><button class="btn" id="fall" type="button">Show all</button></div>
 <div id="flow" style="width:100%;margin-top:6px"></div>
 <p class="cap">{cap1}</p></section>
+<section id="themes"><h2>What each group talks about</h2><p class="prompt">Share of each group’s posts by topic, from {f(th["coded"])} coordination posts coded through Nov 5, 2026 (IRGC collection catch-up and Palestinian Islamic Jihad included).</p><div class="row"><div class="leg">{leg3}</div><div>{tb}</div></div><p class="cap">{cap3}</p></section>
 {WEEK}
 <details id="more"><summary>More: shared websites, method and sources</summary><div class="in"><p><b>Shared websites.</b> {infra}</p>
 <p><b>Method.</b> A message counts as copied when the same text appears in two or more channels; the first channel to post it is the origin. Same-group copies (for example between Houthi channels) are included in the top bar; the flow chart shows only copies between different groups. Flows under 10 messages are left out.</p>
