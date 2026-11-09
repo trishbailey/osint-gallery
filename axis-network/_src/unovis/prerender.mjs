@@ -6,7 +6,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { renderToSvg } from '@unovis/ssr'
 import { zoomIdentity } from 'd3-zoom'
-import { toGraphData, linkWidth } from './model.mjs'
+import { LAND, toGraphData, linkWidth } from './model.mjs'
 
 const THEME = {
   '--vis-font-family': 'Segoe UI, system-ui, sans-serif',
@@ -88,6 +88,15 @@ export async function prerender({ dataPath, htmlPath, width = 1040, height = 640
   let inline = svg.replace(/<\?xml[^>]*>\s*/, '').replace(/<svg\b([^>]*?)\srole="img"/, '<svg class="ssr-graph"$1 role="img" aria-label="Static copy of the Axis network graph"')
   // Arrow markers pick up one shared stroke variable. Paint each arrow with its own link color.
   inline = inline.replace(/<use ([^>]*?)fill="(#[0-9A-Fa-f]{3,8})"([^>]*?)style="fill:\s*#[0-9A-Fa-f]{3,8};/g, '<use $1fill="$2"$3style="fill: $2;')
+  const frame = data.frame
+  const geo = `translate(${frame.tx},${frame.ty}) scale(${frame.scale}) translate(${-frame.vx},${-frame.vy})`
+  const land = LAND.map(d => `<path d="${d}" fill="#16284a" stroke="#2c4370" stroke-width="1.15" vector-effect="non-scaling-stroke"/>`).join('')
+  const leaders = data.nodes.filter(n => n.nudged).map(n =>
+    `<line x1="${n.anchorX}" y1="${n.anchorY}" x2="${n.x}" y2="${n.y}" stroke="${n.color}" stroke-width="1.5"/>` +
+    `<circle cx="${n.anchorX}" cy="${n.anchorY}" r="3.5" fill="${n.color}" stroke="#0b1526" stroke-width="1.5"/>`
+  ).join('')
+  const base = `<svg class="ssr-land basemap" data-ci-ignore="basemap" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" aria-hidden="true"><g class="basemap" transform="${geo}">${land}</g>${leaders}</svg>`
+  inline = `<div class="ssr-stage">${base}${inline}</div>`
   const html = readFileSync(htmlPath, 'utf8')
   const next = html.replace(/<!--SSR_START-->[\s\S]*?<!--SSR_END-->/, `<!--SSR_START-->\n${inline}\n<!--SSR_END-->`)
   if (next === html) throw new Error('SSR markers missing in ' + htmlPath)

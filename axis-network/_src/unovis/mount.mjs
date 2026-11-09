@@ -6,7 +6,7 @@ import { SingleContainer } from '@unovis/ts/containers/single-container/index.js
 import { Tooltip } from '@unovis/ts/components/tooltip/index.js'
 import { zoomIdentity } from 'd3-zoom'
 import {
-  GROUPS, MIN_FLOW, FLOW_DOT_MIN, endId, groupOf, toGraphData, linkWidth, rgba, niceDate,
+  GROUPS, LAND, MIN_FLOW, FLOW_DOT_MIN, endId, groupOf, toGraphData, linkWidth, rgba, niceDate,
 } from './model.mjs'
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -26,11 +26,255 @@ function routesFor(links, id) {
   return { out, inn }
 }
 
+const NS = 'http://www.w3.org/2000/svg'
+
 function recolorArrows(root) {
   root.querySelectorAll('use').forEach(el => {
     const fill = el.getAttribute('fill')
     if (fill && el.style.fill !== fill) el.style.fill = fill
   })
+}
+
+// Where a label prefers to sit, as a direction away from its circle.
+const LABEL_DIR = {
+  houthi: [0, 1],
+  irgc: [1, 0.15],
+  hezbollah: [0, -1],
+  iraqi: [1, 0.35],
+  hamas: [-1, 0],
+  pij: [1, 0.45],
+  aligned: [-1, 0.15],
+}
+const PHONE_DIR = {
+  houthi: [0, 1],
+  irgc: [0.1, -1],
+  hezbollah: [-0.7, -1],
+  iraqi: [1, 0.1],
+  hamas: [-0.2, 1],
+  pij: [1, 1],
+  aligned: [0.15, 1],
+}
+
+function drawBasemap(frame, nodes) {
+  const svg = document.getElementById('basemap')
+  const geo = `translate(${frame.tx},${frame.ty}) scale(${frame.scale}) translate(${-frame.vx},${-frame.vy})`
+  const land = LAND.map(d => `<path d="${d}" fill="#16284a" stroke="#2c4370" stroke-width="1.15" vector-effect="non-scaling-stroke"/>`).join('')
+  const leaders = nodes.filter(n => n.nudged).map(n =>
+    `<line x1="${n.anchorX}" y1="${n.anchorY}" x2="${n.x}" y2="${n.y}" stroke="${n.color}" stroke-width="1.5" stroke-linecap="round"/>` +
+    `<circle cx="${n.anchorX}" cy="${n.anchorY}" r="3.5" fill="${n.color}" stroke="#0b1526" stroke-width="1.5"/>`
+  ).join('')
+  svg.innerHTML =
+    `<g id="basemap-zoom">` +
+    `<g class="basemap" data-ci-ignore="basemap" transform="${geo}">${land}</g>` +
+    `<g id="basemap-leaders">${leaders}</g></g>`
+}
+
+function syncBasemapZoom(transform) {
+  const g = document.getElementById('basemap-zoom')
+  if (g && transform) g.setAttribute('transform', transform.toString())
+}
+
+// Fixed chips on a phone, in the open water around the cities, so the circles stay put.
+function phoneLabelBox(item, stage) {
+  const { id, w, h, origin, node } = item
+  const r = node.size / 2
+  const left = stage.left + 6
+  const right = stage.right - 6 - w
+  let x = origin.x - w / 2
+  let y = origin.y + r + 10
+  if (id === 'irgc' || id === 'hezbollah') y = origin.y - r - h - 16
+  if (id === 'hezbollah') x = left
+  if (id === 'irgc') x = Math.min(right, origin.x - w * 0.35)
+  if (id === 'hamas') { x = left; y = origin.y - r - h - 6 }
+  if (id === 'iraqi') { x = right; y = origin.y + 4 }
+  if (id === 'pij') { x = left; y = origin.y - r - h - 4 }
+  if (id === 'aligned') { x = Math.max(left, origin.x - w / 2); y = origin.y + r + 18 }
+  if (id === 'houthi') { x = origin.x - w / 2; y = origin.y + r + 12 }
+  x = Math.min(Math.max(x, left), right)
+  y = Math.min(Math.max(y, stage.top + 6), stage.bottom - 6 - h)
+  return { x, y, w, h }
+}
+
+function localDelta(el, screenDx, screenDy) {
+  const ctm = el.getScreenCTM()
+  if (!ctm) return [screenDx, screenDy]
+  const inv = ctm.inverse()
+  const p0 = new DOMPoint(0, 0).matrixTransform(inv)
+  const p1 = new DOMPoint(screenDx, screenDy).matrixTransform(inv)
+  return [p1.x - p0.x, p1.y - p0.y]
+}
+
+function boxesOverlap(a, b, pad) {
+  return a.x < b.x + b.w + pad && a.x + a.w + pad > b.x && a.y < b.y + b.h + pad && a.y + a.h + pad > b.y
+}
+
+function overlapArea(a, b) {
+  const x = Math.max(0, Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x))
+  const y = Math.max(0, Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y))
+  return x * y
+}
+
+// Keep Unovis label chips, but slide a chip when it would cover another chip or circle.
+function layoutLabels(chartEl, nodes) {
+  const stage = chartEl.getBoundingClientRect()
+  const byId = Object.fromEntries(nodes.map(n => [n.id, n]))
+  const items = []
+  for (const g of chartEl.querySelectorAll('svg g')) {
+    const datum = g.__data__
+    if (!datum || !datum.id || !byId[datum.id]) continue
+    if (!g.querySelector(':scope > circle')) continue
+    const label = [...g.children].find(el => el.tagName === 'g' && el.querySelector('rect[rx]'))
+    if (!label) continue
+    const origin = new DOMPoint(0, 0).matrixTransform(g.getScreenCTM())
+    const axis = new DOMPoint(1, 0).matrixTransform(g.getScreenCTM())
+    const k = Math.hypot(axis.x - origin.x, axis.y - origin.y) || 1
+    const chip = label.querySelector('rect')
+    const w = parseFloat(chip.getAttribute('width')) || label.getBoundingClientRect().width
+    const h = parseFloat(chip.getAttribute('height')) || label.getBoundingClientRect().height
+    if (w < 8) continue
+    items.push({ id: datum.id, g, label, w, h, node: byId[datum.id], origin, k })
+  }
+  if (!items.length) return
+  const placed = []
+  const bounds = { x: stage.left + 4, y: stage.top + 4, r: stage.right - 4, b: stage.bottom - 4 }
+  const phone = stage.width < 700
+  for (const item of items) {
+    const n = item.node
+    let best = null
+    if (phone) best = { box: phoneLabelBox(item, stage) }
+    const prefer = (phone ? PHONE_DIR : LABEL_DIR)[n.id] || [0, 1]
+    const dirs = [prefer, [0, 1], [0, -1], [-1, 0], [1, 0], [-1, 1], [1, 1], [-1, -1], [1, -1]]
+    if (!phone) dirs.forEach((dir, index) => {
+      const len = Math.hypot(dir[0], dir[1]) || 1
+      const ux = dir[0] / len, uy = dir[1] / len
+      const along = Math.abs(ux) * item.w / 2 + Math.abs(uy) * item.h / 2
+      const dist = (n.size / 2 + 12) * item.k + along
+      const cx = item.origin.x + ux * dist
+      const cy = item.origin.y + uy * dist
+      const box = { x: cx - item.w / 2, y: cy - item.h / 2, w: item.w, h: item.h }
+      let penalty = index * 6
+      penalty += Math.max(0, bounds.x - box.x) * 80
+      penalty += Math.max(0, bounds.y - box.y) * 80
+      penalty += Math.max(0, box.x + box.w - bounds.r) * 80
+      penalty += Math.max(0, box.y + box.h - bounds.b) * 80
+      for (const other of placed) penalty += overlapArea(box, other.box) * 4
+      for (const other of items) {
+        if (other.id === n.id) continue
+        const nx = other.origin.x, ny = other.origin.y
+        const rr = (other.node.size / 2 + 4) * item.k
+        const nearX = Math.max(box.x, Math.min(nx, box.x + box.w))
+        const nearY = Math.max(box.y, Math.min(ny, box.y + box.h))
+        const dd = Math.hypot(nx - nearX, ny - nearY)
+        if (dd < rr) penalty += (rr - dd) * 220
+      }
+      if (!best || penalty < best.penalty) best = { box, penalty, ux, uy }
+    })
+    if (!best) best = { box: { x: item.origin.x, y: item.origin.y, w: item.w, h: item.h } }
+    // Pull the chosen box back inside the chart.
+    best.box.x = Math.min(Math.max(best.box.x, bounds.x), bounds.r - best.box.w)
+    best.box.y = Math.min(Math.max(best.box.y, bounds.y), bounds.b - best.box.h)
+    item.g.__originX = item.origin.x
+    item.g.__originY = item.origin.y
+    placed.push({ id: n.id, box: best.box, node: n, label: item.label, g: item.g })
+  }
+  // A last push if two chosen boxes still touch. Phone spots are already separated.
+  for (let iter = 0; iter < (phone ? 0 : 24); iter++) {
+    let moved = false
+    for (let i = 0; i < placed.length; i++) {
+      for (let j = i + 1; j < placed.length; j++) {
+        const a = placed[i].box, b = placed[j].box
+        if (!boxesOverlap(a, b, 6)) continue
+        const acx = a.x + a.w / 2, acy = a.y + a.h / 2
+        const bcx = b.x + b.w / 2, bcy = b.y + b.h / 2
+        const ox = (a.w + b.w) / 2 + 6 - Math.abs(bcx - acx)
+        const oy = (a.h + b.h) / 2 + 6 - Math.abs(bcy - acy)
+        if (ox <= 0 || oy <= 0) continue
+        moved = true
+        if (ox < oy) {
+          const s = Math.sign(bcx - acx) || 1
+          a.x -= s * ox / 2; b.x += s * ox / 2
+        } else {
+          const s = Math.sign(bcy - acy) || 1
+          a.y -= s * oy / 2; b.y += s * oy / 2
+        }
+      }
+    }
+    for (const p of placed) {
+      p.box.x = Math.min(Math.max(p.box.x, bounds.x), bounds.r - p.box.w)
+      p.box.y = Math.min(Math.max(p.box.y, bounds.y), bounds.b - p.box.h)
+    }
+    if (!moved) break
+  }
+  const stageBox = document.getElementById('stage').getBoundingClientRect()
+  const host = document.getElementById('chips')
+  const wires = document.getElementById('wires')
+  const lines = []
+  for (const p of placed) {
+    p.label.style.display = 'none'
+    let chip = document.getElementById('chip-' + p.id)
+    if (!chip) {
+      chip = document.createElement('div')
+      chip.id = 'chip-' + p.id
+      chip.className = 'chip-label'
+      chip.innerHTML = `<b>${escapeHtml(p.node.label)}</b>` + (p.node.subLabel ? `<span>${escapeHtml(p.node.subLabel)}</span>` : '')
+      host.appendChild(chip)
+    }
+    const left = p.box.x - stageBox.left
+    const top = p.box.y - stageBox.top
+    chip.style.left = left + 'px'
+    chip.style.top = top + 'px'
+    const nx = p.g.__originX - stageBox.left
+    const ny = p.g.__originY - stageBox.top
+    const tx = left + p.box.w / 2
+    const ty = top + p.box.h / 2
+    const dist = Math.hypot(tx - nx, ty - ny)
+    if (dist < p.node.size / 2 + 16) continue
+    const ux = (tx - nx) / dist, uy = (ty - ny) / dist
+    const reach = Math.abs(ux) * p.box.w / 2 + Math.abs(uy) * p.box.h / 2
+    lines.push(`<line x1="${nx + ux * (p.node.size / 2 + 2)}" y1="${ny + uy * (p.node.size / 2 + 2)}" x2="${tx - ux * reach}" y2="${ty - uy * reach}" stroke="${p.node.color}" stroke-width="1.25" stroke-linecap="round"/>`)
+  }
+  wires.setAttribute('viewBox', `0 0 ${stageBox.width} ${stageBox.height}`)
+  wires.innerHTML = lines.join('')
+}
+
+// Measured positions win over the plan: nudge until chips are inside the map and off each other.
+function settleLabels(chartEl) {
+  const stage = chartEl.getBoundingClientRect()
+  const pad = 6
+  const labels = () => [...chartEl.querySelectorAll('svg g')].flatMap(g => {
+    if (!g.__data__ || !g.__data__.id || !g.querySelector(':scope > circle')) return []
+    const label = [...g.children].find(el => el.tagName === 'g' && el.querySelector('rect[rx]'))
+    if (!label) return []
+    return [{ g, label, r: label.getBoundingClientRect(), node: g.__data__ }]
+  })
+  for (let pass = 0; pass < 16; pass++) {
+    const items = labels()
+    let moved = false
+    for (const a of items) {
+      let dx = 0, dy = 0
+      for (const b of items) {
+        if (a === b) continue
+        const ox = Math.min(a.r.right, b.r.right) - Math.max(a.r.left, b.r.left)
+        const oy = Math.min(a.r.bottom, b.r.bottom) - Math.max(a.r.top, b.r.top)
+        if (ox > 1 && oy > 1) {
+          if (ox < oy) dx += (a.r.left + a.r.width / 2 < b.r.left + b.r.width / 2 ? -1 : 1) * (ox / 2 + 1)
+          else dy += (a.r.top + a.r.height / 2 < b.r.top + b.r.height / 2 ? -1 : 1) * (oy / 2 + 1)
+        }
+      }
+      const nextLeft = a.r.left + dx, nextRight = a.r.right + dx
+      const nextTop = a.r.top + dy, nextBottom = a.r.bottom + dy
+      if (nextLeft < stage.left + pad) dx += stage.left + pad - nextLeft
+      if (nextRight > stage.right - pad) dx -= nextRight - (stage.right - pad)
+      if (nextTop < stage.top + pad) dy += stage.top + pad - nextTop
+      if (nextBottom > stage.bottom - pad) dy -= nextBottom - (stage.bottom - pad)
+      if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) continue
+      const [lx, ly] = localDelta(a.g, dx, dy)
+      const prev = a.label.transform.baseVal.consolidate()
+      a.label.setAttribute('transform', `translate(${(prev ? prev.matrix.e : 0) + lx},${(prev ? prev.matrix.f : 0) + ly})`)
+      moved = true
+    }
+    if (!moved) break
+  }
 }
 
 export function mount(raw) {
@@ -84,8 +328,8 @@ export function mount(raw) {
     nodeSubLabelTrim: false,
     nodeLabelFitMode: 'wrap',
     nodeSubLabelFitMode: 'wrap',
-    nodeLabelWidth: 148,
-    nodeSubLabelWidth: 156,
+    nodeLabelWidth: 200,
+    nodeSubLabelWidth: 210,
     nodeSelectionHighlightMode: 'none',
     selectedNodeIds: [],
     linkWidth: l => linkWidth(l.n, state.maxN),
@@ -99,13 +343,20 @@ export function mount(raw) {
     linkFlowParticleSize: 3.2,
     linkFlowParticleSpeed: 36,
     panels: [],
-    onZoom: (k) => { zoomEl.textContent = `Zoom ${Math.round(k * 100)}%` },
+    onZoom: (k, _extent, _event, transform) => {
+      zoomEl.textContent = `Zoom ${Math.round(k * 100)}%`
+      syncBasemapZoom(transform)
+      if (state.sizing) layoutLabels(chartEl, state.sizing.nodes)
+    },
     onRenderComplete: () => {
       recolorArrows(chartEl)
-      if (!state.needsHome || !state.graph) return
-      state.needsHome = false
-      state.graph._zoomBehavior.transform(state.graph.g, zoomIdentity)
-      zoomEl.textContent = 'Zoom 100%'
+      if (state.needsHome && state.graph) {
+        state.needsHome = false
+        state.graph._zoomBehavior.transform(state.graph.g, zoomIdentity)
+        syncBasemapZoom(zoomIdentity)
+        zoomEl.textContent = 'Zoom 100%'
+      }
+      if (state.sizing) layoutLabels(chartEl, state.sizing.nodes)
     },
   }
 
@@ -198,8 +449,9 @@ export function mount(raw) {
     const data = toGraphData(raw, width, height)
     state.links = data.links
     state.maxN = data.maxN
-    state.sizing = { width, height, nodes: data.nodes }
+    state.sizing = { width, height, nodes: data.nodes, frame: data.frame }
     state.needsHome = true
+    drawBasemap(data.frame, data.nodes)
     if (!state.chart) {
       const graph = new Graph(cfg)
       state.graph = graph
@@ -238,6 +490,7 @@ export function mount(raw) {
     state.focus = null
     state.needsHome = true
     if (state.graph) state.graph._zoomBehavior.transform(state.graph.g, zoomIdentity)
+    syncBasemapZoom(zoomIdentity)
     paint()
     zoomEl.textContent = 'Zoom 100%'
   })

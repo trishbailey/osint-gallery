@@ -1,9 +1,12 @@
 // Group names, colors, and home bases copied from axis-network/_src/gen_page.py
 // (the G table and the LOC table inside netmap). Counts always come from data.json.
-// Projection constants are basemap.json (W, H, lat0, S, K, lonc), the same ones the live map uses.
+// Land shapes and the projection are axis-network/_src/basemap.json, the same plate the live map draws.
+
+import basemap from '../basemap.json' with { type: 'json' }
 
 export const MIN_FLOW = 10
 export const FLOW_DOT_MIN = 200
+export const LAND = basemap.paths
 
 export const GROUPS = [
   { id: 'houthi', name: 'Houthis (Ansar Allah)', short: 'Houthis', color: '#b24762', lon: 44.2, lat: 15.35, base: 'Sanaa' },
@@ -11,7 +14,9 @@ export const GROUPS = [
   { id: 'hezbollah', name: 'Hezbollah', short: 'Hezbollah', color: '#c9a75a', lon: 35.5, lat: 33.89, base: 'Beirut' },
   { id: 'hamas', name: 'Hamas and allied media', short: 'Hamas', color: '#3f9c96', lon: 33.6, lat: 30.6, base: 'Gaza' },
   { id: 'iraqi', name: 'Iraqi militias', short: 'Iraqi militias', color: '#4379a8', lon: 44.36, lat: 33.31, base: 'Baghdad' },
-  { id: 'aligned', name: 'Pro-Axis news outlets', short: 'Pro-Axis media', color: '#8e65b8', lon: 27.5, lat: 25.5, base: 'regional' },
+  // Pro-Axis outlets have no single base. The live map places them at 27.5E, 25.5N,
+  // and shifts that spot to 38.5E, 24.5N on a phone so it stays inside the cropped view.
+  { id: 'aligned', name: 'Pro-Axis news outlets', short: 'Pro-Axis media', color: '#8e65b8', lon: 27.5, lat: 25.5, phoneLon: 38.5, phoneLat: 24.5, base: 'regional' },
   { id: 'pij', name: 'Palestinian Islamic Jihad (PIJ)', short: 'PIJ', color: '#b36a34', lon: 34.3, lat: 28.2, base: 'Gaza' },
 ]
 
@@ -37,80 +42,70 @@ function project(lon, lat) {
   ]
 }
 
-function textWidth(text, px) {
-  return Math.ceil(text.length * px * 0.62)
+// Same window the live map uses: the full plate on a desktop, a tighter crop on a phone.
+export function mapFrame(width, height) {
+  const phone = width < 700
+  const vx = phone ? 240 : 0
+  const vy = phone ? 20 : 0
+  const vw = phone ? 760 : MAP.W
+  const vh = phone ? 640 : MAP.H
+  const scale = Math.min(width / vw, height / vh)
+  return {
+    phone, vx, vy, vw, vh, scale,
+    tx: (width - vw * scale) / 2,
+    ty: (height - vh * scale) / 2,
+  }
 }
 
-// Home-base positions, then a push so a label never sits on the next circle.
-// Gaza (Hamas and PIJ) is the tight pair on the live map.
+export function toScreen(frame, mapX, mapY) {
+  return [
+    frame.tx + (mapX - frame.vx) * frame.scale,
+    frame.ty + (mapY - frame.vy) * frame.scale,
+  ]
+}
+
+// Circles stay on the projected city. If two circles overlap (Hamas and PIJ, both Gaza),
+// nudge them apart by only as much as the circles need, and keep the real spot for a leader.
+const MAX_NUDGE = 36
 function place(nodes, width, height) {
-  const metrics = (n) => {
-    const half = Math.max(n.size / 2 + 12, textWidth(n.label, 14) / 2 + 10, textWidth(n.subLabel, 13) / 2 + 10)
-    return { half, above: n.size / 2 + 16, below: n.size / 2 + 62 }
+  const frame = mapFrame(width, height)
+  const phone = frame.phone
+  for (const n of nodes) {
+    const lon = phone && n.phoneLon != null ? n.phoneLon : n.lon
+    const lat = phone && n.phoneLat != null ? n.phoneLat : n.lat
+    const [mx, my] = project(lon, lat)
+    const [x, y] = toScreen(frame, mx, my)
+    n.x = n.anchorX = x
+    n.y = n.anchorY = y
   }
-  const widest = Math.max(...nodes.map(n => metrics(n).half))
-  const padX = Math.max(widest + 6, 16)
-  const padTop = 36
-  const padBottom = 86
-  const innerW = Math.max(40, width - padX * 2)
-  const innerH = Math.max(80, height - padTop - padBottom)
-  const raw = nodes.map(n => project(n.lon, n.lat))
-  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity
-  for (const [x, y] of raw) {
-    minX = Math.min(minX, x); maxX = Math.max(maxX, x)
-    minY = Math.min(minY, y); maxY = Math.max(maxY, y)
-  }
-  const spanX = maxX - minX || 1
-  const spanY = maxY - minY || 1
-  nodes.forEach((n, i) => {
-    n.x = padX + ((raw[i][0] - minX) / spanX) * innerW
-    n.y = padTop + ((raw[i][1] - minY) / spanY) * innerH
-  })
-  const clamp = (n) => {
-    const m = metrics(n)
-    n.x = Math.max(m.half + 2, Math.min(width - m.half - 2, n.x))
-    n.y = Math.max(m.above + 2, Math.min(height - m.below - 2, n.y))
-  }
-  for (let iter = 0; iter < 200; iter++) {
+  for (let iter = 0; iter < 8; iter++) {
     let moved = false
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
         const a = nodes[i], b = nodes[j]
-        const ma = metrics(a), mb = metrics(b)
-        let dx = b.x - a.x
-        let dy = b.y - a.y
-        const top = a.y <= b.y ? a : b
-        const bot = top === a ? b : a
-        const mt = metrics(top), mdn = metrics(bot)
-        const needX = ma.half + mb.half + 8
-        const needY = mt.below + mdn.above + 6
-        const ox = needX - Math.abs(dx)
-        const oy = needY - Math.abs(dy)
+        let dx = b.x - a.x, dy = b.y - a.y
         const dist = Math.hypot(dx, dy) || 0.01
-        const minDist = Math.min(132, Math.max(96, width * 0.18))
-        if (ox > 0 && oy > 0) {
-          moved = true
-          if (ox * 0.65 < oy) {
-            const s = Math.sign(dx) || (i % 2 ? 1 : -1)
-            a.x -= s * (ox / 2 + 0.5)
-            b.x += s * (ox / 2 + 0.5)
-          } else {
-            const s = Math.sign(dy) || 1
-            a.y -= s * (oy / 2 + 0.5)
-            b.y += s * (oy / 2 + 0.5)
-          }
-        } else if (dist < minDist && Math.abs(dy) < needY * 0.9) {
-          moved = true
-          dx /= dist; dy /= dist
-          const push = (minDist - dist) / 2
-          a.x -= dx * push; a.y -= dy * push
-          b.x += dx * push; b.y += dy * push
-        }
+        const need = a.size / 2 + b.size / 2 + 6
+        if (dist >= need) continue
+        const push = (need - dist) / 2
+        dx /= dist; dy /= dist
+        a.x -= dx * push; a.y -= dy * push
+        b.x += dx * push; b.y += dy * push
+        moved = true
       }
     }
-    nodes.forEach(clamp)
     if (!moved) break
   }
+  for (const n of nodes) {
+    const dx = n.x - n.anchorX, dy = n.y - n.anchorY
+    const dist = Math.hypot(dx, dy)
+    if (dist > MAX_NUDGE) {
+      n.x = n.anchorX + dx / dist * MAX_NUDGE
+      n.y = n.anchorY + dy / dist * MAX_NUDGE
+    }
+    n.nudged = Math.hypot(n.x - n.anchorX, n.y - n.anchorY) > 1.5
+  }
+  return frame
 }
 
 export function toGraphData(raw, width, height) {
@@ -120,25 +115,30 @@ export function toGraphData(raw, width, height) {
     const bg = (raw.by_group && raw.by_group[g.id]) || { ch: 0, posts: 0 }
     const ch = Number(bg.ch) || 0
     const sub = `${ch.toLocaleString('en-US')} channel${ch === 1 ? '' : 's'} · ${g.base}`
+    const phone = width < 700
     return {
       id: g.id,
       label: g.short,
-      subLabel: sub,
+      // A phone is too narrow for the two-line chip. The city and channel count stay in the tooltip.
+      subLabel: phone ? '' : sub,
       name: g.name,
       color: g.color,
       base: g.base,
       lon: g.lon,
       lat: g.lat,
+      phoneLon: g.phoneLon,
+      phoneLat: g.phoneLat,
       channels: bg.ch || 0,
       posts: bg.posts || 0,
       size: nodePixelSize(bg.ch || 1),
     }
   })
-  place(nodes, width, height)
+  const frame = place(nodes, width, height)
   const links = flows.map(([source, target, n]) => ({ source, target, n }))
   return {
     nodes,
     links,
+    frame,
     maxN,
     through: raw.data_through,
     windowStart: raw.window_start,
