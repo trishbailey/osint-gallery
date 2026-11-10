@@ -6,7 +6,7 @@ import { SingleContainer } from '@unovis/ts/containers/single-container/index.js
 import { Tooltip } from '@unovis/ts/components/tooltip/index.js'
 import { zoomIdentity } from 'd3-zoom'
 import {
-  GROUPS, LAND, MIN_FLOW, FLOW_DOT_MIN, endId, groupOf, toGraphData, linkWidth, rgba, niceDate,
+  GROUPS, LAND, MIN_FLOW, isNarrow, mapFrame, endId, groupOf, toGraphData, linkWidth, rgba, niceDate,
 } from './model.mjs'
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -32,6 +32,25 @@ function recolorArrows(root) {
   root.querySelectorAll('use').forEach(el => {
     const fill = el.getAttribute('fill')
     if (fill && el.style.fill !== fill) el.style.fill = fill
+  })
+}
+
+// Live map: pale dots travel every route, more of them on the busier ones.
+function paintFlowDots(root, maxN) {
+  root.querySelectorAll('svg g').forEach(g => {
+    const d = g.__data__
+    if (!d || d.n == null) return
+    const dots = [...g.querySelectorAll('circle')].filter(c => {
+      const r = parseFloat(c.getAttribute('r'))
+      return r > 0 && r < 6
+    })
+    if (!dots.length) return
+    const keep = Math.max(1, Math.round(1 + 6 * Math.sqrt(d.n / maxN)))
+    dots.forEach((c, i) => {
+      c.style.fill = '#e6e9ef'
+      c.style.fillOpacity = '0.9'
+      c.style.display = i < keep ? '' : 'none'
+    })
   })
 }
 
@@ -137,7 +156,7 @@ function layoutLabels(chartEl, nodes) {
   if (!items.length) return
   const placed = []
   const bounds = { x: stage.left + 4, y: stage.top + 4, r: stage.right - 4, b: stage.bottom - 4 }
-  const phone = stage.width < 700
+  const phone = isNarrow(stage.width)
   for (const item of items) {
     const n = item.node
     let best = null
@@ -219,18 +238,35 @@ function layoutLabels(chartEl, nodes) {
       chip.innerHTML = `<b>${escapeHtml(p.node.label)}</b>` + (p.node.subLabel ? `<span>${escapeHtml(p.node.subLabel)}</span>` : '')
       host.appendChild(chip)
     }
-    const left = p.box.x - stageBox.left
-    const top = p.box.y - stageBox.top
+    let left = p.box.x - stageBox.left
+    let top = p.box.y - stageBox.top
     chip.style.left = left + 'px'
     chip.style.top = top + 'px'
+    const cw = chip.offsetWidth
+    const ch = chip.offsetHeight
     const nx = p.g.__originX - stageBox.left
     const ny = p.g.__originY - stageBox.top
-    const tx = left + p.box.w / 2
-    const ty = top + p.box.h / 2
+    const rr = p.node.size / 2 + 3
+    const hits = (x, y) => {
+      const nearX = Math.max(x, Math.min(nx, x + cw))
+      const nearY = Math.max(y, Math.min(ny, y + ch))
+      return Math.hypot(nx - nearX, ny - nearY) < rr
+    }
+    if (hits(left, top)) {
+      const below = ny + rr + 2
+      const above = ny - rr - ch - 2
+      top = below + ch <= stageBox.height - 4 ? below : above
+    }
+    left = Math.min(Math.max(4, left), Math.max(4, stageBox.width - cw - 4))
+    top = Math.min(Math.max(4, top), Math.max(4, stageBox.height - ch - 4))
+    chip.style.left = left + 'px'
+    chip.style.top = top + 'px'
+    const tx = left + cw / 2
+    const ty = top + ch / 2
     const dist = Math.hypot(tx - nx, ty - ny)
     if (dist < p.node.size / 2 + 16) continue
     const ux = (tx - nx) / dist, uy = (ty - ny) / dist
-    const reach = Math.abs(ux) * p.box.w / 2 + Math.abs(uy) * p.box.h / 2
+    const reach = Math.abs(ux) * cw / 2 + Math.abs(uy) * ch / 2
     lines.push(`<line x1="${nx + ux * (p.node.size / 2 + 2)}" y1="${ny + uy * (p.node.size / 2 + 2)}" x2="${tx - ux * reach}" y2="${ty - uy * reach}" stroke="${p.node.color}" stroke-width="1.25" stroke-linecap="round"/>`)
   }
   wires.setAttribute('viewBox', `0 0 ${stageBox.width} ${stageBox.height}`)
@@ -339,17 +375,24 @@ export function mount(raw) {
     linkArrow: 'single',
     linkBandWidth: 0,
     linkHighlightOnHover: true,
-    linkFlow: l => !reduceMotion && l.n >= FLOW_DOT_MIN && activeLink(l),
-    linkFlowParticleSize: 3.2,
-    linkFlowParticleSpeed: 36,
+    // Pale dots on every shown route, same idea as the live map. Speed scales with volume.
+    // Reduced motion keeps the dots and stops them.
+    linkFlow: () => true,
+    linkFlowParticleSize: 2.5,
+    // Unovis treats a speed of 0 as "unset" and falls back to a moving duration, so a tiny speed is what actually holds the dots still.
+    linkFlowParticleSpeed: l => reduceMotion ? 1e-6 : 22 + 55 * Math.sqrt(l.n / state.maxN),
     panels: [],
     onZoom: (k, _extent, _event, transform) => {
       zoomEl.textContent = `Zoom ${Math.round(k * 100)}%`
       syncBasemapZoom(transform)
-      if (state.sizing) layoutLabels(chartEl, state.sizing.nodes)
+      if (state.sizing) {
+        layoutLabels(chartEl, state.sizing.nodes)
+        paintFlowDots(chartEl, state.maxN)
+      }
     },
     onRenderComplete: () => {
       recolorArrows(chartEl)
+      if (state.maxN) paintFlowDots(chartEl, state.maxN)
       if (state.needsHome && state.graph) {
         state.needsHome = false
         state.graph._zoomBehavior.transform(state.graph.g, zoomIdentity)
@@ -437,9 +480,22 @@ export function mount(raw) {
   })
   clearBtn.addEventListener('click', clearFocus)
 
+  function syncStage() {
+    const stage = document.getElementById('stage')
+    const width = stage.clientWidth
+    if (!isNarrow(width)) {
+      if (stage.style.height) stage.style.height = ''
+      return
+    }
+    const { vw, vh } = mapFrame(width, width)
+    const next = Math.round(width * vh / vw) + 'px'
+    if (stage.style.height !== next) stage.style.height = next
+  }
+
   function currentSize() {
+    syncStage()
     const width = Math.max(280, chartEl.clientWidth)
-    const height = chartEl.clientHeight || (matchMedia('(max-width: 700px)').matches ? 720 : 640)
+    const height = chartEl.clientHeight || (isNarrow(width) ? Math.round(width * 620 / 530) : 700)
     return { width, height }
   }
 

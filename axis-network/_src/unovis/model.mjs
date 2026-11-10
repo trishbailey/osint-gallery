@@ -5,8 +5,11 @@
 import basemap from '../basemap.json' with { type: 'json' }
 
 export const MIN_FLOW = 10
-export const FLOW_DOT_MIN = 200
 export const LAND = basemap.paths
+
+export function isNarrow(width) {
+  return width <= 430
+}
 
 export const GROUPS = [
   { id: 'houthi', name: 'Houthis (Ansar Allah)', short: 'Houthis', color: '#b24762', lon: 44.2, lat: 15.35, base: 'Sanaa' },
@@ -31,8 +34,9 @@ export function endId(v) {
   return v
 }
 
-export function nodePixelSize(channels) {
-  return Math.round(36 + 16 * Math.sqrt((channels || 1) / 25))
+export function nodePixelSize(channels, narrow) {
+  const t = Math.sqrt((channels || 1) / 25)
+  return narrow ? Math.round(14 + 10 * t) : Math.round(36 + 16 * t)
 }
 
 function project(lon, lat) {
@@ -42,16 +46,19 @@ function project(lon, lat) {
   ]
 }
 
-// Same window the live map uses: the full plate on a desktop, a tighter crop on a phone.
+// Desktop uses the full plate. A phone uses a portrait window around the seven bases
+// so the land fills the chart instead of sitting in a short band.
 export function mapFrame(width, height) {
-  const phone = width < 700
-  const vx = phone ? 240 : 0
-  const vy = phone ? 20 : 0
-  const vw = phone ? 760 : MAP.W
-  const vh = phone ? 640 : MAP.H
+  const narrow = isNarrow(width)
+  const vx = narrow ? 330 : 0
+  const vy = 0
+  const vw = narrow ? 530 : MAP.W
+  const vh = narrow ? MAP.H : MAP.H
   const scale = Math.min(width / vw, height / vh)
   return {
-    phone, vx, vy, vw, vh, scale,
+    narrow,
+    phone: narrow,
+    vx, vy, vw, vh, scale,
     tx: (width - vw * scale) / 2,
     ty: (height - vh * scale) / 2,
   }
@@ -66,10 +73,10 @@ export function toScreen(frame, mapX, mapY) {
 
 // Circles stay on the projected city. If two circles overlap (Hamas and PIJ, both Gaza),
 // nudge them apart by only as much as the circles need, and keep the real spot for a leader.
-const MAX_NUDGE = 36
 function place(nodes, width, height) {
   const frame = mapFrame(width, height)
   const phone = frame.phone
+  const maxNudge = phone ? 14 : 36
   for (const n of nodes) {
     const lon = phone && n.phoneLon != null ? n.phoneLon : n.lon
     const lat = phone && n.phoneLat != null ? n.phoneLat : n.lat
@@ -99,9 +106,9 @@ function place(nodes, width, height) {
   for (const n of nodes) {
     const dx = n.x - n.anchorX, dy = n.y - n.anchorY
     const dist = Math.hypot(dx, dy)
-    if (dist > MAX_NUDGE) {
-      n.x = n.anchorX + dx / dist * MAX_NUDGE
-      n.y = n.anchorY + dy / dist * MAX_NUDGE
+    if (dist > maxNudge) {
+      n.x = n.anchorX + dx / dist * maxNudge
+      n.y = n.anchorY + dy / dist * maxNudge
     }
     n.nudged = Math.hypot(n.x - n.anchorX, n.y - n.anchorY) > 1.5
   }
@@ -115,12 +122,12 @@ export function toGraphData(raw, width, height) {
     const bg = (raw.by_group && raw.by_group[g.id]) || { ch: 0, posts: 0 }
     const ch = Number(bg.ch) || 0
     const sub = `${ch.toLocaleString('en-US')} channel${ch === 1 ? '' : 's'} · ${g.base}`
-    const phone = width < 700
+    const narrow = isNarrow(width)
     return {
       id: g.id,
       label: g.short,
-      // A phone is too narrow for the two-line chip. The city and channel count stay in the tooltip.
-      subLabel: phone ? '' : sub,
+      // A phone chip is one line so it can sit beside a small circle. The city stays in the tooltip.
+      subLabel: narrow ? '' : sub,
       name: g.name,
       color: g.color,
       base: g.base,
@@ -130,7 +137,7 @@ export function toGraphData(raw, width, height) {
       phoneLat: g.phoneLat,
       channels: bg.ch || 0,
       posts: bg.posts || 0,
-      size: nodePixelSize(bg.ch || 1),
+      size: nodePixelSize(bg.ch || 1, narrow),
     }
   })
   const frame = place(nodes, width, height)
